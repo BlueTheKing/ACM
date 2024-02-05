@@ -1,0 +1,4 @@
+#include "script_component.hpp"
+
+[QGVAR(wrapBruisesLocal), LINKFUNC(wrapBruisesLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(wrapBodyPartLocal), LINKFUNC(wrapBodyPartLocal)] call CBA_fnc_addEventHandler;

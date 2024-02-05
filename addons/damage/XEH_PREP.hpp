@@ -1,0 +1,12 @@
+PREP(canStitch);
+PREP(canWrap);
+PREP(getBandageTime);
+PREP(getBruiseWrapTime);
+PREP(getStitchTime);
+PREP(getWrapTime);
+PREP(isBodyPartBleeding);
+PREP(surgicalKitProgress);
+PREP(wrapBodyPart);
+PREP(wrapBodyPartLocal);
+PREP(wrapBruises);
+PREP(wrapBruisesLocal);

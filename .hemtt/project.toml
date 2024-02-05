@@ -1,0 +1,12 @@
+name = "Advanced Medical System"
+author = "Blue"
+prefix = "AMS"
+mainprefix = "x"
+
+[files]
+include = [
+    "mod.cpp"
+]
+
+[version]
+git_hash = 0
