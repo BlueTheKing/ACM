@@ -28,7 +28,7 @@ if (ACEGVAR(interact_menu,menuBackground) == 2) then {0 cutRsc [QACEGVAR(interac
 
 // Set middle header as target name
 private _ctrlTitle = _display displayCtrl IDC_NAME;
-_ctrlTitle ctrlSetText ([GVAR(target)] call ACEFUNC(common,getName));
+_ctrlTitle ctrlSetText ([ACEGVAR(medical_gui,target)] call ACEFUNC(common,getName));
 
 // Initially hide the triage select buttons
 [_display] call ACEFUNC(medical_gui,toggleTriageSelect);

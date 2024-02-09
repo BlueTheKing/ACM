@@ -38,7 +38,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "";
         icon = "";
         medicRequired = 0;
-        treatmentTime = 0.1;
+        treatmentTime = 0.01;
         condition = QUOTE(_patient getVariable [ARR_2(QQGVAR(HeadTilt_State),false)] && !(IN_RECOVERYPOSITION(_patient)));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,false)] call FUNC(setHeadTiltChinLift));
     };

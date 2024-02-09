@@ -23,6 +23,7 @@ private _entries = [];
 private _nonissueColor = [1, 1, 1, 0.33];
 
 private _airwayColor = [0.19, 0.91, 0.93, 1];
+private _circulationColor = [0.2, 0.6, 0.2, 1];
 
 private _addListSpacer = false;
 
@@ -196,7 +197,56 @@ if (_bodyPartIV > 0) then {
         _IVEntry = _IVText;
     };
 
-    _entries pushBack [_IVEntry, [0.2, 0.6, 0.2, 1]];
+    _entries pushBack [_IVEntry, _circulationColor];
+};
+
+if ((_selectionN == 1 || (_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_PulseOximeter), -1] == (_selectionN max 0))) && [_target] call EFUNC(circulation,hasAED)) then {
+    private _padsStatus = _target getVariable [QEGVAR(circulation,AEDMonitor_Placement_Pads), false];
+    private _pulseOximeterStatus = (_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_PulseOximeter), -1] != -1);
+
+    private _entry = "AED ";
+
+    private _displayedHR = _target getVariable [QEGVAR(circulation,AEDMonitor_Pads_Display), 0];
+
+    if (_displayedHR < 1) then {
+        _displayedHR = "--";
+    };
+
+    if (_padsStatus) then {
+        _entry = _entry + (format ["[HR: %1", _displayedHR]);
+    } else {
+        _entry = _entry + (format ["[PR: %1", _displayedHR]);
+    };
+
+    if (_pulseOximeterStatus) then {
+        private _displayedSPO2 = _target getVariable [QEGVAR(circulation,AEDMonitor_PulseOximeter_Display), 0];
+
+        if (_displayedSPO2 < 1) then {
+            _displayedSPO2 = "--";
+        };
+
+        _entry = _entry + (format [" SpO2: %1", _displayedSPO2]);
+    } else {
+        _entry = _entry + " SpO2: --";
+    };
+
+    private _measuredBP = _target getVariable [QEGVAR(circulation,AEDMonitor_NIBP_Display), [0,0]];
+
+    private _displayedBP = _measuredBP;
+
+    if ((_measuredBP select 1) < 1) then {
+        _displayedBP = ["--","--"];
+    };
+
+    _entry = _entry + (format [" BP: %1/%2", (_displayedBP select 0), (_displayedBP select 1)]);
+
+    if (false) then { // TODO add EtCO2 display
+        _entry = _entry + " CO2: --";
+    } else {
+        _entry = _entry + " CO2: --";
+    };
+
+    _entries pushBack [format ["%1]",_entry], _circulationColor];
 };
 
 if (_selectionN in [2,3] && {HAS_PULSEOX(_target,(_selectionN - 2))}) then {

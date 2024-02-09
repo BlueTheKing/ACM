@@ -1,7 +1,15 @@
-PREP(displayDefibrillatorMonitor);
+PREP(displayAEDMonitor_adjustLine);
+PREP(displayAEDMonitor_generateEKG);
+PREP(displayAEDMonitor_generatePO);
+PREP(displayAEDMonitor_updateStep);
+PREP(displayAEDMonitor);
 PREP(getIVFlowRate);
+PREP(handleAED);
+PREP(hasAED);
 PREP(hasIV);
 PREP(resetVariables);
+PREP(setAED);
+PREP(setAEDLocal);
 PREP(setIV);
 PREP(setIVLocal);
 PREP(updateCirculationState);

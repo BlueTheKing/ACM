@@ -46,18 +46,13 @@ private _PFH = [{
     {
         if (((_patient getVariable [QGVAR(PulseOximeter_LastSync), [-1,-1]] select _x) + 3) < CBA_missionTime) then {
             if (!(HAS_TOURNIQUET_APPLIED_ON(_patient,(_x + 2))) && !(IN_CRDC_ARRST(_patient)) && (alive _patient)) then {
-                private _oxygen = GET_OXYGEN(_patient);
                 private _pr = GET_HEART_RATE(_patient);
-
                 private _displayedSPO2 = 0;
 
                 if (_pr < 30) then {
                     _pr = 0;
                 } else {
-                    private _inaccuracyRange = linearConversion [95, 75, _oxygen, 1, 5, false];
-                    private _bloodLossEffect = linearConversion [5.5, 3, GET_BLOOD_VOLUME(_patient), 0, 25, true];
-
-                    _displayedSPO2 = (random [(0 max (_oxygen - _inaccuracyRange)), _oxygen, ((_oxygen + _inaccuracyRange) min 99)]) - (_bloodLossEffect * (_oxygen / (_patient getVariable [QEGVAR(core,TargetVitals_OxygenSaturation), 100])));
+                    _displayedSPO2 = [_patient] call FUNC(getSpO2);
                 };
 
                 _displayArray set [_x, [round(_displayedSPO2), round(_pr)]];

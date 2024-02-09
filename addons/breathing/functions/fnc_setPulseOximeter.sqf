@@ -23,8 +23,8 @@ params ["_medic", "_patient", "_bodyPart", ["_state", true]];
 private _hint = "placed";
 
 if !(_state) then {
-	_hint = "removed";
-	[_medic, "AMS_PulseOximeter"] call ACEFUNC(common,addToInventory);
+    _hint = "removed";
+    [_medic, "AMS_PulseOximeter"] call ACEFUNC(common,addToInventory);
 };
 
 [_patient, "activity", "%1 %2 Pulse Oximeter", [[_medic, false, true] call ACEFUNC(common,getName), _hint]] call ACEFUNC(medical_treatment,addToLog);

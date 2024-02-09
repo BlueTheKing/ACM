@@ -3,6 +3,7 @@ PREP(applyChestSealLocal);
 PREP(canPlacePulseOximeter);
 PREP(checkBreathing);
 PREP(checkBreathingLocal);
+PREP(getSpO2);
 PREP(handleChestInjury);
 PREP(handlePneumothorax);
 PREP(handlePulseOximeter);
