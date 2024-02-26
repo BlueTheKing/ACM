@@ -246,7 +246,7 @@ if ((_selectionN == 1 || (_target getVariable [QEGVAR(circulation,AEDMonitor_Pla
         _entry = _entry + " CO2: --";
     };
 
-    _entries pushBack [format ["%1]",_entry], _circulationColor];
+    _entries pushBack [format ["%1]",_entry], [0.18, 0.6, 0.96, 1]];
 };
 
 if (_selectionN in [2,3] && {HAS_PULSEOX(_target,(_selectionN - 2))}) then {

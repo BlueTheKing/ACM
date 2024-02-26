@@ -184,25 +184,25 @@ if ((_IVArray select 1) > 0) then {
     _ctrlIO ctrlShow false;
 };
 
-/*private _ctrlAEDPads = _ctrlGroup controlsGroupCtrl IDC_BODY_TORSO_AED_PADS;
+private _ctrlAEDPads = _ctrlGroup controlsGroupCtrl IDC_BODY_TORSO_AED_PADS;
 private _ctrlAEDVitalsMonitorRight = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_AED_VITALS;
 private _ctrlAEDVitalsMonitorLeft = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_AED_VITALS;
 
-if (_target getVariable [QEGVAR(circulation,DefibrillatorPads_Connected), false]) then {
+if (_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_Pads), false]) then {
     _ctrlAEDPads ctrlShow true;
 } else {
     _ctrlAEDPads ctrlShow false;
 };
 
-if (_target getVariable [QEGVAR(circulation,AED_X_VitalsMonitor_Connected), false]) then {
-    if (((_target getVariable [QEGVAR(circulation,AED_X_VitalsMonitor_Provider), [objNull, -1, 3]]) select 2) isEqualTo 3) then {
-        _ctrlAEDVitalsMonitorRight ctrlShow true;
-        _ctrlAEDVitalsMonitorLeft ctrlShow false;
-    } else {
+if ((_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_PulseOximeter), -1]) != -1) then {
+    if (_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_PulseOximeter), -1] == 2) then {
         _ctrlAEDVitalsMonitorRight ctrlShow false;
         _ctrlAEDVitalsMonitorLeft ctrlShow true;
+    } else {
+        _ctrlAEDVitalsMonitorRight ctrlShow true;
+        _ctrlAEDVitalsMonitorLeft ctrlShow false;
     };
 } else {
     _ctrlAEDVitalsMonitorRight ctrlShow false;
     _ctrlAEDVitalsMonitorLeft ctrlShow false;
-};*/
+};

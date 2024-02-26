@@ -73,3 +73,17 @@ private _PFH = [{
 }, 0.05, [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(AEDMonitor_PFH), _PFH];
+
+[{
+    params ["_patient", "_medic"];
+
+    !((objectParent _medic) isEqualTo (objectParent _patient)) || ((_patient distance _medic) > 5) // TODO add setting
+}, {
+    params ["_patient", "_medic"];
+    
+    if !(isNull _patient) then {
+        [_medic, _patient, "body", 0, false] call FUNC(setAED);
+        [_medic, _patient, "body", 1, false] call FUNC(setAED);
+        ["Patient Disconnected", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    };
+}, [_patient, _medic], 3600] call CBA_fnc_waitUntilAndExecute;
