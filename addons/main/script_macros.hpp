@@ -84,6 +84,9 @@
 #define FATAL_INJURIES_CRDC_ARRST 1
 #define FATAL_INJURIES_NEVER 2
 
+// ace_medical_vitals
+#define BASE_OXYGEN_USE -0.25
+
 // ACE undefs
 
 #undef GET_BLOOD_LOSS
@@ -100,6 +103,10 @@
 #define VAR_CRDC_ARRST        QACEGVAR(medical,inCardiacArrest)
 #undef VAR_HEART_RATE
 #define VAR_HEART_RATE        QACEGVAR(medical,heartRate)
+#undef VAR_SPO2
+#define VAR_SPO2              QACEGVAR(medical,spo2)
+#undef VAR_OXYGEN_DEMAND
+#define VAR_OXYGEN_DEMAND     QACEGVAR(medical,oxygenDemand)
 #undef VAR_PAIN
 #define VAR_PAIN              QACEGVAR(medical,pain)
 #undef VAR_PAIN_SUPP

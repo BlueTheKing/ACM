@@ -37,6 +37,7 @@ if IN_CRDC_ARRST(_unit) then {
     if (_bloodVolume > BLOOD_VOLUME_CLASS_4_HEMORRHAGE) then {
         GET_BLOOD_PRESSURE(_unit) params ["_bloodPressureL", "_bloodPressureH"];
         private _meanBP = (2/3) * _bloodPressureH + (1/3) * _bloodPressureL;
+        private _oxygenSaturation = GET_SPO2(_unit);
         private _painLevel = GET_PAIN_PERCEIVED(_unit);
 
         private _targetBP = 107;
@@ -54,6 +55,9 @@ if IN_CRDC_ARRST(_unit) then {
         if (IS_BLEEDING(_unit)) then {
             _targetHR = _targetHR - (80 * ((GET_WOUND_BLEEDING(_unit) * 1.5) min 1));
         };
+        // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
+        private _oxygenDemand = _unit getVariable [VAR_OXYGEN_DEMAND, 0];
+        _targetHR = _targetHR + ((97 - _oxygenSaturation) * 2) + (_oxygenDemand * -1000);
         _targetHR = (_targetHR + _hrTargetAdjustment) max 0;
 
         _hrChange = round(_targetHR - _heartRate) / 2;

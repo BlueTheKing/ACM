@@ -8,6 +8,9 @@ class CfgFunctions {
             class updateHeartRate {
                 file = QPATHTOF(overrides\fnc_updateHeartRate.sqf);
             };
+            class updateOxygen {
+                file = QPATHTOF(overrides\fnc_updateOxygen.sqf);
+            };
         };
     };
     class overwrite_medical_status {
