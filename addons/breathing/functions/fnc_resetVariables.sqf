@@ -25,6 +25,6 @@ _patient setVariable [QGVAR(PulseOximeter_Placement), [false,false], true];
 _patient setVariable [QGVAR(PulseOximeter_PFH), [-1,-1]];
 _patient setVariable [QGVAR(PulseOximeter_LastSync), [-1,-1]];
 
-_patient setVariable [QGVAR(OxygenSaturation), 100, true];
+//_patient setVariable [QGVAR(OxygenSaturation), 100, true];
 
 [_patient] call FUNC(updateBreathingState);

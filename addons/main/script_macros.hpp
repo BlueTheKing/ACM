@@ -145,7 +145,7 @@
 #define IN_RECOVERYPOSITION(unit) (unit getVariable [QQEGVAR(airway,RecoveryPosition_State), false])
 
 // Breathing
-#define GET_OXYGEN(unit) (unit getVariable [QEGVAR(breathing,OxygenSaturation),0])
+#define GET_OXYGEN(unit) (unit getVariable [VAR_SPO2, DEFAULT_SPO2])
 #define GET_PULSEOX(unit) (unit getVariable [QEGVAR(breathing,PulseOximeter_Placement),[false,false]])
 #define HAS_PULSEOX(unit,index) (GET_PULSEOX(unit) select index)
 

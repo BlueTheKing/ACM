@@ -35,7 +35,7 @@ class CfgWeapons {
 
     class AMS_SuctionBag: AMS_GuedelTube {
         picture = QPATHTOF(ui\suctionbag_ca.paa);
-        displayName = "Manual Suction Bag";
+        displayName = "Emergency Disposable Suction Bag";
         descriptionShort = "desc short";
         descriptionUse = "desc use";
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -45,7 +45,7 @@ class CfgWeapons {
 
     class AMS_Accuvac: AMS_SuctionBag {
         picture = QPATHTOF(ui\accuvac_ca.paa);
-        displayName = "Accuvac";
+        displayName = "ACCUVAC";
         descriptionShort = "desc short";
         descriptionUse = "desc use";
         class ItemInfo: CBA_MiscItem_ItemInfo {

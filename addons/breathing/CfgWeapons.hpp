@@ -55,7 +55,7 @@ class CfgWeapons {
         };
     };
 
-    class AMS_PocketBVM_Packed: AMS_PocketBVM {
+    /*class AMS_PocketBVM_Packed: AMS_PocketBVM {
         picture = QPATHTOF(ui\pocketbvm_p_ca.paa);
         displayName = "Pocket BVM (Packaged)";
         descriptionShort = "desc short";
@@ -63,7 +63,7 @@ class CfgWeapons {
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 2.5;
         };
-    };
+    };*/
 
     class AMS_BVM: AMS_PocketBVM {
         picture = QPATHTOF(ui\bvm_ca.paa);
