@@ -29,30 +29,32 @@ private _addListSpacer = false;
 
 // Indicate if unit is bleeding at all
 if (IS_BLEEDING(_target)) then {
-    _addListSpacer = true;
-    // Give a qualitative description of the rate of bleeding
-    private _cardiacOutput = [_target] call ACEFUNC(medical_status,getCardiacOutput);
-    private _bleedRate = GET_BLOOD_LOSS(_target);
-    private _bleedRateKO = BLOOD_LOSS_KNOCK_OUT_THRESHOLD_DEFAULT * (_cardiacOutput max 0.05);
-    // Use nonzero minimum cardiac output to prevent all bleeding showing as massive during cardiac arrest
-
-    if (GVAR(showBleedRate)) then {
-        switch (true) do {
-            case (_bleedRate < _bleedRateKO * BLEED_RATE_SLOW): {
-                _entries pushBack [localize ACELSTRING(medical_gui,Bleed_Rate1), [1, 1, 0, 1]];
-            };
-            case (_bleedRate < _bleedRateKO * BLEED_RATE_MODERATE): {
-                _entries pushBack [localize ACELSTRING(medical_gui,Bleed_Rate2), [1, 0.67, 0, 1]];
-            };
-            case (_bleedRate < _bleedRateKO * BLEED_RATE_SEVERE): {
-                _entries pushBack [localize ACELSTRING(medical_gui,Bleed_Rate3), [1, 0.33, 0, 1]];
-            };
-            default {
-                _entries pushBack [localize ACELSTRING(medical_gui,Bleed_Rate4), [1, 0, 0, 1]];
+    switch (ACEGVAR(medical_gui,showBleeding)) do {
+        case 1: {
+        //  Just show whether the unit is bleeding at all
+            _entries pushBack [localize ACELSTRING(medical_gui,Status_Bleeding), [1, 0, 0, 1]];
+        };
+        case 2: {
+            // Give a qualitative description of the rate of bleeding
+            private _cardiacOutput = [_target] call ACEFUNC(medical_status,getCardiacOutput);
+            private _bleedRate = GET_BLOOD_LOSS(_target);
+            private _bleedRateKO = BLOOD_LOSS_KNOCK_OUT_THRESHOLD_DEFAULT * (_cardiacOutput max 0.05);
+            // Use nonzero minimum cardiac output to prevent all bleeding showing as massive during cardiac arrest
+            switch (true) do {
+                case (_bleedRate < _bleedRateKO * BLEED_RATE_SLOW): {
+                    _entries pushBack [localize ACELSTRING(medical_gui,Bleed_Rate1), [1, 1, 0, 1]];
+                };
+                case (_bleedRate < _bleedRateKO * BLEED_RATE_MODERATE): {
+                    _entries pushBack [localize ACELSTRING(medical_gui,Bleed_Rate2), [1, 0.67, 0, 1]];
+                };
+                case (_bleedRate < _bleedRateKO * BLEED_RATE_SEVERE): {
+                    _entries pushBack [localize ACELSTRING(medical_gui,Bleed_Rate3), [1, 0.33, 0, 1]];
+                };
+                default {
+                    _entries pushBack [localize ACELSTRING(medical_gui,Bleed_Rate4), [1, 0, 0, 1]];
+                };
             };
         };
-    } else {
-        _entries pushBack [localize ACELSTRING(medical_gui,Status_Bleeding), [1, 0, 0, 1]];
     };
 } else {
     if (GVAR(showInactiveStatuses)) then {_entries pushBack [localize ACELSTRING(medical_gui,Status_Nobleeding), _nonissueColor];};
@@ -82,18 +84,40 @@ if (ACEGVAR(medical_gui,showBloodlossEntry)) then {
         };
     };
 };
+
 // Show receiving IV volume remaining
 private _totalIvVolume = 0;
+private _saline = 0;
+private _blood = 0;
+private _plasma = 0;
 {
-    _x params ["_volumeRemaining"];
+    _x params ["_volumeRemaining", "_type"];
+    switch (_type) do {
+        case "Saline": {
+            _saline = _saline + _volumeRemaining;
+        };
+        case "Blood": {
+            _blood = _blood + _volumeRemaining;
+        };
+        case "Plasma": {
+            _plasma = _plasma + _volumeRemaining;
+        };
+    };
     _totalIvVolume = _totalIvVolume + _volumeRemaining;
 } forEach (_target getVariable [QACEGVAR(medical,ivBags), []]);
 
-if (_totalIvVolume >= 1) then {
-    _addListSpacer = true;
-    _entries pushBack [format [localize ACELSTRING(medical_treatment,receivingIvVolume), floor _totalIvVolume], [1, 1, 1, 1]];
+if (_totalIvVolume > 0) then {
+    if (_saline > 0) then {
+        _entries pushBack [format [localize ACELSTRING(medical_treatment,receivingSalineIvVolume), floor _saline], [1, 1, 1, 1]];
+    };
+    if (_blood > 0) then {
+        _entries pushBack [format [localize ACELSTRING(medical_treatment,receivingBloodIvVolume), floor _blood], [1, 1, 1, 1]];
+    };
+    if (_plasma > 0) then {
+        _entries pushBack [format [localize ACELSTRING(medical_treatment,receivingPlasmaIvVolume), floor _plasma], [1, 1, 1, 1]];
+    };
 } else {
-    if (GVAR(showInactiveStatuses)) then {_entries pushBack [localize ACELSTRING(medical_gui,Status_NoIv), _nonissueColor];};
+    if (GVAR(showInactiveStatuses)) then {_entries pushBack [localize ACELSTRING(medical_treatment,Status_NoIv), _nonissueColor];};
 };
 
 // Indicate the amount of pain the unit is in
