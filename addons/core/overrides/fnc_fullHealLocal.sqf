@@ -26,7 +26,7 @@ if ((["ace_fire"] call ACEFUNC(common,isModLoaded)) && {[_patient] call ACEFUNC(
 };
 
 // Allow mods to heal
-[QGVAR(fullHealLocalMod), [_patient]] call CBA_fnc_localEvent;
+[QACEGVAR(medical_treatment,fullHealLocalMod), [_patient]] call CBA_fnc_localEvent;
 
 private _state = GET_SM_STATE(_patient);
 TRACE_1("start",_state);
