@@ -206,3 +206,5 @@ if ((_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_PulseOximeter)
     _ctrlAEDVitalsMonitorRight ctrlShow false;
     _ctrlAEDVitalsMonitorLeft ctrlShow false;
 };
+
+[QACEGVAR(medical_gui,updateBodyImage), [_ctrlGroup, _target, _selectionN]] call CBA_fnc_localEvent;

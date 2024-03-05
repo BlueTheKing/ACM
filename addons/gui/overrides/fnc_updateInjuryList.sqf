@@ -156,6 +156,8 @@ if (_selectionN == -1) exitWith {
     _ctrl lbSetCurSel -1;
 };
 
+[QACEGVAR(medical_gui,updateInjuryListGeneral), [_ctrl, _target, _selectionN, _entries]] call CBA_fnc_localEvent;
+
 if (count _entries > 0) then {_entries pushBack ["", [1, 1, 1, 1]];};
 
 // Add selected body part name
@@ -348,6 +350,8 @@ switch (GET_FRACTURES(_target) select _selectionN) do {
     };
 };
 
+[QACEGVAR(medical_gui,updateInjuryListPart), [_ctrl, _target, _selectionN, _entries, _bodyPartName]] call CBA_fnc_localEvent;
+
 // Add entries for open, bandaged, and stitched wounds
 private _woundEntries = [];
 
@@ -381,6 +385,8 @@ private _fnc_processWounds = {
 [GET_STITCHED_WOUNDS(_target), "[S] %1", [0.7, 0.7, 0.7, 1]] call _fnc_processWounds;
 [GET_CLOTTED_WOUNDS(_target), "[C] %1", [1, 0.5, 0.1, 1]] call _fnc_processWounds;
 [GET_WRAPPED_WOUNDS(_target), "[W] %1", [0.7, 0.5, 0.1, 1]] call _fnc_processWounds;
+
+[QACEGVAR(medical_gui,updateInjuryListWounds), [_ctrl, _target, _selectionN, _woundEntries, _bodyPartName]] call CBA_fnc_localEvent;
 
 // Handle no wound entries
 if (_woundEntries isEqualTo []) then {
