@@ -46,7 +46,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 4;// TODO change
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE(!([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED)) && (_patient getVariable [ARR_2(QQGVAR(AEDMonitor_Placement_PulseOximeter), -1)]) == -1);
+        condition = QUOTE(!([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED)) && (_patient getVariable [ARR_2(QQGVAR(AEDMonitor_Placement_PulseOximeter),-1)]) == -1);
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(setAED));
     };
     class AED_DisconnectPulseOximeter: AED_RemovePads {
@@ -55,7 +55,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 2;// TODO change
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED) && (_patient getVariable [ARR_2(QQGVAR(AEDMonitor_Placement_PulseOximeter), -1)]) != -1);
+        condition = QUOTE([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED) && (_patient getVariable [ARR_2(QQGVAR(AEDMonitor_Placement_PulseOximeter),-1)]) != -1);
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,1,false)] call FUNC(setAED));
     };
 

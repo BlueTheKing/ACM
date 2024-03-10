@@ -25,7 +25,7 @@ if (GET_BLOOD_VOLUME(_patient) < 3.2) exitWith {
     _patient setVariable [QGVAR(CardiacArrest_RhythmState), 1, true]; // asystole
 };
 
-private _targetRhythm = if (((random 100) * (GET_BLOOD_VOLUME(_patient) / BLOOD_VOLUME_CLASS_2_HEMORRHAGE)) > 50) then {3} else {2};
+private _targetRhythm = [2,3] select (((random 100) * (GET_BLOOD_VOLUME(_patient) / BLOOD_VOLUME_CLASS_2_HEMORRHAGE)) > 50);
 _patient setVariable [QGVAR(CardiacArrest_RhythmState), _targetRhythm, true];
 
 private _PFH = [{
