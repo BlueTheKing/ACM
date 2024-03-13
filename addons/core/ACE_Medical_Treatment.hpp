@@ -291,4 +291,49 @@ class ACE_ADDON(Medical_Treatment) {
             class PunctureWoundLarge: PunctureWound {};
         };
     };
+
+    class Medication {
+        class Morphine {
+            painReduce = 0.8;
+            hrIncreaseLow[] = {-10, -20};
+            hrIncreaseNormal[] = {-10, -30};
+            hrIncreaseHigh[] = {-10, -35};
+            timeInSystem = 1800;
+            timeTillMaxEffect = 30;
+            maxDose = 4;
+            incompatibleMedication[] = {};
+            viscosityChange = -4;
+        };
+        /*class Epinephrine {
+            painReduce = 0;
+            hrIncreaseLow[] = {10, 20};
+            hrIncreaseNormal[] = {10, 50};
+            hrIncreaseHigh[] = {10, 40};
+            timeInSystem = 120;
+            timeTillMaxEffect = 10;
+            maxDose = 9;
+            incompatibleMedication[] = {};
+        };
+        class Adenosine {
+            painReduce = 0;
+            hrIncreaseLow[] = {-7, -10};
+            hrIncreaseNormal[] = {-15, -30};
+            hrIncreaseHigh[] = {-15, -35};
+            timeInSystem = 120;
+            timeTillMaxEffect = 15;
+            maxDose = 5;
+            incompatibleMedication[] = {};
+        };
+        class PainKillers {
+            painReduce = 0.35;
+            hrIncreaseLow[] = {-5, -10};
+            hrIncreaseNormal[] = {-5, -15};
+            hrIncreaseHigh[] = {-5, -17};
+            timeInSystem = 420;
+            timeTillMaxEffect = 60;
+            maxDose = 5;
+            incompatibleMedication[] = {};
+            viscosityChange = 5;
+        };*/
+    };
 };

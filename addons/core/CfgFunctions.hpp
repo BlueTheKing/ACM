@@ -25,6 +25,9 @@ class CfgFunctions {
             class hasStableVitals {
                 file = QPATHTOF(overrides\fnc_hasStableVitals.sqf);
             };
+            class getBloodLoss {
+                file = QPATHTOF(overrides\fnc_getBloodLoss.sqf);
+            };
         };
     };
     class overwrite_medical_treatment {
@@ -36,16 +39,19 @@ class CfgFunctions {
             class treatment {
                 file = QPATHTOF(overrides\fnc_treatment.sqf);
             };
+            class bandage {
+                file = QPATHTOF(overrides\fnc_bandage.sqf); // TODO REMOVE WHEN FIXED
+            };
         };
     };
-    /*class overwrite_medical_damage {
+    class overwrite_medical_damage {
         tag = "ace_medical_damage";
         class ace_medical_damage {
             class woundsHandlerBase {
                 file = QPATHTOF(overrides\fnc_woundsHandlerBase.sqf);
             };
         };
-    };*/
+    };
     class overwrite_medical_statemachine {
         tag = "ace_medical_statemachine";
         class ace_medical_statemachine {

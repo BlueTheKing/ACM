@@ -46,14 +46,14 @@ if IN_CRDC_ARRST(_unit) then {
         };
 
         _targetHR = DEFAULT_HEART_RATE;
-        if (_bloodVolume < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
+        if (_bloodVolume < 4.8) then { //BLOOD_VOLUME_CLASS_3_HEMORRHAGE
             _targetHR = _heartRate * (_targetBP / (45 max _meanBP));
         };
         if (_painLevel > 0.2) then {
             _targetHR = _targetHR max (80 + 50 * _painLevel);
         };
         if (IS_BLEEDING(_unit)) then {
-            _targetHR = _targetHR - (80 * ((GET_WOUND_BLEEDING(_unit) * 1.5) min 1));
+            _targetHR = _targetHR - ((30 * GET_WOUND_BLEEDING(_unit)) * (_painLevel + 0.1));
         };
         // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
         private _oxygenDemand = _unit getVariable [VAR_OXYGEN_DEMAND, 0];

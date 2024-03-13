@@ -13,3 +13,4 @@ PREP(setAEDLocal);
 PREP(setIV);
 PREP(setIVLocal);
 PREP(updateCirculationState);
+PREP(updateFluidBagTypes);

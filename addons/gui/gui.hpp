@@ -52,7 +52,7 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
         class Torso_IO: Torso_ChestSeal {
             idc = IDC_BODY_TORSO_IO;
             text = QPATHTOF(data\body_image\torso_fast_io.paa);
-            colorText[] = {0.2, 0.6, 0.2, 1};
+            colorText[] = {0.3, 0.6, 0.3, 1};
         };
         class Torso_Pneumothorax: Torso_ChestSeal {
             idc = IDC_BODY_TORSO_PNEUMOTHORAX;

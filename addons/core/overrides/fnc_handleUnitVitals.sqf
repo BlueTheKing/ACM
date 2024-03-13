@@ -115,11 +115,10 @@ if (_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) t
 private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
 [_unit, _painSupressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
 [_unit, _peripheralResistanceAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePeripheralResistance);
-[_unit, _deltaT, _syncValues] call EFUNC(breathing,updateOxygenSaturation);
 
-_unit setVariable [QEGVAR(circulation,BloodPressureAdjust), (1 - GET_WOUND_BLEEDING(_unit) * 0.4)];
+//_unit setVariable [QEGVAR(circulation,BloodPressureAdjust), ]; // TODO move this?
 
-private _bloodPressure = GET_BLOOD_PRESSURE(_unit);
+private _bloodPressure = [_unit] call ACEFUNC(medical_status,getBloodPressure);
 _unit setVariable [VAR_BLOOD_PRESS, _bloodPressure, _syncValues];
 
 _bloodPressure params ["_bloodPressureL", "_bloodPressureH"];
@@ -157,7 +156,7 @@ switch (true) do {
         private _nextCheck = _unit getVariable [QACEGVAR(medical_vitals,nextCheckCriticalHeartRate), CBA_missionTime];
         private _enterCardiacArrest = false;
         if (CBA_missionTime >= _nextCheck) then {
-            _enterCardiacArrest = random 1 < (0.4 + 0.6*(30 - _heartRate)/10);  // Variable chance of getting into cardiac arrest.
+            _enterCardiacArrest = random 1 < (0.4 + 0.6*(30 - _heartRate)/10); // Variable chance of getting into cardiac arrest.
             _unit setVariable [QACEGVAR(medical_vitals,nextCheckCriticalHeartRate), CBA_missionTime + 5];
         };
         if (_enterCardiacArrest) then {
@@ -172,7 +171,7 @@ switch (true) do {
         private _nextCheck = _unit getVariable [QEGVAR(circulation,ReversibleCardiacArrest_HypoxiaTime), CBA_missionTime];
         private _enterCardiacArrest = false;
         if (CBA_missionTime >= _nextCheck) then {
-            _enterCardiacArrest = random 1 < (0.4 + 0.6*(30 - _heartRate)/10);  // Variable chance of getting into cardiac arrest.
+            _enterCardiacArrest = random 1 < (0.4 + 0.6 * (30 - _heartRate) / 10); // Variable chance of getting into cardiac arrest.
             _unit setVariable [QEGVAR(circulation,ReversibleCardiacArrest_HypoxiaTime), CBA_missionTime + 5];
         };
         if (_enterCardiacArrest) then {

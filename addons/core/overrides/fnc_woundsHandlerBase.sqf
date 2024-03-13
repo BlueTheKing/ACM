@@ -210,6 +210,14 @@ if (_createdWounds) then {
     };
 
     TRACE_4("exit",_unit,_painLevel,GET_PAIN(_unit),GET_OPEN_WOUNDS(_unit));
+
+    if (true) then { // TODO settings
+        [{
+            params ["_unit"];
+
+            [QEGVAR(damage,handleCoagulationPFH), [_unit], _unit] call CBA_fnc_targetEvent;
+        }, [_unit], 3] call CBA_fnc_waitAndExecute;
+    };
 };
 
 [] //return, no further damage handling

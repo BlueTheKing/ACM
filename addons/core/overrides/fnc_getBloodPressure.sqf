@@ -5,6 +5,7 @@
  *
  * Arguments:
  * 0: The Unit <OBJECT>
+ * 1: Bleeding Rate of Unit <NUMBER>
  *
  * Return Value:
  * 0: BloodPressure Low <NUMBER>
@@ -26,17 +27,19 @@ params ["_unit"];
 
 private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
 private _resistance = _unit getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES];
-private _bloodPressureAdjust = _unit getVariable [QEGVAR(circulation,BloodPressureAdjust), 1];
-private _bloodPressure = _cardiacOutput * _resistance * _bloodPressureAdjust;
+//private _bloodPressureAdjust = _unit getVariable [QEGVAR(circulation,BloodPressureAdjust), 1]; // TODO remove
+private _bloodPressure = _cardiacOutput * _resistance; //* _bloodPressureAdjust;
 
 private _tensionEffect = 0;
 
-if (_patient getVariable [QGVAR(Pneumothorax_State), 0] > 0) then {
-    _tensionEffect = -8 * _patient getVariable [QGVAR(Pneumothorax_State), 0];
+private _vasoconstrictionMultiplier = (1 - GET_WOUND_BLEEDING(_unit) * 0.1); // Simulate constriction of veins in reaction to bleeding
+
+if (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0] > 0) then {
+    _tensionEffect = 8 * _unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0];
 };
 
-if (_patient getVariable [QGVAR(TensionPneumothorax_State), false]) then {
-    _tensionEffect = -35;
+if (_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) then {
+    _tensionEffect = 35;
 };
 
-[(round(_bloodPressure * MODIFIER_BP_LOW) - _tensionEffect) max 0, (round(_bloodPressure * MODIFIER_BP_HIGH) - _tensionEffect) max 0]
+[(round(((_bloodPressure * MODIFIER_BP_LOW) - _tensionEffect) * _vasoconstrictionMultiplier)) max 0, (round(((_bloodPressure * MODIFIER_BP_HIGH) - _tensionEffect) * _vasoconstrictionMultiplier)) max 0]
