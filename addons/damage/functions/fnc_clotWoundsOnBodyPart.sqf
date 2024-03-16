@@ -19,7 +19,7 @@
  * Public: No
  */
 
-params ["_patient", "_bodyPart", ["_woundsToClot", 1], ["_targetWoundSeverity", 1], ["_unstable", true]];
+params ["_patient", "_bodyPart", ["_woundsToClot", 1], ["_maxWoundSeverity", 1], ["_unstable", true]];
 
 private _fnc_getWoundsToTreat = {
     params ["_woundsList", "_maximumSeverity"];
@@ -98,15 +98,17 @@ private _fnc_handleReopening = {
 private _openWounds = GET_OPEN_WOUNDS(_patient);
 private _openWoundsOnPart = _openWounds getOrDefault [_bodyPart, []];
 
-private _woundIndex = [_openWoundsOnPart, _targetWoundSeverity] call _fnc_getWoundsToTreat;
+private _woundIndex = [_openWoundsOnPart, _maxWoundSeverity] call _fnc_getWoundsToTreat;
 
 if (_woundIndex isEqualTo -1) exitWith {};
 
 (_openWoundsOnPart select _woundIndex) params ["_woundID", "_woundCount", "_woundBleeding", "_woundDamage"];
 private _openWoundEntry = [_woundID, _woundCount, _woundBleeding, _woundDamage];
 
-private _woundSeverity = _woundID % 10;
-_woundsToClot = _woundsToClot / (_woundSeverity + 1);
+private _woundSeverity = (_woundID % 10) + 1;
+_woundsToClot = _woundsToClot / _woundSeverity;
+
+private _clotSuccess = false;
 
 private _woundsRemaining = _woundCount - _woundsToClot;
 private _amountClotted = _woundsToClot;
@@ -116,54 +118,62 @@ if (_woundsRemaining < 0) then { // TODO use min/max (?)
     _amountClotted = _woundCount;
 };
 
-private _clottedWounds = GET_CLOTTED_WOUNDS(_patient);
-private _clottedWoundsOnPart = _clottedWounds getOrDefault [_bodyPart, []];
-private _clottedWoundEntry = [_woundID, _woundCount, _woundBleeding, _woundDamage];
-_clottedWoundEntry set [1, _amountClotted];
-
-_clottedWoundEntry params ["_clottedID"];
-
-// Handle incrementing or creating new entry for clotted wounds
-if (_clottedWoundsOnPart isEqualTo []) then {
-    _clottedWoundsOnPart insert [-1, [_clottedWoundEntry]];
+if (_woundSeverity > 1) then {
+    _clotSuccess = (random 1) <= (1 - 0.75 * (_woundSeverity / 3));
 } else {
-    private _foundIndex = _clottedWoundsOnPart findIf {(_x select 0) isEqualTo _clottedID};
-
-    if (_foundIndex isEqualTo -1) then {
-        _clottedWoundsOnPart insert [-1, [_clottedWoundEntry]];
-    } else {
-        private _foundClottedWoundEntry = _clottedWoundsOnPart select _foundIndex;
-        _foundClottedWoundEntry params ["_id", "_amountOf", "_bleeding", "_damage"];
-        _clottedWoundsOnPart set [_foundIndex, [_id, (_amountOf + _amountClotted), _bleeding, _damage]];
-    };
+    _clotSuccess = true;
 };
 
-_clottedWounds set [_bodyPart, _clottedWoundsOnPart];
-_patient setVariable [VAR_CLOTTED_WOUNDS, _clottedWounds, true];
+if (_clotSuccess) then {
+    private _clottedWounds = GET_CLOTTED_WOUNDS(_patient);
+    private _clottedWoundsOnPart = _clottedWounds getOrDefault [_bodyPart, []];
+    private _clottedWoundEntry = [_woundID, _woundCount, _woundBleeding, _woundDamage];
+    _clottedWoundEntry set [1, _amountClotted];
 
-_woundsToClot = _woundsToClot - _amountClotted;
+    _clottedWoundEntry params ["_clottedID"];
 
-_openWoundEntry set [1, _woundsRemaining];
-_openWoundsOnPart set [_woundIndex, _openWoundEntry];
-_openWounds set [_bodyPart, _openWoundsOnPart];
+    // Handle incrementing or creating new entry for clotted wounds
+    if (_clottedWoundsOnPart isEqualTo []) then {
+        _clottedWoundsOnPart insert [-1, [_clottedWoundEntry]];
+    } else {
+        private _foundIndex = _clottedWoundsOnPart findIf {(_x select 0) isEqualTo _clottedID};
 
-_patient setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
+        if (_foundIndex isEqualTo -1) then {
+            _clottedWoundsOnPart insert [-1, [_clottedWoundEntry]];
+        } else {
+            private _foundClottedWoundEntry = _clottedWoundsOnPart select _foundIndex;
+            _foundClottedWoundEntry params ["_id", "_amountOf", "_bleeding", "_damage"];
+            _clottedWoundsOnPart set [_foundIndex, [_id, (_amountOf + _amountClotted), _bleeding, _damage]];
+        };
+    };
+
+    _clottedWounds set [_bodyPart, _clottedWoundsOnPart];
+    _patient setVariable [VAR_CLOTTED_WOUNDS, _clottedWounds, true];
+
+    _woundsToClot = _woundsToClot - _amountClotted;
+
+    _openWoundEntry set [1, _woundsRemaining];
+    _openWoundsOnPart set [_woundIndex, _openWoundEntry];
+    _openWounds set [_bodyPart, _openWoundsOnPart];
+
+    _patient setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
+
+    private _reopenChance = 0.7; // TODO add TXA
+    //private _txaCount = [_patient, "TXA"] call ACEFUNC(medical_status,getMedicationCount);
+
+    /*if (_txaCount > 0 || !_unstable) then {
+        _reopenChance = 0.4;
+    };*/
+
+    for "_i" from 1 to _amountClotted do {
+        if ((random 1) < _reopenChance) then {
+            [_patient, _bodyPart, _clottedID, _unstable] call _fnc_handleReopening;
+        };
+    };
+};
 
 if (_woundsToClot > 0) then { // Clot more wounds if able
     [_patient, _bodyPart, _woundsToClot] call FUNC(clotWoundsOnBodyPart);
 } else {
     [_patient] call ACEFUNC(medical_status,updateWoundBloodLoss);
-};
-
-private _reopenChance = 0.7;
-//private _txaCount = [_patient, "TXA"] call ACEFUNC(medical_status,getMedicationCount);
-
-/*if (_txaCount > 0 || !_unstable) then {
-    _reopenChance = 0.4;
-};*/
-
-for "_i" from 1 to _amountClotted do {
-    if ((random 1) < _reopenChance) then {
-        [_patient, _bodyPart, _clottedID, _unstable] call _fnc_handleReopening;
-    };
 };

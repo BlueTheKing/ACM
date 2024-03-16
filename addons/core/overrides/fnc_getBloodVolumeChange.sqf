@@ -61,7 +61,7 @@ if (_salineVolume > 0) then {
 };
 
 if (_plateletCount > 0) then {
-    _plateletCountChange = _bloodLoss * (0.5 * GET_WOUND_BLEEDING(_unit)) / _activeVolumes;
+    _plateletCountChange = _bloodLoss;
 };
 
 if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
