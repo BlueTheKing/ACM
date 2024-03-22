@@ -5,6 +5,8 @@ PREP(displayAEDMonitor_updateStep);
 PREP(displayAEDMonitor);
 PREP(getIVFlowRate);
 PREP(handleAED);
+PREP(handleMed_AmmoniumCarbonateLocal);
+PREP(handleMed_NaloxoneLocal);
 PREP(hasAED);
 PREP(hasIV);
 PREP(resetVariables);

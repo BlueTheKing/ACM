@@ -294,27 +294,27 @@ class ACE_ADDON(Medical_Treatment) {
 
     class Medication {
         class Morphine {
-            painReduce = 0.8;
-            hrIncreaseLow[] = {-10, -20};
-            hrIncreaseNormal[] = {-10, -30};
-            hrIncreaseHigh[] = {-10, -35};
-            timeInSystem = 1800;
-            timeTillMaxEffect = 30;
+            painReduce = 0.75;
+            hrIncreaseLow[] = {-10, -15};
+            hrIncreaseNormal[] = {-10, -25};
+            hrIncreaseHigh[] = {-10, -30};
+            timeInSystem = 300;
+            timeTillMaxEffect = 15;
             maxDose = 4;
             incompatibleMedication[] = {};
             viscosityChange = -4;
         };
-        /*class Epinephrine {
+        class Epinephrine {
             painReduce = 0;
             hrIncreaseLow[] = {10, 20};
-            hrIncreaseNormal[] = {10, 50};
-            hrIncreaseHigh[] = {10, 40};
-            timeInSystem = 120;
+            hrIncreaseNormal[] = {10, 45};
+            hrIncreaseHigh[] = {10, 35};
+            timeInSystem = 180;
             timeTillMaxEffect = 10;
             maxDose = 9;
             incompatibleMedication[] = {};
         };
-        class Adenosine {
+        class Adenosine { // Doesn't exist
             painReduce = 0;
             hrIncreaseLow[] = {-7, -10};
             hrIncreaseNormal[] = {-15, -30};
@@ -334,6 +334,89 @@ class ACE_ADDON(Medical_Treatment) {
             maxDose = 5;
             incompatibleMedication[] = {};
             viscosityChange = 5;
-        };*/
+        };
+
+        class Paracetamol: PainKillers {
+            painReduce = 0.4;
+            timeTillMaxEffect = 90;
+            timeInSystem = 480;
+        };
+        class AmmoniumCarbonate: Paracetamol {
+            painReduce = 0;
+            hrIncreaseLow[] = {5, 15};
+            hrIncreaseNormal[] = {5, 20};
+            hrIncreaseHigh[] = {5, 12};
+            timeInSystem = 30;
+            timeTillMaxEffect = 5;
+            maxDose = 4;
+            viscosityChange = 1;
+        };
+        class Penthrox: Paracetamol {
+            painReduce = 0.7;
+            hrIncreaseLow[] = {-5, -15};
+            hrIncreaseNormal[] = {-5, -20};
+            hrIncreaseHigh[] = {-5, -12};
+            timeInSystem = 300;
+            timeTillMaxEffect = 5;
+            maxDose = 4;
+            viscosityChange = -1;
+        };
+        class Naloxone: Paracetamol {
+            painReduce = 0;
+            hrIncreaseLow[] = {0, 0};
+            hrIncreaseNormal[] = {0, 0};
+            hrIncreaseHigh[] = {0, 0};
+            timeInSystem = 300;
+            timeTillMaxEffect = 3;
+            viscosityChange = 0;
+        };
+
+        class Epinephrine_Vial: Epinephrine {
+            painReduce = 0;
+            hrIncreaseLow[] = {25, 35};
+            hrIncreaseNormal[] = {25, 55};
+            hrIncreaseHigh[] = {25, 45};
+            timeInSystem = 120;
+            timeTillMaxEffect = 2;
+            maxDose = 5;
+            incompatibleMedication[] = {};
+        };
+        class Adenosine_Vial: Adenosine {
+            painReduce = 0;
+            hrIncreaseLow[] = {-10, -15};
+            hrIncreaseNormal[] = {-15, -30};
+            hrIncreaseHigh[] = {-20, -40};
+            timeInSystem = 120;
+            timeTillMaxEffect = 2;
+            maxDose = -5;
+        };
+        class Morphine_Vial: Morphine {
+            painReduce = 0.85;
+            hrIncreaseLow[] = {-10, -15};
+            hrIncreaseNormal[] = {-15, -35};
+            hrIncreaseHigh[] = {-15, -35};
+            timeInSystem = 120;
+            timeTillMaxEffect = 3;
+            maxDose = 3;
+            viscosityChange = -5;
+        };
+        class Amiodarone_Vial: Naloxone {
+            hrIncreaseLow[] = {-1, -2};
+            hrIncreaseNormal[] = {-3, -5};
+            hrIncreaseHigh[] = {-10, -15};
+            timeInSystem = 360;
+            timeTillMaxEffect = 2;
+            maxDose = 3;
+        };
+
+        class TXA_Vial: Naloxone {
+            hrIncreaseLow[] = {-1, -1};
+            hrIncreaseNormal[] = {-1, -1};
+            hrIncreaseHigh[] = {-2, -4};
+            timeInSystem = 360;
+            timeTillMaxEffect = 3;
+            maxDose = 3;
+            viscosityChange = -5;
+        };
     };
 };

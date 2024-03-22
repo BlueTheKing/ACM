@@ -39,9 +39,6 @@ class CfgFunctions {
             class treatment {
                 file = QPATHTOF(overrides\fnc_treatment.sqf);
             };
-            class bandage {
-                file = QPATHTOF(overrides\fnc_bandage.sqf); // TODO REMOVE WHEN FIXED
-            };
         };
     };
     class overwrite_medical_damage {

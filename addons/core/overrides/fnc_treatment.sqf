@@ -158,7 +158,7 @@ if (_medic isNotEqualTo player || {!_isInZeus}) then {
     // Play a random treatment sound globally if defined
     private _soundsConfig = _config >> "sounds";
 
-    if (isArray _soundsConfig) then {
+    if (isArray _soundsConfig && {count (getArray _soundsConfig) > 0}) then { // Don't attempt to play if there's nothing in there
         (selectRandom (getArray _soundsConfig)) params ["_file", ["_volume", 1], ["_pitch", 1], ["_distance", 10]];
         playSound3D [_file, objNull, false, getPosASL _medic, _volume, _pitch, _distance];
     };
