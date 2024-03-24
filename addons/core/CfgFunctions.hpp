@@ -2,13 +2,13 @@ class CfgFunctions {
     class overwrite_medical_vitals {
         tag = "ace_medical_vitals";
         class ace_medical_vitals {
-            class handleUnitVitals {
+            class handleUnitVitals { // Core
                 file = QPATHTOF(overrides\fnc_handleUnitVitals.sqf);
             };
-            class updateHeartRate {
+            class updateHeartRate { // Circulation
                 file = QPATHTOF(overrides\fnc_updateHeartRate.sqf);
             };
-            class updateOxygen {
+            class updateOxygen { // Breathing
                 file = QPATHTOF(overrides\fnc_updateOxygen.sqf);
             };
         };
@@ -16,16 +16,16 @@ class CfgFunctions {
     class overwrite_medical_status {
         tag = "ace_medical_status";
         class ace_medical_status {
-            class getBloodPressure {
+            class getBloodPressure { // Circulation
                 file = QPATHTOF(overrides\fnc_getBloodPressure.sqf);
             };
-            class getBloodVolumeChange {
+            class getBloodVolumeChange { // Circulation
                 file = QPATHTOF(overrides\fnc_getBloodVolumeChange.sqf);
             };
-            class hasStableVitals {
+            class hasStableVitals { // Add oxygen saturation as vital
                 file = QPATHTOF(overrides\fnc_hasStableVitals.sqf);
             };
-            class getBloodLoss {
+            class getBloodLoss { // Circulation
                 file = QPATHTOF(overrides\fnc_getBloodLoss.sqf);
             };
         };
@@ -33,10 +33,10 @@ class CfgFunctions {
     class overwrite_medical_treatment {
         tag = "ace_medical_treatment";
         class ace_medical_treatment {
-            class fullHealLocal {
+            class fullHealLocal { // questionable
                 file = QPATHTOF(overrides\fnc_fullHealLocal.sqf);
             };
-            class treatment {
+            class treatment { // Add fixes and patient animations
                 file = QPATHTOF(overrides\fnc_treatment.sqf);
             };
         };
@@ -44,7 +44,7 @@ class CfgFunctions {
     class overwrite_medical_damage {
         tag = "ace_medical_damage";
         class ace_medical_damage {
-            class woundsHandlerBase {
+            class woundsHandlerBase { // Modify wounds, coagulation functionality
                 file = QPATHTOF(overrides\fnc_woundsHandlerBase.sqf);
             };
         };
@@ -55,15 +55,15 @@ class CfgFunctions {
             /*class handleStateCardiacArrest {
                 file = QPATHTOF(overrides\fnc_handleStateCardiacArrest.sqf);
             };*/
-            class enteredStateCardiacArrest {
+            class enteredStateCardiacArrest { // Disable cardiac arrest timer
                 file = QPATHTOF(overrides\fnc_enteredStateCardiacArrest.sqf);
-            };/*
-            class leftStateCardiacArrest {
-                file = QPATHTOF(overrides\fnc_leftStateCardiacArrest.sqf);
-            };*/
-            class conditionCardiacArrestTimer {
+            };
+            class conditionCardiacArrestTimer { // Disable cardiac arrest timer
                 file = QPATHTOF(overrides\fnc_conditionCardiacArrestTimer.sqf);
             };
+            /*class leftStateCardiacArrest {
+                file = QPATHTOF(overrides\fnc_leftStateCardiacArrest.sqf);
+            };*/
             /*class enteredStateFatalInjury {
                 file = QPATHTOF(overrides\fnc_enteredStateFatalInjury.sqf);
             };*/

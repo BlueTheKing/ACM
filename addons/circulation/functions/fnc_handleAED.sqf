@@ -38,7 +38,6 @@ private _PFH = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _hr = GET_HEART_RATE(_patient);
     private _spO2 = [_patient] call EFUNC(breathing,getSpO2);
 
     if (_padsStatus) then {
@@ -47,7 +46,7 @@ private _PFH = [{
         if (_lastSync + 5.25 < CBA_missionTime) then {
             _patient setVariable [QGVAR(AEDMonitor_Pads_LastSync), CBA_missionTime];
             
-            _patient setVariable [QGVAR(AEDMonitor_Pads_Display), round(_hr), true];
+            _patient setVariable [QGVAR(AEDMonitor_Pads_Display), round([_patient] call FUNC(getEKGHeartRate)), true];
         };
     };
 
@@ -60,7 +59,7 @@ private _PFH = [{
             if (!(HAS_TOURNIQUET_APPLIED_ON(_patient,_pulseOximeterPlacement))) then {
                 _patient setVariable [QGVAR(AEDMonitor_PulseOximeter_Display), round(_spO2), true];
                 if !(_padsStatus) then {
-                    _patient setVariable [QGVAR(AEDMonitor_Pads_Display), round(_hr), true];
+                    _patient setVariable [QGVAR(AEDMonitor_Pads_Display), round(GET_HEART_RATE(_patient)), true];
                 };
             } else {
                 _patient setVariable [QGVAR(AEDMonitor_PulseOximeter_Display), 0, true];

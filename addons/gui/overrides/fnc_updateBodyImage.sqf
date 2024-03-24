@@ -133,7 +133,7 @@ private _ctrlPulseOximeterLeft = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_P
 private _ctrlChestSeal = _ctrlGroup controlsGroupCtrl IDC_BODY_TORSO_CHESTSEAL;
 private _ctrlChestInjury = _ctrlGroup controlsGroupCtrl IDC_BODY_TORSO_PNEUMOTHORAX;
 
-if (_target getVariable [QEGVAR(breathing,activeChestSeal), false]) then {
+if (_target getVariable [QEGVAR(breathing,ChestSeal_State), false]) then {
     _ctrlChestSeal ctrlShow true;
 } else {
     _ctrlChestSeal ctrlShow false;

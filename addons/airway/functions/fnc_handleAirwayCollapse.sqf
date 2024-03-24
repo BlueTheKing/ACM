@@ -17,7 +17,7 @@
 
 params ["_patient"];
 
-if (_patient getVariable [QGVAR(AirwayCollapse_PFH), -1] != -1) exitWith {systemchat "fuckup";};
+if (_patient getVariable [QGVAR(AirwayCollapse_PFH), -1] != -1) exitWith {};
 
 private _PFH = [{
     params ["_args", "_idPFH"];

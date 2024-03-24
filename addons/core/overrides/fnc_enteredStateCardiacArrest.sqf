@@ -28,4 +28,4 @@ TRACE_3("enteredStateCardiacArrest",_unit,_time,CBA_missionTime);
 // Update the unit status to reflect cardiac arrest
 [_unit, true] call ACEFUNC(medical_status,setCardiacArrestState);
 
-[_unit] call EFUNC(circulation,handleReversibleCardiacArrest);
+//[_unit] call EFUNC(circulation,handleReversibleCardiacArrest);

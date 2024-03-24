@@ -21,8 +21,8 @@ params ["_patient", "_state"];
 if (!local _patient) exitWith {};
 
 if !(_state) exitWith {
-    if !(IS_UNCONSCIOUS(_patient)) then {
-        [_patient] call FUNC(onWakeUp);
+    if !(IS_UNCONSCIOUS(_patient)) then { // On wakeup
+        [_patient] call FUNC(resetVariables);
     }; 
 };
 

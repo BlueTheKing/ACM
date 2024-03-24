@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle suction of airway LOCAL
+ * Handle suction of airway (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>

@@ -16,4 +16,4 @@ PREP(setPulseOximeter);
 PREP(setPulseOximeterLocal);
 PREP(updateBreathingState);
 //PREP(updateOxygenSaturation);
-PREP(updateRespirationRate);
+//PREP(updateRespirationRate);

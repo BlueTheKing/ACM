@@ -1,12 +1,16 @@
+//PREP(beginCPR);
 PREP(displayAEDMonitor_adjustLine);
 PREP(displayAEDMonitor_generateEKG);
 PREP(displayAEDMonitor_generatePO);
 PREP(displayAEDMonitor_updateStep);
 PREP(displayAEDMonitor);
+PREP(getEKGHeartRate);
 PREP(getIVFlowRate);
 PREP(handleAED);
+//PREP(handleCardiacArrest);
 PREP(handleMed_AmmoniumCarbonateLocal);
 PREP(handleMed_NaloxoneLocal);
+//PREP(handleReversibleCardiacArrest);
 PREP(hasAED);
 PREP(hasIV);
 PREP(resetVariables);
