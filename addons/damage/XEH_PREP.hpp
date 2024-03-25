@@ -2,6 +2,7 @@ PREP(canStitch);
 PREP(canWrap);
 PREP(clotWoundsOnBodyPart);
 PREP(getBandageTime);
+PREP(getBodyPartBleeding);
 PREP(getBruiseWrapTime);
 PREP(getStitchTime);
 PREP(getWrapTime);
