@@ -17,7 +17,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class AED_ApplyPads: CheckPulse {
         displayName = "Apply AED Pads";
-        displayNameProgress = "Applying AED Pads";
+        displayNameProgress = "Applying AED Pads...";
         icon = "";
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -32,7 +32,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class AED_RemovePads: AED_ApplyPads {
         displayName = "Remove AED Pads";
-        displayNameProgress = "Removing AED Pads";
+        displayNameProgress = "Removing AED Pads...";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         treatmentTime = 2;// TODO change
         allowSelfTreatment = 1;
@@ -41,7 +41,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class AED_ConnectPulseOximeter: AED_ApplyPads {
         displayName = "Connect AED Pulse Oximeter";
-        displayNameProgress = "Connecting AED Pulse Oximeter";
+        displayNameProgress = "Connecting AED Pulse Oximeter...";
         icon = "";
         category = "examine";
         treatmentTime = 4;// TODO change
@@ -51,7 +51,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class AED_DisconnectPulseOximeter: AED_RemovePads {
         displayName = "Disconnect AED Pulse Oximeter";
-        displayNameProgress = "Disconnecting AED Pulse Oximeter";
+        displayNameProgress = "Disconnecting AED Pulse Oximeter...";
         category = "examine";
         treatmentTime = 2;// TODO change
         allowedSelections[] = {"LeftArm","RightArm"};
@@ -61,7 +61,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class InsertIV_16: CheckPulse {
         displayName = "Insert 16g IV";
-        displayNameProgress = "Inserting 16g IV";
+        displayNameProgress = "Inserting 16g IV...";
         icon = "";
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -76,7 +76,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class InsertIV_14: InsertIV_16 {
         displayName = "Insert 14g IV";
-        displayNameProgress = "Inserting 14g IV";
+        displayNameProgress = "Inserting 14g IV...";
         icon = "";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         medicRequired = 0;
@@ -87,7 +87,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class InsertIO: InsertIV_16 {
         displayName = "Insert FAST1 IO";
-        displayNameProgress = "Inserting FAST1 IO";
+        displayNameProgress = "Inserting FAST1 IO...";
         icon = "";
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -101,7 +101,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class RemoveIV_16: InsertIV_16 {
         displayName = "Remove 16g IV";
-        displayNameProgress = "Removing 16g IV";
+        displayNameProgress = "Removing 16g IV...";
         icon = "";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         medicRequired = 0;
@@ -114,7 +114,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class RemoveIV_14: RemoveIV_16 {
         displayName = "Remove 14g IV";
-        displayNameProgress = "Removing 14g IV";
+        displayNameProgress = "Removing 14g IV...";
         icon = "";
         treatmentTime = 3;
         allowSelfTreatment = 0;
@@ -123,7 +123,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class RemoveIO: RemoveIV_16 {
         displayName = "Remove FAST1 IO";
-        displayNameProgress = "Removing FAST1 IO";
+        displayNameProgress = "Removing FAST1 IO...";
         icon = "";
         allowedSelections[] = {"Body"};
         allowSelfTreatment = 0;

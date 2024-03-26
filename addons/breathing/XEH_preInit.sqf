@@ -2,9 +2,11 @@
 
 ADDON = false;
 
-//PREP_RECOMPILE_START;
+PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
-//PREP_RECOMPILE_END;
+PREP_RECOMPILE_END;
+
+call FUNC(generatePTXMap);
 
 #define CBA_SETTINGS_CATEGORY "AMS: Breathing"
     

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle pneumothorax deterioration
+ * Handle pneumothorax deterioration (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>
@@ -40,9 +40,8 @@ private _PFH = [{
     private _isBreathing = (_patient getVariable [QEGVAR(airway,AirwayState), 0] > 0 && _breathingState > 0);
     private _pneumothoraxState = _patient getVariable [QGVAR(Pneumothorax_State), 0];
 
-    if (_pneumothoraxState < 1 || _patient getVariable [QGVAR(TensionPneumothorax_State), false]) exitWith {
+    if ((_pneumothoraxState < 1 && (_patient getVariable [QGVAR(ChestSeal_State), false])) || _patient getVariable [QGVAR(TensionPneumothorax_State), false]) exitWith {
         _patient setVariable [QGVAR(Pneumothorax_PFH), -1];
-        _patient setVariable [QGVAR(Pneumothorax_State), 0];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 

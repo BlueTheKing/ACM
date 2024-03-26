@@ -65,7 +65,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class ApplySAMSplint: Splint {
         displayName = "Apply SAM Splint";
-        displayNameProgress = "Applying SAM Splint";
+        displayNameProgress = "Applying SAM Splint...";
         items[] = {"AMS_SAMSplint"};
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
         condition = QACEFUNC(medical_treatment,canSplint);
@@ -74,7 +74,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class RemoveSAMSplint: Splint {
         displayName = "Remove SAM Splint";
-        displayNameProgress = "Removing SAM Splint";
+        displayNameProgress = "Removing SAM Splint...";
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
         items[] = {};
         condition = QEFUNC(disability,canRemoveSplint);

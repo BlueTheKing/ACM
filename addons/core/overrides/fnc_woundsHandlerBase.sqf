@@ -125,6 +125,10 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
                 [QACEGVAR(medical,FatalInjury), _unit] call CBA_fnc_localEvent;
             };
         };
+        if (_bodyPart isEqualTo "body" && {_woundClassIDToAdd in [10,60,70]}) then {
+            [QEGVAR(breathing,handleChestInjury), [_unit, _classComplex]] call CBA_fnc_localEvent;
+            systemchat format ["%1 -- %2 -- %3", _classComplex, _bleeding, _woundDamage];
+        };
 
         #ifdef DEBUG_MODE_FULL
         systemChat format["%1, damage: %2, peneration: %3, bleeding: %4, pain: %5", _bodyPart, _woundDamage toFixed 2, _woundDamage > PENETRATION_THRESHOLD_DEFAULT, _bleeding toFixed 3, _pain toFixed 3];

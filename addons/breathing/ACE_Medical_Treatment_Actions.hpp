@@ -2,7 +2,7 @@ class ACEGVAR(medical_treatment,actions) {
     class CheckPulse;
     class CheckBreathing: CheckPulse {
         displayName = "Check Breathing";
-        displayNameProgress = "Checking Breathing";
+        displayNameProgress = "Checking Breathing...";
         icon = "";
         category = "airway";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -15,7 +15,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class InspectChest: CheckBreathing {
         displayName = "Inspect Chest";
-        displayNameProgress = "Inspecting Chest";
+        displayNameProgress = "Inspecting Chest...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 6;
@@ -35,7 +35,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class ApplyChestSeal: CheckBreathing {
         displayName = "Apply Chest Seal";
-        displayNameProgress = "Applying Chest Seal";
+        displayNameProgress = "Applying Chest Seal...";
         icon = "";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         medicRequired = 0;
@@ -44,13 +44,13 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"AMS_ChestSeal"};
         consumeItem = 1;
-        condition = "true";
+        condition = QUOTE(!(_patient getVariable [ARR_2(QQGVAR(ChestSeal_State), false)]) && _patient getVariable [ARR_2(QQGVAR(ChestInjury_State), false)]);
         callbackSuccess = QFUNC(applyChestSeal);
     };
 
     class PerformNCD: ApplyChestSeal {
         displayName = "Perform Needle-Chest-Decompression";
-        displayNameProgress = "Performing Needle-Chest-Decompression";
+        displayNameProgress = "Performing Needle-Chest-Decompression...";
         icon = "";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         medicRequired = 0;
@@ -64,7 +64,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class PlacePulseOximeter: CheckPulse {
         displayName = "Place Pulse Oximeter";
-        displayNameProgress = "Placing Pulse Oximeter";
+        displayNameProgress = "Placing Pulse Oximeter...";
         icon = "";
         category = "examine";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -79,7 +79,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class RemovePulseOximeter: PlacePulseOximeter {
         displayName = "Remove Pulse Oximeter";
-        displayNameProgress = "Removing Pulse Oximeter";
+        displayNameProgress = "Removing Pulse Oximeter...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 1;

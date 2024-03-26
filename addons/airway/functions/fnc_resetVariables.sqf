@@ -21,7 +21,7 @@ _patient setVariable [QGVAR(AirwayCollapse_State), 0, true];
 
 _patient setVariable [QGVAR(AirwayObstructionVomit_State), 0, true];
 _patient setVariable [QGVAR(AirwayObstructionVomit_GracePeriod), -1, true];
-_patient getVariable [QGVAR(AirwayObstructionVomit_Count), 2, true];
+_patient setVariable [QGVAR(AirwayObstructionVomit_Count), 2, true];
 
 _patient setVariable [QGVAR(AirwayObstructionBlood_State), 0, true];
 

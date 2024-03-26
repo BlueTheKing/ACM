@@ -2,7 +2,7 @@ class ACEGVAR(medical_treatment,actions) {
     class CheckPulse;
     class CheckAirway: CheckPulse {
         displayName = "Check Airway";
-        displayNameProgress = "Checking Airway";
+        displayNameProgress = "Checking Airway...";
         icon = "";
         category = "airway";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -16,7 +16,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class HeadTurn: CheckAirway {
         displayName = "Perform Head Turning";
-        displayNameProgress = "Head Turning";
+        displayNameProgress = "Head Turning...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 5;
@@ -26,7 +26,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class HeadTiltChinLift: CheckAirway {
         displayName = "Perform Head Tilt-Chin Lift";
-        displayNameProgress = "Tilting Head";
+        displayNameProgress = "Tilting Head...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 4;
@@ -45,7 +45,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class RecoveryPosition: CheckAirway {
         displayName = "Establish Recovery Position";
-        displayNameProgress = "Establishing Recovery Position";
+        displayNameProgress = "Establishing Recovery Position...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 8;
@@ -55,7 +55,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class CancelRecoveryPosition: RecoveryPosition {
         displayName = "Cancel Recovery Position";
-        displayNameProgress = "Cancelling Recovery Position";
+        displayNameProgress = "Cancelling Recovery Position...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 1;
@@ -65,7 +65,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class UseSuctionBag: CheckAirway {
         displayName = "Use Suction Bag";
-        displayNameProgress = "Using Suction Bag";
+        displayNameProgress = "Using Suction Bag...";
         icon = "";
         medicRequired = 0;
         treatmentTime = QUOTE([_patient] call FUNC(getSuctionTime));
@@ -76,7 +76,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class UseAccuvac: UseSuctionBag {
         displayName = "Use Accuvac";
-        displayNameProgress = "Using Accuvac";
+        displayNameProgress = "Using Accuvac...";
         icon = "";
         medicRequired = 0;
         treatmentTime = QUOTE([_patient] call FUNC(getSuctionTime));
@@ -87,7 +87,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class InsertGuedelTube: CheckAirway {
         displayName = "Insert Guedel Tube";
-        displayNameProgress = "Inserting Guedel Tube";
+        displayNameProgress = "Inserting Guedel Tube...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 4;
@@ -98,7 +98,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class InsertIGel: InsertGuedelTube {
         displayName = "Insert iGel";
-        displayNameProgress = "Inserting iGel";
+        displayNameProgress = "Inserting iGel...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 8;
@@ -108,7 +108,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class RemoveGuedelTube: CheckAirway {
         displayName = "Remove Guedel Tube";
-        displayNameProgress = "Removing Guedel Tube";
+        displayNameProgress = "Removing Guedel Tube...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 2;
@@ -117,7 +117,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class RemoveIGel: RemoveGuedelTube {
         displayName = "Remove iGel";
-        displayNameProgress = "Removing iGel";
+        displayNameProgress = "Removing iGel...";
         icon = "";
         medicRequired = 0;
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == 'SGA'));

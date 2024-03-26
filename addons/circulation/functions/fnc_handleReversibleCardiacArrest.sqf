@@ -17,7 +17,7 @@
 
 params ["_patient"];
 
-if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] == 0 && ) then {
+if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] == 0) then {
     if (_patient getVariable [QGVAR(ReversibleCardiacArrest_PFH), -1] != -1) exitWith {};
 
     _patient setVariable [QGVAR(ReversibleCardiacArrest_State), true, true];
@@ -30,7 +30,7 @@ if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] == 0 && ) then {
 
         private _time = _patient getVariable [QGVAR(ReversibleCardiacArrest_Time), -1];
 
-        private _reversibleCause = _patient getVariable [QGVAR(TensionPneumothorax_State), false] || (BLOOD_VOLUME_CLASS_4_HEMORRHAGE >= GET_BLOOD_VOLUME(_patient)) || (GET_OXYGEN(_patient) < 70);
+        private _reversibleCause = _patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false] || (BLOOD_VOLUME_CLASS_4_HEMORRHAGE >= GET_BLOOD_VOLUME(_patient)) || (GET_OXYGEN(_patient) < 70);
 
         if (!_reversibleCause || !(IN_CRDC_ARRST(_patient)) || !(alive _patient) || ((_time + 600) < CBA_missionTime)) exitWith {
             _patient setVariable [QGVAR(ReversibleCardiacArrest_State), false, true];

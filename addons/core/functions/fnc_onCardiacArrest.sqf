@@ -18,7 +18,7 @@
 params ["_patient"];
 
 if !(_patient getVariable [QGVAR(FatalInjury_State), false]) then {
-    if (_patient getVariable [QGVAR(TensionPneumothorax_State), false] || (BLOOD_VOLUME_CLASS_4_HEMORRHAGE >= GET_BLOOD_VOLUME(_patient)) || (GET_OXYGEN(_patient) < 70)) then {
+    if (_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false] || (BLOOD_VOLUME_CLASS_4_HEMORRHAGE >= GET_BLOOD_VOLUME(_patient)) || (GET_OXYGEN(_patient) < 70)) then {
         [QEGVAR(circulation,handleReversibleCardiacArrest), [_patient], _patient] call CBA_fnc_targetEvent;
     } else {
         _patient setVariable [QGVAR(KnockOut_State), true];
