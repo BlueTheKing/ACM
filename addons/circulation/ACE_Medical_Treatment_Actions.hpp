@@ -136,6 +136,16 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
     };
+
+    class CPR {
+        displayNameProgress = "";
+        treatmentTime = 0.01;
+        callbackStart = "";
+        callbackProgress = "";
+        callbackFailure = "";
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(beginCPR));
+        condition = QACEFUNC(medical_treatment,canCPR);
+    };
     /*class BloodIV_500: BloodIV {
         allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));

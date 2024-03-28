@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * 
+ * Begin CPR
  *
  * Arguments:
  * 0: Medic <OBJECT>
@@ -19,7 +19,6 @@
 params ["_medic", "_patient"];
 
 _patient setVariable [QACEGVAR(medical,CPR_provider), _medic, true];
-_medic setVariable [QGVAR(isPerformingCPR), true, true];
 
 GVAR(CPRTarget) = _patient;
 
@@ -63,10 +62,8 @@ if (_notInVehicle) then {
         private _vehicleCondition = !(objectParent _medic isEqualTo objectParent _patient);
         private _distanceCondition = (_patient distance2D _medic > ACEGVAR(medical_gui,maxDistance));
 
-        if (_patientCondition || _medicCondition || (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]) isEqualTo objNull || !(_medic getVariable [QGVAR(isPerformingCPR), false]) || dialog || {(!_notInVehicle && _vehicleCondition) || {(_notInVehicle && _distanceCondition)}}) exitWith { // Stop CPR
+        if (_patientCondition || _medicCondition || (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]) isEqualTo objNull || dialog || {(!_notInVehicle && _vehicleCondition) || {(_notInVehicle && _distanceCondition)}}) exitWith { // Stop CPR
             [_idPFH] call CBA_fnc_removePerFrameHandler;
-
-            _medic setVariable [QGVAR(isPerformingCPR), false, true];
 
             if !(_patient getVariable [QACEGVAR(medical,CPR_provider), objNull] isEqualTo objNull) then {
                 _patient setVariable [QACEGVAR(medical,CPR_provider), objNull, true];
@@ -86,9 +83,12 @@ if (_notInVehicle) then {
 
             [_patient, "activity", "%1 stopped CPR (%2)", [[_medic, false, true] call ACEFUNC(common,getName), _time]] call ACEFUNC(medical_treatment,addToLog);
 
-            if (_CPRStartTime <= CBA_missionTime - 18) then {
+            /*if (_CPRStartTime <= CBA_missionTime - 18) then { // TODO move this
                 _patient setVariable [QGVAR(CPR_OxygenationPeriod), CBA_missionTime];
-            };
+            };*/
+
+            _patient setVariable [QGVAR(CPR_StoppedTotal), _CPRTime, true];
+            _patient setVariable [QGVAR(CPR_StoppedTime), CBA_missionTime, true];
 
             closeDialog 0;
 
@@ -102,10 +102,12 @@ if (_notInVehicle) then {
             [{
                 params ["_medic"];
 
-                !(_medic getVariable [QGVAR(isPerformingCPR), false]);
+                !(isNull (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]));
             }, {}, [_medic], 9, {
                 GVAR(loopCPR) = true;
             }] call CBA_fnc_waitUntilAndExecute;
         };
     }, 0, [_medic, _patient, _notInVehicle, _CPRStartTime]] call CBA_fnc_addPerFrameHandler;
+
+    [QGVAR(handleCPR), [_patient, _CPRStartTime], _patient] call CBA_fnc_targetEvent;
 }, [_medic, _patient, _notInVehicle, _CPRStartTime], 2.1] call CBA_fnc_waitAndExecute;

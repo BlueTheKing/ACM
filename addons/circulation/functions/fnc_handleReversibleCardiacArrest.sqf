@@ -28,14 +28,16 @@ if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] == 0) then {
         params ["_args", "_idPFH"];
         _args params ["_patient"];
 
+        if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) exitWith {};
+
         private _time = _patient getVariable [QGVAR(ReversibleCardiacArrest_Time), -1];
 
         private _reversibleCause = _patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false] || (BLOOD_VOLUME_CLASS_4_HEMORRHAGE >= GET_BLOOD_VOLUME(_patient)) || (GET_OXYGEN(_patient) < 70);
 
-        if (!_reversibleCause || !(IN_CRDC_ARRST(_patient)) || !(alive _patient) || ((_time + 600) < CBA_missionTime)) exitWith {
+        if (!_reversibleCause || !(IN_CRDC_ARRST(_patient)) || !(alive _patient) || ((_time + 360) < CBA_missionTime)) exitWith {
             _patient setVariable [QGVAR(ReversibleCardiacArrest_State), false, true];
 
-            if (IN_CRDC_ARRST(_patient) && (alive _patient) && ((_time + 600) > CBA_missionTime)) then { // Reversed
+            if (IN_CRDC_ARRST(_patient) && (alive _patient) && ((_time + 360) > CBA_missionTime)) then { // Reversed
                 _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
                 [QACEGVAR(medical,CPRSucceeded), _patient] call CBA_fnc_localEvent;
             } else {
