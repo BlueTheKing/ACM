@@ -20,7 +20,7 @@ params ["_patient"];
 private _activeTypesArray = _patient getVariable [QGVAR(FluidBags_ActiveTypes), [0,0,0,0,0,0]];
 
 private _fluidBags = _patient getVariable [QACEGVAR(medical,ivBags), []];
-private _tourniquets = GET_TOURNIQUETS(_unit);
+private _tourniquets = GET_TOURNIQUETS(_patient);
 
 private _activeBloodBags = [0,0,0,0,0,0];
 private _activePlasmaBags = [0,0,0,0,0,0];

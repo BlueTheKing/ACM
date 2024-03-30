@@ -7,7 +7,7 @@
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
  * 2: Body Part <STRING>
- * 3:  <NUMBER>
+ * 3: Type <NUMBER>
  * 4: State <BOOL>
  * 5: Hide log <BOOL>
  *
@@ -15,7 +15,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftarm", 0, true] call AMS_breathing_fnc_setAED;
+ * [player, cursorTarget, "leftarm", 0, true] call AMS_circulation_fnc_setAED;
  *
  * Public: No
  */
@@ -31,6 +31,7 @@ switch (_type) do {
         } else {
             _hint = "disconnected AED Pulse Oximeter";
         };
+        _medic setVariable [QGVAR(AEDMonitor_Medic_Used_PulseOximeter), _state, true];
     };
     default {
         if (_state) then {
@@ -38,6 +39,7 @@ switch (_type) do {
         } else {
             _hint = "removed AED pads";
         };
+        _medic setVariable [QGVAR(AEDMonitor_Medic_Used_Pads), _state, true];
     };
 };
 

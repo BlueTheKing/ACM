@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [player, "head", 60, 0.2] call AMS_damage_fnc_handleWoundReopening;
+ * [player, "head", 60, 0.2] call AMS_damage_fnc_handleWoundReopening; // TODO use this
  *
  * Public: No
  */
@@ -83,11 +83,11 @@ private _fnc_moveWound = {
 
 private _woundIndex = -1;
 
-/*_woundIndex = [_unit, _bodyPart, _woundType, 1] call _fnc_getWoundIndex; // clots
+_woundIndex = [_unit, _bodyPart, _woundType, 1] call _fnc_getWoundIndex; // clots
 
 if (_woundIndex != -1) exitWith {
     [_unit, _bodyPart, GET_CLOTTED_WOUNDS(_unit), 1, _woundIndex, _woundDamage] call _fnc_moveWound;
-};*/
+};
 
 _woundIndex = [_unit, _bodyPart, _woundType] call _fnc_getWoundIndex; // bandages
 

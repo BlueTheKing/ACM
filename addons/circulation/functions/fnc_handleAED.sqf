@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, 2] call AMS_breathing_fnc_handleAED;
+ * [player, cursorTarget, 2] call AMS_circulation_fnc_handleAED;
  *
  * Public: No
  */

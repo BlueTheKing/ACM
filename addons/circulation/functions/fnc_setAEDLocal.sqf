@@ -7,14 +7,14 @@
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
  * 2: Body Part <STRING>
- * 3:  <NUMBER>
+ * 3: Type <NUMBER>
  * 4: State <BOOL>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, cursorTarget, "leftarm", 0, true] call AMS_breathing_fnc_setAEDLocal;
+ * [player, cursorTarget, "leftarm", 0, true] call AMS_circulation_fnc_setAEDLocal;
  *
  * Public: No
  */

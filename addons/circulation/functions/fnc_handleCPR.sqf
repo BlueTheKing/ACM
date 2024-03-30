@@ -24,7 +24,7 @@ private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient", "_CPRStartTime"];
 
-    private _medic = _patient getVariable [QACEGVAR(medical,CPR_provider), objNull]
+    private _medic = _patient getVariable [QACEGVAR(medical,CPR_provider), objNull];
 
     if !(alive _medic) exitWith {
         [_idPFH] call CBA_fnc_removePerFrameHandler;
