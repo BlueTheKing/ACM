@@ -226,13 +226,13 @@ if (_bodyPartIV > 0) then {
     _entries pushBack [_IVEntry, _circulationColor];
 };
 
-if ((_selectionN == 1 || (_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_PulseOximeter), -1] == (_selectionN max 0))) && [_target] call EFUNC(circulation,hasAED)) then {
-    private _padsStatus = _target getVariable [QEGVAR(circulation,AEDMonitor_Placement_Pads), false];
-    private _pulseOximeterStatus = (_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_PulseOximeter), -1] != -1);
+if ((_selectionN == 1 || (_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1] == (_selectionN max 0))) && [_target] call EFUNC(circulation,hasAED)) then {
+    private _padsStatus = _target getVariable [QEGVAR(circulation,AED_Placement_Pads), false];
+    private _pulseOximeterStatus = (_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1] != -1);
 
     private _entry = "AED ";
 
-    private _displayedHR = _target getVariable [QEGVAR(circulation,AEDMonitor_Pads_Display), 0];
+    private _displayedHR = _target getVariable [QEGVAR(circulation,AED_Pads_Display), 0];
 
     if (_displayedHR < 1) then {
         _displayedHR = "--";
@@ -245,7 +245,7 @@ if ((_selectionN == 1 || (_target getVariable [QEGVAR(circulation,AEDMonitor_Pla
     };
 
     if (_pulseOximeterStatus) then {
-        private _displayedSPO2 = _target getVariable [QEGVAR(circulation,AEDMonitor_PulseOximeter_Display), 0];
+        private _displayedSPO2 = _target getVariable [QEGVAR(circulation,AED_PulseOximeter_Display), 0];
 
         if (_displayedSPO2 < 1) then {
             _displayedSPO2 = "--";
@@ -256,7 +256,7 @@ if ((_selectionN == 1 || (_target getVariable [QEGVAR(circulation,AEDMonitor_Pla
         _entry = _entry + " SpO2: --";
     };
 
-    private _measuredBP = _target getVariable [QEGVAR(circulation,AEDMonitor_NIBP_Display), [0,0]];
+    private _measuredBP = _target getVariable [QEGVAR(circulation,AED_NIBP_Display), [0,0]];
 
     private _displayedBP = _measuredBP;
 

@@ -19,10 +19,10 @@
 
 params ["_medic", "_patient", ["_inMonitor", false]];
 
-_patient setVariable [QGVAR(AEDMonitor_AnalyzeRhythm_State), false, true];
+_patient setVariable [QGVAR(AED_AnalyzeRhythm_State), false, true];
 
-_patient setVariable [QGVAR(AEDMonitor_InUse), true, true];
-_medic setVariable [QGVAR(AEDMonitor_Medic_InUse), true, true];
+_patient setVariable [QGVAR(AED_InUse), true, true];
+_medic setVariable [QGVAR(AED_Medic_InUse), true, true];
 
 private _timeToAnalyze = (4 + (random 4)) + 4 * (1 - (GET_BLOOD_VOLUME(_patient) / 7));
 
@@ -35,7 +35,7 @@ if (_inMonitor) then {
 [{
     params ["_patient", "_medic"];
 
-    _patient setVariable [QGVAR(AEDMonitor_AnalyzeRhythm_State), true, true];
+    _patient setVariable [QGVAR(AED_AnalyzeRhythm_State), true, true];
 
     private _shockable = (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0]) in [2,3];
     private _adviceDelay = 1.9;
@@ -53,8 +53,10 @@ if (_inMonitor) then {
         if (_shockable) then {
             [_medic, _patient] call FUNC(AED_BeginCharge);
         } else {
-            _patient setVariable [QGVAR(AEDMonitor_InUse), false, true];
-            _medic setVariable [QGVAR(AEDMonitor_Medic_InUse), false, true];
+            _patient setVariable [QGVAR(AED_InUse), false, true];
+            _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
+
+            //playSound3D [QPATHTO_R(sound\aed_checkpulse_performcpr.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 1.812s
         };
 
     }, [_patient, _medic, _shockable], 2] call CBA_fnc_waitAndExecute;

@@ -25,20 +25,21 @@ private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
 switch (_type) do {
     case 1: {
-        _patient setVariable [QGVAR(AEDMonitor_PulseOximeter_LastSync), CBA_missionTime];
-        _patient setVariable [QGVAR(AEDMonitor_PulseOximeter_Display), 0, true];
+        _patient setVariable [QGVAR(AED_PulseOximeter_LastSync), CBA_missionTime];
+        _patient setVariable [QGVAR(AED_PulseOximeter_Display), 0, true];
 
         if (_state) then {
-            _patient setVariable [QGVAR(AEDMonitor_Placement_PulseOximeter), _partIndex, true];
+            _patient setVariable [QGVAR(AED_Placement_PulseOximeter), _partIndex, true];
             [_medic, _patient] call FUNC(handleAED);
         } else {
-            _patient setVariable [QGVAR(AEDMonitor_Placement_PulseOximeter), -1, true];
+            _patient setVariable [QGVAR(AED_Placement_PulseOximeter), -1, true];
         };
     };
     default {
-        _patient setVariable [QGVAR(AEDMonitor_Placement_Pads), _state, true];
-        _patient setVariable [QGVAR(AEDMonitor_Pads_LastSync), CBA_missionTime];
-        _patient setVariable [QGVAR(AEDMonitor_Pads_Display), 0, true];
+        _patient setVariable [QGVAR(AED_Placement_Pads), _state, true];
+        _patient setVariable [QGVAR(AED_Pads_LastSync), CBA_missionTime];
+        _patient setVariable [QGVAR(AED_Pads_Display), 0, true];
+        _patient setVariable [QGVAR(AED_ShockTotal), 0, true];
 
         if (_state) then {
             [_medic, _patient] call FUNC(handleAED);

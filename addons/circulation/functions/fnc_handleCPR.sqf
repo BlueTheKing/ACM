@@ -47,7 +47,7 @@ private _PFH = [{
     private _consistencyEffect = ((CBA_missionTime - _CPRStartTime) / 120) min 1.4;
     private _bloodlossEffect = linearConversion [BLOOD_VOLUME_CLASS_4_HEMORRHAGE, BLOOD_VOLUME_CLASS_2_HEMORRHAGE, _bloodVolume, 0, 1, true];
 
-    private _shockEffect = ((45 / (CBA_missionTime - (_patient getVariable [QGVAR(AEDMonitor_LastShock), -1]))) min 2) max 0.8;
+    private _shockEffect = ((45 / (CBA_missionTime - (_patient getVariable [QGVAR(AED_LastShock), -1]))) min 2) max 0.8;
     private _rhythmEffect = 1;
     private _medicationEffect = 1;
 

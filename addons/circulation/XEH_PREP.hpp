@@ -1,9 +1,13 @@
 PREP(AED_AdministerShock);
 PREP(AED_AnalyzeRhythm);
 PREP(AED_BeginCharge);
+PREP(AED_CanAdministerShock);
+PREP(AED_CanAnalyzeRhythm);
+PREP(AED_CanCancelCharge);
 PREP(AED_CancelCharge);
+PREP(AED_CanManualCharge);
 PREP(beginCPR);
-PREP(displayAEDMonitor_adjustLine);
+PREP(displayAEDMonitor_adjustWaveform);
 PREP(displayAEDMonitor_generateEKG);
 PREP(displayAEDMonitor_generatePO);
 PREP(displayAEDMonitor_updateStep);

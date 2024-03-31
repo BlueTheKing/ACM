@@ -10,7 +10,7 @@ class ACEGVAR(medical_treatment,actions) {
         medicRequired = 0;
         treatmentTime = 0.01;
         allowedSelections[] = {"All"};
-        allowSelfTreatment = 1;
+        allowSelfTreatment = 0;
         condition = QUOTE(([ARR_2(_patient,_bodyPart)] call FUNC(hasAED)));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(displayAEDMonitor));
     };
@@ -57,6 +57,30 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"LeftArm","RightArm"};
         condition = QUOTE([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED) && (_patient getVariable [ARR_2(QQGVAR(AEDMonitor_Placement_PulseOximeter),-1)]) != -1);
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,1,false)] call FUNC(setAED));
+    };
+
+    class AED_AnalyzeRhythm: AED_ViewMonitor {
+        displayName = "Analyze Rhythm";
+        category = "examine";
+        allowedSelections[] = {"Body"};
+        condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CanAnalyzeRhythm));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_AnalyzeRhythm));
+    };
+    class AED_ManualCharge: AED_AnalyzeRhythm {
+        displayName = "Charge AED";
+        category = "advanced";
+        condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CanManualCharge));
+        callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(AED_BeginCharge));
+    };
+    class AED_Shock: AED_ManualCharge {
+        displayName = "Administer Shock";
+        condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CanAdministerShock));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_AdministerShock));
+    };
+    class AED_CancelCharge: AED_ManualCharge {
+        displayName = "Cancel Charge";
+        condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CanCancelCharge));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_BeginCharge));
     };
 
     class InsertIV_16: CheckPulse {

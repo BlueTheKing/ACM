@@ -24,8 +24,8 @@ if (_bodyPart != "") then {
     _partIndex = ALL_BODY_PARTS find _bodyPart;
 };
 
-private _padsStatus = _patient getVariable [QGVAR(AEDMonitor_Placement_Pads), false];
-private _pulseOximeterPlacement = _patient getVariable [QGVAR(AEDMonitor_Placement_PulseOximeter), -1];
+private _padsStatus = _patient getVariable [QGVAR(AED_Placement_Pads), false];
+private _pulseOximeterPlacement = _patient getVariable [QGVAR(AED_Placement_PulseOximeter), -1];
 
 switch (_type) do {
     case 2: {

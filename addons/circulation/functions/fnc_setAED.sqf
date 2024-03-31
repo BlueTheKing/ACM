@@ -31,7 +31,7 @@ switch (_type) do {
         } else {
             _hint = "disconnected AED Pulse Oximeter";
         };
-        _medic setVariable [QGVAR(AEDMonitor_Medic_Used_PulseOximeter), _state, true];
+        _medic setVariable [QGVAR(AED_Medic_Used_PulseOximeter), _state, true];
     };
     default {
         if (_state) then {
@@ -39,7 +39,7 @@ switch (_type) do {
         } else {
             _hint = "removed AED pads";
         };
-        _medic setVariable [QGVAR(AEDMonitor_Medic_Used_Pads), _state, true];
+        _medic setVariable [QGVAR(AED_Medic_Used_Pads), _state, true];
     };
 };
 

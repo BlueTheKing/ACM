@@ -2,11 +2,11 @@
 #include "..\defines.hpp"
 /*
  * Author: Blue
- * Adjusts set monitor line in current step
+ * Adjusts set monitor waveform in current step
  *
  * Arguments:
  * 0: Dialog Control <DISPLAY>
- * 1: Line Type <NUMBER>
+ * 1: Waveform Type <NUMBER>
  	* 0: EKG
 	* 1: Pulse Oximeter
 	* 2: EtCO2
@@ -18,7 +18,7 @@
  * None
  *
  * Example:
- * [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), 0, 0, 0, 10] call AMS_circulation_fnc_displayAEDMonitor_adjustLine;
+ * [(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), 0, 0, 0, 10] call AMS_circulation_fnc_displayAEDMonitor_adjustWaveform;
  *
  * Public: No
  */

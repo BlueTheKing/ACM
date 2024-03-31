@@ -188,14 +188,14 @@ private _ctrlAEDPads = _ctrlGroup controlsGroupCtrl IDC_BODY_TORSO_AED_PADS;
 private _ctrlAEDVitalsMonitorRight = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_AED_VITALS;
 private _ctrlAEDVitalsMonitorLeft = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_AED_VITALS;
 
-if (_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_Pads), false]) then {
+if (_target getVariable [QEGVAR(circulation,AED_Placement_Pads), false]) then {
     _ctrlAEDPads ctrlShow true;
 } else {
     _ctrlAEDPads ctrlShow false;
 };
 
-if ((_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_PulseOximeter), -1]) != -1) then {
-    if (_target getVariable [QEGVAR(circulation,AEDMonitor_Placement_PulseOximeter), -1] == 2) then {
+if ((_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1]) != -1) then {
+    if (_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1] == 2) then {
         _ctrlAEDVitalsMonitorRight ctrlShow false;
         _ctrlAEDVitalsMonitorLeft ctrlShow true;
     } else {
