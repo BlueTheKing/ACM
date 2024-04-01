@@ -6,6 +6,7 @@ PREP(AED_CanAnalyzeRhythm);
 PREP(AED_CanCancelCharge);
 PREP(AED_CancelCharge);
 PREP(AED_CanManualCharge);
+PREP(AED_TrackCPR);
 PREP(beginCPR);
 PREP(displayAEDMonitor_adjustWaveform);
 PREP(displayAEDMonitor_generateEKG);

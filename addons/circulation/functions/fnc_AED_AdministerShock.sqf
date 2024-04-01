@@ -30,19 +30,12 @@ _patient setVariable [QGVAR(AED_LastShock), CBA_missionTime];
 private _totalShocks = _patient getVariable [QGVAR(AED_ShockTotal), 0];
 _patient setVariable [QGVAR(AED_ShockTotal), (_totalShocks + 1), true];
 
-if !(_manual) then { 
-    /*[{ // Reminder to re-analyze
-        params ["_patient", "_medic"];
-
-        //playSound3D [QPATHTO_R(sound\aed_checkpulse_pushtoanalyze.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 0.1s
-
-    }, [_patient, _medic], 5] call CBA_fnc_waitAndExecute;*/
-
+if !(_manual) then {
     [{ // Reminder to start CPR
         params ["_patient", "_medic"];
 
         [_patient] call FUNC(AED_TrackCPR);
-        //playSound3D [QPATHTO_R(sound\aed_startcpr.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 0.1s
+        playSound3D [QPATHTO_R(sound\aed_startcpr.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 1.858s
 
     }, [_patient, _medic], 2] call CBA_fnc_waitAndExecute;
 };
