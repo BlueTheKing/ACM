@@ -1,13 +1,13 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Get SpO2 value, affected by saturation and blood loss
+ * Get SpO2 value, affected by oxygen saturation and blood loss
  *
  * Arguments:
  * 0: Patient <OBJECT>
  *
  * Return Value:
- * Detected Oxygen Saturation <NUMBER>
+ * Calculated Oxygen Saturation <NUMBER>
  *
  * Example:
  * [player] call AMS_breathing_fnc_getSpO2;

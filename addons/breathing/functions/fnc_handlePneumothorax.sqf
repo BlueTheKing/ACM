@@ -47,7 +47,7 @@ private _PFH = [{
 
     if !(_isBreathing) exitWith {};
 
-    if (random 100 < (50 + _breathingState * 15)) then { // TODO settable chance
+    if (random 100 < (50 * GVAR(pneumothoraxDeteriorateChance) + _breathingState * 15)) then {
         _pneumothoraxState = _pneumothoraxState + 1;
         if (_pneumothoraxState > 4) then {
             _patient setVariable [QGVAR(Pneumothorax_State), 4];

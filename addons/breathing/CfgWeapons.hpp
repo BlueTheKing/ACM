@@ -7,8 +7,8 @@ class CfgWeapons {
         author = "Blue";
         picture = QPATHTOF(ui\chestseal_ca.paa);
         displayName = "Chest Seal";
-        descriptionShort = "desc short";
-        descriptionUse = "desc use";
+        descriptionShort = "Used to manage penetrating chest injuries";
+        descriptionUse = "Adhesive dressing used to stop air from entering the penetrating injury, keeping lung function and preventing deterioration";
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 1;
@@ -18,14 +18,14 @@ class CfgWeapons {
     class AMS_PulseOximeter: AMS_ChestSeal {
         picture = QPATHTOF(ui\pulseoximeter_ca.paa);
         displayName = "Pulse Oximeter";
-        descriptionShort = "desc short";
-        descriptionUse = "desc use";
+        descriptionShort = "Used to measure patient vitals";
+        descriptionUse = "Small device used to measure patient oxygen saturation and pulse rate";
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 1;
         };
     };
 
-    class AMS_Stethoscope: AMS_ChestSeal {
+    /*class AMS_Stethoscope: AMS_ChestSeal {
         picture = QPATHTOF(ui\stethoscope_ca.paa);
         displayName = "Stethoscope";
         descriptionShort = "desc short";
@@ -33,13 +33,13 @@ class CfgWeapons {
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 2;
         };
-    };
+    };*/
 
     class AMS_NCDKit: AMS_ChestSeal {
         picture = QPATHTOF(ui\ncdkit_ca.paa);
         displayName = "NCD Kit";
-        descriptionShort = "desc short";
-        descriptionUse = "desc use";
+        descriptionShort = "Single-use needle used to decompress tensionpneumothorax";
+        descriptionUse = "Single-use needle used to decompress tensionpneumothorax by creating a deep hole in the side of the patient chest";
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 1;
         };
@@ -48,8 +48,8 @@ class CfgWeapons {
     class AMS_PocketBVM: AMS_ChestSeal {
         picture = QPATHTOF(ui\pocketbvm_ca.paa);
         displayName = "Pocket BVM";
-        descriptionShort = "desc short";
-        descriptionUse = "desc use";
+        descriptionShort = "Compact version of Bag-Valve-Mask";
+        descriptionUse = "Compact variant of Bag-Valve-Mask, device used to ventilate non-breathing patient by inflating and deflating the lungs with air";
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 5;
         };
@@ -68,8 +68,8 @@ class CfgWeapons {
     class AMS_BVM: AMS_PocketBVM {
         picture = QPATHTOF(ui\bvm_ca.paa);
         displayName = "Bag-Valve-Mask";
-        descriptionShort = "desc short";
-        descriptionUse = "desc use";
+        descriptionShort = "Used to ventilate patient that is not breathing";
+        descriptionUse = "Device used to ventilate non-breathing patient by inflating and deflating the lungs with air, may be connected to oxygen";
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 5;
         };

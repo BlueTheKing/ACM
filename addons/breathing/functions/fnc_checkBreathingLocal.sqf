@@ -25,7 +25,7 @@ private _pneumothorax = _patient getVariable [QGVAR(Pneumothorax_State), 0] > 0;
 private _tensionPneumothorax = _patient getVariable [QGVAR(TensionPneumothorax_State), false];
 
 private _respiratoryArrest = (IN_CRDC_ARRST(_patient) || !(alive _patient) || _tensionPneumothorax);
-private _airwayBlocked = !(_patient getVariable [QEGVAR(airway,AirwayState), 0] > 0);
+private _airwayBlocked = (_patient getVariable [QEGVAR(airway,AirwayState), 0]) == 0;
 
 switch (true) do {
     case (_respiratoryArrest || _airwayBlocked): {

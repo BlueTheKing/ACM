@@ -53,7 +53,7 @@ PREP_RECOMPILE_END;
     "SLIDER",
     ["Recovery Position Time", "Time to establish Recovery Position"],
     [AMS_SETTINGS_CATEGORY, "Airway Management"],
-    [1, 30, 8, 0],
+    [1, 30, 8, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -62,7 +62,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow Suction Bag", "Training level required to use Suction Bag"],
     [AMS_SETTINGS_CATEGORY, "Airway Management"],
-    [[0, 1, 2], [ACELLSTRING(Medical_Treatment,Anyone), ACELLSTRING(Medical_Treatment,Medics), ACELLSTRING(Medical_Treatment,Doctors)], 0],
+    [SETTING_SLIDER_SKILL, 0],
     true
 ] call CBA_fnc_addSetting;
 
@@ -71,7 +71,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow ACCUVAC", "Training level required to use ACCUVAC"],
     [AMS_SETTINGS_CATEGORY, "Airway Management"],
-    [[0, 1, 2], [ACELLSTRING(Medical_Treatment,Anyone), ACELLSTRING(Medical_Treatment,Medics), ACELLSTRING(Medical_Treatment,Doctors)], 1],
+    [SETTING_SLIDER_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -82,7 +82,7 @@ PREP_RECOMPILE_END;
     "SLIDER",
     ["Guedel Tube Time", "Time to insert Guedel Tube"],
     [AMS_SETTINGS_CATEGORY, "Airway Adjunct"],
-    [1, 30, 5, 0],
+    [1, 30, 5, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -91,7 +91,7 @@ PREP_RECOMPILE_END;
     "SLIDER",
     ["iGel Time", "Time to insert iGel"],
     [AMS_SETTINGS_CATEGORY, "Airway Adjunct"],
-    [1, 30, 7, 0],
+    [1, 30, 7, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -100,7 +100,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow Guedel Tube", "Training level required to insert Guedel Tube"],
     [AMS_SETTINGS_CATEGORY, "Airway Adjunct"],
-    [[0, 1, 2], [ACELLSTRING(Medical_Treatment,Anyone), ACELLSTRING(Medical_Treatment,Medics), ACELLSTRING(Medical_Treatment,Doctors)], 0],
+    [SETTING_SLIDER_SKILL, 0],
     true
 ] call CBA_fnc_addSetting;
 
@@ -109,7 +109,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow iGel", "Training level required to insert iGel"],
     [AMS_SETTINGS_CATEGORY, "Airway Adjunct"],
-    [[0, 1, 2], [ACELLSTRING(Medical_Treatment,Anyone), ACELLSTRING(Medical_Treatment,Medics), ACELLSTRING(Medical_Treatment,Doctors)], 1],
+    [SETTING_SLIDER_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
 

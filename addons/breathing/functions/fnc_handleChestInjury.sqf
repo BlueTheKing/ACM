@@ -24,6 +24,6 @@ if !(_patient setVariable [QGVAR(ChestInjury_State), false]) then {
 
 private _chance = GVAR(ChestInjury_Chances) get _woundID;
 
-if (random 100 < _chance) then { // TODO settable chance
+if (random 100 < (_chance * GVAR(chestInjuryChance))) then {
     [_patient] call FUNC(handlePneumothorax);
 };

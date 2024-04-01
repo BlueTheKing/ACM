@@ -17,14 +17,15 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Inspect Chest";
         displayNameProgress = "Inspecting Chest...";
         icon = "";
-        medicRequired = 0;
-        treatmentTime = 6;
+        medicRequired = QGVAR(allowInspectChest);
+        treatmentTime = QGVAR(treatmentTimeInspectChest);
         allowedSelections[] = {"Body"};
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && !(_patient call ACEFUNC(common,isAwake)));
         callbackSuccess = QFUNC(inspectChest);
     };
     /*class UseStethoscope: CheckBreathing {
         displayName = "Inspect With Stethoscope";
-        displayNameProgress = "Inspecting With Stethoscope";
+        displayNameProgress = "Inspecting With Stethoscope...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 0.1;
@@ -41,10 +42,10 @@ class ACEGVAR(medical_treatment,actions) {
         medicRequired = 0;
         treatmentTime = 5;
         allowedSelections[] = {"Body"};
-        allowSelfTreatment = 0;
+        allowSelfTreatment = 1;
         items[] = {"AMS_ChestSeal"};
         consumeItem = 1;
-        condition = QUOTE(!(_patient getVariable [ARR_2(QQGVAR(ChestSeal_State), false)]) && _patient getVariable [ARR_2(QQGVAR(ChestInjury_State), false)]);
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && !(_patient getVariable [ARR_2(QQGVAR(ChestSeal_State), false)]) && _patient getVariable [ARR_2(QQGVAR(ChestInjury_State), false)]);
         callbackSuccess = QFUNC(applyChestSeal);
     };
 
@@ -53,12 +54,12 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Performing Needle-Chest-Decompression...";
         icon = "";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
-        medicRequired = 0;
+        medicRequired = QGVAR(allowNCD);
         treatmentTime = 5;
         allowSelfTreatment = 0;
         items[] = {"AMS_NCDKit"};
         consumeItem = 1;
-        condition = "true";
+        condition = QGVAR(pneumothoraxEnabled);
         callbackSuccess = QFUNC(performNCD);
     };
 
