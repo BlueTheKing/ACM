@@ -27,7 +27,7 @@ private _PFH = [{
 
     private _padsStatus = _patient getVariable [QGVAR(AED_Placement_Pads), false];
     private _pulseOximeterPlacement = _patient getVariable [QGVAR(AED_Placement_PulseOximeter), -1];
-    private _pulseOximeterPlacementStatus = (_pulseOximeterPlacement != -1 && {});
+    private _pulseOximeterPlacementStatus = (_pulseOximeterPlacement != -1 && {HAS_TOURNIQUET_APPLIED_ON(_patient,_pulseOximeterPlacement)});
 
     if (!_padsStatus && _pulseOximeterPlacement == -1) exitWith {
         _patient setVariable [QGVAR(AED_Pads_Display), 0, true];
