@@ -31,6 +31,6 @@ if !(IS_UNCONSCIOUS(_patient)) exitWith {};
     [QGVAR(handleAirwayObstruction_Vomit), [_patient], _patient] call CBA_fnc_targetEvent;
 }, [_patient], 60] call CBA_fnc_waitAndExecute;
 
-if (false) then { // TODO check if bleeding from head
+if ([_patient, "head"] call EFUNC(damage,isBodyPartBleeding)) then {
     [QGVAR(handleAirwayObstruction_Blood), [_patient], _patient] call CBA_fnc_targetEvent;
 };

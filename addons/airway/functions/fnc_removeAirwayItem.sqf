@@ -23,7 +23,7 @@ private _airway = _patient getVariable [QGVAR(AirwayItem), ""];
 _patient setVariable [QGVAR(AirwayItem), "", true];
 [_patient] call FUNC(updateAirwayState);
 
-if (false) then { // TODO reusable
+if (GVAR(airwayAdjunctReusable)) then {
     if (_airway == "OPA") then {
         [_medic, "AMS_GuedelTube_Used"] call ACEFUNC(common,addToInventory);
     } else {

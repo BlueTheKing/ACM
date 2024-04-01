@@ -22,6 +22,6 @@ private _obstructionState = (_patient getVariable [QGVAR(AirwayObstructionVomit_
 
 private _return = linearConversion [1, 8, _obstructionState, 2, 10, false];
 
-if (_type == 1) exitWith {_return max 8};
+if (_type == 1) exitWith {_return min 8};
 
 _return;

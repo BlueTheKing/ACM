@@ -26,14 +26,14 @@ private _obstructionBloodState = _patient getVariable [QGVAR(AirwayObstructionBl
 if (_obstructionVomitState > 0 || _obstructionBloodState > 0) then {
     private _tooSevere = false;
 
-    if (_obstructionVomitState == 1) then {
+    if (_obstructionVomitState < 2) then {
         _patient setVariable [QGVAR(AirwayObstructionVomit_State), 0];
         _patient setVariable [QGVAR(AirwayObstructionVomit_GracePeriod), CBA_missionTime, true];
     } else {
         _tooSevere = true;
     };
 
-    if (_obstructionBloodState == 1) then {
+    if (_obstructionBloodState < 2) then {
         _patient setVariable [QGVAR(AirwayObstructionBlood_State), 0];
     } else {
         _tooSevere = true;
