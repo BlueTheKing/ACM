@@ -25,7 +25,7 @@ _patient setVariable [QGVAR(AED_Charged), false, true];
 _patient setVariable [QGVAR(AED_InUse), false, true];
 _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
 
-_patient setVariable [QGVAR(AED_LastShock), CBA_missionTime];
+_patient setVariable [QGVAR(AED_LastShock), CBA_missionTime, true];
 
 private _totalShocks = _patient getVariable [QGVAR(AED_ShockTotal), 0];
 _patient setVariable [QGVAR(AED_ShockTotal), (_totalShocks + 1), true];

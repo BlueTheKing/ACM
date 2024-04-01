@@ -27,6 +27,7 @@ private _PFH = [{
     private _medic = _patient getVariable [QACEGVAR(medical,CPR_provider), objNull];
 
     if !(alive _medic) exitWith {
+        _patient setVariable [QGVAR(CPR_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 

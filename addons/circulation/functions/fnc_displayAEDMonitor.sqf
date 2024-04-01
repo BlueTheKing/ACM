@@ -98,8 +98,10 @@ private _PFH = [{
         _patient setVariable [QGVAR(AED_PODisplay), _monitorArray_PORefresh, true];
 
         _patient setVariable [QGVAR(AED_UpdateStep), 0, true];
-        _patient setVariable [QGVAR(AEDMonitorDisplay_PFH), -1];
         _patient setVariable [QGVAR(AED_Offset), 0, true];
+        
+        _patient setVariable [QGVAR(AEDMonitorDisplay_PFH), -1];
+        
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 

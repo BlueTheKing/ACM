@@ -23,8 +23,6 @@ playSound3D [QPATHTO_R(sound\aed_charging.wav), _patient, false, getPosASL _pati
 
 _patient setVariable [QGVAR(AED_Charged), false, true];
 
-GVAR(loopTime) = 0;
-
 private _fnc_chargedPFH = {
     params ["_patient"];
 
@@ -36,24 +34,21 @@ private _fnc_chargedPFH = {
             [_idPFH] call CBA_fnc_removePerFrameHandler;
         };
 
-        if ((GVAR(loopTime) + 0.53) > CBA_missionTime) exitWith {};
-
-        GVAR(loopTime) = CBA_missionTime;
-        playSound3D [QPATHTO_R(sound\aed_chargedalarm.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 0.528s
-    }, 0, [_patient]] call CBA_fnc_addPerFrameHandler;
+        playSound3D [QPATHTO_R(sound\aed_alarm.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 0.528s
+    }, 0.528, [_patient]] call CBA_fnc_addPerFrameHandler;
 
     [{
         params ["_patient"];
 
         !(_patient getVariable [QGVAR(AED_Charged), false]);
     }, {}, [_patient], 20, 
-    {
+    { // Cancel shock if not administered within 20s
         params ["_patient"];
 
         _patient setVariable [QGVAR(AED_Charged), false, true];
         playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 0.624s
 
-    }] call CBA_fnc_waitUntilAndExecute; // Cancel shock if not administered within 20s
+    }] call CBA_fnc_waitUntilAndExecute;
 };
 
 [{

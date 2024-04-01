@@ -52,6 +52,7 @@ private _PFH = [{
     private _currentRhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 
     if (!(IN_CRDC_ARRST(_patient)) || _currentRhythm in [1,5]) exitWith {
+        _patient setVariable [QGVAR(CardiacArrest_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
