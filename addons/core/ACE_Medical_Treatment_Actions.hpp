@@ -106,6 +106,11 @@ class ACEGVAR(medical_treatment,actions) {
         callbackProgress = QUOTE([ARR_4(_args,_elapsedTime,_totalTime,2)] call FUNC(surgicalKitProgress));
     };*/
 
+    class ApplyTourniquet;
+    class RemoveTourniquet: ApplyTourniquet {
+        treatmentTime = QGVAR(treatmentTimeTakeOffTourniquet);
+    };
+
     // Medication
 
     class Paracetamol: Morphine {
@@ -137,7 +142,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Use Naloxone Spray";
         displayNameProgress = "Using Naloxone Spray...";
         items[] = {"AMS_Spray_Naloxone"};
-        condition = "";
+        condition = "true";
         //sounds[] = {};
     };
     

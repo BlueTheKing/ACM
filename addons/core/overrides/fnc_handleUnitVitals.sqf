@@ -116,8 +116,6 @@ private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACE
 [_unit, _painSupressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
 [_unit, _peripheralResistanceAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePeripheralResistance);
 
-//_unit setVariable [QEGVAR(circulation,BloodPressureAdjust), ]; // TODO move this?
-
 private _bloodPressure = [_unit] call ACEFUNC(medical_status,getBloodPressure);
 _unit setVariable [VAR_BLOOD_PRESS, _bloodPressure, _syncValues];
 

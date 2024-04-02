@@ -27,8 +27,7 @@ params ["_unit"];
 
 private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
 private _resistance = _unit getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES];
-//private _bloodPressureAdjust = _unit getVariable [QEGVAR(circulation,BloodPressureAdjust), 1]; // TODO remove
-private _bloodPressure = _cardiacOutput * _resistance; //* _bloodPressureAdjust;
+private _bloodPressure = _cardiacOutput * _resistance;
 
 private _tensionEffect = 0;
 
