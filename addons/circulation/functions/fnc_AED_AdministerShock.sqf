@@ -44,9 +44,9 @@ if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [1,5]) exitWit
     _patient setVariable [QGVAR(CardiacArrest_RhythmState), 1, true];
 };
 
-private _amiodaroneVial = ([_patient, "Amiodarone_Vial", false] call ACEFUNC(medical_status,getMedicationCount) * 2) min 2; // TODO move to function
+private _amiodarone = ([_patient] call FUNC(getCardiacMedicationEffects)) get "amiodarone";
 
-if (random 100 < (2 + (2 * _amiodaroneVial))) exitWith { // ROSC
+if (random 100 < (2 + (2 * _amiodarone))) exitWith { // ROSC
     [QEGVAR(medical,CPRSucceeded), _patient] call CBA_fnc_localEvent;
     _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0];
 };

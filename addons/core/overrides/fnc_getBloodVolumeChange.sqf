@@ -19,8 +19,6 @@
 
 params ["_unit", "_deltaT", "_syncValues"];
 
-//private _effectiveBloodVolume = GET_BLOOD_VOLUME(_unit); // TODO unused?
-
 private _bloodVolume = _unit getVariable [QEGVAR(circulation,Blood_Volume), 6];
 private _plasmaVolume = _unit getVariable [QEGVAR(circulation,Plasma_Volume), 0];
 private _salineVolume = _unit getVariable [QEGVAR(circulation,Saline_Volume), 0];

@@ -17,7 +17,7 @@
 
 params ["_patient"];
 
-if (_patient getVariable [QGVAR(Coagulation_PFH), -1] != -1 || !(IS_BLEEDING(_patient))) exitWith {}; // TODO add setting
+if (_patient getVariable [QGVAR(Coagulation_PFH), -1] != -1 || !(IS_BLEEDING(_patient)) || (GVAR(coagulationClottingAffectAI) && !(isPlayer _patient))) exitWith {};
 
 _patient setVariable [QGVAR(Coagulation_InitTime), CBA_missionTime];
 

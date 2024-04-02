@@ -19,6 +19,26 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// Coagulation
+
+[
+    QGVAR(coagulationClotting),
+    "CHECKBOX",
+    "Enable Clotting",
+    [AMS_SETTINGS_CATEGORY, "Coagulation"],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(coagulationClottingAffectAI),
+    "CHECKBOX",
+    "Clotting for AI",
+    [AMS_SETTINGS_CATEGORY, "Coagulation"],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
 // Cardiac Rhythms
 
 [

@@ -139,13 +139,6 @@ if (_target getVariable [QEGVAR(breathing,ChestSeal_State), false]) then {
     _ctrlChestSeal ctrlShow false;
 };
 
-
-/*if (_target getVariable [QEGVAR(breathing,deepPenetratingInjury), false] || (_target getVariable [QEGVAR(breathing,pneumothorax), 0] > 0)) then { // TODO more visual stuff
-    _ctrlChestInjury ctrlShow true;
-} else {
-    _ctrlChestInjury ctrlShow false;
-};*/
-
 if (HAS_PULSEOX(_target,0)) then {
     _ctrlPulseOximeterLeft ctrlShow true;
 } else {

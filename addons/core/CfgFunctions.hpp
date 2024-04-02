@@ -61,6 +61,9 @@ class CfgFunctions {
             class conditionCardiacArrestTimer { // Disable cardiac arrest timer
                 file = QPATHTOF(overrides\fnc_conditionCardiacArrestTimer.sqf);
             };
+            class handleStateUnconscious { // KnockOut state
+                file = QPATHTOF(overrides\fnc_handleStateUnconscious.sqf);
+            };
             /*class leftStateCardiacArrest {
                 file = QPATHTOF(overrides\fnc_leftStateCardiacArrest.sqf);
             };*/

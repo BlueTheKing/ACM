@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [player, "head", 60, 0.2] call AMS_damage_fnc_handleWoundReopening; // TODO use this
+ * [player, "head", 60, 0.2] call AMS_damage_fnc_handleWoundReopening;
  *
  * Public: No
  */
@@ -28,7 +28,7 @@ private _fnc_getWoundIndex = {
     private _woundsToCheck = createHashMap;
 
     switch (_type) do {
-        //case 1: {_woundsToCheck = GET_CLOTTED_WOUNDS(_unit);};
+        case 1: {_woundsToCheck = GET_CLOTTED_WOUNDS(_unit);};
         case 2: {_woundsToCheck = GET_WRAPPED_WOUNDS(_unit);};
         case 3: {_woundsToCheck = GET_STITCHED_WOUNDS(_unit);};
         default {_woundsToCheck = GET_BANDAGED_WOUNDS(_unit);};
@@ -60,7 +60,7 @@ private _fnc_moveWound = {
     _woundsHashMap set [_bodyPart, _woundsOnPart];
 
     switch (_type) do {
-        //case 1: {_unit setVariable [VAR_CLOTTED_WOUNDS, _woundsHashMap, true];};
+        case 1: {_unit setVariable [VAR_CLOTTED_WOUNDS, _woundsHashMap, true];};
         case 2: {_unit setVariable [VAR_WRAPPED_WOUNDS, _woundsHashMap, true];};
         case 3: {_unit setVariable [VAR_STITCHED_WOUNDS, _woundsHashMap, true];};
         default {_unit setVariable [VAR_BANDAGED_WOUNDS, _woundsHashMap, true];};

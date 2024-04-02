@@ -17,6 +17,6 @@
 
 params ["_patient"];
 
-if (random 100 < 50) then { // TODO settings
+if (random 100 < GVAR(grazingInjuryChance)) then {
 	_patient setVariable [QGVAR(FatalInjury_State), true];
 };

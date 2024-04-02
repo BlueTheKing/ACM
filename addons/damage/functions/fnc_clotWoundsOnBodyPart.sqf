@@ -158,12 +158,12 @@ if (_clotSuccess) then {
 
     _patient setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
 
-    private _reopenChance = 0.7; // TODO add TXA
-    //private _txaCount = [_patient, "TXA"] call ACEFUNC(medical_status,getMedicationCount);
+    private _reopenChance = 0.7;
+    private _txaEffect = [_patient, "TXA_Vial", false] call ACEFUNC(medical_status,getMedicationCount);
 
-    /*if (_txaCount > 0 || !_unstable) then {
+    if (_txaEffect > 0.15 || !_unstable) then {
         _reopenChance = 0.4;
-    };*/
+    };
 
     for "_i" from 1 to _amountClotted do {
         if ((random 1) < _reopenChance) then {

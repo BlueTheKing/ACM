@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle Naloxone effects
+ * Handle Naloxone effects (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>

@@ -139,4 +139,4 @@ if (ACEGVAR(medical,limping) == 2 && {_patient getVariable [QACEGVAR(medical,isL
     [QACEGVAR(medical_engine,updateDamageEffects), _patient, _patient] call CBA_fnc_targetEvent;
 };
 
-[_patient, "activity", "%1 wrapped %2", [[_medic] call ACEFUNC(common,getName), _output]] call ACEFUNC(medical_treatment,addToLog); // TODO make local and usual
+[_patient, "activity", "%1 wrapped %2", [[_medic] call ACEFUNC(common,getName), _output]] call ACEFUNC(medical_treatment,addToLog);

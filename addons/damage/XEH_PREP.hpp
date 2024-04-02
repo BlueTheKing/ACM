@@ -7,6 +7,7 @@ PREP(getBruiseWrapTime);
 PREP(getStitchTime);
 PREP(getWrapTime);
 PREP(handleCoagulationPFH);
+PREP(handleWoundReopening);
 PREP(isBodyPartBleeding);
 PREP(surgicalKitProgress);
 PREP(wrapBodyPart);

@@ -14,6 +14,7 @@ PREP(displayAEDMonitor_generateEKG);
 PREP(displayAEDMonitor_generatePO);
 PREP(displayAEDMonitor_updateStep);
 PREP(displayAEDMonitor);
+PREP(getCardiacMedicationEffects);
 PREP(getEKGHeartRate);
 PREP(getIVFlowRate);
 PREP(handleAED);

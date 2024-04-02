@@ -11,26 +11,24 @@ PREP_RECOMPILE_END;
 //ACEGVAR(medical,STATE_MACHINE) = (configFile >> "AMS_StateMachine") call CBA_statemachine_fnc_createFromConfig; // TODO statemachine fuckery
 
 [
-    QGVAR(treatmentTimeTakeOffTourniquet),
+    QGVAR(grazingInjuryChance),
     "SLIDER",
-    "Take Off Tourniquet Time",
+    ["Chance to ignore fatal injury", "Chance to ignore fatal injury and try to inflict reversible cardiac arrest instead of regular cardiac arrest, if vitals are too stable knock out unit for a random time (15-35s)"],
     [AMS_SETTINGS_CATEGORY, ""],
-    [1, 30, 4, 1],
-    true
-] call CBA_fnc_addSetting;
-
-// Coagulation
-
-[
-    QGVAR(coagulationAffectAI),
-    "CHECKBOX",
-    "Coagulation for AI",
-    [AMS_SETTINGS_CATEGORY, "Coagulation"],
-    [true],
+    [0, 100, 0, 1],
     true
 ] call CBA_fnc_addSetting;
 
 // Items
+
+[
+    QGVAR(treatmentTimeTakeOffTourniquet),
+    "SLIDER",
+    "Take Off Tourniquet Time",
+    [AMS_SETTINGS_CATEGORY, "Items"],
+    [1, 30, 4, 1],
+    true
+] call CBA_fnc_addSetting;
 
 /*[
     QGVAR(treatmentTimeWrap),

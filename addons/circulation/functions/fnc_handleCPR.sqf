@@ -54,23 +54,20 @@ private _PFH = [{
     private _rhythmEffect = 1;
     private _medicationEffect = 1;
 
-    private _morphine = ([_patient, "Morphine", false] call ACEFUNC(medical_status,getMedicationCount) * 0.3) min 0.5;
-    private _morphineVial = ([_patient, "Morphine_Vial", false] call ACEFUNC(medical_status,getMedicationCount) * 0.6) min 0.8; // TODO simplify this, get everything with single function ie less forEaching to get multiple things
-    private _epinephrine = ([_patient, "Epinephrine", false] call ACEFUNC(medical_status,getMedicationCount) * 1.3) min 1.6;
-    private _epinephrineVial = ([_patient, "Epinephrine_Vial", false] call ACEFUNC(medical_status,getMedicationCount) * 1.5) min 1.8;
-    private _amiodaroneVial = ([_patient, "Amiodarone_Vial", false] call ACEFUNC(medical_status,getMedicationCount) * 2) min 2;
+    private _cardiacMedication = [_patient] call FUNC(getCardiacMedicationEffects);
 
-    _epinephrine = _epinephrine max _epinephrineVial;
-    _morphine = _morphine max _morphineVial;
+    private _epinephrine = _cardiacMedication get "epinephrine";
+    private _morphine = _cardiacMedication get "morphine";
+    private _amiodarone = _cardiacMedication get "amiodarone";
     
     switch (_rhythmState) do {
         case 3: {
             _rhythmEffect = _shockEffect;
-            _medicationEffect = (_epinephrine + _amiodaroneVial min 2.2) - _morphine;
+            _medicationEffect = (_epinephrine + _amiodarone min 2.2) - _morphine;
         };
         case 2: {
             _rhythmEffect = 0.9 * _shockEffect;
-            _medicationEffect = (_epinephrine + _amiodaroneVial min 2.2) - _morphine;
+            _medicationEffect = (_epinephrine + _amiodarone min 2.2) - _morphine;
         };
         case 1: {
             _rhythmEffect = 0.8

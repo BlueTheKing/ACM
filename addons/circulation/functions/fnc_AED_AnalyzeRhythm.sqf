@@ -6,7 +6,6 @@
  * Arguments:
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
- * 2: Is medic in monitor view <BOOL>
  *
  * Return Value:
  * None
@@ -17,7 +16,7 @@
  * Public: No
  */
 
-params ["_medic", "_patient", ["_inMonitor", false]];
+params ["_medic", "_patient"];
 
 _patient setVariable [QGVAR(AED_AnalyzeRhythm_State), false, true];
 
@@ -27,10 +26,6 @@ _medic setVariable [QGVAR(AED_Medic_InUse), true, true];
 private _timeToAnalyze = (4 + (random 4)) + 4 * (1 - (GET_BLOOD_VOLUME(_patient) / 7));
 
 playSound3D [QPATHTO_R(sound\aed_analyzingnow.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 3.074s
-
-if (_inMonitor) then {
-    //playSoundUI [QPATHTO_R(sound\aed_analyzingnow.wav), 0.5, 1, true]; // TODO move to event
-};
 
 [{
     params ["_patient", "_medic"];

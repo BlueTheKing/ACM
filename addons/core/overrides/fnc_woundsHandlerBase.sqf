@@ -187,6 +187,8 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
             _existingWounds pushBack _injury;
         };
         _createdWounds = true;
+
+        //[_unit, _bodyPart, _classComplex, _woundDamage] call EFUNC(damage,handleWoundReopening); // TODO test this
     };
 
     // selection-specific damage only hits the first part
@@ -215,7 +217,7 @@ if (_createdWounds) then {
 
     TRACE_4("exit",_unit,_painLevel,GET_PAIN(_unit),GET_OPEN_WOUNDS(_unit));
 
-    if (true) then { // TODO settings
+    if (GVAR(coagulationClotting) && (GVAR(coagulationClottingAffectAI) || (!(GVAR(coagulationClottingAffectAI)) && isPlayer _unit))) then {
         [{
             params ["_unit"];
 
