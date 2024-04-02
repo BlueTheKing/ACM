@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Wrap splint
+ * Wrap splint (LOCAL)
  *
  * Arguments:
  * 0: Medic <OBJECT>

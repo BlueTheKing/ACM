@@ -20,7 +20,7 @@
 params ["_patient", "_bodyPart", ["_type", 0]];
 
 switch (_type) do {
-    case 1: {count (GET_WRAPPED_WOUNDS(_patient) getOrDefault [_bodyPart, []]) * 2;};
+    case 1: {count (GET_WRAPPED_WOUNDS(_patient) getOrDefault [_bodyPart, []]) * EGVAR(core,treatmentTimeWrappedStitch);}; // TODO move to damage?
     case 2: {count (GET_CLOTTED_WOUNDS(_patient) getOrDefault [_bodyPart, []]) * ACEGVAR(medical_treatment,woundStitchTime);};
     default {count (GET_BANDAGED_WOUNDS(_patient) getOrDefault [_bodyPart, []]) * ACEGVAR(medical_treatment,woundStitchTime);};
 };

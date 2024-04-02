@@ -69,7 +69,7 @@ class ACEGVAR(medical_treatment,actions) {
         items[] = {"AMS_SAMSplint"};
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
         condition = QACEFUNC(medical_treatment,canSplint);
-        treatmentTime = 3;
+        treatmentTime = QGVAR(treatmentTimeSAMSplint);
         callbackSuccess = QEFUNC(disability,splint);
     };
     class RemoveSAMSplint: Splint {

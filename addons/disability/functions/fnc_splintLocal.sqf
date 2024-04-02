@@ -33,11 +33,12 @@ if (_classname isEqualTo "ApplySAMSplint" && ACEGVAR(medical,fractures) > 1) the
     _patient setVariable [VAR_SPLINTS, _splints, true];
 
     // Splint falls off after a while
+    private _fallOffTime = EGVAR(core,splintFallOffTime);
     [{
         params ["_patient", "_bodyPart"];
 
         GET_SPLINTS(_patient) select (ALL_BODY_PARTS find toLower _bodyPart) != 1;
-    }, {}, [_patient, _bodyPart], (random [60, 90, 120]), {
+    }, {}, [_patient, _bodyPart], (random [_fallOffTime, (_fallOffTime + 30), (_fallOffTime + 60)]), {
         params ["_patient", "_bodyPart"];
         
         [QGVAR(removeSplintLocal), [objNull, _patient, _bodyPart], _patient] call CBA_fnc_targetEvent;

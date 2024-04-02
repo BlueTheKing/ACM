@@ -6,7 +6,7 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-#define CBA_SETTINGS_CATEGORY "AMS: GUI"
+#define AMS_SETTINGS_CATEGORY "AMS: GUI"
     
 ADDON = true;
 
@@ -15,40 +15,40 @@ ADDON = true;
     QGVAR(showInactiveStatuses),
     "CHECKBOX",
     ["Show inactive vitals statuses", "Show vitals status in overview tab when inactive (display ""none"")"],
-    [CBA_SETTINGS_CATEGORY, ""],
+    [AMS_SETTINGS_CATEGORY, ""],
     [false],
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 // Display bleed rate (slow/moderate/severe/massive)
 [
     QGVAR(showBleedRate),
     "CHECKBOX",
     "Show bleed rate",
-    [CBA_SETTINGS_CATEGORY, ""],
+    [AMS_SETTINGS_CATEGORY, ""],
     [false],
     true
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 // Overlay selected body part in medical menu
 [
     QGVAR(overlayBodyPart),
     "CHECKBOX",
     "Show overlay for selected body part",
-    [CBA_SETTINGS_CATEGORY, ""],
+    [AMS_SETTINGS_CATEGORY, ""],
     [false],
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 // Label left and right in medical menu
 [
     QGVAR(showPatientSideLabels),
     "CHECKBOX",
     "Show patient side labels (L/R)",
-    [CBA_SETTINGS_CATEGORY, ""],
+    [AMS_SETTINGS_CATEGORY, ""],
     [false],
     false
-] call CBA_Settings_fnc_init;
+] call CBA_fnc_addSetting;
 
 // OVERRIDE ACE
 
