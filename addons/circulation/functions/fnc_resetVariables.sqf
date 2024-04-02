@@ -23,3 +23,4 @@ _patient setVariable [QGVAR(Plasma_Volume), 0, true];
 _patient setVariable [QGVAR(Saline_Volume), 0, true];
 
 [_patient] call FUNC(updateCirculationState);
+[_patient] call FUNC(generateBloodType);

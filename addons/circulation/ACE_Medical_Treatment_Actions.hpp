@@ -1,3 +1,9 @@
+#define AMS_BLOODBAG_ENTRY(type,typeS,amount,item) \
+    class TRIPLE(BloodBag,type,amount): BloodBag_O_1000 { \
+        displayName = QUOTE(Transfuse Blood typeS (amountml)); \
+        items[] = {QUOTE(TRIPLES(AMS_BloodBag,type,amount))}; \
+    }
+
 class ACEGVAR(medical_treatment,actions) {
     class CheckPulse;
 
@@ -197,4 +203,36 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
     };*/
+
+    class BloodBag_O_1000: BloodIV {
+        displayName = "Transfuse Blood O+ (1000ml)";
+        displayNameProgress = "Transfusing Blood...";
+        items[] = {"AMS_BloodBag_O_1000"};
+        callbackSuccess = QFUNC(transfuseBlood);
+    };
+    AMS_BLOODBAG_ENTRY(ON,'O-',1000);
+    AMS_BLOODBAG_ENTRY(A,'A+',1000);
+    AMS_BLOODBAG_ENTRY(AN,'A-',1000);
+    AMS_BLOODBAG_ENTRY(B,'B+',1000);
+    AMS_BLOODBAG_ENTRY(BN,'B-',1000);
+    AMS_BLOODBAG_ENTRY(AB,'AB+',1000);
+    AMS_BLOODBAG_ENTRY(ABN,'AB-',1000);
+
+    AMS_BLOODBAG_ENTRY(O,'O+',500);
+    AMS_BLOODBAG_ENTRY(ON,'O-',500);
+    AMS_BLOODBAG_ENTRY(A,'A+',500);
+    AMS_BLOODBAG_ENTRY(AN,'A-',500);
+    AMS_BLOODBAG_ENTRY(B,'B+',500);
+    AMS_BLOODBAG_ENTRY(BN,'B-',500);
+    AMS_BLOODBAG_ENTRY(AB,'AB+',500);
+    AMS_BLOODBAG_ENTRY(ABN,'AB-',500);
+
+    AMS_BLOODBAG_ENTRY(O,'O+',250);
+    AMS_BLOODBAG_ENTRY(ON,'O-',250);
+    AMS_BLOODBAG_ENTRY(A,'A+',250);
+    AMS_BLOODBAG_ENTRY(AN,'A-',250);
+    AMS_BLOODBAG_ENTRY(B,'B+',250);
+    AMS_BLOODBAG_ENTRY(BN,'B-',250);
+    AMS_BLOODBAG_ENTRY(AB,'AB+',250);
+    AMS_BLOODBAG_ENTRY(ABN,'AB-',250);
 };

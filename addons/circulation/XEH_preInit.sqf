@@ -164,4 +164,34 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// Blood Types
+
+{
+    _x params ["_type", "_string", "_default"];
+
+    [
+        format ["AMS_Circulation_BloodTypeRatio_%1", _type],
+        "SLIDER",
+        [format ["%1 Ratio", _string], format ["Ratio out of 100 that is taken by the %1 blood type", _string]],
+        [AMS_SETTINGS_CATEGORY, "Blood Types"],
+        [1, 100, _default, 0],
+        true,
+        {},
+        true
+    ] call CBA_fnc_addSetting;
+} forEach [["O", "O+", 41],["A", "A+", 30],["B", "B+", 20],["ON", "O-", 7],["AB", "AB+", 5],["AN", "A-", 4],["BN", "B-", 2],["ABN", "AB-", 1]];
+
+[
+    QGVAR(BloodType_Ratio_O),
+    "SLIDER",
+    ["O+ Ratio", "Ratio out of 100 that is taken by the O+ blood type"],
+    [AMS_SETTINGS_CATEGORY, "Blood Types"],
+    [0, 100, 41, 0],
+    true
+] call CBA_fnc_addSetting;
+
+if (isServer) then {
+    call FUNC(generateBloodTypeList);
+};
+
 ADDON = true;

@@ -158,6 +158,15 @@
 // Circulation
 #define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),[0,0,0,0,0,0]])
 
+#define AMS_BLOODTYPE_O 0
+#define AMS_BLOODTYPE_ON 1
+#define AMS_BLOODTYPE_A 2
+#define AMS_BLOODTYPE_AN 3
+#define AMS_BLOODTYPE_B 4
+#define AMS_BLOODTYPE_BN 5
+#define AMS_BLOODTYPE_AB 6
+#define AMS_BLOODTYPE_ABN 7
+
 // Damage
 #define VAR_WRAPPED_WOUNDS             QEGVAR(damage,WrappedWounds)
 #define GET_WRAPPED_WOUNDS(unit)       (unit getVariable [VAR_WRAPPED_WOUNDS, createHashMap])

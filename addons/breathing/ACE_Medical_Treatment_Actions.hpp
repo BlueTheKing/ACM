@@ -45,7 +45,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 1;
         items[] = {"AMS_ChestSeal"};
         consumeItem = 1;
-        condition = QUOTE(GVAR(pneumothoraxEnabled) && !(_patient getVariable [ARR_2(QQGVAR(ChestSeal_State), false)]) && _patient getVariable [ARR_2(QQGVAR(ChestInjury_State), false)]);
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && !(_patient getVariable [ARR_2(QQGVAR(ChestSeal_State),false)]) && _patient getVariable [ARR_2(QQGVAR(ChestInjury_State),false)]);
         callbackSuccess = QFUNC(applyChestSeal);
     };
 

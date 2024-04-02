@@ -98,4 +98,6 @@ class CfgWeapons {
             mass = 0.2;
         };
     };
+
+    #include "CfgWeapons_Blood.hpp"
 };
