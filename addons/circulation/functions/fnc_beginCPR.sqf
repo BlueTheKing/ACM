@@ -83,10 +83,6 @@ if (_notInVehicle) then {
 
             [_patient, "activity", "%1 stopped CPR (%2)", [[_medic, false, true] call ACEFUNC(common,getName), _time]] call ACEFUNC(medical_treatment,addToLog);
 
-            /*if (_CPRStartTime <= CBA_missionTime - 18) then { // TODO move this
-                _patient setVariable [QGVAR(CPR_OxygenationPeriod), CBA_missionTime];
-            };*/
-
             _patient setVariable [QGVAR(CPR_StoppedTotal), _CPRTime, true];
             _patient setVariable [QGVAR(CPR_StoppedTime), CBA_missionTime, true];
 

@@ -40,10 +40,12 @@ private _PFH = [{
     if !(_bloodVolume < BLOOD_VOLUME_CLASS_4_HEMORRHAGE) exitWith {};
 
     private _medicSkill = switch (true) do {
-        case ([_medic, 2] call ACEFUNC(medical_treatment,isMedic)): {70}; // Doctor
-        case ([_medic, 1] call ACEFUNC(medical_treatment,isMedic)): {50}; // Medic
-        default {30}; // Other
+        case ([_medic, 2] call ACEFUNC(medical_treatment,isMedic)): {65}; // Doctor
+        case ([_medic, 1] call ACEFUNC(medical_treatment,isMedic)): {45}; // Medic
+        default {25}; // Other
     };
+
+    _medicSkill = _medicSkill * GVAR(CPREffectiveness);
 
     private _consistencyEffect = ((CBA_missionTime - _CPRStartTime) / 120) min 1.4;
     private _bloodlossEffect = linearConversion [BLOOD_VOLUME_CLASS_4_HEMORRHAGE, BLOOD_VOLUME_CLASS_2_HEMORRHAGE, _bloodVolume, 0, 1, true];

@@ -7,7 +7,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         category = "examine";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
-        medicRequired = 0;
+        medicRequired = QGVAR(allowAED);
         treatmentTime = 0.01;
         allowedSelections[] = {"All"};
         allowSelfTreatment = 0;
@@ -21,11 +21,11 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
-        medicRequired = 0;
+        medicRequired = QGVAR(allowAED);
         treatmentTime = 4;// TODO change
         allowedSelections[] = {"Body"};
         allowSelfTreatment = 0;
-        items[] = {};
+        items[] = {"AMS_AED"};
         consumeItem = 0;
         condition = QUOTE(!([ARR_3(_patient,_bodyPart,1)] call FUNC(hasAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call FUNC(setAED));
@@ -34,7 +34,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Remove AED Pads";
         displayNameProgress = "Removing AED Pads...";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
-        treatmentTime = 2;// TODO change
+        treatmentTime = 3;
         allowSelfTreatment = 1;
         condition = QUOTE([ARR_3(_patient,_bodyPart,1)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,0,false)] call FUNC(setAED));
@@ -53,7 +53,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Disconnect AED Pulse Oximeter";
         displayNameProgress = "Disconnecting AED Pulse Oximeter...";
         category = "examine";
-        treatmentTime = 2;// TODO change
+        treatmentTime = 3;
         allowedSelections[] = {"LeftArm","RightArm"};
         condition = QUOTE([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED) && (_patient getVariable [ARR_2(QQGVAR(AEDMonitor_Placement_PulseOximeter),-1)]) != -1);
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,1,false)] call FUNC(setAED));
@@ -89,10 +89,10 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
-        medicRequired = 0;
-        treatmentTime = 6;
+        medicRequired = QGVAR(allowIV);
+        treatmentTime = QGVAR(treatmentTimeIV_16);
         allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
-        allowSelfTreatment = 0;
+        allowSelfTreatment = QGVAR(selfIV);
         items[] = {"AMS_IV_16g"};
         consumeItem = 1;
         condition = QUOTE(!([ARR_2(_patient,_bodyPart)] call FUNC(hasIV)));
@@ -102,10 +102,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Insert 14g IV";
         displayNameProgress = "Inserting 14g IV...";
         icon = "";
-        treatmentLocations = TREATMENT_LOCATIONS_ALL;
-        medicRequired = 0;
-        treatmentTime = 8;
-        allowSelfTreatment = 0;
+        treatmentTime = QGVAR(treatmentTimeIV_14);
         items[] = {"AMS_IV_14g"};
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,2,true)] call FUNC(setIV));
     };
@@ -113,12 +110,10 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Insert FAST1 IO";
         displayNameProgress = "Inserting FAST1 IO...";
         icon = "";
-        category = "advanced";
-        treatmentLocations = TREATMENT_LOCATIONS_ALL;
-        medicRequired = 0;
-        treatmentTime = 4;
+        medicRequired = QGVAR(allowIO);
+        treatmentTime = QGVAR(treatmentTimeIO_FAST1);
         allowedSelections[] = {"Body"};
-        allowSelfTreatment = 0;
+        allowSelfTreatment = QGVAR(selfIO);
         items[] = {"AMS_IO_FAST1"};
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,3,true)] call FUNC(setIV));
     };

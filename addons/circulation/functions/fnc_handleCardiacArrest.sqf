@@ -63,7 +63,7 @@ private _PFH = [{
 
     private _cardiacArrestTime = (_patient getVariable [QGVAR(CardiacArrest_Time), -1]) - CBA_missionTime;
 
-    if (((random 100) < 40) && {_cardiacArrestTime > (30 + random(30))}) then { // TODO settings
+    if (((random 100) < (40 * GVAR(cardiacArrestDeteriorationRate))) && {_cardiacArrestTime > (30 + random(30))}) then {
         private _targetRhythm = (_currentRhythm - 1) max 1;
 
         _patient setVariable [QGVAR(CardiacArrest_RhythmState), _targetRhythm, true];

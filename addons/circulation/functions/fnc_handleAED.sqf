@@ -116,7 +116,7 @@ _patient setVariable [QGVAR(AED_PFH), _PFH];
 [{
     params ["_patient", "_medic"];
 
-    !((objectParent _medic) isEqualTo (objectParent _patient)) || ((_patient distance _medic) > 5) // TODO add setting
+    !((objectParent _medic) isEqualTo (objectParent _patient)) || ((_patient distance _medic) > GVAR(AEDDistanceLimit));
 }, {
     params ["_patient", "_medic"];
     
