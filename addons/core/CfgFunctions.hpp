@@ -39,6 +39,12 @@ class CfgFunctions {
             class treatment { // Add fixes and patient animations
                 file = QPATHTOF(overrides\fnc_treatment.sqf);
             };
+            class ivBagLocal { // Circulation
+                file = QPATHTOF(overrides\fnc_ivBagLocal.sqf);
+            };
+            class ivBag { // Circulation
+                file = QPATHTOF(overrides\fnc_ivBag.sqf);
+            };
         };
     };
     class overwrite_medical_damage {

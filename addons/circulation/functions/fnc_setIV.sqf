@@ -25,8 +25,8 @@ private _hintState = "inserted";
 private _hintType = "16g IV";
 
 switch (_type) do {
-    case 2: {_hintType = "14g IV";};
-    case 3: {_hintType = "IO";};
+    case AMS_IV_14G: {_hintType = "14g IV";};
+    case AMS_IO_FAST1: {_hintType = "IO";};
     default {};
 };
 

@@ -156,6 +156,10 @@
 #define HAS_PULSEOX(unit,index) (GET_PULSEOX(unit) select index)
 
 // Circulation
+#define AMS_IV_16G 1
+#define AMS_IV_14G 2
+#define AMS_IO_FAST1 3
+
 #define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),[0,0,0,0,0,0]])
 
 #define AMS_BLOODTYPE_O 0
