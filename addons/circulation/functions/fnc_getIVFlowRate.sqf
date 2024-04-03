@@ -20,8 +20,8 @@ params ["_patient", "_partIndex"];
 
 private _type = GET_IV(_patient) select _partIndex;
 
-switch (_type) do {
-    case 2: {IV_CHANGE_PER_SECOND * 1.5};
-    case 3: {IV_CHANGE_PER_SECOND * 0.7};
+switch (_type) do { // TODO pressure bag
+    case AMS_IV_14G: {IV_CHANGE_PER_SECOND * 1.5};
+    case AMS_IO_FAST1: {IV_CHANGE_PER_SECOND * 0.65};
     default {IV_CHANGE_PER_SECOND};
 };
