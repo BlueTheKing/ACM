@@ -1,10 +1,10 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * 
+ * List fluid bags on selected body part
  *
  * Arguments:
- * 0: Unit <OBJECT>
+ * 0: Patient <OBJECT>
  * 1: Bodypart Index <NUMBER>
  *
  * Return Value:
@@ -23,7 +23,7 @@ private _plasmaVolume = 0;
 private _salineVolume = 0;
 
 {
-    _x params ["_volumeRemaining", "_type", "_bodyPart"];
+    _x params ["_bodyPart", "_type", "_volumeRemaining"];
 
     if (_bodyPart == _partIndex) then {
 

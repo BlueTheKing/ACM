@@ -6,7 +6,7 @@
  * Arguments:
  * 0: The Unit <OBJECT>
  * 1: Time since last update <NUMBER>
- * 2: Global Sync Values (bloodbags) <BOOL>
+ * 2: Global Sync Values (fluid bags) <BOOL>
  *
  * Return Value:
  * Blood volume <NUMBER>
@@ -65,7 +65,7 @@ if (_plateletCount > 0) then {
 if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
     private _flowMultiplier = 1;
 
-    private _activeBagTypes = _unit getVariable [QEGVAR(circulation,FluidBags_ActiveTypes), [1,1,1,1,1,1]];
+    private _activeBagTypes = _unit getVariable [QEGVAR(circulation,ActiveFluidBags), 1];
 
     if (IN_CRDC_ARRST(_unit)) then {
         _flowMultiplier = 0.02;
@@ -74,14 +74,13 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
         };
     };
 
-    private _bloodBags = _unit getVariable [QACEGVAR(medical,ivBags), []];
+    private _fluidBags = _unit getVariable [QACEGVAR(medical,ivBags), []];
     private _tourniquets = GET_TOURNIQUETS(_unit);
 
-    _bloodBags = _bloodBags apply {
-        _x params ["_bagVolumeRemaining", "_type", "_bodyPart"];
+    _fluidBags = _fluidBags apply {
+        _x params ["_bodyPart", "_type", "_bagVolumeRemaining", ["_bloodType", -1]];
 
         if (_tourniquets select _bodyPart == 0) then {
-
             private _fluidFlowRate = 1;
 
             switch (_type) do {
@@ -95,7 +94,7 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
             };
 
             private _bagChange = ((_deltaT * ACEGVAR(medical,ivFlowRate) * ([_unit, _bodypart] call EFUNC(circulation,getIVFlowRate))) * _flowMultiplier * _fluidFlowRate) min _bagVolumeRemaining; // absolute value of the change in miliLiters
-            //_bagChange = _bagChange / (_activeBagTypes select _bodyPart); // TODO add
+            _bagChange = _bagChange / _activeBagTypes;
             _bagVolumeRemaining = _bagVolumeRemaining - _bagChange;
 
             switch (_type) do {
@@ -107,26 +106,34 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
                     _salineVolumeChange = _salineVolumeChange + (_bagChange / 1000);
                 };
                 default {
-                    _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
-                    _plateletCountChange = _plateletCountChange + (_bagChange / 1000);
+                    if ([(_unit getVariable [QEGVAR(circulation,BloodType), AMS_BLOODTYPE_O]), _bloodType] call EFUNC(circulation,isBloodTypeCompatible)) then {
+                        _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
+                        _plateletCountChange = _plateletCountChange + (_bagChange / 1000);
+                    } else {
+                        _bloodVolumeChange = _bloodVolumeChange - (_bagChange / 1000);
+                        _plateletCountChange = _plateletCountChange - (_bagChange / 4000);
+
+                        _plasmaVolumeChange = _plasmaVolumeChange + (_bagChange / 4000);
+                        _salineVolumeChange = _salineVolumeChange + (_bagChange / 1333.4);
+                    };
                 };
             };
         };
 
         if (_bagVolumeRemaining < 0.01) then {
-            _unit call EFUNC(circulation,updateFluidBagTypes);
+            [_unit] call EFUNC(circulation,updateActiveFluidBags);
             []
         } else {
-            [_bagVolumeRemaining, _type, _bodyPart]
+            [_bodyPart, _type, _bagVolumeRemaining, _bloodType]
         };
     };
 
-    _bloodBags = _bloodBags - [[]]; // remove empty bags
+    _fluidBags = _fluidBags - [[]]; // remove empty bags
 
-    if (_bloodBags isEqualTo []) then {
+    if (_fluidBags isEqualTo []) then {
         _unit setVariable [QACEGVAR(medical,ivBags), nil, true]; // no bags left - clear variable (always globaly sync this)
     } else {
-        _unit setVariable [QACEGVAR(medical,ivBags), _bloodBags, _syncValues];
+        _unit setVariable [QACEGVAR(medical,ivBags), _fluidBags, _syncValues];
     };
 };
 
