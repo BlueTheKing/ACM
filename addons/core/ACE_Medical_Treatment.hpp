@@ -1,3 +1,8 @@
+#define BLOODBAG_ENTRY(type,amount) \
+    class TRIPLE(Blood,type,amount): DOUBLES(Blood_O,amount) { \
+        bloodtype = DOUBLES(AMS_BLOODTYPE,type); \
+    }
+
 class ACE_ADDON(Medical_Treatment) {
     class Bandaging {
         class FieldDressing;
@@ -418,5 +423,81 @@ class ACE_ADDON(Medical_Treatment) {
             maxDose = 3;
             viscosityChange = -5;
         };
+    };
+
+    class IV {
+        // volume is in millileters
+        volume = 1000;
+        ratio[] = {};
+        type = "Blood";
+        class BloodIV {
+            volume = 1000;
+            ratio[] = {"Plasma", 1};
+        };
+        class BloodIV_500: BloodIV {
+            volume = 500;
+        };
+        class BloodIV_250: BloodIV {
+            volume = 250;
+        };
+        class PlasmaIV: BloodIV {
+            volume = 1000;
+            ratio[] = {"Blood", 1};
+            type = "Plasma";
+        };
+        class PlasmaIV_500: PlasmaIV {
+            volume = 500;
+        };
+        class PlasmaIV_250: PlasmaIV {
+            volume = 250;
+        };
+        class SalineIV: BloodIV {
+            volume = 1000;
+            type = "Saline";
+            ratio[] = {};
+        };
+        class SalineIV_500: SalineIV {
+            volume = 500;
+        };
+        class SalineIV_250: SalineIV {
+            volume = 250;
+        };
+
+        // Blood Types
+        class Blood_O_1000: BloodIV {
+            volume = 1000;
+            ratio[] = {"Plasma", 1};
+            type = "Blood";
+            bloodtype = AMS_BLOODTYPE_O;
+        };
+        BLOODBAG_ENTRY(ON,1000);
+        BLOODBAG_ENTRY(A,1000);
+        BLOODBAG_ENTRY(AN,1000);
+        BLOODBAG_ENTRY(B,1000);
+        BLOODBAG_ENTRY(BN,1000);
+        BLOODBAG_ENTRY(AB,1000);
+        BLOODBAG_ENTRY(ABN,1000);
+
+        class Blood_ON_500: Blood_O_1000 {
+            volume = 500;
+        };
+        BLOODBAG_ENTRY(ON,500);
+        BLOODBAG_ENTRY(A,500);
+        BLOODBAG_ENTRY(AN,500);
+        BLOODBAG_ENTRY(B,500);
+        BLOODBAG_ENTRY(BN,500);
+        BLOODBAG_ENTRY(AB,500);
+        BLOODBAG_ENTRY(ABN,500);
+
+        class Blood_ON_250: Blood_O_1000 {
+            volume = 250;
+        };
+        BLOODBAG_ENTRY(ON,250);
+        BLOODBAG_ENTRY(A,250);
+        BLOODBAG_ENTRY(AN,250);
+        BLOODBAG_ENTRY(B,250);
+        BLOODBAG_ENTRY(BN,250);
+        BLOODBAG_ENTRY(AB,250);
+        BLOODBAG_ENTRY(ABN,250);
     };
 };

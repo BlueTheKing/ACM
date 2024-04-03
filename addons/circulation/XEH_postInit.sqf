@@ -8,8 +8,6 @@
 [QGVAR(setIVLocal), LINKFUNC(setIVLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(setAEDLocal), LINKFUNC(setAEDLocal)] call CBA_fnc_addEventHandler;
 
-[QACEGVAR(medical_treatment,ivBagLocal), LINKFUNC(updateFluidBagTypes)] call CBA_fnc_addEventHandler;
-
 [QGVAR(handleMed_AmmoniumCarbonateLocal), LINKFUNC(handleMed_AmmoniumCarbonateLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_NaloxoneLocal), LINKFUNC(handleMed_NaloxoneLocal)] call CBA_fnc_addEventHandler;
 

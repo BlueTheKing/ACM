@@ -91,7 +91,7 @@ private _saline = 0;
 private _blood = 0;
 private _plasma = 0;
 {
-    _x params ["_volumeRemaining", "_type"];
+    _x params ["", "_type", "_volumeRemaining"];
     switch (_type) do {
         case "Saline": {
             _saline = _saline + _volumeRemaining;
