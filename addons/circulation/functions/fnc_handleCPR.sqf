@@ -70,7 +70,7 @@ private _PFH = [{
             _medicationEffect = (_epinephrine + _amiodarone min 2.2) - _morphine;
         };
         case 1: {
-            _rhythmEffect = 0.8
+            _rhythmEffect = 0.8;
             _medicationEffect = _epinephrine - _morphine;
         };
     };

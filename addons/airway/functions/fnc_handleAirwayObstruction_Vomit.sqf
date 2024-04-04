@@ -37,7 +37,7 @@ private _PFH = [{
 
     if (_keepAirwayIntact || _gracePeriod) exitWith {};
 
-    if (random 100 < (100 * GVAR(airwayObstructionVomitChance))) then {
+    if (random 100 < (50 * GVAR(airwayObstructionVomitChance))) then {
         // TODO play noise
         _patient setVariable [QGVAR(AirwayObstructionVomit_Count), (_vomitCount - 1), true];
 
