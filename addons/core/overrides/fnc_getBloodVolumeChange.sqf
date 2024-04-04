@@ -118,6 +118,10 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
                     };
                 };
             };
+
+            if (_bodyPart == 1 && {[_unit, _bodyPart, AMS_IO_FAST1] call EFUNC(circulation,hasIV)}) then {
+                private _transfusionPain = _bagChange / 1000;
+            };
         };
 
         if (_bagVolumeRemaining < 0.01) then {
