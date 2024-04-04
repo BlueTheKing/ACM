@@ -14,7 +14,7 @@ PREP_RECOMPILE_END;
     QGVAR(cardiacArrestBleedRate),
     "SLIDER",
     "Cardiac Arrest Bleed Rate",
-    [AMS_SETTINGS_CATEGORY, "Basic"],
+    [AMS_SETTINGS_CATEGORY, ""],
     [0.01, 1, 0.05, 2],
     true
 ] call CBA_fnc_addSetting;
@@ -44,7 +44,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(cardiacArrestDeteriorationRate),
     "SLIDER",
-    ["Cardiac Arrest Rhythm Deterioration Multiplier", "Chance that rhythm will deteriorate while in cardiac arrest"],
+    ["Rhythm Deterioration Multiplier", "Chance that rhythm will deteriorate while in cardiac arrest"],
     [AMS_SETTINGS_CATEGORY, "Cardiac Rhythms"],
     [0, 2, 1, 1],
     true
@@ -148,7 +148,7 @@ PREP_RECOMPILE_END;
 
 [
     QGVAR(selfIV),
-    "LIST",
+    "CHECKBOX",
     ["Allow Self IV", "Allow self-application of IV"],
     [AMS_SETTINGS_CATEGORY, "IV/IO"],
     [true],
@@ -157,7 +157,7 @@ PREP_RECOMPILE_END;
 
 [
     QGVAR(selfIO),
-    "LIST",
+    "CHECKBOX",
     ["Allow Self IO", "Allow self-application of IO"],
     [AMS_SETTINGS_CATEGORY, "IV/IO"],
     [false],
@@ -180,15 +180,6 @@ PREP_RECOMPILE_END;
         true
     ] call CBA_fnc_addSetting;
 } forEach [["O", "O+", 41],["A", "A+", 30],["B", "B+", 20],["ON", "O-", 7],["AB", "AB+", 5],["AN", "A-", 4],["BN", "B-", 2],["ABN", "AB-", 1]];
-
-[
-    QGVAR(BloodType_Ratio_O),
-    "SLIDER",
-    ["O+ Ratio", "Ratio out of 100 that is taken by the O+ blood type"],
-    [AMS_SETTINGS_CATEGORY, "Blood Types"],
-    [0, 100, 41, 0],
-    true
-] call CBA_fnc_addSetting;
 
 if (isServer) then {
     call FUNC(generateBloodTypeList);

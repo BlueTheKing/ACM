@@ -1,6 +1,6 @@
-#define AMS_BLOODBAG_ENTRY(type,typeS,amount,item) \
-    class TRIPLE(BloodBag,type,amount): BloodBag_O_1000 { \
-        displayName = QUOTE(Transfuse Blood typeS (amountml)); \
+#define AMS_BLOODBAG_ENTRY(type,typeS,amount) \
+    class TRIPLES(BloodBag,type,amount): BloodBag_O_1000 { \
+        displayName = QUOTE(Transfuse Blood typeS (##amount##ml)); \
         items[] = {QUOTE(TRIPLES(AMS_BloodBag,type,amount))}; \
     }
 

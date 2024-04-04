@@ -34,7 +34,7 @@ private _PFH = [{
 
     if (_keepAirwayIntact) exitWith {};
 
-    if (random 100 < (100 * GVAR(airwayCollapseChance))) then {
+    if (random 100 < (50 * GVAR(airwayCollapseChance))) then {
         _patient setVariable [QGVAR(AirwayCollapse_State), (_collapseState + 1), true];
         [_patient] call FUNC(updateAirwayState);
     };

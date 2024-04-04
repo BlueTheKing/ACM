@@ -23,7 +23,7 @@ call FUNC(generatePTXMap);
 
 [
     QGVAR(chestInjuryChance),
-    "LIST",
+    "SLIDER",
     ["Chest Injury Severity Multiplier", "Chance that chest injury causes pneumothorax"],
     [AMS_SETTINGS_CATEGORY, "Pneumothorax"],
     [0, 2, 1, 1],

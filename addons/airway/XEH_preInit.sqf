@@ -14,7 +14,7 @@ PREP_RECOMPILE_END;
     QGVAR(enable),
     "CHECKBOX",
     ["Enable Airway", "Enable airway collapse/obstruction"],
-    [AMS_SETTINGS_CATEGORY, "Basic"],
+    [AMS_SETTINGS_CATEGORY, ""],
     [true],
     true
 ] call CBA_fnc_addSetting;
@@ -23,8 +23,8 @@ PREP_RECOMPILE_END;
     QGVAR(airwayCollapseChance),
     "SLIDER",
     "Airway Collapse Chance Multiplier",
-    [AMS_SETTINGS_CATEGORY, "Basic"],
-    [0, 2, 0.5, 1],
+    [AMS_SETTINGS_CATEGORY, ""],
+    [0, 2, 1, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -32,8 +32,8 @@ PREP_RECOMPILE_END;
     QGVAR(airwayObstructionBloodChance),
     "SLIDER",
     "Airway Obstruction (Blood) Chance Multiplier",
-    [AMS_SETTINGS_CATEGORY, "Basic"],
-    [0, 2, 0.4, 1],
+    [AMS_SETTINGS_CATEGORY, ""],
+    [0, 2, 1, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -41,8 +41,8 @@ PREP_RECOMPILE_END;
     QGVAR(airwayObstructionVomitChance),
     "SLIDER",
     "Airway Obstruction (Vomit) Chance Multiplier",
-    [AMS_SETTINGS_CATEGORY, "Basic"],
-    [0, 2, 0.5, 1],
+    [AMS_SETTINGS_CATEGORY, ""],
+    [0, 2, 1, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -51,7 +51,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeRecoveryPosition),
     "SLIDER",
-    ["Recovery Position Time", "Time to establish Recovery Position"],
+    ["Establish Recovery Position Time", "Time to establish Recovery Position"],
     [AMS_SETTINGS_CATEGORY, "Airway Management"],
     [1, 30, 8, 1],
     true
