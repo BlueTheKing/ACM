@@ -148,19 +148,19 @@ PREP_RECOMPILE_END;
 
 [
     QGVAR(selfIV),
-    "CHECKBOX",
+    "LIST",
     ["Allow Self IV", "Allow self-application of IV"],
     [AMS_SETTINGS_CATEGORY, "IV/IO"],
-    [true],
+    [[0, 1], [ACELSTRING(common,No), ACELSTRING(common,Yes)], 0],
     true
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(selfIO),
-    "CHECKBOX",
+    "LIST",
     ["Allow Self IO", "Allow self-application of IO"],
     [AMS_SETTINGS_CATEGORY, "IV/IO"],
-    [false],
+    [[0, 1], [ACELSTRING(common,No), ACELSTRING(common,Yes)], 0],
     true
 ] call CBA_fnc_addSetting;
 

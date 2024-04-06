@@ -19,15 +19,22 @@ params ["_patient"];
 
 private _fluidBags = _patient getVariable [QACEGVAR(medical,ivBags), []];
 
-private _activeTypes = [];
+private _activeBagList = [[],[],[],[],[],[]];
 
 {
     _x params ["_partIndex", "_type"];
 
-    if (GET_TOURNIQUETS(_patient) select _partIndex && {!(_type in _activeTypes)}) then {
-        _activeTypes pushBack _type;
+    private _activeTypesBodyPart = _activeBagList select _partIndex;
+
+    if ((GET_TOURNIQUETS(_patient) select _partIndex == 0) && {!(_type in _activeTypesBodyPart)}) then {
+        _activeTypesBodyPart pushBack _type;
     };
-    
 } forEach _fluidBags;
 
-_patient setVariable [QGVAR(ActiveFluidBags), ((count _activeTypes) max 1), true];
+private _bagsBodyPart = [];
+
+{
+    _bagsBodyPart pushBack ((count _x) max 1);
+} forEach _activeBagList;
+
+_patient setVariable [QGVAR(ActiveFluidBags), _bagsBodyPart, true];

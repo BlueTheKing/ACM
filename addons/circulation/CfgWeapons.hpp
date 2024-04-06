@@ -11,7 +11,7 @@ class CfgWeapons {
         descriptionUse = "Battery-powered device used to treat shockable cardiac arrest rhythms and measure other vitals";
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 20;
+            mass = 40;
         };
     };
 

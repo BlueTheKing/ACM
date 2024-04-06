@@ -65,7 +65,7 @@ if (_plateletCount > 0) then {
 if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
     private _flowMultiplier = 1;
 
-    private _activeBagTypes = _unit getVariable [QEGVAR(circulation,ActiveFluidBags), 1];
+    private _activeBagTypes = _unit getVariable [QEGVAR(circulation,ActiveFluidBags), [1,1,1,1,1,1]];
 
     if (IN_CRDC_ARRST(_unit)) then {
         _flowMultiplier = 0.02;
@@ -76,6 +76,8 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
 
     private _fluidBags = _unit getVariable [QACEGVAR(medical,ivBags), []];
     private _tourniquets = GET_TOURNIQUETS(_unit);
+
+    private _bagCountChanged = false;
 
     _fluidBags = _fluidBags apply {
         _x params ["_bodyPart", "_type", "_bagVolumeRemaining", ["_bloodType", -1]];
@@ -93,8 +95,14 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
                 default {};
             };
 
+            private _activeBagTypesBodyPart = _activeBagTypes select _bodyPart;
+
             private _bagChange = ((_deltaT * ACEGVAR(medical,ivFlowRate) * ([_unit, _bodypart] call EFUNC(circulation,getIVFlowRate))) * _flowMultiplier * _fluidFlowRate) min _bagVolumeRemaining; // absolute value of the change in miliLiters
-            _bagChange = _bagChange / _activeBagTypes;
+            
+            if !(_bagVolumeRemaining < 1) then {
+                _bagChange = _bagChange / _activeBagTypesBodyPart;
+            };
+
             _bagVolumeRemaining = _bagVolumeRemaining - _bagChange;
 
             switch (_type) do {
@@ -119,25 +127,30 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
                 };
             };
 
-            if (_bodyPart == 1 && {[_unit, _bodyPart, AMS_IO_FAST1] call EFUNC(circulation,hasIV)}) then {
+            /*if (_bodyPart == 1 && {[_unit, _bodyPart, AMS_IO_FAST1] call EFUNC(circulation,hasIV)}) then { // TODO fully implement
                 private _transfusionPain = _bagChange / 1000;
-            };
+            };*/
         };
 
         if (_bagVolumeRemaining < 0.01) then {
-            [_unit] call EFUNC(circulation,updateActiveFluidBags);
+            _bagCountChanged = true;
             []
         } else {
             [_bodyPart, _type, _bagVolumeRemaining, _bloodType]
         };
     };
 
-    _fluidBags = _fluidBags - [[]]; // remove empty bags
+    _fluidBags = _fluidBags - [[]]; // remove empty bag
 
     if (_fluidBags isEqualTo []) then {
-        _unit setVariable [QACEGVAR(medical,ivBags), nil, true]; // no bags left - clear variable (always globaly sync this)
+        _unit setVariable [QACEGVAR(medical,ivBags), nil, true]; // no bags left - clear variable (always globally sync this)
+        _bagCountChanged = true;
     } else {
         _unit setVariable [QACEGVAR(medical,ivBags), _fluidBags, _syncValues];
+    };
+
+    if (_bagCountChanged) then {
+        [_unit] call EFUNC(circulation,updateActiveFluidBags);
     };
 };
 
@@ -164,7 +177,7 @@ _plasmaVolume = 0 max _plasmaVolume + _plasmaVolumeChange min DEFAULT_BLOOD_VOLU
 _salineVolume = 0 max _salineVolume + _salineVolumeChange min DEFAULT_BLOOD_VOLUME;
 
 if (!(IS_BLEEDING(_unit)) && _plateletCount != 3) then {
-    private _adjustSpeed = 1000;
+    private _adjustSpeed = 1000 * linearConversion [3, 6, _bloodVolume, 10, 1, true]; 
     if (_plateletCount > 3) then {
         _adjustSpeed = 100;
     };

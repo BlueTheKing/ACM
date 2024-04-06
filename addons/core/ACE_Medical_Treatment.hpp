@@ -1,6 +1,6 @@
-#define BLOODBAG_ENTRY(type,amount) \
-    class TRIPLES(Blood,type,amount): DOUBLES(Blood_O,amount) { \
-        bloodtype = QUOTE(DOUBLES(AMS_BLOODTYPE,type)); \
+#define BLOODBAG_ENTRY(type,typeM,amount) \
+    class TRIPLES(BloodBag,type,amount): DOUBLES(BloodBag_O,amount) { \
+        bloodtype = typeM; \
     }
 
 class ACE_ADDON(Medical_Treatment) {
@@ -464,40 +464,40 @@ class ACE_ADDON(Medical_Treatment) {
         };
 
         // Blood Types
-        class Blood_O_1000: BloodIV {
+        class BloodBag_O_1000: BloodIV {
             volume = 1000;
             ratio[] = {"Plasma", 1};
             type = "Blood";
             bloodtype = AMS_BLOODTYPE_O;
         };
-        BLOODBAG_ENTRY(ON,1000);
-        BLOODBAG_ENTRY(A,1000);
-        BLOODBAG_ENTRY(AN,1000);
-        BLOODBAG_ENTRY(B,1000);
-        BLOODBAG_ENTRY(BN,1000);
-        BLOODBAG_ENTRY(AB,1000);
-        BLOODBAG_ENTRY(ABN,1000);
+        BLOODBAG_ENTRY(ON,AMS_BLOODTYPE_ON,1000);
+        BLOODBAG_ENTRY(A,AMS_BLOODTYPE_A,1000);
+        BLOODBAG_ENTRY(AN,AMS_BLOODTYPE_AN,1000);
+        BLOODBAG_ENTRY(B,AMS_BLOODTYPE_B,1000);
+        BLOODBAG_ENTRY(BN,AMS_BLOODTYPE_BN,1000);
+        BLOODBAG_ENTRY(AB,AMS_BLOODTYPE_AB,1000);
+        BLOODBAG_ENTRY(ABN,AMS_BLOODTYPE_ABN,1000);
 
-        class Blood_O_500: Blood_O_1000 {
+        class BloodBag_O_500: BloodBag_O_1000 {
             volume = 500;
         };
-        BLOODBAG_ENTRY(ON,500);
-        BLOODBAG_ENTRY(A,500);
-        BLOODBAG_ENTRY(AN,500);
-        BLOODBAG_ENTRY(B,500);
-        BLOODBAG_ENTRY(BN,500);
-        BLOODBAG_ENTRY(AB,500);
-        BLOODBAG_ENTRY(ABN,500);
+        BLOODBAG_ENTRY(ON,AMS_BLOODTYPE_ON,500);
+        BLOODBAG_ENTRY(A,AMS_BLOODTYPE_A,500);
+        BLOODBAG_ENTRY(AN,AMS_BLOODTYPE_AN,500);
+        BLOODBAG_ENTRY(B,AMS_BLOODTYPE_B,500);
+        BLOODBAG_ENTRY(BN,AMS_BLOODTYPE_BN,500);
+        BLOODBAG_ENTRY(AB,AMS_BLOODTYPE_AB,500);
+        BLOODBAG_ENTRY(ABN,AMS_BLOODTYPE_ABN,500);
 
-        class Blood_O_250: Blood_O_1000 {
+        class BloodBag_O_250: BloodBag_O_1000 {
             volume = 250;
         };
-        BLOODBAG_ENTRY(ON,250);
-        BLOODBAG_ENTRY(A,250);
-        BLOODBAG_ENTRY(AN,250);
-        BLOODBAG_ENTRY(B,250);
-        BLOODBAG_ENTRY(BN,250);
-        BLOODBAG_ENTRY(AB,250);
-        BLOODBAG_ENTRY(ABN,250);
+        BLOODBAG_ENTRY(ON,AMS_BLOODTYPE_ON,250);
+        BLOODBAG_ENTRY(A,AMS_BLOODTYPE_A,250);
+        BLOODBAG_ENTRY(AN,AMS_BLOODTYPE_AN,250);
+        BLOODBAG_ENTRY(B,AMS_BLOODTYPE_B,250);
+        BLOODBAG_ENTRY(BN,AMS_BLOODTYPE_BN,250);
+        BLOODBAG_ENTRY(AB,AMS_BLOODTYPE_AB,250);
+        BLOODBAG_ENTRY(ABN,AMS_BLOODTYPE_ABN,250);
     };
 };
