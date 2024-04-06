@@ -1,6 +1,6 @@
 #define BLOODBAG_ENTRY(type,amount) \
-    class TRIPLE(Blood,type,amount): DOUBLES(Blood_O,amount) { \
-        bloodtype = DOUBLES(AMS_BLOODTYPE,type); \
+    class TRIPLES(Blood,type,amount): DOUBLES(Blood_O,amount) { \
+        bloodtype = QUOTE(DOUBLES(AMS_BLOODTYPE,type)); \
     }
 
 class ACE_ADDON(Medical_Treatment) {
@@ -478,7 +478,7 @@ class ACE_ADDON(Medical_Treatment) {
         BLOODBAG_ENTRY(AB,1000);
         BLOODBAG_ENTRY(ABN,1000);
 
-        class Blood_ON_500: Blood_O_1000 {
+        class Blood_O_500: Blood_O_1000 {
             volume = 500;
         };
         BLOODBAG_ENTRY(ON,500);
@@ -489,7 +489,7 @@ class ACE_ADDON(Medical_Treatment) {
         BLOODBAG_ENTRY(AB,500);
         BLOODBAG_ENTRY(ABN,500);
 
-        class Blood_ON_250: Blood_O_1000 {
+        class Blood_O_250: Blood_O_1000 {
             volume = 250;
         };
         BLOODBAG_ENTRY(ON,250);
