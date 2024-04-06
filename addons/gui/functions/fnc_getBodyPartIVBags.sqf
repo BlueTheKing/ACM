@@ -38,15 +38,15 @@ private _salineVolume = 0;
 private _output = [];
 
 if (_bloodVolume > 0) then {
-    _output pushBack format ["(B) %1ml", floor(_bloodVolume)];
+    _output pushBack format ["B: %1ml", floor(_bloodVolume)];
 };
 
 if (_plasmaVolume > 0) then {
-	_output pushBack format ["(P) %1ml", floor(_plasmaVolume)];
+	_output pushBack format ["P: %1ml", floor(_plasmaVolume)];
 };
 
 if (_salineVolume > 0) then {
-	_output pushBack format ["(S) %1ml", floor(_salineVolume)];
+	_output pushBack format ["S: %1ml", floor(_salineVolume)];
 };
 
 _output joinString " ";

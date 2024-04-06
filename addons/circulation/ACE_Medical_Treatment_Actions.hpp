@@ -1,6 +1,6 @@
 #define AMS_BLOODBAG_ENTRY(type,typeS,amount) \
     class TRIPLES(BloodBag,type,amount): BloodBag_O_1000 { \
-        displayName = QUOTE(Transfuse Blood typeS (##amount##ml)); \
+        displayName = QUOTE(Give Blood typeS (##amount##ml)); \
         items[] = {QUOTE(TRIPLES(AMS_BloodBag,type,amount))}; \
     }
 
@@ -156,12 +156,6 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,AMS_IO_FAST1,false)] call FUNC(setIV));
     };
 
-    class BasicBandage;
-    class BloodIV: BasicBandage {
-        allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
-    };
-
     class CPR {
         displayNameProgress = "";
         treatmentTime = 0.01;
@@ -171,68 +165,47 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(beginCPR));
         condition = QACEFUNC(medical_treatment,canCPR);
     };
-    /*class BloodIV_500: BloodIV {
+
+    class BasicBandage;
+    class BloodIV: BasicBandage {
         allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
+        condition = "false";
+    };
+    class BloodBag_O_1000: BloodIV {
+        displayName = "Give Blood O+ (1000ml)";
+        displayNameProgress = "Transfusing Blood...";
+        items[] = {"AMS_BloodBag_O_1000"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
     };
-    class BloodIV_250: BloodIV {
-        allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
-    };
+    AMS_BLOODBAG_ENTRY(ON,O-,1000);
+    AMS_BLOODBAG_ENTRY(A,A+,1000);
+    AMS_BLOODBAG_ENTRY(AN,A-,1000);
+    AMS_BLOODBAG_ENTRY(B,B+,1000);
+    AMS_BLOODBAG_ENTRY(BN,B-,1000);
+    AMS_BLOODBAG_ENTRY(AB,AB+,1000);
+    AMS_BLOODBAG_ENTRY(ABN,AB-,1000);
+
+    AMS_BLOODBAG_ENTRY(O,O+,500);
+    AMS_BLOODBAG_ENTRY(ON,O-,500);
+    AMS_BLOODBAG_ENTRY(A,A+,500);
+    AMS_BLOODBAG_ENTRY(AN,A-,500);
+    AMS_BLOODBAG_ENTRY(B,B+,500);
+    AMS_BLOODBAG_ENTRY(BN,B-,500);
+    AMS_BLOODBAG_ENTRY(AB,AB+,500);
+    AMS_BLOODBAG_ENTRY(ABN,AB-,500);
+
+    AMS_BLOODBAG_ENTRY(O,O+,250);
+    AMS_BLOODBAG_ENTRY(ON,O-,250);
+    AMS_BLOODBAG_ENTRY(A,A+,250);
+    AMS_BLOODBAG_ENTRY(AN,A-,250);
+    AMS_BLOODBAG_ENTRY(B,B+,250);
+    AMS_BLOODBAG_ENTRY(BN,B-,250);
+    AMS_BLOODBAG_ENTRY(AB,AB+,250);
+    AMS_BLOODBAG_ENTRY(ABN,AB-,250);
     class PlasmaIV: BloodIV {
-        allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
-    };
-    class PlasmaIV_500: PlasmaIV {
-        allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
-    };
-    class PlasmaIV_250: PlasmaIV {
-        allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
     };
     class SalineIV: BloodIV {
-        allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
     };
-    class SalineIV_500: SalineIV {
-        allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
-    };
-    class SalineIV_250: SalineIV {
-        allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
-    };*/
-
-    class BloodBag_O_1000: BloodIV {
-        displayName = "Transfuse Blood O+ (1000ml)";
-        displayNameProgress = "Transfusing Blood...";
-        items[] = {"AMS_BloodBag_O_1000"};
-        callbackSuccess = QFUNC(transfuseBlood);
-    };
-    AMS_BLOODBAG_ENTRY(ON,'O-',1000);
-    AMS_BLOODBAG_ENTRY(A,'A+',1000);
-    AMS_BLOODBAG_ENTRY(AN,'A-',1000);
-    AMS_BLOODBAG_ENTRY(B,'B+',1000);
-    AMS_BLOODBAG_ENTRY(BN,'B-',1000);
-    AMS_BLOODBAG_ENTRY(AB,'AB+',1000);
-    AMS_BLOODBAG_ENTRY(ABN,'AB-',1000);
-
-    AMS_BLOODBAG_ENTRY(O,'O+',500);
-    AMS_BLOODBAG_ENTRY(ON,'O-',500);
-    AMS_BLOODBAG_ENTRY(A,'A+',500);
-    AMS_BLOODBAG_ENTRY(AN,'A-',500);
-    AMS_BLOODBAG_ENTRY(B,'B+',500);
-    AMS_BLOODBAG_ENTRY(BN,'B-',500);
-    AMS_BLOODBAG_ENTRY(AB,'AB+',500);
-    AMS_BLOODBAG_ENTRY(ABN,'AB-',500);
-
-    AMS_BLOODBAG_ENTRY(O,'O+',250);
-    AMS_BLOODBAG_ENTRY(ON,'O-',250);
-    AMS_BLOODBAG_ENTRY(A,'A+',250);
-    AMS_BLOODBAG_ENTRY(AN,'A-',250);
-    AMS_BLOODBAG_ENTRY(B,'B+',250);
-    AMS_BLOODBAG_ENTRY(BN,'B-',250);
-    AMS_BLOODBAG_ENTRY(AB,'AB+',250);
-    AMS_BLOODBAG_ENTRY(ABN,'AB-',250);
 };
