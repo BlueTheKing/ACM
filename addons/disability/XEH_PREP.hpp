@@ -3,6 +3,8 @@ PREP(canWrapSplint);
 PREP(getSplintWrapTime);
 PREP(removeSplint);
 PREP(removeSplintLocal);
+PREP(resetVariables);
+PREP(setTourniquetTime);
 PREP(splint);
 PREP(splintLocal);
 PREP(wrapSplint);

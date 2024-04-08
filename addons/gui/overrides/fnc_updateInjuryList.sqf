@@ -194,10 +194,11 @@ if (_airwayItemType != "") then {
 
 private _oxygenSaturation = GET_OXYGEN(_target);
 
-if (_selectionN in [0,2,3] && _oxygenSaturation < 92) then {
+if (_selectionN in [0,2,3] && {(_oxygenSaturation < 92 || HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN))}) then {
+    private _tourniquetTime = CBA_missionTime - (_patient getVariable [QEGVAR(disability,Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]]);
     private _cyanosis = switch (true) do {
-        case (_oxygenSaturation < 67): {"Severe"};
-        case (_oxygenSaturation < 82): {"Moderate"};
+        case (_oxygenSaturation < 67 || _tourniquetTime > 90): {"Severe"};
+        case (_oxygenSaturation < 82 || _tourniquetTime > 60): {"Moderate"};
         default {"Slight"};
     };
     private _colorScale = linearConversion [93, 55, _oxygenSaturation, 0.47, 0.13, true];
@@ -326,7 +327,7 @@ if (ACEGVAR(medical_gui,showDamageEntry)) then {
 
 // Indicate if a tourniquet is applied
 if (HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN)) then {
-    _entries pushBack [format ["%1 [%2]",localize ACELSTRING(medical_gui,Status_Tourniquet_Applied), "17:45"], [0.77, 0.51, 0.08, 1]];
+    _entries pushBack [format ["%1 [%2]",localize ACELSTRING(medical_gui,Status_Tourniquet_Applied), ((_target getVariable [QEGVAR(disability,Tourniquet_Time), [0,0,0,0,0,0]]) select _selectionN)], [0.77, 0.51, 0.08, 1]];
 };
 
 // Indicate current body part fracture status
