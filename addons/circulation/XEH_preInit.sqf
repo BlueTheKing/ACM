@@ -170,19 +170,15 @@ PREP_RECOMPILE_END;
     _x params ["_type", "_string", "_default"];
 
     [
-        format ["AMS_Circulation_BloodTypeRatio_%1", _type],
+        format ["AMS_Circulation_BloodType_Ratio_%1", _type],
         "SLIDER",
-        [format ["%1 Ratio", _string], format ["Ratio out of 100 that is taken by the %1 blood type", _string]],
+        [format ["%1 Ratio", _string], format ["Ratio out of 100 that is taken by the %1 blood type, ratios must add up to exactly 100", _string]],
         [AMS_SETTINGS_CATEGORY, "Blood Types"],
         [1, 100, _default, 0],
         true,
         {},
         true
     ] call CBA_fnc_addSetting;
-} forEach [["O", "O+", 41],["A", "A+", 30],["B", "B+", 20],["ON", "O-", 7],["AB", "AB+", 5],["AN", "A-", 4],["BN", "B-", 2],["ABN", "AB-", 1]];
-
-if (isServer) then {
-    call FUNC(generateBloodTypeList);
-};
+} forEach [["O", "O+", 39],["ON", "O-", 5],["A", "A+", 28],["AN", "A-", 3],["B", "B+", 18],["BN", "B-", 2],["AB", "AB+", 4],["ABN", "AB-", 1]];
 
 ADDON = true;

@@ -18,12 +18,12 @@
 params ["_patient"];
 
 /*
-    O+ 41% 
-    A+ 30%
-    B+ 20%
-    O- 7%
-    AB+ 5%
-    A- 4%
+    O+ 39% 
+    A+ 28%
+    B+ 18%
+    O- 5%
+    AB+ 4%
+    A- 3%
     B- 2%
     AB- 1%
 */
@@ -40,47 +40,19 @@ private _fnc_generateListFromRatio = {
     _array;
 };
 
-private _ratio_O = missionNamespace getVariable QGVAR(BloodType_Ratio_O);
-private _ratio_ON = missionNamespace getVariable QGVAR(BloodType_Ratio_ON);
-private _ratio_A = missionNamespace getVariable QGVAR(BloodType_Ratio_A);
-private _ratio_AN = missionNamespace getVariable QGVAR(BloodType_Ratio_AN);
-private _ratio_B = missionNamespace getVariable QGVAR(BloodType_Ratio_B);
-private _ratio_BN = missionNamespace getVariable QGVAR(BloodType_Ratio_BN);
-private _ratio_AB = missionNamespace getVariable QGVAR(BloodType_Ratio_AB);
-private _ratio_ABN = missionNamespace getVariable QGVAR(BloodType_Ratio_ABN);
-
-private _ratioArray = [[AMS_BLOODTYPE_O, _ratio_O],
-[AMS_BLOODTYPE_A, _ratio_A],
-[AMS_BLOODTYPE_B, _ratio_B],
-[AMS_BLOODTYPE_ON, _ratio_ON],
-[AMS_BLOODTYPE_AB, _ratio_AB],
-[AMS_BLOODTYPE_AN, _ratio_AN],
-[AMS_BLOODTYPE_BN, _ratio_BN],
-[AMS_BLOODTYPE_ABN, _ratio_ABN]];
-
-private _unsortedArray = [];
-
+private _total = -1;
+private _ratioArray = [];
 {
-    _x params ["_intendedIndex", "_ratio"];
+    private _list = [_total, _x] call _fnc_generateListFromRatio;
+    _total = _total + (count _list);
+    _ratioArray pushBack _list;
+} forEach [(missionNamespace getVariable QGVAR(BloodType_Ratio_O)),
+(missionNamespace getVariable QGVAR(BloodType_Ratio_ON)),
+(missionNamespace getVariable QGVAR(BloodType_Ratio_A)),
+(missionNamespace getVariable QGVAR(BloodType_Ratio_AN)),
+(missionNamespace getVariable QGVAR(BloodType_Ratio_B)),
+(missionNamespace getVariable QGVAR(BloodType_Ratio_BN)),
+(missionNamespace getVariable QGVAR(BloodType_Ratio_AB)),
+(missionNamespace getVariable QGVAR(BloodType_Ratio_ABN))];
 
-    if (_forEachIndex == 0) then {
-        _unsortedArray pushBack [_intendedIndex, ([0, _ratio] call _fnc_generateListFromRatio)];
-    } else {
-        _unsortedArray pushBack [_intendedIndex, ([(_ratioArray select (_forEachIndex-1) + 1), _ratio] call _fnc_generateListFromRatio)];
-    };
-} forEach _ratioArray;
-
-private _array = [];
-private _targetIndex = 0;
-
-{
-    _x params ["_index", "_list"];
-    
-    if (_index == _targetIndex) then {
-        _array pushBack _list;
-        _targetIndex = _targetIndex + 1;
-    };
-    
-} forEach _unsortedArray;
-
-missionNamespace setVariable [QGVAR(BloodTypeList), _array, true];
+missionNamespace setVariable [QGVAR(BloodTypeList), _ratioArray];

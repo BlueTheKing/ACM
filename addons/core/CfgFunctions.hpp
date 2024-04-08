@@ -33,7 +33,7 @@ class CfgFunctions {
     class overwrite_medical_treatment {
         tag = "ace_medical_treatment";
         class ace_medical_treatment {
-            class fullHealLocal { // questionable
+            class fullHealLocal { // Work properly
                 file = QPATHTOF(overrides\fnc_fullHealLocal.sqf);
             };
             class treatment { // Add fixes and patient animations
@@ -79,6 +79,14 @@ class CfgFunctions {
             /*class handleStateInjured {
                 file = QPATHTOF(overrides\fnc_handleStateInjured.sqf);
             };*/
+        };
+    };
+    class overwrite_ace_dogtags {
+        tag = "ace_dogtags";
+        class ace_dogtags {
+            class getDogtagData { // Blood type display
+                file = QPATHTOF(overrides\fnc_getDogtagData.sqf);
+            };
         };
     };
     /*class overwrite_CBA_statemachine { // TODO statemachine fuckery

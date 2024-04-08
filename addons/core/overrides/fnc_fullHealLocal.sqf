@@ -41,9 +41,7 @@ if IN_CRDC_ARRST(_patient) then {
 };
 
 // AMS Stuff
-[_patient] call EFUNC(airway,resetVariables);
-[_patient] call EFUNC(breathing,resetVariables);
-[_patient] call EFUNC(circulation,resetVariables);
+[QGVAR(fullHealLocalMod), [_patient]] call CBA_fnc_localEvent;
 
 _patient setVariable [VAR_PAIN, 0, true];
 _patient setVariable [VAR_BLOOD_VOL, DEFAULT_BLOOD_VOLUME, true];

@@ -114,7 +114,7 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
                     _salineVolumeChange = _salineVolumeChange + (_bagChange / 1000);
                 };
                 default {
-                    if ([(_unit getVariable [QEGVAR(circulation,BloodType), AMS_BLOODTYPE_O]), _bloodType] call EFUNC(circulation,isBloodTypeCompatible)) then {
+                    if ([GET_BLOODTYPE(_unit), _bloodType] call EFUNC(circulation,isBloodTypeCompatible)) then {
                         _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
                         _plateletCountChange = _plateletCountChange + (_bagChange / 1000);
                     } else {

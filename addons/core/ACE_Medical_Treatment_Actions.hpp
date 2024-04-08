@@ -3,11 +3,21 @@ class ACEGVAR(medical_treatment,actions) {
     class Splint;
     class Morphine;
     class SurgicalKit;
+    class CheckResponse;
+    class CheckDogTags: CheckResponse {
+        displayName = ACECSTRING(dogtags,checkItem);
+        displayNameProgress = "";
+        icon = QACEPATHTOF(dogtags,data\dogtag_icon_ca.paa);
+        treatmentTime = 0.01;
+        allowSelfTreatment = 1;
+        condition = QFUNC(canCheckDogtag);
+        callbackSuccess = QACEFUNC(dogtags,checkDogtag);
+    };
 
     class PressureBandage: BasicBandage {
         displayName = "Pressure Bandage";
         displayNameProgress = ACECSTRING(medical_treatment,Bandaging);
-        icon = QACEPATHTOF(medical_treatment,ui\bandage.paa);
+        icon = QACEPATHTOF(medical_gui,ui\bandage.paa);
         category = "bandage";
 
         consumeItem = 1;

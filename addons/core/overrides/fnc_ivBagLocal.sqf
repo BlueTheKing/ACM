@@ -39,3 +39,7 @@ _ivBags pushBack [_partIndex, _type, _volume, _bloodType];
 _patient setVariable [QACEGVAR(medical,ivBags), _ivBags, true];
 
 [_patient] call EFUNC(circulation,updateActiveFluidBags);
+
+if (GET_BLOODTYPE(_patient) == -1) then {
+	[_patient] call EFUNC(circulation,generateBloodType);
+};

@@ -19,3 +19,5 @@
     	[(format ["AMS_circulation_handleMed_%1Local", toLower _classname]), [_patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
 	};
 }] call CBA_fnc_addEventHandler;
+
+call FUNC(generateBloodTypeList);

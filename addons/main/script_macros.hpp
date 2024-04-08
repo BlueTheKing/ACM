@@ -162,6 +162,8 @@
 
 #define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),[0,0,0,0,0,0]])
 
+#define GET_BLOODTYPE(unit) (unit getVariable [QEGVAR(circulation,BloodType),-1])
+
 #define AMS_BLOODTYPE_O 0
 #define AMS_BLOODTYPE_ON 1
 #define AMS_BLOODTYPE_A 2
