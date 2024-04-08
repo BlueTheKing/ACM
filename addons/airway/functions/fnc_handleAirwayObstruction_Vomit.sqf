@@ -25,7 +25,7 @@ private _PFH = [{
 
     private _inRecovery = _patient getVariable [QGVAR(RecoveryPosition_State), false];
     private _keepAirwayIntact = (_patient getVariable [QGVAR(AirwayItem), ""] == "SGA"); // TODO consciousness state
-    private _gracePeriod = (_patient getVariable [QGVAR(AirwayObstructionVomit_GracePeriod), CBA_missionTime]) + 10 > CBA_missionTime;
+    private _gracePeriod = (_patient getVariable [QGVAR(AirwayObstructionVomit_GracePeriod), -1]) + 10 > CBA_missionTime;
     private _obstructionState = _patient getVariable [QGVAR(AirwayObstructionVomit_State), 0];
     private _vomitCount = _patient getVariable [QGVAR(AirwayObstructionVomit_Count), 0];
 
@@ -41,7 +41,7 @@ private _PFH = [{
         // TODO play noise
         _patient setVariable [QGVAR(AirwayObstructionVomit_Count), (_vomitCount - 1), true];
 
-        if !(_inRecovery) then {
+        if !(_inRecovery) then { // TODO check for pose
             _patient setVariable [QGVAR(AirwayObstructionVomit_State), (_obstructionState + 1), true];
             [_patient] call FUNC(updateAirwayState);
         };

@@ -20,15 +20,33 @@ params ["_medic", "_patient"];
 
 private _hint = "Airway is clear";
 private _hintLog = "Clear";
+private _hintHeight = 1.5;
 
 private _collapseState = "";
 private _collapseStateLog = "";
 private _obstructionState = "";
 private _obstructionStateLog = "";
 
-private _airwayCollapseState = _patient getVariable [QGVAR(AirwayCollapse_State), 0];
+private _collapseShow = false;
+private _obstructionShow = false;
 
-if (_patient getVariable [QGVAR(AirwayItem), ""] == "") then {
+private _airwayCollapseState = _patient getVariable [QGVAR(AirwayCollapse_State), 0];
+private _airwayItemInserted = _patient getVariable [QGVAR(AirwayItem), ""];
+
+if (_airwayItemInserted != "") then {
+    _collapseShow = true;
+    switch (_airwayItemInserted) do {
+        case "OPA": {
+            _collapseState = "Guedel Tube Inserted";
+            _collapseStateLog = "Guedel Tube Inserted";
+        };
+        case "SGA": {
+            _collapseState = "iGel Inserted";
+            _collapseStateLog = "iGel Inserted";
+        };
+    };
+} else {
+    _collapseShow = (_airwayCollapseState > 0);
     switch (_airwayCollapseState) do {
         case 1: {
             _collapseState = "Airway mildly collapsed";
@@ -44,27 +62,30 @@ if (_patient getVariable [QGVAR(AirwayItem), ""] == "") then {
         };
         default {};
     };
-} else {
-    _collapseState = "Airway collapse mitigated";
-    _collapseStateLog = "Collapse mitigated";
 };
 
-private _obstructionVomitState = _patient getVariable [QGVAR(AirwayObstructionVomit_State), 0];
-private _obstructionBloodState = _patient getVariable [QGVAR(AirwayObstructionBlood_State), 0];
+if (_airwayItemInserted == "SGA") then {
+    _obstructionState = "";
+} else {
+    private _obstructionVomitState = _patient getVariable [QGVAR(AirwayObstructionVomit_State), 0];
+    private _obstructionBloodState = _patient getVariable [QGVAR(AirwayObstructionBlood_State), 0];
 
-if (_obstructionVomitState > 0 || _obstructionBloodState > 0) then {
-    _obstructionState = "Airway lightly obstructed";
-    _obstructionStateLog = "Light obstruction";
-    if (_obstructionVomitState > 1 || _obstructionBloodState > 1) then {
-        _obstructionState = "Airway obstructed";
-        _obstructionStateLog = "Obstruction";
+    if (_obstructionVomitState > 0 || _obstructionBloodState > 0) then {
+        _hintHeight = 2;
+        _obstructionShow = true;
+        _obstructionState = "Airway lightly obstructed";
+        _obstructionStateLog = ", Light obstruction";
+        if (_obstructionVomitState > 1 || _obstructionBloodState > 1) then {
+            _obstructionState = "Airway obstructed";
+            _obstructionStateLog = ", Obstruction";
+        };
     };
 };
 
-if (_airwayCollapseState > 0 || _obstructionVomitState > 0 || _obstructionBloodState > 0) then {
+if (_collapseShow || _obstructionShow) then {
     _hint = format ["%1<br />%2", _collapseState, _obstructionState];
-    _hintLog = format ["%1 %2", _collapseStateLog, _obstructionStateLog];
+    _hintLog = format ["%1%2", _collapseStateLog, _obstructionStateLog];
 };
 
-[_hint, 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+[_hint, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
 [_patient, "quick_view", "%1 checked airway: %2", [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);

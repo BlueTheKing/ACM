@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle airway obstruction due to blood.
+ * Handle airway obstruction due to bleeding.
  *
  * Arguments:
  * 0: Patient <OBJECT>
@@ -27,24 +27,21 @@ private _PFH = [{
     private _inRecovery = _patient getVariable [QGVAR(RecoveryPosition_State), false];
 
     if (!(IS_UNCONSCIOUS(_patient)) || !_isBleeding) exitWith {
-        if !(IS_UNCONSCIOUS(_patient)) then {
-            _patient setVariable [QGVAR(AirwayObstructionBlood_Count), 0, true];
-        };
         _patient setVariable [QGVAR(AirwayObstructionBlood_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    if (_inRecovery) exitWith {};
+    if (_inRecovery) exitWith {}; // TODO check for pose
 
     private _cardiacArrest = IN_CRDC_ARRST(_patient);
-    private _obstructChance = linearConversion [0.05, 0.5, ([_patient, "head"] call EFUNC(damage,getBodyPartBleeding)), 0, 50, true];
+    private _obstructChance = (linearConversion [0.05, 0.5, ([_patient, "head"] call EFUNC(damage,getBodyPartBleeding)), 0, 50, true]) * GVAR(airwayObstructionBloodChance);
     private _obstructionState = _patient getVariable [QGVAR(AirwayObstructionBlood_State), 0];
 
-    if ((!_cardiacArrest && (random 100 < _obstructChance)) || {(_cardiacArrest && (random 100 < (_obstructChance * GVAR(airwayObstructionBloodChance))))}) then {
+    if ((!_cardiacArrest && (random 100 < _obstructChance)) || {_cardiacArrest && (random 100 < (_obstructChance * 0.5))}) then {
         _patient setVariable [QGVAR(AirwayObstructionBlood_State), (_obstructionState + 1), true];
         [_patient] call FUNC(updateAirwayState);
     };
 
-}, 2 max (random 8), [_patient]] call CBA_fnc_addPerFrameHandler;
+}, 5 max (random 10), [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(AirwayObstructionBlood_PFH), _PFH];

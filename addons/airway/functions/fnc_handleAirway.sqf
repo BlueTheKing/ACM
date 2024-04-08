@@ -23,6 +23,10 @@ if !(IS_UNCONSCIOUS(_patient)) exitWith {};
     params ["_patient"];
 
     [QGVAR(handleAirwayCollapse), [_patient], _patient] call CBA_fnc_targetEvent;
+
+    if ([_patient, "head"] call EFUNC(damage,isBodyPartBleeding)) then {
+        [QGVAR(handleAirwayObstruction_Blood), [_patient], _patient] call CBA_fnc_targetEvent;
+    };
 }, [_patient], 10] call CBA_fnc_waitAndExecute;
 
 [{
@@ -30,7 +34,3 @@ if !(IS_UNCONSCIOUS(_patient)) exitWith {};
 
     [QGVAR(handleAirwayObstruction_Vomit), [_patient], _patient] call CBA_fnc_targetEvent;
 }, [_patient], 60] call CBA_fnc_waitAndExecute;
-
-if ([_patient, "head"] call EFUNC(damage,isBodyPartBleeding)) then {
-    [QGVAR(handleAirwayObstruction_Blood), [_patient], _patient] call CBA_fnc_targetEvent;
-};
