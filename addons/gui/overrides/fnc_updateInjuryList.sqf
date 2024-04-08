@@ -171,7 +171,7 @@ private _bodyPartName = [
 ] select _selectionN;
 
 _entries pushBack [localize _bodyPartName, [1, 1, 1, 1]];
-
+// Recovery Position
 if (_selectionN in [0,1] && _target getVariable [QEGVAR(airway,RecoveryPosition_State), false]) then {
     _entries pushBack ["In Recovery Position", _airwayColor];
 } else {
@@ -181,7 +181,7 @@ if (_selectionN in [0,1] && _target getVariable [QEGVAR(airway,RecoveryPosition_
 };
 
 private _airwayItemType = _target getVariable [QEGVAR(airway,AirwayItem), ""];
-
+// Airway Item
 if (_airwayItemType != "") then {
     private _airwayItem = "Guedel Tube";
 
@@ -193,21 +193,27 @@ if (_airwayItemType != "") then {
 };
 
 private _oxygenSaturation = GET_OXYGEN(_target);
-
+// Cyanosis
 if (_selectionN in [0,2,3] && {(_oxygenSaturation < 92 || HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN))}) then {
-    private _tourniquetTime = CBA_missionTime - (_patient getVariable [QEGVAR(disability,Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]]);
+    private _tourniquetTime = 0;
+    private _colorScale = linearConversion [93, 55, _oxygenSaturation, 0.47, 0.13, true];
+
+    if (HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN)) then {
+        _tourniquetTime = CBA_missionTime - ((_target getVariable [QEGVAR(disability,Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]]) select _selectionN);
+        _colorScale = _colorScale min (linearConversion [1, 90, _tourniquetTime, 0.47, 0.13, true]);
+    };
+
     private _cyanosis = switch (true) do {
         case (_oxygenSaturation < 67 || _tourniquetTime > 90): {"Severe"};
         case (_oxygenSaturation < 82 || _tourniquetTime > 60): {"Moderate"};
         default {"Slight"};
     };
-    private _colorScale = linearConversion [93, 55, _oxygenSaturation, 0.47, 0.13, true];
 
     _entries pushBack [format ["%1 Cyanosis", _cyanosis], [0.16, _colorScale, 1, 1]];
 };
 
 private _bodyPartIV = GET_IV(_target) select _selectionN;
-
+// IV/IO
 if (_bodyPartIV > 0) then {
     private _IVText = switch (_bodyPartIV) do {
         case AMS_IV_16G: {"16g IV"};
@@ -226,7 +232,7 @@ if (_bodyPartIV > 0) then {
 
     _entries pushBack [_IVEntry, _circulationColor];
 };
-
+// AED
 if ((_selectionN == 1 || (_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1] == (_selectionN max 0))) && [_target] call EFUNC(circulation,hasAED)) then {
     private _padsStatus = _target getVariable [QEGVAR(circulation,AED_Placement_Pads), false];
     private _pulseOximeterStatus = (_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1] != -1);
@@ -275,7 +281,7 @@ if ((_selectionN == 1 || (_target getVariable [QEGVAR(circulation,AED_Placement_
 
     _entries pushBack [format ["%1]",_entry], [0.18, 0.6, 0.96, 1]];
 };
-
+// Pulse Oximeter
 if (_selectionN in [2,3] && {HAS_PULSEOX(_target,(_selectionN - 2))}) then {
     private _pr = (_target getVariable [QEGVAR(breathing,PulseOximeter_Display), [[0,0],[0,0]]] select (_selectionN - 2)) select 1;
     private _spO2 = (_target getVariable [QEGVAR(breathing,PulseOximeter_Display), [[0,0],[0,0]]] select (_selectionN - 2)) select 0; 

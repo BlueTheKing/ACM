@@ -58,7 +58,7 @@ private _isInZeus = !isNull findDisplay 312;
 private _isSelf = _medic isEqualTo _patient;
 
 // play patient animation
-if (alive _patient) then {
+if (alive _patient && !(_isInZeus)) then {
     private _patientAnim = getText (_config >> "animationPatient");
 
     if (IS_UNCONSCIOUS(_patient) && ACEGVAR(medical,allowUnconsciousAnimationOnTreatment)) then {
