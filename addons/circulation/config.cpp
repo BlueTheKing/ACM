@@ -17,7 +17,8 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
-#include "CfgWeapons.hpp"
+#include "CfgMoves.hpp"
 #include "CfgMagazines.hpp"
+#include "CfgWeapons.hpp"
 #include "ACE_Medical_Treatment_Actions.hpp"
 #include "Defibrillator_Monitor_Dialog.hpp"

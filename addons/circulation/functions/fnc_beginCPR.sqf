@@ -77,9 +77,8 @@ if (_notInVehicle) then {
                 [_medic, "AinvPknlMstpSnonWnonDnon_medicEnd", 2] call ACEFUNC(common,doAnimation);
             };
 
-            // Format time to minutes:seconds
             private _CPRTime = CBA_missionTime - _CPRStartTime; 
-            private _time = format ["%1:%2",(["0", ""] select ((floor(((_CPRTime/3600) - floor(_CPRTime/3600)) * 60)) < 10)) + str (floor(((_CPRTime/3600) - floor(_CPRTime/3600)) * 60)), (["", "0"] select ((floor(((_CPRTime/60) - floor(_CPRTime/60)) * 60)) < 10)) + str (floor(((_CPRTime/60) - floor(_CPRTime/60)) * 60))];
+            private _time = [_CPRTime, "MM:SS"] call BIS_fnc_secondsToString;
 
             [_patient, "activity", "%1 stopped CPR (%2)", [[_medic, false, true] call ACEFUNC(common,getName), _time]] call ACEFUNC(medical_treatment,addToLog);
 
