@@ -33,9 +33,6 @@ class CfgFunctions {
     class overwrite_medical_treatment {
         tag = "ace_medical_treatment";
         class ace_medical_treatment {
-            class fullHealLocal { // Work properly
-                file = QPATHTOF(overrides\fnc_fullHealLocal.sqf);
-            };
             class treatment { // Add fixes and patient animations
                 file = QPATHTOF(overrides\fnc_treatment.sqf);
             };
