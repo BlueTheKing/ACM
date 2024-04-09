@@ -33,16 +33,15 @@ private _targetBloodType = AMS_BLOODTYPE_O;
 private _id = 0;
 
 if !(isPlayer _patient) then {
-    _id = floor(random 99);
+    _id = floor (random 99);
 } else {
     if (GET_BLOODTYPE(_patient) == -1) then {
         if (isMultiplayer) then {
             // 765611981351544| 3 [ 0 ]|
-            private _selectRange = 16;
-            private _playerID = getPlayerUID _patient;
-            _id = parseNumber (_playerID select (_selectRange - 1) + (_playerID select _selectRange));
+            private _selectRange = 15;
+            _id = parseNumber ((getPlayerUID _patient) select [_selectRange, 2]);
         } else {
-            _id = floor(random 99);
+            _id = floor (random 99);
         };
     };
 };
@@ -54,5 +53,4 @@ if !(isPlayer _patient) then {
 } forEach _bloodTypeRatios;
 
 _patient setVariable [QGVAR(BloodType), _targetBloodType, true];
-systemchat format ["%1 -- %2 -- %3", _patient, ([_targetBloodType, 1] call FUNC(convertBloodType)), _id];
 _targetBloodType;
