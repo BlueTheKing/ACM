@@ -42,7 +42,6 @@ params ["_patient"];
 
         // Kill PFH if CPR stops for 30 seconds
         if (isNull (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]) && {((_patient getVariable [QGVAR(CPR_StoppedTime), CBA_missionTime]) + 30) < CBA_missionTime}) exitWith {
-            systemchat format ["%1",(_patient getVariable [QGVAR(CPR_StoppedTime), 0])];
             _patient setVariable [QGVAR(AED_MuteAlarm), false, true];
             [_idPFH] call CBA_fnc_removePerFrameHandler;
         };
