@@ -21,6 +21,8 @@ params ["_medic", "_patient"];
 
 if ((_patient getVariable [QGVAR(AED_PFH), -1]) != -1) exitWith {};
 
+_patient setVariable [QGVAR(AED_PlacementTime), CBA_missionTime, true];
+
 private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient"];
@@ -46,6 +48,7 @@ private _PFH = [{
         private _lastSync = _patient getVariable [QGVAR(AED_Pads_LastSync), -1];
 
         private _ekgHR = [_patient] call FUNC(getEKGHeartRate);
+        private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 
         if (_lastSync + 5.25 < CBA_missionTime) then {
             _patient setVariable [QGVAR(AED_Pads_LastSync), CBA_missionTime];
@@ -53,39 +56,53 @@ private _PFH = [{
             _patient setVariable [QGVAR(AED_Pads_Display), round(_ekgHR), true];
         };
 
-        if (_ekgHR > 0) then {
-            private _hrDelay = 60 / _ekgHR;
+        if !(_patient getVariable [QGVAR(AED_InUse), false]) then {
+            if (_ekgHR > 0) then {
+                private _lastBeep = _patient getVariable [QGVAR(AED_Pads_LastBeep), -1];
+                private _hrDelay = 60 / _ekgHR;
 
-            if (_patient getVariable [QGVAR(AED_Alarm_State), false]) then {
-                _patient setVariable [QGVAR(AED_Alarm_State), false];
+                if (!(_patient getVariable [QGVAR(AED_Alarm_State), false]) && {_rhythmState in [2,3]}) then {
+                    _patient setVariable [QGVAR(AED_Alarm_State), true];
 
-                [{
-                    params ["_patient"];
+                    [{
+                        params ["_patient"];
 
-                    [_patient] call FUNC(AED_PlayAlarm);
-                    GVAR(AED_CardiacArrest) = true;
-                }, [_patient], 2] call CBA_fnc_waitAndExecute;
-            };
-
-            if (GVAR(AED_CardiacArrest)) exitWith {
-                if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [0,5]) then {
-                    GVAR(AED_CardiacArrest) = false;
+                        if !(_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [0,5]) then {
+                            [_patient] call FUNC(AED_PlayAlarm);
+                            _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
+                        } else {
+                            _patient setVariable [QGVAR(AED_Alarm_State), false];
+                        };
+                    }, [_patient], 2] call CBA_fnc_waitAndExecute;
                 };
-            };
 
-            if (GVAR(AED_lastBeep) + _hrDelay < CBA_missionTime) then {
-                GVAR(AED_lastBeep) = CBA_missionTime;
-                playSound3D [QPATHTO_R(sound\aed_hr_beep.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 0.15s
-            };
-        } else {
-            if !(_patient getVariable [QGVAR(AED_Alarm_State), false]) then {
-                _patient setVariable [QGVAR(AED_Alarm_State), true];
+                if (_patient getVariable [QGVAR(AED_Alarm_CardiacArrest_State), false]) exitWith {
+                    if (_rhythmState in [0,5]) then {
+                        _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), false];
+                        _patient setVariable [QGVAR(AED_Alarm_State), false];
+                        playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 0.369s
+                    };
+                };
 
-                [{
-                    params ["_patient"];
+                if ((_lastBeep + _hrDelay) < CBA_missionTime) then {
+                    _patient setVariable [QGVAR(AED_Pads_LastBeep), CBA_missionTime];
+                    playSound3D [QPATHTO_R(sound\aed_hr_beep.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 0.15s
+                };
+            } else {
+                if !(_patient getVariable [QGVAR(AED_Alarm_State), false]) then {
+                    _patient setVariable [QGVAR(AED_Alarm_State), true];
 
-                    [_patient] call FUNC(AED_PlayAlarm);
-                }, [_patient], 2] call CBA_fnc_waitAndExecute;
+                    [{
+                        params ["_patient"];
+
+                        if !(_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [0,5]) then {
+                            [_patient] call FUNC(AED_PlayAlarm);
+                            _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
+                        } else {
+                            _patient setVariable [QGVAR(AED_Alarm_State), false];
+                        };
+                    }, [_patient], 2] call CBA_fnc_waitAndExecute;
+                };
             };
         };
     };
@@ -109,7 +126,7 @@ private _PFH = [{
             };
         };
     };
-}, 0.01, [_patient]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(AED_PFH), _PFH];
 

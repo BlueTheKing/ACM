@@ -28,7 +28,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         medicRequired = QGVAR(allowAED);
-        treatmentTime = 4;// TODO change
+        treatmentTime = 1;// TODO change
         allowedSelections[] = {"Body"};
         allowSelfTreatment = 0;
         items[] = {"AMS_AED"};
@@ -40,7 +40,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Remove AED Pads";
         displayNameProgress = "Removing AED Pads...";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
-        treatmentTime = 3;
+        treatmentTime = 1;
         allowSelfTreatment = 1;
         condition = QUOTE([ARR_3(_patient,_bodyPart,1)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,0,false)] call FUNC(setAED));
@@ -50,7 +50,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Connecting AED Pulse Oximeter...";
         icon = "";
         category = "examine";
-        treatmentTime = 4;// TODO change
+        treatmentTime = 1;// TODO change
         allowedSelections[] = {"LeftArm","RightArm"};
         condition = QUOTE(!([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED)) && (_patient getVariable [ARR_2(QQGVAR(AEDMonitor_Placement_PulseOximeter),-1)]) == -1);
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(setAED));
@@ -59,7 +59,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Disconnect AED Pulse Oximeter";
         displayNameProgress = "Disconnecting AED Pulse Oximeter...";
         category = "examine";
-        treatmentTime = 3;
+        treatmentTime = 1;
         allowedSelections[] = {"LeftArm","RightArm"};
         condition = QUOTE([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED) && (_patient getVariable [ARR_2(QQGVAR(AEDMonitor_Placement_PulseOximeter),-1)]) != -1);
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,1,false)] call FUNC(setAED));

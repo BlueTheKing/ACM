@@ -19,7 +19,7 @@
 
 params ["_medic", "_patient", ["_manual", false]];
 
-playSound3D [QPATHTO_R(sound\aed_charging.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 4.002s
+playSound3D [QPATHTO_R(sound\aed_charging.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 4.002s
 
 _patient setVariable [QGVAR(AED_Charged), false, true];
 
@@ -34,31 +34,30 @@ private _fnc_chargedPFH = {
             [_idPFH] call CBA_fnc_removePerFrameHandler;
         };
 
-        playSound3D [QPATHTO_R(sound\aed_alarm.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 0.528s
+        playSound3D [QPATHTO_R(sound\aed_alarm.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 0.528s
     }, 0.528, [_patient]] call CBA_fnc_addPerFrameHandler;
 
     [{
         params ["_patient"];
 
         !(_patient getVariable [QGVAR(AED_Charged), false]);
-    }, {}, [_patient], 20, 
-    { // Cancel shock if not administered within 20s
+    }, {}, [_patient], 30, 
+    { // Cancel shock if not administered within 30s
         params ["_patient"];
 
         _patient setVariable [QGVAR(AED_Charged), false, true];
-        playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 0.624s
-
+        playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 0.624s
     }] call CBA_fnc_waitUntilAndExecute;
 };
 
 [{
-    params ["_patient", "_medic", "_fnc_chargedPFH"];
+    params ["_patient", "_medic", "_manual", "_fnc_chargedPFH"];
 
     if (_manual) then {
         _patient setVariable [QGVAR(AED_Charged), true, true];
         [_patient] call _fnc_chargedPFH;
     } else {
-        playSound3D [QPATHTO_R(sound\aed_standclear_pushtoshock.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 2.557s
+        playSound3D [QPATHTO_R(sound\aed_standclear_pushtoshock.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 2.557s
 
         [{
             params ["_patient", "_medic", "_fnc_chargedPFH"];
@@ -68,7 +67,7 @@ private _fnc_chargedPFH = {
             [_patient] call _fnc_chargedPFH;
         }, [_patient, _medic, _fnc_chargedPFH], 2.5] call CBA_fnc_waitAndExecute;
     };
-}, [_patient, _medic, _fnc_chargedPFH], 4.1] call CBA_fnc_waitAndExecute;
+}, [_patient, _medic, _manual, _fnc_chargedPFH], 4.1] call CBA_fnc_waitAndExecute;
 
 
 

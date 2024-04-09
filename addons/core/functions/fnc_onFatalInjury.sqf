@@ -17,6 +17,5 @@
 
 params ["_patient"];
 
-if (random 100 < GVAR(grazingInjuryChance)) then {
-	_patient setVariable [QGVAR(FatalInjury_State), true];
-};
+if (random 100 < GVAR(grazingInjuryChance)) exitWith {};
+_patient setVariable [QGVAR(FatalInjury_State), true];

@@ -68,7 +68,7 @@ private _fnc_generateHeartRate = { // ace_medical_vitals_fnc_updateHeartRate
 
 private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 
-if ((_patient getVariable [QGVAR(AED_LastShock), 0]) + 10 > CBA_missionTime) exitWith {0};
+if ((_patient getVariable [QGVAR(AED_LastShock), -1]) + 10 > CBA_missionTime) exitWith {0};
 
 switch (_rhythm) do {
     case 1: { // Asystole

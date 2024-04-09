@@ -48,12 +48,12 @@ private _rhythmArray = [];
 
 switch (_rhythm) do {
     case -5: {
-        private _dashedStep = [100,100,-100,-100];
+        private _step = [0];
 
-        private _repeat = ceil(AED_MONITOR_WIDTH / (count _dashedStep));
+        private _repeat = ceil(AED_MONITOR_WIDTH / (count _step));
 
         for "_i" from 0 to _repeat do {
-            _rhythmArray = _rhythmArray + _dashedStep;
+            _rhythmArray = _rhythmArray + _step;
         };
     };
     default { // TODO change

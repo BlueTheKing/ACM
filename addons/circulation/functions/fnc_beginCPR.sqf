@@ -39,11 +39,17 @@ if (dialog) then { // If another dialog is open (medical menu) close it
 };
 
 private _notInVehicle = isNull objectParent _medic;
+private _initialAnimation = animationState _medic;
+private _startDelay = 2;
 GVAR(loopCPR) = false;
 
 if (_notInVehicle) then {
     [_medic, "AinvPknlMstpSnonWnonDnon_AinvPknlMstpSnonWnonDnon_medic", 1] call ACEFUNC(common,doAnimation);
     GVAR(loopCPR) = true;
+};
+
+if (_initialAnimation in ["amovpercmstpsnonwnondnon", "amovpknlmstpsnonwnondnon_gear", "amovpknlmstpsnonwnondnon"]) then { // Wack
+    _startDelay = 1.8;
 };
 
 [{
@@ -64,11 +70,6 @@ if (_notInVehicle) then {
 
         if (_patientCondition || _medicCondition || (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]) isEqualTo objNull || dialog || {(!_notInVehicle && _vehicleCondition) || {(_notInVehicle && _distanceCondition)}}) exitWith { // Stop CPR
             [_idPFH] call CBA_fnc_removePerFrameHandler;
-
-            if !(_patient getVariable [QACEGVAR(medical,CPR_provider), objNull] isEqualTo objNull) then {
-                _patient setVariable [QACEGVAR(medical,CPR_provider), objNull, true];
-            };
-
             [] call ACEFUNC(interaction,hideMouseHint);
             [GVAR(CPRCancel_EscapeID), "keydown"] call CBA_fnc_removeKeyHandler;
             [GVAR(CPRCancel_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
@@ -84,6 +85,10 @@ if (_notInVehicle) then {
 
             _patient setVariable [QGVAR(CPR_StoppedTotal), _CPRTime, true];
             _patient setVariable [QGVAR(CPR_StoppedTime), CBA_missionTime, true];
+
+            if !(_patient getVariable [QACEGVAR(medical,CPR_provider), objNull] isEqualTo objNull) then {
+                _patient setVariable [QACEGVAR(medical,CPR_provider), objNull, true];
+            };
 
             closeDialog 0;
 
@@ -105,4 +110,4 @@ if (_notInVehicle) then {
     }, 0, [_medic, _patient, _notInVehicle, _CPRStartTime]] call CBA_fnc_addPerFrameHandler;
 
     [QGVAR(handleCPR), [_patient, _CPRStartTime], _patient] call CBA_fnc_targetEvent;
-}, [_medic, _patient, _notInVehicle, _CPRStartTime], 2.1] call CBA_fnc_waitAndExecute;
+}, [_medic, _patient, _notInVehicle, _CPRStartTime], _startDelay] call CBA_fnc_waitAndExecute;

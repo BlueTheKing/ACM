@@ -19,7 +19,7 @@ params ["_patient"];
 
 if ((_patient getVariable [QGVAR(AED_AlarmPFH), -1]) != -1) exitWith {};
 
-playSound3D [QPATHTO_R(sound\aed_checkpatient.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 1.837s
+playSound3D [QPATHTO_R(sound\aed_checkpatient.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 1.837s
 
 _patient setVariable [QGVAR(AED_AlarmPFH), -2];
 
@@ -30,12 +30,14 @@ _patient setVariable [QGVAR(AED_AlarmPFH), -2];
         params ["_args", "_idPFH"];
         _args params ["_patient"];
 
-        if !(_patient getVariable [QGVAR(AED_Alarm_State), false]) exitWith {
+        if (!([_patient] call FUNC(hasAED)) || !(_patient getVariable [QGVAR(AED_Alarm_State), false])) exitWith {
             _patient setVariable [QGVAR(AED_AlarmPFH), -1];
             [_idPFH] call CBA_fnc_removePerFrameHandler;
         };
 
-        playSound3D [QPATHTO_R(sound\aed_alarm.wav), _patient, false, getPosASL _patient, 1, 1, 3]; // 0.528s
+        if (_patient getVariable [QGVAR(AED_InUse), false] || {((_patient getVariable [QGVAR(AED_LastShock), -1]) + 30 > CBA_missionTime) || {_patient getVariable [QGVAR(AED_MuteAlarm), false]}}) exitWith {};
+
+        playSound3D [QPATHTO_R(sound\aed_alarm.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 0.528s
     }, 0.528, [_patient]] call CBA_fnc_addPerFrameHandler;
 
     _patient setVariable [QGVAR(AED_AlarmPFH), _PFH];

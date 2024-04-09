@@ -28,11 +28,11 @@ _monitorArray_EKG set [_updateStep, _monitorArray_EKGRefresh select _updateStep]
 _patient setVariable [QGVAR(AED_EKGDisplay), _monitorArray_EKG];
 
 // Pulse Oximeter
-private _monitorArray_PO = _patient getVariable [QGVAR(AED_PODisplay), []];
+/*private _monitorArray_PO = _patient getVariable [QGVAR(AED_PODisplay), []];
 _monitorArray_PO set [_updateStep, _monitorArray_PORefresh select _updateStep];
-_patient setVariable [QGVAR(AED_PODisplay), _monitorArray_PO];
+_patient setVariable [QGVAR(AED_PODisplay), _monitorArray_PO];*/
 
 private _previousIndex = _updateStep - 1;
 
 [_dlg, 0, _updateStep, (_monitorArray_EKGRefresh select _previousIndex), (_monitorArray_EKGRefresh select _updateStep)] call FUNC(displayAEDMonitor_adjustWaveform);
-[_dlg, 1, _updateStep, (_monitorArray_PORefresh select _previousIndex), (_monitorArray_PORefresh select _updateStep)] call FUNC(displayAEDMonitor_adjustWaveform);
+//[_dlg, 1, _updateStep, (_monitorArray_PORefresh select _previousIndex), (_monitorArray_PORefresh select _updateStep)] call FUNC(displayAEDMonitor_adjustWaveform);

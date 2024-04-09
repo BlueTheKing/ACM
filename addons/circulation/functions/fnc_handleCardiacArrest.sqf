@@ -17,7 +17,7 @@
 
 params ["_patient"];
 
-if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 1] == 1) exitWith {};
+if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), -1] == 1) exitWith {};
 
 /*
     0 - Sinus

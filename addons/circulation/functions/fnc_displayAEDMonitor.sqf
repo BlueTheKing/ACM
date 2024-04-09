@@ -71,8 +71,8 @@ if (count (_ekgDisplay) < AED_MONITOR_WIDTH) then {
     private _monitorArray_PO = _patient getVariable [QGVAR(AED_PODisplay), []];
 
     for "_i" from 1 to (AED_MONITOR_WIDTH - 1) do {
-        [(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), 0, _i, (_monitorArray_EKG select (_i - 1)), (_monitorArray_EKG select _i)] call _fnc_syncLine;
-        [(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), 1, _i, (_monitorArray_PO select (_i - 1)), (_monitorArray_PO select _i)] call _fnc_syncLine;
+        //[(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), 0, _i, (_monitorArray_EKG select (_i - 1)), (_monitorArray_EKG select _i)] call _fnc_syncLine;
+        //[(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), 1, _i, (_monitorArray_PO select (_i - 1)), (_monitorArray_PO select _i)] call _fnc_syncLine;
     };
 };
 
@@ -94,8 +94,8 @@ private _PFH = [{
 
     if (isNull _dlg && ((_patient getVariable [QGVAR(AED_RefreshTime), -1]) + _timeToExpire < CBA_missionTime)) exitWith {
         systemchat "kill pfh";
-        _patient setVariable [QGVAR(AED_EKGDisplay), _monitorArray_EKGRefresh, true];
-        _patient setVariable [QGVAR(AED_PODisplay), _monitorArray_PORefresh, true];
+        //_patient setVariable [QGVAR(AED_EKGDisplay), _monitorArray_EKGRefresh, true];
+        //_patient setVariable [QGVAR(AED_PODisplay), _monitorArray_PORefresh, true];
 
         _patient setVariable [QGVAR(AED_UpdateStep), 0, true];
         _patient setVariable [QGVAR(AED_Offset), 0, true];
@@ -133,7 +133,7 @@ private _PFH = [{
 
     _stepSpacing = 0 max (round(_stepSpacing));
 
-    if (_monitorUpdateStep >= (AED_MONITOR_WIDTH - 1) || (_rhythm != _patient getVariable [QGVAR(AED_EKGRhythm), -1]) || {(count _monitorArray_EKGRefresh < AED_MONITOR_WIDTH)}) then {
+    if (_monitorUpdateStep >= (AED_MONITOR_WIDTH - 1) || (_rhythm != _patient getVariable [QGVAR(AED_EKGRhythm), -1]) || {(count _monitorArray_EKGRefresh < AED_MONITOR_WIDTH)}) then { // 
         _patient setVariable [QGVAR(AED_RefreshTime), CBA_missionTime, true];
         _patient setVariable [QGVAR(AED_EKGRhythm), _rhythm, true];
 
