@@ -21,5 +21,5 @@ params ["_patient", "_state"];
 if (!local _patient) exitWith {};
 
 if !(_state) then {
-    _patient setVariable [QGVAR(FatalInjury_State), false];
+    _patient setVariable [QGVAR(FatalInjury_Grazed), false];
 };

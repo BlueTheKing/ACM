@@ -26,6 +26,7 @@ PREP(handleCardiacArrest);
 PREP(handleCPR);
 PREP(handleMed_AmmoniumCarbonateLocal);
 PREP(handleMed_NaloxoneLocal);
+PREP(handleOverdose);
 PREP(handleReversibleCardiacArrest);
 PREP(hasAED);
 PREP(hasIV);

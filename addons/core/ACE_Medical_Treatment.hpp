@@ -298,23 +298,26 @@ class ACE_ADDON(Medical_Treatment) {
     };
 
     class Medication {
+        maxDoseDeviation = 1;
+        // onOverDose = "";
         class Morphine {
-            painReduce = 0.75;
-            hrIncreaseLow[] = {-10, -15};
-            hrIncreaseNormal[] = {-10, -25};
-            hrIncreaseHigh[] = {-10, -30};
-            timeInSystem = 300;
+            painReduce = 0.7;
+            hrIncreaseLow[] = {-10, -20};
+            hrIncreaseNormal[] = {-10, -30};
+            hrIncreaseHigh[] = {-10, -35};
+            timeInSystem = 600;
             timeTillMaxEffect = 15;
-            maxDose = 4;
+            maxDose = 2;
             incompatibleMedication[] = {};
-            viscosityChange = -4;
+            viscosityChange = -2;
+            onOverDose = QUOTE(_this call EFUNC(circulation,handleOverdose));
         };
         class Epinephrine {
             painReduce = 0;
             hrIncreaseLow[] = {10, 20};
             hrIncreaseNormal[] = {10, 45};
             hrIncreaseHigh[] = {10, 35};
-            timeInSystem = 180;
+            timeInSystem = 300;
             timeTillMaxEffect = 10;
             maxDose = 9;
             incompatibleMedication[] = {};
@@ -381,7 +384,7 @@ class ACE_ADDON(Medical_Treatment) {
             hrIncreaseLow[] = {25, 35};
             hrIncreaseNormal[] = {25, 55};
             hrIncreaseHigh[] = {25, 45};
-            timeInSystem = 120;
+            timeInSystem = 240;
             timeTillMaxEffect = 2;
             maxDose = 5;
             incompatibleMedication[] = {};
@@ -391,7 +394,7 @@ class ACE_ADDON(Medical_Treatment) {
             hrIncreaseLow[] = {-10, -15};
             hrIncreaseNormal[] = {-15, -30};
             hrIncreaseHigh[] = {-20, -40};
-            timeInSystem = 120;
+            timeInSystem = 240;
             timeTillMaxEffect = 2;
             maxDose = -5;
         };
@@ -400,7 +403,7 @@ class ACE_ADDON(Medical_Treatment) {
             hrIncreaseLow[] = {-10, -15};
             hrIncreaseNormal[] = {-15, -35};
             hrIncreaseHigh[] = {-15, -35};
-            timeInSystem = 120;
+            timeInSystem = 600;
             timeTillMaxEffect = 3;
             maxDose = 3;
             viscosityChange = -5;
@@ -409,7 +412,7 @@ class ACE_ADDON(Medical_Treatment) {
             hrIncreaseLow[] = {-1, -2};
             hrIncreaseNormal[] = {-3, -5};
             hrIncreaseHigh[] = {-10, -15};
-            timeInSystem = 360;
+            timeInSystem = 420;
             timeTillMaxEffect = 2;
             maxDose = 3;
         };
@@ -418,7 +421,7 @@ class ACE_ADDON(Medical_Treatment) {
             hrIncreaseLow[] = {-1, -1};
             hrIncreaseNormal[] = {-1, -1};
             hrIncreaseHigh[] = {-2, -4};
-            timeInSystem = 360;
+            timeInSystem = 420;
             timeTillMaxEffect = 3;
             maxDose = 3;
             viscosityChange = -5;

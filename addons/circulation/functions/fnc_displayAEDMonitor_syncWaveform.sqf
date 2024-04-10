@@ -29,7 +29,6 @@ private _lineIDC = IDC_EKG_LINE_0 + _type * 2000;
 private _ctrlLine = _dlg displayCtrl (_ctrlIndex + _lineIDC);
 private _ctrlDot = _dlg displayCtrl (_ctrlIndex + _lineIDC + 1000);
 
-systemchat format ["%1 -- %2 -- %3", _ctrlIndex, _previousHeight, _targetHeight];
 if (_connected) then {
     switch (_type) do {
         case 1: {
