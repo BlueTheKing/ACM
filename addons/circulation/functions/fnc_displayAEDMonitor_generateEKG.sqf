@@ -20,7 +20,9 @@
 
 params ["_rhythm", "_spacing", "_arrayOffset"];
 
-_arrayOffset = _arrayOffset + floor(_spacing/2);
+if (_spacing != -1) then {
+    _arrayOffset = _arrayOffset + floor(_spacing/2);
+};
 
 private _maxLength = AED_MONITOR_WIDTH;
 
@@ -41,6 +43,16 @@ private _fnc_generateStepSpacingArray = {
     _stepSpacingArray;
 };
 
+private _generateNoisyRhythmStep = {
+    params ["_cleanRhythmStep", "_noiseRange"];
+
+    private _noisyRhythm = [];
+    {
+        _noisyRhythm pushBack (random [(_x - _noiseRange), _x, (_x + _noiseRange)]);
+    } forEach _cleanRhythmStep;
+    _noisyRhythm;
+};
+
 private _rhythmArray = [];
 
 switch (_rhythm) do {
@@ -53,16 +65,8 @@ switch (_rhythm) do {
             _rhythmArray = _rhythmArray + _step;
         };
     };
-    case 0: {
-        private _generateNoisyRhythmStep = {
-            params ["_cleanRhythmStep", "_noiseRange"];
-            private _noisyRhythm = [];
-            {
-                _noisyRhythm pushBack (random [(_x - _noiseRange), _x, (_x + _noiseRange)]);
-            } forEach _cleanRhythmStep;
-            _noisyRhythm;
-        };
-
+    case 5; // PEA
+    case 0: { // Sinus
         private _cleanRhythmStep = [0,-1,-5,0.1,2,-4,-40,25,5,2,1,-5,-7,-1,5,4,2,0.8,0,0];
         private _noiseRange = 3;
         private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStep) + _spacing));
@@ -75,11 +79,50 @@ switch (_rhythm) do {
             _rhythmArray = _rhythmArray + ([_spacing] call _fnc_generateStepSpacingArray) + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
         };
     };
+    case 1: { // Asystole
+        private _cleanRhythmStep = [0];
+        private _noiseRange = 3;
+        private _repeat = ceil(AED_MONITOR_WIDTH / (count _cleanRhythmStep));
+
+        if (_arrayOffset > 0) then {
+            _repeat = _repeat + 1;
+        };
+
+        for "_i" from 0 to _repeat do {
+            _rhythmArray = _rhythmArray + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
+        };
+    };
+    case 2: { // VF
+        private _cleanRhythmStep = [0];
+        private _noiseRange = 30;
+        private _repeat = ceil(AED_MONITOR_WIDTH / (count _cleanRhythmStep));
+
+        if (_arrayOffset > 0) then {
+            _repeat = _repeat + 1;
+        };
+
+        for "_i" from 0 to _repeat do {
+            _rhythmArray = _rhythmArray + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
+        };
+    };
+    case 3: { // PVT
+        private _cleanRhythmStep = [1,-30,-47,-49,-44,-39,-30];
+        private _noiseRange = 3;
+        private _repeat = ceil(AED_MONITOR_WIDTH / (count _cleanRhythmStep));
+
+        if (_arrayOffset > 0) then {
+            _repeat = _repeat + 1;
+        };
+
+        for "_i" from 0 to _repeat do {
+            _rhythmArray = _rhythmArray + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
+        };
+    };
 };
 
 if (_arrayOffset > 0) then {
     _rhythmArray deleteRange [0,_arrayOffset];
 };
 
-_rhythmArray resize _maxLength;
+_rhythmArray resize [_maxLength, 0];
 _rhythmArray;

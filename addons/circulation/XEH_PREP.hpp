@@ -12,6 +12,7 @@ PREP(beginCPR);
 PREP(displayAEDMonitor_adjustWaveform);
 PREP(displayAEDMonitor_generateEKG);
 PREP(displayAEDMonitor_generatePO);
+PREP(displayAEDMonitor_syncWaveform);
 PREP(displayAEDMonitor_updateStep);
 PREP(displayAEDMonitor);
 PREP(generateBloodType);

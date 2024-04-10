@@ -30,7 +30,11 @@ private _pulseOximeterPlacement = _patient getVariable [QGVAR(AED_Placement_Puls
 switch (_type) do {
     case 2: {
         if (_pulseOximeterPlacement != -1) then {
-            _pulseOximeterPlacement == _partIndex;
+            if (_bodyPart == "") then {
+                true;
+            } else {
+                _pulseOximeterPlacement == _partIndex;
+            };
         } else {
             false;
         };

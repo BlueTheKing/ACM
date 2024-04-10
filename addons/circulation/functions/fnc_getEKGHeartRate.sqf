@@ -66,6 +66,8 @@ private _fnc_generateHeartRate = { // ace_medical_vitals_fnc_updateHeartRate
     _heartRate
 };
 
+if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) exitWith {GET_HEART_RATE(_patient)};
+
 private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 
 if ((_patient getVariable [QGVAR(AED_LastShock), -1]) + 10 > CBA_missionTime) exitWith {0};

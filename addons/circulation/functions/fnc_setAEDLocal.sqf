@@ -33,6 +33,8 @@ switch (_type) do {
             [_medic, _patient] call FUNC(handleAED);
         } else {
             _patient setVariable [QGVAR(AED_Placement_PulseOximeter), -1, true];
+            _patient setVariable [QGVAR(AED_PODisplay), [], true];
+            _patient setVariable [QGVAR(AED_PORefreshDisplay), [], true];
         };
     };
     default {
@@ -44,7 +46,9 @@ switch (_type) do {
         if (_state) then {
             [_medic, _patient] call FUNC(handleAED);
         } else {
-            _patient setVariable [QGVAR(AED_PlacementTime), -1, true];
+            _patient setVariable [QGVAR(AED_StartTime), -1, true];
+            _patient setVariable [QGVAR(AED_EKGDisplay), [], true];
+            _patient setVariable [QGVAR(AED_EKGRefreshDisplay), [], true];
         };
     };
 };

@@ -115,7 +115,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
             shadow = 0;
             type = 0;
             style = 1;
-            sizeEx = QUOTE(AMS_GRID_H * 1.8 * (0.55 / (getResolution select 5)));
+            sizeEx = QUOTE(AMS_GRID_H * 1.9 * (0.55 / (getResolution select 5)));
             text = "0";
         };
         class SpO2VitalsDisplay: HRVitalsDisplay {

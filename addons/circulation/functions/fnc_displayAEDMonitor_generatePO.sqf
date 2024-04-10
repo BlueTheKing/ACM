@@ -14,14 +14,18 @@
  * Rhythm Array <ARRAY<NUMBER>>
  *
  * Example:
- * [0, 7, 0] call AMS_circulation_fnc_displayAEDMonitor_generatePO;
+ * [0, 7, 0, 99] call AMS_circulation_fnc_displayAEDMonitor_generatePO;
  *
  * Public: No
  */
 
 params ["_rhythm", "_spacing", "_arrayOffset", "_saturation"];
 
-_saturation = _saturation / 100;
+if (_spacing != -1) then {
+    _arrayOffset = _arrayOffset + floor(_spacing/2);
+};
+
+_saturation = _saturation / 99;
 
 _arrayOffset = _arrayOffset + floor(_spacing/2);
 
@@ -86,5 +90,5 @@ if (_arrayOffset > 0) then {
     _rhythmArray deleteRange [0,_arrayOffset];
 };
 
-_rhythmArray resize _maxLength;
+_rhythmArray resize [_maxLength, 0];
 _rhythmArray;

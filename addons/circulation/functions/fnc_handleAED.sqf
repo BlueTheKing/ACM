@@ -21,7 +21,7 @@ params ["_medic", "_patient"];
 
 if ((_patient getVariable [QGVAR(AED_PFH), -1]) != -1) exitWith {};
 
-_patient setVariable [QGVAR(AED_PlacementTime), CBA_missionTime, true];
+_patient setVariable [QGVAR(AED_StartTime), CBA_missionTime, true];
 
 private _PFH = [{
     params ["_args", "_idPFH"];
@@ -56,7 +56,7 @@ private _PFH = [{
             _patient setVariable [QGVAR(AED_Pads_Display), round(_ekgHR), true];
         };
 
-        if !(_patient getVariable [QGVAR(AED_InUse), false]) then {
+        if (!(_patient getVariable [QGVAR(AED_InUse), false]) && !(_patient getVariable [QGVAR(AED_SilentMode), true])) then { // TODO TESTING
             if (_ekgHR > 0) then {
                 private _lastBeep = _patient getVariable [QGVAR(AED_Pads_LastBeep), -1];
                 private _hrDelay = 60 / _ekgHR;
