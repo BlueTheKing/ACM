@@ -19,7 +19,7 @@
 
 params ["_medic", "_patient", ["_manual", false]];
 
-//playSound3D [QPATHTO_R(sound\aed_shock.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 0.1s idk lol
+//playSound3D [QPATHTO_R(sound\aed_shock.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 0.1s idk lol
 
 _patient setVariable [QGVAR(AED_Charged), false, true];
 _patient setVariable [QGVAR(AED_InUse), false, true];
@@ -35,7 +35,7 @@ if !(_manual) then {
         params ["_patient", "_medic"];
 
         [_patient] call FUNC(AED_TrackCPR);
-        playSound3D [QPATHTO_R(sound\aed_startcpr.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 1.858s
+        playSound3D [QPATHTO_R(sound\aed_startcpr.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 1.858s
 
     }, [_patient, _medic], 2] call CBA_fnc_waitAndExecute;
 };
@@ -47,6 +47,6 @@ if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [1,5]) exitWit
 private _amiodarone = ([_patient] call FUNC(getCardiacMedicationEffects)) get "amiodarone";
 
 if (random 100 < (2 + (2 * _amiodarone))) exitWith { // ROSC
-    [QEGVAR(medical,CPRSucceeded), _patient] call CBA_fnc_localEvent;
+    [QACEGVAR(medical,CPRSucceeded), _patient] call CBA_fnc_localEvent;
     _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0];
 };

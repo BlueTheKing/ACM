@@ -67,7 +67,7 @@ switch (_rhythm) do {
     };
     case 5; // PEA
     case 0: { // Sinus
-        private _cleanRhythmStep = [0,-1,-5,0.1,2,-4,-40,25,5,2,1,-5,-7,-1,5,4,2,0.8,0,0];
+        private _cleanRhythmStep = [0,-1,-5,0.1,2,-4,-40,25,5,2,1,-5,-7,-1,5,4,2,0.8];
         private _noiseRange = 3;
         private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStep) + _spacing));
 

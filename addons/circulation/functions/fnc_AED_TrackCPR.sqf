@@ -26,14 +26,14 @@ params ["_patient"];
 
     _patient setVariable [QGVAR(AED_MuteAlarm), true, true];
 
-    playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 0.369s
+    playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 0.369s
 
     GVAR(loopTime_cpr) = 0;
 
     [{ // Reminder to re-analyze
         params ["_patient", "_medic"];
 
-        playSound3D [QPATHTO_R(sound\aed_checkpulse_nopulsepushanalyze.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 7.375s
+        playSound3D [QPATHTO_R(sound\aed_checkpulse_nopulsepushanalyze.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 7.375s
     }, [_patient, _medic], 120] call CBA_fnc_waitAndExecute;
 
     [{
@@ -49,6 +49,6 @@ params ["_patient"];
         if ((GVAR(loopTime_cpr) + 0.6) > CBA_missionTime) exitWith {};
 
         GVAR(loopTime_cpr) = CBA_missionTime;
-        playSound3D [QPATHTO_R(sound\aed_cprtick.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 0.058s
+        playSound3D [QPATHTO_R(sound\aed_cprtick.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 0.058s
     }, 0, [_patient]] call CBA_fnc_addPerFrameHandler;
 }, [_patient], 30] call CBA_fnc_waitUntilAndExecute;

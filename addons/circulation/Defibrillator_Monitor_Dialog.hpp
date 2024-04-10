@@ -105,9 +105,9 @@ class GVAR(Lifepak_Monitor_Dialog) {
 
         class HRVitalsDisplay: RscText {
             idc = IDC_VITALSDISPLAY_HR;
-            x = QUOTE(AMS_pxToScreen_X(385));
+            x = QUOTE(AMS_pxToScreen_X(380));
             y = QUOTE(AMS_pxToScreen_Y(VitalsDisplay_Spacing_Y(0)));
-            w = QUOTE(AMS_pxToScreen_W(120));
+            w = QUOTE(AMS_pxToScreen_W(125));
             h = QUOTE(AMS_pxToScreen_H(90));
             colorBackground[] = {0,0,0,0};
             colorText[] = HR_COLOR;

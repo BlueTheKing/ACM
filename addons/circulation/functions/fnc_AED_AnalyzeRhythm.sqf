@@ -25,7 +25,7 @@ _medic setVariable [QGVAR(AED_Medic_InUse), true, true];
 
 private _timeToAnalyze = (4 + (random 4)) + 4 * (1 - (GET_BLOOD_VOLUME(_patient) / 7));
 
-playSound3D [QPATHTO_R(sound\aed_analyzingnow.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 3.074s
+playSound3D [QPATHTO_R(sound\aed_analyzingnow.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 3.074s
 
 [{
     params ["_patient", "_medic"];
@@ -36,10 +36,10 @@ playSound3D [QPATHTO_R(sound\aed_analyzingnow.wav), _patient, false, getPosASL _
     private _adviceDelay = 2;
 
     if (_shockable) then {
-        playSound3D [QPATHTO_R(sound\aed_shockadvised.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 1.662s
+        playSound3D [QPATHTO_R(sound\aed_shockadvised.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 1.662s
         _adviceDelay = 1.7;
     } else {
-        playSound3D [QPATHTO_R(sound\aed_noshockadvised.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 1.99s
+        playSound3D [QPATHTO_R(sound\aed_noshockadvised.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 1.99s
     };
 
     [{
@@ -51,7 +51,7 @@ playSound3D [QPATHTO_R(sound\aed_analyzingnow.wav), _patient, false, getPosASL _
             _patient setVariable [QGVAR(AED_InUse), false, true];
             _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
 
-            playSound3D [QPATHTO_R(sound\aed_startcpr.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 1.858s
+            playSound3D [QPATHTO_R(sound\aed_startcpr.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 1.858s
         };
 
     }, [_patient, _medic, _shockable], 2] call CBA_fnc_waitAndExecute;

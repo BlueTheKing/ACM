@@ -80,13 +80,13 @@ private _PFH = [{
                     if (_rhythmState in [0,5]) then {
                         _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), false];
                         _patient setVariable [QGVAR(AED_Alarm_State), false];
-                        playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 0.369s
+                        playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 0.369s
                     };
                 };
 
                 if ((_lastBeep + _hrDelay) < CBA_missionTime) then {
                     _patient setVariable [QGVAR(AED_Pads_LastBeep), CBA_missionTime];
-                    playSound3D [QPATHTO_R(sound\aed_hr_beep.wav), _patient, false, getPosASL _patient, 10, 1, 10]; // 0.15s
+                    playSound3D [QPATHTO_R(sound\aed_hr_beep.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 0.15s
                 };
             } else {
                 if !(_patient getVariable [QGVAR(AED_Alarm_State), false]) then {
