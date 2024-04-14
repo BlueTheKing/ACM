@@ -19,7 +19,13 @@
 
 params ["_unit", "_deltaT", "_syncValue"];
 
-if (!ACEGVAR(medical_vitals,simulateSpO2)) exitWith {}; // changing back to default is handled in initSettings.inc.sqf
+//if (!ACEGVAR(medical_vitals,simulateSpO2)) exitWith {}; // changing back to default is handled in initSettings.inc.sqf
+
+private _maxDecline = -50;
+
+if !(_unit call ACEFUNC(common,isAwake)) then {
+    _maxDecline = -0.125;
+};
 
 #define IDEAL_PPO2 0.255
 
@@ -71,7 +77,7 @@ private _breathingState = _unit getVariable [QEGVAR(breathing,BreathingState), 1
 
 private _breathingEffectiveness = (_airwayState min _effectiveBloodVolume) * _breathingState;
 
-private _rateOfChange = _negativeChange + (_positiveChange * _breathingEffectiveness);
+private _rateOfChange = _negativeChange + (_positiveChange * _breathingEffectiveness) max _maxDecline;
 
 private _oxygenSaturation = (_currentOxygenSaturation + (_rateOfChange * _deltaT)) max 0 min 100;
 

@@ -20,7 +20,7 @@ params ["_patient"];
 private _state = true;
 
 switch (true) do {
-    case (GET_OXYGEN(_patient) < 70);
+    case (GET_OXYGEN(_patient) < AMS_OXYGEN_HYPOXIA);
     case (_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]);
     case (GET_BLOOD_VOLUME(_patient) < BLOOD_VOLUME_CLASS_4_HEMORRHAGE): {
         _state = false;

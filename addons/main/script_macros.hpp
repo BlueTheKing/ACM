@@ -155,6 +155,10 @@
 #define GET_PULSEOX(unit) (unit getVariable [QEGVAR(breathing,PulseOximeter_Placement),[false,false]])
 #define HAS_PULSEOX(unit,index) (GET_PULSEOX(unit) select index)
 
+#define AMS_OXYGEN_UNCONSCIOUS 80
+#define AMS_OXYGEN_HYPOXIA 60
+#define AMS_OXYGEN_DEATH 55
+
 // Circulation
 #define AMS_IV_16G 1
 #define AMS_IV_14G 2

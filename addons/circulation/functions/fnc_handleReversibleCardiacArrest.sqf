@@ -30,7 +30,7 @@ private _PFH = [{
     if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) exitWith {};
 
     private _time = _patient getVariable [QGVAR(ReversibleCardiacArrest_Time), -1];
-    private _reversibleCause = _patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false] || (BLOOD_VOLUME_CLASS_4_HEMORRHAGE >= GET_BLOOD_VOLUME(_patient)) || (GET_OXYGEN(_patient) < 70);
+    private _reversibleCause = _patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false] || (BLOOD_VOLUME_CLASS_4_HEMORRHAGE >= GET_BLOOD_VOLUME(_patient)) || (GET_OXYGEN(_patient) < AMS_OXYGEN_HYPOXIA);
     
     if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] != 5 || !_reversibleCause || !(IN_CRDC_ARRST(_patient)) || !(alive _patient) || ((_time + 360) < CBA_missionTime)) exitWith {
         _patient setVariable [QGVAR(ReversibleCardiacArrest_State), false, true];

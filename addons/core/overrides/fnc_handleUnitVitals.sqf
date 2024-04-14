@@ -100,8 +100,8 @@ if (_adjustments isNotEqualTo []) then {
     };
 };
 
-if (GET_OXYGEN(_unit) < 70) then {
-    _hrTargetAdjustment = _hrTargetAdjustment - 10 * GET_OXYGEN(_unit);
+if (GET_OXYGEN(_unit) < AMS_OXYGEN_HYPOXIA) then { // Severe hypoxia causes heart to give out
+    _hrTargetAdjustment = _hrTargetAdjustment - 10 * abs (AMS_OXYGEN_HYPOXIA - GET_OXYGEN(_unit));
 };
 
 if (_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) then {
@@ -127,10 +127,9 @@ switch (true) do {
         TRACE_3("BloodVolume Fatal",_unit,BLOOD_VOLUME_FATAL,_bloodVolume);
         [QACEGVAR(medical,Bleedout), _unit] call CBA_fnc_localEvent;
     };
-    case (GET_OXYGEN(_unit) < 60): {
-        if (50 + (random 5) > GET_OXYGEN(_unit)) then {
-            systemchat "dead";
-            //[QEGVAR(breathing,oxygenDeprivation), _unit] call CBA_fnc_localEvent;
+    case (GET_OXYGEN(_unit) < AMS_OXYGEN_DEATH): {
+        if (AMS_OXYGEN_DEATH - (random 5) > GET_OXYGEN(_unit)) then {
+            [_unit, "Oxygen Deprivation"] call ACEFUNC(medical_status,setDead);
         };
     };
     case (IN_CRDC_ARRST(_unit)): {}; // if in cardiac arrest just break now to avoid throwing unneeded events
@@ -165,7 +164,7 @@ switch (true) do {
             [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
         };
     };
-    case (GET_OXYGEN(_unit) < 70): {
+    case (GET_OXYGEN(_unit) < AMS_OXYGEN_HYPOXIA): {
         private _nextCheck = _unit getVariable [QEGVAR(circulation,ReversibleCardiacArrest_HypoxiaTime), CBA_missionTime];
         private _enterCardiacArrest = false;
         if (CBA_missionTime >= _nextCheck) then {
@@ -181,7 +180,7 @@ switch (true) do {
     case (_woundBloodLoss > BLOOD_LOSS_KNOCK_OUT_THRESHOLD_DEFAULT): {
         [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };
-    case (GET_OXYGEN(_unit) < 80): {
+    case (GET_OXYGEN(_unit) < AMS_OXYGEN_UNCONSCIOUS): {
         if (70 + (random 10) > GET_OXYGEN(_unit)) then {
             [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
         };
