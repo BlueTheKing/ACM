@@ -216,9 +216,9 @@ private _bodyPartIV = GET_IV(_target) select _selectionN;
 // IV/IO
 if (_bodyPartIV > 0) then {
     private _IVText = switch (_bodyPartIV) do {
-        case AMS_IV_16G: {"16g IV"};
-        case AMS_IV_14G: {"14g IV"};
-        case AMS_IO_FAST1: {"FAST1 IO"};
+        case AMS_IV_16G_M: {"16g IV"};
+        case AMS_IV_14G_M: {"14g IV"};
+        case AMS_IO_FAST1_M: {"FAST1 IO"};
     };
     private _connectedBag = [_target, _selectionN] call FUNC(getBodyPartIVBags);
 

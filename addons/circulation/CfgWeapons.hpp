@@ -38,7 +38,7 @@ class CfgWeapons {
         };
     };
 
-    class AMS_IO_FAST1: AMS_IV_16g {
+    class AMS_IO_FAST: AMS_IV_16g {
         picture = QPATHTOF(ui\IO_FAST1_ca.paa);
         displayName = "FAST1 IO";
         descriptionShort = "Used to transfuse fluids in case of severe injury";

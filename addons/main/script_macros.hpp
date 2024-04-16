@@ -160,9 +160,9 @@
 #define AMS_OXYGEN_DEATH 55
 
 // Circulation
-#define AMS_IV_16G 1
-#define AMS_IV_14G 2
-#define AMS_IO_FAST1 3
+#define AMS_IV_16G_M 1
+#define AMS_IV_14G_M 2
+#define AMS_IO_FAST1_M 3
 
 #define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),[0,0,0,0,0,0]])
 

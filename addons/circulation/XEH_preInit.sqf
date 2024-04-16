@@ -113,7 +113,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowIO),
     "LIST",
-    ["AllowIO", "Training level required to use IOs"],
+    ["Allow IO", "Training level required to use IOs"],
     [AMS_SETTINGS_CATEGORY, "IV/IO"],
     [SETTING_SLIDER_SKILL, 1],
     true
