@@ -27,3 +27,42 @@ private _partIndex = ALL_BODY_PARTS find _bodyPart;
 _IVState set [_partIndex, _type];
 
 _patient setVariable [QGVAR(IV_Placement), _IVState, true];
+
+if (_type == 0) then {
+    private _ivBags = _patient getVariable [QACEGVAR(medical,ivBags), []];
+
+    {
+        _x params ["_bodyPartIndex", "_type", "_volume", "_bloodType"];
+        
+        if (_bodyPartIndex == _partIndex) then {
+            private _returnAmount = 500;
+
+            if (_volume < 500) then {
+                if (_volume < 250) then {
+                    _returnAmount = 0;
+                } else {
+                    _returnAmount = 250;
+                };
+            };
+
+            if (_returnAmount > 0) then {
+                private _itemClassname = switch (_type) do {
+                    case "Blood": {
+                        format ["AMS_BloodBag_%1_%2", ([_bloodType, 2] call FUNC(convertBloodType)), _returnAmount];
+                    };
+                    case "Saline": {
+                        format ["ACE_SalineIV_%1", _returnAmount];
+                    };
+                    default {
+                        format ["ACE_PlasmaIV_%1", _returnAmount];
+                    };
+                };
+
+                [_medic, _itemClassname] call ACEFUNC(common,addToInventory);
+            };
+            _ivBags deleteAt _forEachIndex;
+        };
+    } forEachReversed _ivBags;
+
+    _patient setVariable [QACEGVAR(medical,ivBags), _ivBags, true];
+};
