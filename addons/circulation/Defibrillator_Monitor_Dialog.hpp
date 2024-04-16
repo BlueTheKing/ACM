@@ -15,7 +15,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
     objects[] = {};
 
     class ControlsBackground {
-        class BlackBackground: RscText {
+        class Black_Background: RscText {
             idc = -1;
             x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 20)));
             y = QUOTE(AMS_pxToScreen_Y((AED_TOPLEFT_Y - 20)));
@@ -23,8 +23,8 @@ class GVAR(Lifepak_Monitor_Dialog) {
             h = QUOTE(AMS_pxToScreen_H(700));
             colorBackground[] = {0,0,0,1};
         };
-        class BlackBackground2: BlackBackground {};
-        class VitalsSectionBackground: RscText {
+        class Black_Background2: Black_Background {};
+        class VitalsSection_Background: RscText {
             idc = -1;
             x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 10))); // 330
             y = QUOTE(AMS_pxToScreen_Y(AED_TOPLEFT_Y)); // 900
@@ -33,7 +33,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
             colorBackground[] = {0.18,0.26,0.29,1};
             text = "";
         };
-        class HRVitalsBackground: RscText {
+        class HR_Vitals_Background: RscText {
             idc = -1;
             x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 10))); // 330
             y = QUOTE(AMS_pxToScreen_Y(VitalsBG_Spacing_Y(0)));
@@ -41,32 +41,32 @@ class GVAR(Lifepak_Monitor_Dialog) {
             h = QUOTE(AMS_pxToScreen_H(140));
             colorBackground[] = {0,0,0,1};
         };
-        class SpO2VitalsBackground: HRVitalsBackground {
+        class SpO2_Vitals_Background: HR_Vitals_Background {
             idc = -1;
             y = QUOTE(AMS_pxToScreen_Y(VitalsBG_Spacing_Y(1)));
         };
-        class CO2VitalsBackground: HRVitalsBackground {
+        class CO2_Vitals_Background: HR_Vitals_Background {
             idc = -1;
             y = QUOTE(AMS_pxToScreen_Y(VitalsBG_Spacing_Y(2)));
         };
-        class BPVitalsBackground: HRVitalsBackground {
+        class BP_Vitals_Background: HR_Vitals_Background {
             idc = -1;
             y = QUOTE(AMS_pxToScreen_Y(VitalsBG_Spacing_Y(3)));
         };
-        class TopBarBackground: VitalsSectionBackground {
+        class Top_Bar_Background: VitalsSection_Background {
             idc = -1;
             y = QUOTE(AMS_pxToScreen_Y(AED_TOPLEFT_Y)); // 880
             w = QUOTE(AMS_pxToScreen_W(900));
             h = QUOTE(AMS_pxToScreen_H(20));
         };
-        class VitalsSectionDividerBackground: VitalsSectionBackground {
+        class Vitals_SectionDivider_Background: VitalsSection_Background {
             idc = -1;
             x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X + 169)));
             w = QUOTE(AMS_pxToScreen_W(2));
             h = QUOTE(AMS_pxToScreen_H(660));
         };
 
-        class HRVitalsHeader: RscText {
+        class HR_Vitals_Header: RscText {
             idc = -1;
             x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 10)));
             y = QUOTE(AMS_pxToScreen_Y(VitalsHeader_Spacing_Y(0)));
@@ -81,26 +81,26 @@ class GVAR(Lifepak_Monitor_Dialog) {
             sizeEx = QUOTE(AMS_GRID_H * 0.4 * (0.55 / (getResolution select 5)));
             text = "HR";
         };
-        class SpO2VitalsHeader: HRVitalsHeader {
+        class SpO2_Vitals_Header: HR_Vitals_Header {
             idc = -1;
             y = QUOTE(AMS_pxToScreen_Y(VitalsHeader_Spacing_Y(1)));
             colorText[] = SPO2_COLOR;
             text = "SpO2";
         };
-        class CO2VitalsHeader: HRVitalsHeader {
+        class CO2_Vitals_Header: HR_Vitals_Header {
             idc = -1;
             y = QUOTE(AMS_pxToScreen_Y(VitalsHeader_Spacing_Y(2)));
             colorText[] = CO2_COLOR;
             text = "CO2";
         };
-        class BPVitalsHeader: HRVitalsHeader {
+        class BP_Vitals_Header: HR_Vitals_Header {
             idc = -1;
             y = QUOTE(AMS_pxToScreen_Y(VitalsHeader_Spacing_Y(3)));
             colorText[] = NIBP_COLOR;
             text = "NIBP";
         };
 
-        class HRVitalsDisplay: RscText {
+        class HR_Vitals_Display: RscText {
             idc = IDC_VITALSDISPLAY_HR;
             x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X + 50))); // 380
             y = QUOTE(AMS_pxToScreen_Y(VitalsDisplay_Spacing_Y(0)));
@@ -115,7 +115,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
             sizeEx = QUOTE(AMS_GRID_H * 1.9 * (0.55 / (getResolution select 5)));
             text = "0";
         };
-        class SpO2VitalsDisplay: HRVitalsDisplay {
+        class SpO2_Vitals_Display: HR_Vitals_Display {
             idc = IDC_VITALSDISPLAY_SPO2;
             x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X + 60))); // 390
             y = QUOTE(AMS_pxToScreen_Y(VitalsDisplay_Spacing_Y(1)));
@@ -124,6 +124,53 @@ class GVAR(Lifepak_Monitor_Dialog) {
             colorText[] = SPO2_COLOR;
             font = "RobotoCondensedBold";
             sizeEx = QUOTE(AMS_GRID_H * 1.7 * (0.55 / (getResolution select 5)));
+            text = "0";
+        };
+        class CO2_Vitals_Display: SpO2_Vitals_Display {
+            idc = IDC_VITALSDISPLAY_CO2;
+            y = QUOTE(AMS_pxToScreen_Y(VitalsDisplay_Spacing_Y(2)));
+            w = QUOTE(AMS_pxToScreen_W(115));
+            h = QUOTE(AMS_pxToScreen_H(93));
+            colorText[] = CO2_COLOR;
+            text = "0";
+        };
+        class RR_Vitals_Display: CO2_Vitals_Display {
+            idc = IDC_VITALSDISPLAY_RR;
+            x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 38)));
+            y = QUOTE(AMS_pxToScreen_Y((VitalsDisplay_Spacing_Y(2) + 12)));
+            w = QUOTE(AMS_pxToScreen_W(80));
+            h = QUOTE(AMS_pxToScreen_H(80));
+            sizeEx = QUOTE(AMS_GRID_H * 0.8 * (0.55 / (getResolution select 5)));
+            text = "0";
+        };
+        class RR_Text_Vitals_Display: RR_Vitals_Display {
+            idc = IDC_VITALSDISPLAY_RR_TEXT;
+            x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 14)));
+            y = QUOTE(AMS_pxToScreen_Y((VitalsDisplay_Spacing_Y(2) + 9)));
+            sizeEx = QUOTE(AMS_GRID_H * 0.45 * (0.55 / (getResolution select 5)));
+            text = "RR";
+        };
+        class NIBP_S_Vitals_Display: SpO2_Vitals_Display {
+            idc = IDC_VITALSDISPLAY_NIBP_S;
+            y = QUOTE(AMS_pxToScreen_Y(VitalsDisplay_Spacing_Y(3)));
+            w = QUOTE(AMS_pxToScreen_W(115));
+            h = QUOTE(AMS_pxToScreen_H(93));
+            colorText[] = NIBP_COLOR;
+            text = "0";
+        };
+        class NIBP_D_Vitals_Display: SpO2_Vitals_Display {
+            idc = IDC_VITALSDISPLAY_NIBP_D;
+            y = QUOTE(AMS_pxToScreen_Y((VitalsDisplay_Spacing_Y(3) + 55)));
+            colorText[] = NIBP_COLOR;
+            text = "0";
+        };
+        class NIBP_Mean_Vitals_Display: NIBP_D_Vitals_Display {
+            idc = IDC_VITALSDISPLAY_NIBPMEAN;
+            x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 48)));
+            y = QUOTE(AMS_pxToScreen_Y((VitalsDisplay_Spacing_Y(3) + 68)));
+            w = QUOTE(AMS_pxToScreen_W(100));
+            h = QUOTE(AMS_pxToScreen_H(90));
+            sizeEx = QUOTE(AMS_GRID_H * 0.8 * (0.55 / (getResolution select 5)));
             text = "0";
         };
 
