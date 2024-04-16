@@ -34,10 +34,11 @@
 #define TR_AUTOCOLLAPSE			2
 
 // UI stuff
+#define AMS_GUI_SIZEM 1.05
 #define AMS_GUI_GRID_W (safezoneW * 0.55)
 #define AMS_GUI_GRID_H (AMS_GUI_GRID_W * 4/3)
-#define AMS_GUI_GRID_X (safezoneX + (safezoneW - AMS_GUI_GRID_W) / 2)
-#define AMS_GUI_GRID_Y (safezoneY + (safezoneH - AMS_GUI_GRID_H) / 2)
+#define AMS_GUI_GRID_X (safezoneX + (safezoneW - AMS_GUI_GRID_W) / 2) * AMS_GUI_SIZEM
+#define AMS_GUI_GRID_Y (safezoneY + (safezoneH - AMS_GUI_GRID_H) / 2) * AMS_GUI_SIZEM
 
 #define AMS_pxToScreen_X(X) (X / 2048 * AMS_GUI_GRID_W + AMS_GUI_GRID_X)
 #define AMS_pxToScreen_Y(X) (X / 2048 * AMS_GUI_GRID_H + AMS_GUI_GRID_Y)
@@ -48,13 +49,16 @@
 
 #define IDC_LIFEPAK_MONITOR 70000
 
+#define AED_TOPLEFT_X 624
+#define AED_TOPLEFT_Y 546
+
 #define AED_MONITOR_WIDTH 176
 
 // Vitals Display stuff
-
-#define VitalsBG_Spacing_Y(number) (900 + (170*number))
-#define VitalsHeader_Spacing_Y(number) (878 + (170*number))
-#define VitalsDisplay_Spacing_Y(number) (887 + (170*number))
+#define VitalsDisplay_Spacing_V 160
+#define VitalsBG_Spacing_Y(number) ((AED_TOPLEFT_Y + 20) + (VitalsDisplay_Spacing_V * number))
+#define VitalsHeader_Spacing_Y(number) ((AED_TOPLEFT_Y - 2) + (VitalsDisplay_Spacing_V * number))
+#define VitalsDisplay_Spacing_Y(number) ((AED_TOPLEFT_Y + 5) + (VitalsDisplay_Spacing_V * number))
 
 #define HR_COLOR {0,1,0,1}
 #define SPO2_COLOR {0,0.6,1,1}
@@ -64,8 +68,8 @@
 // Line stuff
 
 #define EKG_ColumnWidth 4
-#define EKG_Line_X(adjust) (500 + EKG_ColumnWidth*adjust)
-#define EKG_Line_Y(adjust) (975 + adjust)
+#define EKG_Line_X(adjust) ((AED_TOPLEFT_X + 177) + EKG_ColumnWidth*adjust)
+#define EKG_Line_Y(adjust) ((AED_TOPLEFT_Y + 105) + adjust)
 
 // IDC defines
 

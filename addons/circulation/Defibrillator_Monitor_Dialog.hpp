@@ -15,21 +15,30 @@ class GVAR(Lifepak_Monitor_Dialog) {
     objects[] = {};
 
     class ControlsBackground {
+        class BlackBackground: RscText {
+            idc = -1;
+            x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 20)));
+            y = QUOTE(AMS_pxToScreen_Y((AED_TOPLEFT_Y - 20)));
+            w = QUOTE(AMS_pxToScreen_W(1000));
+            h = QUOTE(AMS_pxToScreen_H(700));
+            colorBackground[] = {0,0,0,1};
+        };
+        class BlackBackground2: BlackBackground {};
         class VitalsSectionBackground: RscText {
             idc = -1;
-            x = QUOTE(AMS_pxToScreen_X(330));
-            y = QUOTE(AMS_pxToScreen_Y(900));
-            w = QUOTE(AMS_pxToScreen_W(170));
+            x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 10))); // 330
+            y = QUOTE(AMS_pxToScreen_Y(AED_TOPLEFT_Y)); // 900
+            w = QUOTE(AMS_pxToScreen_W(180));
             h = QUOTE(AMS_pxToScreen_H(550));
             colorBackground[] = {0.18,0.26,0.29,1};
             text = "";
         };
         class HRVitalsBackground: RscText {
             idc = -1;
-            x = QUOTE(AMS_pxToScreen_X(330));
+            x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 10))); // 330
             y = QUOTE(AMS_pxToScreen_Y(VitalsBG_Spacing_Y(0)));
-            w = QUOTE(AMS_pxToScreen_W(170));
-            h = QUOTE(AMS_pxToScreen_H(150));
+            w = QUOTE(AMS_pxToScreen_W(180));
+            h = QUOTE(AMS_pxToScreen_H(140));
             colorBackground[] = {0,0,0,1};
         };
         class SpO2VitalsBackground: HRVitalsBackground {
@@ -44,34 +53,22 @@ class GVAR(Lifepak_Monitor_Dialog) {
             idc = -1;
             y = QUOTE(AMS_pxToScreen_Y(VitalsBG_Spacing_Y(3)));
         };
-        class VitalsWaveformBackground: RscText {
-            idc = -1;
-            x = QUOTE(AMS_pxToScreen_X(500));
-            y = QUOTE(AMS_pxToScreen_Y(900));
-            w = QUOTE(AMS_pxToScreen_W(700));
-            h = QUOTE(AMS_pxToScreen_H(310));
-            type = 0;
-            style = 80;
-            colorBackground[] = {0,0,0,1};
-            colorText[] = {0,0,0,0};
-            text = "";
-        };
         class TopBarBackground: VitalsSectionBackground {
             idc = -1;
-            y = QUOTE(AMS_pxToScreen_Y(880));
-            w = QUOTE(AMS_pxToScreen_W(870));
+            y = QUOTE(AMS_pxToScreen_Y(AED_TOPLEFT_Y)); // 880
+            w = QUOTE(AMS_pxToScreen_W(900));
             h = QUOTE(AMS_pxToScreen_H(20));
         };
         class VitalsSectionDividerBackground: VitalsSectionBackground {
             idc = -1;
-            x = QUOTE(AMS_pxToScreen_X(499));
+            x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X + 169)));
             w = QUOTE(AMS_pxToScreen_W(2));
             h = QUOTE(AMS_pxToScreen_H(660));
         };
 
         class HRVitalsHeader: RscText {
             idc = -1;
-            x = QUOTE(AMS_pxToScreen_X(320));
+            x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 10)));
             y = QUOTE(AMS_pxToScreen_Y(VitalsHeader_Spacing_Y(0)));
             w = QUOTE(AMS_pxToScreen_W(50));
             h = QUOTE(AMS_pxToScreen_H(25));
@@ -105,7 +102,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
 
         class HRVitalsDisplay: RscText {
             idc = IDC_VITALSDISPLAY_HR;
-            x = QUOTE(AMS_pxToScreen_X(380));
+            x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X + 50))); // 380
             y = QUOTE(AMS_pxToScreen_Y(VitalsDisplay_Spacing_Y(0)));
             w = QUOTE(AMS_pxToScreen_W(125));
             h = QUOTE(AMS_pxToScreen_H(90));
@@ -120,7 +117,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
         };
         class SpO2VitalsDisplay: HRVitalsDisplay {
             idc = IDC_VITALSDISPLAY_SPO2;
-            x = QUOTE(AMS_pxToScreen_X(390));
+            x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X + 60))); // 390
             y = QUOTE(AMS_pxToScreen_Y(VitalsDisplay_Spacing_Y(1)));
             w = QUOTE(AMS_pxToScreen_W(115));
             h = QUOTE(AMS_pxToScreen_H(93));
@@ -172,6 +169,17 @@ class GVAR(Lifepak_Monitor_Dialog) {
             text = "";
         };
         PO_DOTS
+        class AEDBackground: RscPicture {
+            idc = -1;
+            x = QUOTE(AMS_GUI_GRID_X);
+            y = QUOTE(AMS_GUI_GRID_Y);
+            w = QUOTE(AMS_GUI_GRID_W * AMS_GUI_SIZEM);
+            h = QUOTE(AMS_GUI_GRID_H * AMS_GUI_SIZEM);
+            type = 0;
+            style = 48;
+            size = 0;
+            text = QPATHTOF(ui\lifepak\background_ca.paa);
+        };
     };
 
     class Controls {};

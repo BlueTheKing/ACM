@@ -109,7 +109,6 @@ private _PFH = [{
     private _timeToExpire = (((AED_MONITOR_WIDTH - 1) - _monitorUpdateStep) * 0.03) max 0;
 
     if (isNull _dlg/* && ((_patient getVariable [QGVAR(AED_RefreshTime), -1]) + _timeToExpire < CBA_missionTime)*/) exitWith {
-        systemchat "kill pfh";
         //_patient setVariable [QGVAR(AED_EKGDisplay), _monitorArray_EKGRefresh, true];
         //_patient setVariable [QGVAR(AED_PODisplay), _monitorArray_PORefresh, true];
 
@@ -151,7 +150,7 @@ private _PFH = [{
     _stepSpacing = 0 max (round(_stepSpacing));
 
     private _stepCondition = _monitorUpdateStep >= (AED_MONITOR_WIDTH - 1);
-    private _rhythmChangeCondition= _rhythm != _patient getVariable [QGVAR(AED_EKGRhythm), -1];
+    private _rhythmChangeCondition = _rhythm != _patient getVariable [QGVAR(AED_EKGRhythm), -1];
     private _vitalsCondition = (abs ((_patient getVariable [QGVAR(AED_Monitor_HR), false]) - _hr) > 10) || (abs ((_patient getVariable [QGVAR(AED_Monitor_OxygenSaturation), false]) - _oxygenSaturation) > 6);
     private _connectedCondition = _patient getVariable [QGVAR(AED_Monitor_Pads_State), false] != _padsState || _patient getVariable [QGVAR(AED_Monitor_PulseOximeter_State), false] != _pulseOximeterState;
     private _listCondition = (count _monitorArray_EKGRefresh < AED_MONITOR_WIDTH) || (count _monitorArray_PORefresh < AED_MONITOR_WIDTH);
