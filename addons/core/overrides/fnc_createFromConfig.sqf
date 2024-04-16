@@ -26,11 +26,7 @@ params [["_config", configNull, [configNull]]];
 
 if (isNull _config) exitWith {};
 
-systemchat format ["%1",configName _config];
-
 if ((configName _config) isEqualTo "ACE_Medical_StateMachine") exitWith {ACEGVAR(medical,STATE_MACHINE)}; // legendary level hack // TODO find another way
-
-systemchat format ["%1",configName _config];
 
 private _list = compile getText (_config >> "list");
 private _skipNull = (getNumber (_config >> "skipNull")) > 0;

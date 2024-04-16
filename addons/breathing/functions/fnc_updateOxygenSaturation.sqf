@@ -86,8 +86,4 @@ if (_targetSaturation > _oxygenSaturation) then {
     _oxygenSaturation = (_oxygenSaturation + _deltaT * _saturationChange) max _targetSaturation;
 };
 
-//if (isPlayer _unit) then {
-//    systemchat format ["%1",_saturationChange];
-//};
-
 _unit setVariable [QGVAR(OxygenSaturation), _oxygenSaturation, _syncValue];

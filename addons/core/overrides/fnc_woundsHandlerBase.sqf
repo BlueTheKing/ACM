@@ -127,7 +127,6 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         };
         if (GVAR(pneumothoraxEnabled) && _bodyPart isEqualTo "body" && {_woundClassIDToAdd in [10,60,70]}) then {
             [QEGVAR(breathing,handleChestInjury), [_unit, _classComplex]] call CBA_fnc_localEvent;
-            systemchat format ["%1 -- %2 -- %3", _classComplex, _bleeding, _woundDamage];
         };
 
         #ifdef DEBUG_MODE_FULL
