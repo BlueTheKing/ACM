@@ -29,7 +29,7 @@ if !(_unit call ACEFUNC(common,isAwake)) then {
 
 #define IDEAL_PPO2 0.255
 
-private _currentOxygenSaturation = GET_SPO2(_unit);
+private _currentOxygenSaturation = GET_OXYGEN(_unit);
 private _heartRate = GET_HEART_RATE(_unit);
 
 private _altitude = ACEGVAR(common,mapAltitude) + ((getPosASL _unit) select 2);
@@ -64,6 +64,8 @@ private _negativeChange = BASE_OXYGEN_USE;
 if (_unit == ACE_player && {missionNamespace getVariable [QACEGVAR(advanced_fatigue,enabled), false]}) then {
     _negativeChange = _negativeChange - ((1 - ACEGVAR(advanced_fatigue,aeReservePercentage)) * 0.1) - ((1 - ACEGVAR(advanced_fatigue,anReservePercentage)) * 0.05);
 };
+
+[_unit, _heartRate, _negativeChange, _deltaT, _syncValue] call EFUNC(breathing,updateRespirationRate);
 
 // Effectiveness of capturing oxygen
 // increases slightly as po2 starts lowering

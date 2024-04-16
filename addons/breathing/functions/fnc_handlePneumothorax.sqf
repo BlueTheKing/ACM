@@ -36,8 +36,8 @@ private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient"];
 
-    private _breathingState = _patient getVariable [QGVAR(BreathingState), 0];
-    private _isBreathing = (_patient getVariable [QEGVAR(airway,AirwayState), 0] > 0 && _breathingState > 0);
+    private _breathingState = _patient getVariable [QGVAR(BreathingState), 1];
+    private _isBreathing = (_patient getVariable [QEGVAR(airway,AirwayState), 1] > 0 && _breathingState > 0);
     private _pneumothoraxState = _patient getVariable [QGVAR(Pneumothorax_State), 0];
 
     if ((_pneumothoraxState < 1 && (_patient getVariable [QGVAR(ChestSeal_State), false])) || _patient getVariable [QGVAR(TensionPneumothorax_State), false]) exitWith {

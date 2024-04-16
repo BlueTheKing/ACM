@@ -37,7 +37,7 @@ if IN_CRDC_ARRST(_unit) then {
     if (_bloodVolume > BLOOD_VOLUME_CLASS_4_HEMORRHAGE) then {
         GET_BLOOD_PRESSURE(_unit) params ["_bloodPressureL", "_bloodPressureH"];
         private _meanBP = (2/3) * _bloodPressureH + (1/3) * _bloodPressureL;
-        private _oxygenSaturation = GET_SPO2(_unit);
+        private _oxygenSaturation = GET_OXYGEN(_unit);
         private _painLevel = GET_PAIN_PERCEIVED(_unit);
 
         private _targetBP = 107;

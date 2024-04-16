@@ -32,7 +32,7 @@ if (_syncValues) then {
 };
 
 // Update SPO2 intake and usage since last update
-[_unit, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateOxygen);
+private _oxygenSaturation = [_unit, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateOxygen);
 
 private _bloodVolume = ([_unit, _deltaT, _syncValues] call ACEFUNC(medical_status,getBloodVolumeChange));
 _bloodVolume = 0 max _bloodVolume min DEFAULT_BLOOD_VOLUME;
@@ -100,8 +100,8 @@ if (_adjustments isNotEqualTo []) then {
     };
 };
 
-if (GET_OXYGEN(_unit) < AMS_OXYGEN_HYPOXIA) then { // Severe hypoxia causes heart to give out
-    _hrTargetAdjustment = _hrTargetAdjustment - 10 * abs (AMS_OXYGEN_HYPOXIA - GET_OXYGEN(_unit));
+if (_oxygenSaturation < AMS_OXYGEN_HYPOXIA) then { // Severe hypoxia causes heart to give out
+    _hrTargetAdjustment = _hrTargetAdjustment - 10 * abs (AMS_OXYGEN_HYPOXIA - _oxygenSaturation);
 };
 
 if (_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) then {
@@ -127,8 +127,8 @@ switch (true) do {
         TRACE_3("BloodVolume Fatal",_unit,BLOOD_VOLUME_FATAL,_bloodVolume);
         [QACEGVAR(medical,Bleedout), _unit] call CBA_fnc_localEvent;
     };
-    case (GET_OXYGEN(_unit) < AMS_OXYGEN_DEATH): {
-        if (AMS_OXYGEN_DEATH - (random 5) > GET_OXYGEN(_unit)) then {
+    case (_oxygenSaturation < AMS_OXYGEN_DEATH): {
+        if (AMS_OXYGEN_DEATH - (random 5) > _oxygenSaturation) then {
             [_unit, "Oxygen Deprivation"] call ACEFUNC(medical_status,setDead);
         };
     };
@@ -164,7 +164,7 @@ switch (true) do {
             [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
         };
     };
-    case (GET_OXYGEN(_unit) < AMS_OXYGEN_HYPOXIA): {
+    case (_oxygenSaturation < AMS_OXYGEN_HYPOXIA): {
         private _nextCheck = _unit getVariable [QEGVAR(circulation,ReversibleCardiacArrest_HypoxiaTime), CBA_missionTime];
         private _enterCardiacArrest = false;
         if (CBA_missionTime >= _nextCheck) then {
@@ -180,8 +180,8 @@ switch (true) do {
     case (_woundBloodLoss > BLOOD_LOSS_KNOCK_OUT_THRESHOLD_DEFAULT): {
         [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };
-    case (GET_OXYGEN(_unit) < AMS_OXYGEN_UNCONSCIOUS): {
-        if (70 + (random 10) > GET_OXYGEN(_unit)) then {
+    case (_oxygenSaturation < AMS_OXYGEN_UNCONSCIOUS): {
+        if (AMS_OXYGEN_UNCONSCIOUS - (random 10) > _oxygenSaturation) then {
             [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
         };
     };

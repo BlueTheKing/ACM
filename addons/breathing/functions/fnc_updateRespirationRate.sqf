@@ -5,49 +5,39 @@
  *
  * Arguments:
  * 0: Unit <OBJECT>
- * 1:  <NUMBER>
- * 2: Time since last update <NUMBER>
- * 3: Sync value? <BOOL>
+ * 1: Heart Rate <NUMBER>
+ * 2: Oxygen Demand <NUMBER>
+ * 3: Time since last update <NUMBER>
+ * 4: Sync value? <BOOL>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player] call AMS_breathing_fnc_updateRespirationRate;
+ * [player, 80, -0.25 1, false] call AMS_breathing_fnc_updateRespirationRate;
  *
  * Public: No
  */
 
-params ["_unit", "_what", "_deltaT", "_syncValue"];
-
+params ["_unit", "_heartRate", "_oxygenDemand", "_deltaT", "_syncValue"];
 // 12-20 per min          40-60 per min
 
-private _unitDesiredRespirationRate = _unit getVariable [QEGVAR(core,TargetVitals_RespirationRate), 16];
-
-private _oxygenSaturation = _unit getVariable [QGVAR(OxygenSaturation), 0];
-
 private _respirationRate = _unit getVariable [QGVAR(RespirationRate), 0];
-private _targetRespirationRate = _unitDesiredRespirationRate;
+private _isBreathing = (_unit getVariable [QEGVAR(airway,AirwayState), 1] > 0) && (_unit getVariable [QGVAR(BreathingState), 1] > 0);
 
-private _respirationRateChange = 0;
+if (_heartRate > 0 && _isBreathing) then {
+    private _desiredRespirationRate = _unit getVariable [QEGVAR(core,TargetVitals_RespirationRate), 16];
+    
+    private _targetRespirationRate = _desiredRespirationRate;
 
-if (IN_CRDC_ARRST(_unit)) then {
-    _targetRespirationRate = 0;
-    if (false) then {}; // TODO BVM
-    if (false) then {}; // TODO CPR
+    _targetRespirationRate = linearConversion [-0.25, -0.3, _oxygenDemand, _desiredRespirationRate, 50, false];
+    _targetRespirationRate = _targetRespirationRate * (_heartRate / (_unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 80]));
 
-    _respirationRateChange = (_targetRespirationRate - _respirationRate);
-} else { // TODO affected by airway + breathing state
+    private _respirationRateChange = (_targetRespirationRate - _respirationRate) / 2;
 
-    _targetRespirationRate = linearConversion [(_unit getVariable [QEGVAR(core,TargetVitals_OxygenSaturation), 100]), 60, _oxygenSaturation, _unitDesiredRespirationRate, 30, true];
-
-    _respirationRateChange = (_targetRespirationRate - _respirationRate) / 3;
-};
-
-if (_targetRespirationRate > 0) then {
-    _respirationRate = (_respirationRate + _deltaT * _respirationRateChange) min _targetRespirationRate;
+    _respirationRate = (_respirationRate + _respirationRateChange * _deltaT) min 60;
 } else {
-    _respirationRate = (_respirationRate + _deltaT * _respirationRateChange) max _targetRespirationRate;
+    _respirationRate = 0;
 };
 
 _unit setVariable [QGVAR(RespirationRate), _respirationRate, _syncValue];
