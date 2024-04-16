@@ -21,19 +21,17 @@
  */
 
 params ["_medic", "_patient", "_bodyPart", "_classname", "", "_usedItem"];
-
-private _entry = _classname splitString "_";
 private _config = configFile >> QUOTE(ACE_ADDON(medical_treatment)) >> "IV";
-private _fluidType = GET_STRING(_config >> "type","Blood");
-private _fluidAmount = GET_NUMBER(_config >> "volume",1000);
+private _fluidType = GET_STRING(_config >> _classname >> "type","Blood");
+private _fluidAmount = GET_NUMBER(_config >> _classname >>"volume",1000);
 
 if (_fluidType == "Blood") then {
-    _fluidType = format ["Blood %1", [GET_STRING(_config >> "bloodtype","O"), 1] call EFUNC(circulation,convertBloodType)]
+    _fluidType = format ["Blood %1", [GET_NUMBER(_config >> _classname >> "bloodtype",0), 1] call EFUNC(circulation,convertBloodType)];
 };
 
 private _fluidDesc = format ["%1 %2ml", _fluidType, _fluidAmount];
 
 [_patient, _usedItem] call ACEFUNC(medical_treatment,addToTriageCard);
-[_patient, "activity", "%1 tranfused fluids (%2)", [[_medic, false, true] call ACEFUNC(common,getName), _fluidDesc]] call FUNC(addToLog);
+[_patient, "activity", "%1 began transfusing fluids (%2)", [[_medic, false, true] call ACEFUNC(common,getName), _fluidDesc]] call ACEFUNC(medical_treatment,addToLog);
 
 [QACEGVAR(medical_treatment,ivBagLocal), [_patient, _bodyPart, _classname], _patient] call CBA_fnc_targetEvent;
