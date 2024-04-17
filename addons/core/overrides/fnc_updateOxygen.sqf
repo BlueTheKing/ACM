@@ -85,3 +85,5 @@ private _oxygenSaturation = (_currentOxygenSaturation + (_rateOfChange * _deltaT
 
 _unit setVariable [VAR_OXYGEN_DEMAND, _negativeChange - BASE_OXYGEN_USE];
 _unit setVariable [VAR_SPO2, _oxygenSaturation, _syncValue];
+
+_oxygenSaturation;
