@@ -1,4 +1,5 @@
 name = "Advanced Medical System";
-picture = "icon.paa";
+picture = "logo.paa";
+logo = "logo_small.paa";
 description = "Advanced Medical System";
 author = "Blue";

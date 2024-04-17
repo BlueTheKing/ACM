@@ -6,7 +6,8 @@ mainprefix = "x"
 [files]
 include = [
     "mod.cpp",
-	"logo.paa"
+	"logo.paa",
+    "logo_small.paa"
 ]
 
 [version]

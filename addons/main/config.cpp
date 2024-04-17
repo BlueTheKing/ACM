@@ -16,13 +16,3 @@ class CfgPatches {
         VERSION_CONFIG;
     };
 };
-
-class CfgMods {
-    class PREFIX {
-        name = "Advanced Medical System";
-        author = AUTHOR;
-        picture = "icon.paa";
-        hidePicture = "true";
-        hideName = "true";
-    };
-};
