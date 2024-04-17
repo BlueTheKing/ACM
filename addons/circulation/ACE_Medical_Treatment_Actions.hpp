@@ -17,7 +17,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 0.01;
         allowedSelections[] = {"All"};
         allowSelfTreatment = 0;
-        condition = QUOTE(([ARR_2(_patient,_bodyPart)] call FUNC(hasAED)));
+        condition = QUOTE(([ARR_3(_medic,_patient,_bodyPart)] call FUNC(hasAED)));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(displayAEDMonitor));
     };
 
@@ -33,7 +33,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"AMS_AED"};
         consumeItem = 0;
-        condition = QUOTE(!([ARR_3(_patient,_bodyPart,1)] call FUNC(hasAED)));
+        condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(hasAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call FUNC(setAED));
     };
     class AED_RemovePads: AED_ApplyPads {
@@ -42,7 +42,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         treatmentTime = 1;
         allowSelfTreatment = 1;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,1)] call FUNC(hasAED));
+        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,0,false)] call FUNC(setAED));
     };
     class AED_ConnectPulseOximeter: AED_ApplyPads {
@@ -52,7 +52,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 1;// TODO change
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE(!([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED)) && (_patient getVariable [ARR_2(QQGVAR(AED_Placement_PulseOximeter),-1)]) == -1);
+        condition = QUOTE(!([ARR_4(_medic,_patient,'',2)] call FUNC(hasAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(setAED));
     };
     class AED_DisconnectPulseOximeter: AED_RemovePads {
@@ -61,8 +61,46 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 1;
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED) && (_patient getVariable [ARR_2(QQGVAR(AED_Placement_PulseOximeter),-1)]) != -1);
+        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,1,false)] call FUNC(setAED));
+    };
+    class AED_ConnectPressureCuff: AED_ApplyPads {
+        displayName = "Connect AED Pressure Cuff";
+        displayNameProgress = "Connecting AED Pressure Cuff...";
+        icon = "";
+        category = "examine";
+        treatmentTime = 1;// TODO change
+        allowedSelections[] = {"LeftArm","RightArm"};
+        condition = QUOTE(!([ARR_4(_medic,_patient,'',3)] call FUNC(hasAED)));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call FUNC(setAED));
+    };
+    class AED_DisconnectPressureCuff: AED_RemovePads {
+        displayName = "Disconnect AED Pressure Cuff";
+        displayNameProgress = "Disconnecting AED Pressure Cuff...";
+        category = "examine";
+        treatmentTime = 1;
+        allowedSelections[] = {"LeftArm","RightArm"};
+        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,3)] call FUNC(hasAED));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,2,false)] call FUNC(setAED));
+    };
+    class AED_ConnectCapnograph: AED_ApplyPads {
+        displayName = "Connect AED Capnograph";
+        displayNameProgress = "Connecting AED Capnograph...";
+        icon = "";
+        category = "examine";
+        treatmentTime = 1;// TODO change
+        allowedSelections[] = {"Head"};
+        condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,4)] call FUNC(hasAED)));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,3)] call FUNC(setAED));
+    };
+    class AED_DisconnectCapnograph: AED_RemovePads {
+        displayName = "Disconnect AED Capnograph";
+        displayNameProgress = "Disconnecting AED Capnograph...";
+        category = "examine";
+        treatmentTime = 1;
+        allowedSelections[] = {"Head"};
+        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,4)] call FUNC(hasAED));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,3,false)] call FUNC(setAED));
     };
 
     class AED_AnalyzeRhythm: AED_ViewMonitor {
@@ -87,6 +125,12 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Cancel Charge";
         condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CanCancelCharge));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_BeginCharge));
+    };
+    class AED_MeasureBP: AED_AnalyzeRhythm {
+        displayName = "Measure Blood Pressure (AED)";
+        allowedSelections[] = {"LeftArm","RightArm","Body"};
+        condition = QFUNC(AED_CanMeasureBP);
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_MeasureBP));
     };
 
     class InsertIV_16: CheckPulse {

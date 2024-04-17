@@ -165,7 +165,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
             text = "0";
         };
         class NIBP_Mean_Vitals_Display: NIBP_D_Vitals_Display {
-            idc = IDC_VITALSDISPLAY_NIBPMEAN;
+            idc = IDC_VITALSDISPLAY_NIBP_M;
             x = QUOTE(AMS_pxToScreen_X((AED_TOPLEFT_X - 48)));
             y = QUOTE(AMS_pxToScreen_Y((VitalsDisplay_Spacing_Y(3) + 68)));
             w = QUOTE(AMS_pxToScreen_W(100));

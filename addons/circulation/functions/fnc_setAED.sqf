@@ -8,6 +8,10 @@
  * 1: Patient <OBJECT>
  * 2: Body Part <STRING>
  * 3: Type <NUMBER>
+    * 0: Pads
+    * 1: Pulse Oximeter
+    * 2: Pressure Cuff
+    * 3: Capnograph
  * 4: State <BOOL>
  * 5: Hide log <BOOL>
  *
@@ -25,13 +29,26 @@ params ["_medic", "_patient", "_bodyPart", "_type", ["_state", true], ["_hideLog
 private _hint = "";
 
 switch (_type) do {
+    case 3: {
+        if (_state) then {
+            _hint = "connected AED Capnograph";
+        } else {
+            _hint = "disconnected AED Capnograph";
+        };
+    };
+    case 2: {
+        if (_state) then {
+            _hint = "connected AED Pressure Cuff";
+        } else {
+            _hint = "disconnected AED Pressure Cuff";
+        };
+    };
     case 1: {
         if (_state) then {
             _hint = "connected AED Pulse Oximeter";
         } else {
             _hint = "disconnected AED Pulse Oximeter";
         };
-        _medic setVariable [QGVAR(AED_Medic_Used_PulseOximeter), _state, true];
     };
     default {
         if (_state) then {
@@ -39,7 +56,6 @@ switch (_type) do {
         } else {
             _hint = "removed AED pads";
         };
-        _medic setVariable [QGVAR(AED_Medic_Used_Pads), _state, true];
     };
 };
 

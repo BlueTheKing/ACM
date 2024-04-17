@@ -31,8 +31,8 @@ GVAR(EKG_Tick) = -1;
 
 uiNamespace setVariable [QGVAR(AED_DLG),(findDisplay IDC_LIFEPAK_MONITOR)];
 
-private _padsState = [_patient, "", 1] call FUNC(hasAED);
-private _pulseOximeterState = [_patient, "", 2] call FUNC(hasAED);
+private _padsState = [objNull, _patient, "", 1] call FUNC(hasAED);
+private _pulseOximeterState = [objNull, _patient, "", 2] call FUNC(hasAED);
 _patient setVariable [QGVAR(AED_Monitor_HR), GET_HEART_RATE(_patient)];
 
 private _saturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), 0];
@@ -95,8 +95,8 @@ private _PFH = [{
 
     private _dlg = (uiNamespace getVariable [QGVAR(AED_DLG),displayNull]);
 
-    private _padsState = [_patient, "", 1] call FUNC(hasAED);
-    private _pulseOximeterState = [_patient, "", 2] call FUNC(hasAED);
+    private _padsState = [objNull, _patient, "", 1] call FUNC(hasAED);
+    private _pulseOximeterState = [objNull, _patient, "", 2] call FUNC(hasAED);
 
     private _oxygenSaturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), 0];
 
@@ -108,7 +108,7 @@ private _PFH = [{
 
     private _timeToExpire = (((AED_MONITOR_WIDTH - 1) - _monitorUpdateStep) * 0.03) max 0;
 
-    if (isNull _dlg/* && ((_patient getVariable [QGVAR(AED_RefreshTime), -1]) + _timeToExpire < CBA_missionTime)*/) exitWith {
+    if (isNull _dlg) exitWith {
         //_patient setVariable [QGVAR(AED_EKGDisplay), _monitorArray_EKGRefresh, true];
         //_patient setVariable [QGVAR(AED_PODisplay), _monitorArray_PORefresh, true];
 
@@ -156,7 +156,6 @@ private _PFH = [{
     private _listCondition = (count _monitorArray_EKGRefresh < AED_MONITOR_WIDTH) || (count _monitorArray_PORefresh < AED_MONITOR_WIDTH);
 
     if (_stepCondition || {_vitalsCondition || {_rhythmChangeCondition || {_connectedCondition || {_listCondition}}}}) then { // Handle full pass / force update if rhythm changes/vitals change/device is disconnected
-        //_patient setVariable [QGVAR(AED_RefreshTime), CBA_missionTime];
         _patient setVariable [QGVAR(AED_EKGRhythm), _rhythm];
 
         _monitorArray_EKGRefresh = [_rhythm, _stepSpacing, _monitorArray_Offset] call FUNC(displayAEDMonitor_generateEKG);
@@ -228,6 +227,11 @@ private _PFH = [{
         // Update vitals displays
         private _displayedHR = _patient getVariable [QGVAR(AED_Pads_Display), 0];
         private _displayedSPO2 = _patient getVariable [QGVAR(AED_PulseOximeter_Display), 0];
+        private _displayedNIBP = _patient getVariable [QGVAR(AED_NIBP_Display), [0,0]];
+        private _displayedRR = _patient getVariable [QGVAR(AED_RR_Display), 0];
+        private _displayedCO2 = _patient getVariable [QGVAR(AED_CO2_Display), 0];
+
+        private _displayedNIBP_M = 0;
 
         if (_displayedHR < 1) then {
             _displayedHR = "---";
@@ -240,8 +244,34 @@ private _PFH = [{
             _displayedSPO2 = _displayedSPO2 toFixed 0;
         };
 
+        _displayedNIBP params ["_displayedNIBP_S", "_displayedNIBP_D"];
+
+        if (_displayedNIBP_D < 1 || _displayedNIBP_S < 1) then {
+            _displayedNIBP_S = "---";
+            _displayedNIBP_D = "---";
+            _displayedNIBP_M = "--";
+        } else {
+            _displayedNIBP_M = (2/3) * _displayedNIBP_S + (1/3) * _displayedNIBP_D;
+            _displayedNIBP_M = _displayedNIBP_M toFixed 0;
+            _displayedNIBP_S = _displayedNIBP_S toFixed 0;
+            _displayedNIBP_D = _displayedNIBP_D toFixed 0;
+        };
+
+        if (_displayedRR < 1 || _displayedCO2 < 1) then {
+            _displayedRR = "--";
+            _displayedCO2 = "---";
+        } else {
+            _displayedRR = _displayedRR toFixed 0;
+            _displayedCO2 = _displayedCO2 toFixed 0;
+        };
+
         ctrlSetText [IDC_VITALSDISPLAY_HR, _displayedHR];
         ctrlSetText [IDC_VITALSDISPLAY_SPO2, _displayedSPO2];
+        ctrlSetText [IDC_VITALSDISPLAY_NIBP_S, _displayedNIBP_S];
+        ctrlSetText [IDC_VITALSDISPLAY_NIBP_D, _displayedNIBP_D];
+        ctrlSetText [IDC_VITALSDISPLAY_NIBP_M, _displayedNIBP_M];
+        ctrlSetText [IDC_VITALSDISPLAY_RR, _displayedRR];
+        ctrlSetText [IDC_VITALSDISPLAY_CO2, _displayedCO2];
     };
 }, 0, [_patient]] call CBA_fnc_addPerFrameHandler;
 

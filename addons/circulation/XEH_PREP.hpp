@@ -6,6 +6,8 @@ PREP(AED_CanAnalyzeRhythm);
 PREP(AED_CanCancelCharge);
 PREP(AED_CancelCharge);
 PREP(AED_CanManualCharge);
+PREP(AED_CanMeasureBP);
+PREP(AED_MeasureBP);
 PREP(AED_PlayAlarm);
 PREP(AED_TrackCPR);
 PREP(beginCPR);

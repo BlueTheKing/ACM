@@ -21,6 +21,8 @@ params ["_medic", "_patient"];
 
 if ((_patient getVariable [QGVAR(AED_PFH), -1]) != -1) exitWith {};
 
+_medic setVariable [QGVAR(AED_Target_Patient), _patient, true];
+
 _patient setVariable [QGVAR(AED_StartTime), CBA_missionTime, true];
 
 private _PFH = [{
@@ -30,14 +32,22 @@ private _PFH = [{
     private _padsStatus = _patient getVariable [QGVAR(AED_Placement_Pads), false];
     private _pulseOximeterPlacement = _patient getVariable [QGVAR(AED_Placement_PulseOximeter), -1];
     private _pulseOximeterPlacementStatus = (_pulseOximeterPlacement != -1 && {HAS_TOURNIQUET_APPLIED_ON(_patient,_pulseOximeterPlacement)});
+    private _pressureCuffPlacement = _patient getVariable [QGVAR(AED_Placement_PressureCuff), -1];
+    private _capnographStatus = _patient getVariable [QGVAR(AED_Placement_Capnograph), false];
 
-    if (!_padsStatus && _pulseOximeterPlacement == -1) exitWith {
+    if (!_padsStatus && _pulseOximeterPlacement == -1 && _pressureCuffPlacement == -1 && !_capnographStatus) exitWith {
         _patient setVariable [QGVAR(AED_Pads_Display), 0, true];
         _patient setVariable [QGVAR(AED_Pads_LastSync), -1];
         _patient setVariable [QGVAR(AED_PulseOximeter_Display), 0, true];
         _patient setVariable [QGVAR(AED_PulseOximeter_LastSync), -1];
 
+        _patient setVariable [QGVAR(AED_Capnograph_LastSync), -1];
+        _patient setVariable [QGVAR(AED_RR_Display), 0, true];
+        _patient setVariable [QGVAR(AED_CO2_Display), 0, true];
+
         _patient setVariable [QGVAR(AED_PFH), -1];
+
+        _medic setVariable [QGVAR(AED_Target_Patient), objNull, true];
 
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
@@ -56,7 +66,7 @@ private _PFH = [{
             _patient setVariable [QGVAR(AED_Pads_Display), round(_ekgHR), true];
         };
 
-        if (!(_patient getVariable [QGVAR(AED_InUse), false]) && !(_patient getVariable [QGVAR(AED_SilentMode), true])) then { // TODO TESTING
+        if (!(_patient getVariable [QGVAR(AED_InUse), false]) && !(_patient getVariable [QGVAR(AED_SilentMode), false])) then {
             if (_ekgHR > 0) then {
                 private _lastBeep = _patient getVariable [QGVAR(AED_Pads_LastBeep), -1];
                 private _hrDelay = 60 / _ekgHR;
@@ -124,6 +134,15 @@ private _PFH = [{
                     _patient setVariable [QGVAR(AED_Pads_Display), 0, true];
                 };
             };
+        };
+    };
+
+    if (_capnographStatus) then {
+        private _lastSync = _patient getVariable [QGVAR(AED_Capnograph_LastSync), -1];
+
+        if (_lastSync + 4 < CBA_missionTime) then {
+            _patient setVariable [QGVAR(AED_RR_Display), round(GET_RESPIRATION_RATE(_patient)), true];
+            _patient setVariable [QGVAR(AED_CO2_Display), round([_patient] call EFUNC(breathing,getEtCO2)), true];
         };
     };
 }, 0, [_patient]] call CBA_fnc_addPerFrameHandler;
