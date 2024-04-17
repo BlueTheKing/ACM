@@ -23,7 +23,7 @@ params ["_unit", "_deltaT", "_syncValue"];
 
 private _maxDecline = -50;
 
-if !(_unit call ACEFUNC(common,isAwake)) then {
+if !(IS_UNCONSCIOUS(_unit)) then {
     _maxDecline = -0.125;
 };
 

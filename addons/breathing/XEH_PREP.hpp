@@ -4,6 +4,7 @@ PREP(canPlacePulseOximeter);
 PREP(checkBreathing);
 PREP(checkBreathingLocal);
 PREP(generatePTXMap);
+PREP(getEtCO2);
 PREP(getSpO2);
 PREP(handleChestInjury);
 PREP(handlePneumothorax);

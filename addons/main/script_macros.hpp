@@ -142,16 +142,22 @@
 #define GET_DAMAGE_THRESHOLD(unit)  (unit getVariable [QACEGVAR(medical,damageThreshold), [ACEGVAR(medical,AIDamageThreshold),ACEGVAR(medical,playerDamageThreshold)] select (isPlayer unit)])
 
 // AMS
-
 #define ALL_BODY_PARTS_PRIORITY ["body", "head", "leftarm", "rightarm", "leftleg", "rightleg"]
 
 #define SETTING_SLIDER_SKILL [0, 1, 2], [ACELLSTRING(Medical_Treatment,Anyone), ACELLSTRING(Medical_Treatment,Medics), ACELLSTRING(Medical_Treatment,Doctors)]
 
 // Airway
+#define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])
+
 #define IN_RECOVERYPOSITION(unit) (unit getVariable [QQEGVAR(airway,RecoveryPosition_State), false])
 
 // Breathing
+#define GET_BREATHINGSTATE(unit) (unit getVariable [QEGVAR(breathing,BreathingState), 1])
+
 #define GET_OXYGEN(unit) (unit getVariable [VAR_SPO2, DEFAULT_SPO2])
+
+#define GET_RESPIRATION_RATE(unit) (unit getVariable [QEGVAR(breathing,RespirationRate), 0])
+
 #define GET_PULSEOX(unit) (unit getVariable [QEGVAR(breathing,PulseOximeter_Placement),[false,false]])
 #define HAS_PULSEOX(unit,index) (GET_PULSEOX(unit) select index)
 
