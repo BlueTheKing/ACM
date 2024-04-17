@@ -6,6 +6,6 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-#define AMS_SETTINGS_CATEGORY "AMS: Disability"
+#define ACM_SETTINGS_CATEGORY "ACM: Disability"
 
 ADDON = true;

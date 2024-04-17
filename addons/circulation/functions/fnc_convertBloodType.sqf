@@ -14,7 +14,7 @@
  * Blood Type <STRING/NUMBER>
  *
  * Example:
- * ["ON", 0] call AMS_circulation_fnc_convertBloodType;
+ * ["ON", 0] call ACM_circulation_fnc_convertBloodType;
  *
  * Public: No
  */
@@ -22,14 +22,14 @@
 params ["_bloodType", ["_returnType", 0]];
 
 /*
-    O+  = O   = 0 = AMS_BLOODTYPE_O
-    O-  = ON  = 1 = AMS_BLOODTYPE_ON
-    A+  = A   = 2 = AMS_BLOODTYPE_A
-    A-  = AN  = 3 = AMS_BLOODTYPE_AN
-    B+  = B   = 4 = AMS_BLOODTYPE_B
-    B-  = BN  = 5 = AMS_BLOODTYPE_BN
-    AB+ = AB  = 6 = AMS_BLOODTYPE_AB
-    AB- = ABN = 7 = AMS_BLOODTYPE_ABN
+    O+  = O   = 0 = ACM_BLOODTYPE_O
+    O-  = ON  = 1 = ACM_BLOODTYPE_ON
+    A+  = A   = 2 = ACM_BLOODTYPE_A
+    A-  = AN  = 3 = ACM_BLOODTYPE_AN
+    B+  = B   = 4 = ACM_BLOODTYPE_B
+    B-  = BN  = 5 = ACM_BLOODTYPE_BN
+    AB+ = AB  = 6 = ACM_BLOODTYPE_AB
+    AB- = ABN = 7 = ACM_BLOODTYPE_ABN
 */
 
 private _foundBloodTypeID = 0;
@@ -38,14 +38,14 @@ private _foundBloodTypeID = 0;
     if (_bloodType in _x) exitWith {
         _foundBloodTypeID = _forEachIndex;
     };
-} forEach [["O+","O",AMS_BLOODTYPE_O],
-["O-","ON",AMS_BLOODTYPE_ON],
-["A+","A",AMS_BLOODTYPE_A],
-["A-","AN",AMS_BLOODTYPE_AN],
-["B+","B",AMS_BLOODTYPE_B],
-["B-","BN",AMS_BLOODTYPE_BN],
-["AB+","AB",AMS_BLOODTYPE_AB],
-["AB-","ABN",AMS_BLOODTYPE_ABN]];
+} forEach [["O+","O",ACM_BLOODTYPE_O],
+["O-","ON",ACM_BLOODTYPE_ON],
+["A+","A",ACM_BLOODTYPE_A],
+["A-","AN",ACM_BLOODTYPE_AN],
+["B+","B",ACM_BLOODTYPE_B],
+["B-","BN",ACM_BLOODTYPE_BN],
+["AB+","AB",ACM_BLOODTYPE_AB],
+["AB-","ABN",ACM_BLOODTYPE_ABN]];
 
 switch (_returnType) do {
     case 1: {

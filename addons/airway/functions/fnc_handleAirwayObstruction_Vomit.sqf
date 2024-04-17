@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call AMS_airway_fnc_handleAirwayObstruction_Vomit;
+ * [player] call ACM_airway_fnc_handleAirwayObstruction_Vomit;
  *
  * Public: No
  */

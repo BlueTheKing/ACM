@@ -2,7 +2,7 @@ class CfgWeapons {
     class ACE_ItemCore;
     class CBA_MiscItem_ItemInfo;
 
-    class AMS_AED: ACE_ItemCore {
+    class ACM_AED: ACE_ItemCore {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\AED_ca.paa);
@@ -15,7 +15,7 @@ class CfgWeapons {
         };
     };
 
-    class AMS_IV_16g: ACE_ItemCore {
+    class ACM_IV_16g: ACE_ItemCore {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\IV_16g_ca.paa);
@@ -28,7 +28,7 @@ class CfgWeapons {
         };
     };
 
-    class AMS_IV_14g: AMS_IV_16g {
+    class ACM_IV_14g: ACM_IV_16g {
         picture = QPATHTOF(ui\IV_14g_ca.paa);
         displayName = "14g IV";
         descriptionShort = "Used to rapidly transfuse fluids in case of blood loss";
@@ -38,7 +38,7 @@ class CfgWeapons {
         };
     };
 
-    class AMS_IO_FAST: AMS_IV_16g {
+    class ACM_IO_FAST: ACM_IV_16g {
         picture = QPATHTOF(ui\IO_FAST1_ca.paa);
         displayName = "FAST1 IO";
         descriptionShort = "Used to transfuse fluids in case of severe injury";
@@ -48,7 +48,7 @@ class CfgWeapons {
         };
     };
 
-    class AMS_Vial_Epinephrine: ACE_ItemCore {
+    class ACM_Vial_Epinephrine: ACE_ItemCore {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\vial_epinephrine_ca.paa);
@@ -60,26 +60,26 @@ class CfgWeapons {
             mass = 0.2;
         };
     };
-    class AMS_Vial_Adenosine: AMS_Vial_Epinephrine {
+    class ACM_Vial_Adenosine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_adenosine_ca.paa);
         displayName = "Adenosine Vial";
         descriptionShort = ACECSTRING(medical_treatment,adenosine_Desc_Short);
         descriptionUse = ACECSTRING(medical_treatment,adenosine_Desc_Use);
     };
-    class AMS_Vial_Morphine: AMS_Vial_Epinephrine {
+    class ACM_Vial_Morphine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_morphine_ca.paa);
         displayName = "Morphine Vial";
         descriptionShort = ACECSTRING(medical_treatment,Morphine_Desc_Short);
         descriptionUse = ACECSTRING(medical_treatment,Morphine_Desc_Use);
     };
-    class AMS_Vial_TXA: AMS_Vial_Epinephrine {
+    class ACM_Vial_TXA: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_txa_ca.paa);
         displayName = "TXA Vial";
         descriptionShort = "Used to manage catastrophic bleeding by improving clotting ability";
         descriptionUse = "Medication used to manage catastrophic bleeding by slowing the breakdown of clots, improving clotting ability";
     };
 
-    class AMS_Vial_Amiodarone: AMS_Vial_Epinephrine {
+    class ACM_Vial_Amiodarone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_amiodarone_ca.paa);
         displayName = "Amiodarone Vial";
         descriptionShort = "Used to treat irregular heart rhythms";
@@ -89,7 +89,7 @@ class CfgWeapons {
         };
     };
 
-    class AMS_Spray_Naloxone: AMS_Vial_Epinephrine {
+    class ACM_Spray_Naloxone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\spray_naloxone_ca.paa);
         displayName = "Naloxone Nasal Spray";
         descriptionShort = "Used to rapidly reverse opioid overdose";

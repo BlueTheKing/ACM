@@ -11,7 +11,7 @@
  * Time to wrap <INT>
  *
  * Example:
- * [player, cursorTarget] call AMS_disability_fnc_getSplintWrapTime;
+ * [player, cursorTarget] call ACM_disability_fnc_getSplintWrapTime;
  *
  * Public: No
  */

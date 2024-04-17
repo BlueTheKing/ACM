@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget] call AMS_airway_fnc_action_checkAirway;
+ * [player, cursorTarget] call ACM_airway_fnc_action_checkAirway;
  *
  * Public: No
  */

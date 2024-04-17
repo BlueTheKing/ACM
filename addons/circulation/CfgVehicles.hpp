@@ -13,11 +13,11 @@ class CfgVehicles {
                 };
             };
             class ACE_Equipment {
-                class AMS_AED_Interactions {
+                class ACM_AED_Interactions {
                     displayName = "AED";
-                    condition = QUOTE('AMS_AED' in (items _player));
+                    condition = QUOTE('ACM_AED' in (items _player));
                     //icon = QPATHTOF(ui\icon_aed_ca.paa);
-                    class AMS_AED_ViewMonitor {
+                    class ACM_AED_ViewMonitor {
                         displayName = "View Monitor";
                         condition = "true";
                         statement = QUOTE([ARR_2(_player,_player)] call FUNC(displayAEDMonitor));

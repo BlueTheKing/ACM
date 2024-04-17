@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget] call AMS_circulation_fnc_beginCPR;
+ * [player, cursorTarget] call ACM_circulation_fnc_beginCPR;
  *
  * Public: No
  */
@@ -96,7 +96,7 @@ if (_initialAnimation in ["amovpercmstpsnonwnondnon", "amovpknlmstpsnonwnondnon_
         };
 
         if (GVAR(loopCPR)) then {
-            [QACEGVAR(common,switchMove), [_medic, "AMS_CPR"]] call CBA_fnc_globalEvent;
+            [QACEGVAR(common,switchMove), [_medic, "ACM_CPR"]] call CBA_fnc_globalEvent;
             GVAR(loopCPR) = false;
 
             [{

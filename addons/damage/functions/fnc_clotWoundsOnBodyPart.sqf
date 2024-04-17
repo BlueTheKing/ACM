@@ -14,7 +14,7 @@
  * None
  *
  * Example:
- * [cursorTarget, "leftleg", 1, 1, true] call AMS_damage_fnc_clotWoundsOnBodyPart;
+ * [cursorTarget, "leftleg", 1, 1, true] call ACM_damage_fnc_clotWoundsOnBodyPart;
  *
  * Public: No
  */

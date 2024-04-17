@@ -10,7 +10,7 @@
  * Blood Type <NUMBER>
  *
  * Example:
- * [player] call AMS_circulation_fnc_generateBloodType;
+ * [player] call ACM_circulation_fnc_generateBloodType;
  *
  * Public: No
  */
@@ -29,7 +29,7 @@ params ["_patient"];
 */
 
 private _bloodTypeRatios = missionNamespace getVariable [QGVAR(BloodTypeList), []];
-private _targetBloodType = AMS_BLOODTYPE_O;
+private _targetBloodType = ACM_BLOODTYPE_O;
 private _id = 0;
 
 if !(isPlayer _patient) then {

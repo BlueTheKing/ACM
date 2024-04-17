@@ -16,7 +16,7 @@ class CfgPatches {
     };
 };
 
-//#include "AMS_Statemachine.hpp"
+//#include "ACM_Statemachine.hpp"
 #include "CfgFunctions.hpp"
 #include "CfgEventHandlers.hpp"
 #include "ACE_Medical_Treatment.hpp"

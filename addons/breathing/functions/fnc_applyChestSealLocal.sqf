@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget] call AMS_breathing_fnc_applyChestSealLocal;
+ * [player, cursorTarget] call ACM_breathing_fnc_applyChestSealLocal;
  *
  * Public: No
  */

@@ -34,18 +34,18 @@
 #define TR_AUTOCOLLAPSE			2
 
 // UI stuff
-#define AMS_GUI_SIZEM 1.05
-#define AMS_GUI_GRID_W (safezoneW * 0.55)
-#define AMS_GUI_GRID_H (AMS_GUI_GRID_W * 4/3)
-#define AMS_GUI_GRID_X (safezoneX + (safezoneW - AMS_GUI_GRID_W) / 2) * AMS_GUI_SIZEM
-#define AMS_GUI_GRID_Y (safezoneY + (safezoneH - AMS_GUI_GRID_H) / 2) * AMS_GUI_SIZEM
+#define ACM_GUI_SIZEM 1.05
+#define ACM_GUI_GRID_W (safezoneW * 0.55)
+#define ACM_GUI_GRID_H (ACM_GUI_GRID_W * 4/3)
+#define ACM_GUI_GRID_X (safezoneX + (safezoneW - ACM_GUI_GRID_W) / 2) * ACM_GUI_SIZEM
+#define ACM_GUI_GRID_Y (safezoneY + (safezoneH - ACM_GUI_GRID_H) / 2) * ACM_GUI_SIZEM
 
-#define AMS_pxToScreen_X(X) (X / 2048 * AMS_GUI_GRID_W + AMS_GUI_GRID_X)
-#define AMS_pxToScreen_Y(X) (X / 2048 * AMS_GUI_GRID_H + AMS_GUI_GRID_Y)
-#define AMS_pxToScreen_W(X) (X / 2048 * AMS_GUI_GRID_W)
-#define AMS_pxToScreen_H(X) (X / 2048 * AMS_GUI_GRID_H)
+#define ACM_pxToScreen_X(X) (X / 2048 * ACM_GUI_GRID_W + ACM_GUI_GRID_X)
+#define ACM_pxToScreen_Y(X) (X / 2048 * ACM_GUI_GRID_H + ACM_GUI_GRID_Y)
+#define ACM_pxToScreen_W(X) (X / 2048 * ACM_GUI_GRID_W)
+#define ACM_pxToScreen_H(X) (X / 2048 * ACM_GUI_GRID_H)
 
-#define AMS_GRID_H ((((safezoneW / safezoneH) min 1.2) / 1.2) / 22)
+#define ACM_GRID_H ((((safezoneW / safezoneH) min 1.2) / 1.2) / 22)
 
 #define IDC_LIFEPAK_MONITOR 70000
 
@@ -262,7 +262,7 @@
 #define EKG_LINE(num,id) \
     class DOUBLES(EKG_Line,num): EKG_Line_0 { \
         idc = id; \
-        x = QUOTE(AMS_pxToScreen_X(EKG_Line_X(num))); \
+        x = QUOTE(ACM_pxToScreen_X(EKG_Line_X(num))); \
         show = 0; \
     }
 
@@ -445,7 +445,7 @@
 #define EKG_DOT(num,id) \
     class DOUBLES(EKG_Dot,num): EKG_Dot_0 { \
         idc = id; \
-        x = QUOTE(AMS_pxToScreen_X(EKG_Line_X(num))); \
+        x = QUOTE(ACM_pxToScreen_X(EKG_Line_X(num))); \
     }
 
 #define IDC_EKG_DOT_0 72000
@@ -981,7 +981,7 @@
 #define PO_LINE(num,id) \
     class DOUBLES(PO_Line,num): PO_Line_0 { \
         idc = id; \
-        x = QUOTE(AMS_pxToScreen_X(EKG_Line_X(num))); \
+        x = QUOTE(ACM_pxToScreen_X(EKG_Line_X(num))); \
         show = 0; \
     }
 
@@ -1340,7 +1340,7 @@
 #define PO_DOT(num,id) \
     class DOUBLES(PO_Dot,num): PO_Dot_0 { \
         idc = id; \
-        x = QUOTE(AMS_pxToScreen_X(EKG_Line_X(num))); \
+        x = QUOTE(ACM_pxToScreen_X(EKG_Line_X(num))); \
     }
 
 #define PO_DOTS \
@@ -1698,7 +1698,7 @@
 #define CO_LINE(num,id) \
     class DOUBLES(CO_Line,num): CO_Line_0 { \
         idc = id; \
-        x = QUOTE(AMS_pxToScreen_X(EKG_Line_X(num))); \
+        x = QUOTE(ACM_pxToScreen_X(EKG_Line_X(num))); \
     }
 
 #define CO_LINES \
@@ -2056,7 +2056,7 @@
 #define CO_DOT(num,id) \
     class DOUBLES(CO_Dot,num): CO_Dot_0 { \
         idc = id; \
-        x = QUOTE(AMS_pxToScreen_X(EKG_Line_X(num))); \
+        x = QUOTE(ACM_pxToScreen_X(EKG_Line_X(num))); \
     }
 
 #define CO_DOTS \

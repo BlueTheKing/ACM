@@ -5,7 +5,7 @@ class CfgMovesBasic {
 class CfgMovesMaleSdr: CfgMovesBasic {
     class States {
         //class AinvPknlMstpSnonWnonDr_medic0;
-        class AMS_CPR: Default {
+        class ACM_CPR: Default {
             file = "a3\anims_f\data\anim\sdr\inj\healing\ainvpknlmstpsnonwnondr_medic0.rtm";
             speed = 0.11;
             looped = 1;
@@ -18,12 +18,12 @@ class CfgMovesMaleSdr: CfgMovesBasic {
             aiming = "empty";
             aimingBody = "empty";
             ConnectFrom[] = {
-                "AMS_CPR", 
+                "ACM_CPR", 
                 0.1
             };
             //ConnectAs = "";
             ConnectTo[] = {
-                "AMS_CPR", 
+                "ACM_CPR", 
                 0.1
             };
             forceAim = 1;
@@ -31,7 +31,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
             //InterpolateWith[] = {};
             InterpolateTo[]=
             {
-                "AMS_CPR", 
+                "ACM_CPR", 
                 0.1,
                 "AinvPknlMstpSnonWnonDnon_medic",
                 0.1,

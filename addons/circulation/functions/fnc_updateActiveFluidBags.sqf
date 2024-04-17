@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call AMS_circulation_fnc_updateActiveFluidBags;
+ * [player] call ACM_circulation_fnc_updateActiveFluidBags;
  *
  * Public: No
  */

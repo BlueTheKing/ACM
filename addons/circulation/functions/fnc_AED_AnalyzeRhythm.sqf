@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, false] call AMS_circulation_fnc_AED_AnalyzeRhythm;
+ * [player, cursorTarget, false] call ACM_circulation_fnc_AED_AnalyzeRhythm;
  *
  * Public: No
  */

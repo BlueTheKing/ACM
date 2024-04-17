@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftleg"] call AMS_disability_fnc_setTourniquetTime;
+ * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_setTourniquetTime;
  *
  * Public: No
  */

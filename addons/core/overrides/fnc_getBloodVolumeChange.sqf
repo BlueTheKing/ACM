@@ -127,7 +127,7 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
                 };
             };
 
-            /*if (_bodyPart == 1 && {[_unit, _bodyPart, AMS_IO_FAST1_M] call EFUNC(circulation,hasIV)}) then { // TODO fully implement
+            /*if (_bodyPart == 1 && {[_unit, _bodyPart, ACM_IO_FAST1_M] call EFUNC(circulation,hasIV)}) then { // TODO fully implement
                 private _transfusionPain = _bagChange / 1000;
             };*/
         };

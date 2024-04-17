@@ -12,7 +12,7 @@
  * Treatment Time <NUMBER>
  *
  * Example:
- * [cursorObject, "head", 0] call AMS_damage_fnc_getStitchTime;
+ * [cursorObject, "head", 0] call ACM_damage_fnc_getStitchTime;
  *
  * Public: No
  */

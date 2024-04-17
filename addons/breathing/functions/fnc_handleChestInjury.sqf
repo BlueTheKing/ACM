@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, 60] call AMS_breathing_fnc_handleChestInjury;
+ * [player, 60] call ACM_breathing_fnc_handleChestInjury;
  *
  * Public: No
  */

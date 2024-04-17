@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, 0] call AMS_airway_fnc_handleSuction;
+ * [player, cursorTarget, 0] call ACM_airway_fnc_handleSuction;
  *
  * Public: No
  */

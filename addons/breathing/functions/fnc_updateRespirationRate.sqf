@@ -14,7 +14,7 @@
  * None
  *
  * Example:
- * [player, 80, -0.25 1, false] call AMS_breathing_fnc_updateRespirationRate;
+ * [player, 80, -0.25 1, false] call ACM_breathing_fnc_updateRespirationRate;
  *
  * Public: No
  */

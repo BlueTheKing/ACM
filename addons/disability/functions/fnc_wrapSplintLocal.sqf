@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftleg"] call AMS_disability_fnc_wrapSplintLocal;
+ * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_wrapSplintLocal;
  *
  * Public: No
  */

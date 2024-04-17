@@ -1,6 +1,6 @@
-name = "Advanced Medical System"
+name = "Advanced Combat Medicine"
 author = "Blue"
-prefix = "AMS"
+prefix = "ACM"
 mainprefix = "x"
 
 [files]

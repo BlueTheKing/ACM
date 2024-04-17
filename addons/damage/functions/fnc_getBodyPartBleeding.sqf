@@ -11,7 +11,7 @@
  * Amount of bleeding on body part <NUMBER>
  *
  * Example:
- * [cursorTarget, "head"] call AMS_damage_fnc_getBodyPartBleeding;
+ * [cursorTarget, "head"] call ACM_damage_fnc_getBodyPartBleeding;
  *
  * Public: No
  */

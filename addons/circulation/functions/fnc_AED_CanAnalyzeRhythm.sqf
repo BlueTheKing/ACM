@@ -11,7 +11,7 @@
  * Can analyze rhythm <BOOL>
  *
  * Example:
- * [player, cursorTarget] call AMS_circulation_fnc_AED_CanAnalyzeRhythm;
+ * [player, cursorTarget] call ACM_circulation_fnc_AED_CanAnalyzeRhythm;
  *
  * Public: No
  */

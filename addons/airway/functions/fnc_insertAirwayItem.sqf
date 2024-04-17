@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "OPA"] call AMS_airway_fnc_insertAirwayItem;
+ * [player, cursorTarget, "OPA"] call ACM_airway_fnc_insertAirwayItem;
  *
  * Public: No
  */

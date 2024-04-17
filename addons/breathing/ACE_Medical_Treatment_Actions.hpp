@@ -43,7 +43,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 5;
         allowedSelections[] = {"Body"};
         allowSelfTreatment = 1;
-        items[] = {"AMS_ChestSeal"};
+        items[] = {"ACM_ChestSeal"};
         consumeItem = 1;
         condition = QUOTE(GVAR(pneumothoraxEnabled) && !(_patient getVariable [ARR_2(QQGVAR(ChestSeal_State),false)]) && _patient getVariable [ARR_2(QQGVAR(ChestInjury_State),false)]);
         callbackSuccess = QFUNC(applyChestSeal);
@@ -57,7 +57,7 @@ class ACEGVAR(medical_treatment,actions) {
         medicRequired = QGVAR(allowNCD);
         treatmentTime = 5;
         allowSelfTreatment = 0;
-        items[] = {"AMS_NCDKit"};
+        items[] = {"ACM_NCDKit"};
         consumeItem = 1;
         condition = QGVAR(pneumothoraxEnabled);
         callbackSuccess = QFUNC(performNCD);
@@ -73,7 +73,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 2;
         allowedSelections[] = {"LeftArm","RightArm"};
         allowSelfTreatment = 0;
-        items[] = {"AMS_PulseOximeter"};
+        items[] = {"ACM_PulseOximeter"};
         consumeItem = 1;
         condition = QFUNC(canPlacePulseOximeter);
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call FUNC(setPulseOximeter));

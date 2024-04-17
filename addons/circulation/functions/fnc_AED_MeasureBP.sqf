@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget] call AMS_circulation_fnc_AED_MeasureBP;
+ * [player, cursorTarget] call ACM_circulation_fnc_AED_MeasureBP;
  *
  * Public: No
  */

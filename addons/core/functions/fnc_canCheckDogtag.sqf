@@ -11,7 +11,7 @@
  * True if dogtag can be checked <BOOL>
  *
  * Example:
- * [player, cursorTarget] call ace_dogtags_fnc_canCheckDogtag // AMS_core_fnc_canCheckDogtag;
+ * [player, cursorTarget] call ace_dogtags_fnc_canCheckDogtag // ACM_core_fnc_canCheckDogtag;
  *
  * Public: No
  */

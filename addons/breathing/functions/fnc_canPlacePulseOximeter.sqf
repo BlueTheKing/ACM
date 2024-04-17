@@ -13,7 +13,7 @@
  * Can place pulse oximeter <BOOL>
  *
  * Example:
- * [player, cursorTarget, "leftarm", "PlacePulseOximeter"] call AMS_breathing_fnc_canPlacePulseOximeter;
+ * [player, cursorTarget, "leftarm", "PlacePulseOximeter"] call ACM_breathing_fnc_canPlacePulseOximeter;
  *
  * Public: No
  */

@@ -7,7 +7,7 @@ class CfgWeapons {
         displayName = "Universal Splint";
         descriptionShort = "Single-use splint kit used to immobilize fracture";
     };
-    class AMS_SAMSplint: ACE_splint {
+    class ACM_SAMSplint: ACE_splint {
         author = "Blue";
         picture = QPATHTOF(ui\samSplint.paa);
         displayName = "SAM Splint";

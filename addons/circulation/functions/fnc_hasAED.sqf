@@ -13,7 +13,7 @@
  * Has AED <BOOL>
  *
  * Example:
- * [player, cursorTarget, "leftarm", 0] call AMS_circulation_fnc_hasAED;
+ * [player, cursorTarget, "leftarm", 0] call ACM_circulation_fnc_hasAED;
  *
  * Public: No
  */

@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget] call AMS_circulation_fnc_displayAEDMonitor;
+ * [player, cursorTarget] call ACM_circulation_fnc_displayAEDMonitor;
  *
  * Public: No
  */

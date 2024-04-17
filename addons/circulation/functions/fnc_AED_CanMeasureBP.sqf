@@ -12,7 +12,7 @@
  * Can measure blood pressure <BOOL>
  *
  * Example:
- * [player, cursorTarget] call AMS_circulation_fnc_AED_CanMeasureBP;
+ * [player, cursorTarget] call ACM_circulation_fnc_AED_CanMeasureBP;
  *
  * Public: No
  */

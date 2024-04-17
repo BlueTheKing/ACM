@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftleg"] call AMS_disability_fnc_removeSplintLocal;
+ * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_removeSplintLocal;
  *
  * Public: No
  */
@@ -36,7 +36,7 @@ if (_reFracture) then {
 };
 
 if (_medic isEqualTo objNull) then {
-    [_patient, "AMS_SAMsplint"] call ACEFUNC(common,addToInventory);
+    [_patient, "ACM_SAMsplint"] call ACEFUNC(common,addToInventory);
 } else {
-    [_medic, "AMS_SAMsplint"] call ACEFUNC(common,addToInventory);
+    [_medic, "ACM_SAMsplint"] call ACEFUNC(common,addToInventory);
 };

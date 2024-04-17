@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call AMS_core_fnc_initUnit;
+ * [player] call ACM_core_fnc_initUnit;
  */
 
 params ["_unit"];

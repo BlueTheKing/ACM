@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftarm", true] call AMS_breathing_fnc_setPulseOximeter;
+ * [player, cursorTarget, "leftarm", true] call ACM_breathing_fnc_setPulseOximeter;
  *
  * Public: No
  */
@@ -24,7 +24,7 @@ private _hint = "placed";
 
 if !(_state) then {
     _hint = "removed";
-    [_medic, "AMS_PulseOximeter"] call ACEFUNC(common,addToInventory);
+    [_medic, "ACM_PulseOximeter"] call ACEFUNC(common,addToInventory);
 };
 
 [_patient, "activity", "%1 %2 Pulse Oximeter", [[_medic, false, true] call ACEFUNC(common,getName), _hint]] call ACEFUNC(medical_treatment,addToLog);

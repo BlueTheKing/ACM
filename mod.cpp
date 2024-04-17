@@ -1,5 +1,5 @@
-name = "Advanced Medical System";
+name = "Advanced Combat Medicine";
 picture = "logo.paa";
 logo = "logo_small.paa";
-description = "Advanced Medical System";
+description = "Advanced Combat Medicine";
 author = "Blue";

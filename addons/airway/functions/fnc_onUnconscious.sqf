@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, true] call AMS_airway_fnc_onUnconscious;
+ * [player, true] call ACM_airway_fnc_onUnconscious;
  *
  * Public: No
  */

@@ -13,7 +13,7 @@
  * Nothing
  *
  * Example:
- * [player, cursorObject, "LeftLeg"] call ace_medical_treatment_fnc_splintLocal; // AMS_disability_fnc_splintLocal;
+ * [player, cursorObject, "LeftLeg"] call ace_medical_treatment_fnc_splintLocal; // ACM_disability_fnc_splintLocal;
  *
  * Public: No
  */

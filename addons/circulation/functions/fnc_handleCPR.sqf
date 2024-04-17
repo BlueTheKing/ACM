@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [cursorTarget, CBA_missionTime] call AMS_circulation_fnc_handleCPR;
+ * [cursorTarget, CBA_missionTime] call ACM_circulation_fnc_handleCPR;
  *
  * Public: No
  */

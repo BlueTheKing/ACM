@@ -1,7 +1,7 @@
-#define AMS_BLOODBAG_ENTRY(type,typeS,amount) \
+#define ACM_BLOODBAG_ENTRY(type,typeS,amount) \
     class TRIPLES(BloodBag,type,amount): BloodBag_O_1000 { \
         displayName = QUOTE(Give Blood typeS (##amount##ml)); \
-        items[] = {QUOTE(TRIPLES(AMS_BloodBag,type,amount))}; \
+        items[] = {QUOTE(TRIPLES(ACM_BloodBag,type,amount))}; \
     }
 
 class ACEGVAR(medical_treatment,actions) {
@@ -31,7 +31,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 1;// TODO change
         allowedSelections[] = {"Body"};
         allowSelfTreatment = 0;
-        items[] = {"AMS_AED"};
+        items[] = {"ACM_AED"};
         consumeItem = 0;
         condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(hasAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call FUNC(setAED));
@@ -143,18 +143,18 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = QGVAR(treatmentTimeIV_16);
         allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         allowSelfTreatment = QGVAR(selfIV);
-        items[] = {"AMS_IV_16g"};
+        items[] = {"ACM_IV_16g"};
         consumeItem = 1;
         condition = QUOTE(!([ARR_2(_patient,_bodyPart)] call FUNC(hasIV)));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,AMS_IV_16G_M,true)] call FUNC(setIV));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_16G_M,true)] call FUNC(setIV));
     };
     class InsertIV_14: InsertIV_16 {
         displayName = "Insert 14g IV";
         displayNameProgress = "Inserting 14g IV...";
         icon = "";
         treatmentTime = QGVAR(treatmentTimeIV_14);
-        items[] = {"AMS_IV_14g"};
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,AMS_IV_14G_M,true)] call FUNC(setIV));
+        items[] = {"ACM_IV_14g"};
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_14G_M,true)] call FUNC(setIV));
     };
     class InsertIO: InsertIV_16 {
         displayName = "Insert FAST1 IO";
@@ -164,8 +164,8 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = QGVAR(treatmentTimeIO_FAST1);
         allowedSelections[] = {"Body"};
         allowSelfTreatment = QGVAR(selfIO);
-        items[] = {"AMS_IO_FAST"};
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,AMS_IO_FAST1_M,true)] call FUNC(setIV));
+        items[] = {"ACM_IO_FAST"};
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IO_FAST1_M,true)] call FUNC(setIV));
     };
 
     class RemoveIV_16: InsertIV_16 {
@@ -178,16 +178,16 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 1;
         items[] = {};
         consumeItem = 0;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,AMS_IV_16G_M)] call FUNC(hasIV));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,AMS_IV_16G_M,false)] call FUNC(setIV));
+        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_16G_M)] call FUNC(hasIV));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_16G_M,false)] call FUNC(setIV));
     };
     class RemoveIV_14: RemoveIV_16 {
         displayName = "Remove 14g IV";
         displayNameProgress = "Removing 14g IV...";
         icon = "";
         allowSelfTreatment = 0;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,AMS_IV_14G_M)] call FUNC(hasIV));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,AMS_IV_14G_M,false)] call FUNC(setIV));
+        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_14G_M)] call FUNC(hasIV));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_14G_M,false)] call FUNC(setIV));
     };
     class RemoveIO: RemoveIV_16 {
         displayName = "Remove FAST1 IO";
@@ -196,8 +196,8 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Body"};
         treatmentTime = 5;
         allowSelfTreatment = 0;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,AMS_IO_FAST1_M)] call FUNC(hasIV));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,AMS_IO_FAST1_M,false)] call FUNC(setIV));
+        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IO_FAST1_M)] call FUNC(hasIV));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IO_FAST1_M,false)] call FUNC(setIV));
     };
 
     class CPR {
@@ -218,34 +218,34 @@ class ACEGVAR(medical_treatment,actions) {
     class BloodBag_O_1000: BloodIV {
         displayName = "Give Blood O+ (1000ml)";
         displayNameProgress = "Transfusing Blood...";
-        items[] = {"AMS_BloodBag_O_1000"};
+        items[] = {"ACM_BloodBag_O_1000"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
     };
-    AMS_BLOODBAG_ENTRY(ON,O-,1000);
-    AMS_BLOODBAG_ENTRY(A,A+,1000);
-    AMS_BLOODBAG_ENTRY(AN,A-,1000);
-    AMS_BLOODBAG_ENTRY(B,B+,1000);
-    AMS_BLOODBAG_ENTRY(BN,B-,1000);
-    AMS_BLOODBAG_ENTRY(AB,AB+,1000);
-    AMS_BLOODBAG_ENTRY(ABN,AB-,1000);
+    ACM_BLOODBAG_ENTRY(ON,O-,1000);
+    ACM_BLOODBAG_ENTRY(A,A+,1000);
+    ACM_BLOODBAG_ENTRY(AN,A-,1000);
+    ACM_BLOODBAG_ENTRY(B,B+,1000);
+    ACM_BLOODBAG_ENTRY(BN,B-,1000);
+    ACM_BLOODBAG_ENTRY(AB,AB+,1000);
+    ACM_BLOODBAG_ENTRY(ABN,AB-,1000);
 
-    AMS_BLOODBAG_ENTRY(O,O+,500);
-    AMS_BLOODBAG_ENTRY(ON,O-,500);
-    AMS_BLOODBAG_ENTRY(A,A+,500);
-    AMS_BLOODBAG_ENTRY(AN,A-,500);
-    AMS_BLOODBAG_ENTRY(B,B+,500);
-    AMS_BLOODBAG_ENTRY(BN,B-,500);
-    AMS_BLOODBAG_ENTRY(AB,AB+,500);
-    AMS_BLOODBAG_ENTRY(ABN,AB-,500);
+    ACM_BLOODBAG_ENTRY(O,O+,500);
+    ACM_BLOODBAG_ENTRY(ON,O-,500);
+    ACM_BLOODBAG_ENTRY(A,A+,500);
+    ACM_BLOODBAG_ENTRY(AN,A-,500);
+    ACM_BLOODBAG_ENTRY(B,B+,500);
+    ACM_BLOODBAG_ENTRY(BN,B-,500);
+    ACM_BLOODBAG_ENTRY(AB,AB+,500);
+    ACM_BLOODBAG_ENTRY(ABN,AB-,500);
 
-    AMS_BLOODBAG_ENTRY(O,O+,250);
-    AMS_BLOODBAG_ENTRY(ON,O-,250);
-    AMS_BLOODBAG_ENTRY(A,A+,250);
-    AMS_BLOODBAG_ENTRY(AN,A-,250);
-    AMS_BLOODBAG_ENTRY(B,B+,250);
-    AMS_BLOODBAG_ENTRY(BN,B-,250);
-    AMS_BLOODBAG_ENTRY(AB,AB+,250);
-    AMS_BLOODBAG_ENTRY(ABN,AB-,250);
+    ACM_BLOODBAG_ENTRY(O,O+,250);
+    ACM_BLOODBAG_ENTRY(ON,O-,250);
+    ACM_BLOODBAG_ENTRY(A,A+,250);
+    ACM_BLOODBAG_ENTRY(AN,A-,250);
+    ACM_BLOODBAG_ENTRY(B,B+,250);
+    ACM_BLOODBAG_ENTRY(BN,B-,250);
+    ACM_BLOODBAG_ENTRY(AB,AB+,250);
+    ACM_BLOODBAG_ENTRY(ABN,AB-,250);
     class PlasmaIV: BloodIV {
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
     };

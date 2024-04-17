@@ -12,7 +12,7 @@
  * Has IV <BOOL>
  *
  * Example:
- * [cursorTarget, "leftarm"] call AMS_circulation_fnc_hasIV;
+ * [cursorTarget, "leftarm"] call ACM_circulation_fnc_hasIV;
  *
  * Public: No
  */

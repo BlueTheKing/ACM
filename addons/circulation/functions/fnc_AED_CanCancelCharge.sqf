@@ -11,7 +11,7 @@
  * Can cancel charge <BOOL>
  *
  * Example:
- * [player, cursorTarget] call AMS_circulation_fnc_AED_CanCancelCharge;
+ * [player, cursorTarget] call ACM_circulation_fnc_AED_CanCancelCharge;
  *
  * Public: No
  */

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call AMS_breathing_fnc_generatePTXMap;
+ * [] call ACM_breathing_fnc_generatePTXMap;
  *
  * Public: No
  */

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call AMS_core_fnc_fullHealLocal;
+ * [player] call ACM_core_fnc_fullHealLocal;
  */
 
 params ["_patient"];

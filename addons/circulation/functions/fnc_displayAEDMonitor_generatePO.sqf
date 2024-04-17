@@ -14,7 +14,7 @@
  * Rhythm Array <ARRAY<NUMBER>>
  *
  * Example:
- * [0, 7, 0, 99] call AMS_circulation_fnc_displayAEDMonitor_generatePO;
+ * [0, 7, 0, 99] call ACM_circulation_fnc_displayAEDMonitor_generatePO;
  *
  * Public: No
  */

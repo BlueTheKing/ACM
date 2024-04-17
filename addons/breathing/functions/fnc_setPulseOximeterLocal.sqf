@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftarm", true] call AMS_breathing_fnc_setPulseOximeterLocal;
+ * [player, cursorTarget, "leftarm", true] call ACM_breathing_fnc_setPulseOximeterLocal;
  *
  * Public: No
  */

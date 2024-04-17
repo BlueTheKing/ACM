@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call AMS_core_fnc_onCardiacArrest;
+ * [player] call ACM_core_fnc_onCardiacArrest;
  *
  * Public: No
  */
@@ -20,7 +20,7 @@ params ["_patient"];
 [{
     params ["_patient"];
 
-    if (_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false] || (GET_BLOOD_VOLUME(_patient) <= BLOOD_VOLUME_CLASS_4_HEMORRHAGE) || (GET_OXYGEN(_patient) < AMS_OXYGEN_HYPOXIA)) then {
+    if (_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false] || (GET_BLOOD_VOLUME(_patient) <= BLOOD_VOLUME_CLASS_4_HEMORRHAGE) || (GET_OXYGEN(_patient) < ACM_OXYGEN_HYPOXIA)) then {
         if !(IN_CRDC_ARRST(_patient)) then {
             [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
         };

@@ -11,7 +11,7 @@
  * Fluid bag volume on bodypart <STRING>
  *
  * Example:
- * [player, 2] call AMS_GUI_fnc_getBodyPartIVBags;
+ * [player, 2] call ACM_GUI_fnc_getBodyPartIVBags;
  *
  * Public: No
  */

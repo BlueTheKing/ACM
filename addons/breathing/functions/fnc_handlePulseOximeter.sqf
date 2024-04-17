@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, 2] call AMS_breathing_fnc_handlePulseOximeter;
+ * [player, cursorTarget, 2] call ACM_breathing_fnc_handlePulseOximeter;
  *
  * Public: No
  */

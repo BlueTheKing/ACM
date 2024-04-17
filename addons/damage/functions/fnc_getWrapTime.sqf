@@ -13,7 +13,7 @@
  * Treatment Time <NUMBER>
  *
  * Example:
- * [player, cursorObject, "head", 0] call AMS_damage_fnc_getWrapTime;
+ * [player, cursorObject, "head", 0] call ACM_damage_fnc_getWrapTime;
  *
  * Public: No
  */

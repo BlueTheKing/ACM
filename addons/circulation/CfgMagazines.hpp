@@ -1,7 +1,7 @@
 class CfgMagazines {
     class CA_Magazine;
 
-    class AMS_Paracetamol: CA_Magazine {
+    class ACM_Paracetamol: CA_Magazine {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\paracetamol_ca.paa);
@@ -14,7 +14,7 @@ class CfgMagazines {
         mass = 0.3;
     };
 
-    class AMS_AmmoniumCarbonate: AMS_Paracetamol {
+    class ACM_AmmoniumCarbonate: ACM_Paracetamol {
         picture = QPATHTOF(ui\ammoniumcarbonate_ca.paa);
         displayName = "Ammonium Carbonate";
         descriptionShort = "Used to wake up patients who've fainted";
@@ -22,7 +22,7 @@ class CfgMagazines {
         count = 8;
     };
 
-    class AMS_Inhaler_Penthrox: AMS_Paracetamol {
+    class ACM_Inhaler_Penthrox: ACM_Paracetamol {
         picture = QPATHTOF(ui\inhaler_penthrox_ca.paa);
         displayName = "Penthrox Inhaler";
         descriptionShort = "Used to rapidly manage acute pain for a short time";

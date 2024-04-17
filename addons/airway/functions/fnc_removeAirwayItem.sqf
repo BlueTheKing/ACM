@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget] call AMS_airway_fnc_removeAirwayItem;
+ * [player, cursorTarget] call ACM_airway_fnc_removeAirwayItem;
  *
  * Public: No
  */
@@ -25,8 +25,8 @@ _patient setVariable [QGVAR(AirwayItem), "", true];
 
 if (GVAR(airwayAdjunctReusable)) then {
     if (_airway == "OPA") then {
-        [_medic, "AMS_GuedelTube_Used"] call ACEFUNC(common,addToInventory);
+        [_medic, "ACM_GuedelTube_Used"] call ACEFUNC(common,addToInventory);
     } else {
-        [_medic, "AMS_IGel_Used"] call ACEFUNC(common,addToInventory);
+        [_medic, "ACM_IGel_Used"] call ACEFUNC(common,addToInventory);
     };
 };

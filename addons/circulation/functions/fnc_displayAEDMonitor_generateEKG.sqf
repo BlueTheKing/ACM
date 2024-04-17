@@ -13,7 +13,7 @@
  * Rhythm Array <ARRAY<NUMBER>>
  *
  * Example:
- * [0, 7, 0] call AMS_circulation_fnc_displayAEDMonitor_generateEKG;
+ * [0, 7, 0] call ACM_circulation_fnc_displayAEDMonitor_generateEKG;
  *
  * Public: No
  */

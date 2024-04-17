@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call AMS_core_fnc_onFatalInjury;
+ * [player] call ACM_core_fnc_onFatalInjury;
  *
  * Public: No
  */

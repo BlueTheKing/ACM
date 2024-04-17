@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget] call AMS_circulation_fnc_AED_TrackCPR;
+ * [player, cursorTarget] call ACM_circulation_fnc_AED_TrackCPR;
  *
  * Public: No
  */

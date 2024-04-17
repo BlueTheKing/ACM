@@ -2,7 +2,7 @@ class CfgWeapons {
     class ACE_ItemCore;
     class CBA_MiscItem_ItemInfo;
 
-    class AMS_ChestSeal: ACE_ItemCore {
+    class ACM_ChestSeal: ACE_ItemCore {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\chestseal_ca.paa);
@@ -15,7 +15,7 @@ class CfgWeapons {
         };
     };
 
-    class AMS_PulseOximeter: AMS_ChestSeal {
+    class ACM_PulseOximeter: ACM_ChestSeal {
         picture = QPATHTOF(ui\pulseoximeter_ca.paa);
         displayName = "Pulse Oximeter";
         descriptionShort = "Used to measure patient vitals";
@@ -25,7 +25,7 @@ class CfgWeapons {
         };
     };
 
-    /*class AMS_Stethoscope: AMS_ChestSeal {
+    /*class ACM_Stethoscope: ACM_ChestSeal {
         picture = QPATHTOF(ui\stethoscope_ca.paa);
         displayName = "Stethoscope";
         descriptionShort = "desc short";
@@ -35,7 +35,7 @@ class CfgWeapons {
         };
     };*/
 
-    class AMS_NCDKit: AMS_ChestSeal {
+    class ACM_NCDKit: ACM_ChestSeal {
         picture = QPATHTOF(ui\ncdkit_ca.paa);
         displayName = "NCD Kit";
         descriptionShort = "Single-use needle used to decompress tensionpneumothorax";
@@ -45,7 +45,7 @@ class CfgWeapons {
         };
     };
 
-    class AMS_PocketBVM: AMS_ChestSeal {
+    class ACM_PocketBVM: ACM_ChestSeal {
         picture = QPATHTOF(ui\pocketbvm_ca.paa);
         displayName = "Pocket BVM";
         descriptionShort = "Compact version of Bag-Valve-Mask";
@@ -55,7 +55,7 @@ class CfgWeapons {
         };
     };
 
-    /*class AMS_PocketBVM_Packed: AMS_PocketBVM {
+    /*class ACM_PocketBVM_Packed: ACM_PocketBVM {
         picture = QPATHTOF(ui\pocketbvm_p_ca.paa);
         displayName = "Pocket BVM (Packaged)";
         descriptionShort = "desc short";
@@ -65,7 +65,7 @@ class CfgWeapons {
         };
     };*/
 
-    class AMS_BVM: AMS_PocketBVM {
+    class ACM_BVM: ACM_PocketBVM {
         picture = QPATHTOF(ui\bvm_ca.paa);
         displayName = "Bag-Valve-Mask";
         descriptionShort = "Used to ventilate patient that is not breathing";

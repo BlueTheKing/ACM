@@ -69,7 +69,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         medicRequired = QGVAR(allowSuctionBag);
         treatmentTime = QUOTE([_patient] call FUNC(getSuctionTime));
-        items[] = {"AMS_SuctionBag"};
+        items[] = {"ACM_SuctionBag"};
         consumeItem = 1;
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,0)] call FUNC(handleSuction));
@@ -80,7 +80,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         medicRequired = QGVAR(allowACCUVAC);
         treatmentTime = QUOTE([_patient] call FUNC(getSuctionTime));
-        items[] = {"AMS_ACCUVAC"};
+        items[] = {"ACM_ACCUVAC"};
         consumeItem = 0;
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,1)] call FUNC(handleSuction));
     };
@@ -91,7 +91,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         medicRequired = QGVAR(allowOPA);
         treatmentTime = QGVAR(treatmentTimeOPA);
-        items[] = {"AMS_GuedelTube","AMS_GuedelTube_Used"};
+        items[] = {"ACM_GuedelTube","ACM_GuedelTube_Used"};
         consumeItem = 1;
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == ''));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'OPA')] call FUNC(insertAirwayItem));
@@ -102,7 +102,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         medicRequired = QGVAR(allowSGA);
         treatmentTime = QGVAR(treatmentTimeSGA);
-        items[] = {"AMS_IGel","AMS_IGel_Used"};
+        items[] = {"ACM_IGel","ACM_IGel_Used"};
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'SGA')] call FUNC(insertAirwayItem));
     };
 

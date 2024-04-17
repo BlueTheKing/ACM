@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player] call AMS_breathing_fnc_updateOxygenSaturation;
+ * [player] call ACM_breathing_fnc_updateOxygenSaturation;
  *
  * Public: No
  */

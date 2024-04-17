@@ -1,7 +1,7 @@
 class ACE_bloodIV: ACE_ItemCore {
     //scope = 0;
 };
-class AMS_BloodBag_O_1000: ACE_bloodIV {
+class ACM_BloodBag_O_1000: ACE_bloodIV {
     scope = 2;
     author = "Blue";
     displayName = "Blood Bag O+ (1000ml)";
@@ -10,7 +10,7 @@ class AMS_BloodBag_O_1000: ACE_bloodIV {
 };
 
 #define BLOODBAG_ENTRY(type,typeS,amount) \
-    class TRIPLES(AMS_BloodBag,type,amount): DOUBLES(AMS_BloodBag_O,amount) { \
+    class TRIPLES(ACM_BloodBag,type,amount): DOUBLES(ACM_BloodBag_O,amount) { \
         displayName = QUOTE(Blood Bag typeS (##amount##ml)); \
     }
 
@@ -25,7 +25,7 @@ BLOODBAG_ENTRY(ABN,AB-,1000);
 class ACE_bloodIV_500: ACE_bloodIV {
     //scope = 0;
 };
-class AMS_BloodBag_O_500: ACE_bloodIV_500 {
+class ACM_BloodBag_O_500: ACE_bloodIV_500 {
     scope = 2;
     author = "Blue";
     displayName = "Blood Bag O+ (500ml)";
@@ -44,7 +44,7 @@ BLOODBAG_ENTRY(ABN,AB-,500);
 class ACE_bloodIV_250: ACE_bloodIV {
     //scope = 0;
 };
-class AMS_BloodBag_O_250: ACE_bloodIV_250 {
+class ACM_BloodBag_O_250: ACE_bloodIV_250 {
     scope = 2;
     author = "Blue";
     displayName = "Blood Bag O+ (250ml)";

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call AMS_airway_fnc_handleAirway;
+ * [player] call ACM_airway_fnc_handleAirway;
  *
  * Public: No
  */

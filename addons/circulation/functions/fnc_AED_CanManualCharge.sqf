@@ -11,7 +11,7 @@
  * Can manually charge <BOOL>
  *
  * Example:
- * [player, cursorTarget] call AMS_circulation_fnc_AED_CanManualCharge;
+ * [player, cursorTarget] call ACM_circulation_fnc_AED_CanManualCharge;
  *
  * Public: No
  */

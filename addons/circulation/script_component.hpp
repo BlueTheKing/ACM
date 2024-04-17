@@ -1,6 +1,6 @@
 #define COMPONENT circulation
 #define COMPONENT_BEAUTIFIED Circulation
-#include "\x\AMS\addons\main\script_mod.hpp"
+#include "\x\ACM\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
@@ -12,4 +12,4 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_CIRCULATION
 #endif
 
-#include "\x\AMS\addons\main\script_macros.hpp"
+#include "\x\ACM\addons\main\script_macros.hpp"

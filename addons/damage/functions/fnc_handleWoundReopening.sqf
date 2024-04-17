@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [player, "head", 60, 0.2] call AMS_damage_fnc_handleWoundReopening;
+ * [player, "head", 60, 0.2] call ACM_damage_fnc_handleWoundReopening;
  *
  * Public: No
  */

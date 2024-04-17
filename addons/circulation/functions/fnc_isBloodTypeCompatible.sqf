@@ -11,7 +11,7 @@
  * Is compatible <BOOL>
  *
  * Example:
- * [AMS_BLOODTYPE_O, AMS_BLOODTYPE_ABN] call AMS_circulation_fnc_isBloodTypeCompatible;
+ * [ACM_BLOODTYPE_O, ACM_BLOODTYPE_ABN] call ACM_circulation_fnc_isBloodTypeCompatible;
  *
  * Public: No
  */

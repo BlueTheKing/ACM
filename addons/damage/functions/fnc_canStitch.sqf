@@ -13,7 +13,7 @@
  * Can Stitch <BOOL>
  *
  * Example:
- * [player, cursorTarget, "head", 0] call ace_medical_treatment_fnc_canStitch; // AMS_damage_fnc_canStitch;
+ * [player, cursorTarget, "head", 0] call ace_medical_treatment_fnc_canStitch; // ACM_damage_fnc_canStitch;
  *
  * Public: No
  */

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call AMS_breathing_fnc_resetVariables;
+ * [player] call ACM_breathing_fnc_resetVariables;
  *
  * Public: No
  */

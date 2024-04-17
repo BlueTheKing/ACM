@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [cursorTarget, "Morphine"] call AMS_circulation_fnc_handleOverdose;
+ * [cursorTarget, "Morphine"] call ACM_circulation_fnc_handleOverdose;
  *
  * Public: No
  */

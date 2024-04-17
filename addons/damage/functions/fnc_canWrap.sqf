@@ -13,7 +13,7 @@
  * Can wrap <BOOL>
  *
  * Example:
- * [player, cursorTarget, "head", 0] call AMS_damage_fnc_canWrap;
+ * [player, cursorTarget, "head", 0] call ACM_damage_fnc_canWrap;
  *
  * Public: No
  */

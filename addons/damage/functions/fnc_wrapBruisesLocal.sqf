@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "head", 8] call AMS_damage_fnc_wrapBruisesLocal;
+ * [player, cursorTarget, "head", 8] call ACM_damage_fnc_wrapBruisesLocal;
  *
  * Public: No
  */

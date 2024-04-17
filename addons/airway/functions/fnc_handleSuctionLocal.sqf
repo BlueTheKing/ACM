@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [cursorTarget] call AMS_airway_fnc_handleSuctionLocal;
+ * [cursorTarget] call ACM_airway_fnc_handleSuctionLocal;
  *
  * Public: No
  */

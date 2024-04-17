@@ -12,7 +12,7 @@
  * Can remove splint <BOOL>
  *
  * Example:
- * [player, cursorTarget, "leftleg"] call AMS_disability_fnc_canRemoveSplint;
+ * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_canRemoveSplint;
  *
  * Public: No
  */

@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftleg"] call AMS_disability_fnc_removeSplint;
+ * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_removeSplint;
  *
  * Public: No
  */

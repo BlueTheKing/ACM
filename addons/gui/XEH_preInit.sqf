@@ -6,7 +6,7 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-#define AMS_SETTINGS_CATEGORY "AMS: GUI"
+#define ACM_SETTINGS_CATEGORY "ACM: GUI"
     
 ADDON = true;
 
@@ -15,7 +15,7 @@ ADDON = true;
     QGVAR(showInactiveStatuses),
     "CHECKBOX",
     ["Show inactive vitals statuses", "Show vitals status in overview tab when inactive (display ""none"")"],
-    [AMS_SETTINGS_CATEGORY, ""],
+    [ACM_SETTINGS_CATEGORY, ""],
     [false],
     true
 ] call CBA_fnc_addSetting;
@@ -25,7 +25,7 @@ ADDON = true;
     QGVAR(showBleedRate),
     "CHECKBOX",
     "Show bleed rate",
-    [AMS_SETTINGS_CATEGORY, ""],
+    [ACM_SETTINGS_CATEGORY, ""],
     [false],
     true
 ] call CBA_fnc_addSetting;
@@ -35,7 +35,7 @@ ADDON = true;
     QGVAR(overlayBodyPart),
     "CHECKBOX",
     "Show overlay for selected body part",
-    [AMS_SETTINGS_CATEGORY, ""],
+    [ACM_SETTINGS_CATEGORY, ""],
     [false],
     false
 ] call CBA_fnc_addSetting;
@@ -45,7 +45,7 @@ ADDON = true;
     QGVAR(showPatientSideLabels),
     "CHECKBOX",
     "Show patient side labels (L/R)",
-    [AMS_SETTINGS_CATEGORY, ""],
+    [ACM_SETTINGS_CATEGORY, ""],
     [false],
     false
 ] call CBA_fnc_addSetting;

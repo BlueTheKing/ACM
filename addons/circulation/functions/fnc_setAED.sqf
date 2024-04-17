@@ -19,7 +19,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftarm", 0, true] call AMS_circulation_fnc_setAED;
+ * [player, cursorTarget, "leftarm", 0, true] call ACM_circulation_fnc_setAED;
  *
  * Public: No
  */

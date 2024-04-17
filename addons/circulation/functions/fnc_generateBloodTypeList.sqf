@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call AMS_circulation_fnc_generateBloodTypeList;
+ * [] call ACM_circulation_fnc_generateBloodTypeList;
  *
  * Public: No
  */

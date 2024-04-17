@@ -1,4 +1,4 @@
-class AMS_StateMachine {
+class ACM_StateMachine {
     list = QUOTE(call ACEFUNC(common,getLocalUnits));
     skipNull = 1;
     class Default {

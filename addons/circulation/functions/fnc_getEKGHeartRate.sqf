@@ -10,7 +10,7 @@
  * EKG Heart Rate <NUMBER>
  *
  * Example:
- * [player] call AMS_circulation_fnc_getEKGHeartRate;
+ * [player] call ACM_circulation_fnc_getEKGHeartRate;
  *
  * Public: No
  */

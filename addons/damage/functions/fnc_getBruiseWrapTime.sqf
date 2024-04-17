@@ -12,7 +12,7 @@
  * Time to wrap bruises <NUMBER>
  *
  * Example:
- * [player, cursorTarget, "head" call AMS_damage_fnc_getBruiseWrapTime;
+ * [player, cursorTarget, "head" call ACM_damage_fnc_getBruiseWrapTime;
  *
  * Public: No
  */

@@ -11,7 +11,7 @@
  * Can administer shock <BOOL>
  *
  * Example:
- * [player, cursorTarget] call AMS_circulation_fnc_AED_CanAdministerShock;
+ * [player, cursorTarget] call ACM_circulation_fnc_AED_CanAdministerShock;
  *
  * Public: No
  */

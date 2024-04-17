@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, true] call AMS_airway_fnc_setHeadTiltChinLift;
+ * [player, cursorTarget, true] call ACM_airway_fnc_setHeadTiltChinLift;
  *
  * Public: No
  */

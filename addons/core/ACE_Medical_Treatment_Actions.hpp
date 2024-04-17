@@ -21,7 +21,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "bandage";
 
         consumeItem = 1;
-        items[] = {"AMS_pressureBandage"};
+        items[] = {"ACM_pressureBandage"};
 
         medicRequired = 0;
         allowSelfTreatment = 1;
@@ -42,13 +42,13 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class EmergencyTraumaDressing: PressureBandage {
         displayName = "Emergency Trauma Dressing";
-        items[] = {"AMS_emergencyTraumaDressing"};
+        items[] = {"ACM_emergencyTraumaDressing"};
         allowSelfTreatment = 0;
     };
     class ElasticWrap: PressureBandage {
         displayName = "Wrap Bruises";
         displayNameProgress = "Wrapping...";
-        items[] = {"AMS_elasticWrap"};
+        items[] = {"ACM_elasticWrap"};
         medicRequired = 1;
         condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call EFUNC(damage,canWrap));
         treatmentTime = QEFUNC(damage,getBruiseWrapTime);
@@ -76,7 +76,7 @@ class ACEGVAR(medical_treatment,actions) {
     class ApplySAMSplint: Splint {
         displayName = "Apply SAM Splint";
         displayNameProgress = "Applying SAM Splint...";
-        items[] = {"AMS_SAMSplint"};
+        items[] = {"ACM_SAMSplint"};
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
         condition = QACEFUNC(medical_treatment,canSplint);
         treatmentTime = QGVAR(treatmentTimeSAMSplint);
@@ -98,7 +98,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         category = "bandage";
         allowedSelections[] = {"All"};
-        items[] = {"AMS_chitosanInjector"};
+        items[] = {"ACM_chitosanInjector"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(isBodyPartBleeding));
         callbackSuccess = QFUNC(applyChitosanInjector);
         litter[] = {};
@@ -128,7 +128,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Giving Paracetamol...";
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         allowedSelections[] = {"Head"};
-        items[] = {"AMS_Paracetamol"};
+        items[] = {"ACM_Paracetamol"};
         condition = QUOTE([_patient] call ACEFUNC(common,isAwake));
         //treatmentTime = QACEGVAR(medical_treatment,treatmentTimeAutoinjector);
         //animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
@@ -138,20 +138,20 @@ class ACEGVAR(medical_treatment,actions) {
     class Penthrox: Paracetamol {
         displayName = "Use Penthrox Inhaler";
         displayNameProgress = "Using Penthrox Inhaler";
-        items[] = {"AMS_Inhaler_Penthrox"};
+        items[] = {"ACM_Inhaler_Penthrox"};
         animationMedic = "";
         //sounds[] = {};
     };
     class AmmoniumCarbonate: Paracetamol {
         displayName = "Give Ammonium Carbonate";
         displayNameProgress = "Giving Ammonium Carbonate...";
-        items[] = {"AMS_AmmoniumCarbonate"};
+        items[] = {"ACM_AmmoniumCarbonate"};
         condition = QUOTE(([_patient] call ACEFUNC(common,isAwake)));
     };
     class Naloxone: Paracetamol {
         displayName = "Use Naloxone Spray";
         displayNameProgress = "Using Naloxone Spray...";
-        items[] = {"AMS_Spray_Naloxone"};
+        items[] = {"ACM_Spray_Naloxone"};
         condition = "true";
         //sounds[] = {};
     };
@@ -163,7 +163,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Pushing Epinephrine...";
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
-        items[] = {"AMS_Vial_Epinephrine"};
+        items[] = {"ACM_Vial_Epinephrine"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV));
         //treatmentTime = QACEGVAR(medical_treatment,treatmentTimeAutoinjector);
         callbackSuccess = QACEFUNC(medical_treatment,medication);
@@ -174,21 +174,21 @@ class ACEGVAR(medical_treatment,actions) {
     class Morphine_Vial: Epinephrine_Vial {
         displayName = "Push Morphine (Vial)";
         displayNameProgress = "Pushing Morphine...";
-        items[] = {"AMS_Vial_Morphine"};
+        items[] = {"ACM_Vial_Morphine"};
     };
     class Adenosine_Vial: Epinephrine_Vial {
         displayName = "Push Adenosine (Vial)";
         displayNameProgress = "Pushing Adenosine...";
-        items[] = {"AMS_Vial_Adenosine"};
+        items[] = {"ACM_Vial_Adenosine"};
     };
     class Amiodarone_Vial: Epinephrine_Vial {
         displayName = "Push Amiodarone (Vial)";
         displayNameProgress = "Pushing Amiodarone...";
-        items[] = {"AMS_Vial_Amiodarone"};
+        items[] = {"ACM_Vial_Amiodarone"};
     };
     class TXA_Vial: Epinephrine_Vial {
         displayName = "Push TXA (Vial)";
         displayNameProgress = "Pushing TXA...";
-        items[] = {"AMS_Vial_TXA"};
+        items[] = {"ACM_Vial_TXA"};
     };
 };

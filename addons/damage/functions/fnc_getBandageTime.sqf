@@ -13,7 +13,7 @@
  * Treatment Time <NUMBER>
  *
  * Example:
- * [player, cursorTarget, "head", "FieldDressing"] call ace_medical_treatment_fnc_getBandageTime; // AMS_damage_fnc_getBandageTime
+ * [player, cursorTarget, "head", "FieldDressing"] call ace_medical_treatment_fnc_getBandageTime; // ACM_damage_fnc_getBandageTime
  *
  * Public: No
  */

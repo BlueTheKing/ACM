@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call AMS_disability_fnc_resetVariables;
+ * [player] call ACM_disability_fnc_resetVariables;
  *
  * Public: No
  */

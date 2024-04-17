@@ -14,7 +14,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftarm", 1, true] call AMS_circulation_fnc_setIV;
+ * [player, cursorTarget, "leftarm", 1, true] call ACM_circulation_fnc_setIV;
  *
  * Public: No
  */
@@ -25,8 +25,8 @@ private _hintState = "inserted";
 private _hintType = "16g IV";
 
 switch (_type) do {
-    case AMS_IV_14G_M: {_hintType = "14g IV";};
-    case AMS_IO_FAST1_M: {_hintType = "IO";};
+    case ACM_IV_14G_M: {_hintType = "14g IV";};
+    case ACM_IO_FAST1_M: {_hintType = "IO";};
     default {};
 };
 

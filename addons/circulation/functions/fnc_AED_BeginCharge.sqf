@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, false] call AMS_circulation_fnc_AED_BeginCharge;
+ * [player, cursorTarget, false] call ACM_circulation_fnc_AED_BeginCharge;
  *
  * Public: No
  */

@@ -10,7 +10,7 @@
  * End-Tidal Carbon Dioxide (mmHg) <NUMBER>
  *
  * Example:
- * [player] call AMS_breathing_fnc_getEtCO2;
+ * [player] call ACM_breathing_fnc_getEtCO2;
  *
  * Public: No
  */

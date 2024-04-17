@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftarm", 1] call AMS_circulation_fnc_setIVLocal;
+ * [player, cursorTarget, "leftarm", 1] call ACM_circulation_fnc_setIVLocal;
  *
  * Public: No
  */
@@ -48,7 +48,7 @@ if (_type == 0) then {
             if (_returnAmount > 0) then {
                 private _itemClassname = switch (_type) do {
                     case "Blood": {
-                        format ["AMS_BloodBag_%1_%2", ([_bloodType, 2] call FUNC(convertBloodType)), _returnAmount];
+                        format ["ACM_BloodBag_%1_%2", ([_bloodType, 2] call FUNC(convertBloodType)), _returnAmount];
                     };
                     case "Saline": {
                         format ["ACE_SalineIV_%1", _returnAmount];

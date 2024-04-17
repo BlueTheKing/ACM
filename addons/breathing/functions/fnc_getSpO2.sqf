@@ -10,7 +10,7 @@
  * Calculated Oxygen Saturation <NUMBER>
  *
  * Example:
- * [player] call AMS_breathing_fnc_getSpO2;
+ * [player] call ACM_breathing_fnc_getSpO2;
  *
  * Public: No
  */

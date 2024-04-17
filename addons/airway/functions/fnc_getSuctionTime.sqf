@@ -11,7 +11,7 @@
  * Suction Time <NUMBER>
  *
  * Example:
- * [cursorTarget, 0] call AMS_airway_fnc_action_getSuctionTime;
+ * [cursorTarget, 0] call ACM_airway_fnc_action_getSuctionTime;
  *
  * Public: No
  */

@@ -13,7 +13,7 @@
  * Nothing
  *
  * Example:
- * [player, cursorObject, "LeftLeg", "ApplySAMSplint"] call ace_medical_treatment_fnc_splint; // AMS_disability_fnc_splint;
+ * [player, cursorObject, "LeftLeg", "ApplySAMSplint"] call ace_medical_treatment_fnc_splint; // ACM_disability_fnc_splint;
  *
  * Public: No
  */
@@ -26,7 +26,7 @@ TRACE_3("splint",_medic,_patient,_bodyPart);
 private _item = "ACE_splint";
 
 if (_classname isEqualTo "ApplySAMSplint" && ACEGVAR(medical,fractures) > 1) then {
-    _item = "AMS_SAMSplint";
+    _item = "ACM_SAMSplint";
 };
 
 [_patient, _item] call ACEFUNC(medical_treatment,addToTriageCard);

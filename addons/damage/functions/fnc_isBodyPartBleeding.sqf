@@ -11,7 +11,7 @@
  * Body part is bleeding <BOOL>
  *
  * Example:
- * [cursorTarget, "head"] call AMS_damage_fnc_isBodyPartBleeding;
+ * [cursorTarget, "head"] call ACM_damage_fnc_isBodyPartBleeding;
  *
  * Public: No
  */

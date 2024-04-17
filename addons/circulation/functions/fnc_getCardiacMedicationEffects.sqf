@@ -10,7 +10,7 @@
  * Medication effect <HASHMAP<NUMBER>>
  *
  * Example:
- * [cursorTarget] call AMS_circulation_fnc_getCardiacMedicationEffects;
+ * [cursorTarget] call ACM_circulation_fnc_getCardiacMedicationEffects;
  *
  * Public: No
  */

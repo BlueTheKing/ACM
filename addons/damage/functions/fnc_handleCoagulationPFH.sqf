@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call AMS_damage_fnc_handleCoagulationPFH;
+ * [player] call ACM_damage_fnc_handleCoagulationPFH;
  *
  * Public: No
  */

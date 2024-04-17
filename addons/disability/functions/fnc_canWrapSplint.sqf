@@ -12,7 +12,7 @@
  * Can wrap <BOOL>
  *
  * Example:
- * [player, cursorTarget, "leftleg"] call AMS_disability_fnc_canWrapSplint;
+ * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_canWrapSplint;
  *
  * Public: No
  */

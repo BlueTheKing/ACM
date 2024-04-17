@@ -6,6 +6,6 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-#define AMS_SETTINGS_CATEGORY "AMS: Damage"
+#define ACM_SETTINGS_CATEGORY "ACM: Damage"
 
 ADDON = true;

@@ -16,7 +16,7 @@
  * Continue Treatment <BOOL>
  *
  * Example:
- * [[objNull, player, "head"], 5, 10, 0] call ace_medical_treatment_fnc_surgicalKitProgress; // AMS_damage_fnc_surgicalKitProgress; // TODO move to disability
+ * [[objNull, player, "head"], 5, 10, 0] call ace_medical_treatment_fnc_surgicalKitProgress; // ACM_damage_fnc_surgicalKitProgress; // TODO move to disability
  *
  * Public: No
  */
