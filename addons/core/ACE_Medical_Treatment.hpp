@@ -349,7 +349,7 @@ class ACE_ADDON(Medical_Treatment) {
             timeTillMaxEffect = 90;
             timeInSystem = 480;
         };
-        class AmmoniumCarbonate: Paracetamol {
+        class AmmoniaInhalant: Paracetamol {
             painReduce = 0;
             hrIncreaseLow[] = {5, 15};
             hrIncreaseNormal[] = {5, 20};

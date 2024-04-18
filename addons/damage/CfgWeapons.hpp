@@ -2,7 +2,7 @@ class CfgWeapons {
     class ACE_ItemCore;
     class CBA_MiscItem_ItemInfo;
 
-    class ACM_pressureBandage: ACE_ItemCore {
+    class ACM_PressureBandage: ACE_ItemCore {
         scope = 2;
         author = "Blue";
         model = QACEPATHTOF(medical_treatment,data\bandage.p3d);
@@ -15,7 +15,7 @@ class CfgWeapons {
             mass = 0.6;
         };
     };
-    class ACM_emergencyTraumaDressing: ACM_pressureBandage {
+    class ACM_EmergencyTraumaDressing: ACM_PressureBandage {
         picture = QPATHTOF(ui\etd.paa);
         displayName = "Emergency Trauma Dressing";
         descriptionShort = "Trauma dressing with large surface area";
@@ -24,7 +24,7 @@ class CfgWeapons {
             mass = 2;
         };
     };
-    class ACM_elasticWrap: ACM_pressureBandage {
+    class ACM_ElasticWrap: ACM_PressureBandage {
         picture = QACEPATHTOF(medical_treatment,ui\elasticbandage_ca.paa);
         displayName = "Elastic Wrap";
         descriptionShort = "Used to wrap bandages and bruises";

@@ -21,7 +21,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "bandage";
 
         consumeItem = 1;
-        items[] = {"ACM_pressureBandage"};
+        items[] = {"ACM_PressureBandage"};
 
         medicRequired = 0;
         allowSelfTreatment = 1;
@@ -42,13 +42,13 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class EmergencyTraumaDressing: PressureBandage {
         displayName = "Emergency Trauma Dressing";
-        items[] = {"ACM_emergencyTraumaDressing"};
+        items[] = {"ACM_EmergencyTraumaDressing"};
         allowSelfTreatment = 0;
     };
     class ElasticWrap: PressureBandage {
         displayName = "Wrap Bruises";
         displayNameProgress = "Wrapping...";
-        items[] = {"ACM_elasticWrap"};
+        items[] = {"ACM_ElasticWrap"};
         medicRequired = 1;
         condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call EFUNC(damage,canWrap));
         treatmentTime = QEFUNC(damage,getBruiseWrapTime);
@@ -142,10 +142,10 @@ class ACEGVAR(medical_treatment,actions) {
         animationMedic = "";
         //sounds[] = {};
     };
-    class AmmoniumCarbonate: Paracetamol {
-        displayName = "Give Ammonium Carbonate";
-        displayNameProgress = "Giving Ammonium Carbonate...";
-        items[] = {"ACM_AmmoniumCarbonate"};
+    class AmmoniaInhalant: Paracetamol {
+        displayName = "Give Ammonia Inhalant";
+        displayNameProgress = "Giving Ammonia Inhalant...";
+        items[] = {"ACM_AmmoniaInhalant"};
         condition = QUOTE(([_patient] call ACEFUNC(common,isAwake)));
     };
     class Naloxone: Paracetamol {

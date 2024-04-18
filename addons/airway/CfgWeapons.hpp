@@ -16,6 +16,7 @@ class CfgWeapons {
     };
 
     class ACM_GuedelTube_Used: ACM_GuedelTube {
+        scope = 1;
         displayName = "Guedel Tube (Used)";
         descriptionShort = "Already used? ew";
     };
@@ -31,6 +32,7 @@ class CfgWeapons {
     };
 
     class ACM_IGel_Used: ACM_IGel {
+        scope = 1;
         displayName = "i-Gel (Used)";
         descriptionShort = "Already used? ew";
     };

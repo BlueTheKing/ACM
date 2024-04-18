@@ -14,9 +14,9 @@ class CfgMagazines {
         mass = 0.3;
     };
 
-    class ACM_AmmoniumCarbonate: ACM_Paracetamol {
-        picture = QPATHTOF(ui\ammoniumcarbonate_ca.paa);
-        displayName = "Ammonium Carbonate";
+    class ACM_AmmoniaInhalant: ACM_Paracetamol {
+        picture = QPATHTOF(ui\inhalant_ammonia_ca.paa);
+        displayName = "Ammonia Inhalant";
         descriptionShort = "Used to wake up patients who've fainted";
         descriptionUse = "Also known as, smelling salts, inhalant used to wake up unconscious patients by triggering the inhalation reflex";
         count = 8;

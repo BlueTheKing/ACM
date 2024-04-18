@@ -8,14 +8,14 @@
 [QGVAR(setIVLocal), LINKFUNC(setIVLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(setAEDLocal), LINKFUNC(setAEDLocal)] call CBA_fnc_addEventHandler;
 
-[QGVAR(handleMed_AmmoniumCarbonateLocal), LINKFUNC(handleMed_AmmoniumCarbonateLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_AmmoniaInhalantLocal), LINKFUNC(handleMed_AmmoniaInhalantLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_NaloxoneLocal), LINKFUNC(handleMed_NaloxoneLocal)] call CBA_fnc_addEventHandler;
 
 [QACEGVAR(medical_treatment,medicationLocal), {
 	params ["_patient", "_bodyPart", "_classname"];
 
 	// Handle special medication effects
-	if (_classname in ["AmmoniumCarbonate", "Naloxone"]) then {
+	if (_classname in ["AmmoniaInhalant", "Naloxone"]) then {
     	[(format ["ACM_circulation_handleMed_%1Local", toLower _classname]), [_patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
 	};
 }] call CBA_fnc_addEventHandler;

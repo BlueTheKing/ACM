@@ -76,14 +76,14 @@ class CfgWeapons {
         picture = QPATHTOF(ui\vial_txa_ca.paa);
         displayName = "TXA Vial";
         descriptionShort = "Used to manage catastrophic bleeding by improving clotting ability";
-        descriptionUse = "Medication used to manage catastrophic bleeding by slowing the breakdown of clots, improving clotting ability";
+        descriptionUse = "Medication used to manage catastrophic bleeding by impeding the breakdown of clots, improving clotting ability";
     };
 
     class ACM_Vial_Amiodarone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_amiodarone_ca.paa);
         displayName = "Amiodarone Vial";
         descriptionShort = "Used to treat irregular heart rhythms";
-        descriptionUse = "Medication used to treat irregular heart rhythms like VF/PVT by affecting the electrical signals of the heart";
+        descriptionUse = "Medication used to treat irregular heart rhythms like VF/VT by affecting the electrical signals of the heart";
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.2;
         };

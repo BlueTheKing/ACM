@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle Ammonium Carbonate effects (LOCAL)
+ * Handle Amonia Inhalant effects (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call ACM_circulation_fnc_handleMed_AmmoniumCarbonateLocal;
+ * [player] call ACM_circulation_fnc_handleMed_AmmoniaInhalantLocal;
  *
  * Public: No
  */
