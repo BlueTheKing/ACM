@@ -21,10 +21,10 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             text = QPATHTOF(data\body_image\head_guedeltube.paa);
             colorText[] = {0.19, 0.91, 0.93, 1};
         };
-        /*class Head_iGel: Head_GuedelTube {
+        class Head_iGel: Head_GuedelTube {
             idc = IDC_BODY_HEAD_IGEL;
             text = QPATHTOF(data\body_image\head_igel.paa);
-        };*/
+        };
         class RightArm_PulseOximeter: Background {
             idc = IDC_BODY_RIGHTARM_PULSEOX;
             text = QPATHTOF(data\body_image\rightarm_pulseoximeter.paa);
@@ -41,24 +41,36 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             colorText[] = {0.18, 0.6, 0.96, 1};
             show = 0;
         };
-        class RightArm_AED_VitalsMonitor: Torso_AED_Pads {
-            idc = IDC_BODY_RIGHTARM_AED_VITALS;
-            text = QPATHTOF(data\body_image\rightarm_aed_vitals_monitor.paa);
+        class Head_AED_Capnograph: Torso_AED_Pads {
+            idc = IDC_BODY_HEAD_AED_CAPNOGRAPH;
+            text = QPATHTOF(data\body_image\head_aed_capnograph.paa);
         };
-        class LeftArm_AED_VitalsMonitor: RightArm_AED_VitalsMonitor {
-            idc = IDC_BODY_LEFTARM_AED_VITALS;
-            text = QPATHTOF(data\body_image\leftarm_aed_vitals_monitor.paa);
+        class RightArm_AED_PulseOximeter: Torso_AED_Pads {
+            idc = IDC_BODY_RIGHTARM_AED_PULSEOX;
+            text = QPATHTOF(data\body_image\rightarm_aed_pulseoximeter.paa);
+        };
+        class LeftArm_AED_PulseOximeter: RightArm_AED_PulseOximeter {
+            idc = IDC_BODY_LEFTARM_AED_PULSEOX;
+            text = QPATHTOF(data\body_image\leftarm_aed_pulseoximeter.paa);
+        };
+        class RightArm_AED_PressureCuff: Torso_AED_Pads {
+            idc = IDC_BODY_RIGHTARM_AED_PRESSURECUFF;
+            text = QPATHTOF(data\body_image\rightarm_aed_pressurecuff.paa);
+        };
+        class LeftArm_AED_PressureCuff: RightArm_AED_PulseOximeter {
+            idc = IDC_BODY_LEFTARM_AED_PRESSURECUFF;
+            text = QPATHTOF(data\body_image\leftarm_aed_pressurecuff.paa);
         };
         class Torso_IO: Torso_ChestSeal {
             idc = IDC_BODY_TORSO_IO;
             text = QPATHTOF(data\body_image\torso_fast_io.paa);
-            colorText[] = {0.3, 0.6, 0.3, 1};
+            colorText[] = {0.2, 0.65, 0.2, 1};
         };
-        class Torso_Pneumothorax: Torso_ChestSeal {
+        /*class Torso_Pneumothorax: Torso_ChestSeal { // TODO REMOVE
             idc = IDC_BODY_TORSO_PNEUMOTHORAX;
             text = QPATHTOF(data\body_image\torso_pneumothorax.paa);
             colorText[] = {1, 1, 1, 1};
-        };
+        };*/
         class RightArm_IV: Torso_IO {
             idc = IDC_BODY_RIGHTARM_IV;
             text = QPATHTOF(data\body_image\rightarm_iv.paa);
