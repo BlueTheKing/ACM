@@ -17,13 +17,13 @@
 
 params ["_patient"];
 
-_patient setVariable [QGVAR(KnockOut_State), false];
+_patient setVariable [QEGVAR(core,KnockOut_State), false];
 
 if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {};
 
 private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 40, 100, true] ;
 
 if (random 100 < _oxygenSaturationChance) then {
-    //playSound3D [QPATHTO_R(sound\wakeup.wav), _patient, false, getPosASL _patient, 15, 1, 12];
+    //playSound3D [QPATHTO_R(sound\wakeup.wav), _patient, false, getPosASL _patient, 15, 1, 15];
     [QACEGVAR(medical,WakeUp), _patient] call CBA_fnc_localEvent;
 };
