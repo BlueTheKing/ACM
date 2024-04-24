@@ -24,5 +24,16 @@ _patient setVariable [QGVAR(Saline_Volume), 0, true];
 
 _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
 
+_patient setVariable [QGVAR(ReversibleCardiacArrest_Time), nil];
+_patient setVariable [QGVAR(ReversibleCardiacArrest_State), false, true];
+_patient setVariable [QGVAR(CardiacArrest_Time), nil];
+
+_patient setVariable [QGVAR(AED_LastShock), nil, true];
+_patient setVariable [QGVAR(AED_ShockTotal), 0, true];
+
+_patient setVariable [QGVAR(CPR_StoppedTotal), nil, true];
+_patient setVariable [QGVAR(CPR_StoppedTime), nil, true];
+
 [_patient] call FUNC(updateCirculationState);
 [_patient] call FUNC(generateBloodType);
+[_patient] call FUNC(updateActiveFluidBags);

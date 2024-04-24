@@ -90,13 +90,13 @@ private _PFH = [{
                     if (_rhythmState in [0,5]) then {
                         _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), false];
                         _patient setVariable [QGVAR(AED_Alarm_State), false];
-                        playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 0.369s
+                        playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.369s
                     };
                 };
 
                 if ((_lastBeep + _hrDelay) < CBA_missionTime) then {
                     _patient setVariable [QGVAR(AED_Pads_LastBeep), CBA_missionTime];
-                    playSound3D [QPATHTO_R(sound\aed_hr_beep.wav), _patient, false, getPosASL _patient, 15, 1, 12]; // 0.15s
+                    playSound3D [QPATHTO_R(sound\aed_hr_beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.15s
                 };
             } else {
                 if !(_patient getVariable [QGVAR(AED_Alarm_State), false]) then {
@@ -159,6 +159,8 @@ _patient setVariable [QGVAR(AED_PFH), _PFH];
     if !(isNull _patient) then {
         [_medic, _patient, "body", 0, false] call FUNC(setAED);
         [_medic, _patient, "body", 1, false] call FUNC(setAED);
+        [_medic, _patient, "body", 2, false] call FUNC(setAED);
+        [_medic, _patient, "body", 3, false] call FUNC(setAED);
         ["Patient Disconnected", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
     };
 }, [_patient, _medic], 3600] call CBA_fnc_waitUntilAndExecute;

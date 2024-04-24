@@ -31,11 +31,13 @@ params ["_patient"];
 private _bloodTypeRatios = missionNamespace getVariable [QGVAR(BloodTypeList), []];
 private _targetBloodType = ACM_BLOODTYPE_O;
 private _id = 0;
+private _exit = true;
 
-if !(isPlayer _patient) then {
-    _id = floor (random 99);
-} else {
-    if (GET_BLOODTYPE(_patient) == -1) then {
+if (GET_BLOODTYPE(_patient) == -1) then {
+    _exit = false;
+    if !(isPlayer _patient) then {
+        _id = floor (random 99);
+    } else {
         if (isMultiplayer) then {
             // 765611981351544| 3 [ 0 ]|
             private _selectRange = 15;
@@ -45,6 +47,8 @@ if !(isPlayer _patient) then {
         };
     };
 };
+
+if (_exit) exitWith {GET_BLOODTYPE(_patient)};
 
 {
     if (_id in _x) exitWith {

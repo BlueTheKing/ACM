@@ -38,7 +38,7 @@ private _amiodaroneVial = 0;
         };
         case "Epinephrine": {
             _epinephrine = _epinephrine + _getEffect;
-        };;
+        };
         case "EpinephrineVial": {
             _epinephrineVial = _epinephrineVial + _getEffect;
         };

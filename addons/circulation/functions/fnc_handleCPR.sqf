@@ -45,9 +45,7 @@ private _PFH = [{
         default {25}; // Other
     };
 
-    _medicSkill = _medicSkill * GVAR(CPREffectiveness);
-
-    private _consistencyEffect = ((CBA_missionTime - _CPRStartTime) / 120) min 1.4;
+    private _consistencyEffect = ((CBA_missionTime - _CPRStartTime) / 120) min 2;
     private _bloodlossEffect = linearConversion [BLOOD_VOLUME_CLASS_4_HEMORRHAGE, BLOOD_VOLUME_CLASS_2_HEMORRHAGE, _bloodVolume, 0, 1, true];
 
     private _shockEffect = ((45 / (CBA_missionTime - (_patient getVariable [QGVAR(AED_LastShock), -1]))) min 2) max 0.8;
@@ -76,7 +74,7 @@ private _PFH = [{
     };
     ;
     
-    if (random 100 < (_medicSkill * _bloodlossEffect * _consistencyEffect * _rhythmEffect * _medicationEffect)) then {
+    if (random 100 < (_medicSkill * GVAR(CPREffectiveness) * _bloodlossEffect * _consistencyEffect * _rhythmEffect * _medicationEffect)) then {
         if (_rhythmState == 1) then {
             private _newRhythm = [2,3] select (random 1 < 0.5);
 
