@@ -19,7 +19,6 @@
 params ["_medic", "_patient"];
 
 _patient setVariable [QGVAR(AED_PressureCuffBusy), true, true];
-_patient setVariable [QGVAR(AED_PressureCuff_Measure), [0,0]];
 
 [{
     params ["_medic", "_patient"];
@@ -41,14 +40,20 @@ _patient setVariable [QGVAR(AED_PressureCuff_Measure), [0,0]];
         _diastolic = _bp select 0;
     };
 
-    _patient setVariable [QGVAR(AED_PressureCuff_Measure), [_systolic, _diastolic]];
+    _patient setVariable [QGVAR(AED_PressureCuff_Measure), [_systolic, _diastolic], true];
 }] call CBA_fnc_waitUntilAndExecute;
+
+private _sound = playSound3D [QPATHTO_R(sound\aed_pressurecuff.wav), _patient, false, getPosASL _patient, 8, 1, 8]; // 7.291s
 
 [{
     params ["_medic", "_patient"];
 
     !([_medic, _patient, "", 3] call FUNC(hasAED));
-}, {}, [_medic, _patient], 10, 
+}, {
+    params ["", "", "_sound"];
+
+    stopSound _sound;
+}, [_medic, _patient, _sound], 10, 
 {
     params ["", "_patient"];
 
@@ -56,5 +61,5 @@ _patient setVariable [QGVAR(AED_PressureCuff_Measure), [0,0]];
 
     private _measuredBP = _patient getVariable [QGVAR(AED_PressureCuff_Measure), [0,0]];
     _patient setVariable [QGVAR(AED_NIBP_Display), [(_measuredBP select 0), (_measuredBP select 1)], true];
-    _patient setVariable [QGVAR(AED_PressureCuff_Measure), [0,0]];
+    _patient setVariable [QGVAR(AED_PressureCuff_Measure), [0,0], true];
 }] call CBA_fnc_waitUntilAndExecute;
