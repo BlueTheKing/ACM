@@ -30,7 +30,16 @@ playSound3D [QPATHTO_R(sound\aed_analyzingnow.wav), _patient, false, getPosASL _
 _patient setVariable [QGVAR(AED_SilentMode), true, true];
 
 [{
-    params ["_patient", "_medic"];
+    params ["_medic", "_patient"];
+
+    !([_medic, _patient, "", 1] call FUNC(hasAED));
+}, {
+    params ["_medic", "_patient"];
+
+    playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.624s
+}, [_medic, _patient], _timeToAnalyze, 
+{
+    params ["_medic", "_patient"];
 
     _patient setVariable [QGVAR(AED_AnalyzeRhythm_State), true, true];
 
@@ -63,4 +72,4 @@ _patient setVariable [QGVAR(AED_SilentMode), true, true];
         };
 
     }, [_patient, _medic, _shockable], _adviceDelay] call CBA_fnc_waitAndExecute;
-}, [_patient, _medic], _timeToAnalyze] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_waitUntilAndExecute;

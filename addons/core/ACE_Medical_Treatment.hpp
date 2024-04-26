@@ -322,7 +322,7 @@ class ACE_ADDON(Medical_Treatment) {
             maxDose = 9;
             incompatibleMedication[] = {};
         };
-        class Adenosine { // Doesn't exist
+        class Adenosine {
             painReduce = 0;
             hrIncreaseLow[] = {-7, -10};
             hrIncreaseNormal[] = {-15, -30};

@@ -8,6 +8,11 @@
  * 1: Patient <OBJECT>
  * 2: Body Part <STRING>
  * 3: Type <NUMBER>
+    * 0: Any
+    * 1: Pads
+    * 2: Pulse Oximeter
+    * 3: Pressure Cuff
+    * 4: Capnograph
  *
  * Return Value:
  * Has AED <BOOL>
