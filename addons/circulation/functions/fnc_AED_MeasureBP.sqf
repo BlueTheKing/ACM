@@ -43,7 +43,7 @@ _patient setVariable [QGVAR(AED_PressureCuffBusy), true, true];
     _patient setVariable [QGVAR(AED_PressureCuff_Measure), [_systolic, _diastolic], true];
 }] call CBA_fnc_waitUntilAndExecute;
 
-private _sound = playSound3D [QPATHTO_R(sound\aed_pressurecuff.wav), _patient, false, getPosASL _patient, 8, 1, 8]; // 7.291s
+private _sound = playSound3D [QPATHTO_R(sound\aed_pressurecuff.wav), _patient, false, getPosASL _patient, 4, 1, 6]; // 7.291s
 
 [{
     params ["_medic", "_patient"];

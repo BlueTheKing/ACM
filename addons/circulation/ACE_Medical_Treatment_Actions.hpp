@@ -124,7 +124,7 @@ class ACEGVAR(medical_treatment,actions) {
     class AED_CancelCharge: AED_ManualCharge {
         displayName = "Cancel Charge";
         condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CanCancelCharge));
-        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_BeginCharge));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CancelCharge));
     };
     class AED_MeasureBP: AED_AnalyzeRhythm {
         displayName = "Measure Blood Pressure (AED)";
