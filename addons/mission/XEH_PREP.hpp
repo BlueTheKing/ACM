@@ -1,4 +1,6 @@
 //PREP(initHealTent);
 PREP(initTrainingComputer);
-PREP(initTrainingComputer_childActions);
-PREP(spawner_generatePatient);
+PREP(generatePatient);
+PREP(generatePatients);
+PREP(spawnPatient_childActions);
+PREP(spawnPatients_childActions);

@@ -11,7 +11,7 @@
  * ACE actions <ARRAY>
  *
  * Example:
- * [this, ACM_Mission_TrainingSpot1] call ACM_mission_fnc_initTrainingComputer_childActions;
+ * [this, ACM_Mission_TrainingSpot1] call ACM_mission_fnc_spawnPatient_childActions;
  *
  * Public: No
  */
@@ -30,7 +30,7 @@ private _actions = [];
         params ["_object", "_unit", "_args"];
         _args params ["_spawnPos", "_severity"];
 
-        [_object, _spawnPos, _unit, _severity, 0] call FUNC(spawner_generatePatient);
+        [_object, _spawnPos, _unit, _severity, 0] call FUNC(generatePatient);
     },
     {true},
     {
@@ -49,7 +49,7 @@ private _actions = [];
                 params ["", "", "_args"];
                 _args params ["_object", "_unit","_spawnPos", "_severity", "_damageType"];
 
-                [_object, _spawnPos, _unit, _severity, _damageType] call FUNC(spawner_generatePatient);
+                [_object, _spawnPos, _unit, _severity, _damageType] call FUNC(generatePatient);
             },
             {true},
             {},

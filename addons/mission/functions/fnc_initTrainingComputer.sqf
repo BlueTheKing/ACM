@@ -18,6 +18,8 @@
 
 params ["_object", "_spawnLocation"];
 
+GVAR(TrainingCasualtyGroup) = createGroup [civilian, false];
+
 private _actions = [];
 
 _actions pushBack (["ACM_Training_SpawnPatient",
@@ -27,14 +29,32 @@ _actions pushBack (["ACM_Training_SpawnPatient",
     params ["_object", "_unit", "_args"];
     _args params ["_spawnPos"];
 
-    [_object, _spawnPos, _unit, 1, 1] call FUNC(spawner_generatePatient);
+    [_object, _spawnPos, _unit, 0, 0] call FUNC(generatePatient);
 },
 {true},
 {
     params ["_object", "_unit", "_args"];
     _args params ["_spawnPos"];
 
-    [_object, _spawnPos] call FUNC(initTrainingComputer_childActions);
+    [_object, _spawnPos] call FUNC(spawnPatient_childActions);
+},
+[_spawnLocation]] call ACEFUNC(interact_menu,createAction));
+
+_actions pushBack (["ACM_Training_SpawnPatients",
+"Spawn Patients",
+"",
+{
+    params ["_object", "_unit", "_args"];
+    _args params ["_spawnPos"];
+
+    [_object, _spawnPos, _unit, 0, 0] call FUNC(generatePatients);
+},
+{true},
+{
+    params ["_object", "_unit", "_args"];
+    _args params ["_spawnPos"];
+
+    [_object, _spawnPos] call FUNC(spawnPatients_childActions);
 },
 [_spawnLocation]] call ACEFUNC(interact_menu,createAction));
 

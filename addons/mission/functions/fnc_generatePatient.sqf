@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Init interactions for spawning patient
+ * Spawn patient
  *
  * Arguments:
  * 0: Interaction Object <OBJECT>
@@ -9,23 +9,35 @@
  * 2: Initiator Unit <OBJECT>
  * 3: Severity Preset <NUMBER>
  * 4: Injury Type <NUMBER>
+ * 5: Single Patient Spawning <BOOL>
  *
  * Return Value:
- * None
+ * Patient <OBJECT>
  *
  * Example:
- * [_object, _location, player, 0, 0] call ACM_mission_fnc_spawner_generatePatient;
+ * [_object, _location, player, 0, 0, true] call ACM_mission_fnc_generatePatient;
  *
  * Public: No
  */
 
-params ["_object", "_location", "_initiator", "_severity", "_type"];
+params ["_object", "_location", "_initiator", "_severity", "_type", ["_singlePatient", true]];
 
-private _activePatient = _object getVariable [QGVAR(ActivePatient), objNull];
+if (_singlePatient) then {
+    private _activePatient = _object getVariable [QGVAR(ActivePatient), objNull];
 
-if !(isNull _activePatient) then {
-    deleteVehicle _activePatient;
-    _object setVariable [QGVAR(ActivePatient), objNull, true];
+    if !(isNull _activePatient) then {
+        deleteVehicle _activePatient;
+        _object setVariable [QGVAR(ActivePatient), objNull, true];
+    };
+
+    private _activePatients = _object getVariable [QGVAR(ActivePatients), []];
+
+    if (count _activePatients > 0) then {
+        {
+            deleteVehicle _x;
+        } forEachReversed _activePatients;
+        _object setVariable [QGVAR(ActivePatients), [], true];
+    };
 };
 
 private _fnc_generateWounds = {
@@ -72,8 +84,7 @@ private _fnc_generateWounds = {
     [_targetPart,_mechanism,_damageAmount];
 };
 
-private _group = createGroup [civilian, true];
-private _patient = _group createUnit ["B_Survivor_F", position _location, [], 0, "FORM"];
+private _patient = GVAR(TrainingCasualtyGroup) createUnit ["B_Survivor_F", position _location, [], 0, "FORM"];
 
 _patient disableAI "MOVE";
 
@@ -121,4 +132,8 @@ for "_i" from 1 to _woundCount do {
     [_patient, _damageAmount, _targetPart, _mechanism, _initiator] call ACEFUNC(medical,addDamageToUnit);
 } forEach _injuryArray;
 
-_object setVariable [QGVAR(ActivePatient), _patient, true];
+if (_singlePatient) then {
+    _object setVariable [QGVAR(ActivePatient), _patient, true];
+};
+
+_patient;
