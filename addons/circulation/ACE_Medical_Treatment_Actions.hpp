@@ -33,7 +33,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"ACM_AED"};
         consumeItem = 0;
-        condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(hasAED)));
+        condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call FUNC(setAED));
     };
     class AED_RemovePads: AED_ApplyPads {
@@ -52,7 +52,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 1;// TODO change
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE(!([ARR_4(_medic,_patient,'',2)] call FUNC(hasAED)));
+        condition = QUOTE(!([ARR_4(_medic,_patient,'',2)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(setAED));
     };
     class AED_DisconnectPulseOximeter: AED_RemovePads {
@@ -71,7 +71,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 1;// TODO change
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE(!([ARR_4(_medic,_patient,'',3)] call FUNC(hasAED)));
+        condition = QUOTE(!([ARR_4(_medic,_patient,'',3)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call FUNC(setAED));
     };
     class AED_DisconnectPressureCuff: AED_RemovePads {
@@ -90,7 +90,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 1;// TODO change
         allowedSelections[] = {"Head"};
-        condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,4)] call FUNC(hasAED)));
+        condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,4)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,3)] call FUNC(setAED));
     };
     class AED_DisconnectCapnograph: AED_RemovePads {

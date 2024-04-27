@@ -19,6 +19,7 @@ PREP(displayAEDMonitor_updateStep);
 PREP(displayAEDMonitor);
 PREP(generateBloodType);
 PREP(generateBloodTypeList);
+PREP(canConnectAED);
 PREP(convertBloodType);
 PREP(getCardiacMedicationEffects);
 PREP(getEKGHeartRate);

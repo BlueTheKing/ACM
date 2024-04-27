@@ -30,7 +30,7 @@ _patient setVariable [QGVAR(AED_InUse), false, true];
 
 private _PFH = [{
     params ["_args", "_idPFH"];
-    _args params ["_patient"];
+    _args params ["_patient", "_medic"];
 
     private _padsStatus = _patient getVariable [QGVAR(AED_Placement_Pads), false];
     private _pulseOximeterPlacement = _patient getVariable [QGVAR(AED_Placement_PulseOximeter), -1];
@@ -148,7 +148,7 @@ private _PFH = [{
             _patient setVariable [QGVAR(AED_CO2_Display), round([_patient] call EFUNC(breathing,getEtCO2)), true];
         };
     };
-}, 0, [_patient]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_patient, _medic]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(AED_PFH), _PFH];
 
@@ -160,10 +160,11 @@ _patient setVariable [QGVAR(AED_PFH), _PFH];
     params ["_patient", "_medic"];
     
     if !(isNull _patient) then {
-        [_medic, _patient, "body", 0, false] call FUNC(setAED);
-        [_medic, _patient, "body", 1, false] call FUNC(setAED);
-        [_medic, _patient, "body", 2, false] call FUNC(setAED);
-        [_medic, _patient, "body", 3, false] call FUNC(setAED);
+        [_medic, _patient, "body", 0, false, true] call FUNC(setAED);
+        [_medic, _patient, "body", 1, false, true] call FUNC(setAED);
+        [_medic, _patient, "body", 2, false, true] call FUNC(setAED);
+        [_medic, _patient, "body", 3, false, true] call FUNC(setAED);
+        [_patient, "activity", "%1 disconnected AED", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
         ["Patient Disconnected", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
     };
 }, [_patient, _medic], 3600] call CBA_fnc_waitUntilAndExecute;
