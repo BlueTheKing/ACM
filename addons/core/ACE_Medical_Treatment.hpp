@@ -331,6 +331,7 @@ class ACE_ADDON(Medical_Treatment) {
             timeTillMaxEffect = 15;
             maxDose = 5;
             incompatibleMedication[] = {};
+            viscosityChange = -5;
         };
         class PainKillers {
             painReduce = 0.35;
@@ -397,6 +398,7 @@ class ACE_ADDON(Medical_Treatment) {
             timeInSystem = 240;
             timeTillMaxEffect = 2;
             maxDose = -5;
+            viscosityChange = -10;
         };
         class Morphine_Vial: Morphine {
             painReduce = 0.85;
