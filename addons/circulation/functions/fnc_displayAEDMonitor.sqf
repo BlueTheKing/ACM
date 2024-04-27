@@ -35,7 +35,7 @@ private _padsState = [objNull, _patient, "", 1] call FUNC(hasAED);
 private _pulseOximeterState = [objNull, _patient, "", 2] call FUNC(hasAED);
 _patient setVariable [QGVAR(AED_Monitor_HR), GET_HEART_RATE(_patient)];
 
-private _saturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), 0];
+private _saturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), -1];
 _patient setVariable [QGVAR(AED_Monitor_OxygenSaturation), _saturation];
 
 private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
@@ -44,7 +44,15 @@ _patient setVariable [QGVAR(AED_EKGRhythm), _rhythm];
 private _HRSpacing = 0;
 
 if (_rhythm in [-1,0,5]) then {
-    _HRSpacing = (60 / (([_patient] call FUNC(getEKGHeartRate)) max GET_HEART_RATE(_patient))) * 20;
+    if (_rhythm == 5) then { // PEA
+        _HRSpacing = (60 / ([_patient] call FUNC(getEKGHeartRate))) * 20;
+    } else {
+        if (GET_HEART_RATE(_patient) > 0) then {
+            _HRSpacing = (60 / GET_HEART_RATE(_patient)) * 20;
+        } else {
+            _HRSpacing = 0;
+        };
+    };
 };
 
 if (count (_patient getVariable [QGVAR(AED_EKGDisplay), []]) < AED_MONITOR_WIDTH || !(_patient getVariable [QGVAR(AED_Monitor_Pads_State), false])) then { // Initial
@@ -98,7 +106,7 @@ private _PFH = [{
     private _padsState = [objNull, _patient, "", 1] call FUNC(hasAED);
     private _pulseOximeterState = [objNull, _patient, "", 2] call FUNC(hasAED);
 
-    private _oxygenSaturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), 0];
+    private _oxygenSaturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), -1];
 
     private _monitorUpdateStep = (_patient getVariable [QGVAR(AED_UpdateStep), (floor ((CBA_missionTime - (_patient getvariable [QGVAR(AED_StartTime), CBA_missionTime])) mod 6.2304 / 0.0354))]); // x1.18
     private _monitorArray_Offset = _patient getVariable [QGVAR(AED_Offset), 0];
@@ -121,45 +129,68 @@ private _PFH = [{
     };
 
     private _hr = GET_HEART_RATE(_patient);
-    private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
-    private _actualRhythm = 0;
+    private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
+    private _EKGRhythm = -5;
+    private _PORhythm = -5;
     private _stepSpacing = 8;
 
-    if (_padsState) then {
-        if (IN_CRDC_ARRST(_patient)) then {
-            _actualRhythm = 1;
-            _stepSpacing = 0;
-            if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
-                _rhythm = -1;
-                _actualRhythm = -1;
-                _stepSpacing = (60 / _hr) * 20;
+    switch (true) do {
+        case (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])): { // CPR
+            if (_padsState) then {
+                _EKGRhythm = -1;
             };
-
-            if (_rhythm == 5) then {
-                _stepSpacing = (60 / _hr) * 20;
+            if (_pulseOximeterState) then {
+                _PORhythm = -1;
             };
-        } else {
             _stepSpacing = (60 / _hr) * 20;
         };
-        _rhythm = _rhythm;
-    } else {
-        _rhythm = -5;
-        _monitorArray_Offset = 0;
+        case ((_patient getVariable [QGVAR(AED_LastShock), -1]) + 30 > CBA_missionTime): { // After shock
+            if (_padsState) then {
+                _EKGRhythm = 1;
+            };
+            if (_pulseOximeterState) then {
+                _PORhythm = 1;
+            };
+            _stepSpacing = 0;
+        };
+        case (IN_CRDC_ARRST(_patient)): {
+            if (_padsState) then {
+                _EKGRhythm = _rhythmState;
+                if (_EKGRhythm == 5) then { // PEA
+                    _hr = [_patient] call FUNC(getEKGHeartRate);
+                    _stepSpacing = (60 / _hr) * 20;
+                };
+            };
+            if (_pulseOximeterState) then {
+                _PORhythm = 1;
+            };
+            _stepSpacing = 0;
+        };
+        default { // Sinus
+            if (_padsState) then {
+                _EKGRhythm = _rhythmState;
+            };
+            if (_pulseOximeterState && _oxygenSaturation != -1) then {
+                _PORhythm = _rhythmState;
+            };
+            _stepSpacing = (60 / _hr) * 20;
+        };
     };
 
     _stepSpacing = 0 max (round(_stepSpacing));
 
     private _stepCondition = _monitorUpdateStep >= (AED_MONITOR_WIDTH - 1);
-    private _rhythmChangeCondition = _rhythm != _patient getVariable [QGVAR(AED_EKGRhythm), -1];
+    private _rhythmChangeCondition = _EKGRhythm != _patient getVariable [QGVAR(AED_EKGRhythm), -2] || _PORhythm != _patient getVariable [QGVAR(AED_PORhythm), -2];
     private _vitalsCondition = (abs ((_patient getVariable [QGVAR(AED_Monitor_HR), false]) - _hr) > 10) || (abs ((_patient getVariable [QGVAR(AED_Monitor_OxygenSaturation), false]) - _oxygenSaturation) > 6);
     private _connectedCondition = _patient getVariable [QGVAR(AED_Monitor_Pads_State), false] != _padsState || _patient getVariable [QGVAR(AED_Monitor_PulseOximeter_State), false] != _pulseOximeterState;
     private _listCondition = (count _monitorArray_EKGRefresh < AED_MONITOR_WIDTH) || (count _monitorArray_PORefresh < AED_MONITOR_WIDTH);
 
     if (_stepCondition || {_vitalsCondition || {_rhythmChangeCondition || {_connectedCondition || {_listCondition}}}}) then { // Handle full pass / force update if rhythm changes/vitals change/device is disconnected
-        _patient setVariable [QGVAR(AED_EKGRhythm), _rhythm];
+        _patient setVariable [QGVAR(AED_EKGRhythm), _EKGRhythm];
+        _patient setVariable [QGVAR(AED_PORhythm), _PORhythm];
 
-        _monitorArray_EKGRefresh = [_rhythm, _stepSpacing, _monitorArray_Offset] call FUNC(displayAEDMonitor_generateEKG);
-        _monitorArray_PORefresh = [_actualRhythm, _stepSpacing, _monitorArray_Offset, _oxygenSaturation] call FUNC(displayAEDMonitor_generatePO);
+        _monitorArray_EKGRefresh = [_EKGRhythm, _stepSpacing, _monitorArray_Offset] call FUNC(displayAEDMonitor_generateEKG);
+        _monitorArray_PORefresh = [_PORhythm, _stepSpacing, _monitorArray_Offset, _oxygenSaturation] call FUNC(displayAEDMonitor_generatePO);
 
         if (_vitalsCondition) then {
             private _EKGArray = [];
@@ -272,6 +303,19 @@ private _PFH = [{
         ctrlSetText [IDC_VITALSDISPLAY_NIBP_M, _displayedNIBP_M];
         ctrlSetText [IDC_VITALSDISPLAY_RR, _displayedRR];
         ctrlSetText [IDC_VITALSDISPLAY_CO2, _displayedCO2];
+
+        private _HRNumber = _dlg displayCtrl IDC_VITALSDISPLAY_HR;
+        private _HRText = _dlg displayCtrl IDC_VITALSDISPLAY_HR_TEXT;
+
+        if (!_padsState && _pulseOximeterState) then {
+            ctrlSetText [IDC_VITALSDISPLAY_HR_TEXT, "PR (SpO2)"];
+            _HRNumber ctrlSetTextColor SPO2_COLOR_M;
+            _HRText ctrlSetTextColor SPO2_COLOR_M;
+        } else {
+            ctrlSetText [IDC_VITALSDISPLAY_HR_TEXT, "HR"];
+            _HRNumber ctrlSetTextColor HR_COLOR_M;
+            _HRText ctrlSetTextColor HR_COLOR_M;
+        };
     };
 }, 0, [_patient]] call CBA_fnc_addPerFrameHandler;
 

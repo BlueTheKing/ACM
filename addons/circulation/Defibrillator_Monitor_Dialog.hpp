@@ -67,10 +67,10 @@ class GVAR(Lifepak_Monitor_Dialog) {
         };
 
         class HR_Vitals_Header: RscText {
-            idc = -1;
+            idc = IDC_VITALSDISPLAY_HR_TEXT;
             x = QUOTE(ACM_pxToScreen_X((AED_TOPLEFT_X - 10)));
             y = QUOTE(ACM_pxToScreen_Y(VitalsHeader_Spacing_Y(0)));
-            w = QUOTE(ACM_pxToScreen_W(50));
+            w = QUOTE(ACM_pxToScreen_W(80));
             h = QUOTE(ACM_pxToScreen_H(25));
             colorBackground[] = {0,0,0,0};
             colorText[] = HR_COLOR;

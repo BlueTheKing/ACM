@@ -61,7 +61,9 @@
 #define VitalsDisplay_Spacing_Y(number) ((AED_TOPLEFT_Y + 5) + (VitalsDisplay_Spacing_V * number))
 
 #define HR_COLOR {0,1,0,1}
+#define HR_COLOR_M [0,1,0,1]
 #define SPO2_COLOR {0,0.6,1,1}
+#define SPO2_COLOR_M [0,0.6,1,1]
 #define CO2_COLOR {1,0.5,0.2,1}
 #define NIBP_COLOR {1,1,1,1}
 
@@ -72,6 +74,8 @@
 #define EKG_Line_Y(adjust) ((AED_TOPLEFT_Y + 105) + adjust)
 
 // IDC defines
+
+#define IDC_VITALSDISPLAY_HR_TEXT 70011
 
 #define IDC_VITALSDISPLAY_HR 70001
 #define IDC_VITALSDISPLAY_SPO2 70002

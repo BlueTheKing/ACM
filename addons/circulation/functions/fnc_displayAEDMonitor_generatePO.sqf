@@ -48,6 +48,17 @@ private _fnc_generateStepSpacingArray = {
     _stepSpacingArray;
 };
 
+private _generateNoisyRhythmStep = {
+    params ["_cleanRhythmStep", "_noiseRange"];
+
+    private _noisyRhythm = [];
+    {
+        _noisyRhythm pushBack (random [(_x - _noiseRange), _x, (_x + _noiseRange)]);
+    } forEach _cleanRhythmStep;
+
+    _noisyRhythm;
+};
+
 private _rhythmArray = [];
 
 switch (_rhythm) do {
@@ -60,20 +71,13 @@ switch (_rhythm) do {
             _rhythmArray = _rhythmArray + _step;
         };
     };
-    case 0: { // TODO change
-        private _generateNoisyRhythmStep = {
-            params ["_cleanRhythmStep", "_noiseRange"];
-            private _noisyRhythm = [];
-            {
-                _noisyRhythm pushBack (random [(_x - _noiseRange), _x, (_x + _noiseRange)]);
-            } forEach _cleanRhythmStep;
-            _noisyRhythm;
-        };
+    case -1;
+    case 0: {
         //[0,-10,-30,-40,-45,-47,-49.2,-50,-49.2,-45,-40,-38,-36,-33,-30,-20,-15,-5];
         private _cleanRhythmStep = [0, -10 * _saturation, -30 * _saturation, -40 * _saturation, -45 * _saturation, -47 * _saturation, -49.2 * _saturation, -50 * _saturation, -49.2 * _saturation, -45 * _saturation, -40 * _saturation,
         -38 * _saturation, -36 * _saturation, -33 * _saturation, -30 * _saturation, -20 * _saturation, -15 * _saturation, -5 * _saturation];
 
-        private _noiseRange = 1;
+        private _noiseRange = 2;
         private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStep) + _spacing));
 
         if (_arrayOffset > 0) then {
@@ -85,12 +89,13 @@ switch (_rhythm) do {
         };
     };
     default {
-        private _step = [0];
+        private _step = [(0 + 30 * (1 - 1 * _saturation))];
+        private _noiseRange = 2;
 
         private _repeat = ceil(AED_MONITOR_WIDTH / (count _step));
 
         for "_i" from 0 to _repeat do {
-            _rhythmArray = _rhythmArray + _step;
+            _rhythmArray = _rhythmArray + ([_step, _noiseRange] call _generateNoisyRhythmStep);
         };
     };
 };

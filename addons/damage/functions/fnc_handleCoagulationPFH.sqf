@@ -34,11 +34,11 @@ private _id = [{
     
     private _exit = true;
 
-    if (GET_HEART_RATE(_patient) < 30 || _plateletCount < 0.5) exitWith {};
+    private _txaCount = ([_patient, "TXA_Vial", false] call ACEFUNC(medical_status,getMedicationCount)) min 1.4;
+
+    if (GET_HEART_RATE(_patient) < 30 || (_plateletCount < 0.5 && _txaCount < 0.1)) exitWith {};
 
     private _maximumWoundSeverity = ceil (_plateletCount / 2);
-
-    //private _txaCount = [_patient, "TXA"] call ACEFUNC(medical_status,getMedicationCount);
 
     {
         private _openWounds = GET_OPEN_WOUNDS(_patient);

@@ -28,6 +28,9 @@ _patient setVariable [QGVAR(AED_StartTime), CBA_missionTime, true];
 _patient setVariable [QGVAR(AED_SilentMode), false, true];
 _patient setVariable [QGVAR(AED_InUse), false, true];
 
+_patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), false];
+_patient setVariable [QGVAR(AED_Alarm_State), false];
+
 private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient", "_medic"];
@@ -69,7 +72,7 @@ private _PFH = [{
             _patient setVariable [QGVAR(AED_Pads_Display), round(_ekgHR), true];
         };
 
-        if (!(_patient getVariable [QGVAR(AED_InUse), false]) && !(_patient getVariable [QGVAR(AED_SilentMode), false])) then {
+        if (!(_patient getVariable [QGVAR(AED_InUse), false]) && !([_patient] call FUNC(AED_IsSilent))) then {
             if (_ekgHR > 0) then {
                 private _lastBeep = _patient getVariable [QGVAR(AED_Pads_LastBeep), -1];
                 private _hrDelay = 60 / _ekgHR;
@@ -99,7 +102,13 @@ private _PFH = [{
 
                 if ((_lastBeep + _hrDelay) < CBA_missionTime) then {
                     _patient setVariable [QGVAR(AED_Pads_LastBeep), CBA_missionTime];
-                    playSound3D [QPATHTO_R(sound\aed_hr_beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.15s
+
+                    private _pitch = 1;
+                    if (_pulseOximeterPlacement != -1) then { // Beep pitch affected by SpO2
+                        _pitch = linearConversion [50, 90, ([_patient, true] call EFUNC(breathing,getSpO2)), 0.5, 1, true];
+                    };
+
+                    playSound3D [QPATHTO_R(sound\aed_hr_beep.wav), _patient, false, getPosASL _patient, 15, _pitch, 15]; // 0.15s
                 };
             } else {
                 if !(_patient getVariable [QGVAR(AED_Alarm_State), false]) then {

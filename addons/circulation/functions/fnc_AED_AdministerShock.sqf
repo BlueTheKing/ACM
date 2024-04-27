@@ -49,7 +49,12 @@ if (_patient getVariable [QGVAR(AED_AnalyzeRhythm_State), false]) then {
     _patient setVariable [QGVAR(AED_AnalyzeRhythm_State), false, true];
 };
 
-if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [1,5]) exitWith {
+private _currentRhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
+
+if (_currentRhythm in [0,1,5]) exitWith {
+    if (_currentRhythm == 0) then {
+        [QACEGVAR(medical,FatalVitals), [_patient], _patient] call CBA_fnc_targetEvent;
+    };
     _patient setVariable [QGVAR(CardiacArrest_RhythmState), 1, true];
 };
 
@@ -63,6 +68,6 @@ if (_CPRAmount > 60) then {
 };
 
 if (random 100 < (_CPREffectiveness + (10 + (10 * _amiodarone)))) exitWith { // ROSC
-    [QACEGVAR(medical,CPRSucceeded), _patient] call CBA_fnc_localEvent;
+    [QACEGVAR(medical,CPRSucceeded), [_patient], _patient] call CBA_fnc_targetEvent;
     _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
 };
