@@ -19,7 +19,7 @@
  * Public: No
  */
 
-params ["_unit", "_heartRate", "_oxygenDemand", "_deltaT", "_syncValue"];
+params ["_unit", "_heartRate", ["_oxygenDemand", 0], "_deltaT", "_syncValue"];
 // 12-20 per min          40-60 per min
 
 private _respirationRate = _unit getVariable [QGVAR(RespirationRate), 0];
