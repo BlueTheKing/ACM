@@ -44,7 +44,7 @@ PREP_RECOMPILE_END;
     "SLIDER",
     ["Wrapped Stitch Time", "Time to stitch a wrapped wound"],
     [ACM_SETTINGS_CATEGORY, "Items"],
-    [1, 30, 3, 1],
+    [1, 30, 2, 1],
     true
 ] call CBA_fnc_addSetting;
 

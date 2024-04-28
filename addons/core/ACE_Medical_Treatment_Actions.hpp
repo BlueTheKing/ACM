@@ -60,12 +60,12 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call EFUNC(damage,getWrapTime));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call EFUNC(damage,wrapBodypart));
     };
-    /*class ElasticWrapClots: ElasticWrap {
-        displayName = "";
-        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(canWrap));
-        treatmentTime = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(getWrapTime));
-        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(wrapBodypart));
-    };*/
+    class ElasticWrapClots: ElasticWrap {
+        displayName = "Wrap Clotted Wounds";
+        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(damage,canWrap));
+        treatmentTime = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(damage,getWrapTime));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(damage,wrapBodypart));
+    };
     class ElasticWrapSplint: ElasticWrap {
         displayName = "Wrap SAM Splint";
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
@@ -109,12 +109,12 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call EFUNC(damage,canStitch));
         callbackProgress = QUOTE([ARR_4(_args,_elapsedTime,_totalTime,1)] call EFUNC(damage,surgicalKitProgress));
     };
-    /*class StitchClottedWounds: SurgicalKit {
-        displayName = CSTRING(UseSurgicalKit_Clotted);
-        treatmentTime = QUOTE([ARR_3(_patient,_bodyPart,2)] call FUNC(getStitchTime));
-        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(canStitch));
-        callbackProgress = QUOTE([ARR_4(_args,_elapsedTime,_totalTime,2)] call FUNC(surgicalKitProgress));
-    };*/
+    class StitchClottedWounds: SurgicalKit {
+        displayName = "Use Surgical Kit (Clotted)";
+        treatmentTime = QUOTE([ARR_3(_patient,_bodyPart,2)] call EFUNC(damage,getStitchTime));
+        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(damage,canStitch));
+        callbackProgress = QUOTE([ARR_4(_args,_elapsedTime,_totalTime,2)] call EFUNC(damage,surgicalKitProgress));
+    };
 
     class ApplyTourniquet;
     class RemoveTourniquet: ApplyTourniquet {

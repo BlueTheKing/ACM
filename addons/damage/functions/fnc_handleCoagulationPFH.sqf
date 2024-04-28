@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle coagulation
+ * Handle coagulation (LOCAL)
  *
  * Arguments:
  * 0: Target <OBJECT>
@@ -17,9 +17,9 @@
 
 params ["_patient"];
 
-if (_patient getVariable [QGVAR(Coagulation_PFH), -1] != -1 || !(IS_BLEEDING(_patient)) || (GVAR(coagulationClottingAffectAI) && !(isPlayer _patient))) exitWith {};
+if (_patient getVariable [QGVAR(Coagulation_PFH), -1] != -1 || !(IS_BLEEDING(_patient))) exitWith {};
 
-_patient setVariable [QGVAR(Coagulation_InitTime), CBA_missionTime];
+_patient setVariable [QGVAR(Coagulation_LastClotTime), CBA_missionTime];
 
 private _id = [{
     params ["_args", "_idPFH"];
@@ -27,7 +27,7 @@ private _id = [{
 
     private _plateletCount = _patient getVariable [QEGVAR(circulation,Platelet_Count), 3];
 
-    if (!(alive _patient) || ((_patient setVariable [QGVAR(Coagulation_InitTime), -1]) + 120 < CBA_missionTime && _plateletCount < 0.5)) exitWith {
+    if (!(alive _patient) || ((_patient getVariable [QGVAR(Coagulation_LastClotTime), -1]) + 120 < CBA_missionTime)) exitWith {
         _patient setVariable [QGVAR(Coagulation_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
@@ -52,6 +52,7 @@ private _id = [{
 
         if (_woundIndex != -1) exitWith {
             [_patient, _x, 1, _maximumWoundSeverity] call FUNC(clotWoundsOnBodyPart);
+            _patient setVariable [QGVAR(Coagulation_LastClotTime), CBA_missionTime];
             _exit = false;
         };
     } forEach ALL_BODY_PARTS_PRIORITY;

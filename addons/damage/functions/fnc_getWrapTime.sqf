@@ -24,7 +24,7 @@ private _woundsOnPart = [];
 private _total = 0;
 
 if (_type isEqualTo 1) then {
-    //_woundsOnPart = GET_CLOTTED_WOUNDS(_patient) getOrDefault [_bodyPart, [], true];
+    _woundsOnPart = GET_CLOTTED_WOUNDS(_patient) getOrDefault [_bodyPart, [], true];
 } else {
     _woundsOnPart = GET_BANDAGED_WOUNDS(_patient) getOrDefault [_bodyPart, [], true];
 };

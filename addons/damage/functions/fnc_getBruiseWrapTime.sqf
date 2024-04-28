@@ -50,4 +50,4 @@ if ([_medic] call ACEFUNC(medical_treatment,isMedic)) then {
     _treatmentTimeModifier = _treatmentTimeModifier + BANDAGE_TIME_MOD_MEDIC;
 };
 
-1 max ((_woundsToTreat min 8) + _treatmentTimeModifier);
+3 max ((_woundsToTreat min 12) + _treatmentTimeModifier);

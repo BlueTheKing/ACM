@@ -34,9 +34,9 @@ switch (_type) do {
             if (_id in [20,21,22] && {_amountOf > 0}) then {_condition = true;};
         } forEach _openWounds;
     };
-    /*case 1: {
+    case 1: {
         _condition = (GET_CLOTTED_WOUNDS(_patient) getOrDefault [_bodyPart, []]) isNotEqualTo [];
-    };*/
+    };
     default { // Bandages
         _condition = (GET_BANDAGED_WOUNDS(_patient) getOrDefault [_bodyPart, []]) isNotEqualTo [];
     };

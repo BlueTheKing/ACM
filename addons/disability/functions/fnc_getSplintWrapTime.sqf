@@ -18,7 +18,7 @@
 
 params ["_medic", "_patient"];
 
-private _time = GVAR(treatmentTimeWrapSplint);
+private _time = EGVAR(core,treatmentTimeWrapSplint);
 
 if (_medic isEqualTo _patient) then {
     _time = _time * 2;

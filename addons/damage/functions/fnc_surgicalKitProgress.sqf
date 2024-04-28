@@ -16,7 +16,7 @@
  * Continue Treatment <BOOL>
  *
  * Example:
- * [[objNull, player, "head"], 5, 10, 0] call ace_medical_treatment_fnc_surgicalKitProgress; // ACM_damage_fnc_surgicalKitProgress; // TODO move to disability
+ * [[objNull, player, "head"], 5, 10, 0] call ace_medical_treatment_fnc_surgicalKitProgress; // ACM_damage_fnc_surgicalKitProgress;
  *
  * Public: No
  */
@@ -31,7 +31,7 @@ private _woundVar = VAR_BANDAGED_WOUNDS;
 switch (_woundType) do {
     case 1: {
         _targetWounds = GET_WRAPPED_WOUNDS(_patient);
-        _timeToStitch = 2;
+        _timeToStitch = EGVAR(core,treatmentTimeWrappedStitch);
         _woundVar = VAR_WRAPPED_WOUNDS;
     };
     case 2: {
