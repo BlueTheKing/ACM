@@ -44,13 +44,15 @@ private _fnc_chargedPFH = {
     [{
         params ["_patient"];
 
-        !(_patient getVariable [QGVAR(AED_Charged), false]);
+        !(_patient getVariable [QGVAR(AED_Charged), false]) || !([_medic, _patient, "", 1] call FUNC(hasAED));
     }, {}, [_patient], 30, 
     { // Cancel shock if not administered within 30s
         params ["_patient"];
 
-        _patient setVariable [QGVAR(AED_Charged), false, true];
-        playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.624s
+        if ([_medic, _patient, "", 1] call FUNC(hasAED)) then {
+            _patient setVariable [QGVAR(AED_Charged), false, true];
+            playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.624s
+        };
     }] call CBA_fnc_waitUntilAndExecute;
 };
 
