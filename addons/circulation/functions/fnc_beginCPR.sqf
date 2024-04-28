@@ -30,8 +30,6 @@ GVAR(CPRCancel_MouseID) = [0xF0, [false, false, false], {
     GVAR(CPRTarget) setVariable [QACEGVAR(medical,CPR_provider), objNull, true];
 }, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
 
-private _CPRStartTime = CBA_missionTime + 2.5;
-
 ACEGVAR(medical_gui,pendingReopen) = false; // Prevent medical menu from reopening
 
 if (dialog) then { // If another dialog is open (medical menu) close it
@@ -51,6 +49,8 @@ if (_notInVehicle) then {
 if (_initialAnimation in ["amovpercmstpsnonwnondnon", "amovpknlmstpsnonwnondnon_gear", "amovpknlmstpsnonwnondnon"]) then { // Wack
     _startDelay = 1.8;
 };
+
+private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
 
 [{
     params ["_medic", "_patient", "_notInVehicle", "_CPRStartTime"];

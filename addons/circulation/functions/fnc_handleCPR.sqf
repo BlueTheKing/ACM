@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle CPR being performed on patient
+ * Handle CPR being performed on patient (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>
@@ -37,7 +37,7 @@ private _PFH = [{
 
     private _bloodVolume = GET_BLOOD_VOLUME(_patient);
 
-    if !(_bloodVolume < BLOOD_VOLUME_CLASS_4_HEMORRHAGE) exitWith {};
+    if (_bloodVolume < BLOOD_VOLUME_CLASS_4_HEMORRHAGE) exitWith {};
 
     private _medicSkill = switch (true) do {
         case ([_medic, 2] call ACEFUNC(medical_treatment,isMedic)): {65}; // Doctor
@@ -61,19 +61,18 @@ private _PFH = [{
     switch (_rhythmState) do {
         case 3: {
             _rhythmEffect = _shockEffect;
-            _medicationEffect = (_epinephrine + _amiodarone min 2.2) - _morphine;
+            _medicationEffect = (1 max (_epinephrine + _amiodarone min 2.2)) - _morphine;
         };
         case 2: {
             _rhythmEffect = 0.9 * _shockEffect;
-            _medicationEffect = (_epinephrine + _amiodarone min 2.2) - _morphine;
+            _medicationEffect = (1 max (_epinephrine + _amiodarone min 2.2)) - _morphine;
         };
         case 1: {
             _rhythmEffect = 0.8;
-            _medicationEffect = _epinephrine - _morphine;
+            _medicationEffect = (1 max _epinephrine) - _morphine;
         };
     };
-    ;
-    
+
     if (random 100 < (_medicSkill * GVAR(CPREffectiveness) * _bloodlossEffect * _consistencyEffect * _rhythmEffect * _medicationEffect)) then {
         if (_rhythmState == 1) then {
             private _newRhythm = [2,3] select (random 1 < 0.5);

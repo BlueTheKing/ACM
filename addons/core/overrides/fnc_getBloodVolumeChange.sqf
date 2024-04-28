@@ -68,9 +68,9 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
     private _activeBagTypes = _unit getVariable [QEGVAR(circulation,ActiveFluidBags), [1,1,1,1,1,1]];
 
     if (IN_CRDC_ARRST(_unit)) then {
-        _flowMultiplier = 0.02;
+        _flowMultiplier = EGVAR(circulation,cardiacArrestBleedRate);
         if (alive (_unit getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
-            _flowMultiplier = 0.6;
+            _flowMultiplier = 0.9;
         };
     };
 

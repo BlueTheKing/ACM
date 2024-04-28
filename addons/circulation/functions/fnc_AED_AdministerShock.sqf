@@ -69,5 +69,4 @@ if (_CPRAmount > 60) then {
 
 if (random 100 < (_CPREffectiveness + (10 + (10 * _amiodarone)))) exitWith { // ROSC
     [QACEGVAR(medical,CPRSucceeded), [_patient], _patient] call CBA_fnc_targetEvent;
-    _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
 };

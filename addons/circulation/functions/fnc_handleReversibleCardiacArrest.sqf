@@ -36,7 +36,6 @@ private _PFH = [{
         _patient setVariable [QGVAR(ReversibleCardiacArrest_State), false, true];
         
         if (IN_CRDC_ARRST(_patient) && (alive _patient) && ((_time + 360) > CBA_missionTime) && _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] == 5) then { // Reversed
-            _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
             [QACEGVAR(medical,CPRSucceeded), _patient] call CBA_fnc_localEvent;
         } else {
             if (IN_CRDC_ARRST(_patient) && (alive _patient)) then { // Timed out (deteriorated)
