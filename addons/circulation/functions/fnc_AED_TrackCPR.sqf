@@ -17,38 +17,30 @@
 
 params ["_patient"];
 
+_patient setVariable [QGVAR(AED_MuteAlarm), true, true];
+_patient setVariable [QGVAR(AED_TrackedCPR_Time), (CBA_missionTime + 2), true];
+
+GVAR(loopTime_cpr) = 0;
+
+[{ // Reminder to re-analyze
+    params ["_patient", "_medic"];
+
+    playSound3D [QPATHTO_R(sound\aed_checkpulse_nopulsepushanalyze.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 7.375s
+}, [_patient, _medic], 120] call CBA_fnc_waitAndExecute;
+
 [{
-    params ["_patient"];
+    params ["_args", "_idPFH"];
+    _args params ["_patient"];
 
-    alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]);
-}, {
-    params ["_patient"];
+    // Kill PFH once CPR is stopped after 2 minutes
+    if ((alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]) && ((_patient getVariable [QGVAR(AED_TrackedCPR_Time), 0]) + 120) < CBA_missionTime) || !([objNull,_patient] call FUNC(hasAED))) exitWith {
+        _patient setVariable [QGVAR(AED_MuteAlarm), false, true];
+        _patient setVariable [QGVAR(AED_TrackedCPR_Time), -1, true];
+        [_idPFH] call CBA_fnc_removePerFrameHandler;
+    };
 
-    _patient setVariable [QGVAR(AED_MuteAlarm), true, true];
+    if ((GVAR(loopTime_cpr) + 0.6) > CBA_missionTime || (_patient getVariable [QGVAR(AED_MuteCPR), false])) exitWith {};
 
-    playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.369s
-
-    GVAR(loopTime_cpr) = 0;
-
-    [{ // Reminder to re-analyze
-        params ["_patient", "_medic"];
-
-        playSound3D [QPATHTO_R(sound\aed_checkpulse_nopulsepushanalyze.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 7.375s
-    }, [_patient, _medic], 120] call CBA_fnc_waitAndExecute;
-
-    [{
-        params ["_args", "_idPFH"];
-        _args params ["_patient"];
-
-        // Kill PFH if CPR stops for 30 seconds
-        if (isNull (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]) && {((_patient getVariable [QGVAR(CPR_StoppedTime), CBA_missionTime]) + 30) < CBA_missionTime}) exitWith {
-            _patient setVariable [QGVAR(AED_MuteAlarm), false, true];
-            [_idPFH] call CBA_fnc_removePerFrameHandler;
-        };
-
-        if ((GVAR(loopTime_cpr) + 0.6) > CBA_missionTime) exitWith {};
-
-        GVAR(loopTime_cpr) = CBA_missionTime;
-        playSound3D [QPATHTO_R(sound\aed_cprtick.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.058s
-    }, 0, [_patient]] call CBA_fnc_addPerFrameHandler;
-}, [_patient], 30] call CBA_fnc_waitUntilAndExecute;
+    GVAR(loopTime_cpr) = CBA_missionTime;
+    playSound3D [QPATHTO_R(sound\aed_cprtick.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.058s
+}, 0, [_patient]] call CBA_fnc_addPerFrameHandler;

@@ -41,6 +41,8 @@ _patient setVariable [QGVAR(AED_Monitor_OxygenSaturation), _saturation];
 private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 _patient setVariable [QGVAR(AED_EKGRhythm), _rhythm];
 
+private _recentShock = (_patient getVariable [QGVAR(AED_LastShock), -1]) + 45 > CBA_missionTime;
+
 private _HRSpacing = 0;
 
 if (_rhythm in [-1,0,5]) then {
@@ -62,7 +64,11 @@ if (count (_patient getVariable [QGVAR(AED_EKGDisplay), []]) < AED_MONITOR_WIDTH
         if (_rhythm in [-1,0,5]) then {
             _patient setVariable [QGVAR(AED_EKGDisplay), ([_rhythm, _HRSpacing, 0] call FUNC(displayAEDMonitor_generateEKG))];
         } else {
-             _patient setVariable [QGVAR(AED_EKGDisplay), ([_rhythm, -1, 0] call FUNC(displayAEDMonitor_generateEKG))];
+            if (_recentShock) then {
+                _patient setVariable [QGVAR(AED_EKGDisplay), ([1, -1, 0] call FUNC(displayAEDMonitor_generateEKG))];
+            } else {
+                _patient setVariable [QGVAR(AED_EKGDisplay), ([_rhythm, -1, 0] call FUNC(displayAEDMonitor_generateEKG))];
+            };
         };
     };
 }; 
@@ -73,7 +79,11 @@ if (count (_patient getVariable [QGVAR(AED_PODisplay), []]) < AED_MONITOR_WIDTH 
         if (_rhythm in [-1,0,5]) then {
             _patient setVariable [QGVAR(AED_PODisplay), ([_rhythm, _HRSpacing, 0, _saturation] call FUNC(displayAEDMonitor_generatePO))];
         } else {
-            _patient setVariable [QGVAR(AED_PODisplay), ([_rhythm, -1, 0, _saturation] call FUNC(displayAEDMonitor_generatePO))];
+            if (_recentShock) then {
+                _patient setVariable [QGVAR(AED_PODisplay), ([1, -1, 0, _saturation] call FUNC(displayAEDMonitor_generatePO))];
+            } else {
+                _patient setVariable [QGVAR(AED_PODisplay), ([_rhythm, -1, 0, _saturation] call FUNC(displayAEDMonitor_generatePO))];
+            };
         };
     };
 };

@@ -25,11 +25,34 @@ _medic setVariable [QGVAR(AED_Target_Patient), _patient, true];
 _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
 
 _patient setVariable [QGVAR(AED_StartTime), CBA_missionTime, true];
-_patient setVariable [QGVAR(AED_SilentMode), false, true];
+_patient setVariable [QGVAR(AED_SilentMode), true, true];
 _patient setVariable [QGVAR(AED_InUse), false, true];
 
-_patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), false];
-_patient setVariable [QGVAR(AED_Alarm_State), false];
+[{
+    params ["_patient"];
+
+    _patient setVariable [QGVAR(AED_SilentMode), false, true];
+}, [_patient], 5] call CBA_fnc_waitAndExecute;
+
+if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [1,2,3]) then {
+    _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
+    _patient setVariable [QGVAR(AED_Alarm_State), true];
+    
+    _patient setVariable [QGVAR(AED_MuteAlarm), true, true];
+
+    [{
+        params ["_patient"];
+
+        !([objNull,_patient] call FUNC(hasAED)) || (_patient getVariable [QGVAR(AED_InUse), false]);
+    }, {}, [_patient], 5, {
+        params ["_patient"];
+
+        playSound3D [QPATHTO_R(sound\aed_pushanalyze.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 1.715s
+    }] call CBA_fnc_waitUntilAndExecute;
+} else {
+    _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), false];
+    _patient setVariable [QGVAR(AED_Alarm_State), false];
+};
 
 private _PFH = [{
     params ["_args", "_idPFH"];
@@ -54,6 +77,8 @@ private _PFH = [{
         _patient setVariable [QGVAR(AED_PFH), -1];
 
         _medic setVariable [QGVAR(AED_Target_Patient), objNull, true];
+
+        _patient setVariable [QGVAR(AED_MuteAlarm), false, true];
 
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };

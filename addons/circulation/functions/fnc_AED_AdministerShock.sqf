@@ -29,7 +29,7 @@ _patient setVariable [QGVAR(AED_LastShock), CBA_missionTime, true];
 private _totalShocks = _patient getVariable [QGVAR(AED_ShockTotal), 0];
 _patient setVariable [QGVAR(AED_ShockTotal), (_totalShocks + 1), true];
 
-if (_patient getVariable [QGVAR(AED_AnalyzeRhythm_State), false]) then {
+if (_patient getVariable [QGVAR(AED_AnalyzeRhythm_State), false]) then { // AED Mode
     [{ // Reminder to start CPR
         params ["_patient", "_medic"];
 
@@ -47,6 +47,13 @@ if (_patient getVariable [QGVAR(AED_AnalyzeRhythm_State), false]) then {
 
     }, [_patient, _medic], 4] call CBA_fnc_waitAndExecute;
     _patient setVariable [QGVAR(AED_AnalyzeRhythm_State), false, true];
+} else {
+    [{
+        params ["_patient", "_medic"];
+
+        playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.624s
+
+    }, [_patient, _medic], 0.7] call CBA_fnc_waitAndExecute;
 };
 
 private _currentRhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
