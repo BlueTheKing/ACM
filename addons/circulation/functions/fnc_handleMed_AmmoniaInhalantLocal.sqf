@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle Amonia Inhalant effects (LOCAL)
+ * Handle Ammonia Inhalant effects (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>

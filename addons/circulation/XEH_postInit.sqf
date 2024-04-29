@@ -4,11 +4,11 @@
 [QGVAR(handleReversibleCardiacArrest), LINKFUNC(handleReversibleCardiacArrest)] call CBA_fnc_addEventHandler;
 
 [QACEGVAR(medical,CPRSucceeded), {
-	params ["_patient"];
+    params ["_patient"];
 
-	if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] != 0) then {
-		_patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
-	};
+    if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] != 0) then {
+        _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
+    };
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleCPR), LINKFUNC(handleCPR)] call CBA_fnc_addEventHandler;
@@ -20,12 +20,12 @@
 [QGVAR(handleMed_NaloxoneLocal), LINKFUNC(handleMed_NaloxoneLocal)] call CBA_fnc_addEventHandler;
 
 [QACEGVAR(medical_treatment,medicationLocal), {
-	params ["_patient", "_bodyPart", "_classname"];
+    params ["_patient", "_bodyPart", "_classname"];
 
-	// Handle special medication effects
-	if (_classname in ["AmmoniaInhalant", "Naloxone"]) then {
-    	[(format ["ACM_circulation_handleMed_%1Local", toLower _classname]), [_patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
-	};
+    // Handle special medication effects
+    if (_classname in ["AmmoniaInhalant", "Naloxone"]) then {
+        [(format ["ACM_circulation_handleMed_%1Local", toLower _classname]), [_patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
+    };
 }] call CBA_fnc_addEventHandler;
 
 call FUNC(generateBloodTypeList);

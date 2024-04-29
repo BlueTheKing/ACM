@@ -143,10 +143,10 @@ class ACEGVAR(medical_treatment,actions) {
         //sounds[] = {};
     };
     class AmmoniaInhalant: Paracetamol {
-        displayName = "Give Ammonia Inhalant";
+        displayName = "Use Ammonia Inhalant";
         displayNameProgress = "Giving Ammonia Inhalant...";
         items[] = {"ACM_AmmoniaInhalant"};
-        condition = QUOTE(([_patient] call ACEFUNC(common,isAwake)));
+        condition = "true";
     };
     class Naloxone: Paracetamol {
         displayName = "Use Naloxone Spray";
@@ -155,6 +155,24 @@ class ACEGVAR(medical_treatment,actions) {
         condition = "true";
         //sounds[] = {};
     };
+
+    class ShakeAwake: CheckResponse {
+        displayName = "Attempt To Shake Awake";
+        displayNameProgress = "Shaking Patient...";
+        category = "medication";
+        medicRequired = 0;
+        allowedSelections[] = {"Body","LeftArm","RightArm"};
+        treatmentTime = 1.5;
+        condition = QUOTE(!([_patient] call ACEFUNC(common,isAwake)));
+        callbackSuccess = QEFUNC(disability,shakeAwake);
+    };
+    class SlapAwake: ShakeAwake {
+        displayName = "Attempt To Slap Awake";
+        displayNameProgress = "Slapping Patient...";
+        allowedSelections[] = {"Head"};
+        treatmentTime = 2.5;
+        callbackSuccess = QEFUNC(disability,slapAwake);
+    };
     
     // Vials
 
@@ -162,7 +180,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Push Epinephrine (Vial)";
         displayNameProgress = "Pushing Epinephrine...";
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
-        allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
+        allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
         items[] = {"ACM_Vial_Epinephrine"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV));
         //treatmentTime = QACEGVAR(medical_treatment,treatmentTimeAutoinjector);
