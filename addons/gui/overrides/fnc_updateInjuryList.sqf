@@ -197,9 +197,9 @@ if (_airwayItemType != "") then {
 private _oxygenSaturation = GET_OXYGEN(_target);
 
 // Cyanosis
-if (_selectionN in [0,2,3] && {(_oxygenSaturation < 92 || HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN))}) then {
+if (_selectionN in [0,2,3] && {(_oxygenSaturation < 91 || HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN))}) then {
     private _tourniquetTime = 0;
-    private _colorScale = linearConversion [93, 55, _oxygenSaturation, 0.47, 0.13, true];
+    private _colorScale = linearConversion [91, 55, _oxygenSaturation, 0.47, 0.13, true];
 
     if (HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN)) then {
         _tourniquetTime = CBA_missionTime - ((_target getVariable [QEGVAR(disability,Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]]) select _selectionN);

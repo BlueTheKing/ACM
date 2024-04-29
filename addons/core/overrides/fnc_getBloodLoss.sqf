@@ -47,4 +47,10 @@ if (_plateletCount > 0) then {
 };
 
 // even if heart stops blood will still flow slowly (gravity)
-(_woundBleeding * ((_cardiacOutput * _bloodPressureModifier) max EGVAR(circulation,cardiacArrestBleedRate)) * _coagulationModifier * ACEGVAR(medical,bleedingCoefficient))
+private _bloodLoss = (_woundBleeding * ((_cardiacOutput * _bloodPressureModifier) max EGVAR(circulation,cardiacArrestBleedRate)) * _coagulationModifier * ACEGVAR(medical,bleedingCoefficient));
+
+private _eventArgs = [_unit, _bloodLoss]; // Pass by reference
+
+[QACEGVAR(medical_status,getBloodLoss), _eventArgs] call CBA_fnc_localEvent;
+
+_eventArgs select 1 // return
