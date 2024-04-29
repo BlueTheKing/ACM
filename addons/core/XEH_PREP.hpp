@@ -1,4 +1,5 @@
 PREP(canCheckDogtag);
+PREP(effectOxygen);
 PREP(fullHealLocal);
 PREP(handleRespawn);
 //PREP(initUnit);

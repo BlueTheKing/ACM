@@ -52,6 +52,17 @@ class CfgFunctions {
             };
         };
     };
+    class overwrite_medical_feedback {
+        tag = "ace_medical_feedback";
+        class ace_medical_feedback {
+            class handleEffects { // Oxygen Effect
+                file = QPATHTOF(overrides\fnc_handleEffects.sqf);
+            };
+            class initEffects { // Oxygen Effect
+                file = QPATHTOF(overrides\fnc_initEffects.sqf);
+            };
+        };
+    };
     class overwrite_medical_statemachine {
         tag = "ace_medical_statemachine";
         class ace_medical_statemachine {

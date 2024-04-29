@@ -166,6 +166,9 @@
 #define ACM_OXYGEN_DEATH 55
 
 // Circulation
+
+#define GET_EFF_BLOOD_VOLUME(unit) unit getVariable [QEGVAR(circulation,Blood_Volume), 6]
+
 #define ACM_IV_16G_M 1
 #define ACM_IV_14G_M 2
 #define ACM_IO_FAST1_M 3
