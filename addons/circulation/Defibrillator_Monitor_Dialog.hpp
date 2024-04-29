@@ -227,7 +227,102 @@ class GVAR(Lifepak_Monitor_Dialog) {
             size = 0;
             text = QPATHTOF(ui\lifepak\background_ca.paa);
         };
+
+        /*class Test_Background: RscText {
+            idc = -1;
+            x = QUOTE(ACM_pxToScreen_X(AED_BUTTON_TOPLEFT_X));
+            y = QUOTE(ACM_pxToScreen_Y(AED_BUTTON_TOPLEFT_Y));
+            w = QUOTE(ACM_pxToScreen_W(AED_BUTTON_W));
+            h = QUOTE(ACM_pxToScreen_H(AED_BUTTON_H));
+            colorBackground[] = {1,1,1,0.5};
+        };*/
     };
 
-    class Controls {};
+    class Controls {
+        class Button_Power: RscButton {
+            text = "";
+            colorText[] = {1,1,1,0};
+            colorDisabled[] = {1,1,1,0};
+            colorBackground[] = {1,1,1,0};
+            colorBackgroundDisabled[] = {1,1,1,0};
+            colorBackgroundActive[] = {1,1,1,0};
+            colorFocused[] = {1,1,1,0};
+            colorBorder[] = {0,0,0,0};
+            soundEnter[] = {};
+            soundPush[] = {};
+            soundEscape[] = {};
+            idc = -1;
+            style = 0;
+            x = QUOTE(ACM_pxToScreen_X((AED_BUTTON_TOPLEFT_X + 189)));
+            y = QUOTE(ACM_pxToScreen_Y(AED_BUTTON_TOPLEFT_Y));
+            w = QUOTE(ACM_pxToScreen_W(AED_BUTTON_W));
+            h = QUOTE(ACM_pxToScreen_H(AED_BUTTON_H));
+            shadow = 0;
+            font = "RobotoCondensed";
+            sizeEx = "0";
+            onButtonClick = "";
+            tooltip = "";
+        };
+        class Button_CPR: Button_Power {
+            idc = -1;
+            x = QUOTE(ACM_pxToScreen_X(AED_BUTTON_TOPLEFT_X));
+            y = QUOTE(ACM_pxToScreen_Y((AED_BUTTON_TOPLEFT_Y + AED_BUTTON_Spacing_V)));
+            onButtonClick = QUOTE([GVAR(AED_Monitor_Target)] call FUNC(AED_Button_CPR));
+            tooltip = "CPR Mode Toggle";
+        };
+        class Button_Analyze: Button_CPR {
+            idc = -1;
+            x = QUOTE(ACM_pxToScreen_X(AED_BUTTON_TOPLEFT_X));
+            y = QUOTE(ACM_pxToScreen_Y((AED_BUTTON_TOPLEFT_Y + (AED_BUTTON_Spacing_V * 2) - 15)));
+            onButtonClick = QUOTE([GVAR(AED_Monitor_Target)] call FUNC(AED_Button_Analyze));
+            tooltip = "Analyze Rhythm";
+        };
+        class Button_NIBP: Button_CPR {
+            idc = -1;
+            x = QUOTE(ACM_pxToScreen_X((AED_BUTTON_TOPLEFT_X + 3)));
+            y = QUOTE(ACM_pxToScreen_Y((AED_BUTTON_TOPLEFT_Y + (AED_BUTTON_Spacing_V * 4) + 27)));
+            onButtonClick = QUOTE([GVAR(AED_Monitor_Target)] call FUNC(AED_Button_MeasureBP));
+            tooltip = "Measure NIBP";
+        };
+        class Button_Alarms: Button_CPR {
+            idc = -1;
+            x = QUOTE(ACM_pxToScreen_X((AED_BUTTON_TOPLEFT_X + 3)));
+            y = QUOTE(ACM_pxToScreen_Y((AED_BUTTON_TOPLEFT_Y + (AED_BUTTON_Spacing_V * 5) + 12)));
+            onButtonClick = "";
+            tooltip = "";
+        };
+        class Button_EnergySelect: Button_Power {
+            idc = -1;
+            x = QUOTE(ACM_pxToScreen_X((AED_BUTTON_TOPLEFT_X + 189)));
+            y = QUOTE(ACM_pxToScreen_Y((AED_BUTTON_TOPLEFT_Y + AED_BUTTON_Spacing_V)));
+            onButtonClick = "";
+            tooltip = "";
+        };
+        class Button_Charge: Button_Power {
+            idc = -1;
+            x = QUOTE(ACM_pxToScreen_X((AED_BUTTON_TOPLEFT_X + 189)));
+            y = QUOTE(ACM_pxToScreen_Y((AED_BUTTON_TOPLEFT_Y + (AED_BUTTON_Spacing_V * 2) - 16)));
+            onButtonClick = QUOTE([GVAR(AED_Monitor_Target)] call FUNC(AED_Button_ManualCharge));
+            tooltip = "Manual Charge";
+        };
+        class Button_Shock: Button_Power {
+            idc = -1;
+            x = QUOTE(ACM_pxToScreen_X((AED_BUTTON_TOPLEFT_X + 223)));
+            y = QUOTE(ACM_pxToScreen_Y((AED_BUTTON_TOPLEFT_Y + (AED_BUTTON_Spacing_V * 3) - 25)));
+            w = QUOTE(ACM_pxToScreen_W(80));
+            h = QUOTE(ACM_pxToScreen_H(80));
+            onButtonClick = QUOTE([GVAR(AED_Monitor_Target)] call FUNC(AED_Button_Shock));
+            tooltip = "Administer Shock";
+        };
+        class Button_SpeedDial: Button_Power {
+            soundClick[] = {QPATHTO_R(sound\aed_button_speeddial.wav), 1, 1};
+            idc = -1;
+            x = QUOTE(ACM_pxToScreen_X((AED_BUTTON_TOPLEFT_X + 140)));
+            y = QUOTE(ACM_pxToScreen_Y((AED_BUTTON_TOPLEFT_Y + 670)));
+            w = QUOTE(ACM_pxToScreen_W(180));
+            h = QUOTE(ACM_pxToScreen_H(180));
+            onButtonClick = QUOTE([GVAR(AED_Monitor_Target)] call FUNC(AED_Button_SpeedDial));
+            tooltip = "Speed Dial";
+        };
+    };
 };

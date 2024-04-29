@@ -52,6 +52,14 @@
 #define AED_TOPLEFT_X 624
 #define AED_TOPLEFT_Y 546
 
+#define AED_BUTTON_TOPLEFT_X 1632
+#define AED_BUTTON_TOPLEFT_Y 512
+
+#define AED_BUTTON_W 142
+#define AED_BUTTON_H 43
+
+#define AED_BUTTON_Spacing_V 70
+
 #define AED_MONITOR_WIDTH 176
 
 // Vitals Display stuff

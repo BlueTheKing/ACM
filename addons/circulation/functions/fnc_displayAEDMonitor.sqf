@@ -29,6 +29,8 @@ createDialog QGVAR(Lifepak_Monitor_Dialog);
 
 GVAR(EKG_Tick) = -1;
 
+GVAR(AED_Monitor_Target) = _patient;
+
 uiNamespace setVariable [QGVAR(AED_DLG),(findDisplay IDC_LIFEPAK_MONITOR)];
 
 private _padsState = [objNull, _patient, "", 1] call FUNC(hasAED);
@@ -41,7 +43,7 @@ _patient setVariable [QGVAR(AED_Monitor_OxygenSaturation), _saturation];
 private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 _patient setVariable [QGVAR(AED_EKGRhythm), _rhythm];
 
-private _recentShock = (_patient getVariable [QGVAR(AED_LastShock), -1]) + 45 > CBA_missionTime;
+private _recentShock = (_patient getVariable [QGVAR(AED_LastShock), -45]) + 45 > CBA_missionTime;
 
 private _HRSpacing = 0;
 
@@ -154,7 +156,7 @@ private _PFH = [{
             };
             _stepSpacing = (60 / _hr) * 20;
         };
-        case ((_patient getVariable [QGVAR(AED_LastShock), -1]) + 30 > CBA_missionTime): { // After shock
+        case ((_patient getVariable [QGVAR(AED_LastShock), -30]) + 30 > CBA_missionTime): { // After shock
             if (_padsState) then {
                 _EKGRhythm = 1;
             };

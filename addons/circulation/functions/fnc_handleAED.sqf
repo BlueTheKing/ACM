@@ -21,6 +21,7 @@ params ["_medic", "_patient"];
 
 if ((_patient getVariable [QGVAR(AED_PFH), -1]) != -1) exitWith {};
 
+_patient setVariable [QGVAR(AED_Provider), _patient, true];
 _medic setVariable [QGVAR(AED_Target_Patient), _patient, true];
 _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
 
@@ -77,6 +78,7 @@ private _PFH = [{
         _patient setVariable [QGVAR(AED_PFH), -1];
 
         _medic setVariable [QGVAR(AED_Target_Patient), objNull, true];
+        _patient setVariable [QGVAR(AED_Provider), objNull, true];
 
         _patient setVariable [QGVAR(AED_MuteAlarm), false, true];
 
