@@ -42,6 +42,9 @@ class CfgFunctions {
             class ivBag { // Circulation
                 file = QPATHTOF(overrides\fnc_ivBag.sqf);
             };
+            class medication { // Fix magazine names in triage card
+                file = QPATHTOF(overrides\fnc_medication.sqf);
+            };
         };
     };
     class overwrite_medical_damage {
