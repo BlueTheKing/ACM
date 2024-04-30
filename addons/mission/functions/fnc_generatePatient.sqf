@@ -90,6 +90,8 @@ _patient disableAI "MOVE";
 
 removeAllWeapons _patient;
 removeAllItems _patient;
+removeAllAssignedItems _patient;
+removeGoggles _patient;
 
 [_patient, true, 30] call ACEFUNC(medical,setUnconscious);
 
