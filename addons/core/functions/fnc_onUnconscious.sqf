@@ -22,4 +22,10 @@ if (!local _patient) exitWith {};
 
 if !(_state) then {
     _patient setVariable [QGVAR(FatalInjury_Grazed), false];
+
+    [{
+        params ["_patient"];
+
+        _patient setVariable [QGVAR(WasTreated), false, true];
+    }, [_patient], 2] call CBA_fnc_waitAndExecute;
 };

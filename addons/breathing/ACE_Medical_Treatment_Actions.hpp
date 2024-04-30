@@ -12,6 +12,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)));
         callbackSuccess = QFUNC(checkBreathing);
+        ACM_rollToBack = 1;
     };
     class InspectChest: CheckBreathing {
         displayName = "Inspect Chest";
@@ -22,6 +23,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Body"};
         condition = QUOTE(GVAR(pneumothoraxEnabled) && !(_patient call ACEFUNC(common,isAwake)));
         callbackSuccess = QFUNC(inspectChest);
+        ACM_cancelRecovery = 1;
     };
     /*class UseStethoscope: CheckBreathing {
         displayName = "Inspect With Stethoscope";
@@ -47,6 +49,7 @@ class ACEGVAR(medical_treatment,actions) {
         consumeItem = 1;
         condition = QUOTE(GVAR(pneumothoraxEnabled) && !(_patient getVariable [ARR_2(QQGVAR(ChestSeal_State),false)]) && _patient getVariable [ARR_2(QQGVAR(ChestInjury_State),false)]);
         callbackSuccess = QFUNC(applyChestSeal);
+        ACM_cancelRecovery = 1;
     };
 
     class PerformNCD: ApplyChestSeal {
@@ -61,6 +64,7 @@ class ACEGVAR(medical_treatment,actions) {
         consumeItem = 1;
         condition = QGVAR(pneumothoraxEnabled);
         callbackSuccess = QFUNC(performNCD);
+        ACM_cancelRecovery = 1;
     };
 
     class PlacePulseOximeter: CheckPulse {

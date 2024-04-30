@@ -12,6 +12,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 1;
         condition = QFUNC(canCheckDogtag);
         callbackSuccess = QACEFUNC(dogtags,checkDogtag);
+        ACM_rollToBack = 1;
     };
 
     class PressureBandage: BasicBandage {
@@ -147,12 +148,14 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Giving Ammonia Inhalant...";
         items[] = {"ACM_AmmoniaInhalant"};
         condition = "true";
+        ACM_rollToBack = 1;
     };
     class Naloxone: Paracetamol {
         displayName = "Use Naloxone Spray";
         displayNameProgress = "Using Naloxone Spray...";
         items[] = {"ACM_Spray_Naloxone"};
         condition = "true";
+        ACM_rollToBack = 1;
         //sounds[] = {};
     };
 

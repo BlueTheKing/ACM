@@ -35,6 +35,8 @@ class ACEGVAR(medical_treatment,actions) {
         consumeItem = 0;
         condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call FUNC(setAED));
+        ACM_cancelRecovery = 1;
+        ACM_rollToBack = 1;
     };
     class AED_RemovePads: AED_ApplyPads {
         displayName = "Remove AED Pads";
@@ -54,6 +56,8 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"LeftArm","RightArm"};
         condition = QUOTE(!([ARR_4(_medic,_patient,'',2)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(setAED));
+        ACM_cancelRecovery = 0;
+        ACM_rollToBack = 0;
     };
     class AED_DisconnectPulseOximeter: AED_RemovePads {
         displayName = "Disconnect AED Pulse Oximeter";
@@ -63,6 +67,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"LeftArm","RightArm"};
         condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,1,false)] call FUNC(setAED));
+        ACM_rollToBack = 0;
     };
     class AED_ConnectPressureCuff: AED_ApplyPads {
         displayName = "Connect AED Pressure Cuff";
@@ -73,6 +78,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"LeftArm","RightArm"};
         condition = QUOTE(!([ARR_4(_medic,_patient,'',3)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call FUNC(setAED));
+        ACM_cancelRecovery = 0;
     };
     class AED_DisconnectPressureCuff: AED_RemovePads {
         displayName = "Disconnect AED Pressure Cuff";
@@ -147,6 +153,7 @@ class ACEGVAR(medical_treatment,actions) {
         consumeItem = 1;
         condition = QUOTE(!([ARR_2(_patient,_bodyPart)] call FUNC(hasIV)));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_16G_M,true)] call FUNC(setIV));
+        ACM_rollToBack = 1;
     };
     class InsertIV_14: InsertIV_16 {
         displayName = "Insert 14g IV";
@@ -166,6 +173,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = QGVAR(selfIO);
         items[] = {"ACM_IO_FAST"};
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IO_FAST1_M,true)] call FUNC(setIV));
+        ACM_cancelRecovery = 1;
     };
 
     class RemoveIV_16: InsertIV_16 {
@@ -201,6 +209,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class CPR {
+        displayName = "Begin CPR";
         displayNameProgress = "";
         treatmentTime = 0.01;
         callbackStart = "";
@@ -208,6 +217,7 @@ class ACEGVAR(medical_treatment,actions) {
         callbackFailure = "";
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(beginCPR));
         condition = QACEFUNC(medical_treatment,canCPR);
+        ACM_rollToBack = 1;
     };
 
     class BasicBandage;

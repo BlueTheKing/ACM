@@ -37,7 +37,9 @@ if (_patient getVariable [QGVAR(AirwayObstructionBlood_State), 0] == 1) then {
 private _hint = "Established recovery position";
 private _hintLog = "%1 established recovery position";
 
-if !(_state) then {
+if (_state) then {
+    [_patient, "ACM_RecoveryPosition", 2] call ACEFUNC(common,doAnimation);
+} else {
     _hint = "Cancelled recovery position";
     _hintLog = "%1 cancelled recovery position";
 };

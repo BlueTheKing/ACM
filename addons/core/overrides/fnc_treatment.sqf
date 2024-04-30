@@ -57,21 +57,53 @@ _userAndItem params ["_itemUser", "_usedItem", "_createLitter"];
 private _isInZeus = !isNull findDisplay 312;
 private _isSelf = _medic isEqualTo _patient;
 
+private _rollToBack = false;
+private _cancelsRecoveryPosition = false;
+
+if (isNumber (_config >> "ACM_rollToBack")) then {
+    _rollToBack = [false,true] select (getNumber (_config >> "ACM_rollToBack"));
+    if !(_rollToBack) then {
+        _rollToBack = (_bodyPart == "Body");
+    };
+};
+
+if (isNumber (_config >> "ACM_cancelRecovery")) then {
+    _cancelsRecoveryPosition = [false,true] select (getNumber (_config >> "ACM_cancelRecovery"));
+
+    if (!(_patient getVariable [QGVAR(RecoveryPosition_State), false]) && _cancelsRecoveryPosition) then {
+        _patient setVariable [QGVAR(RecoveryPosition_State), false, true];
+    };
+};
+
 // play patient animation
-if (alive _patient && !(_isInZeus)) then {
-    private _patientAnim = getText (_config >> "animationPatient");
+if (alive _patient) then {
+    private _animationStatePatient = animationState _patient;
 
-    if (IS_UNCONSCIOUS(_patient) && ACEGVAR(medical,allowUnconsciousAnimationOnTreatment)) then {
-        if !(animationState _patient in (getArray (_config >> "animationPatientUnconsciousExcludeOn"))) then {
-            _patientAnim = getText (_config >> "animationPatientUnconscious");
-        };
-    };    
+    if (_animationStatePatient != "acm_recoveryposition" || (_animationStatePatient == "acm_recoveryposition" && _cancelsRecoveryPosition)) then {
+        private _patientAnim = "";
 
-    if (!_isSelf && {isNull objectParent _patient} && {_patientAnim != ""}) then {
         if (IS_UNCONSCIOUS(_patient)) then {
-            [_patient, _patientAnim, 2, true] call ACEFUNC(common,doAnimation);
+            if (!(_animationStatePatient in (getArray (_config >> "animationPatientUnconsciousExcludeOn"))) && {isText (_config >> "animationPatientUnconscious")}) then {
+                _patientAnim = getText (_config >> "animationPatientUnconscious");
+            };
         } else {
-            [_patient, _patientAnim, 1, true] call ACEFUNC(common,doAnimation);
+            if (isText (_config >> "animationPatient")) then {
+                _patientAnim = getText (_config >> "animationPatient");
+            };
+        };
+
+        if (!_isSelf && {isNull objectParent _patient}) then {
+            if (_patientAnim == "" && _rollToBack && {_animationStatePatient != "ainjppnemstpsnonwrfldnon"}) then {
+                _patientAnim = "AinjPpneMstpSnonWrflDnon_rolltoback";
+            };
+
+            if (_patientAnim != "") then {
+                if (IS_UNCONSCIOUS(_patient)) then {
+                    [_patient, _patientAnim, 2] call ACEFUNC(common,doAnimation);
+                } else {
+                    [_patient, _patientAnim, 1] call ACEFUNC(common,doAnimation);
+                };
+            };
         };
     };
 };

@@ -18,6 +18,7 @@ params ["_unit", "_dead"];
 
 if !(local _unit) exitWith {};
 
+[_unit] call FUNC(resetVariables);
 [_unit] call EFUNC(airway,resetVariables);
 [_unit] call EFUNC(breathing,resetVariables);
 [_unit] call EFUNC(circulation,resetVariables);
