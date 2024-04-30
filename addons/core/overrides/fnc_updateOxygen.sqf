@@ -23,7 +23,7 @@ params ["_unit", "_deltaT", "_syncValue"];
 
 private _maxDecline = -50;
 
-if !(IS_UNCONSCIOUS(_unit)) then {
+if (IS_UNCONSCIOUS(_unit)) then {
     _maxDecline = -0.125;
 };
 
@@ -79,7 +79,7 @@ private _breathingState = _unit getVariable [QEGVAR(breathing,BreathingState), 1
 
 private _breathingEffectiveness = (_airwayState min _effectiveBloodVolume) * _breathingState;
 
-private _rateOfChange = _negativeChange + (_positiveChange * _breathingEffectiveness) max _maxDecline;
+private _rateOfChange = (_negativeChange + (_positiveChange * _breathingEffectiveness)) max _maxDecline;
 
 private _oxygenSaturation = (_currentOxygenSaturation + (_rateOfChange * _deltaT)) max 0 min 100;
 
