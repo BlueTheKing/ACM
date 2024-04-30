@@ -17,6 +17,8 @@
 
 params ["_patient"];
 
+if (isNull _patient) exitWith {};
+
 private _soundActive = _patient getVariable [QGVAR(AED_MuteCPR), false];
 
 _patient setVariable [QGVAR(AED_MuteCPR), !_soundActive, true];

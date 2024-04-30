@@ -26,20 +26,12 @@ _medic setVariable [QGVAR(AED_Target_Patient), _patient, true];
 _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
 
 _patient setVariable [QGVAR(AED_StartTime), CBA_missionTime, true];
-_patient setVariable [QGVAR(AED_SilentMode), true, true];
+_patient setVariable [QGVAR(AED_MuteAlarm), true, true];
 _patient setVariable [QGVAR(AED_InUse), false, true];
-
-[{
-    params ["_patient"];
-
-    _patient setVariable [QGVAR(AED_SilentMode), false, true];
-}, [_patient], 5] call CBA_fnc_waitAndExecute;
 
 if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [1,2,3]) then {
     _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
     _patient setVariable [QGVAR(AED_Alarm_State), true];
-    
-    _patient setVariable [QGVAR(AED_MuteAlarm), true, true];
 
     [{
         params ["_patient"];
@@ -53,6 +45,12 @@ if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [1,2,3]) then 
 } else {
     _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), false];
     _patient setVariable [QGVAR(AED_Alarm_State), false];
+
+    [{
+        params ["_patient"];
+
+        _patient setVariable [QGVAR(AED_MuteAlarm), false, true];
+    }, [_patient], 5] call CBA_fnc_waitAndExecute;
 };
 
 private _PFH = [{
@@ -97,6 +95,11 @@ private _PFH = [{
             _patient setVariable [QGVAR(AED_Pads_LastSync), CBA_missionTime];
             
             _patient setVariable [QGVAR(AED_Pads_Display), round(_ekgHR), true];
+        };
+
+        if ([_patient] call FUNC(AED_IsSilent)) then {
+            _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), false];
+            _patient setVariable [QGVAR(AED_Alarm_State), false];
         };
 
         if (!(_patient getVariable [QGVAR(AED_InUse), false]) && !([_patient] call FUNC(AED_IsSilent))) then {

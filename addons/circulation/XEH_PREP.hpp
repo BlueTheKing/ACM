@@ -5,6 +5,7 @@ PREP(AED_Button_Analyze);
 PREP(AED_Button_CPR);
 PREP(AED_Button_ManualCharge);
 PREP(AED_Button_MeasureBP);
+PREP(AED_Button_MuteAlarms);
 PREP(AED_Button_Shock);
 PREP(AED_Button_SpeedDial);
 PREP(AED_CanAdministerShock);

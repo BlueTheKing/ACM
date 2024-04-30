@@ -27,7 +27,7 @@ private _timeToAnalyze = (4 + (random 4)) + 4 * (1 - (GET_BLOOD_VOLUME(_patient)
 
 playSound3D [QPATHTO_R(sound\aed_analyzingnow.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 3.074s
 
-_patient setVariable [QGVAR(AED_SilentMode), true, true];
+_patient setVariable [QGVAR(AED_Analyze_Busy), true, true];
 
 [{
     params ["_medic", "_patient"];
@@ -67,7 +67,7 @@ _patient setVariable [QGVAR(AED_SilentMode), true, true];
             [{
                 params ["_patient", "_medic"];
                 
-                _patient setVariable [QGVAR(AED_SilentMode), false, true];
+                _patient setVariable [QGVAR(AED_Analyze_Busy), false, true];
             }, [_patient, _medic], 2] call CBA_fnc_waitAndExecute;
         };
 

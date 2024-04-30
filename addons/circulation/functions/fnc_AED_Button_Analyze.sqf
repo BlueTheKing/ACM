@@ -17,6 +17,8 @@
 
 params ["_patient"];
 
+if (isNull _patient) exitWith {};
+
 private _medic = _patient getVariable [QGVAR(AED_Provider), objNull];
 
 if (isNull _medic) exitWith {};

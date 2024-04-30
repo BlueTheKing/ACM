@@ -288,8 +288,8 @@ class GVAR(Lifepak_Monitor_Dialog) {
             idc = -1;
             x = QUOTE(ACM_pxToScreen_X((AED_BUTTON_TOPLEFT_X + 3)));
             y = QUOTE(ACM_pxToScreen_Y((AED_BUTTON_TOPLEFT_Y + (AED_BUTTON_Spacing_V * 5) + 12)));
-            onButtonClick = "";
-            tooltip = "";
+            onButtonClick = QUOTE([GVAR(AED_Monitor_Target)] call FUNC(AED_Button_MuteAlarms));
+            tooltip = "Toggle Alarms";
         };
         class Button_EnergySelect: Button_Power {
             idc = -1;

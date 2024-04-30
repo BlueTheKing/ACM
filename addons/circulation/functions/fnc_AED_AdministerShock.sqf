@@ -38,12 +38,12 @@ if (_patient getVariable [QGVAR(AED_AnalyzeRhythm_State), false]) then { // AED 
 
     }, [_patient, _medic], 2] call CBA_fnc_waitAndExecute;
 
-    _patient setVariable [QGVAR(AED_SilentMode), true, true];
+    _patient setVariable [QGVAR(AED_Analyze_Busy), true, true];
 
     [{ // Stay quiet to hear advice
         params ["_patient", "_medic"];
 
-        _patient setVariable [QGVAR(AED_SilentMode), false, true];
+        _patient setVariable [QGVAR(AED_Analyze_Busy), false, true];
 
     }, [_patient, _medic], 4] call CBA_fnc_waitAndExecute;
     _patient setVariable [QGVAR(AED_AnalyzeRhythm_State), false, true];

@@ -17,7 +17,7 @@
 
 params ["_patient"];
 
-_patient setVariable [QGVAR(AED_MuteAlarm), true, true];
+_patient setVariable [QGVAR(AED_TrackingCPR), true, true];
 _patient setVariable [QGVAR(AED_TrackedCPR_Time), (CBA_missionTime + 2), true];
 
 GVAR(loopTime_cpr) = 0;
@@ -34,7 +34,7 @@ GVAR(loopTime_cpr) = 0;
 
     // Kill PFH once CPR is stopped after 2 minutes
     if ((!(alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) && ((_patient getVariable [QGVAR(AED_TrackedCPR_Time), 0]) + 120) < CBA_missionTime) || !([objNull,_patient] call FUNC(hasAED))) exitWith {
-        _patient setVariable [QGVAR(AED_MuteAlarm), false, true];
+        _patient setVariable [QGVAR(AED_TrackingCPR), false, true];
         _patient setVariable [QGVAR(AED_TrackedCPR_Time), -1, true];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
