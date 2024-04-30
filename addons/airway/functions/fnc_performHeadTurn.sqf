@@ -46,5 +46,5 @@ if (_obstructionVomitState > 0 || _obstructionBloodState > 0) then {
     };
 };
 
-[_hint, 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+[_hint, 2, _medic] call ACEFUNC(common,displayTextStructured);
 [_patient, "activity", "%1 performed head turning", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);

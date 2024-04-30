@@ -6,6 +6,8 @@
  * Arguments:
  * 0: Patient <OBJECT>
  * 1: Suction Device Type <NUMBER>
+ *   0: Manual Suction Bag
+ *   1: ACCUVAC
  *
  * Return Value:
  * Suction Time <NUMBER>
@@ -20,7 +22,7 @@ params ["_patient", ["_type", 0]];
 
 private _obstructionState = (_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]);
 
-private _return = linearConversion [1, 8, _obstructionState, 2, 10, false];
+private _return = (2 max (_obstructionState * 2)) min 12;
 
 if (_type == 1) exitWith {_return min 8};
 
