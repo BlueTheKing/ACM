@@ -70,7 +70,7 @@ if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) exit
 
 private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 
-if ((_patient getVariable [QGVAR(AED_LastShock), -30]) + 30 > CBA_missionTime) exitWith {0};
+if ([_patient, true] call FUNC(recentAEDShock)) exitWith {0};
 
 switch (_rhythm) do {
     case 1: { // Asystole

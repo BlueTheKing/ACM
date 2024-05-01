@@ -17,4 +17,4 @@
 
 params ["_patient"];
 
-((_patient getVariable [QGVAR(AED_LastShock), -45]) + 45 > CBA_missionTime) || (_patient getVariable [QGVAR(AED_MuteAlarm), false]) || (_patient getVariable [QGVAR(AED_Analyze_Busy), false]) || (_patient getVariable [QGVAR(AED_TrackingCPR), false]);
+([_patient, true] call FUNC(recentAEDShock)) || (_patient getVariable [QGVAR(AED_MuteAlarm), false]) || (_patient getVariable [QGVAR(AED_Analyze_Busy), false]) || (_patient getVariable [QGVAR(AED_TrackingCPR), false]);

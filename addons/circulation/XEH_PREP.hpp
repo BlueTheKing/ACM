@@ -43,6 +43,7 @@ PREP(hasAED);
 PREP(hasIV);
 PREP(initUnit);
 PREP(isBloodTypeCompatible);
+PREP(recentAEDShock);
 PREP(resetVariables);
 PREP(setAED);
 PREP(setAEDLocal);

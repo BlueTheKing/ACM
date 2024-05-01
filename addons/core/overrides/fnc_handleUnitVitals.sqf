@@ -133,6 +133,7 @@ switch (true) do {
         };
     };
     case (IN_CRDC_ARRST(_unit)): {}; // if in cardiac arrest just break now to avoid throwing unneeded events
+    case ([_unit] call EFUNC(circulation,recentAEDShock)): {};
     case (_hemorrhage == 4): {
         TRACE_3("Class IV Hemorrhage",_unit,_hemorrhage,_bloodVolume);
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;

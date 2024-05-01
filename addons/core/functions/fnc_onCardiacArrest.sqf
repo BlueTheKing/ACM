@@ -11,14 +11,14 @@
  * None
  *
  * Example:
- * [player] call ACM_core_fnc_onCardiacArrest;
+ * [player, true] call ACM_core_fnc_onCardiacArrest;
  *
  * Public: No
  */
 
 params ["_patient", "_active"];
 
-if (_patient getVariable [QEGVAR(core,CardiacArrest_RhythmState), 0] == 1 || !_active) exitWith {};
+if (_patient getVariable [QEGVAR(circulation,CardiacArrest_RhythmState), 0] == 1 || !_active) exitWith {};
 
 [{
     params ["_patient"];

@@ -45,6 +45,9 @@ class CfgFunctions {
             class medication { // Fix magazine names in triage card
                 file = QPATHTOF(overrides\fnc_medication.sqf);
             };
+            class checkPulseLocal { // CPR rate
+                file = QPATHTOF(overrides\fnc_checkPulseLocal.sqf);
+            };
         };
     };
     class overwrite_medical_damage {

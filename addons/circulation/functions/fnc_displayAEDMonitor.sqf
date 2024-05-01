@@ -48,7 +48,7 @@ if !(alive _patient) then {
 
 _patient setVariable [QGVAR(AED_EKGRhythm), _rhythm];
 
-private _recentShock = (_patient getVariable [QGVAR(AED_LastShock), -45]) + 45 > CBA_missionTime;
+private _recentShock = [_patient, true] call FUNC(recentAEDShock);
 
 private _HRSpacing = 0;
 
@@ -161,7 +161,7 @@ private _PFH = [{
             };
             _stepSpacing = (60 / _hr) * 20;
         };
-        case ((_patient getVariable [QGVAR(AED_LastShock), -30]) + 30 > CBA_missionTime): { // After shock
+        case ([_patient, true] call FUNC(recentAEDShock)): { // After shock
             if (_padsState) then {
                 _EKGRhythm = 1;
             };
