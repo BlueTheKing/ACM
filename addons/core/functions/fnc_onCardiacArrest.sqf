@@ -5,6 +5,7 @@
  *
  * Arguments:
  * 0: Patient <OBJECT>
+ * 1: In Cardiac Arrest <BOOL>
  *
  * Return Value:
  * None
@@ -15,7 +16,9 @@
  * Public: No
  */
 
-params ["_patient"];
+params ["_patient", "_active"];
+
+if (_patient getVariable [QEGVAR(core,CardiacArrest_RhythmState), 0] == 1 || !_active) exitWith {};
 
 [{
     params ["_patient"];

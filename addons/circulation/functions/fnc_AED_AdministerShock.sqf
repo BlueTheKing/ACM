@@ -61,10 +61,10 @@ if !(alive _patient) exitWith {};
 private _currentRhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 
 if (_currentRhythm in [0,1,5]) exitWith {
+    _patient setVariable [QGVAR(CardiacArrest_RhythmState), 1, true];
     if (_currentRhythm == 0) then {
         [QACEGVAR(medical,FatalVitals), [_patient], _patient] call CBA_fnc_targetEvent;
     };
-    _patient setVariable [QGVAR(CardiacArrest_RhythmState), 1, true];
 };
 
 private _amiodarone = ([_patient] call FUNC(getCardiacMedicationEffects)) get "amiodarone";

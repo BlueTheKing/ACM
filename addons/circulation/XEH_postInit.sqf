@@ -6,9 +6,7 @@
 [QACEGVAR(medical,CPRSucceeded), {
     params ["_patient"];
 
-    if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] != 0) then {
-        _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
-    };
+    _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleCPR), LINKFUNC(handleCPR)] call CBA_fnc_addEventHandler;
