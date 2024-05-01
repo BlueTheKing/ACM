@@ -93,7 +93,7 @@ if (alive _patient) then {
         };
 
         if (!_isSelf && {isNull objectParent _patient}) then {
-            if (_patientAnim == "" && _rollToBack && {_animationStatePatient != "ainjppnemstpsnonwrfldnon"}) then {
+            if (_patientAnim == "" && _rollToBack && IS_UNCONSCIOUS(_patient) && {_animationStatePatient != "ainjppnemstpsnonwrfldnon"}) then {
                 _patientAnim = "AinjPpneMstpSnonWrflDnon_rolltoback";
             };
 

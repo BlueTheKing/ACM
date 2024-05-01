@@ -17,7 +17,7 @@
 [QGVAR(playWakeUpSound), {
     params ["_patient"];
 
-    _patient setVariable [QACEGVAR(medical_feedback,soundTimeoutmoan), CBA_missionTime + 6];
+    _patient setVariable [QACEGVAR(medical_feedback,soundTimeoutmoan), CBA_missionTime + 8];
 
     private _distance = 5;
     private _targets = allPlayers inAreaArray [ASLToAGL getPosASL _patient, _distance, _distance, 0, false, _distance];

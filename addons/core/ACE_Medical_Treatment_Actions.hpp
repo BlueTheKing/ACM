@@ -117,9 +117,12 @@ class ACEGVAR(medical_treatment,actions) {
         callbackProgress = QUOTE([ARR_4(_args,_elapsedTime,_totalTime,2)] call EFUNC(damage,surgicalKitProgress));
     };
 
-    class ApplyTourniquet;
+    class ApplyTourniquet: BasicBandage {
+        sounds[] = {{QPATHTOF(sound\tourniquet_apply.wav),10,1,30}};
+    };
     class RemoveTourniquet: ApplyTourniquet {
         treatmentTime = QGVAR(treatmentTimeTakeOffTourniquet);
+        sounds[] = {{QPATHTOF(sound\tourniquet_remove.wav),10,1,30}};
     };
 
     // Medication
@@ -133,7 +136,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE([_patient] call ACEFUNC(common,isAwake));
         treatmentTime = 5;
         //animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
-        sounds[] = {{QPATHTO_R(sounds\paracetamol.wav),1,1,50}};
+        sounds[] = {{QPATHTOEF(circulation,sound\paracetamol.wav),10,1,30}};
         litter[] = {};
     };
     class Penthrox: Paracetamol {
