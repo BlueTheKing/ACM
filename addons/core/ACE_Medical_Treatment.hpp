@@ -352,9 +352,9 @@ class ACE_ADDON(Medical_Treatment) {
         };
         class AmmoniaInhalant: Paracetamol {
             painReduce = 0;
-            hrIncreaseLow[] = {5, 15};
-            hrIncreaseNormal[] = {5, 20};
-            hrIncreaseHigh[] = {5, 12};
+            hrIncreaseLow[] = {15, 30};
+            hrIncreaseNormal[] = {10, 20};
+            hrIncreaseHigh[] = {5, 10};
             timeInSystem = 30;
             timeTillMaxEffect = 5;
             maxDose = 4;

@@ -2,7 +2,7 @@ PREP(canCheckDogtag);
 PREP(effectOxygen);
 PREP(fullHealLocal);
 PREP(handleRespawn);
-//PREP(initUnit);
+PREP(initUnit);
 PREP(onCardiacArrest);
 PREP(onFatalInjury);
 PREP(onUnconscious);

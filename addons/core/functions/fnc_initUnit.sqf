@@ -15,4 +15,4 @@
 
 params ["_unit"];
 
-[_unit] call EFUNC(circulation,generateBloodType);
+[_unit] call EFUNC(circulation,initUnit);

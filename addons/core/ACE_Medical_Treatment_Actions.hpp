@@ -125,28 +125,30 @@ class ACEGVAR(medical_treatment,actions) {
     // Medication
 
     class Paracetamol: Morphine {
-        displayName = "Give Paracetamol";
-        displayNameProgress = "Giving Paracetamol...";
+        displayName = "Use Paracetamol";
+        displayNameProgress = "Using Paracetamol...";
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         allowedSelections[] = {"Head"};
         items[] = {"ACM_Paracetamol"};
         condition = QUOTE([_patient] call ACEFUNC(common,isAwake));
-        //treatmentTime = QACEGVAR(medical_treatment,treatmentTimeAutoinjector);
+        treatmentTime = 5;
         //animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
-        sounds[] = {};
+        sounds[] = {{QPATHTO_R(sounds\paracetamol.wav),1,1,50}};
         litter[] = {};
     };
     class Penthrox: Paracetamol {
         displayName = "Use Penthrox Inhaler";
-        displayNameProgress = "Using Penthrox Inhaler";
+        displayNameProgress = "Using Penthrox Inhaler...";
         items[] = {"ACM_Inhaler_Penthrox"};
+        treatmentTime = 5;
         animationMedic = "";
-        //sounds[] = {};
+        sounds[] = {};
     };
     class AmmoniaInhalant: Paracetamol {
         displayName = "Use Ammonia Inhalant";
         displayNameProgress = "Giving Ammonia Inhalant...";
         items[] = {"ACM_AmmoniaInhalant"};
+        treatmentTime = 4;
         condition = "true";
         ACM_rollToBack = 1;
     };
@@ -156,7 +158,7 @@ class ACEGVAR(medical_treatment,actions) {
         items[] = {"ACM_Spray_Naloxone"};
         condition = "true";
         ACM_rollToBack = 1;
-        //sounds[] = {};
+        sounds[] = {};
     };
 
     class ShakeAwake: CheckResponse {

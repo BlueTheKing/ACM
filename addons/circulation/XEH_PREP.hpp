@@ -41,6 +41,7 @@ PREP(handleOverdose);
 PREP(handleReversibleCardiacArrest);
 PREP(hasAED);
 PREP(hasIV);
+PREP(initUnit);
 PREP(isBloodTypeCompatible);
 PREP(resetVariables);
 PREP(setAED);

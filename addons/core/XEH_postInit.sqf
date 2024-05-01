@@ -13,3 +13,17 @@
         _patient setVariable [QGVAR(WasTreated), true, true];
     };
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(playWakeUpSound), {
+    params ["_patient"];
+
+    _patient setVariable [QACEGVAR(medical_feedback,soundTimeoutmoan), CBA_missionTime + 6];
+
+    private _distance = 5;
+    private _targets = allPlayers inAreaArray [ASLToAGL getPosASL _patient, _distance, _distance, 0, false, _distance];
+    if (_targets isEqualTo []) exitWith {};
+
+    private _sound = selectRandom ["ACM_wakeUp_1","ACM_wakeUp_2","ACM_wakeUp_3","ACM_wakeUp_4"];
+
+    [QACEGVAR(medical_feedback,forceSay3D), [_patient, _sound, _distance], _targets] call CBA_fnc_targetEvent;
+}] call CBA_fnc_addEventHandler;
