@@ -25,19 +25,29 @@ params ["_unit", "_heartRate", ["_oxygenDemand", 0], "_deltaT", "_syncValue"];
 private _respirationRate = _unit getVariable [QGVAR(RespirationRate), 0];
 private _isBreathing = (_unit getVariable [QEGVAR(airway,AirwayState), 1] > 0) && (_unit getVariable [QGVAR(BreathingState), 1] > 0);
 
-if (_heartRate > 0 && _isBreathing) then {
-    private _desiredRespirationRate = _unit getVariable [QEGVAR(core,TargetVitals_RespirationRate), 16];
-    
-    private _targetRespirationRate = _desiredRespirationRate;
+switch (true) do {
+    case !(_isBreathing): {
+        _respirationRate = 0;
+    };
+    case (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]): {
+        _respirationRate = random [10,11,12];
+    };
+    case !(alive _patient);
+    case (IN_CRDC_ARRST(_patient)): {
+        _respirationRate = 0;
+    };
+    default {
+        private _desiredRespirationRate = _unit getVariable [QEGVAR(core,TargetVitals_RespirationRate), 16];
 
-    _targetRespirationRate = linearConversion [-0.25, -0.3, _oxygenDemand, _desiredRespirationRate, 50, false];
-    _targetRespirationRate = _targetRespirationRate * (_heartRate / (_unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 80]));
+        private _targetRespirationRate = _desiredRespirationRate;
 
-    private _respirationRateChange = (_targetRespirationRate - _respirationRate) / 2;
+        _targetRespirationRate = linearConversion [-0.25, -0.3, _oxygenDemand, _desiredRespirationRate, 50, false];
+        _targetRespirationRate = _targetRespirationRate * (_heartRate / (_unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 80]));
 
-    _respirationRate = (_respirationRate + _respirationRateChange * _deltaT) min 60;
-} else {
-    _respirationRate = 0;
+        private _respirationRateChange = (_targetRespirationRate - _respirationRate) / 2;
+
+        _respirationRate = (_respirationRate + _respirationRateChange * _deltaT) min 60;
+    };
 };
 
 _unit setVariable [QGVAR(RespirationRate), _respirationRate, _syncValue];

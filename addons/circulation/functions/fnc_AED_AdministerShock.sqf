@@ -56,6 +56,8 @@ if (_patient getVariable [QGVAR(AED_AnalyzeRhythm_State), false]) then { // AED 
     }, [_patient, _medic], 0.7] call CBA_fnc_waitAndExecute;
 };
 
+if !(alive _patient) exitWith {};
+
 private _currentRhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 
 if (_currentRhythm in [0,1,5]) exitWith {

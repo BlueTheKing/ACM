@@ -33,7 +33,7 @@ private _PFH = [{
 
     private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 
-    if (!(IN_CRDC_ARRST(_patient)) || _rhythmState == 5) exitWith {};
+    if (!(IN_CRDC_ARRST(_patient)) || _rhythmState == 5 || !(alive _patient)) exitWith {};
 
     private _bloodVolume = GET_BLOOD_VOLUME(_patient);
 

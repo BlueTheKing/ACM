@@ -41,6 +41,11 @@ private _saturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), -1
 _patient setVariable [QGVAR(AED_Monitor_OxygenSaturation), _saturation];
 
 private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
+
+if !(alive _patient) then {
+    _rhythm = 1
+};
+
 _patient setVariable [QGVAR(AED_EKGRhythm), _rhythm];
 
 private _recentShock = (_patient getVariable [QGVAR(AED_LastShock), -45]) + 45 > CBA_missionTime;
@@ -172,6 +177,15 @@ private _PFH = [{
                     _hr = [_patient] call FUNC(getEKGHeartRate);
                     _stepSpacing = (60 / _hr) * 20;
                 };
+            };
+            if (_pulseOximeterState) then {
+                _PORhythm = 1;
+            };
+            _stepSpacing = 0;
+        };
+        case !(alive _patient): {
+            if (_padsState) then {
+                _EKGRhythm = 1;
             };
             if (_pulseOximeterState) then {
                 _PORhythm = 1;

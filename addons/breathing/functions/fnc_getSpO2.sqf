@@ -22,6 +22,8 @@ private _oxygen = GET_OXYGEN(_patient);
 private _inaccuracyRange = linearConversion [95, 75, _oxygen, 1, 5, false];
 private _bloodLossEffect = linearConversion [5.5, 3, GET_BLOOD_VOLUME(_patient), 0, 25, true];
 
+if !(alive _patient) exitWith {0};
+
 if !(_accurate) exitWith {
     (random [(0 max (_oxygen - _inaccuracyRange)), _oxygen, ((_oxygen + _inaccuracyRange) min 99)]) - (_bloodLossEffect * (_oxygen / (_patient getVariable [QEGVAR(core,TargetVitals_OxygenSaturation), 100])));
 };
