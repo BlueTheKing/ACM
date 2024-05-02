@@ -342,6 +342,11 @@ if (ACEGVAR(medical_gui,showDamageEntry)) then {
     };
 };
 
+// Chest Seal
+if (_selectionN == 1 && (_target getVariable [QEGVAR(breathing,ChestSeal_State), false])) then {
+    _entries pushBack ["Chest Seal Applied", [1, 0.95, 0, 1]];
+};
+
 // Indicate if a tourniquet is applied
 if (HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN)) then {
     _entries pushBack [format ["%1 [%2]",localize ACELSTRING(medical_gui,Status_Tourniquet_Applied), ((_target getVariable [QEGVAR(disability,Tourniquet_Time), [0,0,0,0,0,0]]) select _selectionN)], [0.77, 0.51, 0.08, 1]];

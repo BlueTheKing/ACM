@@ -63,7 +63,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"ACM_NCDKit"};
         consumeItem = 1;
-        condition = QGVAR(pneumothoraxEnabled);
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && _patient getVariable [ARR_2(QQGVAR(ChestInjury_State),false)]);
         callbackSuccess = QFUNC(performNCD);
         ACM_cancelRecovery = 1;
     };

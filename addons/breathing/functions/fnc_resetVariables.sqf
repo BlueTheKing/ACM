@@ -17,6 +17,8 @@
 
 params ["_patient"];
 
+_patient setVariable [QGVAR(ChestInjury_State), false, true];
+
 _patient setVariable [QGVAR(Pneumothorax_State), 0, true];
 _patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
 
