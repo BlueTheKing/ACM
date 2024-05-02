@@ -23,6 +23,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Body"};
         condition = QUOTE(GVAR(pneumothoraxEnabled) && !(_patient call ACEFUNC(common,isAwake)));
         callbackSuccess = QFUNC(inspectChest);
+        animationMedic = "AinvPknlMstpSnonWnonDr_medic4";
         ACM_cancelRecovery = 1;
     };
     /*class UseStethoscope: CheckBreathing {

@@ -20,4 +20,4 @@ params ["_medic", "_patient"];
 
 [_patient, "activity", "%1 applied Chest Seal", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
-[QGVAR(useChestSealLocal), [_medic, _patient], _patient] call CBA_fnc_targetEvent;
+[QGVAR(applyChestSealLocal), [_medic, _patient], _patient] call CBA_fnc_targetEvent;

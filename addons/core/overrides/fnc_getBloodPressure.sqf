@@ -34,7 +34,7 @@ private _tensionEffect = 0;
 private _vasoconstrictionMultiplier = (1 - GET_WOUND_BLEEDING(_unit) * 0.1); // Simulate constriction of veins in reaction to bleeding
 
 if (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0] > 0) then {
-    _tensionEffect = 8 * _unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0];
+    _tensionEffect = (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0]) * 8;
 };
 
 if (_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) then {

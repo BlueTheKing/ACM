@@ -53,7 +53,7 @@ class CfgFunctions {
     class overwrite_medical_damage {
         tag = "ace_medical_damage";
         class ace_medical_damage {
-            class woundsHandlerBase { // Modify wounds, coagulation functionality
+            class woundsHandlerBase { // Modify wounds, coagulation functionality, chest injury
                 file = QPATHTOF(overrides\fnc_woundsHandlerBase.sqf);
             };
         };

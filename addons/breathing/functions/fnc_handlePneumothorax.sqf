@@ -22,10 +22,10 @@ if (_patient getVariable [QGVAR(TensionPneumothorax_State), false]) exitWith {};
 private _state = _patient getVariable [QGVAR(Pneumothorax_State), 0];
 
 if (_state > 3) then {
-    _patient setVariable [QGVAR(TensionPneumothorax_State), true];
+    _patient setVariable [QGVAR(TensionPneumothorax_State), true, true];
 } else {
     _state = _state + 1;
-    _patient setVariable [QGVAR(Pneumothorax_State), _state];
+    _patient setVariable [QGVAR(Pneumothorax_State), _state, true];
 };
 
 [_patient] call FUNC(updateBreathingState);
@@ -36,8 +36,8 @@ private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient"];
 
-    private _breathingState = _patient getVariable [QGVAR(BreathingState), 1];
-    private _isBreathing = (_patient getVariable [QEGVAR(airway,AirwayState), 1] > 0 && _breathingState > 0);
+    private _breathingState = GET_BREATHINGSTATE(_patient);
+    private _isBreathing = (GET_AIRWAYSTATE(_patient) > 0 && _breathingState > 0);
     private _pneumothoraxState = _patient getVariable [QGVAR(Pneumothorax_State), 0];
 
     if ((_pneumothoraxState < 1 && (_patient getVariable [QGVAR(ChestSeal_State), false])) || _patient getVariable [QGVAR(TensionPneumothorax_State), false]) exitWith {
@@ -47,17 +47,17 @@ private _PFH = [{
 
     if !(_isBreathing) exitWith {};
 
-    if (random 100 < (50 * GVAR(pneumothoraxDeteriorateChance) + _breathingState * 15)) then {
+    if (random 100 < ((40 + _breathingState * 15) * GVAR(pneumothoraxDeteriorateChance))) then {
         _pneumothoraxState = _pneumothoraxState + 1;
         if (_pneumothoraxState > 4) then {
-            _patient setVariable [QGVAR(Pneumothorax_State), 4];
-            _patient setVariable [QGVAR(TensionPneumothorax_State), true];
+            _patient setVariable [QGVAR(Pneumothorax_State), 4, true];
+            _patient setVariable [QGVAR(TensionPneumothorax_State), true, true];
         } else {
-            _patient setVariable [QGVAR(Pneumothorax_State), _pneumothoraxState];
+            _patient setVariable [QGVAR(Pneumothorax_State), _pneumothoraxState, true];
         };
         [_patient] call FUNC(updateBreathingState);
     };
 
-}, (25 + (random 10)), [_patient]] call CBA_fnc_addPerFrameHandler;
+}, (30 + (random 30)), [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(Pneumothorax_PFH), _PFH];

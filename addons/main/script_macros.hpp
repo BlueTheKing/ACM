@@ -167,7 +167,7 @@
 
 // Circulation
 
-#define GET_EFF_BLOOD_VOLUME(unit) unit getVariable [QEGVAR(circulation,Blood_Volume), 6]
+#define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + (unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3))
 
 #define ACM_IV_16G_M 1
 #define ACM_IV_14G_M 2

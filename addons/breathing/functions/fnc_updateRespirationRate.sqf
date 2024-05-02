@@ -23,7 +23,7 @@ params ["_unit", "_heartRate", ["_oxygenDemand", 0], "_deltaT", "_syncValue"];
 // 12-20 per min          40-60 per min
 
 private _respirationRate = _unit getVariable [QGVAR(RespirationRate), 0];
-private _isBreathing = (_unit getVariable [QEGVAR(airway,AirwayState), 1] > 0) && (_unit getVariable [QGVAR(BreathingState), 1] > 0);
+private _isBreathing = (GET_AIRWAYSTATE(_unit) > 0) && (GET_BREATHINGSTATE(_unit) > 0);
 
 switch (true) do {
     case !(_isBreathing): {

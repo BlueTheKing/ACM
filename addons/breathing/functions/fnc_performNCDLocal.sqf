@@ -18,10 +18,10 @@
 
 params ["_medic", "_patient"];
 
-_patient setVariable [QGVAR(TensionPneumothorax_State), false];
+_patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
 
 if (_patient getVariable [QGVAR(Pneumothorax_State), 0] > 0) then {
-    _patient setVariable [QGVAR(Pneumothorax_State), 0];
+    _patient setVariable [QGVAR(Pneumothorax_State), 0, true];
 
     if !(_patient getVariable [QGVAR(ChestSeal_State), false]) then {
         [_patient] call FUNC(handlePneumothorax);

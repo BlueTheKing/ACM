@@ -73,9 +73,9 @@ if (_unit == ACE_player && {missionNamespace getVariable [QACEGVAR(advanced_fati
 private _capture = 1 max ((_po2 / IDEAL_PPO2) ^ (-_po2 * 3));
 private _positiveChange = _heartRate * 0.00368 * _airOxygenSaturation * _capture;
 
-private _effectiveBloodVolume = (((_unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + ((_unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3)) min 4.5) / 4.5;
-private _airwayState = _unit getVariable [QEGVAR(airway,AirwayState), 1];
-private _breathingState = _unit getVariable [QEGVAR(breathing,BreathingState), 1];
+private _effectiveBloodVolume = (GET_EFF_BLOOD_VOLUME(_unit) min 4.5) / 4.5;
+private _airwayState = GET_AIRWAYSTATE(_unit);
+private _breathingState = GET_BREATHINGSTATE(_unit);
 
 private _breathingEffectiveness = (_airwayState min _effectiveBloodVolume) * _breathingState;
 

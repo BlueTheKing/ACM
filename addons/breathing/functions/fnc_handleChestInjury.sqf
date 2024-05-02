@@ -18,7 +18,7 @@
 
 params ["_patient", "_woundID"];
 
-if !(_patient setVariable [QGVAR(ChestInjury_State), false]) then {
+if !(_patient getVariable [QGVAR(ChestInjury_State), false]) then {
     _patient setVariable [QGVAR(ChestInjury_State), true, true];
 };
 
