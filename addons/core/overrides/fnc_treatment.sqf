@@ -59,6 +59,11 @@ private _isSelf = _medic isEqualTo _patient;
 
 private _rollToBack = false;
 private _cancelsRecoveryPosition = false;
+private _ignoreAnimCoef = false;
+
+if (isNumber (_config >> "ACM_ignoreAnimCoef")) then {
+    _ignoreAnimCoef = [false,true] select (getNumber (_config >> "ACM_ignoreAnimCoef"));
+};
 
 if (isNumber (_config >> "ACM_rollToBack")) then {
     _rollToBack = [false,true] select (getNumber (_config >> "ACM_rollToBack"));
@@ -160,7 +165,7 @@ if (_medic isNotEqualTo player || {!_isInZeus}) then {
         };
 
         // Skip animation enitrely if progress bar too quick.
-        if (_animRatio > ANIMATION_SPEED_MAX_COEFFICIENT) exitWith {};
+        if (_animRatio > ANIMATION_SPEED_MAX_COEFFICIENT && {!_ignoreAnimCoef}) exitWith {};
 
         [QACEGVAR(common,setAnimSpeedCoef), [_medic, _animRatio]] call CBA_fnc_globalEvent;
 
@@ -192,7 +197,14 @@ if (_medic isNotEqualTo player || {!_isInZeus}) then {
 
     if (isArray _soundsConfig && {count (getArray _soundsConfig) > 0}) then { // Don't attempt to play if there's nothing in there
         (selectRandom (getArray _soundsConfig)) params ["_file", ["_volume", 1], ["_pitch", 1], ["_distance", 10]];
-        playSound3D [_file, objNull, false, getPosASL _medic, _volume, _pitch, _distance];
+        private _soundID = playSound3D [_file, objNull, false, getPosASL _medic, _volume, _pitch, _distance];
+
+        [{
+            !dialog;
+        }, {
+            params ["_soundID"];
+            stopSound _soundID;
+        }, [_soundID], _treatmentTime] call CBA_fnc_waitUntilAndExecute;
     };
 };
 

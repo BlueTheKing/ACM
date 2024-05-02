@@ -149,7 +149,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class AmmoniaInhalant: Paracetamol {
         displayName = "Use Ammonia Inhalant";
-        displayNameProgress = "Giving Ammonia Inhalant...";
+        displayNameProgress = "Using Ammonia Inhalant...";
         items[] = {"ACM_AmmoniaInhalant"};
         treatmentTime = 4;
         condition = "true";
@@ -178,8 +178,11 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Attempt To Slap Awake";
         displayNameProgress = "Slapping Patient...";
         allowedSelections[] = {"Head"};
-        treatmentTime = 2.5;
+        treatmentTime = 3;
         callbackSuccess = QEFUNC(disability,slapAwake);
+        animationMedic = "AinvPknlMstpSnonWnonDr_medic3";
+        ACM_rollToBack = 1;
+        ACM_ignoreAnimCoef = 1;
     };
     
     // Vials
