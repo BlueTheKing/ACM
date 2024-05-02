@@ -19,6 +19,7 @@ params ["_unit"];
 
 if (GET_BLOOD_VOLUME(_unit) < MINIMUM_BLOOD_FOR_STABLE_VITALS) exitWith { /*systemchat format ["BLOOD %1",GET_BLOOD_VOLUME(_unit)];*/ false };
 if IN_CRDC_ARRST(_unit) exitWith { false };
+if ([_unit] call EFUNC(circulation,recentAEDShock)) exitWith { false };
 
 private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
 private _bloodLoss = GET_BLOOD_LOSS(_unit);

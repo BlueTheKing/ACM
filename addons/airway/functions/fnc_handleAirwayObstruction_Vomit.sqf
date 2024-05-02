@@ -39,7 +39,7 @@ private _PFH = [{
 
     if (_keepAirwayIntact || _gracePeriod) exitWith {};
 
-    if (random 100 < (50 * GVAR(airwayObstructionVomitChance))) then {
+    if (random 100 < (40 * GVAR(airwayObstructionVomitChance))) then {
         _patient setVariable [QGVAR(AirwayObstructionVomit_Count), (_vomitCount - 1), true];
 
         if !(_inRecovery) then { // TODO check for pose

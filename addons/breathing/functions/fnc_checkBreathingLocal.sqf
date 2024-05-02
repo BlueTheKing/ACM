@@ -24,7 +24,7 @@ private _hintLog = "Normal";
 private _pneumothorax = _patient getVariable [QGVAR(Pneumothorax_State), 0] > 0;
 private _tensionPneumothorax = _patient getVariable [QGVAR(TensionPneumothorax_State), false];
 
-private _respiratoryArrest = (IN_CRDC_ARRST(_patient) || !(alive _patient) || _tensionPneumothorax);
+private _respiratoryArrest = ((GET_HEART_RATE(_patient) < 20) || !(alive _patient) || _tensionPneumothorax);
 private _airwayBlocked = (GET_AIRWAYSTATE(_patient)) == 0;
 
 switch (true) do {

@@ -170,7 +170,7 @@ private _PFH = [{
             };
             _stepSpacing = 0;
         };
-        case (IN_CRDC_ARRST(_patient)): {
+        case (_hr < 20): {
             if (_padsState) then {
                 _EKGRhythm = _rhythmState;
                 if (_EKGRhythm == 5) then { // PEA

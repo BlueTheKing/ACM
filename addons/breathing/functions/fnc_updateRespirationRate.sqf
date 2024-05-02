@@ -33,7 +33,7 @@ switch (true) do {
         _respirationRate = random [10,11,12];
     };
     case !(alive _patient);
-    case (IN_CRDC_ARRST(_patient)): {
+    case (GET_HEART_RATE(_patient) < 20): {
         _respirationRate = 0;
     };
     default {
