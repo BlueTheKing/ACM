@@ -29,8 +29,10 @@ private _PFH = [{
     private _obstructionState = _patient getVariable [QGVAR(AirwayObstructionVomit_State), 0];
     private _vomitCount = _patient getVariable [QGVAR(AirwayObstructionVomit_Count), 0];
 
-    if (!(IS_UNCONSCIOUS(_patient)) || _vomitCount <= 0) exitWith {
-        _patient setVariable [QGVAR(AirwayObstructionVomit_Count), 0, true];
+    if (!(IS_UNCONSCIOUS(_patient)) || _vomitCount < 1) exitWith {
+        if (_vomitCount < 1) then {
+            _patient setVariable [QGVAR(AirwayObstructionVomit_Count), 0, true];
+        };
         _patient setVariable [QGVAR(AirwayObstructionVomit_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
@@ -38,15 +40,15 @@ private _PFH = [{
     if (_keepAirwayIntact || _gracePeriod) exitWith {};
 
     if (random 100 < (50 * GVAR(airwayObstructionVomitChance))) then {
-        // TODO play noise
         _patient setVariable [QGVAR(AirwayObstructionVomit_Count), (_vomitCount - 1), true];
 
         if !(_inRecovery) then { // TODO check for pose
             _patient setVariable [QGVAR(AirwayObstructionVomit_State), (_obstructionState + 1), true];
             [_patient] call FUNC(updateAirwayState);
         };
-    };
 
+        playSound3D [format ["%1%2.wav", QPATHTOF(sound\vomit),(1 + round(random 5))], _patient, false, getPosASL _patient, 10, (0.9 + (random 0.2)), 10];
+    };
 }, (25 + (random 10)), [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(AirwayObstructionVomit_PFH), _PFH];

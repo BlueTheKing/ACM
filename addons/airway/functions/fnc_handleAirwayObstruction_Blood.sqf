@@ -33,7 +33,7 @@ private _PFH = [{
 
     if (_inRecovery) exitWith {}; // TODO check for pose
 
-    private _cardiacArrest = IN_CRDC_ARRST(_patient);
+    private _cardiacArrest = GET_HEART_RATE(_patient) < 20;
     private _obstructChance = (linearConversion [0.05, 0.5, ([_patient, "head"] call EFUNC(damage,getBodyPartBleeding)), 0, 50, true]) * GVAR(airwayObstructionBloodChance);
     private _obstructionState = _patient getVariable [QGVAR(AirwayObstructionBlood_State), 0];
 

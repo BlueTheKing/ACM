@@ -8,6 +8,7 @@ PREP(handleHeadTiltChinLift);
 PREP(handleRecoveryPosition);
 PREP(handleSuction);
 PREP(handleSuctionLocal);
+PREP(initUnit);
 PREP(insertAirwayItem);
 PREP(onUnconscious);
 PREP(performHeadTurn);
