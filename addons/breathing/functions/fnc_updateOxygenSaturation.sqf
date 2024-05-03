@@ -19,7 +19,7 @@
 
 params ["_unit", "_deltaT", "_syncValue"];
 
-private _unitDesiredSaturation = _unit getVariable [QEGVAR(core,TargetVitals_OxygenSaturation), 100];
+private _unitDesiredSaturation = _unit getVariable [QEGVAR(core,TargetVitals_OxygenSaturation), 99];
 
 private _effectiveBloodVolume = (((_unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + ((_unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3)) min 4.5) / 4.5;
 

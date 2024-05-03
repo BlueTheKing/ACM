@@ -64,6 +64,9 @@ class CfgFunctions {
             class handleEffects { // Oxygen Effect
                 file = QPATHTOF(overrides\fnc_handleEffects.sqf);
             };
+            class effectHeartBeat { // Lower high HR threshold
+                file = QPATHTOF(overrides\fnc_effectHeartBeat.sqf);
+            };
             class initEffects { // Oxygen Effect
                 file = QPATHTOF(overrides\fnc_initEffects.sqf);
             };

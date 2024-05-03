@@ -42,7 +42,7 @@ switch (true) do {
         private _targetRespirationRate = _desiredRespirationRate;
 
         _targetRespirationRate = linearConversion [-0.25, -0.3, _oxygenDemand, _desiredRespirationRate, 50, false];
-        _targetRespirationRate = _targetRespirationRate * (_heartRate / (_unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 80]));
+        _targetRespirationRate = _targetRespirationRate * (_heartRate / (_unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 77]));
 
         private _respirationRateChange = (_targetRespirationRate - _respirationRate) / 2;
 

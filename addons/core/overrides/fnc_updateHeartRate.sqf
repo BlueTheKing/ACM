@@ -20,6 +20,7 @@
 
 params ["_unit", "_hrTargetAdjustment", "_deltaT", "_syncValue"];
 
+private _desiredHR = _unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 77];
 private _heartRate = GET_HEART_RATE(_unit);
 
 if (IN_CRDC_ARRST(_unit) || [_unit] call EFUNC(circulation,recentAEDShock)) then {
@@ -50,14 +51,15 @@ if (IN_CRDC_ARRST(_unit) || [_unit] call EFUNC(circulation,recentAEDShock)) then
             _targetHR = _heartRate * (_targetBP / (45 max _meanBP));
         };
         if (_painLevel > 0.2) then {
-            _targetHR = _targetHR max (80 + 50 * _painLevel);
-        };
-        if (IS_BLEEDING(_unit)) then {
-            _targetHR = _targetHR - ((30 * GET_WOUND_BLEEDING(_unit)) * (_painLevel + 0.1));
+            if !(IS_UNCONSCIOUS(_unit)) then {
+                _targetHR = _targetHR max (_desiredHR + 50 * _painLevel);
+            } else {
+                _targetHR = _targetHR max (_desiredHR + 40 * _painLevel);
+            };
         };
         // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
         private _oxygenDemand = _unit getVariable [VAR_OXYGEN_DEMAND, 0];
-        _targetHR = _targetHR + ((97 - _oxygenSaturation) * 2) + (_oxygenDemand * -1000);
+        _targetHR = _targetHR + (((_unit getVariable [QEGVAR(core,TargetVitals_OxygenSaturation), 99]) - _oxygenSaturation) * 2) + (_oxygenDemand * -1000);
         _targetHR = (_targetHR + _hrTargetAdjustment) max 0;
 
         _hrChange = round(_targetHR - _heartRate) / 2;

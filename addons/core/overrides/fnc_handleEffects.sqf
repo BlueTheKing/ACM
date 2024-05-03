@@ -36,7 +36,7 @@ private _heartRate        = GET_HEART_RATE(ACE_player);
 private _pain             = GET_PAIN_PERCEIVED(ACE_player);
 private _oxygenSaturation = GET_OXYGEN(ACE_player);
 
-if ((!ACEGVAR(medical_feedback,heartBeatEffectRunning)) && {_heartRate != 0} && {(_heartRate > 160) || {_heartRate < 60}}) then {
+if ((!ACEGVAR(medical_feedback,heartBeatEffectRunning)) && {_heartRate != 0} && {(_heartRate > 140) || {_heartRate < 60}}) then {
     TRACE_1("Starting heart beat effect",_heartRate);
     ACEGVAR(medical_feedback,heartBeatEffectRunning) = true;
     [] call ACEFUNC(medical_feedback,effectHeartBeat);
