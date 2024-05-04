@@ -1,4 +1,4 @@
-#include "defines.hpp"
+#include "Defibrillator_defines.hpp"
 
 class RscPicture;
 class RscLine;

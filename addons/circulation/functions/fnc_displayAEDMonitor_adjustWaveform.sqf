@@ -1,5 +1,5 @@
 #include "..\script_component.hpp"
-#include "..\defines.hpp"
+#include "..\Defibrillator_defines.hpp"
 /*
  * Author: Blue
  * Adjusts set monitor waveform in current step.
