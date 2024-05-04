@@ -216,14 +216,6 @@ if (_createdWounds) then {
     };
 
     TRACE_4("exit",_unit,_painLevel,GET_PAIN(_unit),GET_OPEN_WOUNDS(_unit));
-
-    /*if (EGVAR(circulation,coagulationClotting) && (EGVAR(circulation,coagulationClottingAffectAI) || (!(EGVAR(circulation,coagulationClottingAffectAI)) && isPlayer _unit))) then { // TODO MOVED
-        [{
-            params ["_unit"];
-
-            [QEGVAR(damage,handleCoagulationPFH), [_unit]] call CBA_fnc_localEvent;
-        }, [_unit], 3] call CBA_fnc_waitAndExecute;
-    };*/
 };
 
 [] //return, no further damage handling

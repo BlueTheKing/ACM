@@ -376,7 +376,7 @@ switch (GET_FRACTURES(_target) select _selectionN) do {
 // Internal bleeding indicator
 private _selectionN_InternalBleeding = [_target, _selectionN] call EFUNC(damage,getBodyPartInternalBleeding);
 if (_selectionN_InternalBleeding > 0.15) then {
-    private _colorAdjustment = linearConversion [0.15, 1, _selectionN_InternalBleeding, 0.75, 0.45, true];
+    private _colorAdjustment = linearConversion [0.15, 0.5, _selectionN_InternalBleeding, 0.75, 0.45, true];
     _entries pushBack ["Extensive Bruising", [_colorAdjustment, 0.1, 0.6, 1]];
 };
 

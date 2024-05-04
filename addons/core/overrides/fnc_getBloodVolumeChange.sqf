@@ -39,7 +39,7 @@ private _TXAEffect = _unit getVariable [QEGVAR(circulation,TXA_Effect), 0];
 
 private _internalBleedingSeverity = 0;
 
-if (GET_INTERNAL_BLEEDING(_unit) > 0.3) then {
+if (GET_INTERNAL_BLEEDING(_unit) > 0.3 || (_plateletCount < 0.1 && _TXAEffect < 0.1)) then {
     _internalBleedingSeverity = 1;
 };
 
@@ -67,8 +67,8 @@ if (_salineVolume > 0) then {
     _salineVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity) / _activeVolumes;
 };
 
-if (_plateletCount > 0) then {
-    _plateletCountChange = (1.1 *_internalBleeding) + _bloodLoss;
+if (_plateletCount > 0.1) then {
+    _plateletCountChange = (_internalBleeding * 0.5) + (_bloodLoss * 0.5);
     if (_TXAEffect > 0.1) then {
         _plateletCountChange = _plateletCountChange / 2;
     };
@@ -138,9 +138,10 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
                     };
                 };
             };
-
-            /*if (_bodyPart == 1 && {[_unit, _bodyPart, ACM_IO_FAST1_M] call EFUNC(circulation,hasIV)}) then { // TODO fully implement
+            // IO pain
+            /*if (_bodyPart == 1) then { // TODO fully implement
                 private _transfusionPain = _bagChange / 1000;
+                systemchat format ["%1",_transfusionPain];
             };*/
         };
 
@@ -188,12 +189,12 @@ _bloodVolume = 0 max _bloodVolume + _bloodVolumeChange min DEFAULT_BLOOD_VOLUME;
 _plasmaVolume = 0 max _plasmaVolume + _plasmaVolumeChange min DEFAULT_BLOOD_VOLUME; 
 _salineVolume = 0 max _salineVolume + _salineVolumeChange min DEFAULT_BLOOD_VOLUME;
 
-if (!(IS_BLEEDING(_unit)) && !(IS_I_BLEEDING(_unit)) && _plateletCount != 3) then {
+if (_plateletCount != 3) then {
     private _adjustSpeed = 1000 * linearConversion [3, 6, _bloodVolume, 10, 1, true]; 
     if (_TXAEffect > 0.1) then {
         _adjustSpeed / 2;
     };
-    if (_plateletCount > 3) then {
+    if ( !(IS_BLEEDING(_unit)) && !(IS_I_BLEEDING(_unit)) && _plateletCount > 3) then {
         _adjustSpeed = 100;
     };
     _plateletCountChange = _plateletCountChange + ((3 - _plateletCount) / _adjustSpeed);
