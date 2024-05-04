@@ -62,6 +62,7 @@ _patient setVariable [QGVAR(AED_Analyze_Busy), true, true];
             _patient setVariable [QGVAR(AED_InUse), false, true];
             _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
 
+            [_patient] call FUNC(AED_TrackCPR);
             playSound3D [QPATHTO_R(sound\aed_startcpr.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 1.858s
             
             [{
