@@ -1,0 +1,14 @@
+author			= "Blue";
+onLoadName		= "ACM Testing Zone";
+onLoadMission	= "";
+
+briefing = 0;
+debriefing = 0;
+enableDebugConsoleSP = 1;
+
+class Header
+{
+	gameType = "Coop";
+	minPlayers = 1;
+	maxPlayers = 4;
+};
