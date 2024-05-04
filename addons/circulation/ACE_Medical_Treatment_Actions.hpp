@@ -218,6 +218,7 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(beginCPR));
         condition = QACEFUNC(medical_treatment,canCPR);
         ACM_rollToBack = 1;
+        ACM_cancelRecovery = 1;
     };
 
     class BasicBandage;
