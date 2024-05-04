@@ -202,6 +202,14 @@
 #define VAR_CLOTTED_WOUNDS             QEGVAR(damage,ClottedWounds)
 #define GET_CLOTTED_WOUNDS(unit)       (unit getVariable [VAR_CLOTTED_WOUNDS, createHashMap])
 
+#define VAR_INTERNAL_BLEEDING          QEGVAR(damage,InternalBleeding)
+#define GET_INTERNAL_BLEEDING(unit)    (unit getVariable [VAR_INTERNAL_BLEEDING, 0])
+#define IS_I_BLEEDING(unit)            (GET_INTERNAL_BLEEDING(unit) > 0)
+#define GET_INTERNAL_BLEEDRATE(unit)   ([unit] call EFUNC(circulation,getInternalBleedingRate))
+
+#define VAR_INTERNAL_WOUNDS            QEGVAR(damage,InternalWounds)
+#define GET_INTERNAL_WOUNDS(unit)      (unit getVariable [VAR_INTERNAL_WOUNDS, createHashMap])
+
 // Disability
 #define DEFAULT_SPLINT_VALUES          [0,0,0,0,0,0]
 #define VAR_SPLINTS                    QEGVAR(disability,SplintStatus)

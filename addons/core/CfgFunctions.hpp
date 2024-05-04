@@ -28,6 +28,9 @@ class CfgFunctions {
             class getBloodLoss { // Circulation
                 file = QPATHTOF(overrides\fnc_getBloodLoss.sqf);
             };
+            class updateWoundBloodLoss { // Internal bleeding
+                file = QPATHTOF(overrides\fnc_updateWoundBloodLoss.sqf);
+            };
         };
     };
     class overwrite_medical_treatment {

@@ -19,3 +19,4 @@ params ["_patient"];
 [_patient] call EFUNC(airway,resetVariables);
 [_patient] call EFUNC(breathing,resetVariables);
 [_patient] call EFUNC(circulation,resetVariables);
+[_patient] call EFUNC(damage,resetVariables);

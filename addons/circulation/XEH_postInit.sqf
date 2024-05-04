@@ -21,7 +21,7 @@
     params ["_patient", "_bodyPart", "_classname"];
 
     // Handle special medication effects
-    if (_classname in ["AmmoniaInhalant", "Naloxone"]) then {
+    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA"]) then {
         [(format ["ACM_circulation_handleMed_%1Local", toLower _classname]), [_patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
     };
 }] call CBA_fnc_addEventHandler;

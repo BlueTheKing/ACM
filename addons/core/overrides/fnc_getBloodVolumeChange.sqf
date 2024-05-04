@@ -33,6 +33,15 @@ private _salineVolumeChange = 0;
 private _activeVolumes = 0;
 
 private _bloodLoss = -_deltaT * GET_BLOOD_LOSS(_unit);
+private _internalBleeding = -_deltaT * GET_INTERNAL_BLEEDRATE(_unit);
+
+private _TXAEffect = _unit getVariable [QEGVAR(circulation,TXA_Effect), 0];
+
+private _internalBleedingSeverity = 0;
+
+if (GET_INTERNAL_BLEEDING(_unit) > 0.3) then {
+    _internalBleedingSeverity = 1;
+};
 
 if (_bloodVolume > 0) then {
     _activeVolumes = _activeVolumes + 1;
@@ -47,19 +56,22 @@ if (_salineVolume > 0) then {
 };
 
 if (_bloodVolume > 0) then {
-    _bloodVolumeChange = _bloodLoss / _activeVolumes;
+    _bloodVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity) / _activeVolumes;
 };
 
 if (_plasmaVolume > 0) then {
-    _plasmaVolumeChange = _bloodLoss / _activeVolumes;
+    _plasmaVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity) / _activeVolumes;
 };
 
 if (_salineVolume > 0) then {
-    _salineVolumeChange = _bloodLoss / _activeVolumes;
+    _salineVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity) / _activeVolumes;
 };
 
 if (_plateletCount > 0) then {
-    _plateletCountChange = _bloodLoss;
+    _plateletCountChange = (1.1 *_internalBleeding) + _bloodLoss;
+    if (_TXAEffect > 0.1) then {
+        _plateletCountChange = _plateletCountChange / 2;
+    };
 };
 
 if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
@@ -116,7 +128,7 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
                 default {
                     if ([GET_BLOODTYPE(_unit), _bloodType] call EFUNC(circulation,isBloodTypeCompatible)) then {
                         _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
-                        _plateletCountChange = _plateletCountChange + (_bagChange / 1000);
+                        _plateletCountChange = _plateletCountChange + (_bagChange / 500);
                     } else {
                         _bloodVolumeChange = _bloodVolumeChange - (_bagChange / 1000);
                         _plateletCountChange = _plateletCountChange - (_bagChange / 4000);
@@ -176,15 +188,18 @@ _bloodVolume = 0 max _bloodVolume + _bloodVolumeChange min DEFAULT_BLOOD_VOLUME;
 _plasmaVolume = 0 max _plasmaVolume + _plasmaVolumeChange min DEFAULT_BLOOD_VOLUME; 
 _salineVolume = 0 max _salineVolume + _salineVolumeChange min DEFAULT_BLOOD_VOLUME;
 
-if (!(IS_BLEEDING(_unit)) && _plateletCount != 3) then {
+if (!(IS_BLEEDING(_unit)) && !(IS_I_BLEEDING(_unit)) && _plateletCount != 3) then {
     private _adjustSpeed = 1000 * linearConversion [3, 6, _bloodVolume, 10, 1, true]; 
+    if (_TXAEffect > 0.1) then {
+        _adjustSpeed / 2;
+    };
     if (_plateletCount > 3) then {
         _adjustSpeed = 100;
     };
     _plateletCountChange = _plateletCountChange + ((3 - _plateletCount) / _adjustSpeed);
 };
 
-_plateletCount = 0 max _plateletCount + _plateletCountChange min DEFAULT_BLOOD_VOLUME;
+_plateletCount = 0 max (_plateletCount + _plateletCountChange) min DEFAULT_BLOOD_VOLUME;
 
 private _fluidOverload = 0 max ((_bloodVolume + _plasmaVolume + _salineVolume) - 6);
 

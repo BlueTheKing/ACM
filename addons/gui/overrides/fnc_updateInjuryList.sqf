@@ -57,7 +57,7 @@ if (IS_BLEEDING(_target)) then {
         };
     };
 } else {
-    if (GVAR(showInactiveStatuses)) then {_entries pushBack [localize ACELSTRING(medical_gui,Status_Nobleeding), _nonissueColor];};
+    if (GVAR(showInactiveStatuses)) then {_entries pushBack ["No external bleeding", _nonissueColor];}; // TODO stringtable this
 };
 
 if (ACEGVAR(medical_gui,showBloodlossEntry)) then {
@@ -371,6 +371,13 @@ switch (GET_FRACTURES(_target) select _selectionN) do {
             };
         };
     };
+};
+
+// Internal bleeding indicator
+private _selectionN_InternalBleeding = [_target, _selectionN] call EFUNC(damage,getBodyPartInternalBleeding);
+if (_selectionN_InternalBleeding > 0.15) then {
+    private _colorAdjustment = linearConversion [0.15, 1, _selectionN_InternalBleeding, 0.75, 0.45, true];
+    _entries pushBack ["Extensive Bruising", [_colorAdjustment, 0.1, 0.6, 1]];
 };
 
 [QACEGVAR(medical_gui,updateInjuryListPart), [_ctrl, _target, _selectionN, _entries, _bodyPartName]] call CBA_fnc_localEvent;

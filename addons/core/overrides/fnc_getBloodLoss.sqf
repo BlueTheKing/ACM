@@ -25,7 +25,7 @@ private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
 private _coagulationModifier = 1;
 private _plateletCount = _unit getVariable [QEGVAR(circulation,Platelet_Count), 3];
 
-if (_plateletCount > 0) then {
+if (_plateletCount > 0.1) then {
     private _plateletCountModifier = ((_plateletCount / 3) - 1) * -0.1;
     _coagulationModifier = _plateletCountModifier + (0.5 max (0.85 * _woundBleeding));
 };

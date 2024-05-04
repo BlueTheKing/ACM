@@ -29,6 +29,7 @@ private _resistance = _unit getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES];
 private _bloodPressure = _cardiacOutput * _resistance;
 
 private _bleedEffect = 1 - (0.2 * GET_WOUND_BLEEDING(_unit)); // Lower blood pressure if person is actively bleeding
+private _internalBleedingEffect = 1 min (1.2 - (0.5 * GET_INTERNAL_BLEEDING(_unit))); // Lower blood pressure if person has uncontrolled internal bleeding
 
 private _tensionEffect = 0;
 

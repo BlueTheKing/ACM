@@ -5,6 +5,7 @@
  *
  * Arguments:
  * 0: Target <OBJECT>
+ * 1: Coagulation was initiated by TXA <BOOL>
  *
  * Return Value:
  * None
@@ -15,7 +16,7 @@
  * Public: No
  */
 
-params ["_patient"];
+params ["_patient", ["_fromTXA", false]];
 
 if (_patient getVariable [QGVAR(Coagulation_PFH), -1] != -1 || !(IS_BLEEDING(_patient))) exitWith {};
 
@@ -23,7 +24,7 @@ _patient setVariable [QGVAR(Coagulation_LastClotTime), CBA_missionTime];
 
 private _id = [{
     params ["_args", "_idPFH"];
-    _args params ["_patient"];
+    _args params ["_patient", ["_fromTXA", false]];
 
     private _plateletCount = _patient getVariable [QEGVAR(circulation,Platelet_Count), 3];
 
@@ -31,12 +32,12 @@ private _id = [{
         _patient setVariable [QGVAR(Coagulation_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
-    
-    private _exit = true;
 
     private _txaCount = ([_patient, "TXA_Vial", false] call ACEFUNC(medical_status,getMedicationCount)) min 1.4;
 
-    if (GET_HEART_RATE(_patient) < 30 || (_plateletCount < 0.5 && _txaCount < 0.1)) exitWith {};
+    if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 0.5 && _txaCount < 0.1)) exitWith {};
+
+    private _exit = true;
 
     private _maximumWoundSeverity = ceil (_plateletCount / 2);
 
@@ -51,7 +52,7 @@ private _id = [{
         private _woundIndex = _openWoundsOnPart findIf {(_x select 1) > 0 && (_x select 2) > 0 && (((_x select 0) % 10) + 1) <= _maximumWoundSeverity};
 
         if (_woundIndex != -1) exitWith {
-            [_patient, _x, 1, _maximumWoundSeverity] call FUNC(clotWoundsOnBodyPart);
+            [_patient, _x, 2, _maximumWoundSeverity] call FUNC(clotWoundsOnBodyPart);
             _patient setVariable [QGVAR(Coagulation_LastClotTime), CBA_missionTime];
             _exit = false;
         };

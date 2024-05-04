@@ -426,7 +426,7 @@ class ACE_ADDON(Medical_Treatment) {
             timeInSystem = 420;
             timeTillMaxEffect = 3;
             maxDose = 3;
-            viscosityChange = -5;
+            viscosityChange = 5;
         };
     };
 

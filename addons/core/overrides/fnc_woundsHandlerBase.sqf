@@ -187,6 +187,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         };
         _createdWounds = true;
 
+        [_unit, _bodyPart, (10 * _woundClassIDToAdd), _category, _bleeding] call EFUNC(damage,inflictInternalBleeding);
         //[_unit, _bodyPart, _classComplex, _woundDamage] call EFUNC(damage,handleWoundReopening); // TODO test this
     };
 
@@ -216,13 +217,13 @@ if (_createdWounds) then {
 
     TRACE_4("exit",_unit,_painLevel,GET_PAIN(_unit),GET_OPEN_WOUNDS(_unit));
 
-    if (EGVAR(circulation,coagulationClotting) && (EGVAR(circulation,coagulationClottingAffectAI) || (!(EGVAR(circulation,coagulationClottingAffectAI)) && isPlayer _unit))) then {
+    /*if (EGVAR(circulation,coagulationClotting) && (EGVAR(circulation,coagulationClottingAffectAI) || (!(EGVAR(circulation,coagulationClottingAffectAI)) && isPlayer _unit))) then { // TODO MOVED
         [{
             params ["_unit"];
 
             [QEGVAR(damage,handleCoagulationPFH), [_unit]] call CBA_fnc_localEvent;
         }, [_unit], 3] call CBA_fnc_waitAndExecute;
-    };
+    };*/
 };
 
 [] //return, no further damage handling
