@@ -27,15 +27,15 @@ private _actions = [];
     _actionName,
     ["",_colorHex],
     {
-        params ["_object", "_unit", "_args"];
-        _args params ["_spawnPos", "_severity"];
+        params ["", "_unit", "_args"];
+        _args params ["_object", "_spawnPos", "_severity"];
 
         [_object, _spawnPos, _unit, _severity, 0] call FUNC(generatePatient);
     },
     {true},
     {
-        params ["_object", "_unit", "_args"];
-        _args params ["_spawnPos", "_severity", "_actionName", "_childArray"];
+        params ["", "_unit", "_args"];
+        _args params ["_object", "_spawnPos", "_severity", "_actionName", "_childArray"];
 
         private _childActions = [];
 
@@ -58,7 +58,7 @@ private _actions = [];
 
         _childActions;
     },
-    [_spawnLocation, _severity, _actionName, _childArray]] call ACEFUNC(interact_menu,createAction),[],(_this select 1)];
+    [_object, _spawnLocation, _severity, _actionName, _childArray]] call ACEFUNC(interact_menu,createAction),[],(_this select 1)];
 } forEach [[1,"Routine","#1be600",[
     [1,"Gunshot"],[2,"Shrapnel"],[5,"Falling"],[6,"Backblast"]
 ]],

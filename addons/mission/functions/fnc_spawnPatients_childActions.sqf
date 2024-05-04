@@ -27,15 +27,15 @@ private _actions = [];
     _actionName,
     "",
     {
-        params ["_object", "_unit", "_args"];
-        _args params ["_spawnPos", "_actionName", "_casualtyCount"];
+        params ["", "_unit", "_args"];
+        _args params ["_object", "_spawnPos", "_actionName", "_casualtyCount"];
 
         [_object, _spawnPos, _unit, _casualtyCount, 0] call FUNC(generatePatients);
     },
     {true},
     {
-        params ["_object", "_unit", "_args"];
-        _args params ["_spawnPos", "_actionName", "_casualtyCount"];
+        params ["", "_unit", "_args"];
+        _args params ["_object", "_spawnPos", "_actionName", "_casualtyCount"];
 
         private _childActions = [];
 
@@ -60,7 +60,7 @@ private _actions = [];
 
         _childActions;
     },
-    [_spawnLocation, _actionName, _casualtyCount]] call ACEFUNC(interact_menu,createAction),[],(_this select 1)];
+    [_object, _spawnLocation, _actionName, _casualtyCount]] call ACEFUNC(interact_menu,createAction),[],(_this select 1)];
 } forEach [[2,"2"],[3,"3"],[4,"4"],[5,"5"],[6,"6"],[7,"7"],[8,"8"]];
 
 _actions;
