@@ -24,8 +24,8 @@ addCamShake [5, 0.3, 5];
 
 _patient setVariable [QEGVAR(core,KnockOut_State), false];
 
-if (random 100 < 50) then {
-    [_patient, 0.1, "Head", "punch", _medic] call ACEFUNC(medical,addDamageToUnit);
+if (random 100 < 30) then {
+    [_patient, 0.051, "head", "slap", _medic] call ACEFUNC(medical,addDamageToUnit);
 };
 
 if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {
