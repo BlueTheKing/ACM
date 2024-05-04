@@ -22,7 +22,7 @@ params ["_patient", ["_type", 0]];
 
 private _obstructionState = (_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]);
 
-private _return = (2 max (_obstructionState * 2)) min 12;
+private _return = (4 max (_obstructionState * 2.5)) min 10;
 
 if (_type == 1) exitWith {_return min 8};
 
