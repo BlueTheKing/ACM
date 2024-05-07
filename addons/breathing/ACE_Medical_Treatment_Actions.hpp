@@ -27,12 +27,14 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 1;
     };
     /*class UseStethoscope: CheckBreathing {
-        displayName = "Inspect With Stethoscope";
-        displayNameProgress = "Inspecting With Stethoscope...";
+        displayName = "Inspect Chest With Stethoscope";
+        displayNameProgress = "Inspecting Chest With Stethoscope...";
         icon = "";
         medicRequired = 0;
         treatmentTime = 0.1;
         allowedSelections[] = {"Body"};
+        items[] = {"ACM_Stethoscope"};
+        consumeItem = 0;
         condition = "true";
         callbackSuccess = QFUNC(useStethoscope);
     };*/

@@ -1,3 +1,4 @@
+PREP(beginContinuousAction);
 PREP(canCheckDogtag);
 PREP(effectOxygen);
 PREP(fullHealLocal);

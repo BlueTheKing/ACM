@@ -9,7 +9,8 @@ class CfgPatches {
         requiredAddons[] = {
             "cba_main",
             "ace_main",
-            "ace_medical_treatment"
+            "ace_medical_treatment",
+            "ACM_core"
         };
         author = AUTHOR;
         VERSION_CONFIG;

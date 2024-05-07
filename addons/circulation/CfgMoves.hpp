@@ -44,27 +44,5 @@ class CfgMovesMaleSdr: CfgMovesBasic {
                 0.2
             };
         };
-        class ACM_FeelPulse: Default {
-            file = "\a3\anims_f\data\anim\sdr\idl\knl\stp\non\non\AidlPknlMstpSnonWnonDnon_G02.rtm";
-            speed = -100;
-            looped = 1;
-            disableWeapons = 1;
-            disableWeaponsLong = 1;
-            showWeaponAim = 0;
-            canPullTrigger = 0;
-            duty = 0.2;
-            limitGunMovement = 0;
-            aiming = "empty";
-            aimingBody = "empty";
-            //ConnectAs = "";
-            ConnectTo[] = {};
-            forceAim = 1;
-            //InterpolateFrom[] = {};
-            //InterpolateWith[] = {};
-            InterpolateTo[] = {
-                "Unconscious",
-                0.02
-            };
-        };
     };
 };
