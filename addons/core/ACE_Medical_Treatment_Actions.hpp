@@ -159,6 +159,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Use Naloxone Spray";
         displayNameProgress = "Using Naloxone Spray...";
         items[] = {"ACM_Spray_Naloxone"};
+        treatmentTime = 4;
         condition = "true";
         ACM_rollToBack = 1;
         sounds[] = {};

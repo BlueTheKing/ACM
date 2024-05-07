@@ -17,7 +17,7 @@
 
 params ["_patient"];
 
-private _medicationArray = _patient getVariable [VAR_MEDICATION, []];
+private _medicationArray = _patient getVariable [VAR_MEDICATIONS, []];
 private _mitigatedArray = _patient getVariable [QGVAR(MitigatedMedication), []];
 
 private _naloxoneEffect = 2;
@@ -25,14 +25,14 @@ private _naloxoneEffect = 2;
 {
     _x params ["_medicationType", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust"];
 
-    if !(_naloxoneEffect > 0) exitWith {};
+    if (_naloxoneEffect < 1) exitWith {};
 
     if (_medicationType in ["Morphine", "Morphine_Vial"]) then {
         _mitigatedArray pushBack [_medicationType, _injectTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust];
         _medicationArray deleteAt _forEachIndex;
         _naloxoneEffect = _naloxoneEffect - 1;
     };
-} forEach _medicationArray;
+} forEachReversed _medicationArray;
 
 [{ // Naloxone time in system is 5 minutes
     params ["_patient"];
