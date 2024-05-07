@@ -24,3 +24,4 @@ class CfgPatches {
 #include "ACE_Medical_Treatment_Actions.hpp"
 #include "defines.hpp"
 #include "Defibrillator_Monitor_Dialog.hpp"
+#include "RscFeelPulse.hpp"

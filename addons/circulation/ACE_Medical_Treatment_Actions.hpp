@@ -5,7 +5,15 @@
     }
 
 class ACEGVAR(medical_treatment,actions) {
-    class CheckPulse;
+    class Diagnose;
+    class CheckPulse: Diagnose {
+        displayName = "Feel Pulse";
+        displayNameProgress = "";
+        treatmentTime = 0.001;
+        allowedSelections[] = {"All"};
+        condition = "true";
+        callbackSuccess = QFUNC(feelPulse);
+    };
 
     class AED_ViewMonitor: CheckPulse {
         displayName = "View AED Monitor";

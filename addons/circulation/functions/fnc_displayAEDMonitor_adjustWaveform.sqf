@@ -38,11 +38,11 @@ switch (_type) do {
 };
 
 if (_connected) then {
-    _ctrlLine ctrlSetPosition [(ctrlPosition _ctrlLine select 0), ACM_pxToScreen_Y(EKG_Line_Y(_previousHeight)), (ctrlPosition _ctrlLine select 2), ACM_pxToScreen_H((_targetHeight - _previousHeight))];
+    _ctrlLine ctrlSetPosition [(ctrlPosition _ctrlLine select 0), ACM_AED_pxToScreen_Y(EKG_Line_Y(_previousHeight)), (ctrlPosition _ctrlLine select 2), ACM_AED_pxToScreen_H((_targetHeight - _previousHeight))];
     _ctrlLine ctrlCommit 0;
 
     if (abs (_previousHeight - _targetHeight) < 0.8) then {
-        _ctrlDot ctrlSetPosition [(ctrlPosition _ctrlDot select 0), ACM_pxToScreen_Y(EKG_Line_Y(_previousHeight)), (ctrlPosition _ctrlDot select 2), (ctrlPosition _ctrlDot select 3)];
+        _ctrlDot ctrlSetPosition [(ctrlPosition _ctrlDot select 0), ACM_AED_pxToScreen_Y(EKG_Line_Y(_previousHeight)), (ctrlPosition _ctrlDot select 2), (ctrlPosition _ctrlDot select 3)];
         _ctrlDot ctrlCommit 0;
         _ctrlDot ctrlShow true;
     } else {

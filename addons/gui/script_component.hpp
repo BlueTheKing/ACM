@@ -14,6 +14,7 @@
 
 #include "\x\ACM\addons\main\script_macros.hpp"
 
+#include "\a3\ui_f\hpp\defineCommonGrids.inc"
 
 // ACE medical menu macros
 #define POS_X(N) ((N) * GUI_GRID_W + GUI_GRID_CENTER_X)

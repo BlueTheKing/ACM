@@ -25,6 +25,7 @@ PREP(displayAEDMonitor_generatePO);
 PREP(displayAEDMonitor_syncWaveform);
 PREP(displayAEDMonitor_updateStep);
 PREP(displayAEDMonitor);
+PREP(feelPulse);
 PREP(generateBloodType);
 PREP(generateBloodTypeList);
 PREP(canConnectAED);
