@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), player, 0] call ACM_circulation_fnc_displayAEDMonitor_updateStep;
+ * [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), player, 0] call ACM_circulation_fnc_displayAEDMonitor_updateStep;
  *
  * Public: No
  */

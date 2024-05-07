@@ -31,7 +31,7 @@ GVAR(EKG_Tick) = -1;
 
 GVAR(AED_Monitor_Target) = _patient;
 
-uiNamespace setVariable [QGVAR(AED_DLG),(findDisplay IDC_LIFEPAK_MONITOR)];
+uiNamespace setVariable [QGVAR(AEDMonitor_DLG),(findDisplay IDC_LIFEPAK_MONITOR)];
 
 private _padsState = [objNull, _patient, "", 1] call FUNC(hasAED);
 private _pulseOximeterState = [objNull, _patient, "", 2] call FUNC(hasAED);
@@ -101,14 +101,14 @@ private _monitorArray_PO = _patient getVariable [QGVAR(AED_PODisplay), []];
 
 for "_i" from 1 to (AED_MONITOR_WIDTH - 1) do { // TODO fix this
     if (_padsState) then {
-        [(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), 0, (_i - 1), (_monitorArray_EKG select (_i - 1)), (_monitorArray_EKG select _i), true] call FUNC(displayAEDMonitor_syncWaveform);
+        [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), 0, (_i - 1), (_monitorArray_EKG select (_i - 1)), (_monitorArray_EKG select _i), true] call FUNC(displayAEDMonitor_syncWaveform);
     } else {
-        [(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), 0, (_i - 1), -1, -1, false] call FUNC(displayAEDMonitor_syncWaveform);
+        [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), 0, (_i - 1), -1, -1, false] call FUNC(displayAEDMonitor_syncWaveform);
     };
     if (_pulseOximeterState) then {
-        [(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), 1, (_i - 1), (_monitorArray_PO select (_i - 1)), (_monitorArray_PO select _i), true] call FUNC(displayAEDMonitor_syncWaveform);
+        [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), 1, (_i - 1), (_monitorArray_PO select (_i - 1)), (_monitorArray_PO select _i), true] call FUNC(displayAEDMonitor_syncWaveform);
     } else {
-        [(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), 1, (_i - 1), -1, -1, false] call FUNC(displayAEDMonitor_syncWaveform);
+        [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), 1, (_i - 1), -1, -1, false] call FUNC(displayAEDMonitor_syncWaveform);
     };
 };
 
@@ -118,7 +118,7 @@ private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient"];
 
-    private _dlg = (uiNamespace getVariable [QGVAR(AED_DLG),displayNull]);
+    private _dlg = (uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]);
 
     private _padsState = [objNull, _patient, "", 1] call FUNC(hasAED);
     private _pulseOximeterState = [objNull, _patient, "", 2] call FUNC(hasAED);

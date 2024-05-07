@@ -18,7 +18,7 @@
  * None
  *
  * Example:
- * [(uiNamespace getVariable [QGVAR(AED_DLG),displayNull]), 0, 0, 0, 10] call ACM_circulation_fnc_displayAEDMonitor_adjustWaveform;
+ * [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), 0, 0, 0, 10] call ACM_circulation_fnc_displayAEDMonitor_adjustWaveform;
  *
  * Public: No
  */
