@@ -36,7 +36,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         medicRequired = QGVAR(allowAED);
-        treatmentTime = 1;// TODO change
+        treatmentTime = 5;
         allowedSelections[] = {"Body"};
         allowSelfTreatment = 0;
         items[] = {"ACM_AED"};
@@ -60,7 +60,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Connecting AED Pulse Oximeter...";
         icon = "";
         category = "examine";
-        treatmentTime = 1;// TODO change
+        treatmentTime = 2;
         allowedSelections[] = {"LeftArm","RightArm"};
         condition = QUOTE(!([ARR_4(_medic,_patient,'',2)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(setAED));
@@ -82,7 +82,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Connecting AED Pressure Cuff...";
         icon = "";
         category = "examine";
-        treatmentTime = 1;// TODO change
+        treatmentTime = 3;
         allowedSelections[] = {"LeftArm","RightArm"};
         condition = QUOTE(!([ARR_4(_medic,_patient,'',3)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call FUNC(setAED));
@@ -102,7 +102,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Connecting AED Capnograph...";
         icon = "";
         category = "examine";
-        treatmentTime = 1;// TODO change
+        treatmentTime = 3;
         allowedSelections[] = {"Head"};
         condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,4)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,3)] call FUNC(setAED));
