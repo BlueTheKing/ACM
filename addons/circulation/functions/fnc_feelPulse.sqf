@@ -36,7 +36,29 @@ params ["_medic", "_patient", "_bodyPart"];
 
     private _display = uiNamespace getVariable ["ACM_FeelPulse", displayNull];
     private _ctrlText = _display displayCtrl IDC_FEELPULSE_TEXT; 
-    _ctrlText ctrlSetText format ["%1 (%2)", ([_patient, false, true] call ACEFUNC(common,getName)), (localize (format ["STR_ace_medical_gui_%1",_bodyPart]))];
+
+    private _bodyPartString = switch (_bodyPart) do {
+        case "head": {
+            ACELLSTRING(Medical_GUI,Head);
+        };
+        case "body": {
+            ACELLSTRING(Medical_GUI,Torso);
+        };
+        case "leftarm": {
+            ACELLSTRING(Medical_GUI,LeftArm);
+        };
+        case "rightarm": {
+            ACELLSTRING(Medical_GUI,RightArm);
+        };
+        case "leftleg": {
+            ACELLSTRING(Medical_GUI,LeftLeg);
+        };
+        case "rightleg": {
+            ACELLSTRING(Medical_GUI,RightLeg);
+        };
+    };
+
+    _ctrlText ctrlSetText format ["%1 (%2)", ([_patient, false, true] call ACEFUNC(common,getName)), _bodyPartString];
 }, { // On cancel
     params ["_medic", "_patient", "_bodyPart"];
 

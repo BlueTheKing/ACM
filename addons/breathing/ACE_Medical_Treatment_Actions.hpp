@@ -26,18 +26,19 @@ class ACEGVAR(medical_treatment,actions) {
         animationMedic = "AinvPknlMstpSnonWnonDr_medic4";
         ACM_cancelRecovery = 1;
     };
-    /*class UseStethoscope: CheckBreathing {
+    class UseStethoscope: CheckBreathing {
         displayName = "Inspect Chest With Stethoscope";
         displayNameProgress = "Inspecting Chest With Stethoscope...";
         icon = "";
         medicRequired = 0;
-        treatmentTime = 0.1;
+        treatmentTime = 0.001;
         allowedSelections[] = {"Body"};
+        allowSelfTreatment = 0;
         items[] = {"ACM_Stethoscope"};
         consumeItem = 0;
         condition = "true";
         callbackSuccess = QFUNC(useStethoscope);
-    };*/
+    };
 
     class ApplyChestSeal: CheckBreathing {
         displayName = "Apply Chest Seal";

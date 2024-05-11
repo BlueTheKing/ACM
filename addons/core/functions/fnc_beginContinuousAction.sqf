@@ -10,7 +10,8 @@
  *   2: Body Part <STRING>
  * 1: On Start <CODE>
  * 2: On Cancel <CODE>
- * 2: Per Frame Code <CODE>
+ * 3: Per Frame Code <CODE>
+ * 4: Dialog ID <NUMBER>
  *
  * Return Value:
  * None
@@ -21,7 +22,7 @@
  * Public: No
  */
 
-params ["_args", "_onStart", "_onCancel", "_perFrame"];
+params ["_args", "_onStart", "_onCancel", "_perFrame", ["_dialogID", -1]];
 _args params ["_medic", "_patient", "_bodyPart"];
 
 if (GVAR(ContinuousAction_Active)) exitWith {};
@@ -78,14 +79,20 @@ _args call _onStart;
 
 [{
     params ["_args", "_idPFH"];
-    _args params ["_medic", "_patient", "_bodyPart", "_notInVehicle", "_perFrame", "_onCancel"];
+    _args params ["_medic", "_patient", "_bodyPart", "_notInVehicle", "_perFrame", "_onCancel", "_dialogID"];
 
     private _patientCondition = (_patient isEqualTo objNull);
     private _medicCondition = (!(alive _medic) || IS_UNCONSCIOUS(_medic) || _medic isEqualTo objNull);
     private _vehicleCondition = !(objectParent _medic isEqualTo objectParent _patient);
     private _distanceCondition = (_patient distance2D _medic > ACEGVAR(medical_gui,maxDistance));
+
+    private _dialogCondition = dialog;
     
-    if (_patientCondition || _medicCondition || !GVAR(ContinuousAction_Active) || dialog || {(!_notInVehicle && _vehicleCondition) || {(_notInVehicle && _distanceCondition)}}) exitWith {
+    if (_dialogID != -1) then {
+        _dialogCondition = isNull (findDisplay _dialogID);
+    };
+    
+    if (_patientCondition || _medicCondition || !GVAR(ContinuousAction_Active) || _dialogCondition || {(!_notInVehicle && _vehicleCondition) || {(_notInVehicle && _distanceCondition)}}) exitWith {
         [_idPFH] call CBA_fnc_removePerFrameHandler;
 
         [GVAR(ContinuousAction_Cancel_EscapeID), "keydown"] call CBA_fnc_removeKeyHandler;
@@ -96,4 +103,4 @@ _args call _onStart;
     };
 
     _args call _perFrame;
-}, 0, [_medic, _patient, _bodyPart, _notInVehicle, _perFrame, _onCancel]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_medic, _patient, _bodyPart, _notInVehicle, _perFrame, _onCancel, _dialogID]] call CBA_fnc_addPerFrameHandler;

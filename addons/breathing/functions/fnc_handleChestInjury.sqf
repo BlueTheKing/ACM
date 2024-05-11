@@ -26,4 +26,5 @@ private _chance = GVAR(ChestInjury_Chances) get _woundID;
 
 if (random 100 < (_chance * GVAR(chestInjuryChance))) then {
     [_patient] call FUNC(handlePneumothorax);
+    [_patient] call FUNC(updateLungState);
 };

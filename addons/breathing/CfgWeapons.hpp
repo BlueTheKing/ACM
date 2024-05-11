@@ -25,21 +25,20 @@ class CfgWeapons {
         };
     };
 
-    /*class ACM_Stethoscope: ACM_ChestSeal {
+    class ACM_Stethoscope: ACM_ChestSeal {
         picture = QPATHTOF(ui\stethoscope_ca.paa);
         displayName = "Stethoscope";
-        descriptionShort = "desc short";
-        descriptionUse = "desc use";
+        descriptionShort = "Used to listen to breathing and heart sounds of patient";
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 2;
+            mass = 1.5;
         };
-    };*/
+    };
 
     class ACM_NCDKit: ACM_ChestSeal {
         picture = QPATHTOF(ui\ncdkit_ca.paa);
         displayName = "NCD Kit";
-        descriptionShort = "Single-use needle used to decompress tensionpneumothorax";
-        descriptionUse = "Single-use needle used to decompress tensionpneumothorax by creating a deep hole in the side of the patient chest";
+        descriptionShort = "Single-use needle used to decompress tension-pneumothorax";
+        descriptionUse = "Single-use needle used to decompress tension-pneumothorax by creating a deep hole in the side of the patient's chest";
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 1;
         };

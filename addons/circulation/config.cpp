@@ -23,6 +23,6 @@ class CfgPatches {
 #include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"
 #include "ACE_Medical_Treatment_Actions.hpp"
-#include "defines.hpp"
+#include "\x\ACM\addons\core\UI_defines.hpp"
 #include "Defibrillator_Monitor_Dialog.hpp"
 #include "RscFeelPulse.hpp"
