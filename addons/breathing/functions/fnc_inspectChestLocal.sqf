@@ -20,6 +20,7 @@ params ["_medic", "_patient"];
 
 private _hint = "Chest rise and fall observed";
 private _hintLog = "Chest rise and fall observed";
+private _hintHeight = 1.5;
 
 private _pneumothorax = _patient getVariable [QGVAR(Pneumothorax_State), 0] > 0;
 private _tensionPneumothorax = _patient getVariable [QGVAR(TensionPneumothorax_State), false];
@@ -35,6 +36,7 @@ switch (true) do {
         if (_pneumothorax || _tensionPneumothorax) then {
             _hint = format ["%1<br/>%2",_hint, "Chest sides are uneven"];
             _hintLog = format ["%1%2",_hintLog, ", chest sides uneven"];
+            _hintHeight = 2;
         };
     };
     case (_pneumothorax): {
@@ -44,5 +46,5 @@ switch (true) do {
     default {};
 };
 
-[_hint, 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+[_hint, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
 [_patient, "quick_view", "%1 inspected chest: %2", [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
