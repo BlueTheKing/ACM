@@ -22,6 +22,8 @@ _patient setVariable [QGVAR(Blood_Volume), 6, true];
 _patient setVariable [QGVAR(Plasma_Volume), 0, true];
 _patient setVariable [QGVAR(Saline_Volume), 0, true];
 
+_patient setVariable [QGVAR(Platelet_Count), 3, true];
+
 _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
 
 _patient setVariable [QGVAR(ReversibleCardiacArrest_Time), nil];

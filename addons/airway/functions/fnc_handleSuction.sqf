@@ -7,6 +7,8 @@
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
  * 2: Device type <NUMBER>
+    * 0: Suction Bag
+    * 1: ACCUVAC
  *
  * Return Value:
  * None

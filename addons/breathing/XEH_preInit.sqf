@@ -59,14 +59,32 @@ call FUNC(generatePTXMap);
     true
 ] call CBA_fnc_addSetting;
 
-// Items
+// Treatment
 
 [
     QGVAR(allowNCD),
     "LIST",
     ["Allow NCD Kit", "Training level required to use NCD Kit"],
-    [ACM_SETTINGS_CATEGORY, "Items"],
+    [ACM_SETTINGS_CATEGORY, "Treatment"],
     [SETTING_SLIDER_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowThoracostomy),
+    "LIST",
+    ["Allow Thoracostomy", "Training level required to perform Thoracostomy"],
+    [ACM_SETTINGS_CATEGORY, "Treatment"],
+    [SETTING_SLIDER_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(locationThoracostomy),
+    "LIST",
+    ["Locations Thoracostomy", "Sets locations at which Thoracostomy can be performed"],
+    [ACM_SETTINGS_CATEGORY, "Treatment"],
+    [SETTING_DROPDOWN_LOCATION, 3],
     true
 ] call CBA_fnc_addSetting;
 

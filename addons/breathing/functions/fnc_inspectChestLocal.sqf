@@ -24,6 +24,7 @@ private _hintHeight = 1.5;
 
 private _pneumothorax = _patient getVariable [QGVAR(Pneumothorax_State), 0] > 0;
 private _tensionPneumothorax = _patient getVariable [QGVAR(TensionPneumothorax_State), false];
+private _hemothorax = _patient getVariable [QGVAR(Hemothorax_Fluid), 0] > 0.5;
 
 private _respiratoryArrest = ((GET_HEART_RATE(_patient) < 20) || !(alive _patient) || _tensionPneumothorax);
 private _airwayBlocked = GET_AIRWAYSTATE(_patient) == 0;
@@ -34,14 +35,25 @@ switch (true) do {
         _hintLog = "No chest movement";
         
         if (_pneumothorax || _tensionPneumothorax) then {
-            _hint = format ["%1<br/>%2",_hint, "Chest sides are uneven"];
-            _hintLog = format ["%1%2",_hintLog, ", chest sides uneven"];
+            _hint = format ["%1<br/>%2", _hint, "Chest sides are uneven"];
+            _hintLog = format ["%1%2", _hintLog, ", chest sides uneven"];
             _hintHeight = 2;
+        };
+
+        if (_hemothorax) then {
+            _hint = format ["%1<br/>%2", _hint, "Noticable extensive bruising"];
+            _hintLog = format ["%1%2", _hintLog, ", extensive bruising"];
+            _hintHeight = _hintHeight + 0.5;
         };
     };
     case (_pneumothorax): {
         _hint = "Uneven chest rise and fall observed";
         _hintLog = "Uneven chest rise and fall";
+    };
+    case (_hemothorax): {
+        _hint = "Uneven chest rise and fall observed<br/>Noticable extensive bruising";
+        _hintLog = "Uneven chest rise and fall, extensive bruising";
+        _hintHeight = 2.5;
     };
     default {};
 };

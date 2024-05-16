@@ -34,12 +34,13 @@ private _state = 0;
 
 private _PTXState = _patient getVariable [QGVAR(Pneumothorax_State), 0];
 private _TPTXState = _patient getVariable [QGVAR(TensionPneumothorax_State), false];
+private _HTXFluid = _patient getVariable [QGVAR(Hemothorax_Fluid), 0];
 
 switch (true) do {
-    case _TPTXState: {
+    case (_TPTXState ||_HTXFluid > 1.1): {
         _state = 2;
     };
-    case (_PTXState > 0): {
+    case (_PTXState > 0 || _HTXFluid > 0.3): {
         _state = 1;
     };
     default {};

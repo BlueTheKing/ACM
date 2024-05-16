@@ -20,13 +20,20 @@ params ["_patient", ["_healed", false]];
 
 private _state = 1;
 
+private _HTXState = _patient getVariable [QGVAR(Hemothorax_State), 0];
+private _HTXFluid = _patient getVariable [QGVAR(Hemothorax_Fluid), 0];
+
 private _PTXState = _patient getVariable [QGVAR(Pneumothorax_State), 0];
 private _TPTXState = _patient getVariable [QGVAR(TensionPneumothorax_State), false];
 
+if (_HTXFluid > 0.3) then {
+    _state = 1 - (0.9 * (_HTXFluid / 1.5));
+};
+
 if (_TPTXState) then {
-    _state = 0.05;
+    _state = 0.1;
 } else {
-    _state = 1 - (_PTXState / 5);
+    _state = _state - (_PTXState / 10);
 };
 
 if (IS_UNCONSCIOUS(_patient)) then {

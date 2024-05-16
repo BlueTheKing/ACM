@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
- * Author: Glowbal
- * Calculate the total blood loss of a unit.
+ * Author: Blue
+ * Get internal bleeding rate affected by cardiac output and coagulation
  *
  * Arguments:
- * 0: The Unit <OBJECT>
+ * 0: Unit <OBJECT>
  *
  * Return Value:
- * Total blood loss of unit (litres/second) <NUMBER>
+ * Internal bleeding rate of unit <NUMBER>
  *
  * Example:
- * [player] call ace_medical_status_fnc_getBloodLoss
+ * [player] call ACM_circulation_fnc_getInternalBleedingRate;
  *
  * Public: No
  */
@@ -31,4 +31,4 @@ if (_plateletCount > 0) then {
 };
 
 // even if heart stops blood will still flow slowly (gravity)
-(_internalBleeding * (_cardiacOutput  max EGVAR(circulation,cardiacArrestBleedRate)) * _coagulationModifier * ACEGVAR(medical,bleedingCoefficient));
+(_internalBleeding * (_cardiacOutput max GVAR(cardiacArrestBleedRate)) * _coagulationModifier * ACEGVAR(medical,bleedingCoefficient));

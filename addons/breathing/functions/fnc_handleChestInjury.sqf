@@ -25,6 +25,10 @@ if !(_patient getVariable [QGVAR(ChestInjury_State), false]) then {
 private _chance = GVAR(ChestInjury_Chances) get _woundID;
 
 if (random 100 < (_chance * GVAR(chestInjuryChance))) then {
-    [_patient] call FUNC(handlePneumothorax);
+    if (random 1 < 1) then {
+        [_patient] call FUNC(handleHemothorax);
+    } else {
+        [_patient] call FUNC(handlePneumothorax);
+    };
     [_patient] call FUNC(updateLungState);
 };

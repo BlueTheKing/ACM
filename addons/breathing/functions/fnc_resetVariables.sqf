@@ -22,7 +22,12 @@ _patient setVariable [QGVAR(ChestInjury_State), false, true];
 _patient setVariable [QGVAR(Pneumothorax_State), 0, true];
 _patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
 
+_patient setVariable [QGVAR(Hemothorax_State), 0, true];
+_patient setVariable [QGVAR(Hemothorax_Fluid), 0, true];
+
 _patient setVariable [QGVAR(ChestSeal_State), false, true];
+
+_patient setVariable [QGVAR(Thoracostomy_State), nil, true];
 
 _patient setVariable [QGVAR(PulseOximeter_Display), [[0,0],[0,0]], true]; 
 _patient setVariable [QGVAR(PulseOximeter_Placement), [false,false], true];

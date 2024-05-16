@@ -32,6 +32,7 @@ PREP(canConnectAED);
 PREP(convertBloodType);
 PREP(getCardiacMedicationEffects);
 PREP(getEKGHeartRate);
+PREP(getHemothoraxBleedingRate);
 PREP(getInternalBleedingRate);
 PREP(getIVFlowRate);
 PREP(handleAED);

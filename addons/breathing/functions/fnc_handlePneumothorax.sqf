@@ -40,7 +40,7 @@ private _PFH = [{
     private _isBreathing = (GET_AIRWAYSTATE(_patient) > 0 && _breathingState > 0);
     private _pneumothoraxState = _patient getVariable [QGVAR(Pneumothorax_State), 0];
 
-    if ((_pneumothoraxState < 1 && (_patient getVariable [QGVAR(ChestSeal_State), false])) || _patient getVariable [QGVAR(TensionPneumothorax_State), false]) exitWith {
+    if (!(alive _patient) || (_pneumothoraxState < 1 && (_patient getVariable [QGVAR(ChestSeal_State), false])) || _patient getVariable [QGVAR(TensionPneumothorax_State), false] || _patient getVariable [QGVAR(Thoracostomy_State), 0] > 0) exitWith {
         _patient setVariable [QGVAR(Pneumothorax_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };

@@ -43,6 +43,16 @@ if (GET_INTERNAL_BLEEDING(_unit) > 0.3 || (_plateletCount < 0.1 && _TXAEffect < 
     _internalBleedingSeverity = 1;
 };
 
+private _HTXState = _unit getVariable [QEGVAR(breathing,Hemothorax_State), 0];
+private _hemothoraxBleeding = 0;
+
+if (_HTXState > 0) then {
+    _hemothoraxBleeding = -_deltaT * GET_HEMOTHORAX_BLEEDRATE(_unit);
+    private _thoraxBlood = _unit getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
+    _thoraxBlood = _thoraxBlood - _hemothoraxBleeding;
+    _unit setVariable [QEGVAR(breathing,Hemothorax_Fluid), (_thoraxBlood min 1.5), _syncValues];
+};
+
 if (_bloodVolume > 0) then {
     _activeVolumes = _activeVolumes + 1;
 };
@@ -56,19 +66,19 @@ if (_salineVolume > 0) then {
 };
 
 if (_bloodVolume > 0) then {
-    _bloodVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity) / _activeVolumes;
+    _bloodVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity + _hemothoraxBleeding) / _activeVolumes;
 };
 
 if (_plasmaVolume > 0) then {
-    _plasmaVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity) / _activeVolumes;
+    _plasmaVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity + _hemothoraxBleeding) / _activeVolumes;
 };
 
 if (_salineVolume > 0) then {
-    _salineVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity) / _activeVolumes;
+    _salineVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity + _hemothoraxBleeding) / _activeVolumes;
 };
 
 if (_plateletCount > 0.1) then {
-    _plateletCountChange = (_internalBleeding * 0.5) + (_bloodLoss * 0.5);
+    _plateletCountChange = (_internalBleeding * 0.5) + (_bloodLoss * 0.5) + (_hemothoraxBleeding * 0.5);
     if (_TXAEffect > 0.1) then {
         _plateletCountChange = _plateletCountChange / 2;
     };
@@ -194,7 +204,7 @@ if (_plateletCount != 3) then {
     if (_TXAEffect > 0.1) then {
         _adjustSpeed / 2;
     };
-    if ( !(IS_BLEEDING(_unit)) && !(IS_I_BLEEDING(_unit)) && _plateletCount > 3) then {
+    if ( !(IS_BLEEDING(_unit)) && !(IS_I_BLEEDING(_unit)) && _HTXState < 1 && _plateletCount > 3) then {
         _adjustSpeed = 100;
     };
     _plateletCountChange = _plateletCountChange + ((3 - _plateletCount) / _adjustSpeed);

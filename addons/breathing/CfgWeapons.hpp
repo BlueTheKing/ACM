@@ -11,7 +11,7 @@ class CfgWeapons {
         descriptionUse = "Adhesive dressing used to stop air from entering the penetrating injury, keeping lung function and preventing deterioration";
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 1;
+            mass = 2;
         };
     };
 
@@ -44,13 +44,31 @@ class CfgWeapons {
         };
     };
 
+    class ACM_ChestTubeKit: ACM_ChestSeal {
+        picture = QPATHTOF(ui\chestTubeKit_ca.paa);
+        displayName = "Chest Tube Kit";
+        descriptionShort = "Single-use kit used to insert a chest tube for removal of fluid from the plueral space";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 3;
+        };
+    };
+
+    /*class ACM_ThoracostomyKit: ACM_ChestSeal {
+        picture = QPATHTOF(ui\thoracostomyKit_ca.paa);
+        displayName = "Thoracostomy Kit";
+        descriptionShort = "Single-use kit used to prepare patient for chest tube insertion";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 2;
+        };
+    };*/
+
     class ACM_PocketBVM: ACM_ChestSeal {
         picture = QPATHTOF(ui\pocketbvm_ca.paa);
         displayName = "Pocket BVM";
         descriptionShort = "Compact version of Bag-Valve-Mask";
         descriptionUse = "Compact variant of Bag-Valve-Mask, device used to ventilate non-breathing patient by inflating and deflating the lungs with air";
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 5;
+            mass = 3;
         };
     };
 
@@ -70,7 +88,7 @@ class CfgWeapons {
         descriptionShort = "Used to ventilate patient that is not breathing";
         descriptionUse = "Device used to ventilate non-breathing patient by inflating and deflating the lungs with air, may be connected to oxygen";
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 5;
+            mass = 10;
         };
     };
 };

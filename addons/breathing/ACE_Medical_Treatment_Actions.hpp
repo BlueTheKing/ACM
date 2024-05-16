@@ -71,6 +71,63 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 1;
     };
 
+    class PerformThoracostomy: ApplyChestSeal {
+        displayName = "Perform Thoracostomy";
+        displayNameProgress = "Performing Thoracostomy...";
+        icon = "";
+        treatmentLocations = QGVAR(locationThoracostomy);
+        medicRequired = QGVAR(allowThoracostomy);
+        treatmentTime = 5;
+        allowSelfTreatment = 0;
+        items[] = {"ACE_surgicalKit"};
+        consumeItem = 0;
+        condition = QUOTE((_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) < 1);
+        callbackSuccess = QFUNC(Thoracostomy_start);
+        ACM_cancelRecovery = 1;
+    };
+
+    class InsertChestTube: PerformThoracostomy {
+        displayName = "Insert Chest Tube";
+        displayNameProgress = "Inserting Chest Tube...";
+        icon = "";
+        treatmentTime = 5;
+        allowSelfTreatment = 0;
+        items[] = {"ACM_ChestTubeKit"};
+        consumeItem = 1;
+        condition = QUOTE((_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) == 1);
+        callbackSuccess = QFUNC(Thoracostomy_insertChestTube);
+    };
+
+    class DrainFluid_ACCUVAC: PerformThoracostomy {
+        displayName = "Drain Fluid (ACCUVAC)";
+        displayNameProgress = "Draining Fluid...";
+        icon = "";
+        treatmentTime = 5;
+        allowSelfTreatment = 0;
+        items[] = {"ACM_ACCUVAC"};
+        consumeItem = 0;
+        condition = QUOTE((_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) == 2);
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(Thoracostomy_drain));
+    };
+    class DrainFluid_SuctionBag: DrainFluid_ACCUVAC {
+        displayName = "Drain Fluid (Suction Bag)";
+        icon = "";
+        treatmentTime = 8;
+        items[] = {"ACM_SuctionBag"};
+        consumeItem = 1;
+        callbackSuccess = QUOTE([ARR_3(_medic,_patient,0)] call FUNC(Thoracostomy_drain));
+    };
+
+    class CloseIncision: PerformThoracostomy {
+        displayName = "Close Thoracostomy Incision";
+        displayNameProgress = "Closing Thoracostomy Incision...";
+        icon = "";
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        treatmentTime = 5;
+        condition = QUOTE((_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) > 0);
+        callbackSuccess = QFUNC(Thoracostomy_close);
+    };
+
     class PlacePulseOximeter: CheckPulse {
         displayName = "Place Pulse Oximeter";
         displayNameProgress = "Placing Pulse Oximeter...";

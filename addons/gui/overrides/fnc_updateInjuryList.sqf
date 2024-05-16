@@ -184,7 +184,7 @@ if (_selectionN in [0,1] && _target getVariable [QEGVAR(airway,RecoveryPosition_
 private _airwayItemType = _target getVariable [QEGVAR(airway,AirwayItem), ""];
 
 // Airway Item
-if (_airwayItemType != "") then {
+if (_selectionN == 0 && _airwayItemType != "") then {
     private _airwayItem = "Guedel Tube";
 
     if (_airwayItemType isEqualTo "SGA") then {
@@ -378,6 +378,20 @@ private _selectionN_InternalBleeding = [_target, _selectionN] call EFUNC(damage,
 if (_selectionN_InternalBleeding > 0.15) then {
     private _colorAdjustment = linearConversion [0.15, 0.5, _selectionN_InternalBleeding, 0.75, 0.45, true];
     _entries pushBack ["Extensive Bruising", [_colorAdjustment, 0.1, 0.6, 1]];
+} else {
+    private _HTXFluid = _target getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
+    if (_selectionN == 1 && _HTXFluid > 0.5) then {
+        private _colorAdjustment = linearConversion [0.5, 1.5, _HTXFluid, 0.75, 0.45, true];
+        _entries pushBack ["Extensive Bruising (Upper Chest)", [_colorAdjustment, 0.1, 0.6, 1]];
+    };
+};
+
+// Thoracostomy status
+switch (_target getVariable [QEGVAR(breathing,Thoracostomy_State), -1]) do {
+    case 0: {_entries pushBack ["Thoracostomy Incision (Sealed)", _airwayColor];};
+    case 1: {_entries pushBack ["Thoracostomy Incision (Open)", _airwayColor];};
+    case 2: {_entries pushBack ["Thoracostomy Incision (Chest Tube)", _airwayColor];};
+    default { };
 };
 
 [QACEGVAR(medical_gui,updateInjuryListPart), [_ctrl, _target, _selectionN, _entries, _bodyPartName]] call CBA_fnc_localEvent;
