@@ -62,7 +62,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow Suction Bag", "Training level required to use Suction Bag"],
     [ACM_SETTINGS_CATEGORY, "Airway Management"],
-    [SETTING_SLIDER_SKILL, 0],
+    [SETTING_DROPDOWN_SKILL, 0],
     true
 ] call CBA_fnc_addSetting;
 
@@ -71,7 +71,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow ACCUVAC", "Training level required to use ACCUVAC"],
     [ACM_SETTINGS_CATEGORY, "Airway Management"],
-    [SETTING_SLIDER_SKILL, 1],
+    [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -100,7 +100,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow Guedel Tube", "Training level required to insert Guedel Tube"],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
-    [SETTING_SLIDER_SKILL, 0],
+    [SETTING_DROPDOWN_SKILL, 0],
     true
 ] call CBA_fnc_addSetting;
 
@@ -109,7 +109,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow iGel", "Training level required to insert iGel"],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
-    [SETTING_SLIDER_SKILL, 1],
+    [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
 

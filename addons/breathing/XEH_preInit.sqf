@@ -46,7 +46,7 @@ call FUNC(generatePTXMap);
     "LIST",
     ["Allow Inspect Chest", "Training level required to Inspect Chest"],
     [ACM_SETTINGS_CATEGORY, "Diagnosis"],
-    [SETTING_SLIDER_SKILL, 0],
+    [SETTING_DROPDOWN_SKILL, 0],
     true
 ] call CBA_fnc_addSetting;
 
@@ -66,7 +66,7 @@ call FUNC(generatePTXMap);
     "LIST",
     ["Allow NCD Kit", "Training level required to use NCD Kit"],
     [ACM_SETTINGS_CATEGORY, "Treatment"],
-    [SETTING_SLIDER_SKILL, 1],
+    [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -75,7 +75,7 @@ call FUNC(generatePTXMap);
     "LIST",
     ["Allow Thoracostomy", "Training level required to perform Thoracostomy"],
     [ACM_SETTINGS_CATEGORY, "Treatment"],
-    [SETTING_SLIDER_SKILL, 1],
+    [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
 

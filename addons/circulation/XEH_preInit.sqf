@@ -57,7 +57,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow AED", "Training level required to use AED"],
     [ACM_SETTINGS_CATEGORY, "Defibrillator"],
-    [SETTING_SLIDER_SKILL, 0],
+    [SETTING_DROPDOWN_SKILL, 0],
     true
 ] call CBA_fnc_addSetting;
 
@@ -106,7 +106,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow IV", "Training level required to use IVs"],
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
-    [SETTING_SLIDER_SKILL, 1],
+    [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -115,7 +115,7 @@ PREP_RECOMPILE_END;
     "LIST",
     ["Allow IO", "Training level required to use IOs"],
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
-    [SETTING_SLIDER_SKILL, 1],
+    [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
 
