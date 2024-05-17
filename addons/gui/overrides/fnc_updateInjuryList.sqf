@@ -240,7 +240,7 @@ if (_bodyPartIV > 0) then {
 // AED
 private _allowOnArm = (_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1] == (_selectionN max 0)) || (_target getVariable [QEGVAR(circulation,AED_Placement_PressureCuff), -1] == (_selectionN max 0));
 private _allowOnHead = _target getVariable [QEGVAR(circulation,AED_Placement_Capnograph), false];
-if ((_selectionN == 1 || _allowOnArm || _allowOnHead) && [objNull, _target] call EFUNC(circulation,hasAED)) then {
+if ((_selectionN == 1 || (_selectionN in [2,3] && _allowOnArm) || (_selectionN == 0 && _allowOnHead)) && [objNull, _target] call EFUNC(circulation,hasAED)) then {
     private _padsStatus = _target getVariable [QEGVAR(circulation,AED_Placement_Pads), false];
     private _pulseOximeterStatus = (_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1] != -1);
 
@@ -387,11 +387,13 @@ if (_selectionN_InternalBleeding > 0.15) then {
 };
 
 // Thoracostomy status
-switch (_target getVariable [QEGVAR(breathing,Thoracostomy_State), -1]) do {
-    case 0: {_entries pushBack ["Thoracostomy Incision (Sealed)", _airwayColor];};
-    case 1: {_entries pushBack ["Thoracostomy Incision (Open)", _airwayColor];};
-    case 2: {_entries pushBack ["Thoracostomy Incision (Chest Tube)", _airwayColor];};
-    default { };
+if (_selectionN == 1) then {
+    switch (_target getVariable [QEGVAR(breathing,Thoracostomy_State), -1]) do {
+        case 0: {_entries pushBack ["Thoracostomy Incision (Sealed)", _airwayColor];};
+        case 1: {_entries pushBack ["Thoracostomy Incision (Open)", _airwayColor];};
+        case 2: {_entries pushBack ["Thoracostomy Incision (Chest Tube)", _airwayColor];};
+        default { };
+    };
 };
 
 [QACEGVAR(medical_gui,updateInjuryListPart), [_ctrl, _target, _selectionN, _entries, _bodyPartName]] call CBA_fnc_localEvent;
