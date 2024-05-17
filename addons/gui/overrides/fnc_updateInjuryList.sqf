@@ -207,7 +207,7 @@ if (_selectionN in [0,2,3] && {(_oxygenSaturation < 91 || HAS_TOURNIQUET_APPLIED
     };
 
     private _cyanosis = switch (true) do {
-        case (_oxygenSaturation < 67 || _tourniquetTime > 90): {"Severe"};
+        case (_oxygenSaturation < 67 || _tourniquetTime > 120): {"Severe"};
         case (_oxygenSaturation < 82 || _tourniquetTime > 60): {"Moderate"};
         default {"Slight"};
     };
