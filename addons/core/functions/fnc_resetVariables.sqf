@@ -15,4 +15,5 @@
 
 params ["_patient"];
 
+_patient setVariable [QGVAR(KnockOut_State), false];
 _patient setVariable [QGVAR(WasTreated), false, true];

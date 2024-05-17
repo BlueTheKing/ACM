@@ -10,15 +10,6 @@ PREP_RECOMPILE_END;
 
 //ACEGVAR(medical,STATE_MACHINE) = (configFile >> "ACM_StateMachine") call CBA_statemachine_fnc_createFromConfig; // TODO statemachine fuckery
 
-[
-    QGVAR(grazingInjuryChance),
-    "SLIDER",
-    ["Chance to ignore fatal injury", "Chance to ignore fatal injury and try to inflict reversible cardiac arrest instead of regular cardiac arrest, if vitals are too stable knock out unit for a random time (15-35s)"],
-    [ACM_SETTINGS_CATEGORY, ""],
-    [0, 100, 0, 1],
-    true
-] call CBA_fnc_addSetting;
-
 // Items
 
 [

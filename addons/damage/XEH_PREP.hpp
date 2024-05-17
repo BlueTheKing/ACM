@@ -9,6 +9,7 @@ PREP(getStitchTime);
 PREP(getWrapTime);
 PREP(handleCoagulationPFH);
 PREP(handleIBCoagulationPFH);
+PREP(handleTrauma);
 PREP(handleWoundReopening);
 PREP(inflictInternalBleeding);
 PREP(isBodyPartBleeding);

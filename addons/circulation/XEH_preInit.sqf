@@ -39,13 +39,22 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
-// Cardiac Rhythms
+// Cardiac Arrest
+
+[
+    QGVAR(cardiacArrestChance),
+    "SLIDER",
+    ["Critical Damage Cardiac Arrest Chance", "Sets chance for unit to go into cardiac arrest after taking critical damage"],
+    [ACM_SETTINGS_CATEGORY, "Cardiac Arrest"],
+    [0, 1, 0.1, 1, true],
+    true
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(cardiacArrestDeteriorationRate),
     "SLIDER",
     ["Rhythm Deterioration Multiplier", "Chance that rhythm will deteriorate while in cardiac arrest"],
-    [ACM_SETTINGS_CATEGORY, "Cardiac Rhythms"],
+    [ACM_SETTINGS_CATEGORY, "Cardiac Arrest"],
     [0, 2, 1, 1],
     true
 ] call CBA_fnc_addSetting;

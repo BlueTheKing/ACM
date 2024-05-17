@@ -78,9 +78,6 @@ class CfgFunctions {
     class overwrite_medical_statemachine {
         tag = "ace_medical_statemachine";
         class ace_medical_statemachine {
-            /*class handleStateCardiacArrest {
-                file = QPATHTOF(overrides\fnc_handleStateCardiacArrest.sqf);
-            };*/
             class enteredStateCardiacArrest { // Disable cardiac arrest timer
                 file = QPATHTOF(overrides\fnc_enteredStateCardiacArrest.sqf);
             };
@@ -90,15 +87,12 @@ class CfgFunctions {
             class handleStateUnconscious { // KnockOut state
                 file = QPATHTOF(overrides\fnc_handleStateUnconscious.sqf);
             };
-            /*class leftStateCardiacArrest {
-                file = QPATHTOF(overrides\fnc_leftStateCardiacArrest.sqf);
-            };*/
-            /*class enteredStateFatalInjury {
-                file = QPATHTOF(overrides\fnc_enteredStateFatalInjury.sqf);
-            };*/
-            /*class handleStateInjured {
-                file = QPATHTOF(overrides\fnc_handleStateInjured.sqf);
-            };*/
+            class conditionSecondChance { // Damage
+                file = QPATHTOF(overrides\fnc_conditionSecondChance.sqf);
+            };
+            class conditionExecutionDeath { // Damage
+                file = QPATHTOF(overrides\fnc_conditionExecutionDeath.sqf);
+            };
         };
     };
     class overwrite_ace_dogtags {
