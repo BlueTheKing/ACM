@@ -1,1 +1,2 @@
+PREP(forceWakeUp);
 PREP(unCardiacArrest);

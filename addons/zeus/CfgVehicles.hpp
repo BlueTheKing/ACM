@@ -13,4 +13,9 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 2;
     };
+    class GVAR(forceWakeUp): Module_F {
+        displayName = "Force Wake-up";
+        function = QFUNC(forceWakeUp);
+        icon = QACEPATHTOF(zeus,ui\Icon_Module_Zeus_Heal_ca.paa);
+    };
 };
