@@ -18,6 +18,6 @@
 
 params ["_medic", "_patient"];
 
-["Chest Tube inserted", 2, _medic] call ACEFUNC(common,displayTextStructured);
+["Chest Tube inserted", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
 _patient setVariable [QGVAR(Thoracostomy_State), 2, true];

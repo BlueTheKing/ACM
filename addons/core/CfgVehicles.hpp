@@ -68,8 +68,9 @@ class CfgVehicles {
             ADDITEM(ACM_ChestSeal,20);
             ADDITEM(ACM_NCDKit,10);
             ADDITEM(ACM_PulseOximeter,5);
+            ADDITEM(ACM_ChestTubeKit,5);
             // Circulation
-            ADDITEM(ACM_AED,5);
+            ADDITEM(ACM_AED,4);
             ADDITEM(ACM_IV_16g,25);
             ADDITEM(ACM_IV_14g,15);
             ADDITEM(ACM_IO_FAST,20);

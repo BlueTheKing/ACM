@@ -17,7 +17,7 @@
 
 params ["_unit"];
 
-private _hemothoraxBleeding = (_unit getVariable [QEGVAR(breathing,Hemothorax_State), 0]) * 0.05;
+private _hemothoraxBleeding = (_unit getVariable [QEGVAR(breathing,Hemothorax_State), 0]) * 0.02;
 if (_hemothoraxBleeding == 0) exitWith {0};
 
 private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);

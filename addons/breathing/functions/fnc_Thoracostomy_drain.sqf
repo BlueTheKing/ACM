@@ -25,4 +25,4 @@ private _item = ["Suction Bag", "ACCUVAC"] select _type;
 
 [_patient, "activity", "%1 drained plueral space (%2)", [[_medic, false, true] call ACEFUNC(common,getName), _item]] call ACEFUNC(medical_treatment,addToLog);
 
-[QGVAR(Thoracostomy_drainLocal), [_medic, _patient], _patient] call CBA_fnc_targetEvent;
+[QGVAR(Thoracostomy_drainLocal), [_medic, _patient, _type], _patient] call CBA_fnc_targetEvent;

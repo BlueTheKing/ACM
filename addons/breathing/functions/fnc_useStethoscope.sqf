@@ -158,7 +158,7 @@ params ["_medic", "_patient"];
                     };
                 };
                 private _rate = switch (true) do {
-                    case (_breathDelay < 3): {
+                    case (_breathDelay < 2): {
                         "Fast";
                     };
                     case (_breathDelay > 5): {

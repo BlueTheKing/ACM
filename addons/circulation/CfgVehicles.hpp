@@ -1,17 +1,7 @@
 class CfgVehicles {
     class Man;
     class CAManBase: Man {
-        class ACE_Actions {
-            class ACE_Head {
-                class CheckBloodPressure {};
-            };
-        };
         class ACE_SelfActions {
-            class Medical {
-                class ACE_Head {
-                    class CheckBloodPressure {};
-                };
-            };
             class ACE_Equipment {
                 class ACM_AED_Interactions {
                     displayName = "AED";

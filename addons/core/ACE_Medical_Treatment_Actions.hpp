@@ -3,7 +3,10 @@ class ACEGVAR(medical_treatment,actions) {
     class Splint;
     class Morphine;
     class SurgicalKit;
-    class CheckResponse;
+    class CheckPulse;
+    class CheckResponse: CheckPulse {
+        treatmentTime = 2.5;
+    };
     class CheckDogTags: CheckResponse {
         displayName = ACECSTRING(dogtags,checkItem);
         displayNameProgress = "";
