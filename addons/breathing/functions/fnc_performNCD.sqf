@@ -18,6 +18,7 @@
 
 params ["_medic", "_patient"];
 
+[_patient, "Needle Decompression"] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", "%1 performed Needle Chest Decompression", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
 [QGVAR(performNCDLocal), [_medic, _patient], _patient] call CBA_fnc_targetEvent;

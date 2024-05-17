@@ -33,6 +33,7 @@ if ((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient 
 };
 
 [format ["%1 inserted", _item], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+[_patient, _item] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", "%1 has inserted %2", [[_medic, false, true] call ACEFUNC(common,getName), _item]] call ACEFUNC(medical_treatment,addToLog);
 
 _patient setVariable [QGVAR(AirwayItem), _type, true];
