@@ -81,7 +81,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"ACE_surgicalKit"};
         consumeItem = 0;
-        condition = QUOTE((_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) < 1);
+        condition = QUOTE((_patient getVariable [ARR_2(QQGVAR(ChestInjury_State),false)]) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) < 1);
         callbackSuccess = QFUNC(Thoracostomy_start);
         ACM_cancelRecovery = 1;
     };
