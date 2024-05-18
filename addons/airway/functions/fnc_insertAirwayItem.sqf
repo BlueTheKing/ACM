@@ -23,7 +23,7 @@ private _item = "Guedel Tube";
 private _classname = "ACM_GuedelTube";
 
 if (_type == "SGA") then {
-    _item = "iGel";
+    _item = "i-gel";
     _classname = "ACM_IGel";
 };
 

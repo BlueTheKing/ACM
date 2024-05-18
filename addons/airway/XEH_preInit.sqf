@@ -89,7 +89,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeSGA),
     "SLIDER",
-    ["iGel Time", "Time to insert iGel"],
+    ["i-gel Time", "Time to insert i-gel"],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [1, 30, 7, 1],
     true
@@ -107,7 +107,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowSGA),
     "LIST",
-    ["Allow iGel", "Training level required to insert iGel"],
+    ["Allow i-gel", "Training level required to insert i-gel"],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [SETTING_DROPDOWN_SKILL, 1],
     true

@@ -23,7 +23,7 @@ class CfgWeapons {
 
     class ACM_IGel: ACM_GuedelTube {
         picture = QPATHTOF(ui\igel_ca.paa);
-        displayName = "i-Gel";
+        displayName = "i-gel";
         descriptionShort = "Used to secure airway for prolonged time";
         descriptionUse = "An airway adjunct used to secure the airway and allow breathing in unconscious patients for a prolonged time.";
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -33,7 +33,7 @@ class CfgWeapons {
 
     class ACM_IGel_Used: ACM_IGel {
         scope = 1;
-        displayName = "i-Gel (Used)";
+        displayName = "i-gel (Used)";
         descriptionShort = "Already used? ew";
     };
 

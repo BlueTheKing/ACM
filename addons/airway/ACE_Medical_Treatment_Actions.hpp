@@ -105,8 +105,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 1;
     };
     class InsertIGel: InsertGuedelTube {
-        displayName = "Insert iGel";
-        displayNameProgress = "Inserting iGel...";
+        displayName = "Insert i-gel";
+        displayNameProgress = "Inserting i-gel...";
         icon = "";
         medicRequired = QGVAR(allowSGA);
         treatmentTime = QGVAR(treatmentTimeSGA);
@@ -124,8 +124,8 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QFUNC(removeAirwayItem);
     };
     class RemoveIGel: RemoveGuedelTube {
-        displayName = "Remove iGel";
-        displayNameProgress = "Removing iGel...";
+        displayName = "Remove i-gel";
+        displayNameProgress = "Removing i-gel...";
         icon = "";
         medicRequired = 0;
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == 'SGA'));

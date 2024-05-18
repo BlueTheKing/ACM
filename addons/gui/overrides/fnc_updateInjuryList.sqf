@@ -188,7 +188,7 @@ if (_selectionN == 0 && _airwayItemType != "") then {
     private _airwayItem = "Guedel Tube";
 
     if (_airwayItemType isEqualTo "SGA") then {
-        _airwayItem = "iGel";
+        _airwayItem = "i-gel";
     };
 
     _entries pushBack [_airwayItem, _airwayColor];

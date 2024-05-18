@@ -41,8 +41,8 @@ if (_airwayItemInserted != "") then {
             _collapseStateLog = "Guedel Tube Inserted";
         };
         case "SGA": {
-            _collapseState = "iGel Inserted";
-            _collapseStateLog = "iGel Inserted";
+            _collapseState = "i-gel Inserted";
+            _collapseStateLog = "i-gel Inserted";
         };
     };
 } else {
