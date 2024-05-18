@@ -11,6 +11,9 @@
 #define QFUNC(var1) QUOTE(DFUNC(var1))
 #define QEFUNC(var1,var2) QUOTE(DEFUNC(var1,var2))
 
+#define GETVAR_SYS(var1,var2) getVariable [ARR_2(QUOTE(var1),var2)]
+#define GETMVAR(var1,var2) (missionNamespace GETVAR_SYS(var1,var2))
+
 // ACE3 reference macros
 #define ACE_PREFIX ace
 
@@ -166,9 +169,13 @@
 #define ACM_OXYGEN_HYPOXIA 60
 #define ACM_OXYGEN_DEATH 55
 
+#define ACM_TENSIONHEMOTHORAX_THRESHOLD 1.2
+
 #define GET_HEMOTHORAX_BLEEDRATE(unit) ([unit] call EFUNC(circulation,getHemothoraxBleedingRate))
 
 // Circulation
+
+#define ACM_CARDIAC_ARREST_BLOODVOLUME 4
 
 #define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + (unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3))
 

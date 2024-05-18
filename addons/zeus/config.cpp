@@ -4,7 +4,9 @@ class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
         units[] = {
-            QGVAR(unCardiacArrest)
+            QGVAR(forceWakeUp),
+            QGVAR(patientState),
+            QGVAR(unCardiacArrest),
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
@@ -22,3 +24,4 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgVehicles.hpp"
+#include "RscAttributes.hpp"

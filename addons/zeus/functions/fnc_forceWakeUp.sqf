@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [LOGIC] call ACM_zeus_fnc_unCardiacArrest;
+ * [LOGIC] call ACM_zeus_fnc_forceWakeUp;
  *
  * Public: No
  */
