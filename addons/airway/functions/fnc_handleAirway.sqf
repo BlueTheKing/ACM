@@ -33,4 +33,4 @@ if !(IS_UNCONSCIOUS(_patient)) exitWith {};
     params ["_patient"];
 
     [QGVAR(handleAirwayObstruction_Vomit), [_patient], _patient] call CBA_fnc_targetEvent;
-}, [_patient], 60] call CBA_fnc_waitAndExecute;
+}, [_patient], (90 + (random 30))] call CBA_fnc_waitAndExecute;
