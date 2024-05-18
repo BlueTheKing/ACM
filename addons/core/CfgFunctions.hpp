@@ -51,6 +51,9 @@ class CfgFunctions {
             class checkPulseLocal { // CPR rate
                 file = QPATHTOF(overrides\fnc_checkPulseLocal.sqf);
             };
+            class tourniquetRemove { // Tourniquet time
+                file = QPATHTOF(overrides\fnc_tourniquetRemove.sqf);
+            };
         };
     };
     class overwrite_medical_damage {
