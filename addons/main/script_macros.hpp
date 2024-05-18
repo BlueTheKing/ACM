@@ -174,8 +174,11 @@
 #define GET_HEMOTHORAX_BLEEDRATE(unit) ([unit] call EFUNC(circulation,getHemothoraxBleedingRate))
 
 // Circulation
+#define GET_CIRCULATIONSTATE(unit) (unit getVariable [QEGVAR(circulation,CirculationState), false])
 
-#define ACM_CARDIAC_ARREST_BLOODVOLUME 4
+#define ACM_ASYSTOLE_BLOODVOLUME 3.1
+#define ACM_REVERSIBLE_CA_BLOODVOLUME 4.2
+#define ACM_CA_BLOODVOLUME 4
 
 #define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + (unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3))
 
@@ -224,3 +227,7 @@
 #define DEFAULT_SPLINT_VALUES          [0,0,0,0,0,0]
 #define VAR_SPLINTS                    QEGVAR(disability,SplintStatus)
 #define GET_SPLINTS(unit)              (unit getVariable [VAR_SPLINTS, DEFAULT_SPLINT_VALUES])
+
+// Misc
+#define ACM_TARGETVITALS_HR(unit) (unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 77])
+#define ACM_TARGETVITALS_OXYGEN(unit) (unit getVariable [QEGVAR(core,TargetVitals_OxygenSaturation), 99])

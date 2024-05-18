@@ -23,6 +23,8 @@ _patient setVariable [QGVAR(ReversibleCardiacArrest_State), true, true];
 _patient setVariable [QGVAR(ReversibleCardiacArrest_Time), CBA_missionTime];
 _patient setVariable [QGVAR(CardiacArrest_RhythmState), 5, true];
 
+[_patient] call FUNC(updateCirculationState);
+
 private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient"];
@@ -30,13 +32,13 @@ private _PFH = [{
     if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) exitWith {};
 
     private _time = _patient getVariable [QGVAR(ReversibleCardiacArrest_Time), -1];
-    private _reversibleCause = _patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false] || (GET_BLOOD_VOLUME(_patient) <= BLOOD_VOLUME_CLASS_4_HEMORRHAGE) || (GET_OXYGEN(_patient) < ACM_OXYGEN_HYPOXIA);
+    private _reversibleCause = _patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false] || ((_patient getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0] > ACM_TENSIONHEMOTHORAX_THRESHOLD)) || (GET_BLOOD_VOLUME(_patient) <= ACM_REVERSIBLE_CA_BLOODVOLUME) || (GET_OXYGEN(_patient) < ACM_OXYGEN_HYPOXIA);
     
     if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] != 5 || !_reversibleCause || !(IN_CRDC_ARRST(_patient)) || !(alive _patient) || ((_time + 360) < CBA_missionTime)) exitWith {
         _patient setVariable [QGVAR(ReversibleCardiacArrest_State), false, true];
         
         if (IN_CRDC_ARRST(_patient) && (alive _patient) && ((_time + 360) > CBA_missionTime) && _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] == 5) then { // Reversed
-            [QACEGVAR(medical,CPRSucceeded), _patient] call CBA_fnc_localEvent;
+            [QGVAR(attemptROSC), _patient] call CBA_fnc_localEvent;
         } else {
             if (IN_CRDC_ARRST(_patient) && (alive _patient)) then { // Timed out (deteriorated)
                 [QGVAR(handleCardiacArrest), _patient] call CBA_fnc_localEvent;
@@ -44,6 +46,8 @@ private _PFH = [{
         };
 
         _patient setVariable [QGVAR(ReversibleCardiacArrest_PFH), -1];
+
+        [_patient] call FUNC(updateCirculationState);
 
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };

@@ -20,13 +20,15 @@ params ["_patient", "_active"];
 
 if (_patient getVariable [QEGVAR(circulation,CardiacArrest_RhythmState), 0] == 1 || !_active) exitWith {};
 
-if ((_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) || ((_patient getVariable [QEGVAR(breathing,HemoPneumothorax_Fluid), 0]) > 1.2) || (GET_BLOOD_VOLUME(_patient) <= BLOOD_VOLUME_CLASS_4_HEMORRHAGE) || (GET_OXYGEN(_patient) < ACM_OXYGEN_HYPOXIA)) then {
+[_patient] call EFUNC(circulation,updateCirculationState);
+
+if (!(GET_CIRCULATIONSTATE(_patient)) || (GET_BLOOD_VOLUME(_patient) < ACM_REVERSIBLE_CA_BLOODVOLUME)) then {
     if !(IN_CRDC_ARRST(_patient)) then {
-        [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
+        [QACEGVAR(medical,FatalVitals), _patient] call CBA_fnc_localEvent;
     };
     [QEGVAR(circulation,handleReversibleCardiacArrest), [_patient], _patient] call CBA_fnc_targetEvent;
 } else {
-    if (random 1 < GVAR(cardiacArrestChance)) then {
+    if (random 1 < EGVAR(circulation,cardiacArrestChance)) then {
         [QEGVAR(circulation,handleCardiacArrest), _patient] call CBA_fnc_localEvent;
     } else {
         _patient setVariable [QGVAR(KnockOut_State), true];
@@ -38,6 +40,6 @@ if ((_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) 
                 _patient setVariable [QGVAR(KnockOut_State), false];
             }, [_patient], (15 + (random 20))] call CBA_fnc_waitAndExecute;
         };
-        [QACEGVAR(medical,CPRSucceeded), _patient] call CBA_fnc_localEvent;
+        [QEGVAR(circulation,attemptROSC), _patient] call CBA_fnc_localEvent;
     };
 };

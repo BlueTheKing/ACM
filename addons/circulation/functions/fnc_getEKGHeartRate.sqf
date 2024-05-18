@@ -19,36 +19,33 @@ params ["_patient"];
 
 private _fnc_generateHeartRate = { // ace_medical_vitals_fnc_updateHeartRate
     params ["_unit"];
+    private _lastTimeUpdated = _unit getVariable [QACEGVAR(medical_vitals,lastTimeUpdated), 0];
+    private _deltaT = (CBA_missionTime - _lastTimeUpdated) min 10;
+    if (_deltaT < 1) exitWith {_unit getVariable [QGVAR(CardiacArrest_EKG_HR), (ACM_TARGETVITALS_HR(_unit))]};
 
-    private _heartRate = _unit getVariable [QGVAR(CardiacArrest_EKG_HR), 0];
+    private _desiredHR = ACM_TARGETVITALS_HR(_unit);
+
+    private _heartRate = _unit getVariable [QGVAR(CardiacArrest_EKG_HR), _desiredHR];
 
     private _hrChange = 0;
     private _targetHR = 0;
     private _bloodVolume = GET_BLOOD_VOLUME(_unit);
     if (_bloodVolume > BLOOD_VOLUME_CLASS_4_HEMORRHAGE) then {
-        GET_BLOOD_PRESSURE(_unit) params ["_bloodPressureL", "_bloodPressureH"];
-        private _meanBP = (2/3) * _bloodPressureH + (1/3) * _bloodPressureL;
         private _oxygenSaturation = GET_OXYGEN(_unit);
         private _painLevel = GET_PAIN_PERCEIVED(_unit);
 
         private _targetBP = 107;
-        if (_bloodVolume < BLOOD_VOLUME_CLASS_2_HEMORRHAGE) then {
-            _targetBP = _targetBP * (_bloodVolume / DEFAULT_BLOOD_VOLUME);
-        };
 
         _targetHR = DEFAULT_HEART_RATE;
-        if (_bloodVolume < 4.8) then { //BLOOD_VOLUME_CLASS_3_HEMORRHAGE
-            _targetHR = _heartRate * (_targetBP / (45 max _meanBP));
-        };
         if (_painLevel > 0.2) then {
-            _targetHR = _targetHR max (80 + 50 * _painLevel);
+            _targetHR = _targetHR max (_desiredHR + 50 * _painLevel);
         };
         if (IS_BLEEDING(_unit)) then {
             _targetHR = _targetHR - ((30 * GET_WOUND_BLEEDING(_unit)) * (_painLevel + 0.1));
         };
         // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
         private _oxygenDemand = _unit getVariable [VAR_OXYGEN_DEMAND, 0];
-        _targetHR = _targetHR + ((97 - _oxygenSaturation) * 2) + (_oxygenDemand * -1000);
+        _targetHR = _targetHR + ((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 2) + (_oxygenDemand * -1000);
         //_targetHR = (_targetHR + _hrTargetAdjustment) max 0;
 
         _hrChange = round(_targetHR - _heartRate) / 2;

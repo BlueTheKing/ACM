@@ -79,7 +79,7 @@ private _PFH = [{
 
             _patient setVariable [QGVAR(CardiacArrest_RhythmState), _newRhythm, true];
         } else {
-            [QACEGVAR(medical,CPRSucceeded), _patient] call CBA_fnc_localEvent;
+            [QGVAR(attemptROSC), _patient] call CBA_fnc_localEvent;
         };
     };
 }, 5, [_patient, _CPRStartTime]] call CBA_fnc_addPerFrameHandler;

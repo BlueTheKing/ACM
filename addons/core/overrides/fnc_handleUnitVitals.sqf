@@ -137,13 +137,13 @@ switch (true) do {
     case (_hemorrhage == 4): {
         TRACE_3("Class IV Hemorrhage",_unit,_hemorrhage,_bloodVolume);
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
+        [_unit] call EFUNC(circulation,updateCirculationState);
     };
     case (_heartRate < 20 || {_heartRate > 220}): {
         TRACE_2("heartRate Fatal",_unit,_heartRate);
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
     };
-    case (_bloodPressureH < 50 && {_bloodPressureL < 40} && {_heartRate < 40}): {
-        TRACE_4("bloodPressure (H & L) + heartRate Fatal",_unit,_bloodPressureH,_bloodPressureL,_heartRate);
+    case (_bloodPressureH < 50 && {_bloodPressureL < 40}): {
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_bloodPressureL >= 190): {
@@ -171,6 +171,7 @@ switch (true) do {
         if (CBA_missionTime >= _nextCheck) then {
             _enterCardiacArrest = random 1 < (0.4 + 0.6 * (30 - _heartRate) / 10); // Variable chance of getting into cardiac arrest.
             _unit setVariable [QEGVAR(circulation,ReversibleCardiacArrest_HypoxiaTime), CBA_missionTime + 5];
+            [_unit] call EFUNC(circulation,updateCirculationState);
         };
         if (_enterCardiacArrest) then {
             [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
