@@ -13,6 +13,8 @@
 
 [QGVAR(handleCPR), LINKFUNC(handleCPR)] call CBA_fnc_addEventHandler;
 
+[QGVAR(checkCapillaryRefillLocal), LINKFUNC(checkCapillaryRefillLocal)] call CBA_fnc_addEventHandler;
+
 [QGVAR(setIVLocal), LINKFUNC(setIVLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(setAEDLocal), LINKFUNC(setAEDLocal)] call CBA_fnc_addEventHandler;
 

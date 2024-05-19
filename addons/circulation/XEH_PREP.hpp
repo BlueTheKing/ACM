@@ -30,6 +30,8 @@ PREP(feelPulse);
 PREP(generateBloodType);
 PREP(generateBloodTypeList);
 PREP(canConnectAED);
+PREP(checkCapillaryRefill);
+PREP(checkCapillaryRefillLocal);
 PREP(convertBloodType);
 PREP(getCardiacMedicationEffects);
 PREP(getEKGHeartRate);

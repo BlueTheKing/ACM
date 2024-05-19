@@ -7,6 +7,13 @@ class ACEGVAR(medical_treatment,actions) {
     class CheckResponse: CheckPulse {
         treatmentTime = 2.5;
     };
+    class CheckBloodPressure: CheckPulse {
+        displayName = "Check Capillary Refill Time";
+        displayNameProgress = "Checking Capillary Refill Time...";
+        allowedSelections[] = {"Body", "LeftArm", "RightArm"};
+        treatmentTime = 2.5;
+        callbackSuccess = QEFUNC(circulation,checkCapillaryRefill);
+    };
     class CheckDogTags: CheckResponse {
         displayName = ACECSTRING(dogtags,checkItem);
         displayNameProgress = "";
