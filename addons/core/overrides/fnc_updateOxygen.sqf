@@ -42,17 +42,24 @@ private _po2 = if (missionNamespace getVariable [QACEGVAR(weather,enabled), fals
     0.25725 * (_altitude / 1000 + 1)
 };
 
-private _airOxygenSaturation = (IDEAL_PPO2 min _po2) / IDEAL_PPO2;
+private _airOxygenSaturation = 1;
 
-// Check gear for oxygen supply
-[goggles _unit, headgear _unit, vest _unit] findIf {
-    _x in ACEGVAR(medical_vitals,oxygenSupplyConditionCache) &&
-    {ACE_player call (ACEGVAR(medical_vitals,oxygenSupplyConditionCache) get _x)} &&
-    { // Will only run this if other conditions are met due to lazy eval
-        _airOxygenSaturation = 1;
-        _po2 = IDEAL_PPO2;
-        true
-    }
+if (EGVAR(breathing,altitudeAffectOxygen)) then {
+    _airOxygenSaturation = (IDEAL_PPO2 min _po2) / IDEAL_PPO2;
+
+    // Check gear for oxygen supply
+    [goggles _unit, headgear _unit, vest _unit] findIf {
+        _x in ACEGVAR(medical_vitals,oxygenSupplyConditionCache) &&
+        {ACE_player call (ACEGVAR(medical_vitals,oxygenSupplyConditionCache) get _x)} &&
+        { // Will only run this if other conditions are met due to lazy eval
+            _airOxygenSaturation = 1;
+            _po2 = IDEAL_PPO2;
+            true
+        }
+    };
+} else {
+    _po2 = IDEAL_PPO2;
+    _airOxygenSaturation = (IDEAL_PPO2 min _po2) / IDEAL_PPO2;
 };
 
 // Base oxygen consumption rate

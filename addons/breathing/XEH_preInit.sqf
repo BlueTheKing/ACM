@@ -10,6 +10,15 @@ call FUNC(generatePTXMap);
 
 #define ACM_SETTINGS_CATEGORY "ACM: Breathing"
 
+[
+    QGVAR(altitudeAffectOxygen),
+    "CHECKBOX",
+    ["Altitude Affect Oxygen", "Sets whether oxygen saturation calculations are affected by altitude of terrain"],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [false],
+    true
+] call CBA_fnc_addSetting;
+
 // Pneumothorax
     
 [
