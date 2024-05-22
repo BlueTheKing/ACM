@@ -240,7 +240,7 @@ if (_bodyPartIV > 0) then {
 // AED
 private _allowOnArm = (_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1] == (_selectionN max 0)) || (_target getVariable [QEGVAR(circulation,AED_Placement_PressureCuff), -1] == (_selectionN max 0));
 private _allowOnHead = _target getVariable [QEGVAR(circulation,AED_Placement_Capnograph), false];
-if ((_selectionN == 1 || (_selectionN in [2,3] && _allowOnArm) || (_selectionN == 0 && _allowOnHead)) && [objNull, _target] call EFUNC(circulation,hasAED)) then {
+if ((_selectionN == 1 || (_selectionN in [2,3] && _allowOnArm) || (_selectionN == 0 && _allowOnHead)) && [_target] call EFUNC(circulation,hasAED)) then {
     private _padsStatus = _target getVariable [QEGVAR(circulation,AED_Placement_Pads), false];
     private _pulseOximeterStatus = (_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1] != -1);
 

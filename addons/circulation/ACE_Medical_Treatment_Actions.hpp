@@ -26,7 +26,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"LeftArm","RightArm"};
         items[] = {"ACM_PressureCuff"};
         consumeItem = 1;
-        condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,3)] call FUNC(hasAED)) && !([ARR_2(_patient,_bodyPart)] call FUNC(hasPressureCuff)));
+        condition = QUOTE(!([ARR_3(_patient,_bodyPart,3)] call FUNC(hasAED)) && !([ARR_2(_patient,_bodyPart)] call FUNC(hasPressureCuff)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,true)] call FUNC(setPressureCuff));
         ACM_cancelRecovery = 1;
         ACM_rollToBack = 1;
@@ -52,7 +52,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 0.01;
         allowedSelections[] = {"All"};
         allowSelfTreatment = 0;
-        condition = QUOTE(([ARR_3(_medic,_patient,_bodyPart)] call FUNC(hasAED)));
+        condition = QUOTE(([ARR_2(_patient,_bodyPart)] call FUNC(hasAED)));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(displayAEDMonitor));
     };
 
@@ -68,7 +68,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"ACM_AED"};
         consumeItem = 0;
-        condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
+        condition = QUOTE(!([ARR_3(_patient,_bodyPart,1)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call FUNC(setAED));
         ACM_cancelRecovery = 1;
         ACM_rollToBack = 1;
@@ -79,7 +79,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         treatmentTime = 1;
         allowSelfTreatment = 1;
-        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(hasAED));
+        condition = QUOTE([ARR_3(_patient,_bodyPart,1)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,0,false)] call FUNC(setAED));
     };
     class AED_ConnectPulseOximeter: AED_ApplyPads {
@@ -89,7 +89,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 2;
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE(!([ARR_4(_medic,_patient,'',2)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
+        condition = QUOTE(!([ARR_3(_patient,'',2)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call FUNC(setAED));
         ACM_cancelRecovery = 0;
         ACM_rollToBack = 0;
@@ -100,7 +100,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 1;
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call FUNC(hasAED));
+        condition = QUOTE([ARR_3(_patient,_bodyPart,2)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,1,false)] call FUNC(setAED));
         ACM_rollToBack = 0;
     };
@@ -111,7 +111,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 3;
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE(!([ARR_4(_medic,_patient,'',3)] call FUNC(hasAED)) && !([ARR_2(_patient,_bodyPart)] call FUNC(hasPressureCuff)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
+        condition = QUOTE(!([ARR_3(_patient,'',3)] call FUNC(hasAED)) && !([ARR_2(_patient,_bodyPart)] call FUNC(hasPressureCuff)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call FUNC(setAED));
         ACM_cancelRecovery = 0;
     };
@@ -121,7 +121,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 1;
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,3)] call FUNC(hasAED));
+        condition = QUOTE([ARR_3(_patient,_bodyPart,3)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,2,false)] call FUNC(setAED));
     };
     class AED_ConnectCapnograph: AED_ApplyPads {
@@ -131,7 +131,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 3;
         allowedSelections[] = {"Head"};
-        condition = QUOTE(!([ARR_4(_medic,_patient,_bodyPart,4)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
+        condition = QUOTE(!([ARR_3(_patient,_bodyPart,4)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,3)] call FUNC(setAED));
     };
     class AED_DisconnectCapnograph: AED_RemovePads {
@@ -140,7 +140,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 1;
         allowedSelections[] = {"Head"};
-        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,4)] call FUNC(hasAED));
+        condition = QUOTE([ARR_3(_patient,_bodyPart,4)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,3,false)] call FUNC(setAED));
     };
 

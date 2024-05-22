@@ -27,14 +27,14 @@ private _monitorArray_EKG = _patient getVariable [QGVAR(AED_EKGDisplay), []];
 _monitorArray_EKG set [_updateStep, _monitorArray_EKGRefresh select _updateStep];
 _patient setVariable [QGVAR(AED_EKGDisplay), _monitorArray_EKG];
 
-private _padsState = [_medic, _patient, "", 1] call FUNC(hasAED);
+private _padsState = [_patient, "", 1] call FUNC(hasAED);
 
 // Pulse Oximeter
 private _monitorArray_PO = _patient getVariable [QGVAR(AED_PODisplay), []];
 _monitorArray_PO set [_updateStep, _monitorArray_PORefresh select _updateStep];
 _patient setVariable [QGVAR(AED_PODisplay), _monitorArray_PO];
 
-private _pulseOximeterState = [_medic, _patient, "", 2] call FUNC(hasAED);
+private _pulseOximeterState = [_patient, "", 2] call FUNC(hasAED);
 
 private _previousIndex = _updateStep - 1;
 

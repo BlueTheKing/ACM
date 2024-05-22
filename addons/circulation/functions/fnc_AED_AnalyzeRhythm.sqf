@@ -32,7 +32,7 @@ _patient setVariable [QGVAR(AED_Analyze_Busy), true, true];
 [{
     params ["_medic", "_patient"];
 
-    !([_medic, _patient, "", 1] call FUNC(hasAED));
+    !([_patient, "", 1] call FUNC(hasAED));
 }, {
     params ["_medic", "_patient"];
 

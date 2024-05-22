@@ -4,10 +4,9 @@
  * Check if patient has AED connected
  *
  * Arguments:
- * 0: Medic <OBJECT>
- * 1: Patient <OBJECT>
- * 2: Body Part <STRING>
- * 3: Type <NUMBER>
+ * 0: Patient <OBJECT>
+ * 1: Body Part <STRING>
+ * 2: Type <NUMBER>
     * 0: Any
     * 1: Pads
     * 2: Pulse Oximeter
@@ -23,13 +22,7 @@
  * Public: No
  */
 
-params [["_medic", objNull], "_patient", ["_bodyPart", ""], ["_type", 0]];
-
-if !(isNull _medic) then {
-    private _AEDPatient = _medic getVariable [QGVAR(AED_Target_Patient), objNull];
-
-    if (_type != -1 && {alive _AEDPatient}) exitWith {_AEDPatient != _patient};
-};
+params ["_patient", ["_bodyPart", ""], ["_type", 0]];
 
 private _partIndex = "";
 if (_bodyPart != "") then {

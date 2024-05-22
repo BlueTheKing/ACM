@@ -30,7 +30,7 @@ _patient setVariable [QGVAR(AED_AlarmPFH), -2];
         params ["_args", "_idPFH"];
         _args params ["_patient"];
 
-        if (!([objNull, _patient] call FUNC(hasAED)) || !(_patient getVariable [QGVAR(AED_Alarm_State), false])) exitWith {
+        if (!([_patient] call FUNC(hasAED)) || !(_patient getVariable [QGVAR(AED_Alarm_State), false])) exitWith {
             _patient setVariable [QGVAR(AED_AlarmPFH), -1];
             [_idPFH] call CBA_fnc_removePerFrameHandler;
         };

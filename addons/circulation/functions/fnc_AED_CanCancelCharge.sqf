@@ -18,4 +18,4 @@
 
 params ["_medic", "_patient"];
 
-[_medic, _patient, "", 1] call FUNC(hasAED) && (_patient getVariable [QGVAR(AED_InUse), false]) && (_patient getVariable [QGVAR(AED_Charged), false]);
+[_patient, "", 1] call FUNC(hasAED) && (_patient getVariable [QGVAR(AED_InUse), false]) && (_patient getVariable [QGVAR(AED_Charged), false]);

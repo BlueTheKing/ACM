@@ -19,4 +19,4 @@
 
 params ["_medic", "_patient", "_bodyPart"];
 
-([_medic, _patient, _bodyPart, 3] call FUNC(hasAED) || (_bodyPart == "body" && [_medic, _patient, "", 3] call FUNC(hasAED))) && !(_patient getVariable [QGVAR(AED_InUse), false]) && !(_patient getVariable [QGVAR(AED_PressureCuffBusy), false]);
+([_patient, _bodyPart, 3] call FUNC(hasAED) || (_bodyPart == "body" && [_patient, "", 3] call FUNC(hasAED))) && !(_patient getVariable [QGVAR(AED_InUse), false]) && !(_patient getVariable [QGVAR(AED_PressureCuffBusy), false]);

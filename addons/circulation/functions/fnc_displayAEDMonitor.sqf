@@ -33,8 +33,8 @@ GVAR(AED_Monitor_Target) = _patient;
 
 uiNamespace setVariable [QGVAR(AEDMonitor_DLG),(findDisplay IDC_LIFEPAK_MONITOR)];
 
-private _padsState = [objNull, _patient, "", 1] call FUNC(hasAED);
-private _pulseOximeterState = [objNull, _patient, "", 2] call FUNC(hasAED);
+private _padsState = [_patient, "", 1] call FUNC(hasAED);
+private _pulseOximeterState = [_patient, "", 2] call FUNC(hasAED);
 _patient setVariable [QGVAR(AED_Monitor_HR), GET_HEART_RATE(_patient)];
 
 private _saturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), -1];
@@ -120,8 +120,8 @@ private _PFH = [{
 
     private _dlg = (uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]);
 
-    private _padsState = [objNull, _patient, "", 1] call FUNC(hasAED);
-    private _pulseOximeterState = [objNull, _patient, "", 2] call FUNC(hasAED);
+    private _padsState = [_patient, "", 1] call FUNC(hasAED);
+    private _pulseOximeterState = [_patient, "", 2] call FUNC(hasAED);
 
     private _oxygenSaturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), -1];
 

@@ -36,7 +36,7 @@ if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [1,2,3]) then 
     [{
         params ["_patient"];
 
-        !([objNull,_patient] call FUNC(hasAED)) || (_patient getVariable [QGVAR(AED_InUse), false]);
+        !([_patient] call FUNC(hasAED)) || (_patient getVariable [QGVAR(AED_InUse), false]);
     }, {}, [_patient], 5, {
         params ["_patient"];
 
