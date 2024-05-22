@@ -66,11 +66,14 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             text = QPATHTOF(data\body_image\torso_fast_io.paa);
             colorText[] = {0.2, 0.65, 0.2, 1};
         };
-        /*class Torso_Pneumothorax: Torso_ChestSeal { // TODO REMOVE
-            idc = IDC_BODY_TORSO_PNEUMOTHORAX;
-            text = QPATHTOF(data\body_image\torso_pneumothorax.paa);
-            colorText[] = {1, 1, 1, 1};
-        };*/
+        class RightArm_PressureCuff: Torso_IO {
+            idc = IDC_BODY_RIGHTARM_PRESSURECUFF;
+            text = QPATHTOF(data\body_image\rightarm_aed_pressurecuff.paa);
+        };
+        class LeftArm_PressureCuff: Torso_IO {
+            idc = IDC_BODY_LEFTARM_PRESSURECUFF;
+            text = QPATHTOF(data\body_image\leftarm_aed_pressurecuff.paa);
+        };
         class RightArm_IV: Torso_IO {
             idc = IDC_BODY_RIGHTARM_IV;
             text = QPATHTOF(data\body_image\rightarm_iv.paa);

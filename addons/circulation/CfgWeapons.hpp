@@ -15,6 +15,15 @@ class CfgWeapons {
         };
     };
 
+    class ACM_PressureCuff: ACM_AED {
+        picture = QPATHTOF(ui\pressureCuff_ca.paa);
+        displayName = "Pressure Cuff";
+        descriptionShort = "Used to measure blood pressure";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 2;
+        };
+    };
+
     class ACM_IV_16g: ACE_ItemCore {
         scope = 2;
         author = "Blue";

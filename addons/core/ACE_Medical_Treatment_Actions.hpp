@@ -14,6 +14,20 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 2.5;
         callbackSuccess = QEFUNC(circulation,checkCapillaryRefill);
     };
+    class MeasureBloodPressure: CheckBloodPressure {
+        displayName = "Measure Blood Pressure";
+        displayNameProgress = "";
+        allowedSelections[] = {"LeftArm", "RightArm"};
+        treatmentTime = 0.01;
+        condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasPressureCuff));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,false)] call EFUNC(circulation,measureBP));
+    };
+    class MeasureBloodPressureStethoscope: MeasureBloodPressure {
+        displayName = "Measure Blood Pressure (Stethoscope)";
+        items[] = {"ACM_Stethoscope"};
+        consumeItem = 0;
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,true)] call EFUNC(circulation,measureBP));
+    };
     class CheckDogTags: CheckResponse {
         displayName = ACECSTRING(dogtags,checkItem);
         displayNameProgress = "";

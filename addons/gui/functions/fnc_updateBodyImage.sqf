@@ -88,6 +88,26 @@ if ((_IVArray select 1) > 0) then {
     _ctrlIO ctrlShow false;
 };
 
+private _ctrlPressureCuffRight = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_PRESSURECUFF;
+private _ctrlPressureCuffLeft = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_PRESSURECUFF;
+
+if ((_target getVariable [QEGVAR(circulation,PressureCuff_Placement), -1]) isNotEqualTo [false,false]) then {
+    if (HAS_PRESSURECUFF(_target,0)) then {
+        _ctrlPressureCuffLeft ctrlShow true;
+    } else {
+        _ctrlPressureCuffLeft ctrlShow false;
+    };
+
+    if (HAS_PRESSURECUFF(_target,1)) then {
+        _ctrlPressureCuffRight ctrlShow true;
+    } else {
+        _ctrlPressureCuffRight ctrlShow false;
+    };
+} else {
+    _ctrlPressureCuffRight ctrlShow false;
+    _ctrlPressureCuffLeft ctrlShow false;
+};
+
 private _ctrlAEDPads = _ctrlGroup controlsGroupCtrl IDC_BODY_TORSO_AED_PADS;
 private _ctrlAEDPulseOximeterRight = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_AED_PULSEOX;
 private _ctrlAEDPulseOximeterLeft = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_AED_PULSEOX;

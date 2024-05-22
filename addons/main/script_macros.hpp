@@ -188,6 +188,9 @@
 
 #define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),[0,0,0,0,0,0]])
 
+#define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
+#define HAS_PRESSURECUFF(unit,index) (GET_PRESSURECUFF(unit) select index)
+
 #define GET_BLOODTYPE(unit) (unit getVariable [QEGVAR(circulation,BloodType),-1])
 
 #define ACM_BLOODTYPE_O 0

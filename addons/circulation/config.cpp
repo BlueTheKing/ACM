@@ -26,3 +26,4 @@ class CfgPatches {
 #include "\x\ACM\addons\core\UI_defines.hpp"
 #include "Defibrillator_Monitor_Dialog.hpp"
 #include "RscFeelPulse.hpp"
+#include "MeasureBP_Dialog.hpp"

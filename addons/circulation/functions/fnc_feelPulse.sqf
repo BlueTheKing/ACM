@@ -81,12 +81,12 @@ params ["_medic", "_patient", "_bodyPart"];
         _HR = 0;
     };
 
-    if (_HR != 0) then {
+    if (_HR > 0 && alive _patient) then {
         _ctrlHeart ctrlShow true;
+        
+        if (GVAR(FeelPulse_NextPulse) > CBA_missionTime) exitWith {};
 
         private _delay = 60 / _HR;
-
-        if (GVAR(FeelPulse_NextPulse) > CBA_missionTime) exitWith {};
 
         private _beatTime = 0.5 min (0.4 * _delay);
         private _releaseTime = 0.7 min (0.6 * _delay);
