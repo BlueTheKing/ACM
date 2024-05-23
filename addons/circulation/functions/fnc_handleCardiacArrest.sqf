@@ -36,8 +36,13 @@ if (GET_BLOOD_VOLUME(_patient) < ACM_ASYSTOLE_BLOODVOLUME) exitWith {
     _patient setVariable [QGVAR(CardiacArrest_RhythmState), 1, true]; // asystole
 };
 
-private _targetRhythm = [2,3] select (((random 100) * (GET_BLOOD_VOLUME(_patient) / BLOOD_VOLUME_CLASS_2_HEMORRHAGE)) > 50);
+private _targetRhythm = _patient getVariable [QGVAR(CardiacArrest_TargetRhythm), 0];
+
+if (_targetRhythm == 0) then {
+    _targetRhythm = [2,3] select (((random 100) * (GET_BLOOD_VOLUME(_patient) / BLOOD_VOLUME_CLASS_2_HEMORRHAGE)) > 50);
+};
 _patient setVariable [QGVAR(CardiacArrest_RhythmState), _targetRhythm, true];
+_patient setVariable [QGVAR(CardiacArrest_TargetRhythm), 0];
 
 if !(alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
     _patient setVariable [QGVAR(CPR_StoppedTime), CBA_missionTime, true];

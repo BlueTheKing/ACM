@@ -38,6 +38,24 @@ ADDON = true;
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(headTraumaCardiacArrestThreshold),
+    "SLIDER",
+    ["Head Trauma Cardiac Arrest Threshold", "Sets threshold for possibility of cardiac arrest from trauma to the head, using percentage of Head Trauma Death Threshold"],
+    [ACM_SETTINGS_CATEGORY, "Thresholds"],
+    [0, 1, 0.5, 1, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(bodyTraumaCardiacArrestThreshold),
+    "SLIDER",
+    ["Torso Trauma Cardiac Arrest Threshold", "Sets threshold for possibility of cardiac arrest from trauma to the torso, using percentage of Body Trauma Death Threshold"],
+    [ACM_SETTINGS_CATEGORY, "Thresholds"],
+    [0, 1, 0.5, 1, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(traumaModifierAI),
     "SLIDER",
     ["AI Trauma Modifier", "Sets AI toughness compared to player thresholds"],

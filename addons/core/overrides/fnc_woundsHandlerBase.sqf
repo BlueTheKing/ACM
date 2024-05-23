@@ -118,19 +118,25 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
 
         if (_bodyPart isEqualTo "head" || {_bodyPart isEqualTo "body" && {_woundDamage > PENETRATION_THRESHOLD_DEFAULT}}) then {
             _criticalDamage = true;
-            if (EGVAR(damage,enable) && [_unit, _bodyPartDamage] call EFUNC(damage,handleTrauma)) then {
-                [QACEGVAR(medical,FatalInjury), _unit] call CBA_fnc_localEvent;
+            if (EGVAR(damage,enable)) then {
+                if ([_unit, _bodyPartDamage] call EFUNC(damage,handleTrauma)) then {
+                    [QACEGVAR(medical,FatalInjury), _unit] call CBA_fnc_localEvent;
+                } else {
+                    if ([_unit, _bodyPartDamage] call EFUNC(damage,handleCardiacArrestTrauma)) then {
+                        [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
+                    };
+                };
+            } else {
+                if ([_unit, _bodyPartNToAdd, _bodyPartDamage, _woundDamage] call ACEFUNC(medical_damage,determineIfFatal)) then {
+                    if (!isPlayer _unit || {random 1 < ACEGVAR(medical,deathChance)}) then {
+                        TRACE_1("determineIfFatal returned true",_woundDamage);
+                        [QACEGVAR(medical,FatalInjury), _unit] call CBA_fnc_localEvent;
+                    };
+                };
             };
-        };
-
-        if (!(EGVAR(damage,enable)) && [_unit, _bodyPartNToAdd, _bodyPartDamage, _woundDamage] call ACEFUNC(medical_damage,determineIfFatal)) then {
-            if (!isPlayer _unit || {random 1 < ACEGVAR(medical,deathChance)}) then {
-                TRACE_1("determineIfFatal returned true",_woundDamage);
-                [QACEGVAR(medical,FatalInjury), _unit] call CBA_fnc_localEvent;
+            if (EGVAR(breathing,pneumothoraxEnabled) && _bodyPart isEqualTo "body" && {_woundClassIDToAdd in [1,6,7]}) then {
+                [QEGVAR(breathing,handleChestInjury), [_unit, _classComplex]] call CBA_fnc_localEvent;
             };
-        };
-        if (EGVAR(breathing,pneumothoraxEnabled) && _bodyPart isEqualTo "body" && {_woundClassIDToAdd in [1,6,7]}) then {
-            [QEGVAR(breathing,handleChestInjury), [_unit, _classComplex]] call CBA_fnc_localEvent;
         };
 
         #ifdef DEBUG_MODE_FULL

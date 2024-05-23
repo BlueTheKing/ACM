@@ -104,11 +104,11 @@ if (_oxygenSaturation < ACM_OXYGEN_HYPOXIA) then { // Severe hypoxia causes hear
     _hrTargetAdjustment = _hrTargetAdjustment - 10 * abs (ACM_OXYGEN_HYPOXIA - _oxygenSaturation);
 };
 
-if (_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) then {
+if (_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) then {
     _hrTargetAdjustment = _hrTargetAdjustment - 45;
 } else {
-    if (_patient getVariable [QEGVAR(breathing,Pneumothorax_State), 0] > 0) then {
-        _hrTargetAdjustment = _hrTargetAdjustment - (10 * _patient getVariable [QEGVAR(breathing,Pneumothorax_State), 0]);
+    if (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0] > 0) then {
+        _hrTargetAdjustment = _hrTargetAdjustment - (10 * (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0]));
     };
 };
 
@@ -141,13 +141,21 @@ switch (true) do {
     };
     case (_heartRate < 20 || {_heartRate > 220}): {
         TRACE_2("heartRate Fatal",_unit,_heartRate);
+        if (_heartRate > 220) then {
+            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 3];
+        } else {
+            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 2];
+        };
+
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_bloodPressureH < 50 && {_bloodPressureL < 40}): {
+        _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 2];
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_bloodPressureL >= 190): {
         TRACE_2("bloodPressure L above limits",_unit,_bloodPressureL);
+        _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 3];
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_heartRate < 30): {  // With a heart rate below 30 but bigger than 20 there is a chance to enter the cardiac arrest state
@@ -159,6 +167,7 @@ switch (true) do {
         };
         if (_enterCardiacArrest) then {
             TRACE_2("Heart rate critical. Cardiac arrest",_unit,_heartRate);
+            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 2];
             [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
         } else {
             TRACE_2("Heart rate critical. Critical vitals",_unit,_heartRate);

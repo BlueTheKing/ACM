@@ -28,7 +28,7 @@ if (!(GET_CIRCULATIONSTATE(_patient)) || (GET_BLOOD_VOLUME(_patient) < ACM_REVER
     };
     [QEGVAR(circulation,handleReversibleCardiacArrest), [_patient], _patient] call CBA_fnc_targetEvent;
 } else {
-    if (random 1 < EGVAR(circulation,cardiacArrestChance)) then {
+    if (random 1 < EGVAR(circulation,cardiacArrestChance) || _patient getVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 0] != 0) then {
         [QEGVAR(circulation,handleCardiacArrest), _patient] call CBA_fnc_localEvent;
     } else {
         _patient setVariable [QGVAR(KnockOut_State), true];

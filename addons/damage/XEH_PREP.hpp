@@ -7,6 +7,7 @@ PREP(getBodyPartInternalBleeding);
 PREP(getBruiseWrapTime);
 PREP(getStitchTime);
 PREP(getWrapTime);
+PREP(handleCardiacArrestTrauma);
 PREP(handleCoagulationPFH);
 PREP(handleIBCoagulationPFH);
 PREP(handleTrauma);
