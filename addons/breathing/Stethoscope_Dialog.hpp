@@ -90,7 +90,7 @@ class GVAR(Stethoscope_Dialog) {
             shadow = 0;
             font = "RobotoCondensed";
             sizeEx = "0";
-            onMouseButtonClick = QUOTE(call FUNC(Stethoscope_MoveBell));
+            onMouseButtonUp = QUOTE(call FUNC(Stethoscope_MoveBell));
             textureNoShortcut = QPATHTOF(ui\stethoscope_bell.paa);
             tooltip = "Move me";
             colorBackground[] = {1,1,1,0};
