@@ -56,18 +56,22 @@ private _generateNoisyRhythmStep = {
 private _rhythmArray = [];
 
 switch (_rhythm) do {
-    case -5: {
-        private _step = [0];
+    case -1: { // CPR
+        private _cleanRhythmStep = [10,-5,-10,-20,-40 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-40 + (random 5),-20,-10,-5,10]; // 16
+        private _noiseRange = 8;
+        private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStep) + _spacing));
 
-        private _repeat = ceil(AED_MONITOR_WIDTH / (count _step));
+        if (_arrayOffset > 0) then {
+            _repeat = _repeat + 1;
+        };
 
         for "_i" from 0 to _repeat do {
-            _rhythmArray = _rhythmArray + _step;
+            _rhythmArray = _rhythmArray + ([_spacing] call _fnc_generateStepSpacingArray) + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
         };
     };
     case 5; // PEA
     case 0: { // Sinus
-        private _cleanRhythmStep = [0,-1,-5,0.1,2,-4,-40,25,5,2,1,-5,-7,-1,5,4,2,0.8];
+        private _cleanRhythmStep = [0,-1,-5,2,-4,-40,25,5,0,-5,-7,-1,5,4,0.8]; // 15
         private _noiseRange = 3;
         private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStep) + _spacing));
 
@@ -106,7 +110,7 @@ switch (_rhythm) do {
         };
     };
     case 3: { // PVT
-        private _cleanRhythmStep = [1,-30,-47,-49,-44,-39,-30];
+        private _cleanRhythmStep = [5,-30,-47,-49,-49,-49,-44,-39,-30]; // 9
         private _noiseRange = 3;
         private _repeat = ceil(AED_MONITOR_WIDTH / (count _cleanRhythmStep));
 
@@ -115,7 +119,9 @@ switch (_rhythm) do {
         };
 
         for "_i" from 0 to _repeat do {
-            _rhythmArray = _rhythmArray + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
+            private _cleanRhythmStepRandomized = _cleanRhythmStep;
+            _cleanRhythmStepRandomized set [0, ((_cleanRhythmStepRandomized select 0) + (2 - (random 4)))];
+            _rhythmArray = _rhythmArray + ([_cleanRhythmStepRandomized, _noiseRange] call _generateNoisyRhythmStep);
         };
     };
 };

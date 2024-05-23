@@ -27,8 +27,6 @@ if (_spacing != -1) then {
 
 _saturation = _saturation / 99;
 
-_arrayOffset = _arrayOffset + floor(_spacing/2);
-
 private _maxLength = AED_MONITOR_WIDTH;
 
 private _fnc_generateStepSpacingArray = {
@@ -73,11 +71,11 @@ switch (_rhythm) do {
     };
     case -1;
     case 0: {
-        //[0,-10,-30,-40,-45,-47,-49.2,-50,-49.2,-45,-40,-38,-36,-33,-30,-20,-15,-5];
-        private _cleanRhythmStep = [0, -10 * _saturation, -30 * _saturation, -40 * _saturation, -45 * _saturation, -47 * _saturation, -49.2 * _saturation, -50 * _saturation, -49.2 * _saturation, -45 * _saturation, -40 * _saturation,
-        -38 * _saturation, -36 * _saturation, -33 * _saturation, -30 * _saturation, -20 * _saturation, -15 * _saturation, -5 * _saturation];
+        //[0,-10,-30,-40,-45,-47,-49.2,-50,-49.2,-45,-40,-38,-33,-30,-15]; // 15
+        private _cleanRhythmStep = [0, -10 * _saturation, -30 * _saturation, -40 * _saturation, -45 * _saturation, -47 * _saturation, -49.2 * _saturation, -50 * _saturation, -49.2 * _saturation, -45 * _saturation, -40 * _saturation
+        , -35 * _saturation, -33 * _saturation, -30 * _saturation, -15 * _saturation];
 
-        private _noiseRange = 2;
+        private _noiseRange = 1;
         private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStep) + _spacing));
 
         if (_arrayOffset > 0) then {

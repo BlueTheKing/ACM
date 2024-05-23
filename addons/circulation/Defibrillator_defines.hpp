@@ -24,6 +24,7 @@
 #define AED_BUTTON_Spacing_V 70
 
 #define AED_MONITOR_WIDTH 176
+#define AED_SPACING_MULTIPLIER 15
 
 // Vitals Display stuff
 #define VitalsDisplay_Spacing_V 160

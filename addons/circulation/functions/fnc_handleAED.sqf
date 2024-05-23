@@ -66,7 +66,7 @@ private _PFH = [{
     if (!_padsStatus && _pulseOximeterPlacement == -1 && _pressureCuffPlacement == -1 && !_capnographStatus) exitWith {
         _patient setVariable [QGVAR(AED_Pads_Display), 0, true];
         _patient setVariable [QGVAR(AED_Pads_LastSync), -1];
-        _patient setVariable [QGVAR(AED_PulseOximeter_Display), 0, true];
+        _patient setVariable [QGVAR(AED_PulseOximeter_Display), -1, true];
         _patient setVariable [QGVAR(AED_PulseOximeter_LastSync), -1];
 
         _patient setVariable [QGVAR(AED_Capnograph_LastSync), -1];

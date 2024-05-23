@@ -54,10 +54,10 @@ private _HRSpacing = 0;
 
 if (_rhythm in [-1,0,5]) then {
     if (_rhythm == 5) then { // PEA
-        _HRSpacing = (60 / ([_patient] call FUNC(getEKGHeartRate))) * 20;
+        _HRSpacing = (60 / ([_patient] call FUNC(getEKGHeartRate))) * AED_SPACING_MULTIPLIER;
     } else {
         if (GET_HEART_RATE(_patient) > 0) then {
-            _HRSpacing = (60 / GET_HEART_RATE(_patient)) * 20;
+            _HRSpacing = (60 / GET_HEART_RATE(_patient)) * AED_SPACING_MULTIPLIER;
         } else {
             _HRSpacing = 0;
         };
@@ -160,7 +160,7 @@ private _PFH = [{
             if (_pulseOximeterState) then {
                 _PORhythm = -1;
             };
-            _EKGStepSpacing = (60 / _hr) * 20;
+            _EKGStepSpacing = (60 / _hr) * AED_SPACING_MULTIPLIER;
             _POStepSpacing = _EKGStepSpacing;
         };
         case ([_patient, true] call FUNC(recentAEDShock)): { // After shock
@@ -180,7 +180,7 @@ private _PFH = [{
                 _EKGRhythm = _rhythmState;
                 if (_EKGRhythm == 5) then { // PEA
                     _hr = [_patient] call FUNC(getEKGHeartRate);
-                    _EKGStepSpacing = (60 / _hr) * 20;
+                    _EKGStepSpacing = (60 / _hr) * AED_SPACING_MULTIPLIER;
                 };
             };
             if (_pulseOximeterState) then {
@@ -204,7 +204,7 @@ private _PFH = [{
             if (_pulseOximeterState && _oxygenSaturation != -1) then {
                 _PORhythm = _rhythmState;
             };
-            _EKGStepSpacing = (60 / _hr) * 20;
+            _EKGStepSpacing = (60 / _hr) * AED_SPACING_MULTIPLIER;
             _POStepSpacing = _EKGStepSpacing;
         };
     };
