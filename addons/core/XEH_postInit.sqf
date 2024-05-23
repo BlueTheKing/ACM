@@ -26,3 +26,9 @@
 
     [QACEGVAR(medical_feedback,forceSay3D), [_patient, _sound, _distance], _targets] call CBA_fnc_targetEvent;
 }] call CBA_fnc_addEventHandler;
+
+[QACEGVAR(medical,death), {
+    params ["_unit"];
+
+    _unit setVariable [QGVAR(TimeOfDeath), CBA_missionTime, true];
+}] call CBA_fnc_addEventHandler;

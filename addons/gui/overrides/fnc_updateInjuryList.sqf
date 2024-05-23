@@ -197,8 +197,13 @@ if (_selectionN == 0 && _airwayItemType != "") then {
 private _oxygenSaturation = GET_OXYGEN(_target);
 
 // Cyanosis
-if (_selectionN in [0,2,3] && {(_oxygenSaturation < 91 || HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN))}) then {
+if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < 91 || HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN))}) then {
     private _tourniquetTime = 0;
+    if !(alive _target) then {
+        private _timeSinceDeath = CBA_missionTime - (_target getVariable [QEGVAR(core,TimeOfDeath), CBA_missionTime]);
+        private _newOxygenSaturation = linearConversion [0, (330 - ((100 - _oxygenSaturation) * ACM_BREATHING_MAXDECREASE)), _timeSinceDeath, 99, 55, true];
+        _oxygenSaturation = _oxygenSaturation min _newOxygenSaturation;
+    };
     private _colorScale = linearConversion [91, 55, _oxygenSaturation, 0.47, 0.13, true];
 
     if (HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN)) then {
@@ -348,7 +353,7 @@ if (_selectionN == 1 && (_target getVariable [QEGVAR(breathing,ChestSeal_State),
 };
 
 // Standalone Pressure Cuff
-if (_selectionN in [2,3] && HAS_PRESSURECUFF(_target,(_selectionN - 2))) then {
+if (_selectionN in [2,3] && {HAS_PRESSURECUFF(_target,(_selectionN - 2))}) then {
     _entries pushBack ["Pressure Cuff", _circulationColor];
 };
 

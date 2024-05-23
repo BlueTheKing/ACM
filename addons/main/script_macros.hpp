@@ -156,6 +156,8 @@
 #define IN_RECOVERYPOSITION(unit) (unit getVariable [QQEGVAR(airway,RecoveryPosition_State), false])
 
 // Breathing
+#define ACM_BREATHING_MAXDECREASE 0.125
+
 #define GET_BREATHINGSTATE(unit) (unit getVariable [QEGVAR(breathing,BreathingState), 1])
 
 #define GET_OXYGEN(unit) (unit getVariable [VAR_SPO2, DEFAULT_SPO2])

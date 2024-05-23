@@ -24,7 +24,7 @@ params ["_unit", "_deltaT", "_syncValue"];
 private _maxDecline = -50;
 
 if (IS_UNCONSCIOUS(_unit)) then {
-    _maxDecline = -0.125;
+    _maxDecline = -ACM_BREATHING_MAXDECREASE;
 };
 
 #define IDEAL_PPO2 0.255
