@@ -137,7 +137,6 @@ class ACEGVAR(medical_treatment,actions) {
         medicRequired = 0;
         treatmentTime = 2;
         allowedSelections[] = {"LeftArm","RightArm"};
-        allowSelfTreatment = 0;
         items[] = {"ACM_PulseOximeter"};
         consumeItem = 1;
         condition = QFUNC(canPlacePulseOximeter);
