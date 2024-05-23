@@ -347,6 +347,11 @@ if (_selectionN == 1 && (_target getVariable [QEGVAR(breathing,ChestSeal_State),
     _entries pushBack ["Chest Seal Applied", [1, 0.95, 0, 1]];
 };
 
+// Standalone Pressure Cuff
+if (_selectionN in [2,3] && HAS_PRESSURECUFF(_target,(_selectionN - 2))) then {
+    _entries pushBack ["Pressure Cuff", _circulationColor];
+};
+
 // Indicate if a tourniquet is applied
 if (HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN)) then {
     _entries pushBack [format ["%1 [%2]",localize ACELSTRING(medical_gui,Status_Tourniquet_Applied), ((_target getVariable [QEGVAR(disability,Tourniquet_Time), [0,0,0,0,0,0]]) select _selectionN)], [0.77, 0.51, 0.08, 1]];
