@@ -9,6 +9,7 @@
     params ["_patient"];
 
     _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
+    _patient setVariable [QGVAR(ROSC_Time), CBA_missionTime, true];
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleCPR), LINKFUNC(handleCPR)] call CBA_fnc_addEventHandler;
