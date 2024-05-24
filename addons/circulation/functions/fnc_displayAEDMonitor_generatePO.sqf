@@ -87,7 +87,7 @@ switch (_rhythm) do {
         };
     };
     default {
-        private _step = [(0 + 30 * (1 - 1 * _saturation))];
+        private _step = [0];
         private _noiseRange = 2;
 
         private _repeat = ceil(AED_MONITOR_WIDTH / (count _step));

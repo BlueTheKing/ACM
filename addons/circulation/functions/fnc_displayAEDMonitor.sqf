@@ -35,10 +35,15 @@ uiNamespace setVariable [QGVAR(AEDMonitor_DLG),(findDisplay IDC_LIFEPAK_MONITOR)
 
 private _padsState = [_patient, "", 1] call FUNC(hasAED);
 private _pulseOximeterState = [_patient, "", 2] call FUNC(hasAED);
+private _capnographState = [_patient, "", 4] call FUNC(hasAED);
 _patient setVariable [QGVAR(AED_Monitor_HR), GET_HEART_RATE(_patient)];
 
 private _saturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), -1];
 _patient setVariable [QGVAR(AED_Monitor_OxygenSaturation), _saturation];
+
+private _etco2 = _patient getVariable [QGVAR(AED_CO2_Display), 0];
+private _rr = GET_RESPIRATION_RATE(_patient);
+_patient setVariable [QGVAR(AED_Monitor_EtCO2), _etco2];
 
 private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
 
@@ -95,9 +100,25 @@ if (count (_patient getVariable [QGVAR(AED_PODisplay), []]) < AED_MONITOR_WIDTH 
     };
 };
 
+if (count (_patient getVariable [QGVAR(AED_CODisplay), []]) < AED_MONITOR_WIDTH || !(_patient getVariable [QGVAR(AED_Monitor_Capnograph_State), false])) then { // Initial
+    if (_capnographState) then {
+        _patient setVariable [QGVAR(AED_Monitor_Capnograph_State), true, true];
+        if (_rhythm in [-1,0,5]) then {
+            _patient setVariable [QGVAR(AED_CODisplay), ([_rhythm, _HRSpacing, 0, _etco2, _rr] call FUNC(displayAEDMonitor_generateCO))];
+        } else {
+            if (_recentShock) then {
+                _patient setVariable [QGVAR(AED_CODisplay), ([1, -1, 0, 0, 0] call FUNC(displayAEDMonitor_generateCO))];
+            } else {
+                _patient setVariable [QGVAR(AED_CODisplay), ([_rhythm, -1, 0, _etco2, _rr] call FUNC(displayAEDMonitor_generateCO))];
+            };
+        };
+    };
+};
+
 // Sync up waveforms
 private _monitorArray_EKG = _patient getVariable [QGVAR(AED_EKGDisplay), []];
 private _monitorArray_PO = _patient getVariable [QGVAR(AED_PODisplay), []];
+private _monitorArray_CO = _patient getVariable [QGVAR(AED_CODisplay), []];
 
 for "_i" from 1 to (AED_MONITOR_WIDTH - 1) do { // TODO fix this
     if (_padsState) then {
@@ -109,6 +130,11 @@ for "_i" from 1 to (AED_MONITOR_WIDTH - 1) do { // TODO fix this
         [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), 1, (_i - 1), (_monitorArray_PO select (_i - 1)), (_monitorArray_PO select _i), true] call FUNC(displayAEDMonitor_syncWaveform);
     } else {
         [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), 1, (_i - 1), -1, -1, false] call FUNC(displayAEDMonitor_syncWaveform);
+    };
+    if (_capnographState) then {
+        [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), 2, (_i - 1), (_monitorArray_CO select (_i - 1)), (_monitorArray_CO select _i), true] call FUNC(displayAEDMonitor_syncWaveform);
+    } else {
+        [(uiNamespace getVariable [QGVAR(AEDMonitor_DLG),displayNull]), 2, (_i - 1), -1, -1, false] call FUNC(displayAEDMonitor_syncWaveform);
     };
 };
 
@@ -122,8 +148,10 @@ private _PFH = [{
 
     private _padsState = [_patient, "", 1] call FUNC(hasAED);
     private _pulseOximeterState = [_patient, "", 2] call FUNC(hasAED);
+    private _capnographState = [_patient, "", 4] call FUNC(hasAED);
 
     private _oxygenSaturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), -1];
+    private _etco2 = _patient getVariable [QGVAR(AED_CO2_Display), -1];
 
     private _monitorUpdateStep = (_patient getVariable [QGVAR(AED_UpdateStep), (floor ((CBA_missionTime - (_patient getvariable [QGVAR(AED_StartTime), CBA_missionTime])) mod 6.2304 / 0.0354))]); // x1.18
     private _monitorArray_Offset = _patient getVariable [QGVAR(AED_Offset), 0];
@@ -147,10 +175,13 @@ private _PFH = [{
 
     private _hr = GET_HEART_RATE(_patient);
     private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
+    private _rr = GET_RESPIRATION_RATE(_patient);
     private _EKGRhythm = -5;
     private _PORhythm = -5;
+    private _CORhythm = -5;
     private _EKGStepSpacing = 8;
     private _POStepSpacing = _EKGStepSpacing;
+    private _COStepSpacing = _EKGStepSpacing;
 
     switch (true) do {
         case (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])): { // CPR
@@ -160,8 +191,12 @@ private _PFH = [{
             if (_pulseOximeterState) then {
                 _PORhythm = -1;
             };
+            if (_capnographState) then {
+                _CORhythm = -1;
+            };
             _EKGStepSpacing = (60 / _hr) * AED_SPACING_MULTIPLIER;
             _POStepSpacing = _EKGStepSpacing;
+            _COStepSpacing = _EKGStepSpacing;
         };
         case ([_patient, true] call FUNC(recentAEDShock)): { // After shock
             if (_padsState) then {
@@ -170,12 +205,17 @@ private _PFH = [{
             if (_pulseOximeterState) then {
                 _PORhythm = 1;
             };
+            if (_capnographState) then {
+                _CORhythm = 1;
+            };
             _EKGStepSpacing = 0;
             _POStepSpacing = 0;
+            _COStepSpacing = 0;
         };
         case (_hr < 20): {
             _EKGStepSpacing = 0;
             _POStepSpacing = 0;
+            _COStepSpacing = 0;
             if (_padsState) then {
                 _EKGRhythm = _rhythmState;
                 if (_EKGRhythm == 5) then { // PEA
@@ -186,6 +226,9 @@ private _PFH = [{
             if (_pulseOximeterState) then {
                 _PORhythm = 1;
             };
+            if (_capnographState) then {
+                _CORhythm = 1;
+            };
         };
         case !(alive _patient): {
             if (_padsState) then {
@@ -194,36 +237,55 @@ private _PFH = [{
             if (_pulseOximeterState) then {
                 _PORhythm = 1;
             };
+            if (_capnographState) then {
+                _CORhythm = 1;
+            };
             _EKGStepSpacing = 0;
             _POStepSpacing = 0;
+            _COStepSpacing = 0;
         };
         default { // Sinus
             if (_padsState) then {
                 _EKGRhythm = _rhythmState;
             };
-            if (_pulseOximeterState && _oxygenSaturation != -1) then {
-                _PORhythm = _rhythmState;
+            if (_pulseOximeterState) then {
+                if (_oxygenSaturation != -1) then {
+                    _PORhythm = _rhythmState;
+                } else {
+                    _PORhythm = 1;
+                };
+            };
+            if (_capnographState) then {
+                if (_etco2 != -1) then {
+                    _CORhythm = _rhythmState;
+                } else {
+                    _CORhythm = 1;
+                };
             };
             _EKGStepSpacing = (60 / _hr) * AED_SPACING_MULTIPLIER;
             _POStepSpacing = _EKGStepSpacing;
+            _COStepSpacing = _EKGStepSpacing;
         };
     };
 
     _EKGStepSpacing = 0 max (round(_EKGStepSpacing));
     _POStepSpacing = 0 max (round(_POStepSpacing));
+    _COStepSpacing = 0 max (round(_COStepSpacing));
 
     private _stepCondition = _monitorUpdateStep >= (AED_MONITOR_WIDTH - 1);
     private _rhythmChangeCondition = _EKGRhythm != _patient getVariable [QGVAR(AED_EKGRhythm), -2] || _PORhythm != _patient getVariable [QGVAR(AED_PORhythm), -2];
-    private _vitalsCondition = (abs ((_patient getVariable [QGVAR(AED_Monitor_HR), 0]) - _hr) > 10) || (abs ((_patient getVariable [QGVAR(AED_Monitor_OxygenSaturation), 0]) - _oxygenSaturation) > 6);
-    private _connectedCondition = _patient getVariable [QGVAR(AED_Monitor_Pads_State), false] != _padsState || _patient getVariable [QGVAR(AED_Monitor_PulseOximeter_State), false] != _pulseOximeterState;
+    private _vitalsCondition = (abs ((_patient getVariable [QGVAR(AED_Monitor_HR), 0]) - _hr) > 10) || (abs ((_patient getVariable [QGVAR(AED_Monitor_OxygenSaturation), 0]) - _oxygenSaturation) > 6) || (abs ((_patient getVariable [QGVAR(AED_Monitor_EtCO2), 0]) - _etco2) > 10);
+    private _connectedCondition = _patient getVariable [QGVAR(AED_Monitor_Pads_State), false] != _padsState || _patient getVariable [QGVAR(AED_Monitor_PulseOximeter_State), false] != _pulseOximeterState || _patient getVariable [QGVAR(AED_Monitor_Capnograph_State), false] != _capnographState;
     private _listCondition = (count _monitorArray_EKGRefresh < AED_MONITOR_WIDTH) || (count _monitorArray_PORefresh < AED_MONITOR_WIDTH);
 
     if (_stepCondition || {_vitalsCondition || {_rhythmChangeCondition || {_connectedCondition || {_listCondition}}}}) then { // Handle full pass / force update if rhythm changes/vitals change/device is disconnected
         _patient setVariable [QGVAR(AED_EKGRhythm), _EKGRhythm];
         _patient setVariable [QGVAR(AED_PORhythm), _PORhythm];
+        _patient setVariable [QGVAR(AED_CORhythm), _CORhythm];
 
         _monitorArray_EKGRefresh = [_EKGRhythm, _EKGStepSpacing, _monitorArray_Offset] call FUNC(displayAEDMonitor_generateEKG);
         _monitorArray_PORefresh = [_PORhythm, _POStepSpacing, _monitorArray_Offset, _oxygenSaturation] call FUNC(displayAEDMonitor_generatePO);
+        _monitorArray_CORefresh = [_CORhythm, _COStepSpacing, _monitorArray_Offset, _etco2, _rr] call FUNC(displayAEDMonitor_generateCO);
 
         if (_vitalsCondition) then {
             private _EKGArray = [];
@@ -255,14 +317,32 @@ private _PFH = [{
             } forEach _monitorArray_PORefresh;
 
             _monitorArray_PORefresh = _POArray;
+
+            private _COArray = [];
+            _COArray resize AED_MONITOR_WIDTH;
+
+            {
+                private _index = _forEachIndex + _monitorUpdateStep;
+
+                if (_index > (AED_MONITOR_WIDTH-1)) then {
+                    _index = _index - AED_MONITOR_WIDTH;
+                };
+
+                _COArray set [_index, _x];
+            } forEach _monitorArray_CORefresh;
+
+            _monitorArray_CORefresh = _COArray;
         };
 
         _patient setVariable [QGVAR(AED_EKGRefreshDisplay), _monitorArray_EKGRefresh];
         _patient setVariable [QGVAR(AED_PORefreshDisplay), _monitorArray_PORefresh];
+        _patient setVariable [QGVAR(AED_CORefreshDisplay), _monitorArray_CORefresh];
 
         _patient setVariable [QGVAR(AED_Monitor_Pads_State), _padsState];
         _patient setVariable [QGVAR(AED_Monitor_PulseOximeter_State), _pulseOximeterState];
+        _patient setVariable [QGVAR(AED_Monitor_Capnograph_State), _capnographState];
         _patient setVariable [QGVAR(AED_Monitor_OxygenSaturation), _oxygenSaturation];
+        _patient setVariable [QGVAR(AED_Monitor_EtCO2), _etco2];
         _patient setVariable [QGVAR(AED_Monitor_HR), _hr];
 
         /*_monitorArray_Offset = _monitorArray_Offset + round (random [-1.4, 0, 1.4]); // TODO look at later
@@ -348,6 +428,26 @@ private _PFH = [{
             ctrlSetText [IDC_VITALSDISPLAY_HR_TEXT, "HR"];
             _HRNumber ctrlSetTextColor HR_COLOR_M;
             _HRText ctrlSetTextColor HR_COLOR_M;
+        };
+
+        if (_capnographState) then {
+            ctrlShow [IDC_CO_Scale_Line_0, true];
+            ctrlShow [IDC_CO_Scale_Line_1, true];
+            ctrlShow [IDC_CO_Scale_Line_2, true];
+            ctrlShow [IDC_CO_Scale_Line_3, true];
+            ctrlShow [IDC_CO_Scale_Line_4, true];
+            ctrlShow [IDC_CO_Scale_Line_5, true];
+            ctrlShow [IDC_CO_Scale_Text_0, true];
+            ctrlShow [IDC_CO_Scale_Text_50, true];
+        } else {
+            ctrlShow [IDC_CO_Scale_Line_0, false];
+            ctrlShow [IDC_CO_Scale_Line_1, false];
+            ctrlShow [IDC_CO_Scale_Line_2, false];
+            ctrlShow [IDC_CO_Scale_Line_3, false];
+            ctrlShow [IDC_CO_Scale_Line_4, false];
+            ctrlShow [IDC_CO_Scale_Line_5, false];
+            ctrlShow [IDC_CO_Scale_Text_0, false];
+            ctrlShow [IDC_CO_Scale_Text_50, false];
         };
     };
 }, 0, [_patient]] call CBA_fnc_addPerFrameHandler;

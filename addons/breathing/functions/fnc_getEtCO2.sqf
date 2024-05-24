@@ -35,7 +35,7 @@ private _maxTo = 0;
 private _airwayState = (GET_AIRWAYSTATE(_patient) / 0.95) min 1;
 private _breathingState = (GET_BREATHINGSTATE(_patient) / 0.85) min 1;
 
-if ((GET_HEART_RATE(_patient) < 20) || !(alive _patient)) then {
+if ((GET_HEART_RATE(_patient) < 20) || IN_CRDC_ARRST(_patient) || !(alive _patient)) then {
     if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
         _minFrom = 100;
         _maxFrom = 120;

@@ -39,6 +39,11 @@
 #define CO2_COLOR {1,0.5,0.2,1}
 #define NIBP_COLOR {1,1,1,1}
 
+#define AED_PO_Y_SPACING 160
+#define AED_CO_Y_SPACING 400
+
+#define AED_CO_SCALE_Y(number) (AED_TOPLEFT_Y + 505 - (30 * number))
+
 // Line stuff
 
 #define EKG_ColumnWidth 4
@@ -2210,3 +2215,14 @@
     CO_DOT(172,IDC_CO_DOT_172); \
     CO_DOT(173,IDC_CO_DOT_173); \
     CO_DOT(174,IDC_CO_DOT_174);
+
+
+// CO Scale
+#define IDC_CO_Scale_Line_0  76180
+#define IDC_CO_Scale_Line_1  76181
+#define IDC_CO_Scale_Line_2  76182
+#define IDC_CO_Scale_Line_3  76183
+#define IDC_CO_Scale_Line_4  76184
+#define IDC_CO_Scale_Line_5  76185
+#define IDC_CO_Scale_Text_0  76186
+#define IDC_CO_Scale_Text_50 76187

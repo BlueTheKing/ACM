@@ -21,6 +21,7 @@ PREP(AED_TrackCPR);
 PREP(attemptROSC);
 PREP(beginCPR);
 PREP(displayAEDMonitor_adjustWaveform);
+PREP(displayAEDMonitor_generateCO);
 PREP(displayAEDMonitor_generateEKG);
 PREP(displayAEDMonitor_generatePO);
 PREP(displayAEDMonitor_syncWaveform);

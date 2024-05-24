@@ -29,19 +29,25 @@ private _lineIDC = IDC_EKG_LINE_0 + _type * 2000;
 private _ctrlLine = _dlg displayCtrl (_ctrlIndex + _lineIDC);
 private _ctrlDot = _dlg displayCtrl (_ctrlIndex + _lineIDC + 1000);
 
+private _minAngle = 0.8;
+
 switch (_type) do {
     case 1: {
-        _previousHeight = _previousHeight + 160;
-        _targetHeight = _targetHeight + 160;
+        _previousHeight = _previousHeight + AED_PO_Y_SPACING;
+        _targetHeight = _targetHeight + AED_PO_Y_SPACING;
     };
-    case 2: {};
+    case 2: {
+        _previousHeight = _previousHeight + AED_CO_Y_SPACING;
+        _targetHeight = _targetHeight + AED_CO_Y_SPACING;
+        _minAngle = 0.75;
+    };
 };
 
 if (_connected) then {
     _ctrlLine ctrlSetPosition [(ctrlPosition _ctrlLine select 0), ACM_AED_pxToScreen_Y(EKG_Line_Y(_previousHeight)), (ctrlPosition _ctrlLine select 2), ACM_AED_pxToScreen_H((_targetHeight - _previousHeight))];
     _ctrlLine ctrlCommit 0;
 
-    if (abs (_previousHeight - _targetHeight) < 0.8) then {
+    if (abs (_previousHeight - _targetHeight) < _minAngle) then {
         _ctrlDot ctrlSetPosition [(ctrlPosition _ctrlDot select 0), ACM_AED_pxToScreen_Y(EKG_Line_Y(_previousHeight)), (ctrlPosition _ctrlDot select 2), (ctrlPosition _ctrlDot select 3)];
         _ctrlDot ctrlCommit 0;
         _ctrlDot ctrlShow true;

@@ -198,7 +198,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
         class PO_Line_0: RscLine {
             idc = IDC_PO_LINE_0;
             x = QUOTE(ACM_AED_pxToScreen_X(EKG_Line_X(0)));
-            y = QUOTE(ACM_AED_pxToScreen_Y(EKG_Line_Y(160)));
+            y = QUOTE(ACM_AED_pxToScreen_Y(EKG_Line_Y(AED_PO_Y_SPACING)));
             w = QUOTE(ACM_AED_pxToScreen_W(EKG_ColumnWidth));
             h = QUOTE(ACM_AED_pxToScreen_H(0));
             colorBackground[] = {0,0,0,0};
@@ -209,13 +209,84 @@ class GVAR(Lifepak_Monitor_Dialog) {
         class PO_Dot_0: RscText {
             idc = IDC_PO_DOT_0;
             x = QUOTE(ACM_AED_pxToScreen_X(EKG_Line_X(0)));
-            y = QUOTE(ACM_AED_pxToScreen_Y(EKG_Line_Y(160)));
+            y = QUOTE(ACM_AED_pxToScreen_Y(EKG_Line_Y(AED_PO_Y_SPACING)));
             w = QUOTE(ACM_AED_pxToScreen_W(EKG_ColumnWidth));
             h = QUOTE(ACM_AED_pxToScreen_H(2));
             colorBackground[] = SPO2_COLOR;
             text = "";
         };
         PO_DOTS
+        class CO_Line_0: RscLine {
+            idc = IDC_CO_LINE_0;
+            x = QUOTE(ACM_AED_pxToScreen_X(EKG_Line_X(0)));
+            y = QUOTE(ACM_AED_pxToScreen_Y(EKG_Line_Y(AED_CO_Y_SPACING)));
+            w = QUOTE(ACM_AED_pxToScreen_W(EKG_ColumnWidth));
+            h = QUOTE(ACM_AED_pxToScreen_H(0));
+            colorBackground[] = {0,0,0,0};
+            colorText[] = CO2_COLOR;
+            text = "";
+        };
+        CO_LINES
+        class CO_Dot_0: RscText {
+            idc = IDC_CO_DOT_0;
+            x = QUOTE(ACM_AED_pxToScreen_X(EKG_Line_X(0)));
+            y = QUOTE(ACM_AED_pxToScreen_Y(EKG_Line_Y(AED_CO_Y_SPACING)));
+            w = QUOTE(ACM_AED_pxToScreen_W(EKG_ColumnWidth));
+            h = QUOTE(ACM_AED_pxToScreen_H(2));
+            colorBackground[] = CO2_COLOR;
+            text = "";
+        };
+        CO_DOTS
+        class CO_Scale_Line_0: RscText {
+            idc = IDC_CO_Scale_Line_0;
+            x = QUOTE(ACM_AED_pxToScreen_X((AED_TOPLEFT_X + 855)));
+            y = QUOTE(ACM_AED_pxToScreen_Y(AED_CO_SCALE_Y(0)));
+            w = QUOTE(ACM_AED_pxToScreen_W(25));
+            h = QUOTE(ACM_AED_pxToScreen_H(2));
+            colorBackground[] = CO2_COLOR;
+            text = "";
+        };
+        class CO_Scale_Line_1: CO_Scale_Line_0 {
+            idc = IDC_CO_Scale_Line_1;
+            x = QUOTE(ACM_AED_pxToScreen_X((AED_TOPLEFT_X + 870)));
+            y = QUOTE(ACM_AED_pxToScreen_Y(AED_CO_SCALE_Y(1)));
+            w = QUOTE(ACM_AED_pxToScreen_W(10));
+        };
+        class CO_Scale_Line_2: CO_Scale_Line_1 {
+            idc = IDC_CO_Scale_Line_2;
+            y = QUOTE(ACM_AED_pxToScreen_Y(AED_CO_SCALE_Y(2)));
+        };
+        class CO_Scale_Line_3: CO_Scale_Line_1 {
+            idc = IDC_CO_Scale_Line_3;
+            y = QUOTE(ACM_AED_pxToScreen_Y(AED_CO_SCALE_Y(3)));
+        };
+        class CO_Scale_Line_4: CO_Scale_Line_1 {
+            idc = IDC_CO_Scale_Line_4;
+            y = QUOTE(ACM_AED_pxToScreen_Y(AED_CO_SCALE_Y(4)));
+        };
+        class CO_Scale_Line_5: CO_Scale_Line_0 {
+            idc = IDC_CO_Scale_Line_5;
+            y = QUOTE(ACM_AED_pxToScreen_Y(AED_CO_SCALE_Y(5)));
+        };
+        class CO_Scale_Text_0: RscText {
+            idc = IDC_CO_Scale_Text_0;
+            x = QUOTE(ACM_AED_pxToScreen_X((AED_TOPLEFT_X + 845)));
+            y = QUOTE(ACM_AED_pxToScreen_Y((AED_CO_SCALE_Y(1) + 10)));
+            w = QUOTE(ACM_AED_pxToScreen_W(30));
+            h = QUOTE(ACM_AED_pxToScreen_H(20));
+            font = "RobotoCondensed";
+            shadow = 0;
+            type = 0;
+            style = 1;
+            colorText[] = CO2_COLOR;
+            sizeEx = QUOTE(ACM_GRID_H * 0.4 * (0.55 / (getResolution select 5)));
+            text = "0";
+        };
+        class CO_Scale_Text_50: CO_Scale_Text_0 {
+            idc = IDC_CO_Scale_Text_50;
+            y = QUOTE(ACM_AED_pxToScreen_Y((AED_CO_SCALE_Y(5) + 2)));
+            text = "50";
+        };
         class AEDBackground: RscPicture {
             idc = -1;
             x = QUOTE(ACM_GUI_AED_GRID_X);
@@ -227,15 +298,6 @@ class GVAR(Lifepak_Monitor_Dialog) {
             size = 0;
             text = QPATHTOF(ui\lifepak\background_ca.paa);
         };
-
-        /*class Test_Background: RscText {
-            idc = -1;
-            x = QUOTE(ACM_AED_pxToScreen_X(AED_BUTTON_TOPLEFT_X));
-            y = QUOTE(ACM_AED_pxToScreen_Y(AED_BUTTON_TOPLEFT_Y));
-            w = QUOTE(ACM_AED_pxToScreen_W(AED_BUTTON_W));
-            h = QUOTE(ACM_AED_pxToScreen_H(AED_BUTTON_H));
-            colorBackground[] = {1,1,1,0.5};
-        };*/
     };
 
     class Controls {
