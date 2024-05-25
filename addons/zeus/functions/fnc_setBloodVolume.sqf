@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [LOGIC] call ACM_zeus_fnc_patientState;
+ * [LOGIC] call ACM_zeus_fnc_setBloodVolume;
  *
  * Public: No
  */

@@ -5,7 +5,7 @@ class CfgPatches {
         name = COMPONENT_NAME;
         units[] = {
             QGVAR(forceWakeUp),
-            QGVAR(patientState),
+            QGVAR(setBloodVolume),
             QGVAR(unCardiacArrest),
         };
         weapons[] = {};

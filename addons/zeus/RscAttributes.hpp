@@ -24,16 +24,16 @@ class RscDisplayAttributes {
     };
 };
 
-class GVAR(RscPatientState): RscDisplayAttributes {
-    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscPatientState))] call ACEFUNC(zeus,zeusAttributes));
-    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscPatientState))] call ACEFUNC(zeus,zeusAttributes));
+class GVAR(RscSetBloodVolume): RscDisplayAttributes {
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscSetBloodVolume))] call ACEFUNC(zeus,zeusAttributes));
+    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscSetBloodVolume))] call ACEFUNC(zeus,zeusAttributes));
     class Controls: Controls {
         class Background: Background {};
         class Title: Title {};
         class Content: Content {
             class Controls {
-                class globalSetSkill: RscControlsGroupNoScrollbars {
-                    onSetFocus = QUOTE(_this call FUNC(patientState));
+                class SetBloodVolumeTab: RscControlsGroupNoScrollbars {
+                    onSetFocus = QUOTE(_this call FUNC(setBloodVolume));
                     idc = IDC_MODULE_PATIENT_STATE;
                     x = 0;
                     y = 0;

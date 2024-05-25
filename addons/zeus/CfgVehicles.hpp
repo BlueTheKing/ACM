@@ -22,9 +22,9 @@ class CfgVehicles {
         function = QFUNC(forceWakeUp);
         icon = QACEPATHTOF(zeus,ui\Icon_Module_Zeus_Heal_ca.paa);
     };
-    class GVAR(patientState): GVAR(moduleBase) {
-        displayName = "Set Patient State";
+    class GVAR(setBloodVolume): GVAR(moduleBase) {
+        displayName = "Set Blood Volume";
         icon = QACEPATHTOF(zeus,ui\Icon_Module_Zeus_Heal_ca.paa);
-        curatorInfoType = QGVAR(RscPatientState);
+        curatorInfoType = QGVAR(RscSetBloodVolume);
     };
 };
