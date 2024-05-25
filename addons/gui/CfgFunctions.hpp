@@ -8,9 +8,9 @@ class CfgFunctions {
             class onMenuOpen {
                 file = QPATHTOF(overrides\fnc_onMenuOpen.sqf);
             };
-            /*class updateBodyImage { TODO REMOVE
+            class updateBodyImage {
                 file = QPATHTOF(overrides\fnc_updateBodyImage.sqf);
-            };*/
+            };
         };
     };
 };
