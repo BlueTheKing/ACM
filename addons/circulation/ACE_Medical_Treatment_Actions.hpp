@@ -10,7 +10,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Feel Pulse";
         displayNameProgress = "";
         treatmentTime = 0.001;
-        allowedSelections[] = {"All"};
+        allowedSelections[] = {"Head","LeftArm","RightArm","LeftLeg","RightLeg"};
         condition = "true";
         callbackSuccess = QFUNC(feelPulse);
     };

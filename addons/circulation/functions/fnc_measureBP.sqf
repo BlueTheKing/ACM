@@ -102,7 +102,11 @@ if (_stethoscope) then {
             _HR = 0;
         };
 
-        if (_HR > 0 && alive _patient) then {
+        (GET_BLOOD_PRESSURE(_patient)) params ["_BPDiastolic", "_BPSystolic"];
+
+        private _pressureTooLow = 80 > _BPSystolic;
+
+        if (_HR > 0 && !_pressureTooLow && alive _patient) then {
             if (GVAR(MeasureBP_NextHeartBeat) < CBA_missionTime) then {
                 private _heartBeatDelay = 60 / _HR;
                 GVAR(MeasureBP_NextHeartBeat) = CBA_missionTime + _heartBeatDelay;
@@ -120,17 +124,17 @@ if (_stethoscope) then {
                     };
                 };
 
-                (GET_BLOOD_PRESSURE(_patient)) params ["_BPDiastolic", "_BPSystolic"];
+                private _strength = linearConversion [(80.1), 120, _BPSystolic, 0.01, 1, true];
 
                 private _gaugeActual = (GVAR(MeasureBP_Gauge) - GVAR(MeasureBP_Gauge_Offset) - 90);
 
-                if (_gaugeActual <= (_BPSystolic + 15) && _gaugeActual >= (_BPDiastolic - 15)) then {
+                if (_gaugeActual <= (_BPSystolic + (20 * _strength)) && _gaugeActual >= (_BPDiastolic - (20 * _strength))) then {
                     GVAR(MeasureBP_Gauge) = GVAR(MeasureBP_Gauge) + 3;
                 };
 
                 if (_gaugeActual <= _BPSystolic && _gaugeActual >= _BPDiastolic) then {
                     private _maxVolume = _BPSystolic - (_BPSystolic - _BPDiastolic) / 2;
-                    private _volume = linearConversion [40, 0, (abs (_gaugeActual - _maxVolume)), 0, 1, true];
+                    private _volume = (linearConversion [40, 0, (abs (_gaugeActual - _maxVolume)), 0, 1, true]) * _strength;
                     GVAR(MeasureBP_HeartBeatSoundID) = playSoundUI [(format ["ACM_Stethoscope_HeartBeat_%1_%2", _rate, _variant]), _volume, (1 + (random 0.1)), false];
                 };
             };
@@ -225,6 +229,8 @@ if (_stethoscope) then {
 
     (GET_BLOOD_PRESSURE(_patient)) params ["_BPDiastolic", "_BPSystolic"];
 
+    private _pressureTooLow = 80 > _BPSystolic;
+
     private _gaugeActual = (GVAR(MeasureBP_Gauge) - GVAR(MeasureBP_Gauge_Offset) - 90);
     private _strength = linearConversion [_BPSystolic, (_BPSystolic - 10), _gaugeActual, 0.01, 1, true];
 
@@ -232,21 +238,21 @@ if (_stethoscope) then {
         _HR = 0;
     };
 
-    if (_HR > 0 && alive _patient) then {
+    if (_HR > 0 && !_pressureTooLow && alive _patient) then {
         _ctrlHeart ctrlShow true;
 
         if (GVAR(MeasureBP_NextHeartBeat) < CBA_missionTime) then {
             private _heartBeatDelay = 60 / _HR;
             GVAR(MeasureBP_NextHeartBeat) = CBA_missionTime + _heartBeatDelay;
 
-            if (_gaugeActual <= (_BPSystolic + 15) && _gaugeActual >= (_BPDiastolic - 15)) then {
+            if (_gaugeActual <= (_BPSystolic + (20 * _strength)) && _gaugeActual >= (_BPDiastolic - (20 * _strength))) then {
                 GVAR(MeasureBP_Gauge) = GVAR(MeasureBP_Gauge) + 3;
             };
 
             private _beatTime = 0.5 min (0.4 * _heartBeatDelay);
             private _releaseTime = 0.7 min (0.6 * _heartBeatDelay);
 
-            private _maxStrength = _strength * 3;
+            private _maxStrength = _strength * (linearConversion [(80.1), 120, _BPSystolic, 0.01, 1, true]) * 3;
 
             _ctrlHeart ctrlSetPosition [_x_pos(_maxStrength), _y_pos(_maxStrength), _w_pos(_maxStrength), _h_pos(_maxStrength)];
             _ctrlHeart ctrlCommit _beatTime;

@@ -39,22 +39,15 @@ params ["_medic", "_patient", "_bodyPart"];
 
     private _bodyPartString = switch (_bodyPart) do {
         case "head": {
-            ACELLSTRING(Medical_GUI,Head);
+            "Carotid";
         };
-        case "body": {
-            ACELLSTRING(Medical_GUI,Torso);
-        };
-        case "leftarm": {
-            ACELLSTRING(Medical_GUI,LeftArm);
-        };
+        case "leftarm";
         case "rightarm": {
-            ACELLSTRING(Medical_GUI,RightArm);
+            "Radial";
         };
-        case "leftleg": {
-            ACELLSTRING(Medical_GUI,LeftLeg);
-        };
+        case "leftleg";
         case "rightleg": {
-            ACELLSTRING(Medical_GUI,RightLeg);
+            "Femoral";
         };
     };
 
@@ -77,21 +70,28 @@ params ["_medic", "_patient", "_bodyPart"];
 
     private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
+    private _pressureCutoff = [60,0,80,80,70,70] select _partIndex;
+
+    (GET_BLOOD_PRESSURE(_patient)) params ["", "_BPSystolic"];
+
+    private _pressureTooLow = _pressureCutoff > _BPSystolic;
+
     if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) then {
         _HR = 0;
     };
 
-    if (_HR > 0 && alive _patient) then {
+    if (_HR > 0 && !_pressureTooLow && alive _patient) then {
         _ctrlHeart ctrlShow true;
         
         if (GVAR(FeelPulse_NextPulse) > CBA_missionTime) exitWith {};
 
         private _delay = 60 / _HR;
+        private _strength = (linearConversion [(_pressureCutoff + 0.1), (_pressureCutoff + 40), _BPSystolic, 0.01, 1, true]) * 3;
 
         private _beatTime = 0.5 min (0.4 * _delay);
         private _releaseTime = 0.7 min (0.6 * _delay);
 
-        _ctrlHeart ctrlSetPosition [_x_pos(3), _y_pos(3), _w_pos(3), _h_pos(3)];
+        _ctrlHeart ctrlSetPosition [_x_pos(_strength), _y_pos(_strength), _w_pos(_strength), _h_pos(_strength)];
         _ctrlHeart ctrlCommit _beatTime;
 
         [{
