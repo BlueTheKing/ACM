@@ -61,21 +61,27 @@ params ["_medic", "_patient"];
 
     private _display = uiNamespace getVariable [QGVAR(Stethoscope_DLG), displayNull];
     private _ctrlBell = _display displayCtrl IDC_STETHOSCOPE_BELL;
-    private _ctrlBellPos = [(((ctrlPosition _ctrlBell) select 0) + (((ctrlPosition _ctrlBell) select 2) / 2)), (((ctrlPosition _ctrlBell) select 1) + (((ctrlPosition _ctrlBell) select 3) / 2))];
+    private _ctrlBellCenter = [(((ctrlPosition _ctrlBell) select 0) + (((ctrlPosition _ctrlBell) select 2) / 2)), (((ctrlPosition _ctrlBell) select 1) + (((ctrlPosition _ctrlBell) select 3) / 2))];
 
     private _ctrlLeftLung = ctrlPosition (_display displayCtrl IDC_STETHOSCOPE_LEFTLUNG);
-    private _ctrlLeftLungPos = [((_ctrlLeftLung select 0) + ((_ctrlLeftLung select 2) / 2)), ((_ctrlLeftLung select 1) + ((_ctrlLeftLung select 3) / 2))];
+    private _ctrlLeftLungCenter = [((_ctrlLeftLung select 0) + ((_ctrlLeftLung select 2) / 2)), ((_ctrlLeftLung select 1) + ((_ctrlLeftLung select 3) / 2))];
     private _ctrlRightLung = ctrlPosition (_display displayCtrl IDC_STETHOSCOPE_RIGHTLUNG);
-    private _ctrlRightLungPos = [((_ctrlRightLung select 0) + ((_ctrlRightLung select 2) / 2)), ((_ctrlRightLung select 1) + ((_ctrlRightLung select 3) / 2))];
+    private _ctrlRightLungCenter = [((_ctrlRightLung select 0) + ((_ctrlRightLung select 2) / 2)), ((_ctrlRightLung select 1) + ((_ctrlRightLung select 3) / 2))];
     private _ctrlHeart = ctrlPosition (_display displayCtrl IDC_STETHOSCOPE_HEART);
-    private _ctrlHeartPos = [((_ctrlHeart select 0) + ((_ctrlHeart select 2) / 2)), ((_ctrlHeart select 1) + ((_ctrlHeart select 3) / 2))];
+    private _ctrlHeartCenter = [((_ctrlHeart select 0) + ((_ctrlHeart select 2) / 2)), ((_ctrlHeart select 1) + ((_ctrlHeart select 3) / 2))];
 
-    private _rightLungDistance = (_ctrlRightLungPos distance2D _ctrlBellPos);
-    private _rightLungCondition = ((_ctrlRightLung select 0) < (_ctrlBellPos select 0)) && ((_ctrlBellPos select 0) < ((_ctrlRightLung select 0) + ACM_pxToScreen_W(STETHOSCOPE_LUNG_WIDTH))) && ((_ctrlRightLung select 1) < (_ctrlBellPos select 1)) && ((_ctrlBellPos select 1) < ((_ctrlRightLung select 1) + ACM_pxToScreen_H(STETHOSCOPE_LUNG_HEIGHT)));
-    private _leftLungDistance = (_ctrlLeftLungPos distance2D _ctrlBellPos);
-    private _leftLungCondition = ((_ctrlLeftLung select 0) < (_ctrlBellPos select 0)) && ((_ctrlBellPos select 0) < ((_ctrlLeftLung select 0) + ACM_pxToScreen_W(STETHOSCOPE_LUNG_WIDTH))) && ((_ctrlLeftLung select 1) < (_ctrlBellPos select 1)) && ((_ctrlBellPos select 1) < ((_ctrlLeftLung select 1) + ACM_pxToScreen_H(STETHOSCOPE_LUNG_HEIGHT)));
-    private _heartDistance = (_ctrlHeartPos distance2D _ctrlBellPos);
-    private _heartCondition = ((_ctrlHeart select 0) < (_ctrlBellPos select 0)) && ((_ctrlHeart select 0) < ((_ctrlLeftLung select 0) + ACM_pxToScreen_W(STETHOSCOPE_HEART_WIDTH))) && ((_ctrlHeart select 1) < (_ctrlBellPos select 1)) && ((_ctrlBellPos select 1) < ((_ctrlHeart select 1) + ACM_pxToScreen_H(STETHOSCOPE_HEART_HEIGHT)));
+    private _rightLungDistance = (_ctrlRightLungCenter distance2D _ctrlBellCenter);
+    
+    private _rightLungCondition = [_ctrlRightLung, _ctrlBellCenter] call EFUNC(GUI,inZone);
+    private _leftLungDistance = (_ctrlLeftLungCenter distance2D _ctrlBellCenter);
+    
+    private _leftLungCondition = [_ctrlLeftLung, _ctrlBellCenter] call EFUNC(GUI,inZone);
+
+    private _heartDistance = (_ctrlHeartCenter distance2D _ctrlBellCenter);
+    private _heartCondition = [_ctrlHeart, _ctrlBellCenter] call EFUNC(GUI,inZone);
+
+    private _ctrlClavicle = ctrlPosition (_display displayCtrl IDC_STETHOSCOPE_CLAVICLE);
+    private _clavicleCondition = [_ctrlClavicle, _ctrlBellCenter] call EFUNC(GUI,inZone);
 
     if (GVAR(Stethoscope_BellMoving)) then {
         getMousePosition params ["_mouseX", "_mouseY"];
@@ -109,6 +115,8 @@ params ["_medic", "_patient"];
             if (GVAR(Stethoscope_NextBeat) < CBA_missionTime) then {
                 private _heartBeatDelay = 60 / _HR;
                 GVAR(Stethoscope_NextBeat) = CBA_missionTime + _heartBeatDelay;
+
+                if (_clavicleCondition) exitWith {};
 
                 private _variant = 1 + (round (random 2));
                 private _rate = switch (true) do {

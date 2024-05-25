@@ -48,6 +48,14 @@ class GVAR(Stethoscope_Dialog) {
             h = QUOTE(ACM_pxToScreen_H(STETHOSCOPE_HEART_HEIGHT));
             colorBackground[] = {1,0,0,0.5};
         };
+        class ClavicleSpace: RightLungSpace {
+            idc = IDC_STETHOSCOPE_CLAVICLE;
+            x = QUOTE(ACM_pxToScreen_X((STETHOSCOPE_TOPLEFT_X - 40)));
+            y = QUOTE(ACM_pxToScreen_Y((STETHOSCOPE_TOPLEFT_Y - 80)));
+            w = QUOTE(ACM_pxToScreen_W(915));
+            h = QUOTE(ACM_pxToScreen_H(60));
+            colorBackground[] = {0,1,0,0.1};
+        };
     };
     class Controls {
         class TopText: RscText {
