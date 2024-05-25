@@ -53,7 +53,7 @@ class ACEGVAR(medical_treatment,actions) {
         medicRequired = 0;
         treatmentTime = QGVAR(treatmentTimeRecoveryPosition);
         allowedSelections[] = {"Body"};
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == '') && !(IN_RECOVERYPOSITION(_patient)));
+        condition = QUOTE(!([_patient] call EFUNC(core,cprActive)) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == '') && !(IN_RECOVERYPOSITION(_patient)));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(setRecoveryPosition));
         ACM_rollToBack = 0;
     };
