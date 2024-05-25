@@ -75,9 +75,9 @@ if (_stethoscope) then {
 
         if (_targetDegree != _currentDegree) then {
             if (_targetDegree > _currentDegree) then {
-                _currentDegree = _currentDegree + 1;
+                _currentDegree = _currentDegree + 0.5;
             } else {
-                _currentDegree = _currentDegree - 1;
+                _currentDegree = _currentDegree - 0.5;
             };
 
             GVAR(MeasureBP_Gauge) = _currentDegree;
@@ -123,6 +123,10 @@ if (_stethoscope) then {
                 (GET_BLOOD_PRESSURE(_patient)) params ["_BPDiastolic", "_BPSystolic"];
 
                 private _gaugeActual = (GVAR(MeasureBP_Gauge) - GVAR(MeasureBP_Gauge_Offset) - 90);
+
+                if (_gaugeActual <= (_BPSystolic + 15) && _gaugeActual >= (_BPDiastolic - 15)) then {
+                    GVAR(MeasureBP_Gauge) = GVAR(MeasureBP_Gauge) + 3;
+                };
 
                 if (_gaugeActual <= _BPSystolic && _gaugeActual >= _BPDiastolic) then {
                     private _maxVolume = _BPSystolic - (_BPSystolic - _BPDiastolic) / 2;
@@ -192,9 +196,9 @@ if (_stethoscope) then {
 
     if (_targetDegree != _currentDegree) then {
         if (_targetDegree > _currentDegree) then {
-            _currentDegree = _currentDegree + 1;
+            _currentDegree = _currentDegree + 0.5;
         } else {
-            _currentDegree = _currentDegree - 1;
+            _currentDegree = _currentDegree - 0.5;
         };
 
         GVAR(MeasureBP_Gauge) = _currentDegree;
@@ -234,6 +238,10 @@ if (_stethoscope) then {
         if (GVAR(MeasureBP_NextHeartBeat) < CBA_missionTime) then {
             private _heartBeatDelay = 60 / _HR;
             GVAR(MeasureBP_NextHeartBeat) = CBA_missionTime + _heartBeatDelay;
+
+            if (_gaugeActual <= (_BPSystolic + 15) && _gaugeActual >= (_BPDiastolic - 15)) then {
+                GVAR(MeasureBP_Gauge) = GVAR(MeasureBP_Gauge) + 3;
+            };
 
             private _beatTime = 0.5 min (0.4 * _heartBeatDelay);
             private _releaseTime = 0.7 min (0.6 * _heartBeatDelay);

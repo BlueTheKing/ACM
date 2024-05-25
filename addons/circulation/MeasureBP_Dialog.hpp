@@ -135,7 +135,7 @@ class GVAR(MeasureBP_Dialog)
             y = QUOTE(ACM_MEASUREBP_pxToScreen_Y((MEASUREBP_INTERACTABLE_TOPLEFT_Y + 590)));
             w = QUOTE(ACM_MEASUREBP_pxToScreen_W(75));
             h = QUOTE(ACM_MEASUREBP_pxToScreen_H(75));
-            tooltip = "Release Pressure\n-5 (LMB) | -1 (RMB)";
+            tooltip = "Release Pressure\n-10 (LMB) | -2 (RMB)";
         };
     };
 };

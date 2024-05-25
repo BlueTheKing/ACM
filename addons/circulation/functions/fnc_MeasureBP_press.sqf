@@ -31,9 +31,9 @@ if ((ctrlIDC _control) == IDC_MEASUREBP_BUTTON_BULB) then {
     };
 } else {
     if (_button == 0) then {
-        _value = -5;
+        _value = -10;
     } else {
-        _value = -1;
+        _value = -2;
     };
 };
 
