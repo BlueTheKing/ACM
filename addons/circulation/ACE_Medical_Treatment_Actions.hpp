@@ -66,7 +66,6 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 5;
         allowedSelections[] = {"Body"};
         allowSelfTreatment = 0;
-        items[] = {"ACM_AED"};
         consumeItem = 0;
         condition = QUOTE(!([ARR_3(_patient,_bodyPart,1)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call FUNC(setAED));

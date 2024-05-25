@@ -26,6 +26,8 @@
 
 params ["_medic", "_patient", "_bodyPart", "_type", ["_state", true], ["_hideLog", false]];
 
+if !([_medic,_patient] call FUNC(canConnectAED)) exitWith {};
+
 private _hint = "";
 
 switch (_type) do {
