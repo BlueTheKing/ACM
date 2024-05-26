@@ -27,7 +27,7 @@ if (_state == 0) then {
     _state = _state + 1;
 };
 
-_patient setVariable [QGVAR(Hemothorax_State), _state];
+_patient setVariable [QGVAR(Hemothorax_State), _state, true];
 
 [_patient] call FUNC(updateBreathingState);
 

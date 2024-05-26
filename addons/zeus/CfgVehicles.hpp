@@ -24,7 +24,12 @@ class CfgVehicles {
     };
     class GVAR(setBloodVolume): GVAR(moduleBase) {
         displayName = "Set Blood Volume";
-        icon = QACEPATHTOF(zeus,ui\Icon_Module_Zeus_Heal_ca.paa);
+        icon = QPATHTOF(ui\Icon_Module_BloodVolume_ca.paa);
         curatorInfoType = QGVAR(RscSetBloodVolume);
+    };
+    class GVAR(inflictChestInjury): GVAR(moduleBase) {
+        displayName = "Inflict Chest Injury";
+        icon = QPATHTOF(ui\Icon_Module_ChestInjury_ca.paa);
+        curatorInfoType = QGVAR(RscInflictChestInjury);
     };
 };

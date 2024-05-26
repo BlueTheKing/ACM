@@ -5,6 +5,7 @@ class CfgPatches {
         name = COMPONENT_NAME;
         units[] = {
             QGVAR(forceWakeUp),
+            QGVAR(inflictChestInjury),
             QGVAR(setBloodVolume),
             QGVAR(unCardiacArrest),
         };

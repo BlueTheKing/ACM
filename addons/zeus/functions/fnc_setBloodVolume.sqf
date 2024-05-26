@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [LOGIC] call ACM_zeus_fnc_setBloodVolume;
+ * [CONTROL] call ACM_zeus_fnc_setBloodVolume;
  *
  * Public: No
  */
@@ -36,14 +36,14 @@ private _fnc_errorAndClose = {
     breakOut "Main";
 };
 
-switch (false) do {
-    case !(isNull _unit): {
+switch (true) do {
+    case (isNull _unit): {
         [ACELSTRING(zeus,NothingSelected)] call _fnc_errorAndClose;
     };
-    case (_unit isKindOf "CAManBase"): {
+    case !(_unit isKindOf "CAManBase"): {
         [ACELSTRING(zeus,OnlyInfantry)] call _fnc_errorAndClose;
     };
-    case (alive _unit): {
+    case !(alive _unit): {
         [ACELSTRING(zeus,OnlyAlive)] call _fnc_errorAndClose;
     };
 };
@@ -56,9 +56,9 @@ private _fnc_onUnload = {
     deleteVehicle _logic;
 };
 
-private _ctrlBloodVolume = _display displayCtrl IDC_MODULE_PATIENT_STATE_BLOODVOLUME;
-private _ctrlPlasmaVolume = _display displayCtrl IDC_MODULE_PATIENT_STATE_PLASMAVOLUME;
-private _ctrlSalineVolume = _display displayCtrl IDC_MODULE_PATIENT_STATE_SALINEVOLUME;
+private _ctrlBloodVolume = _display displayCtrl IDC_MODULE_SET_BLOOD_VOLUME_BLOODVOLUME;
+private _ctrlPlasmaVolume = _display displayCtrl IDC_MODULE_SET_BLOOD_VOLUME_PLASMAVOLUME;
+private _ctrlSalineVolume = _display displayCtrl IDC_MODULE_SET_BLOOD_VOLUME_SALINEVOLUME;
 
 private _patient = attachedTo _logic;
 
@@ -73,7 +73,7 @@ _ctrlSalineVolume sliderSetPosition _currentSalineVolume;
 private _fnc_sliderMove = {
     params ["_slider"];
 
-    private _idcIndex = (ctrlIDC _slider) - IDC_MODULE_PATIENT_STATE_BLOODVOLUME;
+    private _idcIndex = (ctrlIDC _slider) - IDC_MODULE_SET_BLOOD_VOLUME_BLOODVOLUME;
 
     private _logic = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
     if (isNull _logic) exitWith {};
@@ -93,7 +93,7 @@ private _fnc_sliderMove = {
     private _slider = _display displayCtrl _x;
     _slider ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderMove];
     _slider call _fnc_sliderMove;
-} forEach [IDC_MODULE_PATIENT_STATE_BLOODVOLUME,IDC_MODULE_PATIENT_STATE_PLASMAVOLUME,IDC_MODULE_PATIENT_STATE_SALINEVOLUME];
+} forEach [IDC_MODULE_SET_BLOOD_VOLUME_BLOODVOLUME,IDC_MODULE_SET_BLOOD_VOLUME_PLASMAVOLUME,IDC_MODULE_SET_BLOOD_VOLUME_SALINEVOLUME];
 
 private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
@@ -106,9 +106,9 @@ private _fnc_onConfirm = {
 
     private _patient = attachedTo _logic;
 
-    private _ctrlBloodVolume = _display displayCtrl IDC_MODULE_PATIENT_STATE_BLOODVOLUME;
-    private _ctrlPlasmaVolume = _display displayCtrl IDC_MODULE_PATIENT_STATE_PLASMAVOLUME;
-    private _ctrlSalineVolume = _display displayCtrl IDC_MODULE_PATIENT_STATE_SALINEVOLUME;
+    private _ctrlBloodVolume = _display displayCtrl IDC_MODULE_SET_BLOOD_VOLUME_BLOODVOLUME;
+    private _ctrlPlasmaVolume = _display displayCtrl IDC_MODULE_SET_BLOOD_VOLUME_PLASMAVOLUME;
+    private _ctrlSalineVolume = _display displayCtrl IDC_MODULE_SET_BLOOD_VOLUME_SALINEVOLUME;
 
     private _bloodVolume = sliderPosition _ctrlBloodVolume;
     private _plasmaVolume = sliderPosition _ctrlPlasmaVolume;

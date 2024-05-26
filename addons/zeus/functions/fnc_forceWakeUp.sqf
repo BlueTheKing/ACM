@@ -30,14 +30,14 @@ private _fnc_errorAndClose = {
     breakOut "Main";
 };
 
-switch (false) do {
-    case !(isNull _unit): {
+switch (true) do {
+    case (isNull _unit): {
         [ACELSTRING(zeus,NothingSelected)] call _fnc_errorAndClose;
     };
-    case (_unit isKindOf "CAManBase"): {
+    case !(_unit isKindOf "CAManBase"): {
         [ACELSTRING(zeus,OnlyInfantry)] call _fnc_errorAndClose;
     };
-    case (alive _unit): {
+    case !(alive _unit): {
         [ACELSTRING(zeus,OnlyAlive)] call _fnc_errorAndClose;
     };
 };

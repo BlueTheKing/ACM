@@ -34,7 +34,7 @@ class GVAR(RscSetBloodVolume): RscDisplayAttributes {
             class Controls {
                 class SetBloodVolumeTab: RscControlsGroupNoScrollbars {
                     onSetFocus = QUOTE(_this call FUNC(setBloodVolume));
-                    idc = IDC_MODULE_PATIENT_STATE;
+                    idc = IDC_MODULE_SET_BLOOD_VOLUME;
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
@@ -50,7 +50,7 @@ class GVAR(RscSetBloodVolume): RscDisplayAttributes {
                             colorBackground[] = {0,0,0,0.5};
                         };
                         class Slider_BloodVolume: RscXSliderH {
-                            idc = IDC_MODULE_PATIENT_STATE_BLOODVOLUME;
+                            idc = IDC_MODULE_SET_BLOOD_VOLUME_BLOODVOLUME;
                             x = QUOTE(W_PART(10.1));
                             y = 0;
                             w = QUOTE(W_PART(15.9));
@@ -64,7 +64,7 @@ class GVAR(RscSetBloodVolume): RscDisplayAttributes {
                             y = QUOTE(H_PART(1.1));
                         };
                         class Slider_PlasmaVolume: Slider_BloodVolume {
-                            idc = IDC_MODULE_PATIENT_STATE_PLASMAVOLUME;
+                            idc = IDC_MODULE_SET_BLOOD_VOLUME_PLASMAVOLUME;
                             y = QUOTE(H_PART(1.1));
                             sliderPosition = 0;
                         };
@@ -73,9 +73,53 @@ class GVAR(RscSetBloodVolume): RscDisplayAttributes {
                             y = QUOTE(H_PART(2.2));
                         };
                         class Slider_SalineVolume: Slider_BloodVolume {
-                            idc = IDC_MODULE_PATIENT_STATE_SALINEVOLUME;
+                            idc = IDC_MODULE_SET_BLOOD_VOLUME_SALINEVOLUME;
                             y = QUOTE(H_PART(2.2));
                             sliderPosition = 0;
+                        };
+                    };
+                };
+            };
+        };
+        class ButtonOK: ButtonOK {};
+        class ButtonCancel: ButtonCancel {};
+    };
+};
+
+class GVAR(RscInflictChestInjury): RscDisplayAttributes {
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscInflictChestInjury))] call ACEFUNC(zeus,zeusAttributes));
+    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscInflictChestInjury))] call ACEFUNC(zeus,zeusAttributes));
+    class Controls: Controls {
+        class Background: Background {};
+        class Title: Title {};
+        class Content: Content {
+            class Controls {
+                class InflictChestInjuryTab: RscControlsGroupNoScrollbars {
+                    onSetFocus = QUOTE(_this call FUNC(inflictChestInjury));
+                    idc = IDC_MODULE_INFLICT_CHEST_INJURY;
+                    x = 0;
+                    y = 0;
+                    w = QUOTE(W_PART(26));
+                    h = QUOTE(H_PART(6.5));
+                    class Controls {
+                        class Title_InjuryType: RscText {
+                            idc = -1;
+                            text = "Injury Type";
+                            x = 0;
+                            y = 0;
+                            w = QUOTE(W_PART(10));
+                            h = QUOTE(H_PART(3));
+                            colorBackground[] = {0,0,0,0.5};
+                        };
+                        class List_InjuryType: ctrlToolbox {
+                            idc = IDC_MODULE_INFLICT_CHEST_INJURY_LIST;
+                            x = QUOTE(W_PART(10.1));
+                            y = 0;
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(3));
+                            rows = 2;
+                            columns = 2;
+                            strings[] = {"Pneumothorax", "Tension Pneumothorax", "Hemothorax", "Tension Hemothorax"};
                         };
                     };
                 };
