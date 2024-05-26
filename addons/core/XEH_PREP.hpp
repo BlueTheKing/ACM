@@ -1,3 +1,5 @@
+PREP(addVehicleCarryLoadActions);
+PREP(addVehicleUnloadCarryPatientActions);
 PREP(beginContinuousAction);
 PREP(canCheckDogtag);
 PREP(cprActive);
@@ -8,3 +10,4 @@ PREP(initUnit);
 PREP(onCardiacArrest);
 PREP(onUnconscious);
 PREP(resetVariables);
+PREP(unloadAndCarryPatient);
