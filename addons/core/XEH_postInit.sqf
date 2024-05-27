@@ -32,3 +32,11 @@
 
     _unit setVariable [QGVAR(TimeOfDeath), CBA_missionTime, true];
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(cancelCarryingPrompt), LINKFUNC(cancelCarryingPrompt)] call CBA_fnc_addEventHandler;
+[QGVAR(cancelCarryLocal), {
+    params ["_carrier", "_target"];
+
+    [format ["Stopped carrying %1", [_target, true] call ACEFUNC(common,getName)], 1.5, _carrier] call ACEFUNC(common,displayTextStructured);
+    [_carrier, _target] call ACEFUNC(dragging,dropObject_carry);
+}] call CBA_fnc_addEventHandler;

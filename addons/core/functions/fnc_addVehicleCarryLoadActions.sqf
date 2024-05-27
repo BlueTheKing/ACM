@@ -51,7 +51,7 @@ ACELLSTRING(Interaction,MainAction),
     _loadAction pushBack [
         [format ["ACM_LoadCarriedPatient_%1", _type],
         ACELLSTRING(medical_gui,LoadPatient),
-        QACEPATHTOF(medical_gui,ui\cross.paa),
+        QPATHTOF(ui\person_load.paa),
         {
             params ["", "", "_args"];
             _args params ["_vehicle", "_medic", "_fnc_getFreeSeats"];

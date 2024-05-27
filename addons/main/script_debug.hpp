@@ -7,10 +7,12 @@ Fast Recompiling via function
 // To Use: [] call ACM_PREP_RECOMPILE;
 
 #ifdef DISABLE_COMPILE_CACHE
+    #define ACELINKFUNC(addon,x) {_this call ACEFUNC(addon,x)}
     #define LINKFUNC(x) {_this call FUNC(x)}
     #define PREP_RECOMPILE_START    if (isNil "ACM_PREP_RECOMPILE") then {ACM_RECOMPILES = []; ACM_PREP_RECOMPILE = {{call _x} forEach ACM_RECOMPILES;}}; private _recomp = {
     #define PREP_RECOMPILE_END      }; call _recomp; ACM_RECOMPILES pushBack _recomp;
 #else
+    #define ACELINKFUNC(addon,x) ACEFUNC(addon,x)
     #define LINKFUNC(x) FUNC(x)
     #define PREP_RECOMPILE_START ; /* disabled */
     #define PREP_RECOMPILE_END ; /* disabled */

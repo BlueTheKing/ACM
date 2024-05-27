@@ -113,7 +113,7 @@ class CfgVehicles {
                     exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
                     statement = "";
                     insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(medical_gui,ui\cross.paa);
+                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
                 };
             };
         };
@@ -129,7 +129,7 @@ class CfgVehicles {
                     exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
                     statement = "";
                     insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(medical_gui,ui\cross.paa);
+                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
                 };
             };
         };
@@ -144,7 +144,7 @@ class CfgVehicles {
                     exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
                     statement = "";
                     insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(medical_gui,ui\cross.paa);
+                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
                 };
             };
         };
@@ -159,7 +159,7 @@ class CfgVehicles {
                     exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
                     statement = "";
                     insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(medical_gui,ui\cross.paa);
+                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
                 };
             };
         };
@@ -174,7 +174,7 @@ class CfgVehicles {
                     exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
                     statement = "";
                     insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(medical_gui,ui\cross.paa);
+                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
                 };
             };
         };
@@ -190,7 +190,7 @@ class CfgVehicles {
                     exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
                     statement = "";
                     insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(medical_gui,ui\cross.paa);
+                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
                 };
             };
         };
@@ -205,7 +205,7 @@ class CfgVehicles {
                     exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
                     statement = "";
                     insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(medical_gui,ui\cross.paa);
+                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
                 };
             };
         };
@@ -221,7 +221,7 @@ class CfgVehicles {
                     exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
                     statement = "";
                     insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(dragging,UI\icons\person_carry.paa);
+                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
                 };
             };
         };

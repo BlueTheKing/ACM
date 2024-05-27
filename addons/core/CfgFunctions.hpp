@@ -106,6 +106,17 @@ class CfgFunctions {
             };
         };
     };
+    class overwrite_ace_dragging {
+        tag = "ace_dragging";
+        class ace_dragging {
+            class carryObject { // Cancel carrying prompt
+                file = QPATHTOF(overrides\fnc_carryObject.sqf);
+            };
+            class handleUnconscious { // Cancel carrying prompt, prevent dropping woken-up casualties
+                file = QPATHTOF(overrides\fnc_handleUnconscious.sqf);
+            };
+        };
+    };
     /*class overwrite_CBA_statemachine { // TODO statemachine fuckery
         tag = "CBA_statemachine";
         class CBA_statemachine {
