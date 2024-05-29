@@ -10,7 +10,7 @@
  * 2: Rhythm Sequence Offset <NUMBER>
  *
  * Return Value:
- * Rhythm Array <ARRAY<NUMBER>>
+ * [Rhythm Array <ARRAY<NUMBER>>, Safe Spacing Array] <ARRAY<ARRAY>>
  *
  * Example:
  * [0, 7, 0] call ACM_circulation_fnc_displayAEDMonitor_generateEKG;
@@ -53,7 +53,20 @@ private _generateNoisyRhythmStep = {
     _noisyRhythm;
 };
 
+private _generateSafeSpacing = {
+    params ["_count", ["_safe", false]];
+
+    private _array = [];
+
+    for "_i" from 1 to _count do {
+        _array pushBack _safe;
+    };
+
+    _array;
+};
+
 private _rhythmArray = [];
+private _safeSpacingArray = [];
 
 switch (_rhythm) do {
     case -1: { // CPR
@@ -67,6 +80,7 @@ switch (_rhythm) do {
 
         for "_i" from 0 to _repeat do {
             _rhythmArray = _rhythmArray + ([_spacing] call _fnc_generateStepSpacingArray) + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
+            _safeSpacingArray = _safeSpacingArray + ([_spacing, true] call _generateSafeSpacing) + ([15] call _generateSafeSpacing);
         };
     };
     case 5; // PEA
@@ -81,6 +95,7 @@ switch (_rhythm) do {
 
         for "_i" from 0 to _repeat do {
             _rhythmArray = _rhythmArray + ([_spacing] call _fnc_generateStepSpacingArray) + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
+            _safeSpacingArray = _safeSpacingArray + ([_spacing, true] call _generateSafeSpacing) + ([15] call _generateSafeSpacing);
         };
     };
     case 1: { // Asystole
@@ -130,5 +145,10 @@ if (_arrayOffset > 0) then {
     _rhythmArray deleteRange [0,_arrayOffset];
 };
 
+if (count _safeSpacingArray < 1) then {
+    _safeSpacingArray resize [_maxLength, true];
+};
+
 _rhythmArray resize [_maxLength, 0];
-_rhythmArray;
+
+[_rhythmArray,_safeSpacingArray];

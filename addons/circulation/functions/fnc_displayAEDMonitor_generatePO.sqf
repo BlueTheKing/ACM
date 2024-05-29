@@ -11,7 +11,7 @@
  * 3: Patient Oxygen Saturation <NUMBER>
  *
  * Return Value:
- * Rhythm Array <ARRAY<NUMBER>>
+ * [Rhythm Array <ARRAY<NUMBER>>, Safe Spacing Array] <ARRAY<ARRAY>>
  *
  * Example:
  * [0, 7, 0, 99] call ACM_circulation_fnc_displayAEDMonitor_generatePO;
@@ -57,7 +57,20 @@ private _generateNoisyRhythmStep = {
     _noisyRhythm;
 };
 
+private _generateSafeSpacing = {
+    params ["_count", ["_safe", false]];
+
+    private _array = [];
+
+    for "_i" from 1 to _count do {
+        _array pushBack _safe;
+    };
+
+    _array;
+};
+
 private _rhythmArray = [];
+private _safeSpacingArray = [];
 
 switch (_rhythm) do {
     case -5: {
@@ -69,8 +82,8 @@ switch (_rhythm) do {
             _rhythmArray = _rhythmArray + _step;
         };
     };
-    case -1;
-    case 0: {
+    case -1; // CPR
+    case 0: { // Sinus
         //[0,-10,-30,-40,-45,-47,-49.2,-50,-49.2,-45,-40,-38,-33,-30,-15]; // 15
         private _cleanRhythmStep = [0, -10 * _saturation, -30 * _saturation, -40 * _saturation, -45 * _saturation, -47 * _saturation, -49.2 * _saturation, -50 * _saturation, -49.2 * _saturation, -45 * _saturation, -40 * _saturation
         , -35 * _saturation, -33 * _saturation, -30 * _saturation, -15 * _saturation];
@@ -84,6 +97,7 @@ switch (_rhythm) do {
 
         for "_i" from 0 to _repeat do {
             _rhythmArray = _rhythmArray + ([_spacing] call _fnc_generateStepSpacingArray) + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
+            _safeSpacingArray = _safeSpacingArray + ([_spacing, true] call _generateSafeSpacing) + ([15] call _generateSafeSpacing);
         };
     };
     default {
@@ -102,5 +116,10 @@ if (_arrayOffset > 0) then {
     _rhythmArray deleteRange [0,_arrayOffset];
 };
 
+if (count _safeSpacingArray < 1) then {
+    _safeSpacingArray resize [_maxLength, true];
+};
+
 _rhythmArray resize [_maxLength, 0];
-_rhythmArray;
+
+[_rhythmArray,_safeSpacingArray];

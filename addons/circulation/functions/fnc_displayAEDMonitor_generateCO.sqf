@@ -12,7 +12,7 @@
  * 4: Patient Respiration Rate <NUMBER>
  *
  * Return Value:
- * Rhythm Array <ARRAY<NUMBER>>
+ * [Rhythm Array <ARRAY<NUMBER>>, Safe Spacing Array] <ARRAY<ARRAY>>
  *
  * Example:
  * [0, 7, 0, 35, 20] call ACM_circulation_fnc_displayAEDMonitor_generateCO;
@@ -22,7 +22,7 @@
 
 params ["_rhythm", "_spacing", "_arrayOffset", "_co2", "_rr"];
 
-if (_co2 < 1 || _rr < 1) then {
+if (_rhythm != -5 && {_co2 < 1 || _rr < 1}) then {
     _rhythm = 1;
 };
 
@@ -62,7 +62,20 @@ private _generateNoisyRhythmStep = {
     _noisyRhythm;
 };
 
+private _generateSafeSpacing = {
+    params ["_count", ["_safe", false]];
+
+    private _array = [];
+
+    for "_i" from 1 to _count do {
+        _array pushBack _safe;
+    };
+
+    _array;
+};
+
 private _rhythmArray = [];
+private _safeSpacingArray = [];
 
 private _maxHeight = (-150 * _co2);
 
@@ -76,7 +89,7 @@ switch (_rhythm) do {
             _rhythmArray = _rhythmArray + _step;
         };
     };
-    case -1: {
+    case -1: { // CPR
         private _breathWidth = 5;
         private _angle = 18 / _breathWidth;
 
@@ -92,8 +105,10 @@ switch (_rhythm) do {
 
         _cleanRhythmStepComplete = _cleanRhythmStepComplete + _cleanRhythmEnd;
 
+        private _stepLength = count _cleanRhythmStepComplete;
+
         private _noiseRange = 2;
-        private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStepComplete) + _spacing));
+        private _repeat = ceil(AED_MONITOR_WIDTH / (_stepLength + _spacing));
 
         if (_arrayOffset > 0) then {
             _repeat = _repeat + 1;
@@ -101,9 +116,10 @@ switch (_rhythm) do {
 
         for "_i" from 0 to _repeat do {
             _rhythmArray = _rhythmArray + ([_spacing] call _fnc_generateStepSpacingArray) + ([_cleanRhythmStepComplete, _noiseRange] call _generateNoisyRhythmStep);
+            _safeSpacingArray = _safeSpacingArray + ([_spacing, true] call _generateSafeSpacing) + ([_stepLength] call _generateSafeSpacing);
         };
     };
-    case 0: {
+    case 0: { // Sinus
         private _breathWidth = 30 * (18 / _rr);
         private _angle = 18 / _breathWidth;
         _spacing = round((60 / _rr) * 12);
@@ -120,19 +136,18 @@ switch (_rhythm) do {
 
         _cleanRhythmStepComplete = _cleanRhythmStepComplete + _cleanRhythmEnd;
 
+        private _stepLength = count _cleanRhythmStepComplete;
+
         private _noiseRange = 1;
-        private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStepComplete) + _spacing));
+        private _repeat = ceil(AED_MONITOR_WIDTH / (_stepLength + _spacing));
 
         if (_arrayOffset > 0) then {
             _repeat = _repeat + 1;
         };
 
         for "_i" from 0 to _repeat do {
-            if (_i == 0) then {
-                _rhythmArray = _rhythmArray + ([(_spacing / 2)] call _fnc_generateStepSpacingArray) + ([_cleanRhythmStepComplete, _noiseRange] call _generateNoisyRhythmStep);
-            } else {
-                _rhythmArray = _rhythmArray + ([_spacing] call _fnc_generateStepSpacingArray) + ([_cleanRhythmStepComplete, _noiseRange] call _generateNoisyRhythmStep);
-            };
+            _rhythmArray = _rhythmArray + ([_spacing] call _fnc_generateStepSpacingArray) + ([_cleanRhythmStepComplete, _noiseRange] call _generateNoisyRhythmStep);
+            _safeSpacingArray = _safeSpacingArray + ([_spacing, true] call _generateSafeSpacing) + ([_stepLength] call _generateSafeSpacing);
         };
     };
     default {
@@ -151,5 +166,10 @@ if (_arrayOffset > 0) then {
     _rhythmArray deleteRange [0,_arrayOffset];
 };
 
+if (count _safeSpacingArray < 1) then {
+    _safeSpacingArray resize [_maxLength, true];
+};
+
 _rhythmArray resize [_maxLength, 0];
-_rhythmArray;
+
+[_rhythmArray,_safeSpacingArray];

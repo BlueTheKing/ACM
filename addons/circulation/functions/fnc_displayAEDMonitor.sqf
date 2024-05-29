@@ -74,12 +74,12 @@ if (count (_patient getVariable [QGVAR(AED_EKGDisplay), []]) < AED_MONITOR_WIDTH
     if (_padsState) then {
         _patient setVariable [QGVAR(AED_Monitor_Pads_State), true, true];
         if (_rhythm in [-1,0,5]) then {
-            _patient setVariable [QGVAR(AED_EKGDisplay), ([_rhythm, _HRSpacing, 0] call FUNC(displayAEDMonitor_generateEKG))];
+            _patient setVariable [QGVAR(AED_EKGDisplay), (([_rhythm, _HRSpacing, 0] call FUNC(displayAEDMonitor_generateEKG)) select 0)];
         } else {
             if (_recentShock) then {
-                _patient setVariable [QGVAR(AED_EKGDisplay), ([1, -1, 0] call FUNC(displayAEDMonitor_generateEKG))];
+                _patient setVariable [QGVAR(AED_EKGDisplay), (([1, -1, 0] call FUNC(displayAEDMonitor_generateEKG)) select 0)];
             } else {
-                _patient setVariable [QGVAR(AED_EKGDisplay), ([_rhythm, -1, 0] call FUNC(displayAEDMonitor_generateEKG))];
+                _patient setVariable [QGVAR(AED_EKGDisplay), (([_rhythm, -1, 0] call FUNC(displayAEDMonitor_generateEKG)) select 0)];
             };
         };
     };
@@ -89,12 +89,12 @@ if (count (_patient getVariable [QGVAR(AED_PODisplay), []]) < AED_MONITOR_WIDTH 
     if (_pulseOximeterState) then {
         _patient setVariable [QGVAR(AED_Monitor_PulseOximeter_State), true, true];
         if (_rhythm in [-1,0,5]) then {
-            _patient setVariable [QGVAR(AED_PODisplay), ([_rhythm, _HRSpacing, 0, _saturation] call FUNC(displayAEDMonitor_generatePO))];
+            _patient setVariable [QGVAR(AED_PODisplay), (([_rhythm, _HRSpacing, 0, _saturation] call FUNC(displayAEDMonitor_generatePO)) select 0)];
         } else {
             if (_recentShock) then {
-                _patient setVariable [QGVAR(AED_PODisplay), ([1, -1, 0, _saturation] call FUNC(displayAEDMonitor_generatePO))];
+                _patient setVariable [QGVAR(AED_PODisplay), (([1, -1, 0, _saturation] call FUNC(displayAEDMonitor_generatePO)) select 0)];
             } else {
-                _patient setVariable [QGVAR(AED_PODisplay), ([_rhythm, -1, 0, _saturation] call FUNC(displayAEDMonitor_generatePO))];
+                _patient setVariable [QGVAR(AED_PODisplay), (([_rhythm, -1, 0, _saturation] call FUNC(displayAEDMonitor_generatePO)) select 0)];
             };
         };
     };
@@ -104,12 +104,12 @@ if (count (_patient getVariable [QGVAR(AED_CODisplay), []]) < AED_MONITOR_WIDTH 
     if (_capnographState) then {
         _patient setVariable [QGVAR(AED_Monitor_Capnograph_State), true, true];
         if (_rhythm in [-1,0,5]) then {
-            _patient setVariable [QGVAR(AED_CODisplay), ([_rhythm, _HRSpacing, 0, _etco2, _rr] call FUNC(displayAEDMonitor_generateCO))];
+            _patient setVariable [QGVAR(AED_CODisplay), (([_rhythm, _HRSpacing, 0, _etco2, _rr] call FUNC(displayAEDMonitor_generateCO)) select 0)];
         } else {
             if (_recentShock) then {
-                _patient setVariable [QGVAR(AED_CODisplay), ([1, -1, 0, 0, 0] call FUNC(displayAEDMonitor_generateCO))];
+                _patient setVariable [QGVAR(AED_CODisplay), (([1, -1, 0, 0, 0] call FUNC(displayAEDMonitor_generateCO)) select 0)];
             } else {
-                _patient setVariable [QGVAR(AED_CODisplay), ([_rhythm, -1, 0, _etco2, _rr] call FUNC(displayAEDMonitor_generateCO))];
+                _patient setVariable [QGVAR(AED_CODisplay), (([_rhythm, -1, 0, _etco2, _rr] call FUNC(displayAEDMonitor_generateCO)) select 0)];
             };
         };
     };
@@ -156,8 +156,13 @@ private _PFH = [{
     private _monitorUpdateStep = (_patient getVariable [QGVAR(AED_UpdateStep), (floor ((CBA_missionTime - (_patient getvariable [QGVAR(AED_StartTime), CBA_missionTime])) mod 6.2304 / 0.0354))]); // x1.18
     private _monitorArray_Offset = _patient getVariable [QGVAR(AED_Offset), 0];
 
+    private _monitorArray_EKG = _patient getVariable [QGVAR(AED_EKGDisplay), []];
+    private _monitorArray_PO = _patient getVariable [QGVAR(AED_PODisplay), []];
+    private _monitorArray_CO = _patient getVariable [QGVAR(AED_CODisplay), []];
+
     private _monitorArray_EKGRefresh = _patient getVariable [QGVAR(AED_EKGRefreshDisplay), []];
     private _monitorArray_PORefresh = _patient getVariable [QGVAR(AED_PORefreshDisplay), []];
+    private _monitorArray_CORefresh = _patient getVariable [QGVAR(AED_CORefreshDisplay), []];
 
     private _timeToExpire = (((AED_MONITOR_WIDTH - 1) - _monitorUpdateStep) * 0.03) max 0;
 
@@ -272,71 +277,152 @@ private _PFH = [{
     _POStepSpacing = 0 max (round(_POStepSpacing));
     _COStepSpacing = 0 max (round(_COStepSpacing));
 
-    private _stepCondition = _monitorUpdateStep >= (AED_MONITOR_WIDTH - 1);
-    private _rhythmChangeCondition = _EKGRhythm != _patient getVariable [QGVAR(AED_EKGRhythm), -2] || _PORhythm != _patient getVariable [QGVAR(AED_PORhythm), -2];
-    private _vitalsCondition = (abs ((_patient getVariable [QGVAR(AED_Monitor_HR), 0]) - _hr) > 10) || (abs ((_patient getVariable [QGVAR(AED_Monitor_OxygenSaturation), 0]) - _oxygenSaturation) > 6) || (abs ((_patient getVariable [QGVAR(AED_Monitor_EtCO2), 0]) - _etco2) > 10);
-    private _connectedCondition = _patient getVariable [QGVAR(AED_Monitor_Pads_State), false] != _padsState || _patient getVariable [QGVAR(AED_Monitor_PulseOximeter_State), false] != _pulseOximeterState || _patient getVariable [QGVAR(AED_Monitor_Capnograph_State), false] != _capnographState;
-    private _listCondition = (count _monitorArray_EKGRefresh < AED_MONITOR_WIDTH) || (count _monitorArray_PORefresh < AED_MONITOR_WIDTH);
+    private _connectedEKG = _patient getVariable [QGVAR(AED_Monitor_Pads_State), false] != _padsState;
+    private _connectedPO = _patient getVariable [QGVAR(AED_Monitor_PulseOximeter_State), false] != _pulseOximeterState;
+    private _connectedCO = _patient getVariable [QGVAR(AED_Monitor_Capnograph_State), false] != _capnographState;
+
+    private _vitalsEKG = abs ((_patient getVariable [QGVAR(AED_Monitor_HR), 0]) - _hr) > 10;
+    private _vitalsPO = abs ((_patient getVariable [QGVAR(AED_Monitor_OxygenSaturation), 0]) - _oxygenSaturation) > 6;
+    private _vitalsCO = abs ((_patient getVariable [QGVAR(AED_Monitor_EtCO2), 0]) - _etco2) > 10;
+
+    private _stepCondition = _monitorUpdateStep >= AED_MONITOR_LASTINDEX;
+    private _rhythmChangeCondition = _EKGRhythm != _patient getVariable [QGVAR(AED_EKGRhythm), -2] || _PORhythm != _patient getVariable [QGVAR(AED_PORhythm), -2] || _CORhythm != _patient getVariable [QGVAR(AED_CORhythm), -2];
+    private _vitalsCondition = _vitalsEKG || _vitalsPO || _vitalsCO;
+    private _connectedCondition = _connectedEKG || _connectedPO || _connectedCO;
+    private _listCondition = (count _monitorArray_EKGRefresh < AED_MONITOR_WIDTH) || (count _monitorArray_PORefresh < AED_MONITOR_WIDTH) || (count _monitorArray_CORefresh < AED_MONITOR_WIDTH);
 
     if (_stepCondition || {_vitalsCondition || {_rhythmChangeCondition || {_connectedCondition || {_listCondition}}}}) then { // Handle full pass / force update if rhythm changes/vitals change/device is disconnected
         _patient setVariable [QGVAR(AED_EKGRhythm), _EKGRhythm];
         _patient setVariable [QGVAR(AED_PORhythm), _PORhythm];
         _patient setVariable [QGVAR(AED_CORhythm), _CORhythm];
 
-        _monitorArray_EKGRefresh = [_EKGRhythm, _EKGStepSpacing, _monitorArray_Offset] call FUNC(displayAEDMonitor_generateEKG);
-        _monitorArray_PORefresh = [_PORhythm, _POStepSpacing, _monitorArray_Offset, _oxygenSaturation] call FUNC(displayAEDMonitor_generatePO);
-        _monitorArray_CORefresh = [_CORhythm, _COStepSpacing, _monitorArray_Offset, _etco2, _rr] call FUNC(displayAEDMonitor_generateCO);
+        private _generatedEKG = [_EKGRhythm, _EKGStepSpacing, _monitorArray_Offset] call FUNC(displayAEDMonitor_generateEKG);
+        private _generatedPO = [_PORhythm, _POStepSpacing, _monitorArray_Offset, _oxygenSaturation] call FUNC(displayAEDMonitor_generatePO);
+        private _generatedCO = [_CORhythm, _COStepSpacing, _monitorArray_Offset, _etco2, _rr] call FUNC(displayAEDMonitor_generateCO);
 
-        if (_vitalsCondition) then {
-            private _EKGArray = [];
-            _EKGArray resize AED_MONITOR_WIDTH;
+        _monitorArray_EKGRefresh = _generatedEKG select 0;
+        _monitorArray_PORefresh = _generatedPO select 0;
+        _monitorArray_CORefresh = _generatedCO select 0;
 
-            {
-                private _index = _forEachIndex + _monitorUpdateStep;
+        private _safeArrayEKG = _generatedEKG select 1;
+        private _safeArrayPO = _generatedPO select 1;
+        private _safeArrayCO = _generatedCO select 1;
 
-                if (_index > (AED_MONITOR_WIDTH-1)) then {
-                    _index = _index - AED_MONITOR_WIDTH;
+        if !(_stepCondition) then {
+            private _rapidChange = _rhythmChangeCondition;
+
+            if (_rapidChange) then {
+                private _EKGArray = _monitorArray_EKG;
+                {
+                    private _index = _forEachIndex + 1 + _monitorUpdateStep;
+                    if (_index < AED_MONITOR_WIDTH) then {
+                        _EKGArray set [_index, _x];
+                    };
+                } forEach _monitorArray_EKGRefresh;
+
+                _monitorArray_EKGRefresh = _EKGArray;
+
+                private _POArray = _monitorArray_PO;
+                {
+                    private _index = _forEachIndex + 1 + _monitorUpdateStep;
+                    if (_index < AED_MONITOR_WIDTH) then {
+                        _POArray set [_index, _x];
+                    };
+                } forEach _monitorArray_PORefresh;
+
+                _monitorArray_PORefresh = _POArray;
+
+                private _COArray = _monitorArray_CO;
+                {
+                    private _index = _forEachIndex + 1 + _monitorUpdateStep;
+                    if (_index < AED_MONITOR_WIDTH) then {
+                        _COArray set [_index, _x];
+                    };
+                } forEach _monitorArray_CORefresh;
+
+                _monitorArray_CORefresh = _COArray;
+
+                _patient setVariable [QGVAR(AED_EKGRefreshDisplay), _monitorArray_EKGRefresh];
+                _patient setVariable [QGVAR(AED_PORefreshDisplay), _monitorArray_PORefresh];
+                _patient setVariable [QGVAR(AED_CORefreshDisplay), _monitorArray_CORefresh];
+            } else {
+                if (_connectedEKG || _vitalsEKG) then {
+                    private _EKGArray = _monitorArray_EKG;
+
+                    private _safeIndex = _monitorUpdateStep;
+
+                    for "_i" from _monitorUpdateStep to AED_MONITOR_LASTINDEX do {
+                        private _entry = (_safeArrayEKG select _i);
+
+                        if (_entry) exitWith {
+                            _safeIndex = _i;
+                        };
+                    };
+
+                    for "_i" from _safeIndex to AED_MONITOR_LASTINDEX do {
+                        private _refreshEntry = _monitorArray_EKGRefresh select (_i - _safeIndex);
+
+                        _EKGArray set [_i, _refreshEntry];
+                    };
+
+                    _monitorArray_EKGRefresh = _EKGArray;
+
+                    _patient setVariable [QGVAR(AED_EKGRefreshDisplay), _monitorArray_EKGRefresh];
                 };
 
-                _EKGArray set [_index, _x];
-            } forEach _monitorArray_EKGRefresh;
+                if (_connectedPO || _vitalsPO) then {
+                    private _POArray = _monitorArray_PO;
 
-            _monitorArray_EKGRefresh = _EKGArray;
+                    private _safeIndex = _monitorUpdateStep;
 
-            private _POArray = [];
-            _POArray resize AED_MONITOR_WIDTH;
+                    for "_i" from _monitorUpdateStep to AED_MONITOR_LASTINDEX do {
+                        private _entry = (_safeArrayPO select _i);
 
-            {
-                private _index = _forEachIndex + _monitorUpdateStep;
+                        if (_entry) exitWith {
+                            _safeIndex = _i;
+                        };
+                    };
 
-                if (_index > (AED_MONITOR_WIDTH-1)) then {
-                    _index = _index - AED_MONITOR_WIDTH;
+                    for "_i" from _safeIndex to AED_MONITOR_LASTINDEX do {
+                        private _refreshEntry = _monitorArray_PORefresh select (_i - _safeIndex);
+
+                        _POArray set [_i, _refreshEntry];
+                    };
+
+                    _monitorArray_PORefresh = _POArray;
+
+                    _patient setVariable [QGVAR(AED_PORefreshDisplay), _monitorArray_PORefresh];
                 };
 
-                _POArray set [_index, _x];
-            } forEach _monitorArray_PORefresh;
+                if (_connectedCO || _vitalsCO) then {
+                    private _COArray = _monitorArray_CO;
 
-            _monitorArray_PORefresh = _POArray;
+                    private _safeIndex = _monitorUpdateStep;
 
-            private _COArray = [];
-            _COArray resize AED_MONITOR_WIDTH;
+                    for "_i" from _monitorUpdateStep to AED_MONITOR_LASTINDEX do {
+                        private _entry = (_safeArrayCO select _i);
 
-            {
-                private _index = _forEachIndex + _monitorUpdateStep;
+                        if (_entry) exitWith {
+                            _safeIndex = _i;
+                        };
+                    };
 
-                if (_index > (AED_MONITOR_WIDTH-1)) then {
-                    _index = _index - AED_MONITOR_WIDTH;
+                    for "_i" from _safeIndex to AED_MONITOR_LASTINDEX do {
+                        private _refreshEntry = _monitorArray_CORefresh select (_i - _safeIndex);
+
+                        _COArray set [_i, _refreshEntry];
+                    };
+
+                    _monitorArray_CORefresh = _COArray;
+
+                    _patient setVariable [QGVAR(AED_CORefreshDisplay), _monitorArray_CORefresh];
                 };
-
-                _COArray set [_index, _x];
-            } forEach _monitorArray_CORefresh;
-
-            _monitorArray_CORefresh = _COArray;
+            };
+        } else {
+            _patient setVariable [QGVAR(AED_EKGRefreshDisplay), _monitorArray_EKGRefresh];
+            _patient setVariable [QGVAR(AED_PORefreshDisplay), _monitorArray_PORefresh];
+            _patient setVariable [QGVAR(AED_CORefreshDisplay), _monitorArray_CORefresh];
         };
-
-        _patient setVariable [QGVAR(AED_EKGRefreshDisplay), _monitorArray_EKGRefresh];
-        _patient setVariable [QGVAR(AED_PORefreshDisplay), _monitorArray_PORefresh];
-        _patient setVariable [QGVAR(AED_CORefreshDisplay), _monitorArray_CORefresh];
 
         _patient setVariable [QGVAR(AED_Monitor_Pads_State), _padsState];
         _patient setVariable [QGVAR(AED_Monitor_PulseOximeter_State), _pulseOximeterState];
