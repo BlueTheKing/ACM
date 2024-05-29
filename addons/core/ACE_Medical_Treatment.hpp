@@ -299,6 +299,7 @@ class ACE_ADDON(Medical_Treatment) {
 
     class Medication {
         maxDoseDeviation = 1;
+        rrAdjust[] = {0,0};
         // onOverDose = "";
         class Morphine {
             painReduce = 0.7;
@@ -311,6 +312,7 @@ class ACE_ADDON(Medical_Treatment) {
             incompatibleMedication[] = {};
             viscosityChange = -2;
             onOverDose = QUOTE(_this call EFUNC(circulation,handleOverdose));
+            rrAdjust[] = {-6,-12};
         };
         class Epinephrine {
             painReduce = 0;
@@ -321,6 +323,7 @@ class ACE_ADDON(Medical_Treatment) {
             timeTillMaxEffect = 10;
             maxDose = 9;
             incompatibleMedication[] = {};
+            rrAdjust[] = {5,10};
         };
         class Adenosine {
             painReduce = 0;
@@ -359,6 +362,7 @@ class ACE_ADDON(Medical_Treatment) {
             timeTillMaxEffect = 5;
             maxDose = 4;
             viscosityChange = 1;
+            rrAdjust[] = {5,10};
         };
         class Penthrox: Paracetamol {
             painReduce = 0.7;
@@ -369,6 +373,7 @@ class ACE_ADDON(Medical_Treatment) {
             timeTillMaxEffect = 5;
             maxDose = 4;
             viscosityChange = -1;
+            rrAdjust[] = {-5,-10};
         };
         class Naloxone: Paracetamol {
             painReduce = 0;
@@ -389,6 +394,7 @@ class ACE_ADDON(Medical_Treatment) {
             timeTillMaxEffect = 2;
             maxDose = 5;
             incompatibleMedication[] = {};
+            rrAdjust[] = {8,13};
         };
         class Adenosine_Vial: Adenosine {
             painReduce = 0;
@@ -409,6 +415,7 @@ class ACE_ADDON(Medical_Treatment) {
             timeTillMaxEffect = 3;
             maxDose = 3;
             viscosityChange = -5;
+            rrAdjust[] = {-12,-24};
         };
         class Amiodarone_Vial: Naloxone {
             hrIncreaseLow[] = {-1, -2};

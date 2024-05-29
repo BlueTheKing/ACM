@@ -33,6 +33,6 @@ private _heartRate = GET_HEART_RATE(_unit);
 if (_heartRate < 40) exitWith { /*systemchat format ["HEART RATE %1",GET_HEART_RATE(_unit)];*/ false };
 
 private _oxygen = GET_OXYGEN(_unit);
-if (_oxygen < 80) exitWith { /*systemchat format ["OXYGEN %1",GET_OXYGEN(_unit)];*/ false };
+if (_oxygen < ACM_OXYGEN_UNCONSCIOUS) exitWith { /*systemchat format ["OXYGEN %1",GET_OXYGEN(_unit)];*/ false };
 
 true

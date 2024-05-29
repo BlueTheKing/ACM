@@ -31,9 +31,6 @@ if (_syncValues) then {
     _unit setVariable [QACEGVAR(medical_vitals,lastMomentValuesSynced), CBA_missionTime];
 };
 
-// Update SPO2 intake and usage since last update
-private _oxygenSaturation = [_unit, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateOxygen);
-
 private _bloodVolume = ([_unit, _deltaT, _syncValues] call ACEFUNC(medical_status,getBloodVolumeChange));
 _bloodVolume = 0 max _bloodVolume min DEFAULT_BLOOD_VOLUME;
 
@@ -76,12 +73,13 @@ if (_tourniquetPain > 0) then {
 private _hrTargetAdjustment = 0;
 private _painSupressAdjustment = 0;
 private _peripheralResistanceAdjustment = 0;
+private _respirationRateAdjustment = 0;
 private _adjustments = _unit getVariable [VAR_MEDICATIONS,[]];
 
 if (_adjustments isNotEqualTo []) then {
     private _deleted = false;
     {
-        _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust"];
+        _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", "_rrAdjust"];
         private _timeInSystem = CBA_missionTime - _timeAdded;
         if (_timeInSystem >= _maxTimeInSystem) then {
             _deleted = true;
@@ -91,6 +89,7 @@ if (_adjustments isNotEqualTo []) then {
             if (_hrAdjust != 0) then { _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio; };
             if (_painAdjust != 0) then { _painSupressAdjustment = _painSupressAdjustment + _painAdjust * _effectRatio; };
             if (_flowAdjust != 0) then { _peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _flowAdjust * _effectRatio; };
+            if (_rrAdjust != 0) then { _respirationRateAdjustment = _respirationRateAdjustment + _rrAdjust * _effectRatio; };
         };
     } forEach _adjustments;
 
@@ -99,6 +98,9 @@ if (_adjustments isNotEqualTo []) then {
         _syncValues = true;
     };
 };
+
+// Update SPO2 intake and usage since last update
+private _oxygenSaturation = [_unit, _respirationRateAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateOxygen);
 
 if (_oxygenSaturation < ACM_OXYGEN_HYPOXIA) then { // Severe hypoxia causes heart to give out
     _hrTargetAdjustment = _hrTargetAdjustment - 10 * abs (ACM_OXYGEN_HYPOXIA - _oxygenSaturation);

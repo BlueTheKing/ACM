@@ -31,6 +31,9 @@ class CfgFunctions {
             class updateWoundBloodLoss { // Internal bleeding
                 file = QPATHTOF(overrides\fnc_updateWoundBloodLoss.sqf);
             };
+            class addMedicationAdjustment { // Respiration rate adjust
+                file = QPATHTOF(overrides\fnc_addMedicationAdjustment.sqf);
+            };
         };
     };
     class overwrite_medical_treatment {
@@ -47,6 +50,9 @@ class CfgFunctions {
             };
             class medication { // Fix magazine names in triage card
                 file = QPATHTOF(overrides\fnc_medication.sqf);
+            };
+            class medicationLocal { // Respiration rate adjust
+                file = QPATHTOF(overrides\fnc_medicationLocal.sqf);
             };
             class checkPulseLocal { // CPR rate
                 file = QPATHTOF(overrides\fnc_checkPulseLocal.sqf);

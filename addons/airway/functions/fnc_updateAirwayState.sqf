@@ -25,16 +25,19 @@ if (((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient
     private _collapseState = 1 - ((_patient getVariable [QGVAR(AirwayCollapse_State), 0]) / 3);
     
     if (_patient getVariable [QGVAR(AirwayItem), ""] != "") then {
-        _state = _collapseState max 0.95;
+        _state = _collapseState max 0.99;
+        if (_patient getVariable [QGVAR(AirwayItem), ""] == "OPA") then {
+            _state = _collapseState max 0.85;
+        };
 	} else {
-        if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {
-            if (_patient getVariable [QGVAR(RecoveryPosition_State), false]) then {
-                _state = _collapseState max 0.8;
-            } else {
-                _state = _collapseState max 0.75;
-            };
+        if (_patient getVariable [QGVAR(RecoveryPosition_State), false]) then {
+            _state = _collapseState max 0.85;
         } else {
-            _state = _collapseState;
+            if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {
+                _state = _collapseState max 0.95;
+            } else {
+                _state = _collapseState;
+            };
         };
     };
 };

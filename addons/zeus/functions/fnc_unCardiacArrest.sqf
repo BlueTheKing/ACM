@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * uncardiacarrest patient
+ * Uncardiacarrest patient
  *
  * Arguments:
  * 0: Module Logic <OBJECT>
@@ -42,6 +42,6 @@ switch (true) do {
     };
 };
 
-[QACEGVAR(medical,CPRSucceeded), [_unit], _unit] call CBA_fnc_targetEvent;
+[QEGVAR(circulation,attemptROSC), [_unit], _unit] call CBA_fnc_targetEvent;
 
 deleteVehicle _logic;

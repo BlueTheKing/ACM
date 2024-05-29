@@ -35,10 +35,12 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
     private _hrChange = 0;
     private _targetHR = 0;
     private _bloodVolume = GET_BLOOD_VOLUME(_unit);
+    private _oxygenSaturation = GET_OXYGEN(_unit);
     if (_bloodVolume > BLOOD_VOLUME_CLASS_4_HEMORRHAGE) then {
+        private _timeSinceROSC = (CBA_missionTime - (_unit getVariable [QEGVAR(circulation,ROSC_Time), -30]));
+        
         GET_BLOOD_PRESSURE(_unit) params ["_bloodPressureL", "_bloodPressureH"];
         private _meanBP = (2/3) * _bloodPressureH + (1/3) * _bloodPressureL;
-        private _oxygenSaturation = GET_OXYGEN(_unit);
         private _painLevel = GET_PAIN_PERCEIVED(_unit);
 
         private _targetBP = 107;
@@ -46,8 +48,8 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
             _targetBP = _targetBP * (_bloodVolume / DEFAULT_BLOOD_VOLUME);
         };
 
-        _targetHR = DEFAULT_HEART_RATE;
-        if (_bloodVolume < 4.4) then { //BLOOD_VOLUME_CLASS_3_HEMORRHAGE
+        _targetHR = _desiredHR;
+        if (_bloodVolume < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
             _targetHR = _heartRate * (_targetBP / (45 max _meanBP));
         };
         if (_painLevel > 0.2) then {
@@ -59,7 +61,14 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
         };
         // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
         private _oxygenDemand = _unit getVariable [VAR_OXYGEN_DEMAND, 0];
-        _targetHR = _targetHR + ((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 2) + (_oxygenDemand * -1000);
+        _targetHR = _targetHR + (((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 1.3) max (_oxygenDemand * -2000));
+
+        if (_timeSinceROSC < 30) then {
+            _targetHR = _targetHR max (_desiredHR + 110 * (_timeSinceROSC / 30));
+        };
+
+        _targetHR = _targetHR min ACM_TARGETVITALS_MAXHR(_unit);
+
         _targetHR = (_targetHR + _hrTargetAdjustment) max 0;
 
         _hrChange = round(_targetHR - _heartRate) / 2;

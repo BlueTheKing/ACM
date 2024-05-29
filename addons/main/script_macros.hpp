@@ -163,7 +163,7 @@
 
 #define GET_BREATHINGSTATE(unit) (unit getVariable [QEGVAR(breathing,BreathingState), 1])
 
-#define GET_OXYGEN(unit) (unit getVariable [VAR_SPO2, DEFAULT_SPO2])
+#define GET_OXYGEN(unit) (unit getVariable [VAR_SPO2, 99])
 
 #define GET_RESPIRATION_RATE(unit) (unit getVariable [QEGVAR(breathing,RespirationRate), 0])
 
@@ -238,4 +238,6 @@
 
 // Misc
 #define ACM_TARGETVITALS_HR(unit) (unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 77])
+#define ACM_TARGETVITALS_MAXHR(unit) (unit getVariable [QEGVAR(core,TargetVitals_MaxHeartRate), 200])
 #define ACM_TARGETVITALS_OXYGEN(unit) (unit getVariable [QEGVAR(core,TargetVitals_OxygenSaturation), 99])
+#define ACM_TARGETVITALS_RR(unit) (unit getVariable [QEGVAR(core,TargetVitals_RespirationRate), 16])

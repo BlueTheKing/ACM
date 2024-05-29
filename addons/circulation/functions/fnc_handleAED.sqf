@@ -102,7 +102,7 @@ private _PFH = [{
             _patient setVariable [QGVAR(AED_Alarm_State), false];
         };
 
-        if (!(_patient getVariable [QGVAR(AED_InUse), false]) && !([_patient] call FUNC(AED_IsSilent))) then {
+        if (!(_patient getVariable [QGVAR(AED_InUse), false]) && !([_patient] call FUNC(AED_IsSilent)) && !([_patient] call EFUNC(core,cprActive))) then {
             if (_ekgHR > 0) then {
                 private _lastBeep = _patient getVariable [QGVAR(AED_Pads_LastBeep), -1];
                 private _hrDelay = 60 / _ekgHR;

@@ -37,9 +37,13 @@ if (_TPTXState) then {
 };
 
 if (IS_UNCONSCIOUS(_patient)) then {
-    _state = _state min 0.85;
+    _state = _state min 0.95;
 };
 
 [_patient, _healed] call FUNC(updateLungState);
+
+if (_healed) then {
+    _state = 1;
+};
 
 _patient setVariable [QGVAR(BreathingState), _state, true];

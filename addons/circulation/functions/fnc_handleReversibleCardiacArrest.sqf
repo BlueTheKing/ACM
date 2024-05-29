@@ -29,8 +29,6 @@ private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient"];
 
-    if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) exitWith {};
-
     private _time = _patient getVariable [QGVAR(ReversibleCardiacArrest_Time), -1];
     private _reversibleCause = _patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false] || ((_patient getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0] > ACM_TENSIONHEMOTHORAX_THRESHOLD)) || (GET_BLOOD_VOLUME(_patient) <= ACM_REVERSIBLE_CA_BLOODVOLUME) || (GET_OXYGEN(_patient) < ACM_OXYGEN_HYPOXIA);
     

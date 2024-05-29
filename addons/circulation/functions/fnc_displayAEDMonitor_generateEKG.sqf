@@ -57,7 +57,7 @@ private _rhythmArray = [];
 
 switch (_rhythm) do {
     case -1: { // CPR
-        private _cleanRhythmStep = [10,-5,-10,-20,-40 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-40 + (random 5),-20,-10,-5,10]; // 16
+        private _cleanRhythmStep = [0,-5,-10,-20,-40 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-40 + (random 5),-20,-10,-5]; // 15
         private _noiseRange = 8;
         private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStep) + _spacing));
 
