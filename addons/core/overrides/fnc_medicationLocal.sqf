@@ -73,6 +73,8 @@ private _hrIncreaseNormal       = GET_ARRAY(_medicationConfig >> "hrIncreaseNorm
 private _hrIncreaseHigh         = GET_ARRAY(_medicationConfig >> "hrIncreaseHigh",getArray (_defaultConfig >> "hrIncreaseHigh"));
 private _incompatibleMedication = GET_ARRAY(_medicationConfig >> "incompatibleMedication",getArray (_defaultConfig >> "incompatibleMedication"));
 
+private _administrationType = GET_NUMBER(_medicationConfig >> "administrationType",getNumber (_defaultConfig >> "administrationType"));
+private _maxEffectTime = GET_NUMBER(_medicationConfig >> "maxEffectTime",getNumber (_defaultConfig >> "maxEffectTime"));
 private _rrAdjust = GET_ARRAY(_medicationConfig >> "rrAdjust",getArray (_defaultConfig >> "rrAdjust"));
 
 private _heartRate = GET_HEART_RATE(_patient);
@@ -91,7 +93,7 @@ if ((_rrAdjust select 0) + (_rrAdjust select 1) != 0) then {
 
 // Adjust the medication effects and add the medication to the list
 TRACE_3("adjustments",_heartRateChange,_painReduce,_viscosityChange);
-[_patient, _className, _timeTillMaxEffect, _timeInSystem, _heartRateChange, _painReduce, _viscosityChange, _rrAdjustment] call ACEFUNC(medical_status,addMedicationAdjustment);
+[_patient, _className, _timeTillMaxEffect, _timeInSystem, _heartRateChange, _painReduce, _viscosityChange, _administrationType, _maxEffectTime, _rrAdjustment] call ACEFUNC(medical_status,addMedicationAdjustment);
 
 // Check for medication compatiblity
 [_patient, _className, _maxDose, _maxDoseDeviation, _incompatibleMedication] call ACEFUNC(medical_treatment,onMedicationUsage);

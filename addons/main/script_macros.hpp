@@ -191,6 +191,11 @@
 #define ACM_IV_14G_M 2
 #define ACM_IO_FAST1_M 3
 
+#define ACM_ROUTE_IM 0
+#define ACM_ROUTE_IV 1
+#define ACM_ROUTE_PO 2
+#define ACM_ROUTE_INHALE 3
+
 #define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),[0,0,0,0,0,0]])
 
 #define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])

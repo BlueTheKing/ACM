@@ -31,8 +31,11 @@ class CfgFunctions {
             class updateWoundBloodLoss { // Internal bleeding
                 file = QPATHTOF(overrides\fnc_updateWoundBloodLoss.sqf);
             };
-            class addMedicationAdjustment { // Respiration rate adjust
+            class addMedicationAdjustment { // Administration route, respiration rate adjust
                 file = QPATHTOF(overrides\fnc_addMedicationAdjustment.sqf);
+            };
+            class getMedicationCount { // Administration route, respiration rate adjust
+                file = QPATHTOF(overrides\fnc_getMedicationCount.sqf);
             };
         };
     };

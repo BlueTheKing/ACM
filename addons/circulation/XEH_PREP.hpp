@@ -39,6 +39,7 @@ PREP(getEKGHeartRate);
 PREP(getHemothoraxBleedingRate);
 PREP(getInternalBleedingRate);
 PREP(getIVFlowRate);
+PREP(getMedicationEffect);
 PREP(handleAED);
 PREP(handleCardiacArrest);
 PREP(handleCPR);
