@@ -123,6 +123,8 @@ _unit setVariable [VAR_BLOOD_PRESS, _bloodPressure, _syncValues];
 
 _bloodPressure params ["_bloodPressureL", "_bloodPressureH"];
 
+private _respirationRate = GET_RESPIRATION_RATE(_unit);
+
 // Statements are ordered by most lethal first.
 switch (true) do {
     case (_bloodVolume < BLOOD_VOLUME_FATAL): {
@@ -197,6 +199,9 @@ switch (true) do {
         if (ACM_OXYGEN_UNCONSCIOUS - (random 10) > _oxygenSaturation) then {
             [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
         };
+    };
+    case (_respirationRate < 6): {
+        [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_woundBloodLoss > 0): {
         [QACEGVAR(medical,LoweredVitals), _unit] call CBA_fnc_localEvent;

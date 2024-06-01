@@ -245,4 +245,4 @@
 #define ACM_TARGETVITALS_HR(unit) (unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 77])
 #define ACM_TARGETVITALS_MAXHR(unit) (unit getVariable [QEGVAR(core,TargetVitals_MaxHeartRate), 200])
 #define ACM_TARGETVITALS_OXYGEN(unit) (unit getVariable [QEGVAR(core,TargetVitals_OxygenSaturation), 99])
-#define ACM_TARGETVITALS_RR(unit) (unit getVariable [QEGVAR(core,TargetVitals_RespirationRate), 16])
+#define ACM_TARGETVITALS_RR(unit) (unit getVariable [QEGVAR(core,TargetVitals_RespirationRate), 18])

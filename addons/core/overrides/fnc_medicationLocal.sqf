@@ -85,10 +85,7 @@ private _heartRateChange = _minIncrease + random (_maxIncrease - _minIncrease);
 private _rrAdjustment = 0;
 
 if ((_rrAdjust select 0) + (_rrAdjust select 1) != 0) then {
-    private _respirationRate = GET_RESPIRATION_RATE(_patient);
-    _rrAdjustment = linearConversion [1, 40, _respirationRate, (_rrAdjust select 0), (_rrAdjust select 1), true];
-    private _rrAdjustRandom = _rrAdjustment / 5;
-    _rrAdjustment = _rrAdjustment + (_rrAdjustRandom - (random (_rrAdjustRandom * 2)));
+    _rrAdjustment = random [(_rrAdjust select 0), (((_rrAdjust select 0) + (_rrAdjust select 1)) / 2), (_rrAdjust select 1)]
 };
 
 // Adjust the medication effects and add the medication to the list

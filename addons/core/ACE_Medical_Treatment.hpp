@@ -314,7 +314,7 @@ class ACE_ADDON(Medical_Treatment) {
             incompatibleMedication[] = {};
             viscosityChange = 0;
             onOverDose = QUOTE(_this call EFUNC(circulation,handleOverdose));
-            rrAdjust[] = {-6,-10};
+            rrAdjust[] = {-6,-9};
         };
         class Epinephrine {
             painReduce = 0;
@@ -385,7 +385,7 @@ class ACE_ADDON(Medical_Treatment) {
             timeInSystem = 425;
             maxEffectTime = 80;
             maxDose = 4;
-            rrAdjust[] = {-3,-6};
+            rrAdjust[] = {-4,-7};
         };
         class Naloxone: AmmoniaInhalant {
             hrIncreaseLow[] = {0, 0};
@@ -407,25 +407,27 @@ class ACE_ADDON(Medical_Treatment) {
             maxEffectTime = 120;
             maxDose = 5;
             incompatibleMedication[] = {};
-            rrAdjust[] = {8,13};
+            rrAdjust[] = {8,12};
             administrationType = ACM_ROUTE_IV;
         };
         class Adenosine_Vial: Epinephrine_Vial {
             hrIncreaseLow[] = {-10, -15};
             hrIncreaseNormal[] = {-10, -40};
             hrIncreaseHigh[] = {-10, -30};
+            rrAdjust[] = {0,0};
         };
         class Morphine_Vial: Epinephrine_Vial {
             painReduce = 0.85;
             hrIncreaseLow[] = {-9, -18};
             hrIncreaseNormal[] = {-9, -24};
             hrIncreaseHigh[] = {-9, -30};
-            rrAdjust[] = {-8,-12};
+            rrAdjust[] = {-7,-11};
         };
         class Amiodarone_Vial: Epinephrine_Vial {
             hrIncreaseLow[] = {-1, -2};
             hrIncreaseNormal[] = {-3, -5};
             hrIncreaseHigh[] = {-10, -15};
+            rrAdjust[] = {0,0};
         };
 
         class TXA_Vial: Amiodarone_Vial {

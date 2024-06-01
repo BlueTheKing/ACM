@@ -44,7 +44,13 @@ switch (true) do {
 
         _targetRespirationRate = _targetRespirationRate + ((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 1.1) max (_oxygenDemand * -500);
 
-        _targetRespirationRate = (_targetRespirationRate + _respirationRateAdjustment) max 0;
+        if (_respirationRateAdjustment != 0) then {
+            if (_respirationRateAdjustment < 0) then {
+                _targetRespirationRate = (_targetRespirationRate + 4 * (_respirationRateAdjustment * (_targetRespirationRate / ACM_TARGETVITALS_OXYGEN(_unit)))) max 0;
+            } else {
+                _targetRespirationRate = (_targetRespirationRate + 4 * (_respirationRateAdjustment * (ACM_TARGETVITALS_OXYGEN(_unit) / _targetRespirationRate))) max 0;
+            };
+        };
 
         private _respirationRateChange = (_targetRespirationRate - _respirationRate) / 2;
 
