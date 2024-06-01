@@ -1,7 +1,19 @@
 class ACEGVAR(medical_treatment,actions) {
     class BasicBandage;
     class Splint;
-    class Morphine;
+    class FieldDressing;
+    class Morphine: FieldDressing {
+        displayName = "Use Morphine Autoinjector";
+        displayNameProgress = "Using Morphine Autoinjector...";
+    };
+    class Adenosine: Morphine {
+        displayName = "Use Adenosine Autoinjector";
+        displayNameProgress = "Using Adenosine Autoinjector...";
+    };
+    class Epinephrine: Morphine {
+        displayName = "Use Epinephrine Autoinjector";
+        displayNameProgress = "Using Epinephrine Autoinjector...";
+    };
     class SurgicalKit;
     class CheckPulse;
     class CheckResponse: CheckPulse {
@@ -212,8 +224,8 @@ class ACEGVAR(medical_treatment,actions) {
     
     // Vials
 
-    class Epinephrine_Vial: Morphine {
-        displayName = "Push Epinephrine (Vial)";
+    class Epinephrine_IV: Morphine {
+        displayName = "Push Epinephrine (IV)";
         displayNameProgress = "Pushing Epinephrine...";
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
@@ -225,24 +237,29 @@ class ACEGVAR(medical_treatment,actions) {
         sounds[] = {};
         litter[] = {};
     };
-    class Morphine_Vial: Epinephrine_Vial {
-        displayName = "Push Morphine (Vial)";
-        displayNameProgress = "Pushing Morphine...";
-        items[] = {"ACM_Vial_Morphine"};
-    };
-    class Adenosine_Vial: Epinephrine_Vial {
-        displayName = "Push Adenosine (Vial)";
-        displayNameProgress = "Pushing Adenosine...";
-        items[] = {"ACM_Vial_Adenosine"};
-    };
-    class Amiodarone_Vial: Epinephrine_Vial {
-        displayName = "Push Amiodarone (Vial)";
+    class Amiodarone_Vial: Epinephrine_IV {
+        displayName = "Push Amiodarone (IV)";
         displayNameProgress = "Pushing Amiodarone...";
         items[] = {"ACM_Vial_Amiodarone"};
     };
-    class TXA_Vial: Epinephrine_Vial {
-        displayName = "Push TXA (Vial)";
+    class Morphine_IV: Epinephrine_IV {
+        displayName = "Push Morphine (IV)";
+        displayNameProgress = "Pushing Morphine...";
+        items[] = {"ACM_Vial_Morphine"};
+    };
+    class Ketamine_IV: Epinephrine_IV {
+        displayName = "Push Ketamine (IV)";
+        displayNameProgress = "Pushing Ketamine...";
+        items[] = {"ACM_Vial_Ketamine"};
+    };
+    class TXA_IV: Epinephrine_IV {
+        displayName = "Push TXA (IV)";
         displayNameProgress = "Pushing TXA...";
         items[] = {"ACM_Vial_TXA"};
+    };
+    class Adenosine_IV: Epinephrine_IV {
+        displayName = "Push Adenosine (IV)";
+        displayNameProgress = "Pushing Adenosine...";
+        items[] = {"ACM_Vial_Adenosine"};
     };
 };

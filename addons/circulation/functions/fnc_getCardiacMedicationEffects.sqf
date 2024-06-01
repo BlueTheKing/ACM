@@ -25,24 +25,26 @@ private _amiodaroneVial = 0;
 
 //ace_medical_status_fnc_getMedicationCount
 {
-    _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem"];
+    _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "", "", "", "_administrationType", "_maxEffectTime"];
 
-    private _getEffect = (((_timeInSystem / _timeTillMaxEffect) ^ 2) min 1) * (_maxTimeInSystem - _timeInSystem) / _maxTimeInSystem;
+    private _timeInSystem = CBA_missionTime - _timeAdded;
+
+    private _getEffect = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime] call FUNC(getMedicationEffect);
 
     switch (_medication) do {
         case "Morphine": {
             _morphine = _morphine + _getEffect;
         };
-        case "MorphineVial": {
+        case "Morphine_IV": {
             _morphineVial = _morphineVial + _getEffect;
         };
         case "Epinephrine": {
             _epinephrine = _epinephrine + _getEffect;
         };
-        case "EpinephrineVial": {
+        case "Epinephrine_IV": {
             _epinephrineVial = _epinephrineVial + _getEffect;
         };
-        case "Amiodarone": {
+        case "Amiodarone_IV": {
             _amiodaroneVial = _amiodaroneVial + _getEffect;
         };
     };
@@ -51,7 +53,7 @@ private _amiodaroneVial = 0;
 _morphine = (_morphine * 0.3) min 0.5;
 _morphineVial = (_morphineVial * 0.6) min 0.8;
 _epinephrine = (_epinephrine * 1.3) min 1.6;
-_epinephrineVial = (_epinephrineVial * 1.5) min 1.8;
+_epinephrineVial = (_epinephrineVial * 1.8) min 2;
 _amiodaroneVial = (_amiodaroneVial * 2) min 2;
 
 createHashMapFromArray [["morphine", (_morphine max _morphineVial)], ["epinephrine", (_epinephrine max _epinephrineVial)], ["amiodarone",_amiodaroneVial]];

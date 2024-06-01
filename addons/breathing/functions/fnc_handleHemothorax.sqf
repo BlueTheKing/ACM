@@ -39,7 +39,7 @@ private _PFH = [{
 
     private _hemothoraxState = _patient getVariable [QGVAR(Hemothorax_State), 0];
     private _plateletCount = _patient getVariable [QEGVAR(circulation,Platelet_Count), 3];
-    private _TXAEffect = [_patient, "TXA_Vial", false] call ACEFUNC(medical_status,getMedicationCount);
+    private _TXAEffect = [_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount);
 
     if (!(alive _patient) || _hemothoraxState == 0) exitWith {
         _patient setVariable [QGVAR(Hemothorax_PFH), -1];

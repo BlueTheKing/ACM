@@ -30,7 +30,7 @@ class CfgWeapons {
         displayName = "Stethoscope";
         descriptionShort = "Used to listen to breathing and heart sounds of patient";
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 1.5;
+            mass = 2;
         };
     };
 
@@ -49,7 +49,7 @@ class CfgWeapons {
         displayName = "Chest Tube Kit";
         descriptionShort = "Single-use kit used to insert a chest tube for removal of fluid from the plueral space";
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 3;
+            mass = 4;
         };
     };
 
@@ -68,7 +68,7 @@ class CfgWeapons {
         descriptionShort = "Compact version of Bag-Valve-Mask";
         descriptionUse = "Compact variant of Bag-Valve-Mask, device used to ventilate non-breathing patient by inflating and deflating the lungs with air";
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 3;
+            mass = 5;
         };
     };
 
@@ -88,7 +88,7 @@ class CfgWeapons {
         descriptionShort = "Used to ventilate patient that is not breathing";
         descriptionUse = "Device used to ventilate non-breathing patient by inflating and deflating the lungs with air, may be connected to oxygen";
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 10;
+            mass = 12;
         };
     };
 };

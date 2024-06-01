@@ -159,7 +159,7 @@ if (_clotSuccess) then {
     _patient setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
 
     private _reopenChance = 0.7;
-    private _txaEffect = [_patient, "TXA_Vial", false] call ACEFUNC(medical_status,getMedicationCount);
+    private _txaEffect = [_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount);
 
     if (_txaEffect > 0.15 || !_unstable) then {
         _reopenChance = 0.4;

@@ -10,6 +10,28 @@
         count = num; \
     }
 
+#define ACTION_SYRINGE_IM_DISCARD(medication) \
+    class DOUBLES(ACM_Action_Syringe_IM,medication) { \
+        displayName = QUOTE(Syringe (##medication##)); \
+        condition = QUOTE('ACM_Syringe_IM_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
+        statement = ""; \
+        showDisabled = 0; \
+        class TRIPLES(ACM_Action_Syringe_IM,medication,Discard) { \
+            displayName = QUOTE(Discard); \
+            condition = "true"; \
+            statement = QUOTE([ARR_2(_player,'##medication##')] call EFUNC(circulation,Syringe_Discard)); \
+            showDisabled = 0; \
+        }; \
+    }
+
+#define ACTION_SYRINGE_IM_PREPARE(medication) \
+    class DOUBLES(ACM_Action_Syringe_IM_Empty_Prepare,medication) { \
+        displayName = QUOTE(Draw ##medication##); \
+        condition = QUOTE('ACM_Vial_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
+        statement = QUOTE([ARR_2(_player,'##medication##')] call EFUNC(circulation,Syringe_Prepare)); \
+        showDisabled = 0; \
+    }
+
 class CfgVehicles {
     class ACE_medicalSupplyCrate;
     class ACM_MedicalSupplyCrate_Basic: ACE_medicalSupplyCrate {
@@ -74,6 +96,7 @@ class CfgVehicles {
             ADDITEM(ACM_PressureCuff,3);
             ADDITEM(ACM_IV_16g,25);
             ADDITEM(ACM_IV_14g,15);
+            ADDITEM(ACM_Syringe_IM,5);
             ADDITEM(ACM_IO_FAST,20);
             ADDITEM(ACM_Vial_Epinephrine,10);
             ADDITEM(ACM_Vial_Morphine,10);
@@ -92,6 +115,8 @@ class CfgVehicles {
             ADDITEM(ACE_salineIV_250,10);
             // Disability
             ADDITEM(ACE_morphine,5);
+            ADDITEM(ACM_Vial_Ketamine,10);
+            ADDITEM(ACM_Vial_Lidocaine,10);
             ADDITEM(ACE_splint,10);
             ADDITEM(ACM_SAMSplint,10);
             // Other
@@ -100,6 +125,49 @@ class CfgVehicles {
             ADDITEM(ACE_surgicalKit,2);
             ADDITEM(ACE_bodyBag,5);
             ADDITEM(ACE_suture,60);
+        };
+    };
+
+    class Man;
+    class CAManBase: Man {
+        class ACE_SelfActions {
+            class ACM_Equipment {
+                displayName = "Medical Equipment";
+                icon = QPATHTOEF(main,logo_empty.paa);
+                class ACM_AED_Interactions {
+                    displayName = "AED";
+                    condition = QUOTE('ACM_AED' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                    //icon = QPATHTOF(ui\icon_aed_ca.paa);
+                    class ACM_AED_ViewMonitor {
+                        displayName = "View Monitor";
+                        condition = "true";
+                        statement = QUOTE([ARR_2(_player,_player)] call EFUNC(circulation,displayAEDMonitor));
+                        showDisabled = 0;
+                    };
+                };
+                class ACM_Action_Syringe_IM {
+                    displayName = "IM Syringes";
+                    condition = QUOTE([_player] call EFUNC(circulation,Syringe_Find));
+                    statement = "";
+                    showDisabled = 0;
+                    exceptions[] = {"isNotInside", "isNotSitting"};
+                    icon = "";
+                    class ACM_Action_Syringe_IM_Empty {
+                        displayName = "IM Syringe (Empty)";
+                        condition = QUOTE('ACM_Syringe_IM' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                        statement = "";
+                        showDisabled = 0;
+                        exceptions[] = {"isNotInside", "isNotSitting"};
+                        icon = "";
+                        ACTION_SYRINGE_IM_PREPARE(Epinephrine);
+                        ACTION_SYRINGE_IM_PREPARE(Morphine);
+                        ACTION_SYRINGE_IM_PREPARE(Lidocaine);
+                    };
+                    ACTION_SYRINGE_IM_DISCARD(Epinephrine);
+                    ACTION_SYRINGE_IM_DISCARD(Morphine);
+                    ACTION_SYRINGE_IM_DISCARD(Lidocaine);
+                };
+            };
         };
     };
 

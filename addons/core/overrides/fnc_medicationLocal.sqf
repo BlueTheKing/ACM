@@ -88,6 +88,10 @@ if ((_rrAdjust select 0) + (_rrAdjust select 1) != 0) then {
     _rrAdjustment = random [(_rrAdjust select 0), (((_rrAdjust select 0) + (_rrAdjust select 1)) / 2), (_rrAdjust select 1)]
 };
 
+if (_painReduce > 0) then {
+    _painReduce = _painReduce / (2 * ([_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount)));
+};
+
 // Adjust the medication effects and add the medication to the list
 TRACE_3("adjustments",_heartRateChange,_painReduce,_viscosityChange);
 [_patient, _className, _timeTillMaxEffect, _timeInSystem, _heartRateChange, _painReduce, _viscosityChange, _administrationType, _maxEffectTime, _rrAdjustment] call ACEFUNC(medical_status,addMedicationAdjustment);

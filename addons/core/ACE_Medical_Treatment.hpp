@@ -301,14 +301,14 @@ class ACE_ADDON(Medical_Treatment) {
         maxDoseDeviation = 1;
         administrationType = ACM_ROUTE_IM;
         rrAdjust[] = {0,0};
-        maxEffectTime = 60;
+        maxEffectTime = 120;
         onOverDose = QUOTE(_this call EFUNC(circulation,handleOverdose));
         class Morphine {
             painReduce = 0.7;
             hrIncreaseLow[] = {-8, -12};
             hrIncreaseNormal[] = {-8, -22};
             hrIncreaseHigh[] = {-8, -27};
-            timeInSystem = 900;
+            timeInSystem = 1200;
             timeTillMaxEffect = 30;
             maxDose = 4;
             incompatibleMedication[] = {};
@@ -321,7 +321,7 @@ class ACE_ADDON(Medical_Treatment) {
             hrIncreaseLow[] = {9, 16};
             hrIncreaseNormal[] = {9, 44};
             hrIncreaseHigh[] = {9, 36};
-            timeInSystem = 900;
+            timeInSystem = 1200;
             timeTillMaxEffect = 30;
             maxDose = 8;
             incompatibleMedication[] = {};
@@ -334,7 +334,7 @@ class ACE_ADDON(Medical_Treatment) {
             hrIncreaseLow[] = {-7, -10};
             hrIncreaseNormal[] = {-15, -30};
             hrIncreaseHigh[] = {-15, -35};
-            timeInSystem = 900;
+            timeInSystem = 1200;
             timeTillMaxEffect = 30;
             maxDose = 5;
             incompatibleMedication[] = {};
@@ -378,31 +378,31 @@ class ACE_ADDON(Medical_Treatment) {
             administrationType = ACM_ROUTE_INHALE;
         };
         class Penthrox: AmmoniaInhalant {
-            painReduce = 0.65;
+            painReduce = 0.75;
             hrIncreaseLow[] = {-1, -4};
             hrIncreaseNormal[] = {-1, -5};
             hrIncreaseHigh[] = {-1, -10};
             timeInSystem = 425;
             maxEffectTime = 80;
             maxDose = 4;
-            rrAdjust[] = {-4,-7};
+            rrAdjust[] = {-5,-8};
         };
         class Naloxone: AmmoniaInhalant {
             hrIncreaseLow[] = {0, 0};
             hrIncreaseNormal[] = {0, 0};
             hrIncreaseHigh[] = {0, 0};
-            timeInSystem = 300;
-            maxEffectTime = 60;
+            timeInSystem = 360;
+            maxEffectTime = 120;
             maxDose = 20;
             rrAdjust[] = {0,0};
         };
 
-        class Epinephrine_Vial: Epinephrine {
+        class Epinephrine_IV: Epinephrine {
             painReduce = 0;
             hrIncreaseLow[] = {25, 35};
             hrIncreaseNormal[] = {25, 55};
             hrIncreaseHigh[] = {25, 45};
-            timeInSystem = 1200;
+            timeInSystem = 600;
             timeTillMaxEffect = 5;
             maxEffectTime = 120;
             maxDose = 5;
@@ -410,31 +410,59 @@ class ACE_ADDON(Medical_Treatment) {
             rrAdjust[] = {8,12};
             administrationType = ACM_ROUTE_IV;
         };
-        class Adenosine_Vial: Epinephrine_Vial {
+        class Adenosine_IV: Epinephrine_IV {
             hrIncreaseLow[] = {-10, -15};
             hrIncreaseNormal[] = {-10, -40};
             hrIncreaseHigh[] = {-10, -30};
             rrAdjust[] = {0,0};
         };
-        class Morphine_Vial: Epinephrine_Vial {
+        class Morphine_IV: Epinephrine_IV {
             painReduce = 0.85;
             hrIncreaseLow[] = {-9, -18};
             hrIncreaseNormal[] = {-9, -24};
             hrIncreaseHigh[] = {-9, -30};
             rrAdjust[] = {-7,-11};
         };
-        class Amiodarone_Vial: Epinephrine_Vial {
+        class Amiodarone_IV: Epinephrine_IV {
             hrIncreaseLow[] = {-1, -2};
             hrIncreaseNormal[] = {-3, -5};
             hrIncreaseHigh[] = {-10, -15};
             rrAdjust[] = {0,0};
         };
 
-        class TXA_Vial: Amiodarone_Vial {
+        class TXA_IV: Amiodarone_IV {
             hrIncreaseLow[] = {-1, -1};
             hrIncreaseNormal[] = {-1, -1};
             hrIncreaseHigh[] = {-2, -4};
+            timeInSystem = 360;
             viscosityChange = 5;
+        };
+
+        class Lidocaine: Morphine {
+            painReduce = 0;
+            hrIncreaseLow[] = {0, 0};
+            hrIncreaseNormal[] = {0, 0};
+            hrIncreaseHigh[] = {0, 0};
+            timeTillMaxEffect = 30;
+            maxEffectTime = 240;
+            maxDose = 10;
+            rrAdjust[] = {0,0};
+        };
+
+        class Ketamine: Morphine {
+            painReduce = 0.7;
+            hrIncreaseLow[] = {-1, -1};
+            hrIncreaseNormal[] = {-1, -1};
+            hrIncreaseHigh[] = {-1, -1};
+            rrAdjust[] = {0,0};
+        };
+
+        class Ketamine_IV: Epinephrine_IV {
+            painReduce = 0.85;
+            hrIncreaseLow[] = {-1, -2};
+            hrIncreaseNormal[] = {-1, -2};
+            hrIncreaseHigh[] = {-1, -2};
+            rrAdjust[] = {0,0};
         };
     };
 

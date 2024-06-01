@@ -27,7 +27,7 @@ _patient setVariable [QGVAR(TXA_Effect), ((_TXAEffect + 1) min 2)];
 [{
     params ["_patient"];
 
-    [_patient, "TXA_Vial", false] call ACEFUNC(medical_status,getMedicationCount) < 0.1;
+    [_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount) < 0.1;
     
 }, {
     params ["_patient"];

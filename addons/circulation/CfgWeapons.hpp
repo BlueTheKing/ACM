@@ -1,3 +1,9 @@
+#define PREPARE_SYRINGE_IM(medication) \
+    class DOUBLES(ACM_Syringe_IM,medication): ACM_Syringe_IM { \
+        displayName = QUOTE(IM Syringe (##medication##)); \
+        descriptionShort = QUOTE(IM syringe prepared with ##medication##); \
+    }
+
 class CfgWeapons {
     class ACE_ItemCore;
     class CBA_MiscItem_ItemInfo;
@@ -20,7 +26,7 @@ class CfgWeapons {
         displayName = "Pressure Cuff";
         descriptionShort = "Used to measure blood pressure";
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 2;
+            mass = 4;
         };
     };
 
@@ -57,6 +63,23 @@ class CfgWeapons {
         };
     };
 
+    class ACM_Syringe_IM: ACE_ItemCore {
+        scope = 2;
+        author = "Blue";
+        picture = QPATHTOF(ui\syringe_im_ca.paa);
+        displayName = "IM Syringe";
+        descriptionShort = "Used to administer medications intramuscularly";
+        ACE_isMedicalItem = 1;
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.8;
+        };
+    };
+    /*class ACM_Syringe_IV: ACM_Syringe_IM {
+        picture = QPATHTOF(ui\syringe_iv_ca.paa);
+        displayName = "IV Syringe";
+        descriptionShort = "Used to administer prepared medications through an IV line";
+    };*/
+
     class ACM_Vial_Epinephrine: ACE_ItemCore {
         scope = 2;
         author = "Blue";
@@ -69,6 +92,7 @@ class CfgWeapons {
             mass = 0.2;
         };
     };
+    PREPARE_SYRINGE_IM(Epinephrine);
     class ACM_Vial_Adenosine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_adenosine_ca.paa);
         displayName = "Adenosine Vial";
@@ -78,16 +102,34 @@ class CfgWeapons {
     class ACM_Vial_Morphine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_morphine_ca.paa);
         displayName = "Morphine Vial";
-        descriptionShort = ACECSTRING(medical_treatment,Morphine_Desc_Short);
-        descriptionUse = ACECSTRING(medical_treatment,Morphine_Desc_Use);
+        descriptionShort = "Used to manage moderate to severe pain experiences";
     };
+    PREPARE_SYRINGE_IM(Morphine);
+    class ACM_Vial_Ketamine: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_ketamine_ca.paa);
+        displayName = "Ketamine Vial";
+        descriptionShort = "Used to manage moderate to severe pain, alternative to opioid analgesics";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.2;
+        };
+    };
+
+    class ACM_Vial_Lidocaine: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_lidocaine_ca.paa);
+        displayName = "Lidocaine Vial";
+        descriptionShort = "Used as local anesthetic for painful surgical procedures";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.2;
+        };
+    };
+    PREPARE_SYRINGE_IM(Lidocaine);
+
     class ACM_Vial_TXA: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_txa_ca.paa);
         displayName = "TXA Vial";
         descriptionShort = "Used to manage catastrophic bleeding by improving clotting ability";
         descriptionUse = "Medication used to manage catastrophic bleeding by impeding the breakdown of clots, improving clotting ability";
     };
-
     class ACM_Vial_Amiodarone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_amiodarone_ca.paa);
         displayName = "Amiodarone Vial";
@@ -97,7 +139,7 @@ class CfgWeapons {
             mass = 0.2;
         };
     };
-
+    
     class ACM_Spray_Naloxone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\spray_naloxone_ca.paa);
         displayName = "Naloxone Nasal Spray";
