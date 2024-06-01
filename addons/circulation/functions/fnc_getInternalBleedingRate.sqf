@@ -31,4 +31,4 @@ if (_plateletCount > 0) then {
 };
 
 // even if heart stops blood will still flow slowly (gravity)
-(_internalBleeding * (_cardiacOutput max GVAR(cardiacArrestBleedRate)) * _coagulationModifier * ACEGVAR(medical,bleedingCoefficient));
+(_internalBleeding * (_cardiacOutput max (GVAR(cardiacArrestBleedRate) / 2)) * _coagulationModifier * ACEGVAR(medical,bleedingCoefficient));
