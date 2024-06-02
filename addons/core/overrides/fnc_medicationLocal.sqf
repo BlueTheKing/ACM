@@ -89,7 +89,10 @@ if ((_rrAdjust select 0) + (_rrAdjust select 1) != 0) then {
 };
 
 if (_painReduce > 0) then {
-    _painReduce = _painReduce / (2 * ([_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount)));
+    private _effect = [_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount);
+    if (_effect > 0) then {
+        _painReduce = _painReduce / (2 * _effect);
+    };
 };
 
 // Adjust the medication effects and add the medication to the list
