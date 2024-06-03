@@ -22,13 +22,17 @@
 
 [QGVAR(handleMed_AmmoniaInhalantLocal), LINKFUNC(handleMed_AmmoniaInhalantLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_NaloxoneLocal), LINKFUNC(handleMed_NaloxoneLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_txaLocal), LINKFUNC(handleMed_TXALocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_ketamineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_lidocaineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 
 [QACEGVAR(medical_treatment,medicationLocal), {
     params ["_patient", "_bodyPart", "_classname"];
 
     // Handle special medication effects
-    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA"]) then {
-        [(format ["ACM_circulation_handleMed_%1Local", toLower _classname]), [_patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
+    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine_IV", "Lidocaine"]) then {
+        private _shortClassname = (_classname splitString "_") select 0;
+        [(format ["ACM_circulation_handleMed_%1Local", toLower _shortClassname]), [_patient, _bodyPart, _classname], _patient] call CBA_fnc_targetEvent;
     };
 }] call CBA_fnc_addEventHandler;
 

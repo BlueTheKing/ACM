@@ -41,6 +41,7 @@ PREP(getInternalBleedingRate);
 PREP(getIVFlowRate);
 PREP(getMedicationEffect);
 PREP(handleAED);
+PREP(handleAnestheticEffects);
 PREP(handleCardiacArrest);
 PREP(handleCPR);
 PREP(handleMed_AmmoniaInhalantLocal);

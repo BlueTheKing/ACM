@@ -96,6 +96,12 @@ switch (ACEGVAR(medical_feedback,bloodVolumeEffectType)) do {
     };
 };
 
+GVAR(ppAnestheticEffect_chrom) = [
+    "ChromAberration",
+    13506,
+    [0, 0, false]
+] call _fnc_createEffect;
+
 if (_updateOnly) exitWith {};
 
 // - Unconscious --------------------------------------------------------------
@@ -124,6 +130,7 @@ ACEGVAR(medical_feedback,ppIncapacitationBlur) = [
     [0]
 ] call _fnc_createEffect;
 
+// - Low Oxygen Tunnels Vision ------------------------------------------------
 GVAR(ppLowOxygenTunnelVision) = [
     "ColorCorrections",
     13505,

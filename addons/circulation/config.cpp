@@ -20,7 +20,6 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "CfgMagazines.hpp"
 #include "CfgMoves.hpp"
-#include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"
 #include "ACE_Medical_Treatment_Actions.hpp"
 #include "\x\ACM\addons\core\UI_defines.hpp"

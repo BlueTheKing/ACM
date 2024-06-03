@@ -443,8 +443,8 @@ class ACE_ADDON(Medical_Treatment) {
             hrIncreaseLow[] = {0, 0};
             hrIncreaseNormal[] = {0, 0};
             hrIncreaseHigh[] = {0, 0};
-            timeTillMaxEffect = 30;
-            maxEffectTime = 240;
+            timeTillMaxEffect = 20;
+            timeInSystem = 600;
             maxDose = 10;
             rrAdjust[] = {0,0};
         };

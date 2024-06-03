@@ -12,12 +12,12 @@
 
 #define ACTION_SYRINGE_IM_DISCARD(medication) \
     class DOUBLES(ACM_Action_Syringe_IM,medication) { \
-        displayName = QUOTE(Syringe (##medication##)); \
+        displayName = QUOTE(IM Syringe (##medication##)); \
         condition = QUOTE('ACM_Syringe_IM_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
         statement = ""; \
         showDisabled = 0; \
         class TRIPLES(ACM_Action_Syringe_IM,medication,Discard) { \
-            displayName = QUOTE(Discard); \
+            displayName = QUOTE(Discard Contents); \
             condition = "true"; \
             statement = QUOTE([ARR_2(_player,'##medication##')] call EFUNC(circulation,Syringe_Discard)); \
             showDisabled = 0; \
@@ -151,7 +151,7 @@ class CfgVehicles {
                     statement = "";
                     showDisabled = 0;
                     exceptions[] = {"isNotInside", "isNotSitting"};
-                    icon = "";
+                    icon = QPATHTOEF(circulation,ui\icon_syringe_im_ca.paa);
                     class ACM_Action_Syringe_IM_Empty {
                         displayName = "IM Syringe (Empty)";
                         condition = QUOTE('ACM_Syringe_IM' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
