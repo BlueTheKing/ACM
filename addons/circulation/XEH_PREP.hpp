@@ -67,6 +67,7 @@ PREP(setPressureCuff);
 PREP(setPressureCuffLocal);
 PREP(Syringe_Discard);
 PREP(Syringe_Find);
+PREP(Syringe_Inject);
 PREP(Syringe_Prepare);
 PREP(updateActiveFluidBags);
 PREP(updateCirculationState);
