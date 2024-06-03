@@ -42,7 +42,7 @@ ADDON = true;
     "SLIDER",
     ["Head Trauma Cardiac Arrest Threshold", "Sets threshold for possibility of cardiac arrest from trauma to the head, using percentage of Head Trauma Death Threshold"],
     [ACM_SETTINGS_CATEGORY, "Thresholds"],
-    [0, 1, 0.5, 1, true],
+    [0, 1, 0.65, 1, true],
     true
 ] call CBA_fnc_addSetting;
 
@@ -51,7 +51,16 @@ ADDON = true;
     "SLIDER",
     ["Torso Trauma Cardiac Arrest Threshold", "Sets threshold for possibility of cardiac arrest from trauma to the torso, using percentage of Body Trauma Death Threshold"],
     [ACM_SETTINGS_CATEGORY, "Thresholds"],
-    [0, 1, 0.5, 1, true],
+    [0, 1, 0.65, 1, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(internalBleedingChanceMultiplier),
+    "SLIDER",
+    ["Internal Bleeding Chance Multiplier", "Chance for internal bleeding"],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [0.1, 2, 1, 1],
     true
 ] call CBA_fnc_addSetting;
 

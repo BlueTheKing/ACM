@@ -23,7 +23,7 @@ params ["_patient", "_bodyPart", "_woundTypeID", "_woundSeverityID", "_bleedRate
 
 if (_woundSeverityID < 1 || _woundTypeID in [20,40,80]) exitWith {};
 
-if ((_woundSeverityID == 1 && (random 1) < 0.8) || (_woundSeverityID == 1 && (random 1) < 0.5)) exitWith {};
+if ((_woundSeverityID == 1 && (random 1) < (0.5 * GVAR(internalBleedingChanceMultiplier))) || (_woundSeverityID == 1 && (random 1) < (0.3 * GVAR(internalBleedingChanceMultiplier)))) exitWith {};
 
 private _targetWoundID = _woundTypeID + _woundSeverityID;
 
