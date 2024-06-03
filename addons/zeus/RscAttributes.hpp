@@ -129,3 +129,47 @@ class GVAR(RscInflictChestInjury): RscDisplayAttributes {
         class ButtonCancel: ButtonCancel {};
     };
 };
+
+class GVAR(RscGivePain): RscDisplayAttributes {
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscGivePain))] call ACEFUNC(zeus,zeusAttributes));
+    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscGivePain))] call ACEFUNC(zeus,zeusAttributes));
+    class Controls: Controls {
+        class Background: Background {};
+        class Title: Title {};
+        class Content: Content {
+            class Controls {
+                class SetBloodVolumeTab: RscControlsGroupNoScrollbars {
+                    onSetFocus = QUOTE(_this call FUNC(givePain));
+                    idc = IDC_MODULE_GIVE_PAIN;
+                    x = 0;
+                    y = 0;
+                    w = QUOTE(W_PART(26));
+                    h = QUOTE(H_PART(1.1));
+                    class Controls {
+                        class Title_PainAmount: RscText {
+                            idc = -1;
+                            text = "Pain Amount";
+                            x = 0;
+                            y = 0;
+                            w = QUOTE(W_PART(10));
+                            h = QUOTE(H_PART(1));
+                            colorBackground[] = {0,0,0,0.5};
+                        };
+                        class Slider_PainAmount: RscXSliderH {
+                            idc = IDC_MODULE_GIVE_PAIN_SLIDER;
+                            x = QUOTE(W_PART(10.1));
+                            y = 0;
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));
+                            sliderStep = 0.01;
+                            sliderRange[] = {0,1};
+                            sliderPosition = 0;
+                        };
+                    };
+                };
+            };
+        };
+        class ButtonOK: ButtonOK {};
+        class ButtonCancel: ButtonCancel {};
+    };
+};

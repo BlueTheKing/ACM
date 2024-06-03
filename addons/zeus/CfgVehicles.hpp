@@ -32,4 +32,9 @@ class CfgVehicles {
         icon = QPATHTOF(ui\Icon_Module_ChestInjury_ca.paa);
         curatorInfoType = QGVAR(RscInflictChestInjury);
     };
+    class GVAR(givePain): GVAR(moduleBase) {
+        displayName = "Give Pain";
+        icon = QPATHTOF(ui\Icon_Module_GivePain_ca.paa);
+        curatorInfoType = QGVAR(RscGivePain);
+    };
 };
