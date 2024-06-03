@@ -5,11 +5,12 @@
  *
  * Arguments:
  * 0: Unit <OBJECT>
- * 1: Respiration Rate Adjustment <NUMBER>
- * 2: Oxygen Saturation <NUMBER>
- * 3: Oxygen Demand <NUMBER>
- * 4: Time since last update <NUMBER>
- * 5: Sync value? <BOOL>
+ * 1: Oxygen Saturation <NUMBER>
+ * 2: Oxygen Demand <NUMBER>
+ * 3: Respiration Rate Adjustment <NUMBER>
+ * 4: Carbon Dioxide Sensitivity Adjustment <NUMBER>
+ * 5: Time since last update <NUMBER>
+ * 6: Sync value? <BOOL>
  *
  * Return Value:
  * Respiration Rate <NUMBER>
@@ -20,7 +21,7 @@
  * Public: No
  */
 
-params ["_unit", "_respirationRateAdjustment", "_oxygenSaturation", ["_oxygenDemand", 0], "_deltaT", "_syncValue"];
+params ["_unit", "_oxygenSaturation", ["_oxygenDemand", 0], "_respirationRateAdjustment", "_coSensitivityAdjustment", "_deltaT", "_syncValue"];
 // 12-20 per min          40-60 per min
 
 private _respirationRate = _unit getVariable [QGVAR(RespirationRate), 0];
@@ -40,15 +41,15 @@ switch (true) do {
     default {
         private _desiredRespirationRate = ACM_TARGETVITALS_RR(_unit);
 
-        private _targetRespirationRate = _desiredRespirationRate;
+        private _targetRespirationRate = _desiredRespirationRate  * (1 + _coSensitivityAdjustment);
 
-        _targetRespirationRate = _targetRespirationRate + ((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 1.1) max (_oxygenDemand * -500);
+        _targetRespirationRate = _targetRespirationRate + (((ACM_TARGETVITALS_OXYGEN(_unit) * (1 + _coSensitivityAdjustment)) - _oxygenSaturation) * 1.1) max (_oxygenDemand * -500);
 
         if (_respirationRateAdjustment != 0) then {
             if (_respirationRateAdjustment < 0) then {
-                _targetRespirationRate = (_targetRespirationRate + 4 * (_respirationRateAdjustment * (_targetRespirationRate / ACM_TARGETVITALS_OXYGEN(_unit)))) max 0;
+                _targetRespirationRate = (_targetRespirationRate + (_respirationRateAdjustment * (_targetRespirationRate / ACM_TARGETVITALS_RR(_unit)))) max 0;
             } else {
-                _targetRespirationRate = (_targetRespirationRate + 4 * (_respirationRateAdjustment * (ACM_TARGETVITALS_OXYGEN(_unit) / _targetRespirationRate))) max 0;
+                _targetRespirationRate = (_targetRespirationRate + (_respirationRateAdjustment * (ACM_TARGETVITALS_RR(_unit) / _targetRespirationRate))) max 0;
             };
         };
 

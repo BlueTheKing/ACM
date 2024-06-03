@@ -6,8 +6,10 @@
  * Arguments:
  * 0: The Unit <OBJECT>
  * 1: Respiration Rate Adjustment <NUMBER>
- * 2: Time since last update <NUMBER>
- * 3: Sync value? <BOOL>
+ * 2: Carbon Dioxide Sensitivity Adjustment <NUMBER>
+ * 3: Breathing Effectiveness Adjustment <NUMBER>
+ * 4: Time since last update <NUMBER>
+ * 5: Sync value? <BOOL>
  *
  * ReturnValue:
  * Current SPO2 <NUMBER>
@@ -18,7 +20,7 @@
  * Public: No
  */
 
-params ["_unit", "_respirationRateAdjustment", "_deltaT", "_syncValue"];
+params ["_unit", "_respirationRateAdjustment", "_coSensitivityAdjustment", "_breathingEffectivenessAdjustment", "_deltaT", "_syncValue"];
 
 //if (!ACEGVAR(medical_vitals,simulateSpO2)) exitWith {}; // changing back to default is handled in initSettings.inc.sqf
 
@@ -68,7 +70,7 @@ if (_unit == ACE_player && {missionNamespace getVariable [QACEGVAR(advanced_fati
     _negativeChange = _negativeChange - ((1 - ACEGVAR(advanced_fatigue,aeReservePercentage)) * 0.1) - ((1 - ACEGVAR(advanced_fatigue,anReservePercentage)) * 0.05);
 };
 
-private _respirationRate = [_unit, _respirationRateAdjustment, _currentOxygenSaturation, (_negativeChange - BASE_OXYGEN_USE), _deltaT, _syncValue] call EFUNC(breathing,updateRespirationRate);
+private _respirationRate = [_unit, _currentOxygenSaturation, (_negativeChange - BASE_OXYGEN_USE), _respirationRateAdjustment, _coSensitivityAdjustment, _deltaT, _syncValue] call EFUNC(breathing,updateRespirationRate);
 
 private _targetOxygenSaturation = _desiredOxygenSaturation;
 
@@ -93,8 +95,12 @@ if IS_UNCONSCIOUS(_unit) then {
 if (_respirationRate > 0) then {
     private _airSaturation = _airOxygenSaturation * _capture;
 
-    private _hyperVentilationEffect = 0.9 max (40 / _respirationRate) min 1;
+    private _hyperVentilationEffect = 0.9 max (45 / _respirationRate) min 1;
     private _breathingEffectiveness = _airwayState * _effectiveBloodVolume * _breathingState * _hyperVentilationEffect;
+
+    if (_breathingEffectivenessAdjustment != 0) then {
+        _breathingEffectiveness = (_breathingEffectiveness * (1 + _breathingEffectivenessAdjustment)) min ((_breathingEffectiveness + 0.01) min 1);
+    };
 
     private _fatigueEffect = 0.99 max (-0.25 / _negativeChange) min 1;
 

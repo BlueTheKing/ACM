@@ -75,17 +75,31 @@ private _incompatibleMedication = GET_ARRAY(_medicationConfig >> "incompatibleMe
 
 private _administrationType = GET_NUMBER(_medicationConfig >> "administrationType",getNumber (_defaultConfig >> "administrationType"));
 private _maxEffectTime = GET_NUMBER(_medicationConfig >> "maxEffectTime",getNumber (_defaultConfig >> "maxEffectTime"));
-private _rrAdjust = GET_ARRAY(_medicationConfig >> "rrAdjust",getArray (_defaultConfig >> "rrAdjust"));
 
 private _heartRate = GET_HEART_RATE(_patient);
 private _hrIncrease = [_hrIncreaseLow, _hrIncreaseNormal, _hrIncreaseHigh] select (floor ((0 max _heartRate min 110) / 55));
 _hrIncrease params ["_minIncrease", "_maxIncrease"];
 private _heartRateChange = _minIncrease + random (_maxIncrease - _minIncrease);
 
+private _rrAdjust = GET_ARRAY(_medicationConfig >> "rrAdjust",getArray (_defaultConfig >> "rrAdjust"));
 private _rrAdjustment = 0;
 
 if ((_rrAdjust select 0) + (_rrAdjust select 1) != 0) then {
-    _rrAdjustment = random [(_rrAdjust select 0), (((_rrAdjust select 0) + (_rrAdjust select 1)) / 2), (_rrAdjust select 1)]
+    _rrAdjustment = random [(_rrAdjust select 0), (((_rrAdjust select 0) + (_rrAdjust select 1)) / 2), (_rrAdjust select 1)];
+};
+
+private _coSensitivityAdjust = GET_ARRAY(_medicationConfig >> "coSensitivityAdjust",getArray (_defaultConfig >> "coSensitivityAdjust"));
+private _coSensitivityAdjustment = 0;
+
+if ((_coSensitivityAdjust select 0) + (_coSensitivityAdjust select 1) != 0) then {
+    _coSensitivityAdjustment = random [(_coSensitivityAdjust select 0), (((_coSensitivityAdjust select 0) + (_coSensitivityAdjust select 1)) / 2), (_coSensitivityAdjust select 1)];
+};
+
+private _breathingEffectivenessAdjust = GET_ARRAY(_medicationConfig >> "breathingEffectivenessAdjust",getArray (_defaultConfig >> "breathingEffectivenessAdjust"));
+private _breathingEffectivenessAdjustment = 0;
+
+if ((_breathingEffectivenessAdjust select 0) + (_breathingEffectivenessAdjust select 1) != 0) then {
+    _breathingEffectivenessAdjustment = random [(_breathingEffectivenessAdjust select 0), (((_breathingEffectivenessAdjust select 0) + (_breathingEffectivenessAdjust select 1)) / 2), (_breathingEffectivenessAdjust select 1)];
 };
 
 if (_painReduce > 0) then {
@@ -97,7 +111,7 @@ if (_painReduce > 0) then {
 
 // Adjust the medication effects and add the medication to the list
 TRACE_3("adjustments",_heartRateChange,_painReduce,_viscosityChange);
-[_patient, _className, _timeTillMaxEffect, _timeInSystem, _heartRateChange, _painReduce, _viscosityChange, _administrationType, _maxEffectTime, _rrAdjustment] call ACEFUNC(medical_status,addMedicationAdjustment);
+[_patient, _className, _timeTillMaxEffect, _timeInSystem, _heartRateChange, _painReduce, _viscosityChange, _administrationType, _maxEffectTime, _rrAdjustment, _coSensitivityAdjustment, _breathingEffectivenessAdjustment] call ACEFUNC(medical_status,addMedicationAdjustment);
 
 // Check for medication compatiblity
 [_patient, _className, _maxDose, _maxDoseDeviation, _incompatibleMedication] call ACEFUNC(medical_treatment,onMedicationUsage);
