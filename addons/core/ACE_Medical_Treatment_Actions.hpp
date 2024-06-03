@@ -304,6 +304,7 @@ class ACEGVAR(medical_treatment,actions) {
     class Lidocaine_Draw_IM: Epinephrine_Draw_IM {
         displayName = "Draw And Inject Lidocaine (IM)";
         displayNameProgress = "Drawing And Injecting Lidocaine...";
+        allowedSelections[] = {"Body"};
         items[] = {"ACM_Vial_Lidocaine"};
         callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'Lidocaine','ACM_Vial_Lidocaine',false)] call EFUNC(circulation,Syringe_Inject));
     };
