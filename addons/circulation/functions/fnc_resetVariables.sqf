@@ -39,6 +39,9 @@ _patient setVariable [QGVAR(AED_ShockTotal), 0, true];
 _patient setVariable [QGVAR(CPR_StoppedTotal), nil, true];
 _patient setVariable [QGVAR(CPR_StoppedTime), nil, true];
 
+_patient setVariable [QGVAR(CPR_Medic), objNull, true];
+_patient setVariable [QGVAR(isPerformingCPR), false, true];
+
 _patient setVariable [QGVAR(AmmoniaInhalant_EffectiveUses), (round(2 + random 3)), true];
 
 [_patient] call FUNC(updateCirculationState);

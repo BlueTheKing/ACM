@@ -182,8 +182,12 @@ if (_selectionN in [0,1] && _target getVariable [QEGVAR(airway,RecoveryPosition_
 };
 
 // CPR
-if (_selectionN == 1 && [_target] call EFUNC(core,cprActive)) then {
-    _entries pushBack [format ["CPR In Progress (%1)", ([(_target getVariable [QACEGVAR(medical,CPR_provider), objNull]), false, true] call ACEFUNC(common,getName))], _circulationColor];
+if (_selectionN == 1 && (_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]) isNotEqualTo objNull) then {
+    private _string = "Paused";
+    if ([_target] call EFUNC(core,cprActive)) then {
+        _string = "In Progress";
+    };
+    _entries pushBack [format ["CPR %1 (%2)", _string, ([(_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _circulationColor];
 };
 
 private _airwayItemType = _target getVariable [QEGVAR(airway,AirwayItem), ""];

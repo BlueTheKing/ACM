@@ -14,5 +14,3 @@
 [QGVAR(Thoracostomy_drainLocal), LINKFUNC(Thoracostomy_drainLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(setPulseOximeterLocal), LINKFUNC(setPulseOximeterLocal)] call CBA_fnc_addEventHandler;
-
-["isNotPerformingCPR", {!(alive ((_this select 0) getVariable [QACEGVAR(medical,CPR_provider), objNull]))}] call ACEFUNC(common,addCanInteractWithCondition);

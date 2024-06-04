@@ -37,3 +37,5 @@
 }] call CBA_fnc_addEventHandler;
 
 call FUNC(generateBloodTypeList);
+
+["isNotPerformingCPR", {!((_this select 0) getVariable [QGVAR(isPerformingCPR), false])}] call ACEFUNC(common,addCanInteractWithCondition);
