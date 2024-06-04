@@ -98,7 +98,7 @@ private _fnc_onConfirm = {
 
     private _setPain = (sliderPosition _ctrlPainAmount) - _currentPain;
 
-    [_patient, _setPain] call ACEFUNC(medical,adjustPainLevel);
+    [QGVAR(givePain), [_patient, _setPain], _patient] call CBA_fnc_targetEvent;
 };
 
 _display displayAddEventHandler ["Unload", _fnc_onUnload];
