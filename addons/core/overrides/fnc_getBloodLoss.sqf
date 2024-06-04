@@ -27,7 +27,7 @@ private _plateletCount = _unit getVariable [QEGVAR(circulation,Platelet_Count), 
 
 if (_plateletCount > 0.1) then {
     private _plateletCountModifier = ((_plateletCount / 3) - 1) * -0.1;
-    _coagulationModifier = _plateletCountModifier + (0.5 max (0.85 * _woundBleeding));
+    _coagulationModifier = _plateletCountModifier + (0.6 max (0.95 * _woundBleeding));
 };
 
 // even if heart stops blood will still flow slowly (gravity)

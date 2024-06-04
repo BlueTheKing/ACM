@@ -62,6 +62,6 @@ private _id = [{
         _patient setVariable [QGVAR(Coagulation_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
-}, 6, [_patient]] call CBA_fnc_addPerFrameHandler;
+}, 6.5, [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(Coagulation_PFH), _id];
