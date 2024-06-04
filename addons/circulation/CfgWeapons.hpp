@@ -113,6 +113,7 @@ class CfgWeapons {
             mass = 0.2;
         };
     };
+    PREPARE_SYRINGE_IM(Ketamine);
 
     class ACM_Vial_Lidocaine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_lidocaine_ca.paa);

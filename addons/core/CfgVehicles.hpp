@@ -161,10 +161,12 @@ class CfgVehicles {
                         icon = "";
                         ACTION_SYRINGE_IM_PREPARE(Epinephrine);
                         ACTION_SYRINGE_IM_PREPARE(Morphine);
+                        ACTION_SYRINGE_IM_PREPARE(Ketamine);
                         ACTION_SYRINGE_IM_PREPARE(Lidocaine);
                     };
                     ACTION_SYRINGE_IM_DISCARD(Epinephrine);
                     ACTION_SYRINGE_IM_DISCARD(Morphine);
+                    ACTION_SYRINGE_IM_DISCARD(Ketamine);
                     ACTION_SYRINGE_IM_DISCARD(Lidocaine);
                 };
             };

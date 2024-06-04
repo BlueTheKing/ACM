@@ -279,6 +279,12 @@ class ACEGVAR(medical_treatment,actions) {
         items[] = {"ACM_Syringe_IM_Morphine"};
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,'Morphine','ACM_Syringe_IM_Morphine')] call EFUNC(circulation,Syringe_Inject));
     };
+    class Ketamine_IM: Epinephrine_IM {
+        displayName = "Inject Ketamine (IM)";
+        displayNameProgress = "Injecting Ketamine...";
+        items[] = {"ACM_Syringe_IM_Ketamine"};
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,'Ketamine','ACM_Syringe_IM_Ketamine')] call EFUNC(circulation,Syringe_Inject));
+    };
     class Lidocaine_IM: Epinephrine_IM {
         displayName = "Inject Lidocaine (IM)";
         displayNameProgress = "Injecting Lidocaine...";
@@ -300,6 +306,12 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Drawing And Injecting Morphine...";
         items[] = {"ACM_Vial_Morphine"};
         callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'Morphine','ACM_Vial_Morphine',false)] call EFUNC(circulation,Syringe_Inject));
+    };
+    class Ketamine_Draw_IM: Epinephrine_Draw_IM {
+        displayName = "Draw And Inject Ketamine (IM)";
+        displayNameProgress = "Drawing And Injecting Ketamine...";
+        items[] = {"ACM_Vial_Ketamine"};
+        callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'Ketamine','ACM_Vial_Ketamine',false)] call EFUNC(circulation,Syringe_Inject));
     };
     class Lidocaine_Draw_IM: Epinephrine_Draw_IM {
         displayName = "Draw And Inject Lidocaine (IM)";
