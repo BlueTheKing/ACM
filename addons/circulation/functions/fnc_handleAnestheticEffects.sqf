@@ -5,18 +5,21 @@
  *
  * Arguments:
  * 0: Patient <OBJECT>
- * 1: Classname <STRING>
+ * 1: Body Part <STRING>
+ * 2: Classname <STRING>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player] call ACM_circulation_fnc_handleAnestheticEffects;
+ * [player, "", "Ketamine"] call ACM_circulation_fnc_handleAnestheticEffects;
  *
  * Public: No
  */
 
 params ["_patient", "", "_classname"];
+
+if (_patient != ACE_player) exitWith {};
 
 switch (_classname) do {
     case "Ketamine": {
