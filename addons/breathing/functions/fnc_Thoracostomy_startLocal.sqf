@@ -60,6 +60,6 @@ if (_anestheticEffect < 0.5) then {
 };
 
 _patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
-_patient setVariable [QGVAR(Pneumothorax_State), 3, true];
+_patient setVariable [QGVAR(Pneumothorax_State), 4, true];
 
 [_patient] call FUNC(updateBreathingState);

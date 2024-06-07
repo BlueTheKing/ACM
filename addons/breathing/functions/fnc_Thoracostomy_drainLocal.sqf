@@ -49,3 +49,5 @@ if (_type == 0) then {
 [(format ["%1<br/>%2", _hint, _amount]), 2, _medic, _width] call ACEFUNC(common,displayTextStructured);
 
 _patient setVariable [QGVAR(Hemothorax_Fluid), 0, true];
+
+[_patient] call FUNC(updateBreathingState);
