@@ -23,6 +23,7 @@ private _entries = [];
 private _nonissueColor = [1, 1, 1, 0.33];
 
 private _airwayColor = [0.19, 0.91, 0.93, 1];
+private _breathingColor = [0.3, 0.8, 0.8, 1];
 private _circulationColor = [0.2, 0.6, 0.2, 1];
 
 private _addListSpacer = false;
@@ -229,6 +230,15 @@ if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < 91 || HA
     _entries pushBack [format ["%1 Cyanosis", _cyanosis], [0.16, _colorScale, 1, 1]];
 };
 
+// BVM
+if (_selectionN == 0 && (_target getVariable [QEGVAR(breathing,BVM_Medic), objNull]) isNotEqualTo objNull) then {
+    private _string = "Paused";
+    if (alive (_target getVariable [QEGVAR(breathing,BVM_provider), objNull])) then {
+        _string = "Active";
+    };
+    _entries pushBack [format ["BVM %1 (%2)", _string, ([(_target getVariable [QEGVAR(breathing,BVM_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _breathingColor];
+};
+
 private _bodyPartIV = GET_IV(_target) select _selectionN;
 
 // IV/IO
@@ -316,7 +326,7 @@ if (_selectionN in [2,3] && {HAS_PULSEOX(_target,(_selectionN - 2))}) then {
         _spO2 = "--";
     };
 
-    _entries pushBack [format ["Pulse Oximeter [PR: %1 SpO2: %2]", _pr, _spo2], [0.3, 0.8, 0.8, 1]];
+    _entries pushBack [format ["Pulse Oximeter [PR: %1 SpO2: %2]", _pr, _spo2], _breathingColor];
 };
 
 // Damage taken tooltip

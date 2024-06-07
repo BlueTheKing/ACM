@@ -1,4 +1,3 @@
-#include "\x\ACM\addons\core\UI_defines.hpp"
 #include "\a3\ui_f\hpp\defineCommonGrids.inc"
 
 #define IDC_STETHOSCOPE 81000

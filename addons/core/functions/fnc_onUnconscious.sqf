@@ -26,4 +26,6 @@ if !(_state) then {
 
         _patient setVariable [QGVAR(WasTreated), false, true];
     }, [_patient], 2] call CBA_fnc_waitAndExecute;
+
+    _patient setVariable [QEGVAR(breathing,BVM_lastBreath), -1, true];
 };

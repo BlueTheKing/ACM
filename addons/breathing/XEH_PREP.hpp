@@ -30,4 +30,5 @@ PREP(updateBreathingState);
 PREP(updateLungState);
 //PREP(updateOxygenSaturation);
 PREP(updateRespirationRate);
+PREP(useBVM);
 PREP(useStethoscope);

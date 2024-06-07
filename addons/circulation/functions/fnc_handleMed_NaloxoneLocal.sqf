@@ -20,7 +20,7 @@ params ["_patient"];
 private _medicationArray = _patient getVariable [VAR_MEDICATIONS, []];
 private _mitigatedArray = _patient getVariable [QGVAR(MitigatedMedication), []];
 
-private _naloxoneEffect = 2;
+private _naloxoneEffect = 1;
 
 {
     _x params ["_medicationType", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", "_administrationType", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust"];

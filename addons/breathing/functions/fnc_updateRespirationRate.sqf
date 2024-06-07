@@ -31,7 +31,10 @@ switch (true) do {
     case !(_isBreathing): {
         _respirationRate = 0;
     };
-    case (_unit getVariable [QACEGVAR(medical,CPR_provider), objNull]): {
+    case ([_unit] call EFUNC(core,bvmActive)): {
+        _respirationRate = random [10,10,11];
+    };
+    case ([_unit] call EFUNC(core,cprActive)): {
         _respirationRate = random [20,25,30];
     };
     case !(alive _unit);
@@ -40,12 +43,23 @@ switch (true) do {
     };
     default {
         private _desiredRespirationRate = ACM_TARGETVITALS_RR(_unit);
+        private _coEffect = 1;
 
-        private _targetRespirationRate = _desiredRespirationRate  * (1 + _coSensitivityAdjustment);
+        private _targetRespirationRate = _desiredRespirationRate;
+        
+        if (_coSensitivityAdjustment != 0) then {
+            _coEffect = (1 + _coSensitivityAdjustment) ^ 2;
+            _targetRespirationRate = _targetRespirationRate * _coEffect ^ 4;
+        };
 
-        _targetRespirationRate = _targetRespirationRate + (((ACM_TARGETVITALS_OXYGEN(_unit) * (1 + _coSensitivityAdjustment)) - _oxygenSaturation) * 1.1) max (_oxygenDemand * -500);
+        _targetRespirationRate = _targetRespirationRate + ((ACM_TARGETVITALS_OXYGEN(_unit) * _coEffect) - _oxygenSaturation) max (_oxygenDemand * -500);
+
+        if IS_UNCONSCIOUS(_unit) then {
+            _targetRespirationRate = (_desiredRespirationRate + 16) min _targetRespirationRate;
+        };
 
         if (_respirationRateAdjustment != 0) then {
+            _targetRespirationRate = _targetRespirationRate max 0.1;
             if (_respirationRateAdjustment < 0) then {
                 _targetRespirationRate = (_targetRespirationRate + (_respirationRateAdjustment * (_targetRespirationRate / ACM_TARGETVITALS_RR(_unit)))) max 0;
             } else {

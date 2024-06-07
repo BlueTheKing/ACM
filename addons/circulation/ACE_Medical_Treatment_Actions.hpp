@@ -250,7 +250,7 @@ class ACEGVAR(medical_treatment,actions) {
         callbackProgress = "";
         callbackFailure = "";
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(beginCPR));
-        condition = QACEFUNC(medical_treatment,canCPR);
+        condition = QUOTE([ARR_2(_medic,_patient)] call ACEFUNC(medical_treatment,canCPR) && ((_patient getVariable [ARR_2(QQEGVAR(airway,AirwayItem),'')] == 'SGA') || !([_patient] call EFUNC(core,bvmActive))));
         ACM_rollToBack = 1;
         ACM_cancelRecovery = 1;
     };

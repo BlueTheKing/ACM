@@ -10,7 +10,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 3;
         allowedSelections[] = {"Head"};
         allowSelfTreatment = 0;
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)));
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
         callbackSuccess = QFUNC(checkBreathing);
         ACM_rollToBack = 1;
     };
@@ -39,6 +39,21 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE(!([_patient] call EFUNC(core,cprActive)));
         callbackSuccess = QFUNC(useStethoscope);
     };
+    class UseBVM: UseStethoscope {
+        displayName = "Use BVM";
+        displayNameProgress = "Use BVM...";
+        icon = "";
+        allowedSelections[] = {"Head"};
+        items[] = {"ACM_BVM","ACM_PocketBVM"};
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !([_patient] call EFUNC(core,cprActive)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
+        callbackSuccess = QFUNC(useBVM);
+        ACM_cancelRecovery = 1;
+    };
+    class UseBVM_Assist: UseBVM {
+        displayName = "Use BVM (Assist)";
+        displayNameProgress = "Use BVM (Assist)...";
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && ([_patient] call EFUNC(core,cprActive)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
+    };
 
     class ApplyChestSeal: CheckBreathing {
         displayName = "Apply Chest Seal";
@@ -66,7 +81,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"ACM_NCDKit"};
         consumeItem = 1;
-        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && _patient getVariable [ARR_2(QQGVAR(ChestInjury_State),false)]);
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && !([_patient] call EFUNC(core,bvmActive)) && _patient getVariable [ARR_2(QQGVAR(ChestInjury_State),false)]);
         callbackSuccess = QFUNC(performNCD);
         ACM_cancelRecovery = 1;
     };
@@ -81,7 +96,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"ACE_surgicalKit"};
         consumeItem = 0;
-        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && (_patient getVariable [ARR_2(QQGVAR(ChestInjury_State),false)]) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) < 1);
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && !([_patient] call EFUNC(core,bvmActive)) && (_patient getVariable [ARR_2(QQGVAR(ChestInjury_State),false)]) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) < 1);
         callbackSuccess = QFUNC(Thoracostomy_start);
         ACM_cancelRecovery = 1;
     };
@@ -94,7 +109,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"ACM_ChestTubeKit"};
         consumeItem = 1;
-        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) == 1);
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && !([_patient] call EFUNC(core,bvmActive)) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) == 1);
         callbackSuccess = QFUNC(Thoracostomy_insertChestTube);
     };
 
@@ -106,7 +121,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"ACM_ACCUVAC"};
         consumeItem = 0;
-        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) == 2);
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && !([_patient] call EFUNC(core,bvmActive)) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) == 2);
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(Thoracostomy_drain));
     };
     class DrainFluid_SuctionBag: DrainFluid_ACCUVAC {
@@ -124,7 +139,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         treatmentTime = 5;
-        condition = QUOTE(!([_patient] call EFUNC(core,cprActive)) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) > 0);
+        condition = QUOTE(!([_patient] call EFUNC(core,cprActive)) && !([_patient] call EFUNC(core,bvmActive)) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) > 0);
         callbackSuccess = QFUNC(Thoracostomy_close);
     };
 

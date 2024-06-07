@@ -79,24 +79,48 @@ private _targetOxygenSaturation = _desiredOxygenSaturation;
 // but falls off quickly as po2 drops further
 private _capture = 1 max ((_po2 / IDEAL_PPO2) ^ (-_po2 * 3));
 
-private _effectiveBloodVolume = (GET_EFF_BLOOD_VOLUME(_unit) / 5.3) min 1;
+private _effectiveBloodVolume = (GET_EFF_BLOOD_VOLUME(_unit) / 5.4) min 1;
 private _airwayState = GET_AIRWAYSTATE(_unit);
 private _breathingState = GET_BREATHINGSTATE(_unit);
 
 private _oxygenSaturation = _currentOxygenSaturation;
 private _oxygenChange = 0;
 
-private _maxPositiveGain = 0.3;
+private _activeBVM = [_unit] call EFUNC(core,bvmActive);
+private _timeSinceLastBreath = CBA_missionTime - (_unit getVariable [QEGVAR(breathing,BVM_lastBreath), -1]);
 
-if IS_UNCONSCIOUS(_unit) then {
-    _maxPositiveGain = _maxPositiveGain * 0.42;
+private _BVMLastingEffect = 1;
+
+if (_timeSinceLastBreath < 60) then {
+    _BVMLastingEffect = 1 min 19 / _timeSinceLastBreath;
 };
 
-if (_respirationRate > 0) then {
+private _maxDecrease = -ACM_BREATHING_MAXDECREASE;
+private _maxPositiveGain = 0.5;
+
+if !(_activeBVM) then {
+    if IS_UNCONSCIOUS(_unit) then {
+        _maxPositiveGain = _maxPositiveGain * 0.25;
+    };
+    _maxDecrease = _maxDecrease * (1 - (0.2 * _BVMLastingEffect));
+} else {
+    _maxPositiveGain = _maxPositiveGain * 0.7;
+    _maxDecrease = _maxDecrease * 0.8;
+};
+
+if (_respirationRate > 0 && (GET_HEART_RATE(_unit) > 20)) then {
     private _airSaturation = _airOxygenSaturation * _capture;
 
-    private _hyperVentilationEffect = 0.9 max (45 / _respirationRate) min 1;
+    private _hyperVentilationEffect = 0.8 max (35 / _respirationRate) min 1;
     private _breathingEffectiveness = _airwayState * _effectiveBloodVolume * _breathingState * _hyperVentilationEffect;
+
+    if (_activeBVM) then {
+        _breathingEffectiveness = _breathingEffectiveness * 1.9;
+    };
+
+    if (IN_CRDC_ARRST(_unit) && [_unit] call EFUNC(core,cprActive)) then {
+        _breathingEffectiveness = _breathingEffectiveness * 0.8;
+    };
 
     if (_breathingEffectivenessAdjustment != 0) then {
         _breathingEffectiveness = (_breathingEffectiveness * (1 + _breathingEffectivenessAdjustment)) min ((_breathingEffectiveness + 0.01) min 1);
@@ -104,18 +128,30 @@ if (_respirationRate > 0) then {
 
     private _fatigueEffect = 0.99 max (-0.25 / _negativeChange) min 1;
 
-    _targetOxygenSaturation = 100 min (_targetOxygenSaturation * _breathingEffectiveness * _airSaturation * (0.8 max (_respirationRate / ACM_TARGETVITALS_RR(_unit)) min 1) * _fatigueEffect);
+    private _respirationEffect = 1;
+
+    if (_respirationRate > ACM_TARGETVITALS_RR(_unit)) then {
+        _respirationEffect = 0.9 max (35 / _respirationRate) min 1.1;
+    } else {
+        _respirationEffect = 0.8 max (_respirationRate / 12) min 1.1;
+    };
+
+    _targetOxygenSaturation = 99 min (_targetOxygenSaturation * _breathingEffectiveness * _airSaturation * _respirationEffect * _fatigueEffect);
     
+    if (isPlayer _unit) then {
+        systemchat str _targetOxygenSaturation;
+    };
+
     _oxygenChange = (_targetOxygenSaturation - _currentOxygenSaturation) / 5;
 
     if (_oxygenChange < 0) then {
-        _oxygenSaturation = _currentOxygenSaturation + (_oxygenChange max -ACM_BREATHING_MAXDECREASE) * _deltaT;
+        _oxygenSaturation = _currentOxygenSaturation + (_oxygenChange max _maxDecrease) * _deltaT;
     } else {
-        _oxygenSaturation = _currentOxygenSaturation + (ACM_BREATHING_MAXDECREASE max _oxygenChange min _maxPositiveGain) * _deltaT;
+        _oxygenSaturation = _currentOxygenSaturation + ((_maxPositiveGain / 2) max _oxygenChange min _maxPositiveGain) * _deltaT;
     };
 } else {
     _targetOxygenSaturation = 0;
-    _oxygenSaturation = _currentOxygenSaturation + -ACM_BREATHING_MAXDECREASE * _deltaT;
+    _oxygenSaturation = _currentOxygenSaturation + _maxDecrease * _deltaT;
 };
 
 _oxygenSaturation = 100 min _oxygenSaturation max 0;

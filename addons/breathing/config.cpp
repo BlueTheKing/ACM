@@ -20,4 +20,6 @@ class CfgPatches {
 #include "CfgWeapons.hpp"
 #include "CfgSounds.hpp"
 #include "ACE_Medical_Treatment_Actions.hpp"
+#include "\x\ACM\addons\core\UI_defines.hpp"
 #include "Stethoscope_Dialog.hpp"
+#include "RscUseBVM.hpp"

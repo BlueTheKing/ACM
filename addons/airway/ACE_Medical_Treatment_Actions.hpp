@@ -10,7 +10,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 2.5;
         allowedSelections[] = {"Head"};
         allowSelfTreatment = 0;
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)));
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QFUNC(checkAirway);
         ACM_rollToBack = 1;
     };
@@ -21,7 +21,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         medicRequired = 0;
         treatmentTime = 5;
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == ''));
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QFUNC(performHeadTurn);
         ACM_cancelRecovery = 1;
     };
@@ -32,7 +32,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         medicRequired = 0;
         treatmentTime = 4;
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(_patient getVariable [ARR_2(QQGVAR(HeadTilt_State),false)]) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == ''));
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(_patient getVariable [ARR_2(QQGVAR(HeadTilt_State),false)]) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(setHeadTiltChinLift));
         ACM_cancelRecovery = 1;
     };
@@ -53,7 +53,7 @@ class ACEGVAR(medical_treatment,actions) {
         medicRequired = 0;
         treatmentTime = QGVAR(treatmentTimeRecoveryPosition);
         allowedSelections[] = {"Body"};
-        condition = QUOTE(!([_patient] call EFUNC(core,cprActive)) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == '') && !(IN_RECOVERYPOSITION(_patient)));
+        condition = QUOTE(!([_patient] call EFUNC(core,cprActive)) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])) && !(IN_RECOVERYPOSITION(_patient)));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(setRecoveryPosition));
         ACM_rollToBack = 0;
     };
@@ -77,7 +77,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = QUOTE([_patient] call FUNC(getSuctionTime));
         items[] = {"ACM_SuctionBag"};
         consumeItem = 1;
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)));
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,0)] call FUNC(handleSuction));
         ACM_cancelRecovery = 1;
     };
@@ -100,7 +100,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = QGVAR(treatmentTimeOPA);
         items[] = {"ACM_GuedelTube","ACM_GuedelTube_Used"};
         consumeItem = 1;
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == ''));
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'OPA')] call FUNC(insertAirwayItem));
         ACM_cancelRecovery = 1;
     };

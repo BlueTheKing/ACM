@@ -38,3 +38,8 @@ _patient setVariable [QGVAR(PulseOximeter_LastSync), [-1,-1]];
 
 _patient setVariable [QGVAR(BVM_provider), objNull, true];
 _patient setVariable [QGVAR(BVM_Medic), objNull, true];
+_patient setVariable [QGVAR(isUsingBVM), false, true];
+
+_patient setVariable [QGVAR(BVM_lastBreath), -1, true];
+
+_patient setVariable [QGVAR(RespirationRate), (ACM_TARGETVITALS_RR(_patient)), true];

@@ -169,7 +169,7 @@ class ACEGVAR(medical_treatment,actions) {
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         allowedSelections[] = {"Head"};
         items[] = {"ACM_Paracetamol"};
-        condition = QUOTE([_patient] call ACEFUNC(common,isAwake));
+        condition = QUOTE([_patient] call ACEFUNC(common,isAwake) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         treatmentTime = 5;
         //animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
         sounds[] = {{QPATHTOEF(circulation,sound\paracetamol.wav),10,1,30}};
@@ -188,7 +188,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Using Ammonia Inhalant...";
         items[] = {"ACM_AmmoniaInhalant"};
         treatmentTime = 4;
-        condition = "true";
+        condition = QUOTE(!(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         ACM_rollToBack = 1;
     };
     class Naloxone: Paracetamol {
@@ -196,7 +196,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Using Naloxone Spray...";
         items[] = {"ACM_Spray_Naloxone"};
         treatmentTime = 4;
-        condition = "true";
+        condition = QUOTE(!(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         ACM_rollToBack = 1;
         sounds[] = {};
     };
@@ -216,6 +216,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "Slapping Patient...";
         allowedSelections[] = {"Head"};
         treatmentTime = 3;
+        condition = QUOTE(!([_patient] call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QEFUNC(disability,slapAwake);
         animationMedic = "AinvPknlMstpSnonWnonDr_medic3";
         ACM_rollToBack = 1;

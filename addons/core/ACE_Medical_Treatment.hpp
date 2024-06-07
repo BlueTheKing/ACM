@@ -406,7 +406,7 @@ class ACE_ADDON(Medical_Treatment) {
             hrIncreaseLow[] = {-9, -18};
             hrIncreaseNormal[] = {-9, -24};
             hrIncreaseHigh[] = {-9, -30};
-            coSensitivityAdjust[] = {-0.03,-0.08};
+            coSensitivityAdjust[] = {-0.035,-0.04};
         };
         class Amiodarone_IV: ACM_IV_Medication {
             hrIncreaseLow[] = {-1, -2};
@@ -448,7 +448,7 @@ class ACE_ADDON(Medical_Treatment) {
             hrIncreaseLow[] = {-8, -16};
             hrIncreaseNormal[] = {-8, -18};
             hrIncreaseHigh[] = {-8, -24};
-            coSensitivityAdjust[] = {-0.01,-0.05};
+            coSensitivityAdjust[] = {-0.03,-0.035};
         };
         class Epinephrine: ACM_IM_Medication {
             painReduce = 0;

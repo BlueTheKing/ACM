@@ -1,6 +1,7 @@
 PREP(addVehicleCarryLoadActions);
 PREP(addVehicleUnloadCarryPatientActions);
 PREP(beginContinuousAction);
+PREP(bvmActive);
 PREP(cancelCarryingPrompt);
 PREP(canCheckDogtag);
 PREP(cprActive);

@@ -75,8 +75,8 @@ if (isNumber (_config >> "ACM_rollToBack")) then {
 if (isNumber (_config >> "ACM_cancelRecovery")) then {
     _cancelsRecoveryPosition = [false,true] select (getNumber (_config >> "ACM_cancelRecovery"));
 
-    if ((_patient getVariable [QGVAR(RecoveryPosition_State), false]) && _cancelsRecoveryPosition) then {
-        _patient setVariable [QGVAR(RecoveryPosition_State), false, true];
+    if ((_patient getVariable [QEGVAR(airway,RecoveryPosition_State), false]) && _cancelsRecoveryPosition) then {
+        _patient setVariable [QEGVAR(airway,RecoveryPosition_State), false, true];
     };
 };
 

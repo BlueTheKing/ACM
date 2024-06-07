@@ -57,6 +57,7 @@ class CfgVehicles {
             ADDITEM(ACM_SuctionBag,5);
             // Breathing
             ADDITEM(ACM_ChestSeal,10);
+            ADDITEM(ACM_PocketBVM,2);
             ADDITEM(ACM_NCDKit,5);
             // Circulation
             ADDITEM(ACE_epinephrine,10);
@@ -88,6 +89,7 @@ class CfgVehicles {
             ADDITEM(ACM_SuctionBag,10);
             // Breathing
             ADDITEM(ACM_ChestSeal,20);
+            ADDITEM(ACM_BVM,4);
             ADDITEM(ACM_NCDKit,10);
             ADDITEM(ACM_PulseOximeter,5);
             ADDITEM(ACM_ChestTubeKit,5);

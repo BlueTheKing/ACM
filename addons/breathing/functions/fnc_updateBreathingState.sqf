@@ -36,10 +36,6 @@ if (_TPTXState) then {
     _state = _state - (_PTXState / 10);
 };
 
-if (IS_UNCONSCIOUS(_patient)) then {
-    _state = _state min 0.95;
-};
-
 [_patient, _healed] call FUNC(updateLungState);
 
 if (_healed) then {

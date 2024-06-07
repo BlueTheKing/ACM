@@ -14,3 +14,5 @@
 [QGVAR(Thoracostomy_drainLocal), LINKFUNC(Thoracostomy_drainLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(setPulseOximeterLocal), LINKFUNC(setPulseOximeterLocal)] call CBA_fnc_addEventHandler;
+
+["isNotUsingBVM", {!((_this select 0) getVariable [QGVAR(isUsingBVM), false])}] call ACEFUNC(common,addCanInteractWithCondition);
