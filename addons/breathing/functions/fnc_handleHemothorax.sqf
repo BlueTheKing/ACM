@@ -29,6 +29,8 @@ if (_state == 0) then {
 
 _patient setVariable [QGVAR(Hemothorax_State), _state, true];
 
+[_patient, 0.3] call ACEFUNC(medical,adjustPainLevel);
+
 [_patient] call FUNC(updateBreathingState);
 
 if (_patient getVariable [QGVAR(Hemothorax_PFH), -1] != -1) exitWith {};

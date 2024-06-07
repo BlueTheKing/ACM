@@ -87,12 +87,14 @@ private _oxygenSaturation = _currentOxygenSaturation;
 private _oxygenChange = 0;
 
 private _activeBVM = [_unit] call EFUNC(core,bvmActive);
+private _BVMOxygenAssisted = _unit getVariable [QEGVAR(breathing,BVM_ConnectedOxygen), false];
+
 private _timeSinceLastBreath = CBA_missionTime - (_unit getVariable [QEGVAR(breathing,BVM_lastBreath), -1]);
 
-private _BVMLastingEffect = 1;
+private _BVMLastingEffect = 0;
 
-if (_timeSinceLastBreath < 60) then {
-    _BVMLastingEffect = 1 min 19 / _timeSinceLastBreath;
+if (_timeSinceLastBreath < 35) then {
+    _BVMLastingEffect = 1 min 15 / (_timeSinceLastBreath max 0.001);
 };
 
 private _maxDecrease = -ACM_BREATHING_MAXDECREASE;
@@ -102,10 +104,23 @@ if !(_activeBVM) then {
     if IS_UNCONSCIOUS(_unit) then {
         _maxPositiveGain = _maxPositiveGain * 0.25;
     };
-    _maxDecrease = _maxDecrease * (1 - (0.2 * _BVMLastingEffect));
+    _maxDecrease = _maxDecrease * (1 - (0.5 * _BVMLastingEffect));
 } else {
-    _maxPositiveGain = _maxPositiveGain * 0.7;
-    _maxDecrease = _maxDecrease * 0.8;
+    if (_BVMOxygenAssisted) then {
+        _maxPositiveGain = _maxPositiveGain * 0.85;
+        if (IN_CRDC_ARRST(_unit)) then {
+            _maxDecrease = _maxDecrease * 0.3;
+        } else {
+            _maxDecrease = _maxDecrease * 0.1;
+        };
+    } else {
+        _maxPositiveGain = _maxPositiveGain * 0.7;
+        if (IN_CRDC_ARRST(_unit)) then {
+            _maxDecrease = _maxDecrease * 0.9;
+        } else {
+            _maxDecrease = _maxDecrease * 0.7;
+        };
+    };
 };
 
 if (_respirationRate > 0 && (GET_HEART_RATE(_unit) > 20)) then {
@@ -115,11 +130,20 @@ if (_respirationRate > 0 && (GET_HEART_RATE(_unit) > 20)) then {
     private _breathingEffectiveness = _airwayState * _effectiveBloodVolume * _breathingState * _hyperVentilationEffect;
 
     if (_activeBVM) then {
-        _breathingEffectiveness = _breathingEffectiveness * 1.9;
-    };
-
-    if (IN_CRDC_ARRST(_unit) && [_unit] call EFUNC(core,cprActive)) then {
-        _breathingEffectiveness = _breathingEffectiveness * 0.8;
+        if (IN_CRDC_ARRST(_unit)) then {
+            _breathingEffectiveness = _breathingEffectiveness * 1.2;
+        } else {
+            _breathingEffectiveness = _breathingEffectiveness * 1.9;
+        };
+        
+        if (_BVMOxygenAssisted) then {
+            _breathingEffectiveness = _breathingEffectiveness * 1.5;
+        };
+    } else {
+        if (IN_CRDC_ARRST(_unit) && [_unit] call EFUNC(core,cprActive)) then {
+            _maxPositiveGain = _maxPositiveGain * (0.5 + (0.5 * _BVMLastingEffect));
+            _breathingEffectiveness = _breathingEffectiveness * 0.7;
+        };
     };
 
     if (_breathingEffectivenessAdjustment != 0) then {
@@ -137,8 +161,8 @@ if (_respirationRate > 0 && (GET_HEART_RATE(_unit) > 20)) then {
     };
 
     _targetOxygenSaturation = 99 min (_targetOxygenSaturation * _breathingEffectiveness * _airSaturation * _respirationEffect * _fatigueEffect);
-    
-    if (isPlayer _unit) then {
+
+    if !(isPlayer _unit) then {
         systemchat str _targetOxygenSaturation;
     };
 

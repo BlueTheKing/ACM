@@ -23,7 +23,7 @@
  */
 
 params ["_args", "_onStart", "_onCancel", "_perFrame", ["_dialogID", -1]];
-_args params ["_medic", "_patient", "_bodyPart"];
+_args params ["_medic", "_patient", "_bodyPart", ["_extraArgs", []]];
 
 if (GVAR(ContinuousAction_Active)) exitWith {};
 
@@ -79,7 +79,7 @@ _args call _onStart;
 
 [{
     params ["_args", "_idPFH"];
-    _args params ["_medic", "_patient", "_bodyPart", "_notInVehicle", "_perFrame", "_onCancel", "_dialogID"];
+    _args params ["_medic", "_patient", "_bodyPart", "_extraArgs", "_notInVehicle", "_perFrame", "_onCancel", "_dialogID"];
 
     private _patientCondition = (_patient isEqualTo objNull);
     private _medicCondition = (!(alive _medic) || IS_UNCONSCIOUS(_medic) || _medic isEqualTo objNull);
@@ -99,8 +99,8 @@ _args call _onStart;
 
         GVAR(ContinuousAction_Active) = false;
 
-        [_medic, _patient] call _onCancel;
+        [_medic, _patient, _extraArgs] call _onCancel;
     };
 
     _args call _perFrame;
-}, 0, [_medic, _patient, _bodyPart, _notInVehicle, _perFrame, _onCancel, _dialogID]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_medic, _patient, _bodyPart, _extraArgs, _notInVehicle, _perFrame, _onCancel, _dialogID]] call CBA_fnc_addPerFrameHandler;

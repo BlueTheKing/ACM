@@ -32,7 +32,7 @@ switch (true) do {
         _respirationRate = 0;
     };
     case ([_unit] call EFUNC(core,bvmActive)): {
-        _respirationRate = random [10,10,11];
+        _respirationRate = 10;
     };
     case ([_unit] call EFUNC(core,cprActive)): {
         _respirationRate = random [20,25,30];

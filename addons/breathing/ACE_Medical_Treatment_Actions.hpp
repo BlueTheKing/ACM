@@ -41,18 +41,23 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class UseBVM: UseStethoscope {
         displayName = "Use BVM";
-        displayNameProgress = "Use BVM...";
         icon = "";
         allowedSelections[] = {"Head"};
         items[] = {"ACM_BVM","ACM_PocketBVM"};
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !([_patient] call EFUNC(core,cprActive)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
-        callbackSuccess = QFUNC(useBVM);
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
+        callbackSuccess = QUOTE([ARR_3(_medic,_patient,false)] call FUNC(useBVM));
         ACM_cancelRecovery = 1;
     };
-    class UseBVM_Assist: UseBVM {
-        displayName = "Use BVM (Assist)";
-        displayNameProgress = "Use BVM (Assist)...";
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && ([_patient] call EFUNC(core,cprActive)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
+    class UseBVM_Oxygen: UseBVM {
+        displayName = "Use BVM with Oxygen";
+        treatmentLocations = TREATMENT_LOCATIONS_FACILITIES;
+        items[] = {"ACM_BVM"};
+        callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(useBVM));
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
+    };
+    class UseBVM_VehicleOxygen: UseBVM_Oxygen {
+        displayName = "Use BVM with Oxygen (Vehicle)";
+        treatmentLocations = TREATMENT_LOCATIONS_VEHICLES;
     };
 
     class ApplyChestSeal: CheckBreathing {

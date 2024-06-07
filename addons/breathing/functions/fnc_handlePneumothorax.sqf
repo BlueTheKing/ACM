@@ -49,6 +49,7 @@ private _PFH = [{
 
     if (random 100 < ((40 + _breathingState * 15) * GVAR(pneumothoraxDeteriorateChance))) then {
         _pneumothoraxState = _pneumothoraxState + 1;
+        [_patient, (_pneumothoraxState / 4)] call ACEFUNC(medical,adjustPainLevel);
         if (_pneumothoraxState > 4) then {
             _patient setVariable [QGVAR(Pneumothorax_State), 4, true];
             _patient setVariable [QGVAR(TensionPneumothorax_State), true, true];
@@ -58,6 +59,6 @@ private _PFH = [{
         [_patient] call FUNC(updateBreathingState);
     };
 
-}, (30 + (random 30)), [_patient]] call CBA_fnc_addPerFrameHandler;
+}, (40 + (random 40)), [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(Pneumothorax_PFH), _PFH];
