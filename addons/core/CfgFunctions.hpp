@@ -63,6 +63,9 @@ class CfgFunctions {
             class tourniquetRemove { // Tourniquet time
                 file = QPATHTOF(overrides\fnc_tourniquetRemove.sqf);
             };
+            class loadUnit { // Allow loading conscious patients
+                file = QPATHTOF(overrides\fnc_loadUnit.sqf);
+            };
         };
     };
     class overwrite_medical_damage {
