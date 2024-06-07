@@ -162,10 +162,6 @@ if (_respirationRate > 0 && (GET_HEART_RATE(_unit) > 20)) then {
 
     _targetOxygenSaturation = 99 min (_targetOxygenSaturation * _breathingEffectiveness * _airSaturation * _respirationEffect * _fatigueEffect);
 
-    if !(isPlayer _unit) then {
-        systemchat str _targetOxygenSaturation;
-    };
-
     _oxygenChange = (_targetOxygenSaturation - _currentOxygenSaturation) / 5;
 
     if (_oxygenChange < 0) then {
