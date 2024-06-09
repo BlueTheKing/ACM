@@ -90,6 +90,11 @@
 #define FATAL_INJURIES_CRDC_ARRST 1
 #define FATAL_INJURIES_NEVER 2
 
+// ace_dragging
+#define CARRY_ANIMATIONS ["acinpercmstpsnonwnondnon", "acinpknlmstpsnonwnondnon_acinpercmrunsnonwnondnon"]
+#define MAX_DRAGGED_ITEMS 3
+#define MAX_LOAD_DISTANCE_MAN 5
+
 // ace_medical_vitals
 #define BASE_OXYGEN_USE -0.25
 
@@ -152,6 +157,8 @@
 
 #define SETTING_DROPDOWN_SKILL [0, 1, 2], [ACELLSTRING(Medical_Treatment,Anyone), ACELLSTRING(Medical_Treatment,Medics), ACELLSTRING(Medical_Treatment,Doctors)]
 #define SETTING_DROPDOWN_LOCATION [0, 1, 2, 3, 4], [ACELSTRING(common,Anywhere), ACELSTRING(common,Vehicle), ACELSTRING(medical_treatment,MedicalFacilities), ACELSTRING(medical_treatment,VehiclesAndFacilities), ACELSTRING(common,Disabled)]
+
+#define LYING_ANIMATION ["ainjppnemstpsnonwrfldnon", "acm_lyingstate"]
 
 // Airway
 #define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])

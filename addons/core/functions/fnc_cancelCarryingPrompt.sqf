@@ -18,6 +18,8 @@
 
 params ["_unit", "_carrier"];
 
+if (ACE_player != _unit) exitWith {};
+
 ["", "Cancel Carrying", ""] call ACEFUNC(interaction,showMouseHint);
 GVAR(Carrier) = _carrier;
 
@@ -36,7 +38,9 @@ _unit setVariable [QGVAR(CancelCarryingActionID), [0xF1, [false, false, false], 
         [QGVAR(cancelCarryLocal), [_carrier, (_carrier getVariable QACEGVAR(dragging,carriedObject))], _carrier] call CBA_fnc_targetEvent;
     };
 
-    [] call ACEFUNC(interaction,hideMouseHint);
+    if !(_unit getVariable [QGVAR(Lying_State), false]) then {
+        [] call ACEFUNC(interaction,hideMouseHint);
+    };
     GVAR(Carrier) = nil;
     [_unit getVariable QGVAR(CancelCarryingActionID), "keyup"] call CBA_fnc_removeKeyHandler;
     _unit setVariable [QGVAR(CancelCarryingActionID), nil];

@@ -8,15 +8,25 @@
 ["ace_treatmentSucceded", {
     params ["_medic", "_patient", "", "_classname"];
 
-    if (IS_UNCONSCIOUS(_patient)) then {
-        _patient setVariable [QGVAR(WasTreated), true, true];
+    if (_patient getVariable [QGVAR(WasTreated), false]) exitWith {};
+
+    if !(IS_UNCONSCIOUS(_patient)) exitWith {};
+
+    if (_classname in ["SlapAwake","AmmoniaInhalant"]) exitWith {}; // Ignore these
+
+    private _config = configFile >> QACEGVAR(medical_treatment,actions) >> _classname;
+
+    if (isNumber (_config >> "ACM_rollToBack")) then {
+        if ([false,true] select (getNumber (_config >> "ACM_rollToBack"))) then {
+            _patient setVariable [QGVAR(WasTreated), true, true];
+        };
     };
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(playWakeUpSound), {
     params ["_patient"];
 
-    _patient setVariable [QACEGVAR(medical_feedback,soundTimeoutmoan), CBA_missionTime + 8];
+    _patient setVariable [QACEGVAR(medical_feedback,soundTimeoutmoan), CBA_missionTime + 10];
 
     private _distance = 5;
     private _targets = allPlayers inAreaArray [ASLToAGL getPosASL _patient, _distance, _distance, 0, false, _distance];
@@ -40,3 +50,7 @@
     [format ["Stopped carrying %1", [_target, true] call ACEFUNC(common,getName)], 1.5, _carrier] call ACEFUNC(common,displayTextStructured);
     [_carrier, _target] call ACEFUNC(dragging,dropObject_carry);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(getUpPrompt), LINKFUNC(getUpPrompt)] call CBA_fnc_addEventHandler;
+
+["isNotInLyingState", {!((_this select 0) getVariable [QGVAR(Lying_State), false])}] call ACEFUNC(common,addCanInteractWithCondition);

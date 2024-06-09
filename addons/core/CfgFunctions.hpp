@@ -110,6 +110,14 @@ class CfgFunctions {
             };
         };
     };
+    class overwrite_medical_engine {
+        tag = "ace_medical_engine";
+        class ace_medical_engine {
+            class setUnconsciousAnim { // Force lying animation when waking up
+                file = QPATHTOF(overrides\fnc_setUnconsciousAnim.sqf);
+            };
+        };
+    };
     class overwrite_ace_dogtags {
         tag = "ace_dogtags";
         class ace_dogtags {
@@ -124,8 +132,17 @@ class CfgFunctions {
             class carryObject { // Cancel carrying prompt
                 file = QPATHTOF(overrides\fnc_carryObject.sqf);
             };
+            class dropObject_carry { // Handle dropping animation
+                file = QPATHTOF(overrides\fnc_dropObject_carry.sqf);
+            };
             class handleUnconscious { // Cancel carrying prompt, prevent dropping woken-up casualties
                 file = QPATHTOF(overrides\fnc_handleUnconscious.sqf);
+            };
+            class canDrag { // Lying state allow drag
+                file = QPATHTOF(overrides\fnc_canDrag.sqf);
+            };
+            class canCarry { // Lying state allow carry
+                file = QPATHTOF(overrides\fnc_canCarry.sqf);
             };
         };
     };

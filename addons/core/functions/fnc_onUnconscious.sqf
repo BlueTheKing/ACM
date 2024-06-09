@@ -21,11 +21,16 @@ params ["_patient", "_state"];
 if (!local _patient) exitWith {};
 
 if !(_state) then {
-    [{
-        params ["_patient"];
-
+    if (_patient getVariable [QGVAR(WasTreated), false]) then {
+        _patient setVariable [QGVAR(Lying_State), true, true];
         _patient setVariable [QGVAR(WasTreated), false, true];
-    }, [_patient], 2] call CBA_fnc_waitAndExecute;
+    };
+
+    if ((_patient getVariable [QGVAR(Lying_State), false]) && ((animationState _patient) in LYING_ANIMATION)) then {
+        [QGVAR(getUpPrompt), [_patient], _patient] call CBA_fnc_targetEvent;
+    };
 
     _patient setVariable [QEGVAR(breathing,BVM_lastBreath), -1, true];
+} else {
+    [_patient] call ACEFUNC(weaponselect,putWeaponAway);
 };

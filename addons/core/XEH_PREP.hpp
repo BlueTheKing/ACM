@@ -7,6 +7,8 @@ PREP(canCheckDogtag);
 PREP(cprActive);
 PREP(effectOxygen);
 PREP(fullHealLocal);
+PREP(getUp);
+PREP(getUpPrompt);
 PREP(handleRespawn);
 PREP(initUnit);
 PREP(onCardiacArrest);

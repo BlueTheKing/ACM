@@ -172,6 +172,19 @@ class CfgVehicles {
                     ACTION_SYRINGE_IM_DISCARD(Lidocaine);
                 };
             };
+            
+        };
+        class ACE_Actions {
+            class ACE_MainActions {
+                class ACM_LyingState_GetUp {
+                    displayName = "Get Up";
+                    icon = "";
+                    condition = QUOTE(_target getVariable [ARR_2(QQGVAR(Lying_State),false)] && !(isPlayer _target));
+                    statement = QUOTE([_target] call FUNC(getUp));
+                    exceptions[] = {"isNotInside"};
+                    showDisabled = 0;
+                };
+            };
         };
     };
 
