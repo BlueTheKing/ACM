@@ -16,4 +16,7 @@
 params ["_patient"];
 
 _patient setVariable [QGVAR(Lying_State), false, true];
-[_patient, "UnconsciousOutProne", 2] call ACEFUNC(common,doAnimation);
+
+if (animationState _patient in LYING_ANIMATION) then {
+    [_patient, "UnconsciousOutProne", 2] call ACEFUNC(common,doAnimation);
+};
