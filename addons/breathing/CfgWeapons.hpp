@@ -91,4 +91,14 @@ class CfgWeapons {
             mass = 12;
         };
     };
+
+    class ACM_OxygenTank_425_Empty: ACM_ChestSeal {
+        scope = 1;
+        picture = QPATHTOF(ui\oxygenTank_ca.paa);
+        displayName = "Empty Portable Oxygen Tank (425L)";
+        descriptionShort = "Used with BVM to provide supplementary oxygen to patients";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 20;
+        };
+    };
 };

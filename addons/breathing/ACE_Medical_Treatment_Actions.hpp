@@ -52,12 +52,19 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = "Use BVM with Oxygen";
         treatmentLocations = TREATMENT_LOCATIONS_FACILITIES;
         items[] = {"ACM_BVM"};
-        callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(useBVM));
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
+        callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(useBVM));
     };
     class UseBVM_VehicleOxygen: UseBVM_Oxygen {
         displayName = "Use BVM with Oxygen (Vehicle)";
         treatmentLocations = TREATMENT_LOCATIONS_VEHICLES;
+    };
+    class UseBVM_PortableOxygen: UseBVM_Oxygen {
+        displayName = "Use BVM with Oxygen (Portable)";
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        items[] = {"ACM_BVM"};
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])) && ('ACM_OxygenTank_425' in ([ARR_2(_medic,2)] call ACEFUNC(common,uniqueItems))));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,true,true)] call FUNC(useBVM));
     };
 
     class ApplyChestSeal: CheckBreathing {

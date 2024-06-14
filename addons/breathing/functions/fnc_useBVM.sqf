@@ -8,21 +8,22 @@
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
  * 2: Use Oxygen <BOOL>
+ * 3: Using Portable Oxygen <BOOL>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, cursorObject, false] call ACM_breathing_fnc_useBVM;
+ * [player, cursorObject, false, false] call ACM_breathing_fnc_useBVM;
  *
  * Public: No
  */
 
-params ["_medic", "_patient", ["_useOxygen", false]];
+params ["_medic", "_patient", ["_useOxygen", false], ["_portableOxygen", false]];
 
-[[_medic, _patient, "head", [_useOxygen]], { // On Start
+[[_medic, _patient, "head", [_useOxygen, _portableOxygen]], { // On Start
     params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
-    _extraArgs params ["_useOxygen"];
+    _extraArgs params ["_useOxygen", "_portableOxygen"];
 
     "ACM_UseBVM" cutRsc ["RscUseBVM", "PLAIN", 0, false];
 
@@ -33,6 +34,7 @@ params ["_medic", "_patient", ["_useOxygen", false]];
     GVAR(CPRActive) = false;
 
     GVAR(BVM_OxygenActive) = _useOxygen;
+    GVAR(BVM_PortableOxygen) = _portableOxygen;
 
     _patient setVariable [QGVAR(BVM_ConnectedOxygen), _useOxygen, true];
 
@@ -109,7 +111,7 @@ params ["_medic", "_patient", ["_useOxygen", false]];
     };
 }, { // On cancel
     params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
-    _extraArgs params ["_useOxygen"];
+    _extraArgs params ["_useOxygen", "_portableOxygen"];
 
     [GVAR(BVMCancel_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
     [GVAR(BVMToggle_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
@@ -137,7 +139,7 @@ params ["_medic", "_patient", ["_useOxygen", false]];
     ["Stopped using BVM", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
-    _extraArgs params ["_useOxygen"];
+    _extraArgs params ["_useOxygen", "_portableOxygen"];
 
     private _updateMouseHint = false;
     private _updateText = false;
@@ -147,7 +149,7 @@ params ["_medic", "_patient", ["_useOxygen", false]];
         _updateText = true;
     };
 
-    if (_patient getVariable [QGVAR(BVM_ConnectedOxygen), false] != GVAR(BVM_OxygenActive)) then {
+    if ((_patient getVariable [QGVAR(BVM_ConnectedOxygen), false]) != GVAR(BVM_OxygenActive)) then {
         GVAR(BVM_OxygenActive) = (_patient getVariable [QGVAR(BVM_ConnectedOxygen), false]);
         _updateText = true;
     };
@@ -187,6 +189,9 @@ params ["_medic", "_patient", ["_useOxygen", false]];
     };
 
     if (_updateText) then {
+        private _display = uiNamespace getVariable ["ACM_UseBVM", displayNull];
+        private _ctrlTopText = _display displayCtrl IDC_USEBVM_TOPTEXT;
+        
         if ([_patient] call EFUNC(core,cprActive)) then {
             if !(_patient getVariable [QGVAR(BVM_ConnectedOxygen), false]) then {
                 _ctrlTopText ctrlSetText "Using BVM (Assisting CPR)...";
@@ -209,6 +214,15 @@ params ["_medic", "_patient", ["_useOxygen", false]];
             GVAR(BVM_BreathCount) = GVAR(BVM_BreathCount) + 1;
             if (GVAR(BVM_BreathCount) > 1 && (GET_AIRWAYSTATE(_patient) > 0)) then {
                 _patient setVariable [QGVAR(BVM_lastBreath), CBA_missionTime, true];
+            };
+
+            if (GVAR(BVM_PortableOxygen)) then {
+                private _success = [_medic] call FUNC(useOxygenTankReserve);
+                if !(_success) then {
+                    ["Portable Oxygen Tank Depleted", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                    _patient setVariable [QGVAR(BVM_ConnectedOxygen), false, true];
+                    GVAR(BVM_PortableOxygen) = false;
+                };
             };
         };
     };

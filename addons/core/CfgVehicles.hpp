@@ -32,6 +32,25 @@
         showDisabled = 0; \
     }
 
+#define ACTION_UNLOADANDCARRY \
+    class ACM_Action_UnloadAndCarryPatient { \
+        displayName = QUOTE(Carry Patient); \
+        condition = QUOTE(alive _target); \
+        exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"}; \
+        statement = ""; \
+        insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions)); \
+        icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa); \
+    }
+
+#define ACTION_REFILL_OXYGEN_425 \
+    class ACM_Action_Refill_PortableOxygenTank_425 { \
+        displayName = QUOTE(Refill Oxygen Tank); \
+        condition = QUOTE([ARR_2(_player,_target)] call EFUNC(breathing,canRefillOxygenTank)); \
+        exceptions[] = {"isNotInside"}; \
+        statement = QUOTE([_player] call EFUNC(breathing,refillOxygenTank)); \
+        icon = QPATHTOEF(breathing,ui\icon_oxygentank_ca.paa); \
+    }
+
 class CfgVehicles {
     class ACE_medicalSupplyCrate;
     class ACM_MedicalSupplyCrate_Basic: ACE_medicalSupplyCrate {
@@ -75,6 +94,7 @@ class CfgVehicles {
             ADDMAGAZINE(ACM_Paracetamol,8);
             ADDMAGAZINE(ACM_AmmoniaInhalant,8);
             ADDMAGAZINE(ACM_Inhaler_Penthrox,8);
+            ADDMAGAZINE(ACM_OxygenTank_425,2);
         };
         class TransportItems {
             // Catastrophic Bleeding
@@ -192,14 +212,8 @@ class CfgVehicles {
     class Car: LandVehicle {
         class ACE_Actions {
             class ACE_MainActions {
-                class ACM_UnloadAndCarryPatient {
-                    displayName = "Carry Patient";
-                    condition = QUOTE(alive _target);
-                    exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
-                    statement = "";
-                    insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
-                };
+                ACTION_UNLOADANDCARRY;
+                ACTION_REFILL_OXYGEN_425;
             };
         };
     };
@@ -208,14 +222,7 @@ class CfgVehicles {
     class Quadbike_01_base_F: Car_F {
         class ACE_Actions: ACE_Actions {
             class ACE_MainActions: ACE_MainActions {
-                class ACM_UnloadAndCarryPatient {
-                    displayName = "Carry Patient";
-                    condition = QUOTE(alive _target);
-                    exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
-                    statement = "";
-                    insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
-                };
+                ACTION_UNLOADANDCARRY;
             };
         };
     };
@@ -223,14 +230,7 @@ class CfgVehicles {
     class Kart_01_Base_F: Car_F {
         class ACE_Actions: ACE_Actions {
             class ACE_MainActions: ACE_MainActions {
-                class ACM_UnloadAndCarryPatient {
-                    displayName = "Carry Patient";
-                    condition = QUOTE(alive _target);
-                    exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
-                    statement = "";
-                    insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
-                };
+                ACTION_UNLOADANDCARRY;
             };
         };
     };
@@ -238,14 +238,7 @@ class CfgVehicles {
     class Tank: LandVehicle {
         class ACE_Actions {
             class ACE_MainActions {
-                class ACM_UnloadAndCarryPatient {
-                    displayName = "Carry Patient";
-                    condition = QUOTE(alive _target);
-                    exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
-                    statement = "";
-                    insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
-                };
+                ACTION_UNLOADANDCARRY;
             };
         };
     };
@@ -253,14 +246,7 @@ class CfgVehicles {
     class Motorcycle: LandVehicle {
         class ACE_Actions {
             class ACE_MainActions {
-                class ACM_UnloadAndCarryPatient {
-                    displayName = "Carry Patient";
-                    condition = QUOTE(alive _target);
-                    exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
-                    statement = "";
-                    insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
-                };
+                ACTION_UNLOADANDCARRY;
             };
         };
     };
@@ -269,14 +255,7 @@ class CfgVehicles {
     class Helicopter: Air {
         class ACE_Actions {
             class ACE_MainActions {
-                class ACM_UnloadAndCarryPatient {
-                    displayName = "Carry Patient";
-                    condition = QUOTE(alive _target);
-                    exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
-                    statement = "";
-                    insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
-                };
+                ACTION_UNLOADANDCARRY;
             };
         };
     };
@@ -284,14 +263,7 @@ class CfgVehicles {
     class Plane: Air {
         class ACE_Actions {
             class ACE_MainActions {
-                class ACM_UnloadAndCarryPatient {
-                    displayName = "Carry Patient";
-                    condition = QUOTE(alive _target);
-                    exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
-                    statement = "";
-                    insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
-                };
+                ACTION_UNLOADANDCARRY;
             };
         };
     };
@@ -300,14 +272,7 @@ class CfgVehicles {
     class Ship_F: Ship {
         class ACE_Actions {
             class ACE_MainActions {
-                class ACM_UnloadAndCarryPatient {
-                    displayName = "Carry Patient";
-                    condition = QUOTE(alive _target);
-                    exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"};
-                    statement = "";
-                    insertChildren = QUOTE(call FUNC(addVehicleUnloadCarryPatientActions));
-                    icon = QACEPATHTOF(dragging,ui\icons\person_carry.paa);
-                };
+                ACTION_UNLOADANDCARRY;
             };
         };
     };
