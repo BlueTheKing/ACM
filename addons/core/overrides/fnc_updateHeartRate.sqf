@@ -61,7 +61,7 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
         };
         // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
         private _oxygenDemand = _unit getVariable [VAR_OXYGEN_DEMAND, 0];
-        _targetHR = _targetHR + (((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 1.3) max (_oxygenDemand * -2000));
+        _targetHR = _targetHR + (((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 1.5) max (_oxygenDemand * -2000));
 
         if (_timeSinceROSC < 30) then {
             _targetHR = _targetHR max (_desiredHR + 110 * (_timeSinceROSC / 30));
