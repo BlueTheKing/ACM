@@ -21,6 +21,8 @@ params ["_medic", "_patient"];
 
 if ((_patient getVariable [QGVAR(AED_PFH), -1]) != -1) exitWith {};
 
+private _inVehicle = !(isNull (objectParent _medic));
+
 _patient setVariable [QGVAR(AED_Provider), _patient, true];
 _medic setVariable [QGVAR(AED_Target_Patient), _patient, true];
 _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
@@ -191,19 +193,38 @@ private _PFH = [{
 
 _patient setVariable [QGVAR(AED_PFH), _PFH];
 
-[{
-    params ["_patient", "_medic"];
+if (_inVehicle) then {
+    [{
+        params ["_patient", "_medic"];
 
-    !((objectParent _medic) isEqualTo (objectParent _patient)) || ((_patient distance _medic) > GVAR(AEDDistanceLimit));
-}, {
-    params ["_patient", "_medic"];
+        !((objectParent _medic) isEqualTo (objectParent _patient));
+    }, {
+        params ["_patient", "_medic"];
+
+        if !(isNull _patient) then {
+            [_medic, _patient, "body", 0, false, true] call FUNC(setAED);
+            [_medic, _patient, "body", 1, false, true] call FUNC(setAED);
+            [_medic, _patient, "body", 2, false, true] call FUNC(setAED);
+            [_medic, _patient, "body", 3, false, true] call FUNC(setAED);
+            [_patient, "activity", "%1 disconnected AED", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+            ["Patient Disconnected", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+        };
+    }, [_patient, _medic], 3600] call CBA_fnc_waitUntilAndExecute;
+} else {
+    [{
+        params ["_patient", "_medic"];
     
-    if !(isNull _patient) then {
-        [_medic, _patient, "body", 0, false, true] call FUNC(setAED);
-        [_medic, _patient, "body", 1, false, true] call FUNC(setAED);
-        [_medic, _patient, "body", 2, false, true] call FUNC(setAED);
-        [_medic, _patient, "body", 3, false, true] call FUNC(setAED);
-        [_patient, "activity", "%1 disconnected AED", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
-        ["Patient Disconnected", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-    };
-}, [_patient, _medic], 3600] call CBA_fnc_waitUntilAndExecute;
+        (!((objectParent _medic) isEqualTo (objectParent _patient)) || ((_patient distance _medic) > GVAR(AEDDistanceLimit)));
+    }, {
+        params ["_patient", "_medic"];
+        
+        if !(isNull _patient) then {
+            [_medic, _patient, "body", 0, false, true] call FUNC(setAED);
+            [_medic, _patient, "body", 1, false, true] call FUNC(setAED);
+            [_medic, _patient, "body", 2, false, true] call FUNC(setAED);
+            [_medic, _patient, "body", 3, false, true] call FUNC(setAED);
+            [_patient, "activity", "%1 disconnected AED", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+            ["Patient Disconnected", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+        };
+    }, [_patient, _medic], 3600] call CBA_fnc_waitUntilAndExecute;
+};
