@@ -22,7 +22,7 @@ _medic call ACEFUNC(common,goKneeling);
 
 [3, [_medic, _medication], {
     params ["_args"];
-	_args params ["_medic", "_medication"];
+    _args params ["_medic", "_medication"];
 
     _medic removeItem (format ["ACM_Vial_%1", _medication]);
     _medic removeItem "ACM_Syringe_IM";

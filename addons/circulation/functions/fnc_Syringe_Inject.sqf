@@ -27,7 +27,7 @@ private _itemName = getText (configFile >> "CfgWeapons" >> _usedItem >> "display
 [_patient, "activity", "%1 used %2 (IM)", [[_medic, false, true] call ACEFUNC(common,getName), _itemName]] call ACEFUNC(medical_treatment,addToLog);
 
 if (_returnSyringe) then {
-	[_medic, "ACM_Syringe_IM"] call ACEFUNC(common,addToInventory);
+    [_medic, "ACM_Syringe_IM"] call ACEFUNC(common,addToInventory);
 };
 
 [QACEGVAR(medical_treatment,medicationLocal), [_patient, _bodyPart, _classname], _patient] call CBA_fnc_targetEvent;
