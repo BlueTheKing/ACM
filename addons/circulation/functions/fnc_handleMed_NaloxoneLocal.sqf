@@ -23,12 +23,16 @@ private _mitigatedArray = _patient getVariable [QGVAR(MitigatedMedication), []];
 private _naloxoneEffect = 1;
 
 {
-    _x params ["_medicationType", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", "_administrationType", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust"];
+    _x params ["_medicationType", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", "_administrationType", "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust"];
 
     if (_naloxoneEffect < 1) exitWith {};
 
+    if (_medicationType == "Overdose_Opioid") then {
+        _medicationArray deleteAt _forEachIndex;
+    };
+
     if (_medicationType in ["Morphine", "Morphine_IV"]) then {
-        _mitigatedArray pushBack [_medicationType, _injectTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust, _administrationType, _rrAdjust, _coSensitivityAdjust, _breathingEffectivenessAdjust];
+        _mitigatedArray pushBack [_medicationType, _injectTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust, _administrationType, _maxEffectTime, _rrAdjust, _coSensitivityAdjust, _breathingEffectivenessAdjust];
         _medicationArray deleteAt _forEachIndex;
         _naloxoneEffect = _naloxoneEffect - 1;
     };

@@ -57,6 +57,9 @@ class CfgFunctions {
             class medicationLocal { // Respiration rate adjust
                 file = QPATHTOF(overrides\fnc_medicationLocal.sqf);
             };
+            class onMedicationUsage { // Overdose changes
+                file = QPATHTOF(overrides\fnc_onMedicationUsage.sqf);
+            };
             class checkPulseLocal { // CPR rate
                 file = QPATHTOF(overrides\fnc_checkPulseLocal.sqf);
             };

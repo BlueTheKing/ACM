@@ -27,7 +27,7 @@ private _return = 0;
         private _timeInSystem = CBA_missionTime - _timeAdded;
         if (_getCount) then {
             // just return effective count, a medication will always start at 1 and only drop after reaching timeTilMaxEffect
-            _return = _return + linearConversion [_timeTillMaxEffect, _maxTimeInSystem, _timeInSystem, 1, 0, true];
+            _return = _return + linearConversion [(_timeTillMaxEffect + _maxEffectTime), _maxTimeInSystem, _timeInSystem, 1, 0, true];
         } else {
             // as used in handleUnitVitals, a medication effectiveness will start low, ramp up to timeTillMaxEffect, and then drop off
             _return = _return + ([_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime] call EFUNC(circulation,getMedicationEffect));

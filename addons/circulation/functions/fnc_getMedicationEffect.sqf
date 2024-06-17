@@ -34,12 +34,12 @@ if (_timeInSystem > _timeTillMaxEffect && _timeInSystem < _timeTillMaxEffect + _
     _effect = 1;
 } else {
     _effect = switch (_administrationType) do {
-        case 0: {
+        case ACM_ROUTE_IM: {
             [(1.1^(_timeInSystem - _timeTillMaxEffect)), (-((_currentEliminationTime^2)/(_eliminationTime^2)) + 1)] select (_timeInSystem > (_maxEffectTime + _timeTillMaxEffect));
         };
-        case 1;
-        case 2;
-        case 3: {
+        case ACM_ROUTE_IV;
+        case ACM_ROUTE_PO;
+        case ACM_ROUTE_INHALE: {
             [(sin (deg (_timeInSystem / ((2 * _timeTillMaxEffect * pi) / (3.113 * pi))))), (((cos deg (_currentEliminationTime / (_eliminationTime / 3.1))) / 2) + 0.5)] select (_timeInSystem > (_maxEffectTime + _timeTillMaxEffect));
         };
         default {

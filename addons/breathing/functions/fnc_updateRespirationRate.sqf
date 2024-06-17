@@ -21,7 +21,7 @@
  * Public: No
  */
 
-params ["_unit", "_oxygenSaturation", ["_oxygenDemand", 0], "_respirationRateAdjustment", "_coSensitivityAdjustment", "_deltaT", "_syncValue"];
+params ["_unit", "_oxygenSaturation", ["_oxygenDemand", 0], ["_respirationRateAdjustment", 0], "_coSensitivityAdjustment", "_deltaT", "_syncValue"];
 // 12-20 per min          40-60 per min
 
 private _respirationRate = _unit getVariable [QGVAR(RespirationRate), 0];
@@ -58,14 +58,7 @@ switch (true) do {
             _targetRespirationRate = (_desiredRespirationRate + 16) min _targetRespirationRate;
         };
 
-        if (_respirationRateAdjustment != 0) then {
-            _targetRespirationRate = _targetRespirationRate max 0.1;
-            if (_respirationRateAdjustment < 0) then {
-                _targetRespirationRate = (_targetRespirationRate + (_respirationRateAdjustment * (_targetRespirationRate / ACM_TARGETVITALS_RR(_unit)))) max 0;
-            } else {
-                _targetRespirationRate = (_targetRespirationRate + (_respirationRateAdjustment * (ACM_TARGETVITALS_RR(_unit) / _targetRespirationRate))) max 0;
-            };
-        };
+        _targetRespirationRate = 60 min (_targetRespirationRate + _respirationRateAdjustment) max 0;
 
         private _respirationRateChange = (_targetRespirationRate - _respirationRate) / 2;
 
