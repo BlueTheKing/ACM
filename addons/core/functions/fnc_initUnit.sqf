@@ -17,3 +17,5 @@ params ["_unit"];
 
 [_unit] call EFUNC(airway,initUnit);
 [_unit] call EFUNC(circulation,initUnit);
+
+[_unit] call FUNC(generateTargetVitals);

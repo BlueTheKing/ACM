@@ -7,6 +7,7 @@ PREP(canCheckDogtag);
 PREP(cprActive);
 PREP(effectOxygen);
 PREP(fullHealLocal);
+PREP(generateTargetVitals);
 PREP(getUp);
 PREP(getUpPrompt);
 PREP(handleRespawn);
