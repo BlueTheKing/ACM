@@ -6,6 +6,8 @@ class ACM_Medication {
     breathingEffectivenessAdjust[] = {0,0};
     maxEffectTime = 120;
     onOverDose = "";
+    maxEffectDose = 1; // mg
+    weightEffect = 0;
 
     class ACM_PO_Medication {
         painReduce = 0;
@@ -20,6 +22,7 @@ class ACM_Medication {
         incompatibleMedication[] = {};
         administrationType = ACM_ROUTE_PO;
         viscosityChange = 0;
+        weightEffect = 1;
     };
 
     class Paracetamol: ACM_PO_Medication {
@@ -78,6 +81,7 @@ class ACM_Medication {
         incompatibleMedication[] = {};
         administrationType = ACM_ROUTE_IV;
         viscosityChange = 0;
+        weightEffect = 1;
     };
 
     class Epinephrine_IV: ACM_IV_Medication {
@@ -86,12 +90,14 @@ class ACM_Medication {
         hrIncreaseHigh[] = {25, 45};
         rrAdjust[] = {6,12};
         breathingEffectivenessAdjust[] = {0.01,0.04};
+        maxEffectDose = 1;
     };
 
     class Adenosine_IV: ACM_IV_Medication {
         hrIncreaseLow[] = {-10, -15};
         hrIncreaseNormal[] = {-10, -40};
         hrIncreaseHigh[] = {-10, -30};
+        maxEffectDose = 6;
     };
 
     class Morphine_IV: ACM_IV_Medication {
@@ -103,12 +109,14 @@ class ACM_Medication {
         coSensitivityAdjust[] = {-0.035,-0.04};
         maxDose = 1;
         maxDoseDeviation = 0;
+        maxEffectDose = 5;
     };
 
     class Amiodarone_IV: ACM_IV_Medication {
         hrIncreaseLow[] = {-1, -2};
         hrIncreaseNormal[] = {-3, -5};
         hrIncreaseHigh[] = {-10, -15};
+        maxEffectDose = 150;
     };
 
     class TXA_IV: ACM_IV_Medication {
@@ -116,6 +124,7 @@ class ACM_Medication {
         hrIncreaseNormal[] = {-1, -1};
         hrIncreaseHigh[] = {-2, -4};
         viscosityChange = 5;
+        weightEffect = 0;
     };
 
     class Ketamine_IV: ACM_IV_Medication {
@@ -125,6 +134,7 @@ class ACM_Medication {
         hrIncreaseHigh[] = {-1, -2};
         maxDose = 2;
         maxDoseDeviation = 0;
+        maxEffectDose = 20;
     };
 
     class ACM_IM_Medication {
@@ -140,6 +150,7 @@ class ACM_Medication {
         incompatibleMedication[] = {};
         administrationType = ACM_ROUTE_IM;
         viscosityChange = 0;
+        weightEffect = 1;
     };
 
     class Morphine: ACM_IM_Medication {
@@ -151,18 +162,20 @@ class ACM_Medication {
         coSensitivityAdjust[] = {-0.03,-0.035};
         maxDose = 2;
         maxDoseDeviation = 0;
+        maxEffectDose = 10;
     };
-    class Epinephrine: ACM_IM_Medication {
+    class Epinephrine: ACM_IM_Medication { // EpiPen
         painReduce = 0;
         hrIncreaseLow[] = {8, 16};
         hrIncreaseNormal[] = {8, 34};
         hrIncreaseHigh[] = {8, 26};
         timeInSystem = 500;
-        rrAdjust[] = {4,8};
-        breathingEffectivenessAdjust[] = {0,0.02};
+        rrAdjust[] = {3,6};
+        breathingEffectivenessAdjust[] = {0,0.01};
+        maxEffectDose = 1;
     };
 
-    class Adenosine: ACM_IM_Medication {
+    class Adenosine: ACM_IM_Medication { // Doesn't exist
         hrIncreaseLow[] = {-7, -10};
         hrIncreaseNormal[] = {-15, -30};
         hrIncreaseHigh[] = {-15, -35};
@@ -173,6 +186,7 @@ class ACM_Medication {
         timeInSystem = 400;
         maxDose = 3;
         maxDoseDeviation = 1;
+        maxEffectDose = 70;
     };
 
     class Ketamine: ACM_IM_Medication {
@@ -183,5 +197,6 @@ class ACM_Medication {
         rrAdjust[] = {0,0};
         maxDose = 2;
         maxDoseDeviation = 1;
+        maxEffectDose = 50;
     };
 };

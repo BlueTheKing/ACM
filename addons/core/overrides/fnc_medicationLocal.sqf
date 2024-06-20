@@ -7,12 +7,13 @@
  * 0: Patient <OBJECT>
  * 1: Body Part <STRING>
  * 2: Treatment <STRING>
+ * 3: Medication Dose <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, "RightArm", "Morphine"] call ace_medical_treatment_fnc_medicationLocal
+ * [player, "RightArm", "Morphine", 1] call ace_medical_treatment_fnc_medicationLocal
  *
  * Public: No
  */
@@ -23,7 +24,7 @@
 // 0.6 = basic medication morph. pain suppr., 0.8 = adv. medication morph. pain suppr., 0.35 = adv. medication painkillers. pain suppr.
 #define PAINKILLERS_PAIN_SUPPRESSION 0.2625 
 
-params ["_patient", "_bodyPart", "_classname"];
+params ["_patient", "_bodyPart", "_classname", ["_dose", 1]];
 TRACE_3("medicationLocal",_patient,_bodyPart,_classname);
 
 // Medication has no effects on dead units
@@ -102,6 +103,17 @@ if ((_breathingEffectivenessAdjust select 0) + (_breathingEffectivenessAdjust se
     _breathingEffectivenessAdjustment = random [(_breathingEffectivenessAdjust select 0), (((_breathingEffectivenessAdjust select 0) + (_breathingEffectivenessAdjust select 1)) / 2), (_breathingEffectivenessAdjust select 1)];
 };
 
+private _weightEffect = GET_NUMBER(_medicationConfig >> "weightEffect",getNumber (_defaultConfig >> "weightEffect"));
+
+private _concentrationRatio = 1;
+
+if (_weightEffect == 1) then {
+    private _maxEffectDose = GET_NUMBER(_medicationConfig >> "maxEffectDose",getNumber (_defaultConfig >> "maxEffectDose"));
+    private _weightModifier = IDEAL_BODYWEIGHT / GET_BODYWEIGHT(_patient);
+
+    _concentrationRatio = (_dose * _weightModifier) / _maxEffectDose;
+};
+
 if (_painReduce > 0) then {
     private _effect = [_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount);
     if (_effect > 0) then {
@@ -111,7 +123,7 @@ if (_painReduce > 0) then {
 
 // Adjust the medication effects and add the medication to the list
 TRACE_3("adjustments",_heartRateChange,_painReduce,_viscosityChange);
-[_patient, _className, _timeTillMaxEffect, _timeInSystem, _heartRateChange, _painReduce, _viscosityChange, _administrationType, _maxEffectTime, _rrAdjustment, _coSensitivityAdjustment, _breathingEffectivenessAdjustment] call ACEFUNC(medical_status,addMedicationAdjustment);
+[_patient, _className, _timeTillMaxEffect / (0.1 max _concentrationRatio min 1.2), _timeInSystem * (0.1 max _concentrationRatio min 1.2), _heartRateChange * _concentrationRatio, _painReduce * _concentrationRatio, _viscosityChange * _concentrationRatio, _administrationType, _maxEffectTime * (0.01 max _concentrationRatio min 1.1), _rrAdjustment * _concentrationRatio, _coSensitivityAdjustment * _concentrationRatio, _breathingEffectivenessAdjustment * _concentrationRatio, _concentrationRatio] call ACEFUNC(medical_status,addMedicationAdjustment);
 
 // Check for medication compatiblity
 [_patient, _className, _maxDose, _maxDoseDeviation, _incompatibleMedication] call ACEFUNC(medical_treatment,onMedicationUsage);

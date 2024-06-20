@@ -84,7 +84,7 @@ class CfgWeapons {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\vial_epinephrine_ca.paa);
-        displayName = "Epinephrine Vial";
+        displayName = "Epinephrine Vial (1mg/1ml)";
         descriptionShort = ACECSTRING(medical_treatment,Epinephrine_Desc_Short);
         descriptionUse = ACECSTRING(medical_treatment,Epinephrine_Desc_Use);
         ACE_isMedicalItem = 1;
@@ -95,19 +95,19 @@ class CfgWeapons {
     PREPARE_SYRINGE_IM(Epinephrine);
     class ACM_Vial_Adenosine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_adenosine_ca.paa);
-        displayName = "Adenosine Vial";
+        displayName = "Adenosine Vial (12mg/4ml)";
         descriptionShort = ACECSTRING(medical_treatment,adenosine_Desc_Short);
         descriptionUse = ACECSTRING(medical_treatment,adenosine_Desc_Use);
     };
     class ACM_Vial_Morphine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_morphine_ca.paa);
-        displayName = "Morphine Vial";
+        displayName = "Morphine Vial (10mg/2ml)";
         descriptionShort = "Used to manage moderate to severe pain experiences";
     };
     PREPARE_SYRINGE_IM(Morphine);
     class ACM_Vial_Ketamine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_ketamine_ca.paa);
-        displayName = "Ketamine Vial";
+        displayName = "Ketamine Vial (500mg/10ml)";
         descriptionShort = "Used to manage moderate to severe pain, alternative to opioid analgesics";
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.2;
@@ -117,7 +117,7 @@ class CfgWeapons {
 
     class ACM_Vial_Lidocaine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_lidocaine_ca.paa);
-        displayName = "Lidocaine Vial";
+        displayName = "Lidocaine Vial (100mg/5ml)";
         descriptionShort = "Used as local anesthetic for painful surgical procedures";
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.2;
@@ -127,13 +127,13 @@ class CfgWeapons {
 
     class ACM_Vial_TXA: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_txa_ca.paa);
-        displayName = "TXA Vial";
+        displayName = "TXA Vial (1000mg/10ml)";
         descriptionShort = "Used to manage catastrophic bleeding by improving clotting ability";
         descriptionUse = "Medication used to manage catastrophic bleeding by impeding the breakdown of clots, improving clotting ability";
     };
     class ACM_Vial_Amiodarone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_amiodarone_ca.paa);
-        displayName = "Amiodarone Vial";
+        displayName = "Amiodarone Vial (150mg/3ml)";
         descriptionShort = "Used to treat irregular heart rhythms";
         descriptionUse = "Medication used to treat irregular heart rhythms like VF/VT by affecting the electrical signals of the heart";
         class ItemInfo: CBA_MiscItem_ItemInfo {

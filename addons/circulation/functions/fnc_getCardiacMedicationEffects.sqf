@@ -25,11 +25,11 @@ private _amiodaroneVial = 0;
 
 //ace_medical_status_fnc_getMedicationCount
 {
-    _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "", "", "", "_administrationType", "_maxEffectTime"];
+    _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "", "", "", "_administrationType", "_maxEffectTime", "", "", "", "_concentration"];
 
     private _timeInSystem = CBA_missionTime - _timeAdded;
 
-    private _getEffect = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime] call FUNC(getMedicationEffect);
+    private _getEffect = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime, _concentration] call FUNC(getMedicationEffect);
 
     switch (_medication) do {
         case "Morphine": {

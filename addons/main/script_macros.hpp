@@ -160,6 +160,10 @@
 
 #define LYING_ANIMATION ["ainjppnemstpsnonwrfldnon", "acm_lyingstate"]
 
+#define GET_BODYWEIGHT(unit) (unit getVariable [QEGVAR(core,BodyWeight), 80])
+
+#define IDEAL_BODYWEIGHT 80
+
 // Airway
 #define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])
 

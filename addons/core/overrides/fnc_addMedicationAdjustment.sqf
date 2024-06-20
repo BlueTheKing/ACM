@@ -20,6 +20,7 @@
  * 9: Respiration Rate Adjust <NUMBER>
  * 10: Carbon Dioxide Sensitivity Adjustment <NUMBER>
  * 11: Breathing Effectiveness Adjustment <NUMBER>
+ * 12: Medication Concentration <NUMBER>
  *
  * Return Value:
  * None
@@ -29,7 +30,7 @@
  *
  * Public: No
  */
-params ["_unit", "_medication", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", ["_administrationType", ACM_ROUTE_IM], "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust"];
+params ["_unit", "_medication", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", ["_administrationType", ACM_ROUTE_IM], "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust", "_concentration"];
 TRACE_7("addMedicationAdjustment",_unit,_medication,_timeToMaxEffect,_maxTimeInSystem,_hrAdjust,_painAdjust,_flowAdjust);
 
 if (_maxTimeInSystem <= 0) exitWith { WARNING_1("bad value for _maxTimeInSystem - %1",_this); };
@@ -37,6 +38,6 @@ _timeToMaxEffect = _timeToMaxEffect max 1;
 
 private _adjustments = _unit getVariable [VAR_MEDICATIONS, []];
 
-_adjustments pushBack [_medication, CBA_missionTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust, _administrationType, _maxEffectTime, _rrAdjust, _coSensitivityAdjust, _breathingEffectivenessAdjust];
+_adjustments pushBack [_medication, CBA_missionTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust, _administrationType, _maxEffectTime, _rrAdjust, _coSensitivityAdjust, _breathingEffectivenessAdjust, _concentration];
 
 _unit setVariable [VAR_MEDICATIONS, _adjustments, true];

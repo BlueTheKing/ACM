@@ -29,17 +29,17 @@ private _handleOverdoseEffect = {
     switch (_classname) do {
         case "Ketamine_IM";
         case "Ketamine": {
-            [_patient, "Overdose_Ketamine", 60, 300, (random [-20, -35, -40]), 0, 0, ACM_ROUTE_IM, 90, 0, (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1])] call ACEFUNC(medical_status,addMedicationAdjustment);
+            [_patient, "Overdose_Ketamine", 60, 300, (random [-20, -35, -40]), 0, 0, ACM_ROUTE_IM, 90, 0, (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1]), 1] call ACEFUNC(medical_status,addMedicationAdjustment);
         };
         case "Lidocaine": {
-            [_patient, "Overdose_Lidocaine", 60, 360, (random [-40, -45, -50]), 0, 0, ACM_ROUTE_IM, 90, 0, (random [-0.9, -0.95, -1]), 0] call ACEFUNC(medical_status,addMedicationAdjustment);
+            [_patient, "Overdose_Lidocaine", 60, 360, (random [-40, -45, -50]), 0, 0, ACM_ROUTE_IM, 90, 0, (random [-0.9, -0.95, -1]), 0, 1] call ACEFUNC(medical_status,addMedicationAdjustment);
         };
         case "Morphine";
         case "Morphine_IV": {
-            [_patient, "Overdose_Opioid", 60, 360, (random [-10, -15, -20]), 0, 0, ACM_ROUTE_IM, 120, (random [-40, -45, -50]), (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1])] call ACEFUNC(medical_status,addMedicationAdjustment);
+            [_patient, "Overdose_Opioid", 60, 360, (random [-10, -15, -20]), 0, 0, ACM_ROUTE_IM, 120, (random [-40, -45, -50]), (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1]), 1] call ACEFUNC(medical_status,addMedicationAdjustment);
         };
         case "Penthrox": {
-            [_patient, "Overdose_Penthrox", 30, 300, (random [-10, -15, -20]), 0, 0, ACM_ROUTE_IM, 60, (random [-40, -45, -50]), (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1])] call ACEFUNC(medical_status,addMedicationAdjustment);
+            [_patient, "Overdose_Penthrox", 30, 300, (random [-10, -15, -20]), 0, 0, ACM_ROUTE_IM, 60, (random [-40, -45, -50]), (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1]), 1] call ACEFUNC(medical_status,addMedicationAdjustment);
         };
     };
 };

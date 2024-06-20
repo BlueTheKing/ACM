@@ -13,17 +13,18 @@
  * 2: Time until max effect <NUMBER>
  * 3: Max time in system <NUMBER>
  * 4: Max effect time <NUMBER>
+ * 5: Medication Concentration <NUMBER>
  *
  * Return Value:
  * Medication effect <NUMBER>
  *
  * Example:
- * [0, 10, 60, 120, 60] call ACM_circulation_fnc_getMedicationEffect;
+ * [0, 10, 60, 120, 60, 1] call ACM_circulation_fnc_getMedicationEffect;
  *
  * Public: No
  */
 
-params ["_administrationType", "_timeInSystem", "_timeTillMaxEffect", "_maxTimeInSystem", "_maxEffectTime"];
+params ["_administrationType", "_timeInSystem", "_timeTillMaxEffect", "_maxTimeInSystem", "_maxEffectTime", "_concentration"];
 
 private _eliminationTime = (_maxTimeInSystem - _maxEffectTime - _timeTillMaxEffect);
 private _currentEliminationTime = (_timeInSystem - _maxEffectTime - _timeTillMaxEffect);
@@ -31,7 +32,7 @@ private _currentEliminationTime = (_timeInSystem - _maxEffectTime - _timeTillMax
 private _effect = 0;
 
 if (_timeInSystem > _timeTillMaxEffect && _timeInSystem < _timeTillMaxEffect + _maxEffectTime) then {
-    _effect = 1;
+    _effect = 1 * _concentration;
 } else {
     _effect = switch (_administrationType) do {
         case ACM_ROUTE_IM: {
@@ -48,4 +49,4 @@ if (_timeInSystem > _timeTillMaxEffect && _timeInSystem < _timeTillMaxEffect + _
     };
 };
 
-0 max _effect min 1;
+0 max (_effect * _concentration) min 1;
