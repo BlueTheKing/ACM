@@ -10,7 +10,7 @@
         count = num; \
     }
 
-#define ACTION_SYRINGE_IM_DISCARD(medication) \
+/*#define ACTION_SYRINGE_IM_DISCARD(medication) \
     class DOUBLES(ACM_Action_Syringe_IM,medication) { \
         displayName = QUOTE(IM Syringe (##medication##)); \
         condition = QUOTE('ACM_Syringe_IM_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
@@ -29,6 +29,14 @@
         displayName = QUOTE(Draw ##medication##); \
         condition = QUOTE('ACM_Vial_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
         statement = QUOTE([ARR_2(_player,'##medication##')] call EFUNC(circulation,Syringe_Prepare)); \
+        showDisabled = 0; \
+    }*/
+
+#define ACTION_SYRINGE_IV_PREPARE(medication) \
+    class DOUBLES(ACM_Action_Syringe_IV_Empty_Prepare,medication) { \
+        displayName = QUOTE(Draw ##medication##); \
+        condition = QUOTE('ACM_Vial_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
+        statement = QUOTE([ARR_5(_player,objNull,'','##medication##',true)] call EFUNC(circulation,Syringe_Prepare)); \
         showDisabled = 0; \
     }
 
@@ -119,6 +127,7 @@ class CfgVehicles {
             ADDITEM(ACM_IV_16g,25);
             ADDITEM(ACM_IV_14g,15);
             ADDITEM(ACM_Syringe_IM,5);
+            ADDITEM(ACM_Syringe_IV,5);
             ADDITEM(ACM_IO_FAST,20);
             ADDITEM(ACM_Vial_Epinephrine,10);
             ADDITEM(ACM_Vial_Morphine,10);
@@ -167,29 +176,28 @@ class CfgVehicles {
                         showDisabled = 0;
                     };
                 };
-                class ACM_Action_Syringe_IM {
-                    displayName = "IM Syringes";
-                    condition = QUOTE([_player] call EFUNC(circulation,Syringe_Find));
+                class ACM_Action_Syringe_IV {
+                    displayName = "IV Syringes";
+                    condition = QUOTE([ARR_2(_player,true)] call EFUNC(circulation,Syringe_Find));
                     statement = "";
                     showDisabled = 0;
                     exceptions[] = {"isNotInside", "isNotSitting"};
-                    icon = QPATHTOEF(circulation,ui\icon_syringe_im_ca.paa);
-                    class ACM_Action_Syringe_IM_Empty {
-                        displayName = "IM Syringe (Empty)";
-                        condition = QUOTE('ACM_Syringe_IM' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                    icon = QPATHTOEF(circulation,ui\icon_syringe_iv_ca.paa);
+                    insertChildren = QUOTE([ARR_2(_player,true)] call EFUNC(circulation,Syringe_Draw_ChildActions));
+                    class ACM_Action_Syringe_IV_Empty {
+                        displayName = "IV Syringe (Empty)";
+                        condition = QUOTE('ACM_Syringe_IV' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
                         statement = "";
                         showDisabled = 0;
                         exceptions[] = {"isNotInside", "isNotSitting"};
                         icon = "";
-                        ACTION_SYRINGE_IM_PREPARE(Epinephrine);
-                        ACTION_SYRINGE_IM_PREPARE(Morphine);
-                        ACTION_SYRINGE_IM_PREPARE(Ketamine);
-                        ACTION_SYRINGE_IM_PREPARE(Lidocaine);
+                        ACTION_SYRINGE_IV_PREPARE(Epinephrine);
+                        ACTION_SYRINGE_IV_PREPARE(Morphine);
+                        ACTION_SYRINGE_IV_PREPARE(Ketamine);
+                        ACTION_SYRINGE_IV_PREPARE(Amiodarone);
+                        ACTION_SYRINGE_IV_PREPARE(Adenosine);
+                        ACTION_SYRINGE_IV_PREPARE(TXA);
                     };
-                    ACTION_SYRINGE_IM_DISCARD(Epinephrine);
-                    ACTION_SYRINGE_IM_DISCARD(Morphine);
-                    ACTION_SYRINGE_IM_DISCARD(Ketamine);
-                    ACTION_SYRINGE_IM_DISCARD(Lidocaine);
                 };
             };
             

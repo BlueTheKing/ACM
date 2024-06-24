@@ -60,7 +60,7 @@ if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) exitWith {
 };
 
 // Get adjustment attributes for used medication
-private _defaultConfig = configFile >> "ACM_Medication";
+private _defaultConfig = configFile >> "ACM_Medication" >> "Medications";
 private _medicationConfig = _defaultConfig >> _classname;
 
 private _painReduce             = GET_NUMBER(_medicationConfig >> "painReduce",getNumber (_defaultConfig >> "painReduce"));

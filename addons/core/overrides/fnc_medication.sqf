@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Glowbal, mharis001
- * Administers medication to the patient on the given body bodypart.
+ * Administers medication to the patient on the given bodypart.
  *
  * Arguments:
  * 0: Medic <OBJECT>
