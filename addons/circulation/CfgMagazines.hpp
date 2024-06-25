@@ -16,7 +16,7 @@ class CfgMagazines {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\paracetamol_ca.paa);
-        displayName = "Paracetamol (650mg/10)";
+        displayName = "Paracetamol";
         descriptionShort = "Used to combat mild to moderate pain";
         descriptionUse = "Package of pills used to combat mild to moderate pain";
         ACE_isMedicalItem = 1;

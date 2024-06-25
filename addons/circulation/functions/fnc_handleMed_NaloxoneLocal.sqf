@@ -23,16 +23,16 @@ private _mitigatedArray = _patient getVariable [QGVAR(MitigatedMedication), []];
 private _naloxoneEffect = 1;
 
 {
-    _x params ["_medicationType", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", "_administrationType", "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust", "_concentration"];
+    _x params ["_medicationClassname", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", "_administrationType", "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust", "_concentration", "_medicationType"];
 
     if (_naloxoneEffect < 1) exitWith {};
 
-    if (_medicationType == "Overdose_Opioid") then {
+    if (_medicationClassname == "Overdose_Opioid") then {
         _medicationArray deleteAt _forEachIndex;
     };
 
-    if (_medicationType in ["Morphine", "Morphine_IV"]) then {
-        _mitigatedArray pushBack [_medicationType, _injectTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust, _administrationType, _maxEffectTime, _rrAdjust, _coSensitivityAdjust, _breathingEffectivenessAdjust, _concentration];
+    if (_medicationClassname in ["Morphine", "Morphine_IV"]) then {
+        _mitigatedArray pushBack [_medicationClassname, _injectTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust, _administrationType, _maxEffectTime, _rrAdjust, _coSensitivityAdjust, _breathingEffectivenessAdjust, _concentration, _medicationType];
         _medicationArray deleteAt _forEachIndex;
         _naloxoneEffect = _naloxoneEffect - 1;
     };
@@ -45,7 +45,7 @@ private _naloxoneEffect = 1;
         private _mitigatedArray = _patient getVariable [QGVAR(MitigatedMedication), []];
 
         /*{
-            _x params ["_medicationType", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust"];
+            _x params ["_medicationClassname", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust"];
 
             if (_injectTime + _maxTimeInSystem > CBA_missionTime) then {
                 private _timeRemaining = CBA_missionTime - _injectTime;
@@ -55,7 +55,7 @@ private _naloxoneEffect = 1;
                     _newTimeToMaxEffect = _timeToMaxEffect - (_maxTimeInSystem - _timeRemaining);
                 };
 
-                [_patient, _medicationType, _newTimeToMaxEffect, _timeRemaining, _hrAdjust, _painAdjust, _flowAdjust] call ACEFUNC(medical_status,addMedicationAdjustment);
+                [_patient, _medicationClassname, _newTimeToMaxEffect, _timeRemaining, _hrAdjust, _painAdjust, _flowAdjust] call ACEFUNC(medical_status,addMedicationAdjustment);
             };
         } forEach _mitigatedArray;*/
 

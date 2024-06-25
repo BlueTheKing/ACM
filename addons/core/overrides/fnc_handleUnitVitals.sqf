@@ -78,10 +78,12 @@ private _coSensitivityAdjustment = 0;
 private _breathingEffectivenessAdjustment = 0;
 private _adjustments = _unit getVariable [VAR_MEDICATIONS,[]];
 
+private _painSuppressAdjustmentMap = +GVAR(MedicationTypes);
+
 if (_adjustments isNotEqualTo []) then {
     private _deleted = false;
     {
-        _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", "_administrationType", "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust", "_concentration"];
+        _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", "_administrationType", "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust", "_concentration", "_medicationType"];
         private _timeInSystem = CBA_missionTime - _timeAdded;
         if (_timeInSystem >= _maxTimeInSystem) then {
             _deleted = true;
@@ -89,13 +91,32 @@ if (_adjustments isNotEqualTo []) then {
         } else {
             private _effectRatio = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime, _concentration] call EFUNC(circulation,getMedicationEffect);
             if (_hrAdjust != 0) then { _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio; };
-            if (_painAdjust != 0) then { _painSupressAdjustment = _painSupressAdjustment + _painAdjust * _effectRatio; };
             if (_flowAdjust != 0) then { _peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _flowAdjust * _effectRatio; };
             if (_rrAdjust != 0) then { _respirationRateAdjustment = _respirationRateAdjustment + _rrAdjust * _effectRatio; };
             if (_coSensitivityAdjust != 0) then { _coSensitivityAdjustment = _coSensitivityAdjustment + _coSensitivityAdjust * _effectRatio; };
             if (_breathingEffectivenessAdjust != 0) then { _breathingEffectivenessAdjustment = _breathingEffectivenessAdjustment + _breathingEffectivenessAdjust * _effectRatio; };
+
+            if (_painAdjust != 0) then {
+                if (_medicationType == "Default") then {
+                    _medicationType = _medication;
+                };
+                (_painSuppressAdjustmentMap get _medicationType) params ["_medClassnames", "_medPainReduce", "_medMaxPainAdjust"];
+                if (_medication in _medClassnames) then {
+                    private _newPainAdjust = _medPainReduce + _painAdjust * _effectRatio;
+
+                    if (_medPainReduce < (_newPainAdjust min _medMaxPainAdjust)) then {
+                        _painSuppressAdjustmentMap set [_medicationType, [_medClassnames, (_newPainAdjust min _medMaxPainAdjust), _medMaxPainAdjust]];
+                    };
+                };
+            };
         };
     } forEach _adjustments;
+
+    {
+        _y params ["", "_medPainAdjust", "_medMaxPainAdjust"];
+
+        _painSupressAdjustment = _painSupressAdjustment + (_medPainAdjust min _medMaxPainAdjust);
+    } forEach _painSuppressAdjustmentMap;
 
     if (_deleted) then {
         _unit setVariable [VAR_MEDICATIONS, _adjustments - [objNull], true];
