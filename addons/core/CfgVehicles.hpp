@@ -10,33 +10,18 @@
         count = num; \
     }
 
-/*#define ACTION_SYRINGE_IM_DISCARD(medication) \
-    class DOUBLES(ACM_Action_Syringe_IM,medication) { \
-        displayName = QUOTE(IM Syringe (##medication##)); \
-        condition = QUOTE('ACM_Syringe_IM_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
-        statement = ""; \
-        showDisabled = 0; \
-        class TRIPLES(ACM_Action_Syringe_IM,medication,Discard) { \
-            displayName = QUOTE(Discard Contents); \
-            condition = "true"; \
-            statement = QUOTE([ARR_2(_player,'##medication##')] call EFUNC(circulation,Syringe_Discard)); \
-            showDisabled = 0; \
-        }; \
-    }
-
-#define ACTION_SYRINGE_IM_PREPARE(medication) \
-    class DOUBLES(ACM_Action_Syringe_IM_Empty_Prepare,medication) { \
-        displayName = QUOTE(Draw ##medication##); \
-        condition = QUOTE('ACM_Vial_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
-        statement = QUOTE([ARR_2(_player,'##medication##')] call EFUNC(circulation,Syringe_Prepare)); \
-        showDisabled = 0; \
-    }*/
-
 #define ACTION_SYRINGE_IV_PREPARE(medication) \
     class DOUBLES(ACM_Action_Syringe_IV_Empty_Prepare,medication) { \
         displayName = QUOTE(Draw ##medication##); \
         condition = QUOTE('ACM_Vial_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
         statement = QUOTE([ARR_5(_player,objNull,'','##medication##',true)] call EFUNC(circulation,Syringe_Prepare)); \
+        showDisabled = 0; \
+    }
+#define ACTION_SYRINGE_IM_PREPARE(medication) \
+    class DOUBLES(ACM_Action_Syringe_IM_Empty_Prepare,medication) { \
+        displayName = QUOTE(Draw ##medication##); \
+        condition = QUOTE('ACM_Vial_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
+        statement = QUOTE([ARR_5(_player,objNull,'','##medication##',false)] call EFUNC(circulation,Syringe_Prepare)); \
         showDisabled = 0; \
     }
 
@@ -197,6 +182,27 @@ class CfgVehicles {
                         ACTION_SYRINGE_IV_PREPARE(Amiodarone);
                         ACTION_SYRINGE_IV_PREPARE(Adenosine);
                         ACTION_SYRINGE_IV_PREPARE(TXA);
+                    };
+                };
+                class ACM_Action_Syringe_IM {
+                    displayName = "IM Syringes";
+                    condition = QUOTE([ARR_2(_player,false)] call EFUNC(circulation,Syringe_Find));
+                    statement = "";
+                    showDisabled = 0;
+                    exceptions[] = {"isNotInside", "isNotSitting"};
+                    icon = QPATHTOEF(circulation,ui\icon_syringe_im_ca.paa);
+                    insertChildren = QUOTE([ARR_2(_player,false)] call EFUNC(circulation,Syringe_Draw_ChildActions));
+                    class ACM_Action_Syringe_IM_Empty {
+                        displayName = "IM Syringe (Empty)";
+                        condition = QUOTE('ACM_Syringe_IM' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                        statement = "";
+                        showDisabled = 0;
+                        exceptions[] = {"isNotInside", "isNotSitting"};
+                        icon = "";
+                        ACTION_SYRINGE_IM_PREPARE(Epinephrine);
+                        ACTION_SYRINGE_IM_PREPARE(Morphine);
+                        ACTION_SYRINGE_IM_PREPARE(Ketamine);
+                        ACTION_SYRINGE_IM_PREPARE(Lidocaine);
                     };
                 };
             };

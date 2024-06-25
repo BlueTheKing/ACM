@@ -86,16 +86,60 @@ class GVAR(SyringeDraw_Dialog) {
                 };
             };
         };
+        class Syringe_IM: RscControlsGroup {
+            idc = IDC_SYRINGEDRAW_SYRINGE_IM_GROUP;
+            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 4));
+            y = QUOTE(safezoneY - (safezoneH / 10));
+            w = QUOTE(safezoneW / 2);
+            h = QUOTE(safezoneH * 2);
+            type = 15;
+            style = 0;
+            class ScrollBar
+			{
+				color[] = {1,1,1,0.6};
+				colorActive[] = {1,1,1,1};
+				colorDisabled[] = {1,1,1,0.3};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+			};
+            class HScrollbar: ScrollBar
+            {
+                height = 0;
+                shadow = 0;
+            };
+            class Controls {
+                class Syringe_IM_Backbit: RscPictureKeepAspect {
+                    idc = -1;
+                    x = 0;
+                    y = 0;
+                    w = QUOTE(safezoneW / 2);
+                    h = QUOTE(safezoneH);
+                    type = 0;
+                    size = 0;
+                    text = QPATHTOF(ui\syringe\syringe_im_backbit_ca.paa);
+                    colorText[] = {1, 1, 1, 1};
+                };
+                class Syringe_IM_Plunger: Syringe_IM_Backbit {
+                    idc = IDC_SYRINGEDRAW_SYRINGE_IM_PLUNGER;
+                    text = QPATHTOF(ui\syringe\syringe_im_plunger_ca.paa);
+                };
+                class Syringe_IM_Barrel: Syringe_IM_Backbit {
+                    text = QPATHTOF(ui\syringe\syringe_im_barrel_ca.paa);
+                };
+            };
+        };
     };
     class Controls {
         class Plunger: RscButton {
             text = "";
             colorText[] = {1,1,1,0};
             colorDisabled[] = {1,1,1,0};
-            colorBackground[] = {0,0,1,0.5};
-            colorBackgroundDisabled[] = {0,0,1,0.5};
-            colorBackgroundActive[] = {0,0,1,0.5};
-            colorFocused[] = {0,0,1,0.5};
+            colorBackground[] = {0,0,1,0};
+            colorBackgroundDisabled[] = {0,0,1,0};
+            colorBackgroundActive[] = {0,0,1,0};
+            colorFocused[] = {0,0,1,0};
             colorBorder[] = {0,0,0,0};
             soundClick[] = {};
             soundEnter[] = {};

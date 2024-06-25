@@ -21,7 +21,7 @@
  * Public: No
  */
 
-params ["_medic", "_patient", "_bodyPart", ["_iv", false], "_medication"];
+params ["_medic", "_patient", "_bodyPart", ["_IV", false], "_medication"];
 
 private _inject = true;
 
@@ -37,7 +37,7 @@ GVAR(SyringeDraw_MaxDose) = 0;
 GVAR(SyringeDraw_Medication) = "";
 GVAR(SyringeDraw_IV) = false;
 
-[[_medic, _patient, _bodyPart, [_inject, _iv, _medication]], { // On Start
+[[_medic, _patient, _bodyPart, [_inject, _IV, _medication]], { // On Start
     params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
     _extraArgs params ["_inject", "_IV", "_medication"];
 
@@ -60,6 +60,20 @@ GVAR(SyringeDraw_IV) = false;
     GVAR(SyringeDraw_MaxDose) = getNumber (configFile >> "ACM_Medication" >> "Concentration" >> _medication >> "volume");
     GVAR(SyringeDraw_Medication) = _medication;
     GVAR(SyringeDraw_IV) = _IV;
+
+    if (_IV) then {
+        (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_IM_GROUP) ctrlShow false;
+    } else {
+        private _ctrlPlunger = _display displayCtrl IDC_SYRINGEDRAW_PLUNGER;
+        (ctrlPosition _ctrlPlunger) params ["_plungerX","","_plungerW","_plungerH"];
+        _ctrlPlunger ctrlSetPosition [_plungerX, SYRINGEDRAW_LIMIT_IM_TOP, _plungerW, _plungerH];
+        _ctrlPlunger ctrlCommit 0;
+
+        private _ctrlInjectButton = _display displayCtrl IDC_SYRINGEDRAW_BUTTON_PUSH;
+        _ctrlInjectButton ctrlSetText "Inject";
+
+        (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_IV_GROUP) ctrlShow false;
+    };
 
     if (_inject) then {
         GVAR(SyringeDraw_Target) = _patient;
@@ -86,7 +100,41 @@ GVAR(SyringeDraw_IV) = false;
     };
 
     [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
-}, { // PerFrame
+}, ([// PerFrame
+{ // IM
+    params ["_medic", "_patient", "_bodyPart"];
+
+    private _display = uiNamespace getVariable [QGVAR(SyringeDraw_DLG), displayNull];
+
+    if (GVAR(SyringeDraw_Moving)) then {
+        private _ctrlPlunger = _display displayCtrl IDC_SYRINGEDRAW_PLUNGER;
+        private _ctrlPlungerVisual = _display displayCtrl IDC_SYRINGEDRAW_SYRINGE_IM_PLUNGER;
+
+        private _bottomLimit = linearConversion [0, 5, GVAR(SyringeDraw_MaxDose), 0.774622, 1.168, true];
+        private _bottomLimitMouse = _bottomLimit + 0.02;
+
+        getMousePosition params ["_mouseX", "_mouseY"];
+        setMousePosition [SYRINGEDRAW_MOUSE_X, (_bottomLimitMouse min _mouseY max SYRINGEDRAW_LIMIT_IM_TOP_MOUSE)];
+
+        (ctrlPosition _ctrlPlunger) params ["_plungerX","","_plungerW","_plungerH"];
+
+        private _newY = _mouseY - (_plungerH / 2);
+
+        _newY = _bottomLimit min _newY max SYRINGEDRAW_LIMIT_IM_TOP;
+
+        _ctrlPlunger ctrlSetPosition [_plungerX, _newY, _plungerW, _plungerH];
+        _ctrlPlunger ctrlCommit 0;
+
+        (ctrlPosition _ctrlPlungerVisual) params ["_plungerVX","","_plungerVW","_plungerVH"];
+
+        _ctrlPlungerVisual ctrlSetPosition [_plungerVX, (_newY - ACM_pxToScreen_Y(1338)), _plungerVW, _plungerVH];
+        _ctrlPlungerVisual ctrlCommit 0;
+
+        private _amountDrawn = linearConversion [0.774622, 1.168, _newY, 0, 5, true];
+
+        GVAR(SyringeDraw_DrawnAmount) = _amountDrawn;
+    };
+},{ // IV
     params ["_medic", "_patient", "_bodyPart"];
 
     private _display = uiNamespace getVariable [QGVAR(SyringeDraw_DLG), displayNull];
@@ -96,7 +144,6 @@ GVAR(SyringeDraw_IV) = false;
         private _ctrlPlungerVisual = _display displayCtrl IDC_SYRINGEDRAW_SYRINGE_IV_PLUNGER;
 
         private _bottomLimit = linearConversion [0, 10, GVAR(SyringeDraw_MaxDose), 0.795004, 1.196, true];
-        systemchat str _bottomLimit;
         private _bottomLimitMouse = _bottomLimit + 0.02;
 
         getMousePosition params ["_mouseX", "_mouseY"];
@@ -119,8 +166,5 @@ GVAR(SyringeDraw_IV) = false;
         private _amountDrawn = linearConversion [0.795004, 1.196, _newY, 0, 10, true];
 
         GVAR(SyringeDraw_DrawnAmount) = _amountDrawn;
-
-        systemchat format ["%1 -- %2", _amountDrawn, _newY];
     };
-    
-}, IDC_SYRINGEDRAW] call EFUNC(core,beginContinuousAction);
+}] select _IV), IDC_SYRINGEDRAW] call EFUNC(core,beginContinuousAction);
