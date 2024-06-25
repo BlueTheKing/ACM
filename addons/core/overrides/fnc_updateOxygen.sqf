@@ -160,7 +160,7 @@ if (_respirationRate > 0 && (GET_HEART_RATE(_unit) > 20)) then {
         _respirationEffect = 0.8 max (_respirationRate / 12) min 1.1;
     };
 
-    _targetOxygenSaturation = 99 min (_targetOxygenSaturation * _breathingEffectiveness * _airSaturation * _respirationEffect * _fatigueEffect);
+    _targetOxygenSaturation = _desiredOxygenSaturation min (_targetOxygenSaturation * _breathingEffectiveness * _airSaturation * _respirationEffect * _fatigueEffect);
 
     _oxygenChange = (_targetOxygenSaturation - _currentOxygenSaturation) / 5;
 
