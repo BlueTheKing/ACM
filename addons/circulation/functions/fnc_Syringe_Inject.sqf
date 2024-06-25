@@ -57,14 +57,16 @@ private _dose = 0;
 
 if (_dose < 1) exitWith {};
 
-[_patient, format ["%1 (%2)", _classname, _administrationString]] call ACEFUNC(medical_treatment,addToTriageCard);
-[_patient, "activity", "%1 %2 %3 (%4)", [[_medic, false, true] call ACEFUNC(common,getName), _actionString, _classname, _administrationString]] call ACEFUNC(medical_treatment,addToLog);
+private _medicationConcentration = getNumber (configFile >> "ACM_Medication" >> "Concentration" >> _classname >> "concentration");
+
+private _stringDose = round((_dose / 100) * _medicationConcentration);
+
+[_patient, format ["%1 %2 (%3mg)", _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToTriageCard);
+[_patient, "activity", "%1 %2 %3 %4 (%5mg)", [[_medic, false, true] call ACEFUNC(common,getName), _actionString, _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToLog);
 
 if (_returnSyringe) then {
     [_medic, (format ["ACM_Syringe_%1", _administrationString])] call ACEFUNC(common,addToInventory);
 };
-
-private _medicationConcentration = getNumber (configFile >> "ACM_Medication" >> "Concentration" >> _classname >> "concentration");
 
 private _concentrationDose = _medicationConcentration * (_dose / 100);
 
