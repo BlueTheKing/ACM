@@ -126,4 +126,4 @@ TRACE_3("adjustments",_heartRateChange,_painReduce,_viscosityChange);
 [_patient, _className, _timeTillMaxEffect / (0.1 max _concentrationRatio min 1.2), _timeInSystem * (0.1 max _concentrationRatio min 1.2), _heartRateChange * _concentrationRatio, _painReduce * _concentrationRatio, _viscosityChange * _concentrationRatio, _administrationType, _maxEffectTime * (0.01 max _concentrationRatio min 1.1), _rrAdjustment * _concentrationRatio, _coSensitivityAdjustment * _concentrationRatio, _breathingEffectivenessAdjustment * _concentrationRatio, _concentrationRatio] call ACEFUNC(medical_status,addMedicationAdjustment);
 
 // Check for medication compatiblity
-[_patient, _className, _maxDose, _maxDoseDeviation, _incompatibleMedication] call ACEFUNC(medical_treatment,onMedicationUsage);
+[_patient, _className, _maxDose, _maxDoseDeviation, _concentrationRatio, _incompatibleMedication] call ACEFUNC(medical_treatment,onMedicationUsage);

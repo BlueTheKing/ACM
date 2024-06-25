@@ -30,9 +30,10 @@ private _eliminationTime = (_maxTimeInSystem - _maxEffectTime - _timeTillMaxEffe
 private _currentEliminationTime = (_timeInSystem - _maxEffectTime - _timeTillMaxEffect);
 
 private _effect = 0;
+private _maxEffect = _concentration;
 
 if (_timeInSystem > _timeTillMaxEffect && _timeInSystem < _timeTillMaxEffect + _maxEffectTime) then {
-    _effect = 1 * _concentration;
+    _effect = _maxEffect;
 } else {
     _effect = switch (_administrationType) do {
         case ACM_ROUTE_IM: {
@@ -49,4 +50,4 @@ if (_timeInSystem > _timeTillMaxEffect && _timeInSystem < _timeTillMaxEffect + _
     };
 };
 
-0 max (_effect * _concentration) min 1;
+0 max (_effect * _concentration) min _maxEffect;

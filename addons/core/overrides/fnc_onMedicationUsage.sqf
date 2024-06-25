@@ -8,7 +8,8 @@
  * 1: Medication Treatment classname <STRING>
  * 2: Max dose (0 to ignore) <NUMBER>
  * 3: Max dose deviation <NUMBER>
- * 3: Incompatable medication <ARRAY<STRING>>
+ * 4: Dose Concentration <NUMBER>
+ * 5: Incompatable medication <ARRAY<STRING>>
  *
  * Return Value:
  * None
@@ -19,7 +20,7 @@
  * Public: No
  */
 
-params ["_target", "_className", "_maxDose", "_maxDoseDeviation", "_incompatibleMedication"];
+params ["_target", "_className", "_maxDose", "_maxDoseDeviation", "_doseConcentration", "_incompatibleMedication"];
 TRACE_5("onMedicationUsage",_target,_className,_maxDose,_maxDoseDeviation,_incompatibleMedication);
 
 private _overdosedMedications = [];
@@ -39,5 +40,8 @@ if (_maxDoseDeviation > 0) then {
 
 if (_currentDose > _maxDose + _doseDeviation) then {
     [_target, _className, _maxDose, _doseDeviation] call EFUNC(circulation,handleOverdose);
+} else {
+    if (_doseConcentration > _maxDose + _doseDeviation) then {
+        [_target, _className, _maxDose, _doseDeviation] call EFUNC(circulation,handleOverdose);
+    };
 };
-
