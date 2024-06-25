@@ -162,7 +162,7 @@
 
 #define GET_BODYWEIGHT(unit) (unit getVariable [QEGVAR(core,BodyWeight), 80])
 
-#define IDEAL_BODYWEIGHT 80
+#define IDEAL_BODYWEIGHT 83
 
 // Airway
 #define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])

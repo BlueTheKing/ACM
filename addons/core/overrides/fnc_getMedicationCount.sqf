@@ -30,7 +30,7 @@ private _return = 0;
             _return = _return + ((linearConversion [(_timeTillMaxEffect + _maxEffectTime), _maxTimeInSystem, _timeInSystem, 1, 0, true]) * _concentration);
         } else {
             // as used in handleUnitVitals, a medication effectiveness will start low, ramp up to timeTillMaxEffect, and then drop off
-            _return = _return + ([_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime] call EFUNC(circulation,getMedicationEffect));
+            _return = _return + ([_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime, _concentration] call EFUNC(circulation,getMedicationEffect));
         };
     };
 } forEach (_target getVariable [VAR_MEDICATIONS, []]);
