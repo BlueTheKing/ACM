@@ -11,6 +11,8 @@
  *
  * Example:
  * [player] call ACM_damage_fnc_resetVariables;
+ *
+ * Public: No
  */
 
 params ["_patient"];

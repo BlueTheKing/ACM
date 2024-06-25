@@ -11,6 +11,8 @@
  *
  * Example:
  * [player] call ACM_core_fnc_fullHealLocal;
+ *
+ * Public: No
  */
 
 params ["_patient"];

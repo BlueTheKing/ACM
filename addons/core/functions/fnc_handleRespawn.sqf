@@ -12,6 +12,8 @@
  *
  * Example:
  * [alive, body] call ACM_core_fnc_handleRespawn;
+ *
+ * Public: No
  */
 
 params ["_unit", "_dead"];
