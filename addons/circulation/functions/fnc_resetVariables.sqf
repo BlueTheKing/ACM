@@ -17,6 +17,11 @@
 
 params ["_patient"];
 
+if (_patient == ACE_player) then {
+    _patient setVariable [QGVAR(AnestheticEffect_Ketamine_Absorbed), false];
+    _patient setVariable [QGVAR(AnestheticEffect_PFH), -1];
+};
+
 _patient setVariable [QGVAR(ROSC_Time), -30, true];
 
 _patient setVariable [QGVAR(IV_Placement), [0,0,0,0,0,0], true];
