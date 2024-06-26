@@ -26,7 +26,10 @@ private _hintType = "16g IV";
 
 switch (_type) do {
     case ACM_IV_14G_M: {_hintType = "14g IV";};
-    case ACM_IO_FAST1_M: {_hintType = "IO";};
+    case ACM_IO_FAST1_M: {
+        _hintType = "IO";
+        [_patient, 0.4] call ACEFUNC(medical_status,adjustPainLevel);
+    };
     default {};
 };
 

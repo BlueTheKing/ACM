@@ -34,4 +34,6 @@ private _fluidDesc = format ["%1 %2ml", _fluidType, _fluidAmount];
 [_patient, _usedItem] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", "%1 began transfusing fluids (%2)", [[_medic, false, true] call ACEFUNC(common,getName), _fluidDesc]] call ACEFUNC(medical_treatment,addToLog);
 
-[QACEGVAR(medical_treatment,ivBagLocal), [_patient, _bodyPart, _classname], _patient] call CBA_fnc_targetEvent;
+private _partIndex = ALL_BODY_PARTS find tolowerANSI _bodyPart;
+
+[QACEGVAR(medical_treatment,ivBagLocal), [_patient, _bodyPart, _classname, (GET_IV(_patient) select _partIndex)], _patient] call CBA_fnc_targetEvent;

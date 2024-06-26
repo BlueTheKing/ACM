@@ -84,6 +84,8 @@ if (_plateletCount > 0.1) then {
     };
 };
 
+private _transfusionPain = 0;
+
 if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
     private _flowMultiplier = 1;
 
@@ -102,7 +104,7 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
     private _bagCountChanged = false;
 
     _fluidBags = _fluidBags apply {
-        _x params ["_bodyPart", "_type", "_bagVolumeRemaining", ["_bloodType", -1]];
+        _x params ["_bodyPart", "_type", "_bagVolumeRemaining", ["_bloodType", -1], ["_accessType", 1]];
 
         if (_tourniquets select _bodyPart == 0) then {
             private _fluidFlowRate = 1;
@@ -149,17 +151,17 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
                 };
             };
             // IO pain
-            /*if (_bodyPart == 1) then { // TODO fully implement
-                private _transfusionPain = _bagChange / 1000;
-                systemchat format ["%1",_transfusionPain];
-            };*/
+            if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then {
+                private _IOPain = _bagChange / 3.7;
+                _transfusionPain = _transfusionPain + _IOPain;
+            };
         };
 
         if (_bagVolumeRemaining < 0.01) then {
             _bagCountChanged = true;
             []
         } else {
-            [_bodyPart, _type, _bagVolumeRemaining, _bloodType]
+            [_bodyPart, _type, _bagVolumeRemaining, _bloodType, _accessType]
         };
     };
 
@@ -175,6 +177,10 @@ if (!isNil {_unit getVariable QACEGVAR(medical,ivBags)}) then {
     if (_bagCountChanged) then {
         [_unit] call EFUNC(circulation,updateActiveFluidBags);
     };
+};
+
+if (_transfusionPain > 0) then {
+    [_unit, (_transfusionPain min 0.8)] call ACEFUNC(medical_status,adjustPainLevel);
 };
 
 if (_bloodVolume < 6) then {

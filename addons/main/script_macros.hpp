@@ -201,6 +201,7 @@
 #define ACM_IV_16G_M 1
 #define ACM_IV_14G_M 2
 #define ACM_IO_FAST1_M 3
+#define ACM_IO_EZ_M 4
 
 #define ACM_ROUTE_IM 0
 #define ACM_ROUTE_IV 1

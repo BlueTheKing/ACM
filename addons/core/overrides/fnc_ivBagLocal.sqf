@@ -7,17 +7,18 @@
  * 0: Patient <OBJECT>
  * 1: Body Part <STRING>
  * 2: Treatment <STRING>
+ * 3: Access Type <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, "RightArm", "BloodIV"] call ace_medical_treatment_fnc_ivBagLocal
+ * [player, "RightArm", "BloodIV", 1] call ace_medical_treatment_fnc_ivBagLocal
  *
  * Public: No
  */
 
-params ["_patient", "_bodyPart", "_classname"];
+params ["_patient", "_bodyPart", "_classname", "_accessType"];
 
 // Exit if patient has max blood volume
 private _bloodVolume = GET_BLOOD_VOLUME(_patient);
@@ -35,7 +36,7 @@ private _bloodType = GET_NUMBER(_ivConfig >> "bloodtype",-1);
 
 // Add IV bag to patient's ivBags array
 private _ivBags = _patient getVariable [QACEGVAR(medical,ivBags), []];
-_ivBags pushBack [_partIndex, _type, _volume, _bloodType];
+_ivBags pushBack [_partIndex, _type, _volume, _bloodType, _accessType];
 _patient setVariable [QACEGVAR(medical,ivBags), _ivBags, true];
 
 [_patient] call EFUNC(circulation,updateActiveFluidBags);
