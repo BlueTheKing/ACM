@@ -35,6 +35,7 @@ private _unconscious      = IS_UNCONSCIOUS(ACE_player);
 private _heartRate        = GET_HEART_RATE(ACE_player);
 private _pain             = GET_PAIN_PERCEIVED(ACE_player);
 private _oxygenSaturation = GET_OXYGEN(ACE_player);
+private _respirationRate  = GET_RESPIRATION_RATE(ACE_player);
 
 if ((!ACEGVAR(medical_feedback,heartBeatEffectRunning)) && {_heartRate != 0} && {(_heartRate > 140) || {_heartRate < 60}}) then {
     TRACE_1("Starting heart beat effect",_heartRate);
@@ -59,7 +60,7 @@ if ((!ACEGVAR(medical_feedback,heartBeatEffectRunning)) && {_heartRate != 0} && 
 
 [!_unconscious, _pain] call ACEFUNC(medical_feedback,effectPain);
 [!_unconscious, _bleedingStrength, _manualUpdate] call ACEFUNC(medical_feedback,effectBleeding);
-[!_unconscious, _oxygenSaturation] call FUNC(effectOxygen);
+[!_unconscious, _oxygenSaturation, _respirationRate] call FUNC(effectOxygen);
 
 // - Tourniquets, fractures and splints indication ---------------------------------------
 if (ACEGVAR(medical_feedback,enableHUDIndicators)) then {

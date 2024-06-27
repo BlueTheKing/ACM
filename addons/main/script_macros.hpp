@@ -176,7 +176,7 @@
 
 #define GET_OXYGEN(unit) (unit getVariable [VAR_SPO2, 99])
 
-#define GET_RESPIRATION_RATE(unit) (unit getVariable [QEGVAR(breathing,RespirationRate), 0])
+#define GET_RESPIRATION_RATE(unit) (unit getVariable [QEGVAR(breathing,RespirationRate), 18])
 
 #define GET_PULSEOX(unit) (unit getVariable [QEGVAR(breathing,PulseOximeter_Placement),[false,false]])
 #define HAS_PULSEOX(unit,index) (GET_PULSEOX(unit) select index)
