@@ -207,7 +207,7 @@ switch (true) do {
         private _nextCheck = _unit getVariable [QEGVAR(circulation,ReversibleCardiacArrest_HypoxiaTime), CBA_missionTime];
         private _enterCardiacArrest = false;
         if (CBA_missionTime >= _nextCheck) then {
-            _enterCardiacArrest = random 1 < (0.4 + 0.6 * (30 - _heartRate) / 10); // Variable chance of getting into cardiac arrest.
+            _enterCardiacArrest = (ACM_OXYGEN_HYPOXIA - (random 10) > _oxygenSaturation);
             _unit setVariable [QEGVAR(circulation,ReversibleCardiacArrest_HypoxiaTime), CBA_missionTime + 5];
             [_unit] call EFUNC(circulation,updateCirculationState);
         };

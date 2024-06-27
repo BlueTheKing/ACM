@@ -36,6 +36,6 @@ private _oxygen = GET_OXYGEN(_unit);
 if (_oxygen < ACM_OXYGEN_UNCONSCIOUS) exitWith { /*systemchat format ["OXYGEN %1",GET_OXYGEN(_unit)];*/ false };
 
 private _rr = GET_RESPIRATION_RATE(_unit);
-if (_rr < 6) exitWith {};
+if (_rr < 6) exitWith {/* systemchat format ["RESPIRATION RATE %1",GET_RESPIRATION_RATE(_unit)];*/ false };
 
 true
