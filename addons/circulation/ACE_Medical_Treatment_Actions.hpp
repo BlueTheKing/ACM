@@ -63,7 +63,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         medicRequired = QGVAR(allowAED);
-        treatmentTime = 5;
+        treatmentTime = QFUNC(getApplyPadsTime);
         allowedSelections[] = {"Body"};
         allowSelfTreatment = 0;
         consumeItem = 0;

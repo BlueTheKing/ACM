@@ -34,6 +34,7 @@ PREP(canConnectAED);
 PREP(checkCapillaryRefill);
 PREP(checkCapillaryRefillLocal);
 PREP(convertBloodType);
+PREP(getApplyPadsTime);
 PREP(getCardiacMedicationEffects);
 PREP(getEKGHeartRate);
 PREP(getHemothoraxBleedingRate);
