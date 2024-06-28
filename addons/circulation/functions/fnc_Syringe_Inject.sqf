@@ -59,7 +59,14 @@ if (_dose < 1) exitWith {};
 
 private _medicationConcentration = getNumber (configFile >> "ACM_Medication" >> "Concentration" >> _classname >> "concentration");
 
-private _stringDose = round((_dose / 100) * _medicationConcentration);
+private _stringDose = (_dose / 100) * _medicationConcentration;
+
+if (_stringDose < 1) then {
+    _stringDose = round (_stringDose * 10);
+    _stringDose = (_stringDose / 10);
+} else {
+    _stringDose = round(_stringDose);
+};
 
 [_patient, format ["%1 %2 (%3mg)", _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", "%1 %2 %3 %4 (%5mg)", [[_medic, false, true] call ACEFUNC(common,getName), _actionString, _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToLog);
