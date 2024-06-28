@@ -59,10 +59,19 @@ ADDON = true;
     QGVAR(internalBleedingChanceMultiplier),
     "SLIDER",
     ["Internal Bleeding Chance Multiplier", "Chance for internal bleeding"],
-    [ACM_SETTINGS_CATEGORY, ""],
+    [ACM_SETTINGS_CATEGORY, "Internal Bleeding"],
     [0.1, 2, 1, 1],
     true
 ] call CBA_fnc_addSetting;
+
+/*[
+    QGVAR(Hardcore_InternalBleeding),
+    "CHECKBOX",
+    ["[HARDCORE] Internal Bleeding", "[HARDCORE] Sets whether internal bleeding should require further treatment to fully stop"],
+    [ACM_SETTINGS_CATEGORY, "Internal Bleeding"],
+    [false],
+    true
+] call CBA_fnc_addSetting;*/
 
 [
     QGVAR(traumaModifierAI),

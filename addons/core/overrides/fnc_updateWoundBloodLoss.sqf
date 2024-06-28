@@ -43,6 +43,10 @@ private _bodyPartInternalBleeding = [0,0,0,0,0,0];
     };
 } forEach GET_INTERNAL_WOUNDS(_unit);
 
+/*if (GVAR(Hardcore_InternalBleeding)) then {
+    [_unit] call EFUNC(damage,handleHardcoreInternalBleeding);
+};*/
+
 if (_bodyPartInternalBleeding isEqualTo [0,0,0,0,0,0]) then {
     _unit setVariable [VAR_INTERNAL_BLEEDING, 0, true];
 } else {

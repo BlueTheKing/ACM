@@ -59,6 +59,15 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(Hardcore_PostCardiacArrest),
+    "CHECKBOX",
+    ["[HARDCORE] Post Cardiac Arrest Complications", "[HARDCORE] Sets whether there should be a decrease in cardiac output after ROSC requiring further treatment to fully treat"],
+    [ACM_SETTINGS_CATEGORY, "Cardiac Arrest"],
+    [false],
+    true
+] call CBA_fnc_addSetting;
+
 // Defibrillator
 
 [

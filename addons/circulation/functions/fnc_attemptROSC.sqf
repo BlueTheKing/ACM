@@ -23,6 +23,9 @@ if (!(IN_CRDC_ARRST(_patient)) || !(alive _patient)) exitWith {false};
 
 if (GET_CIRCULATIONSTATE(_patient) && (GET_BLOOD_VOLUME(_patient) > ACM_REVERSIBLE_CA_BLOODVOLUME)) exitWith {
     [QACEGVAR(medical,CPRSucceeded), _patient] call CBA_fnc_localEvent;
+    if (GVAR(Hardcore_PostCardiacArrest)) then {
+        _patient setVariable [QGVAR(Hardcore_PostCardiacArrest), true, true];
+    };
     true;
 };
 

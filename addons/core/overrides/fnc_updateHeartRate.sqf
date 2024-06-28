@@ -43,13 +43,9 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
         private _meanBP = (2/3) * _bloodPressureH + (1/3) * _bloodPressureL;
         private _painLevel = GET_PAIN_PERCEIVED(_unit);
 
-        private _targetBP = 107;
-        if (_bloodVolume < BLOOD_VOLUME_CLASS_2_HEMORRHAGE) then {
-            _targetBP = _targetBP * (_bloodVolume / DEFAULT_BLOOD_VOLUME);
-        };
-
         _targetHR = _desiredHR;
         if (_bloodVolume < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
+            private _targetBP = 107 * (_bloodVolume / DEFAULT_BLOOD_VOLUME);
             _targetHR = _heartRate * (_targetBP / (45 max _meanBP));
         };
         if (_painLevel > 0.2) then {
@@ -65,6 +61,10 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
 
         if (_timeSinceROSC < 30) then {
             _targetHR = _targetHR max (_desiredHR + 110 * (_timeSinceROSC / 30));
+        } else {
+            if (_patient getVariable [QEGVAR(circulation,Hardcore_PostCardiacArrest), false]) then {
+                _targetHR = _targetHR min (_targetHR / _desiredHR) * (_desiredHR * 0.7);
+            };
         };
 
         _targetHR = _targetHR min ACM_TARGETVITALS_MAXHR(_unit);

@@ -26,6 +26,8 @@ private _HTXFluid = _patient getVariable [QGVAR(Hemothorax_Fluid), 0];
 private _PTXState = _patient getVariable [QGVAR(Pneumothorax_State), 0];
 private _TPTXState = _patient getVariable [QGVAR(TensionPneumothorax_State), false];
 
+private _hardcorePTX = _patient getVariable [QGVAR(Hardcore_Pneumothorax), false];
+
 if (_HTXFluid > 0.3) then {
     _state = 1 - (0.9 * (_HTXFluid / 1.5));
 };
@@ -37,6 +39,10 @@ if (_TPTXState) then {
 };
 
 [_patient, _healed] call FUNC(updateLungState);
+
+if (_hardcorePTX) then {
+    _state = _state min 0.8;
+};
 
 if (_healed) then {
     _state = 1;

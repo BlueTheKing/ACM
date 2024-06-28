@@ -131,8 +131,8 @@ if (_oxygenSaturation < ACM_OXYGEN_HYPOXIA) then { // Severe hypoxia causes hear
     _hrTargetAdjustment = _hrTargetAdjustment - 10 * abs (ACM_OXYGEN_HYPOXIA - _oxygenSaturation);
 };
 
-if (_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) then {
-    _hrTargetAdjustment = _hrTargetAdjustment - 35;
+if ((_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) || (_unit getVariable [QEGVAR(breathing,Hardcore_Pneumothorax), false])) then {
+    _hrTargetAdjustment = _hrTargetAdjustment - ([25,35] select (_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]));
 } else {
     if (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0] > 0) then {
         _hrTargetAdjustment = _hrTargetAdjustment - (5 * (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0]));

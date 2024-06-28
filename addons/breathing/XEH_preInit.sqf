@@ -48,6 +48,24 @@ call FUNC(generatePTXMap);
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(Hardcore_ChestInjury),
+    "CHECKBOX",
+    ["[HARDCORE] Chest Injuries", "[HARDCORE] Sets whether Tension Pneumothorax should require further treatment to fully heal"],
+    [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
+    [false],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Hardcore_HemothoraxBleeding),
+    "CHECKBOX",
+    ["[HARDCORE] Hemothorax Bleeding", "[HARDCORE] Sets whether Hemothorax should require further treatment to fully stop internal bleeding"],
+    [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
+    [false],
+    true
+] call CBA_fnc_addSetting;
+
 // Diagnosis
 
 [

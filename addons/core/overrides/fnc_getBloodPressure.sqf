@@ -41,7 +41,7 @@ if (_PTXState > 0 || _HTXFluid > 0.1) then {
     _tensionEffect = (_PTXState * 8) max (_HTXFluid / 46);
 };
 
-if (_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) then {
+if ((_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) || (_unit getVariable [QEGVAR(breathing,Hardcore_Pneumothorax), false])) then {
     _tensionEffect = 35;
 };
 

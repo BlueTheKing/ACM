@@ -24,6 +24,8 @@ if (_patient == ACE_player) then {
 
 _patient setVariable [QGVAR(ROSC_Time), -30, true];
 
+_patient setVariable [QGVAR(Hardcore_PostCardiacArrest), false, true];
+
 _patient setVariable [QGVAR(IV_Placement), [0,0,0,0,0,0], true];
 _patient setVariable [QGVAR(Blood_Volume), 6, true];
 _patient setVariable [QGVAR(Plasma_Volume), 0, true];

@@ -39,3 +39,9 @@
 call FUNC(generateBloodTypeList);
 
 ["isNotPerformingCPR", {!((_this select 0) getVariable [QGVAR(isPerformingCPR), false])}] call ACEFUNC(common,addCanInteractWithCondition);
+
+if (GVAR(Hardcore_PostCardiacArrest)) then {
+    [QGVAR(Hardcore_PostCardiacArrest), {
+        ([1, 1.4] select (_this getVariable [QGVAR(Hardcore_PostCardiacArrest), false]));
+    }] call ACEFUNC(advanced_fatigue,addDutyFactor);
+};
