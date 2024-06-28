@@ -24,7 +24,7 @@
 params ["_unit", "_oxygenSaturation", ["_oxygenDemand", 0], ["_respirationRateAdjustment", 0], "_coSensitivityAdjustment", "_deltaT", "_syncValue"];
 // 12-20 per min          40-60 per min
 
-private _respirationRate = _unit getVariable [QGVAR(RespirationRate), 0];
+private _respirationRate = GET_RESPIRATION_RATE(_unit);
 private _isBreathing = (GET_AIRWAYSTATE(_unit) > 0) && (GET_BREATHINGSTATE(_unit) > 0);
 
 switch (true) do {
@@ -63,9 +63,9 @@ switch (true) do {
         private _respirationRateChange = (_targetRespirationRate - _respirationRate) / 2;
 
         if (_respirationRateChange < 0) then {
-            _respirationRate = (_respirationRate + _deltaT * _respirationRateChange) max 0;
+            _respirationRate = (_respirationRate + _deltaT * _respirationRateChange) max _targetRespirationRate;
         } else {
-            _respirationRate = (_respirationRate + _deltaT * _respirationRateChange) min 60;
+            _respirationRate = (_respirationRate + _deltaT * _respirationRateChange) min _targetRespirationRate;
         };
     };
 };
