@@ -133,7 +133,7 @@ params ["_medic", "_patient"];
 
                 GVAR(Stethoscope_BeatSoundID) = playSoundUI [(format ["ACM_Stethoscope_HeartBeat_%1_%2", _rate, _variant]), (linearConversion [0.36, 0.099, _heartDistance, 0.01, 1, true]), (1 + (random 0.1)), false];
             };
-            if (_RR == 0) exitWith {};
+            if (_RR < 1) exitWith {};
             if (GVAR(Stethoscope_NextBreath) < CBA_missionTime) then {
                 private _breathDelay = 60 / _RR;
                 GVAR(Stethoscope_NextBreath) = CBA_missionTime + _breathDelay;

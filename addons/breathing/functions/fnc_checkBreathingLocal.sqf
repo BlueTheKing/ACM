@@ -28,10 +28,10 @@ private _hemothorax = (_patient getVariable [QGVAR(Hemothorax_Fluid), 0]) > 1.4;
 private _respiratoryArrest = ((GET_HEART_RATE(_patient) < 20) || !(alive _patient) || _tensionPneumothorax || _hemothorax);
 private _airwayBlocked = (GET_AIRWAYSTATE(_patient)) == 0;
 
-private _respirationRate = _patient getVariable [QGVAR(RespirationRate), 0];
+private _respirationRate = GET_RESPIRATION_RATE(_patient);
 
 switch (true) do {
-    case (_respiratoryArrest || _airwayBlocked): {
+    case (_respirationRate < 1|| _respiratoryArrest || _airwayBlocked): {
         _hint = "Patient is not breathing";
         _hintLog = "None";
     };
