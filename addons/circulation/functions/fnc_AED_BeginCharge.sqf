@@ -51,6 +51,8 @@ private _fnc_chargedPFH = {
 
         if ([_patient, "", 1] call FUNC(hasAED) && (_patient getVariable [QGVAR(AED_Charged), false])) then {
             _patient setVariable [QGVAR(AED_Charged), false, true];
+            _patient setVariable [QGVAR(AED_InUse), false, true];
+            _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
             playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.624s
         };
     }] call CBA_fnc_waitUntilAndExecute;
