@@ -35,7 +35,7 @@ private _activeVolumes = 0;
 private _bloodLoss = -_deltaT * GET_BLOOD_LOSS(_unit);
 private _internalBleeding = -_deltaT * GET_INTERNAL_BLEEDRATE(_unit);
 
-private _TXAEffect = _unit getVariable [QEGVAR(circulation,TXA_Effect), 0];
+private _TXAEffect = ([_unit, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount));
 
 private _internalBleedingSeverity = 0;
 

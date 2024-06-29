@@ -17,22 +17,5 @@
 
 params ["_patient"];
 
-private _TXAEffect = _patient getVariable [QGVAR(TXA_Effect), 0];
-
-_patient setVariable [QGVAR(TXA_Effect), ((_TXAEffect + 1) min 2)];
-
 [QGVAR(handleCoagulationPFH), [_patient, true], _patient] call CBA_fnc_targetEvent;
 [QGVAR(handleIBCoagulationPFH), [_patient, true], _patient] call CBA_fnc_targetEvent;
-
-[{
-    params ["_patient"];
-
-    [_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount) < 0.1;
-    
-}, {
-    params ["_patient"];
-
-    private _TXAEffect = _patient getVariable [QGVAR(TXA_Effect), 0];
-
-    _patient setVariable [QGVAR(TXA_Effect), ((_TXAEffect - 1) max 0)];
-}, [_patient], 420] call CBA_fnc_waitUntilAndExecute;

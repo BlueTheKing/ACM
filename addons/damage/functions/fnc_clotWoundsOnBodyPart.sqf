@@ -161,13 +161,15 @@ if (_clotSuccess) then {
     private _reopenChance = 0.7;
     private _txaEffect = [_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount);
 
-    if (_txaEffect > 0.15 || !_unstable) then {
+    private _hasTXA = _txaEffect > 0.15;
+
+    if (_hasTXA || !_unstable) then {
         _reopenChance = 0.4;
     };
 
     for "_i" from 1 to _amountClotted do {
         if ((random 1) < _reopenChance) then {
-            [_patient, _bodyPart, _clottedID, _unstable] call _fnc_handleReopening;
+            [_patient, _bodyPart, _clottedID, (_unstable && !_hasTXA)] call _fnc_handleReopening;
         };
     };
 };

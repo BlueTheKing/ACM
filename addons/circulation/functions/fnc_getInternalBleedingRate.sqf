@@ -24,10 +24,11 @@ private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
 
 private _coagulationModifier = 1;
 private _plateletCount = _unit getVariable [QGVAR(Platelet_Count), 3];
+private _TXACount = ([_unit, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 1.4;
 
-if (_plateletCount > 0) then {
+if (_plateletCount > 0 || _TXACount > 0.1) then {
     private _plateletCountModifier = ((_plateletCount / 3) - 1) * -0.1;
-    _coagulationModifier = _plateletCountModifier + (0.5 max (0.75 * _internalBleeding));
+    _coagulationModifier = _plateletCountModifier + (0.5 max (0.75 * _internalBleeding)) - (0.35 * _TXACount);
 };
 
 // even if heart stops blood will still flow slowly (gravity)
