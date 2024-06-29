@@ -17,15 +17,13 @@
 
 params ["_patient"];
 
-private _usesLeft = _patient getVariable [QGVAR(AmmoniaInhalant_EffectiveUses), 0];
+private _timeSinceLastUse = CBA_missionTime - (_patient getVariable [QGVAR(AmmoniaInhalant_LastUse), -1]);
 
-if (_usesLeft < 1) exitWith {};
-
-_usesLeft = _usesLeft - 1;
-
-_patient setVariable [QGVAR(AmmoniaInhalant_EffectiveUses), _usesLeft, true];
+_patient setVariable [QGVAR(AmmoniaInhalant_LastUse), CBA_missionTime, true];
 
 _patient setVariable [QEGVAR(core,KnockOut_State), false];
+
+if (_timeSinceLastUse < 10) exitWith {};
 
 if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {};
 
