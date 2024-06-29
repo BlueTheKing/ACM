@@ -37,14 +37,12 @@ class CfgMovesMaleSdr: CfgMovesBasic {
             canPullTrigger = 0;
             duty = 0.2;
             limitGunMovement = 0;
-            aiming = "empty";
-            aimingBody = "empty";
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
             ConnectTo[] = {};
             forceAim = 1;
-            InterpolateTo[] = {
-                "Unconscious",
-                0.02
-            };
+            InterpolateTo[] = {};
         };
     };
 };

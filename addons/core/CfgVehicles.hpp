@@ -206,7 +206,14 @@ class CfgVehicles {
                     };
                 };
             };
-            
+            class ACM_Action_GetUp {
+                displayName = "Get Up";
+                icon = "";
+                condition = QUOTE(_player getVariable [ARR_2(QQGVAR(Lying_State),false)]);
+                statement = QUOTE([_player] call FUNC(getUp));
+                exceptions[] = {"isNotInside","isNotInLyingState"};
+                showDisabled = 0;
+            };
         };
         class ACE_Actions {
             class ACE_MainActions {

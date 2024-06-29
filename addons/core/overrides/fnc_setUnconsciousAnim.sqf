@@ -48,8 +48,18 @@ if (_isUnconscious) then {
         // and on foot
         TRACE_1("onfoot - playing standard anim",_unit);
 
-        if (_unit getVariable [QGVAR(WasTreated), false] || _patient getVariable [QGVAR(Lying_State), false]) then {
+        if (_unit getVariable [QGVAR(WasTreated), false] || _unit getVariable [QGVAR(Lying_State), false]) then {
             [QACEGVAR(common,switchMove), [_unit, "ACM_LyingState"]] call CBA_fnc_globalEvent;
+
+            [{
+                params ["_unit"];
+                if (!alive _unit) exitWith {};
+                // Fix unit being in locked animation with switchMove (If unit was unloaded from a vehicle, they may be in deadstate instead of unconscious)
+                private _animation = animationState _unit;
+                if ((_animation == "unconscious" || {_animation == "deadstate" || {_animation find QACEGVAR(medical_engine,uncon_anim) != -1}}) && {lifeState _unit != "INCAPACITATED"}) then {
+                    [QACEGVAR(common,switchMove), [_unit, "ACM_LyingState"]] call CBA_fnc_globalEvent;
+                };
+            }, _unit, 0.5] call CBA_fnc_waitAndExecute;
         } else {
             if (animationState _unit in LYING_ANIMATION) then {
                 [_unit, "UnconsciousOutProne", 2] call ACEFUNC(common,doAnimation); // Roll out
