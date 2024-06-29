@@ -27,6 +27,10 @@ if (_type == "SGA") then {
     _classname = "ACM_IGel";
 };
 
+if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {
+    [_medic, _patient, false] call FUNC(setHeadTiltChinLift);
+};
+
 if ((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient getVariable [QGVAR(AirwayObstructionBlood_State), 0]) > 0) exitWith {
     [format ["Failed to insert %1<br/>Airway obstructed", _item], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
     [_medic, _classname] call ACEFUNC(common,addToInventory);

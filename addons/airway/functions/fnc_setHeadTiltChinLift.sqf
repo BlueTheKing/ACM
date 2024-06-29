@@ -32,4 +32,4 @@ if (_state) then {
     _hint = "Head tilt-chin lift cancelled";
 };
 
-[_hint, 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+[_hint, 2, _medic] call ACEFUNC(common,displayTextStructured);
