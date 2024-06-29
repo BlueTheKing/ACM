@@ -118,8 +118,11 @@ if (_woundsRemaining < 0) then { // TODO use min/max (?)
     _amountClotted = _woundCount;
 };
 
+private _bloodVolumeEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 5.5) min 1;
+private _TXAEffect = [_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount);
+
 if (_woundSeverity > 1) then {
-    _clotSuccess = (random 1) <= (1 - 0.75 * (_woundSeverity / 3));
+    _clotSuccess = (random 1) <= ((1 - 0.75 * (_woundSeverity / 3)) * (1.5 * (_TXAEffect min 1)) * _bloodVolumeEffect);
 } else {
     _clotSuccess = true;
 };
@@ -159,9 +162,8 @@ if (_clotSuccess) then {
     _patient setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
 
     private _reopenChance = 0.7;
-    private _txaEffect = [_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount);
 
-    private _hasTXA = _txaEffect > 0.15;
+    private _hasTXA = _TXAEffect > 0.15;
 
     if (_hasTXA || !_unstable) then {
         _reopenChance = 0.4;

@@ -35,7 +35,7 @@ private _id = [{
 
     private _txaCount = ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 1.4;
 
-    if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 0.5 && _txaCount < 0.1)) exitWith {};
+    if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 0.5 && _txaCount < 0.1) || (GET_EFF_BLOOD_VOLUME(_patient) < 3.6)) exitWith {};
 
     private _exit = true;
 

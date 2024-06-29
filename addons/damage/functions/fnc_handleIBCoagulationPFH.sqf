@@ -33,7 +33,7 @@ private _id = [{
     
     private _txaCount = ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 1.4;
 
-    if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 0.1 && _txaCount < 0.1)) exitWith {};
+    if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 0.1 && _txaCount < 0.1) || (GET_EFF_BLOOD_VOLUME(_patient) < 3.6)) exitWith {};
 
     private _exit = true;
 
@@ -62,7 +62,10 @@ private _id = [{
             (_internalWoundsOnPart select _woundIndex) params ["_woundType", "_woundCount", "_woundBleeding"];
                 private _woundSeverity = _woundType % 10;
 
-                if (_woundSeverity == 1 || {_woundSeverity == 2 && (random 100 < (60 * (1 + (1 min _txaCount))))}) then {
+                private _txaEffect = 1 + (1 min _txaCount);
+                private _bloodVolumEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 4) min 1;
+
+                if (_woundSeverity == 1 || {_woundSeverity == 2 && (random 1 < (3.6 * _txaEffect * _bloodVolumEffect))}) then {
 
                 private _newWoundCount = _woundCount - _clotEffectiveness;
 
