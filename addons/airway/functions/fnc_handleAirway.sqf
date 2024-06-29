@@ -29,8 +29,10 @@ if !(IS_UNCONSCIOUS(_patient)) exitWith {};
     };
 }, [_patient], 10] call CBA_fnc_waitAndExecute;
 
-[{
-    params ["_patient"];
+if (random 1 < 0.5) then {
+    [{
+        params ["_patient"];
 
-    [QGVAR(handleAirwayObstruction_Vomit), [_patient], _patient] call CBA_fnc_targetEvent;
-}, [_patient], (90 + (random 30))] call CBA_fnc_waitAndExecute;
+        [QGVAR(handleAirwayObstruction_Vomit), [_patient], _patient] call CBA_fnc_targetEvent;
+    }, [_patient], (90 + (random 30))] call CBA_fnc_waitAndExecute;
+};
