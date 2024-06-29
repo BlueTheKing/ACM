@@ -142,7 +142,7 @@ if (_respirationRate > 0 && (GET_HEART_RATE(_unit) > 20)) then {
     } else {
         if (IN_CRDC_ARRST(_unit) && [_unit] call EFUNC(core,cprActive)) then {
             _maxPositiveGain = _maxPositiveGain * (0.5 + (0.5 * _BVMLastingEffect));
-            _breathingEffectiveness = _breathingEffectiveness * 0.7;
+            _breathingEffectiveness = _breathingEffectiveness * 0.8 * (1 + (0.2 * _BVMLastingEffect));
         };
     };
 
