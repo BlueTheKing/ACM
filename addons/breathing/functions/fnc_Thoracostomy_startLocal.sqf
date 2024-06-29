@@ -23,6 +23,8 @@ private _height = 2.5;
 private _diagnose = "";
 private _hintLog = "";
 
+private _RR = GET_RESPIRATION_RATE(_patient);
+
 switch (true) do {
     case (_patient getVariable [QGVAR(Hemothorax_Fluid), 0] > 0.8): {
         _height = 3;
@@ -39,8 +41,17 @@ switch (true) do {
     };
     case (_patient getVariable [QGVAR(Hemothorax_Fluid), 0] > 0): {
         _height = 3;
-        _diagnose = "Found blood in pleural space<br/>Lung is inflating normally";
-        _hintLog = "Blood in pleural space, lung inflating normally";
+        if (_RR < 1) then {
+            _diagnose = "Found blood in pleural space<br/>Lung is not inflating";
+            _hintLog = "Blood in pleural space, lung is not inflating";
+        } else {
+            _diagnose = "Found blood in pleural space<br/>Lung is inflating normally";
+            _hintLog = "Blood in pleural space, lung inflating normally";
+        };
+    };
+    case (_RR < 1): {
+        _diagnose = "Lung is not inflating";
+        _hintLog = "Lung is not inflating";
     };
     default {
         _diagnose = "Lung is inflating normally";
@@ -57,6 +68,7 @@ private _anestheticEffect = [_patient, "Lidocaine", false] call ACEFUNC(medical_
 
 if (_anestheticEffect < 0.5) then {
     [_patient, (1 - _anestheticEffect)] call ACEFUNC(medical,adjustPainLevel);
+    [QACEGVAR(medical,CriticalVitals), _patient] call CBA_fnc_localEvent;
 };
 
 _patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
