@@ -62,7 +62,7 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
         if (_timeSinceROSC < 30) then {
             _targetHR = _targetHR max (_desiredHR + 110 * (_timeSinceROSC / 30));
         } else {
-            if (_patient getVariable [QEGVAR(circulation,Hardcore_PostCardiacArrest), false]) then {
+            if (_unit getVariable [QEGVAR(circulation,Hardcore_PostCardiacArrest), false]) then {
                 _targetHR = _targetHR min (_targetHR / _desiredHR) * (_desiredHR * 0.7);
             };
         };
