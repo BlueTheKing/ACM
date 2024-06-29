@@ -132,6 +132,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Head"};
         condition = QUOTE(!([ARR_3(_patient,_bodyPart,4)] call FUNC(hasAED)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,3)] call FUNC(setAED));
+        ACM_cancelRecovery = 0;
     };
     class AED_DisconnectCapnograph: AED_RemovePads {
         displayName = "Disconnect AED Capnograph";
