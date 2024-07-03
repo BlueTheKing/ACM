@@ -12,9 +12,9 @@
 #define IDC_SYRINGEDRAW_SYRINGE_IM_PLUNGER 84009
 
 #define SYRINGEDRAW_MOUSE_X (safezoneX + (safezoneW / 2))
-#define SYRINGEDRAW_LIMIT_IV_TOP (safezoneY + (safezoneH / 1.51))
+#define SYRINGEDRAW_LIMIT_IV_TOP (safezoneY + (safezoneH / 1.43))
 #define SYRINGEDRAW_LIMIT_IV_BOTTOM (safezoneY + (safezoneH / 1.13))
 #define SYRINGEDRAW_LIMIT_IV_BOTTOM_MOUSE (safezoneY + (safezoneH / 1.11))
 
-#define SYRINGEDRAW_LIMIT_IM_TOP (safezoneY + (safezoneH / 1.536))
-#define SYRINGEDRAW_LIMIT_IM_TOP_MOUSE (safezoneY + (safezoneH / 1.534))
+#define SYRINGEDRAW_LIMIT_IM_TOP (safezoneY + (safezoneH / 1.457))
+#define SYRINGEDRAW_LIMIT_IM_TOP_MOUSE (safezoneY + (safezoneH / 1.452))

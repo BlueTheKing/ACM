@@ -110,7 +110,7 @@ GVAR(SyringeDraw_IV) = false;
         private _ctrlPlunger = _display displayCtrl IDC_SYRINGEDRAW_PLUNGER;
         private _ctrlPlungerVisual = _display displayCtrl IDC_SYRINGEDRAW_SYRINGE_IM_PLUNGER;
 
-        private _bottomLimit = linearConversion [0, 5, GVAR(SyringeDraw_MaxDose), 0.774622, 1.168, true];
+        private _bottomLimit = linearConversion [0, 5, GVAR(SyringeDraw_MaxDose), 0.838804, 1.2836, true];
         private _bottomLimitMouse = _bottomLimit + 0.02;
 
         getMousePosition params ["_mouseX", "_mouseY"];
@@ -127,10 +127,10 @@ GVAR(SyringeDraw_IV) = false;
 
         (ctrlPosition _ctrlPlungerVisual) params ["_plungerVX","","_plungerVW","_plungerVH"];
 
-        _ctrlPlungerVisual ctrlSetPosition [_plungerVX, (_newY - ACM_pxToScreen_Y(1338)), _plungerVW, _plungerVH];
+        _ctrlPlungerVisual ctrlSetPosition [_plungerVX, (_newY - ACM_pxToScreen_Y(1413)), _plungerVW, _plungerVH];
         _ctrlPlungerVisual ctrlCommit 0;
 
-        private _amountDrawn = linearConversion [0.774622, 1.168, _newY, 0, 5, true];
+        private _amountDrawn = linearConversion [0.838804, 1.2836, _newY, 0, 5, true];
 
         GVAR(SyringeDraw_DrawnAmount) = _amountDrawn;
     };
@@ -143,7 +143,7 @@ GVAR(SyringeDraw_IV) = false;
         private _ctrlPlunger = _display displayCtrl IDC_SYRINGEDRAW_PLUNGER;
         private _ctrlPlungerVisual = _display displayCtrl IDC_SYRINGEDRAW_SYRINGE_IV_PLUNGER;
 
-        private _bottomLimit = linearConversion [0, 10, GVAR(SyringeDraw_MaxDose), 0.795004, 1.196, true];
+        private _bottomLimit = linearConversion [0, 10, GVAR(SyringeDraw_MaxDose), 0.862366, 1.319, true];
         private _bottomLimitMouse = _bottomLimit + 0.02;
 
         getMousePosition params ["_mouseX", "_mouseY"];
@@ -160,10 +160,10 @@ GVAR(SyringeDraw_IV) = false;
 
         (ctrlPosition _ctrlPlungerVisual) params ["_plungerVX","","_plungerVW","_plungerVH"];
 
-        _ctrlPlungerVisual ctrlSetPosition [_plungerVX, (_newY - ACM_pxToScreen_Y(1365)), _plungerVW, _plungerVH];
+        _ctrlPlungerVisual ctrlSetPosition [_plungerVX, (_newY - ACM_pxToScreen_Y(1440)), _plungerVW, _plungerVH];
         _ctrlPlungerVisual ctrlCommit 0;
 
-        private _amountDrawn = linearConversion [0.795004, 1.196, _newY, 0, 10, true];
+        private _amountDrawn = linearConversion [0.862366, 1.319, _newY, 0, 10, true];
 
         GVAR(SyringeDraw_DrawnAmount) = _amountDrawn;
     };

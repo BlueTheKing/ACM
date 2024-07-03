@@ -44,10 +44,10 @@ class GVAR(SyringeDraw_Dialog) {
         };
         class Syringe_IV: RscControlsGroup {
             idc = IDC_SYRINGEDRAW_SYRINGE_IV_GROUP;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 4));
+            x = QUOTE(safezoneX + (safezoneW / 10));
             y = QUOTE(safezoneY - (safezoneH / 10));
-            w = QUOTE(safezoneW / 2);
-            h = QUOTE(safezoneH * 2);
+            w = QUOTE(safezoneW);
+            h = QUOTE(safezoneH * 3);
             type = 15;
             style = 0;
             class ScrollBar
@@ -70,7 +70,7 @@ class GVAR(SyringeDraw_Dialog) {
                     idc = -1;
                     x = 0;
                     y = 0;
-                    w = QUOTE(safezoneW / 2);
+                    w = QUOTE(safezoneW / 1.25);
                     h = QUOTE(safezoneH);
                     type = 0;
                     size = 0;
@@ -88,10 +88,10 @@ class GVAR(SyringeDraw_Dialog) {
         };
         class Syringe_IM: RscControlsGroup {
             idc = IDC_SYRINGEDRAW_SYRINGE_IM_GROUP;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 4));
+            x = QUOTE(safezoneX + (safezoneW / 10));
             y = QUOTE(safezoneY - (safezoneH / 10));
-            w = QUOTE(safezoneW / 2);
-            h = QUOTE(safezoneH * 2);
+            w = QUOTE(safezoneW);
+            h = QUOTE(safezoneH * 3);
             type = 15;
             style = 0;
             class ScrollBar
@@ -114,7 +114,7 @@ class GVAR(SyringeDraw_Dialog) {
                     idc = -1;
                     x = 0;
                     y = 0;
-                    w = QUOTE(safezoneW / 2);
+                    w = QUOTE(safezoneW / 1.25);
                     h = QUOTE(safezoneH);
                     type = 0;
                     size = 0;
@@ -134,12 +134,12 @@ class GVAR(SyringeDraw_Dialog) {
     class Controls {
         class Plunger: RscButton {
             text = "";
-            colorText[] = {1,1,1,0};
-            colorDisabled[] = {1,1,1,0};
-            colorBackground[] = {0,0,1,0};
-            colorBackgroundDisabled[] = {0,0,1,0};
-            colorBackgroundActive[] = {0,0,1,0};
-            colorFocused[] = {0,0,1,0};
+            colorText[] = {1,1,1,0.2};
+            colorDisabled[] = {1,1,1,0.2};
+            colorBackground[] = {0,0,1,0.2};
+            colorBackgroundDisabled[] = {0,0,1,0.2};
+            colorBackgroundActive[] = {0,0,1,0.2};
+            colorFocused[] = {0,0,1,0.2};
             colorBorder[] = {0,0,0,0};
             soundClick[] = {};
             soundEnter[] = {};
@@ -147,9 +147,9 @@ class GVAR(SyringeDraw_Dialog) {
             soundEscape[] = {};
             idc = IDC_SYRINGEDRAW_PLUNGER;
             style = 0;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 72));
+            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 56));
             y = QUOTE(SYRINGEDRAW_LIMIT_IV_TOP);
-            w = QUOTE(safezoneW / 36);
+            w = QUOTE(safezoneW / 28);
             h = QUOTE(ACM_pxToScreen_H(36));
             shadow = 0;
             font = "RobotoCondensed";
