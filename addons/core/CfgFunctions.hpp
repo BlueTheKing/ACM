@@ -124,8 +124,11 @@ class CfgFunctions {
     class overwrite_ace_dogtags {
         tag = "ace_dogtags";
         class ace_dogtags {
-            class getDogtagData { // Blood type display
+            class getDogtagData { // Blood type, weight display
                 file = QPATHTOF(overrides\fnc_getDogtagData.sqf);
+            };
+            class showDogtag { // Blood type, weight display
+                file = QPATHTOF(overrides\fnc_showDogtag.sqf);
             };
         };
     };

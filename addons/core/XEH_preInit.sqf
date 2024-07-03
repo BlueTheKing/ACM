@@ -66,4 +66,15 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(Dogtag_ShowWeight),
+    "CHECKBOX",
+    ["Dogtag list weight", "Set whether dog tags list the unit's weight"],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
 ADDON = true;
