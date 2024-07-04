@@ -39,7 +39,7 @@ GVAR(CPRCancel_MouseID) = [0xF0, [false, false, false], {
 
 GVAR(CPRToggle_MouseID) = [0xF1, [false, false, false], {
     if (GVAR(CPRTarget) getVariable [QACEGVAR(medical,CPR_provider), objNull] isEqualTo objNull) then {
-        if !((GVAR(CPRTarget) getVariable [QEGVAR(airway,AirwayItem), ""]) in ["", "OPA"]) then {
+        if ((GVAR(CPRTarget) getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA") then {
             GVAR(CPRTarget) setVariable [QACEGVAR(medical,CPR_provider), ACE_player, true];
         } else {
             if !([GVAR(CPRTarget)] call EFUNC(core,bvmActive)) then {
@@ -133,7 +133,7 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
         };
 
         if (_updateMouseHint) then {
-            if !((_patient getVariable [QEGVAR(airway,AirwayItem), ""]) in ["", "OPA"]) then { // Intubated
+            if ((_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA") then { // Intubated
                 GVAR(BVMActive) = [_patient] call EFUNC(core,bvmActive);
                 if ([_patient] call EFUNC(core,cprActive)) then {
                     ["Continued CPR", 1.5, _medic] call ACEFUNC(common,displayTextStructured);

@@ -191,17 +191,24 @@ if (_selectionN == 1 && (_target getVariable [QEGVAR(circulation,CPR_Medic), obj
     _entries pushBack [format ["CPR %1 (%2)", _string, ([(_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _circulationColor];
 };
 
-private _airwayItemType = _target getVariable [QEGVAR(airway,AirwayItem), ""];
+// Airway Items
+if (_selectionN == 0) then {
+    private _airwayItemTypeOral = _target getVariable [QEGVAR(airway,AirwayItem_Oral), ""];
+    private _airwayItemTypeNasal = _target getVariable [QEGVAR(airway,AirwayItem_Nasal), ""];
 
-// Airway Item
-if (_selectionN == 0 && _airwayItemType != "") then {
-    private _airwayItem = "Guedel Tube";
-
-    if (_airwayItemType isEqualTo "SGA") then {
-        _airwayItem = "i-gel";
+    if (_airwayItemTypeNasal == "NPA") then {
+        _entries pushBack ["NPA", _airwayColor];
     };
 
-    _entries pushBack [_airwayItem, _airwayColor];
+    if (_airwayItemTypeOral != "") then {
+        private _airwayItem = "Guedel Tube";
+
+        if (_airwayItemTypeOral isEqualTo "SGA") then {
+            _airwayItem = "i-gel";
+        };
+
+        _entries pushBack [_airwayItem, _airwayColor];
+    };
 };
 
 private _oxygenSaturation = GET_OXYGEN(_target);

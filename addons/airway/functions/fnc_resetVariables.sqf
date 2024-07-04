@@ -28,6 +28,7 @@ _patient setVariable [QGVAR(AirwayObstructionBlood_State), 0, true];
 _patient setVariable [QGVAR(RecoveryPosition_State), false, true];
 _patient setVariable [QGVAR(HeadTilt_State), false, true];
 
-_patient setVariable [QGVAR(AirwayItem), "", true];
+_patient setVariable [QGVAR(AirwayItem_Oral), "", true];
+_patient setVariable [QGVAR(AirwayItem_Nasal), "", true];
 
 [_patient] call FUNC(updateAirwayState);

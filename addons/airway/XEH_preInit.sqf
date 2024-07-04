@@ -82,6 +82,15 @@ PREP_RECOMPILE_END;
     "SLIDER",
     ["Guedel Tube Time", "Time to insert Guedel Tube"],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
+    [1, 30, 3, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(treatmentTimeNPA),
+    "SLIDER",
+    ["NPA Time", "Time to insert NPA"],
+    [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [1, 30, 5, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -99,6 +108,15 @@ PREP_RECOMPILE_END;
     QGVAR(allowOPA),
     "LIST",
     ["Allow Guedel Tube", "Training level required to insert Guedel Tube"],
+    [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
+    [SETTING_DROPDOWN_SKILL, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowNPA),
+    "LIST",
+    ["Allow NPA", "Training level required to insert NPA"],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [SETTING_DROPDOWN_SKILL, 0],
     true

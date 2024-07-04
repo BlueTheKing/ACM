@@ -35,7 +35,7 @@ switch (true) do {
         _hint = "Patient is not breathing";
         _hintLog = "None";
     };
-    case (_pneumothorax || (((_patient getVariable [QEGVAR(airway,AirwayCollapse_State), 0]) > 0) && ((_patient getVariable [QEGVAR(airway,AirwayItem), ""]) != "SGA"))): {
+    case (_pneumothorax || (((_patient getVariable [QEGVAR(airway,AirwayCollapse_State), 0]) > 0) && ((_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) != "SGA"))): {
         _hint = "Patient breathing is shallow";
         _hintLog = "Shallow";
 

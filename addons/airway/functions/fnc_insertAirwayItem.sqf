@@ -22,9 +22,16 @@ params ["_medic", "_patient", "_type"];
 private _item = "Guedel Tube";
 private _classname = "ACM_GuedelTube";
 
-if (_type == "SGA") then {
-    _item = "i-gel";
-    _classname = "ACM_IGel";
+switch (_type) do {
+    case "NPA": {
+        _item = "NPA";
+        _classname = "ACM_NPA";
+    };
+    case "SGA": {
+        _item = "i-gel";
+        _classname = "ACM_IGel";
+    };
+    default {};
 };
 
 if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {
@@ -40,5 +47,10 @@ if ((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient 
 [_patient, _item] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", "%1 has inserted %2", [[_medic, false, true] call ACEFUNC(common,getName), _item]] call ACEFUNC(medical_treatment,addToLog);
 
-_patient setVariable [QGVAR(AirwayItem), _type, true];
+if (_type == "NPA") then {
+    _patient setVariable [QGVAR(AirwayItem_Nasal), _type, true];
+} else {
+    _patient setVariable [QGVAR(AirwayItem_Oral), _type, true];
+};
+
 [_patient] call FUNC(updateAirwayState);

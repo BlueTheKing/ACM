@@ -37,6 +37,21 @@ class CfgWeapons {
         descriptionShort = "Already used? ew";
     };
 
+    class ACM_NPA: ACM_GuedelTube {
+        picture = QPATHTOF(ui\npa_ca.paa);
+        displayName = "NPA";
+        descriptionShort = "Used to keep airway open through nasal route";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 1.4;
+        };
+    };
+
+    class ACM_NPA_Used: ACM_NPA {
+        scope = 1;
+        displayName = "NPA (Used)";
+        descriptionShort = "Already used? ew";
+    };
+
     class ACM_SuctionBag: ACM_GuedelTube {
         picture = QPATHTOF(ui\suctionbag_ca.paa);
         displayName = "Emergency Disposable Suction Bag";

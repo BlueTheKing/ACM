@@ -24,9 +24,9 @@ if (((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient
 } else {
     private _collapseState = 1 - ((_patient getVariable [QGVAR(AirwayCollapse_State), 0]) / 3);
     
-    if (_patient getVariable [QGVAR(AirwayItem), ""] != "") then {
+    if (_patient getVariable [QGVAR(AirwayItem_Oral), ""] != "") then {
         _state = _collapseState max 0.99;
-        if (_patient getVariable [QGVAR(AirwayItem), ""] == "OPA") then {
+        if (_patient getVariable [QGVAR(AirwayItem_Oral), ""] == "OPA" || _patient getVariable [QGVAR(AirwayItem_Nasal), ""] == "NPA") then {
             _state = _collapseState max 0.85;
         };
 	} else {

@@ -66,6 +66,7 @@ class CfgVehicles {
             ADDITEM(ACE_tourniquet,24);
             // Airway
             ADDITEM(ACM_GuedelTube,10);
+            ADDITEM(ACM_NPA,10);
             ADDITEM(ACM_SuctionBag,5);
             // Breathing
             ADDITEM(ACM_ChestSeal,10);
@@ -99,6 +100,7 @@ class CfgVehicles {
             ADDITEM(ACM_IGel,20);
             ADDITEM(ACM_ACCUVAC,5);
             ADDITEM(ACM_GuedelTube,10);
+            ADDITEM(ACM_NPA,10);
             ADDITEM(ACM_SuctionBag,10);
             // Breathing
             ADDITEM(ACM_ChestSeal,20);

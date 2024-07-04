@@ -40,7 +40,7 @@ params ["_medic", "_patient", ["_useOxygen", false], ["_portableOxygen", false]]
 
     GVAR(BVM_BreathCount) = 0;
 
-    GVAR(BVMTarget_Intubated) = !((_patient getVariable [QEGVAR(airway,AirwayItem), ""]) in ["", "OPA"]);
+    GVAR(BVMTarget_Intubated) = ((_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA");
 
     GVAR(BVMCancel_MouseID) = [0xF0, [false, false, false], {
         GVAR(BVMTarget) setVariable [QGVAR(BVM_provider), objNull, true];
@@ -50,7 +50,7 @@ params ["_medic", "_patient", ["_useOxygen", false], ["_portableOxygen", false]]
 
     GVAR(BVMToggle_MouseID) = [0xF1, [false, false, false], {
         if (GVAR(BVMTarget) getVariable [QGVAR(BVM_provider), objNull] isEqualTo objNull) then {
-            if !((GVAR(BVMTarget) getVariable [QEGVAR(airway,AirwayItem), ""]) in ["", "OPA"]) then {
+            if ((GVAR(BVMTarget) getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA") then {
                 GVAR(BVMTarget) setVariable [QGVAR(BVM_provider), ACE_player, true];
             } else {
                 if !([GVAR(BVMTarget)] call EFUNC(core,cprActive)) then {

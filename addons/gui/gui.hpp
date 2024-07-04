@@ -21,6 +21,10 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             text = QPATHTOF(data\body_image\head_guedeltube.paa);
             colorText[] = {0.19, 0.91, 0.93, 1};
         };
+        class Head_NPA: Head_GuedelTube {
+            idc = IDC_BODY_HEAD_NPA;
+            text = QPATHTOF(data\body_image\head_npa.paa);
+        };
         class Head_iGel: Head_GuedelTube {
             idc = IDC_BODY_HEAD_IGEL;
             text = QPATHTOF(data\body_image\head_igel.paa);

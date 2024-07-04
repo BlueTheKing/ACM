@@ -31,20 +31,48 @@ private _collapseShow = false;
 private _obstructionShow = false;
 
 private _airwayCollapseState = _patient getVariable [QGVAR(AirwayCollapse_State), 0];
-private _airwayItemInserted = _patient getVariable [QGVAR(AirwayItem), ""];
+private _airwayItemInsertedOral = _patient getVariable [QGVAR(AirwayItem_Oral), ""];
+private _airwayItemInsertedNasal = _patient getVariable [QGVAR(AirwayItem_Nasal), ""];
 
-if (_airwayItemInserted != "") then {
+if (_airwayItemInsertedOral != "" || _airwayItemInsertedNasal != "") then {
     _collapseShow = true;
-    switch (_airwayItemInserted) do {
+
+    private _nasal = "";
+    if (_airwayItemInsertedNasal == "NPA") then {
+        _nasal = "NPA";
+    };
+
+    private _oral = "";
+
+    switch (_airwayItemInsertedOral) do {
         case "OPA": {
-            _collapseState = "Guedel Tube Inserted";
-            _collapseStateLog = "Guedel Tube Inserted";
+            _oral = "Guedel Tube";
+            if (_nasal == "NPA") then {
+                _collapseState = format ["%1 &amp; %2", _nasal, _oral];
+                _collapseStateLog = format ["%1 & %2", _nasal, _oral];
+            } else {
+                _collapseState = _oral;
+                _collapseStateLog = _oral;
+            };
         };
         case "SGA": {
-            _collapseState = "i-gel Inserted";
-            _collapseStateLog = "i-gel Inserted";
+            _oral = "i-gel";
+            if (_nasal == "NPA") then {
+                _collapseState = format ["%1 &amp; %2", _nasal, _oral];
+                _collapseStateLog = format ["%1 & %2", _nasal, _oral];
+            } else {
+                _collapseState = _oral;
+                _collapseStateLog = _oral;
+            };
+        };
+        default {
+            _collapseState = _nasal;
+            _collapseStateLog = _nasal;
         };
     };
+
+    _collapseState = format ["%1 Inserted", _collapseState];
+    _collapseStateLog = format ["%1 Inserted", _collapseStateLog];
 } else {
     _collapseShow = (_airwayCollapseState > 0);
     switch (_airwayCollapseState) do {
@@ -64,7 +92,7 @@ if (_airwayItemInserted != "") then {
     };
 };
 
-if (_airwayItemInserted == "SGA") then {
+if (_airwayItemInsertedOral == "SGA") then {
     _obstructionState = "";
 } else {
     private _obstructionVomitState = _patient getVariable [QGVAR(AirwayObstructionVomit_State), 0];

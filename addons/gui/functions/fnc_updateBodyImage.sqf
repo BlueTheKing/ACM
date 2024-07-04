@@ -21,12 +21,14 @@ params ["_ctrlGroup", "_target", "_selectionN"];
 
 // Airway
 private _ctrlGuedelTube = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_GUEDELTUBE;
+private _ctrlNPA = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_NPA;
 private _ctrlIGel = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_IGEL;
 
-private _airwayItem = _target getVariable [QEGVAR(airway,AirwayItem), ""];
+private _airwayItemOral = _target getVariable [QEGVAR(airway,AirwayItem_Oral), ""];
+private _airwayItemNPA = _target getVariable [QEGVAR(airway,AirwayItem_Nasal), ""];
 
-if !(_airwayItem isEqualTo "") then {
-    if (_airwayItem isEqualTo "SGA") then {
+if !(_airwayItemOral isEqualTo "") then {
+    if (_airwayItemOral isEqualTo "SGA") then {
         _ctrlGuedelTube ctrlShow false;
         _ctrlIGel ctrlShow true;
     } else {
@@ -36,6 +38,12 @@ if !(_airwayItem isEqualTo "") then {
 } else {
     _ctrlGuedelTube ctrlShow false;
     _ctrlIGel ctrlShow false;
+};
+
+if (_airwayItemNPA isEqualTo "NPA") then {
+    _ctrlNPA ctrlShow true;
+} else {
+    _ctrlNPA ctrlShow false;
 };
 
 // Breathing
@@ -148,7 +156,7 @@ if ((_target getVariable [QEGVAR(circulation,AED_Placement_PressureCuff), -1]) !
 };
 
 if (_target getVariable [QEGVAR(circulation,AED_Placement_Capnograph), false]) then {
-    if (_airwayItem isEqualTo "") then {
+    if (_airwayItemOral isEqualTo "") then {
         _ctrlAEDCapnograph ctrlShow true;
     } else {
         _ctrlAEDCapnograph ctrlShow false;
