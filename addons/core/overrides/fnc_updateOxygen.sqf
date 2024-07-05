@@ -79,7 +79,7 @@ private _targetOxygenSaturation = _desiredOxygenSaturation;
 // but falls off quickly as po2 drops further
 private _capture = 1 max ((_po2 / IDEAL_PPO2) ^ (-_po2 * 3));
 
-private _effectiveBloodVolume = (GET_EFF_BLOOD_VOLUME(_unit) / 5.4) min 1;
+private _effectiveBloodVolume = ((sin (deg ((GET_EFF_BLOOD_VOLUME(_unit) ^ 2) / 21.1))) * 1.01) min 1;
 private _airwayState = GET_AIRWAYSTATE(_unit);
 private _breathingState = GET_BREATHINGSTATE(_unit);
 
@@ -127,7 +127,7 @@ if (_respirationRate > 0 && (GET_HEART_RATE(_unit) > 20)) then {
     private _airSaturation = _airOxygenSaturation * _capture;
 
     private _hyperVentilationEffect = 0.8 max (35 / _respirationRate) min 1;
-    private _breathingEffectiveness = _airwayState * _effectiveBloodVolume * _breathingState * _hyperVentilationEffect;
+    private _breathingEffectiveness = _effectiveBloodVolume min _airwayState * _breathingState * _hyperVentilationEffect;
 
     if (_activeBVM) then {
         if (IN_CRDC_ARRST(_unit)) then {
