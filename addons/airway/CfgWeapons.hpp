@@ -8,7 +8,6 @@ class CfgWeapons {
         picture = QPATHTOF(ui\guedeltube_ca.paa);
         displayName = "Guedel Tube";
         descriptionShort = "Used to keep airway open";
-        descriptionUse = "An airway adjunct used to mitigate airway collapse and allow breathing in unconscious patients.";
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 1;

@@ -20,3 +20,4 @@ class CfgPatches {
 #include "CfgMoves.hpp"
 #include "CfgWeapons.hpp"
 #include "ACE_Medical_Treatment_Actions.hpp"
+#include "RscHeadTilt.hpp"

@@ -39,7 +39,7 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {
 };
 
 if ((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient getVariable [QGVAR(AirwayObstructionBlood_State), 0]) > 0) exitWith {
-    [format ["Failed to insert %1<br/>Airway obstructed", _item], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [format ["Failed to insert %1<br/>Airway obstructed", _item], 2, _medic] call ACEFUNC(common,displayTextStructured);
     [_medic, _classname] call ACEFUNC(common,addToInventory);
 };
 

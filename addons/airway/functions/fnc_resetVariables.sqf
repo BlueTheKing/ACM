@@ -17,6 +17,8 @@
 
 params ["_patient"];
 
+_patient setVariable [QGVAR(AirwayReflex_State), true, true];
+
 _patient setVariable [QGVAR(AirwayCollapse_State), 0, true];
 
 _patient setVariable [QGVAR(AirwayObstructionVomit_State), 0, true];

@@ -38,6 +38,10 @@ if (!(GET_CIRCULATIONSTATE(_patient)) || (GET_BLOOD_VOLUME(_patient) < ACM_REVER
                 params ["_patient"];
 
                 _patient setVariable [QGVAR(KnockOut_State), false];
+
+                if !(_patient getVariable [QEGVAR(airway,AirwayReflex_State), false]) then { // Able to wake up
+                    _patient setVariable [QEGVAR(airway,AirwayReflex_State), true, true];
+                };
             }, [_patient], (15 + (random 20))] call CBA_fnc_waitAndExecute;
         };
         [QEGVAR(circulation,attemptROSC), _patient] call CBA_fnc_localEvent;

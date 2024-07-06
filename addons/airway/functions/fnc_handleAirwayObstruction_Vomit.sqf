@@ -49,6 +49,6 @@ private _PFH = [{
 
         playSound3D [format ["%1%2.wav", QPATHTOF(sound\vomit),(1 + round(random 5))], _patient, false, getPosASL _patient, 10, (0.9 + (random 0.2)), 10];
     };
-}, (25 + (random 10)), [_patient]] call CBA_fnc_addPerFrameHandler;
+}, (35 + (random 15)), [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(AirwayObstructionVomit_PFH), _PFH];

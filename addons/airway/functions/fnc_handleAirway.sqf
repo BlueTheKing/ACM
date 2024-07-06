@@ -19,20 +19,30 @@ params ["_patient"];
 
 if !(IS_UNCONSCIOUS(_patient)) exitWith {};
 
+private _airwayReflexDelay = 20 + (random 25);
+
 [{
     params ["_patient"];
 
-    [QGVAR(handleAirwayCollapse), [_patient], _patient] call CBA_fnc_targetEvent;
+    if (_patient getVariable [QGVAR(AirwayReflex_State), false]) then {
+        _patient setVariable [QGVAR(AirwayReflex_State), false, true];
+    };
 
     if ([_patient, "head"] call EFUNC(damage,isBodyPartBleeding)) then {
         [QGVAR(handleAirwayObstruction_Blood), [_patient], _patient] call CBA_fnc_targetEvent;
     };
-}, [_patient], 10] call CBA_fnc_waitAndExecute;
+}, [_patient], _airwayReflexDelay] call CBA_fnc_waitAndExecute;
+
+[{
+    params ["_patient"];
+
+    [QGVAR(handleAirwayCollapse), [_patient], _patient] call CBA_fnc_targetEvent;
+}, [_patient], (_airwayReflexDelay + (150 + (random 60)))] call CBA_fnc_waitAndExecute;
 
 if (random 1 < 0.5) then {
     [{
         params ["_patient"];
 
         [QGVAR(handleAirwayObstruction_Vomit), [_patient], _patient] call CBA_fnc_targetEvent;
-    }, [_patient], (90 + (random 30))] call CBA_fnc_waitAndExecute;
+    }, [_patient], (_airwayReflexDelay + (90 + (random 30)))] call CBA_fnc_waitAndExecute;
 };

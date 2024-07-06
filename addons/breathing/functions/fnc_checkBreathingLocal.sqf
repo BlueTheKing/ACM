@@ -21,21 +21,27 @@ params ["_medic", "_patient"];
 private _hint = "Patient is breathing normally";
 private _hintLog = "Normal";
 
+private _respirationRate = GET_RESPIRATION_RATE(_patient);
+
 private _pneumothorax = _patient getVariable [QGVAR(Pneumothorax_State), 0] > 0;
 private _tensionPneumothorax = _patient getVariable [QGVAR(TensionPneumothorax_State), false];
 private _hemothorax = (_patient getVariable [QGVAR(Hemothorax_Fluid), 0]) > 1.4;
 
-private _respiratoryArrest = ((GET_HEART_RATE(_patient) < 20) || !(alive _patient) || _tensionPneumothorax || _hemothorax);
+private _respiratoryArrest = (_respirationRate < 1 || (GET_HEART_RATE(_patient) < 20) || !(alive _patient) || _tensionPneumothorax || _hemothorax);
 private _airwayBlocked = (GET_AIRWAYSTATE(_patient)) == 0;
+private _airwayCollapsed = (_patient getVariable [QEGVAR(airway,AirwayCollapse_State), 0]) > 0;
+private _airwayReflexIntact = _patient getVariable [QEGVAR(airway,AirwayReflex_State), false];
 
-private _respirationRate = GET_RESPIRATION_RATE(_patient);
+private _airwayManeuver = _patient getVariable [QEGVAR(airway,RecoveryPosition_State), false] || _patient getVariable [QEGVAR(airway,HeadTilt_State), false];
+private _airwayAdjunct = (_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "OPA" || (_patient getVariable [QEGVAR(airway,AirwayItem_Nasal), ""]) == "NPA" || _airwayManeuver;
+private _airwaySecure = (_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA" || _airwayManeuver;
 
 switch (true) do {
-    case (_respirationRate < 1|| _respiratoryArrest || _airwayBlocked): {
+    case (_respiratoryArrest || _airwayBlocked): {
         _hint = "Patient is not breathing";
         _hintLog = "None";
     };
-    case (_pneumothorax || (((_patient getVariable [QEGVAR(airway,AirwayCollapse_State), 0]) > 0) && ((_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) != "SGA"))): {
+    case (_pneumothorax || _airwayCollapsed && !_airwaySecure || !_airwayReflexIntact && !_airwayAdjunct): {
         _hint = "Patient breathing is shallow";
         _hintLog = "Shallow";
 

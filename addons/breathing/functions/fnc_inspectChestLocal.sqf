@@ -25,8 +25,9 @@ private _hintHeight = 1.5;
 private _pneumothorax = _patient getVariable [QGVAR(Pneumothorax_State), 0] > 0;
 private _tensionPneumothorax = _patient getVariable [QGVAR(TensionPneumothorax_State), false];
 private _hemothorax = _patient getVariable [QGVAR(Hemothorax_Fluid), 0] > 0.5;
+private _tensionHemothorax = _patient getVariable [QGVAR(Hemothorax_Fluid), 0] > 1.4;
 
-private _respiratoryArrest = ((GET_HEART_RATE(_patient) < 20) || !(alive _patient) || _tensionPneumothorax);
+private _respiratoryArrest = (GET_RESPIRATION_RATE(_patient) < 1 || (GET_HEART_RATE(_patient) < 20) || !(alive _patient) || _tensionPneumothorax || _tensionHemothorax);
 private _airwayBlocked = GET_AIRWAYSTATE(_patient) == 0;
 
 switch (true) do {

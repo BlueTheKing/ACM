@@ -1,10 +1,10 @@
+PREP(beginHeadTiltChinLift);
 PREP(checkAirway);
 PREP(getSuctionTime);
 PREP(handleAirway);
 PREP(handleAirwayCollapse);
 PREP(handleAirwayObstruction_Blood);
 PREP(handleAirwayObstruction_Vomit);
-PREP(handleHeadTiltChinLift);
 PREP(handleRecoveryPosition);
 PREP(handleSuction);
 PREP(handleSuctionLocal);
@@ -14,6 +14,5 @@ PREP(onUnconscious);
 PREP(performHeadTurn);
 PREP(removeAirwayItem);
 PREP(resetVariables);
-PREP(setHeadTiltChinLift);
 PREP(setRecoveryPosition);
 PREP(updateAirwayState);

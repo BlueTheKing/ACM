@@ -26,24 +26,15 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 1;
     };
 
-    class HeadTiltChinLift: CheckAirway {
+    class BeginHeadTiltChinLift: CheckAirway {
         displayName = "Perform Head Tilt-Chin Lift";
-        displayNameProgress = "Tilting Head...";
-        icon = "";
-        medicRequired = 0;
-        treatmentTime = 4;
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(_patient getVariable [ARR_2(QQGVAR(HeadTilt_State),false)]) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == '') && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Nasal),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
-        callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(setHeadTiltChinLift));
-        ACM_cancelRecovery = 1;
-    };
-    class CancelHeadTiltChinLift: HeadTiltChinLift {
-        displayName = "Cancel Head Tilt-Chin Lift";
         displayNameProgress = "";
         icon = "";
         medicRequired = 0;
-        treatmentTime = 0.01;
-        condition = QUOTE(_patient getVariable [ARR_2(QQGVAR(HeadTilt_State),false)] && !(IN_RECOVERYPOSITION(_patient)));
-        callbackSuccess = QUOTE([ARR_3(_medic,_patient,false)] call FUNC(setHeadTiltChinLift));
+        treatmentTime = 0.001;
+        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(_patient getVariable [ARR_2(QQGVAR(HeadTilt_State),false)]));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(beginHeadTiltChinLift));
+        ACM_cancelRecovery = 1;
     };
 
     class RecoveryPosition: CheckAirway {

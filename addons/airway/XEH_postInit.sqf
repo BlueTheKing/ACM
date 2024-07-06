@@ -5,7 +5,6 @@
 [QGVAR(handleAirwayObstruction_Blood), LINKFUNC(handleAirwayObstruction_Blood)] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleRecoveryPosition), LINKFUNC(handleRecoveryPosition)] call CBA_fnc_addEventHandler;
-[QGVAR(handleHeadTiltChinLift), LINKFUNC(handleHeadTiltChinLift)] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleSuctionLocal), LINKFUNC(handleSuctionLocal)] call CBA_fnc_addEventHandler;
 
