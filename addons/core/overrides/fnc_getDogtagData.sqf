@@ -34,7 +34,7 @@ if (_bloodType == -1) then {
 };
 
 if (GVAR(Dogtag_ShowWeight)) then {
-    _weight = format ["%1 kg", round GET_BODYWEIGHT(_target)];
+    _weight = format ["%1 KG", round GET_BODYWEIGHT(_target)];
 };
 
 private _dogTagData = [
