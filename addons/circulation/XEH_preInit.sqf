@@ -188,7 +188,7 @@ PREP_RECOMPILE_END;
     _x params ["_type", "_string", "_default"];
 
     [
-        format ["ACM_Circulation_BloodType_Ratio_%1", _type],
+        format ["ACM_circulation_BloodType_Ratio_%1", _type],
         "SLIDER",
         [format ["%1 Ratio", _string], format ["Ratio out of 100 that is taken by the %1 blood type, ratios must add up to exactly 100", _string]],
         [ACM_SETTINGS_CATEGORY, "Blood Types"],
