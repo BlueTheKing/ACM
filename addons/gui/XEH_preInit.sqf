@@ -20,16 +20,6 @@ ADDON = true;
     true
 ] call CBA_fnc_addSetting;
 
-// Display bleed rate (slow/moderate/severe/massive)
-[
-    QGVAR(showBleedRate),
-    "CHECKBOX",
-    "Show bleed rate",
-    [ACM_SETTINGS_CATEGORY, ""],
-    [false],
-    true
-] call CBA_fnc_addSetting;
-
 // Overlay selected body part in medical menu
 [
     QGVAR(overlayBodyPart),
