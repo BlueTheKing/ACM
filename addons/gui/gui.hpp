@@ -10,6 +10,16 @@ class RscControlsGroupNoScrollbars;
 class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
     class controls {
         class Background;
+        class Head: Background;
+        class Torso: Background;
+        class ArmLeft: Background;
+        class ArmRight: Background;
+        class LegLeft: Background;
+        class LegRight: Background;
+        class ArmLeftB: Background;
+        class ArmRightB: ArmLeftB;
+        class LegLeftB: ArmLeftB;
+        class LegRightB: ArmLeftB;
         class Torso_ChestSeal: Background {
             idc = IDC_BODY_TORSO_CHESTSEAL;
             text = QPATHTOF(data\body_image\torso_chestseal.paa);
