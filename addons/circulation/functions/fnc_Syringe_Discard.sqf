@@ -52,15 +52,15 @@ private _containers = [uniformContainer _unit, vestContainer _unit, backpackCont
     };
 } forEach _containers;
 
-[2.5, [_medic, _medication, _sourceString], {
+[2.5, [_medic, _medication, _sourceString, _amount], {
     params ["_args"];
     _args params ["_medic", "_medication", "_sourceString"];
 
     [_medic, (format ["ACM_Syringe_%1", _sourceString])] call ACEFUNC(common,addToInventory);
 }, {
     params ["_args"];
-    _args params ["_medic", "_medication", "_sourceString"];
+    _args params ["_medic", "_medication", "_sourceString", "_amount"];
 
-    [_medic, (format ["ACM_Syringe_%1_%2", _sourceString, _medication])] call ACEFUNC(common,addToInventory);
+    [_medic, (format ["ACM_Syringe_%1_%2", _sourceString, _medication]), "", _amount] call ACEFUNC(common,addToInventory);
 }, (format ["Discarding %1 from %2 syringe...", _medication, _sourceString])] call ACEFUNC(common,progressBar);
 
