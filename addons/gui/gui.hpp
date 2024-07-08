@@ -115,6 +115,7 @@ class ACE_Medical_Menu {
         };
         class BodyLabelRight: BodyLabelLeft {
             idc = IDC_SIDE_LABEL_RIGHT;
+            show = 0;
         };
     };
 };

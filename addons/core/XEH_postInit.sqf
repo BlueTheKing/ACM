@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+[QGVAR(openMedicalMenu), ACELINKFUNC(medical_gui,openMenu)] call CBA_fnc_addEventHandler;
+
 ["ace_cardiacArrest", LINKFUNC(onCardiacArrest)] call CBA_fnc_addEventHandler;
 ["ace_unconscious", LINKFUNC(onUnconscious)] call CBA_fnc_addEventHandler;
 

@@ -127,6 +127,9 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
 
             ["Stopped CPR", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
             GVAR(CPRActive) = false;
+
+            [QEGVAR(core,openMedicalMenu), GVAR(CPRTarget)] call CBA_fnc_localEvent;
+
             GVAR(CPRTarget) = objNull;
         };
 
