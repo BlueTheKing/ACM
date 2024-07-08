@@ -1,8 +1,8 @@
 #define ADDMAGAZINE(classname,num) \
     class DOUBLES(_xx,classname) { \
-		magazine = QUOTE(classname); \
-		count = num; \
-	}
+        magazine = QUOTE(classname); \
+        count = num; \
+    }
 
 #define ADDITEM(classname,num) \
     class DOUBLES(_xx,classname) { \
@@ -14,6 +14,7 @@
     class DOUBLES(ACM_Action_Syringe_IV_Empty_Prepare,medication) { \
         displayName = QUOTE(Draw ##medication##); \
         condition = QUOTE('ACM_Vial_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
+        exceptions[] = {"isNotDragging", "isNotInside"}; \
         statement = QUOTE([ARR_5(_player,objNull,'','##medication##',true)] call EFUNC(circulation,Syringe_Prepare)); \
         showDisabled = 0; \
     }
@@ -21,6 +22,7 @@
     class DOUBLES(ACM_Action_Syringe_IM_Empty_Prepare,medication) { \
         displayName = QUOTE(Draw ##medication##); \
         condition = QUOTE('ACM_Vial_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
+        exceptions[] = {"isNotDragging", "isNotInside"}; \
         statement = QUOTE([ARR_5(_player,objNull,'','##medication##',false)] call EFUNC(circulation,Syringe_Prepare)); \
         showDisabled = 0; \
     }
@@ -148,18 +150,35 @@ class CfgVehicles {
 
     class Man;
     class CAManBase: Man {
+        class ACE_Actions {
+            class ACE_MainActions {
+                class ACM_LyingState_GetUp {
+                    displayName = "Get Up";
+                    icon = "";
+                    condition = QUOTE(_target getVariable [ARR_2(QQGVAR(Lying_State),false)] && !(isPlayer _target));
+                    statement = QUOTE([_target] call FUNC(getUp));
+                    exceptions[] = {"isNotInside"};
+                    showDisabled = 0;
+                };
+            };
+        };
         class ACE_SelfActions {
             class ACM_Equipment {
                 displayName = "Medical Equipment";
                 icon = QPATHTOEF(main,logo_empty.paa);
+                exceptions[] = {"isNotInside", "isNotSitting"};
                 class ACM_AED_Interactions {
                     displayName = "AED";
                     condition = QUOTE('ACM_AED' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                    statement = "";
+                    exceptions[] = {"isNotInside", "isNotSitting"};
+                    showDisabled = 0;
                     //icon = QPATHTOF(ui\icon_aed_ca.paa);
                     class ACM_AED_ViewMonitor {
                         displayName = "View Monitor";
                         condition = "true";
                         statement = QUOTE([ARR_2(_player,_player)] call EFUNC(circulation,displayAEDMonitor));
+                        exceptions[] = {"isNotInside", "isNotSitting"};
                         showDisabled = 0;
                     };
                 };
@@ -215,18 +234,6 @@ class CfgVehicles {
                 statement = QUOTE([_player] call FUNC(getUp));
                 exceptions[] = {"isNotInside","isNotInLyingState"};
                 showDisabled = 0;
-            };
-        };
-        class ACE_Actions {
-            class ACE_MainActions {
-                class ACM_LyingState_GetUp {
-                    displayName = "Get Up";
-                    icon = "";
-                    condition = QUOTE(_target getVariable [ARR_2(QQGVAR(Lying_State),false)] && !(isPlayer _target));
-                    statement = QUOTE([_target] call FUNC(getUp));
-                    exceptions[] = {"isNotInside"};
-                    showDisabled = 0;
-                };
             };
         };
     };
