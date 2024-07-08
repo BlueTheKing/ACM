@@ -93,13 +93,15 @@ GVAR(SyringeDraw_IV) = false;
         _ctrlBText ctrlSetText format ["%1 (%2)", ([_patient, false, true] call ACEFUNC(common,getName)), _bodyPartString];
     };
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart"];
+    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
 
     if !(isNull findDisplay IDC_SYRINGEDRAW) then {
         closeDialog 0;
     };
-
-    [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    
+    if (_notInVehicle) then {
+        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    };
 }, ([// PerFrame
 { // IM
     params ["_medic", "_patient", "_bodyPart"];

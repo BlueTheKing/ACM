@@ -42,7 +42,7 @@ params ["_medic", "_patient"];
     private _ctrlText = _display displayCtrl IDC_STETHOSCOPE_TEXT; 
     _ctrlText ctrlSetText format ["%1 (Torso)", [_patient, false, true] call ACEFUNC(common,getName)];
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart"];
+    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
 
     stopSound GVAR(Stethoscope_BreathSoundID);
     stopSound GVAR(Stethoscope_BeatSoundID);
@@ -51,7 +51,9 @@ params ["_medic", "_patient"];
         closeDialog 0;
     };
 
-    [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    if (_notInVehicle) then {
+        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    };
 
     ["Stopped using stethoscope", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 

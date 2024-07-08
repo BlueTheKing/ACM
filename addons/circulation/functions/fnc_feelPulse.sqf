@@ -57,11 +57,13 @@ params ["_medic", "_patient", "_bodyPart"];
 
     "ACM_FeelPulse" cutText ["","PLAIN", 0, false];
 
-    [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    if (_notInVehicle) then {
+        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    };
 
     ["Stopped feeling pulse", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 }, { // PerFrame
-    params ["_medic", "_patient", "_bodyPart"];
+    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
 
     private _display = uiNamespace getVariable ["ACM_FeelPulse", displayNull];
     private _ctrlHeart = _display displayCtrl IDC_FEELPULSE_HEART;

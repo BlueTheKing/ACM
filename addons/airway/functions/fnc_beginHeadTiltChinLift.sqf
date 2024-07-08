@@ -40,7 +40,7 @@ params ["_medic", "_patient"];
     _patient setVariable [QGVAR(HeadTilt_State), true, true];
     [_patient] call FUNC(updateAirwayState);
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart"];
+    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
 
     [GVAR(HeadTiltCancel_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
 
@@ -48,7 +48,9 @@ params ["_medic", "_patient"];
 
     "ACM_HeadTilt" cutText ["","PLAIN", 0, false];
 
-    [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    if (_notInVehicle) then {
+        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    };
 
     ["Head tilt-chin lift cancelled", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 

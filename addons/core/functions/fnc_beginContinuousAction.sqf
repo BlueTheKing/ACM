@@ -99,7 +99,7 @@ _args call _onStart;
 
         GVAR(ContinuousAction_Active) = false;
 
-        [_medic, _patient, _extraArgs] call _onCancel;
+        [_medic, _patient, _extraArgs, _notInVehicle] call _onCancel;
     };
 
     _args call _perFrame;

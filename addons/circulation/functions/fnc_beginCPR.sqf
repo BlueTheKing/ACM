@@ -65,6 +65,10 @@ GVAR(loopCPR) = false;
 if (_notInVehicle) then {
     [_medic, "AinvPknlMstpSnonWnonDnon_AinvPknlMstpSnonWnonDnon_medic", 1] call ACEFUNC(common,doAnimation);
     GVAR(loopCPR) = true;
+} else {
+    if (currentWeapon _medic != "") then {
+        [_medic] call ACEFUNC(weaponselect,putWeaponAway);
+    };
 };
 
 if (_initialAnimation in ["amovpercmstpsnonwnondnon", "amovpknlmstpsnonwnondnon_gear", "amovpknlmstpsnonwnondnon"]) then { // Wack
@@ -141,7 +145,9 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
                     GVAR(CPRActive) = true;
                     GVAR(loopCPR) = true;
                 } else {
-                    [QACEGVAR(common,switchMove), [_medic, "ACM_CPR_Stop"]] call CBA_fnc_globalEvent;
+                    if (_notInVehicle) then {
+                        [QACEGVAR(common,switchMove), [_medic, "ACM_CPR_Stop"]] call CBA_fnc_globalEvent;
+                    };
                     ["Paused CPR", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
                     ["Stop CPR", "Continue CPR", ""] call ACEFUNC(interaction,showMouseHint);
                     GVAR(CPRActive) = false;
@@ -161,7 +167,9 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
                         GVAR(CPRActive) = true;
                         GVAR(loopCPR) = true;
                     } else {
-                        [QACEGVAR(common,switchMove), [_medic, "ACM_CPR_Stop"]] call CBA_fnc_globalEvent;
+                        if (_notInVehicle) then {
+                            [QACEGVAR(common,switchMove), [_medic, "ACM_CPR_Stop"]] call CBA_fnc_globalEvent;
+                        };
                         ["Paused CPR", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
                         ["Stop CPR", "Continue CPR", ""] call ACEFUNC(interaction,showMouseHint);
                         GVAR(CPRActive) = false;
@@ -172,7 +180,7 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
             _medic setVariable [QGVAR(isPerformingCPR), GVAR(CPRActive), true];
         };
 
-        if (GVAR(loopCPR)) then {
+        if (_notInVehicle && GVAR(loopCPR)) then {
             [QACEGVAR(common,switchMove), [_medic, "ACM_CPR"]] call CBA_fnc_globalEvent;
             GVAR(loopCPR) = false;
 

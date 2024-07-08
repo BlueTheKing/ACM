@@ -22,126 +22,128 @@
 params ["_medic", "_patient", "_bodyPart", ["_stethoscope", false]];
 
 if (_stethoscope) then {
-    [[_medic, _patient, _bodyPart], { // On Start
-        params ["_medic", "_patient", "_bodyPart"];
+[[_medic, _patient, _bodyPart], { // On Start
+    params ["_medic", "_patient", "_bodyPart"];
 
-        GVAR(MeasureBP_HeartBeatSoundID) = -1;
-        GVAR(MeasureBP_NextHeartBeat) = -1;
+    GVAR(MeasureBP_HeartBeatSoundID) = -1;
+    GVAR(MeasureBP_NextHeartBeat) = -1;
+    
+    GVAR(MeasureBP_Gauge_Pressure) = 0;
+    GVAR(MeasureBP_Gauge_Offset) = 0;
+    GVAR(MeasureBP_Gauge_Target) = 90;
+    GVAR(MeasureBP_Gauge) = 90;
 
-        GVAR(MeasureBP_Gauge_Pressure) = 0;
-        GVAR(MeasureBP_Gauge_Offset) = 0;
-        GVAR(MeasureBP_Gauge_Target) = 90;
-        GVAR(MeasureBP_Gauge) = 90;
+    createDialog QGVAR(MeasureBP_Dialog);
+    uiNamespace setVariable [QGVAR(MeasureBP_DLG),(findDisplay IDC_MEASUREBP)];
+    
+    ACEGVAR(hearing,volumeAttenuation) = 0.2;
+    [ACELLSTRING(Volume,Lowered), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
-        createDialog QGVAR(MeasureBP_Dialog);
-        uiNamespace setVariable [QGVAR(MeasureBP_DLG),(findDisplay IDC_MEASUREBP)];
+    private _display = uiNamespace getVariable [QGVAR(MeasureBP_DLG), displayNull];
+    private _ctrlText = _display displayCtrl IDC_MEASUREBP_TEXT;
+    private _ctrlStethoscope = _display displayCtrl IDC_MEASUREBP_STETHOSCOPE;
 
-        ACEGVAR(hearing,volumeAttenuation) = 0.2;
-        [ACELLSTRING(Volume,Lowered), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    _ctrlStethoscope ctrlShow true;
 
-        private _display = uiNamespace getVariable [QGVAR(MeasureBP_DLG), displayNull];
-        private _ctrlText = _display displayCtrl IDC_MEASUREBP_TEXT;
-        private _ctrlStethoscope = _display displayCtrl IDC_MEASUREBP_STETHOSCOPE;
+    private _bodyPartString = ACELLSTRING(Medical_GUI,LeftArm);
 
-        _ctrlStethoscope ctrlShow true;
+    if (_bodyPart == "rightarm") then {
+        _bodyPartString = ACELLSTRING(Medical_GUI,RightArm);
+    };
 
-        private _bodyPartString = ACELLSTRING(Medical_GUI,LeftArm);
+    _ctrlText ctrlSetText format ["%1 (%2)", ([_patient, false, true] call ACEFUNC(common,getName)), _bodyPartString];
+}, { // On cancel
+    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
 
-        if (_bodyPart == "rightarm") then {
-            _bodyPartString = ACELLSTRING(Medical_GUI,RightArm);
-        };
+    if !(isNull findDisplay IDC_MEASUREBP) then {
+        stopSound GVAR(MeasureBP_HeartBeatSoundID);
+        closeDialog 0;
+    };
 
-        _ctrlText ctrlSetText format ["%1 (%2)", ([_patient, false, true] call ACEFUNC(common,getName)), _bodyPartString];
-    }, { // On cancel
-        params ["_medic", "_patient", "_bodyPart"];
-
-        if !(isNull findDisplay IDC_MEASUREBP) then {
-            stopSound GVAR(MeasureBP_HeartBeatSoundID);
-            closeDialog 0;
-        };
-
+    if (_notInVehicle) then {
         [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    };
 
-        ["Stopped measuring blood pressure", 2, _medic] call ACEFUNC(common,displayTextStructured);
+    ["Stopped measuring blood pressure", 2, _medic] call ACEFUNC(common,displayTextStructured);
 
-        call ACEFUNC(hearing,updateHearingProtection);
-    }, { // PerFrame
-        params ["_medic", "_patient", "_bodyPart"];
+    call ACEFUNC(hearing,updateHearingProtection);
+}, { // PerFrame
+    params ["_medic", "_patient", "_bodyPart"];
 
-        private _display = uiNamespace getVariable [QGVAR(MeasureBP_DLG), displayNull];
+    private _display = uiNamespace getVariable [QGVAR(MeasureBP_DLG), displayNull];
 
-        private _targetDegree = GVAR(MeasureBP_Gauge_Target);
-        private _currentDegree = GVAR(MeasureBP_Gauge);
+    private _targetDegree = GVAR(MeasureBP_Gauge_Target);
+    private _currentDegree = GVAR(MeasureBP_Gauge);
 
-        if (_targetDegree != _currentDegree) then {
-            if (_targetDegree > _currentDegree) then {
-                _currentDegree = _currentDegree + 0.5;
-            } else {
-                _currentDegree = _currentDegree - 0.5;
-            };
-
-            GVAR(MeasureBP_Gauge) = _currentDegree;
+    if (_targetDegree != _currentDegree) then {
+        if (_targetDegree > _currentDegree) then {
+            _currentDegree = _currentDegree + 0.5;
+        } else {
+            _currentDegree = _currentDegree - 0.5;
         };
 
-        private _ctrlGaugeDial_1 = _display displayCtrl IDC_MEASUREBP_DIAL_1;
-        private _ctrlGaugeDial_2 = _display displayCtrl IDC_MEASUREBP_DIAL_2;
+        GVAR(MeasureBP_Gauge) = _currentDegree;
+    };
 
-        private _dial_1_Pos = ctrlPosition _ctrlGaugeDial_1;
-        private _dial_2_Pos = ctrlPosition _ctrlGaugeDial_2;
+    private _ctrlGaugeDial_1 = _display displayCtrl IDC_MEASUREBP_DIAL_1;
+    private _ctrlGaugeDial_2 = _display displayCtrl IDC_MEASUREBP_DIAL_2;
 
-        _ctrlGaugeDial_1 ctrlSetPosition [(_dial_1_Pos select 0), (_dial_1_Pos select 1), (ACM_MEASUREBP_pxToScreen_W(round (MEASUREBP_DIAL_LENGTH * cos GVAR(MeasureBP_Gauge)))), (ACM_MEASUREBP_pxToScreen_H(round (MEASUREBP_DIAL_LENGTH * sin GVAR(MeasureBP_Gauge))))];
-        _ctrlGaugeDial_1 ctrlCommit 0;
-        _ctrlGaugeDial_2 ctrlSetPosition [(_dial_2_Pos select 0), (_dial_2_Pos select 1), (ACM_MEASUREBP_pxToScreen_W(round (MEASUREBP_DIAL_LENGTH * cos GVAR(MeasureBP_Gauge)))), (ACM_MEASUREBP_pxToScreen_H(round (MEASUREBP_DIAL_LENGTH * sin GVAR(MeasureBP_Gauge))))];
-        _ctrlGaugeDial_2 ctrlCommit 0;
+    private _dial_1_Pos = ctrlPosition _ctrlGaugeDial_1;
+    private _dial_2_Pos = ctrlPosition _ctrlGaugeDial_2;
 
-        private _HR = GET_HEART_RATE(_patient);
+    _ctrlGaugeDial_1 ctrlSetPosition [(_dial_1_Pos select 0), (_dial_1_Pos select 1), (ACM_MEASUREBP_pxToScreen_W(round (MEASUREBP_DIAL_LENGTH * cos GVAR(MeasureBP_Gauge)))), (ACM_MEASUREBP_pxToScreen_H(round (MEASUREBP_DIAL_LENGTH * sin GVAR(MeasureBP_Gauge))))];
+    _ctrlGaugeDial_1 ctrlCommit 0;
+    _ctrlGaugeDial_2 ctrlSetPosition [(_dial_2_Pos select 0), (_dial_2_Pos select 1), (ACM_MEASUREBP_pxToScreen_W(round (MEASUREBP_DIAL_LENGTH * cos GVAR(MeasureBP_Gauge)))), (ACM_MEASUREBP_pxToScreen_H(round (MEASUREBP_DIAL_LENGTH * sin GVAR(MeasureBP_Gauge))))];
+    _ctrlGaugeDial_2 ctrlCommit 0;
 
-        private _partIndex = ALL_BODY_PARTS find _bodyPart;
+    private _HR = GET_HEART_RATE(_patient);
 
-        if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) then {
-            _HR = 0;
-        };
+    private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
-        (GET_BLOOD_PRESSURE(_patient)) params ["_BPDiastolic", "_BPSystolic"];
+    if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) then {
+        _HR = 0;
+    };
 
-        private _pressureTooLow = 80 > _BPSystolic;
+    (GET_BLOOD_PRESSURE(_patient)) params ["_BPDiastolic", "_BPSystolic"];
 
-        if (_HR > 0 && !_pressureTooLow && alive _patient) then {
-            if (GVAR(MeasureBP_NextHeartBeat) < CBA_missionTime) then {
-                private _heartBeatDelay = 60 / _HR;
-                GVAR(MeasureBP_NextHeartBeat) = CBA_missionTime + _heartBeatDelay;
+    private _pressureTooLow = 80 > _BPSystolic;
 
-                private _variant = 1 + (round (random 2));
-                private _rate = switch (true) do {
-                    case (_heartBeatDelay < 0.5): {
-                        "Fast";
-                    };
-                    case (_heartBeatDelay > 1.2): {
-                        "Slow";
-                    };
-                    default {
-                        "Normal";
-                    };
+    if (_HR > 0 && !_pressureTooLow && alive _patient) then {
+        if (GVAR(MeasureBP_NextHeartBeat) < CBA_missionTime) then {
+            private _heartBeatDelay = 60 / _HR;
+            GVAR(MeasureBP_NextHeartBeat) = CBA_missionTime + _heartBeatDelay;
+
+            private _variant = 1 + (round (random 2));
+            private _rate = switch (true) do {
+                case (_heartBeatDelay < 0.5): {
+                    "Fast";
                 };
-
-                private _strength = linearConversion [(80.1), 120, _BPSystolic, 0.01, 1, true];
-
-                private _gaugeActual = (GVAR(MeasureBP_Gauge) - GVAR(MeasureBP_Gauge_Offset) - 90);
-
-                if (_gaugeActual <= (_BPSystolic + (20 * _strength)) && _gaugeActual >= (_BPDiastolic - (20 * _strength))) then {
-                    GVAR(MeasureBP_Gauge) = GVAR(MeasureBP_Gauge) + 3;
+                case (_heartBeatDelay > 1.2): {
+                    "Slow";
                 };
-
-                if (_gaugeActual <= _BPSystolic && _gaugeActual >= _BPDiastolic) then {
-                    private _maxVolume = _BPSystolic - (_BPSystolic - _BPDiastolic) / 2;
-                    private _volume = (linearConversion [40, 0, (abs (_gaugeActual - _maxVolume)), 0, 1, true]) * _strength;
-                    GVAR(MeasureBP_HeartBeatSoundID) = playSoundUI [(format ["ACM_Stethoscope_HeartBeat_%1_%2", _rate, _variant]), _volume, (1 + (random 0.1)), false];
+                default {
+                    "Normal";
                 };
             };
+
+            private _strength = linearConversion [(80.1), 120, _BPSystolic, 0.01, 1, true];
+
+            private _gaugeActual = (GVAR(MeasureBP_Gauge) - GVAR(MeasureBP_Gauge_Offset) - 90);
+
+            if (_gaugeActual <= (_BPSystolic + (20 * _strength)) && _gaugeActual >= (_BPDiastolic - (20 * _strength))) then {
+                GVAR(MeasureBP_Gauge) = GVAR(MeasureBP_Gauge) + 3;
+            };
+
+            if (_gaugeActual <= _BPSystolic && _gaugeActual >= _BPDiastolic) then {
+                private _maxVolume = _BPSystolic - (_BPSystolic - _BPDiastolic) / 2;
+                private _volume = (linearConversion [40, 0, (abs (_gaugeActual - _maxVolume)), 0, 1, true]) * _strength;
+                GVAR(MeasureBP_HeartBeatSoundID) = playSoundUI [(format ["ACM_Stethoscope_HeartBeat_%1_%2", _rate, _variant]), _volume, (1 + (random 0.1)), false];
+            };
         };
-    }, IDC_MEASUREBP] call EFUNC(core,beginContinuousAction);
+    };
+}, IDC_MEASUREBP] call EFUNC(core,beginContinuousAction);
 } else {
-    [[_medic, _patient, _bodyPart], { // On Start
+[[_medic, _patient, _bodyPart], { // On Start
     #define _x_pos(mult) (safezoneX + (safezoneW / 2) - (safezoneW / (160 / mult)) + 0.03)
     #define _y_pos(mult) (safezoneY + (safezoneH / 2) - (safezoneH / (160 / mult)) + 0.18)
 
@@ -178,14 +180,16 @@ if (_stethoscope) then {
 
     _ctrlText ctrlSetText format ["%1 (%2)", ([_patient, false, true] call ACEFUNC(common,getName)), _bodyPartString];
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart"];
+    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
 
     if !(isNull findDisplay IDC_MEASUREBP) then {
         stopSound GVAR(MeasureBP_HeartBeatSoundID);
         closeDialog 0;
     };
 
-    [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    if (_notInVehicle) then {
+        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    };
 
     ["Stopped measuring blood pressure", 2, _medic] call ACEFUNC(common,displayTextStructured);
 }, { // PerFrame

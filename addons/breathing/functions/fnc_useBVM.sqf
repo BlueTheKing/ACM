@@ -110,7 +110,7 @@ params ["_medic", "_patient", ["_useOxygen", false], ["_portableOxygen", false]]
         [_patient, "activity", "%1 started BVM rescue breaths", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
     };
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
+    params ["_medic", "_patient", "_bodyPart", "_extraArgs", "_notInVehicle"];
     _extraArgs params ["_useOxygen", "_portableOxygen"];
 
     [GVAR(BVMCancel_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
@@ -132,7 +132,9 @@ params ["_medic", "_patient", ["_useOxygen", false], ["_portableOxygen", false]]
 
     "ACM_UseBVM" cutText ["","PLAIN", 0, false];
 
-    [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    if (_notInVehicle) then {
+        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
+    };
 
     [_patient, "activity", "%1 stopped BVM rescue breaths (x%2)", [[_medic, false, true] call ACEFUNC(common,getName), GVAR(BVM_BreathCount)]] call ACEFUNC(medical_treatment,addToLog);
 
