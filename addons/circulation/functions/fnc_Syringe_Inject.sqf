@@ -74,7 +74,7 @@ if (_stringDose < 1) then {
 
 [_patient, format ["%1 %2 (%3mg)", _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", "%1 %2 %3 %4 (%5mg)", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _actionString), _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToLog);
-[(format ["%1 %2 %3", _actionString, _administrationString, _classname]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+[(format ["%1 %2 %3", _actionString, _administrationString, _classname]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
 if (_returnSyringe) then {
     [_medic, (format ["ACM_Syringe_%1", _administrationString])] call ACEFUNC(common,addToInventory);
