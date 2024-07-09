@@ -18,6 +18,10 @@
 
 params ["_medic", "_patient"];
 
+if !(isNull (_patient getVariable [QGVAR(CPR_Medic), objNull])) exitWith {
+    ["Patient already has CPR provider", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+};
+
 _patient setVariable [QACEGVAR(medical,CPR_provider), _medic, true];
 _patient setVariable [QGVAR(CPR_Medic), _medic, true];
 

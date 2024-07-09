@@ -23,19 +23,28 @@ params ["_medic", "_patient", "_bodyPart", "_type", "_state"];
 
 private _hintState = "inserted";
 private _hintType = "16g IV";
+private _insertPain = 0;
 
 switch (_type) do {
     case ACM_IV_14G_M: {_hintType = "14g IV";};
     case ACM_IO_FAST1_M: {
         _hintType = "IO";
-        [_patient, 0.4] call ACEFUNC(medical_status,adjustPainLevel);
+        _insertPain = 0.4;
     };
     default {};
 };
 
+if (_state && [_patient, _bodyPart, _type] call FUNC(hasIV)) exitWith {
+    [(format ["Patient already has %1 in %2", _hintType, ([_bodyPart] call EFUNC(core,getBodyPartString))]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+};
+
 private _setState = _type;
 
-if !(_state) then {
+if (_state) then {
+    if (_insertPain > 0) then {
+        [_patient, _insertPain] call ACEFUNC(medical_status,adjustPainLevel);
+    };
+} else {
     _hintState = "removed";
     _setState = 0;
 };

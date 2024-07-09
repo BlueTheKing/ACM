@@ -20,6 +20,12 @@
 
 params ["_medic", "_patient", "_bodyPart", ["_state", true]];
 
+private _partIndex = ALL_BODY_PARTS find _bodyPart;
+
+if (_state && HAS_PULSEOX(_patient,(_partIndex - 2))) exitWith {
+    [(format ["Patient already has pulse oximeter on %1", ([_bodyPart] call EFUNC(core,getBodyPartString))]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+};
+
 private _hint = "placed";
 
 if !(_state) then {

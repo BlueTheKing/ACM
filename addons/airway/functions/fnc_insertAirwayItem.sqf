@@ -21,17 +21,23 @@ params ["_medic", "_patient", "_type"];
 
 private _item = "Guedel Tube";
 private _classname = "ACM_GuedelTube";
+private _airwayItem = _patient getVariable [QGVAR(AirwayItem_Oral), ""];
 
 switch (_type) do {
     case "NPA": {
         _item = "NPA";
         _classname = "ACM_NPA";
+        _airwayItem = _patient getVariable [QGVAR(AirwayItem_Nasal), ""];
     };
     case "SGA": {
         _item = "i-gel";
         _classname = "ACM_IGel";
     };
     default {};
+};
+
+if (_airwayItem != "") exitWith {
+    ["Airway item already inserted", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {

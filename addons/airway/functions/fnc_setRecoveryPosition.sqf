@@ -20,6 +20,10 @@
 
 params ["_medic", "_patient", "_state", ["_skip", false]];
 
+if (_patient getVariable [QGVAR(RecoveryPosition_State), false]) exitWith {
+    ["Patient already in recovery position", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+};
+
 _patient setVariable [QGVAR(RecoveryPosition_State), _state, true];
 _patient setVariable [QGVAR(HeadTilt_State), _state, true];
 [_patient] call FUNC(updateAirwayState);

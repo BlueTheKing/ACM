@@ -21,6 +21,10 @@
 
 params ["_medic", "_patient", ["_useOxygen", false], ["_portableOxygen", false]];
 
+if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
+    ["Patient already has BVM", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+};
+
 [[_medic, _patient, "head", [_useOxygen, _portableOxygen]], { // On Start
     params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
     _extraArgs params ["_useOxygen", "_portableOxygen"];

@@ -9,6 +9,7 @@ PREP(effectOxygen);
 PREP(fullHealLocal);
 PREP(generateMedicationTypeMap);
 PREP(generateTargetVitals);
+PREP(getBodyPartString);
 PREP(getUp);
 PREP(getUpPrompt);
 PREP(handleRespawn);

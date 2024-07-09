@@ -27,6 +27,10 @@ if (_bodyPart == "rightarm") then {
     _bodyPartHint = ACELLSTRING(Medical_GUI,RightArm);
 };
 
+if (_state && (([_patient, _bodyPart, 3] call FUNC(hasAED)) || [_patient, _bodyPart] call FUNC(hasPressureCuff))) exitWith {
+    [(format ["Patient already has pressure cuff on %1", _bodyPartString]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+};
+
 if !(_state) then {
     _hint = "Removed";
 };
