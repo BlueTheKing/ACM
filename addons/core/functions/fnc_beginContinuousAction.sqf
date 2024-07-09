@@ -99,7 +99,7 @@ _args call _onStart;
 
         GVAR(ContinuousAction_Active) = false;
 
-        [_medic, _patient, _extraArgs, _notInVehicle] call _onCancel;
+        [_medic, _patient, _bodyPart, _extraArgs, _notInVehicle] call _onCancel;
         [QGVAR(openMedicalMenu), _patient] call CBA_fnc_localEvent;
     };
 
