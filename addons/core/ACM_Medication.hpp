@@ -140,6 +140,8 @@ class ACM_Medication {
             hrIncreaseLow[] = {-1, -1};
             hrIncreaseNormal[] = {-1, -1};
             hrIncreaseHigh[] = {-2, -4};
+            timeInSystem = 600;
+            maxEffectTime = 300;
             viscosityChange = 5;
             weightEffect = 0;
         };
