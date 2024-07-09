@@ -21,7 +21,7 @@ class ACEGVAR(medical_treatment,actions) {
         medicRequired = QGVAR(allowInspectChest);
         treatmentTime = QGVAR(treatmentTimeInspectChest);
         allowedSelections[] = {"Body"};
-        condition = QUOTE(GVAR(pneumothoraxEnabled) && !(_patient call ACEFUNC(common,isAwake)) && !([_patient] call EFUNC(core,cprActive)));
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && !(_patient call ACEFUNC(common,isAwake)) && !([_patient] call EFUNC(core,cprActive)) && (isNull objectParent _patient));
         callbackSuccess = QFUNC(inspectChest);
         animationMedic = "AinvPknlMstpSnonWnonDr_medic4";
         ACM_cancelRecovery = 1;
