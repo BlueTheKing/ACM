@@ -20,10 +20,10 @@ params ["_bodyPart"];
 private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
 ([
-    ACELSTRING(medical_gui,Head),
-    ACELSTRING(medical_gui,Torso),
-    ACELSTRING(medical_gui,LeftArm),
-    ACELSTRING(medical_gui,RightArm),
-    ACELSTRING(medical_gui,LeftLeg),
-    ACELSTRING(medical_gui,RightLeg)
+    ACELLSTRING(medical_gui,Head),
+    ACELLSTRING(medical_gui,Torso),
+    ACELLSTRING(medical_gui,LeftArm),
+    ACELLSTRING(medical_gui,RightArm),
+    ACELLSTRING(medical_gui,LeftLeg),
+    ACELLSTRING(medical_gui,RightLeg)
 ] select _partIndex);

@@ -23,7 +23,7 @@
 params ["_medic", "_patient", "_bodyPart", "_classname", ["_returnSyringe", true], ["_iv", false]];
 
 if (_iv && !([_patient, _bodyPart, 0] call FUNC(hasIV))) exitWith {
-    [(format ["Medication push failed<br />Patient has no IV access on %1", _hintType, ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [(format ["Medication push failed<br />Patient has no IV access on the %1", _hintType, toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic, 13] call ACEFUNC(common,displayTextStructured);
 };
 
 private _itemClassname = "";

@@ -61,8 +61,8 @@ switch (_type) do {
     };
 };
 
-if (_state && [_patient, _bodyPart, _type] call FUNC(hasAED)) exitWith {
-    [(format ["Patient already has %1 on %2", _hint, ([_bodyPart] call EFUNC(core,getBodyPartString))]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+if (_state && [_patient, _bodyPart, (_type + 1)] call FUNC(hasAED)) exitWith {
+    [(format ["Patient already has %1 on the %2", _hint, toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 if !(_hideLog) then {

@@ -35,7 +35,7 @@ switch (_type) do {
 };
 
 if (_state && [_patient, _bodyPart, _type] call FUNC(hasIV)) exitWith {
-    [(format ["Patient already has %1 in %2", _hintType, ([_bodyPart] call EFUNC(core,getBodyPartString))]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [(format ["Patient already has %1 in %2", _hintType, toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 private _setState = _type;

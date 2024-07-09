@@ -20,7 +20,7 @@
 params ["_medic", "_patient"];
 
 if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
-    ["Patient already has head tilted-chin lifted", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    ["Patient already has head tilted-chin lifted", 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 [[_medic, _patient, "head"], { // On Start

@@ -19,7 +19,7 @@
 params ["_medic", "_patient"];
 
 if ((_patient getVariable [QGVAR(Thoracostomy_State), -1]) == 1) exitWith {
-    ["Thoracostomy sweep already performed", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    ["Thoracostomy sweep already performed", 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 [_patient, "activity", "%1 performed thoracostomy", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);

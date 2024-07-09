@@ -28,7 +28,7 @@ if (_bodyPart == "rightarm") then {
 };
 
 if (_state && (([_patient, _bodyPart, 3] call FUNC(hasAED)) || [_patient, _bodyPart] call FUNC(hasPressureCuff))) exitWith {
-    [(format ["Patient already has pressure cuff on %1", _bodyPartString]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [(format ["Patient already has pressure cuff on the %1", toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 if !(_state) then {
