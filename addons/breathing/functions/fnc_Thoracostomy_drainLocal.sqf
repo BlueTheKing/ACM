@@ -43,10 +43,15 @@ if (_type == 0) then {
         };
     };
 } else {
-    _amount = format ["~%1 ml of blood drained", round((_fluid * 1000))];
+    if (_fluid <= 0) then {
+        _amount = "No blood drained";
+    } else {
+        _amount = format ["~%1 ml of blood drained", round((_fluid * 1000))];
+    };
 };
 
-[(format ["%1<br/>%2", _hint, _amount]), 2, _medic, _width] call ACEFUNC(common,displayTextStructured);
+[_patient, "quick_view", "Thoracostomy Drain: %1", [_amount]] call ACEFUNC(medical_treatment,addToLog);
+[QACEGVAR(common,displayTextStructured), [(format ["%1<br/>%2", _hint, _amount]), 2, _medic], _medic] call CBA_fnc_targetEvent;
 
 _patient setVariable [QGVAR(Hemothorax_Fluid), 0, true];
 

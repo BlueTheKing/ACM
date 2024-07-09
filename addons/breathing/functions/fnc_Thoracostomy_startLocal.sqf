@@ -59,7 +59,7 @@ switch (true) do {
     };
 };
 
-[(format ["%1<br/><br/>%2", _hint, _diagnose]), _height, _medic, 13] call ACEFUNC(common,displayTextStructured);
+[QACEGVAR(common,displayTextStructured), [(format ["%1<br/><br/>%2", _hint, _diagnose]), _height, _medic, 13], _medic] call CBA_fnc_targetEvent;
 [_patient, "quick_view", "Thoracostomy Sweep: %1", [_hintLog]] call ACEFUNC(medical_treatment,addToLog);
 
 _patient setVariable [QGVAR(Thoracostomy_State), 1, true];

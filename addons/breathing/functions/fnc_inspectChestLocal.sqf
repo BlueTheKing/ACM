@@ -59,5 +59,5 @@ switch (true) do {
     default {};
 };
 
-[_hint, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
+[QACEGVAR(common,displayTextStructured), [_hint, _hintHeight, _medic], _medic] call CBA_fnc_targetEvent;
 [_patient, "quick_view", "%1 inspected chest: %2", [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);

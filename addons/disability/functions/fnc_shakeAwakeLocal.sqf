@@ -23,7 +23,7 @@ private _hint = "Patient is still asleep";
 addCamShake [2, 2, 5];
 
 if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {
-    [format ["You attempt to shake the patient awake<br />%1", _hint], 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [QACEGVAR(common,displayTextStructured), [(format ["You attempt to shake the patient awake<br />%1", _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
 };
 
 private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 1, 15, true] ;
@@ -34,4 +34,4 @@ if (random 100 < _oxygenSaturationChance) then {
     _hint = "Patient has woken up";
 };
 
-[format ["You shook the patient<br />%1", _hint], 2, _medic] call ACEFUNC(common,displayTextStructured);
+[QACEGVAR(common,displayTextStructured), [(format ["You shook the patient<br />%1", _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;

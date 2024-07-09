@@ -57,6 +57,7 @@ private _containers = [uniformContainer _unit, vestContainer _unit, backpackCont
     _args params ["_medic", "_medication", "_sourceString"];
 
     [_medic, (format ["ACM_Syringe_%1", _sourceString])] call ACEFUNC(common,addToInventory);
+    ["Discarded syringe contents", 2, _medic] call ACEFUNC(common,displayTextStructured);
 }, {
     params ["_args"];
     _args params ["_medic", "_medication", "_sourceString", "_amount"];

@@ -24,13 +24,13 @@ params ["_medic", "_patient", "_bodyPart", "_classname", ["_returnSyringe", true
 
 private _itemClassname = "";
 private _administrationString = "IM";
-private _actionString = "injected";
+private _actionString = "Injected";
 private _medicationClassname = _classname;
 
 if (_iv) then {
     _medicationClassname = format ["%1_IV", _classname];
     _administrationString = "IV";
-    _actionString = "pushed";
+    _actionString = "Pushed";
     _itemClassname = format ["ACM_Syringe_IV_%1",_classname];
 } else {
     _itemClassname = format ["ACM_Syringe_IM_%1",_classname];
@@ -69,7 +69,8 @@ if (_stringDose < 1) then {
 };
 
 [_patient, format ["%1 %2 (%3mg)", _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToTriageCard);
-[_patient, "activity", "%1 %2 %3 %4 (%5mg)", [[_medic, false, true] call ACEFUNC(common,getName), _actionString, _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", "%1 %2 %3 %4 (%5mg)", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _actionString), _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToLog);
+[(format ["%1 %2 %3", _actionString, _administrationString, _classname]), 2, _medic] call ACEFUNC(common,displayTextStructured);
 
 if (_returnSyringe) then {
     [_medic, (format ["ACM_Syringe_%1", _administrationString])] call ACEFUNC(common,addToInventory);

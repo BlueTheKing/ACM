@@ -29,7 +29,7 @@ if (random 100 < 20) then {
 };
 
 if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {
-    [format ["You slap the patient<br />%1", _hint], 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [QACEGVAR(common,displayTextStructured), [(format ["You slap the patient<br />%1", _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
 };
 
 private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 5, 40, true] ;
@@ -42,4 +42,4 @@ if (random 100 < _oxygenSaturationChance) then {
     _hint = "Patient has woken up";
 };
 
-[format ["You slap the patient<br />%1", _hint], 2, _medic] call ACEFUNC(common,displayTextStructured);
+[QACEGVAR(common,displayTextStructured), [(format ["You slap the patient<br />%1", _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;

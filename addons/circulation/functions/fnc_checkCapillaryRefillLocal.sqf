@@ -60,5 +60,5 @@ switch (true) do {
     };
 };
 
-[(format ["Measured Capillary Refill Time<br />%1", _hint]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+[QACEGVAR(common,displayTextStructured), [(format ["Measured Capillary Refill Time<br />%1", _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
 [_patient, "quick_view", "%1 measured capillary refill time: %2 (%3)", [[_medic, false, true] call ACEFUNC(common,getName), _hintLog, _bodyPartString]] call ACEFUNC(medical_treatment,addToLog);
