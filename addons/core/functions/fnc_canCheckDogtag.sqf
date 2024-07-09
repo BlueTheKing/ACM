@@ -21,4 +21,4 @@ params ["_medic", "_patient"];
 // check if disabled for faction
 if ([ACEGVAR(dogtags,disabledFactions) getVariable faction _patient] param [0, false]) exitWith {false};
 
-!([_patient] call ACEFUNC(common,isAwake)) || {_medic == _patient};
+!([_patient] call ACEFUNC(common,isAwake)) || (_patient getVariable [QGVAR(Lying_State), false]) || _medic == _patient || !(isPlayer _patient);
