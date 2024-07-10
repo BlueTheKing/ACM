@@ -23,7 +23,7 @@ class GVAR(Stethoscope_Dialog) {
             h = QUOTE(safezoneH * 3);
             type = 0;
             size = 0;
-            text = QPATHTOF(ui\body_background.paa);
+            text = QPATHTOEF(gui,ui\body_background.paa);
         };
 
         class RightLungSpace: RscText {

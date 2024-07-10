@@ -27,3 +27,4 @@ class CfgPatches {
 #include "RscFeelPulse.hpp"
 #include "MeasureBP_Dialog.hpp"
 #include "SyringeDraw_Dialog.hpp"
+#include "TransfusionMenu_Dialog.hpp"

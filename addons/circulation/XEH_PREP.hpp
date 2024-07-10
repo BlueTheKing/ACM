@@ -58,6 +58,7 @@ PREP(isBloodTypeCompatible);
 PREP(MeasureBP_press);
 PREP(MeasureBP_updateCuffPressure);
 PREP(measureBP);
+PREP(openTransfusionMenu);
 PREP(recentAEDShock);
 PREP(resetVariables);
 PREP(setAED);
