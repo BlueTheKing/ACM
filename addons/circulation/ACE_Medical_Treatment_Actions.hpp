@@ -187,7 +187,7 @@ class ACEGVAR(medical_treatment,actions) {
         items[] = {"ACM_IV_16g"};
         consumeItem = 1;
         condition = QUOTE(!([ARR_2(_patient,_bodyPart)] call FUNC(hasIV)));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_16G_M,true)] call FUNC(setIV));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_16G,true)] call FUNC(setIV));
         ACM_rollToBack = 1;
     };
     class InsertIV_14: InsertIV_16 {
@@ -196,7 +196,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         treatmentTime = QGVAR(treatmentTimeIV_14);
         items[] = {"ACM_IV_14g"};
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_14G_M,true)] call FUNC(setIV));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_14G,true)] call FUNC(setIV));
     };
     class InsertIO: InsertIV_16 {
         displayName = "Insert FAST1 IO";
@@ -207,7 +207,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Body"};
         allowSelfTreatment = QGVAR(selfIO);
         items[] = {"ACM_IO_FAST"};
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IO_FAST1_M,true)] call FUNC(setIV));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IO_FAST1,true)] call FUNC(setIV));
         ACM_cancelRecovery = 1;
     };
 
@@ -221,16 +221,16 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 1;
         items[] = {};
         consumeItem = 0;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_16G_M)] call FUNC(hasIV));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_16G_M,false)] call FUNC(setIV));
+        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_16G)] call FUNC(hasIV));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_16G,false)] call FUNC(setIV));
     };
     class RemoveIV_14: RemoveIV_16 {
         displayName = "Remove 14g IV";
         displayNameProgress = "Removing 14g IV...";
         icon = "";
         allowSelfTreatment = 0;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_14G_M)] call FUNC(hasIV));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_14G_M,false)] call FUNC(setIV));
+        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_14G)] call FUNC(hasIV));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_14G,false)] call FUNC(setIV));
     };
     class RemoveIO: RemoveIV_16 {
         displayName = "Remove FAST1 IO";
@@ -239,8 +239,8 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Body"};
         treatmentTime = 5;
         allowSelfTreatment = 0;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IO_FAST1_M)] call FUNC(hasIV));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IO_FAST1_M,false)] call FUNC(setIV));
+        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IO_FAST1)] call FUNC(hasIV));
+        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IO_FAST1,false)] call FUNC(setIV));
     };
 
     class CPR {

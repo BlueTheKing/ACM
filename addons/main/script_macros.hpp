@@ -198,10 +198,20 @@
 
 #define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + (unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3))
 
-#define ACM_IV_16G_M 1
-#define ACM_IV_14G_M 2
-#define ACM_IO_FAST1_M 3
-#define ACM_IO_EZ_M 4
+#define ACM_IO_EZ 1
+#define ACM_IO_FAST1 2
+#define ACM_IV_16G 1
+#define ACM_IV_14G 2
+
+#define ACM_IV_P_SITE_DEFAULT_0 [0,0,0]
+#define ACM_IV_P_SITE_DEFAULT_1 [1,1,1]
+#define ACM_IV_PLACEMENT_DEFAULT_0 [ACM_IV_P_SITE_DEFAULT_0,ACM_IV_P_SITE_DEFAULT_0,ACM_IV_P_SITE_DEFAULT_0,ACM_IV_P_SITE_DEFAULT_0,ACM_IV_P_SITE_DEFAULT_0,ACM_IV_P_SITE_DEFAULT_0]
+#define ACM_IV_PLACEMENT_DEFAULT_1 [ACM_IV_P_SITE_DEFAULT_1,ACM_IV_P_SITE_DEFAULT_1,ACM_IV_P_SITE_DEFAULT_1,ACM_IV_P_SITE_DEFAULT_1,ACM_IV_P_SITE_DEFAULT_1,ACM_IV_P_SITE_DEFAULT_1]
+#define ACM_IO_PLACEMENT_DEFAULT_0 [0,0,0,0,0,0]
+#define ACM_IO_PLACEMENT_DEFAULT_1 [1,1,1,1,1,1]
+
+#define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),ACM_IV_PLACEMENT_DEFAULT_0])
+#define GET_IO(unit) (unit getVariable [QEGVAR(circulation,IO_Placement),ACM_IO_PLACEMENT_DEFAULT_0])
 
 #define ACM_ROUTE_IM 0
 #define ACM_ROUTE_IV 1
@@ -210,8 +220,6 @@
 
 #define ACM_SYRINGES_IM ['ACM_Syringe_IM','ACM_Syringe_IM_Epinephrine','ACM_Syringe_IM_Morphine','ACM_Syringe_IM_Ketamine','ACM_Syringe_IM_Lidocaine']
 #define ACM_SYRINGES_IV ['ACM_Syringe_IV','ACM_Syringe_IV_Epinephrine','ACM_Syringe_IV_Morphine','ACM_Syringe_IV_Ketamine','ACM_Syringe_IV_Adenosine','ACM_Syringe_IV_Amiodarone','ACM_Syringe_IV_TXA']
-
-#define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),[0,0,0,0,0,0]])
 
 #define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
 #define HAS_PRESSURECUFF(unit,index) (GET_PRESSURECUFF(unit) select index)

@@ -8,33 +8,46 @@
  * 1: Patient <OBJECT>
  * 2: Body Part <STRING>
  * 3: Type <NUMBER>
+ * 4: Is IV? <BOOL>
+ * 5: Access Site <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, cursorTarget, "leftarm", 1] call ACM_circulation_fnc_setIVLocal;
+ * [player, cursorTarget, "leftarm", 1, true, 0] call ACM_circulation_fnc_setIVLocal;
  *
  * Public: No
  */
 
-params ["_medic", "_patient", "_bodyPart", "_type"];
-
-private _IVState = GET_IV(_patient);
+params ["_medic", "_patient", "_bodyPart", "_type", "_iv", "_accessSite"];
 
 private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
-_IVState set [_partIndex, _type];
+if (_iv) then {
+    private _IVState = GET_IV(_patient);
+    private _IVStateBodyPart = +(_IVState select _bodyPart);
 
-_patient setVariable [QGVAR(IV_Placement), _IVState, true];
+    _IVStateBodyPart set [_accessSite, _type];
+    _IVState set [_partIndex, _IVStateBodyPart];
+
+    _patient setVariable [QGVAR(IV_Placement), _IVState, true];
+} else {
+    private _IOState = GET_IO(_patient);
+
+    _IOState set [_partIndex, _type];
+
+    _patient setVariable [QGVAR(IO_Placement), _IOState, true];
+};
 
 if (_type == 0) then {
-    private _ivBags = _patient getVariable [QACEGVAR(medical,ivBags), []];
+    private _ivBags = _patient getVariable [QGVAR(IV_Bags), createHashMap];
+    private _ivBagsBodyPart = _ivBags getOrDefault [_bodyPart, []];
 
     {
-        _x params ["_bodyPartIndex", "_type", "_volume", "_bloodType"];
+        _x params ["_bagType", "_volume", "_accessType", "_bagAccessSite", "_bagIV"];
         
-        if (_bodyPartIndex == _partIndex) then {
+        if (_bagIV == _iv && _bagAccessSite == _accessSite) then {
             private _returnAmount = 500;
 
             if (_volume < 500) then {
@@ -64,5 +77,7 @@ if (_type == 0) then {
         };
     } forEachReversed _ivBags;
 
-    _patient setVariable [QACEGVAR(medical,ivBags), _ivBags, true];
+    _ivBags set [_bodyPart, _ivBagsBodyPart];
+
+    _patient setVariable [QGVAR(IV_Bags), _ivBags, true];
 };

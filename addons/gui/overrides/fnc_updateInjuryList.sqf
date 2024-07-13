@@ -86,36 +86,41 @@ if (ACEGVAR(medical_gui,showBloodlossEntry)) then {
     };
 };
 
-// Show receiving IV volume remaining
-private _totalIvVolume = 0;
-private _saline = 0;
-private _blood = 0;
-private _plasma = 0;
+// Show total connected IV bags
+private _totalBags = 0;
+private _salineBags = 0;
+private _bloodBags = 0;
+private _plasmaBags = 0;
 {
-    _x params ["", "_type", "_volumeRemaining"];
-    switch (_type) do {
-        case "Saline": {
-            _saline = _saline + _volumeRemaining;
-        };
-        case "Blood": {
-            _blood = _blood + _volumeRemaining;
-        };
-        case "Plasma": {
-            _plasma = _plasma + _volumeRemaining;
-        };
-    };
-    _totalIvVolume = _totalIvVolume + _volumeRemaining;
-} forEach (_target getVariable [QACEGVAR(medical,ivBags), []]);
+    private _IVBagsBodyPart = (_target getVariable [QEGVAR(circulation,IV_Bags), createHashMap]) getOrDefault [_x, []];
 
-if (_totalIvVolume > 0) then {
-    if (_saline > 0) then {
-        _entries pushBack [format [localize ACELSTRING(medical_treatment,receivingSalineIvVolume), floor _saline], [1, 1, 1, 1]];
+    {
+        _x params ["_type"];
+
+        switch (_type) do {
+            case "Saline": {
+                _salineBags = _salineBags + 1;
+            };
+            case "Blood": {
+                _bloodBags = _bloodBags + 1;
+            };
+            case "Plasma": {
+                _plasmaBags = _plasmaBags + 1;
+            };
+        };
+        _totalBags = _totalBags + 1;  
+    } forEach _allBagsBodyPart; 
+} forEach ALL_BODY_PARTS;
+
+if (_totalBags > 0) then {
+    if (_salineBags > 0) then {
+        _entries pushBack [format ["Transfusing Saline [%1x]", floor _salineBags], [1, 1, 1, 1]];
     };
-    if (_blood > 0) then {
-        _entries pushBack [format [localize ACELSTRING(medical_treatment,receivingBloodIvVolume), floor _blood], [1, 1, 1, 1]];
+    if (_bloodBags > 0) then {
+        _entries pushBack [format ["Transfusing Blood [%1x]", floor _bloodBags], [1, 1, 1, 1]];
     };
-    if (_plasma > 0) then {
-        _entries pushBack [format [localize ACELSTRING(medical_treatment,receivingPlasmaIvVolume), floor _plasma], [1, 1, 1, 1]];
+    if (_plasmaBags > 0) then {
+        _entries pushBack [format ["Transfusing Plasma [%1x]", floor _plasmaBags], [1, 1, 1, 1]];
     };
 } else {
     if (GVAR(showInactiveStatuses)) then {_entries pushBack [localize ACELSTRING(medical_treatment,Status_NoIv), _nonissueColor];};
@@ -246,26 +251,51 @@ if (_selectionN == 0 && (_target getVariable [QEGVAR(breathing,BVM_Medic), objNu
     _entries pushBack [format ["BVM %1 (%2)", _string, ([(_target getVariable [QEGVAR(breathing,BVM_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _breathingColor];
 };
 
+private _selectionBodyPart = ALL_BODY_PARTS select _selectionN;
+
+// IO
+private _bodyPartIO = GET_IO(_target) select _selectionN;
+
+if (_bodyPartIO > 0) then {
+    private _IOText = switch (_bodyPartIO) do {
+        case ACM_IO_EZ: {"EZ-IO"};
+        case ACM_IO_FAST1: {"FAST1 IO"};
+    };
+
+    private _connectedBag = [_target, _selectionBodyPart, false] call FUNC(getBodyPartIVBags);
+
+    private _IOEntry = "";
+    if (_connectedBag != "") then {
+        _IOEntry = format ["%1 [%2]", _IOText, _connectedBag];
+    } else {
+        _IOEntry = _IOText;
+    };
+    _entries pushBack [_IOEntry, _circulationColor];
+};
+
+// IV
 private _bodyPartIV = GET_IV(_target) select _selectionN;
 
-// IV/IO
-if (_bodyPartIV > 0) then {
-    private _IVText = switch (_bodyPartIV) do {
-        case ACM_IV_16G_M: {"16g IV"};
-        case ACM_IV_14G_M: {"14g IV"};
-        case ACM_IO_FAST1_M: {"FAST1 IO"};
-    };
-    private _connectedBag = [_target, _selectionN] call FUNC(getBodyPartIVBags);
+if (_bodyPartIV isNotEqualTo [0,0,0]) then {
+    {
+        private _IVText = switch (_x) do {
+            case ACM_IV_16G: {"16g IV"};
+            case ACM_IV_14G: {"14g IV"};
+        };
+        _IVText = format ["%1 (%2)", _IVText, (["Upper","Middle","Lower"] select _forEachIndex)];
 
-    private _IVEntry = "";
-    
-    if (_connectedBag != "") then {
-        _IVEntry = format ["%1 [%2]", _IVText, _connectedBag];
-    } else {
-        _IVEntry = _IVText;
-    };
+        private _connectedBag = [_target, _selectionBodyPart, true, _forEachIndex, _x] call FUNC(getBodyPartIVBags);
 
-    _entries pushBack [_IVEntry, _circulationColor];
+        private _IVEntry = "";
+
+        if (_connectedBag != "") then {
+            _IVEntry = format ["%1 [%2]", _IVText, _connectedBag];
+        } else {
+            _IVEntry = _IVText;
+        };
+
+        _entries pushBack [_IVEntry, _circulationColor];
+    } forEach _bodyPartIV;
 };
 
 // AED
@@ -459,7 +489,7 @@ private _fnc_processWounds = {
 
             _woundEntries pushBack [format [_format, _woundDescription], _color];
         };
-    } forEach (_wounds getOrDefault [ALL_BODY_PARTS select _selectionN, []]);
+    } forEach (_wounds getOrDefault [_selectionBodyPart, []]);
 };
 
 [GET_OPEN_WOUNDS(_target), "%1", [1, 1, 1, 1]] call _fnc_processWounds;
