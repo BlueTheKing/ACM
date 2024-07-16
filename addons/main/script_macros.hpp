@@ -264,6 +264,9 @@
 #define VAR_SPLINTS                    QEGVAR(disability,SplintStatus)
 #define GET_SPLINTS(unit)              (unit getVariable [VAR_SPLINTS, DEFAULT_SPLINT_VALUES])
 
+// GUI
+#define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}
+
 // Misc
 #define ACM_TARGETVITALS_HR(unit) (unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 77])
 #define ACM_TARGETVITALS_MAXHR(unit) (unit getVariable [QEGVAR(core,TargetVitals_MaxHeartRate), 200])

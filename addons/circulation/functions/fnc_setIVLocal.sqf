@@ -45,7 +45,7 @@ if (_type == 0) then {
     private _ivBagsBodyPart = _ivBags getOrDefault [_bodyPart, []];
 
     {
-        _x params ["_bagType", "_volume", "_accessType", "_bagAccessSite", "_bagIV"];
+        _x params ["_bagType", "_volume", "_accessType", "_bagAccessSite", "_bagIV", "_bloodType"];
         
         if (_bagIV == _iv && _bagAccessSite == _accessSite) then {
             private _returnAmount = 500;

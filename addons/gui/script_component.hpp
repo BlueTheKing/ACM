@@ -98,8 +98,23 @@
 #define IDC_BODY_LEFTARM_PRESSURECUFF      70125
 #define IDC_BODY_RIGHTARM_PULSEOX          70126
 #define IDC_BODY_LEFTARM_PULSEOX           70127
-#define IDC_BODY_RIGHTARM_IV               70128
-#define IDC_BODY_LEFTARM_IV                70129
 
-#define IDC_BODY_RIGHTLEG_IV               70131
-#define IDC_BODY_LEFTLEG_IV                70132
+#define IDC_BODY_RIGHTARM_UPPER_IV         70130
+#define IDC_BODY_RIGHTARM_MIDDLE_IV        70131
+#define IDC_BODY_RIGHTARM_LOWER_IV         70132
+#define IDC_BODY_LEFTARM_UPPER_IV          70133
+#define IDC_BODY_LEFTARM_MIDDLE_IV         70134
+#define IDC_BODY_LEFTARM_LOWER_IV          70135
+
+#define IDC_BODY_RIGHTARM_IO               70136
+#define IDC_BODY_LEFTARM_IO                70137
+
+#define IDC_BODY_RIGHTLEG_UPPER_IV         70140
+#define IDC_BODY_RIGHTLEG_MIDDLE_IV        70141
+#define IDC_BODY_RIGHTLEG_LOWER_IV         70142
+#define IDC_BODY_LEFTLEG_UPPER_IV          70143
+#define IDC_BODY_LEFTLEG_MIDDLE_IV         70144
+#define IDC_BODY_LEFTLEG_LOWER_IV          70145
+
+#define IDC_BODY_RIGHTLEG_IO               70146
+#define IDC_BODY_LEFTLEG_IO                70147

@@ -7,7 +7,7 @@
  * Arguments:
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
- * 2: Body Part <OBJECT>
+ * 2: Body Part <STRING>
  * 3: Using stethoscope <BOOL>
  *
  * Return Value:

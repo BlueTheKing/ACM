@@ -76,5 +76,8 @@ PREP(Syringe_Find);
 PREP(Syringe_Inject);
 PREP(Syringe_Prepare);
 PREP(Syringe_PrepareFinish);
+PREP(TransfusionMenu_SelectBodyPart);
+PREP(TransfusionMenu_ToggleIV);
+PREP(TransfusionMenu_UpdateSelection);
 PREP(updateActiveFluidBags);
 PREP(updateCirculationState);

@@ -106,7 +106,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
 
     _fluidBags = _fluidBags apply {
         private _partIndex = ALL_BODY_PARTS find _x;
-        _y params ["_type", "_bagVolumeRemaining", "_accessType", "_accessSite", "_iv", ["_bloodType", -1]];
+        _y params ["_type", "_bagVolumeRemaining", "_accessType", "_accessSite", "_iv", ["_bloodType", -1], "_originalVolume"];
 
         if (_tourniquets select _partIndex == 0) then {
             private _fluidFlowRate = 1;
@@ -163,7 +163,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
             _updateCountBodyPartArray pushBack _x;
             []
         } else {
-            [_type, _bagVolumeRemaining, _accessType, _accessSite, _iv, _bloodType]
+            [_type, _bagVolumeRemaining, _accessType, _accessSite, _iv, _bloodType, _originalVolume]
         };
     };
 
