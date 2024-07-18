@@ -7,9 +7,9 @@ class RscButtonMenu;
 class RscControlsGroup;
 class RscControlsGroupNoScrollbars;
 
-#define BODYIMAGE_IV(bodypart,site) \
+#define BODYIMAGE_IV(bodypart,site,sidc) \
     class TRIPLES(bodypart,IV,site): Torso_IO { \
-        idc = QUOTE(IDC_BODY_##bodypart##_##site##_IV); \
+        idc = sidc; \
         text = QPATHTOF(data\body_image\##bodypart##_iv_##site##.paa); \
     }
 
@@ -94,7 +94,7 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             idc = IDC_BODY_LEFTARM_PRESSURECUFF;
             text = QPATHTOF(data\body_image\leftarm_aed_pressurecuff.paa);
         };
-        /*class RightArm_IO: Torso_IO {
+        class RightArm_IO: Torso_IO {
             idc = IDC_BODY_RIGHTARM_IO;
             text = QPATHTOF(data\body_image\rightarm_io.paa);
         };
@@ -109,44 +109,22 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
         class LeftLeg_IO: RightArm_IO {
             idc = IDC_BODY_LEFTLEG_IO;
             text = QPATHTOF(data\body_image\leftleg_io.paa);
-        };*/
-        /*class RightArm_IV_Upper: Torso_IO {
-            idc = IDC_BODY_RIGHTARM_UPPER_IV;
-            text = QPATHTOF(data\body_image\rightarm_iv_upper.paa);
-        };*/
-        BODYIMAGE_IV(RightArm,Upper);
-        BODYIMAGE_IV(RightArm,Middle);
-        BODYIMAGE_IV(RightArm,Lower);
-
-        BODYIMAGE_IV(LeftArm,Upper);
-        BODYIMAGE_IV(LeftArm,Middle);
-        BODYIMAGE_IV(LeftArm,Lower);
-
-        BODYIMAGE_IV(RightLeg,Upper);
-        BODYIMAGE_IV(RightLeg,Middle);
-        BODYIMAGE_IV(RightLeg,Lower);
-
-        BODYIMAGE_IV(LeftLeg,Upper);
-        BODYIMAGE_IV(LeftLeg,Middle);
-        BODYIMAGE_IV(LeftLeg,Lower);
-
-        /*class RightArm_IV_Upper: Torso_IO {
-            idc = IDC_BODY_RIGHTARM_UPPER_IV;
-            text = QPATHTOF(data\body_image\rightarm_iv_upper.paa);
         };
+        BODYIMAGE_IV(RightArm,Upper,IDC_BODY_RIGHTARM_UPPER_IV);
+        BODYIMAGE_IV(RightArm,Middle,IDC_BODY_RIGHTARM_MIDDLE_IV);
+        BODYIMAGE_IV(RightArm,Lower,IDC_BODY_RIGHTARM_LOWER_IV);
 
-        class LeftArm_IV_Upper: RightArm_IV_Upper {
-            idc = IDC_BODY_LEFTARM_UPPER_IV;
-            text = QPATHTOF(data\body_image\leftarm_iv_upper.paa);
-        };
-        class RightLeg_IV_Upper: RightArm_IV_Upper {
-            idc = IDC_BODY_RIGHTLEG_UPPER_IV;
-            text = QPATHTOF(data\body_image\rightleg_iv_upper.paa);
-        };
-        class LeftLeg_IV_Upper: RightArm_IV_Upper {
-            idc = IDC_BODY_LEFTLEG_UPPER_IV;
-            text = QPATHTOF(data\body_image\leftleg_iv_upper.paa);
-        };*/
+        BODYIMAGE_IV(LeftArm,Upper,IDC_BODY_LEFTARM_UPPER_IV);
+        BODYIMAGE_IV(LeftArm,Middle,IDC_BODY_LEFTARM_MIDDLE_IV);
+        BODYIMAGE_IV(LeftArm,Lower,IDC_BODY_LEFTARM_LOWER_IV);
+
+        BODYIMAGE_IV(RightLeg,Upper,IDC_BODY_RIGHTLEG_UPPER_IV);
+        BODYIMAGE_IV(RightLeg,Middle,IDC_BODY_RIGHTLEG_MIDDLE_IV);
+        BODYIMAGE_IV(RightLeg,Lower,IDC_BODY_RIGHTLEG_LOWER_IV);
+
+        BODYIMAGE_IV(LeftLeg,Upper,IDC_BODY_LEFTLEG_UPPER_IV);
+        BODYIMAGE_IV(LeftLeg,Middle,IDC_BODY_LEFTLEG_MIDDLE_IV);
+        BODYIMAGE_IV(LeftLeg,Lower,IDC_BODY_LEFTLEG_LOWER_IV);
     };
 };
 

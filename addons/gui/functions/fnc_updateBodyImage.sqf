@@ -106,11 +106,7 @@ private _ctrlIOTorso = _ctrlGroup controlsGroupCtrl IDC_BODY_TORSO_IO;
 private _IOArray = GET_IO(_target);
 
 {
-    if ((_IOArray select (_forEachIndex + 1)) > 0) then {
-        _x ctrlShow true;
-    } else {
-        _x ctrlShow false;
-    };
+    _x ctrlShow ((_IOArray select (_forEachIndex + 1)) > 0);
 } forEach [_ctrlIOTorso, _ctrlIOLeftArm, _ctrlIORightArm, _ctrlIOLeftLeg, _ctrlIORightLeg];
 
 private _ctrlPressureCuffRight = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_PRESSURECUFF;

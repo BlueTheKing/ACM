@@ -26,7 +26,7 @@ private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
 if (_iv) then {
     private _IVState = GET_IV(_patient);
-    private _IVStateBodyPart = +(_IVState select _bodyPart);
+    private _IVStateBodyPart = +(_IVState select _partIndex);
 
     _IVStateBodyPart set [_accessSite, _type];
     _IVState set [_partIndex, _IVStateBodyPart];
@@ -43,6 +43,8 @@ if (_iv) then {
 if (_type == 0) then {
     private _ivBags = _patient getVariable [QGVAR(IV_Bags), createHashMap];
     private _ivBagsBodyPart = _ivBags getOrDefault [_bodyPart, []];
+
+    if (count _ivBagsBodyPart < 1) exitWith {};
 
     {
         _x params ["_bagType", "_volume", "_accessType", "_bagAccessSite", "_bagIV", "_bloodType"];
@@ -73,9 +75,9 @@ if (_type == 0) then {
 
                 [_medic, _itemClassname] call ACEFUNC(common,addToInventory);
             };
-            _ivBags deleteAt _forEachIndex;
+            _ivBagsBodyPart deleteAt _forEachIndex;
         };
-    } forEachReversed _ivBags;
+    } forEachReversed _ivBagsBodyPart;
 
     _ivBags set [_bodyPart, _ivBagsBodyPart];
 

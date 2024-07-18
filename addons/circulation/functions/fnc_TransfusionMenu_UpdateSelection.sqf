@@ -21,6 +21,6 @@ private _display = uiNamespace getVariable [QGVAR(TransfusionMenu_DLG), displayN
 
 private _ctrlSelectionText = _display displayCtrl IDC_TRANSFUSIONMENU_SELECTIONTEXT;
 
-private _patientName = [GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(core,getBodyPartString);
+private _bodyPartString = [GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(core,getBodyPartString);
 
-_ctrlSelectionText ctrlSetText ([(format ["%1 - IO", _patientName]), (format ["%1 - IV (%2)", _patientName, (["Upper","Middle","Lower"] select GVAR(TransfusionMenu_Selected_AccessSite))])] select GVAR(TransfusionMenu_SelectIV));
+_ctrlSelectionText ctrlSetText ([(format ["%1 - IO", _bodyPartString]), (format ["%1 - IV (%2)", _bodyPartString, (["Upper","Middle","Lower"] select GVAR(TransfusionMenu_Selected_AccessSite))])] select GVAR(TransfusionMenu_SelectIV));

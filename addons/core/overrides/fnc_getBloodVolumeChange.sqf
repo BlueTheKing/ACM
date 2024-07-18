@@ -153,7 +153,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                 };
             };
             // IO pain
-            if (_accessType in [ACM_IO_FAST1, ACM_IO_EZ]) then {
+            if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then {
                 private _IOPain = _bagChange / 3.7;
                 _transfusionPain = _transfusionPain + _IOPain;
             };

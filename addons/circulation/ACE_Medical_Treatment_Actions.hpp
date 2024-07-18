@@ -174,75 +174,6 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_MeasureBP));
     };
 
-    class InsertIV_16: CheckPulse {
-        displayName = "Insert 16g IV";
-        displayNameProgress = "Inserting 16g IV...";
-        icon = "";
-        category = "advanced";
-        treatmentLocations = TREATMENT_LOCATIONS_ALL;
-        medicRequired = QGVAR(allowIV);
-        treatmentTime = QGVAR(treatmentTimeIV_16);
-        allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
-        allowSelfTreatment = QGVAR(selfIV);
-        items[] = {"ACM_IV_16g"};
-        consumeItem = 1;
-        condition = QUOTE(!([ARR_2(_patient,_bodyPart)] call FUNC(hasIV)));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_16G,true)] call FUNC(setIV));
-        ACM_rollToBack = 1;
-    };
-    class InsertIV_14: InsertIV_16 {
-        displayName = "Insert 14g IV";
-        displayNameProgress = "Inserting 14g IV...";
-        icon = "";
-        treatmentTime = QGVAR(treatmentTimeIV_14);
-        items[] = {"ACM_IV_14g"};
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_14G,true)] call FUNC(setIV));
-    };
-    class InsertIO: InsertIV_16 {
-        displayName = "Insert FAST1 IO";
-        displayNameProgress = "Inserting FAST1 IO...";
-        icon = "";
-        medicRequired = QGVAR(allowIO);
-        treatmentTime = QGVAR(treatmentTimeIO_FAST1);
-        allowedSelections[] = {"Body"};
-        allowSelfTreatment = QGVAR(selfIO);
-        items[] = {"ACM_IO_FAST"};
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IO_FAST1,true)] call FUNC(setIV));
-        ACM_cancelRecovery = 1;
-    };
-
-    class RemoveIV_16: InsertIV_16 {
-        displayName = "Remove 16g IV";
-        displayNameProgress = "Removing 16g IV...";
-        icon = "";
-        treatmentLocations = TREATMENT_LOCATIONS_ALL;
-        medicRequired = 0;
-        treatmentTime = 4;
-        allowSelfTreatment = 1;
-        items[] = {};
-        consumeItem = 0;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_16G)] call FUNC(hasIV));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_16G,false)] call FUNC(setIV));
-    };
-    class RemoveIV_14: RemoveIV_16 {
-        displayName = "Remove 14g IV";
-        displayNameProgress = "Removing 14g IV...";
-        icon = "";
-        allowSelfTreatment = 0;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_14G)] call FUNC(hasIV));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IV_14G,false)] call FUNC(setIV));
-    };
-    class RemoveIO: RemoveIV_16 {
-        displayName = "Remove FAST1 IO";
-        displayNameProgress = "Removing FAST1 IO...";
-        icon = "";
-        allowedSelections[] = {"Body"};
-        treatmentTime = 5;
-        allowSelfTreatment = 0;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IO_FAST1)] call FUNC(hasIV));
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,ACM_IO_FAST1,false)] call FUNC(setIV));
-    };
-
     class CPR {
         displayName = "Begin CPR";
         displayNameProgress = "";
@@ -258,10 +189,9 @@ class ACEGVAR(medical_treatment,actions) {
 
     class BasicBandage;
     class BloodIV: BasicBandage {
-        allowedSelections[] = {"Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         condition = "false";
     };
-    class BloodBag_O_1000: BloodIV {
+    /*class BloodBag_O_1000: BloodIV {
         displayName = "Give Blood O+ (1000ml)";
         displayNameProgress = "Transfusing Blood...";
         items[] = {"ACM_BloodBag_O_1000"};
@@ -297,5 +227,5 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class SalineIV: BloodIV {
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
-    };
+    };*/
 };

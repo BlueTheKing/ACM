@@ -258,8 +258,8 @@ private _bodyPartIO = GET_IO(_target) select _selectionN;
 
 if (_bodyPartIO > 0) then {
     private _IOText = switch (_bodyPartIO) do {
-        case ACM_IO_EZ: {"EZ-IO"};
-        case ACM_IO_FAST1: {"FAST1 IO"};
+        case ACM_IO_EZ_M: {"EZ-IO"};
+        case ACM_IO_FAST1_M: {"FAST1 IO"};
     };
 
     private _connectedBag = [_target, _selectionBodyPart, false] call FUNC(getBodyPartIVBags);
@@ -278,23 +278,25 @@ private _bodyPartIV = GET_IV(_target) select _selectionN;
 
 if (_bodyPartIV isNotEqualTo [0,0,0]) then {
     {
-        private _IVText = switch (_x) do {
-            case ACM_IV_16G: {"16g IV"};
-            case ACM_IV_14G: {"14g IV"};
+        if (_x > 0) then {
+            private _IVText = switch (_x) do {
+                case ACM_IV_16G_M: {"16g IV"};
+                case ACM_IV_14G_M: {"14g IV"};
+            };
+            _IVText = format ["%1 (%2)", _IVText, (["Upper","Middle","Lower"] select _forEachIndex)];
+    
+            private _connectedBag = [_target, _selectionBodyPart, true, _forEachIndex, _x] call FUNC(getBodyPartIVBags);
+    
+            private _IVEntry = "";
+    
+            if (_connectedBag != "") then {
+                _IVEntry = format ["%1 [%2]", _IVText, _connectedBag];
+            } else {
+                _IVEntry = _IVText;
+            };
+    
+            _entries pushBack [_IVEntry, _circulationColor];
         };
-        _IVText = format ["%1 (%2)", _IVText, (["Upper","Middle","Lower"] select _forEachIndex)];
-
-        private _connectedBag = [_target, _selectionBodyPart, true, _forEachIndex, _x] call FUNC(getBodyPartIVBags);
-
-        private _IVEntry = "";
-
-        if (_connectedBag != "") then {
-            _IVEntry = format ["%1 [%2]", _IVText, _connectedBag];
-        } else {
-            _IVEntry = _IVText;
-        };
-
-        _entries pushBack [_IVEntry, _circulationColor];
     } forEach _bodyPartIV;
 };
 

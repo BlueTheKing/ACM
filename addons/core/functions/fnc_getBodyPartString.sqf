@@ -17,7 +17,7 @@
 
 params ["_bodyPart"];
 
-private _partIndex = ALL_BODY_PARTS find _bodyPart;
+private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
 
 ([
     ACELLSTRING(medical_gui,Head),

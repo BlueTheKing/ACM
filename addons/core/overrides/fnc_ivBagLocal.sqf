@@ -38,7 +38,7 @@ private _bloodType = GET_NUMBER(_ivConfig >> "bloodtype",-1);
 
 // Add IV bag to patient's ivBags array
 private _IVBags = (_patient getVariable [QGVAR(IV_Bags), createHashMap]) getOrDefault [_bodyPart, []];
-_IVBags pushBack [_type, _volume, _accessType, _accessSite, _iv, _bloodType, _volume]; // ["Saline", 1000, ACM_IV_16G, 0, false, -1, 1000]
+_IVBags pushBack [_type, _volume, _accessType, _accessSite, _iv, _bloodType, _volume]; // ["Saline", 1000, ACM_IV_16G_M, 0, false, -1, 1000]
 _patient setVariable [QGVAR(IV_Bags), _IVBags, true];
 _patient setVariable [QGVAR(IV_Bags_Active), true, true];
 

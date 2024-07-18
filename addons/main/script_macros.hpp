@@ -14,6 +14,13 @@
 #define GETVAR_SYS(var1,var2) getVariable [ARR_2(QUOTE(var1),var2)]
 #define GETMVAR(var1,var2) (missionNamespace GETVAR_SYS(var1,var2))
 
+// CBA reference macros
+#define CBA_PREFIX cba
+
+#define CBA_EGVAR(module,var)       TRIPLES(CBA_PREFIX,module,var)
+
+#define CBA_FUNC(function)   TRIPLES(CBA_PREFIX,fnc,function)
+
 // ACE3 reference macros
 #define ACE_PREFIX ace
 
@@ -198,10 +205,10 @@
 
 #define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + (unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3))
 
-#define ACM_IO_EZ 1
-#define ACM_IO_FAST1 2
-#define ACM_IV_16G 1
-#define ACM_IV_14G 2
+#define ACM_IV_16G_M 1
+#define ACM_IV_14G_M 2
+#define ACM_IO_EZ_M 3
+#define ACM_IO_FAST1_M 4
 
 #define ACM_IV_P_SITE_DEFAULT_0 [0,0,0]
 #define ACM_IV_P_SITE_DEFAULT_1 [1,1,1]

@@ -9,7 +9,7 @@
 #define DRAW_PUSH_SYRINGE_IV(medication) \
     class TRIPLES(medication,Draw,IV): Epinephrine_Draw_IV { \
         displayName = QUOTE(Draw And Push ##medication## (IV)); \
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) && [ARR_2(_medic,'ACM_Syringe_IV')] call ACEFUNC(common,hasItem) && [ARR_2(_medic,'ACM_Vial_##medication##')] call ACEFUNC(common,hasItem)); \
+        condition = QUOTE(([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO)) && [ARR_2(_medic,'ACM_Syringe_IV')] call ACEFUNC(common,hasItem) && [ARR_2(_medic,'ACM_Vial_##medication##')] call ACEFUNC(common,hasItem)); \
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,true,'##medication##')] call EFUNC(circulation,Syringe_Draw)); \
     }
 
@@ -191,6 +191,153 @@ class ACEGVAR(medical_treatment,actions) {
         sounds[] = {{QPATHTOF(sound\tourniquet_remove.wav),10,1,30}};
     };
 
+    // Transfusion Menu
+
+    class OpenTransfusionMenu: CheckPulse {
+        displayName = "Manage Fluid Transfusion";
+        displayNameProgress = "";
+        icon = "";
+        category = "advanced";
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        medicRequired = 0;
+        allowedSelections[] = {"All"};
+        allowSelfTreatment = 1;
+        items[] = {};
+        consumeItem = 0;
+        condition = QUOTE([ARR_4(_patient,_bodyPart,0,-1)] call EFUNC(circulation,hasIV) || [ARR_3(_patient,_bodyPart,0)] call EFUNC(circulation,hasIO));
+        callbackSuccess = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call EFUNC(circulation,openTransfusionMenu));
+    };
+
+    // IV/IO
+    class InsertIV_16_Upper: CheckPulse {
+        displayName = "Insert 16g IV (Upper)";
+        displayNameProgress = "Inserting 16g IV...";
+        icon = "";
+        category = "advanced";
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        medicRequired = QEGVAR(circulation,allowIV);
+        treatmentTime = QEGVAR(circulation,treatmentTimeIV_16);
+        allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
+        allowSelfTreatment = QEGVAR(circulation,selfIV);
+        items[] = {"ACM_IV_16g"};
+        consumeItem = 1;
+        condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,0)] call EFUNC(circulation,hasIV)));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,true,true,0)] call EFUNC(circulation,setIV));
+        ACM_rollToBack = 1;
+    };
+    class RemoveIV_16_Upper: InsertIV_16_Upper {
+        displayName = "Remove 16g IV (Upper)";
+        displayNameProgress = "Removing 16g IV...";
+        icon = "";
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        medicRequired = 0;
+        treatmentTime = 3;
+        allowSelfTreatment = 1;
+        items[] = {};
+        consumeItem = 0;
+        condition = QUOTE([ARR_4(_patient,_bodyPart,ACM_IV_16G_M,0)] call EFUNC(circulation,hasIV));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,false,true,0)] call EFUNC(circulation,setIV));
+    };
+    class InsertIV_16_Middle: InsertIV_16_Upper {
+        displayName = "Insert 16g IV (Middle)";
+        condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,1)] call EFUNC(circulation,hasIV)));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,true,true,1)] call EFUNC(circulation,setIV));
+    };
+    class RemoveIV_16_Middle: RemoveIV_16_Upper {
+        displayName = "Remove 16g IV (Middle)";
+        condition = QUOTE([ARR_4(_patient,_bodyPart,ACM_IV_16G_M,1)] call EFUNC(circulation,hasIV));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,false,true,1)] call EFUNC(circulation,setIV));
+    };
+    class InsertIV_16_Lower: InsertIV_16_Upper {
+        displayName = "Insert 16g IV (Lower)";
+        condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,2)] call EFUNC(circulation,hasIV)));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,true,true,2)] call EFUNC(circulation,setIV));
+    };
+    class RemoveIV_16_Lower: RemoveIV_16_Upper {
+        displayName = "Remove 16g IV (Lower)";
+        condition = QUOTE([ARR_4(_patient,_bodyPart,ACM_IV_16G_M,2)] call EFUNC(circulation,hasIV));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,false,true,2)] call EFUNC(circulation,setIV));
+    };
+    class InsertIV_14_Upper: InsertIV_16_Upper {
+        displayName = "Insert 14g IV (Upper)";
+        displayNameProgress = "Inserting 14g IV...";
+        icon = "";
+        treatmentTime = QEGVAR(circulation,treatmentTimeIV_14);
+        items[] = {"ACM_IV_14g"};
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,true,true,0)] call EFUNC(circulation,setIV));
+    };
+    class RemoveIV_14_Upper: RemoveIV_16_Upper {
+        displayName = "Remove 14g IV";
+        displayNameProgress = "Removing 14g IV...";
+        icon = "";
+        allowSelfTreatment = 0;
+        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_14G_M)] call EFUNC(circulation,hasIV));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,false,true,0)] call EFUNC(circulation,setIV));
+    };
+    class InsertIV_14_Middle: InsertIV_14_Upper {
+        displayName = "Insert 14g IV (Middle)";
+        condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,1)] call EFUNC(circulation,hasIV)));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,true,true,1)] call EFUNC(circulation,setIV));
+    };
+    class RemoveIV_14_Middle: RemoveIV_14_Upper {
+        displayName = "Remove 14g IV (Middle)";
+        condition = QUOTE([ARR_4(_patient,_bodyPart,ACM_IV_14G_M,1)] call EFUNC(circulation,hasIV));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,false,true,1)] call EFUNC(circulation,setIV));
+    };
+    class InsertIV_14_Lower: InsertIV_14_Upper {
+        displayName = "Insert 14g IV (Lower)";
+        condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,2)] call EFUNC(circulation,hasIV)));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,true,true,2)] call EFUNC(circulation,setIV));
+    };
+    class RemoveIV_14_Lower: RemoveIV_14_Upper {
+        displayName = "Remove 14g IV (Lower)";
+        condition = QUOTE([ARR_4(_patient,_bodyPart,ACM_IV_14G_M,2)] call EFUNC(circulation,hasIV));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,false,true,2)] call EFUNC(circulation,setIV));
+    };
+    class InsertIO_FAST1: InsertIV_16_Upper {
+        displayName = "Insert FAST1 IO";
+        displayNameProgress = "Inserting FAST1 IO...";
+        icon = "";
+        medicRequired = QEGVAR(circulation,allowIO);
+        treatmentTime = QEGVAR(circulation,treatmentTimeIO_FAST1);
+        allowedSelections[] = {"Body"};
+        allowSelfTreatment = QEGVAR(circulation,selfIO);
+        items[] = {"ACM_IO_FAST"};
+        condition = QUOTE(!([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO)));
+        callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,ACM_IO_FAST1_M,true,false)] call EFUNC(circulation,setIV));
+        ACM_cancelRecovery = 1;
+    };
+    class RemoveIO_FAST1: RemoveIV_16_Upper {
+        displayName = "Remove FAST1 IO";
+        displayNameProgress = "Removing FAST1 IO...";
+        icon = "";
+        allowedSelections[] = {"Body"};
+        treatmentTime = 3.5;
+        allowSelfTreatment = 0;
+        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IO_FAST1_M)] call EFUNC(circulation,hasIO));
+        callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,ACM_IO_FAST1_M,false,false)] call EFUNC(circulation,setIV));
+    };
+    class InsertIO_EZ: InsertIO_FAST1 {
+        displayName = "Insert EZ-IO";
+        displayNameProgress = "Inserting EZ-IO...";
+        icon = "";
+        treatmentTime = QEGVAR(circulation,treatmentTimeIO_EZ);
+        allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
+        items[] = {"ACM_IO_EZ"};
+        condition = QUOTE(!([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO)));
+        callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,ACM_IO_EZ_M,true,false)] call EFUNC(circulation,setIV));
+        ACM_cancelRecovery = 0;
+        sounds[] = {{QPATHTOEF(circulation,sound\io_drill.wav),10,1,30}};
+    };
+    class RemoveIO_EZ: RemoveIO_FAST1 {
+        displayName = "Remove EZ-IO";
+        displayNameProgress = "Removing EZ-IO...";
+        icon = "";
+        allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
+        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IO_EZ_M)] call EFUNC(circulation,hasIO));
+        callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,ACM_IO_EZ_M,false,false)] call EFUNC(circulation,setIV));
+    };
+
     // Medication
 
     class Paracetamol: Morphine {
@@ -260,7 +407,7 @@ class ACEGVAR(medical_treatment,actions) {
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
         items[] = {"ACM_Syringe_IV_Epinephrine"};
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV));
+        condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO));
         treatmentTime = 2;
         callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'Epinephrine',true,true)] call EFUNC(circulation,Syringe_Inject));
         //animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
@@ -279,7 +426,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = "";
         items[] = {};
         consumeItem = 0;
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) && [ARR_2(_medic,'ACM_Syringe_IV')] call ACEFUNC(common,hasItem) && [ARR_2(_medic,'ACM_Vial_Epinephrine')] call ACEFUNC(common,hasItem));
+        condition = QUOTE(([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO)) && [ARR_2(_medic,'ACM_Syringe_IV')] call ACEFUNC(common,hasItem) && [ARR_2(_medic,'ACM_Vial_Epinephrine')] call ACEFUNC(common,hasItem));
         treatmentTime = 0.01;
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,true,'Epinephrine')] call EFUNC(circulation,Syringe_Draw));
     };

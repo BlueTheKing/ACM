@@ -9,9 +9,9 @@ class RscButtonMenu;
 class RscPictureKeepAspect;
 class RscListBox;
 
-#define BODY_BACKGROUND_IV(bodypart,site) \
+#define BODY_BACKGROUND_IV(bodypart,site,sidc) \
     class BodyBackground_IV_##bodypart##_##site##: BodyBackground_IO_Torso { \
-        idc = QUOTE(IDC_TRANSFUSIONMENU_BG_IV_##bodypart##_##site##); \
+        idc = sidc; \
         text = QPATHTOEF(gui,data\body_image\##bodypart##_iv_##site##.paa); \
     }
 
@@ -41,7 +41,7 @@ class GVAR(TransfusionMenu_Dialog) {
             h = QUOTE(safezoneH / 20);
             colorText[] = {1,1,1,1};
             colorBackground[] = {0,0,0,0};
-            text = "Joe Biden";
+            text = "";
             lineSpacing = 0;
             sizeEx = QUOTE(GUI_GRID_H * 1.8);
             shadow = 1;
@@ -97,21 +97,37 @@ class GVAR(TransfusionMenu_Dialog) {
             text = QPATHTOEF(gui,data\body_image\torso_fast_io.paa);
             colorText[] = COLOR_CIRCULATION;
         };
-        BODY_BACKGROUND_IV(RightArm,Upper);
-        BODY_BACKGROUND_IV(RightArm,Middle);
-        BODY_BACKGROUND_IV(RightArm,Lower);
+        class BodyBackground_IO_RightArm: BodyBackground_IO_Torso {
+            idc = IDC_TRANSFUSIONMENU_BG_IO_RIGHTARM;
+            text = QPATHTOEF(gui,data\body_image\rightarm_io.paa);
+        };
+        class BodyBackground_IO_LeftArm: BodyBackground_IO_Torso {
+            idc = IDC_TRANSFUSIONMENU_BG_IO_LEFTARM;
+            text = QPATHTOEF(gui,data\body_image\leftarm_io.paa);
+        };
+        class BodyBackground_IO_RightLeg: BodyBackground_IO_Torso {
+            idc = IDC_TRANSFUSIONMENU_BG_IO_RIGHTLEG;
+            text = QPATHTOEF(gui,data\body_image\rightleg_io.paa);
+        };
+        class BodyBackground_IO_LeftLeg: BodyBackground_IO_Torso {
+            idc = IDC_TRANSFUSIONMENU_BG_IO_LEFTLEG;
+            text = QPATHTOEF(gui,data\body_image\leftleg_io.paa);
+        };
+        BODY_BACKGROUND_IV(RightArm,Upper,IDC_TRANSFUSIONMENU_BG_IV_RIGHTARM_UPPER);
+        BODY_BACKGROUND_IV(RightArm,Middle,IDC_TRANSFUSIONMENU_BG_IV_RIGHTARM_MIDDLE);
+        BODY_BACKGROUND_IV(RightArm,Lower,IDC_TRANSFUSIONMENU_BG_IV_RIGHTARM_LOWER);
 
-        BODY_BACKGROUND_IV(LeftArm,Upper);
-        BODY_BACKGROUND_IV(LeftArm,Middle);
-        BODY_BACKGROUND_IV(LeftArm,Lower);
+        BODY_BACKGROUND_IV(LeftArm,Upper,IDC_TRANSFUSIONMENU_BG_IV_LEFTARM_UPPER);
+        BODY_BACKGROUND_IV(LeftArm,Middle,IDC_TRANSFUSIONMENU_BG_IV_LEFTARM_MIDDLE);
+        BODY_BACKGROUND_IV(LeftArm,Lower,IDC_TRANSFUSIONMENU_BG_IV_LEFTARM_LOWER);
 
-        BODY_BACKGROUND_IV(RightLeg,Upper);
-        BODY_BACKGROUND_IV(RightLeg,Middle);
-        BODY_BACKGROUND_IV(RightLeg,Lower);
+        BODY_BACKGROUND_IV(RightLeg,Upper,IDC_TRANSFUSIONMENU_BG_IV_RIGHTLEG_UPPER);
+        BODY_BACKGROUND_IV(RightLeg,Middle,IDC_TRANSFUSIONMENU_BG_IV_RIGHTLEG_MIDDLE);
+        BODY_BACKGROUND_IV(RightLeg,Lower,IDC_TRANSFUSIONMENU_BG_IV_RIGHTLEG_LOWER);
 
-        BODY_BACKGROUND_IV(LeftLeg,Upper);
-        BODY_BACKGROUND_IV(LeftLeg,Middle);
-        BODY_BACKGROUND_IV(LeftLeg,Lower);
+        BODY_BACKGROUND_IV(LeftLeg,Upper,IDC_TRANSFUSIONMENU_BG_IV_LEFTLEG_UPPER);
+        BODY_BACKGROUND_IV(LeftLeg,Middle,IDC_TRANSFUSIONMENU_BG_IV_LEFTLEG_MIDDLE);
+        BODY_BACKGROUND_IV(LeftLeg,Lower,IDC_TRANSFUSIONMENU_BG_IV_LEFTLEG_LOWER);
     };
     class Controls {
         class BodyPart_Torso: RscButton {

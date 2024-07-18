@@ -17,7 +17,7 @@
  * Public: No
  */
 
-if (_bodyPart == "body" && !(GVAR(TransfusionMenu_SelectIV))) exitWith {};
+if (GVAR(TransfusionMenu_Selected_BodyPart) == "body" && !(GVAR(TransfusionMenu_SelectIV))) exitWith {};
 
 GVAR(TransfusionMenu_SelectIV) = !GVAR(TransfusionMenu_SelectIV);
 

@@ -26,17 +26,21 @@ params ["_medic", "_patient", "_bodyPart", "_type", "_state", ["_iv", true], ["_
 private _hintState = "inserted";
 private _hintType = "16g IV";
 
+private _exit = false;
 private _accessSiteHint = "";
+private _givePain = 0;
 
 switch (_type) do {
     case ACM_IV_14G: {
         _hintType = "14g IV";
     };
-    case ACM_IO_FAST1: {
+    case ACM_IO_FAST1_M: {
         _hintType = "FAST1 IO";
+        _givePain = 0.5;
     };
-    case ACM_IO_EZ: {
+    case ACM_IO_EZ_M: {
         _hintType = "EZ-IO";
+        _givePain = 0.25;
     };
     default {};
 };
@@ -44,20 +48,24 @@ switch (_type) do {
 if (_iv) then {
     _accessSiteHint = ["Upper","Middle","Lower"] select _accessSite;
 
-    if (_state && [_patient, _bodyPart, _accessSite] call FUNC(hasIV)) exitWith {
-        [(format ["Patient already has IV in %1 (%2)", toLower ([_bodyPart] call EFUNC(core,getBodyPartString)), _accessSiteHint]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    if (_state && [_patient, _bodyPart, 0, _accessSite] call FUNC(hasIV)) exitWith {
+        _exit = true;
+        [(format ["Patient already has IV in the %1 (%2)", toLower ([_bodyPart] call EFUNC(core,getBodyPartString)), _accessSiteHint]), 2, _medic] call ACEFUNC(common,displayTextStructured);
     };
 } else {
     if (_state && [_patient, _bodyPart] call FUNC(hasIO)) exitWith {
-        [(format ["Patient already has IO in %1", toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+        _exit = true;
+        [(format ["Patient already has IO in the %1", toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
     };
 };
+
+if (_exit) exitWith {};
 
 private _setState = _type;
 
 if (_state) then {
     if !(_iv) then {
-        [_patient, 0.4] call ACEFUNC(medical,adjustPainLevel);
+        [_patient, _givePain] call ACEFUNC(medical,adjustPainLevel);
     };
 } else {
     _hintState = "removed";

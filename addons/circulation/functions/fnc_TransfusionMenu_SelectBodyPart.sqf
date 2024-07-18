@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * ["LeftArm", 0] call ACM_circulation_fnc_TransfusionMenu_SelectBodyPart;
+ * ["leftarm", 0] call ACM_circulation_fnc_TransfusionMenu_SelectBodyPart;
  *
  * Public: No
  */

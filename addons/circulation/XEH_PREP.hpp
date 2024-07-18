@@ -51,6 +51,7 @@ PREP(handleMed_TXALocal);
 PREP(handleOverdose);
 PREP(handleReversibleCardiacArrest);
 PREP(hasAED);
+PREP(hasIO);
 PREP(hasIV);
 PREP(hasPressureCuff);
 PREP(initUnit);
