@@ -37,13 +37,23 @@ private _type = GET_STRING(_ivConfig >> "type",getText (_defaultConfig >> "type"
 private _bloodType = GET_NUMBER(_ivConfig >> "bloodtype",-1);
 
 // Add IV bag to patient's ivBags array
-private _IVBags = (_patient getVariable [QGVAR(IV_Bags), createHashMap]) getOrDefault [_bodyPart, []];
-_IVBags pushBack [_type, _volume, _accessType, _accessSite, _iv, _bloodType, _volume]; // ["Saline", 1000, ACM_IV_16G_M, 0, false, -1, 1000]
-_patient setVariable [QGVAR(IV_Bags), _IVBags, true];
-_patient setVariable [QGVAR(IV_Bags_Active), true, true];
+private _IVBags = _patient getVariable [QEGVAR(circulation,IV_Bags), createHashMap];
+private _IVBagsBodyPart = _IVBags getOrDefault [_bodyPart, []];
+
+_IVBagsBodyPart pushBack [_type, _volume, _accessType, _accessSite, _iv, _bloodType, _volume]; // ["Saline", 1000, ACM_IV_16G_M, 0, false, -1, 1000]
+
+_IVBags set [_bodyPart, _IVBagsBodyPart];
+
+_patient setVariable [QEGVAR(circulation,IV_Bags), _IVBags, true];
+_patient setVariable [QEGVAR(circulation,IV_Bags_Active), true, true];
 
 [_patient, _bodyPart] call EFUNC(circulation,updateActiveFluidBags);
 
 if (GET_BLOODTYPE(_patient) == -1) then {
     [_patient] call EFUNC(circulation,generateBloodType);
 };
+
+/*if (EGVAR(circulation,TransfusionMenu_Reopen)) then {
+    EGVAR(circulation,TransfusionMenu_Reopen) = false;
+    [ACE_player, _patient, GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(circulation,openTransfusionMenu);
+};*/

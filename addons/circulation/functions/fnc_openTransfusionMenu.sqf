@@ -36,19 +36,23 @@ GVAR(TransfusionMenu_CloseID) = [_medicalMenuKeybind, [false, false, false], { /
 
 GVAR(TransfusionMenu_Target) = _patient;
 
+GVAR(TransfusionMenu_Selected_Inventory) = -1;
+
 GVAR(TransfusionMenu_Selected_BodyPart) = toLowerANSI _bodyPart;
 
-if ([_patient, _bodyPart, 0, -1] call FUNC(hasIV)) then {
-    GVAR(TransfusionMenu_SelectIV) = true;
-    private _ivAccess = (GET_IV(_patient) select (ALL_BODY_PARTS find GVAR(TransfusionMenu_Selected_BodyPart)));
-    {
-        if (_x > 0) exitWith {
-            GVAR(TransfusionMenu_Selected_AccessSite) = _forEachIndex;
-        };
-    } forEach _ivAccess;
-} else {
-    GVAR(TransfusionMenu_Selected_AccessSite) = 0;
-    GVAR(TransfusionMenu_SelectIV) = false;
+if (GVAR(TransfusionMenu_Selected_AccessSite) == -1) then {
+    if ([_patient, _bodyPart, 0, -1] call FUNC(hasIV)) then {
+        GVAR(TransfusionMenu_SelectIV) = true;
+        private _ivAccess = (GET_IV(_patient) select (ALL_BODY_PARTS find GVAR(TransfusionMenu_Selected_BodyPart)));
+        {
+            if (_x > 0) exitWith {
+                GVAR(TransfusionMenu_Selected_AccessSite) = _forEachIndex;
+            };
+        } forEach _ivAccess;
+    } else {
+        GVAR(TransfusionMenu_Selected_AccessSite) = 0;
+        GVAR(TransfusionMenu_SelectIV) = false;
+    };
 };
 
 createDialog QGVAR(TransfusionMenu_Dialog);
@@ -57,6 +61,7 @@ uiNamespace setVariable [QGVAR(TransfusionMenu_DLG),(findDisplay IDC_TRANSFUSION
 private _display = uiNamespace getVariable [QGVAR(TransfusionMenu_DLG), displayNull];
 
 call FUNC(TransfusionMenu_UpdateSelection);
+call FUNC(TransfusionMenu_SwitchTargetInventory);
 
 private _ctrlPatientName = _display displayCtrl IDC_TRANSFUSIONMENU_PATIENTNAME;
 

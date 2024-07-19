@@ -25,7 +25,7 @@ private _bloodVolume = 0;
 private _plasmaVolume = 0;
 private _salineVolume = 0;
 
-private _accessBodyPart = (_patient getVariable [QGVAR(IV_Bags), createHashMap]) getOrDefault [_bodyPart, []];
+private _accessBodyPart = (_patient getVariable [QEGVAR(circulation,IV_Bags), createHashMap]) getOrDefault [_bodyPart, []];
 
 if (_iv) then {
     {

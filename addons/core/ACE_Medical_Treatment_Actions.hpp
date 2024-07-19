@@ -194,7 +194,7 @@ class ACEGVAR(medical_treatment,actions) {
     // Transfusion Menu
 
     class OpenTransfusionMenu: CheckPulse {
-        displayName = "Manage Fluid Transfusion";
+        displayName = "Transfuse Fluids";
         displayNameProgress = "";
         icon = "";
         category = "advanced";

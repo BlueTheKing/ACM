@@ -45,3 +45,6 @@ if (GVAR(Hardcore_PostCardiacArrest)) then {
         ([1, 1.4] select (_this getVariable [QGVAR(Hardcore_PostCardiacArrest), false]));
     }] call ACEFUNC(advanced_fatigue,addDutyFactor);
 };
+
+GVAR(TransfusionMenu_Selected_AccessSite) = -1;
+GVAR(TransfusionMenu_Reopen) = false;

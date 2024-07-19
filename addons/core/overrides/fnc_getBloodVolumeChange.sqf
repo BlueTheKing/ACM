@@ -100,72 +100,77 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
     };
 
     private _fluidBags = _unit getVariable [QEGVAR(circulation,IV_Bags), createHashMap];
-    private _tourniquets = GET_TOURNIQUETS(_unit);
+    //private _tourniquets = GET_TOURNIQUETS(_unit);
 
     private _updateCountBodyPartArray = [];
 
-    _fluidBags = _fluidBags apply {
+    {
         private _partIndex = ALL_BODY_PARTS find _x;
-        _y params ["_type", "_bagVolumeRemaining", "_accessType", "_accessSite", "_iv", ["_bloodType", -1], "_originalVolume"];
 
-        if (_tourniquets select _partIndex == 0) then {
-            private _fluidFlowRate = 1;
+        private _fluidBagsBodyPart = _y;
 
-            switch (_type) do {
-                case "Blood": {
-                    _fluidFlowRate = 0.8;
-                };
-                case "Saline": {
-                    _fluidFlowRate = 1.2;
-                };
-                default {};
-            };
-
-            private _activeBagTypesBodyPart = [(_activeBagTypesIO select _partIndex),((_activeBagTypesIV select _partIndex) select _accessSite)] select _iv;
-
-            private _bagChange = ((_deltaT * ACEGVAR(medical,ivFlowRate) * ([_unit, _partIndex] call EFUNC(circulation,getIVFlowRate))) * _flowMultiplier * _fluidFlowRate) min _bagVolumeRemaining; // absolute value of the change in miliLiters
+        _fluidBagsBodyPart = _fluidBagsBodyPart apply {
             
-            if (_bagVolumeRemaining > 1) then {
-                _bagChange = _bagChange / _activeBagTypesBodyPart;
-            };
+            _x params ["_type", "_bagVolumeRemaining", "_accessType", "_accessSite", "_iv", ["_bloodType", -1], "_originalVolume"];
 
-            _bagVolumeRemaining = _bagVolumeRemaining - _bagChange;
-
-            switch (_type) do {
-                case "Plasma": {
-                    _plasmaVolumeChange = _plasmaVolumeChange + (_bagChange / 1000);
-                    _plateletCountChange = _plateletCountChange + (_bagChange / 1000);
+            if !(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) then {
+                private _fluidFlowRate = 1;
+    
+                switch (_type) do {
+                    case "Blood": {
+                        _fluidFlowRate = 0.8;
+                    };
+                    case "Saline": {
+                        _fluidFlowRate = 1.2;
+                    };
+                    default {};
                 };
-                case "Saline": {
-                    _salineVolumeChange = _salineVolumeChange + (_bagChange / 1000);
+    
+                private _activeBagTypesBodyPart = [(_activeBagTypesIO select _partIndex),((_activeBagTypesIV select _partIndex) select _accessSite)] select _iv;
+                private _bagChange = ((_deltaT * ACEGVAR(medical,ivFlowRate) * ([_unit, _partIndex, _iv, _accessSite] call EFUNC(circulation,getIVFlowRate))) * _flowMultiplier * _fluidFlowRate) min _bagVolumeRemaining; // absolute value of the change in miliLiters
+                if (_bagVolumeRemaining > 1) then {
+                    _bagChange = _bagChange / _activeBagTypesBodyPart;
                 };
-                default {
-                    if ([GET_BLOODTYPE(_unit), _bloodType] call EFUNC(circulation,isBloodTypeCompatible)) then {
-                        _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
-                        _plateletCountChange = _plateletCountChange + (_bagChange / 500);
-                    } else {
-                        _bloodVolumeChange = _bloodVolumeChange - (_bagChange / 1000);
-                        _plateletCountChange = _plateletCountChange - (_bagChange / 4000);
-
-                        _plasmaVolumeChange = _plasmaVolumeChange + (_bagChange / 4000);
-                        _salineVolumeChange = _salineVolumeChange + (_bagChange / 1333.4);
+    
+                _bagVolumeRemaining = _bagVolumeRemaining - _bagChange;
+    
+                switch (_type) do {
+                    case "Plasma": {
+                        _plasmaVolumeChange = _plasmaVolumeChange + (_bagChange / 1000);
+                        _plateletCountChange = _plateletCountChange + (_bagChange / 1000);
+                    };
+                    case "Saline": {
+                        _salineVolumeChange = _salineVolumeChange + (_bagChange / 1000);
+                    };
+                    default {
+                        if ([GET_BLOODTYPE(_unit), _bloodType] call EFUNC(circulation,isBloodTypeCompatible)) then {
+                            _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
+                            _plateletCountChange = _plateletCountChange + (_bagChange / 500);
+                        } else {
+                            _bloodVolumeChange = _bloodVolumeChange - (_bagChange / 1000);
+                            _plateletCountChange = _plateletCountChange - (_bagChange / 4000);
+    
+                            _plasmaVolumeChange = _plasmaVolumeChange + (_bagChange / 4000);
+                            _salineVolumeChange = _salineVolumeChange + (_bagChange / 1333.4);
+                        };
                     };
                 };
+                // IO pain
+                if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then {
+                    private _IOPain = _bagChange / 3.7;
+                    _transfusionPain = _transfusionPain + _IOPain;
+                };
             };
-            // IO pain
-            if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then {
-                private _IOPain = _bagChange / 3.7;
-                _transfusionPain = _transfusionPain + _IOPain;
+    
+            if (_bagVolumeRemaining < 0.01) then {
+                _updateCountBodyPartArray pushBack _x;
+                []
+            } else {
+                [_type, _bagVolumeRemaining, _accessType, _accessSite, _iv, _bloodType, _originalVolume]
             };
         };
-
-        if (_bagVolumeRemaining < 0.01) then {
-            _updateCountBodyPartArray pushBack _x;
-            []
-        } else {
-            [_type, _bagVolumeRemaining, _accessType, _accessSite, _iv, _bloodType, _originalVolume]
-        };
-    };
+        _fluidBags set [_x, _fluidBagsBodyPart];
+    } forEach _fluidBags;
 
     if (count _updateCountBodyPartArray > 0) then {
         _updateCountBodyPartArray arrayIntersect _updateCountBodyPartArray;

@@ -25,12 +25,12 @@ if (_bodyPart == "") exitWith {
 
 private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
-private _fluidBagsBodyPart = _patient getVariable [QGVAR(IV_Bags), createHashMap] getOrDefault [_bodyPart, []];
+private _fluidBagsBodyPart = (_patient getVariable [QGVAR(IV_Bags), createHashMap]) getOrDefault [_bodyPart, []];
 
 private _activeFluidBagsIV = _patient getVariable [QGVAR(ActiveFluidBags_IV), ACM_IV_PLACEMENT_DEFAULT_1];
 private _activeFluidBagsIO = _patient getVariable [QGVAR(ActiveFluidBags_IO), ACM_IO_PLACEMENT_DEFAULT_1];
 
-if (_fluidBagsBodyPart isEqualTo [] || (GET_TOURNIQUETS(_patient) select (_partIndex > 0))) exitWith {
+if ((count _fluidBagsBodyPart) < 2 || (GET_TOURNIQUETS(_patient) select (_partIndex) > 0)) exitWith {
     _activeFluidBagsIV set [_partIndex, [1,1,1]];
     _activeFluidBagsIO set [_partIndex, 1];
     _patient setVariable [QGVAR(ActiveFluidBags_IV), _activeFluidBagsIV, true];

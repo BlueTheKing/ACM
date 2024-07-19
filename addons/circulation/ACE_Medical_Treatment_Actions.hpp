@@ -191,11 +191,11 @@ class ACEGVAR(medical_treatment,actions) {
     class BloodIV: BasicBandage {
         condition = "false";
     };
-    /*class BloodBag_O_1000: BloodIV {
+    class BloodBag_O_1000: BloodIV {
         displayName = "Give Blood O+ (1000ml)";
         displayNameProgress = "Transfusing Blood...";
         items[] = {"ACM_BloodBag_O_1000"};
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
+        condition = "false";
     };
     ACM_BLOODBAG_ENTRY(ON,O-,1000);
     ACM_BLOODBAG_ENTRY(A,A+,1000);
@@ -223,9 +223,9 @@ class ACEGVAR(medical_treatment,actions) {
     ACM_BLOODBAG_ENTRY(AB,AB+,250);
     ACM_BLOODBAG_ENTRY(ABN,AB-,250);
     class PlasmaIV: BloodIV {
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
+        condition = "false";
     };
     class SalineIV: BloodIV {
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(hasIV));
-    };*/
+        condition = "false";
+    };
 };
