@@ -21,6 +21,8 @@
 
 params ["_medic", "_patient", "_bodyPart"];
 
+if !(isNull findDisplay IDC_TRANSFUSIONMENU) exitWith {};
+
 private _medicalMenuKeybind = (["ACE3 Common", QACEGVAR(medical_gui,openMedicalMenuKey)] call CBA_FUNC(getKeybind) select 5) select 0;
 
 ACEGVAR(medical_gui,pendingReopen) = false; // Prevent medical menu from reopening
@@ -67,14 +69,21 @@ private _ctrlPatientName = _display displayCtrl IDC_TRANSFUSIONMENU_PATIENTNAME;
 
 _ctrlPatientName ctrlSetText ([_patient, false, true] call ACEFUNC(common,getName));
 
+private _inVehicle = !(isNull objectParent ACE_player);
+
 [{
     params ["_args", "_idPFH"];
-    _args params ["_display"];
+    _args params ["_display", "_medic", "_patient", "_inVehicle"];
 
-    if (isNull findDisplay IDC_TRANSFUSIONMENU) exitWith {
+    private _dialogCondition = isNull findDisplay IDC_TRANSFUSIONMENU;
+    private _patientCondition = (_patient isEqualTo objNull);
+    private _medicCondition = (!(alive _medic) || IS_UNCONSCIOUS(_medic) || (_medic isEqualTo objNull));
+    private _vehicleCondition = !(objectParent _medic isEqualTo objectParent _patient);
+    private _distanceCondition = (_patient distance2D _medic > ACEGVAR(medical_gui,maxDistance));
+
+    if (_medicCondition || _patientCondition || _dialogCondition || (_inVehicle && _vehicleCondition) || (!_inVehicle && _distanceCondition)) exitWith {
         [GVAR(TransfusionMenu_CloseID), "keydown"] call CBA_fnc_removeKeyHandler;
         GVAR(TransfusionMenu_Target) = objNull;
-        systemchat "closed";
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
@@ -96,7 +105,7 @@ _ctrlPatientName ctrlSetText ([_patient, false, true] call ACEFUNC(common,getNam
 
     private _IVCtrlArray = [[_ctrlIVLeftArmUpper, _ctrlIVLeftArmMiddle, _ctrlIVLeftArmLower], [_ctrlIVRightArmUpper, _ctrlIVRightArmMiddle, _ctrlIVRightArmLower], [_ctrlIVLeftLegUpper, _ctrlIVLeftLegMiddle, _ctrlIVLeftLegLower], [_ctrlIVRightLegUpper, _ctrlIVRightLegMiddle, _ctrlIVRightLegLower]];
 
-    private _IVArray = GET_IV(GVAR(TransfusionMenu_Target));
+    private _IVArray = GET_IV(_patient);
 
     {
         _x params ["_xUpper", "_xMiddle", "_xLower"];
@@ -141,7 +150,7 @@ _ctrlPatientName ctrlSetText ([_patient, false, true] call ACEFUNC(common,getNam
     private _ctrlIOTorso = _display displayCtrl IDC_TRANSFUSIONMENU_BG_IO_TORSO;
 
     private _IOCtrlArray = [_ctrlIOTorso, _ctrlIOLeftArm, _ctrlIORightArm, _ctrlIOLeftLeg, _ctrlIORightLeg];
-    private _IOArray = GET_IO(GVAR(TransfusionMenu_Target));
+    private _IOArray = GET_IO(_patient);
 
     {
         _x ctrlShow ((_IOArray select (_forEachIndex + 1)) > 0);
@@ -152,4 +161,4 @@ _ctrlPatientName ctrlSetText ([_patient, false, true] call ACEFUNC(common,getNam
             _x ctrlSetTextColor [0.2, 0.65, 0.2, 1];
         };
     } forEach _IOCtrlArray;
-}, 0, [_display]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_display, ACE_player, GVAR(TransfusionMenu_Target), _inVehicle]] call CBA_fnc_addPerFrameHandler;

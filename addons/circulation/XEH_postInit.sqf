@@ -47,4 +47,3 @@ if (GVAR(Hardcore_PostCardiacArrest)) then {
 };
 
 GVAR(TransfusionMenu_Selected_AccessSite) = -1;
-GVAR(TransfusionMenu_Reopen) = false;

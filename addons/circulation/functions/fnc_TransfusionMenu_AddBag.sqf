@@ -46,12 +46,18 @@ if (stance _medic in ["STAND","CROUCH"]) then {
     _medic call ACEFUNC(common,goKneeling);
 };
 
-[6, [_medic, _patient, _target, _itemClassname, _actionClassname, _inVehicle], {
+[5, [_medic, _patient, _target, _itemClassname, _actionClassname, _inVehicle], {
     params ["_args"];
     _args params ["_medic", "_patient", "_target", "_itemClassname", "_actionClassname"];
-
+    
     [_medic, _patient, GVAR(TransfusionMenu_Selected_BodyPart), _actionClassname, objNull, _itemClassname, GVAR(TransfusionMenu_SelectIV), GVAR(TransfusionMenu_Selected_AccessSite)] call ACEFUNC(medical_treatment,ivBag);
-    GVAR(TransfusionMenu_Reopen) = true;
+    closeDialog 0;
+    
+    [{
+        params ["_medic", "_patient"];
+
+        [_medic, _patient, GVAR(TransfusionMenu_Selected_BodyPart)] call FUNC(openTransfusionMenu);
+    }, [_medic, _patient], 0.05] call CBA_fnc_waitAndExecute;
 }, {
     params ["_args"];
     _args params ["_medic", "_patient", "_target", "_itemClassname"];
@@ -61,6 +67,8 @@ if (stance _medic in ["STAND","CROUCH"]) then {
     } else {
         [_target, _itemClassname] call ACEFUNC(common,addToInventory);
     };
+    closeDialog 0;
+    
     [_medic, _patient, GVAR(TransfusionMenu_Selected_BodyPart)] call FUNC(openTransfusionMenu);
 }, format ["Connecting fluid bag..."], 
 {
@@ -72,5 +80,5 @@ if (stance _medic in ["STAND","CROUCH"]) then {
     private _vehicleCondition = (objectParent _medic isEqualTo objectParent _patient);
     private _distanceCondition = (_patient distance2D _medic <= ACEGVAR(medical_gui,maxDistance));
 
-    _patientCondition && _medicCondition && ((_inVehicle && _vehicleCondition) || (!_inVehicle && _distanceCondition))
+    (_patientCondition && _medicCondition && ((_inVehicle && _vehicleCondition) || (!_inVehicle && _distanceCondition)));
 }] call ACEFUNC(common,progressBar);

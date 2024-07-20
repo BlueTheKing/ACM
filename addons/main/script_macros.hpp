@@ -220,6 +220,9 @@
 #define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),ACM_IV_PLACEMENT_DEFAULT_0])
 #define GET_IO(unit) (unit getVariable [QEGVAR(circulation,IO_Placement),ACM_IO_PLACEMENT_DEFAULT_0])
 
+#define GET_IV_FLOW(unit) (unit getVariable [QEGVAR(circulation,FluidBagsFlow_IV), ACM_IV_PLACEMENT_DEFAULT_1])
+#define GET_IO_FLOW(unit) (unit getVariable [QEGVAR(circulation,FluidBagsFlow_IO), ACM_IO_PLACEMENT_DEFAULT_1])
+
 #define ACM_ROUTE_IM 0
 #define ACM_ROUTE_IV 1
 #define ACM_ROUTE_PO 2

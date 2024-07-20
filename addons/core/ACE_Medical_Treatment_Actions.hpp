@@ -204,6 +204,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 1;
         items[] = {};
         consumeItem = 0;
+        animationMedic = "";
         condition = QUOTE([ARR_4(_patient,_bodyPart,0,-1)] call EFUNC(circulation,hasIV) || [ARR_3(_patient,_bodyPart,0)] call EFUNC(circulation,hasIO));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call EFUNC(circulation,openTransfusionMenu));
     };

@@ -304,13 +304,13 @@ class GVAR(TransfusionMenu_Dialog) {
             action = "";
             tooltip = "Remove fluid bag";
         };
-        class InfuseBagButton: MoveBagButton {
+        /*class InfuseBagButton: MoveBagButton {
             text = "Infuse";
             idc = -1;
             y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 14.8));
             action = "";
             tooltip = "Infuse medication into fluid bag";
-        };
+        };*/
 
         class RightPanelList: LeftPanelList
         {
@@ -322,7 +322,7 @@ class GVAR(TransfusionMenu_Dialog) {
             idc = -1;
             x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 7.8));
             action = QUOTE(call FUNC(TransfusionMenu_SwitchTargetInventory));
-            textureNoShortcut = QPATHTOF(ui\transfusionmenu\ivtoggle_ca.paa);
+            textureNoShortcut = QPATHTOF(ui\transfusionmenu\inventory_select_ca.paa);
             tooltip = "Change target inventory";
         };
         class AddBagButton: StopTransfusionButton {

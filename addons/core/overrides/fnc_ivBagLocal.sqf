@@ -52,8 +52,3 @@ _patient setVariable [QEGVAR(circulation,IV_Bags_Active), true, true];
 if (GET_BLOODTYPE(_patient) == -1) then {
     [_patient] call EFUNC(circulation,generateBloodType);
 };
-
-/*if (EGVAR(circulation,TransfusionMenu_Reopen)) then {
-    EGVAR(circulation,TransfusionMenu_Reopen) = false;
-    [ACE_player, _patient, GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(circulation,openTransfusionMenu);
-};*/

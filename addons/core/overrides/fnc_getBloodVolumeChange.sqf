@@ -87,20 +87,22 @@ if (_plateletCount > 0.1) then {
 private _transfusionPain = 0;
 
 if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
-    private _flowMultiplier = 1;
+    private _IVFlowMultiplier = 1;
+    private _IOFlowMultiplier = 1;
 
     private _activeBagTypesIV = _unit getVariable [QEGVAR(circulation,ActiveFluidBags_IV), ACM_IV_PLACEMENT_DEFAULT_1];
     private _activeBagTypesIO = _unit getVariable [QEGVAR(circulation,ActiveFluidBags_IO), ACM_IO_PLACEMENT_DEFAULT_1];
 
     if (IN_CRDC_ARRST(_unit)) then {
-        _flowMultiplier = EGVAR(circulation,cardiacArrestBleedRate);
+        _IVFlowMultiplier = EGVAR(circulation,cardiacArrestBleedRate);
+        _IOFlowMultiplier = 0.9;
         if (alive (_unit getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
-            _flowMultiplier = 0.9;
+            _IVFlowMultiplier = 0.9;
+            _IOFlowMultiplier = 1;
         };
     };
 
     private _fluidBags = _unit getVariable [QEGVAR(circulation,IV_Bags), createHashMap];
-    //private _tourniquets = GET_TOURNIQUETS(_unit);
 
     private _updateCountBodyPartArray = [];
 
@@ -110,10 +112,9 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
         private _fluidBagsBodyPart = _y;
 
         _fluidBagsBodyPart = _fluidBagsBodyPart apply {
-            
             _x params ["_type", "_bagVolumeRemaining", "_accessType", "_accessSite", "_iv", ["_bloodType", -1], "_originalVolume"];
 
-            if !(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) then {
+            if (!(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) && (([(GET_IO_FLOW(_unit) select _partIndex),((GET_IV_FLOW(_unit) select _partIndex) select _accessSite)] select _iv) > 0)) then {
                 private _fluidFlowRate = 1;
     
                 switch (_type) do {
@@ -127,7 +128,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                 };
     
                 private _activeBagTypesBodyPart = [(_activeBagTypesIO select _partIndex),((_activeBagTypesIV select _partIndex) select _accessSite)] select _iv;
-                private _bagChange = ((_deltaT * ACEGVAR(medical,ivFlowRate) * ([_unit, _partIndex, _iv, _accessSite] call EFUNC(circulation,getIVFlowRate))) * _flowMultiplier * _fluidFlowRate) min _bagVolumeRemaining; // absolute value of the change in miliLiters
+                private _bagChange = ((_deltaT * ACEGVAR(medical,ivFlowRate) * ([_unit, _partIndex, _iv, _accessSite] call EFUNC(circulation,getIVFlowRate))) * ([_IOFlowMultiplier, _IVFlowMultiplier] select _iv) * _fluidFlowRate) min _bagVolumeRemaining; // absolute value of the change in miliLiters
                 if (_bagVolumeRemaining > 1) then {
                     _bagChange = _bagChange / _activeBagTypesBodyPart;
                 };
