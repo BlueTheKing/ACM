@@ -19,18 +19,6 @@
 
 params [["_update", false]];
 
-private _getACEConfigEntry = {
-    params ["_type", "_volume"];
-
-    private _volumeFormat = "";
-
-    if (_volume < 1000) then {
-        _volumeFormat = format ["_%1", _volume];
-    };
-
-    (format ["ACE_%1IV%2", toLower _type, _volumeFormat]);
-};
-
 private _display = uiNamespace getVariable [QGVAR(TransfusionMenu_DLG), displayNull];
 
 private _ctrlBagPanel = _display displayCtrl IDC_TRANSFUSIONMENU_LEFTLISTPANEL;

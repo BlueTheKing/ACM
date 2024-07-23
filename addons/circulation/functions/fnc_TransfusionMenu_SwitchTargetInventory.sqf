@@ -59,7 +59,7 @@ _ctrlInventorySelectText ctrlSetText (format ["Target: %1", _text]);
 
 private _cachedItems = [ACE_player, 0] call ACEFUNC(common,uniqueItems);
 
-private _index = FLUIDS_ARRAY findIf {_x in _cachedItems};
+private _index = GVAR(Fluids_Array) findIf {_x in _cachedItems};
 
 if (_index < 0) exitWith {};
 
@@ -81,10 +81,10 @@ if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
             private _config = (configFile >> "CfgWeapons" >> _x);
             private _i = _ctrlInventoryPanel lbAdd getText (_config >> "displayName");
             _ctrlInventoryPanel lbSetPicture [_i, getText (_config >> "picture")];
-            _ctrlInventoryPanel lbSetData [_i, (format ["%1|%2",_x,FLUIDS_ARRAY_DATA select _forEachIndex])];
+            _ctrlInventoryPanel lbSetData [_i, (format ["%1|%2",_x,GVAR(Fluids_Array_Data) select _forEachIndex])];
             _ctrlInventoryPanel lbSetTooltip [_i, (format ["%1 available", _count])];
         };
-    } forEach FLUIDS_ARRAY;
+    } forEach GVAR(Fluids_Array);
 } else {
     {
         private _count = [_target, _x] call ACEFUNC(common,getCountOfItem);
@@ -93,8 +93,8 @@ if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
             private _config = (configFile >> "CfgWeapons" >> _x);
             private _i = _ctrlInventoryPanel lbAdd getText (_config >> "displayName");
             _ctrlInventoryPanel lbSetPicture [_i, getText (_config >> "picture")];
-            _ctrlInventoryPanel lbSetData [_i, (format ["%1|%2",_x,FLUIDS_ARRAY_DATA select _forEachIndex])];
+            _ctrlInventoryPanel lbSetData [_i, (format ["%1|%2",_x,GVAR(Fluids_Array_Data) select _forEachIndex])];
             _ctrlInventoryPanel lbSetTooltip [_i, (format ["%1 available", _count])];
         };
-    } forEach FLUIDS_ARRAY;
+    } forEach GVAR(Fluids_Array);
 };

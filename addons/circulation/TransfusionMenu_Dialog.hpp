@@ -229,6 +229,7 @@ class GVAR(TransfusionMenu_Dialog) {
             colorBackground[] = {0,0,0,0.1};
             colorSelectBackground[] = {0.7,0.7,0.7,1};
             colorSelectBackground2[] = {0.7,0.7,0.7,1};
+            sizeEx = QUOTE(GUI_GRID_H * 0.9);
             class Items {};
         };
         class ToggleIV: RscButtonMenu {

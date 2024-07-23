@@ -39,6 +39,6 @@ if (_isACE) exitWith {
 
 switch (_type) do {
     case "Blood": {
-        format ["%1%2_%3_%4", _prefix, _type, ([_bloodType, 2] call FUNC(convertBloodType)), _volume];
+        format ["%1%2_%3_%4", _prefix, "BloodBag", ([_bloodType, 2] call FUNC(convertBloodType)), _volume];
     };
 };
