@@ -33,6 +33,8 @@
 #define ACEPATHTOF(component,path) \z\ace\addons\component\path
 #define QACEPATHTOF(component,path) QUOTE(ACEPATHTOF(component,path))
 
+#define DACEFUNC(module,var1) TRIPLES(module,fnc,var1)
+
 #undef GETVAR
 #define GETVAR(var1,var2,var3) (var1 GETVAR_SYS(var2,var3))
 

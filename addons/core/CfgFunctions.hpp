@@ -1,4 +1,15 @@
 class CfgFunctions {
+    class overwrite_interact_menu {
+        tag = "ace_interact_menu";
+        class ace_interact_menu {
+            class compileMenuSelfAction { // Lying state exception
+                file = QPATHTOF(overrides\fnc_compileMenuSelfAction.sqf);
+            };
+            class keyDown { // Lying state exception
+                file = QPATHTOF(overrides\fnc_keyDown.sqf);
+            };
+        };
+    };
     class overwrite_medical_vitals {
         tag = "ace_medical_vitals";
         class ace_medical_vitals {
