@@ -32,8 +32,6 @@ private _patient = GVAR(TransfusionMenu_Target);
 
 private _vehicle = objectParent _medic;
 
-private _inVehicle = !isNull _vehicle;
-
 private _target = [_medic, _patient, _vehicle] select GVAR(TransfusionMenu_Selected_Inventory);
 
 if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
@@ -42,13 +40,10 @@ if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
     _target removeItem _itemClassname;
 };
 
-if (stance _medic in ["STAND","CROUCH"]) then {
-    _medic call ACEFUNC(common,goKneeling);
-};
+private _itemClassNameString = getText (configFile >> "CfgWeapons" >> _itemClassName >> "displayName");
 
-[5, [_medic, _patient, _target, _itemClassname, _actionClassname, _inVehicle], {
-    params ["_args"];
-    _args params ["_medic", "_patient", "_target", "_itemClassname", "_actionClassname"];
+[[_medic, _patient, _target, _itemClassname, _actionClassname, _vehicle], {
+    params ["_medic", "_patient", "_target", "_itemClassname", "_actionClassname"];
     
     [_medic, _patient, GVAR(TransfusionMenu_Selected_BodyPart), _actionClassname, objNull, _itemClassname, GVAR(TransfusionMenu_SelectIV), GVAR(TransfusionMenu_Selected_AccessSite)] call ACEFUNC(medical_treatment,ivBag);
     closeDialog 0;
@@ -59,8 +54,7 @@ if (stance _medic in ["STAND","CROUCH"]) then {
         [_medic, _patient, GVAR(TransfusionMenu_Selected_BodyPart)] call FUNC(openTransfusionMenu);
     }, [_medic, _patient], 0.05] call CBA_fnc_waitAndExecute;
 }, {
-    params ["_args"];
-    _args params ["_medic", "_patient", "_target", "_itemClassname"];
+    params ["_medic", "_patient", "_target", "_itemClassname", "", "_vehicle"];
 
     if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
         _vehicle addItemCargoGlobal [_itemClassname, 1];
@@ -70,15 +64,4 @@ if (stance _medic in ["STAND","CROUCH"]) then {
     closeDialog 0;
     
     [_medic, _patient, GVAR(TransfusionMenu_Selected_BodyPart)] call FUNC(openTransfusionMenu);
-}, format ["Connecting fluid bag..."], 
-{
-    params ["_args"];
-    _args params ["_medic", "_patient", "_target", "_itemClassname", "_actionClassname", "_inVehicle"];
-
-    private _patientCondition = !(_patient isEqualTo objNull);
-    private _medicCondition = ((alive _medic) && !(IS_UNCONSCIOUS(_medic)) && !(_medic isEqualTo objNull));
-    private _vehicleCondition = (objectParent _medic isEqualTo objectParent _patient);
-    private _distanceCondition = (_patient distance2D _medic <= ACEGVAR(medical_gui,maxDistance));
-
-    (_patientCondition && _medicCondition && ((_inVehicle && _vehicleCondition) || (!_inVehicle && _distanceCondition)));
-}] call ACEFUNC(common,progressBar);
+}, (format ["Connecting %1...", _itemClassNameString]), 5] call EFUNC(core,progressBarAction);

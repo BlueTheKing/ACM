@@ -71,7 +71,7 @@ class GVAR(TransfusionMenu_Dialog) {
             size = 0;
             text = QPATHTOEF(gui,ui\body_background.paa);
         };
-        class SelectionRemainingText: PatientName {
+        /*class SelectionRemainingText: PatientName {
             idc = -1;
             style = 0;
             x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 7.7));
@@ -80,7 +80,7 @@ class GVAR(TransfusionMenu_Dialog) {
             h = QUOTE(safezoneH / 40);
             text = "Remaining: 1000ml";
             sizeEx = QUOTE(GUI_GRID_H * 0.65);
-        };
+        };*/
         class BodyBackground_IO_Torso: BodyBackground {
             idc = IDC_TRANSFUSIONMENU_BG_IO_TORSO;
             text = QPATHTOEF(gui,data\body_image\torso_fast_io.paa);
@@ -229,19 +229,7 @@ class GVAR(TransfusionMenu_Dialog) {
             colorBackground[] = {0,0,0,0.1};
             colorSelectBackground[] = {0.7,0.7,0.7,1};
             colorSelectBackground2[] = {0.7,0.7,0.7,1};
-            class Items
-            {
-                class Item0
-                {
-                    text = "Saline (500ml)";
-                    picture = QACEPATHTOF(medical_treatment,ui\salineiv_ca.paa);
-                };
-                class Item1
-                {
-                    text = "Blood O- (1000ml)";
-                    picture = QACEPATHTOF(medical_treatment,ui\bloodiv_ca.paa);
-                };
-            };
+            class Items {};
         };
         class ToggleIV: RscButtonMenu {
             idc = -1;
@@ -277,7 +265,7 @@ class GVAR(TransfusionMenu_Dialog) {
             colorBackgroundActive[] = {0,0,0,1};
             colorFocused[] = {0,0,0,1};
             colorBorder[] = {0,0,0,0};
-            idc = -1;
+            idc = IDC_TRANSFUSIONMENU_BUTTON_STOPIV;
             style = ST_CENTER;
             x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 4.35));
             y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 5.1));
@@ -286,28 +274,29 @@ class GVAR(TransfusionMenu_Dialog) {
             shadow = 0;
             font = "RobotoCondensed";
             sizeEx = QUOTE(GUI_GRID_H * 0.9);
-            action = "";
+            action = QUOTE(call FUNC(TransfusionMenu_ToggleIVFlow));
             tooltip = "Stop fluid transfusion on selected IV/IO";
         };
         class MoveBagButton: StopTransfusionButton {
             text = "Move";
-            idc = -1;
+            idc = IDC_TRANSFUSIONMENU_BUTTON_MOVEBAG;
             x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 7.8));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 7.5));
+            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 6));
+            w = QUOTE(safezoneW / 22);
             action = "";
             tooltip = "Move fluid bag from IV";
         };
         class RemoveBagButton: MoveBagButton {
             text = "Remove";
-            idc = -1;
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 10));
-            action = "";
+            idc = IDC_TRANSFUSIONMENU_BUTTON_REMOVEBAG;
+            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 7.5));
+            action = QUOTE(call FUNC(TransfusionMenu_RemoveBag));
             tooltip = "Remove fluid bag";
         };
         /*class InfuseBagButton: MoveBagButton {
             text = "Infuse";
             idc = -1;
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 14.8));
+            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 10));
             action = "";
             tooltip = "Infuse medication into fluid bag";
         };*/
@@ -316,7 +305,6 @@ class GVAR(TransfusionMenu_Dialog) {
         {
             idc = IDC_TRANSFUSIONMENU_RIGHTLISTPANEL;
             x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 7.5));
-            class Items {};
         };
         class SwitchTargetInventory: ToggleIV {
             idc = -1;

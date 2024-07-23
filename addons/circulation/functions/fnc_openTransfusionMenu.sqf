@@ -38,6 +38,9 @@ GVAR(TransfusionMenu_CloseID) = [_medicalMenuKeybind, [false, false, false], { /
 
 GVAR(TransfusionMenu_Target) = _patient;
 
+GVAR(TransfusionMenu_Selection_IVBags_LastUpdate) = CBA_missionTime;
+GVAR(TransfusionMenu_Selection_IVBags) = [];
+
 GVAR(TransfusionMenu_Selected_Inventory) = -1;
 
 GVAR(TransfusionMenu_Selected_BodyPart) = toLowerANSI _bodyPart;
@@ -64,6 +67,7 @@ private _display = uiNamespace getVariable [QGVAR(TransfusionMenu_DLG), displayN
 
 call FUNC(TransfusionMenu_UpdateSelection);
 call FUNC(TransfusionMenu_SwitchTargetInventory);
+[false] call FUNC(TransfusionMenu_UpdateBagList);
 
 private _ctrlPatientName = _display displayCtrl IDC_TRANSFUSIONMENU_PATIENTNAME;
 
@@ -161,4 +165,23 @@ private _inVehicle = !(isNull objectParent ACE_player);
             _x ctrlSetTextColor [0.2, 0.65, 0.2, 1];
         };
     } forEach _IOCtrlArray;
+
+    private _ctrlStopTransfusionButton = _display displayCtrl IDC_TRANSFUSIONMENU_BUTTON_STOPIV;
+
+    private _siteFlowRate = [(GET_IO_FLOW(_patient) select _partIndex), ((GET_IV_FLOW(_patient) select _partIndex) select GVAR(TransfusionMenu_Selected_AccessSite))] select GVAR(TransfusionMenu_SelectIV);
+
+    private _typeString = ["IO","IV"] select GVAR(TransfusionMenu_SelectIV);
+
+    if (_siteFlowRate > 0) then {
+        _ctrlStopTransfusionButton ctrlSetText (format ["Stop %1 Transfusion", _typeString]);
+        _ctrlStopTransfusionButton ctrlSetTooltip (format ["Stop fluid transfusion on selected %1", _typeString]);
+    } else {
+        _ctrlStopTransfusionButton ctrlSetText (format ["Start %1 Transfusion", _typeString]);
+        _ctrlStopTransfusionButton ctrlSetTooltip (format ["Start fluid transfusion on selected %1", _typeString]);
+    };
+
+    if ((GVAR(TransfusionMenu_Selection_IVBags_LastUpdate) + 1) < CBA_missionTime) then {
+        GVAR(TransfusionMenu_Selection_IVBags_LastUpdate) = CBA_missionTime;
+        [true] call FUNC(TransfusionMenu_UpdateBagList);
+    };
 }, 0, [_display, ACE_player, GVAR(TransfusionMenu_Target), _inVehicle]] call CBA_fnc_addPerFrameHandler;

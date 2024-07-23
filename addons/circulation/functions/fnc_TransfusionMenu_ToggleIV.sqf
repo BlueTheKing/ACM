@@ -18,7 +18,9 @@
  */
 
 if (GVAR(TransfusionMenu_Selected_BodyPart) == "body" && !(GVAR(TransfusionMenu_SelectIV))) exitWith {};
+if ((GVAR(TransfusionMenu_SelectIV) && !([GVAR(TransfusionMenu_Target), GVAR(TransfusionMenu_Selected_BodyPart), 0] call FUNC(hasIO))) ||(!(GVAR(TransfusionMenu_SelectIV)) && !([GVAR(TransfusionMenu_Target), GVAR(TransfusionMenu_Selected_BodyPart), 0] call FUNC(hasIV)))) exitWith {};
 
 GVAR(TransfusionMenu_SelectIV) = !GVAR(TransfusionMenu_SelectIV);
 
 call FUNC(TransfusionMenu_UpdateSelection);
+[false] call FUNC(TransfusionMenu_UpdateBagList);

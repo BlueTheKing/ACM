@@ -52,3 +52,4 @@ if (GVAR(TransfusionMenu_SelectIV)) then {
 };
 
 call FUNC(TransfusionMenu_UpdateSelection);
+[false] call FUNC(TransfusionMenu_UpdateBagList);

@@ -50,29 +50,20 @@ if (_type == 0) then {
         _x params ["_bagType", "_volume", "_accessType", "_bagAccessSite", "_bagIV", "_bloodType"];
         
         if (_bagIV == _iv && _bagAccessSite == _accessSite) then {
-            private _returnAmount = 500;
+            private _returnAmount = 1000;
 
-            if (_volume < 500) then {
-                if (_volume < 250) then {
-                    _returnAmount = 0;
-                } else {
-                    _returnAmount = 250;
+            if (_volume < 1000) then {
+                if (_volume < 500) then {
+                    if (_volume < 250) then {
+                        _returnAmount = 0;
+                    } else {
+                        _returnAmount = 250;
+                    };
                 };
             };
 
             if (_returnAmount > 0) then {
-                private _itemClassname = switch (_type) do {
-                    case "Blood": {
-                        format ["ACM_BloodBag_%1_%2", ([_bloodType, 2] call FUNC(convertBloodType)), _returnAmount];
-                    };
-                    case "Saline": {
-                        format ["ACE_SalineIV_%1", _returnAmount];
-                    };
-                    default {
-                        format ["ACE_PlasmaIV_%1", _returnAmount];
-                    };
-                };
-
+                private _itemClassName = [([true, _type, _targetVolume] call FUNC(getFluidBagConfigName)), ([false, _type, _targetVolume, _bloodType] call FUNC(getFluidBagConfigName))] select (_type == "Blood");
                 [_medic, _itemClassname] call ACEFUNC(common,addToInventory);
             };
             _ivBagsBodyPart deleteAt _forEachIndex;
