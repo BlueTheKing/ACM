@@ -24,7 +24,9 @@ if (ACE_player != _unit) exitWith {};
 GVAR(Carrier) = _carrier;
 
 _unit setVariable [QGVAR(CancelCarryingActionID), [0xF1, [false, false, false], {
-    [QGVAR(cancelCarryLocal), [GVAR(Carrier), (GVAR(Carrier) getVariable QACEGVAR(dragging,carriedObject))], GVAR(Carrier)] call CBA_fnc_targetEvent;
+    private _patient = GVAR(Carrier) getVariable QACEGVAR(dragging,carriedObject);
+    [QGVAR(cancelCarryLocal), [GVAR(Carrier), _patient], GVAR(Carrier)] call CBA_fnc_targetEvent;
+    [_patient] call FUNC(getUp);
 }, "keyup", "", false, 0] call CBA_fnc_addKeyHandler];
 
 [{

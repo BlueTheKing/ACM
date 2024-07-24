@@ -28,11 +28,11 @@ _unit setVariable [QGVAR(GetUpActionID), [0xF0, [false, false, false], {
 [{
     params ["_unit"];
 
-    !(_unit getVariable [QGVAR(Lying_State), false]) || (animationState _unit == "AinjPfalMstpSnonWnonDf_carried_dead");
+    !(_unit getVariable [QGVAR(Lying_State), false]) || IS_UNCONSCIOUS(_unit) || (animationState _unit == "AinjPfalMstpSnonWnonDf_carried_dead");
 }, {
     params ["_unit"];
 
-    if !(animationState _unit == "AinjPfalMstpSnonWnonDf_carried_dead") then {
+    if (!(animationState _unit == "AinjPfalMstpSnonWnonDf_carried_dead") || IS_UNCONSCIOUS(_unit)) then {
         [] call ACEFUNC(interaction,hideMouseHint);
     };
     [_unit getVariable QGVAR(GetUpActionID), "keyup"] call CBA_fnc_removeKeyHandler;

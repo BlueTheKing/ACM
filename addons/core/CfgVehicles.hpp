@@ -164,6 +164,14 @@ class CfgVehicles {
             };
         };
         class ACE_SelfActions {
+            class ACM_Action_GetUp {
+                displayName = "Get Up";
+                icon = "";
+                condition = QUOTE(_player getVariable [ARR_2(QQGVAR(Lying_State),false)]);
+                statement = QUOTE([_player] call FUNC(getUp));
+                exceptions[] = {"isNotInside","isNotInLyingState"};
+                showDisabled = 0;
+            };
             class ACM_Equipment {
                 displayName = "Medical Equipment";
                 icon = QPATHTOEF(main,logo_empty.paa);
@@ -227,14 +235,6 @@ class CfgVehicles {
                         ACTION_SYRINGE_IM_PREPARE(Lidocaine);
                     };
                 };
-            };
-            class ACM_Action_GetUp {
-                displayName = "Get Up";
-                icon = "";
-                condition = QUOTE(_player getVariable [ARR_2(QQGVAR(Lying_State),false)]);
-                statement = QUOTE([_player] call FUNC(getUp));
-                exceptions[] = {"isNotInside","isNotInLyingState"};
-                showDisabled = 0;
             };
         };
     };

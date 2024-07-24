@@ -26,4 +26,5 @@ class CfgPatches {
 #include "ACE_Medical_Treatment_Actions.hpp"
 #include "CfgMoves.hpp"
 #include "CfgSounds.hpp"
+#include "CfgReplacementItems.hpp"
 #include "CfgVehicles.hpp"
