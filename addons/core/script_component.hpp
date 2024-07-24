@@ -14,6 +14,10 @@
 
 #include "\x\ACM\addons\main\script_macros.hpp"
 
+// CfgReplacementItems.hpp
+#define TYPE_FIRST_AID_KIT 401
+#define TYPE_MEDIKIT 619
+
 #define SM_QACEFUNC(module,function) QUOTE(_this call ACEFUNC(module,function)) // statemachine stuff
 
 #define CBA_QEGVAR(module,var)     QUOTE(TRIPLES(CBA,module,var))
