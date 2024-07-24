@@ -6,7 +6,6 @@ class ACM_BloodBag_O_1000: ACE_bloodIV {
     author = "Blue";
     displayName = "Blood Bag O+ (1000ml)";
     descriptionShort = "Used to replenish lost blood volume";
-    descriptionUse = "Blood bag used to replenish lost blood volume";
 };
 
 #define BLOODBAG_ENTRY(type,typeS,amount) \
@@ -30,7 +29,6 @@ class ACM_BloodBag_O_500: ACE_bloodIV_500 {
     author = "Blue";
     displayName = "Blood Bag O+ (500ml)";
     descriptionShort = "Used to replenish lost blood volume";
-    descriptionUse = "Blood bag used to replenish lost blood volume";
 };
 
 BLOODBAG_ENTRY(ON,O-,500);
@@ -49,7 +47,6 @@ class ACM_BloodBag_O_250: ACE_bloodIV_250 {
     author = "Blue";
     displayName = "Blood Bag O+ (250ml)";
     descriptionShort = "Used to replenish lost blood volume";
-    descriptionUse = "Blood bag used to replenish lost blood volume";
 };
 
 BLOODBAG_ENTRY(ON,O-,250);

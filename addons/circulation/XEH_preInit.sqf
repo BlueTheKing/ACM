@@ -156,9 +156,18 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(treatmentTimeIO_EZ),
+    "SLIDER",
+    "EZ-IO Time",
+    [ACM_SETTINGS_CATEGORY, "IV/IO"],
+    [1, 30, 4, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(treatmentTimeIO_FAST1),
     "SLIDER",
-    "IO Time",
+    "FAST1 IO Time",
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
     [1, 30, 4, 1],
     true

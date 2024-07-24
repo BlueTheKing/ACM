@@ -7,6 +7,12 @@ class RscButtonMenu;
 class RscControlsGroup;
 class RscControlsGroupNoScrollbars;
 
+#define BODYIMAGE_IV(bodypart,site,sidc) \
+    class TRIPLES(bodypart,IV,site): Torso_IO { \
+        idc = sidc; \
+        text = QPATHTOF(data\body_image\##bodypart##_iv_##site##.paa); \
+    }
+
 class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
     class controls {
         class Background;
@@ -78,7 +84,7 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
         class Torso_IO: Torso_ChestSeal {
             idc = IDC_BODY_TORSO_IO;
             text = QPATHTOF(data\body_image\torso_fast_io.paa);
-            colorText[] = {0.2, 0.65, 0.2, 1};
+            colorText[] = COLOR_CIRCULATION;
         };
         class RightArm_PressureCuff: Torso_IO {
             idc = IDC_BODY_RIGHTARM_PRESSURECUFF;
@@ -88,22 +94,37 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             idc = IDC_BODY_LEFTARM_PRESSURECUFF;
             text = QPATHTOF(data\body_image\leftarm_aed_pressurecuff.paa);
         };
-        class RightArm_IV: Torso_IO {
-            idc = IDC_BODY_RIGHTARM_IV;
-            text = QPATHTOF(data\body_image\rightarm_iv.paa);
+        class RightArm_IO: Torso_IO {
+            idc = IDC_BODY_RIGHTARM_IO;
+            text = QPATHTOF(data\body_image\rightarm_io.paa);
         };
-        class LeftArm_IV: RightArm_IV {
-            idc = IDC_BODY_LEFTARM_IV;
-            text = QPATHTOF(data\body_image\leftarm_iv.paa);
+        class LeftArm_IO: RightArm_IO {
+            idc = IDC_BODY_LEFTARM_IO;
+            text = QPATHTOF(data\body_image\leftarm_io.paa);
         };
-        class RightLeg_IV: RightArm_IV {
-            idc = IDC_BODY_RIGHTLEG_IV;
-            text = QPATHTOF(data\body_image\rightleg_iv.paa);
+        class RightLeg_IO: RightArm_IO {
+            idc = IDC_BODY_RIGHTLEG_IO;
+            text = QPATHTOF(data\body_image\rightleg_io.paa);
         };
-        class LeftLeg_IV: RightArm_IV {
-            idc = IDC_BODY_LEFTLEG_IV;
-            text = QPATHTOF(data\body_image\leftleg_iv.paa);
+        class LeftLeg_IO: RightArm_IO {
+            idc = IDC_BODY_LEFTLEG_IO;
+            text = QPATHTOF(data\body_image\leftleg_io.paa);
         };
+        BODYIMAGE_IV(RightArm,Upper,IDC_BODY_RIGHTARM_UPPER_IV);
+        BODYIMAGE_IV(RightArm,Middle,IDC_BODY_RIGHTARM_MIDDLE_IV);
+        BODYIMAGE_IV(RightArm,Lower,IDC_BODY_RIGHTARM_LOWER_IV);
+
+        BODYIMAGE_IV(LeftArm,Upper,IDC_BODY_LEFTARM_UPPER_IV);
+        BODYIMAGE_IV(LeftArm,Middle,IDC_BODY_LEFTARM_MIDDLE_IV);
+        BODYIMAGE_IV(LeftArm,Lower,IDC_BODY_LEFTARM_LOWER_IV);
+
+        BODYIMAGE_IV(RightLeg,Upper,IDC_BODY_RIGHTLEG_UPPER_IV);
+        BODYIMAGE_IV(RightLeg,Middle,IDC_BODY_RIGHTLEG_MIDDLE_IV);
+        BODYIMAGE_IV(RightLeg,Lower,IDC_BODY_RIGHTLEG_LOWER_IV);
+
+        BODYIMAGE_IV(LeftLeg,Upper,IDC_BODY_LEFTLEG_UPPER_IV);
+        BODYIMAGE_IV(LeftLeg,Middle,IDC_BODY_LEFTLEG_MIDDLE_IV);
+        BODYIMAGE_IV(LeftLeg,Lower,IDC_BODY_LEFTLEG_LOWER_IV);
     };
 };
 

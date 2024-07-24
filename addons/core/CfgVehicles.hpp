@@ -117,7 +117,8 @@ class CfgVehicles {
             ADDITEM(ACM_IV_14g,15);
             ADDITEM(ACM_Syringe_IM,5);
             ADDITEM(ACM_Syringe_IV,5);
-            ADDITEM(ACM_IO_FAST,20);
+            ADDITEM(ACM_IO_FAST,15);
+            ADDITEM(ACM_IO_EZ,15);
             ADDITEM(ACM_Vial_Epinephrine,10);
             ADDITEM(ACM_Vial_Morphine,10);
             ADDITEM(ACM_Vial_Adenosine,10);

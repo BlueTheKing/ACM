@@ -45,3 +45,19 @@ if (GVAR(Hardcore_PostCardiacArrest)) then {
         ([1, 1.4] select (_this getVariable [QGVAR(Hardcore_PostCardiacArrest), false]));
     }] call ACEFUNC(advanced_fatigue,addDutyFactor);
 };
+
+GVAR(TransfusionMenu_Selected_AccessSite) = -1;
+
+GVAR(Fluids_Array) = FLUIDS_ARRAY;
+GVAR(Fluids_Array_Data) = FLUIDS_ARRAY_DATA;
+
+// Blood Bags
+{
+    private _bloodType = _x;
+
+    {
+        private _entry = format ["BloodBag_%1_%2", _bloodType, _x];
+        GVAR(Fluids_Array_Data) pushback _entry;
+        GVAR(Fluids_Array) pushback format ["ACM_%1", _entry];
+    } forEach [1000,500,250];
+} forEach ["O","ON","A","AN","B","BN","AB","ABN"];

@@ -14,6 +14,13 @@
 #define GETVAR_SYS(var1,var2) getVariable [ARR_2(QUOTE(var1),var2)]
 #define GETMVAR(var1,var2) (missionNamespace GETVAR_SYS(var1,var2))
 
+// CBA reference macros
+#define CBA_PREFIX cba
+
+#define CBA_EGVAR(module,var)       TRIPLES(CBA_PREFIX,module,var)
+
+#define CBA_FUNC(function)   TRIPLES(CBA_PREFIX,fnc,function)
+
 // ACE3 reference macros
 #define ACE_PREFIX ace
 
@@ -202,8 +209,21 @@
 
 #define ACM_IV_16G_M 1
 #define ACM_IV_14G_M 2
-#define ACM_IO_FAST1_M 3
-#define ACM_IO_EZ_M 4
+#define ACM_IO_EZ_M 3
+#define ACM_IO_FAST1_M 4
+
+#define ACM_IV_P_SITE_DEFAULT_0 [0,0,0]
+#define ACM_IV_P_SITE_DEFAULT_1 [1,1,1]
+#define ACM_IV_PLACEMENT_DEFAULT_0 [ACM_IV_P_SITE_DEFAULT_0,ACM_IV_P_SITE_DEFAULT_0,ACM_IV_P_SITE_DEFAULT_0,ACM_IV_P_SITE_DEFAULT_0,ACM_IV_P_SITE_DEFAULT_0,ACM_IV_P_SITE_DEFAULT_0]
+#define ACM_IV_PLACEMENT_DEFAULT_1 [ACM_IV_P_SITE_DEFAULT_1,ACM_IV_P_SITE_DEFAULT_1,ACM_IV_P_SITE_DEFAULT_1,ACM_IV_P_SITE_DEFAULT_1,ACM_IV_P_SITE_DEFAULT_1,ACM_IV_P_SITE_DEFAULT_1]
+#define ACM_IO_PLACEMENT_DEFAULT_0 [0,0,0,0,0,0]
+#define ACM_IO_PLACEMENT_DEFAULT_1 [1,1,1,1,1,1]
+
+#define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),ACM_IV_PLACEMENT_DEFAULT_0])
+#define GET_IO(unit) (unit getVariable [QEGVAR(circulation,IO_Placement),ACM_IO_PLACEMENT_DEFAULT_0])
+
+#define GET_IV_FLOW(unit) (unit getVariable [QEGVAR(circulation,FluidBagsFlow_IV), ACM_IV_PLACEMENT_DEFAULT_1])
+#define GET_IO_FLOW(unit) (unit getVariable [QEGVAR(circulation,FluidBagsFlow_IO), ACM_IO_PLACEMENT_DEFAULT_1])
 
 #define ACM_ROUTE_IM 0
 #define ACM_ROUTE_IV 1
@@ -212,8 +232,6 @@
 
 #define ACM_SYRINGES_IM ['ACM_Syringe_IM','ACM_Syringe_IM_Epinephrine','ACM_Syringe_IM_Morphine','ACM_Syringe_IM_Ketamine','ACM_Syringe_IM_Lidocaine']
 #define ACM_SYRINGES_IV ['ACM_Syringe_IV','ACM_Syringe_IV_Epinephrine','ACM_Syringe_IV_Morphine','ACM_Syringe_IV_Ketamine','ACM_Syringe_IV_Adenosine','ACM_Syringe_IV_Amiodarone','ACM_Syringe_IV_TXA']
-
-#define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),[0,0,0,0,0,0]])
 
 #define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
 #define HAS_PRESSURECUFF(unit,index) (GET_PRESSURECUFF(unit) select index)
@@ -239,6 +257,9 @@
 #define BLOODTYPE_COMPATIBLE_LIST_ABN [ACM_BLOODTYPE_ABN, ACM_BLOODTYPE_AN, ACM_BLOODTYPE_BN, ACM_BLOODTYPE_ON]
 #define BLOODTYPE_COMPATIBLE_LIST [BLOODTYPE_COMPATIBLE_LIST_O,BLOODTYPE_COMPATIBLE_LIST_ON,BLOODTYPE_COMPATIBLE_LIST_A,BLOODTYPE_COMPATIBLE_LIST_AN,BLOODTYPE_COMPATIBLE_LIST_B,BLOODTYPE_COMPATIBLE_LIST_BN,BLOODTYPE_COMPATIBLE_LIST_AB,BLOODTYPE_COMPATIBLE_LIST_ABN]
 
+#define FLUIDS_ARRAY ['ACE_salineIV','ACE_plasmaIV','ACE_salineIV_500','ACE_plasmaIV_500','ACE_salineIV_250','ACE_plasmaIV_250']
+#define FLUIDS_ARRAY_DATA ['salineIV','plasmaIV','salineIV_500','plasmaIV_500','salineIV_250','plasmaIV_250']
+
 // Damage
 #define VAR_WRAPPED_WOUNDS             QEGVAR(damage,WrappedWounds)
 #define GET_WRAPPED_WOUNDS(unit)       (unit getVariable [VAR_WRAPPED_WOUNDS, createHashMap])
@@ -257,6 +278,9 @@
 #define DEFAULT_SPLINT_VALUES          [0,0,0,0,0,0]
 #define VAR_SPLINTS                    QEGVAR(disability,SplintStatus)
 #define GET_SPLINTS(unit)              (unit getVariable [VAR_SPLINTS, DEFAULT_SPLINT_VALUES])
+
+// GUI
+#define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}
 
 // Misc
 #define ACM_TARGETVITALS_HR(unit) (unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 77])

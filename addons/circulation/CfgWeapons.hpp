@@ -29,7 +29,7 @@ class CfgWeapons {
         author = "Blue";
         picture = QPATHTOF(ui\IV_16g_ca.paa);
         displayName = "16g IV";
-        descriptionShort = "Used to transfuse fluids in case of blood loss";
+        descriptionShort = "Used to gain intravenous access to transfuse fluids in case of blood loss";
         descriptionUse = "Medical device used to gain vein access to transfuse fluids or medication in patients";
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -40,7 +40,7 @@ class CfgWeapons {
     class ACM_IV_14g: ACM_IV_16g {
         picture = QPATHTOF(ui\IV_14g_ca.paa);
         displayName = "14g IV";
-        descriptionShort = "Used to rapidly transfuse fluids in case of blood loss";
+        descriptionShort = "Used to gain intravenous access to rapidly transfuse fluids in case of blood loss";
         descriptionUse = "Medical device used to gain vein access to transfuse fluids or medication in patients, due to the larger diameter it allows for higher flow rates";
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.5;
@@ -50,10 +50,19 @@ class CfgWeapons {
     class ACM_IO_FAST: ACM_IV_16g {
         picture = QPATHTOF(ui\IO_FAST1_ca.paa);
         displayName = "FAST1 IO";
-        descriptionShort = "Used to transfuse fluids in case of severe injury";
+        descriptionShort = "Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the sternum";
         descriptionUse = "Needle used to rapidly gain intraosseus access through the sternum to deliver fluids or medication to critical patients";
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.3;
+        };
+    };
+
+    class ACM_IO_EZ: ACM_IV_16g {
+        picture = QPATHTOF(ui\IO_EZ_ca.paa);
+        displayName = "EZ-IO";
+        descriptionShort = "Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the extremities";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.2;
         };
     };
 

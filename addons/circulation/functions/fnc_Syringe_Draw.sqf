@@ -8,7 +8,7 @@
  * Arguments:
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
- * 2: Body Part <OBJECT>
+ * 2: Body Part <STRING>
  * 3: Is IV? <BOOL>
  * 4: Medication <STRING>
  *

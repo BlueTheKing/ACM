@@ -8,17 +8,19 @@
  * 1: Body Part <STRING>
  * 2: Treatment <STRING>
  * 3: Access Type <NUMBER>
+ * 4: Is IV? <BOOL>
+ * 5: Access Site <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, "RightArm", "BloodIV", 1] call ace_medical_treatment_fnc_ivBagLocal
+ * [player, "RightArm", "BloodIV", 1, true, 0] call ace_medical_treatment_fnc_ivBagLocal
  *
  * Public: No
  */
 
-params ["_patient", "_bodyPart", "_classname", "_accessType"];
+params ["_patient", "_bodyPart", "_classname", "_accessType", ["_iv", true], "_accessSite"];
 
 // Exit if patient has max blood volume
 private _bloodVolume = GET_BLOOD_VOLUME(_patient);
@@ -35,12 +37,18 @@ private _type = GET_STRING(_ivConfig >> "type",getText (_defaultConfig >> "type"
 private _bloodType = GET_NUMBER(_ivConfig >> "bloodtype",-1);
 
 // Add IV bag to patient's ivBags array
-private _ivBags = _patient getVariable [QACEGVAR(medical,ivBags), []];
-_ivBags pushBack [_partIndex, _type, _volume, _bloodType, _accessType];
-_patient setVariable [QACEGVAR(medical,ivBags), _ivBags, true];
+private _IVBags = _patient getVariable [QEGVAR(circulation,IV_Bags), createHashMap];
+private _IVBagsBodyPart = _IVBags getOrDefault [_bodyPart, []];
 
-[_patient] call EFUNC(circulation,updateActiveFluidBags);
+_IVBagsBodyPart pushBack [_type, _volume, _accessType, _accessSite, _iv, _bloodType, _volume]; // ["Saline", 1000, ACM_IV_16G_M, 0, false, -1, 1000]
+
+_IVBags set [_bodyPart, _IVBagsBodyPart];
+
+_patient setVariable [QEGVAR(circulation,IV_Bags), _IVBags, true];
+_patient setVariable [QEGVAR(circulation,IV_Bags_Active), true, true];
+
+[_patient, _bodyPart] call EFUNC(circulation,updateActiveFluidBags);
 
 if (GET_BLOODTYPE(_patient) == -1) then {
-	[_patient] call EFUNC(circulation,generateBloodType);
+    [_patient] call EFUNC(circulation,generateBloodType);
 };

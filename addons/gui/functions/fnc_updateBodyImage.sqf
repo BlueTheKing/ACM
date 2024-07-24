@@ -71,30 +71,43 @@ if (HAS_PULSEOX(_target,1)) then {
 };
 
 // Circulation
-private _ctrlIVLeftArm = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_IV;
-private _ctrlIVRightArm = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_IV;
-private _ctrlIVLeftLeg = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTLEG_IV;
-private _ctrlIVRightLeg = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTLEG_IV;
-private _ctrlIO = _ctrlGroup controlsGroupCtrl IDC_BODY_TORSO_IO;
+private _ctrlIVLeftArmUpper = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_UPPER_IV;
+private _ctrlIVLeftArmMiddle = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_MIDDLE_IV;
+private _ctrlIVLeftArmLower = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_LOWER_IV;
+private _ctrlIVRightArmUpper = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_UPPER_IV;
+private _ctrlIVRightArmMiddle = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_MIDDLE_IV;
+private _ctrlIVRightArmLower = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_LOWER_IV;
+
+private _ctrlIVLeftLegUpper = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTLEG_UPPER_IV;
+private _ctrlIVLeftLegMiddle = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTLEG_MIDDLE_IV;
+private _ctrlIVLeftLegLower = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTLEG_LOWER_IV;
+private _ctrlIVRightLegUpper = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTLEG_UPPER_IV;
+private _ctrlIVRightLegMiddle = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTLEG_MIDDLE_IV;
+private _ctrlIVRightLegLower = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTLEG_LOWER_IV;
 
 private _IVArray = GET_IV(_target);
 
 {
-    switch (_IVArray select (_forEachIndex + 2)) do {
-        case 0: {
-            _x ctrlShow false;
-        };
-        default {
-            _x ctrlShow true;
-        };
-    };
-} forEach [_ctrlIVLeftArm, _ctrlIVRightArm, _ctrlIVLeftLeg, _ctrlIVRightLeg];
+    _x params ["_xUpper", "_xMiddle", "_xLower"];
 
-if ((_IVArray select 1) > 0) then {
-    _ctrlIO ctrlShow true;
-} else {
-    _ctrlIO ctrlShow false;
-};
+    (_IVArray select (_forEachIndex + 2)) params ["_IVUpper", "_IVMiddle", "_IVLower"];
+
+    _xUpper ctrlShow (_IVUpper > 0);
+    _xMiddle ctrlShow (_IVMiddle > 0);
+    _xLower ctrlShow (_IVLower > 0);
+} forEach [[_ctrlIVLeftArmUpper, _ctrlIVLeftArmMiddle, _ctrlIVLeftArmLower], [_ctrlIVRightArmUpper, _ctrlIVRightArmMiddle, _ctrlIVRightArmLower], [_ctrlIVLeftLegUpper, _ctrlIVLeftLegMiddle, _ctrlIVLeftLegLower], [_ctrlIVRightLegUpper, _ctrlIVRightLegMiddle, _ctrlIVRightLegLower]];
+
+private _ctrlIOLeftArm = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_IO;
+private _ctrlIORightArm = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_IO;
+private _ctrlIOLeftLeg = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTLEG_IO;
+private _ctrlIORightLeg = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTLEG_IO;
+private _ctrlIOTorso = _ctrlGroup controlsGroupCtrl IDC_BODY_TORSO_IO;
+
+private _IOArray = GET_IO(_target);
+
+{
+    _x ctrlShow ((_IOArray select (_forEachIndex + 1)) > 0);
+} forEach [_ctrlIOTorso, _ctrlIOLeftArm, _ctrlIORightArm, _ctrlIOLeftLeg, _ctrlIORightLeg];
 
 private _ctrlPressureCuffRight = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_PRESSURECUFF;
 private _ctrlPressureCuffLeft = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_PRESSURECUFF;
