@@ -22,7 +22,7 @@
 params ["_medic", "_patient", "_type"];
 
 private _hint = format ["%1<br />%2", LLSTRING(Suction_Finished), LLSTRING(Suction_AirwayIsClear)];
-private _device = ([LSTRING(SuctionBag_Short), LSTRING(ACCUVAC)] select _type);
+private _device = ([LLSTRING(SuctionBag_Short), LLSTRING(ACCUVAC)] select _type);
 
 if (((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient getVariable [QGVAR(AirwayObstructionBlood_State), 0])) > 0) then {
     [QGVAR(handleSuctionLocal), [_patient], _patient] call CBA_fnc_targetEvent;

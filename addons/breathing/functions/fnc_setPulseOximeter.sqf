@@ -23,16 +23,13 @@ params ["_medic", "_patient", "_bodyPart", ["_state", true]];
 private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
 if (_state && HAS_PULSEOX(_patient,(_partIndex - 2))) exitWith {
-    [(format ["Patient already has pulse oximeter on the %1", toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [(format [LSTRING(PulseOximeter_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
-private _hint = "placed";
-
 if !(_state) then {
-    _hint = "removed";
     [_medic, "ACM_PulseOximeter"] call ACEFUNC(common,addToInventory);
 };
 
-[_patient, "activity", "%1 %2 Pulse Oximeter", [[_medic, false, true] call ACEFUNC(common,getName), _hint]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", ([LSTRING(PulseOximeter_ActionLog_Removed), LSTRING(PulseOximeter_ActionLog_Placed)] select _state), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
 [QGVAR(setPulseOximeterLocal), [_medic, _patient, _bodyPart, _state], _patient] call CBA_fnc_targetEvent;

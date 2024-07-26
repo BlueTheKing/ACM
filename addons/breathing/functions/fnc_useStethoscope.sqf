@@ -19,7 +19,7 @@
 
 params ["_medic", "_patient"];
 
-[_patient, "activity", "%1 inspected chest with Stethoscope", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", LSTRING(Stethoscope_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
 [[_medic, _patient, _bodyPart], { // On Start
     params ["_medic", "_patient", "_bodyPart"];
@@ -40,7 +40,7 @@ params ["_medic", "_patient"];
 
     private _display = uiNamespace getVariable [QGVAR(Stethoscope_DLG), displayNull];
     private _ctrlText = _display displayCtrl IDC_STETHOSCOPE_TEXT; 
-    _ctrlText ctrlSetText format ["%1 (Torso)", [_patient, false, true] call ACEFUNC(common,getName)];
+    _ctrlText ctrlSetText format ["%1 (%2)", [_patient, false, true] call ACEFUNC(common,getName), ACELLSTRING(medical_gui,Torso)];
 }, { // On cancel
     params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
 
@@ -55,7 +55,7 @@ params ["_medic", "_patient"];
         [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
     };
 
-    ["Stopped using stethoscope", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(Stethoscope_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
     call ACEFUNC(hearing,updateHearingProtection);
 }, { // PerFrame
@@ -90,7 +90,7 @@ params ["_medic", "_patient"];
 
         (ctrlPosition _ctrlBell) params ["","","_bellW","_bellH"];
 
-        _ctrlBell ctrlSetTooltip "Place me";
+        _ctrlBell ctrlSetTooltip LLSTRING(Stethoscope_PlaceBell);
         
         _ctrlBell ctrlSetPosition [_mouseX - (_bellW / 2), _mouseY - (_bellH / 2), _bellW, _bellH];
         _ctrlBell ctrlCommit 0;
@@ -108,7 +108,7 @@ params ["_medic", "_patient"];
         stopSound GVAR(Stethoscope_BreathSoundID);
         stopSound GVAR(Stethoscope_BeatSoundID);
     } else {
-        _ctrlBell ctrlSetTooltip "Move me";
+        _ctrlBell ctrlSetTooltip LLSTRING(Stethoscope_MoveBell);
 
         private _HR = GET_HEART_RATE(_patient);
         private _RR = GET_RESPIRATION_RATE(_patient);

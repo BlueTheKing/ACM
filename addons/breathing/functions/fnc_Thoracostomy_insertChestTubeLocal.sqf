@@ -18,6 +18,6 @@
 
 params ["_medic", "_patient"];
 
-[QACEGVAR(common,displayTextStructured), ["Chest Tube inserted", 1.5, _medic], _medic] call CBA_fnc_targetEvent;
+[QACEGVAR(common,displayTextStructured), [LSTRING(ThoracostomyChestTube_Complete), 1.5, _medic], _medic] call CBA_fnc_targetEvent;
 
 _patient setVariable [QGVAR(Thoracostomy_State), 2, true];

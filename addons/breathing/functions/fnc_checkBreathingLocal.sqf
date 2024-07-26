@@ -18,8 +18,8 @@
 
 params ["_medic", "_patient"];
 
-private _hint = "Patient is breathing normally";
-private _hintLog = "Normal";
+private _hint = LLSTRING(CheckBreathing_Normal);
+private _hintLog = LLSTRING(CheckBreathing_Normal_Short);
 
 private _respirationRate = GET_RESPIRATION_RATE(_patient);
 
@@ -38,33 +38,33 @@ private _airwaySecure = (_patient getVariable [QEGVAR(airway,AirwayItem_Oral), "
 
 switch (true) do {
     case (_respiratoryArrest || _airwayBlocked): {
-        _hint = "Patient is not breathing";
-        _hintLog = "None";
+        _hint = LLSTRING(CheckBreathing_None_Short);
+        _hintLog = LLSTRING(CheckBreathing_None_Short);
     };
     case (_pneumothorax || _airwayCollapsed && !_airwaySecure || !_airwayReflexIntact && !_airwayAdjunct): {
-        _hint = "Patient breathing is shallow";
-        _hintLog = "Shallow";
+        _hint = LLSTRING(CheckBreathing_Shallow_Short);
+        _hintLog = LLSTRING(CheckBreathing_Shallow_Short);
 
         if (_respirationRate < 15.9) then {
-            _hint = "Patient breathing is slow and shallow";
-            _hintLog = "Slow and shallow";
+            _hint = LLSTRING(CheckBreathing_ShallowSlow_Short);
+            _hintLog = LLSTRING(CheckBreathing_ShallowSlow_Short);
         } else {
             if (_respirationRate > 22) then {
-                _hint = "Patient breathing is rapid and shallow";
-                _hintLog = "Rapid and shallow";
+                _hint = LLSTRING(CheckBreathing_ShallowRapid_Short);
+                _hintLog = LLSTRING(CheckBreathing_ShallowRapid_Short);
             };
         };
     };
     case (_respirationRate < 15.9): {
-        _hint = "Patient breathing is slow";
-        _hintLog = "Slow";
+        _hint = LLSTRING(CheckBreathing_Slow);
+        _hintLog = LLSTRING(CheckBreathing_Slow_Short);
     };
     case (_respirationRate > 22): {
-        _hint = "Patient breathing is rapid";
-        _hintLog = "Rapid";
+        _hint = LLSTRING(CheckBreathing_Rapid);
+        _hintLog = LLSTRING(CheckBreathing_Rapid_Short);
     };
     default {};
 };
 
 [QACEGVAR(common,displayTextStructured), [_hint, 1.5, _medic], _medic] call CBA_fnc_targetEvent;
-[_patient, "quick_view", "%1 checked breathing: %2", [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "quick_view", LSTRING(CheckBreathing_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);

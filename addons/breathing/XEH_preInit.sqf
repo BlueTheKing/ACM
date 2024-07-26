@@ -13,7 +13,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(altitudeAffectOxygen),
     "CHECKBOX",
-    ["Altitude Affect Oxygen", "Sets whether oxygen saturation calculations are affected by altitude of terrain"],
+    [LLSTRING(SETTING_AltitudeAffectOxygen), LLSTRING(SETTING_AltitudeAffectOxygen_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
     [false],
     true
@@ -24,7 +24,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(pneumothoraxEnabled),
     "CHECKBOX",
-    "Pneumothorax Enabled",
+    LLSTRING(SETTING_PneumothoraxEnabled),
     [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
     [true],
     true
@@ -33,7 +33,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(chestInjuryChance),
     "SLIDER",
-    ["Chest Injury Severity Multiplier", "Chance that a chest injury causes pneumothorax"],
+    [LLSTRING(SETTING_ChestInjuryChance), LLSTRING(SETTING_ChestInjuryChance_Desc)],
     [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
     [0, 2, 1, 1],
     true
@@ -42,7 +42,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(pneumothoraxDeteriorateChance),
     "SLIDER",
-    ["Pneumothorax Deterioration Multiplier", "Chance that pneumothorax will deteriorate"],
+    [LLSTRING(SETTING_PneumothoraxDeteriorateChance), LLSTRING(SETTING_PneumothoraxDeteriorateChance_Desc)],
     [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
     [0, 2, 1, 1],
     true
@@ -51,7 +51,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(Hardcore_ChestInjury),
     "CHECKBOX",
-    ["[HARDCORE] Chest Injuries", "[HARDCORE] Sets whether Tension Pneumothorax should require further treatment to fully heal"],
+    [LLSTRING(SETTING_Hardcore_ChestInjury), LLSTRING(SETTING_Hardcore_ChestInjury_Desc)],
     [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
     [false],
     true
@@ -60,7 +60,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(Hardcore_HemothoraxBleeding),
     "CHECKBOX",
-    ["[HARDCORE] Hemothorax Bleeding", "[HARDCORE] Sets whether Hemothorax should require further treatment to fully stop internal bleeding"],
+    [LLSTRING(SETTING_Hardcore_HemothoraxBleeding), LLSTRING(SETTING_Hardcore_HemothoraxBleeding_Desc)],
     [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
     [false],
     true
@@ -71,7 +71,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(allowInspectChest),
     "LIST",
-    ["Allow Inspect Chest", "Training level required to Inspect Chest"],
+    [LLSTRING(SETTING_Allow_InspectChest), LLSTRING(SETTING_Allow_InspectChest_Desc)],
     [ACM_SETTINGS_CATEGORY, "Diagnosis"],
     [SETTING_DROPDOWN_SKILL, 0],
     true
@@ -80,7 +80,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(treatmentTimeInspectChest),
     "SLIDER",
-    "Inspect Chest Time",
+    [LLSTRING(SETTING_TreatmentTime_InspectChest), LLSTRING(SETTING_TreatmentTime_InspectChest_Desc)],
     [ACM_SETTINGS_CATEGORY, "Diagnosis"],
     [1, 30, 6, 1],
     true
@@ -91,7 +91,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(allowNCD),
     "LIST",
-    ["Allow NCD Kit", "Training level required to use NCD Kit"],
+    [LLSTRING(SETTING_Allow_NCD), LLSTRING(SETTING_Allow_NCD_Desc)],
     [ACM_SETTINGS_CATEGORY, "Treatment"],
     [SETTING_DROPDOWN_SKILL, 1],
     true
@@ -100,7 +100,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(allowThoracostomy),
     "LIST",
-    ["Allow Thoracostomy", "Training level required to perform Thoracostomy"],
+    [LLSTRING(SETTING_Allow_Thoracostomy), LLSTRING(SETTING_Allow_Thoracostomy_Desc)],
     [ACM_SETTINGS_CATEGORY, "Treatment"],
     [SETTING_DROPDOWN_SKILL, 1],
     true
@@ -109,7 +109,7 @@ call FUNC(generatePTXMap);
 [
     QGVAR(locationThoracostomy),
     "LIST",
-    ["Locations Thoracostomy", "Sets locations at which Thoracostomy can be performed"],
+    [LLSTRING(SETTING_Location_Thoracostomy), LLSTRING(SETTING_Location_Thoracostomy_Desc)],
     [ACM_SETTINGS_CATEGORY, "Treatment"],
     [SETTING_DROPDOWN_LOCATION, 3],
     true

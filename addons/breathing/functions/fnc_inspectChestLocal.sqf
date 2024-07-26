@@ -18,8 +18,8 @@
 
 params ["_medic", "_patient"];
 
-private _hint = "Chest rise and fall observed";
-private _hintLog = "Chest rise and fall observed";
+private _hint = LLSTRING(InspectChest_Normal);
+private _hintLog = LLSTRING(InspectChest_Normal);
 private _hintHeight = 1.5;
 
 private _pneumothorax = _patient getVariable [QGVAR(Pneumothorax_State), 0] > 0;
@@ -32,32 +32,32 @@ private _airwayBlocked = GET_AIRWAYSTATE(_patient) == 0;
 
 switch (true) do {
     case (_respiratoryArrest || _airwayBlocked): {
-        _hint = "No chest movement observed";
-        _hintLog = "No chest movement";
+        _hint = LLSTRING(InspectChest_None);
+        _hintLog = LLSTRING(InspectChest_None_Short);
         
         if (_pneumothorax || _tensionPneumothorax) then {
-            _hint = format ["%1<br/>%2", _hint, "Chest sides are uneven"];
-            _hintLog = format ["%1%2", _hintLog, ", chest sides uneven"];
+            _hint = format ["%1<br/>%2", _hint, LLSTRING(InspectChest_None_Uneven)];
+            _hintLog = format ["%1, %2", _hintLog, LLSTRING(InspectChest_None_Uneven_Short)];
             _hintHeight = 2;
         };
 
         if (_hemothorax) then {
-            _hint = format ["%1<br/>%2", _hint, "Noticable extensive bruising"];
-            _hintLog = format ["%1%2", _hintLog, ", extensive bruising"];
+            _hint = format ["%1<br/>%2", _hint, LLSTRING(InspectChest_Bruising)];
+            _hintLog = format ["%1, %2", _hintLog, LLSTRING(InspectChest_Bruising_Short)];
             _hintHeight = _hintHeight + 0.5;
         };
     };
     case (_pneumothorax): {
-        _hint = "Uneven chest rise and fall observed";
-        _hintLog = "Uneven chest rise and fall";
+        _hint = LLSTRING(InspectChest_Uneven);
+        _hintLog = LLSTRING(InspectChest_Uneven_Short);
     };
     case (_hemothorax): {
-        _hint = "Uneven chest rise and fall observed<br/>Noticable extensive bruising";
-        _hintLog = "Uneven chest rise and fall, extensive bruising";
+        _hint = format ["%1<br/>%2", LLSTRING(InspectChest_Uneven), LLSTRING(InspectChest_Bruising)];
+        _hintLog = format ["%1, %2", LLSTRING(InspectChest_Uneven_Short), LLSTRING(InspectChest_Bruising_Short)];
         _hintHeight = 2.5;
     };
     default {};
 };
 
 [QACEGVAR(common,displayTextStructured), [_hint, _hintHeight, _medic], _medic] call CBA_fnc_targetEvent;
-[_patient, "quick_view", "%1 inspected chest: %2", [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "quick_view", LSTRING(InspectChest_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);

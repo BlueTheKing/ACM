@@ -5,8 +5,8 @@ class CfgMagazines {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\oxygenTank_ca.paa);
-        displayName = "Portable Oxygen Tank (425L)";
-        descriptionShort = "Used with BVM to provide supplementary oxygen to patients";
+        displayName = CSTRING(OxygenTank_425);
+        descriptionShort = CSTRING(OxygenTank_425_Desc);
         ACE_isMedicalItem = 1;
         ACE_asItem = 1;
         count = 283;

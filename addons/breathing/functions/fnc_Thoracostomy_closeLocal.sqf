@@ -18,7 +18,7 @@
 
 params ["_medic", "_patient"];
 
-[QACEGVAR(common,displayTextStructured), ["Thoracostomy incision sealed and one-way valve placed", 2, _medic], _medic] call CBA_fnc_targetEvent;
+[QACEGVAR(common,displayTextStructured), [LSTRING(ThoracostomyClose_Complete), 2, _medic], _medic] call CBA_fnc_targetEvent;
 
 _patient setVariable [QGVAR(Thoracostomy_State), 0, true];
 _patient setVariable [QGVAR(Pneumothorax_State), 0, true];

@@ -1,8 +1,8 @@
 class ACEGVAR(medical_treatment,actions) {
     class CheckPulse;
     class CheckBreathing: CheckPulse {
-        displayName = "Check Breathing";
-        displayNameProgress = "Checking Breathing...";
+        displayName = CSTRING(CheckBreathing);
+        displayNameProgress = CSTRING(CheckBreathing_Progress);
         icon = "";
         category = "airway";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -15,8 +15,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_rollToBack = 1;
     };
     class InspectChest: CheckBreathing {
-        displayName = "Inspect Chest";
-        displayNameProgress = "Inspecting Chest...";
+        displayName = CSTRING(InspectChest);
+        displayNameProgress = CSTRING(InspectChest_Progress);
         icon = "";
         medicRequired = QGVAR(allowInspectChest);
         treatmentTime = QGVAR(treatmentTimeInspectChest);
@@ -27,8 +27,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 1;
     };
     class UseStethoscope: CheckBreathing {
-        displayName = "Inspect Chest With Stethoscope";
-        displayNameProgress = "Inspecting Chest With Stethoscope...";
+        displayName = CSTRING(UseStethoscope);
+        displayNameProgress = "";
         icon = "";
         medicRequired = 0;
         treatmentTime = 0.001;
@@ -40,7 +40,7 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QFUNC(useStethoscope);
     };
     class UseBVM: UseStethoscope {
-        displayName = "Use BVM";
+        displayName = CSTRING(UseBVM);
         icon = "";
         allowedSelections[] = {"Head"};
         items[] = {"ACM_BVM","ACM_PocketBVM"};
@@ -49,18 +49,18 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 1;
     };
     class UseBVM_Oxygen: UseBVM {
-        displayName = "Use BVM with Oxygen";
+        displayName = CSTRING(UseBVM_Oxygen);
         treatmentLocations = TREATMENT_LOCATIONS_FACILITIES;
         items[] = {"ACM_BVM"};
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(useBVM));
     };
     class UseBVM_VehicleOxygen: UseBVM_Oxygen {
-        displayName = "Use BVM with Oxygen (Vehicle)";
+        displayName = CSTRING(UseBVM_VehicleOxygen);
         treatmentLocations = TREATMENT_LOCATIONS_VEHICLES;
     };
     class UseBVM_PortableOxygen: UseBVM_Oxygen {
-        displayName = "Use BVM with Oxygen (Portable)";
+        displayName = CSTRING(UseBVM_PortableOxygen);
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         items[] = {"ACM_BVM"};
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])) && ('ACM_OxygenTank_425' in ([ARR_2(_medic,2)] call ACEFUNC(common,uniqueItems))));
@@ -68,8 +68,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class ApplyChestSeal: CheckBreathing {
-        displayName = "Apply Chest Seal";
-        displayNameProgress = "Applying Chest Seal...";
+        displayName = CSTRING(ApplyChestSeal);
+        displayNameProgress = CSTRING(ApplyChestSeal_Progress);
         icon = "";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         medicRequired = 0;
@@ -84,8 +84,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class PerformNCD: ApplyChestSeal {
-        displayName = "Perform Needle-Chest-Decompression";
-        displayNameProgress = "Performing Needle-Chest-Decompression...";
+        displayName = CSTRING(PerformNCD);
+        displayNameProgress = CSTRING(PerformNCD_Progress);
         icon = "";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         medicRequired = QGVAR(allowNCD);
@@ -99,8 +99,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class PerformThoracostomy: ApplyChestSeal {
-        displayName = "Perform Thoracostomy";
-        displayNameProgress = "Performing Thoracostomy...";
+        displayName = CSTRING(PerformThoracostomy);
+        displayNameProgress = CSTRING(PerformThoracostomy_Progress);
         icon = "";
         treatmentLocations = QGVAR(locationThoracostomy);
         medicRequired = QGVAR(allowThoracostomy);
@@ -114,8 +114,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class InsertChestTube: PerformThoracostomy {
-        displayName = "Insert Chest Tube";
-        displayNameProgress = "Inserting Chest Tube...";
+        displayName = CSTRING(InsertChestTube);
+        displayNameProgress = CSTRING(InsertChestTube_Progress);
         icon = "";
         treatmentTime = 5;
         allowSelfTreatment = 0;
@@ -126,8 +126,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class DrainFluid_ACCUVAC: PerformThoracostomy {
-        displayName = "Drain Fluid (ACCUVAC)";
-        displayNameProgress = "Draining Fluid...";
+        displayName = CSTRING(DrainFluid_ACCUVAC);
+        displayNameProgress = CSTRING(DrainFluid_Suction_Progress);
         icon = "";
         treatmentTime = 5;
         allowSelfTreatment = 0;
@@ -137,7 +137,7 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(Thoracostomy_drain));
     };
     class DrainFluid_SuctionBag: DrainFluid_ACCUVAC {
-        displayName = "Drain Fluid (Suction Bag)";
+        displayName = CSTRING(DrainFluid_SuctionBag);
         icon = "";
         treatmentTime = 8;
         items[] = {"ACM_SuctionBag"};
@@ -146,8 +146,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class CloseIncision: PerformThoracostomy {
-        displayName = "Close Thoracostomy Incision";
-        displayNameProgress = "Closing Thoracostomy Incision...";
+        displayName = CSTRING(CloseIncision);
+        displayNameProgress = CSTRING(CloseIncision_Progress);
         icon = "";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         treatmentTime = 5;
@@ -156,8 +156,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class PlacePulseOximeter: CheckPulse {
-        displayName = "Place Pulse Oximeter";
-        displayNameProgress = "Placing Pulse Oximeter...";
+        displayName = CSTRING(PlacePulseOximeter);
+        displayNameProgress = CSTRING(PlacePulseOximeter_Progress);
         icon = "";
         category = "examine";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -170,8 +170,8 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call FUNC(setPulseOximeter));
     };
     class RemovePulseOximeter: PlacePulseOximeter {
-        displayName = "Remove Pulse Oximeter";
-        displayNameProgress = "Removing Pulse Oximeter...";
+        displayName = CSTRING(RemovePulseOximeter);
+        displayNameProgress = CSTRING(RemovePulseOximeter_Progress);
         icon = "";
         medicRequired = 0;
         treatmentTime = 1;

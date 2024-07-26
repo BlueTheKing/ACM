@@ -68,7 +68,7 @@ class GVAR(Stethoscope_Dialog) {
             h = QUOTE(safezoneH);
             colorText[] = {1,1,1,1};
             colorBackground[] = {0,0,0,0};
-            text = "Using Stethoscope...";
+            text = CSTRING(Stethoscope_Using);
             lineSpacing = 0;
             sizeEx = QUOTE(GUI_GRID_H * 1.4);
             fixedWidth = 0;
@@ -100,7 +100,7 @@ class GVAR(Stethoscope_Dialog) {
             sizeEx = "0";
             onMouseButtonUp = QUOTE(call FUNC(Stethoscope_MoveBell));
             textureNoShortcut = QPATHTOF(ui\stethoscope_bell.paa);
-            tooltip = "Move me";
+            tooltip = CSTRING(Stethoscope_MoveBell);
             colorBackground[] = {1,1,1,0};
             colorBackgroundFocused[] = {1,1,1,0};
             period = 0;

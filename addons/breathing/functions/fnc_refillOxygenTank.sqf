@@ -26,11 +26,11 @@ _unit removeItem "ACM_OxygenTank_425_Empty";
     _args params ["_unit"];
 
     [_unit, "ACM_OxygenTank_425"] call ACEFUNC(common,addToInventory);
-    ["Oxygen Tank Refilled", 1.5, _unit] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(RefillOxygenTank_Complete), 1.5, _unit] call ACEFUNC(common,displayTextStructured);
 }, {
     params ["_args"];
     _args params ["_unit"];
 
     [_unit, "ACM_OxygenTank_425_Empty"] call ACEFUNC(common,addToInventory);
-    ["Oxygen Tank Refilling Cancelled", 1.5, _unit] call ACEFUNC(common,displayTextStructured);
-}, "Refilling Oxygen Tank..."] call ACEFUNC(common,progressBar);
+    [LSTRING(RefillOxygenTank_Cancelled), 1.5, _unit] call ACEFUNC(common,displayTextStructured);
+}, LSTRING(RefillOxygenTank_Progress)] call ACEFUNC(common,progressBar);

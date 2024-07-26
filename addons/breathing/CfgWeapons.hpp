@@ -6,9 +6,8 @@ class CfgWeapons {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\chestseal_ca.paa);
-        displayName = "Chest Seal";
-        descriptionShort = "Used to manage penetrating chest injuries";
-        descriptionUse = "Adhesive dressing used to stop air from entering the penetrating injury, keeping lung function and preventing deterioration";
+        displayName = CSTRING(ChestSeal);
+        descriptionShort = CSTRING(ChestSeal_Desc);
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 2;
@@ -17,9 +16,8 @@ class CfgWeapons {
 
     class ACM_PulseOximeter: ACM_ChestSeal {
         picture = QPATHTOF(ui\pulseoximeter_ca.paa);
-        displayName = "Pulse Oximeter";
-        descriptionShort = "Used to measure patient vitals";
-        descriptionUse = "Small device used to measure patient oxygen saturation and pulse rate";
+        displayName = CSTRING(PulseOximeter);
+        descriptionShort = CSTRING(PulseOximeter_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 1;
         };
@@ -27,8 +25,8 @@ class CfgWeapons {
 
     class ACM_Stethoscope: ACM_ChestSeal {
         picture = QPATHTOF(ui\stethoscope_ca.paa);
-        displayName = "Stethoscope";
-        descriptionShort = "Used to listen to breathing and heart sounds of patient";
+        displayName = CSTRING(Stethoscope);
+        descriptionShort = CSTRING(Stethoscope_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 2;
         };
@@ -36,9 +34,8 @@ class CfgWeapons {
 
     class ACM_NCDKit: ACM_ChestSeal {
         picture = QPATHTOF(ui\ncdkit_ca.paa);
-        displayName = "NCD Kit";
-        descriptionShort = "Single-use needle used to decompress tension-pneumothorax";
-        descriptionUse = "Single-use needle used to decompress tension-pneumothorax by creating a deep hole in the side of the patient's chest";
+        displayName = CSTRING(NCDKit);
+        descriptionShort = CSTRING(NCDKit_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 1;
         };
@@ -46,8 +43,8 @@ class CfgWeapons {
 
     class ACM_ChestTubeKit: ACM_ChestSeal {
         picture = QPATHTOF(ui\chestTubeKit_ca.paa);
-        displayName = "Chest Tube Kit";
-        descriptionShort = "Single-use kit used to insert a chest tube for removal of fluid from the plueral space";
+        displayName = CSTRING(ChestTubeKit);
+        descriptionShort = CSTRING(ChestTubeKit_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 4;
         };
@@ -64,9 +61,8 @@ class CfgWeapons {
 
     class ACM_PocketBVM: ACM_ChestSeal {
         picture = QPATHTOF(ui\pocketbvm_ca.paa);
-        displayName = "Pocket BVM";
-        descriptionShort = "Compact version of Bag-Valve-Mask";
-        descriptionUse = "Compact variant of Bag-Valve-Mask, device used to ventilate non-breathing patient by inflating and deflating the lungs with air";
+        displayName = CSTRING(PocketBVM);
+        descriptionShort = CSTRING(PocketBVM_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 5;
         };
@@ -84,9 +80,8 @@ class CfgWeapons {
 
     class ACM_BVM: ACM_PocketBVM {
         picture = QPATHTOF(ui\bvm_ca.paa);
-        displayName = "Bag-Valve-Mask";
-        descriptionShort = "Used to ventilate patient that is not breathing";
-        descriptionUse = "Device used to ventilate non-breathing patient by inflating and deflating the lungs with air, may be connected to oxygen";
+        displayName = CSTRING(BVM);
+        descriptionShort = CSTRING(BVM_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 12;
         };
@@ -95,8 +90,8 @@ class CfgWeapons {
     class ACM_OxygenTank_425_Empty: ACM_ChestSeal {
         scope = 1;
         picture = QPATHTOF(ui\oxygenTank_ca.paa);
-        displayName = "Empty Portable Oxygen Tank (425L)";
-        descriptionShort = "Used with BVM to provide supplementary oxygen to patients";
+        displayName = CSTRING(OxygenTank_425_Empty);
+        descriptionShort = CSTRING(OxygenTank_425_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 20;
         };

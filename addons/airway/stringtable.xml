@@ -110,7 +110,7 @@
         <Key ID="STR_ACM_Airway_ACCUVAC_Desc">
             <English>Device used to clear airway obstructions</English>
         </Key><!--
-            // Actions (to be moved) // -->
+            // Actions // -->
         <Key ID="STR_ACM_Airway_CheckAirway">
             <English>Check Airway</English>
         </Key>
