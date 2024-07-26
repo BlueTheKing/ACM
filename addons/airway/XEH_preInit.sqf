@@ -13,7 +13,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(enable),
     "CHECKBOX",
-    ["Enable Airway", "Enable airway collapse/obstruction"],
+    [LSTRING(SETTING_Enable), LSTRING(SETTING_Enable_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
     [true],
     true
@@ -22,7 +22,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(airwayCollapseChance),
     "SLIDER",
-    "Airway Collapse Chance Multiplier",
+    LSTRING(SETTING_AirwayCollapseChance),
     [ACM_SETTINGS_CATEGORY, ""],
     [0, 2, 1, 1],
     true
@@ -31,7 +31,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(airwayObstructionBloodChance),
     "SLIDER",
-    "Airway Obstruction (Blood) Chance Multiplier",
+    LSTRING(SETTING_AirwayObstructionChance_Blood),
     [ACM_SETTINGS_CATEGORY, ""],
     [0, 2, 1, 1],
     true
@@ -40,7 +40,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(airwayObstructionVomitChance),
     "SLIDER",
-    "Airway Obstruction (Vomit) Chance Multiplier",
+    LSTRING(SETTING_AirwayObstructionChance_Vomit),
     [ACM_SETTINGS_CATEGORY, ""],
     [0, 2, 1, 1],
     true
@@ -51,7 +51,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeRecoveryPosition),
     "SLIDER",
-    ["Establish Recovery Position Time", "Time to establish Recovery Position"],
+    [LSTRING(SETTING_TreatmentTime_RecoveryPosition), LSTRING(SETTING_TreatmentTime_RecoveryPosition_Desc)],
     [ACM_SETTINGS_CATEGORY, "Airway Management"],
     [1, 30, 8, 1],
     true
@@ -60,7 +60,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowSuctionBag),
     "LIST",
-    ["Allow Suction Bag", "Training level required to use Suction Bag"],
+    [LSTRING(SETTING_Allow_SuctionBag), LSTRING(SETTING_Allow_SuctionBag_Desc)],
     [ACM_SETTINGS_CATEGORY, "Airway Management"],
     [SETTING_DROPDOWN_SKILL, 0],
     true
@@ -69,7 +69,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowACCUVAC),
     "LIST",
-    ["Allow ACCUVAC", "Training level required to use ACCUVAC"],
+    [LSTRING(SETTING_Allow_ACCUVAC), LSTRING(SETTING_Allow_ACCUVAC_Desc)],
     [ACM_SETTINGS_CATEGORY, "Airway Management"],
     [SETTING_DROPDOWN_SKILL, 1],
     true
@@ -80,7 +80,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeOPA),
     "SLIDER",
-    ["Guedel Tube Time", "Time to insert Guedel Tube"],
+    [LSTRING(SETTING_TreatmentTime_OPA), LSTRING(SETTING_TreatmentTime_OPA_Desc)],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [1, 30, 3, 1],
     true
@@ -89,7 +89,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeNPA),
     "SLIDER",
-    ["NPA Time", "Time to insert NPA"],
+    [LSTRING(SETTING_TreatmentTime_NPA), LSTRING(SETTING_TreatmentTime_NPA_Desc)],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [1, 30, 5, 1],
     true
@@ -98,7 +98,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeSGA),
     "SLIDER",
-    ["i-gel Time", "Time to insert i-gel"],
+    [LSTRING(SETTING_TreatmentTime_SGA), LSTRING(SETTING_TreatmentTime_SGA_Desc)],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [1, 30, 7, 1],
     true
@@ -107,7 +107,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowOPA),
     "LIST",
-    ["Allow Guedel Tube", "Training level required to insert Guedel Tube"],
+    [LSTRING(SETTING_Allow_OPA), LSTRING(SETTING_Allow_OPA_Desc)],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [SETTING_DROPDOWN_SKILL, 0],
     true
@@ -116,7 +116,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowNPA),
     "LIST",
-    ["Allow NPA", "Training level required to insert NPA"],
+    [LSTRING(SETTING_Allow_NPA), LSTRING(SETTING_Allow_NPA_Desc)],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [SETTING_DROPDOWN_SKILL, 0],
     true
@@ -125,7 +125,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowSGA),
     "LIST",
-    ["Allow i-gel", "Training level required to insert i-gel"],
+    [LSTRING(SETTING_Allow_SGA), LSTRING(SETTING_Allow_SGA_Desc)],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [SETTING_DROPDOWN_SKILL, 1],
     true
@@ -134,7 +134,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(airwayAdjunctReusable),
     "CHECKBOX",
-    ["Airway Adjuncts Reusable", "Airway adjuncts are kept instead of discarded on removal"],
+    [LSTRING(SETTING_AirwayAdjunctsReusable), LSTRING(SETTING_AirwayAdjunctsReusable_Desc)],
     [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
     [false],
     true

@@ -6,8 +6,8 @@ class CfgWeapons {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\guedeltube_ca.paa);
-        displayName = "Guedel Tube";
-        descriptionShort = "Used to keep airway open";
+        displayName = CSTRING(GuedelTube);
+        descriptionShort = CSTRING(GuedelTube_Desc);
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 1;
@@ -22,9 +22,8 @@ class CfgWeapons {
 
     class ACM_IGel: ACM_GuedelTube {
         picture = QPATHTOF(ui\igel_ca.paa);
-        displayName = "i-gel";
-        descriptionShort = "Used to secure airway for prolonged time";
-        descriptionUse = "An airway adjunct used to secure the airway and allow breathing in unconscious patients for a prolonged time.";
+        displayName = CSTRING(IGel);
+        descriptionShort = CSTRING(IGel_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 2;
         };
@@ -38,8 +37,8 @@ class CfgWeapons {
 
     class ACM_NPA: ACM_GuedelTube {
         picture = QPATHTOF(ui\npa_ca.paa);
-        displayName = "NPA";
-        descriptionShort = "Used to keep airway open through nasal route";
+        displayName = CSTRING(NPA);
+        descriptionShort = CSTRING(NPA_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 1.4;
         };
@@ -53,9 +52,8 @@ class CfgWeapons {
 
     class ACM_SuctionBag: ACM_GuedelTube {
         picture = QPATHTOF(ui\suctionbag_ca.paa);
-        displayName = "Emergency Disposable Suction Bag";
-        descriptionShort = "Single-use bag used to clear airway obstructions";
-        descriptionUse = "Portable single-use bag used to clear airway obstructions and allow effective breathing.";
+        displayName = CSTRING(SuctionBag);
+        descriptionShort = CSTRING(SuctionBag_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 4;
         };
@@ -63,9 +61,8 @@ class CfgWeapons {
 
     class ACM_ACCUVAC: ACM_SuctionBag {
         picture = QPATHTOF(ui\accuvac_ca.paa);
-        displayName = "ACCUVAC";
-        descriptionShort = "Device used to clear airway obstruction";
-        descriptionUse = "Battery-powered suction device used to swiftly clear obstructions and allow effective breathing.";
+        displayName = CSTRING(ACCUVAC);
+        descriptionShort = CSTRING(ACCUVAC_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 20;
         };

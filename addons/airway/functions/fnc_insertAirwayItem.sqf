@@ -19,25 +19,25 @@
 
 params ["_medic", "_patient", "_type"];
 
-private _item = "Guedel Tube";
+private _item = LSTRING(GuedelTube);
 private _classname = "ACM_GuedelTube";
 private _airwayItem = _patient getVariable [QGVAR(AirwayItem_Oral), ""];
 
 switch (_type) do {
     case "NPA": {
-        _item = "NPA";
+        _item = LSTRING(NPA);
         _classname = "ACM_NPA";
         _airwayItem = _patient getVariable [QGVAR(AirwayItem_Nasal), ""];
     };
     case "SGA": {
-        _item = "i-gel";
+        _item = LSTRING(IGel);
         _classname = "ACM_IGel";
     };
     default {};
 };
 
 if (_airwayItem != "") exitWith {
-    ["Airway item already inserted", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(Adjunct_Already), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {
@@ -45,13 +45,14 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {
 };
 
 if ((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient getVariable [QGVAR(AirwayObstructionBlood_State), 0]) > 0) exitWith {
-    [format ["Failed to insert %1<br/>Airway obstructed", _item], 2, _medic] call ACEFUNC(common,displayTextStructured);
+    private _hint = format [LLSTRING(Adjunct_Failed), localize _item];
+    [format ["%1<br />%2", _hint, LLSTRING(CheckAirway_Obstruction)], 2, _medic] call ACEFUNC(common,displayTextStructured);
     [_medic, _classname] call ACEFUNC(common,addToInventory);
 };
 
-[format ["%1 inserted", _item], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+[format [LLSTRING(Adjunct_%1_Inserted), localize _item], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 [_patient, _item] call ACEFUNC(medical_treatment,addToTriageCard);
-[_patient, "activity", "%1 has inserted %2", [[_medic, false, true] call ACEFUNC(common,getName), _item]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", LSTRING(Adjunct_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _item]] call ACEFUNC(medical_treatment,addToLog);
 
 if (_type == "NPA") then {
     _patient setVariable [QGVAR(AirwayItem_Nasal), _type, true];

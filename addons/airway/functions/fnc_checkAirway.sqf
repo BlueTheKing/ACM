@@ -18,8 +18,8 @@
 
 params ["_medic", "_patient"];
 
-private _hint = "Airway is clear";
-private _hintLog = "Clear";
+private _hint = LLSTRING(CheckAirway_AirwayIsClear);
+private _hintLog = LLSTRING(CheckAirway_AirwayIsClear_Short);
 private _hintHeight = 1.5;
 
 private _collapseState = "";
@@ -45,14 +45,14 @@ private _maneuverHintLog = "";
 if (_patient getVariable [QGVAR(RecoveryPosition_State), false]) then {
     _showManeuver = true;
     _collapseManaged = true;
-    _maneuverHint = "In Recovery Position";
-    _maneuverHintLog = "In Recovery";
+    _maneuverHint = LLSTRING(CheckAirway_RecoveryPosition);
+    _maneuverHintLog = LLSTRING(CheckAirway_RecoveryPosition_Short);
 } else {
     if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {
         _showManeuver = true;
         _collapseManaged = true;
-        _maneuverHint = "Head Tilted-Chin Lifted";
-        _maneuverHintLog = "Head Tilted";
+        _maneuverHint = LLSTRING(CheckAirway_HeadTiltChinLift);
+        _maneuverHintLog = LLSTRING(CheckAirway_HeadTiltChinLift_Short);
     };
 };
 
@@ -66,14 +66,14 @@ if (_airwayItemInsertedOral != "" || _airwayItemInsertedNasal != "") then {
 
     private _nasal = "";
     if (_airwayItemInsertedNasal == "NPA") then {
-        _nasal = "NPA";
+        _nasal = LLSTRING(NPA);
     };
 
     private _oral = "";
 
     switch (_airwayItemInsertedOral) do {
         case "OPA": {
-            _oral = "Guedel Tube";
+            _oral = LLSTRING(GuedelTube);
             if (_nasal == "NPA") then {
                 _adjunctHint = format ["%1 &amp; %2", _nasal, _oral];
                 _adjunctHintLog = format ["%1 & %2", _nasal, _oral];
@@ -84,7 +84,7 @@ if (_airwayItemInsertedOral != "" || _airwayItemInsertedNasal != "") then {
         };
         case "SGA": {
             _airwaySecure = true;
-            _oral = "i-gel";
+            _oral = LLSTRING(IGel);
             if (_nasal == "NPA") then {
                 _adjunctHint = format ["%1 &amp; %2", _nasal, _oral];
                 _adjunctHintLog = format ["%1 & %2", _nasal, _oral];
@@ -99,8 +99,8 @@ if (_airwayItemInsertedOral != "" || _airwayItemInsertedNasal != "") then {
         };
     };
 
-    _adjunctHint = format ["%1 Inserted", _adjunctHint];
-    _adjunctHintLog = format ["%1 Inserted", _adjunctHintLog];
+    _adjunctHint = format [LLSTRING(CheckAirway_%1_Inserted), _adjunctHint];
+    _adjunctHintLog = format [LLSTRING(CheckAirway_%1_Inserted), _adjunctHintLog];
 };
 
 _collapseManaged = _collapseManaged || _airwaySecure;
@@ -109,16 +109,16 @@ if !(_collapseManaged) then {
     if (_collapseShow) then {
         switch (_airwayCollapseState) do {
             case 1: {
-                _collapseState = "Airway mildly collapsed";
-                _collapseStateLog = "Mild collapse";
+                _collapseState = LLSTRING(CheckAirway_Collapse_Mild);
+                _collapseStateLog = LLSTRING(CheckAirway_Collapse_Mild_Short);
             };
             case 2: {
-                _collapseState = "Airway moderately collapsed";
-                _collapseStateLog = "Moderate collapse";
+                _collapseState = LLSTRING(CheckAirway_Collapse_Moderate);
+                _collapseStateLog = LLSTRING(CheckAirway_Collapse_Moderate_Short);
             };
             case 3: {
-                _collapseState = "Airway severely collapsed";
-                _collapseStateLog = "Severe collapse";
+                _collapseState = LLSTRING(CheckAirway_Collapse_Severe);
+                _collapseStateLog = LLSTRING(CheckAirway_Collapse_Severe_Short);
             };
         };
     };
@@ -131,11 +131,11 @@ private _obstructionBloodState = _patient getVariable [QGVAR(AirwayObstructionBl
 
 if (_obstructionVomitState > 0 || _obstructionBloodState > 0) then {
     _obstructionShow = true;
-    _obstructionState = "Airway lightly obstructed";
-    _obstructionStateLog = "Light obstruction";
+    _obstructionState = LLSTRING(Obstruction_Light);
+    _obstructionStateLog = LLSTRING(Obstruction_Light_Short);
     if (_obstructionVomitState > 1 || _obstructionBloodState > 1) then {
-        _obstructionState = "Airway obstructed";
-        _obstructionStateLog = "Obstruction";
+        _obstructionState = LLSTRING(Obstruction);
+        _obstructionStateLog = LLSTRING(Obstruction_Short);
     };
 };
 
@@ -196,8 +196,8 @@ if (_collapseShow || _obstructionShow || _showManeuver || _showAdjunct) then {
 
 [_hint, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
 if (_doubleSpace) then {
-    [_patient, "quick_view", "%1 checked airway: %2", [[_medic, false, true] call ACEFUNC(common,getName), _addHintLog]] call ACEFUNC(medical_treatment,addToLog);
-    [_patient, "quick_view", "%1 checked airway: %2", [[_medic, false, true] call ACEFUNC(common,getName), _doubleSpaceLog]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "quick_view", LSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _addHintLog]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "quick_view", LSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _doubleSpaceLog]] call ACEFUNC(medical_treatment,addToLog);
 } else {
-    [_patient, "quick_view", "%1 checked airway: %2", [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "quick_view", LSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
 };

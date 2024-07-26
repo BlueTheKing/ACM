@@ -24,7 +24,7 @@ class RscTitles
                 h = QUOTE(safezoneH);
                 colorText[] = {1,1,1,1};
                 colorBackground[] = {0,0,0,0};
-                text = "Performing Head Tilt-Chin Lift...";
+                text = CSTRING(HeadTiltChinLift_ActionInProgress);
                 lineSpacing = 0;
                 sizeEx = QUOTE(GUI_GRID_H * 1.4);
                 fixedWidth = 0;

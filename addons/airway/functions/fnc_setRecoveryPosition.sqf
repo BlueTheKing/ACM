@@ -21,7 +21,7 @@
 params ["_medic", "_patient", "_state", ["_skip", false]];
 
 if (_patient getVariable [QGVAR(RecoveryPosition_State), false]) exitWith {
-    ["Patient already in recovery position", 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(RecoveryPosition_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 _patient setVariable [QGVAR(RecoveryPosition_State), _state, true];
@@ -38,14 +38,14 @@ if (_patient getVariable [QGVAR(AirwayObstructionBlood_State), 0] == 1) then {
     _patient setVariable [QGVAR(AirwayObstructionBlood_State), 0, true];
 };
 
-private _hint = "Established recovery position";
-private _hintLog = "%1 established recovery position";
+private _hint = LSTRING(RecoveryPosition_Established);
+private _hintLog = LSTRING(RecoveryPosition_Established_ActionLog);
 
 if (_state) then {
     [_patient, "ACM_RecoveryPosition", 2] call ACEFUNC(common,doAnimation);
 } else {
-    _hint = "Cancelled recovery position";
-    _hintLog = "%1 cancelled recovery position";
+    _hint = LSTRING(RecoveryPosition_Cancelled);
+    _hintLog = LSTRING(RecoveryPosition_Cancelled_ActionLog);
 };
 
 [_hint, 1.5, _medic] call ACEFUNC(common,displayTextStructured);

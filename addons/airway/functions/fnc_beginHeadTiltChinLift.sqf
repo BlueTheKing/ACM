@@ -20,7 +20,7 @@
 params ["_medic", "_patient"];
 
 if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
-    ["Patient already has head tilted-chin lifted", 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(HeadTiltChinLift_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 [[_medic, _patient, "head"], { // On Start
@@ -32,9 +32,9 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
         EGVAR(core,ContinuousAction_Active) = false;
     }, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
 
-    ["Cancel", "", ""] call ACEFUNC(interaction,showMouseHint);
-    [_patient, "activity", "%1 started performing head tilt-chin lift", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
-    ["Performing head tilt-chin lift<br />Stay close to the patient", 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [ACELLSTRING(common,Cancel), "", ""] call ACEFUNC(interaction,showMouseHint);
+    [_patient, "activity", LSTRING(HeadTiltChinLift_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+    [LSTRING(HeadTiltChinLift_ActionHint), 2, _medic] call ACEFUNC(common,displayTextStructured);
     
     private _display = uiNamespace getVariable ["ACM_HeadTilt", displayNull];
     private _ctrlText = _display displayCtrl IDC_HEADTILT_TEXT;
@@ -56,7 +56,7 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
         [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
     };
 
-    ["Head tilt-chin lift cancelled", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(HeadTiltChinLift_ActionCancelled), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
     _patient setVariable [QGVAR(HeadTilt_State), false, true];
     [_patient] call FUNC(updateAirwayState);

@@ -1,8 +1,8 @@
 class ACEGVAR(medical_treatment,actions) {
     class CheckPulse;
     class CheckAirway: CheckPulse {
-        displayName = "Check Airway";
-        displayNameProgress = "Checking Airway...";
+        displayName = CSTRING(CheckAirway);
+        displayNameProgress = CSTRING(CheckAirway_Progress);
         icon = "";
         category = "airway";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -16,8 +16,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class HeadTurn: CheckAirway {
-        displayName = "Perform Head Turning";
-        displayNameProgress = "Head Turning...";
+        displayName = CSTRING(PerformHeadTurning);
+        displayNameProgress = CSTRING(PerformHeadTurning_Progress);
         icon = "";
         medicRequired = 0;
         treatmentTime = 5;
@@ -27,7 +27,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class BeginHeadTiltChinLift: CheckAirway {
-        displayName = "Perform Head Tilt-Chin Lift";
+        displayName = CSTRING(PerformHeadTiltChinLift);
         displayNameProgress = "";
         icon = "";
         medicRequired = 0;
@@ -38,8 +38,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class RecoveryPosition: CheckAirway {
-        displayName = "Establish Recovery Position";
-        displayNameProgress = "Establishing Recovery Position...";
+        displayName = CSTRING(EstablishRecoveryPosition);
+        displayNameProgress = CSTRING(EstablishRecoveryPosition_Progress);
         icon = "";
         medicRequired = 0;
         treatmentTime = QGVAR(treatmentTimeRecoveryPosition);
@@ -49,8 +49,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_rollToBack = 0;
     };
     class CancelRecoveryPosition: RecoveryPosition {
-        displayName = "Cancel Recovery Position";
-        displayNameProgress = "Cancelling Recovery Position...";
+        displayName = CSTRING(CancelRecoveryPosition);
+        displayNameProgress = CSTRING(CancelRecoveryPosition_Progress);
         icon = "";
         medicRequired = 0;
         treatmentTime = 1;
@@ -61,8 +61,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class UseSuctionBag: CheckAirway {
-        displayName = "Use Suction Bag";
-        displayNameProgress = "Using Suction Bag...";
+        displayName = CSTRING(UseSuctionBag);
+        displayNameProgress = CSTRING(UseSuctionBag_Progress);
         icon = "";
         medicRequired = QGVAR(allowSuctionBag);
         treatmentTime = QUOTE([_patient] call FUNC(getSuctionTime));
@@ -73,8 +73,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 1;
     };
     class UseAccuvac: UseSuctionBag {
-        displayName = "Use ACCUVAC";
-        displayNameProgress = "Using ACCUVAC...";
+        displayName = CSTRING(UseACCUVAC);
+        displayNameProgress = CSTRING(UseACCUVAC_Progress);
         icon = "";
         medicRequired = QGVAR(allowACCUVAC);
         treatmentTime = QUOTE([_patient] call FUNC(getSuctionTime));
@@ -84,8 +84,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class InsertGuedelTube: CheckAirway {
-        displayName = "Insert Guedel Tube";
-        displayNameProgress = "Inserting Guedel Tube...";
+        displayName = CSTRING(InsertGuedelTube);
+        displayNameProgress = CSTRING(InsertGuedelTube_Progress);
         icon = "";
         medicRequired = QGVAR(allowOPA);
         treatmentTime = QGVAR(treatmentTimeOPA);
@@ -96,8 +96,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 1;
     };
     class InsertNPA: InsertGuedelTube {
-        displayName = "Insert NPA";
-        displayNameProgress = "Inserting NPA...";
+        displayName = CSTRING(InsertNPA);
+        displayNameProgress = CSTRING(InsertNPA_Progress);
         icon = "";
         medicRequired = QGVAR(allowNPA);
         treatmentTime = QGVAR(treatmentTimeNPA);
@@ -106,8 +106,8 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'NPA')] call FUNC(insertAirwayItem));
     };
     class InsertIGel: InsertGuedelTube {
-        displayName = "Insert i-gel";
-        displayNameProgress = "Inserting i-gel...";
+        displayName = CSTRING(InsertIGel);
+        displayNameProgress = CSTRING(InsertIGel_Progress);
         icon = "";
         medicRequired = QGVAR(allowSGA);
         treatmentTime = QGVAR(treatmentTimeSGA);
@@ -116,8 +116,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class RemoveGuedelTube: CheckAirway {
-        displayName = "Remove Guedel Tube";
-        displayNameProgress = "Removing Guedel Tube...";
+        displayName = CSTRING(RemoveGuedelTube);
+        displayNameProgress = CSTRING(RemoveGuedelTube_Progress);
         icon = "";
         medicRequired = 0;
         treatmentTime = 1.5;
@@ -125,15 +125,15 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,false)] call FUNC(removeAirwayItem));
     };
     class RemoveNPA: RemoveGuedelTube {
-        displayName = "Remove NPA";
-        displayNameProgress = "Removing NPA...";
+        displayName = CSTRING(RemoveNPA);
+        displayNameProgress = CSTRING(RemoveNPA_Progress);
         icon = "";
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Nasal),'')] == 'NPA'));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(removeAirwayItem));
     };
     class RemoveIGel: RemoveGuedelTube {
-        displayName = "Remove i-gel";
-        displayNameProgress = "Removing i-gel...";
+        displayName = CSTRING(RemoveIGel);
+        displayNameProgress = CSTRING(RemoveIGel_Progress);
         icon = "";
         treatmentTime = 2;
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == 'SGA'));
