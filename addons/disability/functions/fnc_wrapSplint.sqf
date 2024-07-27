@@ -19,6 +19,6 @@
 
 params ["_medic", "_patient", "_bodyPart"];
 
-[_patient, "activity", "%1 has wrapped SAM Splint", [[_medic] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", LSTRING(WrapSplint_ActionLog), [[_medic] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
 [QGVAR(wrapSplintLocal), [_medic, _patient, _bodyPart], _patient] call CBA_fnc_targetEvent;

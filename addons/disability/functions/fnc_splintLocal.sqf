@@ -42,7 +42,7 @@ if (_classname isEqualTo "ApplySAMSplint" && ACEGVAR(medical,fractures) > 1) the
         params ["_patient", "_bodyPart"];
         
         [QGVAR(removeSplintLocal), [objNull, _patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
-        [QACEGVAR(common,displayTextStructured), ["Splint has fallen off", 1.5, _medic], _medic] call CBA_fnc_targetEvent;
+        [QACEGVAR(common,displayTextStructured), [LSTRING(Splint_FellOff), 1.5, _medic], _medic] call CBA_fnc_targetEvent;
     }] call CBA_fnc_waitUntilAndExecute;
 };
 

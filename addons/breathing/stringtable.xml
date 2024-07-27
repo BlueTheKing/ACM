@@ -287,6 +287,9 @@
             <English>%1 performed Needle Chest Decompression</English>
         </Key><!--
             // Oxygen Tank Refill Action // -->
+        <Key ID="STR_ACM_Breathing_RefillOxygenTank">
+            <English>Refill Oxygen Tank</English>
+        </Key>
         <Key ID="STR_ACM_Breathing_RefillOxygenTank_Complete">
             <English>Oxygen Tank Refilled</English>
         </Key>
@@ -308,7 +311,7 @@
         </Key><!--
             // Thoracostomy Close Incision Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomyClose_Already">
-            <English>horacostomy incision already closed</English>
+            <English>Thoracostomy incision already closed</English>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomyClose_ActionLog">
             <English>%1 closed up thoracostomy incision</English>

@@ -20,12 +20,12 @@
 
 params ["_medic", "_patient", "_bodyPart", "_type"];
 
-private _output = "bandages";
+private _output = LLSTRING(WrapBodyPart_ActionLog_Bandages);
 
 if (_type isEqualTo 1) then {
-    _output = "clotted wounds";
+    _output = LLSTRING(WrapBodyPart_ActionLog_Clotted);
 };
 
-[_patient, "activity", "%1 has wrapped %2", [[_medic] call ACEFUNC(common,getName), _output]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", LSTRING(WrapBodyPart_ActionLog), [[_medic] call ACEFUNC(common,getName), _output]] call ACEFUNC(medical_treatment,addToLog);
 
 [QGVAR(wrapBodyPartLocal), [_medic, _patient, _bodyPart, _type], _patient] call CBA_fnc_targetEvent;

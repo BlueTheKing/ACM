@@ -21,4 +21,4 @@ params ["_medic", "_patient", "_bodyPart"];
 
 [QGVAR(wrapBruisesLocal), [_medic, _patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
 
-[_patient, "activity", "%1 has wrapped %2", [[_medic] call ACEFUNC(common,getName), "bruises"]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", LSTRING(WrapBruises_ActionLog), [[_medic] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);

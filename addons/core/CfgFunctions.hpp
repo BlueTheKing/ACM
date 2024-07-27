@@ -163,7 +163,7 @@ class CfgFunctions {
             };
         };
     };
-    /*class overwrite_CBA_statemachine { // TODO statemachine fuckery
+    /*class overwrite_CBA_statemachine {
         tag = "CBA_statemachine";
         class CBA_statemachine {
             class manualTransition {

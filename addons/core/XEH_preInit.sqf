@@ -8,14 +8,14 @@ PREP_RECOMPILE_END;
 
 #define ACM_SETTINGS_CATEGORY "ACM: Core"
 
-//ACEGVAR(medical,STATE_MACHINE) = (configFile >> "ACM_StateMachine") call CBA_statemachine_fnc_createFromConfig; // TODO statemachine fuckery
+//ACEGVAR(medical,STATE_MACHINE) = (configFile >> "ACM_StateMachine") call CBA_statemachine_fnc_createFromConfig;
 
 // Items
 
 [
     QGVAR(treatmentTimeTakeOffTourniquet),
     "SLIDER",
-    "Take Off Tourniquet Time",
+    [LLSTRING(SETTING_TreatmentTime_TakeOffTourniquet), LLSTRING(SETTING_TreatmentTime_TakeOffTourniquet_Desc)],
     [ACM_SETTINGS_CATEGORY, "Items"],
     [1, 30, 4, 1],
     true
@@ -24,7 +24,7 @@ PREP_RECOMPILE_END;
 /*[
     QGVAR(treatmentTimeWrap),
     "SLIDER",
-    ["Wrap Time", "Time to wrap whole body part"],
+    [LELSTRING(damage,SETTING_TreatmentTime_WrapBodyPart), LELSTRING(damage,SETTING_TreatmentTime_WrapBodyPart_Desc)],
     [ACM_SETTINGS_CATEGORY, "Items"],
     [1, 30, 4, 1],
     true
@@ -33,7 +33,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeWrappedStitch),
     "SLIDER",
-    ["Wrapped Stitch Time", "Time to stitch a wrapped wound"],
+    [LELSTRING(damage,SETTING_TreatmentTime_WrappedStitch), LELSTRING(damage,SETTING_TreatmentTime_WrappedStitch_Desc)],
     [ACM_SETTINGS_CATEGORY, "Items"],
     [1, 30, 2, 1],
     true
@@ -42,7 +42,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeSAMSplint),
     "SLIDER",
-    ["SAM Splint Time", "Time to apply SAM Splint"],
+    [LELSTRING(disability,SETTING_TreatmentTime_SAMSplint), LELSTRING(disability,SETTING_TreatmentTime_SAMSplint_Desc)],
     [ACM_SETTINGS_CATEGORY, "Items"],
     [1, 30, 3, 1],
     true
@@ -51,7 +51,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeWrapSplint),
     "SLIDER",
-    ["Wrap Splint Time", "Time to wrap SAM Splint"],
+    [LELSTRING(disability,SETTING_TreatmentTime_WrapSplint), LELSTRING(disability,SETTING_TreatmentTime_WrapSplint_Desc)],
     [ACM_SETTINGS_CATEGORY, "Items"],
     [1, 30, 5, 1],
     true
@@ -60,7 +60,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(splintFallOffTime),
     "SLIDER",
-    ["Splint minimum fall off time", "Minimum time for unwrapped SAM Splint to fall off"],
+    [LELSTRING(disability,SETTING_SplintFallOffTime), LELSTRING(disability,SETTING_SplintFallOffTime_Desc)],
     [ACM_SETTINGS_CATEGORY, "Items"],
     [1, 300, 60, 1],
     true
@@ -69,7 +69,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(Dogtag_ShowWeight),
     "CHECKBOX",
-    ["Dogtag list weight", "Set whether dog tags list the unit's weight"],
+    [LLSTRING(SETTING_Dogtag_ShowWeight), LLSTRING(SETTING_Dogtag_ShowWeight_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
     [true],
     true,

@@ -19,7 +19,7 @@ params ["_unit"];
 
 if (ACE_player != _unit) exitWith {};
 
-["Get up", "", ""] call ACEFUNC(interaction,showMouseHint);
+[LLSTRING(LyingState_GetUp), "", ""] call ACEFUNC(interaction,showMouseHint);
 
 _unit setVariable [QGVAR(GetUpActionID), [0xF0, [false, false, false], {
     ACE_player call FUNC(getUp);

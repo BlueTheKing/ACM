@@ -20,7 +20,7 @@ params ["_unit", "_carrier"];
 
 if (ACE_player != _unit) exitWith {};
 
-["", "Cancel Carrying", ""] call ACEFUNC(interaction,showMouseHint);
+["", LLSTRING(CancelCarrying), ""] call ACEFUNC(interaction,showMouseHint);
 GVAR(Carrier) = _carrier;
 
 _unit setVariable [QGVAR(CancelCarryingActionID), [0xF1, [false, false, false], {

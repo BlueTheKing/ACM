@@ -20,6 +20,6 @@ params ["_medic", "_patient"];
 
 addCamShake [2, 2, 5];
 
-[_patient, "activity", "%1 shook the patient", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", LSTRING(ShakePatient_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
 [QGVAR(shakeAwakeLocal), [_medic, _patient], _patient] call CBA_fnc_targetEvent;

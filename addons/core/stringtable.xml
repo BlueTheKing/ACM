@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ACM">
+    <Package name="Core">
+        <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet">
+            <English>Take Off Tourniquet Time</English>
+        </Key>
+        <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet_Desc">
+            <English>Time to take off tourniquet</English>
+        </Key>
+        <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight">
+            <English>Dogtag list weight</English>
+        </Key>
+        <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
+            <English>Set whether dog tags list the unit's weight</English>
+        </Key><!--
+            // Actions // -->
+        <Key ID="STR_ACM_Core_MorphineAutoinjector">
+            <English>Use Morphine Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
+            <English>Using Morphine Autoinjector...</English>
+        </Key>
+        <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
+            <English>Use Epinephrine Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
+            <English>Using Epinephrine Autoinjector...</English>
+        </Key>
+        <Key ID="STR_ACM_Core_AdenosineAutoinjector">
+            <English>Use Adenosine Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
+            <English>Using Adenosine Autoinjector...</English>
+        </Key>
+
+        <!--<Key ID="STR_ACM_Core_CheckCapillaryRefill">
+            <English>Check Capillary Refill Time</English>
+        </Key>
+        <Key ID="STR_ACM_Core_CheckCapillaryRefill_Progress">
+            <English>Checking Capillary Refill Time...</English>
+        </Key>
+        <Key ID="STR_ACM_Core_PressureCuff_Measure">
+            <English>Measure Blood Pressure</English>
+        </Key>
+        <Key ID="STR_ACM_Core_PressureCuff_Measure_Stethoscope">
+            <English>Measure Blood Pressure (Stethoscope)</English>
+        </Key>-->
+        <!--
+            // Cancel Carrying // -->
+        <Key ID="STR_ACM_Core_CancelCarrying">
+            <English>Cancel Carrying</English>
+        </Key>
+        <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
+            <English>Stopped carrying %1</English>
+        </Key><!--
+            // Lying State // -->
+        <Key ID="STR_ACM_Core_LyingState_GetUp">
+            <English>Get Up</English>
+        </Key><!--
+            // Unload and carry // -->
+        <Key ID="STR_ACM_Core_CarryPatient">
+            <English>Carry Patient</English>
+        </Key><!--
+            // Boxes // -->
+        <Key ID="STR_ACM_Core_MedicalSupplyCrate_Basic_Display">
+            <English>[ACM] Basic Medical Supply Crate</English>
+        </Key>
+        <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
+            <English>[ACM] Advanced Medical Supply Crate</English>
+        </Key>
+    </Package>
+</Project>

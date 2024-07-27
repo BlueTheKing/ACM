@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ACM">
+    <Package name="Damage">
+        <Key ID="STR_ACM_Damage_SETTING_Enable">
+            <English>Enable Damage Addon</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_Enable_Desc">
+            <English>Enable modified damage thresholds</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold">
+            <English>Head Trauma Death Threshold</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold_Desc">
+            <English>Sets threshold for instant death from trauma to the head</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold">
+            <English>Torso Trauma Death Threshold</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold_Desc">
+            <English>Sets threshold for instant death from trauma to the torso</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold">
+            <English>Head Trauma Cardiac Arrest Threshold</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold_Desc">
+            <English>Sets threshold for possibility of cardiac arrest from trauma to the head, using percentage of Head Trauma Death Threshold</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold">
+            <English>Torso Trauma Cardiac Arrest Threshold</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold_Desc">
+            <English>Sets threshold for possibility of cardiac arrest from trauma to the torso, using percentage of Body Trauma Death Threshold</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier">
+            <English>Internal Bleeding Chance Multiplier</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier_Desc">
+            <English>Chance for internal bleeding to occur from inflicted wounds</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_Hardcore_InternalBleeding">
+            <English>[HARDCORE] Internal Bleeding</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_Hardcore_InternalBleeding_Desc">
+            <English>[HARDCORE] Sets whether internal bleeding should require further treatment to fully stop</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_TraumaModifierAI">
+            <English>AI Trauma Modifier</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_TraumaModifierAI_Desc">
+            <English>Sets AI toughness compared to player thresholds</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance">
+            <English>AI Stay Down Chance</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance_Desc">
+            <English>Sets chance for AI to stay down once unconscious (without intervention)</English>
+        </Key><!--
+            // Settings in CORE // -->
+        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart">
+            <English>Wrap Time</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart_Desc">
+            <English>Time to wrap whole body part</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch">
+            <English>Wrapped Stitch Time</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch_Desc">
+            <English>Time to stitch a wrapped wound</English>
+        </Key><!-- 
+            // Items // -->
+        <Key ID="STR_ACM_Damage_PressureBandage">
+            <English>Pressure Bandage</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_PressureBandage_Desc">
+            <English>Standard issue bandage</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_EmergencyTraumaDressing">
+            <English>Emergency Trauma Dressing</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_EmergencyTraumaDressing_Desc">
+            <English>Trauma dressing with large surface area</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_ElasticWrap">
+            <English>Elastic Wrap</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_ElasticWrap_Desc">
+            <English>Used to wrap bandages, clotted wounds and bruises</English>
+        </Key><!--
+            // Actions // -->
+        <Key ID="STR_ACM_Damage_ElasticWrap_Progress">
+            <English>Wrapping...</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_ElasticWrap_Bruises">
+            <English>Wrap Bruises</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_ElasticWrap_Bandages">
+            <English>Wrap Bandaged Wounds</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_ElasticWrap_Clots">
+            <English>Wrap Clotted Wounds</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped">
+            <English>Use Surgical Kit (Wrapped)</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SurgicalKit_Clotted">
+            <English>Use Surgical Kit (Clotted)</English>
+        </Key><!--
+            // Wrap Body Part Action // -->
+        <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">
+            <English>%1 has wrapped %2</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Bandages">
+            <English>bandages</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Clotted">
+            <English>clotted wounds</English>
+        </Key><!--
+            // Wrap Bruises Action // -->
+        <Key ID="STR_ACM_Damage_WrapBruises_ActionLog">
+            <English>%1 has wrapped bruises</English>
+        </Key>
+    </Package>
+</Project>

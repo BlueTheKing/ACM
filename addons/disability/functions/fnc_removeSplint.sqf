@@ -21,4 +21,4 @@ params ["_medic", "_patient", "_bodyPart"];
 
 [QGVAR(removeSplintLocal), [_medic, _patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
 
-[_patient, "activity", "%1 removed splint", [[_medic] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", LSTRING(RemoveSplint_ActionLog), [[_medic] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);

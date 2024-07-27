@@ -33,16 +33,16 @@ class ACEGVAR(medical_treatment,actions) {
     class Splint;
     class FieldDressing;
     class Morphine: FieldDressing {
-        displayName = "Use Morphine Autoinjector";
-        displayNameProgress = "Using Morphine Autoinjector...";
+        displayName = CSTRING(MorphineAutoinjector);
+        displayNameProgress = CSTRING(MorphineAutoinjector_Progress);
     };
     class Adenosine: Morphine {
-        displayName = "Use Adenosine Autoinjector";
-        displayNameProgress = "Using Adenosine Autoinjector...";
+        displayName = CSTRING(AdenosineAutoinjector);
+        displayNameProgress = CSTRING(AdenosineAutoinjector_Progress);
     };
     class Epinephrine: Morphine {
-        displayName = "Use Epinephrine Autoinjector";
-        displayNameProgress = "Using Epinephrine Autoinjector...";
+        displayName = CSTRING(EpinephrineAutoinjector);
+        displayNameProgress = CSTRING(EpinephrineAutoinjector_Progress);
     };
     class SurgicalKit;
     class CheckPulse;
@@ -82,7 +82,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class PressureBandage: BasicBandage {
-        displayName = "Pressure Bandage";
+        displayName = ECSTRING(damage,PressureBandage);
         displayNameProgress = ACECSTRING(medical_treatment,Bandaging);
         icon = QACEPATHTOF(medical_gui,ui\bandage.paa);
         category = "bandage";
@@ -108,13 +108,13 @@ class ACEGVAR(medical_treatment,actions) {
         animationMedicSelfProne = "AinvPpneMstpSlayW[wpn]Dnon_medic";
     };
     class EmergencyTraumaDressing: PressureBandage {
-        displayName = "Emergency Trauma Dressing";
+        displayName = ECSTRING(damage,EmergencyTraumaDressing);
         items[] = {"ACM_EmergencyTraumaDressing"};
         allowSelfTreatment = 0;
     };
     class ElasticWrap: PressureBandage {
-        displayName = "Wrap Bruises";
-        displayNameProgress = "Wrapping...";
+        displayName = ECSTRING(damage,ElasticWrap_Bruises);
+        displayNameProgress = ECSTRING(damage,ElasticWrap_Progress);
         items[] = {"ACM_ElasticWrap"};
         medicRequired = 1;
         condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call EFUNC(damage,canWrap));
@@ -122,27 +122,27 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QEFUNC(damage,wrapBruises);
     };
     class ElasticWrapBandages: ElasticWrap {
-        displayName = "Wrap Bandaged Wounds";
+        displayName = ECSTRING(damage,ElasticWrap_Bandages);
         condition = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call EFUNC(damage,canWrap));
         treatmentTime = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call EFUNC(damage,getWrapTime));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call EFUNC(damage,wrapBodypart));
     };
     class ElasticWrapClots: ElasticWrap {
-        displayName = "Wrap Clotted Wounds";
+        displayName = ECSTRING(damage,ElasticWrap_Clots);
         condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(damage,canWrap));
         treatmentTime = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(damage,getWrapTime));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(damage,wrapBodypart));
     };
     class ElasticWrapSplint: ElasticWrap {
-        displayName = "Wrap SAM Splint";
+        displayName = ECSTRING(disability,ElasticWrap_Splint);
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
         condition = QEFUNC(disability,canWrapSplint);
         treatmentTime = QEFUNC(disability,getSplintWrapTime);
         callbackSuccess = QEFUNC(disability,wrapSplint);
     };
     class ApplySAMSplint: Splint {
-        displayName = "Apply SAM Splint";
-        displayNameProgress = "Applying SAM Splint...";
+        displayName = ECSTRING(disability,ApplySAMSplint);
+        displayNameProgress = ECSTRING(disability,ApplySAMSplint_Progress);
         items[] = {"ACM_SAMSplint"};
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
         condition = QACEFUNC(medical_treatment,canSplint);
@@ -150,8 +150,8 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QEFUNC(disability,splint);
     };
     class RemoveSAMSplint: Splint {
-        displayName = "Remove SAM Splint";
-        displayNameProgress = "Removing SAM Splint...";
+        displayName = ECSTRING(disability,RemoveSAMSplint);
+        displayNameProgress = ECSTRING(disability,RemoveSAMSplint_Progress);
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
         items[] = {};
         condition = QEFUNC(disability,canRemoveSplint);
@@ -159,25 +159,14 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QEFUNC(disability,removeSplint);
         litter[] = {};
     };
-    /*class ChitosanInjector: Morphine {
-        displayName = CSTRING(ChitosanInjector_Display);
-        displayNameProgress = CSTRING(ChitosanInjector_Progress);
-        icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
-        category = "bandage";
-        allowedSelections[] = {"All"};
-        items[] = {"ACM_chitosanInjector"};
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call FUNC(isBodyPartBleeding));
-        callbackSuccess = QFUNC(applyChitosanInjector);
-        litter[] = {};
-    };*/
     class StitchWrappedWounds: SurgicalKit {
-        displayName = "Use Surgical Kit (Wrapped)";
+        displayName = ECSTRING(damage,SurgicalKit_Wrapped);
         treatmentTime = QUOTE([ARR_3(_patient,_bodyPart,1)] call EFUNC(damage,getStitchTime));
         condition = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call EFUNC(damage,canStitch));
         callbackProgress = QUOTE([ARR_4(_args,_elapsedTime,_totalTime,1)] call EFUNC(damage,surgicalKitProgress));
     };
     class StitchClottedWounds: SurgicalKit {
-        displayName = "Use Surgical Kit (Clotted)";
+        displayName = ECSTRING(damage,SurgicalKit_Clotted);
         treatmentTime = QUOTE([ARR_3(_patient,_bodyPart,2)] call EFUNC(damage,getStitchTime));
         condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(damage,canStitch));
         callbackProgress = QUOTE([ARR_4(_args,_elapsedTime,_totalTime,2)] call EFUNC(damage,surgicalKitProgress));
@@ -380,8 +369,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class ShakeAwake: CheckResponse {
-        displayName = "Attempt To Shake Awake";
-        displayNameProgress = "Shaking Patient...";
+        displayName = ECSTRING(disability,ShakeAwake);
+        displayNameProgress = ECSTRING(disability,ShakeAwake_Progress);
         category = "medication";
         medicRequired = 0;
         allowedSelections[] = {"Body","LeftArm","RightArm"};
@@ -390,8 +379,8 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QEFUNC(disability,shakeAwake);
     };
     class SlapAwake: ShakeAwake {
-        displayName = "Attempt To Slap Awake";
-        displayNameProgress = "Slapping Patient...";
+        displayName = ECSTRING(disability,SlapAwake);
+        displayNameProgress = ECSTRING(disability,SlapAwake_Progress);
         allowedSelections[] = {"Head"};
         treatmentTime = 3;
         condition = QUOTE(!([_patient] call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));

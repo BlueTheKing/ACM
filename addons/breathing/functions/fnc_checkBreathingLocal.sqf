@@ -38,19 +38,19 @@ private _airwaySecure = (_patient getVariable [QEGVAR(airway,AirwayItem_Oral), "
 
 switch (true) do {
     case (_respiratoryArrest || _airwayBlocked): {
-        _hint = LLSTRING(CheckBreathing_None_Short);
+        _hint = LLSTRING(CheckBreathing_None);
         _hintLog = LLSTRING(CheckBreathing_None_Short);
     };
     case (_pneumothorax || _airwayCollapsed && !_airwaySecure || !_airwayReflexIntact && !_airwayAdjunct): {
-        _hint = LLSTRING(CheckBreathing_Shallow_Short);
+        _hint = LLSTRING(CheckBreathing_Shallow);
         _hintLog = LLSTRING(CheckBreathing_Shallow_Short);
 
         if (_respirationRate < 15.9) then {
-            _hint = LLSTRING(CheckBreathing_ShallowSlow_Short);
+            _hint = LLSTRING(CheckBreathing_ShallowSlow);
             _hintLog = LLSTRING(CheckBreathing_ShallowSlow_Short);
         } else {
             if (_respirationRate > 22) then {
-                _hint = LLSTRING(CheckBreathing_ShallowRapid_Short);
+                _hint = LLSTRING(CheckBreathing_ShallowRapid);
                 _hintLog = LLSTRING(CheckBreathing_ShallowRapid_Short);
             };
         };

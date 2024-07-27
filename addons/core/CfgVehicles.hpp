@@ -29,7 +29,7 @@
 
 #define ACTION_UNLOADANDCARRY \
     class ACM_Action_UnloadAndCarryPatient { \
-        displayName = QUOTE(Carry Patient); \
+        displayName = CSTRING(CarryPatient); \
         condition = QUOTE(alive _target); \
         exceptions[] = {"isNotDragging", "isNotCarrying", "isNotInside"}; \
         statement = ""; \
@@ -39,7 +39,7 @@
 
 #define ACTION_REFILL_OXYGEN_425 \
     class ACM_Action_Refill_PortableOxygenTank_425 { \
-        displayName = QUOTE(Refill Oxygen Tank); \
+        displayName = ECSTRING(breathing,RefillOxygenTank); \
         condition = QUOTE([ARR_2(_player,_target)] call EFUNC(breathing,canRefillOxygenTank)); \
         exceptions[] = {"isNotInside"}; \
         statement = QUOTE([_player] call EFUNC(breathing,refillOxygenTank)); \
@@ -49,7 +49,7 @@
 class CfgVehicles {
     class ACE_medicalSupplyCrate;
     class ACM_MedicalSupplyCrate_Basic: ACE_medicalSupplyCrate {
-        displayName = "[ACM] Basic Medical Supply Crate";
+        displayName = CSTRING(MedicalSupplyCrate_Basic_Display);
         author = "Blue";
         editorCategory = "EdCat_Supplies";
         editorSubcategory = QGVAR(EditorCategory);
@@ -85,7 +85,7 @@ class CfgVehicles {
         };
     };
     class ACM_MedicalSupplyCrate_Advanced: ACM_MedicalSupplyCrate_Basic {
-        displayName = "[ACM] Advanced Medical Supply Crate";
+        displayName = CSTRING(MedicalSupplyCrate_Advanced_Display);
         class TransportMagazines {
             ADDMAGAZINE(ACM_Paracetamol,8);
             ADDMAGAZINE(ACM_AmmoniaInhalant,8);
@@ -154,7 +154,7 @@ class CfgVehicles {
         class ACE_Actions {
             class ACE_MainActions {
                 class ACM_LyingState_GetUp {
-                    displayName = "Get Up";
+                    displayName = CSTRING(LyingState_GetUp);
                     icon = "";
                     condition = QUOTE(_target getVariable [ARR_2(QQGVAR(Lying_State),false)] && !(isPlayer _target));
                     statement = QUOTE([_target] call FUNC(getUp));
@@ -165,7 +165,7 @@ class CfgVehicles {
         };
         class ACE_SelfActions {
             class ACM_Action_GetUp {
-                displayName = "Get Up";
+                displayName = CSTRING(LyingState_GetUp);
                 icon = "";
                 condition = QUOTE(_player getVariable [ARR_2(QQGVAR(Lying_State),false)]);
                 statement = QUOTE([_player] call FUNC(getUp));

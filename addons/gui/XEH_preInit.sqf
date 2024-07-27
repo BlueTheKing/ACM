@@ -14,7 +14,7 @@ ADDON = true;
 [
     QGVAR(showInactiveStatuses),
     "CHECKBOX",
-    ["Show inactive vitals statuses", "Show vitals status in overview tab when inactive (display ""none"")"],
+    [LLSTRING(SETTING_ShowInactiveStatuses), LLSTRING(SETTING_ShowInactiveStatuses_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
     [false],
     true
@@ -24,7 +24,7 @@ ADDON = true;
 [
     QGVAR(overlayBodyPart),
     "CHECKBOX",
-    "Show overlay for selected body part",
+    LLSTRING(SETTING_OverlayBodyPart),
     [ACM_SETTINGS_CATEGORY, ""],
     [false],
     false
@@ -34,7 +34,7 @@ ADDON = true;
 [
     QGVAR(showPatientSideLabels),
     "CHECKBOX",
-    "Show patient side labels (L/R)",
+    [LLSTRING(SETTING_ShowPatientSideLabels), LLSTRING(SETTING_ShowPatientSideLabels_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
     [false],
     false

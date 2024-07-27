@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ACM">
+    <Package name="GUI">
+        <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses">
+            <English>Show inactive vitals statuses</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
+            <English>Show vitals status in overview tab when inactive (display ""none"")</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
+            <English>Show overlay for selected body part</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels">
+            <English>Show patient side labels</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels_Desc">
+            <English>Show patient left/right side labels in medical menu</English>
+        </Key>
+    </Package>
+</Project>

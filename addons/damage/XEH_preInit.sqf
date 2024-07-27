@@ -13,7 +13,7 @@ ADDON = true;
 [
     QGVAR(enable),
     "CHECKBOX",
-    ["Enable Damage Addon", "Enable modified damage thresholds"],
+    [LLSTRING(SETTING_Enable), LLSTRING(SETTING_Enable_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
     [true],
     true
@@ -22,7 +22,7 @@ ADDON = true;
 [
     QGVAR(headTraumaDeathThreshold),
     "SLIDER",
-    ["Head Trauma Death Threshold", "Sets threshold for instant death from trauma to the head"],
+    [LLSTRING(SETTING_HeadTraumaDeathThreshold), LLSTRING(SETTING_HeadTraumaDeathThreshold_Desc)],
     [ACM_SETTINGS_CATEGORY, "Thresholds"],
     [0, 40, 19, 1],
     true
@@ -31,7 +31,7 @@ ADDON = true;
 [
     QGVAR(bodyTraumaDeathThreshold),
     "SLIDER",
-    ["Torso Trauma Death Threshold", "Sets threshold for instant death from trauma to the torso"],
+    [LLSTRING(SETTING_BodyTraumaDeathThreshold), LLSTRING(SETTING_BodyTraumaDeathThreshold_Desc)],
     [ACM_SETTINGS_CATEGORY, "Thresholds"],
     [0, 40, 24, 1],
     true
@@ -40,7 +40,7 @@ ADDON = true;
 [
     QGVAR(headTraumaCardiacArrestThreshold),
     "SLIDER",
-    ["Head Trauma Cardiac Arrest Threshold", "Sets threshold for possibility of cardiac arrest from trauma to the head, using percentage of Head Trauma Death Threshold"],
+    [LLSTRING(SETTING_HeadTraumaCardiacArrestThreshold), LLSTRING(SETTING_HeadTraumaCardiacArrestThreshold_Desc)],
     [ACM_SETTINGS_CATEGORY, "Thresholds"],
     [0, 1, 0.65, 1, true],
     true
@@ -49,7 +49,7 @@ ADDON = true;
 [
     QGVAR(bodyTraumaCardiacArrestThreshold),
     "SLIDER",
-    ["Torso Trauma Cardiac Arrest Threshold", "Sets threshold for possibility of cardiac arrest from trauma to the torso, using percentage of Body Trauma Death Threshold"],
+    [LLSTRING(SETTING_BodyTraumaCardiacArrestThreshold), LLSTRING(SETTING_BodyTraumaCardiacArrestThreshold_Desc)],
     [ACM_SETTINGS_CATEGORY, "Thresholds"],
     [0, 1, 0.65, 1, true],
     true
@@ -58,7 +58,7 @@ ADDON = true;
 [
     QGVAR(internalBleedingChanceMultiplier),
     "SLIDER",
-    ["Internal Bleeding Chance Multiplier", "Chance for internal bleeding"],
+    [LLSTRING(SETTING_InternalBleedingChanceMultiplier), LLSTRING(SETTING_InternalBleedingChanceMultiplier_Desc)],
     [ACM_SETTINGS_CATEGORY, "Internal Bleeding"],
     [0.1, 2, 1, 1],
     true
@@ -67,7 +67,7 @@ ADDON = true;
 /*[
     QGVAR(Hardcore_InternalBleeding),
     "CHECKBOX",
-    ["[HARDCORE] Internal Bleeding", "[HARDCORE] Sets whether internal bleeding should require further treatment to fully stop"],
+    [LLSTRING(SETTING_Hardcore_InternalBleeding), LLSTRING(SETTING_Hardcore_InternalBleeding_Desc)],
     [ACM_SETTINGS_CATEGORY, "Internal Bleeding"],
     [false],
     true
@@ -76,7 +76,7 @@ ADDON = true;
 [
     QGVAR(traumaModifierAI),
     "SLIDER",
-    ["AI Trauma Modifier", "Sets AI toughness compared to player thresholds"],
+    [LLSTRING(SETTING_TraumaModifierAI), LLSTRING(SETTING_TraumaModifierAI_Desc)],
     [ACM_SETTINGS_CATEGORY, "AI Units"],
     [0.1, 2, 1, 1],
     true
@@ -85,7 +85,7 @@ ADDON = true;
 [
     QGVAR(AIStayDownChance),
     "SLIDER",
-    ["AI Stay Down Chance", "Sets chance for AI to stay down once unconscious (without intervention)"],
+    [LLSTRING(SETTING_AIStayDownChance), LLSTRING(SETTING_AIStayDownChance_Desc)],
     [ACM_SETTINGS_CATEGORY, "AI Units"],
     [0, 1, 1, 0, true],
     true
