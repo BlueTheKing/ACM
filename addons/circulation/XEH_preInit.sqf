@@ -6,14 +6,14 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-#define ACM_SETTINGS_CATEGORY "ACM: Circulation"
+#define ACM_SETTINGS_CATEGORY LLSTRING(Category)
 
 // Basic
 
 [
     QGVAR(cardiacArrestBleedRate),
     "SLIDER",
-    "Cardiac Arrest Bleed Rate",
+    [LLSTRING(SETTING_CardiacArrestBleedRate), LLSTRING(SETTING_CardiacArrestBleedRate_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
     [0.01, 1, 0.05, 2],
     true
@@ -24,7 +24,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(coagulationClotting),
     "CHECKBOX",
-    "Enable Clotting",
+    [LLSTRING(SETTING_CoagulationClotting), LLSTRING(SETTING_CoagulationClotting_Desc)],
     [ACM_SETTINGS_CATEGORY, "Coagulation"],
     [true],
     true
@@ -33,7 +33,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(coagulationClottingAffectAI),
     "CHECKBOX",
-    "Clotting for AI",
+    [LLSTRING(SETTING_CoagulationClottingAffectAI), LLSTRING(SETTING_CoagulationClottingAffectAI_Desc)],
     [ACM_SETTINGS_CATEGORY, "Coagulation"],
     [true],
     true
@@ -44,7 +44,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(cardiacArrestChance),
     "SLIDER",
-    ["Critical Damage Cardiac Arrest Chance", "Sets chance for unit to go into cardiac arrest after taking critical damage"],
+    [LLSTRING(SETTING_CardiacArrestChance), LLSTRING(SETTING_CardiacArrestChance_Desc)],
     [ACM_SETTINGS_CATEGORY, "Cardiac Arrest"],
     [0, 1, 0.1, 1, true],
     true
@@ -53,7 +53,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(cardiacArrestDeteriorationRate),
     "SLIDER",
-    ["Rhythm Deterioration Multiplier", "Chance that rhythm will deteriorate while in cardiac arrest"],
+    [LLSTRING(SETTING_CardiacArrestDeteriorationRate), LLSTRING(SETTING_CardiacArrestDeteriorationRate_Desc)],
     [ACM_SETTINGS_CATEGORY, "Cardiac Arrest"],
     [0, 2, 1, 1],
     true
@@ -62,7 +62,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(Hardcore_PostCardiacArrest),
     "CHECKBOX",
-    ["[HARDCORE] Post Cardiac Arrest Complications", "[HARDCORE] Sets whether there should be a decrease in cardiac output after ROSC requiring further treatment to fully treat"],
+    [LLSTRING(SETTING_Hardcore_PostCardiacArrest), LLSTRING(SETTING_Hardcore_PostCardiacArrest_Desc)],
     [ACM_SETTINGS_CATEGORY, "Cardiac Arrest"],
     [false],
     true
@@ -73,7 +73,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowAED),
     "LIST",
-    ["Allow AED", "Training level required to use AED"],
+    [LLSTRING(SETTING_Allow_AED), LLSTRING(SETTING_Allow_AED_Desc)],
     [ACM_SETTINGS_CATEGORY, "Defibrillator"],
     [SETTING_DROPDOWN_SKILL, 0],
     true
@@ -100,7 +100,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(AEDDistanceLimit),
     "SLIDER",
-    ["AED Distance Limit", "Distance over which the AED will disconnect itself from the patient"],
+    [LLSTRING(SETTING_AEDDistanceLimit), LLSTRING(SETTING_AEDDistanceLimit_Desc)],
     [ACM_SETTINGS_CATEGORY, "Defibrillator"],
     [3, 8, 5, 1],
     true
@@ -111,7 +111,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(CPREffectiveness),
     "SLIDER",
-    ["CPR Effectiveness Multiplier", "Set overall CPR effectiveness"],
+    [LLSTRING(SETTING_CPREffectiveness), LLSTRING(SETTING_CPREffectiveness_Desc)],
     [ACM_SETTINGS_CATEGORY, "CPR"],
     [0.1, 4, 1, 1],
     true
@@ -122,7 +122,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowIV),
     "LIST",
-    ["Allow IV", "Training level required to use IVs"],
+    [LLSTRING(SETTING_Allow_IV), LLSTRING(SETTING_Allow_IV_Desc)],
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
     [SETTING_DROPDOWN_SKILL, 1],
     true
@@ -131,7 +131,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowIO),
     "LIST",
-    ["Allow IO", "Training level required to use IOs"],
+    [LLSTRING(SETTING_Allow_IO), LLSTRING(SETTING_Allow_IO_Desc)],
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
     [SETTING_DROPDOWN_SKILL, 1],
     true
@@ -140,7 +140,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeIV_16),
     "SLIDER",
-    "16g IV Time",
+    [LLSTRING(SETTING_TreatmentTime_IV_16), LLSTRING(SETTING_TreatmentTime_IV_16_Desc)],
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
     [1, 30, 6, 1],
     true
@@ -149,7 +149,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeIV_14),
     "SLIDER",
-    "14g IV Time",
+    [LLSTRING(SETTING_TreatmentTime_IV_14), LLSTRING(SETTING_TreatmentTime_IV_14_Desc)],
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
     [1, 30, 8, 1],
     true
@@ -158,7 +158,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeIO_EZ),
     "SLIDER",
-    "EZ-IO Time",
+    [LLSTRING(SETTING_TreatmentTime_IO_EZ), LLSTRING(SETTING_TreatmentTime_IO_EZ_Desc)],
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
     [1, 30, 4, 1],
     true
@@ -167,7 +167,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(treatmentTimeIO_FAST1),
     "SLIDER",
-    "FAST1 IO Time",
+    [LLSTRING(SETTING_TreatmentTime_IO_FAST1), LLSTRING(SETTING_TreatmentTime_IO_FAST1_Desc)],
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
     [1, 30, 4, 1],
     true
@@ -176,7 +176,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(selfIV),
     "LIST",
-    ["Allow Self IV", "Allow self-application of IV"],
+    [LLSTRING(SETTING_SelfIV), LLSTRING(SETTING_SelfIV_Desc)],
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
     [[0, 1], [ACELSTRING(common,No), ACELSTRING(common,Yes)], 0],
     true
@@ -185,7 +185,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(selfIO),
     "LIST",
-    ["Allow Self IO", "Allow self-application of IO"],
+    [LLSTRING(SETTING_SelfIO), LLSTRING(SETTING_SelfIO_Desc)],
     [ACM_SETTINGS_CATEGORY, "IV/IO"],
     [[0, 1], [ACELSTRING(common,No), ACELSTRING(common,Yes)], 0],
     true
@@ -199,7 +199,7 @@ PREP_RECOMPILE_END;
     [
         format ["ACM_circulation_BloodType_Ratio_%1", _type],
         "SLIDER",
-        [format ["%1 Ratio", _string], format ["Ratio out of 100 that is taken by the %1 blood type, ratios must add up to exactly 100", _string]],
+        [format [LLSTRING(SETTING_BloodType_Ratio_%1), _string], format [LLSTRING(SETTING_BloodType_Ratio_%1_Desc), _string]],
         [ACM_SETTINGS_CATEGORY, "Blood Types"],
         [1, 100, _default, 0],
         true,

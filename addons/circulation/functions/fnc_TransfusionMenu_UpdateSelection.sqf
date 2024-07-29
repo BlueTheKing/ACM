@@ -23,4 +23,4 @@ private _ctrlSelectionText = _display displayCtrl IDC_TRANSFUSIONMENU_SELECTIONT
 
 private _bodyPartString = [GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(core,getBodyPartString);
 
-_ctrlSelectionText ctrlSetText ([(format ["%1 - IO", _bodyPartString]), (format ["%1 - IV (%2)", _bodyPartString, (["Upper","Middle","Lower"] select GVAR(TransfusionMenu_Selected_AccessSite))])] select GVAR(TransfusionMenu_SelectIV));
+_ctrlSelectionText ctrlSetText ([(format ["%1 - %2", _bodyPartString, LLSTRING(Intraosseous_Short)]), (format ["%1 - %2 (%3)", _bodyPartString, LLSTRING(Intravenous_Short), ([LLSTRING(IV_Upper), LLSTRING(IV_Middle), LLSTRING(IV_Lower)] select GVAR(TransfusionMenu_Selected_AccessSite))])] select GVAR(TransfusionMenu_SelectIV));

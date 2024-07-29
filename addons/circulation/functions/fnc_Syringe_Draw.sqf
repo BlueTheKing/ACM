@@ -47,11 +47,11 @@ GVAR(SyringeDraw_IV) = false;
     private _display = uiNamespace getVariable [QGVAR(SyringeDraw_DLG), displayNull];
     private _ctrlText = _display displayCtrl IDC_SYRINGEDRAW_TEXT;
 
-    private _sourceString = ["IM","IV"] select _IV;
+    private _sourceString = [LLSTRING(Intramuscular_Short),LLSTRING(Intravenous_Short)] select _IV;
 
     private _concentration = getText (configFile >> "ACM_Medication" >> "Concentration" >> _medication >> "dose");
 
-    _ctrlText ctrlSetText format ["Drawing %1 (%2) into %3 syringe", _medication, _concentration, _sourceString];
+    _ctrlText ctrlSetText format [LLSTRING(Syringe_Drawing), _medication, _concentration, _sourceString];
 
     GVAR(SyringeDraw_Moving) = false;
 
@@ -70,7 +70,7 @@ GVAR(SyringeDraw_IV) = false;
         _ctrlPlunger ctrlCommit 0;
 
         private _ctrlInjectButton = _display displayCtrl IDC_SYRINGEDRAW_BUTTON_PUSH;
-        _ctrlInjectButton ctrlSetText "Inject";
+        _ctrlInjectButton ctrlSetText LLSTRING(Inject);
 
         (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_IV_GROUP) ctrlShow false;
     };

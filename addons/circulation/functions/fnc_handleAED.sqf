@@ -206,8 +206,8 @@ if (_inVehicle) then {
             [_medic, _patient, "body", 1, false, true] call FUNC(setAED);
             [_medic, _patient, "body", 2, false, true] call FUNC(setAED);
             [_medic, _patient, "body", 3, false, true] call FUNC(setAED);
-            [_patient, "activity", "%1 disconnected AED", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
-            ["Patient Disconnected", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+            [_patient, "activity", LSTRING(AED_%1_Disconnected), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+            [LSTRING(AED_PatientDisconnected), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
         };
     }, [_patient, _medic], 3600] call CBA_fnc_waitUntilAndExecute;
 } else {
@@ -223,8 +223,8 @@ if (_inVehicle) then {
             [_medic, _patient, "body", 1, false, true] call FUNC(setAED);
             [_medic, _patient, "body", 2, false, true] call FUNC(setAED);
             [_medic, _patient, "body", 3, false, true] call FUNC(setAED);
-            [_patient, "activity", "%1 disconnected AED", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
-            ["Patient Disconnected", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+            [_patient, "activity", LSTRING(AED_%1_Disconnected), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+            [LSTRING(AED_PatientDisconnected), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
         };
     }, [_patient, _medic], 3600] call CBA_fnc_waitUntilAndExecute;
 };

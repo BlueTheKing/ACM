@@ -18,7 +18,7 @@
 
 params ["_unit", ["_IV", false]];
 
-private _sourceString = ["IM","IV"] select _IV;
+private _sourceString = [LLSTRING(Intramuscular_Short), LLSTRING(Intravenous_Short)] select _IV;
 
 private _targetItems = [];
 
@@ -52,7 +52,7 @@ private _actions = [];
         _args params ["_actionString", "_medication", "_IV", "_dose"];
 
         private _action = [([[format ["%1_Discard", _actionString],
-        "Discard",
+        LLSTRING(Syringe_Discard),
         "",
         {
             params ["", "", "_args"];

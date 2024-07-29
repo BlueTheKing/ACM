@@ -33,36 +33,36 @@ private _hint = "";
 switch (_type) do {
     case 3: {
         if (_state) then {
-            _hint = "connected AED Capnograph";
+            _hint = format ["%1 %2", (toLower LELSTRING(common,Connected)), LLSTRING(AED_Capnograph)];
         } else {
-            _hint = "disconnected AED Capnograph";
+            _hint = format ["%1 %2", (toLower LELSTRING(common,Disconnected)), LLSTRING(AED_Capnograph)];
         };
     };
     case 2: {
         if (_state) then {
-            _hint = "connected AED Pressure Cuff";
+            _hint = format ["%1 %2", (toLower LELSTRING(common,Connected)), LLSTRING(AED_PressureCuff)];
         } else {
-            _hint = "disconnected AED Pressure Cuff";
+            _hint = format ["%1 %2", (toLower LELSTRING(common,Disconnected)), LLSTRING(AED_PressureCuff)];
         };
     };
     case 1: {
         if (_state) then {
-            _hint = "connected AED Pulse Oximeter";
+            _hint = format ["%1 %2", (toLower LELSTRING(common,Connected)), LLSTRING(AED_PulseOximeter)];
         } else {
-            _hint = "disconnected AED Pulse Oximeter";
+            _hint = format ["%1 %2", (toLower LELSTRING(common,Disconnected)), LLSTRING(AED_PulseOximeter)];
         };
     };
     default {
         if (_state) then {
-            _hint = "applied AED pads";
+            _hint = format ["%1 %2", (toLower LELSTRING(common,Applied)), LLSTRING(AED_Pads)];
         } else {
-            _hint = "removed AED pads";
+            _hint = format ["%1 %2", (toLower LELSTRING(common,Removed)), LLSTRING(AED_Pads)];
         };
     };
 };
 
 if (_state && [_patient, _bodyPart, (_type + 1)] call FUNC(hasAED)) exitWith {
-    [(format ["Patient already has %1 on the %2", _hint, toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [(format [LLSTRING(AED_Already), _hint, toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 if !(_hideLog) then {

@@ -26,7 +26,7 @@
             <English>[HARDCORE] Chest Injuries</English>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury_Desc">
-            <English>[HARDCORE] Sets whether Tension Pneumothorax should require further treatment to fully heal</English>
+            <English>[HARDCORE] Sets whether Tension Pneumothorax should require further treatment to fully treat</English>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding">
             <English>[HARDCORE] Hemothorax Bleeding</English>

@@ -71,7 +71,7 @@ private _funcParams = [_IVBags, _IVBagsOnBodyPart, _targetIndex, _itemClassName,
     
     _funcParams call _completeRemoval;
     private _fluidBagString = [([([true, _type, _returnVolume, -1, true] call FUNC(getFluidBagConfigName)), ([false, _type, _returnVolume, _bloodType, true] call FUNC(getFluidBagConfigName))] select (_type == "Blood"))] call EFUNC(core,getFluidBagString);
-    [_patient, "activity", "%1 removed fluid bag (%2) from %3", [[_medic, false, true] call ACEFUNC(common,getName), _fluidBagString, ([GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(core,getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "activity", LSTRING(TransfusionMenu_RemoveBag_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _fluidBagString, ([GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(core,getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
     closeDialog 0;
     
     [{
@@ -84,4 +84,4 @@ private _funcParams = [_IVBags, _IVBagsOnBodyPart, _targetIndex, _itemClassName,
     closeDialog 0;
     
     [_medic, _patient, GVAR(TransfusionMenu_Selected_BodyPart)] call FUNC(openTransfusionMenu);
-}, (format ["Removing %1...", _itemClassNameString]), 2.5] call EFUNC(core,progressBarAction);
+}, (format [LLSTRING(TransfusionMenu_RemoveBag_Progress), _itemClassNameString]), 2.5] call EFUNC(core,progressBarAction);

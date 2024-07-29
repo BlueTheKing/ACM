@@ -170,14 +170,14 @@ private _inVehicle = !(isNull objectParent ACE_player);
 
     private _siteFlowRate = [(GET_IO_FLOW(_patient) select _partIndex), ((GET_IV_FLOW(_patient) select _partIndex) select GVAR(TransfusionMenu_Selected_AccessSite))] select GVAR(TransfusionMenu_SelectIV);
 
-    private _typeString = ["IO","IV"] select GVAR(TransfusionMenu_SelectIV);
+    private _typeString = [LLSTRING(Intraosseous_Short), LLSTRING(Intravenous_Short)] select GVAR(TransfusionMenu_SelectIV);
 
     if (_siteFlowRate > 0) then {
-        _ctrlStopTransfusionButton ctrlSetText (format ["Stop %1 Transfusion", _typeString]);
-        _ctrlStopTransfusionButton ctrlSetTooltip (format ["Stop fluid transfusion on selected %1", _typeString]);
+        _ctrlStopTransfusionButton ctrlSetText (format [LLSTRING(TransfusionMenu_StopTransfusion_Display), _typeString]);
+        _ctrlStopTransfusionButton ctrlSetTooltip (format [LLSTRING(TransfusionMenu_StopTransfusion_ToolTip), _typeString]);
     } else {
-        _ctrlStopTransfusionButton ctrlSetText (format ["Start %1 Transfusion", _typeString]);
-        _ctrlStopTransfusionButton ctrlSetTooltip (format ["Start fluid transfusion on selected %1", _typeString]);
+        _ctrlStopTransfusionButton ctrlSetText (format [LLSTRING(TransfusionMenu_StartTransfusion_Display), _typeString]);
+        _ctrlStopTransfusionButton ctrlSetTooltip (format [LLSTRING(TransfusionMenu_StartTransfusion_ToolTip), _typeString]);
     };
 
     if ((GVAR(TransfusionMenu_Selection_IVBags_LastUpdate) + 1) < CBA_missionTime) then {

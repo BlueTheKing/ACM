@@ -19,7 +19,7 @@
 params ["_medic", "_patient"];
 
 if !(isNull (_patient getVariable [QGVAR(CPR_Medic), objNull])) exitWith {
-    ["Patient already has CPR provider", 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(CPR_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 _patient setVariable [QACEGVAR(medical,CPR_provider), _medic, true];
@@ -88,9 +88,9 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
         [_medic] call ACEFUNC(weaponselect,putWeaponAway);
     };
     
-    ["Stop CPR", "Pause CPR", ""] call ACEFUNC(interaction,showMouseHint);
-    ["Started CPR", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-    [_patient, "activity", "%1 started CPR", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+    [LLSTRING(CPR_Stop), LLSTRING(CPR_Pause), ""] call ACEFUNC(interaction,showMouseHint);
+    [LSTRING(CPR_Started), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [_patient, "activity", LSTRING(CPR_ActiongLog_Started), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
     [{
         params ["_args", "_idPFH"];
@@ -115,7 +115,7 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
             private _CPRTime = CBA_missionTime - _CPRStartTime; 
             private _time = [_CPRTime, "MM:SS"] call BIS_fnc_secondsToString;
 
-            [_patient, "activity", "%1 stopped CPR (%2)", [[_medic, false, true] call ACEFUNC(common,getName), _time]] call ACEFUNC(medical_treatment,addToLog);
+            [_patient, "activity", LSTRING(CPR_ActiongLog_Stopped), [[_medic, false, true] call ACEFUNC(common,getName), _time]] call ACEFUNC(medical_treatment,addToLog);
 
             _patient setVariable [QGVAR(CPR_StoppedTotal), _CPRTime, true];
             _patient setVariable [QGVAR(CPR_StoppedTime), CBA_missionTime, true];
@@ -129,7 +129,7 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
 
             closeDialog 0;
 
-            ["Stopped CPR", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+            [LSTRING(CPR_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
             GVAR(CPRActive) = false;
 
             [QEGVAR(core,openMedicalMenu), GVAR(CPRTarget)] call CBA_fnc_localEvent;
@@ -147,38 +147,38 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
             if ((_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA") then { // Intubated
                 GVAR(BVMActive) = [_patient] call EFUNC(core,bvmActive);
                 if ([_patient] call EFUNC(core,cprActive)) then {
-                    ["Continued CPR", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-                    ["Stop CPR", "Pause CPR", ""] call ACEFUNC(interaction,showMouseHint);
+                    [LSTRING(CPR_Continued), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                    [LLSTRING(CPR_Stop), LLSTRING(CPR_Pause), ""] call ACEFUNC(interaction,showMouseHint);
                     GVAR(CPRActive) = true;
                     GVAR(loopCPR) = true;
                 } else {
                     if (_notInVehicle) then {
                         [QACEGVAR(common,switchMove), [_medic, "ACM_CPR_Stop"]] call CBA_fnc_globalEvent;
                     };
-                    ["Paused CPR", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-                    ["Stop CPR", "Continue CPR", ""] call ACEFUNC(interaction,showMouseHint);
+                    [LSTRING(CPR_Paused), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                    [LLSTRING(CPR_Stop), LLSTRING(CPR_Continue), ""] call ACEFUNC(interaction,showMouseHint);
                     GVAR(CPRActive) = false;
                     GVAR(loopCPR) = false;
                 };
             } else {
                 if ([_patient] call EFUNC(core,bvmActive)) then {
-                    ["Stop CPR", "", ""] call ACEFUNC(interaction,showMouseHint);
+                    [LLSTRING(CPR_Stop), "", ""] call ACEFUNC(interaction,showMouseHint);
                     GVAR(BVMActive) = true;
                     GVAR(CPRActive) = [_patient] call EFUNC(core,cprActive);
                     GVAR(loopCPR) = GVAR(CPRActive);
                 } else {
                     GVAR(BVMActive) = false;
                     if ([_patient] call EFUNC(core,cprActive)) then {
-                        ["Continued CPR", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-                        ["Stop CPR", "Pause CPR", ""] call ACEFUNC(interaction,showMouseHint);
+                        [LSTRING(CPR_Continued), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                        [LLSTRING(CPR_Stop), LLSTRING(CPR_Pause), ""] call ACEFUNC(interaction,showMouseHint);
                         GVAR(CPRActive) = true;
                         GVAR(loopCPR) = true;
                     } else {
                         if (_notInVehicle) then {
                             [QACEGVAR(common,switchMove), [_medic, "ACM_CPR_Stop"]] call CBA_fnc_globalEvent;
                         };
-                        ["Paused CPR", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-                        ["Stop CPR", "Continue CPR", ""] call ACEFUNC(interaction,showMouseHint);
+                        [LSTRING(CPR_Paused), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                        [LLSTRING(CPR_Stop), LLSTRING(CPR_Continue), ""] call ACEFUNC(interaction,showMouseHint);
                         GVAR(CPRActive) = false;
                         GVAR(loopCPR) = false;
                     };

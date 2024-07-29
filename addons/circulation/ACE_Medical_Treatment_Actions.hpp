@@ -7,7 +7,7 @@
 class ACEGVAR(medical_treatment,actions) {
     class Diagnose;
     class CheckPulse: Diagnose {
-        displayName = "Feel Pulse";
+        displayName = CSTRING(FeelPulse);
         displayNameProgress = "";
         treatmentTime = 0.001;
         allowedSelections[] = {"Head","LeftArm","RightArm","LeftLeg","RightLeg"};
@@ -16,8 +16,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class PressureCuff_Attach: CheckPulse {
-        displayName = "Attach Pressure Cuff";
-        displayNameProgress = "Attaching Pressure Cuff...";
+        displayName = CSTRING(PressureCuff_Attach);
+        displayNameProgress = CSTRING(PressureCuff_Attach_Progress);
         icon = "";
         category = "examine";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -32,8 +32,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_rollToBack = 1;
     };
     class PressureCuff_Remove: PressureCuff_Attach {
-        displayName = "Remove Pressure Cuff";
-        displayNameProgress = "Removing Pressure Cuff...";
+        displayName = CSTRING(PressureCuff_Remove);
+        displayNameProgress = CSTRING(PressureCuff_Remove_Progress);
         icon = "";
         treatmentTime = 2;
         items[] = {};
@@ -43,7 +43,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class AED_ViewMonitor: CheckPulse {
-        displayName = "View AED Monitor";
+        displayName = CSTRING(AED_ViewMonitor);
         displayNameProgress = "";
         icon = "";
         category = "examine";
@@ -57,8 +57,8 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class AED_ApplyPads: CheckPulse {
-        displayName = "Apply AED Pads";
-        displayNameProgress = "Applying AED Pads...";
+        displayName = CSTRING(AED_ApplyPads);
+        displayNameProgress = CSTRING(AED_ApplyPads);
         icon = "";
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -73,8 +73,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_rollToBack = 1;
     };
     class AED_RemovePads: AED_ApplyPads {
-        displayName = "Remove AED Pads";
-        displayNameProgress = "Removing AED Pads...";
+        displayName = CSTRING(AED_RemovePads);
+        displayNameProgress = CSTRING(AED_RemovePads_Progress);
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         treatmentTime = 1;
         allowSelfTreatment = 1;
@@ -82,8 +82,8 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,0,false)] call FUNC(setAED));
     };
     class AED_ConnectPulseOximeter: AED_ApplyPads {
-        displayName = "Connect AED Pulse Oximeter";
-        displayNameProgress = "Connecting AED Pulse Oximeter...";
+        displayName = CSTRING(AED_ConnectPulseOximeter);
+        displayNameProgress = CSTRING(AED_ConnectPulseOximeter_Progress);
         icon = "";
         category = "examine";
         treatmentTime = 2;
@@ -94,8 +94,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_rollToBack = 0;
     };
     class AED_DisconnectPulseOximeter: AED_RemovePads {
-        displayName = "Disconnect AED Pulse Oximeter";
-        displayNameProgress = "Disconnecting AED Pulse Oximeter...";
+        displayName = CSTRING(AED_DisconnectPulseOximeter);
+        displayNameProgress = CSTRING(AED_DisconnectPulseOximeter_Progress);
         category = "examine";
         treatmentTime = 1;
         allowedSelections[] = {"LeftArm","RightArm"};
@@ -104,8 +104,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_rollToBack = 0;
     };
     class AED_ConnectPressureCuff: AED_ApplyPads {
-        displayName = "Connect AED Pressure Cuff";
-        displayNameProgress = "Connecting AED Pressure Cuff...";
+        displayName = CSTRING(AED_ConnectPressureCuff);
+        displayNameProgress = CSTRING(AED_ConnectPressureCuff_Progress);
         icon = "";
         category = "examine";
         treatmentTime = 3;
@@ -115,8 +115,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 0;
     };
     class AED_DisconnectPressureCuff: AED_RemovePads {
-        displayName = "Disconnect AED Pressure Cuff";
-        displayNameProgress = "Disconnecting AED Pressure Cuff...";
+        displayName = CSTRING(AED_DisconnectPressureCuff);
+        displayNameProgress = CSTRING(AED_DisconnectPressureCuff_Progress);
         category = "examine";
         treatmentTime = 1;
         allowedSelections[] = {"LeftArm","RightArm"};
@@ -124,8 +124,8 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,2,false)] call FUNC(setAED));
     };
     class AED_ConnectCapnograph: AED_ApplyPads {
-        displayName = "Connect AED Capnograph";
-        displayNameProgress = "Connecting AED Capnograph...";
+        displayName = CSTRING(AED_ConnectCapnograph);
+        displayNameProgress = CSTRING(AED_ConnectCapnograph_Progress);
         icon = "";
         category = "examine";
         treatmentTime = 3;
@@ -135,8 +135,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 0;
     };
     class AED_DisconnectCapnograph: AED_RemovePads {
-        displayName = "Disconnect AED Capnograph";
-        displayNameProgress = "Disconnecting AED Capnograph...";
+        displayName = CSTRING(AED_DisconnectCapnograph);
+        displayNameProgress = CSTRING(AED_DisconnectCapnograph_Progress);
         category = "examine";
         treatmentTime = 1;
         allowedSelections[] = {"Head"};
@@ -145,37 +145,37 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     class AED_AnalyzeRhythm: AED_ViewMonitor {
-        displayName = "Analyze Rhythm";
+        displayName = CSTRING(AED_AnalyzeRhythm);
         category = "examine";
         allowedSelections[] = {"Body"};
         condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CanAnalyzeRhythm));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_AnalyzeRhythm));
     };
     class AED_ManualCharge: AED_AnalyzeRhythm {
-        displayName = "Charge AED";
+        displayName = CSTRING(AED_ManualCharge);
         category = "advanced";
         condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CanManualCharge));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(AED_BeginCharge));
     };
     class AED_Shock: AED_ManualCharge {
-        displayName = "Administer Shock";
+        displayName = CSTRING(AED_Shock);
         condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CanAdministerShock));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_AdministerShock));
     };
     class AED_CancelCharge: AED_ManualCharge {
-        displayName = "Cancel Charge";
+        displayName = CSTRING(AED_CancelCharge);
         condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CanCancelCharge));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_CancelCharge));
     };
     class AED_MeasureBP: AED_AnalyzeRhythm {
-        displayName = "Measure Blood Pressure (AED)";
+        displayName = CSTRING(AED_MeasureBP);
         allowedSelections[] = {"LeftArm","RightArm","Body"};
         condition = QFUNC(AED_CanMeasureBP);
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(AED_MeasureBP));
     };
 
     class CPR {
-        displayName = "Begin CPR";
+        displayName = CSTRING(BeginCPR);
         displayNameProgress = "";
         treatmentTime = 0.01;
         callbackStart = "";
@@ -191,7 +191,7 @@ class ACEGVAR(medical_treatment,actions) {
     class BloodIV: BasicBandage {
         condition = "false";
     };
-    class BloodBag_O_1000: BloodIV {
+    /*class BloodBag_O_1000: BloodIV { // TODO REMOVE
         displayName = "Give Blood O+ (1000ml)";
         displayNameProgress = "Transfusing Blood...";
         items[] = {"ACM_BloodBag_O_1000"};
@@ -221,7 +221,7 @@ class ACEGVAR(medical_treatment,actions) {
     ACM_BLOODBAG_ENTRY(B,B+,250);
     ACM_BLOODBAG_ENTRY(BN,B-,250);
     ACM_BLOODBAG_ENTRY(AB,AB+,250);
-    ACM_BLOODBAG_ENTRY(ABN,AB-,250);
+    ACM_BLOODBAG_ENTRY(ABN,AB-,250);*/
     class PlasmaIV: BloodIV {
         condition = "false";
     };

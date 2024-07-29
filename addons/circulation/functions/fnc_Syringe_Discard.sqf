@@ -20,7 +20,7 @@
 
 params ["_medic", "_medication", ["_IV", false], "_amount"];
 
-private _sourceString = ["IM","IV"] select _IV;
+private _sourceString = [LLSTRING(Intramuscular_Short), LLSTRING(Intravenous_Short)] select _IV;
 
 _medic call ACEFUNC(common,goKneeling);
 
@@ -57,11 +57,11 @@ private _containers = [uniformContainer _unit, vestContainer _unit, backpackCont
     _args params ["_medic", "_medication", "_sourceString"];
 
     [_medic, (format ["ACM_Syringe_%1", _sourceString])] call ACEFUNC(common,addToInventory);
-    ["Discarded syringe contents", 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(Syringe_Discard_Complete), 2, _medic] call ACEFUNC(common,displayTextStructured);
 }, {
     params ["_args"];
     _args params ["_medic", "_medication", "_sourceString", "_amount"];
 
     [_medic, (format ["ACM_Syringe_%1_%2", _sourceString, _medication]), "", _amount] call ACEFUNC(common,addToInventory);
-}, (format ["Discarding %1 from %2 syringe...", _medication, _sourceString])] call ACEFUNC(common,progressBar);
+}, (format [LLSTRING(Syringe_Discard_Progress), _medication, _sourceString])] call ACEFUNC(common,progressBar);
 

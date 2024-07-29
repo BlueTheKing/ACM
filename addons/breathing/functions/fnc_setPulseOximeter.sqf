@@ -23,7 +23,7 @@ params ["_medic", "_patient", "_bodyPart", ["_state", true]];
 private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
 if (_state && HAS_PULSEOX(_patient,(_partIndex - 2))) exitWith {
-    [(format [LSTRING(PulseOximeter_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [(format [LLSTRING(PulseOximeter_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 if !(_state) then {

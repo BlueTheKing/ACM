@@ -51,11 +51,11 @@ private _display = uiNamespace getVariable [QGVAR(TransfusionMenu_DLG), displayN
 
 private _ctrlInventorySelectText = _display displayCtrl IDC_TRANSFUSIONMENU_SELECTION_INV_TEXT;
 
-private _text = ["Self", "Patient", "Vehicle"] select GVAR(TransfusionMenu_Selected_Inventory);
+private _text = [LLSTRING(TransfusionMenu_InventoryTarget_Self), LLSTRING(TransfusionMenu_InventoryTarget_Patient), LLSTRING(TransfusionMenu_InventoryTarget_Vehicle)] select GVAR(TransfusionMenu_Selected_Inventory);
 
 private _target = [ACE_player, GVAR(TransfusionMenu_Target), _vehicle] select GVAR(TransfusionMenu_Selected_Inventory);
 
-_ctrlInventorySelectText ctrlSetText (format ["Target: %1", _text]);
+_ctrlInventorySelectText ctrlSetText (format [LLSTRING(TransfusionMenu_InventoryTarget), _text]);
 
 private _cachedItems = [ACE_player, 0] call ACEFUNC(common,uniqueItems);
 
@@ -82,7 +82,7 @@ if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
             private _i = _ctrlInventoryPanel lbAdd getText (_config >> "displayName");
             _ctrlInventoryPanel lbSetPicture [_i, getText (_config >> "picture")];
             _ctrlInventoryPanel lbSetData [_i, (format ["%1|%2",_x,GVAR(Fluids_Array_Data) select _forEachIndex])];
-            _ctrlInventoryPanel lbSetTooltip [_i, (format ["%1 available", _count])];
+            _ctrlInventoryPanel lbSetTooltip [_i, (format [LLSTRING(TransfusionMenu_InventoryTarget_Available), _count])];
         };
     } forEach GVAR(Fluids_Array);
 } else {
@@ -94,7 +94,7 @@ if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
             private _i = _ctrlInventoryPanel lbAdd getText (_config >> "displayName");
             _ctrlInventoryPanel lbSetPicture [_i, getText (_config >> "picture")];
             _ctrlInventoryPanel lbSetData [_i, (format ["%1|%2",_x,GVAR(Fluids_Array_Data) select _forEachIndex])];
-            _ctrlInventoryPanel lbSetTooltip [_i, (format ["%1 available", _count])];
+            _ctrlInventoryPanel lbSetTooltip [_i, (format [LLSTRING(TransfusionMenu_InventoryTarget_Available), _count])];
         };
     } forEach GVAR(Fluids_Array);
 };

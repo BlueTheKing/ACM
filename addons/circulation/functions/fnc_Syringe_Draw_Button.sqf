@@ -25,16 +25,10 @@ if (_push && (isNull GVAR(SyringeDraw_Target))) exitWith {};
 [ACE_player, GVAR(SyringeDraw_Medication), GVAR(SyringeDraw_DrawnAmount), GVAR(SyringeDraw_IV)] call FUNC(Syringe_PrepareFinish);
 
 if (_push) then {
-    private _string = "Pushing";
-
-    if !(GVAR(SyringeDraw_IV)) then {
-        _string = "Injecting";
-    };
-    
     [2.5, [], {
         [ACE_player, GVAR(SyringeDraw_Target), GVAR(SyringeDraw_TargetPart), GVAR(SyringeDraw_Medication), true, GVAR(SyringeDraw_IV)] call FUNC(Syringe_Inject);
-    }, {}, (format["%1 %2...", _string, GVAR(SyringeDraw_Medication)])] call ACEFUNC(common,progressBar);
+    }, {}, (format[([LLSTRING(Syringe_Injecting), LLSTRING(Syringe_Pushing)] select GVAR(SyringeDraw_IV)), GVAR(SyringeDraw_Medication)])] call ACEFUNC(common,progressBar);
 } else {
-    [(format ["%1 Drawn", GVAR(SyringeDraw_Medication)]), 1.5, ACE_player] call ACEFUNC(common,displayTextStructured);
+    [(format [LLSTRING(Syringe_Drawn), GVAR(SyringeDraw_Medication)]), 1.5, ACE_player] call ACEFUNC(common,displayTextStructured);
     closeDialog 0;
 };

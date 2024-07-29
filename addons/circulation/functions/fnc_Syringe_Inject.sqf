@@ -22,19 +22,19 @@
 
 params ["_medic", "_patient", "_bodyPart", "_classname", ["_returnSyringe", true], ["_iv", false]];
 
-if (_iv && !([_patient, _bodyPart, 0] call FUNC(hasIV))) exitWith {
-    [(format ["Medication push failed<br />Patient has no IV access on the %1", _hintType, toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic, 13] call ACEFUNC(common,displayTextStructured);
+if (_iv && !([_patient, _bodyPart, 0] call FUNC(hasIV)) && !([_patient, _bodyPart, 0] call FUNC(hasIO))) exitWith {
+    [(format [LLSTRING(Syringe_PushFailed), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic, 13] call ACEFUNC(common,displayTextStructured);
 };
 
 private _itemClassname = "";
-private _administrationString = "IM";
-private _actionString = "Injected";
+private _administrationString = LLSTRING(Intramuscular_Short);
+private _actionString = LLSTRING(Syringe_Injected);
 private _medicationClassname = _classname;
 
 if (_iv) then {
     _medicationClassname = format ["%1_IV", _classname];
-    _administrationString = "IV";
-    _actionString = "Pushed";
+    _administrationString = LLSTRING(Intravenous_Short);
+    _actionString = LLSTRING(Syringe_Pushed);
     _itemClassname = format ["ACM_Syringe_IV_%1",_classname];
 } else {
     _itemClassname = format ["ACM_Syringe_IM_%1",_classname];

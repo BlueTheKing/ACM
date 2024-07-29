@@ -27,3 +27,13 @@
 #define IDC_TRANSFUSIONMENU_BG_IV_LEFTLEG_UPPER   86029
 #define IDC_TRANSFUSIONMENU_BG_IV_LEFTLEG_MIDDLE  86030
 #define IDC_TRANSFUSIONMENU_BG_IV_LEFTLEG_LOWER   86031
+
+
+#define BODY_BACKGROUND_IV(bodypart,site,sidc) \
+    class BodyBackground_IV_##bodypart##_##site##: BodyBackground_IO_Torso { \
+        idc = sidc; \
+        text = QPATHTOEF(gui,data\body_image\##bodypart##_iv_##site##.paa); \
+    }
+
+#define ACE_BODYPART(part) localize 'STR_ACE_Medical_GUI_##part##'
+#define BODYPART_PART(part,loc) QUOTE(format [ARR_3('%1 (%2)',ACE_BODYPART(part),C_LLSTRING(IV_##loc##))])

@@ -64,7 +64,7 @@ if (_stethoscope) then {
         [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
     };
 
-    ["Stopped measuring blood pressure", 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(MeasureBP_Stopped), 2, _medic] call ACEFUNC(common,displayTextStructured);
 
     call ACEFUNC(hearing,updateHearingProtection);
 }, { // PerFrame
@@ -191,7 +191,7 @@ if (_stethoscope) then {
         [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
     };
 
-    ["Stopped measuring blood pressure", 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(MeasureBP_Stopped), 2, _medic] call ACEFUNC(common,displayTextStructured);
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart"];
 

@@ -31,21 +31,7 @@
         </Key>
         <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
             <English>Using Adenosine Autoinjector...</English>
-        </Key>
-
-        <!--<Key ID="STR_ACM_Core_CheckCapillaryRefill">
-            <English>Check Capillary Refill Time</English>
-        </Key>
-        <Key ID="STR_ACM_Core_CheckCapillaryRefill_Progress">
-            <English>Checking Capillary Refill Time...</English>
-        </Key>
-        <Key ID="STR_ACM_Core_PressureCuff_Measure">
-            <English>Measure Blood Pressure</English>
-        </Key>
-        <Key ID="STR_ACM_Core_PressureCuff_Measure_Stethoscope">
-            <English>Measure Blood Pressure (Stethoscope)</English>
-        </Key>-->
-        <!--
+        </Key><!--
             // Cancel Carrying // -->
         <Key ID="STR_ACM_Core_CancelCarrying">
             <English>Cancel Carrying</English>
@@ -67,6 +53,25 @@
         </Key>
         <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
             <English>[ACM] Advanced Medical Supply Crate</English>
+        </Key><!-- 
+            // Common // -->
+        <Key ID="STR_ACM_Core_Common_Inserted">
+            <English>Inserted</English>
+        </Key>
+        <Key ID="STR_ACM_Core_Common_Attached">
+            <English>Attached</English>
+        </Key>
+        <Key ID="STR_ACM_Core_Common_Applied">
+            <English>Applied</English>
+        </Key>
+        <Key ID="STR_ACM_Core_Common_Removed">
+            <English>Removed</English>
+        </Key>
+        <Key ID="STR_ACM_Core_Common_Connected">
+            <English>Connected</English>
+        </Key>
+        <Key ID="STR_ACM_Core_Common_Disconnected">
+            <English>Disconnected</English>
         </Key>
     </Package>
 </Project>

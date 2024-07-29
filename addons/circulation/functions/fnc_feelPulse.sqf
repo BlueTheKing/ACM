@@ -61,7 +61,7 @@ params ["_medic", "_patient", "_bodyPart"];
         [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
     };
 
-    ["Stopped feeling pulse", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [LSTRING(FeelPulse_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
 

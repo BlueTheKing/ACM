@@ -23,7 +23,7 @@ private _hint = LLSTRING(AttemptWakeUp_Failure);
 addCamShake [2, 2, 5];
 
 if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {
-    [QACEGVAR(common,displayTextStructured), [(format [LSTRING(ShakePatient_Attempt), _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
+    [QACEGVAR(common,displayTextStructured), [(format [LLSTRING(ShakePatient_Attempt), _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
 };
 
 private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 1, 15, true] ;
@@ -34,4 +34,4 @@ if (random 100 < _oxygenSaturationChance) then {
     _hint = LLSTRING(AttemptWakeUp_Success);
 };
 
-[QACEGVAR(common,displayTextStructured), [(format [LSTRING(ShakePatient_Complete), _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
+[QACEGVAR(common,displayTextStructured), [(format [LLSTRING(ShakePatient_Complete), _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;

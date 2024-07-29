@@ -49,7 +49,7 @@
 [QGVAR(cancelCarryLocal), {
     params ["_carrier", "_target"];
 
-    [format [LSTRING(CancelCarrying_Stopped), [_target, true] call ACEFUNC(common,getName)], 1.5, _carrier] call ACEFUNC(common,displayTextStructured);
+    [format [LLSTRING(CancelCarrying_Stopped), [_target, true] call ACEFUNC(common,getName)], 1.5, _carrier] call ACEFUNC(common,displayTextStructured);
     [_carrier, _target] call ACEFUNC(dragging,dropObject_carry);
 }] call CBA_fnc_addEventHandler;
 

@@ -64,4 +64,4 @@ private _itemClassNameString = getText (configFile >> "CfgWeapons" >> _itemClass
     closeDialog 0;
     
     [_medic, _patient, GVAR(TransfusionMenu_Selected_BodyPart)] call FUNC(openTransfusionMenu);
-}, (format ["Connecting %1...", _itemClassNameString]), 5] call EFUNC(core,progressBarAction);
+}, (format [LLSTRING(TransfusionMenu_AddBag_Progress), _itemClassNameString]), 5] call EFUNC(core,progressBarAction);

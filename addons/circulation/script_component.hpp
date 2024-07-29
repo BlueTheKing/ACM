@@ -13,3 +13,5 @@
 #endif
 
 #include "\x\ACM\addons\main\script_macros.hpp"
+
+#define C_LLSTRING(string) localize 'STR_ACM_Circulation_##string##'

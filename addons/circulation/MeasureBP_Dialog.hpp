@@ -87,7 +87,7 @@ class GVAR(MeasureBP_Dialog)
             h = QUOTE(safezoneH);
             colorText[] = {1,1,1,1};
             colorBackground[] = {0,0,0,0};
-            text = "Measuring Blood Pressure...";
+            text = CSTRING(MeasureBP_Measuring);
             lineSpacing = 0;
             sizeEx = QUOTE(GUI_GRID_H * 1.4);
             fixedWidth = 0;
@@ -126,7 +126,7 @@ class GVAR(MeasureBP_Dialog)
             font = "RobotoCondensed";
             sizeEx = "0";
             onMouseButtonUp = QUOTE(call FUNC(MeasureBP_press));
-            tooltip = "Squeeze Bulb\n+50 (LMB) | +30 (RMB)";
+            tooltip = CSTRING(MeasureBP_Hint_Bulb);
         };
         class Button_Valve: Button_Bulb {
             soundClick[] = {};
@@ -135,7 +135,7 @@ class GVAR(MeasureBP_Dialog)
             y = QUOTE(ACM_MEASUREBP_pxToScreen_Y((MEASUREBP_INTERACTABLE_TOPLEFT_Y + 590)));
             w = QUOTE(ACM_MEASUREBP_pxToScreen_W(75));
             h = QUOTE(ACM_MEASUREBP_pxToScreen_H(75));
-            tooltip = "Release Pressure\n-10 (LMB) | -2 (RMB)";
+            tooltip = CSTRING(MeasureBP_Hint_Valve);
         };
     };
 };

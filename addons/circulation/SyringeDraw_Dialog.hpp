@@ -155,10 +155,10 @@ class GVAR(SyringeDraw_Dialog) {
             font = "RobotoCondensed";
             sizeEx = "0";
             onMouseButtonUp = QUOTE(call FUNC(Syringe_Draw_Move));
-            tooltip = "Move Plunger";
+            tooltip = CSTRING(Syringe_MovePlunger);
         };
         class Button_Draw: RscButton {
-            text = "Draw";
+            text = CSTRING(Syringe_Draw);
             colorText[] = {1,1,1,1};
             colorDisabled[] = {1,1,1,0.1};
             colorBackground[] = {0,0,0,1};
@@ -183,7 +183,7 @@ class GVAR(SyringeDraw_Dialog) {
             tooltip = "";
         };
         class Button_Push: Button_Draw {
-            text = "Push";
+            text = CSTRING(Push);
             idc = IDC_SYRINGEDRAW_BUTTON_PUSH;
             x = QUOTE(safezoneX + (safezoneW / 2) - ((safezoneW / 24) / 2) + ((safezoneW / 24) * 1.1));
             y = QUOTE(safezoneY + (safezoneH / 1.2));

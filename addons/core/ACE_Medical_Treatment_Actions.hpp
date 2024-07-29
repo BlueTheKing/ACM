@@ -1,29 +1,32 @@
-#define PUSH_SYRINGE_IV(medication) \
+#define SYRINGE_ACTION_FORMAT(var1,var2,var3) QUOTE(format [ARR_3(localize 'STR_ACM_Circulation_Syringe_##var1##',localize 'STR_ACM_Circulation_Medication_##var2##','STR_ACM_Circulation_##var3##_Short')])
+#define SYRINGE_PROGRESS_FORMAT(var1,var2) QUOTE(format [ARR_2(localize 'STR_ACM_Circulation_Syringe_##var1##',localize 'STR_ACM_Circulation_Medication_##var2##')])
+
+#define PUSH_SYRINGE_IV(medication,name,progress) \
     class DOUBLES(medication,IV): Epinephrine_IV { \
-        displayName = QUOTE(Push ##medication## (IV)); \
-        displayNameProgress = QUOTE(Pushing ##medication##...); \
+        displayName = name; \
+        displayNameProgress = progress; \
         items[] = {QUOTE(ACM_Syringe_IV_##medication##)}; \
         callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'##medication##',true,true)] call EFUNC(circulation,Syringe_Inject)); \
     }
 
-#define DRAW_PUSH_SYRINGE_IV(medication) \
+#define DRAW_PUSH_SYRINGE_IV(medication,name) \
     class TRIPLES(medication,Draw,IV): Epinephrine_Draw_IV { \
-        displayName = QUOTE(Draw And Push ##medication## (IV)); \
+        displayName = name; \
         condition = QUOTE(([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO)) && [ARR_2(_medic,'ACM_Syringe_IV')] call ACEFUNC(common,hasItem) && [ARR_2(_medic,'ACM_Vial_##medication##')] call ACEFUNC(common,hasItem)); \
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,true,'##medication##')] call EFUNC(circulation,Syringe_Draw)); \
     }
 
-#define INJECT_SYRINGE_IM(medication) \
+#define INJECT_SYRINGE_IM(medication,name,progress) \
     class DOUBLES(medication,IM): Epinephrine_IM { \
-        displayName = QUOTE(Inject ##medication## (IM)); \
-        displayNameProgress = QUOTE(Injecting ##medication##...); \
+        displayName = name; \
+        displayNameProgress = progress; \
         items[] = {QUOTE(ACM_Syringe_IM_##medication##)}; \
         callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'##medication##',true,false)] call EFUNC(circulation,Syringe_Inject)); \
     }
 
-#define DRAW_INJECT_SYRINGE_IM(medication) \
+#define DRAW_INJECT_SYRINGE_IM(medication,name) \
     class TRIPLES(medication,Draw,IM): Epinephrine_Draw_IM { \
-        displayName = QUOTE(Draw And Inject ##medication## (IM)); \
+        displayName = name; \
         condition = QUOTE([ARR_2(_medic,'ACM_Syringe_IM')] call ACEFUNC(common,hasItem) && [ARR_2(_medic,'ACM_Vial_##medication##')] call ACEFUNC(common,hasItem)); \
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,false,'##medication##')] call EFUNC(circulation,Syringe_Draw)); \
     }
@@ -50,14 +53,14 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 2.5;
     };
     class CheckBloodPressure: CheckPulse {
-        displayName = "Check Capillary Refill Time";
-        displayNameProgress = "Checking Capillary Refill Time...";
+        displayName = ECSTRING(circulation,CheckCapillaryRefill);
+        displayNameProgress = ECSTRING(circulation,CheckCapillaryRefill_Progress);
         allowedSelections[] = {"Body", "LeftArm", "RightArm"};
         treatmentTime = 2.5;
         callbackSuccess = QEFUNC(circulation,checkCapillaryRefill);
     };
     class MeasureBloodPressure: CheckBloodPressure {
-        displayName = "Measure Blood Pressure";
+        displayName = ECSTRING(circulation,PressureCuff_Measure);
         displayNameProgress = "";
         allowedSelections[] = {"LeftArm", "RightArm"};
         treatmentTime = 0.01;
@@ -65,7 +68,7 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,false)] call EFUNC(circulation,measureBP));
     };
     class MeasureBloodPressureStethoscope: MeasureBloodPressure {
-        displayName = "Measure Blood Pressure (Stethoscope)";
+        displayName = ECSTRING(circulation,PressureCuff_Measure_Stethoscope);
         items[] = {"ACM_Stethoscope"};
         consumeItem = 0;
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,true)] call EFUNC(circulation,measureBP));
@@ -183,7 +186,7 @@ class ACEGVAR(medical_treatment,actions) {
     // Transfusion Menu
 
     class OpenTransfusionMenu: CheckPulse {
-        displayName = "Transfuse Fluids";
+        displayName = ECSTRING(circulation,OpenTransfusionMenu);
         displayNameProgress = "";
         icon = "";
         category = "advanced";
@@ -200,8 +203,8 @@ class ACEGVAR(medical_treatment,actions) {
 
     // IV/IO
     class InsertIV_16_Upper: CheckPulse {
-        displayName = "Insert 16g IV (Upper)";
-        displayNameProgress = "Inserting 16g IV...";
+        displayName = ECSTRING(circulation,InsertIV_16_Upper);
+        displayNameProgress = ECSTRING(circulation,InsertIV_16_Progress);
         icon = "";
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -216,8 +219,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_rollToBack = 1;
     };
     class RemoveIV_16_Upper: InsertIV_16_Upper {
-        displayName = "Remove 16g IV (Upper)";
-        displayNameProgress = "Removing 16g IV...";
+        displayName = ECSTRING(circulation,RemoveIV_16_Upper);
+        displayNameProgress = ECSTRING(circulation,RemoveIV_16_Progress);
         icon = "";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         medicRequired = 0;
@@ -229,64 +232,64 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,false,true,0)] call EFUNC(circulation,setIV));
     };
     class InsertIV_16_Middle: InsertIV_16_Upper {
-        displayName = "Insert 16g IV (Middle)";
+        displayName = ECSTRING(circulation,InsertIV_16_Middle);
         condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,1)] call EFUNC(circulation,hasIV)));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,true,true,1)] call EFUNC(circulation,setIV));
     };
     class RemoveIV_16_Middle: RemoveIV_16_Upper {
-        displayName = "Remove 16g IV (Middle)";
+        displayName = ECSTRING(circulation,RemoveIV_16_Middle);
         condition = QUOTE([ARR_4(_patient,_bodyPart,ACM_IV_16G_M,1)] call EFUNC(circulation,hasIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,false,true,1)] call EFUNC(circulation,setIV));
     };
     class InsertIV_16_Lower: InsertIV_16_Upper {
-        displayName = "Insert 16g IV (Lower)";
+        displayName = ECSTRING(circulation,InsertIV_16_Lower);
         condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,2)] call EFUNC(circulation,hasIV)));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,true,true,2)] call EFUNC(circulation,setIV));
     };
     class RemoveIV_16_Lower: RemoveIV_16_Upper {
-        displayName = "Remove 16g IV (Lower)";
+        displayName = ECSTRING(circulation,RemoveIV_16_Lower);
         condition = QUOTE([ARR_4(_patient,_bodyPart,ACM_IV_16G_M,2)] call EFUNC(circulation,hasIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,false,true,2)] call EFUNC(circulation,setIV));
     };
     class InsertIV_14_Upper: InsertIV_16_Upper {
-        displayName = "Insert 14g IV (Upper)";
-        displayNameProgress = "Inserting 14g IV...";
+        displayName = ECSTRING(circulation,InsertIV_14_Upper);
+        displayNameProgress = ECSTRING(circulation,InsertIV_14_Progress);
         icon = "";
         treatmentTime = QEGVAR(circulation,treatmentTimeIV_14);
         items[] = {"ACM_IV_14g"};
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,true,true,0)] call EFUNC(circulation,setIV));
     };
     class RemoveIV_14_Upper: RemoveIV_16_Upper {
-        displayName = "Remove 14g IV";
-        displayNameProgress = "Removing 14g IV...";
+        displayName = ECSTRING(circulation,RemoveIV_14_Upper);
+        displayNameProgress = ECSTRING(circulation,RemoveIV_14_Progress);
         icon = "";
         allowSelfTreatment = 0;
         condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_14G_M)] call EFUNC(circulation,hasIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,false,true,0)] call EFUNC(circulation,setIV));
     };
     class InsertIV_14_Middle: InsertIV_14_Upper {
-        displayName = "Insert 14g IV (Middle)";
+        displayName = ECSTRING(circulation,InsertIV_14_Middle);
         condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,1)] call EFUNC(circulation,hasIV)));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,true,true,1)] call EFUNC(circulation,setIV));
     };
     class RemoveIV_14_Middle: RemoveIV_14_Upper {
-        displayName = "Remove 14g IV (Middle)";
+        displayName = ECSTRING(circulation,RemoveIV_14_Middle);
         condition = QUOTE([ARR_4(_patient,_bodyPart,ACM_IV_14G_M,1)] call EFUNC(circulation,hasIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,false,true,1)] call EFUNC(circulation,setIV));
     };
     class InsertIV_14_Lower: InsertIV_14_Upper {
-        displayName = "Insert 14g IV (Lower)";
+        displayName = ECSTRING(circulation,InsertIV_14_Lower);
         condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,2)] call EFUNC(circulation,hasIV)));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,true,true,2)] call EFUNC(circulation,setIV));
     };
     class RemoveIV_14_Lower: RemoveIV_14_Upper {
-        displayName = "Remove 14g IV (Lower)";
+        displayName = ECSTRING(circulation,RemoveIV_14_Lower);
         condition = QUOTE([ARR_4(_patient,_bodyPart,ACM_IV_14G_M,2)] call EFUNC(circulation,hasIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,false,true,2)] call EFUNC(circulation,setIV));
     };
     class InsertIO_FAST1: InsertIV_16_Upper {
-        displayName = "Insert FAST1 IO";
-        displayNameProgress = "Inserting FAST1 IO...";
+        displayName = ECSTRING(circulation,InsertIO_FAST1);
+        displayNameProgress = ECSTRING(circulation,InsertIO_FAST1_Progress);
         icon = "";
         medicRequired = QEGVAR(circulation,allowIO);
         treatmentTime = QEGVAR(circulation,treatmentTimeIO_FAST1);
@@ -298,8 +301,8 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_cancelRecovery = 1;
     };
     class RemoveIO_FAST1: RemoveIV_16_Upper {
-        displayName = "Remove FAST1 IO";
-        displayNameProgress = "Removing FAST1 IO...";
+        displayName = ECSTRING(circulation,RemoveIO_FAST1);
+        displayNameProgress = ECSTRING(circulation,RemoveIO_FAST1_Progress);
         icon = "";
         allowedSelections[] = {"Body"};
         treatmentTime = 3.5;
@@ -308,8 +311,8 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,ACM_IO_FAST1_M,false,false)] call EFUNC(circulation,setIV));
     };
     class InsertIO_EZ: InsertIO_FAST1 {
-        displayName = "Insert EZ-IO";
-        displayNameProgress = "Inserting EZ-IO...";
+        displayName = ECSTRING(circulation,InsertIO_EZ);
+        displayNameProgress = ECSTRING(circulation,InsertIO_EZ_Progress);
         icon = "";
         treatmentTime = QEGVAR(circulation,treatmentTimeIO_EZ);
         allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
@@ -320,8 +323,8 @@ class ACEGVAR(medical_treatment,actions) {
         sounds[] = {{QPATHTOEF(circulation,sound\io_drill.wav),10,1,30}};
     };
     class RemoveIO_EZ: RemoveIO_FAST1 {
-        displayName = "Remove EZ-IO";
-        displayNameProgress = "Removing EZ-IO...";
+        displayName = ECSTRING(circulation,RemoveIO_EZ);
+        displayNameProgress = ECSTRING(circulation,RemoveIO_EZ_Progress);
         icon = "";
         allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IO_EZ_M)] call EFUNC(circulation,hasIO));
@@ -331,8 +334,8 @@ class ACEGVAR(medical_treatment,actions) {
     // Medication
 
     class Paracetamol: Morphine {
-        displayName = "Use Paracetamol";
-        displayNameProgress = "Using Paracetamol...";
+        displayName = ECSTRING(circulation,UseParacetamol);
+        displayNameProgress = ECSTRING(circulation,UseParacetamol_Progress);
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         allowedSelections[] = {"Head"};
         items[] = {"ACM_Paracetamol"};
@@ -343,24 +346,24 @@ class ACEGVAR(medical_treatment,actions) {
         litter[] = {};
     };
     class Penthrox: Paracetamol {
-        displayName = "Use Penthrox Inhaler";
-        displayNameProgress = "Using Penthrox Inhaler...";
+        displayName = ECSTRING(circulation,UsePenthroxInhaler);
+        displayNameProgress = ECSTRING(circulation,UsePenthroxInhaler_Progress);
         items[] = {"ACM_Inhaler_Penthrox"};
         treatmentTime = 5;
         animationMedic = "";
         sounds[] = {};
     };
     class AmmoniaInhalant: Paracetamol {
-        displayName = "Use Ammonia Inhalant";
-        displayNameProgress = "Using Ammonia Inhalant...";
+        displayName = ECSTRING(circulation,UseAmmoniaInhalant);
+        displayNameProgress = ECSTRING(circulation,UseAmmoniaInhalant_Progress);
         items[] = {"ACM_AmmoniaInhalant"};
         treatmentTime = 4;
         condition = QUOTE(!(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         ACM_rollToBack = 1;
     };
     class Naloxone: Paracetamol {
-        displayName = "Use Naloxone Spray";
-        displayNameProgress = "Using Naloxone Spray...";
+        displayName = ECSTRING(circulation,UseNaloxoneSpray);
+        displayNameProgress = ECSTRING(circulation,UseNaloxoneSpray_Progress);
         items[] = {"ACM_Spray_Naloxone"};
         treatmentTime = 4;
         condition = QUOTE(!(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
@@ -392,8 +395,8 @@ class ACEGVAR(medical_treatment,actions) {
     
     // IV
     class Epinephrine_IV: Morphine {
-        displayName = "Push Epinephrine (IV)";
-        displayNameProgress = "Pushing Epinephrine...";
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Push,Epinephrine,Intravenous));
+        displayNameProgress = __EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Epinephrine));
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
         items[] = {"ACM_Syringe_IV_Epinephrine"};
@@ -404,15 +407,15 @@ class ACEGVAR(medical_treatment,actions) {
         sounds[] = {};
         litter[] = {};
     };
-    PUSH_SYRINGE_IV(Amiodarone);
-    PUSH_SYRINGE_IV(Morphine);
-    PUSH_SYRINGE_IV(Ketamine);
-    PUSH_SYRINGE_IV(TXA);
+    PUSH_SYRINGE_IV(Amiodarone,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,Amiodarone,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Amiodarone)));
+    PUSH_SYRINGE_IV(Morphine,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,Morphine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Morphine)));
+    PUSH_SYRINGE_IV(Ketamine,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,Ketamine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ketamine)));
+    PUSH_SYRINGE_IV(TXA,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,TXA,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,TXA)));
     //PUSH_SYRINGE_IV(Atropine);
     //PUSH_SYRINGE_IV(Ondansetron);
-    PUSH_SYRINGE_IV(Adenosine);
+    PUSH_SYRINGE_IV(Adenosine,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,Adenosine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Adenosine)));
     class Epinephrine_Draw_IV: Epinephrine_IV {
-        displayName = "Draw And Push Epinephrine (IV)";
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,Epinephrine,Intravenous));
         displayNameProgress = "";
         items[] = {};
         consumeItem = 0;
@@ -420,36 +423,36 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 0.01;
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,true,'Epinephrine')] call EFUNC(circulation,Syringe_Draw));
     };
-    DRAW_PUSH_SYRINGE_IV(Amiodarone);
-    DRAW_PUSH_SYRINGE_IV(Morphine);
-    DRAW_PUSH_SYRINGE_IV(Ketamine);
-    DRAW_PUSH_SYRINGE_IV(TXA);
+    DRAW_PUSH_SYRINGE_IV(Amiodarone,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,Amiodarone,Intravenous)));
+    DRAW_PUSH_SYRINGE_IV(Morphine,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,Morphine,Intravenous)));
+    DRAW_PUSH_SYRINGE_IV(Ketamine,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,Ketamine,Intravenous)));
+    DRAW_PUSH_SYRINGE_IV(TXA,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,TXA,Intravenous)));
     //DRAW_PUSH_SYRINGE_IV(Atropine);
     //DRAW_PUSH_SYRINGE_IV(Ondansetron);
-    DRAW_PUSH_SYRINGE_IV(Adenosine);
+    DRAW_PUSH_SYRINGE_IV(Adenosine,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,Adenosine,Intravenous)));
     
     // IM
     class Epinephrine_IM: Epinephrine_IV {
-        displayName = "Inject Epinephrine (IM)";
-        displayNameProgress = "Injecting Epinephrine...";
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,Epinephrine,Intramuscular));
+        displayNameProgress = __EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Epinephrine));
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
         items[] = {"ACM_Syringe_IM_Epinephrine"};
         condition = QUOTE(true);
         treatmentTime = 3;
         callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'Epinephrine',true,false)] call EFUNC(circulation,Syringe_Inject));
     };
-    INJECT_SYRINGE_IM(Morphine);
-    INJECT_SYRINGE_IM(Ketamine);
+    INJECT_SYRINGE_IM(Morphine,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,Morphine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Morphine)));
+    INJECT_SYRINGE_IM(Ketamine,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,Ketamine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ketamine)));
     class Lidocaine_IM: Epinephrine_IM {
-        displayName = "Inject Lidocaine (IM)";
-        displayNameProgress = "Injecting Lidocaine...";
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,Lidocaine,Intramuscular));
+        displayNameProgress = __EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Lidocaine));
         allowedSelections[] = {"Body"};
         items[] = {"ACM_Syringe_IM_Lidocaine"};
         callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'Lidocaine',true,false)] call EFUNC(circulation,Syringe_Inject));
     };
 
     class Epinephrine_Draw_IM: Epinephrine_IM {
-        displayName = "Draw And Inject Epinephrine (IM)";
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(DrawInject,Epinephrine,Intramuscular));
         displayNameProgress = "";
         items[] = {};
         consumeItem = 0;
@@ -457,10 +460,10 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 0.01;
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,false,'Epinephrine')] call EFUNC(circulation,Syringe_Draw));
     };
-    DRAW_INJECT_SYRINGE_IM(Morphine);
-    DRAW_INJECT_SYRINGE_IM(Ketamine);
+    DRAW_INJECT_SYRINGE_IM(Morphine,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawInject,Morphine,Intramuscular)));
+    DRAW_INJECT_SYRINGE_IM(Ketamine,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawInject,Ketamine,Intramuscular)));
     class Lidocaine_Draw_IM: Epinephrine_Draw_IM {
-        displayName = "Draw And Inject Lidocaine (IM)";
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(DrawInject,Lidocaine,Intramuscular));
         allowedSelections[] = {"Body"};
         items[] = {"ACM_Vial_Lidocaine"};
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,false,'Lidocaine')] call EFUNC(circulation,Syringe_Draw));

@@ -48,7 +48,7 @@ if !(_update) then {
         private _i = _ctrlBagPanel lbAdd getText (_config >> "displayName");
         _ctrlBagPanel lbSetPicture [_i, getText (_config >> "picture")];
         _ctrlBagPanel lbSetValue [_i, _bagIndex];
-        _ctrlBagPanel lbSetTooltip [_i, (format ["%1ml remaining", round(_remainingVolume)])];
+        _ctrlBagPanel lbSetTooltip [_i, (format [LLSTRING(TransfusionMenu_FluidRemaining), round(_remainingVolume)])];
     } forEach _IVBagsOnBodyPart;
 } else {
     if (count GVAR(TransfusionMenu_Selection_IVBags) != count _IVBagsOnBodyPart) exitWith {
@@ -69,7 +69,7 @@ if !(_update) then {
 
         if (_cRemainingVolume != _remainingVolume) then {
             GVAR(TransfusionMenu_Selection_IVBags) set [_forEachIndex, [_cType, _remainingVolume, _cAccessType, _cAccessSite, _cIV, _cBloodType, _cVolume, _cIndex]];
-            _ctrlBagPanel lbSetTooltip [_forEachIndex, (format ["%1ml remaining", round(_remainingVolume)])];
+            _ctrlBagPanel lbSetTooltip [_forEachIndex, (format [LLSTRING(TransfusionMenu_FluidRemaining), round(_remainingVolume)])];
         };
     } forEach _IVBagsOnBodyPart;
 };

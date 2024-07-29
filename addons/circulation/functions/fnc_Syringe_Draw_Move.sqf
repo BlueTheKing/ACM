@@ -21,4 +21,4 @@ GVAR(SyringeDraw_Moving) = !GVAR(SyringeDraw_Moving);
 private _display = uiNamespace getVariable [QGVAR(SyringeDraw_DLG), displayNull];
 private _ctrlPlunger = _display displayCtrl IDC_SYRINGEDRAW_PLUNGER;
 
-_ctrlPlunger ctrlSetTooltip (["Move Plunger", ""] select (GVAR(SyringeDraw_Moving)));
+_ctrlPlunger ctrlSetTooltip ([LLSTRING(Syringe_MovePlunger), ""] select (GVAR(SyringeDraw_Moving)));

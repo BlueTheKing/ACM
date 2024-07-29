@@ -43,22 +43,22 @@ private _hintLog = "";
 private _hint = "";
 switch (true) do {
     case (_CRT < 2): {
-        _hint = "~2 seconds";
+        _hint = format "~2";
         _hintLog = _hint;
     };
     case (_CRT < 3): {
-        _hint = "&lt;3 seconds";
-        _hintLog = "<3 seconds";
+        _hint = "&lt;3";
+        _hintLog = "<3";
     };
     case (_CRT < 4): {
-        _hint = "~3 seconds";
+        _hint = "~3";
         _hintLog = _hint;
     };
     default {
-        _hint = "&gt;4 seconds";
-        _hintLog = ">4 seconds";
+        _hint = "&gt;4";
+        _hintLog = ">4";
     };
 };
 
-[QACEGVAR(common,displayTextStructured), [(format ["Measured Capillary Refill Time<br />%1", _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
-[_patient, "quick_view", "%1 measured capillary refill time: %2 (%3)", [[_medic, false, true] call ACEFUNC(common,getName), _hintLog, _bodyPartString]] call ACEFUNC(medical_treatment,addToLog);
+[QACEGVAR(common,displayTextStructured), [(format [LLSTRING(CapillaryRefill_Hint), _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
+[_patient, "quick_view", LSTRING(CapillaryRefill_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog, _bodyPartString]] call ACEFUNC(medical_treatment,addToLog);
