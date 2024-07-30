@@ -24,6 +24,13 @@
 
 params ["_medic", "_patient", "_bodyPart", "_classname", "", "_usedItem", "", ["_dose", 1]];
 
+if (_usedItem == "ACE_morphine") then {
+    _dose = 10; // Autoinjector has dose of 10mg
+};
+if (_usedItem == "ACE_epinephrine") then {
+    _dose = 0.3; // Autoinjector has dose of 0.3mg
+};
+
 private _cfg = ["CfgWeapons", "CfgMagazines"] select (isClass (configFile >> "CfgMagazines" >> _usedItem));
 private _itemName = getText (configFile >> _cfg >> _usedItem >> "displayName");
 [_patient, _itemName] call ACEFUNC(medical_treatment,addToTriageCard);

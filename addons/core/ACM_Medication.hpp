@@ -198,7 +198,7 @@ class ACM_Medication {
             timeInSystem = 500;
             rrAdjust[] = {3,6};
             breathingEffectivenessAdjust[] = {0,0.01};
-            maxEffectDose = 1;
+            maxEffectDose = 0.3;
         };
 
         class Adenosine: ACM_IM_Medication { // Doesn't exist
