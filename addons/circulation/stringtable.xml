@@ -4,6 +4,24 @@
         <Key ID="STR_ACM_Circulation_Category">
             <English>ACM: Circulation</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_Category_Coagulation">
+            <English>Coagulation</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Category_CardiacArrest">
+            <English>Cardiac Arrest</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Category_Defibrillator">
+            <English>Defibrillator</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Category_CPR">
+            <English>CPR</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Category_IV_IO">
+            <English>IV/IO</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Category_BloodTypes">
+            <English>Blood Types</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestBleedRate">
             <English>Cardiac Arrest Bleed Rate</English>
         </Key>
