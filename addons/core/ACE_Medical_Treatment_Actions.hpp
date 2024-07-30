@@ -77,7 +77,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = ACECSTRING(dogtags,checkItem);
         displayNameProgress = "";
         icon = QACEPATHTOF(dogtags,data\dogtag_icon_ca.paa);
-        treatmentTime = 0.01;
+        treatmentTime = 2;
         allowSelfTreatment = 1;
         condition = QFUNC(canCheckDogtag);
         callbackSuccess = QACEFUNC(dogtags,checkDogtag);
