@@ -14,26 +14,26 @@ class CfgVehicles {
     };
 
     class GVAR(unCardiacArrest): GVAR(moduleBase) {
-        displayName = "Un-Cardiac Arrest";
+        displayName = CSTRING(Module_UnCardiacArrest);
         function = QFUNC(unCardiacArrest);
     };
     class GVAR(forceWakeUp): GVAR(moduleBase) {
-        displayName = "Force Wake-up";
+        displayName = CSTRING(Module_ForceWakeUp);
         function = QFUNC(forceWakeUp);
         icon = QACEPATHTOF(zeus,ui\Icon_Module_Zeus_Heal_ca.paa);
     };
     class GVAR(setBloodVolume): GVAR(moduleBase) {
-        displayName = "Set Blood Volume";
+        displayName = CSTRING(Module_SetBloodVolume);
         icon = QPATHTOF(ui\Icon_Module_BloodVolume_ca.paa);
         curatorInfoType = QGVAR(RscSetBloodVolume);
     };
     class GVAR(inflictChestInjury): GVAR(moduleBase) {
-        displayName = "Inflict Chest Injury";
+        displayName = CSTRING(Module_SetBloodVolume);
         icon = QPATHTOF(ui\Icon_Module_ChestInjury_ca.paa);
         curatorInfoType = QGVAR(RscInflictChestInjury);
     };
     class GVAR(givePain): GVAR(moduleBase) {
-        displayName = "Give Pain";
+        displayName = CSTRING(Module_GivePain);
         icon = QPATHTOF(ui\Icon_Module_GivePain_ca.paa);
         curatorInfoType = QGVAR(RscGivePain);
     };

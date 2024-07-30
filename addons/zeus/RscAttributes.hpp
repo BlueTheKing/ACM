@@ -42,7 +42,7 @@ class GVAR(RscSetBloodVolume): RscDisplayAttributes {
                     class Controls {
                         class Title_BloodVolume: RscText {
                             idc = -1;
-                            text = "Blood Volume";
+                            text = CSTRING(Module_SetBloodVolume_BloodVolume);
                             x = 0;
                             y = 0;
                             w = QUOTE(W_PART(10));
@@ -60,7 +60,7 @@ class GVAR(RscSetBloodVolume): RscDisplayAttributes {
                             sliderPosition = 6;
                         };
                         class Title_PlasmaVolume: Title_BloodVolume {
-                            text = "Plasma Volume";
+                            text = CSTRING(Module_SetBloodVolume_PlasmaVolume);
                             y = QUOTE(H_PART(1.1));
                         };
                         class Slider_PlasmaVolume: Slider_BloodVolume {
@@ -69,7 +69,7 @@ class GVAR(RscSetBloodVolume): RscDisplayAttributes {
                             sliderPosition = 0;
                         };
                         class Title_SalineVolume: Title_BloodVolume {
-                            text = "Saline Volume";
+                            text = CSTRING(Module_SetBloodVolume_SalineVolume);
                             y = QUOTE(H_PART(2.2));
                         };
                         class Slider_SalineVolume: Slider_BloodVolume {
@@ -104,7 +104,7 @@ class GVAR(RscInflictChestInjury): RscDisplayAttributes {
                     class Controls {
                         class Title_InjuryType: RscText {
                             idc = -1;
-                            text = "Injury Type";
+                            text = CSTRING(Module_InflictChestInjury_InjuryType);
                             x = 0;
                             y = 0;
                             w = QUOTE(W_PART(10));
@@ -119,7 +119,7 @@ class GVAR(RscInflictChestInjury): RscDisplayAttributes {
                             h = QUOTE(H_PART(3));
                             rows = 2;
                             columns = 2;
-                            strings[] = {"Pneumothorax", "Tension Pneumothorax", "Hemothorax", "Tension Hemothorax"};
+                            strings[] = {CSTRING(Module_InflictChestInjury_Pneumothorax), CSTRING(Module_InflictChestInjury_TensionPneumothorax), CSTRING(Module_InflictChestInjury_Hemothorax), CSTRING(Module_InflictChestInjury_TensionHemothorax)};
                         };
                     };
                 };
@@ -148,7 +148,7 @@ class GVAR(RscGivePain): RscDisplayAttributes {
                     class Controls {
                         class Title_PainAmount: RscText {
                             idc = -1;
-                            text = "Pain Amount";
+                            text = CSTRING(Module_GivePain_PainAmount);
                             x = 0;
                             y = 0;
                             w = QUOTE(W_PART(10));
