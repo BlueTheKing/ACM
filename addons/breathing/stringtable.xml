@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ACM">
     <Package name="Breathing">
+        <Key ID="STR_ACM_Breathing_Category">
+            <English>ACM: Breathing</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_Category_Pneumothorax">
+            <English>Pneumothorax</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_Category_Diagnosis">
+            <English>Diagnosis</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_Category_Treatment">
+            <English>Treatment</English>
+        </Key>
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen">
             <English>Altitude Affect Oxygen</English>
         </Key>
@@ -318,8 +330,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomyClose_Complete">
             <English>Thoracostomy incision sealed and one-way valve placed</English>
-        </Key>
-        <!--
+        </Key><!--
             // Thoracostomy Drain Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomyDrain_ActionLog">
             <English>%1 drained plueral space (%2)</English>
@@ -344,8 +355,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Large">
             <English>Large amount of blood drained</English>
-        </Key>
-        <!--
+        </Key><!--
             // Thoracostomy Chest Tube Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_Already">
             <English>Chest Tube already inserted</English>
@@ -355,8 +365,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_Complete">
             <English>Chest Tube inserted</English>
-        </Key>
-        <!--
+        </Key><!--
             // Thoracostomy Sweep (Start) Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_Already">
             <English>Thoracostomy sweep already performed</English>

@@ -6,7 +6,7 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-#define ACM_SETTINGS_CATEGORY "ACM: Damage"
+#define ACM_SETTINGS_CATEGORY LLSTRING(Category)
 
 ADDON = true;
 
@@ -23,7 +23,7 @@ ADDON = true;
     QGVAR(headTraumaDeathThreshold),
     "SLIDER",
     [LLSTRING(SETTING_HeadTraumaDeathThreshold), LLSTRING(SETTING_HeadTraumaDeathThreshold_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Thresholds"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Thresholds)],
     [0, 40, 19, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -32,7 +32,7 @@ ADDON = true;
     QGVAR(bodyTraumaDeathThreshold),
     "SLIDER",
     [LLSTRING(SETTING_BodyTraumaDeathThreshold), LLSTRING(SETTING_BodyTraumaDeathThreshold_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Thresholds"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Thresholds)],
     [0, 40, 24, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -41,7 +41,7 @@ ADDON = true;
     QGVAR(headTraumaCardiacArrestThreshold),
     "SLIDER",
     [LLSTRING(SETTING_HeadTraumaCardiacArrestThreshold), LLSTRING(SETTING_HeadTraumaCardiacArrestThreshold_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Thresholds"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Thresholds)],
     [0, 1, 0.65, 1, true],
     true
 ] call CBA_fnc_addSetting;
@@ -50,7 +50,7 @@ ADDON = true;
     QGVAR(bodyTraumaCardiacArrestThreshold),
     "SLIDER",
     [LLSTRING(SETTING_BodyTraumaCardiacArrestThreshold), LLSTRING(SETTING_BodyTraumaCardiacArrestThreshold_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Thresholds"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Thresholds)],
     [0, 1, 0.65, 1, true],
     true
 ] call CBA_fnc_addSetting;
@@ -59,7 +59,7 @@ ADDON = true;
     QGVAR(internalBleedingChanceMultiplier),
     "SLIDER",
     [LLSTRING(SETTING_InternalBleedingChanceMultiplier), LLSTRING(SETTING_InternalBleedingChanceMultiplier_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Internal Bleeding"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_InternalBleeding)],
     [0.1, 2, 1, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -68,7 +68,7 @@ ADDON = true;
     QGVAR(Hardcore_InternalBleeding),
     "CHECKBOX",
     [LLSTRING(SETTING_Hardcore_InternalBleeding), LLSTRING(SETTING_Hardcore_InternalBleeding_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Internal Bleeding"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_InternalBleeding)],
     [false],
     true
 ] call CBA_fnc_addSetting;*/
@@ -77,7 +77,7 @@ ADDON = true;
     QGVAR(traumaModifierAI),
     "SLIDER",
     [LLSTRING(SETTING_TraumaModifierAI), LLSTRING(SETTING_TraumaModifierAI_Desc)],
-    [ACM_SETTINGS_CATEGORY, "AI Units"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AIUnits)],
     [0.1, 2, 1, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -86,7 +86,7 @@ ADDON = true;
     QGVAR(AIStayDownChance),
     "SLIDER",
     [LLSTRING(SETTING_AIStayDownChance), LLSTRING(SETTING_AIStayDownChance_Desc)],
-    [ACM_SETTINGS_CATEGORY, "AI Units"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AIUnits)],
     [0, 1, 1, 0, true],
     true
 ] call CBA_fnc_addSetting;

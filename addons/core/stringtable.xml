@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ACM">
     <Package name="Core">
+        <Key ID="STR_ACM_Core_Category">
+            <English>ACM: Core</English>
+        </Key>
+        <Key ID="STR_ACM_Core_Category_Items">
+            <English>Items</English>
+        </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet">
             <English>Take Off Tourniquet Time</English>
         </Key>

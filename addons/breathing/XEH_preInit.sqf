@@ -8,7 +8,7 @@ PREP_RECOMPILE_END;
 
 call FUNC(generatePTXMap);
 
-#define ACM_SETTINGS_CATEGORY "ACM: Breathing"
+#define ACM_SETTINGS_CATEGORY LLSTRING(Category)
 
 [
     QGVAR(altitudeAffectOxygen),
@@ -25,7 +25,7 @@ call FUNC(generatePTXMap);
     QGVAR(pneumothoraxEnabled),
     "CHECKBOX",
     LLSTRING(SETTING_PneumothoraxEnabled),
-    [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Pneumothorax)],
     [true],
     true
 ] call CBA_fnc_addSetting;
@@ -34,7 +34,7 @@ call FUNC(generatePTXMap);
     QGVAR(chestInjuryChance),
     "SLIDER",
     [LLSTRING(SETTING_ChestInjuryChance), LLSTRING(SETTING_ChestInjuryChance_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Pneumothorax)],
     [0, 2, 1, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -43,7 +43,7 @@ call FUNC(generatePTXMap);
     QGVAR(pneumothoraxDeteriorateChance),
     "SLIDER",
     [LLSTRING(SETTING_PneumothoraxDeteriorateChance), LLSTRING(SETTING_PneumothoraxDeteriorateChance_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Pneumothorax)],
     [0, 2, 1, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -52,7 +52,7 @@ call FUNC(generatePTXMap);
     QGVAR(Hardcore_ChestInjury),
     "CHECKBOX",
     [LLSTRING(SETTING_Hardcore_ChestInjury), LLSTRING(SETTING_Hardcore_ChestInjury_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Pneumothorax)],
     [false],
     true
 ] call CBA_fnc_addSetting;
@@ -61,7 +61,7 @@ call FUNC(generatePTXMap);
     QGVAR(Hardcore_HemothoraxBleeding),
     "CHECKBOX",
     [LLSTRING(SETTING_Hardcore_HemothoraxBleeding), LLSTRING(SETTING_Hardcore_HemothoraxBleeding_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Pneumothorax"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Pneumothorax)],
     [false],
     true
 ] call CBA_fnc_addSetting;
@@ -72,7 +72,7 @@ call FUNC(generatePTXMap);
     QGVAR(allowInspectChest),
     "LIST",
     [LLSTRING(SETTING_Allow_InspectChest), LLSTRING(SETTING_Allow_InspectChest_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Diagnosis"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Diagnosis)],
     [SETTING_DROPDOWN_SKILL, 0],
     true
 ] call CBA_fnc_addSetting;
@@ -81,7 +81,7 @@ call FUNC(generatePTXMap);
     QGVAR(treatmentTimeInspectChest),
     "SLIDER",
     [LLSTRING(SETTING_TreatmentTime_InspectChest), LLSTRING(SETTING_TreatmentTime_InspectChest_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Diagnosis"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Diagnosis)],
     [1, 30, 6, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -92,7 +92,7 @@ call FUNC(generatePTXMap);
     QGVAR(allowNCD),
     "LIST",
     [LLSTRING(SETTING_Allow_NCD), LLSTRING(SETTING_Allow_NCD_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Treatment"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Treatment)],
     [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -101,7 +101,7 @@ call FUNC(generatePTXMap);
     QGVAR(allowThoracostomy),
     "LIST",
     [LLSTRING(SETTING_Allow_Thoracostomy), LLSTRING(SETTING_Allow_Thoracostomy_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Treatment"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Treatment)],
     [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -110,7 +110,7 @@ call FUNC(generatePTXMap);
     QGVAR(locationThoracostomy),
     "LIST",
     [LLSTRING(SETTING_Location_Thoracostomy), LLSTRING(SETTING_Location_Thoracostomy_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Treatment"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Treatment)],
     [SETTING_DROPDOWN_LOCATION, 3],
     true
 ] call CBA_fnc_addSetting;

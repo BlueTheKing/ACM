@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ACM">
     <Package name="Damage">
+        <Key ID="STR_ACM_Damage_Category">
+            <English>ACM: Damage</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_Category_Thresholds">
+            <English>Thresholds</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_Category_InternalBleeding">
+            <English>Internal Bleeding</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_Category_AIUnits">
+            <English>AI Units</English>
+        </Key>
         <Key ID="STR_ACM_Damage_SETTING_Enable">
             <English>Enable Damage Addon</English>
         </Key>

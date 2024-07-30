@@ -6,7 +6,7 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-#define ACM_SETTINGS_CATEGORY "ACM: Airway"
+#define ACM_SETTINGS_CATEGORY LLSTRING(Category)
 
 // Basic
 
@@ -52,7 +52,7 @@ PREP_RECOMPILE_END;
     QGVAR(treatmentTimeRecoveryPosition),
     "SLIDER",
     [LSTRING(SETTING_TreatmentTime_RecoveryPosition), LSTRING(SETTING_TreatmentTime_RecoveryPosition_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Airway Management"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayManagement)],
     [1, 30, 8, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -61,7 +61,7 @@ PREP_RECOMPILE_END;
     QGVAR(allowSuctionBag),
     "LIST",
     [LSTRING(SETTING_Allow_SuctionBag), LSTRING(SETTING_Allow_SuctionBag_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Airway Management"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayManagement)],
     [SETTING_DROPDOWN_SKILL, 0],
     true
 ] call CBA_fnc_addSetting;
@@ -70,7 +70,7 @@ PREP_RECOMPILE_END;
     QGVAR(allowACCUVAC),
     "LIST",
     [LSTRING(SETTING_Allow_ACCUVAC), LSTRING(SETTING_Allow_ACCUVAC_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Airway Management"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayManagement)],
     [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -81,7 +81,7 @@ PREP_RECOMPILE_END;
     QGVAR(treatmentTimeOPA),
     "SLIDER",
     [LSTRING(SETTING_TreatmentTime_OPA), LSTRING(SETTING_TreatmentTime_OPA_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayAdjunct)],
     [1, 30, 3, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -90,7 +90,7 @@ PREP_RECOMPILE_END;
     QGVAR(treatmentTimeNPA),
     "SLIDER",
     [LSTRING(SETTING_TreatmentTime_NPA), LSTRING(SETTING_TreatmentTime_NPA_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayAdjunct)],
     [1, 30, 5, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -99,7 +99,7 @@ PREP_RECOMPILE_END;
     QGVAR(treatmentTimeSGA),
     "SLIDER",
     [LSTRING(SETTING_TreatmentTime_SGA), LSTRING(SETTING_TreatmentTime_SGA_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayAdjunct)],
     [1, 30, 7, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -108,7 +108,7 @@ PREP_RECOMPILE_END;
     QGVAR(allowOPA),
     "LIST",
     [LSTRING(SETTING_Allow_OPA), LSTRING(SETTING_Allow_OPA_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayAdjunct)],
     [SETTING_DROPDOWN_SKILL, 0],
     true
 ] call CBA_fnc_addSetting;
@@ -117,7 +117,7 @@ PREP_RECOMPILE_END;
     QGVAR(allowNPA),
     "LIST",
     [LSTRING(SETTING_Allow_NPA), LSTRING(SETTING_Allow_NPA_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayAdjunct)],
     [SETTING_DROPDOWN_SKILL, 0],
     true
 ] call CBA_fnc_addSetting;
@@ -126,7 +126,7 @@ PREP_RECOMPILE_END;
     QGVAR(allowSGA),
     "LIST",
     [LSTRING(SETTING_Allow_SGA), LSTRING(SETTING_Allow_SGA_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayAdjunct)],
     [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
@@ -135,7 +135,7 @@ PREP_RECOMPILE_END;
     QGVAR(airwayAdjunctReusable),
     "CHECKBOX",
     [LSTRING(SETTING_AirwayAdjunctsReusable), LSTRING(SETTING_AirwayAdjunctsReusable_Desc)],
-    [ACM_SETTINGS_CATEGORY, "Airway Adjunct"],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayAdjunct)],
     [false],
     true
 ] call CBA_fnc_addSetting;

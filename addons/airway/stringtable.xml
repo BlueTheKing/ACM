@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ACM">
     <Package name="Airway">
+        <Key ID="STR_ACM_Airway_Category">
+            <English>ACM: Airway</English>
+        </Key>
+        <Key ID="STR_ACM_Airway_Category_AirwayManagement">
+            <English>Airway Management</English>
+        </Key>
+        <Key ID="STR_ACM_Airway_Category_AirwayAdjunct">
+            <English>Airway Adjunct</English>
+        </Key>
         <Key ID="STR_ACM_Airway_SETTING_Enable">
             <English>Enable Airway</English>
         </Key>
