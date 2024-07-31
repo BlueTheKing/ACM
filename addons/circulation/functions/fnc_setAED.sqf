@@ -33,30 +33,30 @@ private _hint = "";
 switch (_type) do {
     case 3: {
         if (_state) then {
-            _hint = format ["%1 %2", (toLower LELSTRING(common,Connected)), LLSTRING(AED_Capnograph)];
+            _hint = format ["%1 %2", (toLower LELSTRING(core,Common_Connected)), LLSTRING(AED_Capnograph)];
         } else {
-            _hint = format ["%1 %2", (toLower LELSTRING(common,Disconnected)), LLSTRING(AED_Capnograph)];
+            _hint = format ["%1 %2", (toLower LELSTRING(core,Common_Disconnected)), LLSTRING(AED_Capnograph)];
         };
     };
     case 2: {
         if (_state) then {
-            _hint = format ["%1 %2", (toLower LELSTRING(common,Connected)), LLSTRING(AED_PressureCuff)];
+            _hint = format ["%1 %2", (toLower LELSTRING(core,Common_Connected)), LLSTRING(AED_PressureCuff)];
         } else {
-            _hint = format ["%1 %2", (toLower LELSTRING(common,Disconnected)), LLSTRING(AED_PressureCuff)];
+            _hint = format ["%1 %2", (toLower LELSTRING(core,Common_Disconnected)), LLSTRING(AED_PressureCuff)];
         };
     };
     case 1: {
         if (_state) then {
-            _hint = format ["%1 %2", (toLower LELSTRING(common,Connected)), LLSTRING(AED_PulseOximeter)];
+            _hint = format ["%1 %2", (toLower LELSTRING(core,Common_Connected)), LLSTRING(AED_PulseOximeter)];
         } else {
-            _hint = format ["%1 %2", (toLower LELSTRING(common,Disconnected)), LLSTRING(AED_PulseOximeter)];
+            _hint = format ["%1 %2", (toLower LELSTRING(core,Common_Disconnected)), LLSTRING(AED_PulseOximeter)];
         };
     };
     default {
         if (_state) then {
-            _hint = format ["%1 %2", (toLower LELSTRING(common,Applied)), LLSTRING(AED_Pads)];
+            _hint = format ["%1 %2", (toLower LELSTRING(core,Common_Applied)), LLSTRING(AED_Pads)];
         } else {
-            _hint = format ["%1 %2", (toLower LELSTRING(common,Removed)), LLSTRING(AED_Pads)];
+            _hint = format ["%1 %2", (toLower LELSTRING(core,Common_Removed)), LLSTRING(AED_Pads)];
         };
     };
 };
