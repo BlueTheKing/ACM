@@ -23,13 +23,13 @@ params ["_medic", "_patient", "_bodyPart"];
 
 if !(isNull findDisplay IDC_TRANSFUSIONMENU) exitWith {};
 
-private _medicalMenuKeybind = (["ACE3 Common", QACEGVAR(medical_gui,openMedicalMenuKey)] call CBA_FUNC(getKeybind) select 5) select 0;
-
 ACEGVAR(medical_gui,pendingReopen) = false; // Prevent medical menu from reopening
 
 if (dialog) then { // If another dialog is open (medical menu) close it
     closeDialog 0;
 };
+
+private _medicalMenuKeybind = (["ACE3 Common", QACEGVAR(medical_gui,openMedicalMenuKey)] call CBA_FUNC(getKeybind) select 5) select 0;
 
 GVAR(TransfusionMenu_CloseID) = [_medicalMenuKeybind, [false, false, false], { // H to close and open medical menu
     closeDialog 0;

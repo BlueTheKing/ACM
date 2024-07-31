@@ -37,7 +37,7 @@ class GVAR(TransfusionMenu_Dialog) {
             colorBackground[] = {0,0,0,0};
             text = "";
             lineSpacing = 0;
-            sizeEx = QUOTE(GUI_GRID_H * 1.8);
+            sizeEx = QUOTE(GUI_GRID_H * 1.8 * NORMALIZE_SIZEEX);
             shadow = 1;
             colorShadow[] = {0,0,0,0.5};
         };
@@ -48,7 +48,7 @@ class GVAR(TransfusionMenu_Dialog) {
             w = QUOTE(safezoneW / 10);
             h = QUOTE(safezoneH / 25);
             text = "";
-            sizeEx = QUOTE(GUI_GRID_H * 1.1);
+            sizeEx = QUOTE(GUI_GRID_H * 1.1 * NORMALIZE_SIZEEX);
         };
         class SelectedInventoryText: SelectedLimbText {
             idc = IDC_TRANSFUSIONMENU_SELECTION_INV_TEXT;
@@ -73,7 +73,7 @@ class GVAR(TransfusionMenu_Dialog) {
             w = QUOTE(safezoneW / 20);
             h = QUOTE(safezoneH / 40);
             text = "Remaining: 1000ml";
-            sizeEx = QUOTE(GUI_GRID_H * 0.65);
+            sizeEx = QUOTE(GUI_GRID_H * 0.65 * NORMALIZE_SIZEEX);
         };*/
         class BodyBackground_IO_Torso: BodyBackground {
             idc = IDC_TRANSFUSIONMENU_BG_IO_TORSO;
@@ -223,7 +223,7 @@ class GVAR(TransfusionMenu_Dialog) {
             colorBackground[] = {0,0,0,0.1};
             colorSelectBackground[] = {0.7,0.7,0.7,1};
             colorSelectBackground2[] = {0.7,0.7,0.7,1};
-            sizeEx = QUOTE(GUI_GRID_H * 0.9);
+            sizeEx = QUOTE(GUI_GRID_H * 0.9 * NORMALIZE_SIZEEX);
             class Items {};
         };
         class ToggleIV: RscButtonMenu {
@@ -268,7 +268,7 @@ class GVAR(TransfusionMenu_Dialog) {
             h = QUOTE(safezoneH / 40);
             shadow = 0;
             font = "RobotoCondensed";
-            sizeEx = QUOTE(GUI_GRID_H * 0.9);
+            sizeEx = QUOTE(GUI_GRID_H * 0.9 * NORMALIZE_SIZEEX);
             action = QUOTE(call FUNC(TransfusionMenu_ToggleIVFlow));
             tooltip = "";
         };

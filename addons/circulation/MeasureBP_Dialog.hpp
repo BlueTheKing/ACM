@@ -82,14 +82,14 @@ class GVAR(MeasureBP_Dialog)
             style = ST_CENTER;
             font = "RobotoCondensed";
             x = QUOTE(safezoneX);
-            y = QUOTE(safezoneY * 3);
+            y = QUOTE(safezoneY);
             w = QUOTE(safezoneW);
-            h = QUOTE(safezoneH);
+            h = QUOTE(safezoneH / 10);
             colorText[] = {1,1,1,1};
             colorBackground[] = {0,0,0,0};
             text = CSTRING(MeasureBP_Measuring);
             lineSpacing = 0;
-            sizeEx = QUOTE(GUI_GRID_H * 1.4);
+            sizeEx = QUOTE(GUI_GRID_H * 1.4 * NORMALIZE_SIZEEX);
             fixedWidth = 0;
             deletable = 0;
             fade = 0;
@@ -100,7 +100,7 @@ class GVAR(MeasureBP_Dialog)
         };
         class BottomText: TopText {
             idc = IDC_MEASUREBP_TEXT;
-            y = QUOTE(safezoneY * 2.85);
+            h = QUOTE(safezoneH / 6);
             text = "";
         };
         class Button_Bulb: RscButton {

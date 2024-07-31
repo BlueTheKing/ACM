@@ -78,7 +78,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
             shadow = 0;
             type = 0;
             style = 0;
-            sizeEx = QUOTE(ACM_GRID_H * 0.4 * (0.55 / (getResolution select 5)));
+            sizeEx = QUOTE(ACM_GRID_H * 0.4 * NORMALIZE_SIZEEX);
             text = CSTRING(AED_Monitor_HR);
         };
         class SpO2_Vitals_Header: HR_Vitals_Header {
@@ -112,7 +112,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
             shadow = 0;
             type = 0;
             style = 1;
-            sizeEx = QUOTE(ACM_GRID_H * 1.9 * (0.55 / (getResolution select 5)));
+            sizeEx = QUOTE(ACM_GRID_H * 1.9 * NORMALIZE_SIZEEX);
             text = "0";
         };
         class SpO2_Vitals_Display: HR_Vitals_Display {
@@ -123,7 +123,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
             h = QUOTE(ACM_AED_pxToScreen_H(93));
             colorText[] = SPO2_COLOR;
             font = "RobotoCondensedBold";
-            sizeEx = QUOTE(ACM_GRID_H * 1.7 * (0.55 / (getResolution select 5)));
+            sizeEx = QUOTE(ACM_GRID_H * 1.7 * NORMALIZE_SIZEEX);
             text = "0";
         };
         class CO2_Vitals_Display: SpO2_Vitals_Display {
@@ -140,14 +140,14 @@ class GVAR(Lifepak_Monitor_Dialog) {
             y = QUOTE(ACM_AED_pxToScreen_Y((VitalsDisplay_Spacing_Y(2) + 12)));
             w = QUOTE(ACM_AED_pxToScreen_W(80));
             h = QUOTE(ACM_AED_pxToScreen_H(80));
-            sizeEx = QUOTE(ACM_GRID_H * 0.8 * (0.55 / (getResolution select 5)));
+            sizeEx = QUOTE(ACM_GRID_H * 0.8 * NORMALIZE_SIZEEX);
             text = "0";
         };
         class RR_Text_Vitals_Display: RR_Vitals_Display {
             idc = IDC_VITALSDISPLAY_RR_TEXT;
             x = QUOTE(ACM_AED_pxToScreen_X((AED_TOPLEFT_X - 14)));
             y = QUOTE(ACM_AED_pxToScreen_Y((VitalsDisplay_Spacing_Y(2) + 9)));
-            sizeEx = QUOTE(ACM_GRID_H * 0.45 * (0.55 / (getResolution select 5)));
+            sizeEx = QUOTE(ACM_GRID_H * 0.45 * NORMALIZE_SIZEEX);
             text = CSTRING(AED_Monitor_RR);
         };
         class NIBP_S_Vitals_Display: SpO2_Vitals_Display {
@@ -170,7 +170,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
             y = QUOTE(ACM_AED_pxToScreen_Y((VitalsDisplay_Spacing_Y(3) + 68)));
             w = QUOTE(ACM_AED_pxToScreen_W(100));
             h = QUOTE(ACM_AED_pxToScreen_H(90));
-            sizeEx = QUOTE(ACM_GRID_H * 0.8 * (0.55 / (getResolution select 5)));
+            sizeEx = QUOTE(ACM_GRID_H * 0.8 * NORMALIZE_SIZEEX);
             text = "0";
         };
 
@@ -279,7 +279,7 @@ class GVAR(Lifepak_Monitor_Dialog) {
             type = 0;
             style = 1;
             colorText[] = CO2_COLOR;
-            sizeEx = QUOTE(ACM_GRID_H * 0.4 * (0.55 / (getResolution select 5)));
+            sizeEx = QUOTE(ACM_GRID_H * 0.4 * NORMALIZE_SIZEEX);
             text = "0";
         };
         class CO_Scale_Text_50: CO_Scale_Text_0 {

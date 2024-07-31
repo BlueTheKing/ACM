@@ -19,14 +19,14 @@ class RscTitles
                 style = ST_CENTER;
                 font = "RobotoCondensed";
                 x = QUOTE(safezoneX);
-                y = QUOTE(safezoneY * 2);
+                y = QUOTE(safezoneY);
                 w = QUOTE(safezoneW);
-                h = QUOTE(safezoneH);
+                h = QUOTE(safezoneH / 10);
                 colorText[] = {1,1,1,1};
                 colorBackground[] = {0,0,0,0};
                 text = CSTRING(UsingBVM);
                 lineSpacing = 0;
-                sizeEx = QUOTE(GUI_GRID_H * 1.4);
+                sizeEx = QUOTE(GUI_GRID_H * 1.4 * NORMALIZE_SIZEEX);
                 fixedWidth = 0;
                 deletable = 0;
                 fade = 0;
@@ -37,7 +37,7 @@ class RscTitles
             };
             class BottomText: TopText {
                 idc = IDC_USEBVM_TEXT;
-                y = QUOTE(safezoneY * 1.85);
+                h = QUOTE(safezoneH / 6);
                 text = "";
             };
         };

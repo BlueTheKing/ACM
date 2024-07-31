@@ -282,6 +282,8 @@
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}
 
+#define NORMALIZE_SIZEEX               (0.55 / (getResolution select 5))
+
 // Misc
 #define ACM_TARGETVITALS_HR(unit) (unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 77])
 #define ACM_TARGETVITALS_MAXHR(unit) (unit getVariable [QEGVAR(core,TargetVitals_MaxHeartRate), 200])

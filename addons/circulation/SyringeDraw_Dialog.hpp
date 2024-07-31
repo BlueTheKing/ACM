@@ -16,32 +16,6 @@ class GVAR(SyringeDraw_Dialog) {
     objects[] = {};
 
     class ControlsBackground {
-        class TopText: RscText {
-            idc = IDC_SYRINGEDRAW_TEXT;
-            style = ST_CENTER;
-            font = "RobotoCondensed";
-            x = QUOTE(safezoneX);
-            y = QUOTE(safezoneY * 3);
-            w = QUOTE(safezoneW);
-            h = QUOTE(safezoneH);
-            colorText[] = {1,1,1,1};
-            colorBackground[] = {0,0,0,0};
-            text = "";
-            lineSpacing = 0;
-            sizeEx = QUOTE(GUI_GRID_H * 1.4);
-            fixedWidth = 0;
-            deletable = 0;
-            fade = 0;
-            access = 0;
-            type = 0;
-            shadow = 1;
-            colorShadow[] = {0,0,0,0.5};
-        };
-        class BottomText: TopText {
-            idc = IDC_SYRINGEDRAW_BOTTOMTEXT;
-            y = QUOTE(safezoneY * 2.85);
-            text = "";
-        };
         class Syringe_IV: RscControlsGroup {
             idc = IDC_SYRINGEDRAW_SYRINGE_IV_GROUP;
             x = QUOTE(safezoneX + (safezoneW / 10));
@@ -70,7 +44,7 @@ class GVAR(SyringeDraw_Dialog) {
                     idc = -1;
                     x = 0;
                     y = 0;
-                    w = QUOTE(safezoneW / 1.25);
+                    w = QUOTE(safezoneW / ACM_GUI_SyringeDraw_SIZEM);
                     h = QUOTE(safezoneH);
                     type = 0;
                     size = 0;
@@ -114,7 +88,7 @@ class GVAR(SyringeDraw_Dialog) {
                     idc = -1;
                     x = 0;
                     y = 0;
-                    w = QUOTE(safezoneW / 1.25);
+                    w = QUOTE(safezoneW / ACM_GUI_SyringeDraw_SIZEM);
                     h = QUOTE(safezoneH);
                     type = 0;
                     size = 0;
@@ -129,6 +103,32 @@ class GVAR(SyringeDraw_Dialog) {
                     text = QPATHTOF(ui\syringe\syringe_im_barrel_ca.paa);
                 };
             };
+        };
+        class TopText: RscText {
+            idc = IDC_SYRINGEDRAW_TEXT;
+            style = ST_CENTER;
+            font = "RobotoCondensed";
+            x = QUOTE(safezoneX);
+            y = QUOTE(safezoneY);
+            w = QUOTE(safezoneW);
+            h = QUOTE(safezoneH / 10);
+            colorText[] = {1,1,1,1};
+            colorBackground[] = {0,0,0,0};
+            text = "";
+            lineSpacing = 0;
+            sizeEx = QUOTE(GUI_GRID_H * 1.4 * NORMALIZE_SIZEEX);
+            fixedWidth = 0;
+            deletable = 0;
+            fade = 0;
+            access = 0;
+            type = 0;
+            shadow = 1;
+            colorShadow[] = {0,0,0,0.5};
+        };
+        class BottomText: TopText {
+            idc = IDC_SYRINGEDRAW_BOTTOMTEXT;
+            h = QUOTE(safezoneH / 6);
+            text = "";
         };
     };
     class Controls {
@@ -147,7 +147,7 @@ class GVAR(SyringeDraw_Dialog) {
             soundEscape[] = {};
             idc = IDC_SYRINGEDRAW_PLUNGER;
             style = 0;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 56));
+            x = QUOTE((safezoneX + (safezoneW / 2) - (safezoneW / 56)));
             y = QUOTE(SYRINGEDRAW_LIMIT_IV_TOP);
             w = QUOTE(safezoneW / 28);
             h = QUOTE(ACM_pxToScreen_H(36));
@@ -178,7 +178,7 @@ class GVAR(SyringeDraw_Dialog) {
             h = QUOTE(safezoneH / 30);
             shadow = 0;
             font = "RobotoCondensed";
-            sizeEx = QUOTE(GUI_GRID_H);
+            sizeEx = QUOTE(GUI_GRID_H * NORMALIZE_SIZEEX);
             onButtonClick = QUOTE([false] call FUNC(Syringe_Draw_Button));
             tooltip = "";
         };
