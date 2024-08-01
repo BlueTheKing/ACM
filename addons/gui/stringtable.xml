@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ACM">
     <Package name="GUI">
+        <Key ID="STR_ACM_GUI_Category">
+            <English>ACM: GUI</English>
+        </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses">
             <English>Show inactive vitals statuses</English>
         </Key>

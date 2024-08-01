@@ -8,7 +8,8 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "cba_main",
-            "ace_main"
+            "ace_main",
+            "ace_medical_gui"
         };
         author = AUTHOR;
         VERSION_CONFIG;

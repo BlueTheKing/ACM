@@ -77,4 +77,15 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// OVERRIDE ACE
+
+[
+    QACEGVAR(medical_treatment,advancedBandages),
+    "LIST",
+    [ACELSTRING(medical_treatment,AdvancedBandages_DisplayName), ACELSTRING(medical_treatment,AdvancedBandages_Description)],
+    [ACELSTRING(medical,Category), ACELSTRING(medical_treatment,SubCategory_Treatment)],
+    [[0, 1, 2], [ACELSTRING(common,Disabled), ACELSTRING(common,Enabled), ACELSTRING(medical_treatment,AdvancedBandages_EnabledCanReopen)], 2],
+    true
+] call CBA_fnc_addSetting;
+
 ADDON = true;

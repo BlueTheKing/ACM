@@ -6,9 +6,7 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-#define ACM_SETTINGS_CATEGORY "ACM: GUI"
-    
-ADDON = true;
+#define ACM_SETTINGS_CATEGORY LLSTRING(Category)
 
 // Show inactive patient statuses
 [
@@ -100,3 +98,5 @@ private _categoryColors = [ACELSTRING(medical,Interface_Category), format ["| %1
         false // isGlobal
     ] call CBA_fnc_addSetting;
 } forEach _damageColors;
+
+ADDON = true;
