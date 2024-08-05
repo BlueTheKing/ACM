@@ -101,6 +101,10 @@
             // Wrap SAM Splint Action // -->
         <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
             <English>%1 has wrapped SAM Splint</English>
+        </Key><!--
+            // GUI // -->
+        <Key ID="STR_ACM_Disability_GUI_Wrapped">
+            <English>Wrapped</English>
         </Key>
     </Package>
 </Project>

@@ -116,6 +116,9 @@
         <Key ID="STR_ACM_Breathing_BVM">
             <English>Bag-Valve-Mask</English>
         </Key>
+        <Key ID="STR_ACM_Breathing_BVM_Short">
+            <English>BVM</English>
+        </Key>
         <Key ID="STR_ACM_Breathing_BVM_Desc">
             <English>Used to ventilate patient that is not breathing, may be connected to oxygen</English>
         </Key>
@@ -283,7 +286,7 @@
             <English>Noticable extensive bruising</English>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_Bruising_Short">
-            <English>extensive bruising</English>
+            <English>Extensive Bruising</English>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_Uneven">
             <English>Uneven chest rise and fall observed</English>
@@ -470,6 +473,34 @@
         </Key>
         <Key ID="STR_ACM_Breathing_Stethoscope_PlaceBell">
             <English>Place Bell</English>
+        </Key><!--
+            // GUI // -->
+        <Key ID="STR_ACM_Breathing_GUI_Cyanosis">
+            <English>Cyanosis</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_Slight">
+            <English>Slight</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_Moderate">
+            <English>Moderate</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_Severe">
+            <English>Severe</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_UpperChest">
+            <English>Upper Chest</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_%1">
+            <English>Thoracostomy Incision (%1)</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_Sealed">
+            <English>Sealed</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_Open">
+            <English>Open</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_ChestTube">
+            <English>Chest Tube</English>
         </Key>
     </Package>
 </Project>

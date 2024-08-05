@@ -79,5 +79,14 @@
         <Key ID="STR_ACM_Core_Common_Disconnected">
             <English>Disconnected</English>
         </Key>
+        <Key ID="STR_ACM_Core_Common_InProgress">
+            <English>In Progress</English>
+        </Key>
+        <Key ID="STR_ACM_Core_Common_Paused">
+            <English>Paused</English>
+        </Key>
+        <Key ID="STR_ACM_Core_Common_Active">
+            <English>Active</English>
+        </Key>
     </Package>
 </Project>

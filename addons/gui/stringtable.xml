@@ -19,5 +19,8 @@
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels_Desc">
             <English>Show patient left/right side labels in medical menu</English>
         </Key>
+        <Key ID="STR_ACM_GUI_NoExternalBleeding">
+            <English>No external bleeding</English>
+        </Key>
     </Package>
 </Project>

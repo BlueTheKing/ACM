@@ -58,7 +58,7 @@ if (IS_BLEEDING(_target)) then {
         };
     };
 } else {
-    if (GVAR(showInactiveStatuses)) then {_entries pushBack ["No external bleeding", _nonissueColor];}; // TODO stringtable this
+    if (GVAR(showInactiveStatuses)) then {_entries pushBack [LLSTRING(NoExternalBleeding), _nonissueColor];};
 };
 
 if (ACEGVAR(medical_gui,showBloodlossEntry)) then {
@@ -114,13 +114,13 @@ private _plasmaBags = 0;
 
 if (_totalBags > 0) then {
     if (_salineBags > 0) then {
-        _entries pushBack [format ["Transfusing Saline [%1x]", floor _salineBags], [1, 1, 1, 1]];
+        _entries pushBack [format [LELSTRING(circulation,GUI_TransfusingSaline), floor _salineBags], [1, 1, 1, 1]];
     };
     if (_bloodBags > 0) then {
-        _entries pushBack [format ["Transfusing Blood [%1x]", floor _bloodBags], [1, 1, 1, 1]];
+        _entries pushBack [format [LELSTRING(circulation,GUI_TransfusingBlood), floor _bloodBags], [1, 1, 1, 1]];
     };
     if (_plasmaBags > 0) then {
-        _entries pushBack [format ["Transfusing Plasma [%1x]", floor _plasmaBags], [1, 1, 1, 1]];
+        _entries pushBack [format [LELSTRING(circulation,GUI_TransfusingPlasma), floor _plasmaBags], [1, 1, 1, 1]];
     };
 } else {
     if (GVAR(showInactiveStatuses)) then {_entries pushBack [localize ACELSTRING(medical_treatment,Status_NoIv), _nonissueColor];};
@@ -180,20 +180,20 @@ _entries pushBack [localize _bodyPartName, [1, 1, 1, 1]];
 
 // Recovery Position
 if (_selectionN in [0,1] && _target getVariable [QEGVAR(airway,RecoveryPosition_State), false]) then {
-    _entries pushBack ["In Recovery Position", _airwayColor];
+    _entries pushBack [LELSTRING(airway,CheckAirway_RecoveryPosition), _airwayColor];
 } else {
     if (_selectionN == 0 && _target getVariable [QEGVAR(airway,HeadTilt_State), false]) then {
-        _entries pushBack ["Head Tilted & Chin Lifted", _airwayColor];
+        _entries pushBack [LELSTRING(airway,GUI_HeadTiltedChinLifted), _airwayColor];
     };
 };
 
 // CPR
 if (_selectionN == 1 && (_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]) isNotEqualTo objNull) then {
-    private _string = "Paused";
+    private _string = LELSTRING(core,Common_Paused);
     if ([_target] call EFUNC(core,cprActive)) then {
-        _string = "In Progress";
+        _string = LELSTRING(core,Common_InProgress);
     };
-    _entries pushBack [format ["CPR %1 (%2)", _string, ([(_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _circulationColor];
+    _entries pushBack [format ["%1 %2 (%3)", ACELSTRING(medical_treatment,Actions_CPR), _string, ([(_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _circulationColor];
 };
 
 // Airway Items
@@ -202,14 +202,14 @@ if (_selectionN == 0) then {
     private _airwayItemTypeNasal = _target getVariable [QEGVAR(airway,AirwayItem_Nasal), ""];
 
     if (_airwayItemTypeNasal == "NPA") then {
-        _entries pushBack ["NPA", _airwayColor];
+        _entries pushBack [LELSTRING(airway,NPA), _airwayColor];
     };
 
     if (_airwayItemTypeOral != "") then {
-        private _airwayItem = "Guedel Tube";
+        private _airwayItem = LELSTRING(airway,GuedelTube);
 
         if (_airwayItemTypeOral isEqualTo "SGA") then {
-            _airwayItem = "i-gel";
+            _airwayItem = LELSTRING(airway,IGel);
         };
 
         _entries pushBack [_airwayItem, _airwayColor];
@@ -234,21 +234,21 @@ if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < 91 || HA
     };
 
     private _cyanosis = switch (true) do {
-        case (_oxygenSaturation < 67 || _tourniquetTime > 120): {"Severe"};
-        case (_oxygenSaturation < 82 || _tourniquetTime > 60): {"Moderate"};
-        default {"Slight"};
+        case (_oxygenSaturation < 67 || _tourniquetTime > 120): {LELSTRING(breathing,GUI_Severe)};
+        case (_oxygenSaturation < 82 || _tourniquetTime > 60): {LELSTRING(breathing,GUI_Moderate)};
+        default {LELSTRING(breathing,GUI_Slight)};
     };
 
-    _entries pushBack [format ["%1 Cyanosis", _cyanosis], [0.16, _colorScale, 1, 1]];
+    _entries pushBack [format ["%1 %2", _cyanosis, LELSTRING(breathing,GUI_Cyanosis)], [0.16, _colorScale, 1, 1]];
 };
 
 // BVM
 if (_selectionN == 0 && (_target getVariable [QEGVAR(breathing,BVM_Medic), objNull]) isNotEqualTo objNull) then {
-    private _string = "Paused";
+    private _string = LELSTRING(core,Common_Paused);
     if (alive (_target getVariable [QEGVAR(breathing,BVM_provider), objNull])) then {
-        _string = "Active";
+        _string = LELSTRING(core,Common_Active);
     };
-    _entries pushBack [format ["BVM %1 (%2)", _string, ([(_target getVariable [QEGVAR(breathing,BVM_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _breathingColor];
+    _entries pushBack [format ["%1 %2 (%3)", LELSTRING(breathing,BVM_Short), _string, ([(_target getVariable [QEGVAR(breathing,BVM_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _breathingColor];
 };
 
 private _selectionBodyPart = ALL_BODY_PARTS select _selectionN;
@@ -258,8 +258,8 @@ private _bodyPartIO = GET_IO(_target) select _selectionN;
 
 if (_bodyPartIO > 0) then {
     private _IOText = switch (_bodyPartIO) do {
-        case ACM_IO_EZ_M: {"EZ-IO"};
-        case ACM_IO_FAST1_M: {"FAST1 IO"};
+        case ACM_IO_EZ_M: {LELSTRING(circulation,IO_EZ)};
+        case ACM_IO_FAST1_M: {LELSTRING(circulation,IO_FAST1)};
     };
 
     private _connectedBag = [_target, _selectionBodyPart, false] call FUNC(getBodyPartIVBags);
@@ -280,10 +280,10 @@ if (_bodyPartIV isNotEqualTo [0,0,0]) then {
     {
         if (_x > 0) then {
             private _IVText = switch (_x) do {
-                case ACM_IV_16G_M: {"16g IV"};
-                case ACM_IV_14G_M: {"14g IV"};
+                case ACM_IV_16G_M: {LELSTRING(circulation,IV_16g)};
+                case ACM_IV_14G_M: {LELSTRING(circulation,IV_14g)};
             };
-            _IVText = format ["%1 (%2)", _IVText, (["Upper","Middle","Lower"] select _forEachIndex)];
+            _IVText = format ["%1 (%2)", _IVText, ([LELSTRING(circulation,IV_Upper), LELSTRING(circulation,IV_Middle), LELSTRING(circulation,IV_Lower)] select _forEachIndex)];
     
             private _connectedBag = [_target, _selectionBodyPart, true, _forEachIndex, _x] call FUNC(getBodyPartIVBags);
     
@@ -307,7 +307,7 @@ if ((_selectionN == 1 || (_selectionN in [2,3] && _allowOnArm) || (_selectionN =
     private _padsStatus = _target getVariable [QEGVAR(circulation,AED_Placement_Pads), false];
     private _pulseOximeterStatus = (_target getVariable [QEGVAR(circulation,AED_Placement_PulseOximeter), -1] != -1);
 
-    private _entry = "AED ";
+    private _entry = LELSTRING(circulation,AED_Short);
 
     private _displayedHR = _target getVariable [QEGVAR(circulation,AED_Pads_Display), 0];
 
@@ -316,9 +316,9 @@ if ((_selectionN == 1 || (_selectionN in [2,3] && _allowOnArm) || (_selectionN =
     };
 
     if (_padsStatus) then {
-        _entry = _entry + (format ["[HR: %1", _displayedHR]);
+        _entry = _entry + (format [" [%1: %2", LELSTRING(circulation,AED_Monitor_HR), _displayedHR]);
     } else {
-        _entry = _entry + (format ["[PR: %1", _displayedHR]);
+        _entry = _entry + (format [" [%1: %2", LELSTRING(circulation,AED_Monitor_PR), _displayedHR]);
     };
 
     if (_pulseOximeterStatus) then {
@@ -328,9 +328,9 @@ if ((_selectionN == 1 || (_selectionN in [2,3] && _allowOnArm) || (_selectionN =
             _displayedSPO2 = "--";
         };
 
-        _entry = _entry + (format [" SpO2: %1", _displayedSPO2]);
+        _entry = _entry + (format [" %1: %2", LELSTRING(circulation,AED_Monitor_SpO2), _displayedSPO2]);
     } else {
-        _entry = _entry + " SpO2: --";
+        _entry = _entry + (format [" %1: --", LELSTRING(circulation,AED_Monitor_SpO2)]);
     };
 
     private _measuredBP = _target getVariable [QEGVAR(circulation,AED_NIBP_Display), [0,0]];
@@ -341,15 +341,15 @@ if ((_selectionN == 1 || (_selectionN in [2,3] && _allowOnArm) || (_selectionN =
         _displayedBP = ["--","--"];
     };
 
-    _entry = _entry + (format [" BP: %1/%2", (_displayedBP select 0), (_displayedBP select 1)]);
+    _entry = _entry + (format [" %1: %2/%3", LELSTRING(circulation,AED_Monitor_BP), (_displayedBP select 0), (_displayedBP select 1)]);
 
     private _measuredEtCO2 = _target getVariable [QEGVAR(circulation,AED_CO2_Display), 0];
     private _measuredRR = _target getVariable [QEGVAR(circulation,AED_RR_Display), 0];
 
     if (_measuredEtCO2 > 0 && _measuredRR > 0) then {
-        _entry = _entry + format [" RR: %1 CO2: %2", _measuredRR, _measuredEtCO2];
+        _entry = _entry + format [" %1: %2 %3: %4", LELSTRING(circulation,AED_Monitor_RR), _measuredRR, LELSTRING(circulation,AED_Monitor_CO2), _measuredEtCO2];
     } else {
-        _entry = _entry + " RR: -- CO2: --";
+        _entry = _entry + format [" %1: -- %2: --", LELSTRING(circulation,AED_Monitor_RR), LELSTRING(circulation,AED_Monitor_CO2)];
     };
 
     _entries pushBack [format ["%1]",_entry], [0.18, 0.6, 0.96, 1]];
@@ -365,7 +365,7 @@ if (_selectionN in [2,3] && {HAS_PULSEOX(_target,(_selectionN - 2))}) then {
         _spO2 = "--";
     };
 
-    _entries pushBack [format ["Pulse Oximeter [PR: %1 SpO2: %2]", _pr, _spo2], _breathingColor];
+    _entries pushBack [format ["%1 [%2: %3 %4: %5]", LELSTRING(breathing,PulseOximeter), LELSTRING(circulation,AED_Monitor_PR), _pr, LELSTRING(circulation,AED_Monitor_SpO2), _spo2], _breathingColor];
 };
 
 // Damage taken tooltip
@@ -407,12 +407,12 @@ if (ACEGVAR(medical_gui,showDamageEntry)) then {
 
 // Chest Seal
 if (_selectionN == 1 && (_target getVariable [QEGVAR(breathing,ChestSeal_State), false])) then {
-    _entries pushBack ["Chest Seal Applied", [1, 0.95, 0, 1]];
+    _entries pushBack [(format ["%1 %2", LELSTRING(breathing,ChestSeal), LELSTRING(core,Common_Applied)]), [1, 0.95, 0, 1]];
 };
 
 // Standalone Pressure Cuff
 if (_selectionN in [2,3] && {HAS_PRESSURECUFF(_target,(_selectionN - 2))}) then {
-    _entries pushBack ["Pressure Cuff", _circulationColor];
+    _entries pushBack [LELSTRING(circulation,PressureCuff), _circulationColor];
 };
 
 // Indicate if a tourniquet is applied
@@ -430,9 +430,9 @@ switch (GET_FRACTURES(_target) select _selectionN) do {
             private _splintStatus = GET_SPLINTS(_target) select _selectionN;
             if (_splintStatus > 0) then {
                 if (_splintStatus == 1) then {
-                    _entries pushBack ["SAM Splint Applied", [0.2, 0.2, 1, 1]];
+                    _entries pushBack [(format ["%1 %2", LELSTRING(disability,SAMSplint), LELSTRING(core,Common_Applied)]), [0.2, 0.2, 1, 1]];
                 } else {
-                    _entries pushBack ["SAM Splint Applied (Wrapped)", [0.2, 0.2, 1, 1]];
+                    _entries pushBack [(format ["%1 %2 (%3)", LELSTRING(disability,SAMSplint), LELSTRING(core,Common_Applied), LELSTRING(disability,GUI_Wrapped)]), [0.2, 0.2, 1, 1]];
                 };
             } else {
                 _entries pushBack [localize ACELSTRING(medical_gui,Status_SplintApplied), [0.2, 0.2, 1, 1]];
@@ -445,22 +445,22 @@ switch (GET_FRACTURES(_target) select _selectionN) do {
 private _selectionN_InternalBleeding = [_target, _selectionN] call EFUNC(damage,getBodyPartInternalBleeding);
 if (_selectionN_InternalBleeding > 0.15) then {
     private _colorAdjustment = linearConversion [0.15, 0.5, _selectionN_InternalBleeding, 0.75, 0.45, true];
-    _entries pushBack ["Extensive Bruising", [_colorAdjustment, 0.1, 0.6, 1]];
+    _entries pushBack [LELSTRING(breathing,InspectChest_Bruising_Short), [_colorAdjustment, 0.1, 0.6, 1]];
 } else {
     private _HTXFluid = _target getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
     if (_selectionN == 1 && _HTXFluid > 0.5) then {
         private _colorAdjustment = linearConversion [0.5, 1.5, _HTXFluid, 0.75, 0.45, true];
-        _entries pushBack ["Extensive Bruising (Upper Chest)", [_colorAdjustment, 0.1, 0.6, 1]];
+        _entries pushBack [(format ["%1 (%2)", LELSTRING(breathing,InspectChest_Bruising_Short), LELSTRING(breathing,GUI_UpperChest)]), [_colorAdjustment, 0.1, 0.6, 1]];
     };
 };
 
 // Thoracostomy status
 if (_selectionN == 1) then {
     switch (_target getVariable [QEGVAR(breathing,Thoracostomy_State), -1]) do {
-        case 0: {_entries pushBack ["Thoracostomy Incision (Sealed)", _airwayColor];};
-        case 1: {_entries pushBack ["Thoracostomy Incision (Open)", _airwayColor];};
-        case 2: {_entries pushBack ["Thoracostomy Incision (Chest Tube)", _airwayColor];};
-        default { };
+        case 0: {_entries pushBack [(format [LELSTRING(breathing,GUI_ThoracostomyIncision_%1), LELSTRING(breathing,GUI_ThoracostomyIncision_Sealed)]), _airwayColor];};
+        case 1: {_entries pushBack [(format [LELSTRING(breathing,GUI_ThoracostomyIncision_%1), LELSTRING(breathing,GUI_ThoracostomyIncision_Open)]), _airwayColor];};
+        case 2: {_entries pushBack [(format [LELSTRING(breathing,GUI_ThoracostomyIncision_%1), LELSTRING(breathing,GUI_ThoracostomyIncision_ChestTube)]), _airwayColor];};
+        default {};
     };
 };
 

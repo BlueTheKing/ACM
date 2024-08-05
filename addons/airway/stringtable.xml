@@ -323,6 +323,10 @@
         </Key>
         <Key ID="STR_ACM_Airway_RecoveryPosition_Cancelled_ActionLog">
             <English>%1 cancelled recovery position</English>
+        </Key><!--
+            // GUI // -->
+        <Key ID="STR_ACM_Airway_GUI_HeadTiltedChinLifted">
+            <English>Head Tilted & Chin Lifted</English>
         </Key>
     </Package>
 </Project>

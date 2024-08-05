@@ -134,6 +134,9 @@
         <Key ID="STR_ACM_Circulation_AED">
             <English>Automated External Defibrillator</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_AED_Short">
+            <English>AED</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_AED_Desc">
             <English>Device used to monitor patient vitals and treat cardiac arrest</English>
         </Key>
@@ -729,6 +732,9 @@
         <Key ID="STR_ACM_Circulation_AED_Monitor_HR">
             <English>HR</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_AED_Monitor_PR">
+            <English>PR</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_AED_Monitor_SpO2">
             <English>SpO2</English>
         </Key>
@@ -737,6 +743,9 @@
         </Key>
         <Key ID="STR_ACM_Circulation_AED_Monitor_NIBP">
             <English>NIBP</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_AED_Monitor_BP">
+            <English>BP</English>
         </Key>
         <Key ID="STR_ACM_Circulation_AED_Monitor_RR">
             <English>RR</English>
@@ -761,6 +770,16 @@
         </Key>
         <Key ID="STR_ACM_Circulation_AED_Monitor_Button_SpeedDial">
             <English>Speed Dial</English>
+        </Key><!--
+            // GUI // -->
+        <Key ID="STR_ACM_Circulation_GUI_TransfusingSaline">
+            <English>Transfusing Saline [%1x]</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_TransfusingBlood">
+            <English>Transfusing Blood [%1x]</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_TransfusingPlasma">
+            <English>Transfusing Plasma [%1x]</English>
         </Key>
     </Package>
 </Project>

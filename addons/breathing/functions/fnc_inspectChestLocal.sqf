@@ -43,7 +43,7 @@ switch (true) do {
 
         if (_hemothorax) then {
             _hint = format ["%1<br/>%2", _hint, LLSTRING(InspectChest_Bruising)];
-            _hintLog = format ["%1, %2", _hintLog, LLSTRING(InspectChest_Bruising_Short)];
+            _hintLog = format ["%1, %2", _hintLog, toLower (LLSTRING(InspectChest_Bruising_Short))];
             _hintHeight = _hintHeight + 0.5;
         };
     };
@@ -53,7 +53,7 @@ switch (true) do {
     };
     case (_hemothorax): {
         _hint = format ["%1<br/>%2", LLSTRING(InspectChest_Uneven), LLSTRING(InspectChest_Bruising)];
-        _hintLog = format ["%1, %2", LLSTRING(InspectChest_Uneven_Short), LLSTRING(InspectChest_Bruising_Short)];
+        _hintLog = format ["%1, %2", LLSTRING(InspectChest_Uneven_Short), toLower (LLSTRING(InspectChest_Bruising_Short))];
         _hintHeight = 2.5;
     };
     default {};
