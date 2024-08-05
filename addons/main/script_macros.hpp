@@ -268,6 +268,8 @@
 #define FLUIDS_ARRAY ['ACE_salineIV','ACE_plasmaIV','ACE_salineIV_500','ACE_plasmaIV_500','ACE_salineIV_250','ACE_plasmaIV_250']
 #define FLUIDS_ARRAY_DATA ['salineIV','plasmaIV','salineIV_500','plasmaIV_500','salineIV_250','plasmaIV_250']
 
+#define ACM_NASAL_MEDICATION ['AmmoniaInhalant','Naloxone']
+
 // Damage
 #define VAR_WRAPPED_WOUNDS             QEGVAR(damage,WrappedWounds)
 #define GET_WRAPPED_WOUNDS(unit)       (unit getVariable [VAR_WRAPPED_WOUNDS, createHashMap])

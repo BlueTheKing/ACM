@@ -118,6 +118,22 @@ private _medicationType = GET_STRING(_medicationConfig >> "medicationType",getTe
 
 // Adjust the medication effects and add the medication to the list
 TRACE_3("adjustments",_heartRateChange,_painReduce,_viscosityChange);
+
+private _continue = true;
+if (_partIndex == 0 && GET_AIRWAYSTATE(_patient) < 0.9) then {
+    if (GET_AIRWAYSTATE(_patient) == 0) then {
+        if (_classname == "Naloxone") else {
+            _continue = false;
+        };
+    } else {
+        if !(_classname in ACM_NASAL_MEDICATION) then {
+            _concentrationRatio = _concentrationRatio * (GET_AIRWAYSTATE(_patient) max 0.1);
+        };
+    };
+};
+
+if !(_continue) exitWith {};
+
 [_patient, _className, _timeTillMaxEffect / (0.1 max _concentrationRatio min 1.2), _timeInSystem * (0.1 max _concentrationRatio min 1.2), _heartRateChange * _concentrationRatio, _painReduce * _concentrationRatio, _viscosityChange * _concentrationRatio, _administrationType, _maxEffectTime * (0.01 max _concentrationRatio min 1.1), _rrAdjustment * _concentrationRatio, _coSensitivityAdjustment * _concentrationRatio, _breathingEffectivenessAdjustment * _concentrationRatio, _concentrationRatio, _medicationType] call ACEFUNC(medical_status,addMedicationAdjustment);
 
 // Check for medication compatiblity
