@@ -171,20 +171,24 @@ switch (true) do {
     case (_heartRate < 20 || {_heartRate > 220}): {
         TRACE_2("heartRate Fatal",_unit,_heartRate);
         if (_heartRate > 220) then {
-            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 3];
+            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
         } else {
-            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 2];
+            if ([_unit, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.5) then { // Amiodarone overdose causes asystole
+                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
+            } else {
+                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
+            };
         };
 
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_bloodPressureH < 50 && {_bloodPressureL < 40}): {
-        _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 2];
+        _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_bloodPressureL >= 190): {
         TRACE_2("bloodPressure L above limits",_unit,_bloodPressureL);
-        _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 3];
+        _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_heartRate < 30): {  // With a heart rate below 30 but bigger than 20 there is a chance to enter the cardiac arrest state
@@ -196,7 +200,11 @@ switch (true) do {
         };
         if (_enterCardiacArrest) then {
             TRACE_2("Heart rate critical. Cardiac arrest",_unit,_heartRate);
-            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 2];
+            if ([_unit, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.5) then { // Amiodarone overdose causes asystole
+                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
+            } else {
+                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
+            };
             [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
         } else {
             TRACE_2("Heart rate critical. Critical vitals",_unit,_heartRate);

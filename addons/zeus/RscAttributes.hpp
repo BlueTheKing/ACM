@@ -86,6 +86,50 @@ class GVAR(RscSetBloodVolume): RscDisplayAttributes {
     };
 };
 
+class GVAR(RscInflictCardiacArrest): RscDisplayAttributes {
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscInflictCardiacArrest))] call ACEFUNC(zeus,zeusAttributes));
+    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscInflictCardiacArrest))] call ACEFUNC(zeus,zeusAttributes));
+    class Controls: Controls {
+        class Background: Background {};
+        class Title: Title {};
+        class Content: Content {
+            class Controls {
+                class InflictCardiacArrestTab: RscControlsGroupNoScrollbars {
+                    onSetFocus = QUOTE(_this call FUNC(inflictCardiacArrest));
+                    idc = IDC_MODULE_INFLICT_CARDIAC_ARREST;
+                    x = 0;
+                    y = 0;
+                    w = QUOTE(W_PART(26));
+                    h = QUOTE(H_PART(6.5));
+                    class Controls {
+                        class Title_TargetRhythm: RscText {
+                            idc = -1;
+                            text = CSTRING(Module_InflictCardiacArrest_TargetRhythm);
+                            x = 0;
+                            y = 0;
+                            w = QUOTE(W_PART(10));
+                            h = QUOTE(H_PART(3));
+                            colorBackground[] = {0,0,0,0.5};
+                        };
+                        class List_TargetRhythm: ctrlToolbox {
+                            idc = IDC_MODULE_INFLICT_CARDIAC_ARREST_LIST;
+                            x = QUOTE(W_PART(10.1));
+                            y = 0;
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(3));
+                            rows = 2;
+                            columns = 2;
+                            strings[] = {CSTRING(Module_InflictCardiacArrest_TargetRhythm_Sinus), CSTRING(Module_InflictCardiacArrest_TargetRhythm_Asystole), CSTRING(Module_InflictCardiacArrest_TargetRhythm_VF), CSTRING(Module_InflictCardiacArrest_TargetRhythm_PVT), CSTRING(Module_InflictCardiacArrest_TargetRhythm_Random)};
+                        };
+                    };
+                };
+            };
+        };
+        class ButtonOK: ButtonOK {};
+        class ButtonCancel: ButtonCancel {};
+    };
+};
+
 class GVAR(RscInflictChestInjury): RscDisplayAttributes {
     onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscInflictChestInjury))] call ACEFUNC(zeus,zeusAttributes));
     onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscInflictChestInjury))] call ACEFUNC(zeus,zeusAttributes));

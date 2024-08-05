@@ -54,6 +54,6 @@ private _amiodaroneVial = 0;
 _morphine = (_morphine * 0.3) min 0.5;
 _morphineVial = (_morphineVial * 0.6) min 0.8;
 _epinephrineVial = (_epinephrineVial * 1.8) min 2;
-_amiodaroneVial = (_amiodaroneVial * 2) min 2;
+_amiodaroneVial = _amiodaroneVial min 2;
 
 createHashMapFromArray [["morphine", (_morphine max _morphineVial)], ["epinephrine", _epinephrineVial], ["amiodarone",_amiodaroneVial]];

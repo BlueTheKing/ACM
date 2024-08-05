@@ -10,7 +10,7 @@
  * Successful? <BOOL>
  *
  * Example:
- * [cursorTarget, "leftarm"] call ACM_circulation_fnc_attemptROSC;
+ * [cursorTarget] call ACM_circulation_fnc_attemptROSC;
  *
  * Public: No
  */

@@ -207,6 +207,14 @@
 
 #define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + (unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3))
 
+#define ACM_Rhythm_NA -5
+#define ACM_Rhythm_CPR -1
+#define ACM_Rhythm_Sinus 0
+#define ACM_Rhythm_Asystole 1
+#define ACM_Rhythm_VF 2
+#define ACM_Rhythm_PVT 3
+#define ACM_Rhythm_PEA 5
+
 #define ACM_IV_16G_M 1
 #define ACM_IV_14G_M 2
 #define ACM_IO_EZ_M 3

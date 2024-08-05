@@ -24,6 +24,8 @@ _patient setVariable [QGVAR(AED_Charged), false, true];
 _patient setVariable [QGVAR(AED_InUse), false, true];
 _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
 
+private _timeSinceLastShock = CBA_missionTime - (_patient getVariable [QGVAR(AED_LastShock), -60]);
+
 _patient setVariable [QGVAR(AED_LastShock), CBA_missionTime, true];
 
 private _totalShocks = _patient getVariable [QGVAR(AED_ShockTotal), 0];
@@ -58,16 +60,33 @@ if (_patient getVariable [QGVAR(AED_AnalyzeRhythm_State), false]) then { // AED 
 
 if !(alive _patient) exitWith {};
 
-private _currentRhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
+private _currentRhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
 
-if (_currentRhythm in [0,1,5]) exitWith {
-    _patient setVariable [QGVAR(CardiacArrest_RhythmState), 1, true];
-    if (_currentRhythm == 0) then {
+if (_currentRhythm in [ACM_Rhythm_Sinus, ACM_Rhythm_Asystole, ACM_Rhythm_PEA] || _timeSinceLastShock < 60) exitWith {
+    _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Asystole, true];
+    if (_currentRhythm == ACM_Rhythm_Sinus) then {
         [QACEGVAR(medical,FatalVitals), [_patient], _patient] call CBA_fnc_targetEvent;
     };
 };
 
 private _amiodarone = ([_patient] call FUNC(getCardiacMedicationEffects)) get "amiodarone";
+
+private _continue = false;
+
+if (_patient getVariable [QGVAR(CardiacArrest_ShockResistant), false]) then {
+    if (_amiodarone > 1.9) then {
+        _continue = true;
+    };
+} else {
+    if !(_patient getVariable [QGVAR(CardiacArrest_ResistChecked), false]) then {
+        if (random 1 < 0.3) then {
+            _patient setVariable [QGVAR(CardiacArrest_ShockResistant), true, true];
+            _patient setVariable [QGVAR(CardiacArrest_ResistChecked), true, true];
+        };
+    };
+};
+
+if !(_continue) exitWith {};
 
 private _CPREffectiveness = 0;
 
@@ -76,6 +95,6 @@ if (_CPRAmount > 60) then {
     _CPREffectiveness = linearConversion [60, 120, _CPRAmount, 0, 10, false];
 };
 
-if (random 100 < (_CPREffectiveness + (10 + (10 * _amiodarone)))) exitWith { // ROSC
+if (random 1 < (_CPREffectiveness + (0.2 + (0.2 * _amiodarone)))) exitWith { // ROSC
     [QGVAR(attemptROSC), [_patient], _patient] call CBA_fnc_targetEvent;
 };

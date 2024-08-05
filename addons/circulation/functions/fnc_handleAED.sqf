@@ -31,7 +31,7 @@ _patient setVariable [QGVAR(AED_StartTime), CBA_missionTime, true];
 _patient setVariable [QGVAR(AED_MuteAlarm), true, true];
 _patient setVariable [QGVAR(AED_InUse), false, true];
 
-if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [1,2,3]) then {
+if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus] in [ACM_Rhythm_Asystole,ACM_Rhythm_VF,ACM_Rhythm_PVT]) then {
     _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
     _patient setVariable [QGVAR(AED_Alarm_State), true];
 
@@ -91,7 +91,7 @@ private _PFH = [{
         private _lastSync = _patient getVariable [QGVAR(AED_Pads_LastSync), -1];
 
         private _ekgHR = [_patient] call FUNC(getEKGHeartRate);
-        private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
+        private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
 
         if (_lastSync + 5.25 < CBA_missionTime) then {
             _patient setVariable [QGVAR(AED_Pads_LastSync), CBA_missionTime];
@@ -109,13 +109,13 @@ private _PFH = [{
                 private _lastBeep = _patient getVariable [QGVAR(AED_Pads_LastBeep), -1];
                 private _hrDelay = 60 / _ekgHR;
 
-                if (!(_patient getVariable [QGVAR(AED_Alarm_State), false]) && {_rhythmState in [2,3]}) then {
+                if (!(_patient getVariable [QGVAR(AED_Alarm_State), false]) && {_rhythmState in [ACM_Rhythm_VF,ACM_Rhythm_PVT]}) then {
                     _patient setVariable [QGVAR(AED_Alarm_State), true];
 
                     [{
                         params ["_patient"];
 
-                        if !(_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [0,5]) then {
+                        if !(_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus] in [ACM_Rhythm_Sinus,ACM_Rhythm_PEA]) then {
                             [_patient] call FUNC(AED_PlayAlarm);
                             _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
                         } else {
@@ -149,7 +149,7 @@ private _PFH = [{
                     [{
                         params ["_patient"];
 
-                        if !(_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0] in [0,5]) then {
+                        if !(_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus] in [ACM_Rhythm_Sinus,ACM_Rhythm_PEA]) then {
                             [_patient] call FUNC(AED_PlayAlarm);
                             _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
                         } else {

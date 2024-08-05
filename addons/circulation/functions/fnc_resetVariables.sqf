@@ -44,8 +44,11 @@ _patient setVariable [QGVAR(Saline_Volume), 0, true];
 
 _patient setVariable [QGVAR(Platelet_Count), 3, true];
 
-_patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
-_patient setVariable [QGVAR(CardiacArrest_TargetRhythm), 0];
+_patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus, true];
+_patient setVariable [QGVAR(CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus];
+
+_patient setVariable [QGVAR(CardiacArrest_ShockResistant), false, true];
+_patient setVariable [QGVAR(CardiacArrest_ResistChecked), false, true];
 
 _patient setVariable [QGVAR(ReversibleCardiacArrest_Time), nil];
 _patient setVariable [QGVAR(ReversibleCardiacArrest_State), false, true];

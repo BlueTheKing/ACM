@@ -31,9 +31,9 @@ private _PFH = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
+    private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
 
-    if (!(IN_CRDC_ARRST(_patient)) || _rhythmState == 5 || !(alive _patient)) exitWith {};
+    if (!(IN_CRDC_ARRST(_patient)) || _rhythmState == ACM_Rhythm_PEA || !(alive _patient)) exitWith {};
 
     private _bloodVolume = GET_BLOOD_VOLUME(_patient);
 
@@ -59,23 +59,23 @@ private _PFH = [{
     private _amiodarone = _cardiacMedication get "amiodarone";
     
     switch (_rhythmState) do {
-        case 3: {
+        case ACM_Rhythm_PVT: {
             _rhythmEffect = _shockEffect;
             _medicationEffect = (1 max (_epinephrine + _amiodarone min 2.2)) - _morphine;
         };
-        case 2: {
+        case ACM_Rhythm_VF: {
             _rhythmEffect = 0.9 * _shockEffect;
             _medicationEffect = (1 max (_epinephrine + _amiodarone min 2.2)) - _morphine;
         };
-        case 1: {
-            _rhythmEffect = 0.8;
+        case ACM_Rhythm_Asystole: {
+            _rhythmEffect = 1.1;
             _medicationEffect = (1 max _epinephrine) - _morphine;
         };
     };
 
     if (random 100 < (_medicSkill * GVAR(CPREffectiveness) * _bloodlossEffect * _consistencyEffect * _rhythmEffect * _medicationEffect)) then {
         if (_rhythmState == 1) then {
-            private _newRhythm = [2,3] select (random 1 < 0.5);
+            private _newRhythm = [ACM_Rhythm_VF,ACM_Rhythm_PVT] select (random 1 < 0.5);
 
             _patient setVariable [QGVAR(CardiacArrest_RhythmState), _newRhythm, true];
         } else {

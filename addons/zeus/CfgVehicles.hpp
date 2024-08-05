@@ -27,6 +27,11 @@ class CfgVehicles {
         icon = QPATHTOF(ui\Icon_Module_BloodVolume_ca.paa);
         curatorInfoType = QGVAR(RscSetBloodVolume);
     };
+    class GVAR(inflictCardiacArrest): GVAR(moduleBase) {
+        displayName = CSTRING(Module_InflictCardiacArrest);
+        icon = QPATHTOF(ui\Icon_Module_CardiacArrest_ca.paa);
+        curatorInfoType = QGVAR(RscInflictCardiacArrest);
+    };
     class GVAR(inflictChestInjury): GVAR(moduleBase) {
         displayName = CSTRING(Module_InflictChestInjury);
         icon = QPATHTOF(ui\Icon_Module_ChestInjury_ca.paa);

@@ -43,7 +43,7 @@ _patient setVariable [QGVAR(AED_Analyze_Busy), true, true];
 
     _patient setVariable [QGVAR(AED_AnalyzeRhythm_State), true, true];
 
-    private _shockable = (_patient getVariable [QGVAR(CardiacArrest_RhythmState), 0]) in [2,3];
+    private _shockable = (_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus]) in [ACM_Rhythm_VF,ACM_Rhythm_PVT];
     private _adviceDelay = 2;
 
     if (_shockable) then {

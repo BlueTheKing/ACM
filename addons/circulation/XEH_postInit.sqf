@@ -8,7 +8,7 @@
 [QACEGVAR(medical,CPRSucceeded), {
     params ["_patient"];
 
-    _patient setVariable [QGVAR(CardiacArrest_RhythmState), 0, true];
+    _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus, true];
     _patient setVariable [QGVAR(ROSC_Time), CBA_missionTime, true];
 }] call CBA_fnc_addEventHandler;
 
@@ -20,8 +20,9 @@
 [QGVAR(setAEDLocal), LINKFUNC(setAEDLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(setPressureCuffLocal), LINKFUNC(setPressureCuffLocal)] call CBA_fnc_addEventHandler;
 
-[QGVAR(handleMed_AmmoniaInhalantLocal), LINKFUNC(handleMed_AmmoniaInhalantLocal)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_NaloxoneLocal), LINKFUNC(handleMed_NaloxoneLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_amiodaroneLocal), LINKFUNC(handleMed_AmiodaroneLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_ammoniaInhalantLocal), LINKFUNC(handleMed_AmmoniaInhalantLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_naloxoneLocal), LINKFUNC(handleMed_NaloxoneLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_txaLocal), LINKFUNC(handleMed_TXALocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_ketamineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_lidocaineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
@@ -30,9 +31,9 @@
     params ["_patient", "_bodyPart", "_classname", ["_dose", 1]];
 
     // Handle special medication effects
-    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine"]) then {
+    if (_classname in ["Amiodarone_IV", "AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine"]) then {
         private _shortClassname = (_classname splitString "_") select 0;
-        [(format ["ACM_circulation_handleMed_%1Local", toLower _shortClassname]), [_patient, _bodyPart, _classname], _patient] call CBA_fnc_targetEvent;
+        [(format ["ACM_circulation_handleMed_%1Local", toLower _shortClassname]), [_patient, _bodyPart, _classname, _dose], _patient] call CBA_fnc_targetEvent;
     };
 }] call CBA_fnc_addEventHandler;
 

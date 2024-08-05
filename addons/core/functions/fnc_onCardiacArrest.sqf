@@ -18,7 +18,7 @@
 
 params ["_patient", "_active"];
 
-if (_patient getVariable [QEGVAR(circulation,CardiacArrest_RhythmState), 0] == 1 || !_active) exitWith {};
+if (_patient getVariable [QEGVAR(circulation,CardiacArrest_RhythmState), ACM_Rhythm_Sinus] == ACM_Rhythm_Asystole || !_active) exitWith {};
 
 [_patient] call EFUNC(circulation,updateCirculationState);
 
@@ -28,7 +28,7 @@ if (!(GET_CIRCULATIONSTATE(_patient)) || (GET_BLOOD_VOLUME(_patient) < ACM_REVER
     };
     [QEGVAR(circulation,handleReversibleCardiacArrest), [_patient], _patient] call CBA_fnc_targetEvent;
 } else {
-    if (random 1 < EGVAR(circulation,cardiacArrestChance) || _patient getVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), 0] != 0) then {
+    if (random 1 < EGVAR(circulation,cardiacArrestChance) || _patient getVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus] != ACM_Rhythm_Sinus) then {
         [QEGVAR(circulation,handleCardiacArrest), _patient] call CBA_fnc_localEvent;
     } else {
         _patient setVariable [QGVAR(KnockOut_State), true];

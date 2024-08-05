@@ -47,8 +47,8 @@ private _fnc_generateHeartRate = { // ace_medical_vitals_fnc_updateHeartRate
     _targetHR = _targetHR + ((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 2) + (_oxygenDemand * -1000);
     //_targetHR = (_targetHR + _hrTargetAdjustment) max 0;
 
-    if (_bloodVolume < (ACM_ASYSTOLE_BLOODVOLUME + 0.3)) then {
-        _targetHR = _targetHR + 266 * (_bloodVolume - (ACM_ASYSTOLE_BLOODVOLUME + 0.3));
+    if (_bloodVolume < (ACM_Rhythm_Asystole_BLOODVOLUME + 0.3)) then {
+        _targetHR = _targetHR + 266 * (_bloodVolume - (ACM_Rhythm_Asystole_BLOODVOLUME + 0.3));
     };
 
     _hrChange = round(_targetHR - _heartRate) / 2;
@@ -68,22 +68,22 @@ private _fnc_generateHeartRate = { // ace_medical_vitals_fnc_updateHeartRate
 
 if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) exitWith {GET_HEART_RATE(_patient)};
 
-private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), 0];
+private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
 
 if ([_patient, true] call FUNC(recentAEDShock) || !(alive _patient)) exitWith {0};
 
 switch (_rhythm) do {
-    case 1: { // Asystole
+    case ACM_Rhythm_Asystole: { // Asystole
         _patient setVariable [QGVAR(CardiacArrest_EKG_HR), 0];
         0;
     };
-    case 2: { // Ventricular Fibrillation
+    case ACM_Rhythm_VF: { // Ventricular Fibrillation
         round (random [150, 170, 200]);
     };
-    case 3: { // (Pulseless) Ventricular Tachycardia
+    case ACM_Rhythm_PVT: { // (Pulseless) Ventricular Tachycardia
         round (random [200, 220, 240]);
     };
-    case 5: { // Pulseless Electrical Activity (Reversible)
+    case ACM_Rhythm_PEA: { // Pulseless Electrical Activity (Reversible)
         [_patient] call _fnc_generateHeartRate;
     };
     default { // Sinus

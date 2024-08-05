@@ -18,6 +18,6 @@
 
 params ["_patient", ["_monitor", false]];
 
-if !(_monitor) exitWith {(_patient getVariable [QEGVAR(circulation,AED_LastShock), -40]) + 40 > CBA_missionTime};
+if !(_monitor) exitWith {(_patient getVariable [QEGVAR(circulation,AED_LastShock), -60]) + 60 > CBA_missionTime};
 
-(_patient getVariable [QEGVAR(circulation,AED_LastShock), -45]) + 45 > CBA_missionTime;
+(_patient getVariable [QEGVAR(circulation,AED_LastShock), -65]) + 65 > CBA_missionTime;

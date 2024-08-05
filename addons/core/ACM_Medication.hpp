@@ -82,9 +82,9 @@ class ACM_Medication {
             hrIncreaseLow[] = {0, 0};
             hrIncreaseNormal[] = {0, 0};
             hrIncreaseHigh[] = {0, 0};
-            timeInSystem = 300;
+            timeInSystem = 360;
             timeTillMaxEffect = 5;
-            maxEffectTime = 90;
+            maxEffectTime = 120;
             maxDose = 0;
             maxDoseDeviation = 0;
             incompatibleMedication[] = {};
@@ -129,10 +129,12 @@ class ACM_Medication {
 
         class Amiodarone_IV: ACM_IV_Medication {
             medicationType = "Amiodarone";
-            hrIncreaseLow[] = {-1, -2};
-            hrIncreaseNormal[] = {-3, -5};
-            hrIncreaseHigh[] = {-10, -15};
+            hrIncreaseLow[] = {-5, -10};
+            hrIncreaseNormal[] = {-15, -30};
+            hrIncreaseHigh[] = {-20, -30};
+            maxDose = 5;
             maxEffectDose = 150;
+            weightEffect = 0;
         };
 
         class TXA_IV: ACM_IV_Medication {
