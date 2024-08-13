@@ -42,7 +42,7 @@ if !(_update) then {
 
         GVAR(TransfusionMenu_Selection_IVBags) pushBack [_type, _remainingVolume, _accessType, _accessSite, _iv, _bloodType, _volume, _forEachIndex];
 
-        private _itemClassName = [([true, _type, _volume] call FUNC(getFluidBagConfigName)), ([false, _type, _volume, _bloodType] call FUNC(getFluidBagConfigName))] select (_type == "Blood");
+        private _itemClassName = [_type, _volume, _bloodType] call FUNC(formatFluidBagName);
 
         private _config = (configFile >> "CfgWeapons" >> _itemClassName);
         private _i = _ctrlBagPanel lbAdd getText (_config >> "displayName");

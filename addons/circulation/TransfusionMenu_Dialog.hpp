@@ -278,7 +278,7 @@ class GVAR(TransfusionMenu_Dialog) {
             x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 7.8));
             y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 6));
             w = QUOTE(safezoneW / 22);
-            action = "";
+            action = QUOTE(call FUNC(TransfusionMenu_MoveBag));
             tooltip = CSTRING(TransfusionMenu_MoveBag_ToolTip);
         };
         class RemoveBagButton: MoveBagButton {

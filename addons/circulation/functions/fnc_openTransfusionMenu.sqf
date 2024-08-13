@@ -41,6 +41,13 @@ GVAR(TransfusionMenu_Target) = _patient;
 GVAR(TransfusionMenu_Selection_IVBags_LastUpdate) = CBA_missionTime;
 GVAR(TransfusionMenu_Selection_IVBags) = [];
 
+GVAR(TransfusionMenu_Move_Active) = false;
+GVAR(TransfusionMenu_Move_Active_Moving) = false;
+GVAR(TransfusionMenu_Move_IVBagContents) = [];
+GVAR(TransfusionMenu_Move_OriginIV) = false;
+GVAR(TransfusionMenu_Move_OriginBodyPart) = toLowerANSI _bodyPart;
+GVAR(TransfusionMenu_Move_OriginAccessSite) = GVAR(TransfusionMenu_Selected_AccessSite);
+
 GVAR(TransfusionMenu_Selected_Inventory) = -1;
 
 GVAR(TransfusionMenu_Selected_BodyPart) = toLowerANSI _bodyPart;
@@ -87,6 +94,11 @@ private _inVehicle = !(isNull objectParent ACE_player);
 
     if (_medicCondition || _patientCondition || _dialogCondition || (_inVehicle && _vehicleCondition) || (!_inVehicle && _distanceCondition)) exitWith {
         [GVAR(TransfusionMenu_CloseID), "keydown"] call CBA_fnc_removeKeyHandler;
+
+        if (GVAR(TransfusionMenu_Move_Active) && !(GVAR(TransfusionMenu_Move_Active_Moving))) then { // Try to return moved fluid bag
+            [_patient] call FUNC(TransfusionMenu_MoveBag_Cancel);
+        };
+
         GVAR(TransfusionMenu_Target) = objNull;
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };

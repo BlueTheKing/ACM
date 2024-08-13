@@ -10,7 +10,6 @@ PREP(fullHealLocal);
 PREP(generateMedicationTypeMap);
 PREP(generateTargetVitals);
 PREP(getBodyPartString);
-PREP(getFluidBagString);
 PREP(getUp);
 PREP(getUpPrompt);
 PREP(handleRespawn);

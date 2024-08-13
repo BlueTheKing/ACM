@@ -18,14 +18,12 @@
  */
 
 private _display = uiNamespace getVariable [QGVAR(TransfusionMenu_DLG), displayNull];
-
 private _ctrlBagPanel = _display displayCtrl IDC_TRANSFUSIONMENU_LEFTLISTPANEL;
-
 private _selectionIndex = lbCurSel _ctrlBagPanel;
 
 if (_selectionIndex < 0) exitWith {};
 
-private _completeRemoval = {
+private _fnc_completeRemoval = {
     params ["_IVBags", "_IVBagsOnBodyPart", "_targetIndex", "_itemClassName", "_return"];
 
     if (_return) then {
@@ -47,31 +45,19 @@ private _bagContents = +(_IVBagsOnBodyPart select _targetIndex);
 
 _bagContents params ["_type", "_remainingVolume", "_accessType", "_accessSite", "_iv", "_bloodType", "_volume"];
 
-private _returnVolume = 0;
+private _returnVolume = [_remainingVolume] call FUNC(getReturnVolume);
 
-if (_remainingVolume < 1000) then {
-    if (_remainingVolume < 500) then {
-        if !(_remainingVolume < 250) then {
-            _returnVolume = 250;
-        };
-    } else {
-        _returnVolume = 500;
-    };
-} else {
-    _returnVolume = 1000;
-};
-
-private _itemClassName = ([([true, _type, _returnVolume] call FUNC(getFluidBagConfigName)), ([false, _type, _returnVolume, _bloodType] call FUNC(getFluidBagConfigName))] select (_type == "Blood"));
+private _itemClassName = [_type, _returnVolume, _bloodType] call FUNC(formatFluidBagName);
 private _itemClassNameString = getText (configFile >> "CfgWeapons" >> _itemClassName >> "displayName");
 
 private _funcParams = [_IVBags, _IVBagsOnBodyPart, _targetIndex, _itemClassName, (_returnVolume > 0)];
 
-[[ACE_player, GVAR(TransfusionMenu_Target), _type, _returnVolume, _bloodType, _completeRemoval, _funcParams], {
-    params ["_medic", "_patient", "_type", "_returnVolume", "_bloodType", "_completeRemoval", "_funcParams"];
+[[ACE_player, GVAR(TransfusionMenu_Target), _type, _returnVolume, _bloodType, _fnc_completeRemoval, _funcParams], {
+    params ["_medic", "_patient", "_type", "_returnVolume", "_bloodType", "_fnc_completeRemoval", "_funcParams"];
     
-    _funcParams call _completeRemoval;
-    private _fluidBagString = [([([true, _type, _returnVolume, -1, true] call FUNC(getFluidBagConfigName)), ([false, _type, _returnVolume, _bloodType, true] call FUNC(getFluidBagConfigName))] select (_type == "Blood"))] call EFUNC(core,getFluidBagString);
-    [_patient, "activity", LSTRING(TransfusionMenu_RemoveBag_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _fluidBagString, ([GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(core,getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
+    _funcParams call _fnc_completeRemoval;
+    private _fluidBagString = [([_type, _returnVolume, _bloodType, true] call FUNC(formatFluidBagName))] call FUNC(getFluidBagString);
+    [_patient, "activity", LSTRING(TransfusionMenu_RemoveBag_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), (_fluidBagString), ([GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(core,getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
     closeDialog 0;
     
     [{

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Get formatted fluid bag name
+ * Get formatted fluid bag name from config string
  *
  * Arguments:
  * 0: Classname <STRING>
@@ -10,7 +10,7 @@
  * Fluid Bag Name <STRING>
  *
  * Example:
- * ["salineIV_500"] call ACM_core_fnc_getFluidBagString;
+ * ["salineIV_500"] call ACM_circulation_fnc_getFluidBagString;
  *
  * Public: No
  */

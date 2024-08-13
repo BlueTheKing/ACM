@@ -604,8 +604,20 @@
         <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Display">
             <English>Move</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Progress">
+            <English>Moving %1 to %2...</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Hint">
+            <English>Began moving %1</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Place_Display">
+            <English>Place</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_ToolTip">
             <English>Move fluid bag from IV</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Place_ToolTip">
+            <English>Place fluid bag on selected IV line</English>
         </Key>
         <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_Display">
             <English>Remove</English>
@@ -616,7 +628,7 @@
         <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_ActionLog">
             <English>%1 removed fluid bag (%2) from %3</English>
         </Key>
-        <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_ProgressLog">
+        <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_Progress">
             <English>Removing %1...</English>
         </Key>
         <Key ID="STR_ACM_Circulation_TransfusionMenu_InventoryTarget">
@@ -780,6 +792,12 @@
         </Key>
         <Key ID="STR_ACM_Circulation_GUI_TransfusingPlasma">
             <English>Transfusing Plasma [%1x]</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_BeganTransfusing">
+            <English>%1 began transfusing fluids (%2) into %3</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
+            <English>%1 moved fluid bag (%2) to %3</English>
         </Key>
     </Package>
 </Project>
