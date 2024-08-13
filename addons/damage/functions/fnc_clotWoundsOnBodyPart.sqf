@@ -83,6 +83,8 @@ private _fnc_handleReopening = {
 
         _patient setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
 
+        [_patient] call ACEFUNC(medical_status,updateWoundBloodLoss);
+
         private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
         switch (_partIndex) do {
