@@ -43,7 +43,7 @@ private _hintLog = "";
 private _hint = "";
 switch (true) do {
     case (_CRT < 2): {
-        _hint = format "~2";
+        _hint = "~2";
         _hintLog = _hint;
     };
     case (_CRT < 3): {

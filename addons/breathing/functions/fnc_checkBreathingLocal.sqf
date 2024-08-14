@@ -36,6 +36,8 @@ private _airwayManeuver = _patient getVariable [QEGVAR(airway,RecoveryPosition_S
 private _airwayAdjunct = (_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "OPA" || (_patient getVariable [QEGVAR(airway,AirwayItem_Nasal), ""]) == "NPA" || _airwayManeuver;
 private _airwaySecure = (_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA" || _airwayManeuver;
 
+private _hintHeight = 1.5;
+
 switch (true) do {
     case (_respiratoryArrest || _airwayBlocked): {
         _hint = LLSTRING(CheckBreathing_None);
@@ -48,10 +50,12 @@ switch (true) do {
         if (_respirationRate < 15.9) then {
             _hint = LLSTRING(CheckBreathing_ShallowSlow);
             _hintLog = LLSTRING(CheckBreathing_ShallowSlow_Short);
+            _hintHeight = 2;
         } else {
             if (_respirationRate > 22) then {
                 _hint = LLSTRING(CheckBreathing_ShallowRapid);
                 _hintLog = LLSTRING(CheckBreathing_ShallowRapid_Short);
+                _hintHeight = 2;
             };
         };
     };
@@ -66,5 +70,5 @@ switch (true) do {
     default {};
 };
 
-[QACEGVAR(common,displayTextStructured), [_hint, 1.5, _medic], _medic] call CBA_fnc_targetEvent;
+[QACEGVAR(common,displayTextStructured), [_hint, _hintHeight, _medic], _medic] call CBA_fnc_targetEvent;
 [_patient, "quick_view", LSTRING(CheckBreathing_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
