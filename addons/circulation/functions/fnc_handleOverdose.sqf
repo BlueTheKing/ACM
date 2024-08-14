@@ -8,17 +8,19 @@
  * 1: Medication Classname <STRING>
  * 2: Max Medication Dose <NUMBER>
  * 3: Max Dose Deviation <NUMBER>
+ * 4: Dose Concentration <NUMBER>
+ * 5: Max Effect Dose <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [cursorTarget, "Morphine"] call ACM_circulation_fnc_handleOverdose;
+ * [cursorTarget, "Morphine", 10, 2, 1.5, 5] call ACM_circulation_fnc_handleOverdose;
  *
  * Public: No
  */
 
-params ["_patient", "_classname", "_maxDose", "_doseDeviation"];
+params ["_patient", "_classname", "_maxDose", "_doseDeviation", "_doseConcentration", "_maxEffectDose"];
 
 private _toxicThreshold = _maxDose;
 private _fatalThreshold = _maxDose + _doseDeviation;
@@ -48,13 +50,13 @@ private _handleOverdoseEffect = {
 };
 
 [{
-    params ["_patient", "_classname", "_fatalThreshold"];
+    params ["_patient", "_classname", "_maxEffectDose", "_fatalThreshold"];
 
-    [_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount) > _fatalThreshold;
+    ([_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount) * _maxEffectDose) > _fatalThreshold;
 }, {
-    params ["_patient", "_classname", "_fatalThreshold", "_handleOverdoseEffect"];
+    params ["_patient", "_classname", "_maxEffectDose", "_fatalThreshold", "_handleOverdoseEffect"];
 
-    if ([_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount) > _fatalThreshold) then {
+    if (([_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount) * _maxEffectDose) > _fatalThreshold) then {
         [_patient, _classname] call _handleOverdoseEffect;
     };
-}, [_patient, _classname, _fatalThreshold, _handleOverdoseEffect], 3600] call CBA_fnc_waitUntilAndExecute;
+}, [_patient, _classname, _maxEffectDose, _fatalThreshold, _handleOverdoseEffect], 3600] call CBA_fnc_waitUntilAndExecute;

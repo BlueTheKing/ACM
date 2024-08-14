@@ -122,9 +122,9 @@ class ACM_Medication {
             hrIncreaseHigh[] = {-9, -30};
             timeInSystem = 600;
             coSensitivityAdjust[] = {-0.035,-0.04};
-            maxDose = 1;
-            maxDoseDeviation = 0;
-            maxEffectDose = 5;
+            maxDose = 10;
+            maxDoseDeviation = 2;
+            maxEffectDose = 6;
         };
 
         class Amiodarone_IV: ACM_IV_Medication {
@@ -132,7 +132,8 @@ class ACM_Medication {
             hrIncreaseLow[] = {-5, -10};
             hrIncreaseNormal[] = {-15, -30};
             hrIncreaseHigh[] = {-20, -30};
-            maxDose = 5;
+            maxDose = 2200;
+            maxDoseDeviation = 200;
             maxEffectDose = 150;
             weightEffect = 0;
         };
@@ -145,6 +146,7 @@ class ACM_Medication {
             timeInSystem = 600;
             maxEffectTime = 300;
             viscosityChange = 5;
+            maxEffectDose = 1000;
             weightEffect = 0;
         };
 
@@ -155,8 +157,8 @@ class ACM_Medication {
             hrIncreaseLow[] = {-1, -2};
             hrIncreaseNormal[] = {-1, -2};
             hrIncreaseHigh[] = {-1, -2};
-            maxDose = 2;
-            maxDoseDeviation = 0;
+            maxDose = 40;
+            maxDoseDeviation = 10;
             maxEffectDose = 20;
         };
 
@@ -187,8 +189,8 @@ class ACM_Medication {
             hrIncreaseHigh[] = {-8, -24};
             timeInSystem = 1000;
             coSensitivityAdjust[] = {-0.03,-0.035};
-            maxDose = 2;
-            maxDoseDeviation = 0;
+            maxDose = 14;
+            maxDoseDeviation = 3;
             maxEffectDose = 10;
         };
         class Epinephrine: ACM_IM_Medication { // EpiPen
@@ -213,8 +215,8 @@ class ACM_Medication {
         class Lidocaine: ACM_IM_Medication {
             timeTillMaxEffect = 20;
             timeInSystem = 400;
-            maxDose = 3;
-            maxDoseDeviation = 1;
+            maxDose = 120;
+            maxDoseDeviation = 20;
             maxEffectDose = 70;
         };
 
@@ -226,8 +228,8 @@ class ACM_Medication {
             hrIncreaseNormal[] = {-1, -1};
             hrIncreaseHigh[] = {-1, -1};
             rrAdjust[] = {0,0};
-            maxDose = 2;
-            maxDoseDeviation = 1;
+            maxDose = 100;
+            maxDoseDeviation = 20;
             maxEffectDose = 50;
         };
     };
