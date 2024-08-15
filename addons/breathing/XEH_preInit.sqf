@@ -111,7 +111,7 @@ call FUNC(generatePTXMap);
     "LIST",
     [LLSTRING(SETTING_Location_Thoracostomy), LLSTRING(SETTING_Location_Thoracostomy_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Treatment)],
-    [SETTING_DROPDOWN_LOCATION, 3],
+    [SETTING_DROPDOWN_LOCATION, 0],
     true
 ] call CBA_fnc_addSetting;
 

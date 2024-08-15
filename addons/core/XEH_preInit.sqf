@@ -88,4 +88,13 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QACEGVAR(medical_treatment,locationSurgicalKit),
+    "LIST",
+    [ACELSTRING(medical_treatment,LocationSurgicalKit_DisplayName), ACELSTRING(medical_treatment,LocationSurgicalKit_Description)],
+    [ACELSTRING(medical,Category), ACELSTRING(medical_treatment,SubCategory_Treatment)],
+    [SETTING_DROPDOWN_LOCATION, 0],
+    true
+] call CBA_fnc_addSetting;
+
 ADDON = true;
