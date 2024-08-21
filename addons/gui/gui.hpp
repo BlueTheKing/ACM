@@ -125,6 +125,10 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
         BODYIMAGE_IV(LeftLeg,Upper,IDC_BODY_LEFTLEG_UPPER_IV);
         BODYIMAGE_IV(LeftLeg,Middle,IDC_BODY_LEFTLEG_MIDDLE_IV);
         BODYIMAGE_IV(LeftLeg,Lower,IDC_BODY_LEFTLEG_LOWER_IV);
+        class ArmLeftT: Background;
+        class ArmRightT: ArmLeftT;
+        class LegLeftT: ArmLeftT;
+        class LegRightT: ArmLeftT;
     };
 };
 

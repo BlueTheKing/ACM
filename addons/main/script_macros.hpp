@@ -164,6 +164,8 @@
 // ACM
 #define ALL_BODY_PARTS_PRIORITY ["body", "head", "leftarm", "rightarm", "leftleg", "rightleg"]
 
+#define GET_BODYPART_INDEX(bodypart) (ALL_BODY_PARTS find bodypart)
+
 #define SETTING_DROPDOWN_SKILL [0, 1, 2], [ACELLSTRING(Medical_Treatment,Anyone), ACELLSTRING(Medical_Treatment,Medics), ACELLSTRING(Medical_Treatment,Doctors)]
 #define SETTING_DROPDOWN_LOCATION [0, 1, 2, 3, 4], [ACELSTRING(common,Anywhere), ACELSTRING(common,Vehicle), ACELSTRING(medical_treatment,MedicalFacilities), ACELSTRING(medical_treatment,VehiclesAndFacilities), ACELSTRING(common,Disabled)]
 
@@ -206,6 +208,8 @@
 #define ACM_CA_BLOODVOLUME 4
 
 #define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + (unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3))
+
+#define GET_MAP(systolic,diastolic) (diastolic + ((systolic - diastolic) / 3))
 
 #define ACM_Rhythm_NA -5
 #define ACM_Rhythm_CPR -1

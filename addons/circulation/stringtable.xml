@@ -640,6 +640,12 @@
         </Key>
         <Key ID="STR_ACM_Circulation_IO_Already">
             <English>Patient already has IO in the %1</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_IV_FailedToLocateVein">
+            <English>Failed to locate vein</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_IV_BodyPartTooDamaged">
+            <English>Body part too damaged</English>
         </Key><!--
             // Pressure Cuff Action // -->
         <Key ID="STR_ACM_Circulation_PressureCuff_Already">
