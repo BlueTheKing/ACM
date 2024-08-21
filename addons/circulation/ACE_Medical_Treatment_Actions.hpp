@@ -1,9 +1,3 @@
-#define ACM_BLOODBAG_ENTRY(type,typeS,amount) \
-    class TRIPLES(BloodBag,type,amount): BloodBag_O_1000 { \
-        displayName = QUOTE(Give Blood typeS (##amount##ml)); \
-        items[] = {QUOTE(TRIPLES(ACM_BloodBag,type,amount))}; \
-    }
-
 class ACEGVAR(medical_treatment,actions) {
     class Diagnose;
     class CheckPulse: Diagnose {
@@ -191,37 +185,6 @@ class ACEGVAR(medical_treatment,actions) {
     class BloodIV: BasicBandage {
         condition = "false";
     };
-    /*class BloodBag_O_1000: BloodIV { // TODO REMOVE
-        displayName = "Give Blood O+ (1000ml)";
-        displayNameProgress = "Transfusing Blood...";
-        items[] = {"ACM_BloodBag_O_1000"};
-        condition = "false";
-    };
-    ACM_BLOODBAG_ENTRY(ON,O-,1000);
-    ACM_BLOODBAG_ENTRY(A,A+,1000);
-    ACM_BLOODBAG_ENTRY(AN,A-,1000);
-    ACM_BLOODBAG_ENTRY(B,B+,1000);
-    ACM_BLOODBAG_ENTRY(BN,B-,1000);
-    ACM_BLOODBAG_ENTRY(AB,AB+,1000);
-    ACM_BLOODBAG_ENTRY(ABN,AB-,1000);
-
-    ACM_BLOODBAG_ENTRY(O,O+,500);
-    ACM_BLOODBAG_ENTRY(ON,O-,500);
-    ACM_BLOODBAG_ENTRY(A,A+,500);
-    ACM_BLOODBAG_ENTRY(AN,A-,500);
-    ACM_BLOODBAG_ENTRY(B,B+,500);
-    ACM_BLOODBAG_ENTRY(BN,B-,500);
-    ACM_BLOODBAG_ENTRY(AB,AB+,500);
-    ACM_BLOODBAG_ENTRY(ABN,AB-,500);
-
-    ACM_BLOODBAG_ENTRY(O,O+,250);
-    ACM_BLOODBAG_ENTRY(ON,O-,250);
-    ACM_BLOODBAG_ENTRY(A,A+,250);
-    ACM_BLOODBAG_ENTRY(AN,A-,250);
-    ACM_BLOODBAG_ENTRY(B,B+,250);
-    ACM_BLOODBAG_ENTRY(BN,B-,250);
-    ACM_BLOODBAG_ENTRY(AB,AB+,250);
-    ACM_BLOODBAG_ENTRY(ABN,AB-,250);*/
     class PlasmaIV: BloodIV {
         condition = "false";
     };
