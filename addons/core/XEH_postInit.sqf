@@ -57,4 +57,4 @@
 
 ["isNotInLyingState", {!((_this select 0) getVariable [QGVAR(Lying_State), false])}] call ACEFUNC(common,addCanInteractWithCondition);
 
-call FUNC(generateMedicationTypeMap)
+call FUNC(generateMedicationTypeMap);

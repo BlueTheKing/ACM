@@ -62,3 +62,30 @@ GVAR(Fluids_Array_Data) = FLUIDS_ARRAY_DATA;
         GVAR(Fluids_Array) pushback format ["ACM_%1", _entry];
     } forEach [1000,500,250];
 } forEach ["O","ON","A","AN","B","BN","AB","ABN"];
+
+ACM_SYRINGES_10 = ['ACM_Syringe_10'];
+ACM_SYRINGES_5 = ['ACM_Syringe_5'];
+ACM_SYRINGES_3 = ['ACM_Syringe_3'];
+ACM_SYRINGES_1 = ['ACM_Syringe_1'];
+
+{ // Filled Syringes
+    private _size = getNumber (_x >> "count");
+
+    private _targetArray = switch (_size) do {
+        case 1000: {ACM_SYRINGES_10};
+        case 500: {ACM_SYRINGES_5};
+        case 300: {ACM_SYRINGES_3};
+        default {ACM_SYRINGES_1};
+    };
+
+    _targetArray pushBack (configName _x);
+} forEach ("getNumber (_x >> 'ACM_isSyringe') > 0" configClasses (configFile >> "CfgMagazines"));
+
+ACM_MEDICATION_VIALS = [];
+
+{ // Medication Vials
+    ACM_MEDICATION_VIALS pushBack (configName _x);
+} forEach ("getNumber (_x >> 'ACM_isVial') > 0" configClasses (configFile >> "CfgWeapons"));
+
+["ACM_Syringe_IV", "ACM_Syringe_10"] call ACEFUNC(common,registerItemReplacement); // 1.1.0 -> TODO REMOVE
+["ACM_Syringe_IM", "ACM_Syringe_5"] call ACEFUNC(common,registerItemReplacement); // 1.1.0 -> TODO REMOVE

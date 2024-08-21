@@ -88,5 +88,12 @@
         <Key ID="STR_ACM_Core_Common_Active">
             <English>Active</English>
         </Key>
+        <Key ID="STR_ACM_Core_Common_Empty">
+            <English>Empty</English>
+        </Key><!-- 
+            // ACE Action // -->
+        <Key ID="STR_ACM_Core_MedicalEquipment">
+            <English>Medical Equipment</English>
+        </Key>
     </Package>
 </Project>

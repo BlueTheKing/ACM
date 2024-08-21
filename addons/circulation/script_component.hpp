@@ -15,3 +15,4 @@
 #include "\x\ACM\addons\main\script_macros.hpp"
 
 #define C_LLSTRING(string) localize 'STR_ACM_Circulation_##string##'
+#define ICON_SYRINGE(size) QPATHTOF(ui\icon_syringe_##size##_ca.paa)

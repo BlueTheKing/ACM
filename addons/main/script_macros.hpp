@@ -238,8 +238,12 @@
 #define ACM_ROUTE_PO 2
 #define ACM_ROUTE_INHALE 3
 
-#define ACM_SYRINGES_IM ['ACM_Syringe_IM','ACM_Syringe_IM_Epinephrine','ACM_Syringe_IM_Morphine','ACM_Syringe_IM_Ketamine','ACM_Syringe_IM_Lidocaine']
-#define ACM_SYRINGES_IV ['ACM_Syringe_IV','ACM_Syringe_IV_Epinephrine','ACM_Syringe_IV_Morphine','ACM_Syringe_IV_Ketamine','ACM_Syringe_IV_Adenosine','ACM_Syringe_IV_Amiodarone','ACM_Syringe_IV_TXA']
+#define ACM_MEDICATION_VIALS EGVAR(circulation,MedicationVialList)
+
+#define ACM_SYRINGES_10 EGVAR(circulation,SyringeList_10)
+#define ACM_SYRINGES_5 EGVAR(circulation,SyringeList_5)
+#define ACM_SYRINGES_3 EGVAR(circulation,SyringeList_3)
+#define ACM_SYRINGES_1 EGVAR(circulation,SyringeList_13)
 
 #define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
 #define HAS_PRESSURECUFF(unit,index) (GET_PRESSURECUFF(unit) select index)

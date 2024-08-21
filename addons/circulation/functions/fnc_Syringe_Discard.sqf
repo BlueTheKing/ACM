@@ -6,7 +6,7 @@
  * Arguments:
  * 0: Medic <OBJECT>
  * 1: Medication Classname <STRING>
- * 2: Is IV? <BOOL>
+ * 2: Syringe Size <NUMBER>
  * 3: Medication Amount <NUMBER>
  *
  * Return Value:
@@ -18,9 +18,7 @@
  * Public: No
  */
 
-params ["_medic", "_medication", ["_IV", false], "_amount"];
-
-private _sourceString = [LLSTRING(Intramuscular_Short), LLSTRING(Intravenous_Short)] select _IV;
+params ["_medic", "_medication", ["_size", false], "_amount"];
 
 _medic call ACEFUNC(common,goKneeling);
 
@@ -52,16 +50,16 @@ private _containers = [uniformContainer _unit, vestContainer _unit, backpackCont
     };
 } forEach _containers;
 
-[2.5, [_medic, _medication, _sourceString, _amount], {
+[2.5, [_medic, _medication, _size, _amount], {
     params ["_args"];
-    _args params ["_medic", "_medication", "_sourceString"];
+    _args params ["_medic", "_medication", "_size"];
 
-    [_medic, (format ["ACM_Syringe_%1", _sourceString])] call ACEFUNC(common,addToInventory);
+    [_medic, (format ["ACM_Syringe_%1", _size])] call ACEFUNC(common,addToInventory);
     [LSTRING(Syringe_Discard_Complete), 2, _medic] call ACEFUNC(common,displayTextStructured);
 }, {
     params ["_args"];
-    _args params ["_medic", "_medication", "_sourceString", "_amount"];
+    _args params ["_medic", "_medication", "_size", "_amount"];
 
-    [_medic, (format ["ACM_Syringe_%1_%2", _sourceString, _medication]), "", _amount] call ACEFUNC(common,addToInventory);
-}, (format [LLSTRING(Syringe_Discard_Progress), _medication, _sourceString])] call ACEFUNC(common,progressBar);
+    [_medic, (format ["ACM_Syringe_%1_%2", _size, _medication]), "", _amount] call ACEFUNC(common,addToInventory);
+}, (format [LLSTRING(Syringe_Discard_Progress), _medication, _size])] call ACEFUNC(common,progressBar);
 

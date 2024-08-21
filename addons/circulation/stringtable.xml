@@ -170,29 +170,17 @@
         <Key ID="STR_ACM_Circulation_IO_EZ_Desc">
             <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the extremities</English>
         </Key>
-        <Key ID="STR_ACM_Circulation_Syringe_IM">
-            <English>IM Syringe (5ml)</English>
+        <Key ID="STR_ACM_Circulation_Syringe">
+            <English>Syringe</English>
         </Key>
-        <Key ID="STR_ACM_Circulation_Syringe_IM_Short">
-            <English>IM Syringe</English>
+        <Key ID="STR_ACM_Circulation_Syringes">
+            <English>Syringes</English>
         </Key>
-        <Key ID="STR_ACM_Circulation_Syringe_IM_Desc">
-            <English>Used to administer medications intramuscularly</English>
-        </Key>
-        <Key ID="STR_ACM_Circulation_Syringe_IV">
-            <English>IV Syringe (10ml)</English>
-        </Key>
-        <Key ID="STR_ACM_Circulation_Syringe_IV_Short">
-            <English>IV Syringe</English>
-        </Key>
-        <Key ID="STR_ACM_Circulation_Syringe_IV_Desc">
-            <English>Used to administer medications through an IV line</English>
+        <Key ID="STR_ACM_Circulation_Syringe_%1">
+            <English>Syringe (%1ml)</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Syringe_PreparedWith">
-            <English>%1 prepared with %2</English>
-        </Key>
-        <Key ID="STR_ACM_Circulation_Syringe_PreparedWith_Display"><!-- TODO REMOVE -->
-            <English>%1 (%2)</English>
+            <English>%1ml syringe prepared with %2</English>
         </Key>
         <Key ID="STR_ACM_Circulation_BloodBag">
             <English>Blood Bag %1</English>
@@ -296,6 +284,9 @@
             <English>Used to rapidly manage acute pain for a short time</English>
         </Key><!--
             // Actions // -->
+        <Key ID="STR_ACM_Circulation_ViewMonitor">
+            <English>View Monitor</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_FeelPulse">
             <English>Feel Pulse</English>
         </Key>
@@ -491,6 +482,9 @@
         <Key ID="STR_ACM_Circulation_UseNaloxoneSpray_Progress">
             <English>Using Naloxone Spray...</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_UseSyringe">
+            <English>Use Syringe (%1ml)</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_Intravenous_Short">
             <English>IV</English>
         </Key>
@@ -586,9 +580,6 @@
         <Key ID="STR_ACM_Circulation_TransfusionMenu_StartTransfusion_ToolTip">
             <English>Start fluid transfusion on selected %1</English>
         </Key>
-        <Key ID="STR_ACM_Circulation_TransfusionMenu_SwitchTargetInventory">
-            <English>Change target inventory</English>
-        </Key>
         <Key ID="STR_ACM_Circulation_TransfusionMenu_ToggleIV">
             <English>Toggle IV/IO</English>
         </Key>
@@ -630,21 +621,6 @@
         </Key>
         <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_Progress">
             <English>Removing %1...</English>
-        </Key>
-        <Key ID="STR_ACM_Circulation_TransfusionMenu_InventoryTarget">
-            <English>Target: %1</English>
-        </Key>
-        <Key ID="STR_ACM_Circulation_TransfusionMenu_InventoryTarget_Self">
-            <English>Self</English>
-        </Key>
-        <Key ID="STR_ACM_Circulation_TransfusionMenu_InventoryTarget_Patient">
-            <English>Patient</English>
-        </Key>
-        <Key ID="STR_ACM_Circulation_TransfusionMenu_InventoryTarget_Vehicle">
-            <English>Vehicle</English>
-        </Key>
-        <Key ID="STR_ACM_Circulation_TransfusionMenu_InventoryTarget_Available">
-            <English>%1 available</English>
         </Key>
         <Key ID="STR_ACM_Circulation_TransfusionMenu_FluidRemaining">
             <English>%1ml remaining</English>
@@ -698,7 +674,7 @@
             <English>Injecting %1...</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Syringe_Drawing">
-            <English>Drawing %1 (%2) into %3 syringe</English>
+            <English>Drawing %1 (%2) into %3ml syringe</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Syringe_MovePlunger">
             <English>Move Plunger</English>
@@ -713,10 +689,13 @@
             <English>Pushed</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Syringe_DrawPush">
-            <English>Draw And Push %1 (%2)</English>
+            <English>Draw &amp; Push</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Syringe_DrawInject">
-            <English>Draw And Inject %1 (%2)</English>
+            <English>Draw &amp; Inject</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Syringe_NoMedicationSelected">
+            <English>No Medication Selected</English>
         </Key><!--
             // AED Actions // -->
         <Key ID="STR_ACM_Circulation_AED_Already">
@@ -798,6 +777,25 @@
         </Key>
         <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
             <English>%1 moved fluid bag (%2) to %3</English>
+        </Key><!--
+            // Common // -->
+        <Key ID="STR_ACM_Circulation_Common_SwitchTargetInventory">
+            <English>Change target inventory</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Common_Available">
+            <English>%1 available</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Common_InventoryTarget">
+            <English>Target: %1</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Common_Self">
+            <English>Self</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Common_Patient">
+            <English>Patient</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Common_Vehicle">
+            <English>Vehicle</English>
         </Key>
     </Package>
 </Project>

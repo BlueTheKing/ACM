@@ -138,6 +138,16 @@ class ACM_Medication {
             weightEffect = 0;
         };
 
+        class Lidocaine_IV: ACM_IV_Medication {
+            medicationType = "Lidocaine_IV";
+            hrIncreaseLow[] = {-1, -2};
+            hrIncreaseNormal[] = {-2, -5};
+            hrIncreaseHigh[] = {-3, -8};
+            maxDose = 300;
+            maxDoseDeviation = 50;
+            maxEffectDose = 83;
+        };
+
         class TXA_IV: ACM_IV_Medication {
             medicationType = "TXA";
             hrIncreaseLow[] = {-1, -1};
@@ -196,9 +206,9 @@ class ACM_Medication {
         class Epinephrine: ACM_IM_Medication { // EpiPen
             medicationType = "Epinephrine";
             painReduce = 0;
-            hrIncreaseLow[] = {8, 16};
-            hrIncreaseNormal[] = {8, 34};
-            hrIncreaseHigh[] = {8, 26};
+            hrIncreaseLow[] = {5, 22};
+            hrIncreaseNormal[] = {5, 20};
+            hrIncreaseHigh[] = {5, 12};
             timeInSystem = 500;
             rrAdjust[] = {3,6};
             breathingEffectivenessAdjust[] = {0,0.01};
@@ -207,9 +217,10 @@ class ACM_Medication {
 
         class Adenosine: ACM_IM_Medication { // Doesn't exist
             medicationType = "Adenosine";
-            hrIncreaseLow[] = {-7, -10};
-            hrIncreaseNormal[] = {-15, -30};
-            hrIncreaseHigh[] = {-15, -35};
+        };
+
+        class Amiodarone: ACM_IM_Medication {
+            weightEffect = 0;
         };
 
         class Lidocaine: ACM_IM_Medication {
@@ -252,6 +263,9 @@ class ACM_Medication {
         };
         class Amiodarone {
             classnames[] = {"Amiodarone_IV"};
+        };
+        class Lidocaine {
+            classnames[] = {"Lidocaine_IV"};
         };
     };
     class Concentration {

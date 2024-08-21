@@ -1,34 +1,24 @@
-#define SYRINGE_ACTION_FORMAT(var1,var2,var3) QUOTE(format [ARR_3(localize 'STR_ACM_Circulation_Syringe_##var1##',localize 'STR_ACM_Circulation_Medication_##var2##','STR_ACM_Circulation_##var3##_Short')])
+#define SYRINGE_ACTION_FORMAT(action,size,med,acc) QUOTE(format [ARR_5('%1 %2 (%3ml) (%4)',localize 'STR_ACM_Circulation_##action##',localize 'STR_ACM_Circulation_Medication_##med##',size,localize 'STR_ACM_Circulation_##acc##_Short')])
 #define SYRINGE_PROGRESS_FORMAT(var1,var2) QUOTE(format [ARR_2(localize 'STR_ACM_Circulation_Syringe_##var1##',localize 'STR_ACM_Circulation_Medication_##var2##')])
 
-#define PUSH_SYRINGE_IV(medication,name,progress) \
-    class DOUBLES(medication,IV): Epinephrine_IV { \
+#define SYRINGE_ACTION_IV(medication,size,name,progress) \
+    class TRIPLES(medication,size,IV): TRIPLES(Epinephrine,size,IV) { \
         displayName = name; \
         displayNameProgress = progress; \
-        items[] = {QUOTE(ACM_Syringe_IV_##medication##)}; \
-        callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'##medication##',true,true)] call EFUNC(circulation,Syringe_Inject)); \
+        icon = QPATHTOEF(circulation,ui\icon_syringe_##size##_ca.paa); \
+        items[] = {QUOTE(ACM_Syringe_##size##_##medication##)}; \
+        condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO)); \
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'##medication##',##size##,true,true)] call EFUNC(circulation,Syringe_Inject)); \
     }
 
-#define DRAW_PUSH_SYRINGE_IV(medication,name) \
-    class TRIPLES(medication,Draw,IV): Epinephrine_Draw_IV { \
-        displayName = name; \
-        condition = QUOTE(([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO)) && [ARR_2(_medic,'ACM_Syringe_IV')] call ACEFUNC(common,hasItem) && [ARR_2(_medic,'ACM_Vial_##medication##')] call ACEFUNC(common,hasItem)); \
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,true,'##medication##')] call EFUNC(circulation,Syringe_Draw)); \
-    }
-
-#define INJECT_SYRINGE_IM(medication,name,progress) \
-    class DOUBLES(medication,IM): Epinephrine_IM { \
+#define SYRINGE_ACTION_IM(medication,size,name,progress) \
+    class TRIPLES(medication,size,IM): TRIPLES(Epinephrine,size,IM) { \
         displayName = name; \
         displayNameProgress = progress; \
-        items[] = {QUOTE(ACM_Syringe_IM_##medication##)}; \
-        callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'##medication##',true,false)] call EFUNC(circulation,Syringe_Inject)); \
-    }
-
-#define DRAW_INJECT_SYRINGE_IM(medication,name) \
-    class TRIPLES(medication,Draw,IM): Epinephrine_Draw_IM { \
-        displayName = name; \
-        condition = QUOTE([ARR_2(_medic,'ACM_Syringe_IM')] call ACEFUNC(common,hasItem) && [ARR_2(_medic,'ACM_Vial_##medication##')] call ACEFUNC(common,hasItem)); \
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,false,'##medication##')] call EFUNC(circulation,Syringe_Draw)); \
+        icon = QPATHTOEF(circulation,ui\icon_syringe_##size##_ca.paa); \
+        items[] = {QUOTE(ACM_Syringe_##size##_##medication##)}; \
+        condition = "true"; \
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'##medication##',##size##,false,true)] call EFUNC(circulation,Syringe_Inject)); \
     }
 
 class ACEGVAR(medical_treatment,actions) {
@@ -184,7 +174,6 @@ class ACEGVAR(medical_treatment,actions) {
     };
 
     // Transfusion Menu
-
     class OpenTransfusionMenu: CheckPulse {
         displayName = ECSTRING(circulation,OpenTransfusionMenu);
         displayNameProgress = "";
@@ -392,80 +381,158 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_rollToBack = 1;
         ACM_ignoreAnimCoef = 1;
     };
-    
-    // IV
-    class Epinephrine_IV: Morphine {
-        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Push,Epinephrine,Intravenous));
-        displayNameProgress = __EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Epinephrine));
-        //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
+
+    class UseSyringe_10: OpenTransfusionMenu {
+        displayName = __EVAL(call compile QUOTE(format [ARR_2(localize 'STR_ACM_Circulation_UseSyringe',10)]));
+        displayNameProgress = "";
+        category = "medication";
+        medicRequired = 0;
+        icon = QPATHTOEF(circulation,ui\icon_syringe_10_ca.paa);
         allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
-        items[] = {"ACM_Syringe_IV_Epinephrine"};
+        treatmentTime = 0.01;
+        condition = QUOTE('ACM_Syringe_10' in (items _medic));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,10)] call EFUNC(circulation,Syringe_Draw));
+    };
+    class UseSyringe_5: UseSyringe_10 {
+        displayName = __EVAL(call compile QUOTE(format [ARR_2(localize 'STR_ACM_Circulation_UseSyringe',5)]));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_5_ca.paa);
+        condition = QUOTE('ACM_Syringe_5' in (items _medic));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,5)] call EFUNC(circulation,Syringe_Draw));
+    };
+    class UseSyringe_3: UseSyringe_10 {
+        displayName = __EVAL(call compile QUOTE(format [ARR_2(localize 'STR_ACM_Circulation_UseSyringe',3)]));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_3_ca.paa);
+        condition = QUOTE('ACM_Syringe_3' in (items _medic));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,3)] call EFUNC(circulation,Syringe_Draw));
+    };
+    class UseSyringe_1: UseSyringe_10 {
+        displayName = __EVAL(call compile QUOTE(format [ARR_2(localize 'STR_ACM_Circulation_UseSyringe',1)]));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_1_ca.paa);
+        condition = QUOTE('ACM_Syringe_1' in (items _medic));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(circulation,Syringe_Draw));
+    };
+
+    // IV
+    class Epinephrine_10_IV: Morphine {
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Epinephrine,Intravenous));
+        displayNameProgress = __EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Epinephrine));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_10_ca.paa);
+        allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
+        items[] = {"ACM_Syringe_10_Epinephrine"};
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO));
         treatmentTime = 2;
-        callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'Epinephrine',true,true)] call EFUNC(circulation,Syringe_Inject));
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',10,true,true)] call EFUNC(circulation,Syringe_Inject));
         //animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
         sounds[] = {};
         litter[] = {};
     };
-    PUSH_SYRINGE_IV(Amiodarone,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,Amiodarone,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Amiodarone)));
-    PUSH_SYRINGE_IV(Morphine,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,Morphine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Morphine)));
-    PUSH_SYRINGE_IV(Ketamine,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,Ketamine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ketamine)));
-    PUSH_SYRINGE_IV(TXA,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,TXA,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,TXA)));
-    //PUSH_SYRINGE_IV(Atropine);
-    //PUSH_SYRINGE_IV(Ondansetron);
-    PUSH_SYRINGE_IV(Adenosine,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,Adenosine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Adenosine)));
-    class Epinephrine_Draw_IV: Epinephrine_IV {
-        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,Epinephrine,Intravenous));
-        displayNameProgress = "";
-        items[] = {};
-        consumeItem = 0;
-        condition = QUOTE(([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO)) && [ARR_2(_medic,'ACM_Syringe_IV')] call ACEFUNC(common,hasItem) && [ARR_2(_medic,'ACM_Vial_Epinephrine')] call ACEFUNC(common,hasItem));
-        treatmentTime = 0.01;
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,true,'Epinephrine')] call EFUNC(circulation,Syringe_Draw));
+    class Epinephrine_5_IV: Epinephrine_10_IV {
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Epinephrine,Intravenous));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_5_ca.paa);
+        items[] = {"ACM_Syringe_5_Epinephrine"};
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',5,true,true)] call EFUNC(circulation,Syringe_Inject));
     };
-    DRAW_PUSH_SYRINGE_IV(Amiodarone,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,Amiodarone,Intravenous)));
-    DRAW_PUSH_SYRINGE_IV(Morphine,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,Morphine,Intravenous)));
-    DRAW_PUSH_SYRINGE_IV(Ketamine,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,Ketamine,Intravenous)));
-    DRAW_PUSH_SYRINGE_IV(TXA,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,TXA,Intravenous)));
-    //DRAW_PUSH_SYRINGE_IV(Atropine);
-    //DRAW_PUSH_SYRINGE_IV(Ondansetron);
-    DRAW_PUSH_SYRINGE_IV(Adenosine,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawPush,Adenosine,Intravenous)));
-    
-    // IM
-    class Epinephrine_IM: Epinephrine_IV {
-        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,Epinephrine,Intramuscular));
-        displayNameProgress = __EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Epinephrine));
-        allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
-        items[] = {"ACM_Syringe_IM_Epinephrine"};
-        condition = QUOTE(true);
-        treatmentTime = 3;
-        callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'Epinephrine',true,false)] call EFUNC(circulation,Syringe_Inject));
+    class Epinephrine_3_IV: Epinephrine_10_IV {
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Epinephrine,Intravenous));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_3_ca.paa);
+        items[] = {"ACM_Syringe_3_Epinephrine"};
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',3,true,true)] call EFUNC(circulation,Syringe_Inject));
     };
-    INJECT_SYRINGE_IM(Morphine,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,Morphine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Morphine)));
-    INJECT_SYRINGE_IM(Ketamine,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,Ketamine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ketamine)));
-    class Lidocaine_IM: Epinephrine_IM {
-        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,Lidocaine,Intramuscular));
-        displayNameProgress = __EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Lidocaine));
-        allowedSelections[] = {"Body"};
-        items[] = {"ACM_Syringe_IM_Lidocaine"};
-        callbackSuccess = QUOTE([ARR_6(_medic,_patient,_bodyPart,'Lidocaine',true,false)] call EFUNC(circulation,Syringe_Inject));
+    class Epinephrine_1_IV: Epinephrine_10_IV {
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Epinephrine,Intravenous));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_1_ca.paa);
+        items[] = {"ACM_Syringe_1_Epinephrine"};
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',1,true,true)] call EFUNC(circulation,Syringe_Inject));
     };
+    SYRINGE_ACTION_IV(Amiodarone,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Amiodarone,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Amiodarone)));
+    SYRINGE_ACTION_IV(Amiodarone,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Amiodarone,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Amiodarone)));
+    SYRINGE_ACTION_IV(Amiodarone,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Amiodarone,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Amiodarone)));
+    SYRINGE_ACTION_IV(Amiodarone,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Amiodarone,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Amiodarone)));
 
-    class Epinephrine_Draw_IM: Epinephrine_IM {
-        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(DrawInject,Epinephrine,Intramuscular));
-        displayNameProgress = "";
-        items[] = {};
-        consumeItem = 0;
-        condition = QUOTE([ARR_2(_medic,'ACM_Syringe_IM')] call ACEFUNC(common,hasItem) && [ARR_2(_medic,'ACM_Vial_Epinephrine')] call ACEFUNC(common,hasItem));
-        treatmentTime = 0.01;
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,false,'Epinephrine')] call EFUNC(circulation,Syringe_Draw));
+    SYRINGE_ACTION_IV(Morphine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Morphine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Morphine)));
+    SYRINGE_ACTION_IV(Morphine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Morphine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Morphine)));
+    SYRINGE_ACTION_IV(Morphine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Morphine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Morphine)));
+    SYRINGE_ACTION_IV(Morphine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Morphine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Morphine)));
+
+    SYRINGE_ACTION_IV(Ketamine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Ketamine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ketamine)));
+    SYRINGE_ACTION_IV(Ketamine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Ketamine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ketamine)));
+    SYRINGE_ACTION_IV(Ketamine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Ketamine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ketamine)));
+    SYRINGE_ACTION_IV(Ketamine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Ketamine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ketamine)));
+
+    SYRINGE_ACTION_IV(TXA,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,TXA,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,TXA)));
+    SYRINGE_ACTION_IV(TXA,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,TXA,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,TXA)));
+    SYRINGE_ACTION_IV(TXA,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,TXA,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,TXA)));
+    SYRINGE_ACTION_IV(TXA,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,TXA,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,TXA)));
+
+    SYRINGE_ACTION_IV(Adenosine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Adenosine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Adenosine)));
+    SYRINGE_ACTION_IV(Adenosine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Adenosine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Adenosine)));
+    SYRINGE_ACTION_IV(Adenosine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Adenosine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Adenosine)));
+    SYRINGE_ACTION_IV(Adenosine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Adenosine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Adenosine)));
+
+    SYRINGE_ACTION_IV(Lidocaine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Lidocaine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Lidocaine)));
+    SYRINGE_ACTION_IV(Lidocaine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Lidocaine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Lidocaine)));
+    SYRINGE_ACTION_IV(Lidocaine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Lidocaine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Lidocaine)));
+    SYRINGE_ACTION_IV(Lidocaine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Lidocaine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Lidocaine)));
+
+    // IM
+    class Epinephrine_10_IM: Epinephrine_10_IV {
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Epinephrine,Intramuscular));
+        displayNameProgress = __EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Epinephrine));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_10_ca.paa);
+        allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
+        items[] = {"ACM_Syringe_10_Epinephrine"};
+        condition = "true";
+        treatmentTime = 2;
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',10,false,true)] call EFUNC(circulation,Syringe_Inject));
+        sounds[] = {};
+        litter[] = {};
     };
-    DRAW_INJECT_SYRINGE_IM(Morphine,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawInject,Morphine,Intramuscular)));
-    DRAW_INJECT_SYRINGE_IM(Ketamine,__EVAL(call compile SYRINGE_ACTION_FORMAT(DrawInject,Ketamine,Intramuscular)));
-    class Lidocaine_Draw_IM: Epinephrine_Draw_IM {
-        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(DrawInject,Lidocaine,Intramuscular));
-        allowedSelections[] = {"Body"};
-        items[] = {"ACM_Vial_Lidocaine"};
-        callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,false,'Lidocaine')] call EFUNC(circulation,Syringe_Draw));
+    class Epinephrine_5_IM: Epinephrine_10_IM {
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Epinephrine,Intramuscular));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_5_ca.paa);
+        items[] = {"ACM_Syringe_5_Epinephrine"};
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',5,false,true)] call EFUNC(circulation,Syringe_Inject));
     };
+    class Epinephrine_3_IM: Epinephrine_10_IM {
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Epinephrine,Intramuscular));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_3_ca.paa);
+        items[] = {"ACM_Syringe_3_Epinephrine"};
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',3,false,true)] call EFUNC(circulation,Syringe_Inject));
+    };
+    class Epinephrine_1_IM: Epinephrine_10_IM {
+        displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Epinephrine,Intramuscular));
+        icon = QPATHTOEF(circulation,ui\icon_syringe_1_ca.paa);
+        items[] = {"ACM_Syringe_1_Epinephrine"};
+        callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',1,false,true)] call EFUNC(circulation,Syringe_Inject));
+    };
+    
+    SYRINGE_ACTION_IM(Morphine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Morphine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Morphine)));
+    SYRINGE_ACTION_IM(Morphine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Morphine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Morphine)));
+    SYRINGE_ACTION_IM(Morphine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Morphine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Morphine)));
+    SYRINGE_ACTION_IM(Morphine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Morphine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Morphine)));
+
+    SYRINGE_ACTION_IM(Ketamine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Ketamine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ketamine)));
+    SYRINGE_ACTION_IM(Ketamine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Ketamine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ketamine)));
+    SYRINGE_ACTION_IM(Ketamine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Ketamine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ketamine)));
+    SYRINGE_ACTION_IM(Ketamine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Ketamine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ketamine)));
+
+    SYRINGE_ACTION_IM(TXA,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,TXA,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,TXA)));
+    SYRINGE_ACTION_IM(TXA,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,TXA,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,TXA)));
+    SYRINGE_ACTION_IM(TXA,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,TXA,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,TXA)));
+    SYRINGE_ACTION_IM(TXA,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,TXA,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,TXA)));
+
+    SYRINGE_ACTION_IM(Lidocaine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Lidocaine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Lidocaine)));
+    SYRINGE_ACTION_IM(Lidocaine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Lidocaine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Lidocaine)));
+    SYRINGE_ACTION_IM(Lidocaine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Lidocaine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Lidocaine)));
+    SYRINGE_ACTION_IM(Lidocaine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Lidocaine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Lidocaine)));
+
+    SYRINGE_ACTION_IM(Amiodarone,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Amiodarone,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Amiodarone)));
+    SYRINGE_ACTION_IM(Amiodarone,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Amiodarone,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Amiodarone)));
+    SYRINGE_ACTION_IM(Amiodarone,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Amiodarone,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Amiodarone)));
+    SYRINGE_ACTION_IM(Amiodarone,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Amiodarone,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Amiodarone)));
+
+    SYRINGE_ACTION_IM(Adenosine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Adenosine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Adenosine)));
+    SYRINGE_ACTION_IM(Adenosine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Adenosine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Adenosine)));
+    SYRINGE_ACTION_IM(Adenosine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Adenosine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Adenosine)));
+    SYRINGE_ACTION_IM(Adenosine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Adenosine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Adenosine)));
 };

@@ -7,25 +7,31 @@
  * 0: Medic <OBJECT>
  * 1: Medication Classname <STRING>
  * 2: Dose (mL) <NUMBER>
- * 3: IV? <BOOL>
+ * 3: Syringe Size <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, 'Epinephrine', 1, false] call ACM_circulation_fnc_Syringe_PrepareFinish;
+ * [player, 'Epinephrine', 1, 10] call ACM_circulation_fnc_Syringe_PrepareFinish;
  *
  * Public: No
  */
 
-params ["_medic", "_medication", "_dose", ["_iv", false]];
+params ["_medic", "_medication", "_dose", ["_size", 10]];
 
-_medic removeItem (format ["ACM_Vial_%1", _medication]);
-
-if (_iv) then {
-    _medic removeItem "ACM_Syringe_IV";
-    [_medic, (format ["ACM_Syringe_IV_%1", _medication]), "", (floor (_dose * 100))] call ACEFUNC(common,addToInventory);
-} else {
-    _medic removeItem "ACM_Syringe_IM";
-    [_medic, (format ["ACM_Syringe_IM_%1", _medication]), "", (floor (_dose * 100))] call ACEFUNC(common,addToInventory);
+switch (GVAR(SyringeDraw_InventorySelection)) do {
+    case 1: {
+        GVAR(SyringeDraw_Target) removeItem (format ["ACM_Vial_%1", _medication]);
+    };
+    case 2: {
+        (objectParent _medic) addItemCargoGlobal [(format ["ACM_Vial_%1", _medication]), -1];
+    };
+    default {
+        _medic removeItem (format ["ACM_Vial_%1", _medication]);
+    };
 };
+
+_medic removeItem (format ["ACM_Syringe_%1", _size]);
+
+[_medic, (format ["ACM_Syringe_%1_%2",_size, _medication]), "", (floor (_dose * 100))] call ACEFUNC(common,addToInventory);

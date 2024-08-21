@@ -10,23 +10,6 @@
         count = num; \
     }
 
-#define ACTION_SYRINGE_IV_PREPARE(medication) \
-    class DOUBLES(ACM_Action_Syringe_IV_Empty_Prepare,medication) { \
-        displayName = QUOTE(Draw ##medication##); \
-        condition = QUOTE('ACM_Vial_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
-        exceptions[] = {"isNotDragging", "isNotInside"}; \
-        statement = QUOTE([ARR_5(_player,objNull,'','##medication##',true)] call EFUNC(circulation,Syringe_Prepare)); \
-        showDisabled = 0; \
-    }
-#define ACTION_SYRINGE_IM_PREPARE(medication) \
-    class DOUBLES(ACM_Action_Syringe_IM_Empty_Prepare,medication) { \
-        displayName = QUOTE(Draw ##medication##); \
-        condition = QUOTE('ACM_Vial_##medication##' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems))); \
-        exceptions[] = {"isNotDragging", "isNotInside"}; \
-        statement = QUOTE([ARR_5(_player,objNull,'','##medication##',false)] call EFUNC(circulation,Syringe_Prepare)); \
-        showDisabled = 0; \
-    }
-
 #define ACTION_UNLOADANDCARRY \
     class ACM_Action_UnloadAndCarryPatient { \
         displayName = CSTRING(CarryPatient); \
@@ -115,8 +98,10 @@ class CfgVehicles {
             ADDITEM(ACM_PressureCuff,3);
             ADDITEM(ACM_IV_16g,25);
             ADDITEM(ACM_IV_14g,15);
-            ADDITEM(ACM_Syringe_IM,5);
-            ADDITEM(ACM_Syringe_IV,5);
+            ADDITEM(ACM_Syringe_1,5);
+            ADDITEM(ACM_Syringe_3,5);
+            ADDITEM(ACM_Syringe_5,5);
+            ADDITEM(ACM_Syringe_10,2);
             ADDITEM(ACM_IO_FAST,15);
             ADDITEM(ACM_IO_EZ,15);
             ADDITEM(ACM_Vial_Epinephrine,10);
@@ -173,66 +158,57 @@ class CfgVehicles {
                 showDisabled = 0;
             };
             class ACM_Equipment {
-                displayName = "Medical Equipment";
+                displayName = CSTRING(MedicalEquipment);
                 icon = QPATHTOEF(main,logo_empty.paa);
                 exceptions[] = {"isNotInside", "isNotSitting"};
                 class ACM_AED_Interactions {
-                    displayName = "AED";
+                    displayName = ECSTRING(circulation,AED_Short);
                     condition = QUOTE('ACM_AED' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
                     statement = "";
                     exceptions[] = {"isNotInside", "isNotSitting"};
                     showDisabled = 0;
                     //icon = QPATHTOF(ui\icon_aed_ca.paa);
                     class ACM_AED_ViewMonitor {
-                        displayName = "View Monitor";
+                        displayName = ECSTRING(circulation,ViewMonitor);
                         condition = "true";
                         statement = QUOTE([ARR_2(_player,_player)] call EFUNC(circulation,displayAEDMonitor));
                         exceptions[] = {"isNotInside", "isNotSitting"};
                         showDisabled = 0;
                     };
                 };
-                class ACM_Action_Syringe_IV {
-                    displayName = "IV Syringes";
-                    condition = QUOTE([ARR_2(_player,true)] call EFUNC(circulation,Syringe_Find));
+                class ACM_Action_Syringe {
+                    displayName = ECSTRING(circulation,Syringes);
+                    condition = QUOTE([ARR_2(_player,0)] call EFUNC(circulation,Syringe_Find));
                     statement = "";
                     showDisabled = 0;
                     exceptions[] = {"isNotInside", "isNotSitting"};
-                    icon = QPATHTOEF(circulation,ui\icon_syringe_iv_ca.paa);
-                    insertChildren = QUOTE([ARR_2(_player,true)] call EFUNC(circulation,Syringe_Draw_ChildActions));
-                    class ACM_Action_Syringe_IV_Empty {
-                        displayName = "IV Syringe (Empty)";
-                        condition = QUOTE('ACM_Syringe_IV' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
-                        statement = "";
+                    icon = QPATHTOEF(circulation,ui\icon_syringe_10_ca.paa);
+                    insertChildren = QUOTE([ARR_2(_player,true)] call EFUNC(circulation,Syringe_ChildActions));
+                    class ACM_Action_Syringe_10_Empty {
+                        displayName = __EVAL(call compile QUOTE(format [ARR_4('%1 (%2ml) [%3]',localize 'STR_ACM_Circulation_Syringe',10,localize 'STR_ACM_Core_Common_Empty')]));
+                        condition = QUOTE('ACM_Syringe_10' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                        statement = QUOTE([ARR_4(_player,objNull,'',10)] call EFUNC(circulation,Syringe_Draw));
                         showDisabled = 0;
                         exceptions[] = {"isNotInside", "isNotSitting"};
-                        icon = "";
-                        ACTION_SYRINGE_IV_PREPARE(Epinephrine);
-                        ACTION_SYRINGE_IV_PREPARE(Morphine);
-                        ACTION_SYRINGE_IV_PREPARE(Ketamine);
-                        ACTION_SYRINGE_IV_PREPARE(Amiodarone);
-                        ACTION_SYRINGE_IV_PREPARE(Adenosine);
-                        ACTION_SYRINGE_IV_PREPARE(TXA);
+                        icon = QPATHTOEF(circulation,ui\icon_syringe_10_ca.paa);
                     };
-                };
-                class ACM_Action_Syringe_IM {
-                    displayName = "IM Syringes";
-                    condition = QUOTE([ARR_2(_player,false)] call EFUNC(circulation,Syringe_Find));
-                    statement = "";
-                    showDisabled = 0;
-                    exceptions[] = {"isNotInside", "isNotSitting"};
-                    icon = QPATHTOEF(circulation,ui\icon_syringe_im_ca.paa);
-                    insertChildren = QUOTE([ARR_2(_player,false)] call EFUNC(circulation,Syringe_Draw_ChildActions));
-                    class ACM_Action_Syringe_IM_Empty {
-                        displayName = "IM Syringe (Empty)";
-                        condition = QUOTE('ACM_Syringe_IM' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
-                        statement = "";
-                        showDisabled = 0;
-                        exceptions[] = {"isNotInside", "isNotSitting"};
-                        icon = "";
-                        ACTION_SYRINGE_IM_PREPARE(Epinephrine);
-                        ACTION_SYRINGE_IM_PREPARE(Morphine);
-                        ACTION_SYRINGE_IM_PREPARE(Ketamine);
-                        ACTION_SYRINGE_IM_PREPARE(Lidocaine);
+                    class ACM_Action_Syringe_5_Empty: ACM_Action_Syringe_10_Empty {
+                        displayName = __EVAL(call compile QUOTE(format [ARR_4('%1 (%2ml) [%3]',localize 'STR_ACM_Circulation_Syringe',5,localize 'STR_ACM_Core_Common_Empty')]));
+                        condition = QUOTE('ACM_Syringe_5' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                        statement = QUOTE([ARR_4(_player,objNull,'',5)] call EFUNC(circulation,Syringe_Draw));
+                        icon = QPATHTOEF(circulation,ui\icon_syringe_5_ca.paa);
+                    };
+                    class ACM_Action_Syringe_3_Empty: ACM_Action_Syringe_10_Empty {
+                        displayName = __EVAL(call compile QUOTE(format [ARR_4('%1 (%2ml) [%3]',localize 'STR_ACM_Circulation_Syringe',3,localize 'STR_ACM_Core_Common_Empty')]));
+                        condition = QUOTE('ACM_Syringe_3' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                        statement = QUOTE([ARR_4(_player,objNull,'',3)] call EFUNC(circulation,Syringe_Draw));
+                        icon = QPATHTOEF(circulation,ui\icon_syringe_3_ca.paa);
+                    };
+                    class ACM_Action_Syringe_1_Empty: ACM_Action_Syringe_10_Empty {
+                        displayName = __EVAL(call compile QUOTE(format [ARR_4('%1 (%2ml) [%3]',localize 'STR_ACM_Circulation_Syringe',1,localize 'STR_ACM_Core_Common_Empty')]));
+                        condition = QUOTE('ACM_Syringe_1' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                        statement = QUOTE([ARR_4(_player,objNull,'',1)] call EFUNC(circulation,Syringe_Draw));
+                        icon = QPATHTOEF(circulation,ui\icon_syringe_1_ca.paa);
                     };
                 };
             };

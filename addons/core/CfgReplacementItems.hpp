@@ -13,7 +13,7 @@ class ACEGVAR(medical,replacementItems) {
         {"ACM_PressureBandage", 3},
         {"ACM_ElasticWrap", 3},
         {"ACM_Vial_Morphine", 1},
-        {"ACM_Syringe_IV", 1},
+        {"ACM_Syringe_5", 1},
         {"ACE_salineIV_250", 1},
         {"ACE_tourniquet", 1},
         {"ACE_splint", 2},

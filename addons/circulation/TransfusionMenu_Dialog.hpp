@@ -53,7 +53,7 @@ class GVAR(TransfusionMenu_Dialog) {
         class SelectedInventoryText: SelectedLimbText {
             idc = IDC_TRANSFUSIONMENU_SELECTION_INV_TEXT;
             x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 7.2));
-            text = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(TransfusionMenu_InventoryTarget),C_LLSTRING(TransfusionMenu_InventoryTarget_Self))]));
+            text = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Common_InventoryTarget),C_LLSTRING(Common_Self))]));
         };
         class BodyBackground: RscPictureKeepAspect {
             idc = -1;
@@ -306,7 +306,7 @@ class GVAR(TransfusionMenu_Dialog) {
             x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 7.8));
             action = QUOTE(call FUNC(TransfusionMenu_SwitchTargetInventory));
             textureNoShortcut = QPATHTOF(ui\transfusionmenu\inventory_select_ca.paa);
-            tooltip = CSTRING(TransfusionMenu_SwitchTargetInventory);
+            tooltip = CSTRING(Common_SwitchTargetInventory);
         };
         class AddBagButton: StopTransfusionButton {
             text = CSTRING(TransfusionMenu_AddBag_Display);

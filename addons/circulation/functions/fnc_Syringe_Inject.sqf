@@ -1,26 +1,27 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle administering IV/IM medication.
+ * Handle administering syringe medication.
  *
  * Arguments:
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
  * 2: Body Part <STRING>
  * 3: Medication Classname <STRING>
- * 4: Return Syringe? <BOOL>
- * 5: Is IV? <BOOL>
+ * 4: Syringe Size <NUMBER>
+ * 5: IV? <BOOL>
+ * 6: Return Syringe? <BOOL>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, cursorObject, "RightArm", "Morphine", true, false] call ACM_circulation_fnc_Syringe_Inject;
+ * [player, cursorObject, "RightArm", "Morphine", 10, true, true] call ACM_circulation_fnc_Syringe_Inject;
  *
  * Public: No
  */
 
-params ["_medic", "_patient", "_bodyPart", "_classname", ["_returnSyringe", true], ["_iv", false]];
+params ["_medic", "_patient", "_bodyPart", "_classname", ["_size", 10], ["_iv", true], ["_returnSyringe", true]];
 
 if (_iv && !([_patient, _bodyPart, 0] call FUNC(hasIV)) && !([_patient, _bodyPart, 0] call FUNC(hasIO))) exitWith {
     [(format [LLSTRING(Syringe_PushFailed), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic, 13] call ACEFUNC(common,displayTextStructured);
@@ -35,10 +36,9 @@ if (_iv) then {
     _medicationClassname = format ["%1_IV", _classname];
     _administrationString = LLSTRING(Intravenous_Short);
     _actionString = LLSTRING(Syringe_Pushed);
-    _itemClassname = format ["ACM_Syringe_IV_%1",_classname];
-} else {
-    _itemClassname = format ["ACM_Syringe_IM_%1",_classname];
 };
+
+_itemClassname = format ["ACM_Syringe_%1_%2", _size, _classname];
 
 private _dose = 0;
 
@@ -77,7 +77,7 @@ if (_stringDose < 1) then {
 [(format ["%1 %2 %3", _actionString, _administrationString, _classname]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
 if (_returnSyringe) then {
-    [_medic, (format ["ACM_Syringe_%1", _administrationString])] call ACEFUNC(common,addToInventory);
+    [_medic, (format ["ACM_Syringe_%1", _size])] call ACEFUNC(common,addToInventory);
 };
 
 private _concentrationDose = _medicationConcentration * (_dose / 100);

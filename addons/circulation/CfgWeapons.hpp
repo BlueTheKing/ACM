@@ -62,12 +62,48 @@ class CfgWeapons {
         };
     };
 
-    class ACM_Syringe_IM: ACE_ItemCore {
+    class ACM_Syringe_10: ACE_ItemCore {
         scope = 2;
+        author = "Blue";
+        picture = QPATHTOF(ui\syringe_10_ca.paa);
+        displayName = "Syringe (10ml)";
+        descriptionShort = "Used to administer 10ml of medication";
+        ACE_isMedicalItem = 1;
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.9;
+        };
+    };
+    class ACM_Syringe_5: ACM_Syringe_10 {
+        picture = QPATHTOF(ui\syringe_5_ca.paa);
+        displayName = "Syringe (5ml)";
+        descriptionShort = "Used to administer 5ml of medication";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.7;
+        };
+    };
+    class ACM_Syringe_3: ACM_Syringe_10 {
+        picture = QPATHTOF(ui\syringe_3_ca.paa);
+        displayName = "Syringe (3ml)";
+        descriptionShort = "Used to administer 3ml of medication";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.6;
+        };
+    };
+    class ACM_Syringe_1: ACM_Syringe_10 {
+        picture = QPATHTOF(ui\syringe_1_ca.paa);
+        displayName = "Syringe (1ml)";
+        descriptionShort = "Used to administer 1ml of medication";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.5;
+        };
+    };
+
+    class ACM_Syringe_IM: ACE_ItemCore {
+        scope = 0;
         author = "Blue";
         picture = QPATHTOF(ui\syringe_im_ca.paa);
         displayName = CSTRING(Syringe_IM);
-        descriptionShort = CSTRING(Syringe_IM_Desc);
+        descriptionShort = "";
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.8;
@@ -76,7 +112,7 @@ class CfgWeapons {
     class ACM_Syringe_IV: ACM_Syringe_IM {
         picture = QPATHTOF(ui\syringe_iv_ca.paa);
         displayName = CSTRING(Syringe_IV);
-        descriptionShort = CSTRING(Syringe_IV_Desc);
+        descriptionShort = "";
     };
 
     class ACM_Vial_Epinephrine: ACE_ItemCore {
@@ -89,6 +125,7 @@ class CfgWeapons {
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.2;
         };
+        ACM_isVial = 1;
     };
     class ACM_Vial_Adenosine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_adenosine_ca.paa);
@@ -139,6 +176,7 @@ class CfgWeapons {
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.2;
         };
+        ACM_isVial = 0;
     };
 
     #include "CfgWeapons_Blood.hpp"

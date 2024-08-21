@@ -16,6 +16,8 @@
  * Public: No
  */
 
+if !(GVAR(SyringeDraw_MedicationSelected)) exitWith {};
+
 GVAR(SyringeDraw_Moving) = !GVAR(SyringeDraw_Moving);
 
 private _display = uiNamespace getVariable [QGVAR(SyringeDraw_DLG), displayNull];
