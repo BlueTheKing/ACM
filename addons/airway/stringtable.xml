@@ -326,7 +326,7 @@
         </Key><!--
             // GUI // -->
         <Key ID="STR_ACM_Airway_GUI_HeadTiltedChinLifted">
-            <English>Head Tilted & Chin Lifted</English>
+            <English>Head Tilted &amp; Chin Lifted</English>
         </Key>
     </Package>
 </Project>
