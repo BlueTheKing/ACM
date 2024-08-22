@@ -161,6 +161,33 @@
 #undef GET_DAMAGE_THRESHOLD
 #define GET_DAMAGE_THRESHOLD(unit)  (unit getVariable [QACEGVAR(medical,damageThreshold), [ACEGVAR(medical,AIDamageThreshold),ACEGVAR(medical,playerDamageThreshold)] select (isPlayer unit)])
 
+#undef HEAD_DAMAGE_THRESHOLD
+#define HEAD_DAMAGE_THRESHOLD ACEGVAR(medical,const_headDamageThreshold)
+#undef ORGAN_DAMAGE_THRESHOLD
+#define ORGAN_DAMAGE_THRESHOLD ACEGVAR(medical,const_organDamageThreshold)
+#undef FATAL_SUM_DAMAGE_WEIBULL_K
+#define FATAL_SUM_DAMAGE_WEIBULL_K ACEGVAR(medical,const_fatalSumDamageWeibull_K)
+#undef FATAL_SUM_DAMAGE_WEIBULL_L
+#define FATAL_SUM_DAMAGE_WEIBULL_L ACEGVAR(medical,const_fatalSumDamageWeibull_L)
+#undef HEART_HIT_CHANCE
+#define HEART_HIT_CHANCE ACEGVAR(medical,const_heartHitChance)
+#undef MINIMUM_BLOOD_FOR_STABLE_VITALS
+#define MINIMUM_BLOOD_FOR_STABLE_VITALS ACEGVAR(medical,const_stableVitalsBloodThreshold)
+#undef PENETRATION_THRESHOLD
+#define PENETRATION_THRESHOLD ACEGVAR(medical,const_penetrationThreshold)
+#undef BLOOD_LOSS_KNOCK_OUT_THRESHOLD
+#define BLOOD_LOSS_KNOCK_OUT_THRESHOLD ACEGVAR(medical,const_bloodLossKnockOutThreshold)
+#undef PAIN_FADE_TIME
+#define PAIN_FADE_TIME ACEGVAR(medical,const_painFadeTime)
+#undef SPONTANEOUS_WAKE_UP_INTERVAL
+#define SPONTANEOUS_WAKE_UP_INTERVAL ACEGVAR(medical,const_wakeUpCheckInterval)
+#undef LIMPING_DAMAGE_THRESHOLD
+#define LIMPING_DAMAGE_THRESHOLD ACEGVAR(medical,const_limpingDamageThreshold)
+#undef FRACTURE_DAMAGE_THRESHOLD
+#define FRACTURE_DAMAGE_THRESHOLD ACEGVAR(medical,const_fractureDamageThreshold)
+#undef CARDIAC_OUTPUT_MIN
+#define CARDIAC_OUTPUT_MIN ACEGVAR(medical,const_minCardiacOutput)
+
 // ACM
 #define ALL_BODY_PARTS_PRIORITY ["body", "head", "leftarm", "rightarm", "leftleg", "rightleg"]
 

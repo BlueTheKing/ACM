@@ -87,7 +87,7 @@ if (_adjustments isNotEqualTo []) then {
         private _timeInSystem = CBA_missionTime - _timeAdded;
         if (_timeInSystem >= _maxTimeInSystem) then {
             _deleted = true;
-            _adjustments set [_forEachIndex, objNull];
+            _adjustments deleteAt _forEachIndex;
         } else {
             private _effectRatio = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime, _concentration] call EFUNC(circulation,getMedicationEffect);
             if (_hrAdjust != 0) then { _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio; };
@@ -110,7 +110,7 @@ if (_adjustments isNotEqualTo []) then {
                 };
             };
         };
-    } forEach _adjustments;
+    } forEachReversed _adjustments;
 
     {
         _y params ["", "_medPainAdjust", "_medMaxPainAdjust"];
@@ -119,7 +119,7 @@ if (_adjustments isNotEqualTo []) then {
     } forEach _painSuppressAdjustmentMap;
 
     if (_deleted) then {
-        _unit setVariable [VAR_MEDICATIONS, _adjustments - [objNull], true];
+        _unit setVariable [VAR_MEDICATIONS, _adjustments, true];
         _syncValues = true;
     };
 };
