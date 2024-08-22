@@ -42,6 +42,7 @@
 [QACEGVAR(medical,death), {
     params ["_unit"];
 
+    _unit setVariable [QEGVAR(circulation,CardiacArrest_RhythmState), ACM_Rhythm_Asystole, true];
     _unit setVariable [QGVAR(TimeOfDeath), CBA_missionTime, true];
 }] call CBA_fnc_addEventHandler;
 

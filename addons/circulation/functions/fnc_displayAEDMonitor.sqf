@@ -189,7 +189,7 @@ private _PFH = [{
     private _COStepSpacing = _EKGStepSpacing;
 
     switch (true) do {
-        case (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])): { // CPR
+        case (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]) && _hr > 0): { // CPR
             if (_padsState) then {
                 _EKGRhythm = ACM_Rhythm_CPR;
             };

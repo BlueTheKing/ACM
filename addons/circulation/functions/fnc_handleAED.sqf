@@ -28,8 +28,13 @@ _medic setVariable [QGVAR(AED_Target_Patient), _patient, true];
 _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
 
 _patient setVariable [QGVAR(AED_StartTime), CBA_missionTime, true];
+_patient setVariable [QGVAR(AED_UpdateStep), 1, true];
 _patient setVariable [QGVAR(AED_MuteAlarm), true, true];
 _patient setVariable [QGVAR(AED_InUse), false, true];
+
+_patient setVariable [QGVAR(AED_EKGRhythm), -2, true];
+_patient setVariable [QGVAR(AED_PORhythm), -2, true];
+_patient setVariable [QGVAR(AED_CORhythm), -2, true];
 
 if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus] in [ACM_Rhythm_Asystole,ACM_Rhythm_VF,ACM_Rhythm_PVT]) then {
     _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
@@ -206,8 +211,8 @@ if (_inVehicle) then {
             [_medic, _patient, "body", 1, false, true] call FUNC(setAED);
             [_medic, _patient, "body", 2, false, true] call FUNC(setAED);
             [_medic, _patient, "body", 3, false, true] call FUNC(setAED);
-            [_patient, "activity", LSTRING(AED_%1_Disconnected), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
-            [LSTRING(AED_PatientDisconnected), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+            [_patient, "activity", LLSTRING(AED_%1_Disconnected), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+            [QACEGVAR(common,displayTextStructured), [LLSTRING(AED_PatientDisconnected), 1.5, _medic], _medic] call CBA_fnc_targetEvent;
         };
     }, [_patient, _medic], 3600] call CBA_fnc_waitUntilAndExecute;
 } else {
@@ -223,8 +228,8 @@ if (_inVehicle) then {
             [_medic, _patient, "body", 1, false, true] call FUNC(setAED);
             [_medic, _patient, "body", 2, false, true] call FUNC(setAED);
             [_medic, _patient, "body", 3, false, true] call FUNC(setAED);
-            [_patient, "activity", LSTRING(AED_%1_Disconnected), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
-            [LSTRING(AED_PatientDisconnected), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+            [_patient, "activity", LLSTRING(AED_%1_Disconnected), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+            [QACEGVAR(common,displayTextStructured), [LLSTRING(AED_PatientDisconnected), 1.5, _medic], _medic] call CBA_fnc_targetEvent;
         };
     }, [_patient, _medic], 3600] call CBA_fnc_waitUntilAndExecute;
 };

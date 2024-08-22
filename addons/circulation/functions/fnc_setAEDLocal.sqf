@@ -34,6 +34,11 @@ switch (_type) do {
         _patient setVariable [QGVAR(AED_Capnograph_LastSync), CBA_missionTime];
         _patient setVariable [QGVAR(AED_CO2_Display), 0, true];
         _patient setVariable [QGVAR(AED_RR_Display), 0, true];
+
+        if !(_state) then {
+            _patient setVariable [QGVAR(AED_CODisplay), [], true];
+            _patient setVariable [QGVAR(AED_CORefreshDisplay), [], true];
+        };
     };
     case 2: {
         _patient setVariable [QGVAR(AED_NIBP_Display), [0,0], true];
@@ -62,7 +67,7 @@ switch (_type) do {
         _patient setVariable [QGVAR(AED_Pads_Display), 0, true];
         _patient setVariable [QGVAR(AED_ShockTotal), 0, true];
 
-        if (_state) then {} else {
+        if !(_state) then {
             _patient setVariable [QGVAR(AED_StartTime), -1, true];
             _patient setVariable [QGVAR(AED_EKGDisplay), [], true];
             _patient setVariable [QGVAR(AED_EKGRefreshDisplay), [], true];
