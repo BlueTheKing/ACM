@@ -179,6 +179,9 @@
         <Key ID="STR_ACM_Circulation_Syringe_%1">
             <English>Syringe (%1ml)</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_Syringe_Desc_%1">
+            <English>Used to administer %1ml of medication</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_Syringe_PreparedWith">
             <English>%1ml syringe prepared with %2</English>
         </Key>

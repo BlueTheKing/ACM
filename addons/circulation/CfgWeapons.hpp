@@ -66,8 +66,8 @@ class CfgWeapons {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\syringe_10_ca.paa);
-        displayName = "Syringe (10ml)";
-        descriptionShort = "Used to administer 10ml of medication";
+        displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),10)]));
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),10)])); 
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.9;
@@ -75,24 +75,24 @@ class CfgWeapons {
     };
     class ACM_Syringe_5: ACM_Syringe_10 {
         picture = QPATHTOF(ui\syringe_5_ca.paa);
-        displayName = "Syringe (5ml)";
-        descriptionShort = "Used to administer 5ml of medication";
+        displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),5)]));
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),5)])); 
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.7;
         };
     };
     class ACM_Syringe_3: ACM_Syringe_10 {
         picture = QPATHTOF(ui\syringe_3_ca.paa);
-        displayName = "Syringe (3ml)";
-        descriptionShort = "Used to administer 3ml of medication";
+        displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),3)]));
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),3)])); 
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.6;
         };
     };
     class ACM_Syringe_1: ACM_Syringe_10 {
         picture = QPATHTOF(ui\syringe_1_ca.paa);
-        displayName = "Syringe (1ml)";
-        descriptionShort = "Used to administer 1ml of medication";
+        displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),1)]));
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),1)])); 
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.5;
         };
@@ -102,7 +102,7 @@ class CfgWeapons {
         scope = 0;
         author = "Blue";
         picture = QPATHTOF(ui\syringe_im_ca.paa);
-        displayName = CSTRING(Syringe_IM);
+        displayName = "";
         descriptionShort = "";
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -111,7 +111,7 @@ class CfgWeapons {
     };
     class ACM_Syringe_IV: ACM_Syringe_IM {
         picture = QPATHTOF(ui\syringe_iv_ca.paa);
-        displayName = CSTRING(Syringe_IV);
+        displayName = "";
         descriptionShort = "";
     };
 
