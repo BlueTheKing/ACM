@@ -11,8 +11,7 @@ class CfgPatches {
             "ace_main"
         };
         author = AUTHOR;
-        actionName="Website";
-		url="https://discord.gg/5MNPpBpsEr";
+		url="https://discord.gg/5MNPpBpsEr/";
         VERSION_CONFIG;
     };
 };
