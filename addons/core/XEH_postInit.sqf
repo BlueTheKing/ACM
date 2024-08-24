@@ -7,8 +7,30 @@
 
 [QACEGVAR(medical_treatment,fullHealLocalMod), LINKFUNC(fullHealLocal)] call CBA_fnc_addEventHandler;
 
+[QGVAR(showTreatmentText), LINKFUNC(handleTreatmentText)] call CBA_fnc_addEventHandler;
+
+["ace_treatmentStarted", {
+    params ["_medic", "_patient", "", "_classname"];
+
+    if (isPlayer _patient) then {
+        [QGVAR(showTreatmentText), [_medic, _patient, true], _patient] call CBA_fnc_targetEvent;
+    };
+}] call CBA_fnc_addEventHandler;
+
+["ace_treatmentFailed", {
+    params ["_medic", "_patient", "", "_classname"];
+
+    if (isPlayer _patient) then {
+        [QGVAR(showTreatmentText), [_medic, _patient, false], _patient] call CBA_fnc_targetEvent;
+    };
+}] call CBA_fnc_addEventHandler;
+
 ["ace_treatmentSucceded", {
     params ["_medic", "_patient", "", "_classname"];
+
+    if (isPlayer _patient) then {
+        [QGVAR(showTreatmentText), [_medic, _patient, false], _patient] call CBA_fnc_targetEvent;
+    };
 
     if (_patient getVariable [QGVAR(WasTreated), false]) exitWith {};
 

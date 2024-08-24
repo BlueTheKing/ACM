@@ -101,6 +101,7 @@ _args call _onStart;
 
         [_medic, _patient, _bodyPart, _extraArgs, _notInVehicle] call _onCancel;
         [QGVAR(openMedicalMenu), _patient] call CBA_fnc_localEvent;
+        ["ace_treatmentFailed", [_medic, _patient, _bodyPart, "ACM_ContinousAction", "", "", false]] call CBA_fnc_localEvent;
     };
 
     _args call _perFrame;

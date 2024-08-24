@@ -21,5 +21,9 @@ _patient setVariable [QGVAR(KnockOut_State), false];
 _patient setVariable [QGVAR(TimeOfDeath), nil, true];
 _patient setVariable [QGVAR(WasTreated), false, true];
 
+if (isPlayer _patient) then {
+    _patient setVariable [QGVAR(TreatmentText_Providers), []];
+};
+
 [_patient] call FUNC(generateTargetVitals);
 [_patient] call FUNC(getUp);

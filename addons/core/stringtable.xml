@@ -49,6 +49,10 @@
         <Key ID="STR_ACM_Core_LyingState_GetUp">
             <English>Get Up</English>
         </Key><!--
+            // Treatment Text // -->
+        <Key ID="STR_ACM_Core_TreatedBy">
+            <English>You are being treated by %1</English>
+        </Key><!--
             // Unload and carry // -->
         <Key ID="STR_ACM_Core_CarryPatient">
             <English>Carry Patient</English>
