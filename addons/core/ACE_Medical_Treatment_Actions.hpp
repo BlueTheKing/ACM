@@ -37,7 +37,6 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = CSTRING(EpinephrineAutoinjector);
         displayNameProgress = CSTRING(EpinephrineAutoinjector_Progress);
     };
-    class SurgicalKit;
     class CheckPulse;
     class CheckResponse: CheckPulse {
         treatmentTime = 2.5;
@@ -152,17 +151,38 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QEFUNC(disability,removeSplint);
         litter[] = {};
     };
+    class SurgicalKit;
+    class SurgicalKit_Suture: SurgicalKit {
+        displayName = ECSTRING(damage,SurgicalKit_Suture);
+        displayNameProgress = ECSTRING(damage,SurgicalKit_Suture_Progress);
+        treatmentTime = QUOTE([ARR_4(_patient,_bodyPart,0,true)] call EFUNC(damage,getStitchTime));
+        condition = QUOTE([ARR_5(_medic,_patient,_bodyPart,0,true)] call EFUNC(damage,canStitch));
+        callbackProgress = QUOTE([ARR_5(_args,_elapsedTime,_totalTime,0,true)] call EFUNC(damage,surgicalKitProgress));
+        callbackStart = QUOTE([ARR_3(_medic,_patient,true)] call EFUNC(damage,surgicalKitStart));
+    };
     class StitchWrappedWounds: SurgicalKit {
         displayName = ECSTRING(damage,SurgicalKit_Wrapped);
         treatmentTime = QUOTE([ARR_3(_patient,_bodyPart,1)] call EFUNC(damage,getStitchTime));
-        condition = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call EFUNC(damage,canStitch));
+        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(damage,canStitch));
         callbackProgress = QUOTE([ARR_4(_args,_elapsedTime,_totalTime,1)] call EFUNC(damage,surgicalKitProgress));
+    };
+    class StitchWrappedWounds_Suture: SurgicalKit_Suture {
+        displayName = ECSTRING(damage,SurgicalKit_Wrapped_Suture);
+        treatmentTime = QUOTE([ARR_4(_patient,_bodyPart,1,true)] call EFUNC(damage,getStitchTime));
+        condition = QUOTE([ARR_5(_medic,_patient,_bodyPart,1,true)] call EFUNC(damage,canStitch));
+        callbackProgress = QUOTE([ARR_5(_args,_elapsedTime,_totalTime,1,true)] call EFUNC(damage,surgicalKitProgress));
     };
     class StitchClottedWounds: SurgicalKit {
         displayName = ECSTRING(damage,SurgicalKit_Clotted);
         treatmentTime = QUOTE([ARR_3(_patient,_bodyPart,2)] call EFUNC(damage,getStitchTime));
-        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(damage,canStitch));
+        condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call EFUNC(damage,canStitch));
         callbackProgress = QUOTE([ARR_4(_args,_elapsedTime,_totalTime,2)] call EFUNC(damage,surgicalKitProgress));
+    };
+    class StitchClottedWounds_Suture: SurgicalKit_Suture {
+        displayName = ECSTRING(damage,SurgicalKit_Clotted_Suture);
+        treatmentTime = QUOTE([ARR_4(_patient,_bodyPart,2,true)] call EFUNC(damage,getStitchTime));
+        condition = QUOTE([ARR_5(_medic,_patient,_bodyPart,2,true)] call EFUNC(damage,canStitch));
+        callbackProgress = QUOTE([ARR_5(_args,_elapsedTime,_totalTime,2,true)] call EFUNC(damage,surgicalKitProgress));
     };
 
     class ApplyTourniquet: BasicBandage {

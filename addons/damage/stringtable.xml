@@ -79,6 +79,12 @@
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch_Desc">
             <English>Time to stitch a wrapped wound</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch">
+            <English>Suture Stitch Time Multiplier</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch_Desc">
+            <English>Time multiplier when stitching wound with sutures</English>
         </Key><!-- 
             // Items // -->
         <Key ID="STR_ACM_Damage_PressureBandage">
@@ -112,11 +118,23 @@
         <Key ID="STR_ACM_Damage_ElasticWrap_Clots">
             <English>Wrap Clotted Wounds</English>
         </Key>
+        <Key ID="STR_ACM_Damage_SurgicalKit_Suture">
+            <English>Use Surgical Kit With Sutures</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SurgicalKit_Suture_Progress">
+            <English>Stitching With Sutures...</English>
+        </Key>
         <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped">
             <English>Use Surgical Kit (Wrapped)</English>
         </Key>
+        <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped_Suture">
+            <English>Use Surgical Kit With Sutures (Wrapped)</English>
+        </Key>
         <Key ID="STR_ACM_Damage_SurgicalKit_Clotted">
             <English>Use Surgical Kit (Clotted)</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SurgicalKit_Clotted_Suture">
+            <English>Use Surgical Kit With Sutures (Clotted)</English>
         </Key><!--
             // Wrap Body Part Action // -->
         <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">

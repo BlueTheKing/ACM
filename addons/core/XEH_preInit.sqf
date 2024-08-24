@@ -40,6 +40,15 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(treatmentTimeSutureStitch),
+    "SLIDER",
+    [LELSTRING(damage,SETTING_TreatmentTime_SutureStitch), LELSTRING(damage,SETTING_TreatmentTime_SutureStitch_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Items)],
+    [0.1, 1, 0.5, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(treatmentTimeSAMSplint),
     "SLIDER",
     [LELSTRING(disability,SETTING_TreatmentTime_SAMSplint), LELSTRING(disability,SETTING_TreatmentTime_SAMSplint_Desc)],
