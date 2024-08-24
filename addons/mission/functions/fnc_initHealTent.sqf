@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Init interactions for spawning patient
+ * Init interactions for heal tent
  *
  * Arguments:
  * 0: Tent Object <OBJECT>

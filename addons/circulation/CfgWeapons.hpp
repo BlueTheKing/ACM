@@ -99,9 +99,9 @@ class CfgWeapons {
     };
 
     class ACM_Syringe_IM: ACE_ItemCore {
-        scope = 0;
+        scope = 1;
         author = "Blue";
-        picture = QPATHTOF(ui\syringe_im_ca.paa);
+        picture = QPATHTOF(ui\syringe_5_ca.paa);
         displayName = "";
         descriptionShort = "";
         ACE_isMedicalItem = 1;
@@ -110,7 +110,7 @@ class CfgWeapons {
         };
     };
     class ACM_Syringe_IV: ACM_Syringe_IM {
-        picture = QPATHTOF(ui\syringe_iv_ca.paa);
+        picture = QPATHTOF(ui\syringe_10_ca.paa);
         displayName = "";
         descriptionShort = "";
     };

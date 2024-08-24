@@ -163,15 +163,4 @@ class CfgFunctions {
             };
         };
     };
-    /*class overwrite_CBA_statemachine {
-        tag = "CBA_statemachine";
-        class CBA_statemachine {
-            class manualTransition {
-                file = QPATHTOF(overrides\fnc_manualTransition.sqf);
-            };
-            class createFromConfig {
-                file = QPATHTOF(overrides\fnc_createFromConfig.sqf);
-            };
-        };
-    };*/
 };
