@@ -16,7 +16,7 @@
  * Public: No
  */
 
-params [["_type", false]];
+params [["_type", 0]];
 
 if (GVAR(SyringeDraw_DrawnAmount) <= 0) exitWith {};
 

@@ -286,14 +286,14 @@ class GVAR(SyringeDraw_Dialog) {
             tooltip = "";
         };
         class Button_Inject: Button_Draw {
-            text = CSTRING(Syringe_DrawPush);
+            text = CSTRING(Syringe_DrawInject);
             idc = IDC_SYRINGEDRAW_BUTTON_INJECT;
             x = QUOTE(safezoneX + (safezoneW / 2) - ((safezoneW / 24) / 2) + ((safezoneW / 24) * 1.1));
             w = QUOTE(safezoneW / 13);
             onButtonClick = QUOTE([2] call FUNC(Syringe_Draw_Button));
         };
         class Button_Push: Button_Inject {
-            text = CSTRING(Syringe_DrawInject);
+            text = CSTRING(Syringe_DrawPush);
             idc = IDC_SYRINGEDRAW_BUTTON_PUSH;
             y = QUOTE(safezoneY + (safezoneH / 1.14));
             onButtonClick = QUOTE([1] call FUNC(Syringe_Draw_Button));
