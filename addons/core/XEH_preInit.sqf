@@ -31,6 +31,15 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;*/
 
 [
+    QGVAR(allowWrap),
+    "LIST",
+    [LELSTRING(damage,SETTING_Allow_Wrap), LELSTRING(damage,SETTING_Allow_Wrap_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Items)],
+    [SETTING_DROPDOWN_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(treatmentTimeWrappedStitch),
     "SLIDER",
     [LELSTRING(damage,SETTING_TreatmentTime_WrappedStitch), LELSTRING(damage,SETTING_TreatmentTime_WrappedStitch_Desc)],

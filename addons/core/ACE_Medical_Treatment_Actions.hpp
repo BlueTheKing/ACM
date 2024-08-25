@@ -108,7 +108,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = ECSTRING(damage,ElasticWrap_Bruises);
         displayNameProgress = ECSTRING(damage,ElasticWrap_Progress);
         items[] = {"ACM_ElasticWrap"};
-        medicRequired = 1;
+        medicRequired = QGVAR(allowWrap);
         condition = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call EFUNC(damage,canWrap));
         treatmentTime = QEFUNC(damage,getBruiseWrapTime);
         callbackSuccess = QEFUNC(damage,wrapBruises);
