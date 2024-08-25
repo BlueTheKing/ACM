@@ -36,7 +36,7 @@ class Extended_Respawn_EventHandlers {
 class Extended_Init_EventHandlers {
     class CAManBase {
         class ADDON {
-            init = QUOTE([ARR_2((_this select 0),false)] call FUNC(initUnit));
+            init = QUOTE([(_this select 0)] call FUNC(initUnit));
             exclude[] = {IGNORE_BASE_UAVPILOTS};
         };
     };

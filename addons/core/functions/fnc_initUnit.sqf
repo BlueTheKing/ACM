@@ -20,4 +20,8 @@ params ["_unit"];
 [_unit] call EFUNC(airway,initUnit);
 [_unit] call EFUNC(circulation,initUnit);
 
-[_unit] call FUNC(generateTargetVitals);
+[{
+    params ["_unit"];
+
+    [_unit] call FUNC(generateTargetVitals);
+}, [_unit], 0.5] call CBA_fnc_waitAndExecute;
