@@ -111,6 +111,24 @@ class GVAR(TransfusionMenu_Dialog) {
         BODY_BACKGROUND_IV(LeftLeg,Upper,IDC_TRANSFUSIONMENU_BG_IV_LEFTLEG_UPPER);
         BODY_BACKGROUND_IV(LeftLeg,Middle,IDC_TRANSFUSIONMENU_BG_IV_LEFTLEG_MIDDLE);
         BODY_BACKGROUND_IV(LeftLeg,Lower,IDC_TRANSFUSIONMENU_BG_IV_LEFTLEG_LOWER);
+
+        class BodyBackground_Tourniquet_RightArm: BodyBackground {
+            idc = IDC_TRANSFUSIONMENU_BG_TOURNIQUET_RIGHTARM;
+            text = QPATHTOEF(gui,data\body_image\rightarm_tourniquet.paa);
+            colorText[] = {0, 0, 0.8, 1};
+        };
+        class BodyBackground_Tourniquet_LeftArm: BodyBackground_Tourniquet_RightArm {
+            idc = IDC_TRANSFUSIONMENU_BG_TOURNIQUET_LEFTARM;
+            text = QPATHTOEF(gui,data\body_image\leftarm_tourniquet.paa);
+        };
+        class BodyBackground_Tourniquet_RightLeg: BodyBackground_Tourniquet_RightArm {
+            idc = IDC_TRANSFUSIONMENU_BG_TOURNIQUET_RIGHTLEG;
+            text = QACEPATHTOF(medical_gui,data\body_image\leg_right_t.paa);
+        };
+        class BodyBackground_Tourniquet_LeftLeg: BodyBackground_Tourniquet_RightArm {
+            idc = IDC_TRANSFUSIONMENU_BG_TOURNIQUET_LEFTLEG;
+            text = QACEPATHTOF(medical_gui,data\body_image\leg_left_t.paa);
+        };
     };
     class Controls {
         class BodyPart_Torso: RscButton {

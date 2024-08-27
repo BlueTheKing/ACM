@@ -103,6 +103,17 @@ private _inVehicle = !(isNull objectParent ACE_player);
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
+    private _ctrlTourniquetLeftArm = _display displayCtrl IDC_TRANSFUSIONMENU_BG_TOURNIQUET_LEFTARM;
+    private _ctrlTourniquetRightArm = _display displayCtrl IDC_TRANSFUSIONMENU_BG_TOURNIQUET_RIGHTARM;
+    private _ctrlTourniquetLeftLeg = _display displayCtrl IDC_TRANSFUSIONMENU_BG_TOURNIQUET_LEFTLEG;
+    private _ctrlTourniquetRightLeg = _display displayCtrl IDC_TRANSFUSIONMENU_BG_TOURNIQUET_RIGHTLEG;
+
+    private _ctrlTourniquetArray = [_ctrlTourniquetLeftArm, _ctrlTourniquetRightArm, _ctrlTourniquetLeftLeg, _ctrlTourniquetRightLeg];
+
+    {
+        _x ctrlShow (HAS_TOURNIQUET_APPLIED_ON(_patient,(_forEachIndex + 2)));
+    } forEach _ctrlTourniquetArray;
+
     private _partIndex = ALL_BODY_PARTS find GVAR(TransfusionMenu_Selected_BodyPart);
 
     private _ctrlIVLeftArmUpper = _display displayCtrl IDC_TRANSFUSIONMENU_BG_IV_LEFTARM_UPPER;
