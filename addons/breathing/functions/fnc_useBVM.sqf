@@ -100,6 +100,8 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
     } else {
         if (GVAR(BVM_OxygenActive)) then {
             _ctrlTopText ctrlSetText LLSTRING(BVM_UsingBVM_Oxygen);
+        } else {
+            _ctrlTopText ctrlSetText LLSTRING(BVM_UsingBVM);
         };
     };
 
@@ -113,6 +115,7 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
     if (GVAR(BVMActive)) then {
         [_patient, "activity", LSTRING(BVM_ActionLog_Start), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
     };
+    [LSTRING(BVM_Started), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 }, { // On cancel
     params ["_medic", "_patient", "_bodyPart", "_extraArgs", "_notInVehicle"];
     _extraArgs params ["_useOxygen", "_portableOxygen"];

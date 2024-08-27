@@ -440,6 +440,9 @@
         <Key ID="STR_ACM_Breathing_BVM_Continue">
             <English>Continue Rescue Breaths</English>
         </Key>
+        <Key ID="STR_ACM_Breathing_BVM_Started">
+            <English>Started Rescue Breaths</English>
+        </Key>
         <Key ID="STR_ACM_Breathing_BVM_Stopped">
             <English>Stopped using BVM</English>
         </Key>
