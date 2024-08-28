@@ -22,6 +22,16 @@ class CfgPatches {
 #include "CfgMoves.hpp"
 #include "CfgWeapons.hpp"
 #include "ACE_Medical_Treatment_Actions.hpp"
+
+class RscText;
+class RscLine;
+class RscStructuredText;
+class RscButton;
+class RscButtonMenu;
+class RscPicture;
+class RscPictureKeepAspect;
+class RscListBox;
+
 #include "\x\ACM\addons\core\UI_defines.hpp"
 #include "Defibrillator_Monitor_Dialog.hpp"
 #include "RscFeelPulse.hpp"

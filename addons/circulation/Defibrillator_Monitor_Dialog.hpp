@@ -1,12 +1,5 @@
 #include "Defibrillator_defines.hpp"
 
-class RscPicture;
-class RscLine;
-class RscText;
-class RscBackground;
-class RscButton;
-class RscStructuredText;
-
 class GVAR(Lifepak_Monitor_Dialog) {
     idd = IDC_LIFEPAK_MONITOR;
     movingEnable = 0;

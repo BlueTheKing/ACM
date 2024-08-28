@@ -1,10 +1,5 @@
 #include "MeasureBP_defines.hpp"
 
-class RscPicture;
-class RscPictureKeepAspect;
-class RscText;
-class RscLine;
-
 class GVAR(MeasureBP_Dialog)
 {
     idd = IDC_MEASUREBP;

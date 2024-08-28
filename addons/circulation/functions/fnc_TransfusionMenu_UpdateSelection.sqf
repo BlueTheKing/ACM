@@ -1,6 +1,5 @@
 #include "..\script_component.hpp"
 #include "..\TransfusionMenu_defines.hpp"
-#include "\x\ACM\addons\core\UI_defines.hpp"
 /*
  * Author: Blue
  * Update selection after changing body part or IV/IO selection.

@@ -1,7 +1,6 @@
 class CfgWeapons {
     class ACE_ItemCore;
     class CBA_MiscItem_ItemInfo;
-    class ACE_ItemCore;
 
     class ACE_splint: ACE_ItemCore {
         displayName = CSTRING(UniversalSplint);

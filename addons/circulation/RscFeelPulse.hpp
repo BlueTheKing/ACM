@@ -1,9 +1,5 @@
 #include "FeelPulse_defines.hpp"
 
-class RscPicture;
-class RscPictureKeepAspect;
-class RscText;
-
 class RscTitles
 {
     class RscFeelPulse

@@ -1,14 +1,5 @@
 #include "TransfusionMenu_defines.hpp"
 
-class RscPicture;
-class RscLine;
-class RscText;
-class RscBackground;
-class RscButton;
-class RscButtonMenu;
-class RscPictureKeepAspect;
-class RscListBox;
-
 class GVAR(TransfusionMenu_Dialog) {
     idd = IDC_TRANSFUSIONMENU;
     movingEnable = 0;

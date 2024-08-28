@@ -1,15 +1,5 @@
 #include "SyringeDraw_defines.hpp"
 
-class RscPicture;
-class RscLine;
-class RscText;
-class RscBackground;
-class RscButton;
-class RscButtonMenu;
-class RscPictureKeepAspect;
-class RscControlsGroupNoScrollbars;
-class RscListBox;
-
 class GVAR(SyringeDraw_Dialog) {
     idd = IDC_SYRINGEDRAW;
     movingEnable = 0;

@@ -1,7 +1,5 @@
 #include "UseBVM_defines.hpp"
 
-class RscText;
-
 class RscTitles
 {
     class RscUseBVM

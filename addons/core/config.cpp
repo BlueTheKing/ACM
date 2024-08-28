@@ -17,7 +17,6 @@ class CfgPatches {
 };
 
 //#include "ACM_Statemachine.hpp"
-#include "RscTitles.hpp"
 #include "CfgEditorSubcategories.hpp"
 #include "CfgFunctions.hpp"
 #include "CfgEventHandlers.hpp"
@@ -29,4 +28,4 @@ class CfgPatches {
 #include "CfgReplacementItems.hpp"
 #include "CfgVehicles.hpp"
 #include "UI_defines.hpp"
-#include "RscTreatmentText.hpp"
+#include "RscTitles.hpp"

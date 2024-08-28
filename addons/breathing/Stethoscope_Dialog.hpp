@@ -1,12 +1,5 @@
 #include "Stethoscope_defines.hpp"
 
-class RscPicture;
-class RscLine;
-class RscText;
-class RscBackground;
-class RscButtonMenu;
-class RscPictureKeepAspect;
-
 class GVAR(Stethoscope_Dialog) {
     idd = IDC_STETHOSCOPE;
     movingEnable = 0;
