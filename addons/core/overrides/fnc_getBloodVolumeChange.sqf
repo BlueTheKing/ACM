@@ -114,7 +114,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
         _fluidBagsBodyPart = _fluidBagsBodyPart apply {
             _x params ["_type", "_bagVolumeRemaining", "_accessType", "_accessSite", "_iv", ["_bloodType", -1], "_originalVolume"];
 
-            if (!(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) && (([(GET_IO_FLOW(_unit) select _partIndex),((GET_IV_FLOW(_unit) select _partIndex) select _accessSite)] select _iv) > 0)) then {
+            if ((!(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) || (!_iv && (_partIndex in [2,3]))) && (([(GET_IO_FLOW(_unit) select _partIndex),((GET_IV_FLOW(_unit) select _partIndex) select _accessSite)] select _iv) > 0)) then {
                 private _fluidFlowRate = 1;
     
                 switch (_type) do {
