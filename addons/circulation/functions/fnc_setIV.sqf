@@ -76,9 +76,9 @@ if (_iv && _state) then {
             GET_BLOOD_PRESSURE(_patient) params ["_diastolic", "_systolic"];
 
             if (_bodyPart in ["leftarm","rightarm"]) then {
-                _successChance = linearConversion [70, 110, _systolic, 0, 1, true];
+                _successChance = linearConversion [70, 90, _systolic, 0, 1, true];
             } else {
-                _successChance = linearConversion [60, 100, _systolic, 0, 1, true];
+                _successChance = linearConversion [60, 80, _systolic, 0, 1, true];
             };
         };
     };
