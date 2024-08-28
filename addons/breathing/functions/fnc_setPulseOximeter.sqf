@@ -24,6 +24,7 @@ private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
 if (_state && HAS_PULSEOX(_patient,(_partIndex - 2))) exitWith {
     [(format [LLSTRING(PulseOximeter_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [_medic, "ACM_PulseOximeter"] call ACEFUNC(common,addToInventory);
 };
 
 if !(_state) then {

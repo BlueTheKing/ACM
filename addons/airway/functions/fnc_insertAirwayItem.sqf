@@ -38,6 +38,7 @@ switch (_type) do {
 
 if (_airwayItem != "") exitWith {
     [LSTRING(Adjunct_Already), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [_medic, _classname] call ACEFUNC(common,addToInventory);
 };
 
 if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {

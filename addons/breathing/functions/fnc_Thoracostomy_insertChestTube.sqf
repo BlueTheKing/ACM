@@ -20,6 +20,7 @@ params ["_medic", "_patient"];
 
 if ((_patient getVariable [QGVAR(Thoracostomy_State), -1]) == 2) exitWith {
     [LSTRING(ThoracostomyChestTube_Already), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [_medic, "ACM_ChestTubeKit"] call ACEFUNC(common,addToInventory);
 };
 
 [_patient, "activity", LSTRING(ThoracostomyChestTube_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);

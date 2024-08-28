@@ -36,7 +36,7 @@
 
     if !(IS_UNCONSCIOUS(_patient)) exitWith {};
 
-    if (_classname in ["SlapAwake","AmmoniaInhalant"]) exitWith {}; // Ignore these
+    if (_classname in ["CheckDogTags","SlapAwake","AmmoniaInhalant"]) exitWith {}; // Ignore these
 
     private _config = configFile >> QACEGVAR(medical_treatment,actions) >> _classname;
 

@@ -31,7 +31,7 @@ private _naloxoneEffect = 1;
         _medicationArray deleteAt _forEachIndex;
     };
 
-    if (_medicationClassname in ["Morphine", "Morphine_IV"]) then {
+    if (_medicationType == "Opioid") then {
         _mitigatedArray pushBack [_medicationClassname, _injectTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust, _administrationType, _maxEffectTime, _rrAdjust, _coSensitivityAdjust, _breathingEffectivenessAdjust, _concentration, _medicationType];
         _medicationArray deleteAt _forEachIndex;
         _naloxoneEffect = _naloxoneEffect - 1;

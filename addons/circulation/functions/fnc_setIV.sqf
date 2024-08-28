@@ -30,17 +30,21 @@ private _exit = false;
 private _accessSiteHint = "";
 private _givePain = 0;
 private _successChance = 1;
+private _classname = "ACM_IV_16g";
 
 switch (_type) do {
     case ACM_IV_14G_M: {
         _hintType = LLSTRING(IV_14g);
+        _classname = "ACM_IV_14g";
     };
     case ACM_IO_FAST1_M: {
         _hintType = LLSTRING(IO_FAST1);
+        _classname = "ACM_IO_FAST";
         _givePain = 0.5;
     };
     case ACM_IO_EZ_M: {
         _hintType = LLSTRING(IO_EZ);
+        _classname = "ACM_IO_EZ";
         _givePain = 0.25;
     };
     default {};
@@ -67,7 +71,7 @@ if (_iv && _state) then {
 
     switch (true) do {
         case (IN_CRDC_ARRST(_patient)): {
-            _successChance = linearConversion [0, 180, (CBA_missionTime - _patient getVariable [QGVAR(CardiacArrest_Time), 0]), 0.9, 0, true];
+            _successChance = linearConversion [0, 120, (CBA_missionTime - (_patient getVariable [QGVAR(CardiacArrest_Time), 0])), 0.8, 0, true];
         };
         case (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)): {
             _successChance = linearConversion [0, 90, (CBA_missionTime - ((_patient getVariable [QEGVAR(disability,Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]]) select _partIndex)), 0.9, 0, true];
@@ -126,7 +130,9 @@ if !(random 1 < _successChance) then {
     };
 };
 
-if (_exit) exitWith {};
+if (_exit) exitWith {
+    [_medic, _classname] call ACEFUNC(common,addToInventory);
+};
 
 private _setState = _type;
 
