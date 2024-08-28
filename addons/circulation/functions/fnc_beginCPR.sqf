@@ -90,7 +90,7 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
     
     [LLSTRING(CPR_Stop), LLSTRING(CPR_Pause), ""] call ACEFUNC(interaction,showMouseHint);
     [LSTRING(CPR_Started), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-    [_patient, "activity", LSTRING(CPR_ActiongLog_Started), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "activity", LSTRING(CPR_ActionLog_Started), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
     [{
         params ["_args", "_idPFH"];
@@ -115,7 +115,7 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
             private _CPRTime = CBA_missionTime - _CPRStartTime; 
             private _time = [_CPRTime, "MM:SS"] call BIS_fnc_secondsToString;
 
-            [_patient, "activity", LSTRING(CPR_ActiongLog_Stopped), [[_medic, false, true] call ACEFUNC(common,getName), _time]] call ACEFUNC(medical_treatment,addToLog);
+            [_patient, "activity", LSTRING(CPR_ActionLog_Stopped), [[_medic, false, true] call ACEFUNC(common,getName), _time]] call ACEFUNC(medical_treatment,addToLog);
 
             _patient setVariable [QGVAR(CPR_StoppedTotal), _CPRTime, true];
             _patient setVariable [QGVAR(CPR_StoppedTime), CBA_missionTime, true];

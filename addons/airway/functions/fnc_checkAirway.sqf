@@ -131,11 +131,11 @@ private _obstructionBloodState = _patient getVariable [QGVAR(AirwayObstructionBl
 
 if (_obstructionVomitState > 0 || _obstructionBloodState > 0) then {
     _obstructionShow = true;
-    _obstructionState = LLSTRING(Obstruction_Light);
-    _obstructionStateLog = LLSTRING(Obstruction_Light_Short);
+    _obstructionState = LLSTRING(CheckAirway_Obstruction_Light);
+    _obstructionStateLog = LLSTRING(CheckAirway_Obstruction_Light_Short);
     if (_obstructionVomitState > 1 || _obstructionBloodState > 1) then {
-        _obstructionState = LLSTRING(Obstruction);
-        _obstructionStateLog = LLSTRING(Obstruction_Short);
+        _obstructionState = LLSTRING(CheckAirway_Obstruction);
+        _obstructionStateLog = LLSTRING(CheckAirway_Obstruction_Short);
     };
 };
 
@@ -196,8 +196,8 @@ if (_collapseShow || _obstructionShow || _showManeuver || _showAdjunct) then {
 
 [_hint, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
 if (_doubleSpace) then {
-    [_patient, "quick_view", LSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _addHintLog]] call ACEFUNC(medical_treatment,addToLog);
-    [_patient, "quick_view", LSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _doubleSpaceLog]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "quick_view", LLSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _addHintLog]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "quick_view", LLSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _doubleSpaceLog]] call ACEFUNC(medical_treatment,addToLog);
 } else {
-    [_patient, "quick_view", LSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "quick_view", LLSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
 };
