@@ -23,25 +23,25 @@
             <English>Head Trauma Death Threshold</English>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold_Desc">
-            <English>Sets threshold for instant death from trauma to the head</English>
+            <English>Sets threshold for instant death from trauma to the head, disabled if 0</English>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold">
             <English>Torso Trauma Death Threshold</English>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold_Desc">
-            <English>Sets threshold for instant death from trauma to the torso</English>
+            <English>Sets threshold for instant death from trauma to the torso, disabled if 0</English>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold">
             <English>Head Trauma Cardiac Arrest Threshold</English>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold_Desc">
-            <English>Sets threshold for possibility of cardiac arrest from trauma to the head, using percentage of Head Trauma Death Threshold</English>
+            <English>Sets threshold for possibility of cardiac arrest from trauma to the head, disabled if 0</English>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold">
             <English>Torso Trauma Cardiac Arrest Threshold</English>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold_Desc">
-            <English>Sets threshold for possibility of cardiac arrest from trauma to the torso, using percentage of Body Trauma Death Threshold</English>
+            <English>Sets threshold for possibility of cardiac arrest from trauma to the torso, disabled if 0</English>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier">
             <English>Internal Bleeding Chance Multiplier</English>
@@ -55,11 +55,29 @@
         <Key ID="STR_ACM_Damage_SETTING_Hardcore_InternalBleeding_Desc">
             <English>[HARDCORE] Sets whether internal bleeding should require further treatment to fully stop</English>
         </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TraumaModifierAI">
-            <English>AI Trauma Modifier</English>
+        <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThresholdAI">
+            <English>AI Head Trauma Death Threshold</English>
         </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TraumaModifierAI_Desc">
-            <English>Sets AI toughness compared to player thresholds</English>
+        <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThresholdAI_Desc">
+            <English>Sets threshold for instant death from trauma to the head for AI, disabled if 0</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThresholdAI">
+            <English>AI Torso Trauma Death Threshold</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThresholdAI_Desc">
+            <English>Sets threshold for instant death from trauma to the torso for AI, disabled if 0</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThresholdAI">
+            <English>AI Head Trauma Cardiac Arrest Threshold</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThresholdAI_Desc">
+            <English>Sets threshold for possibility of cardiac arrest from trauma to the head for AI, disabled if 0</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThresholdAI">
+            <English>AI Torso Trauma Cardiac Arrest Threshold</English>
+        </Key>
+        <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThresholdAI_Desc">
+            <English>Sets threshold for possibility of cardiac arrest from trauma to the torso for AI, disabled if 0</English>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance">
             <English>AI Stay Down Chance</English>

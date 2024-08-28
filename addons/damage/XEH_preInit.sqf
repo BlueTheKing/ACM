@@ -42,7 +42,7 @@ ADDON = true;
     "SLIDER",
     [LLSTRING(SETTING_HeadTraumaCardiacArrestThreshold), LLSTRING(SETTING_HeadTraumaCardiacArrestThreshold_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Thresholds)],
-    [0, 1, 0.65, 1, true],
+    [0, 40, 12, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -51,7 +51,7 @@ ADDON = true;
     "SLIDER",
     [LLSTRING(SETTING_BodyTraumaCardiacArrestThreshold), LLSTRING(SETTING_BodyTraumaCardiacArrestThreshold_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Thresholds)],
-    [0, 1, 0.65, 1, true],
+    [0, 40, 16, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -74,11 +74,38 @@ ADDON = true;
 ] call CBA_fnc_addSetting;*/
 
 [
-    QGVAR(traumaModifierAI),
+    QGVAR(headTraumaDeathThresholdAI),
     "SLIDER",
-    [LLSTRING(SETTING_TraumaModifierAI), LLSTRING(SETTING_TraumaModifierAI_Desc)],
+    [LLSTRING(SETTING_HeadTraumaDeathThresholdAI), LLSTRING(SETTING_HeadTraumaDeathThresholdAI_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AIUnits)],
-    [0.1, 2, 1, 1],
+    [0, 40, 19, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(bodyTraumaDeathThresholdAI),
+    "SLIDER",
+    [LLSTRING(SETTING_BodyTraumaDeathThresholdAI), LLSTRING(SETTING_BodyTraumaDeathThresholdAI_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AIUnits)],
+    [0, 40, 24, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(headTraumaCardiacArrestThresholdAI),
+    "SLIDER",
+    [LLSTRING(SETTING_HeadTraumaCardiacArrestThresholdAI), LLSTRING(SETTING_HeadTraumaCardiacArrestThresholdAI_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AIUnits)],
+    [0, 40, 12, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(bodyTraumaCardiacArrestThresholdAI),
+    "SLIDER",
+    [LLSTRING(SETTING_BodyTraumaCardiacArrestThresholdAI), LLSTRING(SETTING_BodyTraumaCardiacArrestThresholdAI_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AIUnits)],
+    [0, 40, 16, 1],
     true
 ] call CBA_fnc_addSetting;
 
