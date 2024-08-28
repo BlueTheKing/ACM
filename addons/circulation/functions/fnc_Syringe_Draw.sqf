@@ -91,50 +91,58 @@ private _fnc_updateSelectedMedication = {
     GVAR(SyringeDraw_Ctrl_LimitTop) = SYRINGEDRAW_LIMIT_10_TOP;
     GVAR(SyringeDraw_Ctrl_LimitBottom) = SYRINGEDRAW_LIMIT_10_BOTTOM;
     GVAR(SyringeDraw_Ctrl_LimitTopMouse) = SYRINGEDRAW_LIMIT_10_TOP_MOUSE;
-    GVAR(SyringeDraw_Ctrl_PlungerAdjustment) = ACM_pxToScreen_Y(1440);
+    GVAR(SyringeDraw_Ctrl_PlungerAdjustment) = SYRINGEDRAW_10_Y_OFFSET;
 
     private _ctrlPlunger = _display displayCtrl IDC_SYRINGEDRAW_PLUNGER;
     (ctrlPosition _ctrlPlunger) params ["_plungerX","","_plungerW","_plungerH"];
 
     switch (_size) do {
         case 1: { // 1ml
-            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_1_GROUP) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_1_BACKBIT) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_1_BARREL) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_1_PLUNGER) ctrlShow true;
 
             GVAR(SyringeDraw_Ctrl_PlungerVisual) = IDC_SYRINGEDRAW_SYRINGE_1_PLUNGER;
             GVAR(SyringeDraw_Ctrl_LimitTop) = SYRINGEDRAW_LIMIT_1_TOP;
             GVAR(SyringeDraw_Ctrl_LimitBottom) = SYRINGEDRAW_LIMIT_1_BOTTOM;
             GVAR(SyringeDraw_Ctrl_LimitTopMouse) = SYRINGEDRAW_LIMIT_1_TOP_MOUSE;
-            GVAR(SyringeDraw_Ctrl_PlungerAdjustment) = ACM_pxToScreen_Y(1413);
+            GVAR(SyringeDraw_Ctrl_PlungerAdjustment) = SYRINGEDRAW_1_Y_OFFSET;
             
             _ctrlPlunger ctrlSetPosition [_plungerX, SYRINGEDRAW_LIMIT_1_TOP, _plungerW, _plungerH];
             _ctrlPlunger ctrlCommit 0;
         };
         case 3: { // 3ml
-            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_3_GROUP) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_3_BACKBIT) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_3_BARREL) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_3_PLUNGER) ctrlShow true;
 
             GVAR(SyringeDraw_Ctrl_PlungerVisual) = IDC_SYRINGEDRAW_SYRINGE_3_PLUNGER;
             GVAR(SyringeDraw_Ctrl_LimitTop) = SYRINGEDRAW_LIMIT_3_TOP;
             GVAR(SyringeDraw_Ctrl_LimitBottom) = SYRINGEDRAW_LIMIT_3_BOTTOM;
             GVAR(SyringeDraw_Ctrl_LimitTopMouse) = SYRINGEDRAW_LIMIT_3_TOP_MOUSE;
-            GVAR(SyringeDraw_Ctrl_PlungerAdjustment) = ACM_pxToScreen_Y(1413);
+            GVAR(SyringeDraw_Ctrl_PlungerAdjustment) = SYRINGEDRAW_3_Y_OFFSET;
 
             _ctrlPlunger ctrlSetPosition [_plungerX, SYRINGEDRAW_LIMIT_3_TOP, _plungerW, _plungerH];
             _ctrlPlunger ctrlCommit 0;
         };
         case 5: { // 5ml
-            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_5_GROUP) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_5_BACKBIT) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_5_BARREL) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_5_PLUNGER) ctrlShow true;
 
             GVAR(SyringeDraw_Ctrl_PlungerVisual) = IDC_SYRINGEDRAW_SYRINGE_5_PLUNGER;
             GVAR(SyringeDraw_Ctrl_LimitTop) = SYRINGEDRAW_LIMIT_5_TOP;
             GVAR(SyringeDraw_Ctrl_LimitBottom) = SYRINGEDRAW_LIMIT_5_BOTTOM;
             GVAR(SyringeDraw_Ctrl_LimitTopMouse) = SYRINGEDRAW_LIMIT_5_TOP_MOUSE;
-            GVAR(SyringeDraw_Ctrl_PlungerAdjustment) = ACM_pxToScreen_Y(1413);
+            GVAR(SyringeDraw_Ctrl_PlungerAdjustment) = SYRINGEDRAW_5_Y_OFFSET;
 
             _ctrlPlunger ctrlSetPosition [_plungerX, SYRINGEDRAW_LIMIT_5_TOP, _plungerW, _plungerH];
             _ctrlPlunger ctrlCommit 0;
         };
         default { // 10ml
-            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_10_GROUP) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_10_BACKBIT) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_10_BARREL) ctrlShow true;
+            (_display displayCtrl IDC_SYRINGEDRAW_SYRINGE_10_PLUNGER) ctrlShow true;
         };
     };
 

@@ -7,7 +7,7 @@ class RscBackground;
 class RscButton;
 class RscButtonMenu;
 class RscPictureKeepAspect;
-class RscControlsGroup;
+class RscControlsGroupNoScrollbars;
 class RscListBox;
 
 class GVAR(SyringeDraw_Dialog) {
@@ -18,185 +18,64 @@ class GVAR(SyringeDraw_Dialog) {
     objects[] = {};
 
     class ControlsBackground {
-        class Syringe_10: RscControlsGroup {
-            idc = IDC_SYRINGEDRAW_SYRINGE_10_GROUP;
-            x = QUOTE(safezoneX + (safezoneW / 10));
-            y = QUOTE(safezoneY - (safezoneH / 10));
-            w = QUOTE(safezoneW);
-            h = QUOTE(safezoneH * 3);
-            type = 15;
-            style = 0;
+        class Syringe_10_Backbit: RscPicture {
+            idc = IDC_SYRINGEDRAW_SYRINGE_10_BACKBIT;
+            x = QUOTE(safeZoneX + ((safeZoneW - ACM_SYRINGEDRAW_POS_W(42)) / 2));
+            y = QUOTE((safeZoneY + ((safeZoneH - ACM_SYRINGEDRAW_POS_H(42)) / 2)) - ACM_SYRINGEDRAW_POS_Y(5));
+            w = QUOTE(ACM_SYRINGEDRAW_POS_W(42));
+            h = QUOTE(ACM_SYRINGEDRAW_POS_H(42));
+            type = 0;
+            style = 48;
+            size = 0;
+            text = QPATHTOF(ui\syringe\syringe_10_backbit_ca.paa);
             show = 0;
-            class ScrollBar
-            {
-                color[] = {1,1,1,0.6};
-                colorActive[] = {1,1,1,1};
-                colorDisabled[] = {1,1,1,0.3};
-                thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-                arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-                arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-                border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-            };
-            class HScrollbar: ScrollBar
-            {
-                height = 0;
-                shadow = 0;
-            };
-            class Controls {
-                class Syringe_10_Backbit: RscPictureKeepAspect {
-                    idc = -1;
-                    x = 0;
-                    y = 0;
-                    w = QUOTE(safezoneW / ACM_GUI_SyringeDraw_SIZEM);
-                    h = QUOTE(safezoneH);
-                    type = 0;
-                    size = 0;
-                    text = QPATHTOF(ui\syringe\syringe_10_backbit_ca.paa);
-                    colorText[] = {1, 1, 1, 1};
-                };
-                class Syringe_10_Plunger: Syringe_10_Backbit {
-                    idc = IDC_SYRINGEDRAW_SYRINGE_10_PLUNGER;
-                    text = QPATHTOF(ui\syringe\syringe_10_plunger_ca.paa);
-                };
-                class Syringe_10_Barrel: Syringe_10_Backbit {
-                    text = QPATHTOF(ui\syringe\syringe_10_barrel_ca.paa);
-                };
-            };
         };
-        class Syringe_5: RscControlsGroup {
-            idc = IDC_SYRINGEDRAW_SYRINGE_5_GROUP;
-            x = QUOTE(safezoneX + (safezoneW / 10));
-            y = QUOTE(safezoneY - (safezoneH / 10));
-            w = QUOTE(safezoneW);
-            h = QUOTE(safezoneH * 3);
-            type = 15;
-            style = 0;
-            show = 0;
-            class ScrollBar
-            {
-                color[] = {1,1,1,0.6};
-                colorActive[] = {1,1,1,1};
-                colorDisabled[] = {1,1,1,0.3};
-                thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-                arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-                arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-                border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-            };
-            class HScrollbar: ScrollBar
-            {
-                height = 0;
-                shadow = 0;
-            };
-            class Controls {
-                class Syringe_5_Backbit: RscPictureKeepAspect {
-                    idc = -1;
-                    x = 0;
-                    y = 0;
-                    w = QUOTE(safezoneW / ACM_GUI_SyringeDraw_SIZEM);
-                    h = QUOTE(safezoneH);
-                    type = 0;
-                    size = 0;
-                    text = QPATHTOF(ui\syringe\syringe_5_backbit_ca.paa);
-                    colorText[] = {1, 1, 1, 1};
-                };
-                class Syringe_5_Plunger: Syringe_5_Backbit {
-                    idc = IDC_SYRINGEDRAW_SYRINGE_5_PLUNGER;
-                    text = QPATHTOF(ui\syringe\syringe_5_plunger_ca.paa);
-                };
-                class Syringe_5_Barrel: Syringe_5_Backbit {
-                    text = QPATHTOF(ui\syringe\syringe_5_barrel_ca.paa);
-                };
-            };
+        class Syringe_10_Plunger: Syringe_10_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_10_PLUNGER;
+            text = QPATHTOF(ui\syringe\syringe_10_plunger_ca.paa);
         };
-        class Syringe_3: RscControlsGroup {
-            idc = IDC_SYRINGEDRAW_SYRINGE_3_GROUP;
-            x = QUOTE(safezoneX + (safezoneW / 10));
-            y = QUOTE(safezoneY - (safezoneH / 10));
-            w = QUOTE(safezoneW);
-            h = QUOTE(safezoneH * 3);
-            type = 15;
-            style = 0;
-            show = 0;
-            class ScrollBar
-            {
-                color[] = {1,1,1,0.6};
-                colorActive[] = {1,1,1,1};
-                colorDisabled[] = {1,1,1,0.3};
-                thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-                arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-                arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-                border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-            };
-            class HScrollbar: ScrollBar
-            {
-                height = 0;
-                shadow = 0;
-            };
-            class Controls {
-                class Syringe_3_Backbit: RscPictureKeepAspect {
-                    idc = -1;
-                    x = 0;
-                    y = 0;
-                    w = QUOTE(safezoneW / ACM_GUI_SyringeDraw_SIZEM);
-                    h = QUOTE(safezoneH);
-                    type = 0;
-                    size = 0;
-                    text = QPATHTOF(ui\syringe\syringe_3_backbit_ca.paa);
-                    colorText[] = {1, 1, 1, 1};
-                };
-                class Syringe_3_Plunger: Syringe_3_Backbit {
-                    idc = IDC_SYRINGEDRAW_SYRINGE_3_PLUNGER;
-                    text = QPATHTOF(ui\syringe\syringe_3_plunger_ca.paa);
-                };
-                class Syringe_3_Barrel: Syringe_3_Backbit {
-                    text = QPATHTOF(ui\syringe\syringe_3_barrel_ca.paa);
-                };
-            };
+        class Syringe_10_Barrel: Syringe_10_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_10_BARREL;
+            text = QPATHTOF(ui\syringe\syringe_10_barrel_ca.paa);
         };
-        class Syringe_1: RscControlsGroup {
-            idc = IDC_SYRINGEDRAW_SYRINGE_1_GROUP;
-            x = QUOTE(safezoneX + (safezoneW / 10));
-            y = QUOTE(safezoneY - (safezoneH / 10));
-            w = QUOTE(safezoneW);
-            h = QUOTE(safezoneH * 3);
-            type = 15;
-            style = 0;
-            show = 0;
-            class ScrollBar
-            {
-                color[] = {1,1,1,0.6};
-                colorActive[] = {1,1,1,1};
-                colorDisabled[] = {1,1,1,0.3};
-                thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-                arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-                arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-                border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-            };
-            class HScrollbar: ScrollBar
-            {
-                height = 0;
-                shadow = 0;
-            };
-            class Controls {
-                class Syringe_1_Backbit: RscPictureKeepAspect {
-                    idc = -1;
-                    x = 0;
-                    y = 0;
-                    w = QUOTE(safezoneW / ACM_GUI_SyringeDraw_SIZEM);
-                    h = QUOTE(safezoneH);
-                    type = 0;
-                    size = 0;
-                    text = QPATHTOF(ui\syringe\syringe_1_backbit_ca.paa);
-                    colorText[] = {1, 1, 1, 1};
-                };
-                class Syringe_1_Plunger: Syringe_1_Backbit {
-                    idc = IDC_SYRINGEDRAW_SYRINGE_1_PLUNGER;
-                    text = QPATHTOF(ui\syringe\syringe_1_plunger_ca.paa);
-                };
-                class Syringe_1_Barrel: Syringe_1_Backbit {
-                    text = QPATHTOF(ui\syringe\syringe_1_barrel_ca.paa);
-                };
-            };
+
+        class Syringe_5_Backbit: Syringe_10_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_5_BACKBIT;
+            text = QPATHTOF(ui\syringe\syringe_5_backbit_ca.paa);
+        };
+        class Syringe_5_Plunger: Syringe_5_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_5_PLUNGER;
+            text = QPATHTOF(ui\syringe\syringe_5_plunger_ca.paa);
+        };
+        class Syringe_5_Barrel: Syringe_5_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_5_BARREL;
+            text = QPATHTOF(ui\syringe\syringe_5_barrel_ca.paa);
+        };
+
+        class Syringe_3_Backbit: Syringe_10_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_3_BACKBIT;
+            text = QPATHTOF(ui\syringe\syringe_3_backbit_ca.paa);
+        };
+        class Syringe_3_Plunger: Syringe_3_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_3_PLUNGER;
+            text = QPATHTOF(ui\syringe\syringe_3_plunger_ca.paa);
+        };
+        class Syringe_3_Barrel: Syringe_3_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_3_BARREL;
+            text = QPATHTOF(ui\syringe\syringe_3_barrel_ca.paa);
+        };
+
+        class Syringe_1_Backbit: Syringe_10_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_1_BACKBIT;
+            text = QPATHTOF(ui\syringe\syringe_1_backbit_ca.paa);
+        };
+        class Syringe_1_Plunger: Syringe_1_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_1_PLUNGER;
+            text = QPATHTOF(ui\syringe\syringe_1_plunger_ca.paa);
+        };
+        class Syringe_1_Barrel: Syringe_1_Backbit {
+            idc = IDC_SYRINGEDRAW_SYRINGE_1_BARREL;
+            text = QPATHTOF(ui\syringe\syringe_1_barrel_ca.paa);
         };
         class TopText: RscText {
             idc = IDC_SYRINGEDRAW_TEXT;
@@ -238,11 +117,11 @@ class GVAR(SyringeDraw_Dialog) {
         class Plunger: RscButton {
             text = "";
             colorText[] = {1,1,1,0};
-            colorDisabled[] = {1,1,1,0};
-            colorBackground[] = {0,0,1,0};
-            colorBackgroundDisabled[] = {0,0,1,0};
-            colorBackgroundActive[] = {0,0,1,0};
-            colorFocused[] = {0,0,1,0};
+            colorDisabled[] = {1,1,1,0.3};
+            colorBackground[] = {0,0,1,0.3};
+            colorBackgroundDisabled[] = {0,0,1,0.3};
+            colorBackgroundActive[] = {0,0,1,0.3};
+            colorFocused[] = {0,0,1,0.3};
             colorBorder[] = {0,0,0,0};
             soundClick[] = {};
             soundEnter[] = {};
@@ -250,10 +129,10 @@ class GVAR(SyringeDraw_Dialog) {
             soundEscape[] = {};
             idc = IDC_SYRINGEDRAW_PLUNGER;
             style = 0;
-            x = QUOTE((safezoneX + (safezoneW / 2) - (safezoneW / 56)));
-            y = QUOTE(SYRINGEDRAW_LIMIT_10_TOP);
-            w = QUOTE(safezoneW / 28);
-            h = QUOTE(ACM_pxToScreen_H(36));
+            x = QUOTE(safeZoneX + ((safeZoneW - ACM_SYRINGEDRAW_POS_W(2.78)) / 2)); //x = QUOTE(ACM_SYRINGEDRAW_POS_X(18.6));
+            y = QUOTE(SYRINGEDRAW_LIMIT_10_TOP); //y = QUOTE(safeZoneY + ((safeZoneH - ACM_SYRINGEDRAW_POS_H(0.9)) / 2));
+            w = QUOTE(ACM_SYRINGEDRAW_POS_W(2.78));
+            h = QUOTE(ACM_SYRINGEDRAW_POS_H(0.9));
             shadow = 0;
             font = "RobotoCondensed";
             sizeEx = "0";
