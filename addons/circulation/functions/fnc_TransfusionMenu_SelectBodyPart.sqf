@@ -20,6 +20,9 @@
 params ["_bodyPart", "_accessSite"];
 
 private _targetPartIndex = ALL_BODY_PARTS find _bodyPart;
+private _initialBodyPart = GVAR(TransfusionMenu_Selected_BodyPart);
+private _initialSelectIV = GVAR(TransfusionMenu_SelectIV);
+private _initialAccessSite = GVAR(TransfusionMenu_Selected_AccessSite);
 
 if (GVAR(TransfusionMenu_SelectIV)) then {
     if ([GVAR(TransfusionMenu_Target), _bodyPart, 0, _accessSite] call FUNC(hasIV)) then {
@@ -50,5 +53,7 @@ if (GVAR(TransfusionMenu_SelectIV)) then {
     };
 };
 
-call FUNC(TransfusionMenu_UpdateSelection);
-[false] call FUNC(TransfusionMenu_UpdateBagList);
+if (_initialBodyPart != GVAR(TransfusionMenu_Selected_BodyPart) || _initialAccessSite != GVAR(TransfusionMenu_Selected_AccessSite) || _initialSelectIV != GVAR(TransfusionMenu_SelectIV)) then {
+    call FUNC(TransfusionMenu_UpdateSelection);
+    [false] call FUNC(TransfusionMenu_UpdateBagList);
+};

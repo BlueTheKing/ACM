@@ -72,7 +72,7 @@ if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
         private _classname = _x;
         private _targetIndex = (_inventory select 0) findIf {_x == _classname};
         if (_targetIndex < 0) then {
-            break;
+            continue;
         };
         private _count = (_inventory select 1) select _targetIndex;
 

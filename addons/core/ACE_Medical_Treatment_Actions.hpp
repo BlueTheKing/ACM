@@ -273,7 +273,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = ECSTRING(circulation,RemoveIV_14_Progress);
         icon = "";
         allowSelfTreatment = 0;
-        condition = QUOTE([ARR_3(_patient,_bodyPart,ACM_IV_14G_M)] call EFUNC(circulation,hasIV));
+        condition = QUOTE([ARR_4(_patient,_bodyPart,ACM_IV_14G_M,0)] call EFUNC(circulation,hasIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,false,true,0)] call EFUNC(circulation,setIV));
     };
     class InsertIV_14_Middle: InsertIV_14_Upper {

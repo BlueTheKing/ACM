@@ -156,32 +156,36 @@ class GVAR(TransfusionMenu_Dialog) {
             x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 22));
             y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 9.4));
             w = QUOTE(safezoneW / 37);
-            h = QUOTE(safezoneH / 19);
+            h = QUOTE(safezoneH / 13.9);
             tooltip = __EVAL(call compile BODYPART_PART(RightArm,Upper));
             action = QUOTE([ARR_2('rightarm',0)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_RightArm_Middle: BodyPart_RightArm_Upper {
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 18.8));
+            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 29));
+            h = QUOTE(safezoneH / 26);
             tooltip = __EVAL(call compile BODYPART_PART(RightArm,Middle));
             action = QUOTE([ARR_2('rightarm',1)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_RightArm_Lower: BodyPart_RightArm_Upper {
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 1100));
+            y = QUOTE(safezoneY + (safezoneH / 2) + (safezoneH / 300));
+            h = QUOTE(safezoneH / 20);
             tooltip = __EVAL(call compile BODYPART_PART(RightArm,Lower));
             action = QUOTE([ARR_2('rightarm',2)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_LeftArm_Upper: BodyPart_RightArm_Upper {
-            x = QUOTE(safezoneY + (safezoneH / 2) + (safezoneW / 53));
+            x = QUOTE(safezoneY + (safezoneH / 2) + (safezoneW / 54));
             tooltip = __EVAL(call compile BODYPART_PART(LeftArm,Upper));
             action = QUOTE([ARR_2('leftarm',0)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_LeftArm_Middle: BodyPart_LeftArm_Upper {
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 18.8));
+            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 29));
+            h = QUOTE(safezoneH / 26);
             tooltip = __EVAL(call compile BODYPART_PART(LeftArm,Middle));
             action = QUOTE([ARR_2('leftarm',1)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_LeftArm_Lower: BodyPart_LeftArm_Upper {
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 1100));
+            y = QUOTE(safezoneY + (safezoneH / 2) + (safezoneH / 300));
+            h = QUOTE(safezoneH / 20);
             tooltip = __EVAL(call compile BODYPART_PART(LeftArm,Lower));
             action = QUOTE([ARR_2('leftarm',2)] call FUNC(TransfusionMenu_SelectBodyPart));
         };

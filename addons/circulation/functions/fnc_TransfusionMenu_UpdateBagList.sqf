@@ -34,7 +34,7 @@ if !(_update) then {
         _x params ["_type", "_remainingVolume", "_accessType", "_accessSite", "_iv", "_bloodType", "_volume"];
 
         if (_accessSite != GVAR(TransfusionMenu_Selected_AccessSite) || _iv != GVAR(TransfusionMenu_SelectIV)) then {
-            break;
+            continue;
         };
 
         private _bagIndex = count GVAR(TransfusionMenu_Selection_IVBags);
@@ -57,7 +57,7 @@ if !(_update) then {
         _x params ["_type", "_remainingVolume", "_accessType", "_accessSite", "_iv", "_bloodType", "_volume"];
 
         if (_accessSite != GVAR(TransfusionMenu_Selected_AccessSite) || _iv != GVAR(TransfusionMenu_SelectIV)) then {
-            break;
+            continue;
         };
 
         (GVAR(TransfusionMenu_Selection_IVBags) select _forEachIndex) params ["_cType", "_cRemainingVolume", "_cAccessType", "_cAccessSite", "_cIV", "_cBloodType", "_cVolume", "_cIndex"];

@@ -24,11 +24,11 @@ if (GVAR(SyringeDraw_InventorySelection) == 2) then {
     {
         private _classname = _x;
         private _vehicleInventory = getItemCargo _vehicle;
-        private _targetIndex = (_inventory select 0) findIf {_x == _classname};
+        private _targetIndex = (_vehicleInventory select 0) findIf {_x == _classname};
         if (_targetIndex < 0) then {
-            break;
+            continue;
         };
-        private _count = (_inventory select 1) select _targetIndex;
+        private _count = (_vehicleInventory select 1) select _targetIndex;
 
         if (_count > 0) then {
             private _config = (configFile >> "CfgWeapons" >> _classname);

@@ -28,7 +28,7 @@ private _amiodaroneVial = 0;
     _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "", "", "", "_administrationType", "_maxEffectTime", "", "", "", "_concentration"];
 
     if !(_medication in ["Morphine","Morphine_IV","Epinephrine_IV","Amiodarone_IV"]) then {
-        break;
+        continue;
     };
 
     private _timeInSystem = CBA_missionTime - _timeAdded;
