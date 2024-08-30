@@ -160,7 +160,7 @@ params ["_medic", "_patient"];
                         "Shallow";
                     };
                     case 2: {
-                        _volumeModifier = 0.6;
+                        _volumeModifier = 0.3;
                         "Dull";
                     };
                     default {
