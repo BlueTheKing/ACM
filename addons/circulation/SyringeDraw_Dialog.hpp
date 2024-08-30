@@ -107,11 +107,11 @@ class GVAR(SyringeDraw_Dialog) {
         class Plunger: RscButton {
             text = "";
             colorText[] = {1,1,1,0};
-            colorDisabled[] = {1,1,1,0.3};
-            colorBackground[] = {0,0,1,0.3};
-            colorBackgroundDisabled[] = {0,0,1,0.3};
-            colorBackgroundActive[] = {0,0,1,0.3};
-            colorFocused[] = {0,0,1,0.3};
+            colorDisabled[] = {1,1,1,0};
+            colorBackground[] = {0,0,1,0};
+            colorBackgroundDisabled[] = {0,0,1,0};
+            colorBackgroundActive[] = {0,0,1,0};
+            colorFocused[] = {0,0,1,0};
             colorBorder[] = {0,0,0,0};
             soundClick[] = {};
             soundEnter[] = {};
