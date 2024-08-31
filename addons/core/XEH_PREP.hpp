@@ -4,6 +4,7 @@ PREP(beginContinuousAction);
 PREP(bvmActive);
 PREP(cancelCarryingPrompt);
 PREP(canCheckDogtag);
+PREP(checkIncompatibleAddons);
 PREP(cprActive);
 PREP(effectOxygen);
 PREP(fullHealLocal);
