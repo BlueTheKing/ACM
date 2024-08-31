@@ -29,6 +29,16 @@
         icon = QPATHTOEF(breathing,ui\icon_oxygentank_ca.paa); \
     }
 
+#define ACTION_PATIENTS \
+    class ACM_Action_PatientsList { \
+        displayName = CSTRING(VehiclePatients); \
+        condition = QUOTE(count (fullCrew [ARR_2(_target, '')]) > 0); \
+        exceptions[] = {"isNotInside"}; \
+        statement = ""; \
+        insertChildren = QUOTE(call FUNC(addVehiclePatientActions)); \
+        icon = QPATHTOEF(main,logo_empty.paa); \
+    }
+
 class CfgVehicles {
     class ACE_medicalSupplyCrate;
     class ACM_MedicalSupplyCrate_Basic: ACE_medicalSupplyCrate {
@@ -223,6 +233,9 @@ class CfgVehicles {
                 ACTION_REFILL_OXYGEN_425;
             };
         };
+        class ACE_SelfActions {
+            ACTION_PATIENTS;
+        };
     };
 
     class Car_F: Car {};
@@ -232,6 +245,9 @@ class CfgVehicles {
                 ACTION_UNLOADANDCARRY;
             };
         };
+        class ACE_SelfActions {
+            ACTION_PATIENTS;
+        };
     };
 
     class Kart_01_Base_F: Car_F {
@@ -239,6 +255,9 @@ class CfgVehicles {
             class ACE_MainActions: ACE_MainActions {
                 ACTION_UNLOADANDCARRY;
             };
+        };
+        class ACE_SelfActions {
+            ACTION_PATIENTS;
         };
     };
 
@@ -248,6 +267,9 @@ class CfgVehicles {
                 ACTION_UNLOADANDCARRY;
             };
         };
+        class ACE_SelfActions {
+            ACTION_PATIENTS;
+        };
     };
 
     class Motorcycle: LandVehicle {
@@ -255,6 +277,9 @@ class CfgVehicles {
             class ACE_MainActions {
                 ACTION_UNLOADANDCARRY;
             };
+        };
+        class ACE_SelfActions {
+            ACTION_PATIENTS;
         };
     };
 
@@ -265,6 +290,9 @@ class CfgVehicles {
                 ACTION_UNLOADANDCARRY;
             };
         };
+        class ACE_SelfActions {
+            ACTION_PATIENTS;
+        };
     };
 
     class Plane: Air {
@@ -272,6 +300,9 @@ class CfgVehicles {
             class ACE_MainActions {
                 ACTION_UNLOADANDCARRY;
             };
+        };
+        class ACE_SelfActions {
+            ACTION_PATIENTS;
         };
     };
 
@@ -281,6 +312,9 @@ class CfgVehicles {
             class ACE_MainActions {
                 ACTION_UNLOADANDCARRY;
             };
+        };
+        class ACE_SelfActions {
+            ACTION_PATIENTS;
         };
     };
 };

@@ -50,7 +50,7 @@ if (isNull _vehicle) exitWith { TRACE_1("no vehicle found",_vehicle); };
     TRACE_2("success",_unit,_vehicle);
     private _patientName = [_unit, false, true] call ACEFUNC(common,getName);
     private _vehicleName = getText (configOf _vehicle >> "displayName");
-    [[ACELSTRING(medical_treatment,LoadedInto), _patientName, _vehicleName], 3] call ACEFUNC(common,displayTextStructured);
+    [[ACELSTRING(medical_treatment,LoadedInto), _patientName, _vehicleName], 2.5] call ACEFUNC(common,displayTextStructured);
 }, [_patient, _vehicle], 3, {
     params ["_unit", "_vehicle"];
     WARNING_3("loadPerson failed to load %1[local %2] -> %3 ",_unit,local _unit,_vehicle);

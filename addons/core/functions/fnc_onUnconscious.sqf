@@ -33,4 +33,8 @@ if !(_state) then {
     _patient setVariable [QEGVAR(breathing,BVM_lastBreath), -1, true];
 } else {
     [_patient] call ACEFUNC(weaponselect,putWeaponAway);
+
+    if !(_patient getVariable [QGVAR(WasWounded), false]) then {
+        _patient setVariable [QGVAR(WasWounded), true, true];
+    };
 };
