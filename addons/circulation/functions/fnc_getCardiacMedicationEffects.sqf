@@ -18,16 +18,16 @@
 params ["_patient"];
 
 private _morphine = 0;
-private _morphineVial = 0;
-private _epinephrine = 0;
-private _epinephrineVial = 0;
-private _amiodaroneVial = 0;
+private _morphineIV = 0;
+private _epinephrineIV = 0;
+private _amiodaroneIV = 0;
+private _lidocaineIV = 0;
 
 //ace_medical_status_fnc_getMedicationCount
 {
     _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "", "", "", "_administrationType", "_maxEffectTime", "", "", "", "_concentration"];
 
-    if !(_medication in ["Morphine","Morphine_IV","Epinephrine_IV","Amiodarone_IV"]) then {
+    if !(_medication in ["Morphine","Morphine_IV","Epinephrine_IV","Amiodarone_IV","Lidocaine_IV"]) then {
         continue;
     };
 
@@ -40,20 +40,24 @@ private _amiodaroneVial = 0;
             _morphine = _morphine + _getEffect;
         };
         case "Morphine_IV": {
-            _morphineVial = _morphineVial + _getEffect;
+            _morphineIV = _morphineIV + _getEffect;
         };
         case "Epinephrine_IV": {
-            _epinephrineVial = _epinephrineVial + _getEffect;
+            _epinephrineIV = _epinephrineIV + _getEffect;
         };
         case "Amiodarone_IV": {
-            _amiodaroneVial = _amiodaroneVial + _getEffect;
+            _amiodaroneIV = _amiodaroneIV + _getEffect;
+        };
+        case "Lidocaine_IV": {
+            _lidocaineIV = _lidocaineIV + _getEffect;
         };
     };
 } forEach (_patient getVariable [VAR_MEDICATIONS, []]);
 
 _morphine = (_morphine * 0.3) min 0.5;
-_morphineVial = (_morphineVial * 0.6) min 0.8;
-_epinephrineVial = (_epinephrineVial * 1.8) min 2;
-_amiodaroneVial = _amiodaroneVial min 2;
+_morphineIV = (_morphineIV * 0.6) min 0.8;
+_epinephrineIV = (_epinephrineIV * 1.8) min 2;
+_amiodaroneIV = _amiodaroneIV min 2;
+_lidocaineIV = _lidocaineIV min 1.5;
 
-createHashMapFromArray [["morphine", (_morphine max _morphineVial)], ["epinephrine", _epinephrineVial], ["amiodarone",_amiodaroneVial]];
+(createHashMapFromArray [["morphine", (_morphine max _morphineIV)], ["epinephrine", _epinephrineIV], ["amiodarone",_amiodaroneIV], ["lidocaine",_lidocaineIV]]);

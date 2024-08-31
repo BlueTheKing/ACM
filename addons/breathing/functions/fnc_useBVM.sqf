@@ -223,6 +223,9 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
             GVAR(BVM_BreathCount) = GVAR(BVM_BreathCount) + 1;
             if (GVAR(BVM_BreathCount) > 1 && (GET_AIRWAYSTATE(_patient) > 0)) then {
                 _patient setVariable [QGVAR(BVM_lastBreath), CBA_missionTime, true];
+                if (_patient getVariable [QGVAR(BVM_ConnectedOxygen), false]) then {
+                    _patient setVariable [QGVAR(BVM_lastBreathOxygen), CBA_missionTime, true];
+                };
             };
 
             if (GVAR(BVM_PortableOxygen)) then {

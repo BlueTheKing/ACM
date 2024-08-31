@@ -140,9 +140,9 @@ class ACM_Medication {
 
         class Lidocaine_IV: ACM_IV_Medication {
             medicationType = "Lidocaine_IV";
-            hrIncreaseLow[] = {-1, -2};
-            hrIncreaseNormal[] = {-2, -5};
-            hrIncreaseHigh[] = {-3, -8};
+            hrIncreaseLow[] = {-3, -5};
+            hrIncreaseNormal[] = {-12, -20};
+            hrIncreaseHigh[] = {-10, -20};
             maxDose = 300;
             maxDoseDeviation = 50;
             maxEffectDose = 83;

@@ -44,6 +44,7 @@ _patient setVariable [QGVAR(isUsingBVM), false, true];
 
 _patient setVariable [QGVAR(BVM_ConnectedOxygen), false, true];
 
-_patient setVariable [QGVAR(BVM_lastBreath), -1, true];
+_patient setVariable [QGVAR(BVM_lastBreath), nil, true];
+_patient setVariable [QGVAR(BVM_lastBreathOxygen), nil, true];
 
 _patient setVariable [QGVAR(RespirationRate), (ACM_TARGETVITALS_RR(_patient)), true];

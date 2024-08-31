@@ -35,7 +35,7 @@ private _medicationCount = [_target, _className, false] call ACEFUNC(medical_sta
 private _doseDeviation = 0;
 
 if (_maxDoseDeviation > 0) then {
-    _doseDeviation = random (linearConversion [75, 100, _weight, 0, _maxDoseDeviation, true]);
+    _doseDeviation = random (linearConversion [75, 100, _weight, (_maxDoseDeviation / 20), _maxDoseDeviation, true]);
 };
 
 if ((_medicationCount * _maxEffectDose) > _maxDose + _doseDeviation) then {

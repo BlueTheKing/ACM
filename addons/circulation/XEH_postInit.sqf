@@ -31,7 +31,7 @@
     params ["_patient", "_bodyPart", "_classname", ["_dose", 1]];
 
     // Handle special medication effects
-    if (_classname in ["Amiodarone_IV", "AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine"]) then {
+    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine"]) then {
         private _shortClassname = (_classname splitString "_") select 0;
         [(format ["ACM_circulation_handleMed_%1Local", toLower _shortClassname]), [_patient, _bodyPart, _classname, _dose], _patient] call CBA_fnc_targetEvent;
     };

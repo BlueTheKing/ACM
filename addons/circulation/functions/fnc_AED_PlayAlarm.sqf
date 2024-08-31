@@ -19,6 +19,8 @@ params ["_patient"];
 
 if ((_patient getVariable [QGVAR(AED_AlarmPFH), -1]) != -1) exitWith {};
 
+if (_patient getVariable [QGVAR(AED_MuteAlarm), false]) exitWith {};
+
 playSound3D [QPATHTO_R(sound\aed_checkpatient.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 1.837s
 
 _patient setVariable [QGVAR(AED_AlarmPFH), -2];
