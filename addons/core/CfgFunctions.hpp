@@ -146,6 +146,9 @@ class CfgFunctions {
     class overwrite_ace_dragging {
         tag = "ace_dragging";
         class ace_dragging {
+            class startCarryLocal { // Assist carry action
+                file = QPATHTOF(overrides\fnc_startCarryLocal.sqf);
+            };
             class carryObject { // Cancel carrying prompt
                 file = QPATHTOF(overrides\fnc_carryObject.sqf);
             };
