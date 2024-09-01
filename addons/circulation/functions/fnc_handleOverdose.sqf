@@ -29,22 +29,22 @@ private _handleOverdoseEffect = {
     params ["_patient", "_classname"];
 
     switch (_classname) do {
-        case "Amiodarone": {
-            [_patient, "Overdose_Amiodarone", 60, 360, (random [-100, -110, -120]), 0, 0, ACM_ROUTE_IV, 300, 0, 0, 0, 1] call ACEFUNC(medical_status,addMedicationAdjustment);
+        case "Amiodarone_IV": {
+            [_patient, "Overdose_Amiodarone", 60, 360, (random [-100, -110, -120]), 0, 0, ACM_ROUTE_IV, 300, 0, 0, 0, 1, "Overdose_Amiodarone"] call ACEFUNC(medical_status,addMedicationAdjustment);
         };
-        case "Ketamine_IM";
-        case "Ketamine": {
-            [_patient, "Overdose_Ketamine", 60, 300, (random [-20, -35, -40]), 0, 0, ACM_ROUTE_IM, 240, 0, (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1]), 1] call ACEFUNC(medical_status,addMedicationAdjustment);
+        case "Ketamine";
+        case "Ketamine_IV": {
+            [_patient, "Overdose_Ketamine", 60, 360, (random [-20, -35, -40]), 0, 0, ACM_ROUTE_IM, 240, 0, (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1]), 1, "Overdose_Ketamine"] call ACEFUNC(medical_status,addMedicationAdjustment);
         };
         case "Lidocaine": {
-            [_patient, "Overdose_Lidocaine", 60, 360, (random [-40, -45, -50]), 0, 0, ACM_ROUTE_IM, 300, 0, (random [-0.9, -0.95, -1]), 0, 1] call ACEFUNC(medical_status,addMedicationAdjustment);
+            [_patient, "Overdose_Lidocaine", 60, 360, (random [-40, -45, -50]), 0, 0, ACM_ROUTE_IM, 240, 0, (random [-0.9, -0.95, -1]), 0, 1, "Overdose_Lidocaine"] call ACEFUNC(medical_status,addMedicationAdjustment);
         };
         case "Morphine";
         case "Morphine_IV": {
-            [_patient, "Overdose_Opioid", 60, 360, (random [-10, -15, -20]), 0, 0, ACM_ROUTE_IM, 240, (random [-40, -45, -50]), (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1]), 1] call ACEFUNC(medical_status,addMedicationAdjustment);
+            [_patient, "Overdose_Opioid", 60, 360, (random [-10, -15, -20]), 0, 0, ACM_ROUTE_IM, 240, (random [-40, -45, -50]), (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1]), 1, "Overdose_Opioid"] call ACEFUNC(medical_status,addMedicationAdjustment);
         };
         case "Penthrox": {
-            [_patient, "Overdose_Penthrox", 30, 300, (random [-10, -15, -20]), 0, 0, ACM_ROUTE_IM, 120, (random [-40, -45, -50]), (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1]), 1] call ACEFUNC(medical_status,addMedicationAdjustment);
+            [_patient, "Overdose_Penthrox", 30, 300, (random [-10, -15, -20]), 0, 0, ACM_ROUTE_IM, 120, (random [-40, -45, -50]), (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1]), 1, "Overdose_Penthrox"] call ACEFUNC(medical_status,addMedicationAdjustment);
         };
     };
 };
@@ -52,11 +52,11 @@ private _handleOverdoseEffect = {
 [{
     params ["_patient", "_classname", "_maxEffectDose", "_fatalThreshold"];
 
-    ([_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount) * _maxEffectDose) > _fatalThreshold;
+    (([_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount)) * _maxEffectDose) > _fatalThreshold;
 }, {
     params ["_patient", "_classname", "_maxEffectDose", "_fatalThreshold", "_handleOverdoseEffect"];
 
-    if (([_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount) * _maxEffectDose) > _fatalThreshold) then {
+    if ((([_patient, _classname, false] call ACEFUNC(medical_status,getMedicationCount)) * _maxEffectDose) > _fatalThreshold) then {
         [_patient, _classname] call _handleOverdoseEffect;
     };
 }, [_patient, _classname, _maxEffectDose, _fatalThreshold, _handleOverdoseEffect], 3600] call CBA_fnc_waitUntilAndExecute;
