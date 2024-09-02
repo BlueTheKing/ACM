@@ -20,7 +20,8 @@
 
 params ["_medic", "_patient", "_bodyPart", ["_wrapRemaining", 8]];
 
-private _woundsOnPart = GET_OPEN_WOUNDS(_patient) getOrDefault [_bodyPart, []];
+private _wounds = GET_OPEN_WOUNDS(_patient);
+private _woundsOnPart = _wounds getOrDefault [_bodyPart, []];
 
 if (_woundsOnPart isEqualTo []) exitWith {};
 
@@ -65,6 +66,9 @@ if (_amountLeft > 0) then {
     _woundsOnPart deleteAt _woundIndex;
 };
 
+_wounds set [_bodyPart, _woundsOnPart];
+_patient setVariable [VAR_OPEN_WOUNDS, _wounds, true];
+
 private _partIndex = ALL_BODY_PARTS find _bodyPart;
 private _bodyPartDamage = _patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]];
 private _damage = (_bodyPartDamage select _partIndex) - _bruiseDamage * _amountTreated;
@@ -76,9 +80,6 @@ if (_damage > 0.05) then {
 };
 
 _patient setVariable [QACEGVAR(medical,bodyPartDamage), _bodyPartDamage, true];
-
-private _wounds = GET_OPEN_WOUNDS(_patient);
-_wounds set [_bodyPart, _woundsOnPart];
 
 if (_wrapRemaining > 0) then { // If some wrap remains try to treat more bruises
     [_medic, _patient, _bodyPart, _wrapRemaining] call FUNC(wrapBruisesLocal);

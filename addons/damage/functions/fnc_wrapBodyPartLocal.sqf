@@ -77,12 +77,10 @@ private _fnc_handleReopening = {
 };
 
 private _wrappableList = createHashMap;
-//private _output = "bandages";
 private _woundsVar = VAR_BANDAGED_WOUNDS;
 
 if (_type isEqualTo 1) then {
     _wrappableList = GET_CLOTTED_WOUNDS(_patient);
-    //_output = "clotted wounds";
     _woundsVar = VAR_CLOTTED_WOUNDS;
 } else {
     _wrappableList = GET_BANDAGED_WOUNDS(_patient);
@@ -123,7 +121,7 @@ if (_wrappedWoundsOnPart isEqualTo []) then {
     _x params ["_id", "_amountOf", "", ""];
 
     for "_i" from 1 to _amountOf do {
-        if (random (floor 100) < 50) then {
+        if (random 1 < ([0.4, 0.6] select _type)) then {
             [_patient, _bodyPart, _id] call _fnc_handleReopening;
         };
     };
@@ -140,5 +138,3 @@ if (ACEGVAR(medical,limping) == 2 && {_patient getVariable [QACEGVAR(medical,isL
     TRACE_3("Updating damage effects",_patient,_bodyPart,local _patient);
     [QACEGVAR(medical_engine,updateDamageEffects), _patient, _patient] call CBA_fnc_targetEvent;
 };
-
-//[_patient, "activity", "%1 wrapped %2", [[_medic] call ACEFUNC(common,getName), _output]] call ACEFUNC(medical_treatment,addToLog);
