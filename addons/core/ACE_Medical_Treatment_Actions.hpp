@@ -366,7 +366,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = ECSTRING(circulation,UseAmmoniaInhalant);
         displayNameProgress = ECSTRING(circulation,UseAmmoniaInhalant_Progress);
         items[] = {"ACM_AmmoniaInhalant"};
-        treatmentTime = 4;
+        treatmentTime = 3;
         condition = QUOTE(!(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         ACM_rollToBack = 1;
     };
