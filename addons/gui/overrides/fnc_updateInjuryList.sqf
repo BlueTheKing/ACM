@@ -193,7 +193,7 @@ if (_selectionN == 1 && (_target getVariable [QEGVAR(circulation,CPR_Medic), obj
     if ([_target] call EFUNC(core,cprActive)) then {
         _string = LELSTRING(core,Common_InProgress);
     };
-    _entries pushBack [format ["%1 %2 (%3)", ACELSTRING(medical_treatment,Actions_CPR), _string, ([(_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _circulationColor];
+    _entries pushBack [format ["%1 %2 (%3)", ACELLSTRING(medical_treatment,Actions_CPR), _string, ([(_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _circulationColor];
 };
 
 // Airway Items
