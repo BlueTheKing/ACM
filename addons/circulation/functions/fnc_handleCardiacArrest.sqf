@@ -30,7 +30,7 @@ if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), -1] == ACM_Rhythm_As
 
 if (_patient getVariable [QGVAR(CardiacArrest_PFH), -1] != -1) exitWith {};
 
-_patient setVariable [QGVAR(CardiacArrest_Time), CBA_missionTime];
+_patient setVariable [QGVAR(CardiacArrest_DeteriorationTime), CBA_missionTime];
 
 if (GET_BLOOD_VOLUME(_patient) < ACM_Rhythm_Asystole_BLOODVOLUME) exitWith {
     _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Asystole, true]; // asystole
@@ -71,13 +71,13 @@ private _PFH = [{
 
     if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]) || {_noCPRTime < (45 * _CPREffect)}) exitWith {};
 
-    private _cardiacArrestTime = (_patient getVariable [QGVAR(CardiacArrest_Time), -1]) - CBA_missionTime;
+    private _cardiacArrestTime = (_patient getVariable [QGVAR(CardiacArrest_DeteriorationTime), -1]) - CBA_missionTime;
 
     if (((random 1) < (0.4 * GVAR(cardiacArrestDeteriorationRate))) && {_cardiacArrestTime > (30 + random(30))}) then {
         private _targetRhythm = (_currentRhythm - 1) max 1;
 
         _patient setVariable [QGVAR(CardiacArrest_RhythmState), _targetRhythm, true];
-        _patient setVariable [QGVAR(CardiacArrest_Time), CBA_missionTime];
+        _patient setVariable [QGVAR(CardiacArrest_DeteriorationTime), CBA_missionTime];
     };
 }, _deteriorateInterval, [_patient, _deteriorateInterval]] call CBA_fnc_addPerFrameHandler;
 
