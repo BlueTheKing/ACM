@@ -49,7 +49,7 @@ switch (true) do {
             _hintLog = format ["%1, %2",LLSTRING(ThoracostomySweep_Blood_Short), LLSTRING(ThoracostomySweep_Normal_Short)];
         };
     };
-    case (_RR < 1): {
+    case (_RR < 1 || !(alive _patient)): {
         _diagnose = LLSTRING(ThoracostomySweep_NotInflating);
         _hintLog = LLSTRING(ThoracostomySweep_NotInflating);
     };
