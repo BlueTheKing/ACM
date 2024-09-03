@@ -82,4 +82,4 @@ if (_returnSyringe) then {
 
 private _concentrationDose = _medicationConcentration * (_dose / 100);
 
-[QACEGVAR(medical_treatment,medicationLocal), [_patient, _bodyPart, _medicationClassname, _concentrationDose], _patient] call CBA_fnc_targetEvent;
+[QACEGVAR(medical_treatment,medicationLocal), [_patient, _bodyPart, _medicationClassname, _concentrationDose, _iv], _patient] call CBA_fnc_targetEvent;
