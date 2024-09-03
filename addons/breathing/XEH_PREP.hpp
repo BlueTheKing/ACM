@@ -26,6 +26,8 @@ PREP(Thoracostomy_drain);
 PREP(Thoracostomy_drainLocal);
 PREP(Thoracostomy_insertChestTube);
 PREP(Thoracostomy_insertChestTubeLocal);
+PREP(Thoracostomy_resealChestTube);
+PREP(Thoracostomy_resealChestTubeLocal);
 PREP(Thoracostomy_start);
 PREP(Thoracostomy_startLocal);
 PREP(updateBreathingState);

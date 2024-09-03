@@ -460,6 +460,7 @@ if (_selectionN == 1) then {
         case 0: {_entries pushBack [(format [LELSTRING(breathing,GUI_ThoracostomyIncision_%1), LELSTRING(breathing,GUI_ThoracostomyIncision_Sealed)]), _airwayColor];};
         case 1: {_entries pushBack [(format [LELSTRING(breathing,GUI_ThoracostomyIncision_%1), LELSTRING(breathing,GUI_ThoracostomyIncision_Open)]), _airwayColor];};
         case 2: {_entries pushBack [(format [LELSTRING(breathing,GUI_ThoracostomyIncision_%1), LELSTRING(breathing,GUI_ThoracostomyIncision_ChestTube)]), _airwayColor];};
+        case 3: {_entries pushBack [(format [LELSTRING(breathing,GUI_ThoracostomyIncision_%1), LELSTRING(breathing,GUI_ThoracostomyIncision_ChestTubeUnsealed)]), _airwayColor];};
         default {};
     };
 };

@@ -186,6 +186,12 @@
         <Key ID="STR_ACM_Breathing_InsertChestTube_Progress">
             <English>Inserting Chest Tube...</English>
         </Key>
+        <Key ID="STR_ACM_Breathing_ReSealChestTube">
+            <English>Re-Seal Chest Tube</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_ReSealChestTube_Progress">
+            <English>Re-sealing Chest Tube...</English>
+        </Key>
         <Key ID="STR_ACM_Breathing_DrainFluid_ACCUVAC">
             <English>Drain Fluid (ACCUVAC)</English>
         </Key>
@@ -359,7 +365,7 @@
         <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Large">
             <English>Large amount of blood drained</English>
         </Key><!--
-            // Thoracostomy Chest Tube Action // -->
+            // Thoracostomy Insert Chest Tube Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_Already">
             <English>Chest Tube already inserted</English>
         </Key>
@@ -368,6 +374,16 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_Complete">
             <English>Chest Tube inserted</English>
+        </Key><!--
+            // Thoracostomy Reseal Chest Tube Action // -->
+        <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_Already">
+            <English>Chest Tube already re-sealed</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_ActionLog">
+            <English>%1 re-sealed Chest Tube</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_Complete">
+            <English>Chest Tube re-sealed</English>
         </Key><!--
             // Thoracostomy Sweep (Start) Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_Already">
@@ -503,7 +519,10 @@
             <English>Open</English>
         </Key>
         <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_ChestTube">
-            <English>Chest Tube</English>
+            <English>Sealed Chest Tube</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_ChestTubeUnsealed">
+            <English>Unsealed Chest Tube</English>
         </Key>
     </Package>
 </Project>
