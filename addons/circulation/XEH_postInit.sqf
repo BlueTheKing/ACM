@@ -47,8 +47,6 @@ if (GVAR(Hardcore_PostCardiacArrest)) then {
     }] call ACEFUNC(advanced_fatigue,addDutyFactor);
 };
 
-GVAR(TransfusionMenu_Selected_AccessSite) = -1;
-
 GVAR(Fluids_Array) = FLUIDS_ARRAY;
 GVAR(Fluids_Array_Data) = FLUIDS_ARRAY_DATA;
 
