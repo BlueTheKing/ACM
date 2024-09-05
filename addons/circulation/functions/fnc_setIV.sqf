@@ -70,6 +70,9 @@ if (_iv && _state) then {
     private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
     switch (true) do {
+        case !(alive _patient): {
+            _successChance = linearConversion [0, 90, (CBA_missionTime - (_patient getVariable [QEGVAR(core,TimeOfDeath), 0])), 0.75, 0, true];
+        };
         case (IN_CRDC_ARRST(_patient)): {
             _successChance = linearConversion [0, 120, (CBA_missionTime - (_patient getVariable [QGVAR(CardiacArrest_Time), 0])), 0.8, 0, true];
         };
