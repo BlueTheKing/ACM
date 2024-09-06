@@ -13,6 +13,7 @@ PREP(getBodyPartString);
 PREP(getUp);
 PREP(getUpPrompt);
 PREP(handleRespawn);
+PREP(handleKnockOut);
 PREP(handleTreatmentText);
 PREP(initUnit);
 PREP(onCardiacArrest);
