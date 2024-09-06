@@ -23,7 +23,7 @@ if (_bodyPart == "") exitWith {
     _patient setVariable [QGVAR(ActiveFluidBags_IO), ACM_IO_PLACEMENT_DEFAULT_1, true];
 };
 
-private _partIndex = ALL_BODY_PARTS find _bodyPart;
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 private _fluidBagsBodyPart = (_patient getVariable [QGVAR(IV_Bags), createHashMap]) getOrDefault [_bodyPart, []];
 
