@@ -25,7 +25,7 @@ TRACE_3("splint",_medic,_patient,_bodyPart);
 
 private _item = "ACE_splint";
 
-if (_classname isEqualTo "ApplySAMSplint" && ACEGVAR(medical,fractures) > 1) then {
+if (_classname isEqualTo "ApplySAMSplint") then {
     _item = "ACM_SAMSplint";
 };
 
