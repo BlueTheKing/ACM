@@ -79,3 +79,8 @@
 #define ICON_TOURNIQUET_PATH QPATHTOF(data\tourniquet.paa)
 #define ICON_SPLINT_PATH QPATHTOF(data\splint.paa)
 #define ICON_FRACTURE_PATH QPATHTOF(data\fracture.paa)
+
+// ace_medical_engine
+// don't change, these reflect hard coded engine behaviour
+#define DAMAGED_MIN_THRESHOLD 0.45
+#define LIMPING_MIN_DAMAGE 0.5
