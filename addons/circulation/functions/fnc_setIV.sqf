@@ -74,7 +74,11 @@ if (_iv && _state) then {
             _successChance = linearConversion [0, 90, (CBA_missionTime - (_patient getVariable [QEGVAR(core,TimeOfDeath), 0])), 0.75, 0, true];
         };
         case (IN_CRDC_ARRST(_patient)): {
-            _successChance = linearConversion [0, 120, (CBA_missionTime - (_patient getVariable [QGVAR(CardiacArrest_Time), 0])), 0.8, 0, true];
+            if ([_patient] call EFUNC(core,cprActive)) then {
+                _successChance = linearConversion [6, 3, GET_BLOOD_VOLUME(_patient), 0.8, 0, true];
+            } else {
+                _successChance = linearConversion [0, 120, (CBA_missionTime - (_patient getVariable [QGVAR(CardiacArrest_Time), 0])), 0.8, 0, true];
+            };
         };
         case (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)): {
             _successChance = linearConversion [0, 90, (CBA_missionTime - ((_patient getVariable [QEGVAR(disability,Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]]) select _partIndex)), 0.9, 0, true];
