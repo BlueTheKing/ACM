@@ -26,13 +26,19 @@
             <English>Chest Injury Severity Multiplier</English>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ChestInjuryChance_Desc">
-            <English>Chance that a chest injury causes pneumothorax</English>
+            <English>Chance that a chest injury causes a pneumothorax or hemothorax</English>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxDeteriorateChance">
             <English>Pneumothorax Deterioration Multiplier</English>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxDeteriorateChance_Desc">
             <English>Chance that pneumothorax will deteriorate</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance">
+            <English>Hemothorax Chance</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance_Desc">
+            <English>Chance that a inflicted severe chest injury is a hemothorax instead of a pneumothorax</English>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury">
             <English>[HARDCORE] Chest Injuries</English>
@@ -62,7 +68,7 @@
             <English>Allow NCD Kit</English>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_NCD_Desc">
-            <English>Training level required to use NCD Kit</English>
+            <English>Training level required to use an NCD Kit</English>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_Thoracostomy">
             <English>Allow Thoracostomy</English>
