@@ -22,12 +22,12 @@ private _returnVolume = 1000;
 if (_volume < 1000) then {
     if (_volume < 500) then {
         if (_volume < 250) then {
-            _returnAmount = 0;
+            _returnVolume = 0;
         } else {
-            _returnAmount = 250;
+            _returnVolume = 250;
         };
     } else {
-        _returnAmount = 500;
+        _returnVolume = 500;
     };
 };
 
