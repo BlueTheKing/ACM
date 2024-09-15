@@ -32,7 +32,7 @@
 #define ACTION_PATIENTS \
     class ACM_Action_PatientsList { \
         displayName = CSTRING(VehiclePatients); \
-        condition = QUOTE(count (fullCrew [ARR_2(_target, '')]) > 0); \
+        condition = QUOTE(count (fullCrew [ARR_2(_target,'')]) > 0); \
         exceptions[] = {"isNotInside"}; \
         statement = ""; \
         insertChildren = QUOTE(call FUNC(addVehiclePatientActions)); \

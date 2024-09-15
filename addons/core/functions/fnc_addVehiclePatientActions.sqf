@@ -39,7 +39,7 @@ private _actions = [];
                 _iconColor = [(linearConversion [4.3, 3.6, GET_BLOOD_VOLUME(_unit), 0.5, 1, true]), 1.16, 0.1, 1];
                 QPATHTOF(ui\icon_patient_severebloodloss.paa);
             };
-            case ([_unit] call FUNC(core,cprActive)): { //CPR
+            case ([_unit] call FUNC(cprActive)): { //CPR
                 QPATHTOF(ui\icon_patient_cpr.paa);
             };
             case (GET_OXYGEN(_unit) < 90): { // Cyanotic
@@ -60,7 +60,7 @@ private _actions = [];
                 QPATHTOF(ui\icon_patient_pain.paa);
             };
             default {
-                QPATHTOF(ui\icon_patient.paa);
+                "";
             };
         };
 
@@ -69,7 +69,7 @@ private _actions = [];
 
         _actions pushBack [[format ["ACM_PatientActions_%1", _unit],
         _actionText,
-        "",
+        _icon,
         {
             params ["_vehicle", "_medic", "_args"];
             _args params ["_patient"];
@@ -86,7 +86,7 @@ private _actions = [];
             _actions pushBack [
                 [
                 "ACM_PatientActions_ViewMonitor",
-                ELLSTRING(circulation,ViewMonitor),
+                LELSTRING(circulation,ViewMonitor),
                 "", // TODO icon
                 {
                     params ["", "", "_args"];
@@ -110,7 +110,7 @@ private _actions = [];
             _actions pushBack [
                 [
                 "ACM_PatientActions_OpenTransfusionMenu",
-                ELLSTRING(circulation,OpenTransfusionMenu),
+                LELSTRING(circulation,OpenTransfusionMenu),
                 "", // TODO icon
                 {
                     params ["", "", "_args"];
