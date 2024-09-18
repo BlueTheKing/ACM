@@ -115,8 +115,9 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
         _fluidBagsBodyPart = _fluidBagsBodyPart apply {
             _x params ["_type", "_bagVolumeRemaining", "_accessType", "_accessSite", "_iv", ["_bloodType", -1], "_originalVolume"];
 
-            if ((!(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) || (!_iv && (_partIndex in [2,3]))) && (([(GET_IO_FLOW(_unit) select _partIndex),((GET_IV_FLOW(_unit) select _partIndex) select _accessSite)] select _iv) > 0)) then {
+            if ((!(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) || (!_iv && (_partIndex in [2,3]))) && (([(GET_IO_FLOW_X(_unit,_partIndex)),(GET_IV_FLOW_X(_unit,_partIndex,_accessSite))] select _iv) > 0)) then {
                 private _fluidFlowRate = 1;
+                private _fluidPassRatio = 1;
     
                 switch (_type) do {
                     case "Blood": {
@@ -130,6 +131,12 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
     
                 private _activeBagTypesBodyPart = [(_activeBagTypesIO select _partIndex),((_activeBagTypesIV select _partIndex) select _accessSite)] select _iv;
                 private _bagChange = ((_deltaT * ACEGVAR(medical,ivFlowRate) * ([_unit, _partIndex, _iv, _accessSite] call EFUNC(circulation,getIVFlowRate))) * ([_IOFlowMultiplier, _IVFlowMultiplier] select _iv) * _fluidFlowRate) min _bagVolumeRemaining; // absolute value of the change in miliLiters
+                
+                if (_iv && EGVAR(circulation,IVComplications)) then {
+                    _bagChange = [(_bagChange), (_bagChange * 0.9), (_bagChange * 0.85)] select (GET_IV_COMPLICATIONS_FLOW_X(_unit,_partIndex,_accessSite));
+                    _fluidPassRatio = [1,1,0.8] select (GET_IV_COMPLICATIONS_FLOW_X(_unit,_partIndex,_accessSite));
+                };
+                
                 if (_bagVolumeRemaining > 1) then {
                     _bagChange = _bagChange / _activeBagTypesBodyPart;
                 };
@@ -139,28 +146,44 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                 switch (_type) do {
                     case "Plasma": {
                         _plasmaVolumeChange = _plasmaVolumeChange + (_bagChange / 1000);
+                        _plasmaVolumeChange = _plasmaVolumeChange * _fluidPassRatio;
                         _plateletCountChange = _plateletCountChange + (_bagChange / 1000);
+                        _plateletCountChange = _plateletCountChange * _fluidPassRatio;
                     };
                     case "Saline": {
                         _salineVolumeChange = _salineVolumeChange + (_bagChange / 1000);
+                        _salineVolumeChange = _salineVolumeChange * _fluidPassRatio;
                     };
                     default {
                         if ([GET_BLOODTYPE(_unit), _bloodType] call EFUNC(circulation,isBloodTypeCompatible)) then {
                             _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
+                            _bloodVolumeChange = _bloodVolumeChange * _fluidPassRatio;
                             _plateletCountChange = _plateletCountChange + (_bagChange / 500);
+                            _plateletCountChange = _plateletCountChange * _fluidPassRatio;
                         } else {
                             _bloodVolumeChange = _bloodVolumeChange - (_bagChange / 1000);
+                            _bloodVolumeChange = _bloodVolumeChange * _fluidPassRatio;
                             _plateletCountChange = _plateletCountChange - (_bagChange / 4000);
+                            _plateletCountChange = _plateletCountChange * _fluidPassRatio;
     
                             _plasmaVolumeChange = _plasmaVolumeChange + (_bagChange / 4000);
+                            _plasmaVolumeChange = _plasmaVolumeChange * _fluidPassRatio;
                             _salineVolumeChange = _salineVolumeChange + (_bagChange / 1333.4);
+                            _plasmaVolumeChange = _plasmaVolumeChange * _fluidPassRatio;
                         };
                     };
                 };
-                // IO pain
-                if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then {
+                // Flow pain
+                if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then { // IO
                     private _IOPain = _bagChange / 3.7;
                     _transfusionPain = _transfusionPain + _IOPain;
+                } else { // IV complication
+                    private _ivComplicationPain = GET_IV_COMPLICATIONS_PAIN_X(_unit,_partIndex,_accessSite);
+
+                    if (_ivComplicationPain > 0) then {
+                        private _flowPain = (_bagChange / 1000) * _ivComplicationPain;
+                        _transfusionPain = _transfusionPain + _flowPain;
+                    };
                 };
             };
     

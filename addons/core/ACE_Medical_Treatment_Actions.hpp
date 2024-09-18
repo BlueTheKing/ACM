@@ -210,6 +210,31 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call EFUNC(circulation,openTransfusionMenu));
     };
 
+    // IV Catheter Examination
+    class InspectIV_Upper: CheckPulse {
+        displayName = ECSTRING(circulation,InspectIV_Upper);
+        displayNameProgress = ECSTRING(circulation,InspectIV_Progress);
+        icon = "";
+        category = "examine";
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        medicRequired = QEGVAR(circulation,allowIV);
+        treatmentTime = 4;
+        allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
+        allowSelfTreatment = 1;
+        condition = QUOTE(([ARR_4(_patient,_bodyPart,0,0)] call EFUNC(circulation,hasIV)));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call EFUNC(circulation,inspectIV));
+    };
+    class InspectIV_Middle: InspectIV_Upper {
+        displayName = ECSTRING(circulation,InspectIV_Middle);
+        condition = QUOTE(([ARR_4(_patient,_bodyPart,0,1)] call EFUNC(circulation,hasIV)));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(circulation,inspectIV));
+    };
+    class InspectIV_Lower: InspectIV_Upper {
+        displayName = ECSTRING(circulation,InspectIV_Lower);
+        condition = QUOTE(([ARR_4(_patient,_bodyPart,0,2)] call EFUNC(circulation,hasIV)));
+        callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call EFUNC(circulation,inspectIV));
+    };
+
     // IV/IO
     class InsertIV_16_Upper: CheckPulse {
         displayName = ECSTRING(circulation,InsertIV_16_Upper);

@@ -120,6 +120,24 @@ PREP_RECOMPILE_END;
 // IV/IO
 
 [
+    QGVAR(IVComplications),
+    "CHECKBOX",
+    [LLSTRING(SETTING_IVComplications), LLSTRING(SETTING_IVComplications_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_IV_IO)],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(IVComplicationsDeteriorate),
+    "CHECKBOX",
+    [LLSTRING(SETTING_IVComplicationsDeteriorate), LLSTRING(SETTING_IVComplicationsDeteriorate_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_IV_IO)],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(allowIV),
     "LIST",
     [LLSTRING(SETTING_Allow_IV), LLSTRING(SETTING_Allow_IV_Desc)],

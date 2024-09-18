@@ -28,6 +28,11 @@ _patient setVariable [QGVAR(CardiacArrest_Time), nil, true];
 _patient setVariable [QGVAR(Hardcore_PostCardiacArrest), false, true];
 
 _patient setVariable [QGVAR(IV_Placement), ACM_IV_PLACEMENT_DEFAULT_0, true];
+
+_patient setVariable [VAR_IV_COMPLICATIONS_PAIN, ACM_IV_PLACEMENT_DEFAULT_0, true];
+_patient setVariable [VAR_IV_COMPLICATIONS_FLOW, ACM_IV_PLACEMENT_DEFAULT_0, true];
+_patient setVariable [VAR_IV_COMPLICATIONS_BLOCK, ACM_IV_PLACEMENT_DEFAULT_0, true];
+
 _patient setVariable [QGVAR(IO_Placement), ACM_IO_PLACEMENT_DEFAULT_0, true];
 
 _patient setVariable [QGVAR(IV_Bags), createHashMap, true];
@@ -36,8 +41,8 @@ _patient setVariable [QGVAR(IV_Bags_Active), false, true];
 _patient setVariable [QGVAR(ActiveFluidBags_IV), ACM_IV_PLACEMENT_DEFAULT_1, true];
 _patient setVariable [QGVAR(ActiveFluidBags_IO), ACM_IO_PLACEMENT_DEFAULT_1, true];
 
-_patient setVariable [QGVAR(FluidBagsFlow_IV), ACM_IV_PLACEMENT_DEFAULT_1, true];
-_patient setVariable [QGVAR(FluidBagsFlow_IO), ACM_IO_PLACEMENT_DEFAULT_1, true];
+_patient setVariable [VAR_FLUIDBAG_FLOW_IV, ACM_IV_PLACEMENT_DEFAULT_1, true];
+_patient setVariable [VAR_FLUIDBAG_FLOW_IO, ACM_IO_PLACEMENT_DEFAULT_1, true];
 
 _patient setVariable [QGVAR(Blood_Volume), 6, true];
 _patient setVariable [QGVAR(Plasma_Volume), 0, true];
