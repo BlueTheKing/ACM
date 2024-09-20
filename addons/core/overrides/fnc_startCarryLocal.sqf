@@ -56,8 +56,6 @@ if (_target isKindOf "CAManBase") then {
     [QACEGVAR(common,setDir), [_target, getDir _unit + 180], _target] call CBA_fnc_targetEvent;
     _target setPosASL (getPosASL _unit vectorAdd (vectorDir _unit));
 
-    
-
     if (_target getVariable [QGVAR(CarryAssist_State), false]) then {
         _timer = CBA_missionTime + 1;
     } else {
