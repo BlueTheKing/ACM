@@ -144,8 +144,14 @@ private _setState = _type;
 
 if (_state) then {
     if (_iv) then {
-        if (GVAR(IVComplications) && _giveComplication) then {
-            [QGVAR(setIVComplication), [_patient, _type, _bodyPart, _accessSite], _patient] call CBA_fnc_targetEvent;
+        if (GVAR(IVComplications)) then {
+            if (_giveComplication) then {
+                [_patient, _type, _bodyPart, _accessSite] call FUNC(setIVComplication);
+            };
+
+            if (GVAR(IVComplicationsDeteriorate)) then {
+                [QGVAR(handleIVComplication), [_patient, _type, _bodyPart, _accessSite], _patient] call CBA_fnc_targetEvent;
+            };
         };
     } else {
         [_patient, _givePain] call ACEFUNC(medical,adjustPainLevel);

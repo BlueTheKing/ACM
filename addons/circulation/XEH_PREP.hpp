@@ -50,6 +50,7 @@ PREP(handleAED);
 PREP(handleAnestheticEffects);
 PREP(handleCardiacArrest);
 PREP(handleCPR);
+PREP(handleIVComplication);
 PREP(handleMed_AmmoniaInhalantLocal);
 PREP(handleMed_NaloxoneLocal);
 PREP(handleMed_TXALocal);
