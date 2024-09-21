@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Set IV placement on patient
+ * Set IV placement on patient.
  *
  * Arguments:
  * 0: Medic <OBJECT>
@@ -147,10 +147,6 @@ if (_state) then {
         if (GVAR(IVComplications)) then {
             if (_giveComplication) then {
                 [_patient, _type, _bodyPart, _accessSite] call FUNC(setIVComplication);
-            };
-
-            if (GVAR(IVComplicationsDeteriorate)) then {
-                [QGVAR(handleIVComplication), [_patient, _type, _bodyPart, _accessSite], _patient] call CBA_fnc_targetEvent;
             };
         };
     } else {

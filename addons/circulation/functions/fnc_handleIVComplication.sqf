@@ -60,8 +60,10 @@ private _timer = 15 + (random 15);
 
         private _IVPlacementCondition = GET_IV(_patient) isEqualTo ACM_IV_PLACEMENT_DEFAULT_0;
         private _IVComplicationsPain = GET_IV_COMPLICATIONS_PAIN(_patient);
+        private _IVComplicationsFlow = GET_IV_COMPLICATIONS_FLOW(_patient);
+        private _IVComplicationsBlock = GET_IV_COMPLICATIONS_BLOCK(_patient);
 
-        if (_IVPlacementCondition) exitWith {
+        if (_IVPlacementCondition || ((_IVComplicationsPain isEqualTo ACM_IV_PLACEMENT_DEFAULT_0) && (_IVComplicationsFlow isEqualTo ACM_IV_PLACEMENT_DEFAULT_0) && (_IVComplicationsBlock isEqualTo ACM_IV_PLACEMENT_DEFAULT_0))) exitWith {
             _patient setVariable [QGVAR(IV_Complication_PFH), -1];
             [_idPFH] call CBA_fnc_removePerFrameHandler;
         };
@@ -83,6 +85,13 @@ private _timer = 15 + (random 15);
                     continue;
                 };
 
+                private _painOnSite = ((_IVComplicationsPain select _partIndex) select _forEachIndex);
+                private _flowState = GET_IV_COMPLICATIONS_FLOW_X(_patient,_partIndex,_forEachIndex);
+
+                if (_painOnSite <= 0 && _flowState <= 0) then {
+                    continue;
+                };
+
                 private _attemptFlowComplication = false;
                 private _attemptLeakComplication = false;
                 private _targetPain = 0;
@@ -101,10 +110,7 @@ private _timer = 15 + (random 15);
                     };
                     default {};
                 };
-
-                private _flowState = GET_IV_COMPLICATIONS_FLOW_X(_patient,_partIndex,_forEachIndex);
-
-                private _painOnSite = ((_IVComplicationsPain select _partIndex) select _forEachIndex);
+                
                 if (_targetPain > _painOnSite) then {
                     [_patient, _partIndex, _forEachIndex, _targetPain min (_painOnSite + 1)] call _fnc_setIVPain;
                 };

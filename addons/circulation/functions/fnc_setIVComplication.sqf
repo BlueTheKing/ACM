@@ -75,4 +75,8 @@ if (_type == 0) then { // Try to remove
             [_patient, _partIndex, _accessSite, 1] call _fnc_setIVPain;
         };
     };
+
+    if (GVAR(IVComplicationsDeteriorate)) then {
+        [QGVAR(handleIVComplication), [_patient, _type, _bodyPart, _accessSite], _patient] call CBA_fnc_targetEvent;
+    };
 };
