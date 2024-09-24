@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ACM">
+    <Package name="Evacuation">
+        <Key ID="STR_ACM_Evacuation_Category">
+            <English>ACM: Evacuation</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_Category_Tickets">
+            <English>Tickets</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_Category_CasualtyConversion">
+            <English>Casualty Conversion</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_Enable">
+            <English>Enable Evacuation Addon</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_Enable_Desc">
+            <English>Enable Evacuation Addon functionality, respawning and tickets must be enabled on mission to work</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout">
+            <English>Clear Casualty Loadout</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout_Desc">
+            <English>Sets whether casualty's loadout should be cleared after conversion</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_PlayerFaction">
+            <English>Player Side</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_PlayerFaction_Desc">
+            <English>Sets player side, reinforced players will join this side upon spawning</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn">
+            <English>Respawn Ticket Count</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn_Desc">
+            <English>Sets amount of available respawn tickets, if mission-set ticket count is higher then that number will be used instead</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty">
+            <English>Casualty Ticket Count</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty_Desc">
+            <English>Sets amount of available casualty tickets</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert">
+            <English>Allow Converting Casualties</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert_Desc">
+            <English>Training level required to convert casualties</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert">
+            <English>Converting Casualty Location</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert_Desc">
+            <English>Sets locations at which casualty conversion can be performed</English>
+        </Key><!-- 
+            // Actions // -->
+        <Key ID="STR_ACM_Evacuation_ConvertCasualty">
+            <English>Convert Casualty</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_ConvertCasualty_Progress">
+            <English>Converting Casualty...</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_ConvertCasualty_Complete">
+            <English>Casualty Conversion Complete</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_ConvertCasualty_InProgress">
+            <English>Casualty Conversion In Progress</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_ConvertCasualty_Cancelled">
+            <English>Casualty Conversion Cancelled</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_ConvertCasualty_Failed">
+            <English>Casualty Conversion Failed</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_EvacuatePatient">
+            <English>Evacuate Patient</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_EvacuatePatient_Success">
+            <English>Casualty Successfully Evacuated</English>
+        </Key>
+    </Package>
+</Project>

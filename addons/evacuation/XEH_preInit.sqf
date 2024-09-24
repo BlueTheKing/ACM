@@ -1,0 +1,82 @@
+#include "script_component.hpp"
+
+ADDON = false;
+
+PREP_RECOMPILE_START;
+#include "XEH_PREP.hpp"
+PREP_RECOMPILE_END;
+
+#define ACM_SETTINGS_CATEGORY LLSTRING(Category)
+
+[
+    QGVAR(enable),
+    "CHECKBOX",
+    [LLSTRING(SETTING_Enable), LLSTRING(SETTING_Enable_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true], // TODO turn this off
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(clearCasualtyLoadout),
+    "CHECKBOX",
+    [LLSTRING(SETTING_ClearCasualtyLoadout), LLSTRING(SETTING_ClearCasualtyLoadout_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [false],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(playerFaction),
+    "LIST",
+    [LLSTRING(SETTING_PlayerFaction), LLSTRING(SETTING_PlayerFaction_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [[west, east, resistance], ["BLUFOR", "REDFOR", "GREENFOR"], 0],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(ticketCountRespawn),
+    "SLIDER",
+    [LLSTRING(SETTING_TicketCountRespawn), LLSTRING(SETTING_TicketCountRespawn_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Tickets)],
+    [1, 1000, 20, 0],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(ticketCountCasualty),
+    "SLIDER",
+    [LLSTRING(SETTING_TicketCountCasualty), LLSTRING(SETTING_TicketCountCasualty_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Tickets)],
+    [1, 20, 5, 0],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowConvert),
+    "LIST",
+    [LLSTRING(SETTING_Allow_Convert), LLSTRING(SETTING_Allow_Convert_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_CasualtyConversion)],
+    [SETTING_DROPDOWN_SKILL, 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(locationConvert),
+    "LIST",
+    [LLSTRING(SETTING_Location_Convert), LLSTRING(SETTING_Location_Convert_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_CasualtyConversion)],
+    [SETTING_DROPDOWN_LOCATION, 0],
+    true
+] call CBA_fnc_addSetting;
+
+ADDON = true;
