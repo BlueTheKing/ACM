@@ -21,8 +21,8 @@
 
 params ["_medic", "_patient", ["_type", 1]];
 
-private _item = [LLSTRING(SuctionBag_Short), LLSTRING(ACCUVAC)] select _type;
+private _item = [LELSTRING(airway,SuctionBag_Short), LELSTRING(airway,ACCUVAC)] select _type;
 
-[_patient, "activity", LSTRING(ThoracostomyDrain_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _item]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", LLSTRING(ThoracostomyDrain_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _item]] call ACEFUNC(medical_treatment,addToLog);
 
 [QGVAR(Thoracostomy_drainLocal), [_medic, _patient, _type], _patient] call CBA_fnc_targetEvent;

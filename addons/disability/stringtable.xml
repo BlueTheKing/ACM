@@ -21,6 +21,13 @@
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime_Desc">
             <English>Minimum time for unwrapped SAM Splint to fall off</English>
+        </Key>
+        
+        <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
+            <English>Tourniquet Impact Limbs</English>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
+            <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
         </Key><!-- 
             // Items // -->
         <Key ID="STR_ACM_Disability_UniversalSplint">

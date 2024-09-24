@@ -49,7 +49,7 @@ switch (true) do {
             _hintLog = format ["%1, %2",LLSTRING(ThoracostomySweep_Blood_Short), LLSTRING(ThoracostomySweep_Normal_Short)];
         };
     };
-    case (_RR < 1): {
+    case (_RR < 1 || !(alive _patient)): {
         _diagnose = LLSTRING(ThoracostomySweep_NotInflating);
         _hintLog = LLSTRING(ThoracostomySweep_NotInflating);
     };
@@ -60,7 +60,7 @@ switch (true) do {
 };
 
 [QACEGVAR(common,displayTextStructured), [(format ["%1<br/><br/>%2", _hint, _diagnose]), _height, _medic, 13], _medic] call CBA_fnc_targetEvent;
-[_patient, "quick_view", LSTRING(ThoracostomySweep_ActionLog), [_hintLog]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "quick_view", LLSTRING(ThoracostomySweep_ActionLog), [_hintLog]] call ACEFUNC(medical_treatment,addToLog);
 
 _patient setVariable [QGVAR(Thoracostomy_State), 1, true];
 
@@ -72,6 +72,6 @@ if (_anestheticEffect < 0.5) then {
 };
 
 _patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
-_patient setVariable [QGVAR(Pneumothorax_State), 4, true];
+_patient setVariable [QGVAR(Pneumothorax_State), 3, true];
 
 [_patient] call FUNC(updateBreathingState);

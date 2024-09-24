@@ -1,5 +1,13 @@
 #include "script_component.hpp"
 
+if (GVAR(ignoreIncompatibleAddonWarning)) then {
+    INFO("Incompatible Addon Warning Disabled");
+} else {
+    ["CBA_settingsInitialized", {
+        [] call FUNC(checkIncompatibleAddons);
+    }] call CBA_fnc_addEventHandler;
+};
+
 [QGVAR(openMedicalMenu), ACELINKFUNC(medical_gui,openMenu)] call CBA_fnc_addEventHandler;
 
 ["ace_cardiacArrest", LINKFUNC(onCardiacArrest)] call CBA_fnc_addEventHandler;

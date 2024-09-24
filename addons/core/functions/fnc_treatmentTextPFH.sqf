@@ -42,11 +42,15 @@ private _PFH = [{
     private _display = uiNamespace getVariable ["ACM_TreatmentText", displayNull];
     private _ctrlText = _display displayCtrl IDC_TREATMENTTEXT_TEXT;
 
-    if (count _treatmentProviders < 1) exitWith {
+    if (count _treatmentProviders < 1 || !(alive _patient)) exitWith {
         _patient setVariable [QGVAR(TreatmentText_PFH), -1];
         
         _ctrlText ctrlSetFade 1;
         _ctrlText ctrlCommit 0.5;
+
+        if !(alive _patient) then {
+            _patient setVariable [QGVAR(TreatmentText_Providers), []];
+        };
 
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };

@@ -9,17 +9,18 @@
  * 2: Amount of wounds to clot <NUMBER>
  * 3: Maximum wound severity to treat <NUMBER>
  * 4: Clots are unstable <BOOL>
+ * 5: Continued clotting <BOOL>
  *
  * Return Value:
  * None
  *
  * Example:
- * [cursorTarget, "leftleg", 1, 1, true] call ACM_damage_fnc_clotWoundsOnBodyPart;
+ * [cursorTarget, "leftleg", 1, 1, true, false] call ACM_damage_fnc_clotWoundsOnBodyPart;
  *
  * Public: No
  */
 
-params ["_patient", "_bodyPart", ["_woundsToClot", 1], ["_maxWoundSeverity", 1], ["_unstable", true]];
+params ["_patient", "_bodyPart", ["_woundsToClot", 1], ["_maxWoundSeverity", 1], ["_unstable", true], ["_continued", false]];
 
 private _fnc_getWoundsToTreat = {
     params ["_woundsList", "_maximumSeverity"];
@@ -102,7 +103,11 @@ private _openWoundsOnPart = _openWounds getOrDefault [_bodyPart, []];
 
 private _woundIndex = [_openWoundsOnPart, _maxWoundSeverity] call _fnc_getWoundsToTreat;
 
-if (_woundIndex isEqualTo -1) exitWith {};
+if (_woundIndex isEqualTo -1) exitWith {
+    if (_continued) then {
+        [_patient] call ACEFUNC(medical_status,updateWoundBloodLoss);
+    };
+};
 
 (_openWoundsOnPart select _woundIndex) params ["_woundID", "_woundCount", "_woundBleeding", "_woundDamage"];
 private _openWoundEntry = [_woundID, _woundCount, _woundBleeding, _woundDamage];
@@ -179,7 +184,7 @@ if (_clotSuccess) then {
 };
 
 if (_woundsToClot > 0) then { // Clot more wounds if able
-    [_patient, _bodyPart, _woundsToClot] call FUNC(clotWoundsOnBodyPart);
+    [_patient, _bodyPart, _woundsToClot, _maxWoundSeverity, _unstable, true] call FUNC(clotWoundsOnBodyPart);
 } else {
     [_patient] call ACEFUNC(medical_status,updateWoundBloodLoss);
 };

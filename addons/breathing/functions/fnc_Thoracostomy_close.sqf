@@ -19,9 +19,9 @@
 params ["_medic", "_patient"];
 
 if ((_patient getVariable [QGVAR(Thoracostomy_State), -1]) == 0) exitWith {
-    [LSTRING(ThoracostomyClose_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LLSTRING(ThoracostomyClose_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
-[_patient, "activity", LSTRING(ThoracostomyClose_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "activity", LLSTRING(ThoracostomyClose_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
 [QGVAR(Thoracostomy_closeLocal), [_medic, _patient], _patient] call CBA_fnc_targetEvent;

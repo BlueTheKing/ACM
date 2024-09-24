@@ -12,6 +12,7 @@
  * 5: Used Item <STRING>
  * 6: Create Litter <BOOL>
  * 7: Medication Dose <NUMBER>
+ * 8: Is IV? <BOOL>
  *
  * Return Value:
  * None
@@ -22,7 +23,7 @@
  * Public: No
  */
 
-params ["_medic", "_patient", "_bodyPart", "_classname", "", "_usedItem", "", ["_dose", 1]];
+params ["_medic", "_patient", "_bodyPart", "_classname", "", "_usedItem", "", ["_dose", 1], ["_iv", false]];
 
 if (_usedItem == "ACE_morphine") then {
     _dose = 10; // Autoinjector has dose of 10mg
@@ -36,4 +37,4 @@ private _itemName = getText (configFile >> _cfg >> _usedItem >> "displayName");
 [_patient, _itemName] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", ACELSTRING(medical_treatment,Activity_usedItem), [[_medic, false, true] call ACEFUNC(common,getName), _itemName]] call ACEFUNC(medical_treatment,addToLog);
 
-[QACEGVAR(medical_treatment,medicationLocal), [_patient, _bodyPart, _classname, _dose], _patient] call CBA_fnc_targetEvent;
+[QACEGVAR(medical_treatment,medicationLocal), [_patient, _bodyPart, _classname, _dose, _iv], _patient] call CBA_fnc_targetEvent;

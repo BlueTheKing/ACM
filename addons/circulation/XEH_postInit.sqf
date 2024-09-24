@@ -27,7 +27,7 @@
 [QGVAR(handleMed_ketamineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_lidocaineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 
-[QACEGVAR(medical_treatment,medicationLocal), {
+[QGVAR(handleMedicationEffects), {
     params ["_patient", "_bodyPart", "_classname", ["_dose", 1]];
 
     // Handle special medication effects
@@ -46,8 +46,6 @@ if (GVAR(Hardcore_PostCardiacArrest)) then {
         ([1, 1.4] select (_this getVariable [QGVAR(Hardcore_PostCardiacArrest), false]));
     }] call ACEFUNC(advanced_fatigue,addDutyFactor);
 };
-
-GVAR(TransfusionMenu_Selected_AccessSite) = -1;
 
 GVAR(Fluids_Array) = FLUIDS_ARRAY;
 GVAR(Fluids_Array_Data) = FLUIDS_ARRAY_DATA;

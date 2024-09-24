@@ -189,9 +189,11 @@
 #define CARDIAC_OUTPUT_MIN ACEGVAR(medical,const_minCardiacOutput)
 
 // ACM
+#define ACM_INCOMPATIBLE_ADDONS [["pir","Project Injury Reaction"],["kat_main","KAT Advanced Medical"],["MIRA_Vehicle_Medical","ACE Vehicle Medical"]]
+
 #define ALL_BODY_PARTS_PRIORITY ["body", "head", "leftarm", "rightarm", "leftleg", "rightleg"]
 
-#define GET_BODYPART_INDEX(bodypart) (ALL_BODY_PARTS find bodypart)
+#define GET_BODYPART_INDEX(bodypart) (ALL_BODY_PARTS find toLowerANSI bodypart)
 
 #define SETTING_DROPDOWN_SKILL [0, 1, 2], [ACELLSTRING(Medical_Treatment,Anyone), ACELLSTRING(Medical_Treatment,Medics), ACELLSTRING(Medical_Treatment,Doctors)]
 #define SETTING_DROPDOWN_LOCATION [0, 1, 2, 3, 4], [ACELSTRING(common,Anywhere), ACELSTRING(common,Vehicle), ACELSTRING(medical_treatment,MedicalFacilities), ACELSTRING(medical_treatment,VehiclesAndFacilities), ACELSTRING(common,Disabled)]
@@ -323,6 +325,19 @@
 #define DEFAULT_SPLINT_VALUES          [0,0,0,0,0,0]
 #define VAR_SPLINTS                    QEGVAR(disability,SplintStatus)
 #define GET_SPLINTS(unit)              (unit getVariable [VAR_SPLINTS, DEFAULT_SPLINT_VALUES])
+
+#define DEFAULT_TOURNIQUET_NECROSIS     [0,0,0,0]
+#define VAR_TOURNIQUET_NECROSIS         QEGVAR(disability,TourniquetEffects_Necrosis)
+#define GET_TOURNIQUET_NECROSIS(unit)   (unit getVariable [VAR_TOURNIQUET_NECROSIS, DEFAULT_TOURNIQUET_NECROSIS])
+#define VAR_TOURNIQUET_NECROSIS_T       QEGVAR(disability,TourniquetEffects_Necrosis_Threshold)
+#define GET_TOURNIQUET_NECROSIS_T(unit) (unit getVariable [VAR_TOURNIQUET_NECROSIS_T, DEFAULT_TOURNIQUET_NECROSIS])
+
+#define NECROSIS_THRESHOLD_SEVERE       0.9
+#define NECROSIS_THRESHOLD_SEVERELOW    0.8
+#define NECROSIS_THRESHOLD_MODERATE     0.5
+#define NECROSIS_THRESHOLD_MODERATELOW  0.4
+#define NECROSIS_THRESHOLD_LIGHT        0.1
+#define NECROSIS_THRESHOLD_LIGHTLOW     0.05
 
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}

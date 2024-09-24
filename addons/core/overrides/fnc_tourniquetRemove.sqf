@@ -47,11 +47,11 @@ private _occludedMedications = _patient getVariable [QACEGVAR(medical,occludedMe
 private _arrayModified = false;
 
 {
-    _x params ["_bodyPartN", "_medication"];
+    _x params ["_bodyPartN", "_medication", "_dose", "_iv"];
 
     if (_partIndex == _bodyPartN) then {
         TRACE_1("delayed medication call after tourniquet removeal",_x);
-        [QACEGVAR(medical_treatment,medicationLocal), [_patient, _bodyPart, _medication], _patient] call CBA_fnc_targetEvent;
+        [QACEGVAR(medical_treatment,medicationLocal), [_patient, _bodyPart, _medication, _dose, _iv], _patient] call CBA_fnc_targetEvent;
         _occludedMedications set [_forEachIndex, []];
         _arrayModified = true;
     };

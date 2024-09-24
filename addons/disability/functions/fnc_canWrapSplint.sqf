@@ -19,4 +19,4 @@
 
 params ["_medic", "_patient", "_bodyPart"];
 
-GET_SPLINTS(_patient) select (ALL_BODY_PARTS find toLower _bodyPart) isEqualTo 1
+(GET_SPLINTS(_patient) select GET_BODYPART_INDEX(_bodyPart)) == 1

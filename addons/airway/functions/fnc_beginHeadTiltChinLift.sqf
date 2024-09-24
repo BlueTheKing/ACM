@@ -20,7 +20,7 @@
 params ["_medic", "_patient"];
 
 if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
-    [LSTRING(HeadTiltChinLift_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LLSTRING(HeadTiltChinLift_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
 [[_medic, _patient, "head"], { // On Start
@@ -34,7 +34,7 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
 
     [ACELLSTRING(common,Cancel), "", ""] call ACEFUNC(interaction,showMouseHint);
     [_patient, "activity", LSTRING(HeadTiltChinLift_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
-    [LSTRING(HeadTiltChinLift_ActionHint), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LLSTRING(HeadTiltChinLift_ActionHint), 2, _medic] call ACEFUNC(common,displayTextStructured);
     
     private _display = uiNamespace getVariable ["ACM_HeadTilt", displayNull];
     private _ctrlText = _display displayCtrl IDC_HEADTILT_TEXT;
@@ -56,14 +56,14 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
         [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
     };
 
-    [LSTRING(HeadTiltChinLift_ActionCancelled), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [LLSTRING(HeadTiltChinLift_ActionCancelled), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
     _patient setVariable [QGVAR(HeadTilt_State), false, true];
     [_patient] call FUNC(updateAirwayState);
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart"];
 
-    if (_patient getVariable [QGVAR(RecoveryPosition_State), false] || _patient call ACEFUNC(medical_status,isBeingDragged) || _patient call ACEFUNC(medical_status,isBeingCarried)) then {
+    if (_patient getVariable [QGVAR(AirwayItem_Oral), ""] == "SGA" || _patient getVariable [QGVAR(RecoveryPosition_State), false] || _patient call ACEFUNC(medical_status,isBeingDragged) || _patient call ACEFUNC(medical_status,isBeingCarried)) then {
         EGVAR(core,ContinuousAction_Active) = false;
     };
 }] call EFUNC(core,beginContinuousAction);

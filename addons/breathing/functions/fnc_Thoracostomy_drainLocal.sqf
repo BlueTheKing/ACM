@@ -50,7 +50,7 @@ if (_type == 0) then {
     };
 };
 
-[_patient, "quick_view", LSTRING(ThoracostomyDrain_QuickViewLog), [_amount]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "quick_view", LLSTRING(ThoracostomyDrain_QuickViewLog), [_amount]] call ACEFUNC(medical_treatment,addToLog);
 [QACEGVAR(common,displayTextStructured), [(format ["%1<br/>%2", _hint, _amount]), 2, _medic], _medic] call CBA_fnc_targetEvent;
 
 _patient setVariable [QGVAR(Hemothorax_Fluid), 0, true];

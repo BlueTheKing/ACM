@@ -2,7 +2,10 @@
 #include "TreatmentText_defines.hpp"
 #include "ContinuousActionText_defines.hpp"
 
+#define NORMALIZE_UISCALE ((0.55 / (getResolution select 5)) min 1)
+
 class RscText;
+class RscPicture;
 class RscStructuredText;
 
 class RscTitles {
@@ -77,28 +80,62 @@ class RscTitles {
             };
         };
     };
-    class ACEGVAR(dogtags,singleTag) {
+    class GVAR(singleTag) {
+        idd = -1;
+        onLoad = QUOTE(uiNamespace setVariable [ARR_2(QQACEGVAR(dogtags,tag),_this select 0)]);
+        onUnload = QUOTE(uiNamespace setVariable [ARR_2(QQACEGVAR(dogtags,tag),nil)]);
+        fadeIn = 0.2;
+        fadeOut = 0.2;
+        duration = 5;
+        movingEnable = 0;
         class controls {
+            class background: RscPicture {
+                idc = 1000;
+                x = QUOTE(profileNamespace getVariable [ARR_2('TRIPLES(IGUI,ACEGVAR(dogtags,grid),X)',(safeZoneX + safeZoneW) - 12.9 * GUI_GRID_W)]);
+                y = QUOTE(profileNamespace getVariable [ARR_2('TRIPLES(IGUI,ACEGVAR(dogtags,grid),Y)',safeZoneY + 0.175 * safeZoneH)]);
+                w = QUOTE(8 * GUI_GRID_W);
+                h = QUOTE(8 * GUI_GRID_H);
+                text = QACEPATHTOF(dogtags,data\dogtagSingle.paa);
+                colorText[] = {1, 1, 1, 1};
+            };
             class nickname: RscStructuredText {
-                y = QUOTE(0.052 * safeZoneH + (profileNamespace getVariable [ARR_2('TRIPLES(IGUI,ACEGVAR(dogtags,grid),Y)',safeZoneY + 0.175 * safeZoneH)]));
+                idc = 1001;
+                text = "";
+                sizeEx = QUOTE(GUI_GRID_H);
+                colorText[] = {1, 1, 1, 1};
+                colorBackground[] = {0, 0, 0, 0};
+                x = QUOTE(1.4 * GUI_GRID_W + (profileNamespace getVariable [ARR_2('TRIPLES(IGUI,ACEGVAR(dogtags,grid),X)',(safeZoneX + safeZoneW) - 12.9 * GUI_GRID_W)]));
+                y = QUOTE(0.052 * safeZoneH + ((profileNamespace getVariable [ARR_2('TRIPLES(IGUI,ACEGVAR(dogtags,grid),Y)',(safeZoneY + 0.175 * safeZoneH))]) / NORMALIZE_UISCALE));
+                w = QUOTE(5.9 * GUI_GRID_W);
                 h = QUOTE(3.2 * GUI_GRID_H);
-                /*class Attributes {
+                font = "RobotoCondensed";
+                class Attributes {
                     font = "RobotoCondensed";
-                    color = "#EEEEEE"; //color = "#636363";
+                    color = "#FFFFFF";
                     align = "left";
                     valign = "middle";
-                    shadow = 2; //shadow = 0;
-                    shadowColor = "#3f4345"; //shadowColor = "#636363";
-                    size = "0.80";
-                };*/
+                    shadow = 2;
+                    shadowColor = "#3f4345";
+                    size = QUOTE(0.7 * NORMALIZE_SIZEEX);
+                };
             };
         };
     };
-    class ACEGVAR(dogtags,doubleTag): ACEGVAR(dogtags,singleTag) {
+    class GVAR(doubleTag): GVAR(singleTag) {
         class controls: controls {
+            class background: background {
+                text = QACEPATHTOF(dogtags,data\dogtagDouble.paa);
+            };
             class nickname: nickname {
-                y = QUOTE(0.052 * safeZoneH + (profileNamespace getVariable [ARR_2('TRIPLES(IGUI,ACEGVAR(dogtags,grid),Y)',safeZoneY + 0.175 * safeZoneH)]));
-                h = QUOTE(3.2 * GUI_GRID_H);
+                class Attributes: Attributes {
+                    font = "RobotoCondensed";
+                    color = "#FFFFFF";
+                    align = "left";
+                    valign = "middle";
+                    shadow = 2;
+                    shadowColor = "#3f4345";
+                    size = QUOTE(0.7 * NORMALIZE_SIZEEX);
+                };
             };
         };
     };

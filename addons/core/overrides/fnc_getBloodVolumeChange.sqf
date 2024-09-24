@@ -108,7 +108,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
 
     {
         private _targetBodyPart = _x;
-        private _partIndex = ALL_BODY_PARTS find _targetBodyPart;
+        private _partIndex = GET_BODYPART_INDEX(_targetBodyPart);
 
         private _fluidBagsBodyPart = _y;
 
@@ -191,16 +191,19 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
             };
         } forEach _updateCountBodyPartArray;
 
-        if (count _fluidBags < 1) then {
-            _unit setVariable [QEGVAR(circulation,IV_Bags), nil, true]; // no bags left - clear variable (always globally sync this)
-            _unit setVariable [QEGVAR(circulation,IV_Bags_Active), false, true];
-            [_unit, ""] call EFUNC(circulation,updateActiveFluidBags);
-        } else {
-            _unit setVariable [QEGVAR(circulation,IV_Bags), _fluidBags, _syncValues];
+        if (count _fluidBags > 0) then {
             {
                 [_unit, _x] call EFUNC(circulation,updateActiveFluidBags);
             } forEach _updateCountBodyPartArray;
         };
+    };
+
+    if (count _fluidBags < 1) then {
+        _unit setVariable [QEGVAR(circulation,IV_Bags), nil, true]; // no bags left - clear variable (always globally sync this)
+        _unit setVariable [QEGVAR(circulation,IV_Bags_Active), false, true];
+        [_unit, ""] call EFUNC(circulation,updateActiveFluidBags);
+    } else {
+        _unit setVariable [QEGVAR(circulation,IV_Bags), _fluidBags, _syncValues];
     };
 };
 

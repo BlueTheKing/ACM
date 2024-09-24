@@ -13,14 +13,14 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_removeSplintLocal;
+ * [player, cursorTarget, "leftleg", true] call ACM_disability_fnc_removeSplintLocal;
  *
  * Public: No
  */
 
 params [["_medic", objNull], "_patient", "_bodyPart", ["_reFracture", true]];
 
-private _partIndex = ALL_BODY_PARTS find toLower _bodyPart;
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 private _splintStatus = GET_SPLINTS(_patient);
 

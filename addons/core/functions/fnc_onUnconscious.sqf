@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle patient unconscious event
+ * Handle patient unconscious event. (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>
@@ -33,4 +33,5 @@ if !(_state) then {
     _patient setVariable [QEGVAR(breathing,BVM_lastBreath), -1, true];
 } else {
     [_patient] call ACEFUNC(weaponselect,putWeaponAway);
+    [_patient] call FUNC(handleKnockOut);
 };

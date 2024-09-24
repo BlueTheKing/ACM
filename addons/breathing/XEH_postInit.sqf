@@ -11,6 +11,7 @@
 [QGVAR(Thoracostomy_startLocal), LINKFUNC(Thoracostomy_startLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(Thoracostomy_closeLocal), LINKFUNC(Thoracostomy_closeLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(Thoracostomy_insertChestTubeLocal), LINKFUNC(Thoracostomy_insertChestTubeLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(Thoracostomy_resealChestTubeLocal), LINKFUNC(Thoracostomy_resealChestTubeLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(Thoracostomy_drainLocal), LINKFUNC(Thoracostomy_drainLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(setPulseOximeterLocal), LINKFUNC(setPulseOximeterLocal)] call CBA_fnc_addEventHandler;
