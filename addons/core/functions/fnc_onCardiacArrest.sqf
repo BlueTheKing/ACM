@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle patient cardiac arrest event
+ * Handle patient cardiac arrest event. (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>
@@ -33,19 +33,7 @@ if (!(GET_CIRCULATIONSTATE(_patient)) || (GET_BLOOD_VOLUME(_patient) < ACM_REVER
         [QEGVAR(circulation,handleCardiacArrest), _patient] call CBA_fnc_localEvent;
         _patient setVariable [QEGVAR(circulation,CardiacArrest_Time), CBA_missionTime, true];
     } else {
-        _patient setVariable [QGVAR(KnockOut_State), true];
-
-        if (isPlayer _patient || {(!(isPlayer _patient) && {!(random 1 < EGVAR(damage,AIStayDownChance))})}) then {
-            [{
-                params ["_patient"];
-
-                _patient setVariable [QGVAR(KnockOut_State), false];
-
-                if !(_patient getVariable [QEGVAR(airway,AirwayReflex_State), false]) then { // Able to wake up
-                    _patient setVariable [QEGVAR(airway,AirwayReflex_State), true, true];
-                };
-            }, [_patient], (15 + (random 20))] call CBA_fnc_waitAndExecute;
-        };
+        [_patient] call FUNC(handleKnockOut);
         [QEGVAR(circulation,attemptROSC), _patient] call CBA_fnc_localEvent;
     };
 };

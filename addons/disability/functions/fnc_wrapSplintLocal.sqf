@@ -19,9 +19,10 @@
 
 params ["_medic", "_patient", "_bodyPart"];
 
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 private _splintStatus = GET_SPLINTS(_patient);
-private _splintStatusOnPart = _splintStatus select (ALL_BODY_PARTS find toLower _bodyPart);
+private _splintStatusOnPart = _splintStatus select _partIndex;
 
-_splintStatus set [(ALL_BODY_PARTS find toLower _bodyPart), 2];
+_splintStatus set [_partIndex, 2];
 
 _patient setVariable [VAR_SPLINTS, _splintStatus, true];

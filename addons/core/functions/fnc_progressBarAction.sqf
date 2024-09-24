@@ -52,4 +52,4 @@ if (!_inVehicle && stance _medic in ["STAND","CROUCH"]) then {
     private _distanceCondition = (_patient distance2D _medic <= ACEGVAR(medical_gui,maxDistance));
 
     (_patientCondition && _medicCondition && ((_inVehicle && _vehicleCondition) || (!_inVehicle && _distanceCondition)));
-}, {true}] select _condition)] call ACEFUNC(common,progressBar);
+}, {true}] select _condition), ["isNotInside"]] call ACEFUNC(common,progressBar);

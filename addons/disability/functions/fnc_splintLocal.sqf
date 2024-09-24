@@ -13,7 +13,7 @@
  * Nothing
  *
  * Example:
- * [player, cursorObject, "LeftLeg"] call ace_medical_treatment_fnc_splintLocal; // ACM_disability_fnc_splintLocal;
+ * [player, cursorObject, "LeftLeg", "ApplySAMSplint"] call ace_medical_treatment_fnc_splintLocal; // ACM_disability_fnc_splintLocal;
  *
  * Public: No
  */
@@ -21,7 +21,7 @@
 params ["_medic", "_patient", "_bodyPart", "_classname"];
 TRACE_3("splintLocal",_medic,_patient,_bodyPart);
 
-private _partIndex = ALL_BODY_PARTS find toLower _bodyPart;
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 private _fractures = GET_FRACTURES(_patient);
 _fractures set [_partIndex, -1];
@@ -35,14 +35,16 @@ if (_classname isEqualTo "ApplySAMSplint" && ACEGVAR(medical,fractures) > 1) the
     // Splint falls off after a while
     private _fallOffTime = EGVAR(core,splintFallOffTime);
     [{
+        params ["_patient", "", "_partIndex"];
+
+        (GET_SPLINTS(_patient) select _partIndex != 1) || !(alive _patient);
+    }, {}, [_patient, _bodyPart, _partIndex], (random [_fallOffTime, (_fallOffTime + 30), (_fallOffTime + 60)]), {
         params ["_patient", "_bodyPart"];
 
-        GET_SPLINTS(_patient) select (ALL_BODY_PARTS find toLower _bodyPart) != 1;
-    }, {}, [_patient, _bodyPart], (random [_fallOffTime, (_fallOffTime + 30), (_fallOffTime + 60)]), {
-        params ["_patient", "_bodyPart"];
-        
-        [QGVAR(removeSplintLocal), [objNull, _patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
-        [QACEGVAR(common,displayTextStructured), [LSTRING(Splint_FellOff), 1.5, _medic], _medic] call CBA_fnc_targetEvent;
+        if ((GET_SPLINTS(_patient) select GET_BODYPART_INDEX(_bodyPart)) == 1 && alive _patient) then {
+            [QGVAR(removeSplintLocal), [objNull, _patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
+            [LLSTRING(Splint_FellOff), 1.5, _patient] call ACEFUNC(common,displayTextStructured);
+        };
     }] call CBA_fnc_waitUntilAndExecute;
 };
 

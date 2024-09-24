@@ -18,6 +18,12 @@
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
             <English>Set whether dog tags list the unit's weight</English>
+        </Key>
+        <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
+            <English>Ignore Incompatible Addon Warning</English>
+        </Key>
+        <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings_Desc">
+            <English>Disables incompatible addon warnings</English>
         </Key><!--
             // Actions // -->
         <Key ID="STR_ACM_Core_MorphineAutoinjector">
@@ -67,6 +73,10 @@
         </Key>
         <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
             <English>[ACM] Advanced Medical Supply Crate</English>
+        </Key><!--
+            // Incompatible Addons // -->
+        <Key ID="STR_ACM_Core_IncompatibleAddons_Found">
+            <English>Incompatible addons found:</English>
         </Key><!-- 
             // Common // -->
         <Key ID="STR_ACM_Core_Common_Inserted">

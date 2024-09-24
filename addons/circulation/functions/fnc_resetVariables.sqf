@@ -17,13 +17,13 @@
 
 params ["_patient"];
 
-if (_patient == ACE_player) then {
+if (hasInterface) then {
     _patient setVariable [QGVAR(AnestheticEffect_Ketamine_Absorbed), false];
     _patient setVariable [QGVAR(AnestheticEffect_PFH), -1];
 };
 
 _patient setVariable [QGVAR(ROSC_Time), -30, true];
-_patient setVariable [QGVAR(CardiacArrest_Time), 0, true];
+_patient setVariable [QGVAR(CardiacArrest_Time), nil, true];
 
 _patient setVariable [QGVAR(Hardcore_PostCardiacArrest), false, true];
 
@@ -47,13 +47,13 @@ _patient setVariable [QGVAR(Platelet_Count), 3, true];
 
 _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus, true];
 _patient setVariable [QGVAR(CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus];
+_patient setVariable [QGVAR(CardiacArrest_DeteriorationTime), nil];
 
 _patient setVariable [QGVAR(CardiacArrest_ShockResistant), false, true];
 _patient setVariable [QGVAR(CardiacArrest_ResistChecked), false, true];
 
 _patient setVariable [QGVAR(ReversibleCardiacArrest_Time), nil];
 _patient setVariable [QGVAR(ReversibleCardiacArrest_State), false, true];
-_patient setVariable [QGVAR(CardiacArrest_Time), nil];
 
 // AED
 _patient setVariable [QGVAR(AED_PFH), -1];

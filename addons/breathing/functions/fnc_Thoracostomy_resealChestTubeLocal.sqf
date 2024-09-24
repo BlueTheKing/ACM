@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle inserting chest tube (LOCAL)
+ * Handle resealing chest tube (LOCAL)
  *
  * Arguments:
  * 0: Medic <OBJECT>
@@ -11,14 +11,14 @@
  * None
  *
  * Example:
- * [player, cursorTarget] call ACM_breathing_fnc_Thoracostomy_insertChestTubeLocal;
+ * [player, cursorTarget] call ACM_breathing_fnc_Thoracostomy_resealChestTubeLocal;
  *
  * Public: No
  */
 
 params ["_medic", "_patient"];
 
-[QACEGVAR(common,displayTextStructured), [LLSTRING(ThoracostomyChestTube_Complete), 1.5, _medic], _medic] call CBA_fnc_targetEvent;
+[QACEGVAR(common,displayTextStructured), [LLSTRING(ThoracostomyResealChestTube_Complete), 1.5, _medic], _medic] call CBA_fnc_targetEvent;
 
 _patient setVariable [QGVAR(Pneumothorax_State), 0, true];
 _patient setVariable [QGVAR(Thoracostomy_State), 2, true];

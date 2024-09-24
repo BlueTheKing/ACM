@@ -125,6 +125,15 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QFUNC(Thoracostomy_insertChestTube);
     };
 
+    class ResealChestTube: InsertChestTube {
+        displayName = CSTRING(ResealChestTube);
+        displayNameProgress = CSTRING(ResealChestTube_Progress);
+        items[] = {};
+        consumeItem = 0;
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && !([_patient] call EFUNC(core,bvmActive)) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) == 3);
+        callbackSuccess = QFUNC(Thoracostomy_resealChestTube);
+    };
+
     class DrainFluid_ACCUVAC: PerformThoracostomy {
         displayName = CSTRING(DrainFluid_ACCUVAC);
         displayNameProgress = CSTRING(DrainFluid_Suction_Progress);
@@ -133,7 +142,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         items[] = {"ACM_ACCUVAC"};
         consumeItem = 0;
-        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && !([_patient] call EFUNC(core,bvmActive)) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) == 2);
+        condition = QUOTE(GVAR(pneumothoraxEnabled) && !([_patient] call EFUNC(core,cprActive)) && !([_patient] call EFUNC(core,bvmActive)) && (_patient getVariable [ARR_2(QQGVAR(Thoracostomy_State),0)]) in [ARR_2(2,3)]);
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(Thoracostomy_drain));
     };
     class DrainFluid_SuctionBag: DrainFluid_ACCUVAC {

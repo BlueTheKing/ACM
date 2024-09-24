@@ -8,6 +8,7 @@
  * 1: Body Part <STRING>
  * 2: Treatment <STRING>
  * 3: Medication Dose <NUMBER>
+ * 4: Is IV? <BOOL>
  *
  * Return Value:
  * None
@@ -24,7 +25,7 @@
 // 0.6 = basic medication morph. pain suppr., 0.8 = adv. medication morph. pain suppr., 0.35 = adv. medication painkillers. pain suppr.
 #define PAINKILLERS_PAIN_SUPPRESSION 0.2625 
 
-params ["_patient", "_bodyPart", "_classname", ["_dose", 1]];
+params ["_patient", "_bodyPart", "_classname", ["_dose", 1], ["_iv", false]];
 TRACE_3("medicationLocal",_patient,_bodyPart,_classname);
 
 // Medication has no effects on dead units
@@ -52,10 +53,10 @@ TRACE_1("Running treatmentMedicationLocal with Advanced configuration for",_pati
 // Handle tourniquet on body part blocking blood flow at injection site
 private _partIndex = ALL_BODY_PARTS find tolowerANSI _bodyPart;
 
-if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) exitWith {
+if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex) && (!_iv || (_iv && (!([_patient, _bodyPart] call EFUNC(circulation,hasIO)) || _partIndex > 3)))) exitWith {
     TRACE_1("unit has tourniquets blocking blood flow on injection site",_tourniquets);
     private _occludedMedications = _patient getVariable [QACEGVAR(medical,occludedMedications), []];
-    _occludedMedications pushBack [_partIndex, _classname];
+    _occludedMedications pushBack [_partIndex, _classname, _dose, _iv];
     _patient setVariable [QACEGVAR(medical,occludedMedications), _occludedMedications, true];
 };
 
@@ -142,3 +143,5 @@ if !(_continue) exitWith {};
 
 // Check for medication compatiblity
 [_patient, _classname, _maxDose, _maxDoseDeviation, _concentrationRatio, _maxEffectDose, _patientWeight, _incompatibleMedication] call ACEFUNC(medical_treatment,onMedicationUsage);
+
+[QEGVAR(circulation,handleMedicationEffects), [_patient, _bodyPart, _classname, _dose]] call CBA_fnc_localEvent;

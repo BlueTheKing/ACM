@@ -102,12 +102,12 @@ private _PFH = [{
             EGVAR(core,ppAnestheticEffect_chrom) ppEffectCommit 8;
 
             [{
-                params ["_patient"];
+                params ["_patient", "_anestheticEffect"];
 
                 if (_anestheticEffect < 0.1) then {
                     EGVAR(core,ppAnestheticEffect_chrom) ppEffectEnable false;
                 };
-            }, [_patient], 10] call CBA_fnc_waitAndExecute;
+            }, [_patient, _anestheticEffect], 10] call CBA_fnc_waitAndExecute;
         };        
     };
 

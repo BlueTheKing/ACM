@@ -133,6 +133,9 @@ class CfgFunctions {
             class setUnconsciousAnim { // Force lying animation when waking up
                 file = QPATHTOF(overrides\fnc_setUnconsciousAnim.sqf);
             };
+            class updateDamageEffects { // Tourniquet effects for legs
+                file = QPATHTOF(overrides\fnc_updateDamageEffects.sqf);
+            };
         };
     };
     class overwrite_ace_dogtags {
@@ -149,6 +152,9 @@ class CfgFunctions {
     class overwrite_ace_dragging {
         tag = "ace_dragging";
         class ace_dragging {
+            class startCarryLocal { // Assist carry action
+                file = QPATHTOF(overrides\fnc_startCarryLocal.sqf);
+            };
             class carryObject { // Cancel carrying prompt
                 file = QPATHTOF(overrides\fnc_carryObject.sqf);
             };

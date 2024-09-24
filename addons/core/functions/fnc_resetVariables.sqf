@@ -22,6 +22,8 @@ _patient setVariable [QGVAR(TimeOfDeath), nil, true];
 _patient setVariable [QGVAR(WasTreated), false, true];
 _patient setVariable [QGVAR(WasWounded), false, true];
 
+_patient setVariable [QGVAR(CarryAssist_State), false, true];
+
 if (isPlayer _patient) then {
     _patient setVariable [QGVAR(TreatmentText_Providers), []];
 };

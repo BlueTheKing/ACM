@@ -35,11 +35,6 @@ if (ACEGVAR(medical,spontaneousWakeUpChance) > 0) then {
         };
 
         private _wakeUpCheckInterval = SPONTANEOUS_WAKE_UP_INTERVAL;
-        if (ACEGVAR(medical,spontaneousWakeUpEpinephrineBoost) > 1) then {
-            private _epiEffectiveness = [_unit, "Epinephrine", false] call ACEFUNC(medical_status,getMedicationCount);
-            _wakeUpCheckInterval = _wakeUpCheckInterval * linearConversion [0, 1, _epiEffectiveness, 1, 1 / ACEGVAR(medical,spontaneousWakeUpEpinephrineBoost), true];
-            TRACE_2("epiBoost",_epiEffectiveness,_wakeUpCheckInterval);
-        };
         if (CBA_missionTime - _lastWakeUpCheck > _wakeUpCheckInterval) then {
             TRACE_2("Checking for wake up",_unit,ACEGVAR(medical,spontaneousWakeUpChance));
             _unit setVariable [QACEGVAR(medical,lastWakeUpCheck), CBA_missionTime];

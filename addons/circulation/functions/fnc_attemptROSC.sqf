@@ -26,7 +26,7 @@ if (GET_CIRCULATIONSTATE(_patient) && (GET_BLOOD_VOLUME(_patient) > ACM_REVERSIB
     if (GVAR(Hardcore_PostCardiacArrest)) then {
         _patient setVariable [QGVAR(Hardcore_PostCardiacArrest), true, true];
     };
-    _patient setVariable [QGVAR(CardiacArrest_Time), 0, true];
+    _patient setVariable [QGVAR(CardiacArrest_Time), nil, true];
     true;
 };
 

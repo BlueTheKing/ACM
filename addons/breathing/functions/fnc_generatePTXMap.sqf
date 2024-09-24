@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Generate chances for inflicting pneumothorax injury (LOCAL)
+ * Generate chances for inflicting pneumothorax injury. (LOCAL)
  *
  * Arguments:
  * None
@@ -15,4 +15,4 @@
  * Public: No
  */
 
-GVAR(ChestInjury_Chances) = createHashMapfromArray [[60,8],[61,50],[62,90],[70,5],[71,40],[72,80],[10,0],[11,10],[12,20]]; // TODO move to config?
+GVAR(ChestInjury_Chances) = createHashMapfromArray [[60,0.08],[61,0.5],[62,0.9],[70,0.05],[71,0.4],[72,0.8],[10,0],[11,0.1],[12,0.2]]; // TODO move to config?

@@ -44,6 +44,7 @@ private _PFH = [{
         };
 
         _patient setVariable [QGVAR(ReversibleCardiacArrest_PFH), -1];
+        _patient setVariable [QGVAR(ReversibleCardiacArrest_Time), nil];
 
         [_patient] call FUNC(updateCirculationState);
 

@@ -49,6 +49,15 @@ call FUNC(generatePTXMap);
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(hemothoraxChance),
+    "SLIDER",
+    [LLSTRING(SETTING_HemothoraxChance), LLSTRING(SETTING_HemothoraxChance_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Pneumothorax)],
+    [0, 1, 0.2, 0, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(Hardcore_ChestInjury),
     "CHECKBOX",
     [LLSTRING(SETTING_Hardcore_ChestInjury), LLSTRING(SETTING_Hardcore_ChestInjury_Desc)],

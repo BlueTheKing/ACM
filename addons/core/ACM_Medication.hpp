@@ -169,7 +169,7 @@ class ACM_Medication {
             hrIncreaseHigh[] = {-1, -2};
             maxDose = 40;
             maxDoseDeviation = 10;
-            maxEffectDose = 20;
+            maxEffectDose = 20.7;
         };
 
         class ACM_IM_Medication {

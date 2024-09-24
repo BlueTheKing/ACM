@@ -40,16 +40,16 @@ GVAR(TransfusionMenu_Target) = _patient;
 GVAR(TransfusionMenu_Selection_IVBags_LastUpdate) = CBA_missionTime;
 GVAR(TransfusionMenu_Selection_IVBags) = [];
 
+GVAR(TransfusionMenu_Selected_AccessSite) = -1;
+GVAR(TransfusionMenu_Selected_BodyPart) = toLowerANSI _bodyPart;
+GVAR(TransfusionMenu_Selected_Inventory) = -1;
+
 GVAR(TransfusionMenu_Move_Active) = false;
 GVAR(TransfusionMenu_Move_Active_Moving) = false;
 GVAR(TransfusionMenu_Move_IVBagContents) = [];
 GVAR(TransfusionMenu_Move_OriginIV) = false;
 GVAR(TransfusionMenu_Move_OriginBodyPart) = toLowerANSI _bodyPart;
 GVAR(TransfusionMenu_Move_OriginAccessSite) = GVAR(TransfusionMenu_Selected_AccessSite);
-
-GVAR(TransfusionMenu_Selected_Inventory) = -1;
-
-GVAR(TransfusionMenu_Selected_BodyPart) = toLowerANSI _bodyPart;
 
 if (GVAR(TransfusionMenu_Selected_AccessSite) == -1) then {
     if ([_patient, _bodyPart, 0, -1] call FUNC(hasIV)) then {
