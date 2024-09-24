@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Set IV placement on patient
+ * Set IV placement on patient.
  *
  * Arguments:
  * 0: Medic <OBJECT>
@@ -29,6 +29,7 @@ private _hintType = LLSTRING(IV_16g);
 private _exit = false;
 private _accessSiteHint = "";
 private _givePain = 0;
+private _giveComplication = false;
 private _successChance = 1;
 private _classname = "ACM_IV_16g";
 
@@ -100,9 +101,11 @@ if (_iv && _state) then {
         private _modifier = 0;
 
         if (_type == ACM_IV_14G_M) then {
-            _modifier = linearConversion [0, 6, _bodyPartDamage, 0, 1, true];
+            _modifier = linearConversion [ACM_IV_COMPLICATION_THRESHOLD_14_L, ACM_IV_COMPLICATION_THRESHOLD_14_H, _bodyPartDamage, 0, 1, true];
+            _giveComplication = (random 1 < (linearConversion [ACM_IV_COMPLICATION_THRESHOLD_14_L, ACM_IV_COMPLICATION_THRESHOLD_14_H, _bodyPartDamage, 0, 1, true]));
         } else {
-            _modifier = linearConversion [5, 12, _bodyPartDamage, 0, 0.2, true];
+            _modifier = linearConversion [ACM_IV_COMPLICATION_THRESHOLD_16_L, ACM_IV_COMPLICATION_THRESHOLD_16_H, _bodyPartDamage, 0, 0.2, true];
+            _giveComplication = (random 1 < (linearConversion [ACM_IV_COMPLICATION_THRESHOLD_16_L, ACM_IV_COMPLICATION_THRESHOLD_16_H, _bodyPartDamage, 0, 0.5, true]));
         };
 
         _successChance = _successChance - _modifier;
@@ -144,7 +147,13 @@ if (_exit) exitWith {
 private _setState = _type;
 
 if (_state) then {
-    if !(_iv) then {
+    if (_iv) then {
+        if (GVAR(IVComplications)) then {
+            if (_giveComplication) then {
+                [_patient, _type, _bodyPart, _accessSite] call FUNC(setIVComplication);
+            };
+        };
+    } else {
         [_patient, _givePain] call ACEFUNC(medical,adjustPainLevel);
     };
 } else {

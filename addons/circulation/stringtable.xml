@@ -76,6 +76,18 @@
         <Key ID="STR_ACM_Circulation_SETTING_CPREffectiveness_Desc">
             <English>Sets overall CPR effectiveness</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_IVComplications">
+            <English>Enable IV Complications</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_IVComplications_Desc">
+            <English>Sets whether IVs can get complications if inserted on damaged limbs</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_IVComplicationsDeteriorate">
+            <English>Enable IV Complication Deterioration</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_IVComplicationsDeteriorate_Desc">
+            <English>Sets whether IVs with complications can deteriorate during use, or deteriorate into a complication if one isn't already present</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IV">
             <English>Allow IV</English>
         </Key>
@@ -649,6 +661,46 @@
         </Key>
         <Key ID="STR_ACM_Circulation_IV_BodyPartTooDamaged">
             <English>Body part too damaged</English>
+        </Key><!--
+            // Inspect IV Action // -->
+        <Key ID="STR_ACM_Circulation_InspectIV_Upper">
+            <English>Inspect IV Catheter (Upper)</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_Middle">
+            <English>Inspect IV Catheter (Middle)</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_Lower">
+            <English>Inspect IV Catheter (Lower)</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_Progress">
+            <English>Inspecting IV Catheter</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_Clear">
+            <English>IV Catheter is clear</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_Clear_Short">
+            <English>Clear</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow">
+            <English>IV Catheter has normal flow</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow_Short">
+            <English>Normal flow</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_NoFlow">
+            <English>IV Catheter has no flow</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_NoFlow_Short">
+            <English>No flow</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_Swelling">
+            <English>Swelling on insertion site</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_Swelling_Short">
+            <English>noticable swelling</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
+            <English>%1 inspected IV Catheter: %2</English>
         </Key><!--
             // Pressure Cuff Action // -->
         <Key ID="STR_ACM_Circulation_PressureCuff_Already">

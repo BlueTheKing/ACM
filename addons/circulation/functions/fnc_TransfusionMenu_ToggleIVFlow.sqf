@@ -33,7 +33,7 @@ if (GVAR(TransfusionMenu_SelectIV)) then {
     _flowArrayBodyPart set [GVAR(TransfusionMenu_Selected_AccessSite), _newFlow];
     _flowArray set [_partIndex, _flowArrayBodyPart];
 
-    GVAR(TransfusionMenu_Target) setVariable [QGVAR(FluidBagsFlow_IV), _flowArray, true];
+    GVAR(TransfusionMenu_Target) setVariable [VAR_FLUIDBAG_FLOW_IV, _flowArray, true];
 } else {
     private _flowArray = GET_IO_FLOW(GVAR(TransfusionMenu_Target));
 
@@ -47,5 +47,5 @@ if (GVAR(TransfusionMenu_SelectIV)) then {
 
     _flowArray set [_partIndex, _newFlow];
 
-    GVAR(TransfusionMenu_Target) setVariable [QGVAR(FluidBagsFlow_IO), _flowArray, true];
+    GVAR(TransfusionMenu_Target) setVariable [VAR_FLUIDBAG_FLOW_IO, _flowArray, true];
 };

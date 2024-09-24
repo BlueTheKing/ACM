@@ -190,7 +190,7 @@ private _inVehicle = !(isNull objectParent ACE_player);
 
     private _ctrlStopTransfusionButton = _display displayCtrl IDC_TRANSFUSIONMENU_BUTTON_STOPIV;
 
-    private _siteFlowRate = [(GET_IO_FLOW(_patient) select _partIndex), ((GET_IV_FLOW(_patient) select _partIndex) select GVAR(TransfusionMenu_Selected_AccessSite))] select GVAR(TransfusionMenu_SelectIV);
+    private _siteFlowRate = [(GET_IO_FLOW_X(_patient,_partIndex)), (GET_IV_FLOW_X(_patient,_partIndex,(GVAR(TransfusionMenu_Selected_AccessSite))))] select GVAR(TransfusionMenu_SelectIV);
 
     private _typeString = [LLSTRING(Intraosseous_Short), LLSTRING(Intravenous_Short)] select GVAR(TransfusionMenu_SelectIV);
 

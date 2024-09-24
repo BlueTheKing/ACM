@@ -248,6 +248,10 @@
 #define ACM_Rhythm_PVT 3
 #define ACM_Rhythm_PEA 5
 
+#define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
+#define HAS_PRESSURECUFF(unit,index) (GET_PRESSURECUFF(unit) select index)
+
+//// Access
 #define ACM_IV_16G_M 1
 #define ACM_IV_14G_M 2
 #define ACM_IO_EZ_M 3
@@ -263,9 +267,42 @@
 #define GET_IV(unit) (unit getVariable [QEGVAR(circulation,IV_Placement),ACM_IV_PLACEMENT_DEFAULT_0])
 #define GET_IO(unit) (unit getVariable [QEGVAR(circulation,IO_Placement),ACM_IO_PLACEMENT_DEFAULT_0])
 
-#define GET_IV_FLOW(unit) (unit getVariable [QEGVAR(circulation,FluidBagsFlow_IV), ACM_IV_PLACEMENT_DEFAULT_1])
-#define GET_IO_FLOW(unit) (unit getVariable [QEGVAR(circulation,FluidBagsFlow_IO), ACM_IO_PLACEMENT_DEFAULT_1])
+#define VAR_FLUIDBAG_FLOW_IV          QEGVAR(circulation,FluidBagsFlow_IV)
+#define VAR_FLUIDBAG_FLOW_IO          QEGVAR(circulation,FluidBagsFlow_IO)
 
+#define GET_IV_FLOW(unit)             (unit getVariable [VAR_FLUIDBAG_FLOW_IV, ACM_IV_PLACEMENT_DEFAULT_1])
+#define GET_IV_FLOW_X(unit,part,site) ((GET_IV_FLOW(unit) select part) select site)
+
+#define GET_IO_FLOW(unit)             (unit getVariable [VAR_FLUIDBAG_FLOW_IO, ACM_IO_PLACEMENT_DEFAULT_1])
+#define GET_IO_FLOW_X(unit,part)      (GET_IO_FLOW(unit) select part)
+
+//// Complications
+
+#define ACM_IV_COMPLICATION_THRESHOLD_14_L 0
+#define ACM_IV_COMPLICATION_THRESHOLD_14_H 6
+#define ACM_IV_COMPLICATION_THRESHOLD_16_L 5
+#define ACM_IV_COMPLICATION_THRESHOLD_16_H 10
+
+#define ACM_IV_COMPLICATION_FLOW_THRESHOLD_14 3
+#define ACM_IV_COMPLICATION_FLOW_THRESHOLD_16 8
+#define ACM_IV_COMPLICATION_LEAK_THRESHOLD    8
+
+#define ACM_IV_COMPLICATION_FLOW_SLOW 1
+#define ACM_IV_COMPLICATION_FLOW_LOSS 2
+
+#define VAR_IV_COMPLICATIONS_PAIN                    QEGVAR(circulation,IV_Complication_Placement_Pain)
+#define VAR_IV_COMPLICATIONS_FLOW                    QEGVAR(circulation,IV_Complication_Placement_Flow)
+#define VAR_IV_COMPLICATIONS_BLOCK                   QEGVAR(circulation,IV_Complication_Placement_Block)
+
+#define GET_IV_COMPLICATIONS_PAIN(unit)              (unit getVariable [VAR_IV_COMPLICATIONS_PAIN,ACM_IV_PLACEMENT_DEFAULT_0])
+#define GET_IV_COMPLICATIONS_FLOW(unit)              (unit getVariable [VAR_IV_COMPLICATIONS_FLOW,ACM_IV_PLACEMENT_DEFAULT_0])
+#define GET_IV_COMPLICATIONS_BLOCK(unit)             (unit getVariable [VAR_IV_COMPLICATIONS_BLOCK,ACM_IV_PLACEMENT_DEFAULT_0])
+
+#define GET_IV_COMPLICATIONS_PAIN_X(unit,part,site)  ((GET_IV_COMPLICATIONS_PAIN(unit) select part) select site)
+#define GET_IV_COMPLICATIONS_FLOW_X(unit,part,site)  ((GET_IV_COMPLICATIONS_FLOW(unit) select part) select site)
+#define GET_IV_COMPLICATIONS_BLOCK_X(unit,part,site) ((GET_IV_COMPLICATIONS_BLOCK(unit) select part) select site)
+
+//// Medication
 #define ACM_ROUTE_IM 0
 #define ACM_ROUTE_IV 1
 #define ACM_ROUTE_PO 2
@@ -278,9 +315,9 @@
 #define ACM_SYRINGES_3 EGVAR(circulation,SyringeList_3)
 #define ACM_SYRINGES_1 EGVAR(circulation,SyringeList_13)
 
-#define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
-#define HAS_PRESSURECUFF(unit,index) (GET_PRESSURECUFF(unit) select index)
+#define ACM_NASAL_MEDICATION ['AmmoniaInhalant','Naloxone']
 
+//// Blood
 #define GET_BLOODTYPE(unit) (unit getVariable [QEGVAR(circulation,BloodType),-1])
 
 #define ACM_BLOODTYPE_O 0
@@ -302,10 +339,9 @@
 #define BLOODTYPE_COMPATIBLE_LIST_ABN [ACM_BLOODTYPE_ABN, ACM_BLOODTYPE_AN, ACM_BLOODTYPE_BN, ACM_BLOODTYPE_ON]
 #define BLOODTYPE_COMPATIBLE_LIST [BLOODTYPE_COMPATIBLE_LIST_O,BLOODTYPE_COMPATIBLE_LIST_ON,BLOODTYPE_COMPATIBLE_LIST_A,BLOODTYPE_COMPATIBLE_LIST_AN,BLOODTYPE_COMPATIBLE_LIST_B,BLOODTYPE_COMPATIBLE_LIST_BN,BLOODTYPE_COMPATIBLE_LIST_AB,BLOODTYPE_COMPATIBLE_LIST_ABN]
 
+//// Transfusion
 #define FLUIDS_ARRAY ['ACE_salineIV','ACE_plasmaIV','ACE_salineIV_500','ACE_plasmaIV_500','ACE_salineIV_250','ACE_plasmaIV_250']
 #define FLUIDS_ARRAY_DATA ['salineIV','plasmaIV','salineIV_500','plasmaIV_500','salineIV_250','plasmaIV_250']
-
-#define ACM_NASAL_MEDICATION ['AmmoniaInhalant','Naloxone']
 
 // Damage
 #define VAR_WRAPPED_WOUNDS             QEGVAR(damage,WrappedWounds)
