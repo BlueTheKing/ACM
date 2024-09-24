@@ -95,6 +95,15 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(ignoreIncompatibleAddonWarning),
+    "CHECKBOX",
+    [LLSTRING(SETTING_IgnoreIncompatibleAddonWarnings), LLSTRING(SETTING_IgnoreIncompatibleAddonWarnings_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [false],
+    true
+] call CBA_fnc_addSetting;
+
 // OVERRIDE ACE
 
 [
