@@ -148,3 +148,12 @@ class ACE_Medical_Menu {
         };
     };
 };
+
+class ACEGVAR(medical_gui,TriageSelect): RscControlsGroupNoScrollbars {
+    class Controls {
+        class None: RscButton;
+        class Deceased: None {
+            text = CSTRING(Triage_Priority4);
+        };
+    };
+};
