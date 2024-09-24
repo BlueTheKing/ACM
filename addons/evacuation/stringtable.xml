@@ -54,10 +54,10 @@
         </Key><!-- 
             // Actions // -->
         <Key ID="STR_ACM_Evacuation_ConvertCasualty">
-            <English>Casualty Conversion Complete</English>
+            <English>Convert Casualty</English>
         </Key>
         <Key ID="STR_ACM_Evacuation_ConvertCasualty_Progress">
-            <English>Casualty Conversion Complete</English>
+            <English>Converting Casualty...</English>
         </Key>
         <Key ID="STR_ACM_Evacuation_ConvertCasualty_Complete">
             <English>Casualty Conversion Complete</English>
