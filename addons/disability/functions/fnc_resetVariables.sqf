@@ -21,3 +21,7 @@ _patient setVariable [QGVAR(Tourniquet_Time), [0,0,0,0,0,0], true];
 _patient setVariable [QGVAR(Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1], true];
 
 _patient setVariable [VAR_SPLINTS, DEFAULT_SPLINT_VALUES, true];
+
+_patient setVariable [VAR_TOURNIQUET_NECROSIS, DEFAULT_TOURNIQUET_NECROSIS];
+_patient setVariable [VAR_TOURNIQUET_NECROSIS_T, DEFAULT_TOURNIQUET_NECROSIS];
+_patient setVariable [QGVAR(TourniquetEffects_PFH), -1];

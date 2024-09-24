@@ -326,6 +326,19 @@
 #define VAR_SPLINTS                    QEGVAR(disability,SplintStatus)
 #define GET_SPLINTS(unit)              (unit getVariable [VAR_SPLINTS, DEFAULT_SPLINT_VALUES])
 
+#define DEFAULT_TOURNIQUET_NECROSIS     [0,0,0,0]
+#define VAR_TOURNIQUET_NECROSIS         QEGVAR(disability,TourniquetEffects_Necrosis)
+#define GET_TOURNIQUET_NECROSIS(unit)   (unit getVariable [VAR_TOURNIQUET_NECROSIS, DEFAULT_TOURNIQUET_NECROSIS])
+#define VAR_TOURNIQUET_NECROSIS_T       QEGVAR(disability,TourniquetEffects_Necrosis_Threshold)
+#define GET_TOURNIQUET_NECROSIS_T(unit) (unit getVariable [VAR_TOURNIQUET_NECROSIS_T, DEFAULT_TOURNIQUET_NECROSIS])
+
+#define NECROSIS_THRESHOLD_SEVERE       0.9
+#define NECROSIS_THRESHOLD_SEVERELOW    0.8
+#define NECROSIS_THRESHOLD_MODERATE     0.5
+#define NECROSIS_THRESHOLD_MODERATELOW  0.4
+#define NECROSIS_THRESHOLD_LIGHT        0.1
+#define NECROSIS_THRESHOLD_LIGHTLOW     0.05
+
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}
 
