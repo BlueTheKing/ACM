@@ -1,5 +1,6 @@
 PREP(addVehicleCarryLoadActions);
 PREP(addVehicleUnloadCarryPatientActions);
+PREP(beginCarryAssist);
 PREP(beginContinuousAction);
 PREP(bvmActive);
 PREP(cancelCarryingPrompt);

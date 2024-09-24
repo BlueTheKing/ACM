@@ -1,5 +1,6 @@
 #include "\a3\ui_f\hpp\defineCommonGrids.inc"
 #include "TreatmentText_defines.hpp"
+#include "ContinuousActionText_defines.hpp"
 
 #define NORMALIZE_UISCALE ((0.55 / (getResolution select 5)) min 1)
 
@@ -38,6 +39,44 @@ class RscTitles {
                 type = 0;
                 shadow = 1;
                 colorShadow[] = {0,0,0,0.5};
+            };
+        };
+    };
+    class RscContinuousActionText
+    {
+        idd = IDC_CONTINUOUSACTIONTEXT;
+        fadein = 0;
+        fadeout = 0;
+        duration = 1e+011;
+        onLoad = QUOTE(uiNamespace setVariable [ARR_2('ACM_ContinuousActionText',(_this select 0))];);
+        onUnLoad = QUOTE(uiNamespace setVariable [ARR_2('ACM_ContinuousActionText',nil)];);
+        class Controls
+        {
+            class TopText: RscText {
+                idc = IDC_CONTINUOUSACTIONTEXT_UPPER;
+                style = ST_CENTER;
+                font = "RobotoCondensed";
+                x = QUOTE(safezoneX);
+                y = QUOTE(safezoneY);
+                w = QUOTE(safezoneW);
+                h = QUOTE(safezoneH / 10);
+                colorText[] = {1,1,1,1};
+                colorBackground[] = {0,0,0,0};
+                text = "";
+                lineSpacing = 0;
+                sizeEx = QUOTE(GUI_GRID_H * 1.4 * NORMALIZE_SIZEEX);
+                fixedWidth = 0;
+                deletable = 0;
+                fade = 0;
+                access = 0;
+                type = 0;
+                shadow = 1;
+                colorShadow[] = {0,0,0,0.5};
+            };
+            class BottomText: TopText {
+                idc = IDC_CONTINUOUSACTIONTEXT_BOTTOM;
+                h = QUOTE(safezoneH / 6);
+                text = "";
             };
         };
     };
