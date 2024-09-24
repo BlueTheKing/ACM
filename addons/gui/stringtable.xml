@@ -21,6 +21,22 @@
         </Key>
         <Key ID="STR_ACM_GUI_NoExternalBleeding">
             <English>No external bleeding</English>
+        </Key><!--
+            // Triage Text -->
+        <Key ID="STR_ACM_GUI_Triage_Priority1_Short">
+            <English>T1</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_Triage_Priority2_Short">
+            <English>T2</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_Triage_Priority3_Short">
+            <English>T3</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_Triage_Priority4">
+            <English>Expectant</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
+            <English>T4</English>
         </Key>
     </Package>
 </Project>

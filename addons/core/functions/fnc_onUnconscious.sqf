@@ -34,4 +34,8 @@ if !(_state) then {
 } else {
     [_patient] call ACEFUNC(weaponselect,putWeaponAway);
     [_patient] call FUNC(handleKnockOut);
+
+    if !(_patient getVariable [QGVAR(WasWounded), false]) then {
+        _patient setVariable [QGVAR(WasWounded), true, true];
+    };
 };

@@ -18,7 +18,11 @@
  * Public: No
  */
 
-params ["_patient", "_bodyPart", ["_type", 0], ["_accessSite", -1]];
+params ["_patient", ["_bodyPart", ""], ["_type", 0], ["_accessSite", -1]];
+
+if (_bodyPart == "") exitWith {
+    GET_IV(_patient) isNotEqualTo ACM_IV_PLACEMENT_DEFAULT_0;
+};
 
 private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
 

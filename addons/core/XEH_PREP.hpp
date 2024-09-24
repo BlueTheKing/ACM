@@ -1,4 +1,5 @@
 PREP(addVehicleCarryLoadActions);
+PREP(addVehiclePatientActions);
 PREP(addVehicleUnloadCarryPatientActions);
 PREP(beginCarryAssist);
 PREP(beginContinuousAction);

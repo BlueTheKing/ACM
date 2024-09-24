@@ -225,6 +225,10 @@ if (_createdWounds) then {
         [_unit] call ACEFUNC(medical_damage,handleIncapacitation);
     };
 
+    if !(_patient getVariable [QGVAR(WasWounded), false]) then {
+        _patient setVariable [QGVAR(WasWounded), true, true];
+    };
+
     TRACE_4("exit",_unit,_painLevel,GET_PAIN(_unit),GET_OPEN_WOUNDS(_unit));
 };
 

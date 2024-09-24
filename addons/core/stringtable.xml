@@ -59,6 +59,10 @@
         <Key ID="STR_ACM_Core_TreatedBy">
             <English>You are being treated by %1</English>
         </Key><!--
+            // Vehicle Patient Actions // -->
+        <Key ID="STR_ACM_Core_VehiclePatients">
+            <English>Vehicle Patients</English>
+        </Key><!--
             // Unload and carry // -->
         <Key ID="STR_ACM_Core_CarryPatient">
             <English>Carry Patient</English>

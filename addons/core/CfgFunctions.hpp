@@ -80,6 +80,9 @@ class CfgFunctions {
             class loadUnit { // Allow loading conscious patients
                 file = QPATHTOF(overrides\fnc_loadUnit.sqf);
             };
+            class getTriageStatus { // Deceased -> Expectant
+                file = QPATHTOF(overrides\fnc_getTriageStatus.sqf);
+            };
         };
     };
     class overwrite_medical_damage {
