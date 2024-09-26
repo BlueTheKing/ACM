@@ -59,11 +59,7 @@ private _actions = [];
             case (GET_OXYGEN(_unit) < 90): { // Cyanotic
                 private _oxygenState = GET_OXYGEN(_unit);
                 _iconColor = [(linearConversion [90, 55, _oxygenState, 0, 0.5, true]), (linearConversion [90, 55, _oxygenState, 0.6, 0.13, true]), (linearConversion [90, 55, _oxygenState, 1, 0.75, true]), 1];
-                if (GET_RESPIRATION_RATE(_unit) < 1) then {
-                    QPATHTOF(ui\icon_patient_respiratoryarrest_cyanosis.paa); // Not Breathing
-                } else {
-                    QPATHTOF(ui\icon_patient_cyanosis.paa);
-                };
+                ([QPATHTOF(ui\icon_patient_cyanosis.paa),QPATHTOF(ui\icon_patient_respiratoryarrest_cyanosis.paa)] select (GET_RESPIRATION_RATE(_unit) < 1));
             };
             case (GET_RESPIRATION_RATE(_unit) < 1): { // Not Breathing
                 _iconColor = [0, 0.6, 1, 1];
