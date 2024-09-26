@@ -84,6 +84,18 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
     [_carrier, _target] call ACEFUNC(dragging,dropObject_carry);
 }] call CBA_fnc_addEventHandler;
 
+[QACEGVAR(dragging,startedCarry), {
+    params ["_unit", "_target"];
+
+    if (_target isKindOf "CAManBase") then {
+        [_target] call ACEFUNC(weaponselect,putWeaponAway);
+
+        if !(IS_UNCONSCIOUS(_target)) then {
+            [QGVAR(cancelCarryingPrompt), [_target, _unit], _target] call CBA_fnc_targetEvent;
+        };
+    };
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(getUpPrompt), LINKFUNC(getUpPrompt)] call CBA_fnc_addEventHandler;
 
 ["isNotInLyingState", {!((_this select 0) getVariable [QGVAR(Lying_State), false])}] call ACEFUNC(common,addCanInteractWithCondition);

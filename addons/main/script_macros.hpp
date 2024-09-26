@@ -45,6 +45,8 @@
 #undef GETVAR
 #define GETVAR(var1,var2,var3) (var1 GETVAR_SYS(var2,var3))
 
+#define GETACEGVAR(var1,var2,var3) GETMVAR(ACEGVAR(var1,var2),var3)
+
 #ifdef DISABLE_COMPILE_CACHE
     #undef PREP
     #define PREP(fncName) DFUNC(fncName) = compile preprocessFileLineNumbers QPATHTOF(functions\DOUBLES(fnc,fncName).sqf)

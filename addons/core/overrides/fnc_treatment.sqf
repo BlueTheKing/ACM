@@ -81,7 +81,7 @@ if (isNumber (_config >> "ACM_cancelRecovery")) then {
 };
 
 // play patient animation
-if (alive _patient) then {
+if (alive _patient) then { 
     private _animationStatePatient = animationState _patient;
 
     if (_animationStatePatient != "acm_recoveryposition" || (_animationStatePatient == "acm_recoveryposition" && _cancelsRecoveryPosition)) then {
@@ -133,7 +133,7 @@ if (_medic isNotEqualTo player || {!_isInZeus}) then {
     };
 
     // Determine the animation length
-    private _animDuration = ACEGVAR(medical_treatment,animDurations) getVariable _medicAnim;
+    private _animDuration = ACEGVAR(medical_treatment,animDurations)  get toLowerANSI _medicAnim;
     if (isNil "_animDuration") then {
         WARNING_2("animation [%1] for [%2] has no duration defined",_medicAnim,_classname);
         _animDuration = 10;

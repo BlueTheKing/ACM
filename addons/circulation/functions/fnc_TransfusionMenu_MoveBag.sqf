@@ -38,7 +38,7 @@ if (GVAR(TransfusionMenu_Move_Active)) then {
         private _IVBags = GVAR(TransfusionMenu_Target) getVariable [QGVAR(IV_Bags), createHashMap];
         private _IVBagsOnBodyPart = _IVBags getOrDefault [_bodypart, []];
 
-        _IVBagsOnBodyPart pushBack [_type, _remainingVolume, ([_patient, GVAR(TransfusionMenu_SelectIV), (ALL_BODY_PARTS find tolowerANSI _bodypart), GVAR(TransfusionMenu_Selected_AccessSite)] call FUNC(getAccessType)), GVAR(TransfusionMenu_Selected_AccessSite), GVAR(TransfusionMenu_SelectIV), _bloodType, _volume];
+        _IVBagsOnBodyPart pushBack [_type, _remainingVolume, ([_patient, GVAR(TransfusionMenu_SelectIV), (ALL_BODY_PARTS find toLowerANSI _bodypart), GVAR(TransfusionMenu_Selected_AccessSite)] call FUNC(getAccessType)), GVAR(TransfusionMenu_Selected_AccessSite), GVAR(TransfusionMenu_SelectIV), _bloodType, _volume];
 
         _IVBags set [_bodypart, _IVBagsOnBodyPart];
         GVAR(TransfusionMenu_Target) setVariable [QGVAR(IV_Bags), _IVBags, true];

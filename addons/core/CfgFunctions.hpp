@@ -3,10 +3,10 @@ class CfgFunctions {
         tag = "ace_interact_menu";
         class ace_interact_menu {
             class compileMenuSelfAction { // Lying state exception
-                file = QPATHTOF(overrides\fnc_compileMenuSelfAction.sqf);
+                file = QPATHTOF(overrides\fnc_compileMenuSelfAction.sqf); //ace/addons/interact_menu/functions/fnc_compileMenuSelfAction.sqf
             };
             class keyDown { // Lying state exception
-                file = QPATHTOF(overrides\fnc_keyDown.sqf);
+                file = QPATHTOF(overrides\fnc_keyDown.sqf); //ace/addons/interact_menu/functions/fnc_keyDown.sqf
             };
         };
     };
@@ -14,13 +14,13 @@ class CfgFunctions {
         tag = "ace_medical_vitals";
         class ace_medical_vitals {
             class handleUnitVitals { // Core
-                file = QPATHTOF(overrides\fnc_handleUnitVitals.sqf);
+                file = QPATHTOF(overrides\fnc_handleUnitVitals.sqf); //ace/addons/medical_vitals/functions/fnc_handleUnitVitals.sqf
             };
             class updateHeartRate { // Circulation
-                file = QPATHTOF(overrides\fnc_updateHeartRate.sqf);
+                file = QPATHTOF(overrides\fnc_updateHeartRate.sqf); //ace/addons/medical_vitals/functions/fnc_updateHeartRate.sqf
             };
             class updateOxygen { // Breathing
-                file = QPATHTOF(overrides\fnc_updateOxygen.sqf);
+                file = QPATHTOF(overrides\fnc_updateOxygen.sqf); //ace/addons/medical_vitals/functions/fnc_updateOxygen.sqf
             };
         };
     };
@@ -28,25 +28,25 @@ class CfgFunctions {
         tag = "ace_medical_status";
         class ace_medical_status {
             class getBloodPressure { // Circulation
-                file = QPATHTOF(overrides\fnc_getBloodPressure.sqf);
+                file = QPATHTOF(overrides\fnc_getBloodPressure.sqf); //ace/addons/medical_status/functions/fnc_getBloodPressure.sqf
             };
             class getBloodVolumeChange { // Circulation
-                file = QPATHTOF(overrides\fnc_getBloodVolumeChange.sqf);
+                file = QPATHTOF(overrides\fnc_getBloodVolumeChange.sqf); //ace/addons/medical_status/functions/fnc_getBloodVolumeChange.sqf
             };
             class hasStableVitals { // Add oxygen saturation as vital
-                file = QPATHTOF(overrides\fnc_hasStableVitals.sqf);
+                file = QPATHTOF(overrides\fnc_hasStableVitals.sqf); //ace/addons/medical_status/functions/fnc_hasStableVitals.sqf
             };
             class getBloodLoss { // Circulation
-                file = QPATHTOF(overrides\fnc_getBloodLoss.sqf);
+                file = QPATHTOF(overrides\fnc_getBloodLoss.sqf); //ace/addons/medical_status/functions/fnc_getBloodLoss.sqf
             };
             class updateWoundBloodLoss { // Internal bleeding
-                file = QPATHTOF(overrides\fnc_updateWoundBloodLoss.sqf);
+                file = QPATHTOF(overrides\fnc_updateWoundBloodLoss.sqf); //ace/addons/medical_status/functions/fnc_updateWoundBloodLoss.sqf
             };
             class addMedicationAdjustment { // Administration route, respiration rate adjust
-                file = QPATHTOF(overrides\fnc_addMedicationAdjustment.sqf);
+                file = QPATHTOF(overrides\fnc_addMedicationAdjustment.sqf); //ace/addons/medical_status/functions/fnc_addMedicationAdjustment.sqf
             };
             class getMedicationCount { // Administration route, respiration rate adjust
-                file = QPATHTOF(overrides\fnc_getMedicationCount.sqf);
+                file = QPATHTOF(overrides\fnc_getMedicationCount.sqf); //ace/addons/medical_status/functions/fnc_getMedicationCount.sqf
             };
         };
     };
@@ -54,34 +54,34 @@ class CfgFunctions {
         tag = "ace_medical_treatment";
         class ace_medical_treatment {
             class treatment { // Add fixes and patient animations
-                file = QPATHTOF(overrides\fnc_treatment.sqf);
+                file = QPATHTOF(overrides\fnc_treatment.sqf); //ace/addons/medical_treatment/functions/fnc_treatment.sqf
             };
             class ivBagLocal { // Circulation
-                file = QPATHTOF(overrides\fnc_ivBagLocal.sqf);
+                file = QPATHTOF(overrides\fnc_ivBagLocal.sqf); //ace/addons/medical_treatment/functions/fnc_ivBagLocal.sqf
             };
             class ivBag { // Circulation
-                file = QPATHTOF(overrides\fnc_ivBag.sqf);
+                file = QPATHTOF(overrides\fnc_ivBag.sqf); //ace/addons/medical_treatment/functions/fnc_ivBag.sqf
             };
             class medication { // Fix magazine names in triage card
-                file = QPATHTOF(overrides\fnc_medication.sqf);
+                file = QPATHTOF(overrides\fnc_medication.sqf); //ace/addons/medical_treatment/functions/fnc_medication.sqf
             };
             class medicationLocal { // Respiration rate adjust
-                file = QPATHTOF(overrides\fnc_medicationLocal.sqf);
+                file = QPATHTOF(overrides\fnc_medicationLocal.sqf); //ace/addons/medical_treatment/functions/fnc_medicationLocal.sqf
             };
             class onMedicationUsage { // Overdose changes
-                file = QPATHTOF(overrides\fnc_onMedicationUsage.sqf);
+                file = QPATHTOF(overrides\fnc_onMedicationUsage.sqf); //ace/addons/medical_treatment/functions/fnc_onMedicationUsage.sqf
             };
             class checkPulseLocal { // CPR rate
-                file = QPATHTOF(overrides\fnc_checkPulseLocal.sqf);
+                file = QPATHTOF(overrides\fnc_checkPulseLocal.sqf); //ace/addons/medical_treatment/functions/fnc_checkPulseLocal.sqf
             };
             class tourniquetRemove { // Tourniquet time
-                file = QPATHTOF(overrides\fnc_tourniquetRemove.sqf);
+                file = QPATHTOF(overrides\fnc_tourniquetRemove.sqf); //ace/addons/medical_treatment/functions/fnc_tourniquetRemove.sqf
             };
             class loadUnit { // Allow loading conscious patients
-                file = QPATHTOF(overrides\fnc_loadUnit.sqf);
+                file = QPATHTOF(overrides\fnc_loadUnit.sqf); //ace/addons/medical_treatment/functions/fnc_loadUnit.sqf
             };
             class getTriageStatus { // Deceased -> Expectant
-                file = QPATHTOF(overrides\fnc_getTriageStatus.sqf);
+                file = QPATHTOF(overrides\fnc_getTriageStatus.sqf); //ace/addons/medical_treatment/functions/fnc_getTriageStatus.sqf
             };
         };
     };
@@ -89,7 +89,7 @@ class CfgFunctions {
         tag = "ace_medical_damage";
         class ace_medical_damage {
             class woundsHandlerBase { // Modify wounds, coagulation functionality, chest injury
-                file = QPATHTOF(overrides\fnc_woundsHandlerBase.sqf);
+                file = QPATHTOF(overrides\fnc_woundsHandlerBase.sqf); //ace/addons/medical_damage/functions/fnc_woundsHandlerBase.sqf
             };
         };
     };
@@ -97,13 +97,13 @@ class CfgFunctions {
         tag = "ace_medical_feedback";
         class ace_medical_feedback {
             class handleEffects { // Oxygen Effect
-                file = QPATHTOF(overrides\fnc_handleEffects.sqf);
+                file = QPATHTOF(overrides\fnc_handleEffects.sqf); //ace/addons/medical_feedback/functions/fnc_handleEffects.sqf
             };
             class effectHeartBeat { // Lower high HR threshold
-                file = QPATHTOF(overrides\fnc_effectHeartBeat.sqf);
+                file = QPATHTOF(overrides\fnc_effectHeartBeat.sqf); //ace/addons/medical_feedback/functions/fnc_effectHeartBeat.sqf
             };
             class initEffects { // Oxygen Effect
-                file = QPATHTOF(overrides\fnc_initEffects.sqf);
+                file = QPATHTOF(overrides\fnc_initEffects.sqf); //ace/addons/medical_feedback/functions/fnc_initEffects.sqf
             };
         };
     };
@@ -111,19 +111,19 @@ class CfgFunctions {
         tag = "ace_medical_statemachine";
         class ace_medical_statemachine {
             class enteredStateCardiacArrest { // Disable cardiac arrest timer
-                file = QPATHTOF(overrides\fnc_enteredStateCardiacArrest.sqf);
+                file = QPATHTOF(overrides\fnc_enteredStateCardiacArrest.sqf); //ace/addons/medical_statemachine/functions/fnc_enteredStateCardiacArrest.sqf
             };
             class conditionCardiacArrestTimer { // Disable cardiac arrest timer
-                file = QPATHTOF(overrides\fnc_conditionCardiacArrestTimer.sqf);
+                file = QPATHTOF(overrides\fnc_conditionCardiacArrestTimer.sqf); //ace/addons/medical_statemachine/functions/fnc_conditionCardiacArrestTimer.sqf
             };
             class handleStateUnconscious { // KnockOut state
-                file = QPATHTOF(overrides\fnc_handleStateUnconscious.sqf);
+                file = QPATHTOF(overrides\fnc_handleStateUnconscious.sqf); //ace/addons/medical_statemachine/functions/fnc_handleStateUnconscious.sqf
             };
             class conditionSecondChance { // Damage
-                file = QPATHTOF(overrides\fnc_conditionSecondChance.sqf);
+                file = QPATHTOF(overrides\fnc_conditionSecondChance.sqf); //ace/addons/medical_statemachine/functions/fnc_conditionSecondChance.sqf
             };
             class conditionExecutionDeath { // Damage
-                file = QPATHTOF(overrides\fnc_conditionExecutionDeath.sqf);
+                file = QPATHTOF(overrides\fnc_conditionExecutionDeath.sqf); //ace/addons/medical_statemachine/functions/fnc_conditionExecutionDeath.sqf
             };
         };
     };
@@ -131,10 +131,10 @@ class CfgFunctions {
         tag = "ace_medical_engine";
         class ace_medical_engine {
             class setUnconsciousAnim { // Force lying animation when waking up
-                file = QPATHTOF(overrides\fnc_setUnconsciousAnim.sqf);
+                file = QPATHTOF(overrides\fnc_setUnconsciousAnim.sqf); //ace/addons/medical_engine/functions/fnc_setUnconsciousAnim.sqf
             };
             class updateDamageEffects { // Tourniquet effects for legs
-                file = QPATHTOF(overrides\fnc_updateDamageEffects.sqf);
+                file = QPATHTOF(overrides\fnc_updateDamageEffects.sqf); //ace/addons/medical_engine/functions/fnc_updateDamageEffects.sqf
             };
         };
     };
@@ -142,10 +142,10 @@ class CfgFunctions {
         tag = "ace_dogtags";
         class ace_dogtags {
             class getDogtagData { // Blood type, weight display
-                file = QPATHTOF(overrides\fnc_getDogtagData.sqf);
+                file = QPATHTOF(overrides\fnc_getDogtagData.sqf); //ace/addons/dogtags/functions/fnc_getDogtagData.sqf
             };
             class showDogtag { // Blood type, weight display
-                file = QPATHTOF(overrides\fnc_showDogtag.sqf);
+                file = QPATHTOF(overrides\fnc_showDogtag.sqf); //ace/addons/dogtags/functions/fnc_showDogtag.sqf
             };
         };
     };
@@ -153,22 +153,19 @@ class CfgFunctions {
         tag = "ace_dragging";
         class ace_dragging {
             class startCarryLocal { // Assist carry action
-                file = QPATHTOF(overrides\fnc_startCarryLocal.sqf);
-            };
-            class carryObject { // Cancel carrying prompt
-                file = QPATHTOF(overrides\fnc_carryObject.sqf);
+                file = QPATHTOF(overrides\fnc_startCarryLocal.sqf); //ace/addons/dragging/functions/fnc_startCarryLocal.sqf
             };
             class dropObject_carry { // Handle dropping animation
-                file = QPATHTOF(overrides\fnc_dropObject_carry.sqf);
+                file = QPATHTOF(overrides\fnc_dropObject_carry.sqf); //ace/addons/dragging/functions/fnc_dropObject_carry.sqf
             };
             class handleUnconscious { // Cancel carrying prompt, prevent dropping woken-up casualties
-                file = QPATHTOF(overrides\fnc_handleUnconscious.sqf);
+                file = QPATHTOF(overrides\fnc_handleUnconscious.sqf); //ace/addons/dragging/functions/fnc_handleUnconscious.sqf
             };
             class canDrag { // Lying state allow drag
-                file = QPATHTOF(overrides\fnc_canDrag.sqf);
+                file = QPATHTOF(overrides\fnc_canDrag.sqf); //ace/addons/dragging/functions/fnc_canDrag.sqf
             };
             class canCarry { // Lying state allow carry
-                file = QPATHTOF(overrides\fnc_canCarry.sqf);
+                file = QPATHTOF(overrides\fnc_canCarry.sqf); //ace/addons/dragging/functions/fnc_canCarry.sqf
             };
         };
     };

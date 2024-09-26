@@ -27,7 +27,7 @@ params ["_medic", "_patient", "_bodyPart", "_classname", "", "_usedItem", ["_iv"
 [_patient, _usedItem] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", LELSTRING(circulation,GUI_BeganTransfusing), [[_medic, false, true] call ACEFUNC(common,getName), ([_classname] call EFUNC(circulation,getFluidBagString)), ([_bodyPart] call FUNC(getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
 
-private _partIndex = ALL_BODY_PARTS find tolowerANSI _bodyPart;
+private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
 
 private _accessType = [_patient, _iv, _partIndex, _accessSite] call EFUNC(circulation,getAccessType);
 

@@ -25,6 +25,12 @@ TRACE_1("params",_this);
 _unit setVariable [QACEGVAR(dragging,releaseActionID), nil];
 
 private _inBuilding = _unit call ACEFUNC(dragging,isObjectOnObject);
+private _isClone = _target isKindOf QACEGVAR(dragging,clone);
+
+// Drop cloned dead units
+if (_isClone) then {
+    _target = [_unit, _target, _inBuilding] call ACEFUNC(dragging,deleteClone);
+};
 
 // Prevent collision damage
 [QACEGVAR(common,fixCollision), _unit] call CBA_fnc_localEvent;
@@ -49,7 +55,7 @@ if (_target isKindOf "CAManBase" || {animationState _unit in CARRY_ANIMATIONS}) 
         _target setVariable [QGVAR(Lying_State), true, true];
     };
 
-    if (isNull objectParent _unit && {!(_unit getVariable ["ACE_isUnconscious", false])}) then {
+    if (isNull objectParent _unit && {_unit call ACEFUNC(common,isAwake)}) then {
         [_unit, "", 2] call ACEFUNC(common,doAnimation);
     };
 
@@ -67,7 +73,14 @@ if (_target isKindOf "CAManBase" || {animationState _unit in CARRY_ANIMATIONS}) 
 // Properly remove fake weapon
 _unit removeWeapon "ACE_FakePrimaryWeapon";
 
-_unit setVariable [QACEGVAR(dragging,previousWeapon), nil, true];
+// Reselect weapon and re-enable sprint
+private _previousWeaponState = _unit getVariable QACEGVAR(dragging,previousWeapon);
+
+if (!isNil "_previousWeaponState") then {
+    _unit selectWeapon _previousWeaponState;
+
+    _unit setVariable [QACEGVAR(dragging,previousWeapon), nil, true];
+};
 
 [_unit] call ACEFUNC(weaponselect,putWeaponAway);
 
@@ -76,8 +89,9 @@ _unit setVariable [QACEGVAR(dragging,previousWeapon), nil, true];
 [_unit, "blockThrow", QUOTE(ACE_ADDON(dragging)), false] call ACEFUNC(common,statusEffect_set);
 
 // Prevent object from flipping inside buildings
-if (_inBuilding) then {
+if (_inBuilding && {!_isClone}) then {
     _target setPosASL (getPosASL _target vectorAdd [0, 0, 0.05]);
+    TRACE_2("setPos",getPosASL _unit,getPosASL _target);
 };
 
 _unit setVariable [QACEGVAR(dragging,isCarrying), false, true];
@@ -91,16 +105,16 @@ if !(_target isKindOf "CAManBase") then {
     [QACEGVAR(common,fixFloating), _target, _target] call CBA_fnc_targetEvent;
 };
 
-// Recreate UAV crew (add a frame delay or this may cause the vehicle to be moved to [0,0,0])
-if (_target getVariable [QACEGVAR(dragging,isUAV), false]) then {
-    _target setVariable [QACEGVAR(dragging,isUAV), nil, true];
+// Reenable UAV crew
+private _UAVCrew = _target getVariable [QACEGVAR(dragging,isUAV), []];
 
-    [{
-        params ["_target"];
-        if (!alive _target) exitWith {};
-        TRACE_2("restoring uav crew",_target,getPosASL _target);
-        createVehicleCrew _target;
-    }, [_target]] call CBA_fnc_execNextFrame;
+if (_UAVCrew isNotEqualTo []) then {
+    // Reenable AI
+    {
+        [_x, false] call ACEFUNC(common,disableAiUAV);
+    } forEach _UAVCrew;
+
+    _target setVariable [QACEGVAR(dragging,isUAV), nil, true];
 };
 
 // Reset mass
@@ -121,11 +135,17 @@ if (_loadCargo) then {
         private _vehicles = [_cursorObject, 0, true] call ACEFUNC(common,nearestVehiclesFreeSeat);
 
         if ([_cursorObject] isEqualTo _vehicles) then {
-            if (["ace_medical"] call ACEFUNC(common,isModLoaded)) then {
+            if (GETACEGVAR(medical,enabled,false)) then {
                 [_unit, _target, _cursorObject] call ACEFUNC(medical_treatment,loadUnit);
             } else {
                 [_unit, _target, _cursorObject] call ACEFUNC(common,loadPerson);
             };
+
+            // Repurpose variable for flag used in event below
+            _loadCargo = true;
         };
     };
 };
+
+// API
+[QACEGVAR(dragging,stoppedCarry), [_unit, _target, _loadCargo]] call CBA_fnc_localEvent;

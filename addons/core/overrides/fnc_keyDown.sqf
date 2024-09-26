@@ -36,7 +36,7 @@ if (_isTextEditing) then {
 if (
     _isTextEditing ||
     {(isNull curatorCamera) && {
-        !([ACE_player, objNull, ["isNotInLyingState", "isNotInside","isNotDragging", "isNotCarrying", "isNotSwimming", "notOnMap", "isNotEscorting", "isNotSurrendering", "isNotSitting", "isNotOnLadder", "isNotRefueling"]] call ACEFUNC(common,canInteractWith))
+        !([ACE_player, objNull, ["isNotInLyingState", "isNotInside","isNotDragging", "isNotCarrying", "isNotSwimming", "notOnMap", "isNotEscorting", "isNotSurrendering", "isNotHandcuffed", "isNotSitting", "isNotOnLadder", "isNotRefueling"]] call ACEFUNC(common,canInteractWith))
     }
 }) exitWith {false};
 
@@ -84,8 +84,8 @@ if (ACEGVAR(interact_menu,useCursorMenu)) then {
     } else {
         createDialog QACEGVAR(interact_menu,cursorMenu);
     };
-    (finddisplay 91919) displayAddEventHandler ["KeyUp", {[_this,'keyup'] call CBA_events_fnc_keyHandler}];
-    (finddisplay 91919) displayAddEventHandler ["KeyDown", {
+    (findDisplay 91919) displayAddEventHandler ["KeyUp", {[_this,'keyup'] call CBA_events_fnc_keyHandler}];
+    (findDisplay 91919) displayAddEventHandler ["KeyDown", {
         // Handle the escape key being pressed with menu open:
         if ((_this select [1,4]) isEqualTo [1,false,false,false]) exitWith { // escape key with no modifiers
             [displayNull] call ACEFUNC(interact_menu,handleEscapeMenu);
@@ -102,8 +102,8 @@ if (ACEGVAR(interact_menu,useCursorMenu)) then {
     _ctrl ctrlCommit 0;
 
     // handles Mouse moving and LMB in cursor mode when action on keyrelease is disabled
-    ((finddisplay 91919) displayctrl 9922) ctrlAddEventHandler ["MouseMoving", DACEFUNC(ACE_ADDON(interact_menu),handleMouseMovement)];
-    ((finddisplay 91919) displayctrl 9922) ctrlAddEventHandler ["MouseButtonDown", DACEFUNC(ACE_ADDON(interact_menu),handleMouseButtonDown)];
+    ((findDisplay 91919) displayCtrl 9922) ctrlAddEventHandler ["MouseMoving", DACEFUNC(ACE_ADDON(interact_menu),handleMouseMovement)];
+    ((findDisplay 91919) displayCtrl 9922) ctrlAddEventHandler ["MouseButtonDown", DACEFUNC(ACE_ADDON(interact_menu),handleMouseButtonDown)];
     setMousePosition [0.5, 0.5];
 } else {
     if (uiNamespace getVariable [QACEGVAR(interact_menu,cursorMenuOpened),false]) then {
@@ -111,18 +111,12 @@ if (ACEGVAR(interact_menu,useCursorMenu)) then {
     };
 };
 
-ACEGVAR(interact_menu,selfMenuOffset) = (AGLtoASL (positionCameraToWorld [0, 0, 2])) vectorDiff (AGLtoASL (positionCameraToWorld [0, 0, 0]));
+ACEGVAR(interact_menu,selfMenuOffset) = (AGLToASL (positionCameraToWorld [0, 0, 2])) vectorDiff (AGLToASL (positionCameraToWorld [0, 0, 0]));
 
 //Auto expand the first level when self, mounted vehicle or zeus (skips the first animation as there is only one choice)
 if (ACEGVAR(interact_menu,openedMenuType) == 0) then {
     if (isNull curatorCamera) then {
-        if (!(isNull (ACE_controlledUAV select 0))) then {
-            ACEGVAR(interact_menu,menuDepthPath) = [["ACE_SelfActions", (ACE_controlledUAV select 0)]];
-            ACEGVAR(interact_menu,expanded) = true;
-            ACEGVAR(interact_menu,expandedTime) = diag_tickTime;
-            ACEGVAR(interact_menu,lastPath) = +ACEGVAR(interact_menu,menuDepthPath);
-            ACEGVAR(interact_menu,startHoverTime) = -1000;
-        } else {
+        if (isNull (ACE_controlledUAV select 0)) then {
             if (vehicle ACE_player != ACE_player) then {
                 ACEGVAR(interact_menu,menuDepthPath) = [["ACE_SelfActions", (vehicle ACE_player)]];
                 ACEGVAR(interact_menu,expanded) = true;
@@ -130,6 +124,12 @@ if (ACEGVAR(interact_menu,openedMenuType) == 0) then {
                 ACEGVAR(interact_menu,lastPath) = +ACEGVAR(interact_menu,menuDepthPath);
                 ACEGVAR(interact_menu,startHoverTime) = -1000;
             };
+        } else {
+            ACEGVAR(interact_menu,menuDepthPath) = [["ACE_SelfActions", (ACE_controlledUAV select 0)]];
+            ACEGVAR(interact_menu,expanded) = true;
+            ACEGVAR(interact_menu,expandedTime) = diag_tickTime;
+            ACEGVAR(interact_menu,lastPath) = +ACEGVAR(interact_menu,menuDepthPath);
+            ACEGVAR(interact_menu,startHoverTime) = -1000;
         };
     } else {
         ACEGVAR(interact_menu,menuDepthPath) = [["ACE_ZeusActions", (getAssignedCuratorLogic player)]];

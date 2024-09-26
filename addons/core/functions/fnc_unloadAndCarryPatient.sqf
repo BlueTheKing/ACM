@@ -33,13 +33,21 @@ if (!GETVAR(_patient,ACEGVAR(dragging,ignoreWeightCarry),false) && {
 
 private _timer = CBA_missionTime;
 
-// add a primary weapon if the unit has none.
-if (primaryWeapon _medic isEqualto "") then {
-    _medic addWeapon "ACE_FakePrimaryWeapon";
+// Create clone for dead units
+if (!alive _patient) then {
+    _patient = [_medic, _patient] call ACEFUNC(dragging,createClone);
 };
 
-// select primary, otherwise the drag animation actions don't work.
-_medic selectWeapon primaryWeapon _medic;
+private _primaryWeapon = primaryWeapon _medic;
+
+    // Add a primary weapon if the unit has none
+    if (_primaryWeapon == "") then {
+        _medic addWeapon "ACE_FakePrimaryWeapon";
+        _primaryWeapon = "ACE_FakePrimaryWeapon";
+    };
+
+    // Select primary, otherwise the carry animation actions don't work
+    _medic selectWeapon _primaryWeapon; // This turns off lasers/lights
 
 // move a bit closer and adjust direction when trying to pick up a person
 _patient setDir (getDir _medic + 180);
@@ -62,3 +70,12 @@ if (_mass > 1) then {
     _patient setVariable [QACEGVAR(dragging,originalMass), _mass, true];
     [QACEGVAR(common,setMass), [_patient, 1e-12]] call CBA_fnc_globalEvent; // force global sync
 };
+
+[{
+    params ["_patient"];
+
+    [QACEGVAR(common,switchMove), [_patient, "AinjPfalMstpSnonWnonDf_carried_dead"]] call CBA_fnc_globalEvent; // Force carried animation to avoid sliding
+}, [_patient], 1] call CBA_fnc_waitAndExecute;
+
+// API
+[QACEGVAR(dragging,setupCarry), [_medic, _patient]] call CBA_fnc_localEvent;

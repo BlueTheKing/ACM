@@ -41,6 +41,11 @@ private _timer = CBA_missionTime + 5;
 
 // Handle objects vs. persons
 if (_target isKindOf "CAManBase") then {
+    // Create clone for dead units
+    if (!alive _target) then {
+        _target = [_unit, _target] call ACEFUNC(dragging,createClone);
+    };
+
     private _primaryWeapon = primaryWeapon _unit;
 
     // Add a primary weapon if the unit has none
@@ -50,7 +55,7 @@ if (_target isKindOf "CAManBase") then {
     };
 
     // Select primary, otherwise the carry animation actions don't work
-    _unit selectWeapon _primaryWeapon;
+    _unit selectWeapon _primaryWeapon; // This turns off lasers/lights
 
     // Move a bit closer and adjust direction when trying to pick up a person
     [QACEGVAR(common,setDir), [_target, getDir _unit + 180], _target] call CBA_fnc_targetEvent;
@@ -66,10 +71,11 @@ if (_target isKindOf "CAManBase") then {
     };
 } else {
     // Select no weapon and stop sprinting
-    private _previousWeaponIndex = [_unit] call ACEFUNC(common,getFiremodeIndex);
-    _unit setVariable [QACEGVAR(dragging,previousWeapon), _previousWeaponIndex, true];
+    if (currentWeapon _unit != "") then {
+        _unit setVariable [QACEGVAR(dragging,previousWeapon), (weaponState _unit) select [0, 3], true];
 
-    _unit action ["SwitchWeapon", _unit, _unit, 299];
+        _unit action ["SwitchWeapon", _unit, _unit, 299];
+    };
 
     [_unit, "AmovPercMstpSnonWnonDnon", 0] call ACEFUNC(common,doAnimation);
 
@@ -85,7 +91,7 @@ if (_target isKindOf "CAManBase") then {
 // Prevents dragging and carrying at the same time
 _unit setVariable [QACEGVAR(dragging,isCarrying), true, true];
 
-// Required for aborting animation
+// Required for aborting (animation & keybind)
 _unit setVariable [QACEGVAR(dragging,carriedObject), _target, true];
 
 [ACELINKFUNC(dragging,startCarryPFH), 0.2, [_unit, _target, _timer]] call CBA_fnc_addPerFrameHandler;
@@ -97,3 +103,6 @@ if (_mass > 1) then {
     _target setVariable [QACEGVAR(dragging,originalMass), _mass, true];
     [QACEGVAR(common,setMass), [_target, 1e-12]] call CBA_fnc_globalEvent; // Force global sync
 };
+
+// API
+[QACEGVAR(dragging,setupCarry), [_unit, _target]] call CBA_fnc_localEvent;

@@ -107,7 +107,7 @@ if (!_isLimping && {ACEGVAR(medical,limping) > 0}) then {
             (_xAmountOf > 0)
             && {_xDamage > LIMPING_DAMAGE_THRESHOLD}
             // select _causeLimping from woundDetails
-            && {(ACEGVAR(medical_damage,woundDetails) get (_xClassID / 10)) select 3}
+            && {(ACEGVAR(medical_damage,woundDetails) get (floor (_xClassID / 10))) select 3}
         ) exitWith {
             TRACE_1("limping because of wound",_x);
             _isLimping = true;

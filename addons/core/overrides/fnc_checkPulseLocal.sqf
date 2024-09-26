@@ -21,7 +21,7 @@ params ["_medic", "_patient", "_bodyPart"];
 
 private _heartRate = 0;
 
-if (!([_patient, _bodyPart] call ACEFUNC(medical_treatment,hasTourniquetAppliedTo))) then {
+if !([_patient, _bodyPart] call ACEFUNC(medical_treatment,hasTourniquetAppliedTo)) then {
     _heartRate = switch (true) do {
         case (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])): {
             random [100, 110, 120]; // fake heart rate because patient is dead and off state machine

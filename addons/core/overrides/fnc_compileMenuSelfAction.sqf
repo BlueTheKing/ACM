@@ -17,14 +17,14 @@
 
 params ["_target"];
 
-private _objectType = _target;
-if (_target isEqualType objNull) then {
-    _objectType = typeOf _target;
+private _objectType = if (_target isEqualType objNull) then {
+    typeOf _target
+} else {
+    _target call ACEFUNC(common,getConfigName)
 };
-private _namespace = ACEGVAR(interact_menu,ActSelfNamespace);
 
 // Exit if the action menu is already compiled for this class
-if (!isNil {_namespace getVariable _objectType}) exitWith {};
+if (_objectType in ACEGVAR(interact_menu,actSelfNamespace)) exitWith {};
 
 private _recurseFnc = {
     params ["_actionsCfg"];
@@ -119,7 +119,7 @@ private _actions = [
                     // Dummy statement so it's not collapsed when there's no available actions
                     true
                 },
-                {[ACE_player, _target, ["isNotInLyingState", "isNotInside","isNotDragging", "isNotCarrying", "isNotSwimming", "notOnMap", "isNotEscorting", "isNotSurrendering", "isNotSitting", "isNotOnLadder", "isNotRefueling"]] call ACEFUNC(common,canInteractWith)},
+                {[ACE_player, _target, ["isNotInLyingState", "isNotInside","isNotDragging", "isNotCarrying", "isNotSwimming", "notOnMap", "isNotEscorting", "isNotSurrendering", "isNotHandcuffed", "isNotSitting", "isNotOnLadder", "isNotRefueling"]] call ACEFUNC(common,canInteractWith)},
                 {},
                 {},
                 "Spine3",
@@ -130,4 +130,4 @@ private _actions = [
         ]
     ];
 
-_namespace setVariable [_objectType, _actions];
+ACEGVAR(interact_menu,ActSelfNamespace) set [_objectType, _actions];
