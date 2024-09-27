@@ -219,14 +219,14 @@ if (_selectionN == 0) then {
 private _oxygenSaturation = GET_OXYGEN(_target);
 
 // Cyanosis
-if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < 91 || HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN))}) then {
+if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < ACM_CYANOSIS_T_SLIGHT || HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN))}) then {
     private _tourniquetTime = 0;
     if !(alive _target) then {
         private _timeSinceDeath = CBA_missionTime - (_target getVariable [QEGVAR(core,TimeOfDeath), CBA_missionTime]);
         private _newOxygenSaturation = linearConversion [0, (330 - ((100 - _oxygenSaturation) * ACM_BREATHING_MAXDECREASE)), _timeSinceDeath, 99, 55, true];
         _oxygenSaturation = _oxygenSaturation min _newOxygenSaturation;
     };
-    private _colorScale = linearConversion [91, 55, _oxygenSaturation, 0.47, 0.13, true];
+    private _colorScale = linearConversion [ACM_CYANOSIS_T_SLIGHT, ACM_OXYGEN_DEATH, _oxygenSaturation, 0.47, 0.13, true];
 
     if (HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN)) then {
         _tourniquetTime = CBA_missionTime - ((_target getVariable [QEGVAR(disability,Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]]) select _selectionN);
@@ -234,8 +234,8 @@ if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < 91 || HA
     };
 
     private _cyanosis = switch (true) do {
-        case (_oxygenSaturation < 67 || _tourniquetTime > 120): {LELSTRING(breathing,GUI_Severe)};
-        case (_oxygenSaturation < 82 || _tourniquetTime > 60): {LELSTRING(breathing,GUI_Moderate)};
+        case (_oxygenSaturation < ACM_CYANOSIS_T_SEVERE || _tourniquetTime > 120): {LELSTRING(breathing,GUI_Severe)};
+        case (_oxygenSaturation < ACM_CYANOSIS_T_MODERATE || _tourniquetTime > 60): {LELSTRING(breathing,GUI_Moderate)};
         default {LELSTRING(breathing,GUI_Slight)};
     };
 

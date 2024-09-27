@@ -212,6 +212,7 @@
 #define IN_RECOVERYPOSITION(unit) (unit getVariable [QQEGVAR(airway,RecoveryPosition_State), false])
 
 // Breathing
+#define ACM_BREATHING_MINDECREASE 0.1
 #define ACM_BREATHING_MAXDECREASE 0.12
 
 #define GET_BREATHINGSTATE(unit) (unit getVariable [QEGVAR(breathing,BreathingState), 1])
@@ -222,6 +223,10 @@
 
 #define GET_PULSEOX(unit) (unit getVariable [QEGVAR(breathing,PulseOximeter_Placement),[false,false]])
 #define HAS_PULSEOX(unit,index) (GET_PULSEOX(unit) select index)
+
+#define ACM_CYANOSIS_T_SLIGHT   91
+#define ACM_CYANOSIS_T_MODERATE 82
+#define ACM_CYANOSIS_T_SEVERE   67
 
 #define ACM_OXYGEN_UNCONSCIOUS 80
 #define ACM_OXYGEN_HYPOXIA 67

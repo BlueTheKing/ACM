@@ -22,7 +22,7 @@ if (hasInterface) then {
     _patient setVariable [QGVAR(AnestheticEffect_PFH), -1];
 };
 
-_patient setVariable [QGVAR(ROSC_Time), -30, true];
+_patient setVariable [QGVAR(ROSC_Time), nil, true];
 _patient setVariable [QGVAR(CardiacArrest_Time), nil, true];
 
 _patient setVariable [QGVAR(Hardcore_PostCardiacArrest), false, true];

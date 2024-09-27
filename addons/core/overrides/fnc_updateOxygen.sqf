@@ -98,7 +98,7 @@ if (_timeSinceLastBreath < 35) then {
     _BVMLastingEffect = 1 min 25 / (_timeSinceLastBreath max 0.001);
 };
 
-private _maxDecrease = -ACM_BREATHING_MAXDECREASE;
+private _maxDecrease = [-ACM_BREATHING_MINDECREASE, (linearConversion [90, 75, _oxygenSaturation, -ACM_BREATHING_MAXDECREASE, -ACM_BREATHING_MINDECREASE, true])] select (_heartRate > 0);
 private _maxPositiveGain = 0.5;
 
 if !(_activeBVM) then {
