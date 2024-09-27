@@ -32,6 +32,10 @@ private _PFH = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
+    if (_patient getVariable [QGVAR(AirwayReflex_State), false]) then {
+        _patient setVariable [QGVAR(AirwayReflex_State), false, true];
+    };
+
     if (_keepAirwayIntact) exitWith {};
 
     if (random 1 < (0.3 * GVAR(airwayCollapseChance))) then {
