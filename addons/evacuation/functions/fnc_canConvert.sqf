@@ -25,9 +25,9 @@ switch (true) do {
     case !(IS_UNCONSCIOUS(_patient));
     case !(alive _patient);
     case (([1] call FUNC(getAvailableTickets)) < 1);
-    case ([_medic, GVAR(allowConvert)] call ACEFUNC(medical_treatment,isMedic));
-    case ([false, ([_medic] call ACEFUNC(medical_treatment,isInMedicalVehicle)), ([_medic] call ACEFUNC(medical_treatment,isInMedicalFacility)),
-    (([_medic] call ACEFUNC(medical_treatment,isInMedicalVehicle)) || ([_medic] call ACEFUNC(medical_treatment,isInMedicalFacility))), false] select GVAR(locationConvert));
+    case !([_medic, GVAR(allowConvert)] call ACEFUNC(medical_treatment,isMedic));
+    case ([false, !([_medic] call ACEFUNC(medical_treatment,isInMedicalVehicle)), !([_medic] call ACEFUNC(medical_treatment,isInMedicalFacility)),
+    (!([_medic] call ACEFUNC(medical_treatment,isInMedicalVehicle)) && !([_medic] call ACEFUNC(medical_treatment,isInMedicalFacility))), false] select GVAR(locationConvert));
     case (IS_BLEEDING(_patient));
     case (GET_BLOOD_VOLUME(_patient) < 3.6): {false};
     default {true};
