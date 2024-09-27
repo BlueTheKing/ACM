@@ -237,7 +237,7 @@ if (_transfusionPain > 0) then {
 if (_bloodVolume < 6) then {
     if (_plasmaVolume + _plasmaVolumeChange > 0) then {
         private _leftToConvert = _plasmaVolume + _plasmaVolumeChange;
-        private _conversionRate = (-_deltaT * (4 / 1000)) min _leftToConvert;
+        private _conversionRate = (-_deltaT * (3 / 1000)) min _leftToConvert;
     
         _plasmaVolumeChange = _plasmaVolumeChange + _conversionRate;
         _bloodVolumeChange = _bloodVolumeChange - _conversionRate;
@@ -245,7 +245,7 @@ if (_bloodVolume < 6) then {
     
     if (_salineVolume + _salineVolumeChange > 0) then {
         private _leftToConvert = _salineVolume + _salineVolumeChange;
-        private _conversionRate = (-_deltaT * (1 / 1000)) min _leftToConvert;
+        private _conversionRate = (-_deltaT * (0.7 / 1000)) min _leftToConvert;
         
         _salineVolumeChange = _salineVolumeChange + _conversionRate;
         _bloodVolumeChange = _bloodVolumeChange - _conversionRate;
