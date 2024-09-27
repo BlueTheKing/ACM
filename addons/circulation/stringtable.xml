@@ -551,7 +551,7 @@
             <English>Measured Capillary Refill Time&lt;br/&gt;%1 seconds</English>
         </Key>
         <Key ID="STR_ACM_Circulation_CapillaryRefill_ActionLog">
-            <English>%1 measured capillary refill time: %2 (%3)</English>
+            <English>%1 measured capillary refill time: %2s (%3)</English>
         </Key><!--
             // Feel Pulse Action // -->
         <Key ID="STR_ACM_Circulation_FeelPulse_FeelingForPulse">
