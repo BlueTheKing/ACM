@@ -37,7 +37,7 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
     private _bloodVolume = GET_BLOOD_VOLUME(_unit);
     private _oxygenSaturation = GET_OXYGEN(_unit);
     if (_bloodVolume > BLOOD_VOLUME_CLASS_4_HEMORRHAGE) then {
-        private _timeSinceROSC = (CBA_missionTime - (_unit getVariable [QEGVAR(circulation,ROSC_Time), -30]));
+        private _timeSinceROSC = (CBA_missionTime - (_unit getVariable [QEGVAR(circulation,ROSC_Time), -45]));
         
         GET_BLOOD_PRESSURE(_unit) params ["_bloodPressureL", "_bloodPressureH"];
         private _meanBP = (2/3) * _bloodPressureH + (1/3) * _bloodPressureL;
@@ -57,19 +57,18 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
         };
         // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
         private _oxygenDemand = _unit getVariable [VAR_OXYGEN_DEMAND, 0];
-        _targetHR = _targetHR + (((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 1.5) max (_oxygenDemand * -2000));
+        _targetHR = _targetHR + (((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 2) max (_oxygenDemand * -2000));
 
-        if (_timeSinceROSC < 30) then {
-            _targetHR = _targetHR max (_desiredHR + 110 * (_timeSinceROSC / 30));
+        _targetHR = (_targetHR + _hrTargetAdjustment) max 0;
+
+        if (_timeSinceROSC < 45) then {
+            _targetHR = _targetHR max (_desiredHR + 110 * ((_timeSinceROSC / 30) min 1));
+            _targetHR = _targetHR min ACM_TARGETVITALS_MAXHR(_unit);
         } else {
             if (_unit getVariable [QEGVAR(circulation,Hardcore_PostCardiacArrest), false]) then {
                 _targetHR = _targetHR min (_targetHR / _desiredHR) * (_desiredHR * 0.7);
             };
         };
-
-        _targetHR = _targetHR min ACM_TARGETVITALS_MAXHR(_unit);
-
-        _targetHR = (_targetHR + _hrTargetAdjustment) max 0;
 
         _hrChange = round(_targetHR - _heartRate) / 2;
     } else {
