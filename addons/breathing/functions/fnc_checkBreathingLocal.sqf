@@ -43,7 +43,7 @@ switch (true) do {
         _hint = LLSTRING(CheckBreathing_None);
         _hintLog = LLSTRING(CheckBreathing_None_Short);
     };
-    case (_pneumothorax || _airwayCollapsed && !_airwaySecure || !_airwayReflexIntact && !_airwayAdjunct): {
+    case (_pneumothorax || _airwayCollapsed && !_airwaySecure || !_airwaySecure && !_airwayReflexIntact && !_airwayAdjunct): {
         _hint = LLSTRING(CheckBreathing_Shallow);
         _hintLog = LLSTRING(CheckBreathing_Shallow_Short);
 
