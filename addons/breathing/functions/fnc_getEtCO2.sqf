@@ -24,7 +24,7 @@ params ["_patient"];
     Conscious (Normal) - 35-45
     ROSC (Momentary) - 45-50
 */
-private _timeSinceROSC = (CBA_missionTime - (_patient getVariable [QEGVAR(circulation,ROSC_Time), -30]));
+private _timeSinceROSC = (CBA_missionTime - (_patient getVariable [QEGVAR(circulation,ROSC_Time), -45]));
 private _exit = false;
 private _minFrom = 0;
 private _maxFrom = 0;
@@ -35,8 +35,10 @@ private _maxTo = 0;
 private _airwayState = (GET_AIRWAYSTATE(_patient) / 0.95) min 1;
 private _breathingState = (GET_BREATHINGSTATE(_patient) / 0.85) min 1;
 
-if (_timeSinceROSC < 30) exitWith {
-    linearConversion [0, 30, _timeSinceROSC, 50, 30, true];
+private _bloodVolumeEffect = 1 min (GET_EFF_BLOOD_VOLUME(_patient) / 5.9);
+
+if (_timeSinceROSC < 45) exitWith {
+    linearConversion [0, 30, _timeSinceROSC, 50 * _bloodVolumeEffect, 30 * _bloodVolumeEffect, true];
 };
 
 private _desiredRespirationRate = _patient getVariable [QEGVAR(core,TargetVitals_RespirationRate), 16];
@@ -78,4 +80,4 @@ if ((GET_HEART_RATE(_patient) < 20) || IN_CRDC_ARRST(_patient) || !(alive _patie
 
 if (_exit) exitWith {0};
 
-linearConversion [_minFrom, _maxFrom, (_value * (_airwayState min _breathingState)), _minTo, _maxTo, true];
+linearConversion [_minFrom, _maxFrom, (_value * (_airwayState min _breathingState)), _minTo * _bloodVolumeEffect, _maxTo * _bloodVolumeEffect, true];
