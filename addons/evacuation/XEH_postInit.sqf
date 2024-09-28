@@ -38,5 +38,9 @@ if (isServer) then {
         params ["_unit"];
 
         selectPlayer _unit;
+
+        if (["3denEnhanced"] call ACEFUNC(common,isModLoaded)) then { // Prevent restore loadout from breaking
+            _unit setVariable ["ENH_savedLoadout", getUnitLoadout _unit];
+        };
     }, [_unit], 1] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
