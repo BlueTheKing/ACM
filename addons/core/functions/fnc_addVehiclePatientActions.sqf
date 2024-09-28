@@ -43,7 +43,7 @@ private _actions = [];
             case (IS_BLEEDING(_unit)): { // Bleeding
                 private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
                 private _bleedRate = GET_BLOOD_LOSS(_unit);
-                private _bleedRateKO = BLOOD_LOSS_KNOCK_OUT_THRESHOLD_DEFAULT * (_cardiacOutput max 0.05);
+                private _bleedRateKO = BLOOD_LOSS_KNOCK_OUT_THRESHOLD * (_cardiacOutput max 0.05);
 
                 _iconColor = [1, (linearConversion [(_bleedRateKO * BLEED_RATE_SLOW), (_bleedRateKO * BLEED_RATE_SEVERE), _bleedRate, 1, 0, true]), 0, 1];
                 QPATHTOF(ui\icon_patient_bleeding.paa);

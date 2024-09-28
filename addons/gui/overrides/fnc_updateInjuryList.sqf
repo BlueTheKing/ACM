@@ -39,7 +39,7 @@ if (IS_BLEEDING(_target)) then {
             // Give a qualitative description of the rate of bleeding
             private _cardiacOutput = [_target] call ACEFUNC(medical_status,getCardiacOutput);
             private _bleedRate = GET_BLOOD_LOSS(_target);
-            private _bleedRateKO = BLOOD_LOSS_KNOCK_OUT_THRESHOLD_DEFAULT * (_cardiacOutput max 0.05);
+            private _bleedRateKO = BLOOD_LOSS_KNOCK_OUT_THRESHOLD * (_cardiacOutput max 0.05);
             // Use nonzero minimum cardiac output to prevent all bleeding showing as massive during cardiac arrest
             switch (true) do {
                 case (_bleedRate < _bleedRateKO * BLEED_RATE_SLOW): {
@@ -375,10 +375,10 @@ if (ACEGVAR(medical_gui,showDamageEntry)) then {
         private _damageThreshold = GET_DAMAGE_THRESHOLD(_target);
         switch (true) do {
             case (_selectionN > 3): { // legs: index 4 & 5
-                _damageThreshold = LIMPING_DAMAGE_THRESHOLD_DEFAULT * 4;
+                _damageThreshold = LIMPING_DAMAGE_THRESHOLD * 4;
             };
             case (_selectionN > 1): { // arms: index 2 & 3
-                _damageThreshold = FRACTURE_DAMAGE_THRESHOLD_DEFAULT * 4;
+                _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
             };
             case (_selectionN == 0): { // head: index 0
                 _damageThreshold = _damageThreshold * 1.25;

@@ -226,7 +226,7 @@ switch (true) do {
             [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
         };
     };
-    case (_woundBloodLoss > BLOOD_LOSS_KNOCK_OUT_THRESHOLD_DEFAULT): {
+    case (_woundBloodLoss > BLOOD_LOSS_KNOCK_OUT_THRESHOLD): {
         [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_oxygenSaturation < ACM_OXYGEN_UNCONSCIOUS): {

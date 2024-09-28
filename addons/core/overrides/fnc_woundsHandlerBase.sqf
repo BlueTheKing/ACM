@@ -116,7 +116,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         // Create a new injury. Format [0:classComplex, 1:amountOf, 2:bleedingRate, 3:woundDamage]
         private _injury = [_classComplex, 1, _bleeding, _woundDamage];
 
-        if (_bodyPart isEqualTo "head" || {_bodyPart isEqualTo "body" && {_woundDamage > PENETRATION_THRESHOLD_DEFAULT}}) then {
+        if (_bodyPart isEqualTo "head" || {_bodyPart isEqualTo "body" && {_woundDamage > PENETRATION_THRESHOLD}}) then {
             _criticalDamage = true;
             if (EGVAR(damage,enable)) then {
                 if ([_unit, _bodyPartDamage] call EFUNC(damage,handleTrauma)) then {
@@ -140,7 +140,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         };
 
         #ifdef DEBUG_MODE_FULL
-        systemChat format["%1, damage: %2, peneration: %3, bleeding: %4, pain: %5", _bodyPart, _woundDamage toFixed 2, _woundDamage > PENETRATION_THRESHOLD_DEFAULT, _bleeding toFixed 3, _pain toFixed 3];
+        systemChat format["%1, damage: %2, peneration: %3, bleeding: %4, pain: %5", _bodyPart, _woundDamage toFixed 2, _woundDamage > PENETRATION_THRESHOLD, _bleeding toFixed 3, _pain toFixed 3];
         #endif
 
         switch (true) do {
@@ -148,7 +148,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
                 _causeFracture
                 && {ACEGVAR(medical,fractures) > 0}
                 && {_bodyPartNToAdd > 1}
-                && {_woundDamage > FRACTURE_DAMAGE_THRESHOLD_DEFAULT}
+                && {_woundDamage > FRACTURE_DAMAGE_THRESHOLD}
                 && {random 1 < (_fractureMultiplier * ACEGVAR(medical,fractureChance))}
             ): {
                 private _fractures = GET_FRACTURES(_unit);
@@ -164,7 +164,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
                 _causeLimping
                 && {ACEGVAR(medical,limping) > 0}
                 && {_bodyPartNToAdd > 3}
-                && {_woundDamage > LIMPING_DAMAGE_THRESHOLD_DEFAULT}
+                && {_woundDamage > LIMPING_DAMAGE_THRESHOLD}
             ): {
                 _updateDamageEffects = true;
             };
@@ -177,8 +177,8 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
             _x params ["_classID", "_oldAmountOf", "_oldBleeding", "_oldDamage"];
             if (
                     (_classComplex == _classID) &&
-                    {(_bodyPart isNotEqualTo "body") || {(_woundDamage < PENETRATION_THRESHOLD_DEFAULT) isEqualTo (_oldDamage < PENETRATION_THRESHOLD_DEFAULT)}} && // penetrating body damage is handled differently
-                    {(_bodyPartNToAdd > 3) || {!_causeLimping} || {(_woundDamage <= LIMPING_DAMAGE_THRESHOLD_DEFAULT) isEqualTo (_oldDamage <= LIMPING_DAMAGE_THRESHOLD_DEFAULT)}} // ensure limping damage is stacked correctly
+                    {(_bodyPart isNotEqualTo "body") || {(_woundDamage < PENETRATION_THRESHOLD) isEqualTo (_oldDamage < PENETRATION_THRESHOLD)}} && // penetrating body damage is handled differently
+                    {(_bodyPartNToAdd > 3) || {!_causeLimping} || {(_woundDamage <= LIMPING_DAMAGE_THRESHOLD) isEqualTo (_oldDamage <= LIMPING_DAMAGE_THRESHOLD)}} // ensure limping damage is stacked correctly
                     ) exitWith {
                 TRACE_2("merging with existing wound",_injury,_x);
                 private _newAmountOf = _oldAmountOf + 1;
@@ -221,7 +221,7 @@ if (_createdWounds) then {
 
     [QACEGVAR(medical,injured), [_unit, _painLevel]] call CBA_fnc_localEvent;
 
-    if (_criticalDamage || {_painLevel > PAIN_UNCONSCIOUS_DEFAULT}) then {
+    if (_criticalDamage || {_painLevel > PAIN_UNCONSCIOUS}) then {
         [_unit] call ACEFUNC(medical_damage,handleIncapacitation);
     };
 

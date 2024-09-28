@@ -81,10 +81,10 @@ private _bodyPartBloodLoss = [0, 0, 0, 0, 0, 0];
         private _damage = _bodyPartDamage select _forEachIndex;
         switch (true) do { // torso damage threshold doesn't need scaling
             case (_forEachIndex > 3): { // legs: index 4 & 5
-                _damageThreshold = LIMPING_DAMAGE_THRESHOLD_DEFAULT * 4;
+                _damageThreshold = LIMPING_DAMAGE_THRESHOLD * 4;
             };
             case (_forEachIndex > 1): { // arms: index 2 & 3
-                _damageThreshold = FRACTURE_DAMAGE_THRESHOLD_DEFAULT * 4;
+                _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
             };
             case (_forEachIndex == 0): { // head: index 0
                 _damageThreshold = _damageThreshold * 1.25;

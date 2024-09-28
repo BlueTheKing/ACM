@@ -17,13 +17,13 @@
 
 params ["_unit"];
 
-if (GET_BLOOD_VOLUME(_unit) < MINIMUM_BLOOD_FOR_STABLE_VITALS_DEFAULT) exitWith { /*systemchat format ["BLOOD %1",GET_BLOOD_VOLUME(_unit)];*/ false };
+if (GET_BLOOD_VOLUME(_unit) < MINIMUM_BLOOD_FOR_STABLE_VITALS) exitWith { /*systemchat format ["BLOOD %1",GET_BLOOD_VOLUME(_unit)];*/ false };
 if IN_CRDC_ARRST(_unit) exitWith { false };
 if ([_unit] call EFUNC(circulation,recentAEDShock)) exitWith { false };
 
 private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
 private _bloodLoss = GET_BLOOD_LOSS(_unit);
-if (_bloodLoss > (BLOOD_LOSS_KNOCK_OUT_THRESHOLD_DEFAULT * _cardiacOutput) / 2) exitWith { /*systemchat format ["BLOODLOSS %1 > %2",GET_BLOOD_VOLUME(_unit), (BLOOD_LOSS_KNOCK_OUT_THRESHOLD_DEFAULT * _cardiacOutput) / 2];*/ false };
+if (_bloodLoss > (BLOOD_LOSS_KNOCK_OUT_THRESHOLD * _cardiacOutput) / 2) exitWith { /*systemchat format ["BLOODLOSS %1 > %2",GET_BLOOD_VOLUME(_unit), (BLOOD_LOSS_KNOCK_OUT_THRESHOLD * _cardiacOutput) / 2];*/ false };
 
 private _bloodPressure = GET_BLOOD_PRESSURE(_unit);
 _bloodPressure params ["_bloodPressureL", "_bloodPressureH"];
