@@ -168,6 +168,7 @@ switch (true) do {
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
         [_unit] call EFUNC(circulation,updateCirculationState);
     };
+    case ((_unit getVariable [QEGVAR(circulation,ROSC_Time), -5]) + 5 > CBA_missionTime): {};
     case (_heartRate < 20 || {_heartRate > 220}): {
         TRACE_2("heartRate Fatal",_unit,_heartRate);
         if (_heartRate > 220) then {

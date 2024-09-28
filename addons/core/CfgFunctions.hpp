@@ -48,6 +48,9 @@ class CfgFunctions {
             class getMedicationCount { // Administration route, respiration rate adjust
                 file = QPATHTOF(overrides\fnc_getMedicationCount.sqf); //ace/addons/medical_status/functions/fnc_getMedicationCount.sqf
             };
+            class setCardiacArrestState { // Fix weird heart rate on ROSC
+                file = QPATHTOF(overrides\fnc_setCardiacArrestState.sqf); //ace/addons/medical_status/functions/fnc_setCardiacArrestState.sqf
+            };
         };
     };
     class overwrite_medical_treatment {
