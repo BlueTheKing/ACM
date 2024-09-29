@@ -60,21 +60,22 @@ private _PFH = [{
 
     private _epinephrine = _cardiacMedication get "epinephrine";
     private _morphine = _cardiacMedication get "morphine";
+    private _fentanyl = _cardiacMedication get "fentanyl";
     private _amiodarone = _cardiacMedication get "amiodarone";
     private _lidocaine = _cardiacMedication get "lidocaine";
     
     switch (_rhythmState) do {
         case ACM_Rhythm_PVT: {
             _rhythmEffect = 0.9 * _shockEffect;
-            _medicationEffect = (1 max ((_epinephrine + _amiodarone + _lidocaine) min 2.2)) - _morphine;
+            _medicationEffect = ((1 max ((_epinephrine + _amiodarone + _lidocaine) min 2.2)) - _morphine) - _fentanyl;
         };
         case ACM_Rhythm_VF: {
             _rhythmEffect = 0.85 * _shockEffect;
-            _medicationEffect = (1 max ((_epinephrine + _amiodarone + _lidocaine) min 2.2)) - _morphine;
+            _medicationEffect = ((1 max ((_epinephrine + _amiodarone + _lidocaine) min 2.2)) - _morphine) - _fentanyl;
         };
         case ACM_Rhythm_Asystole: {
             _rhythmEffect = 1.2;
-            _medicationEffect = (1 max _epinephrine) - _morphine;
+            _medicationEffect = ((1 max _epinephrine) - _morphine) - _fentanyl;
         };
     };
 

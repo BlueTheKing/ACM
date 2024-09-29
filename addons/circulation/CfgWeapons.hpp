@@ -127,16 +127,19 @@ class CfgWeapons {
         };
         ACM_isVial = 1;
     };
+
     class ACM_Vial_Adenosine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_adenosine_ca.paa);
         displayName = CSTRING(Vial_Adenosine);
         descriptionShort = CSTRING(Vial_Adenosine_Desc);
     };
+
     class ACM_Vial_Morphine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_morphine_ca.paa);
         displayName = CSTRING(Vial_Morphine);
         descriptionShort = CSTRING(Vial_Morphine_Desc);
     };
+
     class ACM_Vial_Ketamine: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_ketamine_ca.paa);
         displayName = CSTRING(Vial_Ketamine);
@@ -160,6 +163,7 @@ class CfgWeapons {
         displayName = CSTRING(Vial_TXA);
         descriptionShort = CSTRING(Vial_TXA_Desc);
     };
+
     class ACM_Vial_Amiodarone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_amiodarone_ca.paa);
         displayName = CSTRING(Vial_Amiodarone);
@@ -168,7 +172,25 @@ class CfgWeapons {
             mass = 0.2;
         };
     };
-    
+
+    class ACM_Vial_Fentanyl: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_fentanyl_ca.paa);
+        displayName = CSTRING(Vial_Fentanyl);
+        descriptionShort = CSTRING(Vial_Fentanyl_Desc);
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.2;
+        };
+    };
+
+    class ACM_Vial_Ondansetron: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_ondansetron_ca.paa);
+        displayName = CSTRING(Vial_Ondansetron);
+        descriptionShort = CSTRING(Vial_Ondansetron_Desc);
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.2;
+        };
+    };
+
     class ACM_Spray_Naloxone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\spray_naloxone_ca.paa);
         displayName = CSTRING(Spray_Naloxone);
@@ -177,6 +199,10 @@ class CfgWeapons {
             mass = 0.2;
         };
         ACM_isVial = 0;
+    };
+
+    class ACE_adenosine: ACE_ItemCore {
+        scope = 0;
     };
 
     #include "CfgWeapons_Blood.hpp"

@@ -225,6 +225,12 @@
         <Key ID="STR_ACM_Circulation_Medication_Amiodarone">
             <English>Amiodarone</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_Medication_Fentanyl">
+            <English>Fentanyl</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Medication_Ondansetron">
+            <English>Ondansetron</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_Medication_Naloxone">
             <English>Naloxone</English>
         </Key>
@@ -273,6 +279,18 @@
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_Amiodarone_Desc">
             <English>Used to treat irregular heart rhythms</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_Fentanyl">
+            <English>Fentanyl Vial (100mcg/2ml)</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_Fentanyl_Desc">
+            <English>Used to manage acute severe pain</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_Ondansetron">
+            <English>Ondansetron Vial (4mg/2ml)</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_Ondansetron_Desc">
+            <English>Used to manage nausea and vomiting</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Spray_Naloxone">
             <English>Naloxone Nasal Spray</English>

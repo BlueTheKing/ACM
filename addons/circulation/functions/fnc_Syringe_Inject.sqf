@@ -65,15 +65,22 @@ private _medicationConcentration = getNumber (configFile >> "ACM_Medication" >> 
 
 private _stringDose = (_dose / 100) * _medicationConcentration;
 
-if (_stringDose < 1) then {
+private _microDose = (_classname == "Fentanyl");
+private _doseMeasurement = ["mg", "mcg"] select _microDose;
+
+if (_stringDose < 1 && !_microDose) then {
     _stringDose = round (_stringDose * 10);
     _stringDose = (_stringDose / 10);
 } else {
-    _stringDose = round(_stringDose);
+    if (_microDose) then {
+        _stringDose = round(_stringDose * 1000);
+    } else {
+        _stringDose = round(_stringDose);
+    };
 };
 
-[_patient, format ["%1 %2 (%3mg)", _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToTriageCard);
-[_patient, "activity", "%1 %2 %3 %4 (%5mg)", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _actionString), _classname, _administrationString, _stringDose]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, format ["%1 %2 (%3%4)", _classname, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToTriageCard);
+[_patient, "activity", "%1 %2 %3 %4 (%5%6)", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _actionString), _classname, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToLog);
 [(format ["%1 %2 %3", _actionString, _administrationString, _classname]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
 if (_returnSyringe) then {

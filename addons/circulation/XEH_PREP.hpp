@@ -45,6 +45,7 @@ PREP(getHemothoraxBleedingRate);
 PREP(getInternalBleedingRate);
 PREP(getIVFlowRate);
 PREP(getMedicationEffect);
+PREP(getNauseaMedicationEffects);
 PREP(getReturnVolume);
 PREP(handleAED);
 PREP(handleAnestheticEffects);

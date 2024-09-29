@@ -39,7 +39,9 @@ private _PFH = [{
 
     if (_keepAirwayIntact || _gracePeriod) exitWith {};
 
-    if (random 1 < (0.3 * GVAR(airwayObstructionVomitChance))) then {
+    private _medicationEffect = [_patient] call EFUNC(circulation,getNauseaMedicationEffects);
+
+    if (random 1 < ((0.4 * GVAR(airwayObstructionVomitChance)) + _medicationEffect)) then {
         _patient setVariable [QGVAR(AirwayObstructionVomit_Count), (_vomitCount - 1), true];
 
         if !(_inRecovery) then { // TODO check for pose

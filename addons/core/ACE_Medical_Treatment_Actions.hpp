@@ -504,6 +504,11 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IV(Ketamine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Ketamine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ketamine)));
     SYRINGE_ACTION_IV(Ketamine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Ketamine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ketamine)));
 
+    SYRINGE_ACTION_IV(Fentanyl,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Fentanyl,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Fentanyl)));
+    SYRINGE_ACTION_IV(Fentanyl,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Fentanyl,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Fentanyl)));
+    SYRINGE_ACTION_IV(Fentanyl,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Fentanyl,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Fentanyl)));
+    SYRINGE_ACTION_IV(Fentanyl,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Fentanyl,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Fentanyl)));
+
     SYRINGE_ACTION_IV(TXA,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,TXA,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,TXA)));
     SYRINGE_ACTION_IV(TXA,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,TXA,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,TXA)));
     SYRINGE_ACTION_IV(TXA,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,TXA,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,TXA)));
@@ -518,6 +523,11 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IV(Lidocaine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Lidocaine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Lidocaine)));
     SYRINGE_ACTION_IV(Lidocaine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Lidocaine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Lidocaine)));
     SYRINGE_ACTION_IV(Lidocaine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Lidocaine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Lidocaine)));
+
+    SYRINGE_ACTION_IV(Ondansetron,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Ondansetron,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ondansetron)));
+    SYRINGE_ACTION_IV(Ondansetron,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Ondansetron,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ondansetron)));
+    SYRINGE_ACTION_IV(Ondansetron,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Ondansetron,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ondansetron)));
+    SYRINGE_ACTION_IV(Ondansetron,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Ondansetron,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ondansetron)));
 
     // IM
     class Epinephrine_10_IM: Epinephrine_10_IV {
@@ -566,6 +576,11 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IM(TXA,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,TXA,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,TXA)));
     SYRINGE_ACTION_IM(TXA,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,TXA,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,TXA)));
 
+    SYRINGE_ACTION_IM(Fentanyl,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Fentanyl,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Fentanyl)));
+    SYRINGE_ACTION_IM(Fentanyl,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Fentanyl,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Fentanyl)));
+    SYRINGE_ACTION_IM(Fentanyl,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Fentanyl,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Fentanyl)));
+    SYRINGE_ACTION_IM(Fentanyl,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Fentanyl,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Fentanyl)));
+
     SYRINGE_ACTION_IM(Lidocaine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Lidocaine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Lidocaine)));
     SYRINGE_ACTION_IM(Lidocaine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Lidocaine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Lidocaine)));
     SYRINGE_ACTION_IM(Lidocaine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Lidocaine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Lidocaine)));
@@ -580,4 +595,9 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IM(Adenosine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Adenosine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Adenosine)));
     SYRINGE_ACTION_IM(Adenosine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Adenosine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Adenosine)));
     SYRINGE_ACTION_IM(Adenosine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Adenosine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Adenosine)));
+
+    SYRINGE_ACTION_IM(Ondansetron,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Ondansetron,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ondansetron)));
+    SYRINGE_ACTION_IM(Ondansetron,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Ondansetron,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ondansetron)));
+    SYRINGE_ACTION_IM(Ondansetron,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Ondansetron,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ondansetron)));
+    SYRINGE_ACTION_IM(Ondansetron,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Ondansetron,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ondansetron)));
 };

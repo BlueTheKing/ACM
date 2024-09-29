@@ -116,6 +116,10 @@ private _PFH = [{
 
     if (_HR == 0) exitWith {};
 
+    private _nauseaReduce = (([_patient, "Ondansetron_IV", false] call ACEFUNC(medical_status,getMedicationCount)) * 0.8) + (([_patient, "Ondansetron", false] call ACEFUNC(medical_status,getMedicationCount)) * 0.4);
+
+    _anestheticEffect = _anestheticEffect - _nauseaReduce;
+
     private _delay = 60 / _HR;
 
     GVAR(AnestheticEffect_NextPulse) = CBA_missionTime + _delay;

@@ -115,7 +115,6 @@ class CfgVehicles {
             ADDITEM(ACM_IO_FAST,15);
             ADDITEM(ACM_IO_EZ,15);
             ADDITEM(ACM_Vial_Epinephrine,10);
-            ADDITEM(ACM_Vial_Morphine,10);
             ADDITEM(ACM_Vial_Adenosine,10);
             ADDITEM(ACM_Vial_TXA,10);
             ADDITEM(ACM_Vial_Amiodarone,10);
@@ -131,8 +130,11 @@ class CfgVehicles {
             ADDITEM(ACE_salineIV_250,10);
             // Disability
             ADDITEM(ACE_morphine,5);
+            ADDITEM(ACM_Vial_Morphine,10);
             ADDITEM(ACM_Vial_Ketamine,10);
+            ADDITEM(ACM_Vial_Fentanyl,10);
             ADDITEM(ACM_Vial_Lidocaine,10);
+            ADDITEM(ACM_Vial_Ondansetron,10);
             ADDITEM(ACE_splint,10);
             ADDITEM(ACM_SAMSplint,10);
             // Other
