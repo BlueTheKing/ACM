@@ -242,6 +242,10 @@ if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < ACM_CYAN
     _entries pushBack [format ["%1 %2", _cyanosis, LELSTRING(breathing,GUI_Cyanosis)], [0.16, _colorScale, 1, 1]];
 };
 
+if (_selectionN == 0 && ((CBA_missionTime - (_target getVariable [QEGVAR(breathing,TensionPneumothorax_Time), CBA_missionTime])) > 300)) then {
+    _entries pushBack [LELSTRING(breathing,GUI_TrachealDeviation), [0.5, 0.1, 0.9, 1]];
+};
+
 // BVM
 if (_selectionN == 0 && (_target getVariable [QEGVAR(breathing,BVM_Medic), objNull]) isNotEqualTo objNull) then {
     private _string = LELSTRING(core,Common_Paused);

@@ -22,6 +22,7 @@ params ["_medic", "_patient"];
 
 if (_patient getVariable [QGVAR(TensionPneumothorax_State), false]) then {
     _patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
+    _patient setVariable [QGVAR(TensionPneumothorax_Time), nil, true];
 
     if (_patient getVariable [QGVAR(Pneumothorax_State), 0] > 0) then {
         _patient setVariable [QGVAR(Pneumothorax_State), 0, true];

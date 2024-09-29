@@ -71,7 +71,8 @@ if (_anestheticEffect < 0.5) then {
     [QACEGVAR(medical,CriticalVitals), _patient] call CBA_fnc_localEvent;
 };
 
-_patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
 _patient setVariable [QGVAR(Pneumothorax_State), 3, true];
+_patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
+_patient setVariable [QGVAR(TensionPneumothorax_Time), nil, true];
 
 [_patient] call FUNC(updateBreathingState);

@@ -305,6 +305,18 @@
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_Uneven_Short">
             <English>Uneven chest rise and fall</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation">
+            <English>Severe Tracheal Deviation</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation_Short">
+            <English>Severe tracheal deviation</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation_Slight">
+            <English>Slight Tracheal Deviation</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation_Slight_Short">
+            <English>Slight tracheal deviation</English>
         </Key><!--
             // NCD Action // -->
         <Key ID="STR_ACM_Breathing_NCD_Needle_Decompression">
@@ -529,6 +541,9 @@
         </Key>
         <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_ChestTubeUnsealed">
             <English>Unsealed Chest Tube</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_TrachealDeviation">
+            <English>Noticable Tracheal Deviation</English>
         </Key>
     </Package>
 </Project>

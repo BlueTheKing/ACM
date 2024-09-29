@@ -23,6 +23,7 @@ private _state = _patient getVariable [QGVAR(Pneumothorax_State), 0];
 
 if (_state > 3) then {
     _patient setVariable [QGVAR(TensionPneumothorax_State), true, true];
+    _patient setVariable [QGVAR(TensionPneumothorax_Time), CBA_missionTime, true];
 } else {
     _state = _state + 1;
     _patient setVariable [QGVAR(Pneumothorax_State), _state, true];
@@ -53,6 +54,7 @@ private _PFH = [{
         if (_pneumothoraxState > 4) then {
             _patient setVariable [QGVAR(Pneumothorax_State), 4, true];
             _patient setVariable [QGVAR(TensionPneumothorax_State), true, true];
+            _patient setVariable [QGVAR(TensionPneumothorax_Time), CBA_missionTime, true];
             if (GVAR(Hardcore_ChestInjury)) then {
                 _patient setVariable [QGVAR(Hardcore_Pneumothorax), true, true];
             };
