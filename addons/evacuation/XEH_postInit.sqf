@@ -37,9 +37,11 @@ if (isServer) then {
     [{
         params ["_unit"];
 
+        private _saved = (ACE_player getVariable ["ENH_savedLoadout", -1] isNotEqualTo -1);
+
         selectPlayer _unit;
 
-        if (["3denEnhanced"] call ACEFUNC(common,isModLoaded)) then { // Prevent restore loadout from breaking
+        if (_saved) then { // Prevent restore loadout from breaking
             _unit setVariable ["ENH_savedLoadout", getUnitLoadout _unit];
         };
     }, [_unit], 1] call CBA_fnc_waitAndExecute;

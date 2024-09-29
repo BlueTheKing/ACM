@@ -33,7 +33,7 @@ _unit setVariable [QGVAR(playerSpawned), true];
 },{
     params ["_unit"];
 
-    if (["3denEnhanced"] call ACEFUNC(common,isModLoaded) && {_unit getVariable ["ENH_savedLoadout", -1] isNotEqualTo -1} && {(getUnitLoadout _unit) isNotEqualTo (_unit getVariable ["ENH_savedLoadout", -1])}) then {
+    if (_unit getVariable ["ENH_savedLoadout", -1] isNotEqualTo -1 && {(getUnitLoadout _unit) isNotEqualTo (_unit getVariable ["ENH_savedLoadout", -1])}) then {
         _unit setUnitLoadout (_unit getVariable ["ENH_savedLoadout", []]);
     };
 }, [_unit], 30] call CBA_fnc_waitUntilAndExecute;
