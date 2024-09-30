@@ -97,7 +97,7 @@ if (GVAR(TransfusionMenu_Move_Active)) then {
     GVAR(TransfusionMenu_Move_IVBagContents) params ["_type", "", "", "", "", "_bloodType", "_volume"];
 
     private _itemClassNameString = getText (configFile >> "CfgWeapons" >> ([_type, _volume, _bloodType] call FUNC(formatFluidBagName)) >> "displayName");
-    [(format [LLSTRING(TransfusionMenu_MoveBag_Hint), _itemClassNameString]), 1.5, ACE_player] call ACEFUNC(common,displayTextStructured);
+    [(format [LLSTRING(TransfusionMenu_MoveBag_Hint), _itemClassNameString]), 2, ACE_player] call ACEFUNC(common,displayTextStructured);
 
     _IVBagsOnBodyPart deleteAt _targetIndex;
 
