@@ -21,7 +21,7 @@
  * Public: No
  */
 
-params ["_unit", "_oxygenSaturation", ["_oxygenDemand", 0], ["_respirationRateAdjustment", 0], "_coSensitivityAdjustment", "_deltaT", "_syncValue"];
+params ["_unit", "_oxygenSaturation", ["_oxygenDemand", 0], ["_respirationRateAdjustment", 0], ["_coSensitivityAdjustment", 0], "_deltaT", "_syncValue"];
 // 12-20 per min          40-60 per min
 
 private _respirationRate = GET_RESPIRATION_RATE(_unit);
@@ -48,11 +48,13 @@ switch (true) do {
         private _targetRespirationRate = _desiredRespirationRate;
         
         if (_coSensitivityAdjustment != 0) then {
-            _coEffect = (1 + _coSensitivityAdjustment) ^ 2;
-            _targetRespirationRate = _targetRespirationRate * _coEffect ^ 4;
+            _coEffect = 1 + _coSensitivityAdjustment;
+            _targetRespirationRate = _targetRespirationRate * (_coEffect * (_targetRespirationRate / 18));
         };
 
-        _targetRespirationRate = _targetRespirationRate + ((ACM_TARGETVITALS_OXYGEN(_unit) * _coEffect) - _oxygenSaturation) max (_oxygenDemand * -500);
+        private _missingOxygen = ((ACM_TARGETVITALS_OXYGEN(_unit) * _coEffect) - _oxygenSaturation);
+
+        _targetRespirationRate = _targetRespirationRate + (_missingOxygen * (linearConversion [0, 20, _missingOxygen, 1, 0.6])) max (_oxygenDemand * -500);
 
         if IS_UNCONSCIOUS(_unit) then {
             _targetRespirationRate = (_desiredRespirationRate + 16) min _targetRespirationRate;

@@ -123,9 +123,9 @@ class ACM_Medication {
             hrIncreaseNormal[] = {-9, -24};
             hrIncreaseHigh[] = {-9, -30};
             timeInSystem = 1300;
-            timeTillMaxEffect = 15;
+            timeTillMaxEffect = 25;
             maxEffectTime = 900;
-            coSensitivityAdjust[] = {-0.035,-0.04};
+            coSensitivityAdjust[] = {-0.07,-0.09};
             maxDose = 10;
             maxDoseDeviation = 2;
             maxEffectDose = 6;
@@ -193,7 +193,8 @@ class ACM_Medication {
             timeInSystem = 960;
             timeTillMaxEffect = 10;
             maxEffectTime = 840;
-            coSensitivityAdjust[] = {-0.035,-0.036};
+            coSensitivityAdjust[] = {-0.07,-0.08};
+            breathingEffectivenessAdjust[] = {-0.01,-0.04};
             maxDose = 0.15;
             maxDoseDeviation = 0.05;
             maxEffectDose = 0.0415; //mcg
@@ -240,7 +241,7 @@ class ACM_Medication {
             timeInSystem = 1800;
             timeTillMaxEffect = 100;
             maxEffectTime = 1200;
-            coSensitivityAdjust[] = {-0.03,-0.035};
+            coSensitivityAdjust[] = {-0.06,-0.07};
             maxDose = 14;
             maxDoseDeviation = 3;
             maxEffectDose = 10;
@@ -299,7 +300,8 @@ class ACM_Medication {
             timeInSystem = 1200;
             timeTillMaxEffect = 30;
             maxEffectTime = 900;
-            coSensitivityAdjust[] = {-0.035,-0.036};
+            coSensitivityAdjust[] = {-0.06,-0.07};
+            breathingEffectivenessAdjust[] = {-0.01,-0.02};
             maxDose = 0.18;
             maxDoseDeviation = 0.075;
             maxEffectDose = 0.0581; //mcg

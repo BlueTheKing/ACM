@@ -27,7 +27,7 @@
  * None
  *
  * Example:
- * [player, "Morphine", 120, 60, -10, 0.8, -10, ACM_ROUTE_IM, 60, 0, 0, 0, "Opioid"] call ace_medical_status_fnc_addMedicationAdjustment
+ * [player, "Morphine", 100, 1800, -12, 0.85, -10, ACM_ROUTE_IM, 1200, 0, -0.03, 0, 1, "Opioid"] call ace_medical_status_fnc_addMedicationAdjustment
  *
  * Public: No
  */
