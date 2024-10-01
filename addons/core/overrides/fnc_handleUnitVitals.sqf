@@ -187,7 +187,7 @@ switch (true) do {
         _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
     };
-    case (_bloodPressureL >= 190): {
+    case (_bloodPressureL > 190): {
         TRACE_2("bloodPressure L above limits",_unit,_bloodPressureL);
         _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
