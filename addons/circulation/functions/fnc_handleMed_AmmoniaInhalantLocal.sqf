@@ -27,9 +27,9 @@ if (_timeSinceLastUse < 10) exitWith {};
 
 if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {};
 
-private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 40, 100, true] ;
+private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 0.5, 1, true] ;
 
-if (random 100 < _oxygenSaturationChance) then {
+if (random 1 < _oxygenSaturationChance) then {
     if (IS_UNCONSCIOUS(_patient)) then {
         [QEGVAR(core,playWakeUpSound), _patient] call CBA_fnc_localEvent;
         [QACEGVAR(medical,WakeUp), _patient] call CBA_fnc_localEvent;

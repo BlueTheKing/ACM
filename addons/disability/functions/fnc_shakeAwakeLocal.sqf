@@ -26,9 +26,9 @@ if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {
     [QACEGVAR(common,displayTextStructured), [(format [LLSTRING(ShakePatient_Attempt), _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
 };
 
-private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 1, 15, true] ;
+private _oxygenSaturationChance = linearConversion [90, 99, GET_OXYGEN(_patient), 0.3, 0.7, true] ;
 
-if (random 100 < _oxygenSaturationChance) then {
+if (random 1 < _oxygenSaturationChance) then {
     _patient setVariable [QEGVAR(core,KnockOut_State), false];
     [QACEGVAR(medical,WakeUp), _patient] call CBA_fnc_localEvent;
     _hint = LLSTRING(AttemptWakeUp_Success);

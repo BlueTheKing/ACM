@@ -53,9 +53,9 @@ class ACM_Medication {
         };
 
         class AmmoniaInhalant: ACM_Inhalant_Medication {
-            hrIncreaseLow[] = {3, 8};
-            hrIncreaseNormal[] = {3, 18};
-            hrIncreaseHigh[] = {3, 12};
+            hrIncreaseLow[] = {10, 25};
+            hrIncreaseNormal[] = {10, 18};
+            hrIncreaseHigh[] = {5, 15};
             rrAdjust[] = {1,3};
         };
 
@@ -133,9 +133,9 @@ class ACM_Medication {
 
         class Amiodarone_IV: ACM_IV_Medication {
             medicationType = "Amiodarone";
-            hrIncreaseLow[] = {-5, -10};
-            hrIncreaseNormal[] = {-15, -30};
-            hrIncreaseHigh[] = {-20, -30};
+            hrIncreaseLow[] = {-10, -20};
+            hrIncreaseNormal[] = {-15, -35};
+            hrIncreaseHigh[] = {-20, -40};
             timeInSystem = 720;
             timeTillMaxEffect = 10;
             maxEffectTime = 480;
