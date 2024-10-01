@@ -28,6 +28,8 @@ private _actions = [];
 
     private _triageLevel = _unit getVariable [QACEGVAR(medical,triageLevel), 0];
 
+    private _bloodVolume = GET_BLOOD_VOLUME(_unit);
+
     if (_unit getVariable [QGVAR(WasWounded), false]) then {
         private _iconColor = [[1,1,1,1],[TRIAGE_COLOR_MINIMAL],[TRIAGE_COLOR_DELAYED],[TRIAGE_COLOR_IMMEDIATE],[TRIAGE_COLOR_DECEASED]] select _triageLevel;
         private _icon = switch (true) do {
@@ -41,12 +43,11 @@ private _actions = [];
                 };
             };
             case (IS_BLEEDING(_unit)): { // Bleeding
-                private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
-                private _bleedRate = GET_BLOOD_LOSS(_unit);
-                private _bleedRateKO = BLOOD_LOSS_KNOCK_OUT_THRESHOLD * (_cardiacOutput max 0.05);
+                _iconColor = [1,1,1,1];
+                private _bleedSeverity = ([_unit] call FUNC(getBleedSeverity)) + 1;
+                private _bloodLossSeverity = GET_HEMORRHAGE(_unit);
 
-                _iconColor = [1, (linearConversion [(_bleedRateKO * BLEED_RATE_SLOW), (_bleedRateKO * BLEED_RATE_SEVERE), _bleedRate, 1, 0, true]), 0, 1];
-                QPATHTOF(ui\icon_patient_bleeding.paa);
+                format ["%1_%2_%3.paa", QPATHTOF(ui\icon_patient_bloodvolume), _bleedSeverity, _bloodLossSeverity];
             };
             case ([_unit] call FUNC(cprActive)): { // CPR
                 _iconColor = [0, 0.6, 1, 1];
@@ -65,13 +66,15 @@ private _actions = [];
                 _iconColor = [0, 0.6, 1, 1];
                 QPATHTOF(ui\icon_patient_respiratoryarrest.paa);
             };
-            case (GET_BLOOD_VOLUME(_unit) < 4.2): { // Mega Bloodloss
-                _iconColor = [1, (linearConversion [4.3, 3.6, GET_BLOOD_VOLUME(_unit), 0.5, 0, true]), 0, 1];
-                QPATHTOF(ui\icon_patient_severebloodloss.paa);
-            };
-            case (GET_BLOOD_VOLUME(_unit) < 5.4): { // Bloodloss
-                _iconColor = [1, (linearConversion [5.4, 4.3, GET_BLOOD_VOLUME(_unit), 1, 0.5, true]), 0, 1];
-                QPATHTOF(ui\icon_patient_bloodloss.paa);
+            case (_bloodVolume < 5.5): { // Bloodloss
+                _iconColor = [1,1,1,1];
+                private _severity = switch (true) do {
+                    case (_bloodVolume < BLOOD_VOLUME_CLASS_4_HEMORRHAGE): {4};
+                    case (_bloodVolume < BLOOD_VOLUME_CLASS_3_HEMORRHAGE): {3};
+                    case (_bloodVolume < BLOOD_VOLUME_CLASS_2_HEMORRHAGE): {2};
+                    default {1};
+                };
+                format ["%1_%2.paa",QPATHTOF(ui\icon_patient_bloodvolume_0), _severity];
             };
             case (IS_UNCONSCIOUS(_unit)): { // Unconscious
                 QPATHTOF(ui\icon_patient_unconscious.paa);

@@ -7,7 +7,7 @@
  * 0: Patient <OBJECT>
  *
  * Return Value:
- * Is BVM being used on unit
+ * Is BVM being used on unit <BOOL>
  *
  * Example:
  * [player] call ACM_core_fnc_bvmActive;

@@ -12,6 +12,7 @@ PREP(effectOxygen);
 PREP(fullHealLocal);
 PREP(generateMedicationTypeMap);
 PREP(generateTargetVitals);
+PREP(getBleedSeverity);
 PREP(getBodyPartString);
 PREP(getUp);
 PREP(getUpPrompt);
