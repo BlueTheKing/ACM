@@ -37,6 +37,10 @@
         </Key>
         <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
             <English>T4</English>
+        </Key><!--
+            // Actions -->
+        <Key ID="STR_ACM_GUI_AssistCarry">
+            <English>Assist Carry</English>
         </Key>
     </Package>
 </Project>
