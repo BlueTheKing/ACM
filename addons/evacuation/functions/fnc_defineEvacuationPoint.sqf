@@ -28,6 +28,8 @@ LLSTRING(EvacuatePatient),
     private _casualty = _unit getVariable [QACEGVAR(dragging,carriedObject), objNull];
 
     if (alive _casualty) then {
+        [_unit, _casualty] call ACEFUNC(dragging,dropObject_carry);
+
         deleteVehicle _casualty;
         [true] call FUNC(setCasualtyTicket);
         [LLSTRING(EvacuatePatient_Success), 2, _unit] call ACEFUNC(common,displayTextStructured);
