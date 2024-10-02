@@ -22,7 +22,7 @@ private _hint = LLSTRING(AttemptWakeUp_Failure);
 
 addCamShake [2, 2, 5];
 
-if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {
+if (!([_patient] call ACEFUNC(medical_status,hasStableVitals)) || [_patient] call EFUNC(core,isForcedUnconscious)) exitWith {
     [QACEGVAR(common,displayTextStructured), [(format [LLSTRING(ShakePatient_Attempt), _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
 };
 

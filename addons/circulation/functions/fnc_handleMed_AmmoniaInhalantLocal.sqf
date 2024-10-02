@@ -25,7 +25,7 @@ _patient setVariable [QEGVAR(core,KnockOut_State), false];
 
 if (_timeSinceLastUse < 10) exitWith {};
 
-if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {};
+if (!([_patient] call ACEFUNC(medical_status,hasStableVitals)) || [_patient] call EFUNC(core,isForcedUnconscious)) exitWith {};
 
 private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 0.5, 1, true] ;
 

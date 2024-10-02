@@ -20,6 +20,7 @@ PREP(handleRespawn);
 PREP(handleKnockOut);
 PREP(handleTreatmentText);
 PREP(initUnit);
+PREP(isForcedUnconscious);
 PREP(onCardiacArrest);
 PREP(onUnconscious);
 PREP(progressBarAction);

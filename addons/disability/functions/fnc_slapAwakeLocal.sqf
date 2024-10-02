@@ -24,11 +24,11 @@ addCamShake [5, 0.3, 5];
 
 _patient setVariable [QEGVAR(core,KnockOut_State), false];
 
-if (random 100 < 20) then {
+if (random 1 < 0.2) then {
     [_patient, 0.051, "head", "slap", _medic] call ACEFUNC(medical,addDamageToUnit);
 };
 
-if !([_patient] call ACEFUNC(medical_status,hasStableVitals)) exitWith {
+if (!([_patient] call ACEFUNC(medical_status,hasStableVitals)) || [_patient] call EFUNC(core,isForcedUnconscious)) exitWith {
     [QACEGVAR(common,displayTextStructured), [(format [LLSTRING(SlapPatient_Attempt), _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
 };
 
