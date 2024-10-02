@@ -18,7 +18,9 @@
 
 params ["_medic", "_patient"];
 
-[_medic] call ACEFUNC(common,goKneeling);
+if (isNull (objectParent _medic)) then {
+    [_medic] call ACEFUNC(common,goKneeling);
+};
 
 [3, [_medic, _patient], {
     params ["_args"];

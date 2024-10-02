@@ -57,6 +57,14 @@ if ("ace_dragging" call ACEFUNC(common,isModLoaded)) then {
             [ACE_player, ACEGVAR(medical_gui,target)] call EFUNC(core,beginCarryAssist);
         }
     ];
+
+    ACEGVAR(medical_gui,actions) pushBack [
+        LELSTRING(evacuation,ConvertCasualty), "drag",
+        {ACE_player != ACEGVAR(medical_gui,target) && {[ACE_player, ACEGVAR(medical_gui,target)] call EFUNC(evacuation,canConvert)}},
+        {
+            [ACE_player, ACEGVAR(medical_gui,target)] call EFUNC(evacuation,convertCasualtyAction);
+        }
+    ];
 };
 
 // testing code for multi-line
