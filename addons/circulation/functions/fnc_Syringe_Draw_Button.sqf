@@ -34,7 +34,7 @@ if (_type > 0) then { // Push/Inject
         (_this select 0) params ["_iv"];
 
         [ACE_player, GVAR(SyringeDraw_Target), GVAR(SyringeDraw_TargetPart), GVAR(SyringeDraw_Medication), GVAR(SyringeDraw_Size), _iv, true] call FUNC(Syringe_Inject);
-    }, {}, (format[([LLSTRING(Syringe_Injecting), LLSTRING(Syringe_Pushing)] select _iv), GVAR(SyringeDraw_Medication)])] call ACEFUNC(common,progressBar);
+    }, {}, (format[([LLSTRING(Syringe_Injecting), LLSTRING(Syringe_Pushing)] select _iv), GVAR(SyringeDraw_Medication)]), {true}, ["isNotInside", "isNotSwimming", "isNotInZeus"]] call ACEFUNC(common,progressBar);
 } else { // Draw
     [(format [LLSTRING(Syringe_Drawn), GVAR(SyringeDraw_Medication)]), 1.5, ACE_player] call ACEFUNC(common,displayTextStructured);
     closeDialog 0;
