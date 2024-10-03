@@ -7,7 +7,7 @@
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
  * 2: State <BOOL>
- * 3: Skip <BOOL>
+ * 3: No Log <BOOL>
  *
  * Return Value:
  * None
@@ -18,9 +18,9 @@
  * Public: No
  */
 
-params ["_medic", "_patient", "_state", ["_skip", false]];
+params ["_medic", "_patient", "_state", ["_noLog", false]];
 
-if (_patient getVariable [QGVAR(RecoveryPosition_State), false]) exitWith {
+if (_state && _patient getVariable [QGVAR(RecoveryPosition_State), false]) exitWith {
     [LSTRING(RecoveryPosition_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
@@ -50,6 +50,6 @@ if (_state) then {
 
 [_hint, 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
-if !(_skip) then {
+if !(_noLog) then {
     [_patient, "quick_view", _hintLog, [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 };
