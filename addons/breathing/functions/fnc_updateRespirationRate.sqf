@@ -49,7 +49,6 @@ switch (true) do {
         
         if (_coSensitivityAdjustment != 0) then {
             _coEffect = 1 + _coSensitivityAdjustment;
-            _targetRespirationRate = _targetRespirationRate * (_coEffect * (_targetRespirationRate / 18));
         };
 
         private _missingOxygen = ((ACM_TARGETVITALS_OXYGEN(_unit) * _coEffect) - _oxygenSaturation);

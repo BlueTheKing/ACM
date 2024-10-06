@@ -1,6 +1,7 @@
 class ACM_Medication {
     class Medications {
         maxDoseDeviation = 1;
+        hrIncrease[] = {0, 0};
         administrationType = ACM_ROUTE_IM;
         medicationType = "Default";
         rrAdjust[] = {0,0};
@@ -8,15 +9,14 @@ class ACM_Medication {
         breathingEffectivenessAdjust[] = {0,0};
         maxEffectTime = 120;
         onOverDose = "";
+        minEffectDose = 1; // mg
         maxEffectDose = 1; // mg
         weightEffect = 0;
+        minPainReduce = 0;
         maxPainReduce = 1;
 
         class ACM_PO_Medication {
             painReduce = 0;
-            hrIncreaseLow[] = {0, 0};
-            hrIncreaseNormal[] = {0, 0};
-            hrIncreaseHigh[] = {0, 0};
             timeInSystem = 3000;
             timeTillMaxEffect = 240;
             maxEffectTime = 900;
@@ -37,9 +37,6 @@ class ACM_Medication {
 
         class ACM_Inhalant_Medication {
             painReduce = 0;
-            hrIncreaseLow[] = {0, 0};
-            hrIncreaseNormal[] = {0, 0};
-            hrIncreaseHigh[] = {0, 0};
             timeInSystem = 40;
             timeTillMaxEffect = 3;
             maxEffectTime = 6;
@@ -53,18 +50,14 @@ class ACM_Medication {
         };
 
         class AmmoniaInhalant: ACM_Inhalant_Medication {
-            hrIncreaseLow[] = {10, 25};
-            hrIncreaseNormal[] = {10, 18};
-            hrIncreaseHigh[] = {5, 15};
+            hrIncrease[] = {5, 25};
             rrAdjust[] = {1,3};
         };
 
         class Penthrox: ACM_Inhalant_Medication {
             painReduce = 0.75;
             maxPainReduce = 0.9;
-            hrIncreaseLow[] = {-1, -2};
-            hrIncreaseNormal[] = {-1, -3};
-            hrIncreaseHigh[] = {-1, -4};
+            hrIncrease[] = {-1, -4};
             timeInSystem = 420;
             maxEffectTime = 90;
             maxDose = 5;
@@ -79,9 +72,6 @@ class ACM_Medication {
 
         class ACM_IV_Medication {
             painReduce = 0;
-            hrIncreaseLow[] = {0, 0};
-            hrIncreaseNormal[] = {0, 0};
-            hrIncreaseHigh[] = {0, 0};
             timeInSystem = 360;
             timeTillMaxEffect = 5;
             maxEffectTime = 240;
@@ -97,45 +87,40 @@ class ACM_Medication {
 
         class Epinephrine_IV: ACM_IV_Medication {
             medicationType = "Epinephrine";
-            hrIncreaseLow[] = {25, 35};
-            hrIncreaseNormal[] = {25, 55};
-            hrIncreaseHigh[] = {25, 45};
+            hrIncrease[] = {25, 60};
             rrAdjust[] = {6,12};
             breathingEffectivenessAdjust[] = {0.01,0.04};
             maxEffectDose = 1;
-            weightEffect = 0;
+            weightEffect = 2;
         };
 
         class Adenosine_IV: ACM_IV_Medication {
             medicationType = "Adenosine";
-            hrIncreaseLow[] = {-10, -15};
-            hrIncreaseNormal[] = {-10, -40};
-            hrIncreaseHigh[] = {-10, -30};
+            hrIncrease[] = {-10, -40};
             maxEffectDose = 6;
             weightEffect = 0;
         };
 
         class Morphine_IV: ACM_IV_Medication {
             medicationType = "Opioid";
+            minPainReduce = 0.6;
             painReduce = 0.85;
             maxPainReduce = 1;
-            hrIncreaseLow[] = {-9, -18};
-            hrIncreaseNormal[] = {-9, -24};
-            hrIncreaseHigh[] = {-9, -30};
+            hrIncrease[] = {-9, -30};
             timeInSystem = 1300;
             timeTillMaxEffect = 25;
             maxEffectTime = 900;
-            coSensitivityAdjust[] = {-0.07,-0.09};
-            maxDose = 10;
-            maxDoseDeviation = 2;
-            maxEffectDose = 6;
+            coSensitivityAdjust[] = {-0.05,-0.09};
+            maxDose = 12;
+            maxDoseDeviation = 3;
+            minEffectDose = 4.15;
+            maxEffectDose = 8.3;
+            weightEffect = 2;
         };
 
         class Amiodarone_IV: ACM_IV_Medication {
             medicationType = "Amiodarone";
-            hrIncreaseLow[] = {-10, -20};
-            hrIncreaseNormal[] = {-15, -35};
-            hrIncreaseHigh[] = {-20, -40};
+            hrIncrease[] = {-15, -35};
             timeInSystem = 720;
             timeTillMaxEffect = 10;
             maxEffectTime = 480;
@@ -147,21 +132,17 @@ class ACM_Medication {
 
         class Lidocaine_IV: ACM_IV_Medication {
             medicationType = "Lidocaine_IV";
-            hrIncreaseLow[] = {-3, -5};
-            hrIncreaseNormal[] = {-12, -20};
-            hrIncreaseHigh[] = {-10, -20};
+            hrIncrease[] = {-5, -20};
             timeInSystem = 600;
             maxEffectTime = 360;
-            maxDose = 300;
+            maxDose = 270;
             maxDoseDeviation = 50;
             maxEffectDose = 83;
         };
 
         class TXA_IV: ACM_IV_Medication {
             medicationType = "TXA";
-            hrIncreaseLow[] = {-1, -1};
-            hrIncreaseNormal[] = {-1, -1};
-            hrIncreaseHigh[] = {-2, -4};
+            hrIncrease[] = {-1, -4};
             timeInSystem = 900;
             timeTillMaxEffect = 15;
             maxEffectTime = 600;
@@ -172,38 +153,37 @@ class ACM_Medication {
 
         class Ketamine_IV: ACM_IV_Medication {
             medicationType = "Ketamine";
+            minPainReduce = 0.5;
             painReduce = 0.85;
             maxPainReduce = 1;
-            hrIncreaseLow[] = {-1, -2};
-            hrIncreaseNormal[] = {-1, -2};
-            hrIncreaseHigh[] = {-1, -2};
+            hrIncrease[] = {-1, -2};
             timeInSystem = 660;
             maxEffectTime = 540;
-            maxDose = 40;
-            maxDoseDeviation = 10;
-            maxEffectDose = 20.7;
+            maxDose = 250;
+            maxDoseDeviation = 50;
+            minEffectDose = 8.3;
+            maxEffectDose = 16.6;
         };
 
         class Fentanyl_IV: ACM_IV_Medication {
             medicationType = "Opioid";
+            minPainReduce = 0.6;
             painReduce = 1;
-            hrIncreaseLow[] = {-20, -26};
-            hrIncreaseNormal[] = {-20, -30};
-            hrIncreaseHigh[] = {-20, -40};
+            hrIncrease[] = {-5, -20};
             timeInSystem = 960;
             timeTillMaxEffect = 10;
             maxEffectTime = 840;
-            coSensitivityAdjust[] = {-0.07,-0.08};
+            coSensitivityAdjust[] = {-0.06,-0.07};
             breathingEffectivenessAdjust[] = {-0.01,-0.04};
             maxDose = 0.15;
             maxDoseDeviation = 0.05;
-            maxEffectDose = 0.0415; //mcg
+            minEffectDose = 0.0415; //mcg
+            maxEffectDose = 0.083; //mcg
+            weightEffect = 2;
         };
 
         class Ondansetron_IV: ACM_IV_Medication {
-            hrIncreaseLow[] = {-4, -8};
-            hrIncreaseNormal[] = {-5, -14};
-            hrIncreaseHigh[] = {-7, -18};
+            hrIncrease[] = {-5, -12};
             timeInSystem = 720;
             timeTillMaxEffect = 15;
             maxEffectTime = 600;
@@ -215,9 +195,6 @@ class ACM_Medication {
 
         class ACM_IM_Medication {
             painReduce = 0;
-            hrIncreaseLow[] = {0, 0};
-            hrIncreaseNormal[] = {0, 0};
-            hrIncreaseHigh[] = {0, 0};
             timeInSystem = 400;
             timeTillMaxEffect = 30;
             maxEffectTime = 240;
@@ -233,25 +210,24 @@ class ACM_Medication {
 
         class Morphine: ACM_IM_Medication {
             medicationType = "Opioid";
+            minPainReduce = 0.5;
             painReduce = 0.7;
             maxPainReduce = 0.95;
-            hrIncreaseLow[] = {-8, -16};
-            hrIncreaseNormal[] = {-8, -18};
-            hrIncreaseHigh[] = {-8, -24};
+            hrIncrease[] = {-6, -20};
             timeInSystem = 1800;
             timeTillMaxEffect = 100;
             maxEffectTime = 1200;
             coSensitivityAdjust[] = {-0.06,-0.07};
             maxDose = 14;
             maxDoseDeviation = 3;
-            maxEffectDose = 10;
+            minEffectDose = 5.83;
+            maxEffectDose = 8.3;
+            weightEffect = 2;
         };
         class Epinephrine: ACM_IM_Medication { // EpiPen
             medicationType = "Epinephrine";
             painReduce = 0;
-            hrIncreaseLow[] = {5, 22};
-            hrIncreaseNormal[] = {5, 20};
-            hrIncreaseHigh[] = {5, 12};
+            hrIncrease[] = {8, 20};
             rrAdjust[] = {3,6};
             breathingEffectivenessAdjust[] = {0,0.01};
             maxEffectDose = 0.3;
@@ -268,49 +244,49 @@ class ACM_Medication {
 
         class Lidocaine: ACM_IM_Medication {
             timeInSystem = 600;
-            timeTillMaxEffect = 20;
+            timeTillMaxEffect = 10;
             maxEffectTime = 240;
-            maxDose = 120;
-            maxDoseDeviation = 20;
-            maxEffectDose = 70;
+            maxDose = 200;
+            maxDoseDeviation = 50;
+            maxEffectDose = 100;
+            weightEffect = 0;
         };
 
         class Ketamine: ACM_IM_Medication {
             medicationType = "Ketamine";
+            minPainReduce = 0.4;
             painReduce = 0.7;
             maxPainReduce = 0.95;
-            hrIncreaseLow[] = {-1, -1};
-            hrIncreaseNormal[] = {-1, -1};
-            hrIncreaseHigh[] = {-1, -1};
+            hrIncrease[] = {-1, -2};
             rrAdjust[] = {0,0};
             timeInSystem = 900;
             timeTillMaxEffect = 20;
             maxEffectTime = 600;
-            maxDose = 100;
-            maxDoseDeviation = 20;
-            maxEffectDose = 50;
+            maxDose = 500;
+            maxDoseDeviation = 100;
+            minEffectDose = 41.5;
+            maxEffectDose = 62.25;
         };
 
         class Fentanyl: ACM_IM_Medication {
             medicationType = "Opioid";
+            minPainReduce = 0.5;
             painReduce = 0.8;
-            hrIncreaseLow[] = {-18, -26};
-            hrIncreaseNormal[] = {-18, -28};
-            hrIncreaseHigh[] = {-18, -34};
+            hrIncrease[] = {-2, -10};
             timeInSystem = 1200;
             timeTillMaxEffect = 30;
             maxEffectTime = 900;
-            coSensitivityAdjust[] = {-0.06,-0.07};
+            coSensitivityAdjust[] = {-0.05,-0.06};
             breathingEffectivenessAdjust[] = {-0.01,-0.02};
             maxDose = 0.18;
             maxDoseDeviation = 0.075;
-            maxEffectDose = 0.0581; //mcg
+            minEffectDose = 0.0581; //mcg
+            maxEffectDose = 0.083; //mcg
+            weightEffect = 2;
         };
 
         class Ondansetron: ACM_IM_Medication {
-            hrIncreaseLow[] = {-1, -5};
-            hrIncreaseNormal[] = {-3, -10};
-            hrIncreaseHigh[] = {-5, -12};
+            hrIncrease[] = {-1, -5};
             timeInSystem = 900;
             timeTillMaxEffect = 45;
             maxEffectTime = 720;
