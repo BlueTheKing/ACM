@@ -35,7 +35,7 @@ if (isServer) then {
     [_unit, ([_originalUnit] call CBA_fnc_getLoadout)] call CBA_fnc_setLoadout;
 
     [{
-        params ["_unit"];
+        params ["_unit", "_originalUnit"];
 
         private _saved = (ACE_player getVariable ["ENH_savedLoadout", -1] isNotEqualTo -1);
 
@@ -44,5 +44,9 @@ if (isServer) then {
         if (_saved) then { // Prevent restore loadout from breaking
             _unit setVariable ["ENH_savedLoadout", getUnitLoadout _unit];
         };
-    }, [_unit], 1] call CBA_fnc_waitAndExecute;
+
+        if (GVAR(clearCasualtyLoadout)) then {
+            removeAllWeapons _originalUnit;
+        };
+    }, [_unit, _originalUnit], 1] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
