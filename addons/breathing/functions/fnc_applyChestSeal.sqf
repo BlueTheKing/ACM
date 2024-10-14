@@ -18,7 +18,7 @@
 
 params ["_medic", "_patient"];
 
-[_patient, LSTRING(ChestSeal)] call ACEFUNC(medical_treatment,addToTriageCard);
-[_patient, "activity", LSTRING(ChestSeal_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, LLSTRING(ChestSeal)] call ACEFUNC(medical_treatment,addToTriageCard);
+[_patient, "activity", LLSTRING(ChestSeal_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
 [QGVAR(applyChestSealLocal), [_medic, _patient], _patient] call CBA_fnc_targetEvent;
