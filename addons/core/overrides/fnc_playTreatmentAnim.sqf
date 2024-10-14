@@ -35,7 +35,10 @@ if (_actionName == "CPR") exitWith {
 };
 
 private _anim = getText (configFile >> QACEGVAR(medical_treatment,Actions) >> _actionName >> _configProperty);
-if (_anim == "") exitWith { WARNING_2("no anim [%1, %2]",_actionName,_configProperty); };
+if (_anim == "") exitWith {
+    _unit call ACEFUNC(common,goKneeling);
+    WARNING_2("no anim [%1, %2]",_actionName,_configProperty); 
+};
 
 private _wpn = switch (true) do {
     case ((currentWeapon _unit) == ""): {"non"};

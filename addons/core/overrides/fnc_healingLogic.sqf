@@ -49,7 +49,18 @@ if (_finishTime > 0) exitWith {
                 _treatmentArgs call ACEFUNC(medical_treatment,tourniquetRemove);
             };
 
-            [_treatmentEvent, _treatmentArgs, _target] call CBA_fnc_targetEvent;
+            if (_treatmentEvent in [QEGVAR(airway,insertAirwayItem), QEGVAR(airway,performHeadTurn)]) then {
+                _treatmentArgs call (switch (_treatmentEvent) do {
+                    case (QEGVAR(airway,insertAirwayItem)): {
+                        EFUNC(airway,insertAirwayItem)
+                    };
+                    case (QEGVAR(airway,performHeadTurn)): {
+                        EFUNC(airway,performHeadTurn)
+                    };
+                });
+            } else {
+                [_treatmentEvent, _treatmentArgs, _target] call CBA_fnc_targetEvent;
+            };
 
             // Splints are already logged on their own
             switch (_treatmentEvent) do {
@@ -71,6 +82,7 @@ if (_finishTime > 0) exitWith {
                     };
                 };
                 case QACEGVAR(medical_treatment,ivBagLocal): {
+                    _treatmentArgs params ["", "_bodyPart", "_classname"];
                     if (_usedItem == "") then {
                         _usedItem = "ACE_salineIV";
                     };
@@ -108,11 +120,12 @@ if (_finishTime > 0) exitWith {
                             "ACM_Paracetamol"
                         };
                     };
-
-                    [_target, _usedItem] call ACEFUNC(medical_treatment,addToTriageCard);
                     
                     private _cfg = ["CfgWeapons", "CfgMagazines"] select (isClass (configFile >> "CfgMagazines" >> _usedItem));
-                    [_target, "activity", ACELSTRING(medical_treatment,Activity_usedItem), [[_healer, false, true] call ACEFUNC(common,getName), getText (configFile >> _cfg >> _usedItem >> "displayName")]] call ACEFUNC(medical_treatment,addToLog);
+                    private _itemName = getText (configFile >> _cfg >> _usedItem >> "displayName");
+
+                    [_target, _itemName] call ACEFUNC(medical_treatment,addToTriageCard);
+                    [_target, "activity", ACELSTRING(medical_treatment,Activity_usedItem), [[_healer, false, true] call ACEFUNC(common,getName), _itemName]] call ACEFUNC(medical_treatment,addToLog);
                 };
                 case QACEGVAR(medical_treatment,tourniquetLocal): {
                     [_target, "ACE_tourniquet"] call ACEFUNC(medical_treatment,addToTriageCard);
@@ -316,12 +329,12 @@ if (true) then {
         _treatmentEvent = QEGVAR(breathing,applyChestSealLocal);
         _treatmentTime = 5;
         _treatmentArgs = [_healer, _target];
-        _treatmentItem = "@chestseal";
+        _treatmentItem = "chestseal";
     };
 
     private _opioidDose = ([_target, "Morphine"] call ACEFUNC(medical_status,getMedicationCount)) + ([_target, "Morphine_IV"] call ACEFUNC(medical_status,getMedicationCount)) + ([_target, "Fentanyl"] call ACEFUNC(medical_status,getMedicationCount)) + ([_target, "Fentanyl_IV"] call ACEFUNC(medical_status,getMedicationCount));
 
-    if (_isUnconscious && (_inCardiacArrest || _opioidDose > 2 || (GET_RESPIRATION_RATE(_target) < 12)) && ([_healer, "naloxone", _target] call ACEFUNC(medical_ai,itemCheck)) # 0) exitWith {
+    if (_isUnconscious && (_inCardiacArrest || GET_RESPIRATION_RATE(_target) < 8) && _opioidDose > 1 && ([_healer, "naloxone", _target] call ACEFUNC(medical_ai,itemCheck)) # 0) exitWith {
         if (CBA_missionTime < (_target getVariable [QACEGVAR(medical_ai,nextNaloxone), -1])) exitWith {
             _treatmentEvent = "#waitForNaloxoneToTakeEffect";
         };
@@ -333,7 +346,6 @@ if (true) then {
         _treatmentArgs = [_target, "head", "Naloxone"];
         _treatmentItem = "naloxone";
     };
-
     
     private _canGiveIV = _needsIV && {_healer call ACEFUNC(medical_treatment,isMedic)};
 
@@ -431,8 +443,7 @@ if (true) then {
                     _targetAccessSite = _forEachIndex;
                     break;
                 };
-                
-            } forEach GET_IV(_target);
+            } forEach (GET_IV(_target) select _targetBodyPart);
         };
 
         private _targetAccessType = [_target, _isIV, _targetBodyPart, _targetAccessSite] call EFUNC(circulation,getAccessType);
@@ -513,6 +524,10 @@ if (true) then {
                 _treatmentItem = "morphine";
             };
             case (_penthroxDose < 2 && {([_healer, "penthrox"] call ACEFUNC(medical_ai,itemCheck)) # 0}): {
+                if (_opioidDose > 0.9 && CBA_missionTime < (_target getVariable [QACEGVAR(medical_ai,nextMorphine), -1])) exitWith {
+                    _treatmentEvent = "#waitForMorphineToTakeEffect";
+                };
+
                 if (CBA_missionTime < (_target getVariable [QACEGVAR(medical_ai,nextPenthrox), -1])) exitWith {
                     _treatmentEvent = "#waitForPenthroxToTakeEffect";
                 };
@@ -525,6 +540,14 @@ if (true) then {
                 _treatmentItem = "penthrox";
             };
             case (_paracetamolDose < 2 && {([_healer, "paracetamol"] call ACEFUNC(medical_ai,itemCheck)) # 0}): {
+                if (_opioidDose > 0.9 && CBA_missionTime < (_target getVariable [QACEGVAR(medical_ai,nextMorphine), -1])) exitWith {
+                    _treatmentEvent = "#waitForMorphineToTakeEffect";
+                };
+
+                if (_penthroxDose > 0.9 && CBA_missionTime < (_target getVariable [QACEGVAR(medical_ai,nextPenthrox), -1])) exitWith {
+                    _treatmentEvent = "#waitForPenthroxToTakeEffect";
+                };
+
                 if (CBA_missionTime < (_target getVariable [QACEGVAR(medical_ai,nextParacetamol), -1])) exitWith {
                     _treatmentEvent = "#waitForParacetamolToTakeEffect";
                 };

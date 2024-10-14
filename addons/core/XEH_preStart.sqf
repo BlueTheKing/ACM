@@ -22,7 +22,7 @@ private _itemHash = createHashMap;
     ["@bandage", ["PressureBandage", "EmergencyTraumaDressing", "FieldDressing", "PackingBandage", "ElasticBandage", "QuikClot"]],
     ["@airway", ["InsertNPA", "InsertGuedelTube", "InsertIGel"]],
     ["@suction", ["UseSuctionBag", "UseACCUVAC"]],
-    ["@chestseal", ["ApplyChestSeal"]],
+    ["chestseal", ["ApplyChestSeal"]],
     ["@iv", ["InsertIV_16_Upper", "InsertIV_16_Middle", "InsertIV_16_Lower"]],
     ["@io", ["InsertIO_FAST1", "InsertIO_EZ"]],
     ["@fluid", ["SalineIV", "SalineIV_500", "SalineIV_250", "PlasmaIV", "PlasmaIV_500", "PlasmaIV_250"]],

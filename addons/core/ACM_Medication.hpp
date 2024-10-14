@@ -31,6 +31,7 @@ class ACM_Medication {
         };
 
         class Paracetamol: ACM_PO_Medication {
+            minPainReduce = 0.35;
             painReduce = 0.35;
             maxPainReduce = 0.45;
         };
@@ -55,6 +56,7 @@ class ACM_Medication {
         };
 
         class Penthrox: ACM_Inhalant_Medication {
+            minPainReduce = 0.75;
             painReduce = 0.75;
             maxPainReduce = 0.9;
             hrIncrease[] = {-1, -4};
