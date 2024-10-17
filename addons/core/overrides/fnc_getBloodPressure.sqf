@@ -37,6 +37,14 @@ private _tensionEffect = 0;
 private _HTXFluid = _unit getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
 private _PTXState = _unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0];
 
+private _overloadEffect = linearConversion [0, 1, (_unit getVariable [QEGVAR(circulation,Overload_Volume), 0]), 1, 1.3];
+
+private _diastolicModifier = 1;
+
+if (GET_BLOOD_VOLUME(_unit) < DEFAULT_BLOOD_VOLUME) then {
+    _diastolicModifier = linearConversion [DEFAULT_BLOOD_VOLUME, 4.2, GET_BLOOD_VOLUME(_unit), 1, 1.3, true];
+};
+
 if (_PTXState > 0 || _HTXFluid > 0.1) then {
     _tensionEffect = (_PTXState * 8) max (_HTXFluid / 46);
 };
@@ -45,4 +53,4 @@ if ((_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) || 
     _tensionEffect = 35;
 };
 
-[(round(((_bloodPressure * MODIFIER_BP_LOW) - _tensionEffect) * _bleedEffect * _internalBleedingEffect)) max 0, (round(((_bloodPressure * MODIFIER_BP_HIGH) - _tensionEffect) * _bleedEffect * _internalBleedingEffect)) max 0]
+[(round(((_bloodPressure * MODIFIER_BP_LOW * _diastolicModifier) - _tensionEffect) * _bleedEffect * _internalBleedingEffect * _overloadEffect)) max 0, (round(((_bloodPressure * MODIFIER_BP_HIGH) - _tensionEffect) * _bleedEffect * _internalBleedingEffect * _overloadEffect)) max 0]

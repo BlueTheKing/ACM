@@ -23,10 +23,28 @@ private _selectionIndex = lbCurSel _ctrlBagPanel;
 if (_selectionIndex < 0) exitWith {};
 
 private _fnc_completeRemoval = {
-    params ["_IVBags", "_IVBagsOnBodyPart", "_targetIndex", "_itemClassName", "_return"];
+    params ["_IVBags", "_IVBagsOnBodyPart", "_targetIndex", "_itemClassName", "_type", "_returnVolume", "_totalVolume"];
 
-    if (_return) then {
-        [ACE_player, _itemClassName] call ACEFUNC(common,addToInventory);
+    private _returned = true;
+
+    if (_returnVolume > 0) then {
+        if (_type == "FBTK" && _returnVolume >= 250) then {
+            private _className = ["FreshBlood", _returnVolume] call FUNC(formatFluidBagName);
+            private _freshBloodID = [GVAR(TransfusionMenu_Target), _returnVolume] call FUNC(generateFreshBloodEntry);
+            _returned = [ACE_player, (format ["%1_%2", _className, _freshBloodID])] call ACEFUNC(common,addToInventory);
+        } else {
+            _returned = [ACE_player, _itemClassName] call ACEFUNC(common,addToInventory);
+        };
+    } else {
+        if (_type == "FBTK") then {
+            _returned = [ACE_player, (format ["ACM_FieldBloodTransfusion_%1", _totalVolume])] call ACEFUNC(common,addToInventory);
+        };
+    };
+
+    _returned = (_returned select 0);
+
+    if !(_returned) then {
+        [ACELLSTRING(common,Inventory_Full), 1.5, ACE_player] call ACEFUNC(common,displayTextStructured);
     };
 
     _IVBagsOnBodyPart deleteAt _targetIndex;
@@ -35,7 +53,7 @@ private _fnc_completeRemoval = {
     GVAR(TransfusionMenu_Target) setVariable [QGVAR(IV_Bags), _IVBags, true];
 };
 
-private _targetIndex = (GVAR(TransfusionMenu_Selection_IVBags) select _selectionIndex) select 7;
+private _targetIndex = (GVAR(TransfusionMenu_Selection_IVBags) select _selectionIndex) select 8;
 
 private _IVBags = GVAR(TransfusionMenu_Target) getVariable [QGVAR(IV_Bags), createHashMap];
 private _IVBagsOnBodyPart = _IVBags getOrDefault [GVAR(TransfusionMenu_Selected_BodyPart), []];
@@ -49,13 +67,20 @@ private _returnVolume = [_remainingVolume] call FUNC(getReturnVolume);
 private _itemClassName = [_type, _returnVolume, _bloodType] call FUNC(formatFluidBagName);
 private _itemClassNameString = getText (configFile >> "CfgWeapons" >> _itemClassName >> "displayName");
 
-private _funcParams = [_IVBags, _IVBagsOnBodyPart, _targetIndex, _itemClassName, (_returnVolume > 0)];
+private _funcParams = [_IVBags, _IVBagsOnBodyPart, _targetIndex, _itemClassName, _type, _returnVolume, _volume];
 
 [[ACE_player, GVAR(TransfusionMenu_Target), _type, _returnVolume, _bloodType, _fnc_completeRemoval, _funcParams], {
     params ["_medic", "_patient", "_type", "_returnVolume", "_bloodType", "_fnc_completeRemoval", "_funcParams"];
     
     _funcParams call _fnc_completeRemoval;
-    private _fluidBagString = [([_type, _returnVolume, _bloodType, true] call FUNC(formatFluidBagName))] call FUNC(getFluidBagString);
+
+    private _fluidBagString = "";
+
+    if (_type == "FBTK") then {
+        _fluidBagString = format ["%1 %2ml", "FBTK", _returnVolume];
+    } else {
+        _fluidBagString = [([_type, _returnVolume, _bloodType, true] call FUNC(formatFluidBagName))] call FUNC(getFluidBagString);
+    };
     [_patient, "activity", LSTRING(TransfusionMenu_RemoveBag_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), (_fluidBagString), ([GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(core,getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
     closeDialog 0;
     

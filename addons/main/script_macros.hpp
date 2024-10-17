@@ -246,7 +246,7 @@
 #define ACM_REVERSIBLE_CA_BLOODVOLUME 4.2
 #define ACM_CA_BLOODVOLUME 4
 
-#define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + (unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3))
+#define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + ((unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3) - (unit getVariable [QEGVAR(circulation,Overload_Volume), 0])) max 0)
 
 #define GET_MAP(systolic,diastolic) (diastolic + ((systolic - diastolic) / 3))
 
@@ -352,6 +352,9 @@
 //// Transfusion
 #define FLUIDS_ARRAY ['ACE_salineIV','ACE_plasmaIV','ACE_salineIV_500','ACE_plasmaIV_500','ACE_salineIV_250','ACE_plasmaIV_250']
 #define FLUIDS_ARRAY_DATA ['salineIV','plasmaIV','salineIV_500','plasmaIV_500','salineIV_250','plasmaIV_250']
+
+#define FBTK_ARRAY ['ACM_FieldBloodTransfusionKit_500','ACM_FieldBloodTransfusionKit_250']
+#define FBTK_ARRAY_DATA ['FieldBloodTransfusionKit_500','FieldBloodTransfusionKit_250']
 
 // Damage
 #define VAR_WRAPPED_WOUNDS             QEGVAR(damage,WrappedWounds)

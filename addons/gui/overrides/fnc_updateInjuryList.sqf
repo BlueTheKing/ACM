@@ -78,7 +78,9 @@ if (ACEGVAR(medical_gui,showBloodlossEntry)) then {
 private _totalBags = 0;
 private _salineBags = 0;
 private _bloodBags = 0;
+private _freshBloodBags = 0;
 private _plasmaBags = 0;
+private _FBTKBags = 0;
 {
     private _IVBagsBodyPart = (_target getVariable [QEGVAR(circulation,IV_Bags), createHashMap]) getOrDefault [_x, []];
 
@@ -95,20 +97,32 @@ private _plasmaBags = 0;
             case "Plasma": {
                 _plasmaBags = _plasmaBags + 1;
             };
+            case "FBTK": {
+                _FBTKBags = _FBTKBags + 1;
+            };
+            case "FreshBlood": {
+                _freshBloodBags = _freshBloodBags + 1;
+            };
         };
         _totalBags = _totalBags + 1;  
     } forEach _allBagsBodyPart; 
 } forEach ALL_BODY_PARTS;
 
 if (_totalBags > 0) then {
-    if (_salineBags > 0) then {
-        _entries pushBack [format [LELSTRING(circulation,GUI_TransfusingSaline), floor _salineBags], [1, 1, 1, 1]];
+    if (_FBTKBags > 0) then {
+        _entries pushBack [format [LELSTRING(circulation,GUI_CollectingBlood), floor _FBTKBags], [1, 1, 1, 1]];
+    };
+    if (_freshBloodBags > 0) then {
+        _entries pushBack [format [LELSTRING(circulation,GUI_TransfusingFreshBlood), floor _freshBloodBags], [1, 1, 1, 1]];
     };
     if (_bloodBags > 0) then {
         _entries pushBack [format [LELSTRING(circulation,GUI_TransfusingBlood), floor _bloodBags], [1, 1, 1, 1]];
     };
     if (_plasmaBags > 0) then {
         _entries pushBack [format [LELSTRING(circulation,GUI_TransfusingPlasma), floor _plasmaBags], [1, 1, 1, 1]];
+    };
+    if (_salineBags > 0) then {
+        _entries pushBack [format [LELSTRING(circulation,GUI_TransfusingSaline), floor _salineBags], [1, 1, 1, 1]];
     };
 } else {
     if (GVAR(showInactiveStatuses)) then {_entries pushBack [localize ACELSTRING(medical_treatment,Status_NoIv), _nonissueColor];};

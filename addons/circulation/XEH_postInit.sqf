@@ -62,6 +62,9 @@ GVAR(Fluids_Array_Data) = FLUIDS_ARRAY_DATA;
     } forEach [1000,500,250];
 } forEach ["O","ON","A","AN","B","BN","AB","ABN"];
 
+GVAR(Fluids_Array) append FBTK_ARRAY; 
+GVAR(Fluids_Array_Data) append FBTK_ARRAY_DATA; 
+
 ACM_SYRINGES_10 = ['ACM_Syringe_10'];
 ACM_SYRINGES_5 = ['ACM_Syringe_5'];
 ACM_SYRINGES_3 = ['ACM_Syringe_3'];
@@ -88,3 +91,7 @@ ACM_MEDICATION_VIALS = [];
 
 ["ACM_Syringe_IV", "ACM_Syringe_10"] call ACEFUNC(common,registerItemReplacement); // 1.1.0 -> TODO REMOVE
 ["ACM_Syringe_IM", "ACM_Syringe_5"] call ACEFUNC(common,registerItemReplacement); // 1.1.0 -> TODO REMOVE
+
+if (isServer) then {
+    missionNamespace setVariable [QGVAR(FreshBloodList), (createHashMapFromArray [[0,[objNull,250,ACM_BLOODTYPE_ON,CBA_missionTime]]]), true];
+};

@@ -168,37 +168,52 @@ class CfgWeapons {
         picture = QPATHTOF(ui\vial_amiodarone_ca.paa);
         displayName = CSTRING(Vial_Amiodarone);
         descriptionShort = CSTRING(Vial_Amiodarone_Desc);
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 0.2;
-        };
     };
 
     class ACM_Vial_Fentanyl: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_fentanyl_ca.paa);
         displayName = CSTRING(Vial_Fentanyl);
         descriptionShort = CSTRING(Vial_Fentanyl_Desc);
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 0.2;
-        };
     };
 
     class ACM_Vial_Ondansetron: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_ondansetron_ca.paa);
         displayName = CSTRING(Vial_Ondansetron);
         descriptionShort = CSTRING(Vial_Ondansetron_Desc);
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 0.2;
-        };
+    };
+
+    class ACM_Vial_CalciumChloride: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_calciumchloride_ca.paa);
+        displayName = CSTRING(Vial_CalciumChloride);
+        descriptionShort = CSTRING(Vial_CalciumChloride_Desc);
     };
 
     class ACM_Spray_Naloxone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\spray_naloxone_ca.paa);
         displayName = CSTRING(Spray_Naloxone);
         descriptionShort = CSTRING(Spray_Naloxone_Desc);
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 0.2;
-        };
         ACM_isVial = 0;
+    };
+
+    class ACM_FieldBloodTransfusionKit_500: ACE_ItemCore {
+        scope = 2;
+        author = "Blue";
+        picture = QPATHTOF(ui\fieldBloodTransfusionKit_ca.paa);
+        displayName = "Field Blood Transfusion Kit (500ml)";
+        shortName = "FBTK (500ml)";
+        descriptionShort = "Used to transfuse fresh blood in emergency";
+        ACE_isMedicalItem = 1;
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 1;
+        };
+    };
+
+    class ACM_FieldBloodTransfusionKit_250: ACM_FieldBloodTransfusionKit_500 {
+        displayName = "Field Blood Transfusion Kit (250ml)";
+        shortName = "FBTK (250ml)";
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.5;
+        };
     };
 
     class ACE_adenosine: ACE_ItemCore {

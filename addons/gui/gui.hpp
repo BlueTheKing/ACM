@@ -86,14 +86,6 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             text = QPATHTOF(data\body_image\torso_fast_io.paa);
             colorText[] = COLOR_CIRCULATION;
         };
-        class RightArm_PressureCuff: Torso_IO {
-            idc = IDC_BODY_RIGHTARM_PRESSURECUFF;
-            text = QPATHTOF(data\body_image\rightarm_aed_pressurecuff.paa);
-        };
-        class LeftArm_PressureCuff: Torso_IO {
-            idc = IDC_BODY_LEFTARM_PRESSURECUFF;
-            text = QPATHTOF(data\body_image\leftarm_aed_pressurecuff.paa);
-        };
         class RightArm_IO: Torso_IO {
             idc = IDC_BODY_RIGHTARM_IO;
             text = QPATHTOF(data\body_image\rightarm_io.paa);
@@ -125,6 +117,14 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
         BODYIMAGE_IV(LeftLeg,Upper,IDC_BODY_LEFTLEG_UPPER_IV);
         BODYIMAGE_IV(LeftLeg,Middle,IDC_BODY_LEFTLEG_MIDDLE_IV);
         BODYIMAGE_IV(LeftLeg,Lower,IDC_BODY_LEFTLEG_LOWER_IV);
+        class RightArm_PressureCuff: Torso_IO {
+            idc = IDC_BODY_RIGHTARM_PRESSURECUFF;
+            text = QPATHTOF(data\body_image\rightarm_aed_pressurecuff.paa);
+        };
+        class LeftArm_PressureCuff: Torso_IO {
+            idc = IDC_BODY_LEFTARM_PRESSURECUFF;
+            text = QPATHTOF(data\body_image\leftarm_aed_pressurecuff.paa);
+        };
         class ArmLeftT: Background {
             text = QPATHTOF(data\body_image\leftarm_tourniquet.paa);
         };
