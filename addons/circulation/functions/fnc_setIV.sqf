@@ -41,12 +41,12 @@ switch (_type) do {
     case ACM_IO_FAST1_M: {
         _hintType = LLSTRING(IO_FAST1);
         _classname = "ACM_IO_FAST";
-        _givePain = 0.5;
+        _givePain = 0.8;
     };
     case ACM_IO_EZ_M: {
         _hintType = LLSTRING(IO_EZ);
         _classname = "ACM_IO_EZ";
-        _givePain = 0.25;
+        _givePain = 0.8;
     };
     default {};
 };

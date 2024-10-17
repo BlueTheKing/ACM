@@ -74,11 +74,11 @@ private _PFH = [{
     private _ketamineIMEffect = [_patient, "Ketamine", false] call ACEFUNC(medical_status,getMedicationCount);
     private _ketamineIVEffect = [_patient, "Ketamine_IV", false] call ACEFUNC(medical_status,getMedicationCount);
 
-    private _ketamineEffect = (_ketamineIMEffect * 0.4) + (_ketamineIVEffect * 0.8);
+    private _ketamineEffect = (_ketamineIMEffect * 0.5) + (_ketamineIVEffect * 0.8);
 
     private _anestheticEffect = 0;
 
-    _anestheticEffect = _anestheticEffect + _lidocaineEffect * 0.3;
+    _anestheticEffect = _anestheticEffect + _lidocaineEffect * 0.4;
 
     if !(_patient getVariable [QGVAR(AnestheticEffect_Ketamine_Absorbed), false]) then {
         _anestheticEffect = _anestheticEffect + _ketamineEffect;

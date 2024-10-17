@@ -7,7 +7,7 @@
  * 0: Patient <OBJECT>
  *
  * Return Value:
- * Is CPR being performed on unit
+ * Is CPR being performed on unit <BOOL>
  *
  * Example:
  * [player] call ACM_core_fnc_cprActive;

@@ -66,9 +66,11 @@ _patient setVariable [QGVAR(Thoracostomy_State), 1, true];
 
 private _anestheticEffect = [_patient, "Lidocaine", false] call ACEFUNC(medical_status,getMedicationCount);
 
-if (_anestheticEffect < 0.5) then {
+if (_anestheticEffect < 0.7) then {
     [_patient, (1 - _anestheticEffect)] call ACEFUNC(medical,adjustPainLevel);
-    [QACEGVAR(medical,CriticalVitals), _patient] call CBA_fnc_localEvent;
+    if (_anestheticEffect < 0.5) then {
+        [QACEGVAR(medical,CriticalVitals), _patient] call CBA_fnc_localEvent;
+    };
 };
 
 _patient setVariable [QGVAR(Pneumothorax_State), 3, true];

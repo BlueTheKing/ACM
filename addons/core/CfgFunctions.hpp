@@ -141,6 +141,20 @@ class CfgFunctions {
             };
         };
     };
+    class overwrite_medical_ai {
+        tag = "ace_medical_ai";
+        class ace_medical_ai {
+            class healingLogic { // Use new items
+                file = QPATHTOF(overrides\fnc_healingLogic.sqf); //ace/addons/medical_ai/functions/fnc_healingLogic.sqf
+            };
+            class itemCheck { // Use own item list
+                file = QPATHTOF(overrides\fnc_itemCheck.sqf); //ace/addons/medical_ai/functions/fnc_itemCheck.sqf
+            };
+            class playTreatmentAnim { // Medic AI CPR
+                file = QPATHTOF(overrides\fnc_playTreatmentAnim.sqf); //ace/addons/medical_ai/functions/fnc_playTreatmentAnim.sqf
+            };
+        };
+    };
     class overwrite_ace_dogtags {
         tag = "ace_dogtags";
         class ace_dogtags {

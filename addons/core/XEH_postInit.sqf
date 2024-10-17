@@ -8,6 +8,18 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
     }] call CBA_fnc_addEventHandler;
 };
 
+[0, {
+    if (_this getVariable [QACEGVAR(medical,isBleeding), false]) exitWith {};
+    
+    private _count = 0;
+
+    ({
+        _count = _count + (count _x);
+    } forEach (_this getVariable [QEGVAR(circulation,IV_Bags), createHashMap]));
+
+    -1 * _count;
+}] call ACEFUNC(field_rations,addStatusModifier);
+
 [QGVAR(openMedicalMenu), ACELINKFUNC(medical_gui,openMenu)] call CBA_fnc_addEventHandler;
 
 ["ace_cardiacArrest", LINKFUNC(onCardiacArrest)] call CBA_fnc_addEventHandler;

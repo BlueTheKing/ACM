@@ -18,7 +18,9 @@
 
 params ["_medic", "_patient"];
 
-[_medic] call ACEFUNC(common,goKneeling);
+if (isNull (objectParent _medic)) then {
+    [_medic] call ACEFUNC(common,goKneeling);
+};
 
 [3, [_medic, _patient], {
     params ["_args"];
@@ -29,7 +31,7 @@ params ["_medic", "_patient"];
     };
 
     [_medic, _patient] call FUNC(convertCasualty);
-    [LLSTRING(ConvertCasualty_InProgress), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LLSTRING(ConvertCasualty_InProgress), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 }, {
     params ["_args"];
     _args params ["_medic", "_patient"];

@@ -211,6 +211,9 @@
 
 #define IN_RECOVERYPOSITION(unit) (unit getVariable [QQEGVAR(airway,RecoveryPosition_State), false])
 
+#define GET_AIRWAYADJUNCT_ORAL(unit)  (unit getVariable [QEGVAR(airway,AirwayItem_Oral), ""])
+#define GET_AIRWAYADJUNCT_NASAL(unit) (unit getVariable [QEGVAR(airway,AirwayItem_Nasal), ""])
+
 // Breathing
 #define ACM_BREATHING_MINDECREASE 0.1
 #define ACM_BREATHING_MAXDECREASE 0.12

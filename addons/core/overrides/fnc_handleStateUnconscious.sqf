@@ -24,7 +24,7 @@ if (!alive _unit || {!local _unit}) exitWith {};
 
 // Handle spontaneous wake up from unconsciousness
 if (ACEGVAR(medical,spontaneousWakeUpChance) > 0) then {
-    if (_unit call ACEFUNC(medical_status,hasStableVitals) && !(_unit getVariable [QGVAR(KnockOut_State), false]) && !(_unit getVariable [QEGVAR(evacuation,casualtyTicketClaimed), false])) then {
+    if (_unit call ACEFUNC(medical_status,hasStableVitals) && !(_unit getVariable [QGVAR(KnockOut_State), false]) && !(_unit call FUNC(isForcedUnconscious))) then {
         private _lastWakeUpCheck = _unit getVariable QACEGVAR(medical,lastWakeUpCheck);
 
         // Handle setting being changed mid-mission and still properly check

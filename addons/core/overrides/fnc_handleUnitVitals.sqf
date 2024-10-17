@@ -89,8 +89,11 @@ if (_adjustments isNotEqualTo []) then {
             _deleted = true;
             _adjustments deleteAt _forEachIndex;
         } else {
-            private _effectRatio = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime, _concentration] call EFUNC(circulation,getMedicationEffect);
-            if (_hrAdjust != 0) then { _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio; };
+            private _effectRatio = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime] call EFUNC(circulation,getMedicationEffect);
+            if (_hrAdjust != 0) then {
+                private _HREffect = [(GET_HEART_RATE(_unit) / ACM_TARGETVITALS_HR(_unit)), (ACM_TARGETVITALS_HR(_unit) / GET_HEART_RATE(_unit))] select (_hrAdjust > 0);
+                _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio * _HREffect;
+            };
             if (_flowAdjust != 0) then { _peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _flowAdjust * _effectRatio; };
             if (_rrAdjust != 0) then { _respirationRateAdjustment = _respirationRateAdjustment + _rrAdjust * _effectRatio; };
             if (_coSensitivityAdjust != 0) then { _coSensitivityAdjustment = _coSensitivityAdjustment + _coSensitivityAdjust * _effectRatio; };
@@ -187,7 +190,7 @@ switch (true) do {
         _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
     };
-    case (_bloodPressureL >= 190): {
+    case (_bloodPressureL > 190): {
         TRACE_2("bloodPressure L above limits",_unit,_bloodPressureL);
         [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };

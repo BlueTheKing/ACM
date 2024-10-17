@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Get effect of medication depending on administration route
+ * Get effect of medication depending on administration route.
  *
  * Arguments:
  * 0: Administration Route <NUMBER>
@@ -26,14 +26,17 @@
 
 params ["_administrationType", "_timeInSystem", "_timeTillMaxEffect", "_maxTimeInSystem", "_maxEffectTime", "_concentration"];
 
+//_maxTimeInSystem = _maxTimeInSystem * (0.1 max _concentration min 1.2);
+//_timeTillMaxEffect = _timeTillMaxEffect / (0.1 max _concentration min 1.2);
+//_maxEffectTime = _maxEffectTime * (0.01 max _concentration min 1.1);
+
 private _eliminationTime = (_maxTimeInSystem - _maxEffectTime - _timeTillMaxEffect);
 private _currentEliminationTime = (_timeInSystem - _maxEffectTime - _timeTillMaxEffect);
 
 private _effect = 0;
-private _maxEffect = _concentration;
 
 if (_timeInSystem > _timeTillMaxEffect && _timeInSystem < _timeTillMaxEffect + _maxEffectTime) then {
-    _effect = _maxEffect;
+    _effect = 1;
 } else {
     _effect = switch (_administrationType) do {
         case ACM_ROUTE_IM: {
@@ -50,4 +53,4 @@ if (_timeInSystem > _timeTillMaxEffect && _timeInSystem < _timeTillMaxEffect + _
     };
 };
 
-0 max (_effect * _concentration) min _maxEffect;
+0 max _effect min 1;

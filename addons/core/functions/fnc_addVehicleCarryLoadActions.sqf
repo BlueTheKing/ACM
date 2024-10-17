@@ -74,6 +74,6 @@ ACELLSTRING(Interaction,MainAction),
     _loadAction;
 },
 [_type, _fnc_getFreeSeats],
-{call ACEFUNC(interaction,getVehiclePos)}, 4] call ACEFUNC(interact_menu,createAction);
+{call ACEFUNC(interaction,getVehiclePos)}, 3] call ACEFUNC(interact_menu,createAction);
 
 [_type, 0, [], _action] call ACEFUNC(interact_menu,addActionToClass);
