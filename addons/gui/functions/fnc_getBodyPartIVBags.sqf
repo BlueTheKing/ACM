@@ -22,8 +22,10 @@
 params ["_patient", "_bodyPart", ["_iv", true], ["_accessSite", -1], ["_accessType", -1]];
 
 private _bloodVolume = 0;
+private _freshBloodVolume = 0;
 private _plasmaVolume = 0;
 private _salineVolume = 0;
+private _FBTKVolume = 0;
 
 private _accessBodyPart = (_patient getVariable [QEGVAR(circulation,IV_Bags), createHashMap]) getOrDefault [_bodyPart, []];
 
@@ -35,6 +37,8 @@ if (_iv) then {
             switch (_type) do {
                 case "Plasma": {_plasmaVolume = _plasmaVolume + _volumeRemaining;};
                 case "Saline": {_salineVolume = _salineVolume + _volumeRemaining;};
+                case "FBTK": {_FBTKVolume = _FBTKVolume + _volumeRemaining;};
+                case "FreshBlood": {_freshBloodVolume = _freshBloodVolume + _volumeRemaining;};
                 default {_bloodVolume = _bloodVolume + _volumeRemaining;};
             };
         };
@@ -47,6 +51,7 @@ if (_iv) then {
             switch (_type) do {
                 case "Plasma": {_plasmaVolume = _plasmaVolume + _volumeRemaining;};
                 case "Saline": {_salineVolume = _salineVolume + _volumeRemaining;};
+                case "FreshBlood": {_freshBloodVolume = _freshBloodVolume + _volumeRemaining;};
                 default {_bloodVolume = _bloodVolume + _volumeRemaining;};
             };
         };
@@ -55,16 +60,24 @@ if (_iv) then {
 
 private _output = [];
 
+if (_FBTKVolume > 0) then {
+	_output pushBack format ["%1: %2ml", LELSTRING(circulation,GUI_TransfusingVolume_FieldBloodTransfusionKit_Short), floor(_FBTKVolume)];
+};
+
+if (_freshBloodVolume > 0) then {
+    _output pushBack format ["%1: %2ml", LELSTRING(circulation,GUI_TransfusingVolume_FreshWholeBlood_Short), floor(_freshBloodVolume)];
+};
+
 if (_bloodVolume > 0) then {
-    _output pushBack format ["B: %1ml", floor(_bloodVolume)];
+    _output pushBack format ["%1: %2ml", LELSTRING(circulation,GUI_TransfusingVolume_Blood_Short), floor(_bloodVolume)];
 };
 
 if (_plasmaVolume > 0) then {
-	_output pushBack format ["P: %1ml", floor(_plasmaVolume)];
+	_output pushBack format ["%1: %2ml", LELSTRING(circulation,GUI_TransfusingVolume_Plasma_Short), floor(_plasmaVolume)];
 };
 
 if (_salineVolume > 0) then {
-	_output pushBack format ["S: %1ml", floor(_salineVolume)];
+	_output pushBack format ["%1: %2ml", LELSTRING(circulation,GUI_TransfusingVolume_Saline_Short), floor(_salineVolume)];
 };
 
 _output joinString " ";

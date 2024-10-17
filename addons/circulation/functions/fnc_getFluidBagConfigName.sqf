@@ -38,6 +38,12 @@ if (_isACE) exitWith {
 };
 
 switch (_type) do {
+    case "FBTK": {
+        format ["%1%2_%3", _prefix, "FieldBloodTransfusionKit", _volume];
+    };
+    case "FreshBlood": {
+        format ["%1%2_%3", _prefix, "FreshBloodBag", _volume];
+    };
     case "Blood": {
         format ["%1%2_%3_%4", _prefix, "BloodBag", ([_bloodType, 2] call FUNC(convertBloodType)), _volume];
     };

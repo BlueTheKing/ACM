@@ -208,7 +208,21 @@ class ACM_Medication {
             maxEffectTime = 600;
             maxDose = 8;
             maxDoseDeviation = 8;
+            viscosityChange = 20;
             maxEffectDose = 4;
+            weightEffect = 0;
+        };
+
+        class CalciumChloride_IV: ACM_IV_Medication {
+            hrIncreaseLow[] = {-5, -10};
+            hrIncreaseNormal[] = {-6, -16};
+            hrIncreaseHigh[] = {-8, -20};
+            timeInSystem = 600;
+            timeTillMaxEffect = 15;
+            maxEffectTime = 300;
+            maxDose = 1050;
+            maxDoseDeviation = 50;
+            maxEffectDose = 1000;
             weightEffect = 0;
         };
 
@@ -401,6 +415,12 @@ class ACM_Medication {
             concentration = 2;
             dose = "4mg/2ml";
             volume = 2;
+        };
+
+        class CalciumChloride {
+            concentration = 100;
+            dose = "1000mg/10ml";
+            volume = 10;
         };
     };
 };

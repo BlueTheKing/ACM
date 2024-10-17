@@ -58,3 +58,34 @@ BLOODBAG_ENTRY(B,250,__EVAL(call compile BLOODBAG_NAME_FORMAT('B+ (250ml)')));
 BLOODBAG_ENTRY(BN,250,__EVAL(call compile BLOODBAG_NAME_FORMAT('B- (250ml)')));
 BLOODBAG_ENTRY(AB,250,__EVAL(call compile BLOODBAG_NAME_FORMAT('AB+ (250ml)')));
 BLOODBAG_ENTRY(ABN,250,__EVAL(call compile BLOODBAG_NAME_FORMAT('AB- (250ml)')));
+
+#define FRESHBLOODBAG_NAME_FORMAT(string) QUOTE(format [ARR_2(C_LLSTRING(FreshBloodBag),string)])
+#define FRESHBLOODBAG_NAME_FORMAT_S(string) QUOTE(format [ARR_2(C_LLSTRING(FreshBloodBag_Short),string)])
+
+#define FRESHBLOODBAG_ENTRY(id,amount,name,shortname) \
+    class TRIPLES(ACM_FreshBloodBag,amount,id): DOUBLES(ACM_FreshBloodBag,amount) { \
+        displayName = name; \
+        shortName = shortname; \
+    }
+
+class ACM_FreshBloodBag_500: ACE_bloodIV_500 {
+    scope = 1;
+    author = "Blue";
+    picture = QPATHTOF(ui\fieldBloodTransfusionKit_full_ca.paa);
+    displayName = __EVAL(call compile FRESHBLOODBAG_NAME_FORMAT('(500ml) [0]'));
+    shortName = __EVAL(call compile FRESHBLOODBAG_NAME_FORMAT_S('(500ml) [0]'));
+    descriptionShort = CSTRING(BloodBag_Desc);
+};
+
+#include "CfgWeapons_Blood_500.hpp"
+
+class ACM_FreshBloodBag_250: ACE_bloodIV_250 {
+    scope = 1;
+    author = "Blue";
+    picture = QPATHTOF(ui\fieldBloodTransfusionKit_full_ca.paa);
+    displayName = __EVAL(call compile FRESHBLOODBAG_NAME_FORMAT('(250ml) [0]'));
+    shortName = __EVAL(call compile FRESHBLOODBAG_NAME_FORMAT_S('(250ml) [0]'));
+    descriptionShort = CSTRING(BloodBag_Desc);
+};
+
+#include "CfgWeapons_Blood_250.hpp"

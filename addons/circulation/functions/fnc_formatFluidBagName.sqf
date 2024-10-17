@@ -20,4 +20,4 @@
 
 params ["_type", "_targetVolume", ["_bloodType", -1], ["_noPrefix", false]];
 
-[([true, _type, _targetVolume, -1, _noPrefix] call FUNC(getFluidBagConfigName)), ([false, _type, _targetVolume, _bloodType, _noPrefix] call FUNC(getFluidBagConfigName))] select (_type == "Blood")
+[([true, _type, _targetVolume, -1, _noPrefix] call FUNC(getFluidBagConfigName)), ([false, _type, _targetVolume, _bloodType, _noPrefix] call FUNC(getFluidBagConfigName))] select (_type in ["Blood","FreshBlood","FBTK"])

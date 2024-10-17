@@ -50,6 +50,10 @@ _patient setVariable [QGVAR(Saline_Volume), 0, true];
 
 _patient setVariable [QGVAR(Platelet_Count), 3, true];
 
+_patient setVariable [QGVAR(Overload_Volume), 0, true];
+
+_patient setVariable [QGVAR(TransfusedBlood_Volume), 0, true];
+
 _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus, true];
 _patient setVariable [QGVAR(CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus];
 _patient setVariable [QGVAR(CardiacArrest_DeteriorationTime), nil];

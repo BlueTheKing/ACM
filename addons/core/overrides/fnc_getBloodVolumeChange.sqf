@@ -30,6 +30,12 @@ private _bloodVolumeChange = 0;
 private _plasmaVolumeChange = 0;
 private _salineVolumeChange = 0;
 
+private _transfusedBloodVolume = _unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0];
+private _transfusedBloodVolumeChange = 0;
+
+private _reactionBloodVolume = _unit getVariable [QEGVAR(circulation,ReactionBlood_Volume), 0];
+private _reactionBloodVolumeChange = 0;
+
 private _activeVolumes = 0;
 
 private _bloodLoss = -_deltaT * GET_BLOOD_LOSS(_unit);
@@ -113,24 +119,39 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
         private _fluidBagsBodyPart = _y;
 
         _fluidBagsBodyPart = _fluidBagsBodyPart apply {
-            _x params ["_type", "_bagVolumeRemaining", "_accessType", "_accessSite", "_iv", ["_bloodType", -1], "_originalVolume"];
+            _x params ["_type", "_bagVolumeRemaining", "_accessType", "_accessSite", "_iv", ["_bloodType", -1], "_originalVolume", ["_freshBloodID", -1]];
 
-            if ((!(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) || (!_iv && (_partIndex in [2,3]))) && (([(GET_IO_FLOW_X(_unit,_partIndex)),(GET_IV_FLOW_X(_unit,_partIndex,_accessSite))] select _iv) > 0)) then {
+            if ((!(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) || (!_iv && (_partIndex in [2,3]))) && (([(GET_IO_FLOW_X(_unit,_partIndex)),(GET_IV_FLOW_X(_unit,_partIndex,_accessSite))] select _iv) > 0) && {_type != "FBTK" || {_type == "FBTK" && _bagVolumeRemaining <= _originalVolume}}) then {
                 private _fluidFlowRate = 1;
                 private _fluidPassRatio = 1;
+                private _uniqueFreshBloodEntry = [];
+
+                if (_type == "FreshBlood") then {
+                    _uniqueFreshBloodEntry = [_freshBloodID] call EFUNC(circulation,getFreshBloodEntry);
+                };
     
                 switch (_type) do {
                     case "Blood": {
                         _fluidFlowRate = 0.8;
                     };
+                    case "FBTK";
                     case "Saline": {
                         _fluidFlowRate = 1.2;
+                    };
+                    case "FreshBlood": {
+                        _fluidFlowRate = 1.2 * ((0.67 max (900 / (CBA_missionTime - (_uniqueFreshBloodEntry select 3)))) min 1);
                     };
                     default {};
                 };
     
                 private _activeBagTypesBodyPart = [(_activeBagTypesIO select _partIndex),((_activeBagTypesIV select _partIndex) select _accessSite)] select _iv;
-                private _bagChange = ((_deltaT * ACEGVAR(medical,ivFlowRate) * ([_unit, _partIndex, _iv, _accessSite] call EFUNC(circulation,getIVFlowRate))) * ([_IOFlowMultiplier, _IVFlowMultiplier] select _iv) * _fluidFlowRate) min _bagVolumeRemaining; // absolute value of the change in miliLiters
+                private _bagChange = ((_deltaT * ACEGVAR(medical,ivFlowRate) * ([_unit, _partIndex, _iv, _accessSite] call EFUNC(circulation,getIVFlowRate))) * ([_IOFlowMultiplier, _IVFlowMultiplier] select _iv) * _fluidFlowRate); // absolute value of the change in miliLiters
+                
+                if (_type == "FBTK") then {
+                    _bagChange = _bagChange min (_originalVolume - _bagVolumeRemaining);
+                } else {
+                    _bagChange = _bagChange min _bagVolumeRemaining;
+                };
                 
                 if (_iv && EGVAR(circulation,IVComplications)) then {
                     _bagChange = [(_bagChange), (_bagChange * 0.9), (_bagChange * 0.85)] select (GET_IV_COMPLICATIONS_FLOW_X(_unit,_partIndex,_accessSite));
@@ -140,8 +161,12 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                 if (_bagVolumeRemaining > 1) then {
                     _bagChange = _bagChange / _activeBagTypesBodyPart;
                 };
-    
-                _bagVolumeRemaining = _bagVolumeRemaining - _bagChange;
+
+                if (_type == "FBTK") then {
+                    _bagVolumeRemaining = _bagVolumeRemaining + _bagChange;
+                } else {
+                    _bagVolumeRemaining = _bagVolumeRemaining - _bagChange;
+                };
     
                 switch (_type) do {
                     case "Plasma": {
@@ -154,22 +179,28 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                         _salineVolumeChange = _salineVolumeChange + (_bagChange / 1000);
                         _salineVolumeChange = _salineVolumeChange * _fluidPassRatio;
                     };
+                    case "FBTK": {
+                        _bloodVolumeChange = _bloodVolumeChange - (_bagChange / 1000);
+                        _bloodVolumeChange = _bloodVolumeChange * _fluidPassRatio;
+                        _plateletCountChange = _plateletCountChange - (_bagChange / 500);
+                        _plateletCountChange = _plateletCountChange * _fluidPassRatio;
+                    };
                     default {
                         if ([GET_BLOODTYPE(_unit), _bloodType] call EFUNC(circulation,isBloodTypeCompatible)) then {
                             _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
                             _bloodVolumeChange = _bloodVolumeChange * _fluidPassRatio;
+
                             _plateletCountChange = _plateletCountChange + (_bagChange / 500);
                             _plateletCountChange = _plateletCountChange * _fluidPassRatio;
+
+                            _transfusedBloodVolumeChange = _transfusedBloodVolumeChange + (_bagChange / 1000);
+                            _transfusedBloodVolumeChange = _transfusedBloodVolumeChange * _fluidPassRatio;
                         } else {
-                            _bloodVolumeChange = _bloodVolumeChange - (_bagChange / 1000);
-                            _bloodVolumeChange = _bloodVolumeChange * _fluidPassRatio;
-                            _plateletCountChange = _plateletCountChange - (_bagChange / 4000);
-                            _plateletCountChange = _plateletCountChange * _fluidPassRatio;
-    
-                            _plasmaVolumeChange = _plasmaVolumeChange + (_bagChange / 4000);
-                            _plasmaVolumeChange = _plasmaVolumeChange * _fluidPassRatio;
-                            _salineVolumeChange = _salineVolumeChange + (_bagChange / 1333.4);
-                            _plasmaVolumeChange = _plasmaVolumeChange * _fluidPassRatio;
+                            _salineVolumeChange = _salineVolumeChange + (_bagChange / 1000);
+                            _salineVolumeChange = _salineVolumeChange * _fluidPassRatio;
+
+                            _reactionBloodVolumeChange = _reactionBloodVolumeChange + (_bagChange / 1000);
+                            _reactionBloodVolumeChange = _reactionBloodVolumeChange * _fluidPassRatio;
                         };
                     };
                 };
@@ -187,11 +218,11 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                 };
             };
     
-            if (_bagVolumeRemaining < 0.01) then {
+            if (_bagVolumeRemaining < 0.01 && {_type != "FBTK"}) then {
                 _updateCountBodyPartArray pushBack _targetBodyPart;
                 []
             } else {
-                [_type, _bagVolumeRemaining, _accessType, _accessSite, _iv, _bloodType, _originalVolume]
+                [_type, (_bagVolumeRemaining min _originalVolume), _accessType, _accessSite, _iv, _bloodType, _originalVolume, _freshBloodID]
             };
         };
         _fluidBags set [_targetBodyPart, _fluidBagsBodyPart];
@@ -237,7 +268,7 @@ if (_transfusionPain > 0) then {
 if (_bloodVolume < 6) then {
     if (_plasmaVolume + _plasmaVolumeChange > 0) then {
         private _leftToConvert = _plasmaVolume + _plasmaVolumeChange;
-        private _conversionRate = (-_deltaT * (3 / 1000)) min _leftToConvert;
+        private _conversionRate = (-_deltaT * 0.003) min _leftToConvert;
     
         _plasmaVolumeChange = _plasmaVolumeChange + _conversionRate;
         _bloodVolumeChange = _bloodVolumeChange - _conversionRate;
@@ -245,53 +276,73 @@ if (_bloodVolume < 6) then {
     
     if (_salineVolume + _salineVolumeChange > 0) then {
         private _leftToConvert = _salineVolume + _salineVolumeChange;
-        private _conversionRate = (-_deltaT * (0.7 / 1000)) min _leftToConvert;
+        private _conversionRate = (-_deltaT * 0.0007) min _leftToConvert;
         
         _salineVolumeChange = _salineVolumeChange + _conversionRate;
         _bloodVolumeChange = _bloodVolumeChange - _conversionRate;
     };
 };
 
-private _fluidOverload = 0; //_unit setVariable [QEGVAR(circulation,Overload_Volume), 0, _syncValues];
-private _spaceRemaining = DEFAULT_BLOOD_VOLUME;
+private _fluidOverload = _unit getVariable [QEGVAR(circulation,Overload_Volume), 0];
+private _fluidOverloadChange = 0;
+
 private _plasmaSpaceRemaining = DEFAULT_BLOOD_VOLUME;
 private _salineSpaceRemaining = DEFAULT_BLOOD_VOLUME;
 
 _bloodVolume = 0 max _bloodVolume + _bloodVolumeChange min DEFAULT_BLOOD_VOLUME;
+_fluidOverloadChange = _fluidOverloadChange + ((_bloodVolume + _bloodVolumeChange) - DEFAULT_BLOOD_VOLUME);
+
 _plasmaSpaceRemaining = _plasmaSpaceRemaining - _bloodVolume;
 _salineSpaceRemaining = _salineSpaceRemaining - _bloodVolume;
 
 _plasmaVolume = 0 max _plasmaVolume + _plasmaVolumeChange min DEFAULT_BLOOD_VOLUME;
-_fluidOverload = ((_plasmaVolume + _plasmaVolumeChange) - _plasmaSpaceRemaining);
+_fluidOverloadChange = _fluidOverloadChange + ((_plasmaVolume + _plasmaVolumeChange) - _plasmaSpaceRemaining);
 
 _plasmaVolume = 0 max (_plasmaVolume min _plasmaSpaceRemaining);
 _salineSpaceRemaining = _salineSpaceRemaining - _plasmaVolume;
 
 _salineVolume = 0 max _salineVolume + _salineVolumeChange min DEFAULT_BLOOD_VOLUME;
-_fluidOverload = ((_salineVolume + _salineVolumeChange) - _salineSpaceRemaining);
+_fluidOverloadChange = _fluidOverloadChange + ((_salineVolume + _salineVolumeChange) - _salineSpaceRemaining);
 
 _salineVolume = 0 max (_salineVolume min _salineSpaceRemaining);
 
-_fluidOverload = _fluidOverload max 0;
-//_unit setVariable [QEGVAR(circulation,Overload_Volume), _fluidOverload, _syncValues];
+_fluidOverload = _fluidOverload + (_fluidOverloadChange / 2) max 0;
 
-if (_plateletCount != 3) then {
-    private _adjustSpeed = 1000 * linearConversion [3, 6, _bloodVolume, 10, 1, true]; 
+if (_fluidOverload > 0 && {_fluidOverloadChange <= 0}) then {
+    _fluidOverload = (_fluidOverload + (-_deltaT * 0.001)) max 0;
+};
+
+_unit setVariable [QEGVAR(circulation,Overload_Volume), _fluidOverload, _syncValues];
+
+_transfusedBloodVolume = _transfusedBloodVolume + _transfusedBloodVolumeChange min DEFAULT_BLOOD_VOLUME;
+_unit setVariable [QEGVAR(circulation,TransfusedBlood_Volume), _transfusedBloodVolume, _syncValues];
+
+_reactionBloodVolume = 0 max _reactionBloodVolume + _reactionBloodVolumeChange min DEFAULT_BLOOD_VOLUME;
+_unit setVariable [QEGVAR(circulation,ReactionBlood_Volume), _reactionBloodVolume, _syncValues];
+
+private _targetPlateletCount = 3;
+
+if ((_transfusedBloodVolume max 0) > 0) then {
+    _targetPlateletCount = 3 - (_transfusedBloodVolume / 400);
+};
+
+if (_plateletCount != _targetPlateletCount) then {
+    private _adjustSpeed = linearConversion [3, 6, _bloodVolume, 10000, 1000, true]; 
     if (_TXAEffect > 0.1) then {
-        _adjustSpeed / 2;
+        _adjustSpeed = _adjustSpeed / 2;
     };
-    if (!(IS_BLEEDING(_unit)) && !(IS_I_BLEEDING(_unit)) && _HTXState < 1 && _plateletCount > 3) then {
+    if (!(IS_BLEEDING(_unit)) && !(IS_I_BLEEDING(_unit)) && _HTXState < 1 && _plateletCount > _targetPlateletCount) then {
         _adjustSpeed = 100;
     };
-    _plateletCountChange = _plateletCountChange + ((3 - _plateletCount) / _adjustSpeed);
+    _plateletCountChange = _plateletCountChange + ((_targetPlateletCount - _plateletCount) / _adjustSpeed);
 };
 
 _plateletCount = 0 max (_plateletCount + _plateletCountChange) min DEFAULT_BLOOD_VOLUME;
 
+_unit setVariable [QEGVAR(circulation,Platelet_Count), _plateletCount, _syncValues];
+
 _unit setVariable [QEGVAR(circulation,Blood_Volume), _bloodVolume, _syncValues];
 _unit setVariable [QEGVAR(circulation,Plasma_Volume), _plasmaVolume, _syncValues];
 _unit setVariable [QEGVAR(circulation,Saline_Volume), _salineVolume, _syncValues];
-
-_unit setVariable [QEGVAR(circulation,Platelet_Count), _plateletCount, _syncValues];
 
 _bloodVolume + _plasmaVolume + _salineVolume min DEFAULT_BLOOD_VOLUME; 

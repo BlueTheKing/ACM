@@ -189,8 +189,7 @@ switch (true) do {
     };
     case (_bloodPressureL >= 190): {
         TRACE_2("bloodPressure L above limits",_unit,_bloodPressureL);
-        _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
-        [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
+        [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_heartRate < 30): {  // With a heart rate below 30 but bigger than 20 there is a chance to enter the cardiac arrest state
         private _nextCheck = _unit getVariable [QACEGVAR(medical_vitals,nextCheckCriticalHeartRate), CBA_missionTime];

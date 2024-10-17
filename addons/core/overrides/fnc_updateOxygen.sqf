@@ -79,7 +79,7 @@ private _targetOxygenSaturation = _desiredOxygenSaturation;
 // but falls off quickly as po2 drops further
 private _capture = 1 max ((_po2 / IDEAL_PPO2) ^ (-_po2 * 3));
 
-private _effectiveBloodVolume = ((sin (deg ((GET_EFF_BLOOD_VOLUME(_unit) ^ 2) / 21.1))) * 1.01) min 1;
+private _effectiveBloodVolume = [1,(((GET_EFF_BLOOD_VOLUME(_unit) / 6) ^ 1.1) min 1)] select (GET_EFF_BLOOD_VOLUME(_unit) < 5.5);
 private _airwayState = GET_AIRWAYSTATE(_unit);
 private _breathingState = GET_BREATHINGSTATE(_unit);
 
@@ -128,18 +128,25 @@ switch (true) do {
     case (_respirationRate > 0 && !(IN_CRDC_ARRST(_unit))): {
         private _airSaturation = _airOxygenSaturation * _capture;
 
-        private _hyperVentilationEffect = 0.8 max (35 / _respirationRate) min 1;
+        private _hyperVentilationEffect = 0.8 max (34 / _respirationRate) min 1;
         private _breathingEffectiveness = _effectiveBloodVolume min _airwayState * _breathingState * _hyperVentilationEffect;
+        private _cardiacEffect = 1.1 min ((DEFAULT_PERIPH_RES / (_unit getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES]))) max 0.8;
+
+        if (_heartRate > ACM_TARGETVITALS_HR(_unit)) then {
+            _cardiacEffect = _cardiacEffect * ([(linearConversion [ACM_TARGETVITALS_HR(_unit), 190, _heartRate, 1, 1.5, true]),(linearConversion [(ACM_TARGETVITALS_MAXHR(_unit) - 5), (ACM_TARGETVITALS_MAXHR(_unit) + 2), _heartRate, 1.5, 1])] select (_heartRate > 190));
+        } else {
+            _cardiacEffect = _cardiacEffect * (linearConversion [(ACM_TARGETVITALS_HR(_unit) - 10), 40, _heartRate, 1, 0.8, true]);
+        };
 
         if (_activeBVM) then {
             if (IN_CRDC_ARRST(_unit)) then {
                 _breathingEffectiveness = _breathingEffectiveness * 1.2;
             } else {
-                _breathingEffectiveness = _breathingEffectiveness * 1.9;
+                _breathingEffectiveness = _breathingEffectiveness * 1.3;
             };
 
             if (_BVMOxygenAssisted) then {
-                _breathingEffectiveness = _breathingEffectiveness * 1.5;
+                _breathingEffectiveness = _breathingEffectiveness * 1.6;
             };
         };
 
@@ -152,12 +159,12 @@ switch (true) do {
         private _respirationEffect = 1;
 
         if (_respirationRate > ACM_TARGETVITALS_RR(_unit)) then {
-            _respirationEffect = 0.9 max (35 / _respirationRate) min 1.1;
+            [(1 max (_respirationRate / ACM_TARGETVITALS_RR(_unit)) min 1.25), (0.9 max (34 / _respirationRate) min 1.25)] select (_respirationRate > 30);
         } else {
-            _respirationEffect = 0.8 max (_respirationRate / 12) min 1.1;
+            _respirationEffect = 0.8 max (_respirationRate / 12) min 1;
         };
 
-        _targetOxygenSaturation = _desiredOxygenSaturation min (_targetOxygenSaturation * _breathingEffectiveness * _airSaturation * _respirationEffect * _fatigueEffect);
+        _targetOxygenSaturation = _desiredOxygenSaturation min (_targetOxygenSaturation * _breathingEffectiveness * _cardiacEffect * _airSaturation * _respirationEffect * _fatigueEffect);
 
         _oxygenChange = (_targetOxygenSaturation - _currentOxygenSaturation) / 5;
 

@@ -87,14 +87,14 @@ if (GVAR(TransfusionMenu_Move_Active)) then {
     GVAR(TransfusionMenu_Move_OriginBodyPart) = GVAR(TransfusionMenu_Selected_BodyPart);
     GVAR(TransfusionMenu_Move_OriginAccessSite) = GVAR(TransfusionMenu_Selected_AccessSite);
 
-    private _targetIndex = (GVAR(TransfusionMenu_Selection_IVBags) select _selectionIndex) select 7;
+    private _targetIndex = (GVAR(TransfusionMenu_Selection_IVBags) select _selectionIndex) select 8;
 
     private _IVBags = GVAR(TransfusionMenu_Target) getVariable [QGVAR(IV_Bags), createHashMap];
     private _IVBagsOnBodyPart = _IVBags getOrDefault [GVAR(TransfusionMenu_Selected_BodyPart), []];
 
     GVAR(TransfusionMenu_Move_IVBagContents) = +(_IVBagsOnBodyPart select _targetIndex);
 
-    GVAR(TransfusionMenu_Move_IVBagContents) params ["_type", "", "", "", "", "_bloodType", "_volume"];
+    GVAR(TransfusionMenu_Move_IVBagContents) params ["_type", "", "", "", "", "_bloodType", "_volume", "_id"];
 
     private _itemClassNameString = getText (configFile >> "CfgWeapons" >> ([_type, _volume, _bloodType] call FUNC(formatFluidBagName)) >> "displayName");
     [(format [LLSTRING(TransfusionMenu_MoveBag_Hint), _itemClassNameString]), 1.5, ACE_player] call ACEFUNC(common,displayTextStructured);

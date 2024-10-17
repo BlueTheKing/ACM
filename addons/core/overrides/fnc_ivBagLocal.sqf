@@ -10,37 +10,49 @@
  * 3: Access Type <NUMBER>
  * 4: Is IV? <BOOL>
  * 5: Access Site <NUMBER>
+ * 6: Is Fresh Blood? <BOOL>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, "RightArm", "BloodIV", 1, true, 0] call ace_medical_treatment_fnc_ivBagLocal
+ * [player, "RightArm", "BloodIV", 1, true, 0, false] call ace_medical_treatment_fnc_ivBagLocal
  *
  * Public: No
  */
 
-params ["_patient", "_bodyPart", "_classname", "_accessType", ["_iv", true], "_accessSite"];
-
-// Exit if patient has max blood volume
-private _bloodVolume = GET_BLOOD_VOLUME(_patient);
-if (_bloodVolume >= DEFAULT_BLOOD_VOLUME) exitWith {};
+params ["_patient", "_bodyPart", "_classname", "_accessType", ["_iv", true], "_accessSite", ["_freshBlood", false]];
 
 private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
-
-// Get attributes for the used IV
-private _defaultConfig = configFile >> QUOTE(ACE_ADDON(medical_treatment)) >> "IV";
-private _ivConfig = _defaultConfig >> _classname;
-
-private _volume = GET_NUMBER(_ivConfig >> "volume",getNumber (_defaultConfig >> "volume"));
-private _type = GET_STRING(_ivConfig >> "type",getText (_defaultConfig >> "type"));
-private _bloodType = GET_NUMBER(_ivConfig >> "bloodtype",-1);
 
 // Add IV bag to patient's ivBags array
 private _IVBags = _patient getVariable [QEGVAR(circulation,IV_Bags), createHashMap];
 private _IVBagsBodyPart = _IVBags getOrDefault [_bodyPart, []];
 
-_IVBagsBodyPart pushBack [_type, _volume, _accessType, _accessSite, _iv, _bloodType, _volume]; // ["Saline", 1000, ACM_IV_16G_M, 0, false, -1, 1000]
+switch (true) do {
+    case (_freshBlood): {
+        (_classname splitString "_") params ["", "_volume", "_id"];
+        ([(parseNumber _id)] call EFUNC(circulation,getFreshBloodEntry)) params ["", "", "_bloodType"];
+
+        _IVBagsBodyPart pushBack ["FreshBlood", (parseNumber _volume), _accessType, _accessSite, _iv, _bloodType, (parseNumber _volume), (parseNumber _id)];
+    };
+    case (_classname in FBTK_ARRAY_DATA): {
+        private _volume = parseNumber ((_classname splitString "_") select 1);
+
+        _IVBagsBodyPart pushBack ["FBTK", 0, _accessType, _accessSite, _iv, -1, _volume];
+    };
+    default {
+        // Get attributes for the used IV
+        private _defaultConfig = configFile >> QUOTE(ACE_ADDON(medical_treatment)) >> "IV";
+        private _ivConfig = _defaultConfig >> _classname;
+
+        private _volume = GET_NUMBER(_ivConfig >> "volume",getNumber (_defaultConfig >> "volume"));
+        private _type = GET_STRING(_ivConfig >> "type",getText (_defaultConfig >> "type"));
+        private _bloodType = GET_NUMBER(_ivConfig >> "bloodtype",-1);
+
+        _IVBagsBodyPart pushBack [_type, _volume, _accessType, _accessSite, _iv, _bloodType, _volume]; // ["Saline", 1000, ACM_IV_16G_M, 0, false, -1, 1000]
+    };
+};
 
 _IVBags set [_bodyPart, _IVBagsBodyPart];
 
