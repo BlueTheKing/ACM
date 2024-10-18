@@ -20,7 +20,7 @@
 
 params ["_medic", "_patient", "_bodyPart", "_state"];
 
-private _hint = LELSTRING(core,Attached);
+private _hint = LELSTRING(core,Common_Attached);
 private _bodyPartHint = ACELLSTRING(Medical_GUI,LeftArm);
 
 if (_bodyPart == "rightarm") then {
@@ -33,7 +33,7 @@ if (_state && (([_patient, _bodyPart, 3] call FUNC(hasAED)) || [_patient, _bodyP
 };
 
 if !(_state) then {
-    _hint = LELSTRING(core,Removed);
+    _hint = LELSTRING(core,Common_Removed);
 };
 
 [(format ["%1 %2", _hint, LLSTRING(PressureCuff)]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
