@@ -191,7 +191,7 @@
 #define CARDIAC_OUTPUT_MIN ACEGVAR(medical,const_minCardiacOutput)
 
 // ACM
-#define ACM_INCOMPATIBLE_ADDONS [["pir","Project Injury Reaction"],["kat_main","KAT Advanced Medical"],["MIRA_Vehicle_Medical","ACE Vehicle Medical"]]
+#define ACM_INCOMPATIBLE_ADDONS [["pir","Project Injury Reaction"],["kat_main","KAT Advanced Medical"],["MIRA_Vehicle_Medical","ACE Vehicle Medical"],["KJW_MedicalExpansion_core", "KJW's Medical Expansion"]]
 
 #define ALL_BODY_PARTS_PRIORITY ["body", "head", "leftarm", "rightarm", "leftleg", "rightleg"]
 
