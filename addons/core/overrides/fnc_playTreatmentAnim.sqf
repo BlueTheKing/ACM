@@ -4,48 +4,57 @@
  * Plays the corresponding treatment animation.
  *
  * Arguments:
- * 0: Unit <OBJECT>
- * 1: Treatment name <STRING>
- * 2: Is self treatment <BOOL>
+ * 0: Medic <OBJECT>
+ * 1: Patient <OBJECT>
+ * 2: Treatment name <STRING>
+ * 3: Is self treatment <BOOL>
  *
  * Return Value:
  * None
  *
  * Example:
- * [cursorObject, "Splint", true] call ace_medical_ai_fnc_playTreatmentAnim
+ * [cursorObject, joe, "Splint", true] call ace_medical_ai_fnc_playTreatmentAnim
  *
  * Public: No
  */
 
-params ["_unit", "_actionName", "_isSelfTreatment"];
-TRACE_3("playTreatmentAnim",_unit,_actionName,_isSelfTreatment);
+params ["_medic", "_patient", "_actionName", "_isSelfTreatment"];
+TRACE_3("playTreatmentAnim",_medic,_actionName,_isSelfTreatment);
 
-if (!isNull objectParent _unit) exitWith {};
+if (!isNull objectParent _medic) exitWith {};
+
+private _config = configFile >> QACEGVAR(medical_treatment,actions) >> _actionName;
 
 private _configProperty = "animationMedic";
 if (_isSelfTreatment) then {
     _configProperty = _configProperty + "Self";
 };
-if (stance _unit == "PRONE") then {
+if (stance _medic == "PRONE") then {
     _configProperty = _configProperty + "Prone";
 };
 
-if (_actionName == "CPR") exitWith {
-    [_unit, "ACM_CPR"] call ACEFUNC(common,doAnimation);
+if (IS_UNCONSCIOUS(_patient) && {isNumber (_config >> "ACM_rollToBack")}) then {
+    if ((getNumber (_config >> "ACM_rollToBack")) > 0) then {
+        [_patient, "AinjPpneMstpSnonWrflDnon_rolltoback", 2] call ACEFUNC(common,doAnimation);
+    };
 };
 
-private _anim = getText (configFile >> QACEGVAR(medical_treatment,Actions) >> _actionName >> _configProperty);
+if (_actionName == "CPR") exitWith {
+    [_medic, "ACM_CPR"] call ACEFUNC(common,doAnimation);
+};
+
+private _anim = getText (_config >> _configProperty);
 if (_anim == "") exitWith {
-    _unit call ACEFUNC(common,goKneeling);
+    _medic call ACEFUNC(common,goKneeling);
     WARNING_2("no anim [%1, %2]",_actionName,_configProperty); 
 };
 
 private _wpn = switch (true) do {
-    case ((currentWeapon _unit) == ""): {"non"};
-    case ((currentWeapon _unit) == (primaryWeapon _unit)): {"rfl"};
-    case ((currentWeapon _unit) == (handgunWeapon _unit)): {"pst"};
+    case ((currentWeapon _medic) == ""): {"non"};
+    case ((currentWeapon _medic) == (primaryWeapon _medic)): {"rfl"};
+    case ((currentWeapon _medic) == (handgunWeapon _medic)): {"pst"};
     default {"non"};
 };
 _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
 
-[_unit, _anim] call ACEFUNC(common,doAnimation);
+[_medic, _anim] call ACEFUNC(common,doAnimation);

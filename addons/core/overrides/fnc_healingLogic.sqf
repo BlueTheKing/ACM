@@ -582,7 +582,7 @@ if ((_treatmentEvent select [0, 1]) != "#") then {
         default {_treatmentArgs select 2};
     };
 
-    [_healer, _treatmentClassname, _healer == _target] call ACEFUNC(medical_ai,playTreatmentAnim);
+    [_healer, _target, _treatmentClassname, _healer == _target] call ACEFUNC(medical_ai,playTreatmentAnim);
 };
 
 #ifdef DEBUG_MODE_FULL
