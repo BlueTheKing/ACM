@@ -127,6 +127,15 @@ if (_adjustments isNotEqualTo []) then {
     };
 };
 
+private _reactionSeverity = _unit getVariable [QEGVAR(circulation,HemolyticReaction_Severity), 0];
+
+if (_reactionSeverity > 0) then {
+    _hrTargetAdjustment = _hrTargetAdjustment + (_reactionSeverity * 15);
+    _respirationRateAdjustment = _respirationRateAdjustment - _reactionSeverity * 5;
+    _peripheralResistanceAdjustment = _peripheralResistanceAdjustment - _reactionSeverity * 15;
+    _breathingEffectivenessAdjustment = _breathingEffectivenessAdjustment - (_reactionSeverity * 0.05);
+};
+
 // Update SPO2 intake and usage since last update
 private _oxygenSaturation = [_unit, _respirationRateAdjustment, _coSensitivityAdjustment, _breathingEffectivenessAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateOxygen);
 
@@ -140,6 +149,10 @@ if ((_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) || 
     if (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0] > 0) then {
         _hrTargetAdjustment = _hrTargetAdjustment - (5 * (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0]));
     };
+};
+
+if ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) > 0.05) then {
+    _hrTargetAdjustment = _hrTargetAdjustment - ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) / 0.05);
 };
 
 private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);

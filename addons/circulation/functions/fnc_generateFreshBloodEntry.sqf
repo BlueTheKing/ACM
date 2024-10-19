@@ -20,6 +20,7 @@ params ["_patient", "_volume"];
 
 private _collectionTime = CBA_missionTime;
 private _bloodType = [_patient] call FUNC(generateBloodType);
+private _alive = alive _patient;
 
 private _freshBloodlist = (missionNamespace getVariable [QGVAR(FreshBloodList), createHashMap]);
 
@@ -27,7 +28,7 @@ private _id = count _freshBloodlist;
 
 if (_id > 999) exitWith {0}; // uh oh
 
-_freshBloodlist set [_id, [_patient,_volume,_bloodType,_collectionTime]];
+_freshBloodlist set [_id, [_patient,_volume,_bloodType,_alive,_collectionTime]];
 
 missionNamespace setVariable [QGVAR(FreshBloodList), _freshBloodlist, true];
 

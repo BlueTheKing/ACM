@@ -197,14 +197,13 @@ class ACM_Medication {
         };
 
         class CalciumChloride_IV: ACM_IV_Medication {
-            hrIncreaseLow[] = {-5, -10};
-            hrIncreaseNormal[] = {-6, -16};
-            hrIncreaseHigh[] = {-8, -20};
+            hrIncrease[] = {5, 20};
             timeInSystem = 600;
             timeTillMaxEffect = 15;
             maxEffectTime = 300;
-            maxDose = 1050;
-            maxDoseDeviation = 50;
+            maxDose = 1500;
+            maxDoseDeviation = 100;
+            viscosityChange = -10;
             maxEffectDose = 1000;
             weightEffect = 0;
         };

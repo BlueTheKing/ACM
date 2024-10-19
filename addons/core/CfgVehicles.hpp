@@ -130,6 +130,7 @@ class CfgVehicles {
             ADDITEM(ACE_salineIV_250,10);
             ADDITEM(ACM_FieldBloodTransfusionKit_250,5);
             ADDITEM(ACM_FieldBloodTransfusionKit_500,5);
+            ADDITEM(ACM_Vial_CalciumChloride,10);
             // Disability
             ADDITEM(ACE_morphine,5);
             ADDITEM(ACM_Vial_Morphine,10);

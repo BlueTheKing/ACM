@@ -28,11 +28,15 @@
 [QGVAR(handleMed_ketamineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_lidocaineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 
+[QGVAR(handleMed_CalciumChlorideLocal), LINKFUNC(handleMed_CalciumChlorideLocal)] call CBA_fnc_addEventHandler;
+
+[QGVAR(handleHemolyticReaction), LINKFUNC(handleHemolyticReaction)] call CBA_fnc_addEventHandler;
+
 [QGVAR(handleMedicationEffects), {
     params ["_patient", "_bodyPart", "_classname", ["_dose", 1]];
 
     // Handle special medication effects
-    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine"]) then {
+    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine", "CalciumChloride_IV"]) then {
         private _shortClassname = (_classname splitString "_") select 0;
         [(format ["ACM_circulation_handleMed_%1Local", toLower _shortClassname]), [_patient, _bodyPart, _classname, _dose], _patient] call CBA_fnc_targetEvent;
     };
@@ -93,5 +97,5 @@ ACM_MEDICATION_VIALS = [];
 ["ACM_Syringe_IM", "ACM_Syringe_5"] call ACEFUNC(common,registerItemReplacement); // 1.1.0 -> TODO REMOVE
 
 if (isServer) then {
-    missionNamespace setVariable [QGVAR(FreshBloodList), (createHashMapFromArray [[0,[objNull,250,ACM_BLOODTYPE_ON,CBA_missionTime]]]), true];
+    missionNamespace setVariable [QGVAR(FreshBloodList), (createHashMapFromArray [[0,[objNull,250,ACM_BLOODTYPE_ON,true,CBA_missionTime]]]), true];
 };

@@ -29,10 +29,14 @@ private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
 private _IVBags = _patient getVariable [QEGVAR(circulation,IV_Bags), createHashMap];
 private _IVBagsBodyPart = _IVBags getOrDefault [_bodyPart, []];
 
+private _donorBloodType = -1;
+
 switch (true) do {
     case (_freshBlood): {
         (_classname splitString "_") params ["", "_volume", "_id"];
         ([(parseNumber _id)] call EFUNC(circulation,getFreshBloodEntry)) params ["", "", "_bloodType"];
+
+        _donorBloodType = _bloodType;
 
         _IVBagsBodyPart pushBack ["FreshBlood", (parseNumber _volume), _accessType, _accessSite, _iv, _bloodType, (parseNumber _volume), (parseNumber _id)];
     };
@@ -50,6 +54,8 @@ switch (true) do {
         private _type = GET_STRING(_ivConfig >> "type",getText (_defaultConfig >> "type"));
         private _bloodType = GET_NUMBER(_ivConfig >> "bloodtype",-1);
 
+        _donorBloodType = _bloodType;
+
         _IVBagsBodyPart pushBack [_type, _volume, _accessType, _accessSite, _iv, _bloodType, _volume]; // ["Saline", 1000, ACM_IV_16G_M, 0, false, -1, 1000]
     };
 };
@@ -63,4 +69,8 @@ _patient setVariable [QEGVAR(circulation,IV_Bags_Active), true, true];
 
 if (GET_BLOODTYPE(_patient) == -1) then {
     [_patient] call EFUNC(circulation,generateBloodType);
+};
+
+if (_donorBloodType > -1 && !([GET_BLOODTYPE(_patient), _donorBloodType] call EFUNC(circulation,isBloodTypeCompatible))) then {
+    [QEGVAR(circulation,handleHemolyticReaction), [_patient], _patient] call CBA_fnc_targetEvent;
 };
