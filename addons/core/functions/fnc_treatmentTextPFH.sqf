@@ -42,13 +42,13 @@ private _PFH = [{
     private _display = uiNamespace getVariable ["ACM_TreatmentText", displayNull];
     private _ctrlText = _display displayCtrl IDC_TREATMENTTEXT_TEXT;
 
-    if (count _treatmentProviders < 1 || !(alive _patient)) exitWith {
+    if (count _treatmentProviders < 1 || !(alive _patient) || (_patient getVariable [QEGVAR(evacuation,casualtyTicketClaimed), false])) exitWith {
         _patient setVariable [QGVAR(TreatmentText_PFH), -1];
         
         _ctrlText ctrlSetFade 1;
         _ctrlText ctrlCommit 0.5;
 
-        if !(alive _patient) then {
+        if (!(alive _patient) || _patient getVariable [QEGVAR(evacuation,casualtyTicketClaimed), false]) then {
             _patient setVariable [QGVAR(TreatmentText_Providers), []];
         };
 

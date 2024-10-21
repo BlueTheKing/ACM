@@ -45,8 +45,18 @@ if (isServer) then {
             _unit setVariable ["ENH_savedLoadout", getUnitLoadout _unit];
         };
 
+        _originalUnit setVariable [QGVAR(TreatmentText_Providers), []];
+
         if (GVAR(clearCasualtyLoadout)) then {
             removeAllWeapons _originalUnit;
         };
+
+        [{
+            params ["_unit", "_originalUnit"];
+
+            // ace_common_fnc_setName
+            _originalUnit setVariable ["ACE_Name", ([name _unit, true] call ACEFUNC(common,sanitizeString)), true];
+            _originalUnit setVariable ["ACE_NameRaw", ([name _unit, false] call ACEFUNC(common,sanitizeString)), true];
+        }, [_unit, _originalUnit], 1] call CBA_fnc_waitAndExecute;
     }, [_unit, _originalUnit], 1] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
