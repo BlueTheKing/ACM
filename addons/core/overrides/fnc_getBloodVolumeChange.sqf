@@ -71,23 +71,26 @@ if (_salineVolume > 0) then {
     _activeVolumes = _activeVolumes + 1;
 };
 
+private _plateletBleedRatio = _plateletCount / 2.9;
+private _plateletInternalBleedRation = _plateletCount / 2.4;
+
+if (_plateletCount > 0.1) then {
+    _plateletCountChange = ((_bloodLoss * _plateletBleedRatio) + ((_internalBleeding * 0.7) * _plateletInternalBleedRation) + ((_internalBleeding * 0.7) * _plateletInternalBleedRation)) * 0.6;
+    if (_TXAEffect > 0.1) then {
+        _plateletCountChange = _plateletCountChange * 0.9;
+    };
+};
+
 if (_bloodVolume > 0) then {
-    _bloodVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity + _hemothoraxBleeding) / _activeVolumes;
+    _bloodVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRation)) + (_hemothoraxBleeding * (1 - _plateletInternalBleedRation)))) / _activeVolumes;
 };
 
 if (_plasmaVolume > 0) then {
-    _plasmaVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity + _hemothoraxBleeding) / _activeVolumes;
+    _plasmaVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRation)) + (_hemothoraxBleeding * (1 - _plateletInternalBleedRation)))) / _activeVolumes;
 };
 
 if (_salineVolume > 0) then {
-    _salineVolumeChange = (_bloodLoss + _internalBleeding * _internalBleedingSeverity + _hemothoraxBleeding) / _activeVolumes;
-};
-
-if (_plateletCount > 0.1) then {
-    _plateletCountChange = (_internalBleeding * 0.5) + (_bloodLoss * 0.5) + (_hemothoraxBleeding * 0.5);
-    if (_TXAEffect > 0.1) then {
-        _plateletCountChange = _plateletCountChange / 2;
-    };
+    _salineVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRation)) + (_hemothoraxBleeding * (1 - _plateletInternalBleedRation)))) / _activeVolumes;
 };
 
 private _transfusionPain = 0;
@@ -174,7 +177,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                     case "Plasma": {
                         _plasmaVolumeChange = _plasmaVolumeChange + (_bagChange / 1000);
                         _plasmaVolumeChange = _plasmaVolumeChange * _fluidPassRatio;
-                        _plateletCountChange = _plateletCountChange + (_bagChange / 1000);
+                        _plateletCountChange = _plateletCountChange + (_bagChange / 600);
                         _plateletCountChange = _plateletCountChange * _fluidPassRatio;
                     };
                     case "Saline": {
@@ -184,7 +187,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                     case "FBTK": {
                         _bloodVolumeChange = _bloodVolumeChange - (_bagChange / 1000);
                         _bloodVolumeChange = _bloodVolumeChange * _fluidPassRatio;
-                        _plateletCountChange = _plateletCountChange - (_bagChange / 500);
+                        _plateletCountChange = _plateletCountChange - (_bagChange / 2000);
                         _plateletCountChange = _plateletCountChange * _fluidPassRatio;
                     };
                     default {
@@ -275,18 +278,18 @@ if (_bloodVolume < 6) then {
     private _conversionRateModifier = ([1,2] select (_freshBloodEffectiveness > 0.83)); 
     if (_plasmaVolume + _plasmaVolumeChange > 0) then {
         private _leftToConvert = _plasmaVolume + _plasmaVolumeChange;
-        private _conversionRate = (-_deltaT * (0.003 * _conversionRateModifier)) min _leftToConvert;
+        private _conversionRate = (_deltaT * (0.003 * _conversionRateModifier)) min _leftToConvert;
     
-        _plasmaVolumeChange = _plasmaVolumeChange + _conversionRate;
-        _bloodVolumeChange = _bloodVolumeChange - _conversionRate;
+        _plasmaVolumeChange = _plasmaVolumeChange - _conversionRate;
+        _bloodVolumeChange = _bloodVolumeChange + _conversionRate;
     };
     
     if (_salineVolume + _salineVolumeChange > 0) then {
         private _leftToConvert = _salineVolume + _salineVolumeChange;
-        private _conversionRate = (-_deltaT * (0.0007 * _conversionRateModifier)) min _leftToConvert;
+        private _conversionRate = (_deltaT * (0.0007 * _conversionRateModifier)) min _leftToConvert;
         
-        _salineVolumeChange = _salineVolumeChange + _conversionRate;
-        _bloodVolumeChange = _bloodVolumeChange - _conversionRate;
+        _salineVolumeChange = _salineVolumeChange - _conversionRate;
+        _bloodVolumeChange = _bloodVolumeChange + _conversionRate;
     };
 };
 

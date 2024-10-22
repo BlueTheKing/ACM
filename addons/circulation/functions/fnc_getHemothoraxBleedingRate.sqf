@@ -17,18 +17,13 @@
 
 params ["_unit"];
 
-private _hemothoraxBleeding = (_unit getVariable [QEGVAR(breathing,Hemothorax_State), 0]) * 0.02;
+private _hemothoraxBleeding = (_unit getVariable [QEGVAR(breathing,Hemothorax_State), 0]) * 0.015;
 if (_hemothoraxBleeding == 0) exitWith {0};
 
 private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
+private _resistance = _unit getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES];
 
-private _coagulationModifier = 1;
-private _plateletCount = _unit getVariable [QGVAR(Platelet_Count), 3];
-
-if (_plateletCount > 0) then {
-    private _plateletCountModifier = ((_plateletCount / 3) - 1) * -0.1;
-    _coagulationModifier = _plateletCountModifier + (0.5 max (0.75 * _hemothoraxBleeding));
-};
+private _TXAEffect = 1 - (0.075 * (([_unit, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 2));
 
 // even if heart stops blood will still flow slowly (gravity)
-(_hemothoraxBleeding * (_cardiacOutput max GVAR(cardiacArrestBleedRate)) * _coagulationModifier * ACEGVAR(medical,bleedingCoefficient));
+(_hemothoraxBleeding * (_cardiacOutput max GVAR(cardiacArrestBleedRate)) * (DEFAULT_PERIPH_RES / _resistance) * ACEGVAR(medical,bleedingCoefficient));

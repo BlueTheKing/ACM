@@ -42,13 +42,15 @@ private _fnc_getWoundsToTreat = {
 };
 
 private _fnc_handleReopening = {
-    params ["_patient", "_bodyPart", "_id", "_unstable"];
+    params ["_patient", "_bodyPart", "_id", "_unstable", "_plateletCount"];
 
-    private _delay = random [150, 180, 210];
+    private _reopenDelay = linearConversion [2.5, 1, _plateletCount, 480, 180, true];
 
     if !(_unstable) then {
-        _delay = random [600, 900, 1200];
+        _reopenDelay = linearConversion [2, 0.5, _plateletCount, 1200, 900, true];
     };
+
+    private _delay = random [(_reopenDelay - 30), _reopenDelay, (_reopenDelay + 30)];
 
     [{
         params ["_patient", "_bodyPart", "_id"];
@@ -125,11 +127,11 @@ if (_woundsRemaining < 0) then { // TODO use min/max (?)
     _amountClotted = _woundCount;
 };
 
-private _bloodVolumeEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 5.5) min 1;
-private _TXAEffect = [_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount);
+private _bloodVolumeEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 5.2) min 1;
+private _TXAEffect = (1 + ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount))) min 1.5;
 
 if (_woundSeverity > 1) then {
-    _clotSuccess = (random 1) <= ((1 - 0.75 * (_woundSeverity / 3)) * (1.5 * (_TXAEffect min 1)) * _bloodVolumeEffect);
+    _clotSuccess = (random 1) <= ((1 - 0.7 * (_woundSeverity / 3)) * _TXAEffect * _bloodVolumeEffect);
 } else {
     _clotSuccess = true;
 };
@@ -168,17 +170,19 @@ if (_clotSuccess) then {
 
     _patient setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
 
-    private _reopenChance = 0.7;
+    private _plateletCount = _patient getVariable [QEGVAR(circulation,Platelet_Count), 3];
+
+    private _reopenChance = [0, (0.5 / _plateletCount)] select (_plateletCount < 2.5);
 
     private _hasTXA = _TXAEffect > 0.15;
 
     if (_hasTXA || !_unstable) then {
-        _reopenChance = 0.4;
+        _reopenChance = _reopenChance * 0.5;
     };
 
     for "_i" from 1 to _amountClotted do {
         if ((random 1) < _reopenChance) then {
-            [_patient, _bodyPart, _clottedID, (_unstable && !_hasTXA)] call _fnc_handleReopening;
+            [_patient, _bodyPart, _clottedID, (_unstable && !_hasTXA), _plateletCount] call _fnc_handleReopening;
         };
     };
 };

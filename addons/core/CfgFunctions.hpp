@@ -86,6 +86,9 @@ class CfgFunctions {
             class getTriageStatus { // Deceased -> Expectant
                 file = QPATHTOF(overrides\fnc_getTriageStatus.sqf); //ace/addons/medical_treatment/functions/fnc_getTriageStatus.sqf
             };
+            class handleBandageOpening { // Bandage reopening chance with platelets
+                file = QPATHTOF(overrides\fnc_handleBandageOpening.sqf); //ace/addons/medical_treatment/functions/fnc_handleBandageOpening.sqf
+            };
         };
     };
     class overwrite_medical_damage {
