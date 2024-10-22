@@ -18,6 +18,16 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// Show exact pain amount
+[
+    QGVAR(showExactPainAmount),
+    "CHECKBOX",
+    [LLSTRING(SETTING_ShowExactPainAmount), LLSTRING(SETTING_ShowExactPainAmount_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
 // Overlay selected body part in medical menu
 [
     QGVAR(overlayBodyPart),

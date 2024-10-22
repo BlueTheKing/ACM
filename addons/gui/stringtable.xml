@@ -10,6 +10,12 @@
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
             <English>Show vitals status in overview tab when inactive (display ""none"")</English>
         </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount">
+            <English>Show Pain Amount</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount_Desc">
+            <English>Show exact pain amount in overview tab</English>
+        </Key>
         <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
             <English>Show overlay for selected body part</English>
         </Key>

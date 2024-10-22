@@ -133,16 +133,21 @@ if (_target call ACEFUNC(common,isAwake)) then {
     private _pain = GET_PAIN_PERCEIVED(_target);
     if (_pain > 0) then {
         _addListSpacer = true;
-        private _painText = switch (true) do {
-            case (_pain > PAIN_UNCONSCIOUS): {
-                ACELSTRING(medical_treatment,Status_SeverePain);
+        private _painText = "";
+        if (GVAR(showExactPainAmount)) then {
+            _painText = switch (true) do {
+                case (_pain > PAIN_UNCONSCIOUS): {
+                    ACELSTRING(medical_treatment,Status_SeverePain);
+                };
+                case (_pain > (PAIN_UNCONSCIOUS / 5)): {
+                    ACELSTRING(medical_treatment,Status_Pain);
+                };
+                default {
+                    ACELSTRING(medical_treatment,Status_MildPain);
+                };
             };
-            case (_pain > (PAIN_UNCONSCIOUS / 5)): {
-                ACELSTRING(medical_treatment,Status_Pain);
-            };
-            default {
-                ACELSTRING(medical_treatment,Status_MildPain);
-            };
+        } else {
+            _painText = ACELSTRING(medical_treatment,Status_Pain);
         };
         _entries pushBack [localize _painText, [1, 1, 1, 1]];
     } else {
