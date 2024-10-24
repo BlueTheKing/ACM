@@ -146,6 +146,7 @@ class CfgVehicles {
             ADDITEM(ACE_surgicalKit,2);
             ADDITEM(ACE_bodyBag,5);
             ADDITEM(ACE_suture,60);
+            ADDITEM(ACM_Vial_Ertapenem,10);
         };
     };
 

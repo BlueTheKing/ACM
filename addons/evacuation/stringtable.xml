@@ -22,6 +22,12 @@
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout_Desc">
             <English>Sets whether casualty's loadout should be cleared after conversion</English>
         </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics">
+            <English>Require Antibiotics</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics_Desc">
+            <English>Sets whether antibiotics need to be administered before a casualty can be converted</English>
+        </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_PlayerFaction">
             <English>Player Side</English>
         </Key>

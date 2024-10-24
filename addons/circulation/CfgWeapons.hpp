@@ -171,6 +171,12 @@ class CfgWeapons {
         descriptionShort = CSTRING(Vial_CalciumChloride_Desc);
     };
 
+    class ACM_Vial_Ertapenem: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_ertapenem_ca.paa);
+        displayName = CSTRING(Vial_Ertapenem);
+        descriptionShort = CSTRING(Vial_Ertapenem_Desc);
+    };
+
     class ACM_Spray_Naloxone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\spray_naloxone_ca.paa);
         displayName = CSTRING(Spray_Naloxone);

@@ -208,6 +208,14 @@ class ACM_Medication {
             weightEffect = 0;
         };
 
+        class Ertapenem_IV: ACM_IV_Medication {
+            timeInSystem = 900;
+            timeTillMaxEffect = 5;
+            maxEffectTime = 600;
+            maxEffectDose = 1000;
+            weightEffect = 0;
+        };
+
         class ACM_IM_Medication {
             painReduce = 0;
             timeInSystem = 400;
@@ -310,6 +318,14 @@ class ACM_Medication {
             maxEffectDose = 4;
             weightEffect = 0;
         };
+
+        class Ertapenem: ACM_IM_Medication {
+            timeInSystem = 1200;
+            timeTillMaxEffect = 30;
+            maxEffectTime = 900;
+            maxEffectDose = 1000;
+            weightEffect = 0;
+        };
     };
     class MedicationType {
         class Default {};
@@ -333,6 +349,9 @@ class ACM_Medication {
         };
         class Lidocaine {
             classnames[] = {"Lidocaine_IV"};
+        };
+        class Ertapenem {
+            classnames[] = {"Ertapenem_IV", "Ertapenem"};
         };
     };
     class Concentration {
@@ -397,6 +416,12 @@ class ACM_Medication {
         };
 
         class CalciumChloride {
+            concentration = 100;
+            dose = "1000mg/10ml";
+            volume = 10;
+        };
+
+        class Ertapenem {
             concentration = 100;
             dose = "1000mg/10ml";
             volume = 10;

@@ -243,6 +243,9 @@
         <Key ID="STR_ACM_Circulation_Medication_CalciumChloride">
             <English>Calcium Chloride</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_Medication_Ertapenem">
+            <English>Ertapenem</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_Medication_Naloxone">
             <English>Naloxone</English>
         </Key>
@@ -309,6 +312,12 @@
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_CalciumChloride_Desc">
             <English>Used to manage low calcium after blood transfusion</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_Ertapenem">
+            <English>Ertapenem Vial (1000mg/10ml)</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_Ertapenem_Desc">
+            <English>Used to manage infections from open wounds, required before evacuation of casualty</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Spray_Naloxone">
             <English>Naloxone Nasal Spray</English>

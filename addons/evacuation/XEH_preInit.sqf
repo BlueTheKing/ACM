@@ -29,6 +29,15 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(requireAntibiotics),
+    "CHECKBOX",
+    [LLSTRING(SETTING_RequireAntibiotics), LLSTRING(SETTING_RequireAntibiotics_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(playerFaction),
     "LIST",
     [LLSTRING(SETTING_PlayerFaction), LLSTRING(SETTING_PlayerFaction_Desc)],
