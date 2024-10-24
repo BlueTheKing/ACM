@@ -369,7 +369,7 @@ class ACM_Medication {
 
         class TXA {
             concentration = 100;
-            dose = "1000mg/10ml";
+            dose = "1g/10ml";
             volume = 10;
         };
 
@@ -417,13 +417,13 @@ class ACM_Medication {
 
         class CalciumChloride {
             concentration = 100;
-            dose = "1000mg/10ml";
+            dose = "1g/10ml";
             volume = 10;
         };
 
         class Ertapenem {
             concentration = 100;
-            dose = "1000mg/10ml";
+            dose = "1g/10ml";
             volume = 10;
         };
     };

@@ -77,6 +77,10 @@ if (_stringDose < 1 && !_microDose) then {
         _stringDose = round(_stringDose * 1000);
     } else {
         _stringDose = round(_stringDose);
+        if (_stringDose >= 1000) then {
+            _stringDose = _stringDose / 1000;
+            _doseMeasurement = "g";
+        };
     };
 };
 
