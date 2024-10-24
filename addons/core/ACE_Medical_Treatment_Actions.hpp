@@ -529,6 +529,11 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IV(Ondansetron,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Ondansetron,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ondansetron)));
     SYRINGE_ACTION_IV(Ondansetron,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Ondansetron,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ondansetron)));
 
+    SYRINGE_ACTION_IV(CalciumChloride,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,CalciumChloride,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,CalciumChloride)));
+    SYRINGE_ACTION_IV(CalciumChloride,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,CalciumChloride,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,CalciumChloride)));
+    SYRINGE_ACTION_IV(CalciumChloride,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,CalciumChloride,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,CalciumChloride)));
+    SYRINGE_ACTION_IV(CalciumChloride,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,CalciumChloride,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,CalciumChloride)));
+
     SYRINGE_ACTION_IV(Ertapenem,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Ertapenem,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ertapenem)));
     SYRINGE_ACTION_IV(Ertapenem,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Ertapenem,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ertapenem)));
     SYRINGE_ACTION_IV(Ertapenem,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Ertapenem,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ertapenem)));
@@ -605,6 +610,11 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IM(Ondansetron,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Ondansetron,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ondansetron)));
     SYRINGE_ACTION_IM(Ondansetron,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Ondansetron,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ondansetron)));
     SYRINGE_ACTION_IM(Ondansetron,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Ondansetron,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ondansetron)));
+
+    SYRINGE_ACTION_IM(CalciumChloride,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,CalciumChloride,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,CalciumChloride)));
+    SYRINGE_ACTION_IM(CalciumChloride,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,CalciumChloride,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,CalciumChloride)));
+    SYRINGE_ACTION_IM(CalciumChloride,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,CalciumChloride,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,CalciumChloride)));
+    SYRINGE_ACTION_IM(CalciumChloride,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,CalciumChloride,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,CalciumChloride)));
 
     SYRINGE_ACTION_IM(Ertapenem,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Ertapenem,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ertapenem)));
     SYRINGE_ACTION_IM(Ertapenem,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Ertapenem,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ertapenem)));
