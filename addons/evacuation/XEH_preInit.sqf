@@ -13,7 +13,7 @@ PREP_RECOMPILE_END;
     "CHECKBOX",
     [LLSTRING(SETTING_Enable), LLSTRING(SETTING_Enable_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
-    [true], // TODO turn this off
+    [true],
     true,
     {},
     true

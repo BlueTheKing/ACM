@@ -124,7 +124,7 @@ private _clotSuccess = false;
 private _woundsRemaining = _woundCount - _woundsToClot;
 private _amountClotted = _woundsToClot;
 
-if (_woundsRemaining < 0) then { // TODO use min/max (?)
+if (_woundsRemaining < 0) then {
     _woundsRemaining = 0;
     _amountClotted = _woundCount;
 };

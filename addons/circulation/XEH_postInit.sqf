@@ -93,9 +93,6 @@ ACM_MEDICATION_VIALS = [];
     ACM_MEDICATION_VIALS pushBack (configName _x);
 } forEach ("getNumber (_x >> 'ACM_isVial') > 0" configClasses (configFile >> "CfgWeapons"));
 
-["ACM_Syringe_IV", "ACM_Syringe_10"] call ACEFUNC(common,registerItemReplacement); // 1.1.0 -> TODO REMOVE
-["ACM_Syringe_IM", "ACM_Syringe_5"] call ACEFUNC(common,registerItemReplacement); // 1.1.0 -> TODO REMOVE
-
 if (isServer) then {
     missionNamespace setVariable [QGVAR(FreshBloodList), (createHashMapFromArray [[0,[objNull,250,ACM_BLOODTYPE_ON,true,CBA_missionTime]]]), true];
 };

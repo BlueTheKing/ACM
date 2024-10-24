@@ -98,23 +98,6 @@ class CfgWeapons {
         };
     };
 
-    class ACM_Syringe_IM: ACE_ItemCore {
-        scope = 1;
-        author = "Blue";
-        picture = QPATHTOF(ui\syringe_5_ca.paa);
-        displayName = "";
-        descriptionShort = "";
-        ACE_isMedicalItem = 1;
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 0.8;
-        };
-    };
-    class ACM_Syringe_IV: ACM_Syringe_IM {
-        picture = QPATHTOF(ui\syringe_10_ca.paa);
-        displayName = "";
-        descriptionShort = "";
-    };
-
     class ACM_Vial_Epinephrine: ACE_ItemCore {
         scope = 2;
         author = "Blue";
