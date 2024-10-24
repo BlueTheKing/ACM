@@ -47,7 +47,7 @@ private _fnc_handleReopening = {
     private _reopenDelay = linearConversion [2.5, 1, _plateletCount, 480, 180, true];
 
     if !(_unstable) then {
-        _reopenDelay = linearConversion [2, 0.5, _plateletCount, 1200, 900, true];
+        _reopenDelay = linearConversion [2, 0.5, _plateletCount, 600, 300, true];
     };
 
     private _delay = random [(_reopenDelay - 30), _reopenDelay, (_reopenDelay + 30)];
@@ -70,6 +70,8 @@ private _fnc_handleReopening = {
         _clottedWounds set [_bodyPart, _clottedWoundsOnPart];
         
         _patient setVariable [VAR_CLOTTED_WOUNDS, _clottedWounds, true];
+
+        [_patient, 1] call FUNC(refreshWounds);
 
         private _openWounds = GET_OPEN_WOUNDS(_patient);
         private _openWoundsOnPart = _openWounds getOrDefault [_bodyPart, []];

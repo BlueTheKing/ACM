@@ -247,6 +247,7 @@
 #define ACM_CA_BLOODVOLUME 4
 
 #define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + ((unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3) - (unit getVariable [QEGVAR(circulation,Overload_Volume), 0])) max 0)
+#define GET_PLATELET_COUNT(unit) (unit getVariable [QEGVAR(circulation,Platelet_Count), 3])
 
 #define GET_MAP(systolic,diastolic) (diastolic + ((systolic - diastolic) / 3))
 
