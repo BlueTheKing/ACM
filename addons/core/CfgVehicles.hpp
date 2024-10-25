@@ -115,7 +115,7 @@ class CfgVehicles {
             ADDITEM(ACM_IO_FAST,15);
             ADDITEM(ACM_IO_EZ,15);
             ADDITEM(ACM_Vial_Epinephrine,10);
-            ADDITEM(ACM_Vial_Adenosine,10);
+            ADDITEM(ACM_Vial_Esmolol,10);
             ADDITEM(ACM_Vial_TXA,10);
             ADDITEM(ACM_Vial_Amiodarone,10);
             ADDITEM(ACE_epinephrine,5);

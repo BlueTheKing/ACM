@@ -97,8 +97,10 @@ class ACM_Medication {
         };
 
         class Adenosine_IV: ACM_IV_Medication {
-            medicationType = "Adenosine";
-            hrIncrease[] = {-10, -40};
+            timeInSystem = 100;
+            timeTillMaxEffect = 60;
+            maxEffectTime = 25;
+            hrIncrease[] = {-50, -100};
             maxEffectDose = 6;
             weightEffect = 0;
         };
@@ -122,7 +124,7 @@ class ACM_Medication {
 
         class Amiodarone_IV: ACM_IV_Medication {
             medicationType = "Amiodarone";
-            hrIncrease[] = {-15, -35};
+            hrIncrease[] = {-15, -30};
             timeInSystem = 720;
             timeTillMaxEffect = 10;
             maxEffectTime = 480;
@@ -209,11 +211,22 @@ class ACM_Medication {
         };
 
         class Ertapenem_IV: ACM_IV_Medication {
+            medicationType = "Ertapenem";
             timeInSystem = 900;
             timeTillMaxEffect = 5;
             maxEffectTime = 600;
             maxEffectDose = 1000;
             weightEffect = 0;
+        };
+
+        class Esmolol_IV: ACM_IV_Medication {
+            hrIncrease[] = {-20, -50};
+            timeInSystem = 320;
+            timeTillMaxEffect = 20;
+            maxEffectTime = 240;
+            minEffectDose = 20.75;
+            maxEffectDose = 41.5;
+            weightEffect = 1;
         };
 
         class ACM_IM_Medication {
@@ -320,6 +333,7 @@ class ACM_Medication {
         };
 
         class Ertapenem: ACM_IM_Medication {
+            medicationType = "Ertapenem";
             timeInSystem = 1200;
             timeTillMaxEffect = 30;
             maxEffectTime = 900;
@@ -329,9 +343,6 @@ class ACM_Medication {
     };
     class MedicationType {
         class Default {};
-        class Adenosine {
-            classnames[] = {"Adenosine_IV", "Adenosine"};
-        };
         class Epinephrine {
             classnames[] = {"Epinephrine_IV", "Epinephrine"};
         };
@@ -424,6 +435,12 @@ class ACM_Medication {
         class Ertapenem {
             concentration = 100;
             dose = "1g/10ml";
+            volume = 10;
+        };
+
+        class Esmolol {
+            concentration = 10;
+            dose = "100mg/10ml";
             volume = 10;
         };
     };

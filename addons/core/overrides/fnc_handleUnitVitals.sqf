@@ -191,7 +191,7 @@ switch (true) do {
         if (_heartRate > 220) then {
             _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
         } else {
-            if ([_unit, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.5) then { // Amiodarone overdose causes asystole
+            if (([_unit, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount)) > 0.9 || ([_unit, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount)) > 0.8) then {
                 _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
             } else {
                 _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];

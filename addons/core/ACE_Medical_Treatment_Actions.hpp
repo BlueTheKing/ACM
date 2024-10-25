@@ -539,6 +539,11 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IV(Ertapenem,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Ertapenem,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ertapenem)));
     SYRINGE_ACTION_IV(Ertapenem,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Ertapenem,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Ertapenem)));
 
+    SYRINGE_ACTION_IV(Esmolol,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Esmolol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Esmolol)));
+    SYRINGE_ACTION_IV(Esmolol,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Esmolol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Esmolol)));
+    SYRINGE_ACTION_IV(Esmolol,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Esmolol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Esmolol)));
+    SYRINGE_ACTION_IV(Esmolol,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Esmolol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Esmolol)));
+
     // IM
     class Epinephrine_10_IM: Epinephrine_10_IV {
         displayName = __EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Epinephrine,Intramuscular));
@@ -620,4 +625,9 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IM(Ertapenem,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Ertapenem,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ertapenem)));
     SYRINGE_ACTION_IM(Ertapenem,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Ertapenem,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ertapenem)));
     SYRINGE_ACTION_IM(Ertapenem,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Ertapenem,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Ertapenem)));
+
+    SYRINGE_ACTION_IM(Esmolol,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Esmolol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Esmolol)));
+    SYRINGE_ACTION_IM(Esmolol,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Esmolol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Esmolol)));
+    SYRINGE_ACTION_IM(Esmolol,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Esmolol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Esmolol)));
+    SYRINGE_ACTION_IM(Esmolol,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Esmolol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Esmolol)));
 };

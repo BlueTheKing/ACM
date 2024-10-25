@@ -60,7 +60,7 @@ _patient setVariable [QGVAR(HemolyticReaction_Volume), 0, true];
 _patient setVariable [QGVAR(HemolyticReaction_Severity), 0, true];
 
 _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus, true];
-_patient setVariable [QGVAR(CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus];
+_patient setVariable [QGVAR(CardiacArrest_TargetRhythm), nil];
 _patient setVariable [QGVAR(CardiacArrest_DeteriorationTime), nil];
 
 _patient setVariable [QGVAR(CardiacArrest_ShockResistant), false, true];

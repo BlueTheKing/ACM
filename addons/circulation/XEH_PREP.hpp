@@ -55,6 +55,8 @@ PREP(handleCardiacArrest);
 PREP(handleCPR);
 PREP(handleHemolyticReaction);
 PREP(handleIVComplication);
+PREP(handleMed_AdenosineLocal);
+//PREP(handleMed_AmiodaroneLocal);
 PREP(handleMed_AmmoniaInhalantLocal);
 PREP(handleMed_CalciumChlorideLocal);
 PREP(handleMed_NaloxoneLocal);
