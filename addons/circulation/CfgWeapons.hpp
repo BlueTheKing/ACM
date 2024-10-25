@@ -67,7 +67,7 @@ class CfgWeapons {
         author = "Blue";
         picture = QPATHTOF(ui\syringe_10_ca.paa);
         displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),10)]));
-        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),10)])); 
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),10)]));
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.9;
@@ -76,7 +76,7 @@ class CfgWeapons {
     class ACM_Syringe_5: ACM_Syringe_10 {
         picture = QPATHTOF(ui\syringe_5_ca.paa);
         displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),5)]));
-        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),5)])); 
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),5)]));
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.7;
         };
@@ -84,7 +84,7 @@ class CfgWeapons {
     class ACM_Syringe_3: ACM_Syringe_10 {
         picture = QPATHTOF(ui\syringe_3_ca.paa);
         displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),3)]));
-        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),3)])); 
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),3)]));
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.6;
         };
@@ -92,7 +92,7 @@ class CfgWeapons {
     class ACM_Syringe_1: ACM_Syringe_10 {
         picture = QPATHTOF(ui\syringe_1_ca.paa);
         displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),1)]));
-        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),1)])); 
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),1)]));
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.5;
         };
@@ -194,9 +194,9 @@ class CfgWeapons {
         scope = 2;
         author = "Blue";
         picture = QPATHTOF(ui\fieldBloodTransfusionKit_ca.paa);
-        displayName = "Field Blood Transfusion Kit (500ml)";
-        shortName = "FBTK (500ml)";
-        descriptionShort = "Used to transfuse fresh blood in emergency";
+        displayName = __EVAL(call compile QUOTE(format [ARR_2('%1 (500ml)',C_LLSTRING(FieldBloodTransfusionKit))]));
+        shortName = __EVAL(call compile QUOTE(format [ARR_2('%1 (500ml)',C_LLSTRING(FieldBloodTransfusionKit_Short))]));
+        descriptionShort = CSTRING(FieldBloodTransfusionKit_Desc);
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 1;
@@ -204,8 +204,8 @@ class CfgWeapons {
     };
 
     class ACM_FieldBloodTransfusionKit_250: ACM_FieldBloodTransfusionKit_500 {
-        displayName = "Field Blood Transfusion Kit (250ml)";
-        shortName = "FBTK (250ml)";
+        displayName = __EVAL(call compile QUOTE(format [ARR_2('%1 (250ml)',C_LLSTRING(FieldBloodTransfusionKit))]));
+        shortName = __EVAL(call compile QUOTE(format [ARR_2('%1 (250ml)',C_LLSTRING(FieldBloodTransfusionKit_Short))]));
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.5;
         };

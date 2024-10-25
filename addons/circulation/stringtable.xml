@@ -203,6 +203,15 @@
         <Key ID="STR_ACM_Circulation_BloodBag_Desc">
             <English>Used to replenish lost blood volume</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit">
+            <English>Field Blood Transfusion Kit</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Short">
+            <English>FBTK</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Desc">
+            <English>Used to transfuse fresh blood in emergency</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_FreshBloodBag">
             <English>Fresh Blood Bag %1</English>
         </Key>
@@ -899,7 +908,6 @@
         <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
             <English>%1 moved fluid bag (%2) to %3</English>
         </Key>
-        
         <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Saline_Short">
             <English>S</English>
         </Key>
@@ -915,7 +923,6 @@
         <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FieldBloodTransfusionKit_Short">
             <English>FBTK</English>
         </Key>
-        
         <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
             <English>%1 moved fluid bag (%2) to %3</English>
         </Key><!--
