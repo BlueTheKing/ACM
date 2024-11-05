@@ -90,7 +90,7 @@ if (_adjustments isNotEqualTo []) then {
             _adjustments deleteAt _forEachIndex;
         } else {
             private _effectRatio = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime] call EFUNC(circulation,getMedicationEffect);
-            if (_hrAdjust != 0) then {
+            if (_hrAdjust != 0 && (GET_HEART_RATE(_unit) > 0)) then {
                 private _HREffect = [(GET_HEART_RATE(_unit) / ACM_TARGETVITALS_HR(_unit)), (ACM_TARGETVITALS_HR(_unit) / GET_HEART_RATE(_unit))] select (_hrAdjust > 0);
                 _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio * _HREffect;
             };
@@ -104,6 +104,7 @@ if (_adjustments isNotEqualTo []) then {
                     _medicationType = _medication;
                 };
                 (_painSuppressAdjustmentMap get _medicationType) params ["_medClassnames", "_medPainReduce", "_medMaxPainAdjust"];
+                
                 if (_medication in _medClassnames) then {
                     private _newPainAdjust = _medPainReduce + _painAdjust * _effectRatio;
 
@@ -127,6 +128,15 @@ if (_adjustments isNotEqualTo []) then {
     };
 };
 
+private _reactionSeverity = _unit getVariable [QEGVAR(circulation,HemolyticReaction_Severity), 0];
+
+if (_reactionSeverity > 0) then {
+    _hrTargetAdjustment = _hrTargetAdjustment + (_reactionSeverity * 15);
+    _respirationRateAdjustment = _respirationRateAdjustment - _reactionSeverity * 5;
+    _peripheralResistanceAdjustment = _peripheralResistanceAdjustment - _reactionSeverity * 15;
+    _breathingEffectivenessAdjustment = _breathingEffectivenessAdjustment - (_reactionSeverity * 0.05);
+};
+
 // Update SPO2 intake and usage since last update
 private _oxygenSaturation = [_unit, _respirationRateAdjustment, _coSensitivityAdjustment, _breathingEffectivenessAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateOxygen);
 
@@ -140,6 +150,10 @@ if ((_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) || 
     if (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0] > 0) then {
         _hrTargetAdjustment = _hrTargetAdjustment - (5 * (_unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0]));
     };
+};
+
+if ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) > 0.05) then {
+    _hrTargetAdjustment = _hrTargetAdjustment - ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) / 0.05);
 };
 
 private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
@@ -177,7 +191,7 @@ switch (true) do {
         if (_heartRate > 220) then {
             _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
         } else {
-            if ([_unit, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.5) then { // Amiodarone overdose causes asystole
+            if (([_unit, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount)) > 0.9 || ([_unit, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount)) > 0.8) then {
                 _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
             } else {
                 _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
@@ -192,8 +206,7 @@ switch (true) do {
     };
     case (_bloodPressureL > 190): {
         TRACE_2("bloodPressure L above limits",_unit,_bloodPressureL);
-        _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
-        [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
+        [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_heartRate < 30): {  // With a heart rate below 30 but bigger than 20 there is a chance to enter the cardiac arrest state
         private _nextCheck = _unit getVariable [QACEGVAR(medical_vitals,nextCheckCriticalHeartRate), CBA_missionTime];

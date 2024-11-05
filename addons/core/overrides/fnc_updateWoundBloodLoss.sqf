@@ -98,6 +98,6 @@ if (_bodyPartBleeding isEqualTo [0,0,0,0,0,0]) then {
             params ["_unit"];
 
             [QEGVAR(damage,handleCoagulationPFH), [_unit], _unit] call CBA_fnc_targetEvent;
-        }, [_unit], 3] call CBA_fnc_waitAndExecute;
+        }, [_unit], 4] call CBA_fnc_waitAndExecute;
     };
 };

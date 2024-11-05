@@ -202,6 +202,24 @@
         </Key>
         <Key ID="STR_ACM_Circulation_BloodBag_Desc">
             <English>Used to replenish lost blood volume</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit">
+            <English>Field Blood Transfusion Kit</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Short">
+            <English>FBTK</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Desc">
+            <English>Used to transfuse fresh blood in emergency</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_FreshBloodBag">
+            <English>Fresh Blood Bag %1</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_FreshBloodBag_Short">
+            <English>FWB Bag %1</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_FreshBloodBag_Desc">
+            <English>Freshly transfused blood, used to replenish lost blood volume</English>
         </Key><!--
             // Items - Individual Medication // -->
         <Key ID="STR_ACM_Circulation_Medication_Epinephrine">
@@ -230,6 +248,15 @@
         </Key>
         <Key ID="STR_ACM_Circulation_Medication_Ondansetron">
             <English>Ondansetron</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Medication_CalciumChloride">
+            <English>Calcium Chloride</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Medication_Ertapenem">
+            <English>Ertapenem</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Medication_Esmolol">
+            <English>Esmolol</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Medication_Naloxone">
             <English>Naloxone</English>
@@ -269,7 +296,7 @@
             <English>Used as local anesthetic for painful surgical procedures</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_TXA">
-            <English>TXA Vial (1000mg/10ml)</English>
+            <English>TXA Vial (1g/10ml)</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_TXA_Desc">
             <English>Used to manage catastrophic bleeding by preventing clot dissolvement</English>
@@ -291,6 +318,24 @@
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_Ondansetron_Desc">
             <English>Used to manage nausea and vomiting</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_CalciumChloride">
+            <English>Calcium Chloride Vial (1g/10ml)</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_CalciumChloride_Desc">
+            <English>Used to manage low calcium after blood transfusion</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_Ertapenem">
+            <English>Ertapenem Vial (1g/10ml)</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_Ertapenem_Desc">
+            <English>Used to manage infections from open wounds, required before evacuation of casualty</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_Esmolol">
+            <English>Esmolol Vial (100mg/10ml)</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_Vial_Esmolol_Desc">
+            <English>Used to lower heart rate for a short time</English>
         </Key>
         <Key ID="STR_ACM_Circulation_Spray_Naloxone">
             <English>Naloxone Nasal Spray</English>
@@ -845,14 +890,38 @@
         <Key ID="STR_ACM_Circulation_GUI_TransfusingSaline">
             <English>Transfusing Saline [%1x]</English>
         </Key>
-        <Key ID="STR_ACM_Circulation_GUI_TransfusingBlood">
-            <English>Transfusing Blood [%1x]</English>
-        </Key>
         <Key ID="STR_ACM_Circulation_GUI_TransfusingPlasma">
             <English>Transfusing Plasma [%1x]</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_GUI_TransfusingBlood">
+            <English>Transfusing Blood [%1x]</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_TransfusingFreshBlood">
+            <English>Transfusing Fresh Blood [%1x]</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_CollectingBlood">
+            <English>Collecting Blood [%1x]</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_GUI_BeganTransfusing">
             <English>%1 began transfusing fluids (%2) into %3</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
+            <English>%1 moved fluid bag (%2) to %3</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Saline_Short">
+            <English>S</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Plasma_Short">
+            <English>P</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Blood_Short">
+            <English>B</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FreshWholeBlood_Short">
+            <English>FWB</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FieldBloodTransfusionKit_Short">
+            <English>FBTK</English>
         </Key>
         <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
             <English>%1 moved fluid bag (%2) to %3</English>

@@ -93,4 +93,19 @@ class CfgMagazines {
     PREPARE_SYRINGE(500,0.7,5,Lidocaine,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Lidocaine,5)),__EVAL(call compile SYRINGE_FORMAT_DESC(Lidocaine,5)));
     PREPARE_SYRINGE(300,0.6,3,Lidocaine,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Lidocaine,3)),__EVAL(call compile SYRINGE_FORMAT_DESC(Lidocaine,3)));
     PREPARE_SYRINGE(100,0.5,1,Lidocaine,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Lidocaine,1)),__EVAL(call compile SYRINGE_FORMAT_DESC(Lidocaine,1)));
+
+    PREPARE_SYRINGE(1000,0.9,10,CalciumChloride,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(CalciumChloride,10)),__EVAL(call compile SYRINGE_FORMAT_DESC(CalciumChloride,10)));
+    PREPARE_SYRINGE(500,0.7,5,CalciumChloride,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(CalciumChloride,5)),__EVAL(call compile SYRINGE_FORMAT_DESC(CalciumChloride,5)));
+    PREPARE_SYRINGE(300,0.6,3,CalciumChloride,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(CalciumChloride,3)),__EVAL(call compile SYRINGE_FORMAT_DESC(CalciumChloride,3)));
+    PREPARE_SYRINGE(100,0.5,1,CalciumChloride,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(CalciumChloride,1)),__EVAL(call compile SYRINGE_FORMAT_DESC(CalciumChloride,1)));
+
+    PREPARE_SYRINGE(1000,0.9,10,Ertapenem,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Ertapenem,10)),__EVAL(call compile SYRINGE_FORMAT_DESC(Ertapenem,10)));
+    PREPARE_SYRINGE(500,0.7,5,Ertapenem,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Ertapenem,5)),__EVAL(call compile SYRINGE_FORMAT_DESC(Ertapenem,5)));
+    PREPARE_SYRINGE(300,0.6,3,Ertapenem,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Ertapenem,3)),__EVAL(call compile SYRINGE_FORMAT_DESC(Ertapenem,3)));
+    PREPARE_SYRINGE(100,0.5,1,Ertapenem,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Ertapenem,1)),__EVAL(call compile SYRINGE_FORMAT_DESC(Ertapenem,1)));
+
+    PREPARE_SYRINGE(1000,0.9,10,Esmolol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Esmolol,10)),__EVAL(call compile SYRINGE_FORMAT_DESC(Esmolol,10)));
+    PREPARE_SYRINGE(500,0.7,5,Esmolol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Esmolol,5)),__EVAL(call compile SYRINGE_FORMAT_DESC(Esmolol,5)));
+    PREPARE_SYRINGE(300,0.6,3,Esmolol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Esmolol,3)),__EVAL(call compile SYRINGE_FORMAT_DESC(Esmolol,3)));
+    PREPARE_SYRINGE(100,0.5,1,Esmolol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Esmolol,1)),__EVAL(call compile SYRINGE_FORMAT_DESC(Esmolol,1)));
 };

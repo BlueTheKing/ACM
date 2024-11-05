@@ -115,7 +115,7 @@ class CfgVehicles {
             ADDITEM(ACM_IO_FAST,15);
             ADDITEM(ACM_IO_EZ,15);
             ADDITEM(ACM_Vial_Epinephrine,10);
-            ADDITEM(ACM_Vial_Adenosine,10);
+            ADDITEM(ACM_Vial_Esmolol,10);
             ADDITEM(ACM_Vial_TXA,10);
             ADDITEM(ACM_Vial_Amiodarone,10);
             ADDITEM(ACE_epinephrine,5);
@@ -128,6 +128,9 @@ class CfgVehicles {
             ADDITEM(ACE_salineIV,10);
             ADDITEM(ACE_salineIV_500,10);
             ADDITEM(ACE_salineIV_250,10);
+            ADDITEM(ACM_FieldBloodTransfusionKit_250,5);
+            ADDITEM(ACM_FieldBloodTransfusionKit_500,5);
+            ADDITEM(ACM_Vial_CalciumChloride,10);
             // Disability
             ADDITEM(ACE_morphine,5);
             ADDITEM(ACM_Vial_Morphine,10);
@@ -143,6 +146,7 @@ class CfgVehicles {
             ADDITEM(ACE_surgicalKit,2);
             ADDITEM(ACE_bodyBag,5);
             ADDITEM(ACE_suture,60);
+            ADDITEM(ACM_Vial_Ertapenem,10);
         };
     };
 

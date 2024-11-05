@@ -26,7 +26,6 @@ _patient setVariable [QGVAR(casualtyTicketClaimed), true, true];
 [{
     params ["_medic", "_patient"];
 
-    [_patient] call ACEFUNC(common,setName);
     _patient disableAI "ALL";
     [_patient] joinSilent GVAR(CasualtyGroup);
     [LLSTRING(ConvertCasualty_Complete), 1.5, _medic] call ACEFUNC(common,displayTextStructured);

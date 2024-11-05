@@ -191,7 +191,7 @@
 #define CARDIAC_OUTPUT_MIN ACEGVAR(medical,const_minCardiacOutput)
 
 // ACM
-#define ACM_INCOMPATIBLE_ADDONS [["pir","Project Injury Reaction"],["kat_main","KAT Advanced Medical"],["MIRA_Vehicle_Medical","ACE Vehicle Medical"]]
+#define ACM_INCOMPATIBLE_ADDONS [["pir","Project Injury Reaction"],["kat_main","KAT Advanced Medical"],["MIRA_Vehicle_Medical","ACE Vehicle Medical"],["KJW_MedicalExpansion_core", "KJW's Medical Expansion"]]
 
 #define ALL_BODY_PARTS_PRIORITY ["body", "head", "leftarm", "rightarm", "leftleg", "rightleg"]
 
@@ -210,6 +210,9 @@
 #define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])
 
 #define IN_RECOVERYPOSITION(unit) (unit getVariable [QQEGVAR(airway,RecoveryPosition_State), false])
+
+#define GET_AIRWAYADJUNCT_ORAL(unit)  (unit getVariable [QEGVAR(airway,AirwayItem_Oral), ""])
+#define GET_AIRWAYADJUNCT_NASAL(unit) (unit getVariable [QEGVAR(airway,AirwayItem_Nasal), ""])
 
 // Breathing
 #define ACM_BREATHING_MINDECREASE 0.1
@@ -243,7 +246,8 @@
 #define ACM_REVERSIBLE_CA_BLOODVOLUME 4.2
 #define ACM_CA_BLOODVOLUME 4
 
-#define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + (unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3))
+#define GET_EFF_BLOOD_VOLUME(unit) (6 min ((unit getVariable [QEGVAR(circulation,Blood_Volume), 6]) + ((unit getVariable [QEGVAR(circulation,Plasma_Volume), 0]) * 0.3) - (unit getVariable [QEGVAR(circulation,Overload_Volume), 0])) max 0)
+#define GET_PLATELET_COUNT(unit) (unit getVariable [QEGVAR(circulation,Platelet_Count), 3])
 
 #define GET_MAP(systolic,diastolic) (diastolic + ((systolic - diastolic) / 3))
 
@@ -349,6 +353,9 @@
 //// Transfusion
 #define FLUIDS_ARRAY ['ACE_salineIV','ACE_plasmaIV','ACE_salineIV_500','ACE_plasmaIV_500','ACE_salineIV_250','ACE_plasmaIV_250']
 #define FLUIDS_ARRAY_DATA ['salineIV','plasmaIV','salineIV_500','plasmaIV_500','salineIV_250','plasmaIV_250']
+
+#define FBTK_ARRAY ['ACM_FieldBloodTransfusionKit_500','ACM_FieldBloodTransfusionKit_250']
+#define FBTK_ARRAY_DATA ['FieldBloodTransfusionKit_500','FieldBloodTransfusionKit_250']
 
 // Damage
 #define VAR_WRAPPED_WOUNDS             QEGVAR(damage,WrappedWounds)

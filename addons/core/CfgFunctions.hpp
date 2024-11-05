@@ -86,6 +86,9 @@ class CfgFunctions {
             class getTriageStatus { // Deceased -> Expectant
                 file = QPATHTOF(overrides\fnc_getTriageStatus.sqf); //ace/addons/medical_treatment/functions/fnc_getTriageStatus.sqf
             };
+            class handleBandageOpening { // Bandage reopening chance with platelets
+                file = QPATHTOF(overrides\fnc_handleBandageOpening.sqf); //ace/addons/medical_treatment/functions/fnc_handleBandageOpening.sqf
+            };
         };
     };
     class overwrite_medical_damage {
@@ -138,6 +141,20 @@ class CfgFunctions {
             };
             class updateDamageEffects { // Tourniquet effects for legs
                 file = QPATHTOF(overrides\fnc_updateDamageEffects.sqf); //ace/addons/medical_engine/functions/fnc_updateDamageEffects.sqf
+            };
+        };
+    };
+    class overwrite_medical_ai {
+        tag = "ace_medical_ai";
+        class ace_medical_ai {
+            class healingLogic { // Use new items
+                file = QPATHTOF(overrides\fnc_healingLogic.sqf); //ace/addons/medical_ai/functions/fnc_healingLogic.sqf
+            };
+            class itemCheck { // Use own item list
+                file = QPATHTOF(overrides\fnc_itemCheck.sqf); //ace/addons/medical_ai/functions/fnc_itemCheck.sqf
+            };
+            class playTreatmentAnim { // Medic AI CPR
+                file = QPATHTOF(overrides\fnc_playTreatmentAnim.sqf); //ace/addons/medical_ai/functions/fnc_playTreatmentAnim.sqf
             };
         };
     };

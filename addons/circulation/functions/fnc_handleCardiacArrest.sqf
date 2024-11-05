@@ -42,7 +42,7 @@ if (_targetRhythm == ACM_Rhythm_Sinus) then {
     _targetRhythm = [ACM_Rhythm_VF,ACM_Rhythm_PVT] select (((random 100) * (GET_BLOOD_VOLUME(_patient) / BLOOD_VOLUME_CLASS_2_HEMORRHAGE)) > 50);
 };
 _patient setVariable [QGVAR(CardiacArrest_RhythmState), _targetRhythm, true];
-_patient setVariable [QGVAR(CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus];
+_patient setVariable [QGVAR(CardiacArrest_TargetRhythm), nil];
 
 if !(alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
     _patient setVariable [QGVAR(CPR_StoppedTime), CBA_missionTime, true];

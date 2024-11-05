@@ -335,6 +335,13 @@ class ACE_ADDON(Medical_Treatment) {
             volume = 250;
         };
 
+        class FreshBloodBag_500: BloodIV_500 {
+            type = "FreshBlood";
+        };
+        class FreshBloodBag_250: FreshBloodBag_500 {
+            volume = 250;
+        };
+
         // Blood Types
         class BloodBag_O_1000: BloodIV {
             volume = 1000;

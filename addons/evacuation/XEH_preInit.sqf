@@ -13,7 +13,7 @@ PREP_RECOMPILE_END;
     "CHECKBOX",
     [LLSTRING(SETTING_Enable), LLSTRING(SETTING_Enable_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
-    [true], // TODO turn this off
+    [true],
     true,
     {},
     true
@@ -25,6 +25,15 @@ PREP_RECOMPILE_END;
     [LLSTRING(SETTING_ClearCasualtyLoadout), LLSTRING(SETTING_ClearCasualtyLoadout_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
     [false],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(requireAntibiotics),
+    "CHECKBOX",
+    [LLSTRING(SETTING_RequireAntibiotics), LLSTRING(SETTING_RequireAntibiotics_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true],
     true
 ] call CBA_fnc_addSetting;
 

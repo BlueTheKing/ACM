@@ -89,6 +89,8 @@ private _oxygenChange = 0;
 private _activeBVM = [_unit] call FUNC(bvmActive);
 private _BVMOxygenAssisted = _unit getVariable [QEGVAR(breathing,BVM_ConnectedOxygen), false];
 
+private _freshBloodEffectiveness = _unit getVariable [QEGVAR(circulation,IV_Bags_FreshBloodEffect), 0];
+
 private _timeSinceLastBreath = CBA_missionTime - (_unit getVariable [QEGVAR(breathing,BVM_lastBreath), -35]);
 
 private _BVMLastingEffect = 0;
@@ -148,6 +150,10 @@ switch (true) do {
             if (_BVMOxygenAssisted) then {
                 _breathingEffectiveness = _breathingEffectiveness * 1.6;
             };
+        };
+
+        if (_freshBloodEffectiveness > 0.83) then {
+            _breathingEffectiveness = _breathingEffectiveness * (1 max (1.2 * _freshBloodEffectiveness));
         };
 
         if (_breathingEffectivenessAdjustment != 0) then {

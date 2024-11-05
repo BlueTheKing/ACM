@@ -67,7 +67,7 @@ class CfgWeapons {
         author = "Blue";
         picture = QPATHTOF(ui\syringe_10_ca.paa);
         displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),10)]));
-        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),10)])); 
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),10)]));
         ACE_isMedicalItem = 1;
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.9;
@@ -76,7 +76,7 @@ class CfgWeapons {
     class ACM_Syringe_5: ACM_Syringe_10 {
         picture = QPATHTOF(ui\syringe_5_ca.paa);
         displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),5)]));
-        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),5)])); 
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),5)]));
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.7;
         };
@@ -84,7 +84,7 @@ class CfgWeapons {
     class ACM_Syringe_3: ACM_Syringe_10 {
         picture = QPATHTOF(ui\syringe_3_ca.paa);
         displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),3)]));
-        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),3)])); 
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),3)]));
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.6;
         };
@@ -92,27 +92,10 @@ class CfgWeapons {
     class ACM_Syringe_1: ACM_Syringe_10 {
         picture = QPATHTOF(ui\syringe_1_ca.paa);
         displayName = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_%1),1)]));
-        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),1)])); 
+        descriptionShort = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Syringe_Desc_%1),1)]));
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 0.5;
         };
-    };
-
-    class ACM_Syringe_IM: ACE_ItemCore {
-        scope = 1;
-        author = "Blue";
-        picture = QPATHTOF(ui\syringe_5_ca.paa);
-        displayName = "";
-        descriptionShort = "";
-        ACE_isMedicalItem = 1;
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 0.8;
-        };
-    };
-    class ACM_Syringe_IV: ACM_Syringe_IM {
-        picture = QPATHTOF(ui\syringe_10_ca.paa);
-        displayName = "";
-        descriptionShort = "";
     };
 
     class ACM_Vial_Epinephrine: ACE_ItemCore {
@@ -168,37 +151,64 @@ class CfgWeapons {
         picture = QPATHTOF(ui\vial_amiodarone_ca.paa);
         displayName = CSTRING(Vial_Amiodarone);
         descriptionShort = CSTRING(Vial_Amiodarone_Desc);
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 0.2;
-        };
     };
 
     class ACM_Vial_Fentanyl: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_fentanyl_ca.paa);
         displayName = CSTRING(Vial_Fentanyl);
         descriptionShort = CSTRING(Vial_Fentanyl_Desc);
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 0.2;
-        };
     };
 
     class ACM_Vial_Ondansetron: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_ondansetron_ca.paa);
         displayName = CSTRING(Vial_Ondansetron);
         descriptionShort = CSTRING(Vial_Ondansetron_Desc);
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 0.2;
-        };
+    };
+
+    class ACM_Vial_CalciumChloride: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_calciumchloride_ca.paa);
+        displayName = CSTRING(Vial_CalciumChloride);
+        descriptionShort = CSTRING(Vial_CalciumChloride_Desc);
+    };
+
+    class ACM_Vial_Ertapenem: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_ertapenem_ca.paa);
+        displayName = CSTRING(Vial_Ertapenem);
+        descriptionShort = CSTRING(Vial_Ertapenem_Desc);
+    };
+
+    class ACM_Vial_Esmolol: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_esmolol_ca.paa);
+        displayName = CSTRING(Vial_Esmolol);
+        descriptionShort = CSTRING(Vial_Esmolol_Desc);
     };
 
     class ACM_Spray_Naloxone: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\spray_naloxone_ca.paa);
         displayName = CSTRING(Spray_Naloxone);
         descriptionShort = CSTRING(Spray_Naloxone_Desc);
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 0.2;
-        };
         ACM_isVial = 0;
+    };
+
+    class ACM_FieldBloodTransfusionKit_500: ACE_ItemCore {
+        scope = 2;
+        author = "Blue";
+        picture = QPATHTOF(ui\fieldBloodTransfusionKit_ca.paa);
+        displayName = __EVAL(call compile QUOTE(format [ARR_2('%1 (500ml)',C_LLSTRING(FieldBloodTransfusionKit))]));
+        shortName = __EVAL(call compile QUOTE(format [ARR_2('%1 (500ml)',C_LLSTRING(FieldBloodTransfusionKit_Short))]));
+        descriptionShort = CSTRING(FieldBloodTransfusionKit_Desc);
+        ACE_isMedicalItem = 1;
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 1;
+        };
+    };
+
+    class ACM_FieldBloodTransfusionKit_250: ACM_FieldBloodTransfusionKit_500 {
+        displayName = __EVAL(call compile QUOTE(format [ARR_2('%1 (250ml)',C_LLSTRING(FieldBloodTransfusionKit))]));
+        shortName = __EVAL(call compile QUOTE(format [ARR_2('%1 (250ml)',C_LLSTRING(FieldBloodTransfusionKit_Short))]));
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.5;
+        };
     };
 
     class ACE_adenosine: ACE_ItemCore {

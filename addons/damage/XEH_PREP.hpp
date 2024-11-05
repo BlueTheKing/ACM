@@ -14,6 +14,7 @@ PREP(handleTrauma);
 PREP(handleWoundReopening);
 PREP(inflictInternalBleeding);
 PREP(isBodyPartBleeding);
+PREP(refreshWounds);
 PREP(resetVariables);
 PREP(surgicalKitProgress);
 PREP(surgicalKitStart);

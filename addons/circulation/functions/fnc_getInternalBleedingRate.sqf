@@ -21,15 +21,9 @@ private _internalBleeding = GET_INTERNAL_BLEEDING(_unit);
 if (_internalBleeding == 0) exitWith {0};
 
 private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
+private _resistance = _unit getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES];
 
-private _coagulationModifier = 1;
-private _plateletCount = _unit getVariable [QGVAR(Platelet_Count), 3];
-private _TXACount = ([_unit, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 1.4;
-
-if (_plateletCount > 0 || _TXACount > 0.1) then {
-    private _plateletCountModifier = ((_plateletCount / 3) - 1) * -0.1;
-    _coagulationModifier = _plateletCountModifier + (0.5 max (0.75 * _internalBleeding)) - (0.35 * _TXACount);
-};
+private _TXAEffect = 1 - (0.075 * (([_unit, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 2));
 
 // even if heart stops blood will still flow slowly (gravity)
-(_internalBleeding * (_cardiacOutput max (GVAR(cardiacArrestBleedRate) / 2)) * _coagulationModifier * ACEGVAR(medical,bleedingCoefficient));
+(_internalBleeding * (_cardiacOutput max (GVAR(cardiacArrestBleedRate) / 2)) * (DEFAULT_PERIPH_RES / _resistance) * ACEGVAR(medical,bleedingCoefficient));

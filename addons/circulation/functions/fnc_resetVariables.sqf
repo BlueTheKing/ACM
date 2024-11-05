@@ -37,6 +37,7 @@ _patient setVariable [QGVAR(IO_Placement), ACM_IO_PLACEMENT_DEFAULT_0, true];
 
 _patient setVariable [QGVAR(IV_Bags), createHashMap, true];
 _patient setVariable [QGVAR(IV_Bags_Active), false, true];
+_patient setVariable [QGVAR(IV_Bags_FreshBloodEffect), 0, true];
 
 _patient setVariable [QGVAR(ActiveFluidBags_IV), ACM_IV_PLACEMENT_DEFAULT_1, true];
 _patient setVariable [QGVAR(ActiveFluidBags_IO), ACM_IO_PLACEMENT_DEFAULT_1, true];
@@ -49,9 +50,17 @@ _patient setVariable [QGVAR(Plasma_Volume), 0, true];
 _patient setVariable [QGVAR(Saline_Volume), 0, true];
 
 _patient setVariable [QGVAR(Platelet_Count), 3, true];
+_patient setVariable [QGVAR(Calcium_Count), 0, true];
+_patient setVariable [QGVAR(Calcium_FirstDose), false, true];
+
+_patient setVariable [QGVAR(Overload_Volume), 0, true];
+_patient setVariable [QGVAR(TransfusedBlood_Volume), 0, true];
+
+_patient setVariable [QGVAR(HemolyticReaction_Volume), 0, true];
+_patient setVariable [QGVAR(HemolyticReaction_Severity), 0, true];
 
 _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus, true];
-_patient setVariable [QGVAR(CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus];
+_patient setVariable [QGVAR(CardiacArrest_TargetRhythm), nil];
 _patient setVariable [QGVAR(CardiacArrest_DeteriorationTime), nil];
 
 _patient setVariable [QGVAR(CardiacArrest_ShockResistant), false, true];

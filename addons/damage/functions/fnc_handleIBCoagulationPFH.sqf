@@ -60,25 +60,22 @@ private _id = [{
 
         if (_woundIndex != -1) exitWith {
             (_internalWoundsOnPart select _woundIndex) params ["_woundType", "_woundCount", "_woundBleeding"];
-                private _woundSeverity = _woundType % 10;
+            
+            private _woundSeverity = _woundType % 10;
+            private _txaEffect = 1 + (1 min _txaCount);
+            private _bloodVolumEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 4) min 1;
 
-                private _txaEffect = 1 + (1 min _txaCount);
-                private _bloodVolumEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 4) min 1;
-
-                if (_woundSeverity == 1 || {_woundSeverity == 2 && (random 1 < (3.6 * _txaEffect * _bloodVolumEffect))}) then {
-
+            if (_woundSeverity == 1 || {_woundSeverity == 2 && (random 1 < (3.6 * _txaEffect * _bloodVolumEffect))}) then {
                 private _newWoundCount = _woundCount - _clotEffectiveness;
 
                 if (_newWoundCount < 1) then {
                     _internalWoundsOnPart deleteAt _woundIndex;
                 } else {
                     private _newWoundBleeding = (_woundBleeding / _woundCount) * _newWoundCount;
-
                     _internalWoundsOnPart set [_woundIndex, [_woundType, _newWoundCount, _newWoundBleeding]];
                 };
 
                 _patient setVariable [VAR_INTERNAL_WOUNDS, _internalWounds, true];
-
                 [_patient] call ACEFUNC(medical_status,updateWoundBloodLoss);
             };
 

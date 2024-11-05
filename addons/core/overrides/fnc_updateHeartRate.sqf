@@ -44,8 +44,8 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
         private _painLevel = GET_PAIN_PERCEIVED(_unit);
 
         _targetHR = _desiredHR;
-        if (_bloodVolume < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
-            private _targetBP = 107 * (_bloodVolume / DEFAULT_BLOOD_VOLUME);
+        if (_bloodVolume <= BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
+            private _targetBP = 105 * (_bloodVolume / DEFAULT_BLOOD_VOLUME);
             _targetHR = _heartRate * (_targetBP / (45 max _meanBP));
         };
         if (_painLevel > 0.2) then {
