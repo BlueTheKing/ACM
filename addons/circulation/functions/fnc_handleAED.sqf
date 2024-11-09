@@ -172,7 +172,9 @@ private _PFH = [{
         if (_lastSync + 3 < CBA_missionTime) then {
             _patient setVariable [QGVAR(AED_PulseOximeter_LastSync), CBA_missionTime];
 
-            if (!(HAS_TOURNIQUET_APPLIED_ON(_patient,_pulseOximeterPlacement))) then {
+            (GET_BLOOD_PRESSURE(_patient)) params ["", "_BPSystolic"];
+
+            if (!(HAS_TOURNIQUET_APPLIED_ON(_patient,_pulseOximeterPlacement)) && _BPSystolic >= 80) then {
                 _patient setVariable [QGVAR(AED_PulseOximeter_Display), round(_spO2), true];
                 if !(_padsStatus) then {
                     _patient setVariable [QGVAR(AED_Pads_Display), round(GET_HEART_RATE(_patient)), true];
