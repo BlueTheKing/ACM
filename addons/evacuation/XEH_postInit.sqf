@@ -21,7 +21,7 @@ if (isServer) then {
     if !(_unit getVariable [QGVAR(playerSpawned), false]) exitWith {};
 
     if (_unit getVariable [QGVAR(casualtyTicketClaimed), false]) then {
-        [_unit] call FUNC(returnCasualtyTicket);
+        [true] call FUNC(setCasualtyTicket);
     };
 }] call CBA_fnc_addEventHandler;
 
