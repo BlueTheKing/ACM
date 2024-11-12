@@ -169,6 +169,14 @@ class CfgFunctions {
             };
         };
     };
+    class overwrite_ace_advanced_fatigue {
+        tag = "ace_advanced_fatigue";
+        class ace_advanced_fatigue {
+            class handleEffects { // Pneumothorax
+                file = QPATHTOF(overrides\fnc_handleEffects_AF.sqf); //ace/addons/advanced_fatigue/functions/fnc_handleEffects.sqf
+            };
+        };
+    };
     class overwrite_ace_dragging {
         tag = "ace_dragging";
         class ace_dragging {

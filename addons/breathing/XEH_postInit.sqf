@@ -20,6 +20,6 @@
 
 if (GVAR(pneumothoraxEnabled)) then {
     [QGVAR(Pneumothorax), {
-        ([(linearConversion [0, 4, (_this getVariable [QGVAR(Pneumothorax_State), 0]), 1, 2, true]), 2] select ((_this getVariable [QGVAR(TensionPneumothorax_State), false]) || (_this getVariable [QGVAR(Hardcore_Pneumothorax), false]) || ((_this getVariable [QGVAR(Hemothorax_Fluid), 0]) > 1)));
+        (([(linearConversion [0, 4, (_this getVariable [QGVAR(Pneumothorax_State), 0]), 1, 2.5, true]), 2.5] select ((_this getVariable [QGVAR(TensionPneumothorax_State), false]) || (_this getVariable [QGVAR(Hardcore_Pneumothorax), false]))) max ((_this getVariable [QGVAR(Hemothorax_Fluid), 0]) * 1.66));
     }] call ACEFUNC(advanced_fatigue,addDutyFactor);
 };

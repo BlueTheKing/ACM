@@ -7,23 +7,24 @@
  * 0: Enable effect <BOOL>
  * 1: Current Oxygen Saturation <NUMBER>
  * 2: Current Respiration Rate <NUMBER>
+ * 3: Chest Injury Severity <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [false, 100, 18] call ACM_core_fnc_effectOxygen;
+ * [false, 100, 18, 0] call ACM_core_fnc_effectOxygen;
  *
  * Public: No
  */
 
-params ["_enable", "_oxygenSaturation", "_respirationRate"];
+params ["_enable", "_oxygenSaturation", "_respirationRate", "_chestInjurySeverity"];
 
-if (!_enable || {_oxygenSaturation > 92 && _respirationRate > 12}) exitWith {
+if (!_enable || {_oxygenSaturation > 92 && _respirationRate > 12 && _chestInjurySeverity == 0}) exitWith {
     if (GVAR(ppLowOxygenTunnelVision) != -1) then { GVAR(ppLowOxygenTunnelVision) ppEffectEnable false; };
 };
 
-if (_oxygenSaturation > 90 && _respirationRate > 10) exitWith {
+if (_oxygenSaturation > 90 && _respirationRate > 10 && _chestInjurySeverity == 0) exitWith {
     if (GVAR(ppLowOxygenTunnelVision) != -1) then {
         if !(GVAR(ppLowOxygenTunnelVision_Finalized)) then {
             GVAR(ppLowOxygenTunnelVision) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0]];
@@ -45,7 +46,7 @@ if (_showNextTick) exitWith {};
 private _initialAdjust = [];
 private _delayedAdjust = [];
 
-private _effectIntensity = ((linearConversion [79, 90, _oxygenSaturation, 1, 0, true]) max (linearConversion [6, 10, _respirationRate, 1, 0, true]));
+private _effectIntensity = ((linearConversion [79, 90, _oxygenSaturation, 1, 0, true]) max (linearConversion [6, 10, _respirationRate, 1, 0, true])) max (linearConversion [0, 4, _chestInjurySeverity, 0, 1, true]);
 private _tunnelVisionIntensity = 0.5 * _effectIntensity;
 
 _initialAdjust = [1, 1, 0, [0, 0, 0, _effectIntensity * 0.95], [0.1, 0.1, 0.1, 0.1], [0, 0, 0, 0], [0.85 - _tunnelVisionIntensity, 0.8 - _tunnelVisionIntensity, 0, 0, 0, 0, 8]];
