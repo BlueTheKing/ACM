@@ -42,7 +42,7 @@ private _overloadEffect = linearConversion [0, 1, (_unit getVariable [QEGVAR(cir
 private _diastolicModifier = 1;
 
 if (GET_BLOOD_VOLUME(_unit) < DEFAULT_BLOOD_VOLUME) then {
-    _diastolicModifier = linearConversion [DEFAULT_BLOOD_VOLUME, 4.2, GET_BLOOD_VOLUME(_unit), 1, 1.4, true];
+    _diastolicModifier = linearConversion [DEFAULT_BLOOD_VOLUME, BLOOD_VOLUME_CLASS_3_HEMORRHAGE, GET_BLOOD_VOLUME(_unit), 1, 1.4, true];
 };
 
 if (_PTXState > 0 || _HTXFluid > 0.1) then {

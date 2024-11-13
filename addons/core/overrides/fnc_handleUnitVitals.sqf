@@ -158,6 +158,18 @@ if ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) > 0.05) 
 
 private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
 [_unit, _painSupressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
+
+if (!(IS_BLEEDING(_unit)) && _bloodVolume > 4) then {
+    private _highHRThreshold = ACM_TARGETVITALS_HR(_unit) + 10;
+    if (_oxygenSaturation < 95) then {
+        _peripheralResistanceAdjustment = _peripheralResistanceAdjustment - (linearConversion [95, 80, _oxygenSaturation, 0, 20]);
+    };
+    if (_heartRate > _highHRThreshold) then {
+        private _bloodVolumeEffect = 0 max (1 - (((DEFAULT_BLOOD_VOLUME - _bloodVolume) * 0.5) min 1));
+        _peripheralResistanceAdjustment = _peripheralResistanceAdjustment - ((linearConversion [_highHRThreshold, ACM_TARGETVITALS_MAXHR(_unit), _heartRate, 0, 50]) * _bloodVolumeEffect);
+    };
+};
+
 [_unit, _peripheralResistanceAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePeripheralResistance);
 
 private _bloodPressure = [_unit] call ACEFUNC(medical_status,getBloodPressure);
