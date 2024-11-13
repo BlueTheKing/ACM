@@ -42,4 +42,9 @@ class CfgVehicles {
         icon = QPATHTOF(ui\Icon_Module_GivePain_ca.paa);
         curatorInfoType = QGVAR(RscGivePain);
     };
+    class GVAR(setOxygen): GVAR(moduleBase) {
+        displayName = CSTRING(Module_SetOxygen);
+        icon = QPATHTOF(ui\Icon_Module_SetOxygen_ca.paa);
+        curatorInfoType = QGVAR(RscSetOxygen);
+    };
 };
