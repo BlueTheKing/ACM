@@ -19,6 +19,16 @@ call FUNC(generatePTXMap);
     true
 ] call CBA_fnc_addSetting;
 
+// Show cyanosis severity
+[
+    QGVAR(showCyanosisSeverity),
+    "CHECKBOX",
+    [LLSTRING(SETTING_ShowCyanosisSeverity), LLSTRING(SETTING_ShowCyanosisSeverity_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
 // Pneumothorax
     
 [
