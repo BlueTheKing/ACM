@@ -111,6 +111,9 @@ class CfgFunctions {
             class initEffects { // Oxygen Effect
                 file = QPATHTOF(overrides\fnc_initEffects.sqf); //ace/addons/medical_feedback/functions/fnc_initEffects.sqf
             };
+            class effectUnconscious { // Oxygen Effect
+                file = QPATHTOF(overrides\fnc_effectUnconscious.sqf); //ace/addons/medical_feedback/functions/fnc_effectUnconscious.sqf
+            };
         };
     };
     class overwrite_medical_statemachine {

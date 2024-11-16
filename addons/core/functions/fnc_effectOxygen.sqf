@@ -47,10 +47,10 @@ private _initialAdjust = [];
 private _delayedAdjust = [];
 
 private _effectIntensity = ((linearConversion [79, 90, _oxygenSaturation, 1, 0, true]) max (linearConversion [6, 10, _respirationRate, 1, 0, true])) max (linearConversion [0, 4, _chestInjurySeverity, 0, 1, true]);
-private _tunnelVisionIntensity = 0.5 * _effectIntensity;
+private _tunnelVisionIntensity = 0.6 * _effectIntensity;
 
 _initialAdjust = [1, 1, 0, [0, 0, 0, _effectIntensity * 0.95], [0.1, 0.1, 0.1, 0.1], [0, 0, 0, 0], [0.85 - _tunnelVisionIntensity, 0.8 - _tunnelVisionIntensity, 0, 0, 0, 0, 8]];
-_delayedAdjust = [1, 1, 0, [0, 0, 0, _effectIntensity], [0, 0, 0, 0], [0, 0, 0, 0], [0.75 - _tunnelVisionIntensity, 0.7 - _tunnelVisionIntensity, 0, 0, 0, 0, 8]];
+_delayedAdjust = [1, 1, 0, [0, 0, 0, _effectIntensity], [0.01, 0.01, 0.01, 0.01], [0, 0, 0, 0], [0.75 - _tunnelVisionIntensity, 0.7 - _tunnelVisionIntensity, 0, 0, 0, 0, 8]];
 
 GVAR(ppLowOxygenTunnelVision) ppEffectAdjust _initialAdjust;
 GVAR(ppLowOxygenTunnelVision) ppEffectCommit 0.3;
