@@ -66,6 +66,7 @@ BLOODBAG_ENTRY(ABN,250,__EVAL(call compile BLOODBAG_NAME_FORMAT('AB- (250ml)')))
     class TRIPLES(ACM_FreshBloodBag,amount,id): DOUBLES(ACM_FreshBloodBag,amount) { \
         displayName = name; \
         shortName = shortname; \
+        uniqueBag = 1; \
     }
 
 class ACM_FreshBloodBag_500: ACE_bloodIV_500 {

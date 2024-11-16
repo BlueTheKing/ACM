@@ -48,7 +48,18 @@ if !(_update) then {
         };
 
         private _config = (configFile >> "CfgWeapons" >> _itemClassName);
-        private _name = [(getText (_config >> "displayName")), (getText (_config >> "shortName"))] select (isText (_config >> "shortName"));
+        private _name = "";
+        
+        if ((getNumber (_config >> "uniqueBag")) > 0) then {
+            ((configName _config) splitString "_") params ["","","_volume","_id"];
+
+            private _bloodType = ([(parseNumber _id)] call FUNC(getFreshBloodEntry)) select 2;
+            private _bloodTypeString = [_bloodType, 1] call FUNC(convertBloodType);
+
+            _name = format [C_LLSTRING(FreshBloodBag_Short), (format ["%1 (%2ml) [%3]", _bloodTypeString, _volume, _id])];
+        } else {
+            _name = [(getText (_config >> "displayName")), (getText (_config >> "shortName"))] select (isText (_config >> "shortName"));
+        };
         private _i = _ctrlBagPanel lbAdd _name;  
         _ctrlBagPanel lbSetPicture [_i, getText (_config >> "picture")];
         _ctrlBagPanel lbSetValue [_i, _bagIndex];

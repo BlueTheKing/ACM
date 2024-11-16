@@ -32,6 +32,7 @@ private _fnc_completeRemoval = {
             private _className = ["FreshBlood", _returnVolume] call FUNC(formatFluidBagName);
             private _freshBloodID = [GVAR(TransfusionMenu_Target), _returnVolume] call FUNC(generateFreshBloodEntry);
             _returned = [ACE_player, (format ["%1_%2", _className, _freshBloodID])] call ACEFUNC(common,addToInventory);
+            [QGVAR(updateFreshBloodBagName), [_returnVolume, _freshBloodID]] call CBA_fnc_globalEvent;
         } else {
             _returned = [ACE_player, _itemClassName] call ACEFUNC(common,addToInventory);
         };

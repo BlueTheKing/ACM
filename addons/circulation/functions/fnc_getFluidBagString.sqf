@@ -21,7 +21,7 @@ private _classnameSplit = _classname splitString "_";
 private _freshBloodID = -1;
 
 if ((_classnameSplit select 0) == "FreshBloodBag") then {
-    _freshBloodID = (_classnameSplit select 2);
+    _freshBloodID = parseNumber (_classnameSplit select 2);
     _classname = format ["%1_%2", (_classnameSplit select 0), (_classnameSplit select 1)];
 };
 
@@ -31,10 +31,10 @@ private _fluidAmount = GET_NUMBER(_config >> _classname >>"volume",1000);
 
 switch (_fluidType) do {
     case "Blood": {
-        _fluidType = format ["Blood %1 %2ml", ([GET_NUMBER(_config >> _classname >> "bloodtype",0), 1] call EFUNC(circulation,convertBloodType)), _fluidAmount];
+        _fluidType = format ["Blood %1 %2ml", ([GET_NUMBER(_config >> _classname >> "bloodtype",0), 1] call FUNC(convertBloodType)), _fluidAmount];
     };
     case "FreshBlood": {
-        _fluidType = format ["Fresh Blood %1ml [ID:%2]", _fluidAmount, _freshBloodID];
+        _fluidType = format ["Fresh Blood %1ml %2 [ID:%3]", _fluidAmount, [(([_freshBloodID] call FUNC(getFreshBloodEntry)) select 2), 1] call FUNC(convertBloodType), _freshBloodID];
     };
     default {
         _fluidType = (format ["%1 %2ml", _fluidType, _fluidAmount]);

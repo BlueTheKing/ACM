@@ -191,7 +191,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                         _plateletCountChange = _plateletCountChange * _fluidPassRatio;
                     };
                     default {
-                        if ([GET_BLOODTYPE(_unit), _bloodType] call EFUNC(circulation,isBloodTypeCompatible) && {_type == "Blood" || (_type == "Fresh Blood" && {_uniqueFreshBloodEntry select 3})}) then {
+                        if ([GET_BLOODTYPE(_unit), _bloodType] call EFUNC(circulation,isBloodTypeCompatible) && {_type == "Blood" || (_type == "FreshBlood" && {_uniqueFreshBloodEntry select 3})}) then {
                             _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
                             _bloodVolumeChange = _bloodVolumeChange * _fluidPassRatio;
 
