@@ -119,8 +119,8 @@ class GVAR(SyringeDraw_Dialog) {
             soundEscape[] = {};
             idc = IDC_SYRINGEDRAW_PLUNGER;
             style = 0;
-            x = QUOTE(safeZoneX + ((safeZoneW - ACM_SYRINGEDRAW_POS_W(2.78)) / 2)); //x = QUOTE(ACM_SYRINGEDRAW_POS_X(18.6));
-            y = QUOTE(SYRINGEDRAW_LIMIT_10_TOP); //y = QUOTE(safeZoneY + ((safeZoneH - ACM_SYRINGEDRAW_POS_H(0.9)) / 2));
+            x = QUOTE(safeZoneX + ((safeZoneW - ACM_SYRINGEDRAW_POS_W(2.78)) / 2));
+            y = QUOTE(SYRINGEDRAW_LIMIT_10_TOP);
             w = QUOTE(ACM_SYRINGEDRAW_POS_W(2.78));
             h = QUOTE(ACM_SYRINGEDRAW_POS_H(0.9));
             shadow = 0;
