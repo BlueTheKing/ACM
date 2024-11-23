@@ -107,6 +107,9 @@ _patient setVariable [QGVAR(CPR_CorpulsStop), false, true];
 _patient setVariable [QGVAR(CPR_Medic), objNull, true];
 _patient setVariable [QGVAR(isPerformingCPR), false, true];
 
+_patient setVariable [QGVAR(CPR_CorpulsActive), false, true];
+_patient setVariable [QGVAR(CPR_CorpulsStop), false, true];
+
 _patient setVariable [QGVAR(AmmoniaInhalant_LastUse), -1, true];
 
 [_patient] call FUNC(updateCirculationState);

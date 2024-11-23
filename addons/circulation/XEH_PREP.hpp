@@ -18,6 +18,7 @@ PREP(AED_IsSilent);
 PREP(AED_MeasureBP);
 PREP(AED_PlayAlarm);
 PREP(AED_TrackCPR);
+PREP(attachCorpulsCPR);
 PREP(attemptROSC);
 PREP(beginCPR);
 PREP(beginCPR_CorpulsCPR);

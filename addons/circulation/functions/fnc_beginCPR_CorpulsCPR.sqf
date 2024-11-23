@@ -22,11 +22,6 @@ if !(isNull (GETVAR(_patient,GVAR(CPR_Medic),objNull))) exitWith {
     [LSTRING(CPR_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
-if (backpack _patient != "ACM_Corpuls_CPR") then {
-    removeBackpackGlobal _medic;
-    _patient addBackpackGlobal "ACM_Corpuls_CPR";
-};
-
 _patient setVariable [QACEGVAR(medical,CPR_provider), _patient, true];
 _patient setVariable [QGVAR(CPR_Medic), _patient, true];
 
@@ -42,6 +37,7 @@ GVAR(loopCPR) = true;
     params ["_medic", "_patient", "_CPRStartTime"];
     
     [_patient, "activity", LSTRING(CPR_ActionLog_Started), ["Corpuls CPR"]] call ACEFUNC(medical_treatment,addToLog); // CHANGE
+    _patient setVariable [QGVAR(CPR_CorpulsActive), true, false];
 
     [{
         params ["_args", "_idPFH"];
@@ -65,6 +61,8 @@ GVAR(loopCPR) = true;
             };
 
             _patient setVariable [QGVAR(CPR_Medic), objNull, true];
+            _patient setVariable [QGVAR(CPR_CorpulsActive), false, true];
+            _patient setVariable [QGVAR(CPR_CorpulsStop), false, true];
 
             //[LSTRING(CPR_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
             GVAR(CPRActive) = false;
