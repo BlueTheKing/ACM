@@ -17,7 +17,8 @@
 
 params ["_object"];
 
-private _action = ["ACM_Training_HealTent",
+private _actions = [];
+_actions pushBack (["ACM_Training_HealTent",
 "Full Heal",
 "",
 {
@@ -39,7 +40,7 @@ private _action = ["ACM_Training_HealTent",
 
     {
         if (_x != _unit) then {
-            _actions pushBack [[format ["ACM_Training_HealTent_%1", [_x, false, true] call ACEFUNC(common,getName)],
+            _actions pushBack ([[format ["ACM_Training_HealTent_%1", [_x, false, true] call ACEFUNC(common,getName)],
             [_x, false, true] call ACEFUNC(common,getName),
             "",
             {
@@ -51,12 +52,13 @@ private _action = ["ACM_Training_HealTent",
             {true},
             {},
             [_x]
-            ] call ACEFUNC(interact_menu,createAction), [], (_this select 1)];
+            ] call ACEFUNC(interact_menu,createAction), [], (_this select 1)]);
         };
     } forEach _targetUnits;
-},
-[]
-] call ACEFUNC(interact_menu,createAction);
 
-[_object, 0, ["ACE_MainActions"], _action] call ACEFUNC(interact_menu,addActionToObject);
+    _actions;
+}] call ACEFUNC(interact_menu,createAction));
 
+{
+    [_object, 0, ["ACE_MainActions"], _x] call ACEFUNC(interact_menu,addActionToObject);
+} forEach _actions;

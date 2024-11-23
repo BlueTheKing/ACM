@@ -135,7 +135,7 @@ switch (true) do {
         private _cardiacEffect = 1.1 min ((DEFAULT_PERIPH_RES / (_unit getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES]))) max 0.8;
 
         if (_heartRate > ACM_TARGETVITALS_HR(_unit)) then {
-            _cardiacEffect = _cardiacEffect * ([(linearConversion [ACM_TARGETVITALS_HR(_unit), 190, _heartRate, 1, 1.5, true]),(linearConversion [(ACM_TARGETVITALS_MAXHR(_unit) - 5), (ACM_TARGETVITALS_MAXHR(_unit) + 2), _heartRate, 1.5, 1])] select (_heartRate > 190));
+            _cardiacEffect = _cardiacEffect * ([(linearConversion [ACM_TARGETVITALS_HR(_unit), 190, _heartRate, 1, 1.35, true]),(linearConversion [(ACM_TARGETVITALS_MAXHR(_unit) - 5), (ACM_TARGETVITALS_MAXHR(_unit) + 2), _heartRate, 1.35, 1])] select (_heartRate > 190));
         } else {
             _cardiacEffect = _cardiacEffect * (linearConversion [(ACM_TARGETVITALS_HR(_unit) - 10), 40, _heartRate, 1, 0.8, true]);
         };

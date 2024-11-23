@@ -240,13 +240,17 @@ if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < ACM_CYAN
         _colorScale = _colorScale min (linearConversion [1, 90, _tourniquetTime, 0.47, 0.13, true]);
     };
 
-    private _cyanosis = switch (true) do {
-        case (_oxygenSaturation < ACM_CYANOSIS_T_SEVERE || _tourniquetTime > 120): {LELSTRING(breathing,GUI_Severe)};
-        case (_oxygenSaturation < ACM_CYANOSIS_T_MODERATE || _tourniquetTime > 60): {LELSTRING(breathing,GUI_Moderate)};
-        default {LELSTRING(breathing,GUI_Slight)};
-    };
+    if (EGVAR(breathing,showCyanosisSeverity)) then {
+        private _cyanosis = switch (true) do {
+            case (_oxygenSaturation < ACM_CYANOSIS_T_SEVERE || _tourniquetTime > 120): {LELSTRING(breathing,GUI_Severe)};
+            case (_oxygenSaturation < ACM_CYANOSIS_T_MODERATE || _tourniquetTime > 60): {LELSTRING(breathing,GUI_Moderate)};
+            default {LELSTRING(breathing,GUI_Slight)};
+        };
 
-    _entries pushBack [format ["%1 %2", _cyanosis, LELSTRING(breathing,GUI_Cyanosis)], [0.16, _colorScale, 1, 1]];
+        _entries pushBack [format ["%1 %2", _cyanosis, LELSTRING(breathing,GUI_Cyanosis)], [0.16, _colorScale, 1, 1]];
+    } else {
+        _entries pushBack [LELSTRING(breathing,GUI_NoticableCyanosis), [0.16, _colorScale, 1, 1]];
+    };
 };
 
 if (_selectionN == 0 && ((CBA_missionTime - (_target getVariable [QEGVAR(breathing,TensionPneumothorax_Time), CBA_missionTime])) > 300)) then {

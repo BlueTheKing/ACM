@@ -19,6 +19,12 @@
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen_Desc">
             <English>Sets whether oxygen saturation calculations are affected by altitude of terrain</English>
         </Key>
+        <Key ID="STR_ACM_Breathing_SETTING_ShowCyanosisSeverity">
+            <English>Show Cyanosis Severity</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_SETTING_ShowCyanosisSeverity_Desc">
+            <English>Show cyanosis severity in overview tab</English>
+        </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxEnabled">
             <English>Pneumothorax Enabled</English>
         </Key>
@@ -514,6 +520,9 @@
             // GUI // -->
         <Key ID="STR_ACM_Breathing_GUI_Cyanosis">
             <English>Cyanosis</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_GUI_NoticableCyanosis">
+            <English>Noticable Cyanosis</English>
         </Key>
         <Key ID="STR_ACM_Breathing_GUI_Slight">
             <English>Slight</English>

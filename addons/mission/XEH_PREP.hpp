@@ -1,4 +1,4 @@
-//PREP(initHealTent);
+PREP(initHealTent);
 PREP(initTrainingComputer);
 PREP(generatePatient);
 PREP(generatePatients);
