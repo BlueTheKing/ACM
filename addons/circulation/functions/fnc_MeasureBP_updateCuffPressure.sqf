@@ -18,27 +18,16 @@
 
 params ["_value"];
 
-private _currentPressure = GVAR(MeasureBP_Gauge_Pressure);
+private _currentPressure = GVAR(MeasureBP_Gauge_Target);
 private _newPressure = _currentPressure + _value;
 
 if (_newPressure <= 0) then {
     _newPressure = 0;
 } else {
-    if (_newPressure >= 300) then {
-        _newPressure = 300;
+    if (_newPressure >= 304) then {
+        _newPressure = 304;
     };
 };
 
-GVAR(MeasureBP_Gauge_Pressure) = _newPressure;
-
-private _offset = 0;
-
-if (_newPressure >= 20) then {
-    _offset = round(linearConversion [20, 300, _newPressure, 4, 36, true]);
-} else {
-    _offset = round(linearConversion [0, 20, _newPressure, 0, 4, true]);
-};
-
-GVAR(MeasureBP_Gauge_Offset) = _offset;
-
-GVAR(MeasureBP_Gauge_Target) = _newPressure + _offset + 90;
+GVAR(MeasureBP_Gauge_Target) = _newPressure;
+GVAR(MeasureBP_Gauge_DialTarget) = _newPressure;
