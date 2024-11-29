@@ -4,7 +4,7 @@
  * Init unit.
  *
  * Arguments:
- * 0: Unit <OBJECT>
+ * 0: Patient <OBJECT>
  *
  * Return Value:
  * None
@@ -15,16 +15,16 @@
  * Public: No
  */
 
-params ["_unit"];
+params ["_patient"];
 
-if !(isPlayer _unit) exitWith {};
+if !(isPlayer _patient) exitWith {};
 
-if !(local _unit) exitWith {};
+if !(local _patient) exitWith {};
 
-if (_unit getVariable [QGVAR(playerSpawned), false]) exitWith {};
+if (_patient getVariable [QGVAR(playerSpawned), false]) exitWith {};
 
 [{
-    params ["_unit"];
+    params ["_patient"];
 
-    _unit setVariable [QGVAR(playerSpawned), true];
-}, [_unit], 0.5] call CBA_fnc_waitAndExecute;
+    _patient setVariable [QGVAR(playerSpawned), true];
+}, [_patient], 0.5] call CBA_fnc_waitAndExecute;

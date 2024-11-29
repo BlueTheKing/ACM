@@ -4,7 +4,7 @@
  * Init circulation variables for unit.
  *
  * Arguments:
- * 0: Unit <OBJECT>
+ * 0: Patient <OBJECT>
  *
  * Return Value:
  * None
@@ -15,8 +15,8 @@
  * Public: No
  */
 
-params ["_unit"];
+params ["_patient"];
 
-if (_unit == ACE_player) then {
-    _unit setVariable [QGVAR(AnestheticEffect_Ketamine_Absorbed), false];
+if (_patient == ACE_player) then {
+    _patient setVariable [QGVAR(AnestheticEffect_Ketamine_Absorbed), false];
 };
