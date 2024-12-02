@@ -123,8 +123,7 @@ private _heartRateChange = 0;
 _hrIncrease params ["_hrIncreaseLow", "_hrIncreaseHigh"];
 
 if ((_hrIncreaseLow + _hrIncreaseHigh) != 0) then {
-    private _heartRate = GET_HEART_RATE(_patient);
-    _heartRateChange = linearConversion [0.5, 1, _concentrationRatio, _hrIncreaseLow, _hrIncreaseHigh];
+    _heartRateChange = (linearConversion [0.5, 1, _concentrationRatio, _hrIncreaseLow, _hrIncreaseHigh]) * 1.4;
 };
 
 private _rrAdjust = GET_ARRAY(_medicationConfig >> "rrAdjust",getArray (_defaultConfig >> "rrAdjust"));

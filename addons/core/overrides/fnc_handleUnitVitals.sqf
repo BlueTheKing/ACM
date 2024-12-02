@@ -91,7 +91,7 @@ if (_adjustments isNotEqualTo []) then {
         } else {
             private _effectRatio = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime] call EFUNC(circulation,getMedicationEffect);
             if (_hrAdjust != 0 && (GET_HEART_RATE(_unit) > 0)) then {
-                private _HREffect = [(GET_HEART_RATE(_unit) / ACM_TARGETVITALS_HR(_unit)), (ACM_TARGETVITALS_HR(_unit) / GET_HEART_RATE(_unit))] select (_hrAdjust > 0);
+                private _HREffect = [(GET_HEART_RATE(_unit) / (ACM_TARGETVITALS_HR(_unit) - 20)), ((ACM_TARGETVITALS_HR(_unit) + 20) / GET_HEART_RATE(_unit))] select (_hrAdjust > 0);
                 _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio * _HREffect;
             };
             if (_flowAdjust != 0) then { _peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _flowAdjust * _effectRatio; };

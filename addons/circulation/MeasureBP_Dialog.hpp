@@ -8,67 +8,64 @@ class GVAR(MeasureBP_Dialog)
     onUnload = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(MeasureBP_DLG),nil)]);
     objects[] = {};
     class ControlsBackground {
-        class BodyBackground: RscPictureKeepAspect {
+        class BodyBackground: RscPicture {
             idc = -1;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW * 1.3));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH));
-            w = QUOTE(safezoneW * 3);
-            h = QUOTE(safezoneH * 3);
+            x = QUOTE(ACM_MEASUREBP_POS_X_CENTER(180,50));
+            y = QUOTE(ACM_MEASUREBP_POS_Y_CENTER(135,36));
+            w = QUOTE(ACM_MEASUREBP_POS_W(180));
+            h = QUOTE(ACM_MEASUREBP_POS_H(135));
             type = 0;
             size = 0;
             text = QPATHTOF(ui\pressurecuff\body_background_pressurecuff.paa);
         };
         class PressureCuffInteractables: BodyBackground {
-            x = QUOTE(safezoneX);
-            y = QUOTE(safezoneY + ((safezoneH * MEASUREBP_INTERACTABLE_SCALE) * 1.25));
-            w = QUOTE(safezoneW * MEASUREBP_INTERACTABLE_SCALE);
-            h = QUOTE(safezoneH * MEASUREBP_INTERACTABLE_SCALE);
+            x = QUOTE(ACM_MEASUREBP_POS_X(-12));
+            y = QUOTE(ACM_MEASUREBP_POS_Y(12));
+            w = QUOTE(ACM_MEASUREBP_POS_W(32));
+            h = QUOTE(ACM_MEASUREBP_POS_H(24));
             text = QPATHTOF(ui\pressurecuff\pressurecuff_interactables.paa);
         };
 
-        class Stethoscope_Bell: RscPictureKeepAspect {
+        class Stethoscope_Bell: RscPicture {
             idc = IDC_MEASUREBP_STETHOSCOPE;
-            x = QUOTE(ACM_MEASUREBP_pxToScreen_X((MEASUREBP_INTERACTABLE_TOPLEFT_X + 1440)));
-            y = QUOTE(ACM_MEASUREBP_pxToScreen_Y((MEASUREBP_INTERACTABLE_TOPLEFT_Y - 50)));
-            w = QUOTE(ACM_pxToScreen_W(128));
-            h = QUOTE(ACM_pxToScreen_H(128));
+            x = QUOTE(ACM_MEASUREBP_POS_X_CENTER(4,29.5));
+            y = QUOTE(ACM_MEASUREBP_POS_Y_CENTER(3,18));
+            w = QUOTE(ACM_MEASUREBP_POS_W(4));
+            h = QUOTE(ACM_MEASUREBP_POS_H(3));
             text = QPATHTOEF(breathing,ui\stethoscope_bell.paa);
             show = 0;
         };
 
-        class GaugeDial_1: RscLine {
-            idc = IDC_MEASUREBP_DIAL_1;
-            x = QUOTE(ACM_MEASUREBP_pxToScreen_X((MEASUREBP_INTERACTABLE_TOPLEFT_X + 634)));
-            y = QUOTE(ACM_MEASUREBP_pxToScreen_Y((MEASUREBP_INTERACTABLE_TOPLEFT_Y + 247)));
-            w = QUOTE(ACM_MEASUREBP_pxToScreen_W(0));
-            h = QUOTE(ACM_MEASUREBP_pxToScreen_H(MEASUREBP_DIAL_LENGTH));
+        class GaugeDial: RscPicture {
+            idc = IDC_MEASUREBP_DIAL;
+            x = QUOTE(ACM_MEASUREBP_POS_X(2.65));
+            y = QUOTE(ACM_MEASUREBP_POS_Y(13.12));
+            w = QUOTE(ACM_MEASUREBP_POS_W(16));
+            h = QUOTE(ACM_MEASUREBP_POS_H(12));
+            text = QPATHTOEF(circulation,ui\pressurecuff\dial\dial_0.paa);
             colorText[] = {0,0,0,1};
         };
-        class GaugeDial_2: GaugeDial_1 {
-            idc = IDC_MEASUREBP_DIAL_2;
-            y = QUOTE(ACM_MEASUREBP_pxToScreen_Y((MEASUREBP_INTERACTABLE_TOPLEFT_Y + 246)));
-        };
 
-        class HeartBack: RscPictureKeepAspect {
-                idc = IDC_MEASUREBP_HEARTBACK;
-                x = QUOTE(safezoneX + ((safezoneW / 2) - (safezoneW / 40)) + 0.03);
-                y = QUOTE(safezoneY + ((safezoneH / 2) - (safezoneH / 40)) + 0.18);
-                w = QUOTE(safezoneW / 20);
-                h = QUOTE(safezoneH / 20);
-                type = 0;
-                size = 0;
-                text = QPATHTOF(ui\feelpulse\heart_ca.paa);
-                colorText[] = {1, 1, 1, 1};
-                show = 0;
-            };
-            class Heart: HeartBack {
-                idc = IDC_MEASUREBP_HEART;
-                x = QUOTE(safezoneX + ((safezoneW / 2) - (safezoneW / 160)) + 0.03);
-                y = QUOTE(safezoneY + ((safezoneH / 2) - (safezoneH / 160)) + 0.18);
-                w = QUOTE(safezoneW / 80);
-                h = QUOTE(safezoneH / 80);
-                colorText[] = {1, 0, 0, 1};
-            };
+        class HeartBack: RscPicture {
+            idc = IDC_MEASUREBP_HEARTBACK;
+            x = QUOTE(ACM_MEASUREBP_POS_X_CENTER(4,29.5));
+            y = QUOTE(ACM_MEASUREBP_POS_Y_CENTER(3,18));
+            w = QUOTE(ACM_MEASUREBP_POS_W(4));
+            h = QUOTE(ACM_MEASUREBP_POS_H(3));
+            type = 0;
+            size = 0;
+            text = QPATHTOF(ui\feelpulse\heart_ca.paa);
+            colorText[] = {1, 1, 1, 1};
+            show = 0;
+        };
+        class Heart: HeartBack {
+            idc = IDC_MEASUREBP_HEART;
+            x = QUOTE(ACM_MEASUREBP_POS_X_CENTER(1,29.5));
+            y = QUOTE(ACM_MEASUREBP_POS_Y_CENTER(0.75,18));
+            w = QUOTE(ACM_MEASUREBP_POS_W(1));
+            h = QUOTE(ACM_MEASUREBP_POS_H(0.75));
+            colorText[] = {1, 0, 0, 1};
+        };
     };
     class Controls
     {
@@ -113,10 +110,10 @@ class GVAR(MeasureBP_Dialog)
             soundEscape[] = {};
             idc = IDC_MEASUREBP_BUTTON_BULB;
             style = 0;
-            x = QUOTE(ACM_MEASUREBP_pxToScreen_X(MEASUREBP_INTERACTABLE_TOPLEFT_X));
-            y = QUOTE(ACM_MEASUREBP_pxToScreen_Y((MEASUREBP_INTERACTABLE_TOPLEFT_Y + 85)));
-            w = QUOTE(ACM_MEASUREBP_pxToScreen_W(267));
-            h = QUOTE(ACM_MEASUREBP_pxToScreen_H(470));
+            x = QUOTE(ACM_MEASUREBP_POS_X(-11));
+            y = QUOTE(ACM_MEASUREBP_POS_Y(14.8));
+            w = QUOTE(ACM_MEASUREBP_POS_W(9.2));
+            h = QUOTE(ACM_MEASUREBP_POS_H(13));
             shadow = 0;
             font = "RobotoCondensed";
             sizeEx = "0";
@@ -126,10 +123,10 @@ class GVAR(MeasureBP_Dialog)
         class Button_Valve: Button_Bulb {
             soundClick[] = {};
             idc = IDC_MEASUREBP_BUTTON_VALVE;
-            x = QUOTE(ACM_MEASUREBP_pxToScreen_X((MEASUREBP_INTERACTABLE_TOPLEFT_X + 106)));
-            y = QUOTE(ACM_MEASUREBP_pxToScreen_Y((MEASUREBP_INTERACTABLE_TOPLEFT_Y + 590)));
-            w = QUOTE(ACM_MEASUREBP_pxToScreen_W(75));
-            h = QUOTE(ACM_MEASUREBP_pxToScreen_H(75));
+            x = QUOTE(ACM_MEASUREBP_POS_X(-7.5));
+            y = QUOTE(ACM_MEASUREBP_POS_Y(28));
+            w = QUOTE(ACM_MEASUREBP_POS_W(2.8));
+            h = QUOTE(ACM_MEASUREBP_POS_H(2.2));
             tooltip = CSTRING(MeasureBP_Hint_Valve);
         };
     };

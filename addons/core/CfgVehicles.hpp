@@ -98,6 +98,7 @@ class CfgVehicles {
             ADDITEM(ACM_NPA,10);
             ADDITEM(ACM_SuctionBag,10);
             // Breathing
+            ADDITEM(ACM_Stethoscope,4);
             ADDITEM(ACM_ChestSeal,20);
             ADDITEM(ACM_BVM,4);
             ADDITEM(ACM_NCDKit,10);

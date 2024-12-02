@@ -18,5 +18,5 @@
 params ["_unit"];
 
 if (_unit == ACE_player) then {
-    _patient setVariable [QGVAR(AnestheticEffect_Ketamine_Absorbed), false];
+    _unit setVariable [QGVAR(AnestheticEffect_Ketamine_Absorbed), false];
 };

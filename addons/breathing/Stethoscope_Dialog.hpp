@@ -8,46 +8,136 @@ class GVAR(Stethoscope_Dialog) {
     objects[] = {};
 
     class ControlsBackground {
-        class BodyBackground: RscPictureKeepAspect {
+        class BodyBackground: RscPicture {
             idc = -1;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW * 1.5));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH));
-            w = QUOTE(safezoneW * 3);
-            h = QUOTE(safezoneH * 3);
+            x = QUOTE(ACM_STETHOSCOPE_BG_POS_X_CENTER(180));
+            y = QUOTE(ACM_STETHOSCOPE_BG_POS_Y_CENTER(135,36));
+            w = QUOTE(ACM_STETHOSCOPE_POS_W(180));
+            h = QUOTE(ACM_STETHOSCOPE_POS_H(135));
             type = 0;
             size = 0;
             text = QPATHTOEF(gui,ui\body_background.paa);
         };
 
-        class RightLungSpace: RscText {
-            idc = IDC_STETHOSCOPE_RIGHTLUNG;
-            x = QUOTE(ACM_pxToScreen_X(STETHOSCOPE_TOPLEFT_X));
-            y = QUOTE(ACM_pxToScreen_Y(STETHOSCOPE_TOPLEFT_Y));
-            w = QUOTE(ACM_pxToScreen_W(STETHOSCOPE_LUNG_WIDTH));
-            h = QUOTE(ACM_pxToScreen_H(STETHOSCOPE_LUNG_HEIGHT));
+        class RightLung_Space: RscText {
+            idc = IDC_STETHOSCOPE_RIGHTLUNG_SPACE;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(12.5));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(-1.5));
+            w = QUOTE(ACM_STETHOSCOPE_POS_W(5.8));
+            h = QUOTE(ACM_STETHOSCOPE_POS_H(10));
             colorBackground[] = {1,1,1,0.5};
             show = 0;
         };
 
-        class LeftLungSpace: RightLungSpace {
-            idc = IDC_STETHOSCOPE_LEFTLUNG;
-            x = QUOTE(ACM_pxToScreen_X((STETHOSCOPE_TOPLEFT_X + 445)));
+        class RightLung_Space_2: RightLung_Space {
+            idc = IDC_STETHOSCOPE_RIGHTLUNG_SPACE_2;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(10));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(3));
+            w = QUOTE(ACM_STETHOSCOPE_POS_W(5));
+            h = QUOTE(ACM_STETHOSCOPE_POS_H(8));
         };
-        class HeartSpace: RightLungSpace {
-            idc = IDC_STETHOSCOPE_HEART;
-            x = QUOTE(ACM_pxToScreen_X((STETHOSCOPE_TOPLEFT_X + 320)));
-            y = QUOTE(ACM_pxToScreen_Y((STETHOSCOPE_TOPLEFT_Y + 80)));
-            w = QUOTE(ACM_pxToScreen_W(STETHOSCOPE_HEART_WIDTH));
-            h = QUOTE(ACM_pxToScreen_H(STETHOSCOPE_HEART_HEIGHT));
+
+        class LeftLung_Space: RightLung_Space {
+            idc = IDC_STETHOSCOPE_LEFTLUNG_SPACE;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(22));
+        };
+        class LeftLung_Space_2: RightLung_Space_2 {
+            idc = IDC_STETHOSCOPE_LEFTLUNG_SPACE_2;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(25.5));
+        };
+
+        class RightSide: RightLung_Space {
+            idc = IDC_STETHOSCOPE_RIGHTSIDE;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(8.5));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(-5.3));
+            w = QUOTE(ACM_STETHOSCOPE_POS_W(11.5));
+            h = QUOTE(ACM_STETHOSCOPE_POS_H(22));
+            colorBackground[] = {0,1,0,0.5};
+            show = 0;
+        };
+        class LeftSide: RightSide {
+            idc = IDC_STETHOSCOPE_LEFTSIDE;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(20));
+        };
+
+        class Bone_Sternum: RightLung_Space {
+            idc = IDC_STETHOSCOPE_BONE_STERNUM;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(18));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(-1.5));
+            w = QUOTE(ACM_STETHOSCOPE_POS_W(4));
+            h = QUOTE(ACM_STETHOSCOPE_POS_H(9));
+            colorBackground[] = {1,1,0.5,0.5};
+        };
+
+        class RightLung_Bronchial: RightLung_Space {
+            idc = IDC_STETHOSCOPE_RIGHTLUNG_BRONCHIAL;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(14.3));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(-5.2));
+            w = QUOTE(ACM_STETHOSCOPE_POS_W(3));
+            h = QUOTE(ACM_STETHOSCOPE_POS_H(3));
+            colorBackground[] = {0,1,0,0.5};
+        };
+        class RightLung_BronchoVesticular: RightLung_Bronchial {
+            idc = IDC_STETHOSCOPE_RIGHTLUNG_BRONCHOVESTICULAR;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(14));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(-0.2));
+        };
+        class RightLung_Vesticular_Middle: RightLung_Bronchial {
+            idc = IDC_STETHOSCOPE_RIGHTLUNG_VESTICULAR_MIDDLE;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(11.5));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(4.8));
+        };
+        class RightLung_Vesticular_Lower: RightLung_Bronchial {
+            idc = IDC_STETHOSCOPE_RIGHTLUNG_VESTICULAR_LOWER;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(10.6));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(9.8));
+        };
+
+        class LeftLung_Bronchial: RightLung_Bronchial {
+            idc = IDC_STETHOSCOPE_LEFTLUNG_BRONCHIAL;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(23));
+        };
+        class LeftLung_BronchoVesticular: RightLung_BronchoVesticular {
+            idc = IDC_STETHOSCOPE_LEFTLUNG_BRONCHOVESTICULAR;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(23));
+        };
+        class LeftLung_Vesticular_Middle: RightLung_Vesticular_Middle {
+            idc = IDC_STETHOSCOPE_LEFTLUNG_VESTICULAR_MIDDLE;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(26.2));
+        };
+        class LeftLung_Vesticular_Lower: RightLung_Vesticular_Lower {
+            idc = IDC_STETHOSCOPE_LEFTLUNG_VESTICULAR_LOWER;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(27.4));
+        };
+
+        class Heart_1: RightLung_Space {
+            idc = IDC_STETHOSCOPE_HEART_1;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(16.6));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(0.3));
+            w = QUOTE(ACM_STETHOSCOPE_POS_W(2));
+            h = QUOTE(ACM_STETHOSCOPE_POS_H(2));
             colorBackground[] = {1,0,0,0.5};
         };
-        class ClavicleSpace: RightLungSpace {
-            idc = IDC_STETHOSCOPE_CLAVICLE;
-            x = QUOTE(ACM_pxToScreen_X((STETHOSCOPE_TOPLEFT_X - 40)));
-            y = QUOTE(ACM_pxToScreen_Y((STETHOSCOPE_TOPLEFT_Y - 80)));
-            w = QUOTE(ACM_pxToScreen_W(915));
-            h = QUOTE(ACM_pxToScreen_H(60));
-            colorBackground[] = {0,1,0,0.1};
+        class Heart_2: Heart_1 {
+            idc = IDC_STETHOSCOPE_HEART_2;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(21.5));
+        };
+        class Heart_3: Heart_1 {
+            idc = IDC_STETHOSCOPE_HEART_3;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(21.7));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(2.4));
+        };
+        class Heart_4: Heart_1 {
+            idc = IDC_STETHOSCOPE_HEART_4;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(21.9));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(4.6));
+        };
+        class Heart_Center: Heart_1 {
+            idc = IDC_STETHOSCOPE_HEART_CENTER;
+            x = QUOTE(ACM_STETHOSCOPE_POS_X(20));
+            y = QUOTE(ACM_STETHOSCOPE_POS_Y(1));
+            w = QUOTE(ACM_STETHOSCOPE_POS_W(1));
+            h = QUOTE(ACM_STETHOSCOPE_POS_H(1));
         };
     };
     class Controls {

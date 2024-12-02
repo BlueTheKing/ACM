@@ -393,6 +393,7 @@
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}
 
 #define NORMALIZE_SIZEEX               (0.55 / (getResolution select 5))
+#define NORMALIZE_UISCALE              ((0.55 / (getResolution select 5)) min 1)
 
 // Misc
 #define ACM_TARGETVITALS_HR(unit) (unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 77])

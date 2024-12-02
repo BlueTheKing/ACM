@@ -27,7 +27,7 @@ class RscText;
 class RscLine;
 class RscStructuredText;
 class RscButtonMenu;
-class RscPictureKeepAspect;
+class RscPicture;
 
 #include "Stethoscope_Dialog.hpp"
 #include "RscUseBVM.hpp"

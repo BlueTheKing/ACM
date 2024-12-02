@@ -225,9 +225,9 @@ class GVAR(TransfusionMenu_Dialog) {
         class LeftPanelList: RscListBox
         {
             idc = IDC_TRANSFUSIONMENU_LEFTLISTPANEL;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 4.1));
+            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 4.05));
             y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 6));
-            w = QUOTE(safezoneW / 9);
+            w = QUOTE(safezoneW / 8.5);
             h = QUOTE(safezoneH / 2.5);
             rowHeight = QUOTE(safezoneH / 20);
             colorText[] = {1,1,1,1};
@@ -288,7 +288,7 @@ class GVAR(TransfusionMenu_Dialog) {
         class MoveBagButton: StopTransfusionButton {
             text = CSTRING(TransfusionMenu_MoveBag_Display);
             idc = IDC_TRANSFUSIONMENU_BUTTON_MOVEBAG;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 7.8));
+            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 8));
             y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 6));
             w = QUOTE(safezoneW / 22);
             action = QUOTE(call FUNC(TransfusionMenu_MoveBag));
@@ -312,7 +312,7 @@ class GVAR(TransfusionMenu_Dialog) {
         class RightPanelList: LeftPanelList
         {
             idc = IDC_TRANSFUSIONMENU_RIGHTLISTPANEL;
-            x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 7.5));
+            x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 7.75));
         };
         class SwitchTargetInventory: ToggleIV {
             idc = -1;

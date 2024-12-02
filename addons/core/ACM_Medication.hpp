@@ -433,9 +433,9 @@ class ACM_Medication {
         };
 
         class Ertapenem {
-            concentration = 100;
-            dose = "1g/10ml";
-            volume = 10;
+            concentration = 312.5;
+            dose = "1g/3.2ml";
+            volume = 3.2;
         };
 
         class Esmolol {

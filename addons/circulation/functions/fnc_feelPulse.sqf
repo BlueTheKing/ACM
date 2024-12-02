@@ -21,11 +21,10 @@
 params ["_medic", "_patient", "_bodyPart"];
 
 [[_medic, _patient, _bodyPart], { // On Start
-    #define _x_pos(mult) (safezoneX + (safezoneW / 2) - (safezoneW / (160 / mult)))
-    #define _y_pos(mult) (safezoneY + (safezoneH / 2) - (safezoneH / (160 / mult)))
-
-    #define _w_pos(mult) (safezoneW / (80 / mult))
-    #define _h_pos(mult) (safezoneH / (80 / mult))
+    #define _x_pos(N) (ACM_FEELPULSE_POS_X(20) - (ACM_FEELPULSE_POS_W((ACM_FEELPULSE_FRONT_W * N)) / 2))
+    #define _y_pos(N) (ACM_FEELPULSE_POS_Y(12.5) - (ACM_FEELPULSE_POS_H((ACM_FEELPULSE_FRONT_H * N)) / 2))
+    #define _w_pos(N) ((ACM_FEELPULSE_FRONT_W * N) * GUI_GRID_W)
+    #define _h_pos(N) ((ACM_FEELPULSE_FRONT_H * N) * GUI_GRID_H)
 
     params ["_medic", "_patient", "_bodyPart"];
 
@@ -88,20 +87,21 @@ params ["_medic", "_patient", "_bodyPart"];
         if (GVAR(FeelPulse_NextPulse) > CBA_missionTime) exitWith {};
 
         private _delay = 60 / _HR;
-        private _strength = (linearConversion [(_pressureCutoff + 0.1), (_pressureCutoff + 40), _BPSystolic, 0.01, 1, true]) * 3;
+        private _fullStrength = (linearConversion [_pressureCutoff, (_pressureCutoff + 60), _BPSystolic, 0.8, 3, true]);
+        private _releaseStrength = (linearConversion [_pressureCutoff, (_pressureCutoff + 60), _BPSystolic, 0.5, 2, true]);
 
         private _beatTime = 0.5 min (0.4 * _delay);
         private _releaseTime = 0.7 min (0.6 * _delay);
 
-        _ctrlHeart ctrlSetPosition [_x_pos(_strength), _y_pos(_strength), _w_pos(_strength), _h_pos(_strength)];
+        _ctrlHeart ctrlSetPosition [_x_pos(_fullStrength), _y_pos(_fullStrength), _w_pos(_fullStrength), _h_pos(_fullStrength)];
         _ctrlHeart ctrlCommit _beatTime;
 
         [{
-            params ["_ctrlHeart", "_releaseTime"];
+            params ["_ctrlHeart", "_releaseTime", "_releaseStrength"];
 
-            _ctrlHeart ctrlSetPosition [_x_pos(1), _y_pos(1), _w_pos(1), _h_pos(1)];
+            _ctrlHeart ctrlSetPosition [_x_pos(_releaseStrength), _y_pos(_releaseStrength), _w_pos(_releaseStrength), _h_pos(_releaseStrength)];
             _ctrlHeart ctrlCommit _releaseTime;
-        }, [_ctrlHeart, _releaseTime], _beatTime] call CBA_fnc_waitAndExecute;
+        }, [_ctrlHeart, _releaseTime, _releaseStrength], _beatTime] call CBA_fnc_waitAndExecute;
 
         GVAR(FeelPulse_NextPulse) = (CBA_missionTime + _delay);
         GVAR(FeelPulse_Hiding) = false;
@@ -113,7 +113,7 @@ params ["_medic", "_patient", "_bodyPart"];
         } else {
             if !(GVAR(FeelPulse_Hiding)) then {
                 GVAR(FeelPulse_Hiding) = true;
-                _ctrlHeart ctrlSetPosition [_x_pos(0.1), _y_pos(0.1), _w_pos(0.1), _h_pos(0.1)];
+                _ctrlHeart ctrlSetPosition [_x_pos(1), _y_pos(1), _w_pos(1), _h_pos(1)];
                 _ctrlHeart ctrlCommit 1;
 
                 [{
@@ -123,6 +123,6 @@ params ["_medic", "_patient", "_bodyPart"];
         };
     };
 
-    private _color = linearConversion [_w_pos(0.5), _w_pos(2.9), ((ctrlPosition _ctrlHeart) select 2), 0.1, 1, false];
+    private _color = linearConversion [_w_pos(1.1), _w_pos(2.8), ((ctrlPosition _ctrlHeart) select 2), 0.1, 1, false];
     _ctrlHeart ctrlSetTextColor [1, 0, 0, _color];
 }] call EFUNC(core,beginContinuousAction);
