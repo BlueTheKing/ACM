@@ -8,7 +8,7 @@
 [QACEGVAR(medical,CPRSucceeded), {
     params ["_patient"];
 
-    _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus, true];
+    _patient setVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus, true];
 
     if (([_patient, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.1)) exitWith {};
 
@@ -31,7 +31,6 @@
 [QGVAR(handleMed_TXALocal), LINKFUNC(handleMed_TXALocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_KetamineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_LidocaineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
-
 [QGVAR(handleMed_CalciumChlorideLocal), LINKFUNC(handleMed_CalciumChlorideLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleHemolyticReaction), LINKFUNC(handleHemolyticReaction)] call CBA_fnc_addEventHandler;

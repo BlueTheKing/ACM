@@ -80,7 +80,7 @@ private _safeSpacingArray = [];
 private _maxHeight = (-150 * _co2);
 
 switch (_rhythm) do {
-    case -5: {
+    case ACM_Rhythm_NA: {
         private _step = [0];
 
         private _repeat = ceil(AED_MONITOR_WIDTH / (count _step));
@@ -89,7 +89,7 @@ switch (_rhythm) do {
             _rhythmArray = _rhythmArray + _step;
         };
     };
-    case -1: { // CPR
+    case ACM_Rhythm_CPR: { // CPR
         private _breathWidth = 5;
         private _angle = 18 / _breathWidth;
 
@@ -119,7 +119,7 @@ switch (_rhythm) do {
             _safeSpacingArray = _safeSpacingArray + ([_spacing, true] call _generateSafeSpacing) + ([_stepLength] call _generateSafeSpacing);
         };
     };
-    case 0: { // Sinus
+    case ACM_Rhythm_Sinus: { // Sinus
         private _breathWidth = 30 * (18 / _rr);
         private _angle = 18 / _breathWidth;
         _spacing = round((60 / _rr) * 12);

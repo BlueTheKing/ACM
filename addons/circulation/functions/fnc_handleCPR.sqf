@@ -31,7 +31,7 @@ private _PFH = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
+    private _rhythmState = _patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus];
 
     if (!(IN_CRDC_ARRST(_patient)) || _rhythmState == ACM_Rhythm_PEA || !(alive _patient)) exitWith {};
 
@@ -85,7 +85,7 @@ private _PFH = [{
         if (_rhythmState == 1) then {
             private _newRhythm = [ACM_Rhythm_VF,ACM_Rhythm_PVT] select (random 1 < 0.5);
 
-            _patient setVariable [QGVAR(CardiacArrest_RhythmState), _newRhythm, true];
+            _patient setVariable [QGVAR(Cardiac_RhythmState), _newRhythm, true];
         } else {
             [QGVAR(attemptROSC), _patient] call CBA_fnc_localEvent;
         };

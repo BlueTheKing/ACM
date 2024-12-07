@@ -42,7 +42,7 @@ private _hemorrhage = switch (true) do {
     case (_bloodVolume < BLOOD_VOLUME_CLASS_4_HEMORRHAGE): { 4 };
     case (_bloodVolume < BLOOD_VOLUME_CLASS_3_HEMORRHAGE): { 3 };
     case (_bloodVolume < BLOOD_VOLUME_CLASS_2_HEMORRHAGE): { 2 };
-    case (_bloodVolume < BLOOD_VOLUME_CLASS_1_HEMORRHAGE): { 1 };
+    case (_bloodVolume < (BLOOD_VOLUME_CLASS_1_HEMORRHAGE - 0.05)): { 1 };
     default {0};
 };
 
@@ -159,25 +159,48 @@ if ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) > 0.05) 
 private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
 [_unit, _painSupressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
 
-if (!(IS_BLEEDING(_unit)) && _bloodVolume > 4) then {
-    private _highHRThreshold = ACM_TARGETVITALS_HR(_unit) + 10;
-    if (_oxygenSaturation < 95) then {
-        _peripheralResistanceAdjustment = _peripheralResistanceAdjustment - (linearConversion [95, 80, _oxygenSaturation, 0, 20]);
+private _vasoconstriction = GET_VASOCONSTRICTION(_unit);
+private _targetVasoconstriction = 0;
+
+if (_bloodVolume < 5.9) then {
+    _targetVasoconstriction = linearConversion [5.9, 4.5, _bloodVolume, 0, 50, true];
+};
+
+if (_bloodVolume > 4) then {
+    private _vasodilation = 0;
+    private _MAP = GET_MAP_PATIENT(_unit);
+
+    if (_MAP > 94) then {
+        _vasodilation =  linearConversion [94, 120, _MAP, 0, 60];
     };
-    if (_heartRate > _highHRThreshold) then {
-        private _bloodVolumeEffect = 0 max (1 - (((DEFAULT_BLOOD_VOLUME - _bloodVolume) * 0.5) min 1));
-        _peripheralResistanceAdjustment = _peripheralResistanceAdjustment - ((linearConversion [_highHRThreshold, ACM_TARGETVITALS_MAXHR(_unit), _heartRate, 0, 50]) * _bloodVolumeEffect);
+
+    _targetVasoconstriction = _targetVasoconstriction - _vasodilation;
+
+    if (IS_BLEEDING(_unit) && _targetVasoconstriction < 0) then {
+        _targetVasoconstriction = _targetVasoconstriction * 0.75;
     };
 };
+
+if (_targetVasoconstriction > _vasoconstriction) then {
+    _vasoconstriction = (_vasoconstriction + ((((abs (_targetVasoconstriction + (abs _vasoconstriction))) / 10) max 0.05) * _deltaT)) min _targetVasoconstriction;
+} else {
+    _vasoconstriction = (_vasoconstriction - ((((abs (_vasoconstriction + (abs _targetVasoconstriction))) / 10) max 0.05) * _deltaT)) max _targetVasoconstriction;
+};
+
+_unit setVariable [QEGVAR(circulation,Vasoconstriction_State), _vasoconstriction, true];
+
+_peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _vasoconstriction;
 
 [_unit, _peripheralResistanceAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePeripheralResistance);
 
 private _bloodPressure = [_unit] call ACEFUNC(medical_status,getBloodPressure);
 _unit setVariable [VAR_BLOOD_PRESS, _bloodPressure, _syncValues];
 
-_bloodPressure params ["_bloodPressureL", "_bloodPressureH"];
+_bloodPressure params ["_BPDiastolic", "_BPSystolic"];
 
 private _respirationRate = GET_RESPIRATION_RATE(_unit);
+
+private _activeGracePeriod = IN_CRITICAL_STATE(_unit);
 
 // Statements are ordered by most lethal first.
 switch (true) do {
@@ -197,49 +220,7 @@ switch (true) do {
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
         [_unit] call EFUNC(circulation,updateCirculationState);
     };
-    case ((_unit getVariable [QEGVAR(circulation,ROSC_Time), -5]) + 5 > CBA_missionTime): {};
-    case (_heartRate < 20 || {_heartRate > 220}): {
-        TRACE_2("heartRate Fatal",_unit,_heartRate);
-        if (_heartRate > 220) then {
-            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
-        } else {
-            if (([_unit, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount)) > 0.9 || ([_unit, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount)) > 0.8) then {
-                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
-            } else {
-                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
-            };
-        };
-
-        [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
-    };
-    case (_bloodPressureH < 50 && {_bloodPressureL < 40}): {
-        _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
-        [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
-    };
-    case (_bloodPressureL > 190): {
-        TRACE_2("bloodPressure L above limits",_unit,_bloodPressureL);
-        [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
-    };
-    case (_heartRate < 30): {  // With a heart rate below 30 but bigger than 20 there is a chance to enter the cardiac arrest state
-        private _nextCheck = _unit getVariable [QACEGVAR(medical_vitals,nextCheckCriticalHeartRate), CBA_missionTime];
-        private _enterCardiacArrest = false;
-        if (CBA_missionTime >= _nextCheck) then {
-            _enterCardiacArrest = random 1 < (0.4 + 0.6*(30 - _heartRate)/10); // Variable chance of getting into cardiac arrest.
-            _unit setVariable [QACEGVAR(medical_vitals,nextCheckCriticalHeartRate), CBA_missionTime + 5];
-        };
-        if (_enterCardiacArrest) then {
-            TRACE_2("Heart rate critical. Cardiac arrest",_unit,_heartRate);
-            if ([_unit, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.5) then { // Amiodarone overdose causes asystole
-                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
-            } else {
-                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
-            };
-            [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
-        } else {
-            TRACE_2("Heart rate critical. Critical vitals",_unit,_heartRate);
-            [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
-        };
-    };
+    case ((_unit getVariable [QEGVAR(circulation,ROSC_Time), 0]) + 10 > CBA_missionTime): {};
     case (_oxygenSaturation < ACM_OXYGEN_HYPOXIA): {
         private _nextCheck = _unit getVariable [QEGVAR(circulation,ReversibleCardiacArrest_HypoxiaTime), CBA_missionTime];
         private _enterCardiacArrest = false;
@@ -253,6 +234,24 @@ switch (true) do {
         } else {
             [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
         };
+    };
+    case (!_activeGracePeriod && {_heartRate < 40 || {_heartRate > 220}}): {
+        TRACE_2("heartRate Fatal",_unit,_heartRate);
+        if (_heartRate > 220) then {
+            _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VT, true];
+            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
+        } else {
+            _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VF, true];
+            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
+        };
+        [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
+    };
+    case (GET_MAP(_BPSystolic,_BPDiastolic) < 43): {
+        [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
+    };
+    case (IS_UNCONSCIOUS(_unit)): {}; // Already unconscious
+    case (GET_MAP(_BPSystolic,_BPDiastolic) > 200): {
+        [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (_woundBloodLoss > BLOOD_LOSS_KNOCK_OUT_THRESHOLD): {
         [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;

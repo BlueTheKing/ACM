@@ -77,7 +77,7 @@ params ["_medic", "_patient", "_bodyPart"];
 
     private _pressureTooLow = _pressureCutoff > _BPSystolic;
 
-    if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) then {
+    if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex) || (!(HAS_PULSE_P(_patient)) && _partIndex != 0)) then {
         _HR = 0;
     };
 
@@ -87,8 +87,9 @@ params ["_medic", "_patient", "_bodyPart"];
         if (GVAR(FeelPulse_NextPulse) > CBA_missionTime) exitWith {};
 
         private _delay = 60 / _HR;
-        private _fullStrength = (linearConversion [_pressureCutoff, (_pressureCutoff + 60), _BPSystolic, 0.8, 3, true]);
-        private _releaseStrength = (linearConversion [_pressureCutoff, (_pressureCutoff + 60), _BPSystolic, 0.5, 2, true]);
+        private _pressureModifier = [0.6, 1] select (HAS_PULSE_P(_patient));
+        private _fullStrength = (linearConversion [_pressureCutoff, (_pressureCutoff + 60), _BPSystolic * _pressureModifier, 0.8, 3, true]);
+        private _releaseStrength = (linearConversion [_pressureCutoff, (_pressureCutoff + 60), _BPSystolic * _pressureModifier, 0.5, 2, true]);
 
         private _beatTime = 0.5 min (0.4 * _delay);
         private _releaseTime = 0.7 min (0.6 * _delay);

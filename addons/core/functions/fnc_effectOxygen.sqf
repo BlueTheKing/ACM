@@ -8,23 +8,24 @@
  * 1: Current Oxygen Saturation <NUMBER>
  * 2: Current Respiration Rate <NUMBER>
  * 3: Chest Injury Severity <NUMBER>
+ * 4: In Critical State <BOOL>
  *
  * Return Value:
  * None
  *
  * Example:
- * [false, 100, 18, 0] call ACM_core_fnc_effectOxygen;
+ * [false, 100, 18, 0, false] call ACM_core_fnc_effectOxygen;
  *
  * Public: No
  */
 
-params ["_enable", "_oxygenSaturation", "_respirationRate", "_chestInjurySeverity"];
+params ["_enable", "_oxygenSaturation", "_respirationRate", "_chestInjurySeverity", "_criticalState"];
 
-if (!_enable || {_oxygenSaturation > 92 && _respirationRate > 12 && _chestInjurySeverity == 0}) exitWith {
+if (!_enable || {_oxygenSaturation > (ACM_OXYGEN_VISION + 2) && _respirationRate > 12 && _chestInjurySeverity == 0 && !_criticalState}) exitWith {
     if (GVAR(ppLowOxygenTunnelVision) != -1) then { GVAR(ppLowOxygenTunnelVision) ppEffectEnable false; };
 };
 
-if (_oxygenSaturation > 90 && _respirationRate > 10 && _chestInjurySeverity == 0) exitWith {
+if (_oxygenSaturation > ACM_OXYGEN_VISION && _respirationRate > 10 && _chestInjurySeverity == 0 && !_criticalState) exitWith {
     if (GVAR(ppLowOxygenTunnelVision) != -1) then {
         if !(GVAR(ppLowOxygenTunnelVision_Finalized)) then {
             GVAR(ppLowOxygenTunnelVision) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0]];
@@ -46,7 +47,9 @@ if (_showNextTick) exitWith {};
 private _initialAdjust = [];
 private _delayedAdjust = [];
 
-private _effectIntensity = ((linearConversion [79, 90, _oxygenSaturation, 1, 0, true]) max (linearConversion [6, 10, _respirationRate, 1, 0, true])) max (linearConversion [0, 4, _chestInjurySeverity, 0, 1, true]);
+private _criticalStateTime = [30, ((ACE_player getVariable [QGVAR(CriticalVitals_Time), -20]) - CBA_missionTime)] select _criticalState;
+
+private _effectIntensity = (((linearConversion [79, ACM_OXYGEN_VISION, _oxygenSaturation, 1, 0, true]) max (linearConversion [6, 10, _respirationRate, 1, 0, true])) max (linearConversion [4, 0, _chestInjurySeverity, 1, 0, true])) max (linearConversion [1, 20, _criticalStateTime, 1, 0, true]);
 private _tunnelVisionIntensity = 0.6 * _effectIntensity;
 
 _initialAdjust = [1, 1, 0, [0, 0, 0, _effectIntensity * 0.95], [0.1, 0.1, 0.1, 0.1], [0, 0, 0, 0], [0.85 - _tunnelVisionIntensity, 0.8 - _tunnelVisionIntensity, 0, 0, 0, 0, 8]];

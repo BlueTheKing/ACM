@@ -35,7 +35,7 @@ private _PFH = [{
 
     private _timeSinceROSC = CBA_missionTime - (_patient getVariable [QGVAR(ROSC_Time), -30]);
 
-    private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
+    private _rhythm = _patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus];
     private _effect = [_patient, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount);
     private _actualEffectiveness = _effect / 2;
 

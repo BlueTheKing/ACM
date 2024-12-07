@@ -60,12 +60,12 @@ if (_patient getVariable [QGVAR(AED_AnalyzeRhythm_State), false]) then { // AED 
 
 if !(alive _patient) exitWith {};
 
-private _currentRhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
+private _currentRhythm = _patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus];
 
-if (_currentRhythm in [ACM_Rhythm_Sinus, ACM_Rhythm_Asystole, ACM_Rhythm_PEA] || _timeSinceLastShock < 60) exitWith {
-    _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Asystole, true];
-    if (_currentRhythm == ACM_Rhythm_Sinus) then {
-        [QACEGVAR(medical,FatalVitals), [_patient], _patient] call CBA_fnc_targetEvent;
+if (_currentRhythm in [ACM_Rhythm_Sinus, ACM_Rhythm_Asystole, ACM_Rhythm_PEA, ACM_Rhythm_VT] || _timeSinceLastShock < 60) exitWith {
+    _patient setVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Asystole, true];
+    if (_currentRhythm in [ACM_Rhythm_Sinus, ACM_Rhythm_VT]) then {
+        [QEGVAR(core,handleFatalVitals), [_patient], _patient] call CBA_fnc_targetEvent;
     };
 };
 

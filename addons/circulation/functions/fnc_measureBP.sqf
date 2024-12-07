@@ -113,7 +113,7 @@ if (_stethoscope) then {
 
     private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
-    if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) then {
+    if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex) || !(HAS_PULSE_P(_patient))) then {
         _HR = 0;
     };
 
@@ -249,7 +249,7 @@ if (_stethoscope) then {
 
     private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
-    if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) then {
+    if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex) || !(HAS_PULSE_P(_patient))) then {
         _HR = 0;
     };
 

@@ -23,7 +23,7 @@ params ["_unit", "_hrTargetAdjustment", "_deltaT", "_syncValue"];
 private _desiredHR = ACM_TARGETVITALS_HR(_unit);
 private _heartRate = GET_HEART_RATE(_unit);
 
-if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provider), objNull]) || [_unit] call EFUNC(circulation,recentAEDShock)) then {
+if (!(HAS_PULSE(_unit)) || alive (_unit getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
     if (alive (_unit getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
         if (_heartRate == 0) then { _syncValue = true }; // always sync on large change
         _heartRate = random [100, 110, 120];
@@ -39,15 +39,21 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
     if (_bloodVolume > BLOOD_VOLUME_CLASS_4_HEMORRHAGE) then {
         private _timeSinceROSC = (CBA_missionTime - (_unit getVariable [QEGVAR(circulation,ROSC_Time), -45]));
         
-        GET_BLOOD_PRESSURE(_unit) params ["_bloodPressureL", "_bloodPressureH"];
-        private _meanBP = (2/3) * _bloodPressureH + (1/3) * _bloodPressureL;
+        GET_BLOOD_PRESSURE(_unit) params ["_BPDiastolic", "_BPSystolic"];
+        private _meanBP = GET_MAP(_BPSystolic,_BPDiastolic);
         private _painLevel = GET_PAIN_PERCEIVED(_unit);
 
         _targetHR = _desiredHR;
-        if (_bloodVolume <= (BLOOD_VOLUME_CLASS_3_HEMORRHAGE + 0.2)) then {
-            private _targetBP = 100 * (_bloodVolume / DEFAULT_BLOOD_VOLUME);
-            _targetHR = _heartRate * (_targetBP / (45 max _meanBP));
+        if (_bloodVolume <= BLOOD_VOLUME_CLASS_2_HEMORRHAGE) then {
+            private _targetBP = linearConversion [BLOOD_VOLUME_CLASS_2_HEMORRHAGE, BLOOD_VOLUME_CLASS_3_HEMORRHAGE, _bloodVolume, 90, 80, true];
+
+            if (_bloodVolume <= BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
+                _targetBP = linearConversion [BLOOD_VOLUME_CLASS_3_HEMORRHAGE, BLOOD_VOLUME_CLASS_4_HEMORRHAGE, _bloodVolume, 80, 40, true];
+            };
+
+            _targetHR = _desiredHR max (_heartRate * (_targetBP / (45 max _meanBP)));
         };
+
         if (_painLevel > 0.2) then {
             if !(IS_UNCONSCIOUS(_unit)) then {
                 _targetHR = _targetHR max (_desiredHR + 50 * _painLevel);
@@ -58,7 +64,7 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
         // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
         private _oxygenDemand = _unit getVariable [VAR_OXYGEN_DEMAND, 0];
         private _missingOxygen = (ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation);
-        private _targetOxygenHR = _targetHR + ((_missingOxygen * (linearConversion [5, 20, _missingOxygen, 0, 3.7, true])) max (_oxygenDemand * -2000));
+        private _targetOxygenHR = _targetHR + ((_missingOxygen * (linearConversion [5, 20, _missingOxygen, 0, 2, true])) max (_oxygenDemand * -2000));
         _targetOxygenHR = _targetOxygenHR min ACM_TARGETVITALS_MAXHR(_unit);
 
         _targetHR = _targetHR max _targetOxygenHR;
@@ -66,7 +72,7 @@ if (IN_CRDC_ARRST(_unit) || alive (_unit getVariable [QACEGVAR(medical,CPR_provi
         _targetHR = (_targetHR + _hrTargetAdjustment) max 0;
 
         if (_timeSinceROSC < 45) then {
-            _targetHR = _targetHR max (_desiredHR + 60 * ((30 / _timeSinceROSC) min 1));
+            _targetHR = _targetHR max (_desiredHR + 40 * ((30 / _timeSinceROSC) min 1));
             _targetHR = _targetHR min ACM_TARGETVITALS_MAXHR(_unit);
         } else {
             if (_unit getVariable [QEGVAR(circulation,Hardcore_PostCardiacArrest), false]) then {

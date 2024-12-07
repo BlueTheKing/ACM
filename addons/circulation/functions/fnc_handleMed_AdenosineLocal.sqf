@@ -17,18 +17,22 @@
 
 params ["_patient"];
 
-private _targetRhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
+private _targetRhythm = _patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus];
+
+if (_targetRhythm == ACM_Rhythm_VT) then {
+    _targetRhythm = ACM_Rhythm_Sinus;
+};
 
 if (!(alive _patient) || _targetRhythm == ACM_Rhythm_Asystole) exitWith {};
 
 [{
     params ["_patient"];
 
-    !(alive _patient) || ((_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus]) == ACM_Rhythm_Asystole) || ([_patient, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.9);
+    !(alive _patient) || ((_patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus]) == ACM_Rhythm_Asystole) || ([_patient, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.9);
 }, {
     params ["_patient", "_targetRhythm"];
 
-    if (!(alive _patient) || (_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus]) == ACM_Rhythm_Asystole) exitWith {};
+    if (!(alive _patient) || (_patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus]) == ACM_Rhythm_Asystole) exitWith {};
 
     if !(IN_CRDC_ARRST(_patient)) then {
         _patient setVariable [QGVAR(CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
@@ -42,12 +46,12 @@ if (!(alive _patient) || _targetRhythm == ACM_Rhythm_Asystole) exitWith {};
     }, {
         params ["_patient", "_targetRhythm"];
 
-        if (!(alive _patient) || (_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus]) != ACM_Rhythm_Asystole) exitWith {};
+        if (!(alive _patient) || (_patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus]) != ACM_Rhythm_Asystole) exitWith {};
 
         if (_targetRhythm == ACM_Rhythm_Sinus) exitWith {
             [QGVAR(attemptROSC), _patient] call CBA_fnc_localEvent;
         };
 
-        _patient setVariable [QGVAR(CardiacArrest_RhythmState), _targetRhythm, true];
+        _patient setVariable [QGVAR(Cardiac_RhythmState), _targetRhythm, true];
     }, [_patient, _targetRhythm], 180] call CBA_fnc_waitUntilAndExecute;
 }, [_patient, _targetRhythm], 60] call CBA_fnc_waitUntilAndExecute;

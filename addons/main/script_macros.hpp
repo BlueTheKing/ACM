@@ -206,6 +206,8 @@
 
 #define IDEAL_BODYWEIGHT 83
 
+#define IN_CRITICAL_STATE(unit) (unit getVariable [QEGVAR(core,CriticalVitals_State), false])
+
 // Airway
 #define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])
 
@@ -231,6 +233,8 @@
 #define ACM_CYANOSIS_T_MODERATE 82
 #define ACM_CYANOSIS_T_SEVERE   67
 
+#define ACM_OXYGEN_VISION 85
+
 #define ACM_OXYGEN_UNCONSCIOUS 80
 #define ACM_OXYGEN_HYPOXIA 67
 #define ACM_OXYGEN_DEATH 55
@@ -240,7 +244,9 @@
 #define GET_HEMOTHORAX_BLEEDRATE(unit) ([unit] call EFUNC(circulation,getHemothoraxBleedingRate))
 
 // Circulation
-#define GET_CIRCULATIONSTATE(unit) (unit getVariable [QEGVAR(circulation,CirculationState), false])
+#define GET_CIRCULATIONSTATE(unit) (unit getVariable [QEGVAR(circulation,CirculationState), true])
+#define HAS_PULSE(unit) ([unit] call EFUNC(circulation,hasPulse))
+#define HAS_PULSE_P(unit) ([unit, true] call EFUNC(circulation,hasPulse))
 
 #define ACM_ASYSTOLE_BLOODVOLUME 3.1
 #define ACM_REVERSIBLE_CA_BLOODVOLUME 4.2
@@ -250,6 +256,9 @@
 #define GET_PLATELET_COUNT(unit) (unit getVariable [QEGVAR(circulation,Platelet_Count), 3])
 
 #define GET_MAP(systolic,diastolic) (diastolic + ((systolic - diastolic) / 3))
+#define GET_MAP_PATIENT(unit) ([unit] call EFUNC(circulation,getMAP))
+
+#define GET_VASOCONSTRICTION(unit) (unit getVariable [QEGVAR(circulation,Vasoconstriction_State), 0])
 
 #define ACM_Rhythm_NA -5
 #define ACM_Rhythm_CPR -1
@@ -257,6 +266,7 @@
 #define ACM_Rhythm_Asystole 1
 #define ACM_Rhythm_VF 2
 #define ACM_Rhythm_PVT 3
+#define ACM_Rhythm_VT 4
 #define ACM_Rhythm_PEA 5
 
 #define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
