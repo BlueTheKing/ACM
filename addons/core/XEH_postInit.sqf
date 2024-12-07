@@ -25,6 +25,8 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
 ["ace_cardiacArrest", LINKFUNC(onCardiacArrest)] call CBA_fnc_addEventHandler;
 ["ace_unconscious", LINKFUNC(onUnconscious)] call CBA_fnc_addEventHandler;
 
+[QGVAR(handleFatalVitals), LINKFUNC(handleFatalVitals)] call CBA_fnc_addEventHandler;
+
 [QACEGVAR(medical_treatment,fullHealLocalMod), LINKFUNC(fullHealLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(showTreatmentText), LINKFUNC(handleTreatmentText)] call CBA_fnc_addEventHandler;
@@ -84,7 +86,7 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
 [QACEGVAR(medical,death), {
     params ["_unit"];
 
-    _unit setVariable [QEGVAR(circulation,CardiacArrest_RhythmState), ACM_Rhythm_Asystole, true];
+    _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Asystole, true];
     _unit setVariable [QGVAR(TimeOfDeath), CBA_missionTime, true];
 }] call CBA_fnc_addEventHandler;
 

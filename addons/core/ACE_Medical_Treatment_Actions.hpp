@@ -45,7 +45,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = ECSTRING(circulation,CheckCapillaryRefill);
         displayNameProgress = ECSTRING(circulation,CheckCapillaryRefill_Progress);
         allowedSelections[] = {"Body", "LeftArm", "RightArm"};
-        treatmentTime = 2.5;
+        treatmentTime = 4;
         callbackSuccess = QEFUNC(circulation,checkCapillaryRefill);
     };
     class MeasureBloodPressure: CheckBloodPressure {

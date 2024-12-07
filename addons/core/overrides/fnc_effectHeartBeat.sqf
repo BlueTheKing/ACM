@@ -32,11 +32,15 @@ private _waitTime = 60 / _heartRate;
 switch (true) do {
     case (_heartRate > 140): {
         // playSound SND_HEARBEAT_FAST; // Array doesn't blend together well, just play one file consistently
-        if (isGameFocused) then { playSound "ACE_heartbeat_fast_1"; };
+        if (isGameFocused) then {
+            playSoundUI ["ACE_heartbeat_fast_1", (linearConversion [140, 190, _heartRate, 0.1, 1, true])];
+        };
         [ACEFUNC(medical_feedback,effectHeartBeat), [], _waitTime] call CBA_fnc_waitAndExecute;
     };
     case (_heartRate < 60): {
-        if (isGameFocused) then { playSound SND_HEARBEAT_SLOW; };
+        if (isGameFocused) then {
+            playSoundUI [SND_HEARBEAT_SLOW, (linearConversion [60, 45, _heartRate, 0.1, 1, true])];
+        };
         [ACEFUNC(medical_feedback,effectHeartBeat), [], _waitTime] call CBA_fnc_waitAndExecute;
     };
     default {

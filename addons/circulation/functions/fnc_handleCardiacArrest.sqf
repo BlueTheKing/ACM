@@ -17,14 +17,14 @@
 
 params ["_patient"];
 
-if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), -1] == ACM_Rhythm_Asystole) exitWith {};
+if (_patient getVariable [QGVAR(Cardiac_RhythmState), -1] == ACM_Rhythm_Asystole) exitWith {};
 
 /*
     0 - Sinus
     1 - Asystole
     2 - Ventricular Fibrillation
     3 - (Pulseless) Ventricular Tachycardia
-    4 - Ventricular Tachycardia (?)
+    4 - Ventricular Tachycardia
     5 - Pulseless Electrical Activity (Reversible)
 */
 
@@ -32,16 +32,16 @@ if (_patient getVariable [QGVAR(CardiacArrest_PFH), -1] != -1) exitWith {};
 
 _patient setVariable [QGVAR(CardiacArrest_DeteriorationTime), CBA_missionTime];
 
-if (GET_BLOOD_VOLUME(_patient) < ACM_Rhythm_Asystole_BLOODVOLUME) exitWith {
-    _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Asystole, true]; // asystole
+if (GET_BLOOD_VOLUME(_patient) < ACM_ASYSTOLE_BLOODVOLUME) exitWith {
+    _patient setVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Asystole, true]; // asystole
 };
 
 private _targetRhythm = _patient getVariable [QGVAR(CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus];
 
-if (_targetRhythm == ACM_Rhythm_Sinus) then {
+if (_targetRhythm in [ACM_Rhythm_Sinus, ACM_Rhythm_VT]) then {
     _targetRhythm = [ACM_Rhythm_VF,ACM_Rhythm_PVT] select (((random 100) * (GET_BLOOD_VOLUME(_patient) / BLOOD_VOLUME_CLASS_2_HEMORRHAGE)) > 50);
 };
-_patient setVariable [QGVAR(CardiacArrest_RhythmState), _targetRhythm, true];
+_patient setVariable [QGVAR(Cardiac_RhythmState), _targetRhythm, true];
 _patient setVariable [QGVAR(CardiacArrest_TargetRhythm), nil];
 
 if !(alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
@@ -54,13 +54,13 @@ private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient", "_deteriorateInterval"];
 
-    private _currentRhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
+    private _currentRhythm = _patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus];
 
     if (!(alive _patient) || !(IN_CRDC_ARRST(_patient)) || _currentRhythm in [ACM_Rhythm_Asystole,ACM_Rhythm_PEA]) exitWith {
         _patient setVariable [QGVAR(CardiacArrest_PFH), -1];
 
         if !(alive _patient) then {
-            _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Asystole, true];
+            _patient setVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Asystole, true];
         };
 
         [_idPFH] call CBA_fnc_removePerFrameHandler;
@@ -71,15 +71,15 @@ private _PFH = [{
 
     if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull]) || {_noCPRTime < (45 * _CPREffect)}) exitWith {};
 
-    private _cardiacArrestTime = (_patient getVariable [QGVAR(CardiacArrest_DeteriorationTime), -1]) - CBA_missionTime;
+    private _lastDeteriorateTime = (_patient getVariable [QGVAR(CardiacArrest_DeteriorationTime), -1]) - CBA_missionTime;
 
-    if (((random 1) < (0.4 * GVAR(cardiacArrestDeteriorationRate))) && {_cardiacArrestTime > (30 + random(30))}) then {
+    if (((random 1) < (0.4 * GVAR(cardiacArrestDeteriorationRate))) && {_lastDeteriorateTime > (30 + random(30))}) then {
         private _targetRhythm = (_currentRhythm - 1) max 1;
 
-        _patient setVariable [QGVAR(CardiacArrest_RhythmState), _targetRhythm, true];
+        _patient setVariable [QGVAR(Cardiac_RhythmState), _targetRhythm, true];
         _patient setVariable [QGVAR(CardiacArrest_DeteriorationTime), CBA_missionTime];
     };
-}, _deteriorateInterval, [_patient, _deteriorateInterval]] call CBA_fnc_addPerFrameHandler;
+}, (15 + (random 15)), [_patient, _deteriorateInterval]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(CardiacArrest_PFH), _PFH];
 
@@ -87,11 +87,11 @@ _patient setVariable [QGVAR(CardiacArrest_PFH), _PFH];
 [{
     params ["_patient"];
 
-    (GET_BLOOD_VOLUME(_patient) < ACM_Rhythm_Asystole_BLOODVOLUME) || !(alive _patient) || !(IN_CRDC_ARRST(_patient))
+    (GET_BLOOD_VOLUME(_patient) < ACM_ASYSTOLE_BLOODVOLUME) || !(alive _patient) || !(IN_CRDC_ARRST(_patient))
 }, {
     params ["_patient"];
 
-    if (alive _patient && (GET_BLOOD_VOLUME(_patient) < ACM_Rhythm_Asystole_BLOODVOLUME)) then {
-        _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Asystole, true];
+    if (alive _patient && (GET_BLOOD_VOLUME(_patient) < ACM_ASYSTOLE_BLOODVOLUME)) then {
+        _patient setVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Asystole, true];
     };
 }, [_patient], 3600] call CBA_fnc_waitUntilAndExecute;

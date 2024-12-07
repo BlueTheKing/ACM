@@ -28,5 +28,8 @@ if (isPlayer _patient) then {
     _patient setVariable [QGVAR(TreatmentText_Providers), []];
 };
 
+_patient setVariable [QGVAR(CriticalVitals_State), false, true];
+_patient setVariable [QGVAR(CriticalVitals_Passed), false, true];
+
 [_patient] call FUNC(generateTargetVitals);
 [_patient] call FUNC(getUp);

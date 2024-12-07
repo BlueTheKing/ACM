@@ -10,7 +10,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 3;
         allowedSelections[] = {"Head"};
         allowSelfTreatment = 0;
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
+        condition = QUOTE(!(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
         callbackSuccess = QFUNC(checkBreathing);
         ACM_rollToBack = 1;
     };

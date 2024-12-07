@@ -79,7 +79,7 @@ private _targetOxygenSaturation = _desiredOxygenSaturation;
 // but falls off quickly as po2 drops further
 private _capture = 1 max ((_po2 / IDEAL_PPO2) ^ (-_po2 * 3));
 
-private _effectiveBloodVolume = [1,(((GET_EFF_BLOOD_VOLUME(_unit) / 6) ^ 1.1) min 1)] select (GET_EFF_BLOOD_VOLUME(_unit) < 5.5);
+private _effectiveBloodVolume = [linearConversion [DEFAULT_BLOOD_VOLUME, 5, GET_EFF_BLOOD_VOLUME(_unit), 1, 0.92, true],(linearConversion [5, 4, GET_EFF_BLOOD_VOLUME(_unit), 0.92, 0.84])] select (GET_EFF_BLOOD_VOLUME(_unit) < 5);
 private _airwayState = GET_AIRWAYSTATE(_unit);
 private _breathingState = GET_BREATHINGSTATE(_unit);
 
@@ -130,14 +130,14 @@ switch (true) do {
     case (_respirationRate > 0 && !(IN_CRDC_ARRST(_unit))): {
         private _airSaturation = _airOxygenSaturation * _capture;
 
-        private _hyperVentilationEffect = 0.8 max (34 / _respirationRate) min 1;
-        private _breathingEffectiveness = _effectiveBloodVolume min _airwayState * _breathingState * _hyperVentilationEffect;
-        private _cardiacEffect = 1.1 min ((DEFAULT_PERIPH_RES / (_unit getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES]))) max 0.8;
+        private _breathingEffectiveness = _effectiveBloodVolume min _airwayState * _breathingState;
+        private _cardiacEffect = 1;
 
-        if (_heartRate > ACM_TARGETVITALS_HR(_unit)) then {
-            _cardiacEffect = _cardiacEffect * ([(linearConversion [ACM_TARGETVITALS_HR(_unit), 190, _heartRate, 1, 1.35, true]),(linearConversion [(ACM_TARGETVITALS_MAXHR(_unit) - 5), (ACM_TARGETVITALS_MAXHR(_unit) + 2), _heartRate, 1.35, 1])] select (_heartRate > 190));
+        private _MAP = GET_MAP_PATIENT(_unit);
+        if (_MAP > 90) then {
+            _cardiacEffect = _cardiacEffect * ([(linearConversion [95, 120, _MAP, 1, 1.15, true]), (linearConversion [120, 150, _MAP, 1.15, 0.85, true])] select (_MAP > 120));
         } else {
-            _cardiacEffect = _cardiacEffect * (linearConversion [(ACM_TARGETVITALS_HR(_unit) - 10), 40, _heartRate, 1, 0.8, true]);
+            _cardiacEffect = _cardiacEffect * (linearConversion [80, 60, _MAP, 1, 0.8, true]);
         };
 
         if (_activeBVM) then {

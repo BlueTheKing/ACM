@@ -28,6 +28,18 @@ private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
 private _resistance = _unit getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES];
 private _bloodPressure = _cardiacOutput * _resistance;
 
+private _HR = GET_HEART_RATE(_unit);
+
+if (_HR > 140) then {
+    _bloodPressure = _bloodPressure * (linearConversion [140, 200, _HR, 1, 0.75, true]);
+};
+
+private _bloodVolume = GET_BLOOD_VOLUME(_unit);
+
+if (_bloodVolume < 4.8) then {
+    _bloodPressure = _bloodPressure * (linearConversion [4.8, 3.6, _bloodVolume, 1, 0.5, true]);
+};
+
 private _bleedEffect = 1 - (0.2 * GET_WOUND_BLEEDING(_unit)); // Lower blood pressure if person is actively bleeding
 private _hemothoraxBleeding = 0.4 * ((_unit getVariable [QEGVAR(breathing,Hemothorax_State), 0]) / 4);
 private _internalBleedingEffect = 1 min (1 - (0.8 * (GET_INTERNAL_BLEEDING(_unit) + _hemothoraxBleeding))) max 0.5; // Lower blood pressure if person has uncontrolled internal bleeding
@@ -42,7 +54,7 @@ private _overloadEffect = linearConversion [0, 1, (_unit getVariable [QEGVAR(cir
 private _diastolicModifier = 1;
 
 if (GET_BLOOD_VOLUME(_unit) < DEFAULT_BLOOD_VOLUME) then {
-    _diastolicModifier = linearConversion [DEFAULT_BLOOD_VOLUME, BLOOD_VOLUME_CLASS_3_HEMORRHAGE, GET_BLOOD_VOLUME(_unit), 1, 1.4, true];
+    _diastolicModifier = linearConversion [BLOOD_VOLUME_CLASS_2_HEMORRHAGE, BLOOD_VOLUME_CLASS_3_HEMORRHAGE, GET_BLOOD_VOLUME(_unit), 1, 1.2, true];
 };
 
 if (_PTXState > 0 || _HTXFluid > 0.1) then {

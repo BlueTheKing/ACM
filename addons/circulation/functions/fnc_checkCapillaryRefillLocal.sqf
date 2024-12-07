@@ -25,18 +25,20 @@ private _CRT = 4;
 private _bloodVolume = GET_BLOOD_VOLUME(_patient);
 private _bodyPartString = [ACELSTRING(medical_gui,Torso),ACELSTRING(medical_gui,LeftArm),ACELSTRING(medical_gui,RightArm)] select (_partIndex - 1);
 
-if !(IN_CRDC_ARRST(_patient)) then {
+if (HAS_PULSE(_patient)) then {
     if (_partIndex in [2,3]) then {
         if !(HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) then {
-            _CRT = linearConversion [6, 5, _bloodVolume, 2, 4, true];
+            _CRT = linearConversion [5.8, 5.2, _bloodVolume, 2, 4];
         };
     } else {
-        _CRT = linearConversion [6, 4.5, _bloodVolume, 2, 4, true];
+        _CRT = linearConversion [5.5, 4.8, _bloodVolume, 2, 4];
     };
 };
 
-if (_CRT < 3) then {
-    _CRT = _CRT - (linearConversion [65, 100, GET_HEART_RATE(_patient), -0.1, 1]);
+private _MAP = GET_MAP_PATIENT(_patient);
+
+if (_bloodVolume > 5) then {
+    _CRT = _CRT + ([(linearConversion [87, 70, _MAP, 0, 2, true]), (linearConversion [95, 110, _MAP, 0, -2, true])] select (_MAP > 95));
 };
 
 private _hintLog = "";

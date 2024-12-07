@@ -73,7 +73,7 @@ private _rhythmArray = [];
 private _safeSpacingArray = [];
 
 switch (_rhythm) do {
-    case -5: {
+    case ACM_Rhythm_NA: {
         private _step = [0];
 
         private _repeat = ceil(AED_MONITOR_WIDTH / (count _step));
@@ -82,8 +82,8 @@ switch (_rhythm) do {
             _rhythmArray = _rhythmArray + _step;
         };
     };
-    case -1; // CPR
-    case 0: { // Sinus
+    case ACM_Rhythm_CPR; // CPR
+    case ACM_Rhythm_Sinus: { // Sinus
         //[0,-10,-30,-40,-45,-47,-49.2,-50,-49.2,-45,-40,-38,-33,-30,-15]; // 15
         private _cleanRhythmStep = [0, -10 * _saturation, -30 * _saturation, -40 * _saturation, -45 * _saturation, -47 * _saturation, -49.2 * _saturation, -50 * _saturation, -49.2 * _saturation, -45 * _saturation, -40 * _saturation
         , -35 * _saturation, -33 * _saturation, -30 * _saturation, -15 * _saturation];

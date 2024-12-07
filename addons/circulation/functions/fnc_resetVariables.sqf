@@ -59,7 +59,7 @@ _patient setVariable [QGVAR(TransfusedBlood_Volume), 0, true];
 _patient setVariable [QGVAR(HemolyticReaction_Volume), 0, true];
 _patient setVariable [QGVAR(HemolyticReaction_Severity), 0, true];
 
-_patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus, true];
+_patient setVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus, true];
 _patient setVariable [QGVAR(CardiacArrest_TargetRhythm), nil];
 _patient setVariable [QGVAR(CardiacArrest_DeteriorationTime), nil];
 
@@ -68,6 +68,8 @@ _patient setVariable [QGVAR(CardiacArrest_ResistChecked), false, true];
 
 _patient setVariable [QGVAR(ReversibleCardiacArrest_Time), nil];
 _patient setVariable [QGVAR(ReversibleCardiacArrest_State), false, true];
+
+_patient setVariable [QGVAR(Vasoconstriction_State), 0, true];
 
 // AED
 _patient setVariable [QGVAR(AED_PFH), -1];

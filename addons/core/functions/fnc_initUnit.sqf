@@ -4,7 +4,7 @@
  * Init unit.
  *
  * Arguments:
- * 0: Unit <OBJECT>
+ * 0: Patient <OBJECT>
  *
  * Return Value:
  * None
@@ -15,13 +15,13 @@
  * Public: No
  */
 
-params ["_unit"];
+params ["_patient"];
 
-[_unit] call EFUNC(airway,initUnit);
-[_unit] call EFUNC(circulation,initUnit);
+[_patient] call EFUNC(airway,initUnit);
+[_patient] call EFUNC(circulation,initUnit);
 
 [{
-    params ["_unit"];
+    params ["_patient"];
 
-    [_unit] call FUNC(generateTargetVitals);
-}, [_unit], 0.5] call CBA_fnc_waitAndExecute;
+    [_patient] call FUNC(generateTargetVitals);
+}, [_patient], 0.5] call CBA_fnc_waitAndExecute;

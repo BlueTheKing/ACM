@@ -36,7 +36,7 @@ _patient setVariable [QGVAR(AED_EKGRhythm), -2, true];
 _patient setVariable [QGVAR(AED_PORhythm), -2, true];
 _patient setVariable [QGVAR(AED_CORhythm), -2, true];
 
-if (_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus] in [ACM_Rhythm_Asystole,ACM_Rhythm_VF,ACM_Rhythm_PVT]) then {
+if (_patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus] in [ACM_Rhythm_Asystole,ACM_Rhythm_VF,ACM_Rhythm_PVT,ACM_Rhythm_VT]) then {
     _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
     _patient setVariable [QGVAR(AED_Alarm_State), true];
 
@@ -90,13 +90,11 @@ private _PFH = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _spO2 = [_patient] call EFUNC(breathing,getSpO2);
-
     if (_padsStatus) then {
         private _lastSync = _patient getVariable [QGVAR(AED_Pads_LastSync), -1];
 
         private _ekgHR = [_patient] call FUNC(getEKGHeartRate);
-        private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
+        private _rhythmState = _patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus];
 
         if (_lastSync + 5.25 < CBA_missionTime) then {
             _patient setVariable [QGVAR(AED_Pads_LastSync), CBA_missionTime];
@@ -120,7 +118,7 @@ private _PFH = [{
                     [{
                         params ["_patient"];
 
-                        if !(_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus] in [ACM_Rhythm_Sinus,ACM_Rhythm_PEA]) then {
+                        if !(_patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus] in [ACM_Rhythm_Sinus,ACM_Rhythm_PEA]) then {
                             [_patient] call FUNC(AED_PlayAlarm);
                             _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
                         } else {
@@ -154,7 +152,7 @@ private _PFH = [{
                     [{
                         params ["_patient"];
 
-                        if !(_patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus] in [ACM_Rhythm_Sinus,ACM_Rhythm_PEA]) then {
+                        if !(_patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus] in [ACM_Rhythm_Sinus,ACM_Rhythm_PEA]) then {
                             [_patient] call FUNC(AED_PlayAlarm);
                             _patient setVariable [QGVAR(AED_Alarm_CardiacArrest_State), true];
                         } else {
@@ -174,8 +172,8 @@ private _PFH = [{
 
             (GET_BLOOD_PRESSURE(_patient)) params ["", "_BPSystolic"];
 
-            if (!(HAS_TOURNIQUET_APPLIED_ON(_patient,_pulseOximeterPlacement)) && _BPSystolic >= 80) then {
-                _patient setVariable [QGVAR(AED_PulseOximeter_Display), round(_spO2), true];
+            if (!(HAS_TOURNIQUET_APPLIED_ON(_patient,_pulseOximeterPlacement)) && _BPSystolic >= 80 && HAS_PULSE_P(_patient)) then {
+                _patient setVariable [QGVAR(AED_PulseOximeter_Display), round([_patient] call EFUNC(breathing,getSpO2)), true];
                 if !(_padsStatus) then {
                     _patient setVariable [QGVAR(AED_Pads_Display), round(GET_HEART_RATE(_patient)), true];
                 };
