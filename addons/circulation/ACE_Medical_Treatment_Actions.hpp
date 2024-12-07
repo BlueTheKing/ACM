@@ -180,6 +180,29 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_rollToBack = 1;
         ACM_cancelRecovery = 1;
     };
+    class Corpuls_CPR_Attach: CheckPulse {
+        displayName = CSTRING(CorpulsCPR_Attach);
+        displayNameProgress = CSTRING(CorpulsCPR_Attach_Progress);
+        treatmentTime = 10;
+        category = "advanced";
+        allowedSelections[] = {"Body"};
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(attachCorpulsCPR));
+        condition = QUOTE([ARR_2(_medic,_patient)] call ACEFUNC(medical_treatment,canCPR) && ((_patient getVariable [ARR_2(QQEGVAR(airway,AirwayItem_Oral),'')] == 'SGA') || !([_patient] call EFUNC(core,bvmActive))) && backpack _patient != 'ACM_Corpuls_CPR' && backpack _medic == 'ACM_Corpuls_CPR');
+        ACM_rollToBack = 1;
+        ACM_cancelRecovery = 1;
+    };
+    class Corpuls_CPR_Start: CPR {
+        displayName = CSTRING(CorpulsCPR_Start);
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(beginCPR_CorpulsCPR));
+        condition = QUOTE([ARR_2(_medic,_patient)] call ACEFUNC(medical_treatment,canCPR) && ((_patient getVariable [ARR_2(QQEGVAR(airway,AirwayItem_Oral),'')] == 'SGA') || !([_patient] call EFUNC(core,bvmActive))) && backpack _patient == 'ACM_Corpuls_CPR');
+    };
+    class Corpuls_CPR_Stop: CPR {
+        displayName = CSTRING(CorpulsCPR_Stop);
+        callbackSuccess = QUOTE(_patient setVariable [ARR_2(QQGVAR(CPR_CorpulsStop),true)]);
+        condition = QUOTE(_patient getVariable [ARR_2(QQGVAR(CPR_CorpulsActive),false)]);
+        ACM_rollToBack = 0;
+        ACM_cancelRecovery = 0;
+    };
 
     class BasicBandage;
     class BloodIV: BasicBandage {

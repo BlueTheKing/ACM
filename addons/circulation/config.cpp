@@ -21,6 +21,7 @@ class CfgPatches {
 #include "CfgMagazines.hpp"
 #include "CfgMoves.hpp"
 #include "CfgWeapons.hpp"
+#include "CfgVehicles.hpp"
 #include "ACE_Medical_Treatment_Actions.hpp"
 
 class RscText;

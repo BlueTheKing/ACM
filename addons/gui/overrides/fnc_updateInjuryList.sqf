@@ -200,7 +200,16 @@ if (_selectionN == 1 && (_target getVariable [QEGVAR(circulation,CPR_Medic), obj
     if ([_target] call EFUNC(core,cprActive)) then {
         _string = LELSTRING(core,Common_InProgress);
     };
-    _entries pushBack [format ["%1 %2 (%3)", ACELLSTRING(medical_treatment,Actions_CPR), _string, ([(_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]), false, true] call ACEFUNC(common,getName))], _circulationColor];
+
+    // If they are CPRing themself (copuls) put out a diffrent name
+    private _cprProvider = "";
+    if ([(_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]), false, true] call ACEFUNC(common,getName) == [_target, false, true] call ACEFUNC(common,getName)) then {
+        _cprProvider = "Corpuls CPR";
+    } else {
+        _cprProvider = [(_target getVariable [QEGVAR(circulation,CPR_Medic), objNull]), false, true] call ACEFUNC(common,getName);
+    };
+
+    _entries pushBack [format ["%1 %2 (%3)", ACELLSTRING(medical_treatment,Actions_CPR), _string, _cprProvider], _circulationColor];
 };
 
 // Airway Items

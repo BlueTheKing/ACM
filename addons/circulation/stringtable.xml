@@ -608,6 +608,18 @@
         </Key>
         <Key ID="STR_ACM_Circulation_CPR_Paused">
             <English>Paused CPR</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_CorpulsCPR_Attach">
+            <English>Attach Corpuls CPR</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_CorpulsCPR_Attach_Progress">
+            <English>Attaching Corpuls CPR</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_CorpulsCPR_Start">
+            <English>Start Corpuls CPR</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_CorpulsCPR_Stop">
+            <English>Stop Corpuls CPR</English>
         </Key><!--
             // Capillary Refill Action // -->
         <Key ID="STR_ACM_Circulation_CapillaryRefill_Hint">
