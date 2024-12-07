@@ -80,7 +80,7 @@ if (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) exit
 
 private _rhythm = _patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus];
 
-if (!(HAS_PULSE(_patient)) && _rhythm != ACM_Rhythm_PEA) exitWith {0};
+if ([_patient] call FUNC(recentAEDShock) || !(alive _patient)) exitWith {0};
 
 switch (_rhythm) do {
     case ACM_Rhythm_Asystole: { // Asystole

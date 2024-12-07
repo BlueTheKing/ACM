@@ -25,7 +25,7 @@ private _CRT = 4;
 private _bloodVolume = GET_BLOOD_VOLUME(_patient);
 private _bodyPartString = [ACELSTRING(medical_gui,Torso),ACELSTRING(medical_gui,LeftArm),ACELSTRING(medical_gui,RightArm)] select (_partIndex - 1);
 
-if !(IN_CRDC_ARRST(_patient)) then {
+if (HAS_PULSE(_patient)) then {
     if (_partIndex in [2,3]) then {
         if !(HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) then {
             _CRT = linearConversion [5.8, 5.2, _bloodVolume, 2, 4];
