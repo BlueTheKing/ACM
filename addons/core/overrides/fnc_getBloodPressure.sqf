@@ -32,6 +32,10 @@ private _HR = GET_HEART_RATE(_unit);
 
 if (_HR > 140) then {
     _bloodPressure = _bloodPressure * (linearConversion [140, 200, _HR, 1, 0.75, true]);
+} else {
+    if (_HR < 70) then {
+        _bloodPressure = _bloodPressure * (linearConversion [70, 50, _HR, 1, 0.75, true]);
+    };
 };
 
 private _bloodVolume = GET_BLOOD_VOLUME(_unit);
