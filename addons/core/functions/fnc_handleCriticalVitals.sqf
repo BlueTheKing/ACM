@@ -17,6 +17,8 @@
 
 params ["_patient"];
 
+if ((_patient getVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus]) == ACM_Rhythm_Asystole) exitWith {};
+
 private _gracePeriod = 15 + (random 15);
 
 _patient setVariable [QGVAR(CriticalVitals_Time), (CBA_missionTime + _gracePeriod)];

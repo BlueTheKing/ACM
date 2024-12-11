@@ -248,8 +248,13 @@ switch (true) do {
             _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VT, true];
             _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
         } else {
-            _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VF, true];
-            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
+            if ([_unit, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.5) then {
+                _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Asystole, true];
+                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
+            } else {
+                _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VF, true];
+                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
+            };
         };
         [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
     };
