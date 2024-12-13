@@ -922,9 +922,6 @@
         </Key>
         <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FieldBloodTransfusionKit_Short">
             <English>FBTK</English>
-        </Key>
-        <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
-            <English>%1 moved fluid bag (%2) to %3</English>
         </Key><!--
             // Common // -->
         <Key ID="STR_ACM_Circulation_Common_SwitchTargetInventory">

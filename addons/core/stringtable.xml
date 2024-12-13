@@ -77,7 +77,11 @@
             // Incompatible Addons // -->
         <Key ID="STR_ACM_Core_IncompatibleAddons_Found">
             <English>Incompatible addons found:</English>
-        </Key><!-- 
+        </Key><!--
+            // Dog Tags // -->
+        <Key ID="STR_ACM_Core_DogTags_InspectingDogtags">
+            <English>%1 is inspecting your dog tags</English>
+        </Key><!--
             // Common // -->
         <Key ID="STR_ACM_Core_Common_Inserted">
             <English>Inserted</English>
@@ -108,7 +112,7 @@
         </Key>
         <Key ID="STR_ACM_Core_Common_Empty">
             <English>Empty</English>
-        </Key><!-- 
+        </Key><!--
             // ACE Action // -->
         <Key ID="STR_ACM_Core_MedicalEquipment">
             <English>Medical Equipment</English>
