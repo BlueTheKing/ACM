@@ -1,117 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ACM">
-    <Package name="Disability">
-        <Key ID="STR_ACM_Disability_Category">
-            <English>ACM: Disability</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
-            <English>SAM Splint Time</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint_Desc">
-            <English>Time to apply SAM Splint</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint">
-            <English>Wrap Splint Time</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint_Desc">
-            <English>Time to wrap SAM Splint</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime">
-            <English>Splint minimum fall off time</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime_Desc">
-            <English>Minimum time for unwrapped SAM Splint to fall off</English>
-        </Key>
-        
-        <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
-            <English>Tourniquet Impact Limbs</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
-            <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
-        </Key><!-- 
+          <Package name="Disability">
+                    <Key ID="STR_ACM_Disability_Category">
+                              <English>ACM: Disability</English>
+                              <Polish>ACM: Ograniczenia ruchowe</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
+                              <English>SAM Splint Time</English>
+                              <Polish>Czas aplikacji szyny SAM splint</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint_Desc">
+                              <English>Time to apply SAM Splint</English>
+                              <Polish>Czas potrzebny na aplikacje szyny SAM splint</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint">
+                              <English>Wrap Splint Time</English>
+                              <Polish>Czas zawinięcia szyny</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint_Desc">
+                              <English>Time to wrap SAM Splint</English>
+                              <Polish>Czas potrzebny na zawinięcie (stabilizacje) szyny SAM splint</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime">
+                              <English>Splint minimum fall off time</English>
+                              <Polish>Czas odpadnięcia szyny</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime_Desc">
+                              <English>Minimum time for unwrapped SAM Splint to fall off</English>
+                              <Polish>Minimalny czas po którym niezawinięta szyna odpadnie od kończyny</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
+                              <English>Tourniquet Impact Limbs</English>
+                              <Polish>Opaski uciskowe wpływają na kończyny</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
+                              <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
+                              <Polish>Ustala czy założone opaski uciskowe mają wpływać na kołysanie broni w przypadku rąk oraz szybkość chodzenia w przypadku nóg</Polish>
+                    </Key>
+                    <!-- 
             // Items // -->
-        <Key ID="STR_ACM_Disability_UniversalSplint">
-            <English>Universal Splint</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_UniversalSplint_Desc">
-            <English>Single-use splint kit used to immobilize fracture</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SAMSplint">
-            <English>SAM Splint</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SAMSplint_Desc">
-            <English>Re-usable splint used to immobilize fracture, should be wrapped to keep fracture stable</English>
-        </Key><!--
+                    <Key ID="STR_ACM_Disability_UniversalSplint">
+                              <English>Universal Splint</English>
+                              <Polish>Szyna uniwersalna</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_UniversalSplint_Desc">
+                              <English>Single-use splint kit used to immobilize fracture</English>
+                              <Polish>Jednorazowy zestaw szyny używany do unieruchomienia złamania</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SAMSplint">
+                              <English>SAM Splint</English>
+                              <Polish>Szyna SAM splint</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SAMSplint_Desc">
+                              <English>Re-usable splint used to immobilize fracture, should be wrapped to keep fracture stable</English>
+                              <Polish>Wielorazowa szyna używana do stabilizacji złamań, powinna być zawinięta by utrzymać unieruchomione złamanie</Polish>
+                    </Key>
+                    <!--
             // Actions // -->
-        <Key ID="STR_ACM_Disability_ElasticWrap_Splint">
-            <English>Wrap SAM Splint</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_ApplySAMSplint">
-            <English>Apply SAM Splint</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_ApplySAMSplint_Progress">
-            <English>Applying SAM Splint...</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_RemoveSAMSplint">
-            <English>Remove SAM Splint</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_RemoveSAMSplint_Progress">
-            <English>Removing SAM Splint...</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_ShakeAwake">
-            <English>Attempt To Shake Awake</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_ShakeAwake_Progress">
-            <English>Shaking Patient...</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SlapAwake">
-            <English>Attempt To Slap Awake</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SlapAwake_Progress">
-            <English>Slapping Patient...</English>
-        </Key><!--
+                    <Key ID="STR_ACM_Disability_ElasticWrap_Splint">
+                              <English>Wrap SAM Splint</English>
+                              <Polish>Zawiń szynę SAM splint</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_ApplySAMSplint">
+                              <English>Apply SAM Splint</English>
+                              <Polish>Użyj szyny SAM splint</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_ApplySAMSplint_Progress">
+                              <English>Applying SAM Splint...</English>
+                              <Polish>Używanie szyny SAM splint...</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_RemoveSAMSplint">
+                              <English>Remove SAM Splint</English>
+                              <Polish>Zdejmij szynę SAM splint</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_RemoveSAMSplint_Progress">
+                              <English>Removing SAM Splint...</English>
+                              <Polish>Zdejmowanie szyny SAM splint...</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_ShakeAwake">
+                              <English>Attempt To Shake Awake</English>
+                              <Polish>Potrząśnij by wybudzić</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_ShakeAwake_Progress">
+                              <English>Shaking Patient...</English>
+                              <Polish>Potrząsanie...</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SlapAwake">
+                              <English>Attempt To Slap Awake</English>
+                              <Polish>Udeż by wybudzić</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SlapAwake_Progress">
+                              <English>Slapping Patient...</English>
+                              <Polish>Udeżenie...</Polish>
+                    </Key>
+                    <!--
             // Remove Splint Action // -->
-        <Key ID="STR_ACM_Disability_RemoveSplint_ActionLog">
-            <English>%1 removed splint</English>
-        </Key><!--
+                    <Key ID="STR_ACM_Disability_RemoveSplint_ActionLog">
+                              <English>%1 removed splint</English>
+                              <Polish>%1 zdjął szynę </Polish>
+                    </Key>
+                    <!--
             // Patient WakeUp Actions -->
-        <Key ID="STR_ACM_Disability_AttemptWakeUp_Success">
-            <English>Patient has woken up</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_AttemptWakeUp_Failure">
-            <English>Patient is still asleep</English>
-        </Key><!--
+                    <Key ID="STR_ACM_Disability_AttemptWakeUp_Success">
+                              <English>Patient has woken up</English>
+                              <Polish>Pacjent się obudził</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_AttemptWakeUp_Failure">
+                              <English>Patient is still asleep</English>
+                              <Polish>Pacjent nadal nieprzytomny</Polish>
+                    </Key>
+                    <!--
             // Shake Patient Action // -->
-        <Key ID="STR_ACM_Disability_ShakePatient_ActionLog">
-            <English>%1 shook the patient</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_ShakePatient_Complete">
-            <English>You shook the patient&lt;br/&gt;%1</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_ShakePatient_Attempt">
-            <English>You attempt to shake the patient awake&lt;br/&gt;%1</English>
-        </Key><!--
+                    <Key ID="STR_ACM_Disability_ShakePatient_ActionLog">
+                              <English>%1 shook the patient</English>
+                              <Polish>%1 potrząsnął pacjentem</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_ShakePatient_Complete">
+                              <English>You shook the patient&lt;br/&gt;%1</English>
+                              <Polish>Potrząsnołeś pacjentem&lt;br/&gt;%1</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_ShakePatient_Attempt">
+                              <English>You attempt to shake the patient awake&lt;br/&gt;%1</English>
+                              <Polish>Próbujesz potrząsnąć pacjentem by się obudził&lt;br/&gt;%1</Polish>
+                    </Key>
+                    <!--
             // Slap Patient Action // -->
-        <Key ID="STR_ACM_Disability_SlapPatient_ActionLog">
-            <English>%1 slapped the patient</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SlapPatient_Complete">
-            <English>You slap the patient&lt;br/&gt;%1</English>
-        </Key>
-        <Key ID="STR_ACM_Disability_SlapPatient_Attempt">
-            <English>You attempt to slap the patient awake&lt;br/&gt;%1</English>
-        </Key><!--
+                    <Key ID="STR_ACM_Disability_SlapPatient_ActionLog">
+                              <English>%1 slapped the patient</English>
+                              <Polish>%1 udeżył pacjenta</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SlapPatient_Complete">
+                              <English>You slap the patient&lt;br/&gt;%1</English>
+                              <Polish>Udeżyłeś pacjenta&lt;br/&gt;%1</Polish>
+                    </Key>
+                    <Key ID="STR_ACM_Disability_SlapPatient_Attempt">
+                              <English>You attempt to slap the patient awake&lt;br/&gt;%1</English>
+                              <Polish>Próbujesz udeżyć pacjenta by się obudził&lt;br/&gt;%1</Polish>
+                    </Key>
+                    <!--
             // Splint Action // -->
-        <Key ID="STR_ACM_Disability_Splint_FellOff">
-            <English>Splint has fallen off</English>
-        </Key><!--
+                    <Key ID="STR_ACM_Disability_Splint_FellOff">
+                              <English>Splint has fallen off</English>
+                              <Polish>Szyna odpadła od kończyny</Polish>
+                    </Key>
+                    <!--
             // Wrap SAM Splint Action // -->
-        <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
-            <English>%1 has wrapped SAM Splint</English>
-        </Key><!--
+                    <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
+                              <English>%1 has wrapped SAM Splint</English>
+                              <Polish>%1 zawinął szynę SAM splint</Polish>
+                    </Key>
+                    <!--
             // GUI // -->
-        <Key ID="STR_ACM_Disability_GUI_Wrapped">
-            <English>Wrapped</English>
-        </Key>
-    </Package>
+                    <Key ID="STR_ACM_Disability_GUI_Wrapped">
+                              <English>Wrapped</English>
+                              <Polish>Zawinięte</Polish>
+                    </Key>
+          </Package>
 </Project>
