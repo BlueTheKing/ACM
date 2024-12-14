@@ -84,3 +84,13 @@
 // don't change, these reflect hard coded engine behaviour
 #define DAMAGED_MIN_THRESHOLD 0.45
 #define LIMPING_MIN_DAMAGE 0.5
+
+// ace_dogtags_fnc_checkDogtag
+#define DOGTAG_SHOW_DELAY 1
+
+#define RUSTLING_SOUNDS [\
+    "a3\sounds_f\characters\ingame\AinvPknlMstpSlayWpstDnon_medic.wss",\
+    "a3\sounds_f\characters\ingame\AinvPknlMstpSlayWrflDnon_medic.wss",\
+    "a3\sounds_f\characters\ingame\AinvPpneMstpSlayWpstDnon_medic.wss",\
+    "a3\sounds_f\characters\ingame\AinvPpneMstpSlayWrflDnon_medic.wss"\
+]
