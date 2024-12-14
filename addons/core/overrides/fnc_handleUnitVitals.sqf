@@ -179,7 +179,7 @@ if (_bloodVolume > 4) then {
         };
     };
 
-    _targetVasoconstriction = _targetVasoconstriction + _MAPAdjustment min 50;
+    _targetVasoconstriction = (_targetVasoconstriction + _MAPAdjustment) min 50;
 
     if (IS_BLEEDING(_unit) && _targetVasoconstriction < 0) then {
         _targetVasoconstriction = _targetVasoconstriction * 0.75;
@@ -187,10 +187,10 @@ if (_bloodVolume > 4) then {
 };
 
 if (_targetVasoconstriction > _vasoconstriction) then {
-    _vasoconstrictionChange = (((abs (_targetVasoconstriction + (abs _vasoconstriction))) / 10) max 0.05);
+    _vasoconstrictionChange = ((_targetVasoconstriction - _vasoconstriction) / 10) max 0.05;
     _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) min _targetVasoconstriction;
 } else {
-    _vasoconstrictionChange = (((abs (_vasoconstriction - (abs _targetVasoconstriction))) / 10) min -0.05);
+    _vasoconstrictionChange = ((_targetVasoconstriction - _vasoconstriction) / 10) min -0.05;
     _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) max _targetVasoconstriction;
 };
 
@@ -261,10 +261,10 @@ switch (true) do {
     case (GET_MAP(_BPSystolic,_BPDiastolic) < 43): {
         [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
     };
-    case (IS_UNCONSCIOUS(_unit)): {}; // Already unconscious
     case (GET_MAP(_BPSystolic,_BPDiastolic) > 200): {
-        [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
+        [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
     };
+    case (IS_UNCONSCIOUS(_unit)): {}; // Already unconscious
     case (_woundBloodLoss > BLOOD_LOSS_KNOCK_OUT_THRESHOLD): {
         [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };

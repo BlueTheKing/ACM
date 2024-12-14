@@ -53,7 +53,7 @@ private _tensionEffect = 0;
 private _HTXFluid = _unit getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
 private _PTXState = _unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0];
 
-private _overloadEffect = linearConversion [0, 1, (_unit getVariable [QEGVAR(circulation,Overload_Volume), 0]), 1, 1.3];
+private _overloadEffect = linearConversion [0, 1, (_unit getVariable [QEGVAR(circulation,Overload_Volume), 0]), 1, 1.5];
 
 private _diastolicModifier = 1;
 

@@ -71,7 +71,7 @@ private _PFH = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    if (!(IN_CRDC_ARRST(_patient)) && {_HR > 45 && _HR < 200 && _MAP > 55 && _MAP < 200}) exitWith {
+    if (!(IN_CRDC_ARRST(_patient)) && {_HR > 45 && _HR < 200 && _MAP > 55 && _MAP < 180}) exitWith {
         if (_currentRhythm == ACM_Rhythm_VT) then {
             _patient setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Sinus, true];
         };
