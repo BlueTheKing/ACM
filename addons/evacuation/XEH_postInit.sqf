@@ -57,6 +57,14 @@ if (isServer) then {
             // ace_common_fnc_setName
             _originalUnit setVariable ["ACE_Name", ([name _unit, true] call ACEFUNC(common,sanitizeString)), true];
             _originalUnit setVariable ["ACE_NameRaw", ([name _unit, false] call ACEFUNC(common,sanitizeString)), true];
+
+            private _engineerLevel = _originalUnit getVariable ["ACE_isEngineer", _originalUnit getUnitTrait "engineer"];
+            _unit setVariable ["ACE_isEngineer", ([0,1,2] select _engineerLevel), true];
+
+            private _medicLevel = _originalUnit getVariable [QACEGVAR(medical,medicClass), parseNumber (_originalUnit getUnitTrait "medic")];
+            _unit setVariable [QACEGVAR(medical,medicClass), _medicLevel, true];
+
+            ["ACM_casualtyEvacuated", [_unit, _originalUnit], _unit] call CBA_fnc_targetEvent;
         }, [_unit, _originalUnit], 1] call CBA_fnc_waitAndExecute;
     }, [_unit, _originalUnit], 1] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
