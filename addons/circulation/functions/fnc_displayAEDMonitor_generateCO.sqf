@@ -93,8 +93,8 @@ switch (_rhythm) do {
         private _breathWidth = 5;
         private _angle = 18 / _breathWidth;
 
-        private _cleanRhythmStart = [0, -10 * _co2, -40 * _co2, _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + 5, _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + 1, _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + 0.01]; // 6
-        private _cleanRhythmEnd = [_maxHeight + 0.1, _maxHeight + 5, _maxHeight + 40, -10 * _co2, -1 * _co2]; // 5
+        private _cleanRhythmStart = [0, -10 * _co2, _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + (40 * _co2), _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + (5 * _co2), _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + (1 * _co2), _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + (0.01 * _co2)]; // 6
+        private _cleanRhythmEnd = [_maxHeight + (0.1 * _co2), _maxHeight + (5 * _co2), _maxHeight + (40 * _co2), -10 * _co2, -1 * _co2]; // 5
         private _cleanRhythmStepComplete = _cleanRhythmStart;
 
         for "_i" from 0 to _breathWidth do {
@@ -124,13 +124,13 @@ switch (_rhythm) do {
         private _angle = 18 / _breathWidth;
         _spacing = round((60 / _rr) * 12);
         
-        private _cleanRhythmStart = [0, -10 * _co2, _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + 40, _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + 5, _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + 1, _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + 0.01]; // 6
-        private _cleanRhythmEnd = [_maxHeight + 0.1, _maxHeight + 5, _maxHeight + 40, -10 * _co2, -1 * _co2]; // 5
+        private _cleanRhythmStart = [0, -10 * _co2, _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + (40 * _co2), _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + (5 * _co2), _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + (1 * _co2), _maxHeight + (_breathWidth / 50 * (_breathWidth * _angle)) + (0.01 * _co2)]; // 6
+        private _cleanRhythmEnd = [_maxHeight + (0.1 * _co2), _maxHeight + (5 * _co2), _maxHeight + (40 * _co2), -10 * _co2, -1 * _co2]; // 5
         private _cleanRhythmStepComplete = _cleanRhythmStart;
 
         for "_i" from 0 to _breathWidth do {
             private _fromMax = _breathWidth - _i;
-            private _value = _maxHeight + (_fromMax/50 * (_fromMax * _angle));
+            private _value = _maxHeight + (_fromMax / 50 * (_fromMax * _angle));
             _cleanRhythmStepComplete = _cleanRhythmStepComplete + [_value];
         };
 
