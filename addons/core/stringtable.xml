@@ -109,6 +109,12 @@
                               <English>Incompatible addons found:</English>
                               <Polish>Znaleziono niekompatybilne addony:</Polish>
                     </Key>
+					<!--
+            // Dog Tags // -->
+					<Key ID="STR_ACM_Core_DogTags_InspectingDogtags">
+							  <English>%1 is inspecting your dog tags</English>
+							  <Polish>%1 sprawdza twój nieśmiertelnik</Polish>
+					</Key>
                     <!-- 
             // Common // -->
                     <Key ID="STR_ACM_Core_Common_Inserted">
