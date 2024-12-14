@@ -117,7 +117,7 @@
             <English>Sets locations at which Thoracostomy can be performed</English>
             <Polish>Ustawia lokalizacje w których można wykonywać torakotomie</Polish>
         </Key><!--
-      // Items // -->
+            // Items // -->
         <Key ID="STR_ACM_Breathing_ChestSeal">
             <English>Chest Seal</English>
             <Polish>Opatrunek Chest Seal</Polish>
@@ -190,7 +190,7 @@
             <English>Used with BVM to provide supplementary oxygen to patients</English>
             <Polish>Używana razem z workiem samorozprężalnym aby dostarczyć pacjętowi tlen</Polish>
         </Key><!--
-      // Actions // -->
+            // Actions // -->
         <Key ID="STR_ACM_Breathing_CheckBreathing">
             <English>Check Breathing</English>
             <Polish>Sprawdź oddech</Polish>
@@ -307,12 +307,12 @@
             <English>Removing Pulse Oximeter...</English>
             <Polish>Zdejmowanie pulsoksymetru...</Polish>
         </Key><!--
-      // Chest Seal Action // -->
+            // Chest Seal Action // -->
         <Key ID="STR_ACM_Breathing_ChestSeal_ActionLog">
             <English>%1 applied Chest Seal</English>
             <Polish>%1 założył Chest Seal</Polish>
         </Key><!--
-      // Check Breathing Action // -->
+            // Check Breathing Action // -->
         <Key ID="STR_ACM_Breathing_CheckBreathing_ActionLog">
             <English>%1 checked breathing: %2</English>
             <Polish>%1 sprawdził oddech: %2</Polish>
@@ -373,7 +373,7 @@
             <English>Rapid and shallow</English>
             <Polish>Płytki i szybki</Polish>
         </Key><!--
-      // Inspect Chest Action // -->
+            // Inspect Chest Action // -->
         <Key ID="STR_ACM_Breathing_InspectChest_ActionLog">
             <English>%1 inspected chest: %2</English>
             <Polish>%1 sprawdził klatkę piersiową: %2</Polish>
@@ -430,7 +430,7 @@
             <English>Slight tracheal deviation</English>
             <Polish>Lekkie odchylenie tchawicy</Polish>
         </Key><!--
-      // NCD Action // -->
+            // NCD Action // -->
         <Key ID="STR_ACM_Breathing_NCD_Needle_Decompression">
             <English>Needle Decompression</English>
             <Polish>Dekompresja igłowa</Polish>
@@ -439,7 +439,7 @@
             <English>%1 performed Needle Chest Decompression</English>
             <Polish>%1 wykonał dekompresje igłową</Polish>
         </Key><!--
-      // Oxygen Tank Refill Action // -->
+            // Oxygen Tank Refill Action // -->
         <Key ID="STR_ACM_Breathing_RefillOxygenTank">
             <English>Refill Oxygen Tank</English>
             <Polish>Uzupełnij butlę z tlenem</Polish>
@@ -456,7 +456,7 @@
             <English>Refilling Oxygen Tank...</English>
             <Polish>Uzupełnianie bulti z tlenem...</Polish>
         </Key><!--
-      // Pulse Oximeter Placement Action // -->
+            // Pulse Oximeter Placement Action // -->
         <Key ID="STR_ACM_Breathing_PulseOximeter_Already">
             <English>Patient already has pulse oximeter on the %1</English>
             <Polish>Pacjęt ma już pulsoksymetr na %1</Polish>
@@ -469,7 +469,7 @@
             <English>%1 removed Pulse Oximeter</English>
             <Polish>%1 zdjął pulsoksymetr</Polish>
         </Key><!--
-      // Thoracostomy Close Incision Action // -->
+            // Thoracostomy Close Incision Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomyClose_Already">
             <English>Thoracostomy incision already closed</English>
             <Polish>Nacięcie drenażu jest już zamknięta</Polish>
@@ -482,7 +482,7 @@
             <English>Thoracostomy incision sealed and one-way valve placed</English>
             <Polish>Nacięcie drenażu zamknięte, zawór jednostronny na miejscu</Polish>
         </Key><!--
-      // Thoracostomy Drain Action // -->
+            // Thoracostomy Drain Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomyDrain_ActionLog">
             <English>%1 drained plueral space (%2)</English>
             <Polish>%1 odessał jamę opłucnej (%2)</Polish>
@@ -515,7 +515,7 @@
             <English>Large amount of blood drained</English>
             <Polish>Duża ilość krwi odessana</Polish>
         </Key><!--
-      // Thoracostomy Insert Chest Tube Action // -->
+            // Thoracostomy Insert Chest Tube Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_Already">
             <English>Chest Tube already inserted</English>
             <Polish>Rurka do drenażu została już włożona</Polish>
@@ -528,7 +528,7 @@
             <English>Chest Tube inserted</English>
             <Polish>Rurka do drenażu włożona</Polish>
         </Key><!--
-      // Thoracostomy Reseal Chest Tube Action // -->
+            // Thoracostomy Reseal Chest Tube Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_Already">
             <English>Chest Tube already re-sealed</English>
             <Polish>Rurka do drenażu została już ponownie zamknięta</Polish>
@@ -541,7 +541,7 @@
             <English>Chest Tube re-sealed</English>
             <Polish>Rurka do drenażu została już zamknięta </Polish>
         </Key><!--
-      // Thoracostomy Sweep (Start) Action // -->
+            // Thoracostomy Sweep (Start) Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_Already">
             <English>Thoracostomy sweep already performed</English>
             <Polish>Przetarcie wnętrza klatki zostało już wykonane</Polish>
@@ -602,7 +602,7 @@
             <English>Bleeding in pleural space</English>
             <Polish>Krwawienie w jamie opłucnej</Polish>
         </Key><!--
-      // BVM Action // -->
+            // BVM Action // -->
         <Key ID="STR_ACM_Breathing_BVM_Already">
             <English>Patient already has BVM</English>
             <Polish>Pacjent ma już worek samorozprężalny</Polish>
@@ -663,7 +663,7 @@
             <English>Portable Oxygen Tank Depleted</English>
             <Polish>Przenośna butla z tlenem wyczerpana</Polish>
         </Key><!--
-      // Stethoscope Action // -->
+            // Stethoscope Action // -->
         <Key ID="STR_ACM_Breathing_Stethoscope_ActionLog">
             <English>%1 inspected chest with Stethoscope</English>
             <Polish>%1 zbadał klatkę piersiową ze stetoskopem</Polish>
@@ -684,7 +684,7 @@
             <English>Place Bell</English>
             <Polish>Przyłóż głowicę</Polish>
         </Key><!--
-      // GUI // -->
+            // GUI // -->
         <Key ID="STR_ACM_Breathing_GUI_Cyanosis">
             <English>Cyanosis</English>
             <Polish>Sinica</Polish>

@@ -33,7 +33,7 @@
             <English>Disables incompatible addon warnings</English>
             <Polish>Wyłącza ostrzeżenia o niekompatybilnych addonach</Polish>
         </Key><!--
-      // Actions // -->
+            // Actions // -->
         <Key ID="STR_ACM_Core_MorphineAutoinjector">
             <English>Use Morphine Autoinjector</English>
             <Polish>Użyj autostrzykawki z morfiną</Polish>
@@ -58,7 +58,7 @@
             <English>Using Adenosine Autoinjector...</English>
             <Polish>Używanie aktostrzykawki z adenozyną...</Polish>
         </Key><!--
-      // Cancel Carrying // -->
+            // Cancel Carrying // -->
         <Key ID="STR_ACM_Core_CancelCarrying">
             <English>Cancel Carrying</English>
             <Polish>Przestań nieść</Polish>
@@ -67,27 +67,27 @@
             <English>Stopped carrying %1</English>
             <Polish>Przestań nieść %1</Polish>
         </Key><!--
-      // Lying State // -->
+            // Lying State // -->
         <Key ID="STR_ACM_Core_LyingState_GetUp">
             <English>Get Up</English>
             <Polish>Wstań</Polish>
         </Key><!--
-      // Treatment Text // -->
+            // Treatment Text // -->
         <Key ID="STR_ACM_Core_TreatedBy">
             <English>You are being treated by %1</English>
             <Polish>%1 udziela ci pomocy</Polish>
         </Key><!--
-      // Vehicle Patient Actions // -->
+            // Vehicle Patient Actions // -->
         <Key ID="STR_ACM_Core_VehiclePatients">
             <English>Vehicle Patients</English>
             <Polish>Pacjenci w pojeździe</Polish>
         </Key><!--
-      // Unload and carry // -->
+            // Unload and carry // -->
         <Key ID="STR_ACM_Core_CarryPatient">
             <English>Carry Patient</English>
             <Polish>Nieś pacjenta</Polish>
         </Key><!--
-      // Boxes // -->
+            // Boxes // -->
         <Key ID="STR_ACM_Core_MedicalSupplyCrate_Basic_Display">
             <English>[ACM] Basic Medical Supply Crate</English>
             <Polish>[ACM] Podstawowa skrzynia z zaopatrzeniem medycznym </Polish>
@@ -96,12 +96,12 @@
             <English>[ACM] Advanced Medical Supply Crate</English>
             <Polish>[ACM] Zawansowana skrzynia z zaopatrzeniem medycznym </Polish>
         </Key><!--
-      // Incompatible Addons // -->
+            // Incompatible Addons // -->
         <Key ID="STR_ACM_Core_IncompatibleAddons_Found">
             <English>Incompatible addons found:</English>
             <Polish>Znaleziono niekompatybilne addony:</Polish>
         </Key><!-- 
-      // Common // -->
+            // Common // -->
         <Key ID="STR_ACM_Core_Common_Inserted">
             <English>Inserted</English>
             <Polish>Włożono</Polish>
@@ -142,7 +142,7 @@
             <English>Empty</English>
             <Polish>Pusty </Polish>
         </Key><!-- 
-      // ACE Action // -->
+            // ACE Action // -->
         <Key ID="STR_ACM_Core_MedicalEquipment">
             <English>Medical Equipment</English>
             <Polish>Wyposarzenie medyczne</Polish>
