@@ -89,7 +89,7 @@ class ACM_Medication {
 
         class Epinephrine_IV: ACM_IV_Medication {
             medicationType = "Epinephrine";
-            hrIncrease[] = {10, 30};
+            hrIncrease[] = {10, 20};
             rrAdjust[] = {2,8};
             breathingEffectivenessAdjust[] = {0.01,0.04};
             viscosityChange = 5;
@@ -111,7 +111,7 @@ class ACM_Medication {
             minPainReduce = 0.6;
             painReduce = 0.85;
             maxPainReduce = 1;
-            hrIncrease[] = {-4, -15};
+            hrIncrease[] = {-4, -12};
             timeInSystem = 1300;
             timeTillMaxEffect = 25;
             maxEffectTime = 900;
@@ -148,7 +148,6 @@ class ACM_Medication {
 
         class TXA_IV: ACM_IV_Medication {
             medicationType = "TXA";
-            hrIncrease[] = {-0.01, -0.2};
             timeInSystem = 900;
             timeTillMaxEffect = 15;
             maxEffectTime = 600;
@@ -252,7 +251,7 @@ class ACM_Medication {
             minPainReduce = 0.5;
             painReduce = 0.7;
             maxPainReduce = 0.95;
-            hrIncrease[] = {-2, -10};
+            hrIncrease[] = {-2, -8};
             timeInSystem = 1800;
             timeTillMaxEffect = 100;
             maxEffectTime = 1200;
