@@ -53,7 +53,7 @@ switch (true) do {
 
         private _missingOxygen = ((ACM_TARGETVITALS_OXYGEN(_unit) * _coEffect) - _oxygenSaturation);
 
-        _targetRespirationRate = _targetRespirationRate + (_missingOxygen * (linearConversion [0, 20, _missingOxygen, 1, 0.6])) max (_oxygenDemand * -500);
+        _targetRespirationRate = _targetRespirationRate + (_missingOxygen * (linearConversion [0, 20, _missingOxygen, 1, 0.6, true])) max (_oxygenDemand * -500);
 
         if IS_UNCONSCIOUS(_unit) then {
             _targetRespirationRate = (_desiredRespirationRate + 16) min _targetRespirationRate;

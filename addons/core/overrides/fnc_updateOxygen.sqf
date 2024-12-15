@@ -127,7 +127,7 @@ if !(_activeBVM) then {
 };
 
 switch (true) do {
-    case (_respirationRate > 0 && !(IN_CRDC_ARRST(_unit))): {
+    case (_respirationRate > 0 && HAS_PULSE(_unit)): {
         private _airSaturation = _airOxygenSaturation * _capture;
 
         private _breathingEffectiveness = _effectiveBloodVolume min _airwayState * _breathingState;
@@ -165,7 +165,7 @@ switch (true) do {
         private _respirationEffect = 1;
 
         if (_respirationRate > ACM_TARGETVITALS_RR(_unit)) then {
-            [(1 max (_respirationRate / ACM_TARGETVITALS_RR(_unit)) min 1.25), (0.9 max (34 / _respirationRate) min 1.25)] select (_respirationRate > 30);
+            [(1 max (_respirationRate / ACM_TARGETVITALS_RR(_unit)) min 1.3), (0.9 max (34 / _respirationRate) min 1.3)] select (_respirationRate > 30);
         } else {
             _respirationEffect = 0.8 max (_respirationRate / 12) min 1;
         };
