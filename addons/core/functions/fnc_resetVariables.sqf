@@ -17,6 +17,8 @@
 
 params ["_patient"];
 
+_patient setVariable [QGVAR(InstantDeath), false];
+
 _patient setVariable [QGVAR(KnockOut_State), false];
 _patient setVariable [QGVAR(TimeOfDeath), nil, true];
 _patient setVariable [QGVAR(WasTreated), false, true];
