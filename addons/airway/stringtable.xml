@@ -19,7 +19,7 @@
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Enable_Desc">
             <English>Enable airway collapse/obstruction</English>
-            <Polish>Włączi niedrożność i zapadanie się dróg oddechowych</Polish>
+            <Polish>Włącz niedrożność i zapadanie się dróg oddechowych</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayCollapseChance">
             <English>Airway Collapse Chance Multiplier</English>
@@ -39,7 +39,7 @@
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_RecoveryPosition_Desc">
             <English>Time to establish Recovery Position</English>
-            <Polish>Czas potrzebny na ułożenie pacjęta w pozycji bocznej ustalonej</Polish>
+            <Polish>Czas potrzebny na ułożenie poszkodowanego w pozycji bocznej ustalonej</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SuctionBag">
             <English>Allow Suction Bag</English>
@@ -121,7 +121,7 @@
         </Key>
         <Key ID="STR_ACM_Airway_GuedelTube_Desc">
             <English>Used to keep airway open</English>
-            <Polish>Udrażnia drogi oddechowe przez usta </Polish>
+            <Polish>Udrażnia drogi oddechowe przez usta</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_IGel">
             <English>i-gel</English>

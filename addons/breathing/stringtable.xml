@@ -267,7 +267,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ReSealChestTube">
             <English>Re-Seal Chest Tube</English>
-            <Polish>Zabespiecz drenaż opłucnej</Polish>
+            <Polish>Zabezpiecz drenaż opłucnej</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_ReSealChestTube_Progress">
             <English>Re-sealing Chest Tube...</English>
@@ -397,11 +397,11 @@
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_None_Uneven">
             <English>Chest sides are uneven</English>
-            <Polish>Klatka piersiowa jest nierówna</Polish>
+            <Polish>Strony klatki są nierówne</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_None_Uneven_Short">
             <English>chest sides uneven</English>
-            <Polish>Klatka piersiowa nierówna</Polish>
+            <Polish>Strony klatki nierówne</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_Bruising">
             <English>Noticable extensive bruising</English>
