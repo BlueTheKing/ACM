@@ -41,7 +41,7 @@
         </Key>
         <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
             <English>Using Morphine Autoinjector...</English>
-            <Polish>Używanie aktostrzykawki z morfiną...</Polish>
+            <Polish>Używanie autostrzykawki z morfiną...</Polish>
         </Key>
         <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
             <English>Use Epinephrine Autoinjector</English>
@@ -49,7 +49,7 @@
         </Key>
         <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
             <English>Using Epinephrine Autoinjector...</English>
-            <Polish>Używanie aktostrzykawki z epinefryną...</Polish>
+            <Polish>Używanie autostrzykawki z epinefryną...</Polish>
         </Key>
         <Key ID="STR_ACM_Core_AdenosineAutoinjector">
             <English>Use Adenosine Autoinjector</English>
@@ -57,7 +57,7 @@
         </Key>
         <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
             <English>Using Adenosine Autoinjector...</English>
-            <Polish>Używanie aktostrzykawki z adenozyną...</Polish>
+            <Polish>Używanie autostrzykawki z adenozyną...</Polish>
         </Key>
         <!--
             // Cancel Carrying // -->
@@ -67,7 +67,7 @@
         </Key>
         <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
             <English>Stopped carrying %1</English>
-            <Polish>Przestań nieść %1</Polish>
+            <Polish>Przestano nieść %1</Polish>
         </Key>
         <!--
             // Lying State // -->
@@ -101,7 +101,7 @@
         </Key>
         <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
             <English>[ACM] Advanced Medical Supply Crate</English>
-            <Polish>[ACM] Zawansowana skrzynia z zaopatrzeniem medycznym </Polish>
+            <Polish>[ACM] Zaawansowana skrzynia z zaopatrzeniem medycznym </Polish>
         </Key>
         <!--
             // Dog Tags // -->
@@ -161,7 +161,7 @@
             // ACE Action // -->
         <Key ID="STR_ACM_Core_MedicalEquipment">
             <English>Medical Equipment</English>
-            <Polish>Wyposarzenie medyczne</Polish>
+            <Polish>Wyposażenie medyczne</Polish>
         </Key>
     </Package>
 </Project>

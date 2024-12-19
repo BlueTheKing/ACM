@@ -7,7 +7,7 @@
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Coagulation">
             <English>Coagulation</English>
-            <Polish>Skrzepy</Polish>
+            <Polish>Krzepnięcie</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_CardiacArrest">
             <English>Cardiac Arrest</English>
@@ -293,7 +293,7 @@
         </Key>
         <Key ID="STR_ACM_Circulation_FreshBloodBag_Desc">
             <English>Freshly transfused blood, used to replenish lost blood volume</English>
-            <Polish>Świerzo pozyskana krew, używana do transfuzji krwi</Polish>
+            <Polish>Świeżo pozyskana krew, używana do transfuzji krwi</Polish>
         </Key>
         <!--
             // Items - Individual Medication // -->
@@ -323,7 +323,7 @@
         </Key>
         <Key ID="STR_ACM_Circulation_Medication_Amiodarone">
             <English>Amiodarone</English>
-            <Polish>Amidaron</Polish>
+            <Polish>Amiodaron</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_Medication_Fentanyl">
             <English>Fentanyl</English>
@@ -405,11 +405,11 @@
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_Amiodarone">
             <English>Amiodarone Vial (150mg/3ml)</English>
-            <Polish>Amidaron (150mg/3ml)</Polish>
+            <Polish>Amiodaron (150mg/3ml)</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_Amiodarone_Desc">
             <English>Used to treat irregular heart rhythms</English>
-            <Polish>Używany do walki z nierególarnymi rytmami serca</Polish>
+            <Polish>Używany do walki z nieregularnymi rytmami serca</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_Fentanyl">
             <English>Fentanyl Vial (100mcg/2ml)</English>
@@ -805,7 +805,7 @@
         </Key>
         <Key ID="STR_ACM_Circulation_CPR_Continued">
             <English>Continued CPR</English>
-            <Polish>Kontunuuje RKO</Polish>
+            <Polish>Kontynuuje RKO</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_CPR_Pause">
             <English>Pause CPR</English>
@@ -959,11 +959,11 @@
         </Key>
         <Key ID="STR_ACM_Circulation_IV_Already">
             <English>Patient already has IV in the %1 (%2)</English>
-            <Polish>IV zostało już podłączone w tym miejscu</Polish>
+            <Polish>IV zostało już podłączone w %1 (%2)</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_IO_Already">
             <English>Patient already has IO in the %1</English>
-            <Polish>IO zostało już podłączone w tym miejscu</Polish>
+            <Polish>IO zostało już podłączone w %1</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_IV_FailedToLocateVein">
             <English>Failed to locate vein</English>
@@ -1031,7 +1031,7 @@
             // Pressure Cuff Action // -->
         <Key ID="STR_ACM_Circulation_PressureCuff_Already">
             <English>Patient already has pressure cuff on the %1</English>
-            <Polish>Pacjęt ma już ciśnieniomierz na %1</Polish>
+            <Polish>Pacjent ma już ciśnieniomierz na %1</Polish>
         </Key>
         <!--
             // Syringe Actions // -->

@@ -125,11 +125,11 @@
         </Key>
         <Key ID="STR_ACM_Airway_IGel">
             <English>i-gel</English>
-            <Polish>I-gel</Polish>
+            <Polish>i-gel</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_IGel_Desc">
             <English>Used to secure airway for prolonged time</English>
-            <Polish>Udrażnia drogi oddechowe chroniąc przed niedrożnością i zapadaniem się ich</Polish>
+            <Polish>Udrażnia drogi oddechowe chroniąc przed niedrożnością i zapadaniem</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_NPA">
             <English>NPA</English>
@@ -141,7 +141,7 @@
         </Key>
         <Key ID="STR_ACM_Airway_SuctionBag">
             <English>Emergency Disposable Suction Bag</English>
-            <Polish>Ssak ręczny jednorazowy</Polish>
+            <Polish>Jednorazowy ssak ręczny</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_SuctionBag_Short">
             <English>Suction Bag</English>
@@ -179,7 +179,7 @@
         </Key>
         <Key ID="STR_ACM_Airway_PerformHeadTiltChinLift">
             <English>Perform Head Tilt-Chin Lift</English>
-            <Polish>Wykonaj rękoczyn czoło-żuchwa</Polish>
+            <Polish>Wykonaj rękoczyn czołowo-żuchwowy</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_EstablishRecoveryPosition">
             <English>Establish Recovery Position</English>
@@ -215,7 +215,7 @@
         </Key>
         <Key ID="STR_ACM_Airway_InsertGuedelTube">
             <English>Insert Guedel Tube</English>
-            <Polish>Użyj rurki ustno-gardłowej</Polish>
+            <Polish>Wprowadź rurki ustno-gardłowej</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_InsertGuedelTube_Progress">
             <English>Inserting Guedel Tube...</English>
@@ -223,7 +223,7 @@
         </Key>
         <Key ID="STR_ACM_Airway_InsertNPA">
             <English>Insert NPA</English>
-            <Polish>Użyj rurki nosowo-gardłowej (NPA)</Polish>
+            <Polish>Wprowadź rurki nosowo-gardłowej (NPA)</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_InsertNPA_Progress">
             <English>Inserting NPA...</English>
@@ -239,7 +239,7 @@
         </Key>
         <Key ID="STR_ACM_Airway_RemoveGuedelTube">
             <English>Remove Guedel Tube</English>
-            <Polish>Wyjmyj rurkę ustno-gardłową</Polish>
+            <Polish>Wyjmij rurkę ustno-gardłową</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_RemoveGuedelTube_Progress">
             <English>Removing Guedel Tube...</English>
@@ -375,11 +375,11 @@
             // Adjunct Insertion Action // -->
         <Key ID="STR_ACM_Airway_Adjunct_Already">
             <English>Airway item already inserted</English>
-            <Polish>Przedmiot jest już używany</Polish>
+            <Polish>Przedmiot jest już w użyciu</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_Adjunct_Failed">
             <English>Failed to insert %1</English>
-            <Polish>Nieudało się wprowadzić: %1</Polish>
+            <Polish>Nie udało się użyć: %1</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_Adjunct_%1_Inserted">
             <English>%1 inserted</English>

@@ -23,7 +23,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen_Desc">
             <English>Sets whether oxygen saturation calculations are affected by altitude of terrain</English>
-            <Polish>Ustawia czy obliczanie saturacji ma uwzględniać wysokość terenu</Polish>
+            <Polish>Określa czy obliczanie saturacji ma uwzględniać wysokość terenu</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ShowCyanosisSeverity">
             <English>Show Cyanosis Severity</English>
@@ -67,7 +67,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury_Desc">
             <English>[HARDCORE] Sets whether Tension Pneumothorax should require further treatment to fully treat</English>
-            <Polish>[HARDCORE] Ustawia czy odma prężna powinna wymagać dalszego leczenia by zostać wyeliminowana</Polish>
+            <Polish>[HARDCORE] Określa czy odma prężna powinna wymagać dalszego leczenia by zostać wyeliminowana</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding">
             <English>[HARDCORE] Hemothorax Bleeding</English>
@@ -75,7 +75,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding_Desc">
             <English>[HARDCORE] Sets whether Hemothorax should require further treatment to fully stop internal bleeding</English>
-            <Polish>[HARDCORE] Ustawia czy krwiak opłucnej powinien wymagać dalszego leczenia by zostać wyeliminowany</Polish>
+            <Polish>[HARDCORE] Określa czy krwiak opłucnej powinien wymagać dalszego leczenia by zostać wyeliminowany</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_InspectChest">
             <English>Allow Inspect Chest</English>
@@ -115,7 +115,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Location_Thoracostomy_Desc">
             <English>Sets locations at which Thoracostomy can be performed</English>
-            <Polish>Ustawia lokalizacje w których można wykonywać torakotomie</Polish>
+            <Polish>Określa lokalizacje w których można wykonywać torakotomie</Polish>
         </Key>
         <!--
             // Items // -->
@@ -125,7 +125,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ChestSeal_Desc">
             <English>Used to manage penetrating chest injuries</English>
-            <Polish>Uzywany do zabezpieczania urazów klatki piersiowej</Polish>
+            <Polish>Używany do zabezpieczania urazów klatki piersiowej</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_PulseOximeter">
             <English>Pulse Oximeter</English>
@@ -133,7 +133,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_PulseOximeter_Desc">
             <English>Used to measure patient vitals</English>
-            <Polish>Używany by zmierzyć puls oraz saturacje pacjęta</Polish>
+            <Polish>Używany do pomiaru tętna i saturacji pacjenta</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_Stethoscope">
             <English>Stethoscope</English>
@@ -141,7 +141,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_Stethoscope_Desc">
             <English>Used to listen to breathing and heart sounds of patient</English>
-            <Polish>Używany do osłuchiwania klatki piersiowej pacjęta</Polish>
+            <Polish>Używany do osłuchiwania klatki piersiowej pacjenta</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_NCDKit">
             <English>NCD Kit</English>
@@ -157,7 +157,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ChestTubeKit_Desc">
             <English>Single-use kit used to insert a chest tube for removal of fluid from the plueral space</English>
-            <Polish>Jednorazowa rurka urzywana do usuwania nadmiaru płynu z przestrzeni opłucnowej</Polish>
+            <Polish>Jednorazowa rurka używana do usuwania nadmiaru płynu z przestrzeni opłucnowej</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_PocketBVM">
             <English>Pocket BVM</English>
@@ -177,7 +177,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_BVM_Desc">
             <English>Used to ventilate patient that is not breathing, may be connected to oxygen</English>
-            <Polish>Używany do wentylacji pacjęta z nieobecnym lub anormalnym rytmem oddechowym, można przez niego podawać tlen</Polish>
+            <Polish>Używany do wentylacji pacjenta z nieobecnym lub anormalnym rytmem oddechowym, można przez niego podawać tlen</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_OxygenTank_425_Empty">
             <English>Empty Portable Oxygen Tank (425L)</English>
@@ -195,11 +195,11 @@
             // Actions // -->
         <Key ID="STR_ACM_Breathing_CheckBreathing">
             <English>Check Breathing</English>
-            <Polish>Sprawdź oddech</Polish>
+            <Polish>Sprawdź oddychanie</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_Progress">
             <English>Checking Breathing...</English>
-            <Polish>Sprawdzanie oddechu...</Polish>
+            <Polish>Sprawdzanie oddychania...</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest">
             <English>Inspect Chest</English>
@@ -239,11 +239,11 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ApplyChestSeal_Progress">
             <English>Applying Chest Seal...</English>
-            <Polish>Aplikowanie opatrnuku Chest Seal...</Polish>
+            <Polish>Używanie opatrnuku Chest Seal...</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_PerformNCD">
             <English>Perform Needle-Chest-Decompression</English>
-            <Polish>Wykonaj dekompresje klatki piersiowej</Polish>
+            <Polish>Wykonaj dekompresję klatki piersiowej</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_PerformNCD_Progress">
             <English>Performing Needle-Chest-Decompression...</English>
@@ -251,7 +251,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_PerformThoracostomy">
             <English>Perform Thoracostomy</English>
-            <Polish>Wykonaj torakotomie</Polish>
+            <Polish>Wykonaj torakotomię</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_PerformThoracostomy_Progress">
             <English>Performing Thoracostomy...</English>
@@ -319,11 +319,11 @@
             // Check Breathing Action // -->
         <Key ID="STR_ACM_Breathing_CheckBreathing_ActionLog">
             <English>%1 checked breathing: %2</English>
-            <Polish>%1 sprawdził oddech: %2</Polish>
+            <Polish>%1 sprawdził oddychanie: %2</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_Normal">
             <English>Patient is breathing normally</English>
-            <Polish>Oddech normalny</Polish>
+            <Polish>Pacjent oddycha normalnie</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_Normal_Short">
             <English>Normal</English>
@@ -331,7 +331,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_None">
             <English>Patient is not breathing</English>
-            <Polish>Brak oddechu</Polish>
+            <Polish>Pacjent nie oddycha</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_None_Short">
             <English>None</English>
@@ -339,7 +339,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_Slow">
             <English>Patient breathing is slow</English>
-            <Polish>Oddech powolny</Polish>
+            <Polish>Pacjent oddycha powoli</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_Slow_Short">
             <English>Slow</English>
@@ -347,7 +347,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_Rapid">
             <English>Patient breathing is rapid</English>
-            <Polish>Oddech przyśpieszony</Polish>
+            <Polish>Pacjent szybko oddycha</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_Rapid_Short">
             <English>Rapid</English>
@@ -355,7 +355,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_Shallow">
             <English>Patient breathing is shallow</English>
-            <Polish>Oddech płytki</Polish>
+            <Polish>Pacjent płytko oddycha</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_Shallow_Short">
             <English>Shallow</English>
@@ -363,7 +363,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowSlow">
             <English>Patient breathing is slow and shallow</English>
-            <Polish>Oddech powolny i płytki</Polish>
+            <Polish>Pacjent oddycha powoli i płytko</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowSlow_Short">
             <English>Slow and shallow</English>
@@ -371,11 +371,11 @@
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowRapid">
             <English>Patient breathing is rapid and shallow</English>
-            <Polish>Oddech płytki i szybki</Polish>
+            <Polish>Pacjent oddycha szybko i płytko</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowRapid_Short">
             <English>Rapid and shallow</English>
-            <Polish>Płytki i szybki</Polish>
+            <Polish>Szybki i płytki</Polish>
         </Key>
         <!--
             // Inspect Chest Action // -->
@@ -443,7 +443,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_NCD_ActionLog">
             <English>%1 performed Needle Chest Decompression</English>
-            <Polish>%1 wykonał dekompresje igłową</Polish>
+            <Polish>%1 wykonał dekompresję igłową</Polish>
         </Key>
         <!--
             // Oxygen Tank Refill Action // -->
@@ -461,7 +461,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_RefillOxygenTank_Progress">
             <English>Refilling Oxygen Tank...</English>
-            <Polish>Uzupełnianie bulti z tlenem...</Polish>
+            <Polish>Uzupełnianie butli z tlenem...</Polish>
         </Key>
         <!--
             // Pulse Oximeter Placement Action // -->
@@ -481,7 +481,7 @@
             // Thoracostomy Close Incision Action // -->
         <Key ID="STR_ACM_Breathing_ThoracostomyClose_Already">
             <English>Thoracostomy incision already closed</English>
-            <Polish>Nacięcie drenażu jest już zamknięta</Polish>
+            <Polish>Nacięcie drenażu jest już zamknięte</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomyClose_ActionLog">
             <English>%1 closed up thoracostomy incision</English>
@@ -489,7 +489,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomyClose_Complete">
             <English>Thoracostomy incision sealed and one-way valve placed</English>
-            <Polish>Nacięcie drenażu zamknięte, zawór jednostronny na miejscu</Polish>
+            <Polish>Nacięcie drenażu zamknięte, zawór jednostronny założony</Polish>
         </Key>
         <!--
             // Thoracostomy Drain Action // -->
@@ -585,7 +585,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereCollapse">
             <English>Lung is severely collapsed</English>
-            <Polish>Płuco jest zapadnięte</Polish>
+            <Polish>Płuco jest poważnie zapadnięte</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereCollapse_Short">
             <English>Lung is collapsed</English>
@@ -643,7 +643,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_BVM_Pause">
             <English>Pause Rescue Breaths</English>
-            <Polish>Przewij oddechy ratunkowe</Polish>
+            <Polish>Przerwij oddechy ratunkowe</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_BVM_Continue">
             <English>Continue Rescue Breaths</English>
@@ -681,7 +681,7 @@
             // Stethoscope Action // -->
         <Key ID="STR_ACM_Breathing_Stethoscope_ActionLog">
             <English>%1 inspected chest with Stethoscope</English>
-            <Polish>%1 zbadał klatkę piersiową ze stetoskopem</Polish>
+            <Polish>%1 zbadał klatkę piersiową stetoskopem</Polish>
         </Key>
         <Key ID="STR_ACM_Breathing_Stethoscope_Stopped">
             <English>Stopped using stethoscope</English>
