@@ -390,10 +390,18 @@ if (ACEGVAR(medical_gui,showDamageEntry)) then {
         private _damageThreshold = GET_DAMAGE_THRESHOLD(_target);
         switch (true) do {
             case (_selectionN > 3): { // legs: index 4 & 5
-                _damageThreshold = LIMPING_DAMAGE_THRESHOLD * 4;
+                if (EGVAR(damage,enable) || !EGVAR(medical,useLimbDamage) || EGVAR(medical,limbDamageThreshold) == 0) then { // Just indicate how close to the limping threshold we are
+                    _damageThreshold = LIMPING_DAMAGE_THRESHOLD * 4;
+                } else {
+                    _damageThreshold = _damageThreshold * EGVAR(medical,limbDamageThreshold);
+                };
             };
             case (_selectionN > 1): { // arms: index 2 & 3
-                _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
+                if (EGVAR(damage,enable) || !ACEGVAR(medical,useLimbDamage) || ACEGVAR(medical,limbDamageThreshold) == 0) then { // Just indicate how close to the fracture threshold we are
+                    _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
+                } else {
+                    _damageThreshold = _damageThreshold * ACEGVAR(medical,limbDamageThreshold);
+                };
             };
             case (_selectionN == 0): { // head: index 0
                 _damageThreshold = _damageThreshold * 1.25;
@@ -402,6 +410,7 @@ if (ACEGVAR(medical_gui,showDamageEntry)) then {
                 _damageThreshold = _damageThreshold * 1.5;
             };
         };
+        // _bodyPartDamage here should indicate how close unit is to guaranteed death via sum of trauma, so use the same multipliers used in medical_damage/functions/fnc_determineIfFatal.sqf
         _bodyPartDamage = (_bodyPartDamage / _damageThreshold) min 1;
         switch (true) do {
             case (_bodyPartDamage isEqualTo 1): {

@@ -16,7 +16,7 @@
  */
 
 if (ACEGVAR(common,OldIsCamera)) exitWith {
-    TRACE_2("Ending heart beat effect - scripted camera",_heartRate,ACEGVAR(common,OldIsCamera));
+    TRACE_2("Ending heart beat effect - scripted camera",GET_HEART_RATE(ACE_player),ACEGVAR(common,OldIsCamera));
     ACEGVAR(medical_feedback,heartBeatEffectRunning) = false;
 };
 

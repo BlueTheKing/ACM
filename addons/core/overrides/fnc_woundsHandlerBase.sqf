@@ -215,8 +215,6 @@ if (_createdWounds) then {
     _unit setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
     _unit setVariable [QACEGVAR(medical,bodyPartDamage), _bodyPartDamage, true];
 
-    [_unit] call ACEFUNC(medical_status,updateWoundBloodLoss);
-
     _bodyPartVisParams call ACEFUNC(medical_engine,updateBodyPartVisuals);
 
     [QACEGVAR(medical,injured), [_unit, _painLevel]] call CBA_fnc_localEvent;
