@@ -167,7 +167,7 @@ if (_partIndex == 0 && GET_AIRWAYSTATE(_patient) < 0.9) then {
 
 if !(_continue) exitWith {};
 
-[_patient, _classname, _timeTillMaxEffect / (0.5 max _concentrationRatio min 1.1), _timeInSystem * (0.5 max _concentrationRatio min 1.1), _heartRateChange, _painReduce, _viscosityChange * _concentrationRatio, _administrationType, _maxEffectTime * (0.01 max _concentrationRatio min 1.1), _rrAdjustment, _coSensitivityAdjustment, _breathingEffectivenessAdjustment, _concentrationRatio, _medicationType] call ACEFUNC(medical_status,addMedicationAdjustment);
+[_patient, _classname, _timeTillMaxEffect / (0.5 max _concentrationRatio min 1.1), _timeInSystem * (0.5 max _concentrationRatio min 1.1), _heartRateChange, _painReduce, _viscosityChange * _concentrationRatio, _administrationType, _maxEffectTime * (0.01 max _concentrationRatio min 1.1), _rrAdjustment, _coSensitivityAdjustment, _breathingEffectivenessAdjustment, _concentrationRatio, _medicationType, _partIndex] call ACEFUNC(medical_status,addMedicationAdjustment);
 
 // Check for medication compatiblity
 [_patient, _classname, _maxDose, _maxDoseDeviation, _concentrationRatio, _maxEffectDose, _patientWeight, _incompatibleMedication] call ACEFUNC(medical_treatment,onMedicationUsage);

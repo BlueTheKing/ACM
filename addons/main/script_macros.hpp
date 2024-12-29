@@ -208,6 +208,15 @@
 
 #define IN_CRITICAL_STATE(unit) (unit getVariable [QEGVAR(core,CriticalVitals_State), false])
 
+// Body Parts
+
+#define BODYPART_N_HEAD     0
+#define BODYPART_N_BODY     1
+#define BODYPART_N_LEFTARM  2
+#define BODYPART_N_RIGHTARM 3
+#define BODYPART_N_LEFTLEG  4
+#define BODYPART_N_RIGHTLEG 5
+
 // Airway
 #define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])
 
@@ -398,6 +407,14 @@
 #define NECROSIS_THRESHOLD_MODERATELOW  0.4
 #define NECROSIS_THRESHOLD_LIGHT        0.1
 #define NECROSIS_THRESHOLD_LIGHTLOW     0.05
+
+#define ACM_FRACTURE_MILD               1
+#define ACM_FRACTURE_SEVERE             2
+#define ACM_FRACTURE_COMPLEX            3
+
+#define FRACTURE_THRESHOLD_MILD         10
+#define FRACTURE_THRESHOLD_SEVERE       20
+#define FRACTURE_THRESHOLD_COMPLEX      30
 
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}

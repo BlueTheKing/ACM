@@ -22,16 +22,17 @@
  * 11: Breathing Effectiveness Adjustment <NUMBER>
  * 12: Medication Concentration <NUMBER>
  * 13: Medication Type <STRING>
+ * 14: Body Part Index <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, "Morphine", 100, 1800, -12, 0.85, -10, ACM_ROUTE_IM, 1200, 0, -0.03, 0, 1, "Opioid"] call ace_medical_status_fnc_addMedicationAdjustment
+ * [player, "Morphine", 100, 1800, -12, 0.85, -10, ACM_ROUTE_IM, 1200, 0, -0.03, 0, 1, "Opioid", BODYPART_N_BODY] call ace_medical_status_fnc_addMedicationAdjustment
  *
  * Public: No
  */
-params ["_unit", "_medication", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", ["_administrationType", ACM_ROUTE_IM], "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust", "_concentration", ["_medicationType", "Default"]];
+params ["_unit", "_medication", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", ["_administrationType", ACM_ROUTE_IM], "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust", "_concentration", ["_medicationType", "Default"], "_bodyPartIndex"];
 TRACE_7("addMedicationAdjustment",_unit,_medication,_timeToMaxEffect,_maxTimeInSystem,_hrAdjust,_painAdjust,_flowAdjust);
 
 if (_maxTimeInSystem <= 0) exitWith { WARNING_1("bad value for _maxTimeInSystem - %1",_this); };
@@ -39,6 +40,6 @@ _timeToMaxEffect = _timeToMaxEffect max 1;
 
 private _adjustments = _unit getVariable [VAR_MEDICATIONS, []];
 
-_adjustments pushBack [_medication, CBA_missionTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust, _administrationType, _maxEffectTime, _rrAdjust, _coSensitivityAdjust, _breathingEffectivenessAdjust, _concentration, _medicationType];
+_adjustments pushBack [_medication, CBA_missionTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust, _administrationType, _maxEffectTime, _rrAdjust, _coSensitivityAdjust, _breathingEffectivenessAdjust, _concentration, _medicationType, _bodyPartIndex];
 
 _unit setVariable [VAR_MEDICATIONS, _adjustments, true];

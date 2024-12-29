@@ -24,7 +24,15 @@ TRACE_3("splintLocal",_medic,_patient,_bodyPart);
 private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 private _fractures = GET_FRACTURES(_patient);
-_fractures set [_partIndex, -1];
+
+private _fractureArray = _patient getVariable [QGVAR(Fracture), [0,0,0,0,0,0]];
+
+private _preparedArray = _patient getVariable [QGVAR(Fracture_Prepared), [false,false,false,false,false,false]];
+
+if ((_preparedArray select _partIndex) && ((_fractureArray select _partIndex) < FRACTURE_THRESHOLD_COMPLEX)) then {
+    _fractures set [_partIndex, -1];
+};
+
 _patient setVariable [VAR_FRACTURES, _fractures, true];
 
 if (_classname isEqualTo "ApplySAMSplint" && ACEGVAR(medical,fractures) > 1) then {

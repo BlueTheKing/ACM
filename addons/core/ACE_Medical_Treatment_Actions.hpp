@@ -132,6 +132,20 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = QEFUNC(disability,getSplintWrapTime);
         callbackSuccess = QEFUNC(disability,wrapSplint);
     };
+    class ClosedReduction: Splint {
+        displayName = "Perform Closed Reduction";
+        displayNameProgress = "Performing Closed Reduction";
+        icon = "";
+        medicRequired = QEGVAR(disability,allowClosedReduction);
+        consumeItem = 0;
+        items[] = {};
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        treatmentTime = 3;
+        callbackSuccess = QFUNC(performClosedReduction);
+        condition = QFUNC(canPerformClosedReduction);
+        litter[] = {};
+        ACM_rollToBack = 1;
+    };
     class ApplySAMSplint: Splint {
         displayName = ECSTRING(disability,ApplySAMSplint);
         displayNameProgress = ECSTRING(disability,ApplySAMSplint_Progress);

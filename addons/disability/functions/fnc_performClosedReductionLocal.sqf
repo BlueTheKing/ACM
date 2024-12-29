@@ -1,0 +1,43 @@
+#include "..\script_component.hpp"
+/*
+ * Author: Blue
+ * Perform closed reduction on patient. (LOCAL)
+ *
+ * Arguments:
+ * 0: Medic <OBJECT>
+ * 1: Patient <OBJECT>
+ * 2: Body Part <STRING>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_performClosedReductionLocal;
+ *
+ * Public: No
+ */
+
+params ["_medic", "_patient", "_bodyPart"];
+
+playSound3D [format ["%1%2.wav", (QPATHTO_R(sound\crack)), (round (1 + (random 2)))], _patient, false, getPosASL _patient, 10, 1, 10];
+
+addCamShake [5, 0.3, 5];
+
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
+
+private _anestheticEffect = [_patient, "Lidocaine", false, _partIndex] call ACEFUNC(medical_status,getMedicationCount);
+
+if (_anestheticEffect < 0.7) then {
+    [_patient, (1 - _anestheticEffect)] call ACEFUNC(medical,adjustPainLevel);
+};
+
+private _preparedArray = _patient getVariable [QGVAR(Fracture_Prepared), [false,false,false,false,false,false]];
+
+if (_preparedArray select _partIndex) exitWith {};
+
+private _noEffectArray = _patient getVariable [QGVAR(Fracture_NoEffect), [false,false,false,false,false,false]];
+
+if (_noEffectArray select _partIndex) exitWith {};
+
+_preparedArray set [_partIndex, true];
+_patient setVariable [QGVAR(Fracture_Prepared), _preparedArray, true];
