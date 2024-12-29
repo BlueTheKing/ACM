@@ -19,17 +19,17 @@ params ["_patient"];
 
 private _state = _patient getVariable [QGVAR(Hemothorax_State), 0];
 
-if (_state > 2) exitWith {};
+if (_state >= 10) exitWith {};
 
 if (_state == 0) then {
-    _state = 1 + round (random 1);
+    _state = 5 + round (random 5);
 } else {
     _state = _state + 1;
 };
 
 _patient setVariable [QGVAR(Hemothorax_State), _state, true];
 
-[_patient, 0.3] call ACEFUNC(medical,adjustPainLevel);
+[_patient, (linearConversion [1, 10, _state, 0.3, 1, true])] call ACEFUNC(medical,adjustPainLevel);
 
 [_patient] call FUNC(updateBreathingState);
 
@@ -53,7 +53,7 @@ private _PFH = [{
     };
 
     if (_plateletCount > 1 || _TXAEffect > 0.1) then {
-        if (random 1 < ((0.2 * _plateletCount / 4) max (0.8 * (_TXAEffect min 1.2)))) then {
+        if (random 1 < ((0.35 * _plateletCount / 4) max (0.9 * (_TXAEffect min 1.2)))) then {
             _hemothoraxState = (_hemothoraxState - 1) max 0;
 
             _patient setVariable [QGVAR(Hemothorax_State), _hemothoraxState, true];
@@ -61,6 +61,6 @@ private _PFH = [{
     };
 
     [_patient] call FUNC(updateBreathingState);
-}, (30 + (random 30)), [_patient]] call CBA_fnc_addPerFrameHandler;
+}, (15 + (random 15)), [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(Hemothorax_PFH), _PFH];
