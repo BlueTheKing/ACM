@@ -188,8 +188,7 @@
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1_Desc">
             <English>Ratio out of 100 that is taken by the %1 blood type, ratios must add up to exactly 100</English>
             <Polish>Współczynnik ze 100 przydzielony grupy krwi %1, współczynniki muszą dodawać się dokładnie do 100</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Items // -->
         <Key ID="STR_ACM_Circulation_AED">
             <English>Automated External Defibrillator</English>
@@ -294,8 +293,7 @@
         <Key ID="STR_ACM_Circulation_FreshBloodBag_Desc">
             <English>Freshly transfused blood, used to replenish lost blood volume</English>
             <Polish>Świeżo pozyskana krew, używana do transfuzji krwi</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Items - Individual Medication // -->
         <Key ID="STR_ACM_Circulation_Medication_Epinephrine">
             <English>Epinephrine</English>
@@ -352,8 +350,7 @@
         <Key ID="STR_ACM_Circulation_Medication_Penthrox">
             <English>Penthrox</English>
             <Polish>Metoksyfluran</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Items - Medication // -->
         <Key ID="STR_ACM_Circulation_Vial_Epinephrine">
             <English>Epinephrine Vial (1mg/1ml)</English>
@@ -482,8 +479,7 @@
         <Key ID="STR_ACM_Circulation_Inhaler_Penthrox_Desc">
             <English>Used to rapidly manage acute pain for a short time</English>
             <Polish>Używany do walki z silnym bólem na krótki okres czasu</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Actions // -->
         <Key ID="STR_ACM_Circulation_ViewMonitor">
             <English>View Monitor</English>
@@ -772,8 +768,7 @@
         <Key ID="STR_ACM_Circulation_Inject">
             <English>Inject</English>
             <Polish>Podaj (IM)</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // CPR Action // -->
         <Key ID="STR_ACM_Circulation_CPR_Already">
             <English>Patient already has CPR provider</English>
@@ -814,8 +809,7 @@
         <Key ID="STR_ACM_Circulation_CPR_Paused">
             <English>Paused CPR</English>
             <Polish>Przerwał RKO</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Capillary Refill Action // -->
         <Key ID="STR_ACM_Circulation_CapillaryRefill_Hint">
             <English>Measured Capillary Refill Time&lt;br/&gt;%1 seconds</English>
@@ -824,8 +818,7 @@
         <Key ID="STR_ACM_Circulation_CapillaryRefill_ActionLog">
             <English>%1 measured capillary refill time: %2s (%3)</English>
             <Polish>%1 sprawdził nawrót kapilarny: %2s (%3)</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Feel Pulse Action // -->
         <Key ID="STR_ACM_Circulation_FeelPulse_FeelingForPulse">
             <English>Feeling for pulse...</English>
@@ -846,8 +839,7 @@
         <Key ID="STR_ACM_Circulation_FeelPulse_Femoral">
             <English>Femoral</English>
             <Polish>Udo</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Measure Blood Pressure Action // -->
         <Key ID="STR_ACM_Circulation_MeasureBP_Stopped">
             <English>Stopped measuring blood pressure</English>
@@ -864,8 +856,7 @@
         <Key ID="STR_ACM_Circulation_MeasureBP_Hint_Valve">
             <English>Release Pressure\n-10 (LMB) | -2 (RMB)</English>
             <Polish>Spuść ciśnienie \n-10 (LMB) | -2 (RMB)</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Transfusion Menu // -->
         <Key ID="STR_ACM_Circulation_TransfusionMenu_StopTransfusion_Display">
             <English>Stop %1 Transfusion</English>
@@ -942,8 +933,7 @@
         <Key ID="STR_ACM_Circulation_TransfusionMenu_FluidRemaining">
             <English>%1ml remaining</English>
             <Polish>Pozostało %1ml...</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // IV/IO Actions // -->
         <Key ID="STR_ACM_Circulation_IV_Upper">
             <English>Upper</English>
@@ -972,8 +962,7 @@
         <Key ID="STR_ACM_Circulation_IV_BodyPartTooDamaged">
             <English>Body part too damaged</English>
             <Polish>Zbyt duże obrażenia na ciele</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Inspect IV Action // -->
         <Key ID="STR_ACM_Circulation_InspectIV_Upper">
             <English>Inspect IV Catheter (Upper)</English>
@@ -1026,14 +1015,12 @@
         <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
             <English>%1 inspected IV Catheter: %2</English>
             <Polish>%1 sprawdził wkłucie: %2</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Pressure Cuff Action // -->
         <Key ID="STR_ACM_Circulation_PressureCuff_Already">
             <English>Patient already has pressure cuff on the %1</English>
             <Polish>Pacjent ma już ciśnieniomierz na %1</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Syringe Actions // -->
         <Key ID="STR_ACM_Circulation_Syringe_Discard">
             <English>Discard</English>
@@ -1102,8 +1089,7 @@
         <Key ID="STR_ACM_Circulation_Syringe_NoMedicationSelected">
             <English>No Medication Selected</English>
             <Polish>Nie wybrano leku</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // AED Actions // -->
         <Key ID="STR_ACM_Circulation_AED_Already">
             <English>Patient already has %1 on the %2</English>
@@ -1132,8 +1118,7 @@
         <Key ID="STR_ACM_Circulation_AED_Capnograph">
             <English>AED Capnograph</English>
             <Polish>Kapnograf defibrylatora</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // AED Monitor // -->
         <Key ID="STR_ACM_Circulation_AED_Monitor_HR">
             <English>HR</English>
@@ -1190,8 +1175,7 @@
         <Key ID="STR_ACM_Circulation_AED_Monitor_Button_SpeedDial">
             <English>Speed Dial</English>
             <Polish>Pokrętło prędkości</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // GUI // -->
         <Key ID="STR_ACM_Circulation_GUI_TransfusingSaline">
             <English>Transfusing Saline [%1x]</English>

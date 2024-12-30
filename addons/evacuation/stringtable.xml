@@ -76,8 +76,7 @@
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert_Desc">
             <English>Sets locations at which casualty conversion can be performed</English>
             <Polish>Ustawia miejsca w których można przeprowadzić konwersje poszkodowanego</Polish>
-        </Key>
-        <!-- 
+        </Key><!-- 
             // Actions // -->
         <Key ID="STR_ACM_Evacuation_ConvertCasualty">
             <English>Convert Casualty</English>

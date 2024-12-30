@@ -112,8 +112,7 @@
         <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance_Desc">
             <English>Sets chance for AI to stay down once unconscious (without intervention)</English>
             <Polish>Szansa na pozostanie jednostki SI w pozycji leżącej, gdy straci przytomność (bez interwencji)</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Settings in CORE // -->
         <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap">
             <English>Allow Wrapping</English>
@@ -146,8 +145,7 @@
         <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch_Desc">
             <English>Time multiplier when stitching wound with sutures</English>
             <Polish>Mnożnik czasu zszywania ran z użyciem szwów</Polish>
-        </Key>
-        <!-- 
+        </Key><!-- 
             // Items // -->
         <Key ID="STR_ACM_Damage_PressureBandage">
             <English>Pressure Bandage</English>
@@ -172,8 +170,7 @@
         <Key ID="STR_ACM_Damage_ElasticWrap_Desc">
             <English>Used to wrap bandages, clotted wounds and bruises</English>
             <Polish>Używany do stabilizacji bandaży, owijania skrzepniętych ran i siniaków</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Actions // -->
         <Key ID="STR_ACM_Damage_ElasticWrap_Progress">
             <English>Wrapping...</English>
@@ -214,8 +211,7 @@
         <Key ID="STR_ACM_Damage_SurgicalKit_Clotted_Suture">
             <English>Use Surgical Kit With Sutures (Clotted)</English>
             <Polish>Użyj zestawu do szycia ze szwami (skrzepy)</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Wrap Body Part Action // -->
         <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">
             <English>%1 has wrapped %2</English>
@@ -228,8 +224,7 @@
         <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Clotted">
             <English>clotted wounds</English>
             <Polish>skrzepnięte rany</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Wrap Bruises Action // -->
         <Key ID="STR_ACM_Damage_WrapBruises_ActionLog">
             <English>%1 has wrapped bruises</English>
