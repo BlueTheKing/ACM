@@ -21,13 +21,13 @@ params ["_patient", "_bodyPartDamage"];
 _bodyPartDamage params ["_headDamage", "_bodyDamage"];
 
 if !(isPlayer _patient) exitWith {
-    private _headTraumaThreshold = GVAR(headTraumaDeathThresholdAI) * GVAR(headTraumaCardiacArrestThresholdAI);
-    private _bodyTraumaThreshold = GVAR(bodyTraumaDeathThresholdAI) * GVAR(bodyTraumaCardiacArrestThresholdAI);
+    private _headTraumaThreshold = GVAR(headTraumaCardiacArrestThresholdAI);
+    private _bodyTraumaThreshold = GVAR(bodyTraumaCardiacArrestThresholdAI);
 
     ((_headDamage > _headTraumaThreshold && _headTraumaThreshold > 0) || (_bodyDamage > _bodyTraumaThreshold && _bodyTraumaThreshold > 0));
 };
 
-private _headTraumaThreshold = GVAR(headTraumaDeathThreshold) * GVAR(headTraumaCardiacArrestThreshold);
-private _bodyTraumaThreshold = GVAR(bodyTraumaDeathThreshold) * GVAR(bodyTraumaCardiacArrestThreshold);
+private _headTraumaThreshold = GVAR(headTraumaCardiacArrestThreshold);
+private _bodyTraumaThreshold = GVAR(bodyTraumaCardiacArrestThreshold);
 
 ((_headDamage > _headTraumaThreshold && _headTraumaThreshold > 0) || (_bodyDamage > _bodyTraumaThreshold && _bodyTraumaThreshold > 0));

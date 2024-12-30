@@ -46,7 +46,7 @@ PREP_RECOMPILE_END;
     "SLIDER",
     [LLSTRING(SETTING_CardiacArrestChance), LLSTRING(SETTING_CardiacArrestChance_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_CardiacArrest)],
-    [0, 1, 0.1, 1, true],
+    [0, 1, 0.3, 1, true],
     true
 ] call CBA_fnc_addSetting;
 

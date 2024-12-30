@@ -170,6 +170,9 @@ class CfgFunctions {
             class showDogtag { // Blood type, weight display
                 file = QPATHTOF(overrides\fnc_showDogtag.sqf); //ace/addons/dogtags/functions/fnc_showDogtag.sqf
             };
+            class checkDogtag { // Dog tags being checked hint
+                file = QPATHTOF(overrides\fnc_checkDogtag.sqf); //ace/addons/dogtags/functions/fnc_checkDogtag.sqf
+            };
         };
     };
     class overwrite_ace_advanced_fatigue {

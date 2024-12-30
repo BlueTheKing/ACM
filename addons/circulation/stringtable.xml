@@ -1240,8 +1240,7 @@
         <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FieldBloodTransfusionKit_Short">
             <English>FBTK</English>
             <Polish>ZPTK</Polish>
-        </Key>
-        <!--
+        </Key><!--
             // Common // -->
         <Key ID="STR_ACM_Circulation_Common_SwitchTargetInventory">
             <English>Change target inventory</English>

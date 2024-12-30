@@ -160,6 +160,7 @@ private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACE
 [_unit, _painSupressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
 
 private _vasoconstriction = GET_VASOCONSTRICTION(_unit);
+private _vasoconstrictionChange = 0;
 private _targetVasoconstriction = 0;
 
 if (_bloodVolume < 5.9) then {
@@ -167,14 +168,18 @@ if (_bloodVolume < 5.9) then {
 };
 
 if (_bloodVolume > 4) then {
-    private _vasodilation = 0;
+    private _MAPAdjustment = 0;
     private _MAP = GET_MAP_PATIENT(_unit);
 
     if (_MAP > 94) then {
-        _vasodilation =  linearConversion [94, 120, _MAP, 0, 60];
+        _MAPAdjustment = linearConversion [94, 120, _MAP, 0, -60, true];
+    } else {
+        if (_MAP < 88) then {
+            _MAPAdjustment = linearConversion [88, 60, _MAP, 0, 40, true];
+        };
     };
 
-    _targetVasoconstriction = _targetVasoconstriction - _vasodilation;
+    _targetVasoconstriction = (_targetVasoconstriction + _MAPAdjustment) min 50;
 
     if (IS_BLEEDING(_unit) && _targetVasoconstriction < 0) then {
         _targetVasoconstriction = _targetVasoconstriction * 0.75;
@@ -182,9 +187,11 @@ if (_bloodVolume > 4) then {
 };
 
 if (_targetVasoconstriction > _vasoconstriction) then {
-    _vasoconstriction = (_vasoconstriction + ((((abs (_targetVasoconstriction + (abs _vasoconstriction))) / 10) max 0.05) * _deltaT)) min _targetVasoconstriction;
+    _vasoconstrictionChange = ((_targetVasoconstriction - _vasoconstriction) / 10) max 0.05;
+    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) min _targetVasoconstriction;
 } else {
-    _vasoconstriction = (_vasoconstriction - ((((abs (_vasoconstriction + (abs _targetVasoconstriction))) / 10) max 0.05) * _deltaT)) max _targetVasoconstriction;
+    _vasoconstrictionChange = ((_targetVasoconstriction - _vasoconstriction) / 10) min -0.05;
+    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) max _targetVasoconstriction;
 };
 
 _unit setVariable [QEGVAR(circulation,Vasoconstriction_State), _vasoconstriction, true];
@@ -241,18 +248,23 @@ switch (true) do {
             _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VT, true];
             _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
         } else {
-            _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VF, true];
-            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
+            if ([_unit, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.5) then {
+                _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Asystole, true];
+                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
+            } else {
+                _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VF, true];
+                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
+            };
         };
         [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (GET_MAP(_BPSystolic,_BPDiastolic) < 43): {
         [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
     };
-    case (IS_UNCONSCIOUS(_unit)): {}; // Already unconscious
     case (GET_MAP(_BPSystolic,_BPDiastolic) > 200): {
-        [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
+        [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
     };
+    case (IS_UNCONSCIOUS(_unit)): {}; // Already unconscious
     case (_woundBloodLoss > BLOOD_LOSS_KNOCK_OUT_THRESHOLD): {
         [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };

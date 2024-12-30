@@ -37,4 +37,4 @@ if (isNull (objectParent _medic)) then {
     _args params ["_medic", "_patient"];
 
     [LLSTRING(ConvertCasualty_Cancelled), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-}, LLSTRING(ConvertCasualty_Progress)] call ACEFUNC(common,progressBar);
+}, LLSTRING(ConvertCasualty_Progress), {true}, ["isNotInside"]] call ACEFUNC(common,progressBar);

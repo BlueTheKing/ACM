@@ -17,6 +17,8 @@
 
 params ["_patient"];
 
+if ((_patient getVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus]) == ACM_Rhythm_Asystole) exitWith {};
+
 private _gracePeriod = 15 + (random 15);
 
 _patient setVariable [QGVAR(CriticalVitals_Time), (CBA_missionTime + _gracePeriod)];
@@ -69,7 +71,7 @@ private _PFH = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    if (!(IN_CRDC_ARRST(_patient)) && {_HR > 45 && _HR < 200 && _MAP > 55 && _MAP < 200}) exitWith {
+    if (!(IN_CRDC_ARRST(_patient)) && {_HR > 45 && _HR < 200 && _MAP > 55 && _MAP < 180}) exitWith {
         if (_currentRhythm == ACM_Rhythm_VT) then {
             _patient setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Sinus, true];
         };

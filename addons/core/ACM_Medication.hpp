@@ -59,7 +59,7 @@ class ACM_Medication {
             minPainReduce = 0.75;
             painReduce = 0.75;
             maxPainReduce = 0.9;
-            hrIncrease[] = {-1, -4};
+            hrIncrease[] = {-0.1, -0.5};
             timeInSystem = 420;
             maxEffectTime = 90;
             maxDose = 5;
@@ -89,9 +89,10 @@ class ACM_Medication {
 
         class Epinephrine_IV: ACM_IV_Medication {
             medicationType = "Epinephrine";
-            hrIncrease[] = {25, 60};
-            rrAdjust[] = {6,12};
+            hrIncrease[] = {10, 20};
+            rrAdjust[] = {2,8};
             breathingEffectivenessAdjust[] = {0.01,0.04};
+            viscosityChange = 5;
             maxEffectDose = 1;
             weightEffect = 2;
         };
@@ -100,7 +101,7 @@ class ACM_Medication {
             timeInSystem = 100;
             timeTillMaxEffect = 60;
             maxEffectTime = 25;
-            hrIncrease[] = {-50, -100};
+            hrIncrease[] = {-5, -24};
             maxEffectDose = 6;
             weightEffect = 0;
         };
@@ -110,11 +111,12 @@ class ACM_Medication {
             minPainReduce = 0.6;
             painReduce = 0.85;
             maxPainReduce = 1;
-            hrIncrease[] = {-9, -30};
+            hrIncrease[] = {-4, -12};
             timeInSystem = 1300;
             timeTillMaxEffect = 25;
             maxEffectTime = 900;
             coSensitivityAdjust[] = {-0.05,-0.09};
+            viscosityChange = -10;
             maxDose = 12;
             maxDoseDeviation = 3;
             minEffectDose = 4.15;
@@ -124,7 +126,7 @@ class ACM_Medication {
 
         class Amiodarone_IV: ACM_IV_Medication {
             medicationType = "Amiodarone";
-            hrIncrease[] = {-15, -30};
+            hrIncrease[] = {-8, -15};
             timeInSystem = 720;
             timeTillMaxEffect = 10;
             maxEffectTime = 480;
@@ -136,7 +138,7 @@ class ACM_Medication {
 
         class Lidocaine_IV: ACM_IV_Medication {
             medicationType = "Lidocaine_IV";
-            hrIncrease[] = {-5, -20};
+            hrIncrease[] = {-2, -10};
             timeInSystem = 600;
             maxEffectTime = 360;
             maxDose = 270;
@@ -146,11 +148,10 @@ class ACM_Medication {
 
         class TXA_IV: ACM_IV_Medication {
             medicationType = "TXA";
-            hrIncrease[] = {-1, -4};
             timeInSystem = 900;
             timeTillMaxEffect = 15;
             maxEffectTime = 600;
-            viscosityChange = 10;
+            viscosityChange = -10;
             maxEffectDose = 1000;
             weightEffect = 0;
         };
@@ -160,7 +161,7 @@ class ACM_Medication {
             minPainReduce = 0.5;
             painReduce = 0.85;
             maxPainReduce = 1;
-            hrIncrease[] = {-1, -2};
+            hrIncrease[] = {-0.1, -0.5};
             timeInSystem = 660;
             maxEffectTime = 540;
             maxDose = 250;
@@ -173,12 +174,13 @@ class ACM_Medication {
             medicationType = "Opioid";
             minPainReduce = 0.6;
             painReduce = 1;
-            hrIncrease[] = {-5, -20};
+            hrIncrease[] = {-2, -5};
             timeInSystem = 960;
             timeTillMaxEffect = 10;
             maxEffectTime = 840;
             coSensitivityAdjust[] = {-0.06,-0.07};
             breathingEffectivenessAdjust[] = {-0.01,-0.04};
+            viscosityChange = 10;
             maxDose = 0.15;
             maxDoseDeviation = 0.05;
             minEffectDose = 0.0415; //mcg
@@ -187,7 +189,7 @@ class ACM_Medication {
         };
 
         class Ondansetron_IV: ACM_IV_Medication {
-            hrIncrease[] = {-5, -12};
+            hrIncrease[] = {-0.5, -2};
             timeInSystem = 720;
             timeTillMaxEffect = 15;
             maxEffectTime = 600;
@@ -199,7 +201,7 @@ class ACM_Medication {
         };
 
         class CalciumChloride_IV: ACM_IV_Medication {
-            hrIncrease[] = {5, 20};
+            hrIncrease[] = {1, 10};
             timeInSystem = 600;
             timeTillMaxEffect = 15;
             maxEffectTime = 300;
@@ -220,7 +222,7 @@ class ACM_Medication {
         };
 
         class Esmolol_IV: ACM_IV_Medication {
-            hrIncrease[] = {-20, -50};
+            hrIncrease[] = {-10, -35};
             timeInSystem = 320;
             timeTillMaxEffect = 20;
             maxEffectTime = 240;
@@ -249,11 +251,11 @@ class ACM_Medication {
             minPainReduce = 0.5;
             painReduce = 0.7;
             maxPainReduce = 0.95;
-            hrIncrease[] = {-6, -20};
+            hrIncrease[] = {-2, -8};
             timeInSystem = 1800;
             timeTillMaxEffect = 100;
             maxEffectTime = 1200;
-            coSensitivityAdjust[] = {-0.06,-0.07};
+            coSensitivityAdjust[] = {-0.06,-0.08};
             maxDose = 14;
             maxDoseDeviation = 3;
             minEffectDose = 5.83;
@@ -263,8 +265,8 @@ class ACM_Medication {
         class Epinephrine: ACM_IM_Medication { // EpiPen
             medicationType = "Epinephrine";
             painReduce = 0;
-            hrIncrease[] = {8, 20};
-            rrAdjust[] = {3,6};
+            hrIncrease[] = {2, 10};
+            rrAdjust[] = {1,6};
             breathingEffectivenessAdjust[] = {0,0.01};
             maxEffectDose = 0.3;
             weightEffect = 0;
@@ -293,8 +295,6 @@ class ACM_Medication {
             minPainReduce = 0.4;
             painReduce = 0.7;
             maxPainReduce = 0.95;
-            hrIncrease[] = {-1, -2};
-            rrAdjust[] = {0,0};
             timeInSystem = 900;
             timeTillMaxEffect = 20;
             maxEffectTime = 600;
@@ -308,12 +308,13 @@ class ACM_Medication {
             medicationType = "Opioid";
             minPainReduce = 0.5;
             painReduce = 0.8;
-            hrIncrease[] = {-2, -10};
+            hrIncrease[] = {-0.5, -3};
             timeInSystem = 1200;
             timeTillMaxEffect = 30;
             maxEffectTime = 900;
             coSensitivityAdjust[] = {-0.05,-0.06};
             breathingEffectivenessAdjust[] = {-0.01,-0.02};
+            viscosityChange = 8;
             maxDose = 0.18;
             maxDoseDeviation = 0.075;
             minEffectDose = 0.0581; //mcg
@@ -322,7 +323,7 @@ class ACM_Medication {
         };
 
         class Ondansetron: ACM_IM_Medication {
-            hrIncrease[] = {-1, -5};
+            hrIncrease[] = {-0.1, -2};
             timeInSystem = 900;
             timeTillMaxEffect = 45;
             maxEffectTime = 720;
