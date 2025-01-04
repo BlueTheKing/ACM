@@ -188,6 +188,12 @@
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1_Desc">
             <English>Ratio out of 100 that is taken by the %1 blood type, ratios must add up to exactly 100</English>
             <Polish>Współczynnik ze 100 przydzielony grupy krwi %1, współczynniki muszą dodawać się dokładnie do 100</Polish>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList">
+            <English>Use Custom List</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList_Desc">
+            <English>Sets whether blood types should be set based on custom list instead of SteamID</English>
         </Key><!--
             // Items // -->
         <Key ID="STR_ACM_Circulation_AED">
