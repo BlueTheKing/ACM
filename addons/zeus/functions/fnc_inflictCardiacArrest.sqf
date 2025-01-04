@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Module dialog to manually inflict cardiac arrest
+ * Module to manually inflict cardiac arrest.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>

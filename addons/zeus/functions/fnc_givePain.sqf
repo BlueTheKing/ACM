@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Give pain to patient.
+ * Module to give pain to patient.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>
