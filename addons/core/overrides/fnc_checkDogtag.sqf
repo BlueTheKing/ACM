@@ -40,6 +40,6 @@ private _dogtagData = _target call ACEFUNC(dogtags,getDogtagData);
 
 [ACELINKFUNC(dogtags,showDogtag), [_dogtagData, _doubleTags], DOGTAG_SHOW_DELAY] call CBA_fnc_waitAndExecute;
 
-if (!(IS_UNCONSCIOUS(_target)) && alive _target) then {
+if (!(IS_UNCONSCIOUS(_target)) && alive _target && (_player != _target)) then {
     [QACEGVAR(common,displayTextStructured), [(format [LLSTRING(DogTags_InspectingDogtags), [_player, false, true] call ACEFUNC(common,getName)]), 2, _target], _target] call CBA_fnc_targetEvent;
 };
