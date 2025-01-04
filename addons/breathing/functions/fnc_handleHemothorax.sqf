@@ -54,7 +54,13 @@ private _PFH = [{
 
     if (_plateletCount > 1 || _TXAEffect > 0.1) then {
         if (random 1 < ((0.35 * _plateletCount / 4) max (0.9 * (_TXAEffect min 1.2)))) then {
-            _hemothoraxState = (_hemothoraxState - 1) max 0;
+            private _clearAmount = 1;
+            
+            if (_TXAEffect >= 1) then {
+                _clearAmount = ([2,3] select (random 1 < (0.3 * _TXAEffect)));
+            };
+
+            _hemothoraxState = (_hemothoraxState - _clearAmount) max 0;
 
             _patient setVariable [QGVAR(Hemothorax_State), _hemothoraxState, true];
         };
