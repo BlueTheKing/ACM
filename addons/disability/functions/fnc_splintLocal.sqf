@@ -25,7 +25,7 @@ private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 private _fractures = GET_FRACTURES(_patient);
 
-private _fractureArray = _patient getVariable [QGVAR(Fracture), [0,0,0,0,0,0]];
+private _fractureArray = _patient getVariable [QGVAR(Fracture_State), [0,0,0,0,0,0]];
 
 private _preparedArray = _patient getVariable [QGVAR(Fracture_Prepared), [false,false,false,false,false,false]];
 

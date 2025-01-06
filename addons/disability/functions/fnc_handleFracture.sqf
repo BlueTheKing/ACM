@@ -61,12 +61,12 @@ switch (true) do {
     };
 };
 
-private _fractureArray = _patient getVariable [QGVAR(Fracture), [0,0,0,0,0,0]];
+private _fractureArray = _patient getVariable [QGVAR(Fracture_State), [0,0,0,0,0,0]];
 private _fractureState = _fractureArray select _partIndex;
 
 if (_targetFracture > _fractureState) then {
-    _fractureState set [_partIndex, _targetFracture];
-    _patient setVariable [QGVAR(Fracture), _fractureState, true];
+    _fractureArray set [_partIndex, _targetFracture];
+    _patient setVariable [QGVAR(Fracture_State), _fractureArray, true];
 };
 
 private _fracturePainArray = _patient getVariable [QGVAR(Fracture_Pain), [false,false,false,false,false,false]];
@@ -99,7 +99,7 @@ private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient"];
 
-    private _fractureArray = _patient getVariable [QGVAR(Fracture), [0,0,0,0,0,0]];
+    private _fractureArray = _patient getVariable [QGVAR(Fracture_State), [0,0,0,0,0,0]];
 
     if (_fractureArray == [0,0,0,0,0,0]) exitWith {
         _patient setVariable [QGVAR(Fracture_PFH), -1];

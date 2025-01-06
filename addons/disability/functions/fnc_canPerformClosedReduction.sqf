@@ -21,4 +21,4 @@ params ["_medic", "_patient", "_bodyPart"];
 
 private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
-(((_patient getVariable [QGVAR(Fracture), [0,0,0,0,0,0]]) select _partIndex) > 0) && (GET_SPLINTS(_patient) select _partIndex) == 0
+(((_patient getVariable [QGVAR(Fracture_State), [0,0,0,0,0,0]]) select _partIndex) > 0) && (GET_SPLINTS(_patient) select _partIndex) == 0

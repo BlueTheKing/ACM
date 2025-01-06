@@ -21,4 +21,6 @@ params ["_medic", "_patient", "_bodyPart"];
 
 [_patient, "activity", "%1 performed closed reduction", [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
+addCamShake [5, 0.4, 10];
+
 [QGVAR(performClosedReductionLocal), [_medic, _patient, _bodyPart], _patient] call CBA_fnc_targetEvent;

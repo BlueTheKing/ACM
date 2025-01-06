@@ -57,7 +57,7 @@ private _bodyPartBloodLoss = [0, 0, 0, 0, 0, 0];
         private _ctrlBone = _ctrlGroup controlsGroupCtrl _fractureIDC;
 
         switch (true) do {
-            case ((_splints select _forEachIndex) == 1): {
+            case ((_splints select _forEachIndex) > 0): {
                 _ctrlBone ctrlShow true;
                 _ctrlBone ctrlSetTextColor [0, 0, 1, 1];
             };

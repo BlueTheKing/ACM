@@ -1,9 +1,11 @@
+PREP(canInspectForFracture);
 PREP(canPerformClosedReduction);
 PREP(canRemoveSplint);
 PREP(canWrapSplint);
 PREP(getSplintWrapTime);
 PREP(handleFracture);
 PREP(handleTourniquetEffects);
+PREP(inspectForFracture);
 PREP(performClosedReduction);
 PREP(performClosedReductionLocal);
 PREP(removeSplint);

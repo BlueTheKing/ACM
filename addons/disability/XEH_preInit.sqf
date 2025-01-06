@@ -17,4 +17,22 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(allowInspectForFracture),
+    "LIST",
+    ["Allow Inspecting For Fracture", "Training level required to inspect for fractures"],
+    [ACM_SETTINGS_CATEGORY, "Fracture Management"],
+    [SETTING_DROPDOWN_SKILL, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowClosedReduction),
+    "LIST",
+    ["Allow Peforming Closed Reduction", "Training level required to perform closed reduction"],
+    [ACM_SETTINGS_CATEGORY, "Fracture Management"],
+    [SETTING_DROPDOWN_SKILL, 0],
+    true
+] call CBA_fnc_addSetting;
+
 ADDON = true;
