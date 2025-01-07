@@ -19,7 +19,10 @@
 
 #define CBA_EGVAR(module,var)       TRIPLES(CBA_PREFIX,module,var)
 
-#define CBA_FUNC(function)   TRIPLES(CBA_PREFIX,fnc,function)
+#define CBA_FUNC(function)          TRIPLES(CBA_PREFIX,fnc,function)
+
+#define CBAPATHTOF(component,path)  \x\cba\addons\component\path
+#define QCBAPATHTOF(component,path) QUOTE(CBAPATHTOF(component,path))
 
 // ACE3 reference macros
 #define ACE_PREFIX ace
