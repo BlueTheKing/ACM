@@ -18,11 +18,11 @@ class CfgVehicles {
     class ACM_HazardOriginObject: B_TargetSoldier {
         author = "Blue";
         displayName = "Hazard Origin";
-        scope = 2;
-        scopeCurator = 2;
+        scope = 1;
+        scopeCurator = 1;
         scopeArsenal = 0;
         model = QCBAPATHTOF(ai,InvisibleTarget.p3d);
-        //icon = ""
+        icon = QPATHTOEF(core,ui\icon_patient_dead.paa);
     };
     class ACM_HazardHelperObject: ACM_HazardOriginObject {};
 };

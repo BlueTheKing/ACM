@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-    class ADDON    {
+    class ADDON {
         name = COMPONENT_NAME;
         units[] = {
             "ACM_HazardOriginObject",
@@ -23,3 +23,4 @@ class CfgPatches {
 #include "CfgVehicles.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"
+#include "ACM_CBRN_Hazards.hpp"
