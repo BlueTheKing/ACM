@@ -127,7 +127,7 @@ private _fnc_handleReopening = {
 
             [_patient] call ACEFUNC(medical_status,updateWoundBloodLoss);
 
-            private _partIndex = ALL_BODY_PARTS find _bodyPart;
+            private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
             switch (_partIndex) do {
                 case 0: { [_patient, true, false, false, false] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
@@ -137,7 +137,8 @@ private _fnc_handleReopening = {
                 default { [_patient, false, false, false, true] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
             };
 
-            if ((ACEGVAR(medical,limping) == 1) && {_partIndex > 3}) then {
+            // Check if limping is caused by this wound re-opening
+            if ((ACEGVAR(medical,limping) > 0) && {_partIndex > 3}) then {
                 [_patient] call ACEFUNC(medical_engine,updateDamageEffects);
             };
         }, [_patient, _bodyPart, _id, _type], _timeToReopen] call CBA_fnc_waitAndExecute;
@@ -204,7 +205,6 @@ _wrappableList deleteAt _bodyPart;
 _patient setVariable [_woundsVar, _wrappableList, true];
 
 // Check if we fixed limping by wrapping this wound (only for leg wounds)
-if (ACEGVAR(medical,limping) == 2 && {_patient getVariable [QACEGVAR(medical,isLimping), false]} && {_bodyPart in ["leftleg", "rightleg"]}) then {
-    TRACE_3("Updating damage effects",_patient,_bodyPart,local _patient);
-    [QACEGVAR(medical_engine,updateDamageEffects), _patient, _patient] call CBA_fnc_targetEvent;
+if (ACEGVAR(medical,limping) > 0 && {_patient getVariable [QACEGVAR(medical,isLimping), false]} && {_bodyPart in ["leftleg", "rightleg"]}) then {
+    [_patient] call ACEFUNC(medical_engine,updateDamageEffects);
 };
