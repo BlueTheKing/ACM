@@ -77,6 +77,7 @@ PREP(MeasureBP_updateCuffPressure);
 PREP(measureBP);
 PREP(openTransfusionMenu);
 PREP(recentAEDShock);
+PREP(removeMedicationAdjustment);
 PREP(resetVariables);
 PREP(setAED);
 PREP(setAEDLocal);
