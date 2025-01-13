@@ -3,72 +3,101 @@
     <Package name="Zeus">
         <Key ID="STR_ACM_Zeus_Module_UnCardiacArrest">
             <English>Un-Cardiac Arrest</English>
+            <Polish>Wznowienie akcji serca</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_ForceWakeUp">
             <English>Force Wake-up</English>
+            <Polish>Wymuszenie ocknięcia się</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_SetBloodVolume">
             <English>Set Blood Volume</English>
+            <Polish>Ustawienie ilości krwi</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_BloodVolume">
             <English>Blood Volume</English>
+            <Polish>Ilość krwi</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_PlasmaVolume">
             <English>Plasma Volume</English>
+            <Polish>Ilość osocza</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_SalineVolume">
             <English>Saline Volume</English>
+            <Polish>Ilość soli fizjologicznej</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest">
             <English>Inflict Cardiac Arrest</English>
+            <Polish>Zatrzymanie akcję serca</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm">
             <English>Target Rhythm</English>
+            <Polish>Docelowy rytm</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Sinus">
             <English>Sinus</English>
+            <Polish>Sinus</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Asystole">
             <English>Asystole</English>
+            <Polish>Asystolia</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_VF">
             <English>Ventricular Fibrillation</English>
+            <Polish>Migotanie komór</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_PVT">
             <English>Ventricular Tachycardia</English>
+            <Polish>Częstoskurcz komorowy (Tachykardia)</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Random">
             <English>Random</English>
+            <Polish>Losowy</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictChestInjury">
             <English>Inflict Chest Injury</English>
+            <Polish>Uraz klatki piersiowej</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_InjuryType">
             <English>Injury Type</English>
+            <Polish>Typ urazu</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Pneumothorax">
             <English>Pneumothorax</English>
+            <Polish>Odma płucna</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionPneumothorax">
             <English>Tension Pneumothorax</English>
+            <Polish>Odma prężna</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Hemothorax">
             <English>Hemothorax</English>
+            <Polish>Odma krwotoczna</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionHemothorax">
             <English>Tension Hemothorax</English>
+            <Polish>Odma prężno-krwotoczna</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_GivePain">
             <English>Give Pain</English>
+            <Polish>Zadanie bólu</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_GivePain_PainAmount">
             <English>Pain Amount</English>
+            <Polish>Ilość bólu</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_SetOxygen">
             <English>Set Oxygen</English>
+            <Polish>Ustawienie tlenu</Polish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_SetOxygen_OxygenLevel">
             <English>Oxygen Level</English>
+            <Polish>Ustawienie poziomu tlenu</Polish>
+        </Key>
+        <Key ID="STR_ACM_Zeus_Module_SetBloodType">
+            <English>Set Blood Type</English>
+        </Key>
+        <Key ID="STR_ACM_Zeus_Module_SetBloodType_List">
+            <English>Blood Type List</English>
         </Key>
     </Package>
 </Project>

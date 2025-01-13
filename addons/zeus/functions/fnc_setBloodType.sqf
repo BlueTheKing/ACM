@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Module to set oxygen of patient.
+ * Module to set blood type of patient.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [CONTROL] call ACM_zeus_fnc_setOxygen;
+ * [CONTROL] call ACM_zeus_fnc_setBloodType;
  *
  * Public: No
  */
@@ -48,7 +48,6 @@ switch (true) do {
     };
 };
 
-
 private _fnc_onUnload = {
     private _logic = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
     if (isNull _logic) exitWith {};
@@ -56,30 +55,9 @@ private _fnc_onUnload = {
     deleteVehicle _logic;
 };
 
-private _ctrlOxygenLevel = _display displayCtrl IDC_MODULE_SET_OXYGEN_SLIDER;
-
 private _patient = attachedTo _logic;
 
-private _currentOxygen = GET_OXYGEN(_patient);
-
-_ctrlOxygenLevel sliderSetPosition _currentOxygen;
-
-private _fnc_sliderMove = {
-    params ["_slider"];
-
-    private _logic = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
-    if (isNull _logic) exitWith {};
-
-    private _patient = attachedTo _logic;
-    
-    private _currentValue = (GET_OXYGEN(_patient) toFixed 2);
-
-    _slider ctrlSetTooltip format ["%1 (was %2)", (sliderPosition _slider), _currentValue];
-};
-
-private _slider = _display displayCtrl IDC_MODULE_SET_OXYGEN_SLIDER;
-_slider ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderMove];
-_slider call _fnc_sliderMove;
+(_display displayCtrl IDC_MODULE_SET_BLOODTYPE_LIST) lbSetCurSel (GET_BLOODTYPE(_patient));
 
 private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
@@ -92,9 +70,10 @@ private _fnc_onConfirm = {
 
     private _patient = attachedTo _logic;
 
-    private _ctrlOxygenLevel = _display displayCtrl IDC_MODULE_SET_OXYGEN_SLIDER;
+    private _selection = lbCurSel (_display displayCtrl IDC_MODULE_SET_BLOODTYPE_LIST);
 
-    _patient setVariable [QACEGVAR(medical,spo2), (sliderPosition _ctrlOxygenLevel), true];
+    _patient setVariable [QEGVAR(circulation,BloodType), _selection, true];
+    _patient setVariable [QACEGVAR(dogtags,dogtagData), nil, true];
 };
 
 _display displayAddEventHandler ["Unload", _fnc_onUnload];

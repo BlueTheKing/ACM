@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Module dialog to manually inflict chest injury
+ * Module to manually inflict chest injury.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Module dialog to modify patient state
+ * Module to modify patient blood volume.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>

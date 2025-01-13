@@ -96,9 +96,12 @@ if (!_isLimping && {ACEGVAR(medical,limping) > 0}) then {
 
     if (ACEGVAR(medical,limping) == 2) then {
         private _bandagedWounds = GET_BANDAGED_WOUNDS(_unit);
+        private _clottedWounds = GET_CLOTTED_WOUNDS(_unit);
         _legWounds = _legWounds
             + (_bandagedWounds getOrDefault ["leftleg", []])
-            + (_bandagedWounds getOrDefault ["rightleg", []]);
+            + (_bandagedWounds getOrDefault ["rightleg", []])
+            + (_clottedWounds getOrDefault ["leftleg", []])
+            + (_clottedWounds getOrDefault ["rightleg", []]);
     };
 
     {
