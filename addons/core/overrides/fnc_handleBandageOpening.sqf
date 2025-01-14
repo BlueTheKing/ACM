@@ -135,27 +135,13 @@ if (random 1 <= _reopeningChance * _plateletEffect * ACEGVAR(medical_treatment,w
 
             [_target, 0] call EFUNC(damage,refreshWounds);
 
-            private _partIndex = ALL_BODY_PARTS find _bodyPart;
-
             // Re-add trauma and damage visuals
             if (ACEGVAR(medical_treatment,clearTrauma) == 2) then {
-                private _injuryDamage = _bDamage * _impact;
-                private _bodyPartDamage = _target getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]];
-                private _newDam = (_bodyPartDamage select _partIndex) + _injuryDamage;
-
-                _bodyPartDamage set [_partIndex, _newDam];
-                _target setVariable [QACEGVAR(medical,bodyPartDamage), _bodyPartDamage, true];
-                switch (_partIndex) do {
-                    case 0: { [_target, true, false, false, false] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
-                    case 1: { [_target, false, true, false, false] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
-                    case 2;
-                    case 3: { [_target, false, false, true, false] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
-                    default { [_target, false, false, false, true] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
-                };
+                [_target, _bodyPart, _bDamage * _impact] call ACEFUNC(medical_treatment,addTrauma);
             };
 
             // Check if we gained limping from this wound re-opening
-            if ((ACEGVAR(medical,limping) == 1) && {_partIndex > 3}) then {
+            if ((ACEGVAR(medical,limping) == 1) && {_bodyPart in ["leftleg", "rightleg"]}) then {
                 [_target] call ACEFUNC(medical_engine,updateDamageEffects);
             };
 
@@ -207,7 +193,7 @@ if (random 1 <= _reopeningChance * _plateletEffect * ACEGVAR(medical_treatment,w
 
                 private _partIndex = ALL_BODY_PARTS find _bodyPart;
 
-                switch (_partIndex) do {
+                switch (_partIndex) do { // Update damage visuals
                     case 0: { [_target, true, false, false, false] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
                     case 1: { [_target, false, true, false, false] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
                     case 2;
@@ -232,7 +218,7 @@ if (random 1 <= _reopeningChance * _plateletEffect * ACEGVAR(medical_treatment,w
             _injury params ["_classID"];
 
             private _selectedInjury = _woundsOnPart select _injuryIndex;
-            _selectedInjury params ["_selClassID", "_selAmount"];
+            _selectedInjury params ["_selClassID", "_selAmount", "", "_selDamage"];
 
             if (_selClassID == _classID) then { // matching the IDs
                 private _bandagedWounds = GET_BANDAGED_WOUNDS(_target);
@@ -254,28 +240,13 @@ if (random 1 <= _reopeningChance * _plateletEffect * ACEGVAR(medical_treatment,w
 
                     [_target] call ACEFUNC(medical_status,updateWoundBloodLoss);
 
-                    private _partIndex = ALL_BODY_PARTS find _bodyPart;
-
                     // Re-add trauma and damage visuals
                     if (ACEGVAR(medical_treatment,clearTrauma) == 2) then {
-                        private _injuryDamage = (_selectedInjury select 3) * _impact;
-                        private _bodyPartDamage = _target getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]];
-                        private _newDam = (_bodyPartDamage select _partIndex) + _injuryDamage;
-                        _bodyPartDamage set [_partIndex, _newDam];
-
-                        _target setVariable [QACEGVAR(medical,bodyPartDamage), _bodyPartDamage, true];
-
-                        switch (_partIndex) do {
-                            case 0: { [_target, true, false, false, false] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
-                            case 1: { [_target, false, true, false, false] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
-                            case 2;
-                            case 3: { [_target, false, false, true, false] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
-                            default { [_target, false, false, false, true] call ACEFUNC(medical_engine,updateBodyPartVisuals); };
-                        };
+                        [_target, _bodyPart, _selDamage * _impact] call ACEFUNC(medical_treatment,addTrauma);
                     };
 
                     // Check if we gained limping from this wound re-opening
-                    if ((ACEGVAR(medical,limping) == 1) && {_partIndex > 3}) then {
+                    if ((ACEGVAR(medical,limping) == 1) && {_bodyPart in ["leftleg", "rightleg"]}) then {
                         [_target] call ACEFUNC(medical_engine,updateDamageEffects);
                     };
                 };

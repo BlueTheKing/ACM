@@ -68,7 +68,7 @@ private _fnc_moveWound = {
 
     if (_type < 3) then {
         private _partIndex = ALL_BODY_PARTS find _bodyPart;
-        private _bodyPartDamage = _unit getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]];
+        private _bodyPartDamage = GET_BODYPART_DAMAGE(_unit);
         private _damage = (_bodyPartDamage select _partIndex) - _damageToRemove;
 
         if (_damage > 0.05) then {
@@ -77,7 +77,7 @@ private _fnc_moveWound = {
             _bodyPartDamage set [_partIndex, 0];
         };
 
-        _unit setVariable [QACEGVAR(medical,bodyPartDamage), _bodyPartDamage, true];
+        _unit setVariable [VAR_BODYPART_DAMAGE, _bodyPartDamage, true];
     };
 };
 
