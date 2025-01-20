@@ -1,11 +1,12 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Perform (finger) thoracostomy on patient (LOCAL)
+ * Perform (finger) thoracostomy on patient. (LOCAL)
  *
  * Arguments:
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
+ * 2: Used Kit <BOOL>
  *
  * Return Value:
  * None
@@ -16,7 +17,7 @@
  * Public: No
  */
 
-params ["_medic", "_patient"];
+params ["_medic", "_patient", ["_usedKit", false]];
 
 private _hint = LLSTRING(ThoracostomySweep_Complete);
 private _height = 2.5;
@@ -76,5 +77,6 @@ if (_anestheticEffect < 0.7) then {
 _patient setVariable [QGVAR(Pneumothorax_State), 3, true];
 _patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
 _patient setVariable [QGVAR(TensionPneumothorax_Time), nil, true];
+_patient setVariable [QGVAR(Thoracostomy_UsedKit), _usedKit, true];
 
 [_patient] call FUNC(updateBreathingState);

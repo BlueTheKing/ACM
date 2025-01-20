@@ -103,6 +103,7 @@ class CfgVehicles {
             ADDITEM(ACM_BVM,4);
             ADDITEM(ACM_NCDKit,10);
             ADDITEM(ACM_PulseOximeter,5);
+            ADDITEM(ACM_ThoracostomyKit,5);
             ADDITEM(ACM_ChestTubeKit,5);
             // Circulation
             ADDITEM(ACM_AED,3);

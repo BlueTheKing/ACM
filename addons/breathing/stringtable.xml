@@ -158,6 +158,12 @@
             <English>Single-use kit used to insert a chest tube for removal of fluid from the plueral space</English>
             <Polish>Jednorazowa rurka używana do usuwania nadmiaru płynu z przestrzeni opłucnowej</Polish>
         </Key>
+        <Key ID="STR_ACM_Breathing_ThoracostomyKit">
+            <English>Thoracostomy Kit</English>
+        </Key>
+        <Key ID="STR_ACM_Breathing_ThoracostomyKit_Desc">
+            <English>Single-use kit used to prepare patient for chest tube insertion</English>
+        </Key>
         <Key ID="STR_ACM_Breathing_PocketBVM">
             <English>Pocket BVM</English>
             <Polish>Kieszonkowy worek samorozprężalny (BVM)</Polish>
@@ -254,6 +260,9 @@
         <Key ID="STR_ACM_Breathing_PerformThoracostomy_Progress">
             <English>Performing Thoracostomy...</English>
             <Polish>Wykonywanie torakotomii...</Polish>
+        </Key>
+        <Key ID="STR_ACM_Breathing_PerformThoracostomy_Kit">
+            <English>Perform Thoracostomy (Kit)</English>
         </Key>
         <Key ID="STR_ACM_Breathing_InsertChestTube">
             <English>Insert Chest Tube</English>
@@ -549,6 +558,9 @@
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_ActionLog_Complete">
             <English>%1 performed thoracostomy</English>
             <Polish>%1 wykonał torakotomie</Polish>
+        </Key>
+        <Key ID="STR_ACM_Breathing_ThoracostomySweep_Kit_ActionLog_Complete">
+            <English>%1 performed thoracostomy (Thoracostomy Kit)</English>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_Complete">
             <English>Finger Thoracostomy Performed</English>
