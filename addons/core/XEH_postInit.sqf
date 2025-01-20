@@ -114,4 +114,6 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
 
 ["isNotInLyingState", {!((_this select 0) getVariable [QGVAR(Lying_State), false])}] call ACEFUNC(common,addCanInteractWithCondition);
 
-call FUNC(generateMedicationTypeMap);
+GVAR(MedicationTypes_MaxPainAdjust) = ["maxPainReduce", "painReduce"] call FUNC(generateMedicationTypeMap);
+GVAR(MedicationTypes_MaxHRAdjust) = ["maxHRIncrease", "hrIncrease"] call FUNC(generateMedicationTypeMap);
+GVAR(MedicationTypes_MaxRRAdjust) = ["maxRRAdjust", "rrAdjust"] call FUNC(generateMedicationTypeMap);

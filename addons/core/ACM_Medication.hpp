@@ -52,7 +52,9 @@ class ACM_Medication {
 
         class AmmoniaInhalant: ACM_Inhalant_Medication {
             hrIncrease[] = {5, 25};
-            rrAdjust[] = {1,3};
+            maxHRIncrease = 25;
+            rrAdjust[] = {3,3};
+            maxRRAdjust = 4;
         };
 
         class Penthrox: ACM_Inhalant_Medication {
