@@ -258,7 +258,7 @@ switch (true) do {
         };
         [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
     };
-    case (GET_MAP(_BPSystolic,_BPDiastolic) < 43): {
+    case (GET_MAP(_BPSystolic,_BPDiastolic) < 55): {
         [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (GET_MAP(_BPSystolic,_BPDiastolic) > 200): {
