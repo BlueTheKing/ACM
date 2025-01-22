@@ -36,6 +36,8 @@ _patient setVariable [QGVAR(AED_PressureCuffBusy), true, true];
     if !(HAS_TOURNIQUET_APPLIED_ON(_patient,_pressureCuffPlacement)) then {
         private _bp = GET_BLOOD_PRESSURE(_patient); // backwards
 
+        if ((_bp select 1) < 80 || !(HAS_PULSE_P(_patient))) exitWith {};
+
         _systolic = _bp select 1;
         _diastolic = _bp select 0;
     };

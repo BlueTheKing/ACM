@@ -149,6 +149,10 @@ if ((_breathingEffectivenessAdjust select 0) + (_breathingEffectivenessAdjust se
 
 private _medicationType = GET_STRING(_medicationConfig >> "medicationType",getText (_defaultConfig >> "medicationType"));
 
+if (_medicationType == "Default") then {
+    _medicationType = _classname;
+};
+
 // Adjust the medication effects and add the medication to the list
 TRACE_3("adjustments",_heartRateChange,_painReduce,_viscosityChange);
 
