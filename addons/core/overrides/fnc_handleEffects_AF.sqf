@@ -30,7 +30,7 @@ if (((_fatigue > 0.4 && {ACEGVAR(advanced_fatigue,lastBreath) > (_fatigue * -10 
     if (!isGameFocused) exitWith {};
 
     switch (true) do {
-        case (_fatigue < 0.6 && !_chestInjury): {
+        case (_fatigue < 0.6 && _chestInjurySeverity == 0): {
             playSound (QACEGVAR(advanced_fatigue,breathLow) + str (floor random 6));
         };
         case (_fatigue < 0.85): {

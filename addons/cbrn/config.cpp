@@ -7,7 +7,9 @@ class CfgPatches {
             "ACM_HazardOriginObject",
             QGVAR(moduleCreateHazardZone),
         };
-        weapons[] = {};
+        weapons[] = {
+            "ACM_Grenade_CS"
+        };
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "cba_main",
@@ -20,6 +22,11 @@ class CfgPatches {
     };
 };
 
+#include "CfgSounds.hpp"
+#include "CfgAmmo.hpp"
+#include "CfgWeapons.hpp"
+#include "CfgMagazines.hpp"
+#include "CfgMagazineWells.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"

@@ -13,9 +13,18 @@ PREP_RECOMPILE_END;
 [
     QGVAR(enable),
     "CHECKBOX",
-    [LSTRING(SETTING_Enable), LSTRING(SETTING_Enable_Desc)],
+    [LLSTRING(SETTING_Enable), LLSTRING(SETTING_Enable_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
-    [false],
+    [true], // TODO
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Chemical_CS_Blindness),
+    "CHECKBOX",
+    [LLSTRING(SETTING_Chemical_CS_Blindness), LLSTRING(SETTING_Chemical_CS_Blindness_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Chemical_CS)],
+    [true], // TODO
     true
 ] call CBA_fnc_addSetting;
 

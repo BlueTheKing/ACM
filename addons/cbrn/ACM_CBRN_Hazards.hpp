@@ -1,8 +1,9 @@
 class ACM_CBRN_Hazards {
     class Chemical {
         class CS {
-            thresholds[] = {0,50,100};
-            threshold_rate[] = {1,0.5};
+            thresholds[] = {0,50};
+            threshold_positiveRate[] = {1,0.5};
+            threshold_negativeRate[] = {1,1};
             absorption_rate = 1;
             inhalation_rate = 0.5;
             elimination_rate = -0.5;
@@ -10,11 +11,11 @@ class ACM_CBRN_Hazards {
         };
 
         class Chlorine {
-            thresholds[] = {0,25,100};
+            thresholds[] = {0,25};
         };
 
         class Sarin {
-            thresholds[] = {0,25,50,75,100};
+            thresholds[] = {0,25,50,75};
         };
 
         class Lewisite {

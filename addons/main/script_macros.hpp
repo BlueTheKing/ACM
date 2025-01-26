@@ -402,6 +402,13 @@
 #define NECROSIS_THRESHOLD_LIGHT        0.1
 #define NECROSIS_THRESHOLD_LIGHTLOW     0.05
 
+// CBRN
+#define QGVAR_BUILDUP(type)                        QEGVAR(CBRN,##type##_Buildup)
+
+#define IS_EXPOSED(unit)                           (unit getVariable [QEGVAR(CBRN,Exposed_State), false])
+#define GET_EXPOSURE_BREATHINGSTATE(unit)          (unit getVariable [QEGVAR(CBRN,BreathingAbility_State), 1])
+#define GET_EXPOSURE_BREATHING_INCREASESTATE(unit) (unit getVariable [QEGVAR(CBRN,BreathingAbility_Increase_State), 1])
+
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}
 

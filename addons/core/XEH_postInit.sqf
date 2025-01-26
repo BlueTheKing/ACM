@@ -115,3 +115,7 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
 ["isNotInLyingState", {!((_this select 0) getVariable [QGVAR(Lying_State), false])}] call ACEFUNC(common,addCanInteractWithCondition);
 
 call FUNC(generateMedicationTypeMap);
+
+if (hasInterface) then {
+    GVAR(ppLowOxygenTunnelVision_Finalized) = false;
+};

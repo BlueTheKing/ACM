@@ -630,4 +630,22 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IM(Esmolol,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Esmolol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Esmolol)));
     SYRINGE_ACTION_IM(Esmolol,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Esmolol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Esmolol)));
     SYRINGE_ACTION_IM(Esmolol,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Esmolol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Esmolol)));
+
+    // CBRN
+    class WashEyes: CheckPulse {
+        displayName = ECSTRING(CBRN,WashEyes);
+        displayNameProgress = ECSTRING(CBRN,WashEyes_Progress);
+        icon = "";
+        category = "medication";
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        medicRequired = 0;
+        treatmentTime = 3;
+        allowedSelections[] = {"Head"};
+        allowSelfTreatment = 1;
+        items[] = {"ACE_WaterBottle","ACE_WaterBottle_Half","ACE_Canteen","ACE_Canteen_Half"};
+        consumeItem = 1;
+        condition = QUOTE(_patient call EFUNC(CBRN,canWashEyes));
+        callbackSuccess = QUOTE([ARR_3(_medic,_patient,_usedItem)] call EFUNC(CBRN,washEyes));
+        ACM_rollToBack = 1;
+    };
 };

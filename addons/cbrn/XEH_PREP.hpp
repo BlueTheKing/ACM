@@ -1,5 +1,10 @@
+PREP(canWashEyes);
 PREP(effectCS);
 PREP(initHazardUnit);
 PREP(initHazardZone);
 PREP(moduleCreateHazardZone);
 PREP(resetVariables);
+PREP(setBlind);
+PREP(showRadius);
+PREP(updateExposureEffects);
+PREP(washEyes);

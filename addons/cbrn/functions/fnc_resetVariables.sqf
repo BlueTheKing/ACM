@@ -17,7 +17,11 @@
 
 params ["_patient"];
 
-//_patient setVariable [QGVAR(), 0, true];
+_patient setVariable [QGVAR(Exposed_State), false, true];
+_patient setVariable [QGVAR(BreathingAbility_State), 1, true];
+_patient setVariable [QGVAR(BreathingAbility_Increase_State), 1, true];
+
+_patient setVariable [QGVAR(EyesWashed), false, true];
 
 {
     private _category = _x;
@@ -25,5 +29,8 @@ params ["_patient"];
     {
         private _hazardType = format ["%1_%2", _category, _x];
         _patient setVariable [(format ["ACM_CBRN_%1_Buildup", toLower _hazardType]), 0, true];
+        _patient setVariable [(format ["ACM_CBRN_%1_Buildup_Threshold", toLower _hazardType]), -1, true];
+        _patient setVariable [(format ["ACM_CBRN_%1_Exposed_State", toLower _hazardType]), false];
+        _patient setVariable [(format ["ACM_CBRN_%1_WasExposed", toLower _hazardType]), false, true];
     } forEach _y;
 } forEach GVAR(HazardType_List);

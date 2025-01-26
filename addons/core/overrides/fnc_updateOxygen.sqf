@@ -81,7 +81,7 @@ private _capture = 1 max ((_po2 / IDEAL_PPO2) ^ (-_po2 * 3));
 
 private _effectiveBloodVolume = [linearConversion [DEFAULT_BLOOD_VOLUME, 5, GET_EFF_BLOOD_VOLUME(_unit), 1, 0.92, true],(linearConversion [5, 4, GET_EFF_BLOOD_VOLUME(_unit), 0.92, 0.84])] select (GET_EFF_BLOOD_VOLUME(_unit) < 5);
 private _airwayState = GET_AIRWAYSTATE(_unit);
-private _breathingState = GET_BREATHINGSTATE(_unit);
+private _breathingState = GET_BREATHINGSTATE(_unit) * GET_EXPOSURE_BREATHINGSTATE(_unit);
 
 private _oxygenSaturation = _currentOxygenSaturation;
 private _oxygenChange = 0;
@@ -104,21 +104,27 @@ private _maxDecrease = [-ACM_BREATHING_MINDECREASE, (linearConversion [90, 75, _
 private _maxPositiveGain = 0.5;
 
 if !(_activeBVM) then {
+    if IS_EXPOSED(_unit) then { // CBRN
+        _maxPositiveGain = _maxPositiveGain * GET_EXPOSURE_BREATHING_INCREASESTATE(_unit);
+    };
     if IS_UNCONSCIOUS(_unit) then {
-        _maxPositiveGain = _maxPositiveGain * 0.25;
+        _maxPositiveGain = (_maxPositiveGain) * 0.25;
     };
     _maxDecrease = _maxDecrease * (1 - (0.7 * _BVMLastingEffect));
 } else {
     if (_BVMOxygenAssisted) then {
         _maxPositiveGain = _maxPositiveGain * 0.8;
-        if (IN_CRDC_ARRST(_unit)) then {
+        if IN_CRDC_ARRST(_unit) then {
             _maxDecrease = _maxDecrease * 0.3;
         } else {
             _maxDecrease = _maxDecrease * 0.1;
         };
     } else {
+        if IS_EXPOSED(_unit) then { // CBRN
+            _maxPositiveGain = _maxPositiveGain * GET_EXPOSURE_BREATHING_INCREASESTATE(_unit);
+        };
         _maxPositiveGain = _maxPositiveGain * 0.75;
-        if (IN_CRDC_ARRST(_unit)) then {
+        if IN_CRDC_ARRST(_unit) then {
             _maxDecrease = _maxDecrease * 0.9;
         } else {
             _maxDecrease = _maxDecrease * 0.7;
