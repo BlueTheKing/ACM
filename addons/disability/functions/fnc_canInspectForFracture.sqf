@@ -22,4 +22,4 @@ params ["_medic", "_patient", "_bodyPart"];
 private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 private _bodyPartDamage = ((_patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]]) select _partIndex);
 
-(GET_SPLINTS(_patient) select _partIndex) == 0 && ((((_patient getVariable [QGVAR(Fracture_State), [0,0,0,0,0,0]]) select _partIndex) > 0) || (_bodyPartDamage select _partIndex) >= FRACTURE_DAMAGE_THRESHOLD || _bodyPartDamage >= LIMPING_DAMAGE_THRESHOLD);
+(GET_SPLINTS(_patient) select _partIndex) == 0 && ((((_patient getVariable [QGVAR(Fracture_State), [0,0,0,0,0,0]]) select _partIndex) > 0) || _bodyPartDamage >= FRACTURE_DAMAGE_THRESHOLD || _bodyPartDamage >= LIMPING_DAMAGE_THRESHOLD);

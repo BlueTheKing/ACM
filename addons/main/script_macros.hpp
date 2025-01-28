@@ -412,9 +412,9 @@
 #define ACM_FRACTURE_SEVERE             2
 #define ACM_FRACTURE_COMPLEX            3
 
-#define FRACTURE_THRESHOLD_MILD         10
-#define FRACTURE_THRESHOLD_SEVERE       20
-#define FRACTURE_THRESHOLD_COMPLEX      30
+#define FRACTURE_THRESHOLD_MILD         3
+#define FRACTURE_THRESHOLD_SEVERE       5
+#define FRACTURE_THRESHOLD_COMPLEX      7
 
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}

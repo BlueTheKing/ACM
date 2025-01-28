@@ -47,11 +47,11 @@ switch (true) do {
     };
     case (_bodyPartDamage < FRACTURE_THRESHOLD_SEVERE && _complication): {
         _givePain = random 1 < 0.5;
-        _canReFracture = random 1 < 0.5;
+        _canReFracture = random 1 < 0.3;
         _targetFracture = ACM_FRACTURE_MILD;
     };
     default {
-        _splintNoEffect = random 1 < 0.5;
+        _splintNoEffect = random 1 < 0.3;
 
         if !(_splintNoEffect) then {
             _canReFracture = random 1 < 0.5;
@@ -101,7 +101,7 @@ private _PFH = [{
 
     private _fractureArray = _patient getVariable [QGVAR(Fracture_State), [0,0,0,0,0,0]];
 
-    if (_fractureArray == [0,0,0,0,0,0]) exitWith {
+    if (_fractureArray isEqualTo [0,0,0,0,0,0]) exitWith {
         _patient setVariable [QGVAR(Fracture_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
