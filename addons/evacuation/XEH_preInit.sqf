@@ -71,6 +71,15 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(convertedCasualtyDeathPenalty),
+    "SLIDER",
+    [LLSTRING(SETTING_ConvertedCasualtyDeathPenalty), LLSTRING(SETTING_ConvertedCasualtyDeathPenalty_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Tickets)],
+    [1, 100, 1, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(allowConvert),
     "LIST",
     [LLSTRING(SETTING_Allow_Convert), LLSTRING(SETTING_Allow_Convert_Desc)],

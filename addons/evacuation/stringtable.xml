@@ -61,6 +61,12 @@
             <English>Sets amount of available casualty tickets</English>
             <Polish>Ustawia ilość punktów odrodzenia dostępnych dla poszkodowanych</Polish>
         </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty">
+            <English>Converted Casualty Death Ticket Penalty</English>
+        </Key>
+        <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty_Desc">
+            <English>Sets amount of respawn tickets subtracted upon converted casualty death</English>
+        </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert">
             <English>Allow Converting Casualties</English>
             <Polish>Pozwól na konwersje poszkodowanych</Polish>
