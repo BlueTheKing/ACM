@@ -4,435 +4,550 @@
         <Key ID="STR_ACM_Airway_Category">
             <English>ACM: Airway</English>
             <Polish>ACM: Drogi oddechowe</Polish>
+            <German>ACM:Atemweg</German>
         </Key>
         <Key ID="STR_ACM_Airway_Category_AirwayManagement">
             <English>Airway Management</English>
             <Polish>Udrażnianie dróg oddechowych</Polish>
+            <German>Atemwegsmanagement</German>
         </Key>
         <Key ID="STR_ACM_Airway_Category_AirwayAdjunct">
             <English>Airway Adjunct</English>
             <Polish>Stabilizacja dróg oddechowych</Polish>
+            <German>Atemwegshilfe</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Enable">
             <English>Enable Airway</English>
             <Polish>Włącz drogi oddechowe</Polish>
+            <German>Atemwegskomplikationen aktivieren</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Enable_Desc">
             <English>Enable airway collapse/obstruction</English>
             <Polish>Włącz niedrożność i zapadanie się dróg oddechowych</Polish>
+            <German>Atemwegskollaps/verlegung aktivieren</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayCollapseChance">
             <English>Airway Collapse Chance Multiplier</English>
             <Polish>Mnożnik szansy zapadnięcia się dróg oddechowych</Polish>
+            <German>Atemwegskollaps Wahrscheinlichkeitsmultiplikator</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayObstructionChance_Blood">
             <English>Airway Obstruction (Blood) Chance Multiplier</English>
             <Polish>Szansa na niedrożność (Krew)</Polish>
+            <German>Atemwegsverlegung(Blut) Wahrscheinlichkeitsmultiplikator</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayObstructionChance_Vomit">
             <English>Airway Obstruction (Vomit) Chance Multiplier</English>
             <Polish>Szansa na niedrożność (Wymiociny)</Polish>
+            <German>Atemwegsverlegung(Erbrochenes) Wahrscheinlichkeitsmultiplikator</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_RecoveryPosition">
             <English>Establish Recovery Position Time</English>
             <Polish>Czas pozycji bezpiecznej</Polish>
+            <German>Stabile Seitenlage Zeit</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_RecoveryPosition_Desc">
             <English>Time to establish Recovery Position</English>
             <Polish>Czas potrzebny na ułożenie poszkodowanego w pozycji bocznej ustalonej</Polish>
+            <German>Zeit bis Patient in stabile Seitenlage gelegt ist</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SuctionBag">
             <English>Allow Suction Bag</English>
             <Polish>Pozwól na użycie ssaka ręcznego</Polish>
+            <German>Absaugbeutel erlauben</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SuctionBag_Desc">
             <English>Training level required to use Suction Bag</English>
             <Polish>Poziom wyszkolenia potrzebny do użycia ssaka ręcznego</Polish>
+            <German>Benötigte Qualifikationsstufe um den Absaugbeutel zu benutzen</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_ACCUVAC">
             <English>Allow ACCUVAC</English>
             <Polish>Pozwól na użycie ACCUVACa</Polish>
+            <German>ACCUVAC erlauben</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_ACCUVAC_Desc">
             <English>Training level required to use ACCUVAC</English>
             <Polish>Poziom wyszkolenia potrzebny do użycia ACCUVACa</Polish>
+            <German>Benötigte Qualifikationsstufe um die ACCUVAC zu benutzen</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_OPA">
             <English>Guedel Tube Time</English>
             <Polish>Czas rurki ustno-gardłowej</Polish>
+            <German>Guedel-Tubus Zeit</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_OPA_Desc">
             <English>Time to insert Guedel Tube</English>
             <Polish>Czas potrzebny na aplikacje rurki ustno-gardłowej</Polish>
+            <German>Zeit bis Guedeltubus eingelegt ist</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_NPA">
             <English>NPA Time</English>
             <Polish>Czas rurki nosowo-gardłowej</Polish>
+            <German>Nasopharyngealtubusl Zeit</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_NPA_Desc">
             <English>Time to insert NPA</English>
             <Polish>Czas potrzebny na aplikacje rurki nosowo-gardłowej</Polish>
+            <German>Zeit bis der Nasopharyngealtubus eingelegt ist</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_SGA">
             <English>i-gel Time</English>
             <Polish>Czas maski krtaniowej i-gel</Polish>
+            <German>i-gel Zeit</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_SGA_Desc">
             <English>Time to insert i-gel</English>
             <Polish>Czas potrzebny na aplikacje maski krtaniowej i-gel</Polish>
+            <German>Zeit bis i-gel Tubus eingelegt ist</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_OPA">
             <English>Allow Guedel Tube</English>
             <Polish>Pozwól na użycie rurki ustno-gardłowej</Polish>
+            <German>Guedel-Tubus erlauben</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_OPA_Desc">
             <English>Training level required to insert Guedel Tube</English>
             <Polish>Poziom wyszkolenia potrzebny do użycia rurki ustno-gardłowej</Polish>
+            <German>Benötigte Qualifikationsstufe um den Gudel Tubus zu benutzen</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_NPA">
             <English>Allow NPA</English>
             <Polish>Pozwól na użycie rurki nosowo-gardłowej</Polish>
+            <German>Nasopharyngealtubus erlauben</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_NPA_Desc">
             <English>Training level required to insert NPA</English>
             <Polish>Poziom wyszkolenia potrzebny do użycia rurki nosowo-gardłowej</Polish>
+            <German>Benötigte Qualifikationsstufe um den Nasopharyngealtubus zu benutzen</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SGA">
             <English>Allow i-gel</English>
             <Polish>Pozwól na użycie maski krtaniowej i-gel</Polish>
+            <German>i-gel erlauben</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SGA_Desc">
             <English>Training level required to insert i-gel</English>
             <Polish>Poziom wyszkolenia potrzebny do użycia maski krtaniowej i-gel</Polish>
+            <German>Benötigte Qualifikationsstufe um die i-gel-Maske zu benutzen</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayAdjunctsReusable">
             <English>Airway Adjuncts Reusable</English>
             <Polish>Przedmioty dróg oddechowych ponownego użytku</Polish>
+            <German>Atemwegshilfen wiederverwenden</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayAdjunctsReusable_Desc">
             <English>Airway adjuncts are kept instead of discarded on removal</English>
             <Polish>Przedmioty dróg oddechowych pozostają w ekwipunku po ich użyciu</Polish>
-        </Key><!--
+            <German>Atemwegshilfen sind wiederverwendbar und werden nicht verworfen nach Entfernung</German>
+        </Key>
+        <!--
             // Items // -->
         <Key ID="STR_ACM_Airway_GuedelTube">
             <English>Guedel Tube</English>
             <Polish>Rurka ustno-gardłowa</Polish>
+            <German>Guedel-Tubus</German>
         </Key>
         <Key ID="STR_ACM_Airway_GuedelTube_Desc">
             <English>Used to keep airway open</English>
             <Polish>Udrażnia drogi oddechowe przez usta</Polish>
+            <German>Hält den Atemweg offen, indem das Zurückfallen der Zunge verhindert wird</German>
         </Key>
         <Key ID="STR_ACM_Airway_IGel">
             <English>i-gel</English>
             <Polish>i-gel</Polish>
+            <German>i-gel</German>
         </Key>
         <Key ID="STR_ACM_Airway_IGel_Desc">
             <English>Used to secure airway for prolonged time</English>
             <Polish>Udrażnia drogi oddechowe chroniąc przed niedrożnością i zapadaniem</Polish>
+            <German>Supraglottische Atemwegshilfe, um den Atemweg für längere Zeit zu sichern</German>
         </Key>
         <Key ID="STR_ACM_Airway_NPA">
             <English>NPA</English>
             <Polish>Rurka nosowo-gardłowa (NPA)</Polish>
+            <German>Nasopharyngealtubus/Wendltubus</German>
         </Key>
         <Key ID="STR_ACM_Airway_NPA_Desc">
             <English>Used to keep airway open through nasal route</English>
             <Polish>Udrażnia drogi oddechowe przez nos</Polish>
+            <German>Hält den Atemweg über die Nase offen</German>
         </Key>
         <Key ID="STR_ACM_Airway_SuctionBag">
             <English>Emergency Disposable Suction Bag</English>
             <Polish>Jednorazowy ssak ręczny</Polish>
+            <German>Einweghandabsaugpumpe</German>
         </Key>
         <Key ID="STR_ACM_Airway_SuctionBag_Short">
             <English>Suction Bag</English>
             <Polish>Ssak ręczny</Polish>
+            <German>Handabsaugpumpe</German>
         </Key>
         <Key ID="STR_ACM_Airway_SuctionBag_Desc">
             <English>Single-use bag used to clear airway obstructions</English>
             <Polish>Jednorazowy ssak służący do oczyszczania zatorów dróg oddechowych</Polish>
+            <German>Eine Einmalhandabsaugpumpe, um Flüssigkeiten im Rachenraum abzusaugen</German>
         </Key>
         <Key ID="STR_ACM_Airway_ACCUVAC">
             <English>ACCUVAC</English>
             <Polish>ACCUVAC</Polish>
+            <German>ACCUVAC</German>
         </Key>
         <Key ID="STR_ACM_Airway_ACCUVAC_Desc">
             <English>Device used to clear airway obstructions</English>
             <Polish>Urządzenie służące do oczyszczania zatorów dróg oddechowych</Polish>
-        </Key><!--
+            <German>Eine elektronische Absaugpump, um Flüssigkeiten im Rachenraum abzusaugen</German>
+        </Key>
+        <!--
             // Actions // -->
         <Key ID="STR_ACM_Airway_CheckAirway">
             <English>Check Airway</English>
             <Polish>Sprawdź drożność dróg oddechowych</Polish>
+            <German>Atemweg überprüfen</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Progress">
             <English>Checking Airway...</English>
             <Polish>Sprawdzanie drożności...</Polish>
+            <German>Überprüfe Atemwege...</German>
         </Key>
         <Key ID="STR_ACM_Airway_PerformHeadTurning">
             <English>Perform Head Turning</English>
             <Polish>Obróć głowę</Polish>
+            <German>Kopf zur Seite drehen</German>
         </Key>
         <Key ID="STR_ACM_Airway_PerformHeadTurning_Progress">
             <English>Head Turning...</English>
             <Polish>Obracanie głowy...</Polish>
+            <German>Drehe Kopf zur Seite...</German>
         </Key>
         <Key ID="STR_ACM_Airway_PerformHeadTiltChinLift">
             <English>Perform Head Tilt-Chin Lift</English>
             <Polish>Wykonaj rękoczyn czołowo-żuchwowy</Polish>
+            <German>Kopf überstrecken</German>
         </Key>
         <Key ID="STR_ACM_Airway_EstablishRecoveryPosition">
             <English>Establish Recovery Position</English>
             <Polish>Pozycja boczna bezpieczna</Polish>
+            <German>Stabile Seitenlage etablieren</German>
         </Key>
         <Key ID="STR_ACM_Airway_EstablishRecoveryPosition_Progress">
             <English>Establishing Recovery Position...</English>
             <Polish>Ustawianie pozycji bocznej bezpiecznej...</Polish>
+            <German>Lege Patient in die stabile Seitenlage...</German>
         </Key>
         <Key ID="STR_ACM_Airway_CancelRecoveryPosition">
             <English>Cancel Recovery Position</English>
             <Polish>Przerwij pozycje boczną bezpieczną</Polish>
+            <German>Stabile Seitenlage abbrechen</German>
         </Key>
         <Key ID="STR_ACM_Airway_CancelRecoveryPosition_Progress">
             <English>Cancelling Recovery Position...</English>
             <Polish>Przerywanie pozycji bocznej bezpiecznej...</Polish>
+            <German>Hebe die stabile Seitenlage auf und lege Patienten auf den Rücken...</German>
         </Key>
         <Key ID="STR_ACM_Airway_UseSuctionBag">
             <English>Use Suction Bag</English>
             <Polish>Użyj ssaka ręcznego</Polish>
+            <German>Einwegabsaugpumpe verwenden</German>
         </Key>
         <Key ID="STR_ACM_Airway_UseSuctionBag_Progress">
             <English>Using Suction Bag...</English>
             <Polish>Używanie ssaka ręcznego...</Polish>
+            <German>Verwende Einwegabsaugpumpe...</German>
         </Key>
         <Key ID="STR_ACM_Airway_UseACCUVAC">
             <English>Use ACCUVAC</English>
             <Polish>Użyj ACCUVACa</Polish>
+            <German>ACCUVAC benutzen</German>
         </Key>
         <Key ID="STR_ACM_Airway_UseACCUVAC_Progress">
             <English>Using ACCUVAC...</English>
             <Polish>Używanie ACCUVACa...</Polish>
+            <German>Verwende ACCUVAC...</German>
         </Key>
         <Key ID="STR_ACM_Airway_InsertGuedelTube">
             <English>Insert Guedel Tube</English>
             <Polish>Wprowadź rurki ustno-gardłowej</Polish>
+            <German>Gudel-Tubus einlegen</German>
         </Key>
         <Key ID="STR_ACM_Airway_InsertGuedelTube_Progress">
             <English>Inserting Guedel Tube...</English>
             <Polish>Wprowadzanie rurki ustno-gardłowej...</Polish>
+            <German>Lege Guedel-Tubus ein...</German>
         </Key>
         <Key ID="STR_ACM_Airway_InsertNPA">
             <English>Insert NPA</English>
             <Polish>Wprowadź rurki nosowo-gardłowej (NPA)</Polish>
+            <German>Nasopharyngealtubus (Wendl-Tubus) einlegen</German>
         </Key>
         <Key ID="STR_ACM_Airway_InsertNPA_Progress">
             <English>Inserting NPA...</English>
             <Polish>Wprowadzanie rurki nosowo-gardłowej...</Polish>
+            <German>Lege Nasopharyngealtubus ein...</German>
         </Key>
         <Key ID="STR_ACM_Airway_InsertIGel">
             <English>Insert i-gel</English>
             <Polish>Użyj maski krtaniowej i-gel</Polish>
+            <German>i-gel einlegen</German>
         </Key>
         <Key ID="STR_ACM_Airway_InsertIGel_Progress">
             <English>Inserting i-gel...</English>
             <Polish>Wprowadzanie maski krtaniowej i-gel...</Polish>
+            <German>Lege i-gel ein...</German>
         </Key>
         <Key ID="STR_ACM_Airway_RemoveGuedelTube">
             <English>Remove Guedel Tube</English>
             <Polish>Wyjmij rurkę ustno-gardłową</Polish>
+            <German>Guedel-Tubus entfernen</German>
         </Key>
         <Key ID="STR_ACM_Airway_RemoveGuedelTube_Progress">
             <English>Removing Guedel Tube...</English>
             <Polish>Wyjmowanie rurki ustno-gardłowej...</Polish>
+            <German>Entferne Guedel-Tubus...</German>
         </Key>
         <Key ID="STR_ACM_Airway_RemoveNPA">
             <English>Remove NPA</English>
             <Polish>Wyjmij rurkę nosowo-gardłową (NPA)</Polish>
+            <German>Nasopharyngealtubus (Wendl-Tubus) entfernen</German>
         </Key>
         <Key ID="STR_ACM_Airway_RemoveNPA_Progress">
             <English>Removing NPA...</English>
             <Polish>Wyjmowanie rurki nosowo-gardłowej...</Polish>
+            <German>Entferne Nasopharyngealtubus...</German>
         </Key>
         <Key ID="STR_ACM_Airway_RemoveIGel">
             <English>Remove i-gel</English>
             <Polish>Wyjmij maskę krtaniową i-gel</Polish>
+            <German>i-gel entfernen</German>
         </Key>
         <Key ID="STR_ACM_Airway_RemoveIGel_Progress">
             <English>Removing i-gel...</English>
             <Polish>Wyjmowanie maski krtaniowej i-gel...</Polish>
-        </Key><!--
+            <German>Entferne i-gel...</German>
+        </Key>
+        <!--
             // Head tilt-chin lift Action // -->
         <Key ID="STR_ACM_Airway_HeadTiltChinLift_Already">
             <English>Patient already has head tilted-chin lifted</English>
             <Polish>Rękoczyn czoło-żuchwa w toku</Polish>
+            <German>Kopf des Patienten bereits überstreckt</German>
         </Key>
         <Key ID="STR_ACM_Airway_HeadTiltChinLift_ActionLog">
             <English>%1 started performing head tilt-chin lift</English>
             <Polish>%1 rozpoczął rękoczyn czoło-żuchwa</Polish>
+            <German>%1 überstreckt den Kopf des Patienten</German>
         </Key>
         <Key ID="STR_ACM_Airway_HeadTiltChinLift_ActionHint">
             <English>Performing head tilt-chin lift&lt;br/&gt;Stay close to the patient</English>
             <Polish>Rękoczyn czoło-żuchwa w toku&lt;br/&gt;Pozostań blisko poszkodowanego</Polish>
+            <German>Du überstreckst den Kopf des Patienten&lt;br/&gt;Bleib in der Nähe des Patienten</German>
         </Key>
         <Key ID="STR_ACM_Airway_HeadTiltChinLift_ActionInProgress">
             <English>Performing Head Tilt-Chin Lift...</English>
             <Polish>Prowadzenie rękoczynu czoło-żuchwa...</Polish>
+            <German>Überstrecke den Kopf des Patienten...</German>
         </Key>
         <Key ID="STR_ACM_Airway_HeadTiltChinLift_ActionCancelled">
             <English>Head tilt-chin lift cancelled</English>
             <Polish>Rękoczyn czoło-żuchwa przerwany</Polish>
-        </Key><!--
+            <German>Überstrecken des Kopfes abgebrochen</German>
+        </Key>
+        <!--
             // Check Airway Action // -->
         <Key ID="STR_ACM_Airway_CheckAirway_ActionLog">
             <English>%1 checked airway: %2</English>
             <Polish>%1 sprawdził drogi oddechowe: %2</Polish>
+            <German>%1 hat den Atemweg überprüft: %2</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_AirwayIsClear">
             <English>Airway is clear</English>
             <Polish>Drogi oddechowe drożne</Polish>
+            <German>Atemweg ist frei</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_AirwayIsClear_Short">
             <English>Clear</English>
             <Polish>Drożne</Polish>
+            <German>Frei</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_RecoveryPosition">
             <English>In Recovery Position</English>
             <Polish>W pozycji bocznej bezpiecznej</Polish>
+            <German>Liegt in stabiler Seitenlage</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_RecoveryPosition_Short">
             <English>In Recovery</English>
             <Polish>W bocznej bezpiecznej</Polish>
+            <German>In stabiler Seitenlage</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_HeadTiltChinLift">
             <English>Head Tilted-Chin Lifted</English>
             <Polish>Rękoczyn czoło-żuchwa wykonany</Polish>
+            <German>Kopf überstreckt</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_HeadTiltChinLift_Short">
             <English>Head Tilted</English>
             <Polish>Czoło-żuchwa w toku</Polish>
+            <German>Kopf überstreckt</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_%1_Inserted">
             <English>%1 Inserted</English>
             <Polish>Wprowadzono: %1</Polish>
+            <German>%1 eingelegt</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Mild">
             <English>Airway mildly collapsed</English>
             <Polish>Drogi oddechowe lekko zapadnięte</Polish>
+            <German>Atemweg leicht kollabiert</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Mild_Short">
             <English>Mild collapse</English>
             <Polish>Lekkie zapadnięcie</Polish>
+            <German>Leicht kollabiert</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Moderate">
             <English>Airway moderately collapsed</English>
             <Polish>Drogi oddechowe umiarkowanie zapadnięte</Polish>
+            <German>Atemweg moderat kollabiert</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Moderate_Short">
             <English>Moderate collapse</English>
             <Polish>Umiarkowane zapadnięcie</Polish>
+            <German>Moderat kollabiert</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Severe">
             <English>Airway severely collapsed</English>
             <Polish>Drogi oddechowe poważnie zapadnięte</Polish>
+            <German>Atemweg stark kollabiert</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Severe_Short">
             <English>Severe collapse</English>
             <Polish>Poważne zapadnięcie</Polish>
+            <German>Stark kollabiert</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Obstruction_Light">
             <English>Airway lightly obstructed</English>
             <Polish>Drogi oddechowe lekko niedrożne</Polish>
+            <German>Atemweg leicht verlegt</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Obstruction_Light_Short">
             <English>Light obstruction</English>
             <Polish>lekka niedrożność</Polish>
+            <German>Leicht verlegt</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Obstruction">
             <English>Airway obstructed</English>
             <Polish>Drogi oodechowe niedrożne</Polish>
+            <German>Atemweg verlegt</German>
         </Key>
         <Key ID="STR_ACM_Airway_CheckAirway_Obstruction_Short">
             <English>Obstruction</English>
             <Polish>Niedrożność</Polish>
-        </Key><!--
+            <German>Verlegt</German>
+        </Key>
+        <!--
             // Suction Action // -->
         <Key ID="STR_ACM_Airway_Suction_Finished">
             <English>Suction finished</English>
             <Polish>Ssanie zakończone</Polish>
+            <German>Patient fertig abgesaugt</German>
         </Key>
         <Key ID="STR_ACM_Airway_Suction_AirwayIsClear">
             <English>Airway is clear</English>
             <Polish>Drogi oddechowe drożne</Polish>
+            <German>Atemweg ist frei</German>
         </Key>
         <Key ID="STR_ACM_Airway_Suction_AirwayHasBeenCleared">
             <English>Airway has been cleared</English>
             <Polish>Drogi oddechowe zostały udrożnione</Polish>
-        </Key><!--
+            <German>Atemweg frei gemacht</German>
+        </Key>
+        <!--
             // Adjunct Insertion Action // -->
         <Key ID="STR_ACM_Airway_Adjunct_Already">
             <English>Airway item already inserted</English>
             <Polish>Przedmiot jest już w użyciu</Polish>
+            <German>Atemwegshilfe ist bereits eingelegt</German>
         </Key>
         <Key ID="STR_ACM_Airway_Adjunct_Failed">
             <English>Failed to insert %1</English>
             <Polish>Nie udało się użyć: %1</Polish>
+            <German>Fehler beim Einlegen von %1</German>
         </Key>
         <Key ID="STR_ACM_Airway_Adjunct_%1_Inserted">
             <English>%1 inserted</English>
             <Polish>Użyto: %1</Polish>
+            <German>%1 eingelegt</German>
         </Key>
         <Key ID="STR_ACM_Airway_Adjunct_ActionLog">
             <English>%1 has inserted %2</English>
             <Polish>%1 użył: %2</Polish>
-        </Key><!--
+            <German>%1 hat %2 eingelegt</German>
+        </Key>
+        <!--
             // Head Turning Action // -->
         <Key ID="STR_ACM_Airway_HeadTurn_Performed">
             <English>Head turning performed</English>
             <Polish>Obracanie głowy wykonane</Polish>
+            <German>Kopf zur Seite gedreht</German>
         </Key>
         <Key ID="STR_ACM_Airway_HeadTurn_AirwayIsClear">
             <English>Airway is clear</English>
             <Polish>Drogi oddechowe drożne</Polish>
+            <German>Atemweg ist frei</German>
         </Key>
         <Key ID="STR_ACM_Airway_HeadTurn_AirwayCleared">
             <English>Airway has been cleared</English>
             <Polish>Drogi oddechowe oczyszczone</Polish>
+            <German>Atemweg frei gemacht</German>
         </Key>
         <Key ID="STR_ACM_Airway_HeadTurn_Failed">
             <English>Head turning unsuccessful</English>
             <Polish>Obracanie głowy nieudane</Polish>
+            <German>Kopf zur Seite drehen war nicht erfolgreich</German>
         </Key>
         <Key ID="STR_ACM_Airway_HeadTurn_SuctionRequired">
             <English>Medical suction required</English>
             <Polish>Ssak wymagany</Polish>
+            <German>Absaugung benötigt</German>
         </Key>
         <Key ID="STR_ACM_Airway_HeadTurn_ActionLog">
             <English>%1 performed head turning</English>
             <Polish>%1 wykonał obracanie głowy</Polish>
-        </Key><!--
+            <German>%1 hat den Kopf zur Seite gedreht</German>
+        </Key>
+        <!--
             // Recovery Position Action // -->
         <Key ID="STR_ACM_Airway_RecoveryPosition_Already">
             <English>Patient already in recovery position</English>
             <Polish>Pacjęt w pozycji bezpiecznej</Polish>
+            <German>Patient liegt bereits in stabiler Seitenlage</German>
         </Key>
         <Key ID="STR_ACM_Airway_RecoveryPosition_Established">
             <English>Established recovery position</English>
             <Polish>Pozycja bezpieczna wykonana</Polish>
+            <German>Patient in stabile Seitenlage gedreht</German>
         </Key>
         <Key ID="STR_ACM_Airway_RecoveryPosition_Established_ActionLog">
             <English>%1 established recovery position</English>
             <Polish>%1 wykonał pozycję bezpieczną</Polish>
+            <German>%1 legte den Patienten in stabile Seitenlage</German>
         </Key>
         <Key ID="STR_ACM_Airway_RecoveryPosition_Cancelled">
             <English>Cancelled recovery position</English>
             <Polish>Przerwano pozycję bezpieczną</Polish>
+            <German>Stabile Seitenlage abgebrochen</German>
         </Key>
         <Key ID="STR_ACM_Airway_RecoveryPosition_Cancelled_ActionLog">
             <English>%1 cancelled recovery position</English>
             <Polish>%1 Przerwał pozycję bezpieczną</Polish>
-        </Key><!--
+            <German>%1 hat den Patienten aus der stabilen Seitenlage geholt</German>
+        </Key>
+        <!--
             // GUI // -->
         <Key ID="STR_ACM_Airway_GUI_HeadTiltedChinLifted">
             <English>Head Tilted &amp; Chin Lifted</English>
             <Polish>Rękoczyn czoło-żuchwa w toku</Polish>
+            <German>Kopf überstreckt</German>
         </Key>
     </Package>
 </Project>
