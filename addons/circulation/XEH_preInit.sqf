@@ -227,7 +227,7 @@ PREP_RECOMPILE_END;
 } forEach [["O", "O+", 39],["ON", "O-", 5],["A", "A+", 28],["AN", "A-", 3],["B", "B+", 18],["BN", "B-", 2],["AB", "AB+", 4],["ABN", "AB-", 1]];
 
 [
-    QGVAR(customBloodTypeList_Enable),
+    QGVAR(customBloodTypeList_enable),
     "CHECKBOX",
     [LLSTRING(SETTING_CustomBloodTypeList), LLSTRING(SETTING_CustomBloodTypeList_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_BloodTypes)],

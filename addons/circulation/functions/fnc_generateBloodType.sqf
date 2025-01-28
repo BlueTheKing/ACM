@@ -19,7 +19,7 @@ params ["_patient"];
 
 if (GET_BLOODTYPE(_patient) != -1) exitWith {GET_BLOODTYPE(_patient)};
 
-private _useList = GVAR(customBloodTypeList_Enable);
+private _useList = GVAR(customBloodTypeList_enable);
 
 /*
     O+ 39% 
