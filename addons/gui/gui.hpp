@@ -16,16 +16,16 @@ class RscControlsGroupNoScrollbars;
 class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
     class Controls {
         class Background;
-        class Head: Background;
-        class Torso: Background;
-        class ArmLeft: Background;
-        class ArmRight: Background;
-        class LegLeft: Background;
-        class LegRight: Background;
-        class ArmLeftB: Background;
-        class ArmRightB: ArmLeftB;
-        class LegLeftB: ArmLeftB;
-        class LegRightB: ArmLeftB;
+        class Head: Background {};
+        class Torso: Background {};
+        class ArmLeft: Background {};
+        class ArmRight: Background {};
+        class LegLeft: Background {};
+        class LegRight: Background {};
+        class ArmLeftB: Background {};
+        class ArmRightB: ArmLeftB {};
+        class LegLeftB: ArmLeftB {};
+        class LegRightB: ArmLeftB {};
         class Torso_ChestSeal: Background {
             idc = IDC_BODY_TORSO_CHESTSEAL;
             text = QPATHTOF(data\body_image\torso_chestseal.paa);
@@ -128,11 +128,11 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
         class ArmLeftT: Background {
             text = QPATHTOF(data\body_image\leftarm_tourniquet.paa);
         };
-        class ArmRightT: ArmLeftT{
+        class ArmRightT: ArmLeftT {
             text = QPATHTOF(data\body_image\rightarm_tourniquet.paa);
         };
-        class LegLeftT: ArmLeftT;
-        class LegRightT: ArmLeftT;
+        class LegLeftT: ArmLeftT {};
+        class LegRightT: ArmLeftT {};
     };
 };
 
@@ -151,7 +151,7 @@ class ACE_Medical_Menu {
 
 class ACEGVAR(medical_gui,TriageSelect): RscControlsGroupNoScrollbars {
     class Controls {
-        class None: RscButton;
+        class None: RscButton {};
         class Deceased: None {
             text = CSTRING(Triage_Priority4);
         };
