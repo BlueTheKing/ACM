@@ -25,6 +25,6 @@ private _radiusX = 5;
 private _radiusY = 5;
 private _hazardType = "chemical_cs";
 
-private _originObject = [QGVAR(initHazardZone), [_logic, false, _hazardType, [_radiusX,_radiusY,0,false,-1], -1, false, true, ACE_player]] call CBA_fnc_serverEvent;
+[QGVAR(initHazardZone), [_logic, false, _hazardType, [_radiusX,_radiusY,0,false,-1], -1, false, true, true, ACE_player]] call CBA_fnc_serverEvent;
 
 deleteVehicle _logic;

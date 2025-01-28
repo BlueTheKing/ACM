@@ -1,10 +1,17 @@
+PREP(canPutOnGasMask);
+PREP(canReplaceFilter);
+PREP(canTakeOffGasMask);
 PREP(canWashEyes);
 PREP(effectCS);
 PREP(initHazardUnit);
 PREP(initHazardZone);
 PREP(moduleCreateHazardZone);
+PREP(putOnGasMask);
+PREP(replaceFilter);
 PREP(resetVariables);
 PREP(setBlind);
 PREP(showRadius);
+PREP(spawnChemicalMist);
+PREP(takeOffGasMask);
 PREP(updateExposureEffects);
 PREP(washEyes);

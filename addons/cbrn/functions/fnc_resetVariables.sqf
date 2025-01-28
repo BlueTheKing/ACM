@@ -23,6 +23,8 @@ _patient setVariable [QGVAR(BreathingAbility_Increase_State), 1, true];
 
 _patient setVariable [QGVAR(EyesWashed), false, true];
 
+_patient setVariable [QGVAR(Filter_State), 1200];
+
 {
     private _category = _x;
     

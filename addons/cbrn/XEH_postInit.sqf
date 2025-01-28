@@ -2,6 +2,7 @@
 
 [QGVAR(initHazardZone), LINKFUNC(initHazardZone)] call CBA_fnc_addEventHandler;
 [QGVAR(initHazardUnit), LINKFUNC(initHazardUnit)] call CBA_fnc_addEventHandler;
+[QGVAR(spawnChemicalMist), LINKFUNC(spawnChemicalMist)] call CBA_fnc_addEventHandler;
 [QGVAR(showRadius), LINKFUNC(showRadius)] call CBA_fnc_addEventHandler;
 
 if (true) then { // TODO setting
@@ -49,7 +50,7 @@ if (true) then { // TODO setting
 };
 
 GVAR(PPE_List) = createHashMapFromArray [
-    ["respirator", ["G_RegulatorMask_F","G_AirPurifyingRespirator_01_F","G_AirPurifyingRespirator_02_black_F","G_AirPurifyingRespirator_02_olive_F","G_AirPurifyingRespirator_02_sand_F"]],
+    ["gasmask", ["G_RegulatorMask_F","G_AirPurifyingRespirator_01_F","G_AirPurifyingRespirator_02_black_F","G_AirPurifyingRespirator_02_olive_F","G_AirPurifyingRespirator_02_sand_F"]],
     ["suit", ["U_C_CBRN_Suit_01_Blue_F","U_B_CBRN_Suit_01_MTP_F","U_B_CBRN_Suit_01_Tropic_F","U_C_CBRN_Suit_01_White_F","U_B_CBRN_Suit_01_Wdl_F","U_I_CBRN_Suit_01_AAF_F","U_I_E_CBRN_Suit_01_EAF_F"]],
     ["goggles", ["G_Combat", "G_Combat_Goggles_tna_F","G_Lowprofile","G_Balaclava_combat"]],
     ["mask_goggles", ["G_Balaclava_TI_G_blk_F","G_Balaclava_TI_G_tna_F"]],
@@ -74,12 +75,7 @@ GVAR(PPE_List) = createHashMapFromArray [
             [_waterSource, (_waterRemaining - 1) max 0] call ACEFUNC(field_rations,setRemainingWater);
 
             [_unit, _unit] call FUNC(washEyes);
-        }, {
-            params ["_args"];
-            _args params ["_object", "_unit"];
-
-            
-        }, LLSTRING(WashEyes_Progress), {true}, ["isNotInside", "isNotSwimming", "isNotInZeus"]] call ACEFUNC(common,progressBar);
+        }, {}, LLSTRING(WashEyes_Progress), {true}, ["isNotInside"]] call ACEFUNC(common,progressBar);
     },
     {
         params ["_object", "_unit"];
@@ -95,24 +91,47 @@ GVAR(PPE_List) = createHashMapFromArray [
 }] call CBA_fnc_addEventHandler;
 
 ["ace_firedPlayer", {
-	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];
-
-    if !(local _unit) exitWith {};
+    params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];
 
     if !(_ammo in ["ACM_Grenade_CS_A", "ACM_Grenade_Shell_CS_A"]) exitWith {};
     
+    private _agent = "";
     private _fuseTime = 0;
-    private _releaseTime = -1;
+    private _lifetime = 52;
     
     if (_ammo in ["ACM_Grenade_CS_A", "ACM_Grenade_Shell_CS_A"]) then {
+        _agent = "Chemical_CS";
         _fuseTime = 2;
-        _releaseTime = 50;
     };
-    systemchat str _projectile;
     
     [{
-        params ["_unit", "_projectile", "_releaseTime"];
+        params ["_unit", "_projectile", "_agent", "_lifetime"];
 
-        [QGVAR(initHazardZone), [_projectile, true, "Chemical_CS", [], _releaseTime, false, true, _unit]] call CBA_fnc_serverEvent;
-    }, [_unit, _projectile, _releaseTime], _fuseTime] call CBA_fnc_waitAndExecute;
+        [QGVAR(initHazardZone), [_projectile, true, _agent, [], _lifetime, false, false, false, ACE_player]] call CBA_fnc_serverEvent;
+    }, [_unit, _projectile, _agent, _lifetime], _fuseTime] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;
+
+["ace_firedPlayerVehicle", {
+    params ["_vehicle", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
+
+    if !(_ammo in ["ACM_Mortar_Shell_CS_A"]) exitWith {};
+
+    _projectile setVariable [QGVAR(ChemicalPayload), _ammo];
+
+    _projectile addEventHandler ["Explode", {
+	    params ["_projectile", "_pos", "_velocity"];
+
+        private _agent = "";
+        private _lifetime = 60;
+        private _payload = _projectile getVariable [QGVAR(ChemicalPayload), ""];
+    
+        if (_payload in ["ACM_Mortar_Shell_CS_A"]) then {
+            _agent = "Chemical_CS";
+            _lifetime = 80;
+        };
+
+        [QGVAR(initHazardZone), [_projectile, false, _agent, [], _lifetime, false, false, true, ACE_player]] call CBA_fnc_serverEvent;
+
+        _projectile removeEventHandler [_thisEvent, _thisEventHandler];
+    }];
 }] call CBA_fnc_addEventHandler;

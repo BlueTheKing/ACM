@@ -10,6 +10,9 @@ class CfgPatches {
         weapons[] = {
             "ACM_Grenade_CS"
         };
+        magazines[] = {
+            "ACM_Mortar_Shell_8Rnd_CS"
+        };
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "cba_main",
@@ -23,6 +26,7 @@ class CfgPatches {
 };
 
 #include "CfgSounds.hpp"
+#include "CfgCloudlets.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgMagazines.hpp"

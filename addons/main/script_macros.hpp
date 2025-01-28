@@ -405,6 +405,8 @@
 // CBRN
 #define QGVAR_BUILDUP(type)                        QEGVAR(CBRN,##type##_Buildup)
 
+#define GET_FILTER_CONDITION(unit)                 (unit getVariable [QEGVAR(CBRN,Filter_State), 1200])
+
 #define IS_EXPOSED(unit)                           (unit getVariable [QEGVAR(CBRN,Exposed_State), false])
 #define GET_EXPOSURE_BREATHINGSTATE(unit)          (unit getVariable [QEGVAR(CBRN,BreathingAbility_State), 1])
 #define GET_EXPOSURE_BREATHING_INCREASESTATE(unit) (unit getVariable [QEGVAR(CBRN,BreathingAbility_Increase_State), 1])

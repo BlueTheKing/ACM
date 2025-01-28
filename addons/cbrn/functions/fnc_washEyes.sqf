@@ -30,7 +30,7 @@ if (_usedItem != "") then {
     [_medic, _item] call ACEFUNC(common,addToInventory);
 };
 
-[LLSTRING(WashEyes_Complete), 2, _unit] call ACEFUNC(common,displayTextStructured);
+[LLSTRING(WashEyes_Complete), 1.5, _unit] call ACEFUNC(common,displayTextStructured);
 [_patient, "activity", LLSTRING(WashEyes_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
 _patient setVariable [QGVAR(EyesWashed), true, true];

@@ -86,6 +86,8 @@ private _PFH = [{
     private _increaseModifier = 1;
     private _decreaseModifier = 1;
 
+    private _filterDepletionRate = 1;
+
     if (_inArea) then {
         private _unitUniform = uniform _patient;
         private _unitGoggles = goggles _patient;
@@ -98,15 +100,21 @@ private _PFH = [{
         };
 
         if (!_blocked || _protectedBody) then {
-            private _respiratorFound = ([_unitGoggles, _unitHeadGear] findIf {
-                _x in (GVAR(PPE_List) get "respirator");
+            private _gasMaskFound = ([_unitGoggles, _unitHeadGear] findIf {
+                _x in (GVAR(PPE_List) get "gasmask");
             }) > -1;
 
-            if (_respiratorFound) then {
+            if (_gasMaskFound) then {
                 _protectedEyes = true;
                 _filtered = true;
                 _filterLevel = 3;
-                _blocked = _protectedBody;
+
+                private _filterCondition = GET_FILTER_CONDITION(_patient);
+                _blocked = _protectedBody && _filterCondition > 0;
+
+                if (_blocked) then {
+                    _patient setVariable [QGVAR(Filter_State), (_filterCondition - _filterDepletionRate) max 0];
+                };
             };
         };
         
@@ -222,14 +230,14 @@ private _coughPFH = [{
 
     private _targets = allPlayers inAreaArray [ASLToAGL getPosASL _patient, _distance, _distance, 0, false, _distance];
 
-    [QACEGVAR(medical_feedback,forceSay3D), [_patient, (format ["ACM_CBRN_Cough_%1", _randomCough]), _distance], _targets] call CBA_fnc_targetEvent;
+    [QEGVAR(core,forceSay3D), [_patient, (format ["ACM_CBRN_Cough_%1", _randomCough]), _distance, (0.9 + (random 0.2))], _targets] call CBA_fnc_targetEvent;
 
     [{
         params ["_patient", "_randomInhale", "_distance"];
 
         private _targets = allPlayers inAreaArray [ASLToAGL getPosASL _patient, _distance, _distance, 0, false, _distance];
 
-        [QACEGVAR(medical_feedback,forceSay3D), [_patient, (format ["ACM_CBRN_Inhale_%1", _randomInhale]), _distance], _targets] call CBA_fnc_targetEvent;
+        [QEGVAR(core,forceSay3D), [_patient, (format ["ACM_CBRN_Inhale_%1", _randomInhale]), _distance, (0.9 + (random 0.2))], _targets] call CBA_fnc_targetEvent;
     }, [_patient, _randomInhale, _distance], (_coughTime + _addTime)] call CBA_fnc_waitAndExecute;
 
     _patient setVariable [QGVAR(ExposureEffects_NextCough), (CBA_missionTime + _coughTime + _inhaleTime + _addTime)];

@@ -35,6 +35,12 @@
             <Key ID="STR_ACM_CBRN_CS_Shell_40mm_Desc">
                 <English>Type: CS Gas Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: EGLM, 3GL</English>
             </Key>
+            <Key ID="STR_ACM_CBRN_GasMaskFilter">
+                <English>Gas Mask Filter</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMaskFilter_Desc">
+                <English>Used with gas mask to allow breathing in hazardous environments</English>
+            </Key>
         </Container>
         <Container name="// Wash Eyes Action //">
             <Key ID="STR_ACM_CBRN_WashEyes">
@@ -48,6 +54,35 @@
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_ActionLog">
                 <English>%1 washed eyes with water</English>
+            </Key>
+        </Container>
+        <Container name="// Gas Mask Actions //">
+            <Key ID="STR_ACM_CBRN_GasMask">
+                <English>Gas Mask</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_PutOn">
+                <English>Put On</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_TakeOff">
+                <English>Take Off</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter">
+                <English>Replace Filter</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_Donned">
+                <English>Donned Gas Mask</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_Removed">
+                <English>Took Off Gas Mask</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_DroppedFaceWear">
+                <English>Dropped Face Wear</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter_Complete">
+                <English>Replaced Gas Mask Filter</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter_Progress">
+                <English>Replacing Gas Mask Filter...</English>
             </Key>
         </Container>
     </Package>

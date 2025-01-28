@@ -646,6 +646,7 @@ class ACEGVAR(medical_treatment,actions) {
         consumeItem = 1;
         condition = QUOTE(_patient call EFUNC(CBRN,canWashEyes));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,_usedItem)] call EFUNC(CBRN,washEyes));
+        animationMedicSelf = "";
         ACM_rollToBack = 1;
     };
 };

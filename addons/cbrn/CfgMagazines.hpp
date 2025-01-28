@@ -6,7 +6,7 @@ class CfgMagazines {
         displayName = CSTRING(CS_Grenade);
         displayNameShort = CSTRING(CS_Grenade);
         picture = QPATHTOF(ui\grenade_cs_ca.paa);
-        model = "\A3\Weapons_f\ammo\smokegrenade_purple";
+        model = QPATHTOF(model\grenade_cs.p3d);
         ammo = "ACM_Grenade_CS_A";
         descriptionShort = CSTRING(CS_Grenade_Desc);
         mass = 4;
@@ -21,6 +21,15 @@ class CfgMagazines {
         picture = QPATHTOF(ui\40mm_cs_ca.paa);
         ammo = "ACM_Grenade_Shell_CS_A";
         descriptionShort = CSTRING(CS_Shell_40mm_Desc);
-        mass  =  4;
+        mass = 4;
+    };
+
+    class 8Rnd_82mm_Mo_Smoke_white;
+    class ACM_Mortar_Shell_8Rnd_CS: 8Rnd_82mm_Mo_Smoke_white
+    {
+        author = AUTHOR;
+        displayName = "Chemical Payload Shell (CS)";
+        displayNameShort = "Chemical Payload Shell (CS)";
+        ammo = "ACM_Mortar_Shell_CS_A";
     };
 };
