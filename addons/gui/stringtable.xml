@@ -45,8 +45,7 @@
             <English>No external bleeding</English>
             <Polish>Brak krwawienia zewnętrznego</Polish>
             <German>Keine externe Blutung</German>
-        </Key>
-        <!--
+        </Key><!--
             // Triage Text -->
         <Key ID="STR_ACM_GUI_Triage_Priority1_Short">
             <English>T1</English>
@@ -72,8 +71,7 @@
             <English>T4</English>
             <Polish>T4</Polish>
             <German>Schwarz</German>
-        </Key>
-        <!--
+        </Key><!--
             // Actions -->
         <Key ID="STR_ACM_GUI_AssistCarry">
             <English>Assist Carry</English>

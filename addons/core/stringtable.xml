@@ -40,8 +40,7 @@
             <English>Disables incompatible addon warnings</English>
             <Polish>Wyłącza ostrzeżenia o niekompatybilnych addonach</Polish>
             <German>Deaktiviert die Inkompatibilitätswarnung vom Addon</German>
-        </Key>
-        <!--
+        </Key><!--
             // Actions // -->
         <Key ID="STR_ACM_Core_MorphineAutoinjector">
             <English>Use Morphine Autoinjector</English>
@@ -72,8 +71,7 @@
             <English>Using Adenosine Autoinjector...</English>
             <Polish>Używanie autostrzykawki z adenozyną...</Polish>
             <German>Benutze Adenosin-Autoinjektor</German>
-        </Key>
-        <!--
+        </Key><!--
             // Cancel Carrying // -->
         <Key ID="STR_ACM_Core_CancelCarrying">
             <English>Cancel Carrying</English>
@@ -84,36 +82,31 @@
             <English>Stopped carrying %1</English>
             <Polish>Przestano nieść %1</Polish>
             <German>Patient %1 abgelegt</German>
-        </Key>
-        <!--
+        </Key><!--
             // Lying State // -->
         <Key ID="STR_ACM_Core_LyingState_GetUp">
             <English>Get Up</English>
             <Polish>Wstań</Polish>
             <German>Aufstehen</German>
-        </Key>
-        <!--
+        </Key><!--
             // Treatment Text // -->
         <Key ID="STR_ACM_Core_TreatedBy">
             <English>You are being treated by %1</English>
             <Polish>%1 udziela ci pomocy</Polish>
             <German>Du wirst von %1 behandelt</German>
-        </Key>
-        <!--
+        </Key><!--
             // Vehicle Patient Actions // -->
         <Key ID="STR_ACM_Core_VehiclePatients">
             <English>Vehicle Patients</English>
             <Polish>Pacjenci w pojeździe</Polish>
             <German>Fahrzeug Verletzte</German>
-        </Key>
-        <!--
+        </Key><!--
             // Unload and carry // -->
         <Key ID="STR_ACM_Core_CarryPatient">
             <English>Carry Patient</English>
             <Polish>Nieś pacjenta</Polish>
             <German>Patient tragen</German>
-        </Key>
-        <!--
+        </Key><!--
             // Boxes // -->
         <Key ID="STR_ACM_Core_MedicalSupplyCrate_Basic_Display">
             <English>[ACM] Basic Medical Supply Crate</English>
@@ -124,22 +117,19 @@
             <English>[ACM] Advanced Medical Supply Crate</English>
             <Polish>[ACM] Zaawansowana skrzynia z zaopatrzeniem medycznym </Polish>
             <German>[ACM] Erweiterte Versorgungskiste</German>
-        </Key>
-        <!--
+        </Key><!--
             // Dog Tags // -->
         <Key ID="STR_ACM_Core_DogTags_InspectingDogtags">
             <English>%1 is inspecting your dog tags</English>
             <Polish>%1 sprawdza twój nieśmiertelnik</Polish>
             <German>%1 schaut sich deine Erkennungsmarke an</German>
-        </Key>
-        <!--
+        </Key><!--
             // Incompatible Addons // -->
         <Key ID="STR_ACM_Core_IncompatibleAddons_Found">
             <English>Incompatible addons found:</English>
             <Polish>Znaleziono niekompatybilne addony:</Polish>
             <German>Inkompatible Addons gefunden:</German>
-        </Key>
-        <!--
+        </Key><!--
             // Common // -->
         <Key ID="STR_ACM_Core_Common_Inserted">
             <English>Inserted</English>
@@ -190,8 +180,7 @@
             <English>Empty</English>
             <Polish>Pusty </Polish>
             <German>Leer</German>
-        </Key>
-        <!--
+        </Key><!--
             // ACE Action // -->
         <Key ID="STR_ACM_Core_MedicalEquipment">
             <English>Medical Equipment</English>

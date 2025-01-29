@@ -45,8 +45,7 @@
             <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
             <Polish>Ustala czy założone opaski uciskowe mają wpływać na kołysanie broni w przypadku rąk oraz szybkość chodzenia w przypadku nóg</Polish>
             <German>Stellt ein, ob ein angelegtes Tourniquet am Arm dasie Waffennutzung und am Bein die Mobilität negativ beeinflusst</German>
-        </Key>
-        <!-- 
+        </Key><!-- 
             // Items // -->
         <Key ID="STR_ACM_Disability_UniversalSplint">
             <English>Universal Splint</English>
@@ -67,8 +66,7 @@
             <English>Re-usable splint used to immobilize fracture, should be wrapped to keep fracture stable</English>
             <Polish>Wielorazowa szyna używana do stabilizacji złamań, powinna być zawinięta by utrzymać unieruchomione złamanie</Polish>
             <German>Wiederverwendbare Schiene, um eine Fraktur zu stabilisieren, sollte mittels Fixierbinde umwickelt werden, um die Schiene zu stabilisieren</German>
-        </Key>
-        <!--
+        </Key><!--
             // Actions // -->
         <Key ID="STR_ACM_Disability_ElasticWrap_Splint">
             <English>Wrap SAM Splint</English>
@@ -114,15 +112,13 @@
             <English>Slapping Patient...</English>
             <Polish>Uderzanie...</Polish>
             <German>Setze Schmerzreiz...</German>
-        </Key>
-        <!--
+        </Key><!--
             // Remove Splint Action // -->
         <Key ID="STR_ACM_Disability_RemoveSplint_ActionLog">
             <English>%1 removed splint</English>
             <Polish>%1 zdjął szynę </Polish>
             <German>%1 entfernte Schiene</German>
-        </Key>
-        <!--
+        </Key><!--
             // Patient WakeUp Actions -->
         <Key ID="STR_ACM_Disability_AttemptWakeUp_Success">
             <English>Patient has woken up</English>
@@ -133,8 +129,7 @@
             <English>Patient is still asleep</English>
             <Polish>Pacjent nadal nieprzytomny</Polish>
             <German>Patient ist weiter bewusstlos</German>
-        </Key>
-        <!--
+        </Key><!--
             // Shake Patient Action // -->
         <Key ID="STR_ACM_Disability_ShakePatient_ActionLog">
             <English>%1 shook the patient</English>
@@ -150,8 +145,7 @@
             <English>You attempt to shake the patient awake&lt;br/&gt;%1</English>
             <Polish>Próbujesz potrząsnąć pacjentem by się obudził&lt;br/&gt;%1</Polish>
             <German>Du hast versucht den Patienten wachzurütteln&lt;br/&gt;%1</German>
-        </Key>
-        <!--
+        </Key><!--
             // Slap Patient Action // -->
         <Key ID="STR_ACM_Disability_SlapPatient_ActionLog">
             <English>%1 slapped the patient</English>
@@ -167,22 +161,19 @@
             <English>You attempt to slap the patient awake&lt;br/&gt;%1</English>
             <Polish>Próbujesz uderzyć pacjenta by się obudził&lt;br/&gt;%1</Polish>
             <German>Du versuchst einen Schmerzreiz zu setzen&lt;br/&gt;%1</German>
-        </Key>
-        <!--
+        </Key><!--
             // Splint Action // -->
         <Key ID="STR_ACM_Disability_Splint_FellOff">
             <English>Splint has fallen off</English>
             <Polish>Szyna odpadła od kończyny</Polish>
             <German>Schiene ist abgefallen</German>
-        </Key>
-        <!--
+        </Key><!--
             // Wrap SAM Splint Action // -->
         <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
             <English>%1 has wrapped SAM Splint</English>
             <Polish>%1 zawinął szynę SAM splint</Polish>
             <German>%1 hat die Schiene eingewickelt</German>
-        </Key>
-        <!--
+        </Key><!--
             // GUI // -->
         <Key ID="STR_ACM_Disability_GUI_Wrapped">
             <English>Wrapped</English>

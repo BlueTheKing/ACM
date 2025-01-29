@@ -140,8 +140,7 @@
             <English>Sets chance for AI to stay down once unconscious (without intervention)</English>
             <Polish>Szansa na pozostanie jednostki SI w pozycji leżącej, gdy straci przytomność (bez interwencji)</Polish>
             <German>Setzt die Wahrscheinlichkeit, dass eine bewusstloser KI-Einheit ohne Behandlung wieder zu bewusstsein kommt</German>
-        </Key>
-        <!--
+        </Key><!--
             // Settings in CORE // -->
         <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap">
             <English>Allow Wrapping</English>
@@ -182,8 +181,7 @@
             <English>Time multiplier when stitching wound with sutures</English>
             <Polish>Mnożnik czasu zszywania ran z użyciem szwów</Polish>
             <German>Zeitmultiplikator beim Nähen von Wunden mit Nahtmaterial</German>
-        </Key>
-        <!-- 
+        </Key><!-- 
             // Items // -->
         <Key ID="STR_ACM_Damage_PressureBandage">
             <English>Pressure Bandage</English>
@@ -214,8 +212,7 @@
             <English>Used to wrap bandages, clotted wounds and bruises</English>
             <Polish>Używany do stabilizacji bandaży, owijania skrzepniętych ran i siniaków</Polish>
             <German>Wird verwendet, um Bandagen, geronnene Wunden oder Prellungen zu fixieren bzw. zu behandeln</German>
-        </Key>
-        <!--
+        </Key><!--
             // Actions // -->
         <Key ID="STR_ACM_Damage_ElasticWrap_Progress">
             <English>Wrapping...</English>
@@ -266,8 +263,7 @@
             <English>Use Surgical Kit With Sutures (Clotted)</English>
             <Polish>Użyj zestawu do szycia ze szwami (skrzepy)</Polish>
             <German>Nähset mit Nähten verwenden (Geronnene Wunden)</German>
-        </Key>
-        <!--
+        </Key><!--
             // Wrap Body Part Action // -->
         <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">
             <English>%1 has wrapped %2</English>
@@ -283,8 +279,7 @@
             <English>clotted wounds</English>
             <Polish>skrzepnięte rany</Polish>
             <German>Geronnene Wunde</German>
-        </Key>
-        <!--
+        </Key><!--
             // Wrap Bruises Action // -->
         <Key ID="STR_ACM_Damage_WrapBruises_ActionLog">
             <English>%1 has wrapped bruises</English>

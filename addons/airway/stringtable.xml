@@ -140,8 +140,7 @@
             <English>Airway adjuncts are kept instead of discarded on removal</English>
             <Polish>Przedmioty dróg oddechowych pozostają w ekwipunku po ich użyciu</Polish>
             <German>Atemwegshilfen sind wiederverwendbar und werden nicht verworfen nach Entfernung</German>
-        </Key>
-        <!--
+        </Key><!--
             // Items // -->
         <Key ID="STR_ACM_Airway_GuedelTube">
             <English>Guedel Tube</English>
@@ -197,8 +196,7 @@
             <English>Device used to clear airway obstructions</English>
             <Polish>Urządzenie służące do oczyszczania zatorów dróg oddechowych</Polish>
             <German>Eine elektronische Absaugpump, um Blockierungen im Rachenraum abzusaugen</German>
-        </Key>
-        <!--
+        </Key><!--
             // Actions // -->
         <Key ID="STR_ACM_Airway_CheckAirway">
             <English>Check Airway</English>
@@ -324,8 +322,7 @@
             <English>Removing i-gel...</English>
             <Polish>Wyjmowanie maski krtaniowej i-gel...</Polish>
             <German>Entferne i-gel...</German>
-        </Key>
-        <!--
+        </Key><!--
             // Head tilt-chin lift Action // -->
         <Key ID="STR_ACM_Airway_HeadTiltChinLift_Already">
             <English>Patient already has head tilted-chin lifted</English>
@@ -351,8 +348,7 @@
             <English>Head tilt-chin lift cancelled</English>
             <Polish>Rękoczyn czoło-żuchwa przerwany</Polish>
             <German>Überstrecken des Kopfes abgebrochen</German>
-        </Key>
-        <!--
+        </Key><!--
             // Check Airway Action // -->
         <Key ID="STR_ACM_Airway_CheckAirway_ActionLog">
             <English>%1 checked airway: %2</English>
@@ -443,8 +439,7 @@
             <English>Obstruction</English>
             <Polish>Niedrożność</Polish>
             <German>Blockierung</German>
-        </Key>
-        <!--
+        </Key><!--
             // Suction Action // -->
         <Key ID="STR_ACM_Airway_Suction_Finished">
             <English>Suction finished</English>
@@ -460,8 +455,7 @@
             <English>Airway has been cleared</English>
             <Polish>Drogi oddechowe zostały udrożnione</Polish>
             <German>Atemweg frei gemacht</German>
-        </Key>
-        <!--
+        </Key><!--
             // Adjunct Insertion Action // -->
         <Key ID="STR_ACM_Airway_Adjunct_Already">
             <English>Airway item already inserted</English>
@@ -482,8 +476,7 @@
             <English>%1 has inserted %2</English>
             <Polish>%1 użył: %2</Polish>
             <German>%1 hat %2 eingelegt</German>
-        </Key>
-        <!--
+        </Key><!--
             // Head Turning Action // -->
         <Key ID="STR_ACM_Airway_HeadTurn_Performed">
             <English>Head turning performed</English>
@@ -514,8 +507,7 @@
             <English>%1 performed head turning</English>
             <Polish>%1 wykonał obracanie głowy</Polish>
             <German>%1 hat den Kopf zur Seite gedreht</German>
-        </Key>
-        <!--
+        </Key><!--
             // Recovery Position Action // -->
         <Key ID="STR_ACM_Airway_RecoveryPosition_Already">
             <English>Patient already in recovery position</English>
@@ -541,8 +533,7 @@
             <English>%1 cancelled recovery position</English>
             <Polish>%1 Przerwał pozycję bezpieczną</Polish>
             <German>%1 hat die stabile Seitenlage abgebrochen</German>
-        </Key>
-        <!--
+        </Key><!--
             // GUI // -->
         <Key ID="STR_ACM_Airway_GUI_HeadTiltedChinLifted">
             <English>Head Tilted &amp; Chin Lifted</English>
