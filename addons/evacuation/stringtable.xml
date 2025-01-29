@@ -97,7 +97,7 @@
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert">
             <English>Converting Casualty Location</English>
             <Polish>Miejsce konwersji poszkodowanych</Polish>
-            <German>Konversionslokalität</German>
+            <German>Konversionsstandort</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert_Desc">
             <English>Sets locations at which casualty conversion can be performed</English>

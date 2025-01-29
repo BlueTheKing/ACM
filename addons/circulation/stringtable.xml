@@ -64,7 +64,7 @@
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClottingAffectAI_Desc">
             <English>Sets whether clotting is allowed for AI</English>
             <Polish>Ustawia czy u jednostki SI mają tworzyć się skrzepy</Polish>
-            <German>Stellt ein, ob KI-Eineiten eine Blutgerinnung haben</German>
+            <German>Stellt ein, ob KI-Einheiten von Blutgerinnung betroffen sind</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestChance">
             <English>Critical Damage Cardiac Arrest Chance</English>
@@ -74,7 +74,7 @@
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestChance_Desc">
             <English>Sets chance for unit to go into cardiac arrest after taking critical damage</English>
             <Polish>Szansa na NZK przy otrzymaniu krytycznych obrażeń</Polish>
-            <German>Setzt die Wahrscheinlichkeit, dass eine Spieler reanimationspflichtig wird, nachdem ein kritischer Schaden erhalten wurde</German>
+            <German>Setzt die Wahrscheinlichkeit, dass ein Spieler reanimationspflichtig wird, nachdem kritischer Schaden erhalten wurde</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestDeteriorationRate">
             <English>Rhythm Deterioration Multiplier</English>
@@ -129,7 +129,7 @@
         <Key ID="STR_ACM_Circulation_SETTING_IVComplications">
             <English>Enable IV Complications</English>
             <Polish>Włącz komplikacje IV</Polish>
-            <German>IV-Zugang Komplikationen aktivieren</German>
+            <German>i.v. Zugang Komplikationen aktivieren</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplications_Desc">
             <English>Sets whether IVs can get complications if inserted on damaged limbs</English>
@@ -274,7 +274,7 @@
         <Key ID="STR_ACM_Circulation_IV_16g">
             <English>16g IV</English>
             <Polish>Igła 16g</Polish>
-            <German>16g (grau) Zugang</German>
+            <German>16g i.v. Katheter</German>
         </Key>
         <Key ID="STR_ACM_Circulation_IV_16g_Desc">
             <English>Used to gain intravenous access to transfuse fluids in case of blood loss</English>
@@ -284,7 +284,7 @@
         <Key ID="STR_ACM_Circulation_IV_14g">
             <English>14g IV</English>
             <Polish>Igła 14g</Polish>
-            <German>14g (orange) Zugang</German>
+            <German>14g i.v. Katheter</German>
         </Key>
         <Key ID="STR_ACM_Circulation_IV_14g_Desc">
             <English>Used to gain intravenous access to rapidly transfuse fluids in case of blood loss</English>
@@ -299,7 +299,7 @@
         <Key ID="STR_ACM_Circulation_IO_FAST1_Desc">
             <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the sternum</English>
             <Polish>Używany do uzyskania dostępu doszpikowego w mostku i przetaczania płynów oraz podawania leków</Polish>
-            <German>Wird vor allem bei schweren Verletzungen mit Tourniquets an allen Extremitäten benutzt, um im Stenrum einen i.o. Zugang zu legen und Flüssigkeit zu transfundieren</German>
+            <German>Wird bei schweren Verletzungen benutzt, um im Sternum einen i.o. Zugang für Flüssigkeitstransfusion oder Medikamentengabe zu legen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_IO_EZ">
             <English>EZ-IO</English>
@@ -339,7 +339,7 @@
         <Key ID="STR_ACM_Circulation_BloodBag">
             <English>Blood Bag %1</English>
             <Polish>Krew %1</Polish>
-            <German>Erythrozytenkonzentrat (Blutkonserve) %1</German>
+            <German>Blutkonserve %1</German>
         </Key>
         <Key ID="STR_ACM_Circulation_BloodBag_Desc">
             <English>Used to replenish lost blood volume</English>
@@ -396,7 +396,7 @@
         <Key ID="STR_ACM_Circulation_Medication_Ketamine">
             <English>Ketamine</English>
             <Polish>Ketamina</Polish>
-            <German>Esketamin</German>
+            <German>Ketamin</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Medication_Lidocaine">
             <English>Lidocaine</English>
@@ -498,7 +498,7 @@
         <Key ID="STR_ACM_Circulation_Vial_Lidocaine_Desc">
             <English>Used as local anesthetic for painful surgical procedures</English>
             <Polish>Używana jako lokalne znieczulenie dla bolesnych zabiegów medycznych</Polish>
-            <German>Lokalanästhetikum und Klasse 1 Antiarrhythmikum</German>
+            <German>Lokalanästhetikum und Antiarrhythmikum</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_TXA">
             <English>TXA Vial (1g/10ml)</English>
@@ -518,7 +518,7 @@
         <Key ID="STR_ACM_Circulation_Vial_Amiodarone_Desc">
             <English>Used to treat irregular heart rhythms</English>
             <Polish>Używany do walki z nieregularnymi rytmami serca</Polish>
-            <German>Klasse 3 Antiarrhythmikum</German>
+            <German>Antiarrhythmikum</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_Fentanyl">
             <English>Fentanyl Vial (100mcg/2ml)</English>
@@ -528,7 +528,7 @@
         <Key ID="STR_ACM_Circulation_Vial_Fentanyl_Desc">
             <English>Used to manage acute severe pain</English>
             <Polish>Używana do walki z silnym bólem</Polish>
-            <German>Behandelt schwere Schmerzen</German>
+            <German>Behandelt schweren Schmerz</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_Ondansetron">
             <English>Ondansetron Vial (4mg/2ml)</English>
@@ -538,7 +538,7 @@
         <Key ID="STR_ACM_Circulation_Vial_Ondansetron_Desc">
             <English>Used to manage nausea and vomiting</English>
             <Polish>Używany do walki z mdłościami i wymiotami</Polish>
-            <German>Antiemetikum, Behandelt Übelkeit und Ebrechen</German>
+            <German>Antiemetikum, um Übelkeit und Ebrechen zu behandeln.</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_CalciumChloride">
             <English>Calcium Chloride Vial (1g/10ml)</English>
@@ -548,7 +548,7 @@
         <Key ID="STR_ACM_Circulation_Vial_CalciumChloride_Desc">
             <English>Used to manage low calcium after blood transfusion</English>
             <Polish>Używany do walki z niskimi poziomami wapnia po transfuzji krwi</Polish>
-            <German>Behandelt eine Hypocalcämie nach Bluttransfusion</German>
+            <German>Behandelt einen niedrigen Calciumpsiegel nach Bluttransfusion</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_Ertapenem">
             <English>Ertapenem Vial (1g/3.2ml)</English>
@@ -593,7 +593,7 @@
         <Key ID="STR_ACM_Circulation_AmmoniaInhalant">
             <English>Ammonia Inhalant</English>
             <Polish>Amoniak wziewny</Polish>
-            <German>Ammoniak Riechstäbchen</German>
+            <German>Ammoniak Inhalant</German>
         </Key>
         <Key ID="STR_ACM_Circulation_AmmoniaInhalant_Desc">
             <English>Used to wake up patients who've fainted</English>
@@ -670,7 +670,7 @@
         <Key ID="STR_ACM_Circulation_AED_ConnectPulseOximeter_Progress">
             <English>Connecting AED Pulse Oximeter...</English>
             <Polish>Zakadanie pulsoksymetru defibrylatora...</Polish>
-            <German>Bringe AED-Pulsoxymeter an</German>
+            <German>Bringe AED-Pulsoxymeter an...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_AED_DisconnectPulseOximeter">
             <English>Disconnect AED Pulse Oximeter</English>
@@ -705,12 +705,12 @@
         <Key ID="STR_ACM_Circulation_AED_ConnectCapnograph">
             <English>Connect AED Capnograph</English>
             <Polish>Załóż kapnograf defibrylatora</Polish>
-            <German>AED-Kapnographie verbinden</German>
+            <German>AED-Kapnograph verbinden</German>
         </Key>
         <Key ID="STR_ACM_Circulation_AED_ConnectCapnograph_Progress">
             <English>Connecting AED Capnograph...</English>
             <Polish>Zakładanie kapnografu defibrylatora...</Polish>
-            <German>Verbinde AED-Kapnographie...</German>
+            <German>Verbinde AED-Kapnograph...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_AED_DisconnectCapnograph">
             <English>Disconnect AED Capnograph</English>
@@ -750,7 +750,7 @@
         <Key ID="STR_ACM_Circulation_AED_MeasureBP">
             <English>Measure Blood Pressure (AED)</English>
             <Polish>Zmierz ciśnienie krwi (defibrylator)</Polish>
-            <German>Blutdruck automatisch messen (AED)</German>
+            <German>Blutdruck messen (AED)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_BeginCPR">
             <English>Begin CPR</English>
@@ -760,7 +760,7 @@
         <Key ID="STR_ACM_Circulation_CheckCapillaryRefill">
             <English>Check Capillary Refill Time</English>
             <Polish>Sprawdź nawrót kapilarny</Polish>
-            <German>Recap-Zeit prüfen</German>
+            <German>Rekapillarisierungszeit prüfen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_CheckCapillaryRefill_Progress">
             <English>Checking Capillary Refill Time...</English>
@@ -775,7 +775,7 @@
         <Key ID="STR_ACM_Circulation_PressureCuff_Measure_Stethoscope">
             <English>Measure Blood Pressure (Stethoscope)</English>
             <Polish>Sprawdź ciśnienie krwi (stetoskop)</Polish>
-            <German>Blutdruck messen (mit Stethoskop)</German>
+            <German>Blutdruck messen (Stethoskop)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_OpenTransfusionMenu">
             <English>Transfuse Fluids</English>
@@ -785,92 +785,92 @@
         <Key ID="STR_ACM_Circulation_InsertIV_16_Progress">
             <English>Inserting 16g IV...</English>
             <Polish>Wprowadzanie igły 16g...</Polish>
-            <German>Lege 16g (grau) i.v. Zugang...</German>
+            <German>Lege 16g i.v. Katheter...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_RemoveIV_16_Progress">
             <English>Removing 16g IV...</English>
             <Polish>Wyciąganie igły 16g...</Polish>
-            <German>Entferne 16g (grau) i.v. Zugang...</German>
+            <German>Entferne 16g i.v. Katheter...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InsertIV_16_Upper">
             <English>Insert 16g IV (Upper)</English>
             <Polish>Wprowadzanie igły 16g (góra)...</Polish>
-            <German>16g i.v. Zugang proximal legen</German>
+            <German>16g i.v. Katheter legen (Oben)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_RemoveIV_16_Upper">
             <English>Remove 16g IV (Upper)</English>
             <Polish>Wyciąganie igły 16g (góra)...</Polish>
-            <German>16 i.v. Zugang proximal entfernen</German>
+            <German>16 i.v. Katheter entfernen (Oben)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InsertIV_16_Middle">
             <English>Insert 16g IV (Middle)</English>
             <Polish>Wprowadzanie igły 16g (środek)...</Polish>
-            <German>16g i.v. Zugang medial legen</German>
+            <German>16g i.v. Katheter legen (Mittig)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_RemoveIV_16_Middle">
             <English>Remove 16g IV (Middle)</English>
             <Polish>Wyciąganie igły 16g (środek...</Polish>
-            <German>16g i.v. Zugang medial entfernen</German>
+            <German>16g i.v. Katheter entfernen (Mittig)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InsertIV_16_Lower">
             <English>Insert 16g IV (Lower)</English>
             <Polish>Wprowadzanie igły 16g (dół)...</Polish>
-            <German>16g i.v. Zugang distal legen</German>
+            <German>16g i.v. Katheter legen (Unten)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_RemoveIV_16_Lower">
             <English>Remove 16g IV (Lower)</English>
             <Polish>Wyciąganie igły 16g (dół...</Polish>
-            <German>16g i.v. Zugang proximal entfernen</German>
+            <German>16g i.v. Katheter entfernen (Unten)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InsertIV_14_Progress">
             <English>Inserting 14g IV...</English>
             <Polish>Wprowadzanie igły 14g...</Polish>
-            <German>Lege 14g (orange) i.v. Zugang...</German>
+            <German>Lege 14g i.v. Katheter...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_RemoveIV_14_Progress">
             <English>Removing 14g IV...</English>
             <Polish>Wyciąganie igły 14g...</Polish>
-            <German>Entferne 14g (orange) i.v. Zugang...</German>
+            <German>Entferne 14g i.v. Katheter...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InsertIV_14_Upper">
             <English>Insert 14g IV (Upper)</English>
             <Polish>Wprowadzanie igły 14g (góra)...</Polish>
-            <German>14g i.v. Zugang proximal legen</German>
+            <German>14g i.v. Katheter legen (Oben)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_RemoveIV_14_Upper">
             <English>Remove 14g IV (Upper)</English>
             <Polish>Wyciąganie igły 14g (góra)...</Polish>
-            <German>14g i.v. Zugang proximal entfernen</German>
+            <German>14g i.v. Katheter entfernen (Oben)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InsertIV_14_Middle">
             <English>Insert 14g IV (Middle)</English>
             <Polish>Wprowadzanie igły 14g (środek)...</Polish>
-            <German>14g i.v. Zugang medial legen</German>
+            <German>14g i.v. Katheter legen (Mittig)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_RemoveIV_14_Middle">
             <English>Remove 14g IV (Middle)</English>
             <Polish>Wyciąganie igły 14g (środek)...</Polish>
-            <German>14g i.v. Zugang medial entfernen</German>
+            <German>14g i.v. Katheter entfernen (Mittig)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InsertIV_14_Lower">
             <English>Insert 14g IV (Lower)</English>
             <Polish>Wprowadzanie igły 14g (dół)...</Polish>
-            <German>14g i.v. Zugang distal legen</German>
+            <German>14g i.v. Katheter legen (Unten)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_RemoveIV_14_Lower">
             <English>Remove 14g IV (Lower)</English>
             <Polish>Wyciąganie igły 14g (dół)...</Polish>
-            <German>14g i.v. Zugang distal entfernen</German>
+            <German>14g i.v. Katheter entfernen (Unten)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InsertIO_FAST1">
             <English>Insert FAST1 IO</English>
             <Polish>Użyj FAST1 IO</Polish>
-            <German>FAST1 IO Zugang etablieren</German>
+            <German>FAST1 IO Zugang legen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InsertIO_FAST1_Progress">
             <English>Inserting FAST1 IO...</English>
             <Polish>Używanie FAST1 IO...</Polish>
-            <German>Etabliere FAST1 IO Zugang...</German>
+            <German>Lege FAST1 IO Zugang...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_RemoveIO_FAST1">
             <English>Remove FAST1 IO</English>
@@ -900,7 +900,7 @@
         <Key ID="STR_ACM_Circulation_RemoveIO_EZ_Progress">
             <English>Removing EZ-IO...</English>
             <Polish>Usuwanie EZ-IO...</Polish>
-            <German>Entferne EZ-IOGZugang</German>
+            <German>Entferne EZ-IO Zugang...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_UseParacetamol">
             <English>Use Paracetamol</English>
@@ -920,17 +920,17 @@
         <Key ID="STR_ACM_Circulation_UsePenthroxInhaler_Progress">
             <English>Using Penthrox Inhaler...</English>
             <Polish>Używanie inhalatora pentorx...</Polish>
-            <German>Ziehe an Penthroxpfeife...</German>
+            <German>Benutze Penthroxpfeife...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_UseAmmoniaInhalant">
             <English>Use Ammonia Inhalant</English>
             <Polish>Użyj amoniaku wziewnego</Polish>
-            <German>Ammoniakriechstäbchen benutzen</German>
+            <German>Ammoniak-Inhalant benutzen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_UseAmmoniaInhalant_Progress">
             <English>Using Ammonia Inhalant...</English>
             <Polish>Używanie amoniaku wziewnego...</Polish>
-            <German>Benutze Ammoniakriechstäbchen...</German>
+            <German>Benutze Ammoniak-Inhalant...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_UseNaloxoneSpray">
             <English>Use Naloxone Spray</English>
@@ -1029,12 +1029,12 @@
         <Key ID="STR_ACM_Circulation_CapillaryRefill_Hint">
             <English>Measured Capillary Refill Time&lt;br/&gt;%1 seconds</English>
             <Polish>Zmierzono nawrót kapilarny: &lt;br/&gt;%1 sekundy</Polish>
-            <German>Recap-Zeit gemessen&lt;br/&gt;%1 Sekunden</German>
+            <German>Rekapillarisierungszeit gemessen: &lt;br/&gt;%1 Sekunden</German>
         </Key>
         <Key ID="STR_ACM_Circulation_CapillaryRefill_ActionLog">
             <English>%1 measured capillary refill time: %2s (%3)</English>
             <Polish>%1 sprawdził nawrót kapilarny: %2s (%3)</Polish>
-            <German>%1 hat die Recap-Zeit gemssen: %2s (%3)</German>
+            <German>%1 hat die Rekapillarisierungszeit gemessen: %2s (%3)</German>
         </Key>
         <!--
             // Feel Pulse Action // -->
@@ -1187,17 +1187,17 @@
         <Key ID="STR_ACM_Circulation_IV_Upper">
             <English>Upper</English>
             <Polish>Góra</Polish>
-            <German>Proximal</German>
+            <German>Oben</German>
         </Key>
         <Key ID="STR_ACM_Circulation_IV_Middle">
             <English>Middle</English>
             <Polish>Środek</Polish>
-            <German>Medial</German>
+            <German>Mittig</German>
         </Key>
         <Key ID="STR_ACM_Circulation_IV_Lower">
             <English>Lower</English>
             <Polish>Dół</Polish>
-            <German>Distal</German>
+            <German>Unten</German>
         </Key>
         <Key ID="STR_ACM_Circulation_IV_Already">
             <English>Patient already has IV in the %1 (%2)</English>
@@ -1224,27 +1224,27 @@
         <Key ID="STR_ACM_Circulation_InspectIV_Upper">
             <English>Inspect IV Catheter (Upper)</English>
             <Polish>Sprawdź wkłucie (góra)</Polish>
-            <German>i.v. Zugang prüfen (Proximal)</German>
+            <German>i.v. Katheter prüfen (Oben)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InspectIV_Middle">
             <English>Inspect IV Catheter (Middle)</English>
             <Polish>Sprawdź wkłucie (środek)</Polish>
-            <German>i.v. Zugang prüfen (Medial)</German>
+            <German>i.v. Katheter prüfen (Mittig)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InspectIV_Lower">
             <English>Inspect IV Catheter (Lower)</English>
             <Polish>Sprawdź wkłucie (dół)</Polish>
-            <German>i.v. Zugang prüfen (Distal)</German>
+            <German>i.v. Katheter prüfen (Unten)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InspectIV_Progress">
             <English>Inspecting IV Catheter</English>
             <Polish>Sprawdzanie wkłucia...</Polish>
-            <German>Prüfe i.v. Zugang...</German>
+            <German>Prüfe i.v. Katheter...</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InspectIV_Clear">
             <English>IV Catheter is clear</English>
             <Polish>Wenflon drożny</Polish>
-            <German>i.v. Zugang ist frei</German>
+            <German>i.v. Katheter ist frei</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InspectIV_Clear_Short">
             <English>Clear</English>
@@ -1254,7 +1254,7 @@
         <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow">
             <English>IV Catheter has normal flow</English>
             <Polish>Wenflon ma normalny przepływ</Polish>
-            <German>i.v. Zugang mit normalen Fluss</German>
+            <German>i.v. Katheter mit normalen Fluss</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow_Short">
             <English>Normal flow</English>
@@ -1264,7 +1264,7 @@
         <Key ID="STR_ACM_Circulation_InspectIV_NoFlow">
             <English>IV Catheter has no flow</English>
             <Polish>Wenflon jest zatkany</Polish>
-            <German>i.v. Zugang läuft nicht</German>
+            <German>i.v. Katheter läuft nicht</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InspectIV_NoFlow_Short">
             <English>No flow</English>
@@ -1284,7 +1284,7 @@
         <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
             <English>%1 inspected IV Catheter: %2</English>
             <Polish>%1 sprawdził wkłucie: %2</Polish>
-            <German>%1 hat einen i.v. Zugang geprüft: %2</German>
+            <German>%1 hat einen i.v. Katheter geprüft: %2</German>
         </Key>
         <!--
             // Pressure Cuff Action // -->
@@ -1348,7 +1348,7 @@
         <Key ID="STR_ACM_Circulation_Syringe_MovePlunger">
             <English>Move Plunger</English>
             <Polish>Przesuń tłok</Polish>
-            <German>Stempel bewegen</German>
+            <German>Kolben bewegen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Syringe_PushFailed">
             <English>Medication push failed&lt;br/&gt;Patient has no IV access on the %1</English>
@@ -1415,7 +1415,7 @@
         <Key ID="STR_ACM_Circulation_AED_Capnograph">
             <English>AED Capnograph</English>
             <Polish>Kapnograf defibrylatora</Polish>
-            <German>AED-Kanographie</German>
+            <German>AED-Kanograph</German>
         </Key>
         <!--
             // AED Monitor // -->
@@ -1452,7 +1452,7 @@
         <Key ID="STR_ACM_Circulation_AED_Monitor_RR">
             <English>RR</English>
             <Polish>RR</Polish>
-            <German>RR</German>
+            <German>AF</German>
         </Key>
         <Key ID="STR_ACM_Circulation_AED_Monitor_Button_CPR">
             <English>CPR Mode Toggle</English>
@@ -1494,7 +1494,7 @@
         <Key ID="STR_ACM_Circulation_GUI_TransfusingSaline">
             <English>Transfusing Saline [%1x]</English>
             <Polish>Przetaczanie soli fizjologicznej [%1x]</Polish>
-            <German>Infundiere Kochsalz [%1x]</German>
+            <German>Infundiere Kochsalzlösung [%1x]</German>
         </Key>
         <Key ID="STR_ACM_Circulation_GUI_TransfusingPlasma">
             <English>Transfusing Plasma [%1x]</English>
@@ -1539,7 +1539,7 @@
         <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Blood_Short">
             <English>B</English>
             <Polish>K</Polish>
-            <German>EK</German>
+            <German>B</German>
         </Key>
         <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FreshWholeBlood_Short">
             <English>FWB</English>

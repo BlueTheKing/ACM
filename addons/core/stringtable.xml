@@ -24,12 +24,12 @@
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight">
             <English>Dogtag list weight</English>
             <Polish>Nieśmiertelniki pokazują wagę</Polish>
-            <German>Dogtag zeigt Gewicht an</German>
+            <German>Erkennungsmarke zeigt Gewicht an</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
             <English>Set whether dog tags list the unit's weight</English>
             <Polish>Czy na nieśmietelnikach ma się wyświetlać waga jednostki</Polish>
-            <German>Stellt ein, ob das Dogtag das Patientengewicht anzeigt</German>
+            <German>Stellt ein, ob die Erkennungsmarke das Patientengewicht anzeigt</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
             <English>Ignore Incompatible Addon Warning</English>
@@ -90,7 +90,7 @@
         <Key ID="STR_ACM_Core_LyingState_GetUp">
             <English>Get Up</English>
             <Polish>Wstań</Polish>
-            <German>Aufstehen lassen</German>
+            <German>Aufstehen</German>
         </Key>
         <!--
             // Treatment Text // -->
@@ -130,7 +130,7 @@
         <Key ID="STR_ACM_Core_DogTags_InspectingDogtags">
             <English>%1 is inspecting your dog tags</English>
             <Polish>%1 sprawdza twój nieśmiertelnik</Polish>
-            <German>%1 schaut sich dein Dogtag an</German>
+            <German>%1 schaut sich deine Erkennungsmarke an</German>
         </Key>
         <!--
             // Incompatible Addons // -->

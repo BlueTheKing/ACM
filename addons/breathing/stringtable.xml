@@ -24,7 +24,7 @@
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen">
             <English>Altitude Affect Oxygen</English>
             <Polish>Wysokość wpływa na saturacje</Polish>
-            <German>Höhenkrankheit</German>
+            <German>Höhe beeinflusst Sauerstoffsätigung</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen_Desc">
             <English>Sets whether oxygen saturation calculations are affected by altitude of terrain</English>
@@ -49,12 +49,12 @@
         <Key ID="STR_ACM_Breathing_SETTING_ChestInjuryChance">
             <English>Chest Injury Severity Multiplier</English>
             <Polish>Mnożnik urazów klatki piersiowej</Polish>
-            <German>Thoraxverletzung Schweregradmultiplikator</German>
+            <German>Brustverletzung Schweregradmultiplikator</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ChestInjuryChance_Desc">
             <English>Chance that a chest injury causes a pneumothorax or hemothorax</English>
             <Polish>Szansa na pojawienie się odmy płucnej przy urazie klatki piersiowej</Polish>
-            <German>Wahrscheinlichkeit, dass eine Brustverletzung einen Pneumothorax oder Hämatothorax verursacht</German>
+            <German>Wahrscheinlichkeit, dass eine Brustverletzung eine Pneumothorax oder Hämatothorax verursacht</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxDeteriorateChance">
             <English>Pneumothorax Deterioration Multiplier</English>
@@ -64,7 +64,7 @@
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxDeteriorateChance_Desc">
             <English>Chance that pneumothorax will deteriorate</English>
             <Polish>Szansa na pogorszenie się stanu odmy płucnej</Polish>
-            <German>Wahrscheinlichkeit, dass ein Pneumothorax sich verschlechtert</German>
+            <German>Wahrscheinlichkeit, dass sich eine Pneumothorax verschlechtert</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance">
             <English>Hemothorax Chance</English>
@@ -74,7 +74,7 @@
         <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance_Desc">
             <English>Chance that a inflicted severe chest injury is a hemothorax instead of a pneumothorax</English>
             <Polish>Szansa na pourazowego krwiaka opłucnej zamiast odmy prężnej</Polish>
-            <German>Wahrscheinlichkeit, dass eine schwere Thoraxverletzung einen Hämatothorax statt einen Pneumothorax verursacht</German>
+            <German>Wahrscheinlichkeit, dass eine schwere Thoraxverletzung eine Hämatothorax statt einer Pneumothorax verursacht</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury">
             <English>[HARDCORE] Chest Injuries</English>
@@ -84,7 +84,7 @@
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury_Desc">
             <English>[HARDCORE] Sets whether Tension Pneumothorax should require further treatment to fully treat</English>
             <Polish>[HARDCORE] Określa czy odma prężna powinna wymagać dalszego leczenia by zostać wyeliminowana</Polish>
-            <German>[HARDCORE] Stellt sein, ob ein Pneumothorax eine weitere Behandlung braucht, um voll geheilt zu werden</German>
+            <German>[HARDCORE] Stellt ein, ob eine Spannungspneumothorax eine weitere Behandlung braucht, um voll geheilt zu werden</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding">
             <English>[HARDCORE] Hemothorax Bleeding</English>
@@ -94,37 +94,37 @@
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding_Desc">
             <English>[HARDCORE] Sets whether Hemothorax should require further treatment to fully stop internal bleeding</English>
             <Polish>[HARDCORE] Określa czy krwiak opłucnej powinien wymagać dalszego leczenia by zostać wyeliminowany</Polish>
-            <German>[HARDCORE] Stellt ein, ob ein Hämatothorax weitere Behandlung braucht, um die innere Blutung zu stoppen</German>
+            <German>[HARDCORE] Stellt ein, ob eine Hämatothorax eine weitere Behandlung braucht, um die innere Blutung komplett zu stoppen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_InspectChest">
             <English>Allow Inspect Chest</English>
             <Polish>Sprawdź klatkę piesiową</Polish>
-            <German>Erlaube Thoraxinspektion</German>
+            <German>Erlaube Brustinspektion</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_InspectChest_Desc">
             <English>Training level required to Inspect Chest</English>
             <Polish>Poziom wyszkolenia potrzebny do sprawdzenia klatki piersiowej</Polish>
-            <German>Benötigtes Qualifikationslevel, um eine Thoraxinspektion durchzuführen</German>
+            <German>Benötigtes Qualifikationslevel, um eine Brustinspektion durchzuführen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_TreatmentTime_InspectChest">
             <English>Inspect Chest Time</English>
             <Polish>Czas sprawdzenia klatki piersiowej</Polish>
-            <German>Thoraxinspektionszeit</German>
+            <German>Brustinspektionszeit</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_TreatmentTime_InspectChest_Desc">
             <English>Time to perform inspect chest action</English>
             <Polish>Czas potrzebny na sprawdzenie klatki piersiowej</Polish>
-            <German>Benötigte Zeit, um eine Thoraxinspektion durchzuführen</German>
+            <German>Benötigte Zeit, um eine Brust-Nadel-Dekompression durchzuführen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_NCD">
             <English>Allow NCD Kit</English>
             <Polish>Pozwól na użycie zestawu NCD</Polish>
-            <German>Erlaube Entlastungspunktion</German>
+            <German>Erlaube Brust-Nadel-Dekompression</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_NCD_Desc">
             <English>Training level required to use an NCD Kit</English>
             <Polish>Poziom wyszkolenia potrzebny do użycia zestawu NCD</Polish>
-            <German>Benötigtes Qualifikationslevel, um eine Thoraxentlastungspunktion durchzuführen</German>
+            <German>Benötigtes Qualifikationslevel, um eine Nadledekompressierung durchzuführen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_Thoracostomy">
             <English>Allow Thoracostomy</English>
@@ -134,17 +134,17 @@
         <Key ID="STR_ACM_Breathing_SETTING_Allow_Thoracostomy_Desc">
             <English>Training level required to perform Thoracostomy</English>
             <Polish>Poziom wyszkolenia potrzebny do wykonania torakotomii</Polish>
-            <German>Benötigtes Qualifikationslevel, um eine Thorakotomie durchzuführen</German>
+            <German>Benötigtes Qualifikationslevel, um eine Nadledekompressierung durchzuführen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Location_Thoracostomy">
             <English>Locations Thoracostomy</English>
             <Polish>Miejsca torakotomii</Polish>
-            <German>Thorakotomie Lokalisation</German>
+            <German>Thorakotomie Standort</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Location_Thoracostomy_Desc">
             <English>Sets locations at which Thoracostomy can be performed</English>
             <Polish>Określa lokalizacje w których można wykonywać torakotomie</Polish>
-            <German>Stellt die Lokalisationen ein, an denen eine Thorakotomie durchgeführt werden kann</German>
+            <German>Stellt die Standorte ein, an denen eine Thorakotomie durchgeführt werden kann</German>
         </Key>
         <!--
             // Items // -->
@@ -156,7 +156,7 @@
         <Key ID="STR_ACM_Breathing_ChestSeal_Desc">
             <English>Used to manage penetrating chest injuries</English>
             <Polish>Używany do zabezpieczania urazów klatki piersiowej</Polish>
-            <German>Wir benutzt, um penetrierende Thoraxwunden abzudecken</German>
+            <German>Wird benutzt, um penetrierende Brustverletzungen abzudecken</German>
         </Key>
         <Key ID="STR_ACM_Breathing_PulseOximeter">
             <English>Pulse Oximeter</English>
@@ -186,12 +186,12 @@
         <Key ID="STR_ACM_Breathing_NCDKit_Desc">
             <English>Single-use needle used to decompress tension-pneumothorax</English>
             <Polish>Jednorazowa igła używana do dekompresji odmy prężnej</Polish>
-            <German>Einmalprodukt, um eine Thoraxentlastungspunktion bei einem Spannungspneumothorax durchzuführen</German>
+            <German>Einmalprodukt, um eine Nadledekommpression bei einem Spannungspneumothorax durchzuführen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ChestTubeKit">
             <English>Chest Tube Kit</English>
             <Polish>Rurka do drenażu klatki piersiowej</Polish>
-            <German>Thoraxdrainageset</German>
+            <German>Thoraxdrainage-Set</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ChestTubeKit_Desc">
             <English>Single-use kit used to insert a chest tube for removal of fluid from the plueral space</English>
@@ -200,7 +200,7 @@
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomyKit">
             <English>Thoracostomy Kit</English>
-            <German>Thorakotomieset</German>
+            <German>Thorakotomie-Set</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomyKit_Desc">
             <English>Single-use kit used to prepare patient for chest tube insertion</English>
@@ -224,12 +224,12 @@
         <Key ID="STR_ACM_Breathing_BVM_Short">
             <English>BVM</English>
             <Polish>BVM</Polish>
-            <German>Beatmungsbeutel</German>
+            <German>BVM</German>
         </Key>
         <Key ID="STR_ACM_Breathing_BVM_Desc">
             <English>Used to ventilate patient that is not breathing, may be connected to oxygen</English>
             <Polish>Używany do wentylacji pacjenta z nieobecnym lub anormalnym rytmem oddechowym, można przez niego podawać tlen</Polish>
-            <German>Wird verwendet, um den Patienten zu beatmen. Kann mit einer Sauerstoffflasche konnektiert werden</German>
+            <German>Wird verwendet, um den Patienten zu beatmen. Kann mit Sauerstoff konnektiert werden</German>
         </Key>
         <Key ID="STR_ACM_Breathing_OxygenTank_425_Empty">
             <English>Empty Portable Oxygen Tank (425L)</English>
@@ -261,17 +261,17 @@
         <Key ID="STR_ACM_Breathing_InspectChest">
             <English>Inspect Chest</English>
             <Polish>Sprawdź klatkę piersiową</Polish>
-            <German>Thoraxexkursion inspizieren</German>
+            <German>Brust inspizieren</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_Progress">
             <English>Inspecting Chest...</English>
             <Polish>Sprawdzanie klatki piersiowej...</Polish>
-            <German>Insipiziere Thoraxexkursion...</German>
+            <German>Inspiziere Brust...</German>
         </Key>
         <Key ID="STR_ACM_Breathing_UseStethoscope">
             <English>Inspect Chest With Stethoscope</English>
             <Polish>Sprwadź klatkę piersiową stetoskopem</Polish>
-            <German>Thorax auskultieren</German>
+            <German>Brust mit Stethoskop inspizieren</German>
         </Key>
         <Key ID="STR_ACM_Breathing_UsePocketBVM">
             <English>Use Pocket BVM</English>
@@ -311,12 +311,12 @@
         <Key ID="STR_ACM_Breathing_PerformNCD">
             <English>Perform Needle-Chest-Decompression</English>
             <Polish>Wykonaj dekompresję klatki piersiowej</Polish>
-            <German>Entlastungspunktion durchführen</German>
+            <German>Nadledekompression durchführen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_PerformNCD_Progress">
             <English>Performing Needle-Chest-Decompression...</English>
             <Polish>Wykonywanie dekompresji...</Polish>
-            <German>Führe Entlastungspunktion durch...</German>
+            <German>Führe Nadledekompression durch...</German>
         </Key>
         <Key ID="STR_ACM_Breathing_PerformThoracostomy">
             <English>Perform Thoracostomy</English>
@@ -335,12 +335,12 @@
         <Key ID="STR_ACM_Breathing_InsertChestTube">
             <English>Insert Chest Tube</English>
             <Polish>Wprowadź rurkę do drenażu</Polish>
-            <German>Thoraxrainage einlegen</German>
+            <German>Thoraxdrainage einlegen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InsertChestTube_Progress">
             <English>Inserting Chest Tube...</English>
             <Polish>Wprowadzanie rurki do drenażu...</Polish>
-            <German>Lege Thoraxrainage ein...</German>
+            <German>Lege Thoraxdrainage ein...</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ReSealChestTube">
             <English>Re-Seal Chest Tube</English>
@@ -429,7 +429,7 @@
         <Key ID="STR_ACM_Breathing_CheckBreathing_None_Short">
             <English>None</English>
             <Polish>Brak</Polish>
-            <German>Atemstillstand</German>
+            <German>Keine Atmung</German>
         </Key>
         <Key ID="STR_ACM_Breathing_CheckBreathing_Slow">
             <English>Patient breathing is slow</English>
@@ -486,52 +486,52 @@
         <Key ID="STR_ACM_Breathing_InspectChest_ActionLog">
             <English>%1 inspected chest: %2</English>
             <Polish>%1 sprawdził klatkę piersiową: %2</Polish>
-            <German>%1 inspizierte die Atemexkursion: %2</German>
+            <German>%1 inspizierte die Brust: %2</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_Normal">
             <English>Chest rise and fall observed</English>
             <Polish>Równe unoszenie się klatki zaobserwowane</Polish>
-            <German>Thorax hebt und senkt sich</German>
+            <German>Brust hebt und senkt sich</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_None">
             <English>No chest movement observed</English>
             <Polish>Brak widocznego unoszenia się klatki</Polish>
-            <German>Thorax bewegt sich nicht</German>
+            <German>Brust bewegt sich nicht</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_None_Short">
             <English>No chest movement</English>
             <Polish>Brak unoszenia się klatki</Polish>
-            <German>Keine Atemexkursion</German>
+            <German>Keine Brustbewegung</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_None_Uneven">
             <English>Chest sides are uneven</English>
             <Polish>Strony klatki są nierówne</Polish>
-            <German>Thorax is asymmetrisch</German>
+            <German>Brust ist asymmetrisch</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_None_Uneven_Short">
             <English>chest sides uneven</English>
             <Polish>Strony klatki nierówne</Polish>
-            <German>Asymmetrischer Thorax</German>
+            <German>Asymmetrische Brust</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_Bruising">
             <English>Noticable extensive bruising</English>
             <Polish>Widoczne rozległe zasinienie</Polish>
-            <German>Wahrnehmbares großflächiges Hämatom</German>
+            <German>Wahrnehmbare großflächiges Blutergüsse</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_Bruising_Short">
             <English>Extensive Bruising</English>
             <Polish>Rozległe zasinienie</Polish>
-            <German>Großflächiges Hämatom</German>
+            <German>Großflächige Blutergüsse</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_Uneven">
             <English>Uneven chest rise and fall observed</English>
             <Polish>Nierówne unoszenie się klatki zaobserwowane</Polish>
-            <German>Paradoxe Atmung beobachtet</German>
+            <German>Asymmetrische Atmung beobachtet</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_Uneven_Short">
             <English>Uneven chest rise and fall</English>
             <Polish>Nierówne unoszenie się klatki</Polish>
-            <German>Paradoxe Atmung</German>
+            <German>Asymmetrische Atmung</German>
         </Key>
         <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation">
             <English>Severe Tracheal Deviation</English>
@@ -558,12 +558,12 @@
         <Key ID="STR_ACM_Breathing_NCD_Needle_Decompression">
             <English>Needle Decompression</English>
             <Polish>Dekompresja igłowa</Polish>
-            <German>Thoraxentlastungspunktion</German>
+            <German>Nadledekompression</German>
         </Key>
         <Key ID="STR_ACM_Breathing_NCD_ActionLog">
             <English>%1 performed Needle Chest Decompression</English>
             <Polish>%1 wykonał dekompresję igłową</Polish>
-            <German>%1 führte eine Thoraxentlastungspunktion durch</German>
+            <German>%1 führte eine Nadledekompression durch</German>
         </Key>
         <!--
             // Oxygen Tank Refill Action // -->
@@ -626,7 +626,7 @@
         <Key ID="STR_ACM_Breathing_ThoracostomyDrain_ActionLog">
             <English>%1 drained plueral space (%2)</English>
             <Polish>%1 odessał jamę opłucnej (%2)</Polish>
-            <German>%1 saugte Flüssigkeit aus Pleuraspalt ab (%2)</German>
+            <German>%1 saugte Flüssigkeit aus Pleuraraum ab (%2)</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomyDrain_QuickViewLog">
             <English>Thoracostomy Drain: %1</English>
@@ -726,7 +726,7 @@
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_Normal">
             <English>Lung is inflating normally</English>
             <Polish>Płuco pracuje normalnie</Polish>
-            <German>Lungen entfalten sich normal</German>
+            <German>Lunge entfaltet sich normal</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_Normal_Short">
             <English>lung inflating normally</English>
@@ -736,12 +736,12 @@
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_NotInflating">
             <English>Lung is not inflating</English>
             <Polish>Płuco nie pracuje</Polish>
-            <German>Lungen entfalten sich nicht</German>
+            <German>Lunge entfaltet sich nicht</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereCollapse">
             <English>Lung is severely collapsed</English>
             <Polish>Płuco jest poważnie zapadnięte</Polish>
-            <German>Lunge ernsthaft kollabiert</German>
+            <German>Lunge stark kollabiert</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereCollapse_Short">
             <English>Lung is collapsed</English>
@@ -751,17 +751,17 @@
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_Blood">
             <English>Found blood in pleural space</English>
             <Polish>Krew w jamie opłucnej</Polish>
-            <German>Blut im Pleuraspalt gefunden</German>
+            <German>Blut im Pleuraraum gefunden</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_Blood_Short">
             <English>Blood in pleural space</English>
             <Polish>Krew w jamie opłucnej</Polish>
-            <German>Blut im Pleuraspalt</German>
+            <German>Blut im Pleuraraum</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereBlood">
             <English>Large amount of blood in pleural space</English>
             <Polish>Duża ilość krwi w jamie opłucnej</Polish>
-            <German>Große Menge an Blut im Pleuraspalt</German>
+            <German>Große Menge an Blut im Pleuraraum</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereBlood_Short">
             <English>large amount of blood</English>
@@ -771,12 +771,12 @@
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_Bleeding">
             <English>Noticable bleeding inside pleural space</English>
             <Polish>Widoczne krwawienie w jamie opłucnej</Polish>
-            <German>Wahrnehmbare Blutung im Pleuraspalt</German>
+            <German>Wahrnehmbare Blutung im Pleuraraum</German>
         </Key>
         <Key ID="STR_ACM_Breathing_ThoracostomySweep_Bleeding_Short">
             <English>Bleeding in pleural space</English>
             <Polish>Krwawienie w jamie opłucnej</Polish>
-            <German>Blutung im Pleuraspalt</German>
+            <German>Blutung im Pleuraraum</German>
         </Key>
         <!--
             // BVM Action // -->
@@ -860,12 +860,12 @@
         <Key ID="STR_ACM_Breathing_Stethoscope_ActionLog">
             <English>%1 inspected chest with Stethoscope</English>
             <Polish>%1 zbadał klatkę piersiową stetoskopem</Polish>
-            <German>%1 führte eine Thoraxauskultation durch</German>
+            <German>%1 führte eine Thoraxauskultation mit Stethoskop durch</German>
         </Key>
         <Key ID="STR_ACM_Breathing_Stethoscope_Stopped">
             <English>Stopped using stethoscope</English>
             <Polish>Przerwano użycie stetoskopu</Polish>
-            <German>Hörte auf mittels Stethoskop auszukultieren</German>
+            <German>Hörte auf mittels Stethoskop zu auskultieren</German>
         </Key>
         <Key ID="STR_ACM_Breathing_Stethoscope_Using">
             <English>Using Stethoscope...</English>
@@ -912,7 +912,7 @@
         <Key ID="STR_ACM_Breathing_GUI_UpperChest">
             <English>Upper Chest</English>
             <Polish>Góra klatki piersiowej</Polish>
-            <German>Oberer Thorax</German>
+            <German>Obere Brust</German>
         </Key>
         <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_%1">
             <English>Thoracostomy Incision (%1)</English>

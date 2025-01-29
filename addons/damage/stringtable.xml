@@ -9,7 +9,7 @@
         <Key ID="STR_ACM_Damage_Category_Thresholds">
             <English>Thresholds</English>
             <Polish>Progi</Polish>
-            <German>Schwelle</German>
+            <German>Grenze</German>
         </Key>
         <Key ID="STR_ACM_Damage_Category_InternalBleeding">
             <English>Internal Bleeding</English>
@@ -19,7 +19,7 @@
         <Key ID="STR_ACM_Damage_Category_AIUnits">
             <English>AI Units</English>
             <Polish>Jednostki SI</Polish>
-            <German>KI Einheit</German>
+            <German>KI Einheiten</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Enable">
             <English>Enable Damage Addon</English>
@@ -29,52 +29,52 @@
         <Key ID="STR_ACM_Damage_SETTING_Enable_Desc">
             <English>Enable modified damage thresholds</English>
             <Polish>Włącz modyfikowanie progów obrażeń</Polish>
-            <German>Aktiviere modifizierte Schadenschwellen</German>
+            <German>Aktiviere modifizierte Schadensgrenzen</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold">
             <English>Head Trauma Death Threshold</English>
             <Polish>Próg śmiertelnych obrażeń w głowę</Polish>
-            <German>Kopfschaden Todesschwelle</German>
+            <German>Kopfschaden Todesgrenze</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold_Desc">
             <English>Sets threshold for instant death from trauma to the head, disabled if 0</English>
             <Polish>Im mniejsza wartość tym szybsza śmierć. 0 wyłącza możliwość śmierci</Polish>
-            <German>Setze die Schwelle die bei Kopfschaden zu einem direkten Tod führt, bei 0 deaktiviert</German>
+            <German>Setzt die Grenze die bei Kopfschaden direkt zum Tod führt, bei 0 deaktiviert</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold">
             <English>Torso Trauma Death Threshold</English>
             <Polish>Próg śmiertelnych obrażeń w tors</Polish>
-            <German>Torsoschaden Todesschwelle</German>
+            <German>Torsoschaden Todesgrenze</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold_Desc">
             <English>Sets threshold for instant death from trauma to the torso, disabled if 0</English>
             <Polish>Im mniejsza wartość tym szybsza śmierć. 0 wyłącza możliwość śmierci</Polish>
-            <German>Setze die Schwelle die bei Torsoschaden direkt zum Tod führt, bei 0 deaktiviert</German>
+            <German>Setzt die Grenze die bei Torsoschaden direkt zum Tod führt, bei 0 deaktiviert</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold">
             <English>Head Trauma Cardiac Arrest Threshold</English>
             <Polish>Próg obrażeń w głowę powodujących zatrzymanie krążenia</Polish>
-            <German>Kopfschaden Reanimationsschwelle</German>
+            <German>Kopfschaden Kreislaufstillstand-Grenze</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the head, disabled if 0</English>
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
-            <German>Setze die Schwelle bei der ein Kopfschaden möglicherweise zu einem direkten Kreislaufstillstand führt, deaktiviert bei 0</German>
+            <German>Setzt die Grenze die bei Kopfschaden möglicherweise zu einem direkten Kreislaufstillstand führt, deaktiviert bei 0</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold">
             <English>Torso Trauma Cardiac Arrest Threshold</English>
             <Polish>Próg obrażeń w tors powodujących zatrzymanie krążenia</Polish>
-            <German>Torsoschaden Reanimationsschwelle</German>
+            <German>Torsoschaden Kreislaufstillstand-Grenze</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the torso, disabled if 0</English>
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
-            <German>Setze die Schwelle bei der ein Torsoschaden möglicherweise zu einem direkten Kreislaufstillstand führt, deaktiviert bei 0</German>
+            <German>Setzt die Grenze die bei Torsoschaden möglicherweise zu einem direkten Kreislaufstillstand führt, deaktiviert bei 0</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier">
             <English>Internal Bleeding Chance Multiplier</English>
             <Polish>Szansa na krwawienie wewnątrzne</Polish>
-            <German>Innere Blutung Wahrscheinlichkeit</German>
+            <German>Innere Blutung Wahrscheinlichkeitmultiplikator</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier_Desc">
             <English>Chance for internal bleeding to occur from inflicted wounds</English>
@@ -94,52 +94,52 @@
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThresholdAI">
             <English>AI Head Trauma Death Threshold</English>
             <Polish>Próg śmiertelnych obrażeń w głowę dla jednostek SI</Polish>
-            <German>KI Kopfschaden Todesschwelle</German>
+            <German>KI Kopfschaden Todesgrenze</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThresholdAI_Desc">
             <English>Sets threshold for instant death from trauma to the head for AI, disabled if 0</English>
             <Polish>Im mniejsza wartość tym szybsza śmierć jednostki SI. 0 wyłącza możliwość śmierci</Polish>
-            <German>Setzt die Todesschwelle bei Kopfschaden an KI-Spielern</German>
+            <German>Setzt die Todesgrenze die bei Kopfschaden an KI-Einheiten direkt zum Tod führt, deaktiviert bei 0</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThresholdAI">
             <English>AI Torso Trauma Death Threshold</English>
             <Polish>Próg śmiertelnych obrażeń w tors dla jednostek SI</Polish>
-            <German>KI Torsoschaden Todesschwelle</German>
+            <German>KI Torsoschaden Todesgrenze</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThresholdAI_Desc">
             <English>Sets threshold for instant death from trauma to the torso for AI, disabled if 0</English>
             <Polish>Im mniejsza wartość tym szybsza śmierć jednostki SI. 0 wyłącza możliwość śmierci</Polish>
-            <German>Setzt die Todesschwelle bei Torsoschaden an KI-Spielern</German>
+            <German>Setzt die Todesgrenze die bei Torsoschaden an KI-Einheiten direkt zum Tod führt, deaktiviert bei 0</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThresholdAI">
             <English>AI Head Trauma Cardiac Arrest Threshold</English>
             <Polish>Próg obrażeń w głowę powodujących zatrzymanie krążenia dla jednostek SI</Polish>
-            <German>KI Kopfschaden Reanimationsschwelle</German>
+            <German>KI Kopfschaden Reanimationsgrenze</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThresholdAI_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the head for AI, disabled if 0</English>
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia u jednostki SI. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
-            <German>Setzt die Schwelle, dass ein Kopfschaden möglicherweise direkt zu einem Kreislaufstillstand bei KI-Spielern führt, deaktiviert bei 0</German>
+            <German>Setzt die Grenze die bei Kopfschaden möglicherweise direkt zu einem Kreislaufstillstand an KI-Einheiten führt, deaktiviert bei 0</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThresholdAI">
             <English>AI Torso Trauma Cardiac Arrest Threshold</English>
             <Polish>Próg obrażeń w tors powodujących zatrzymanie krążenia dla jednostek SI</Polish>
-            <German>KI Torsoschaden Reanimationsschwelle</German>
+            <German>KI Torsoschaden Reanimationsgrenze</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThresholdAI_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the torso for AI, disabled if 0</English>
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia u jednostki SI. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
-            <German>Setzt die Schwelle, dass ein Torsoschaden möglicherweise direkt zu einem Kreislaufstillstand bei KI-Spielern führt, deaktiviert bei 0</German>
+            <German>Setzt die Grenze die bei Torsoschaden möglicherweise direkt zu einem Kreislaufstillstand an KI-Einheiten führt, deaktiviert bei 0</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance">
             <English>AI Stay Down Chance</English>
             <Polish>Szansa że jednostka SI pozostanie na na ziemi</Polish>
-            <German>KI-Spieler Bewusstseinswahrscheinlichkeit</German>
+            <German>KI Bewusstseinswahrscheinlichkeit</German>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance_Desc">
             <English>Sets chance for AI to stay down once unconscious (without intervention)</English>
             <Polish>Szansa na pozostanie jednostki SI w pozycji leżącej, gdy straci przytomność (bez interwencji)</Polish>
-            <German>Setzt die Wahrscheinlichkeit, dass ein bewusstloser KI-Spieler ohne Behandlung wieder zu bewusstsein kommt</German>
+            <German>Setzt die Wahrscheinlichkeit, dass eine bewusstloser KI-Einheit ohne Behandlung wieder zu bewusstsein kommt</German>
         </Key>
         <!--
             // Settings in CORE // -->
@@ -188,7 +188,7 @@
         <Key ID="STR_ACM_Damage_PressureBandage">
             <English>Pressure Bandage</English>
             <Polish>Bandaż uciskowy</Polish>
-            <German>Israeli Bandage</German>
+            <German>Druckverband</German>
         </Key>
         <Key ID="STR_ACM_Damage_PressureBandage_Desc">
             <English>Standard issue bandage</English>

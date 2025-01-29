@@ -44,7 +44,7 @@
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
             <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
             <Polish>Ustala czy założone opaski uciskowe mają wpływać na kołysanie broni w przypadku rąk oraz szybkość chodzenia w przypadku nóg</Polish>
-            <German>Stellt ein, ob ein angelegtes Tourniquet am Arm das Waffenhandling und am Beinen die Mobilität negativ beeinflusst</German>
+            <German>Stellt ein, ob ein angelegtes Tourniquet am Arm dasie Waffennutzung und am Bein die Mobilität negativ beeinflusst</German>
         </Key>
         <!-- 
             // Items // -->
@@ -98,12 +98,12 @@
         <Key ID="STR_ACM_Disability_ShakeAwake">
             <English>Attempt To Shake Awake</English>
             <Polish>Potrząśnij by wybudzić</Polish>
-            <German>Patienten wachütteln</German>
+            <German>Patienten wachrütteln</German>
         </Key>
         <Key ID="STR_ACM_Disability_ShakeAwake_Progress">
             <English>Shaking Patient...</English>
             <Polish>Potrząsanie...</Polish>
-            <German>Rüttele am Patienten...</German>
+            <German>Rüttel am Patienten...</German>
         </Key>
         <Key ID="STR_ACM_Disability_SlapAwake">
             <English>Attempt To Slap Awake</English>

@@ -14,7 +14,7 @@
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
             <English>Show vitals status in overview tab when inactive (display ""none"")</English>
             <Polish>Pokaż stan funkcji życiowych w zakładce przeglądu, gdy jest nieaktywny (wyświetl "brak")</Polish>
-            <German>Stellt ein, ob nicht-gemessene Vitalwerte in der Übersicht angezeigt werden sollen (Anzeige ""none"")</German>
+            <German>Stellt ein, ob nicht-gemessene Vitalwerte in der Übersicht angezeigt werden sollen (Anzeige ""kein"")</German>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount">
             <English>Show Pain Amount</English>
@@ -66,12 +66,12 @@
         <Key ID="STR_ACM_GUI_Triage_Priority4">
             <English>Expectant</English>
             <Polish>Oczekujacy</Polish>
-            <German>Abwartende Behandlung</German>
+            <German>Blau</German>
         </Key>
         <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
             <English>T4</English>
             <Polish>T4</Polish>
-            <German>Blau</German>
+            <German>Schwarz</German>
         </Key>
         <!--
             // Actions -->
