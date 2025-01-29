@@ -4,64 +4,79 @@
         <Key ID="STR_ACM_GUI_Category">
             <English>ACM: GUI</English>
             <Polish>ACM: Interfejs</Polish>
+            <German>ACM: GUI</German>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses">
             <English>Show inactive vitals statuses</English>
             <Polish>Pokaż nieaktywne statusy funkcji życiowych</Polish>
+            <German>Zeige inaktive Vitatwerte</German>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
             <English>Show vitals status in overview tab when inactive (display ""none"")</English>
             <Polish>Pokaż stan funkcji życiowych w zakładce przeglądu, gdy jest nieaktywny (wyświetl "brak")</Polish>
+            <German>Stellt ein, ob nicht-gemessene Vitalwerte in der Übersicht angezeigt werden sollen (Anzeige ""kein"")</German>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount">
             <English>Show Pain Amount</English>
             <Polish>Pokaż wartość bólu</Polish>
+            <German>Zeige Schmerzintensität</German>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount_Desc">
             <English>Show exact pain amount in overview tab</English>
             <Polish>Pokaż dokładną ilość bólu w zakładce przeglądu</Polish>
+            <German>Stellt ein, ob die exakte Schmerzintensität in der Übersicht angezeigt werden soll</German>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
             <English>Show overlay for selected body part</English>
             <Polish>Pokaż nakładkę dla wybranej części ciała</Polish>
+            <German>Zeige Overlay für ausgewähltes Körperteil</German>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels">
             <English>Show patient side labels</English>
             <Polish>Show patient side labels</Polish>
+            <German>Zeige Rechts/Links Markierung an</German>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels_Desc">
             <English>Show patient left/right side labels in medical menu</English>
             <Polish>Pokaż oznaczenia lewej/prawej strony pacjenta w menu medycznym</Polish>
+            <German>Kennzeichnet im Menü die Patientenseite (Rechts/Links)</German>
         </Key>
         <Key ID="STR_ACM_GUI_NoExternalBleeding">
             <English>No external bleeding</English>
             <Polish>Brak krwawienia zewnętrznego</Polish>
+            <German>Keine externe Blutung</German>
         </Key><!--
             // Triage Text -->
         <Key ID="STR_ACM_GUI_Triage_Priority1_Short">
             <English>T1</English>
             <Polish>T1</Polish>
+            <German>Rot</German>
         </Key>
         <Key ID="STR_ACM_GUI_Triage_Priority2_Short">
             <English>T2</English>
             <Polish>T2</Polish>
+            <German>Gelb</German>
         </Key>
         <Key ID="STR_ACM_GUI_Triage_Priority3_Short">
             <English>T3</English>
             <Polish>T3</Polish>
+            <German>Grün</German>
         </Key>
         <Key ID="STR_ACM_GUI_Triage_Priority4">
             <English>Expectant</English>
             <Polish>Oczekujacy</Polish>
+            <German>Blau</German>
         </Key>
         <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
             <English>T4</English>
             <Polish>T4</Polish>
+            <German>Schwarz</German>
         </Key><!--
             // Actions -->
         <Key ID="STR_ACM_GUI_AssistCarry">
             <English>Assist Carry</English>
             <Polish>Pomóż w niesieniu</Polish>
+            <German>Tragen unterstützen</German>
         </Key>
     </Package>
 </Project>
