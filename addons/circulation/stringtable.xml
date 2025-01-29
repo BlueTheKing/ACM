@@ -493,7 +493,7 @@
             <German>Lidocain Ampulle (100mg/5ml)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Vial_Lidocaine_Desc">
-            <English>Used as local anesthetic for painful surgical procedures</English>
+            <English>Used as local anesthetic for painful surgical procedures, and to treat irregular heart rhythms</English>
             <Polish>Używana jako lokalne znieczulenie dla bolesnych zabiegów medycznych</Polish>
             <German>Lokalanästhetikum und Antiarrhythmikum</German>
         </Key>
@@ -1226,7 +1226,7 @@
             <German>i.v. Katheter prüfen (Unten)</German>
         </Key>
         <Key ID="STR_ACM_Circulation_InspectIV_Progress">
-            <English>Inspecting IV Catheter</English>
+            <English>Inspecting IV Catheter...</English>
             <Polish>Sprawdzanie wkłucia...</Polish>
             <German>Prüfe i.v. Katheter...</German>
         </Key>
