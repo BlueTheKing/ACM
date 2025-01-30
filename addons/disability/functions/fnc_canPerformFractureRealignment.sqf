@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Check if closed reduction can be performed.
+ * Check if fracture realignment can be performed.
  *
  * Arguments:
  * 0: Medic <OBJECT>
@@ -9,10 +9,10 @@
  * 2: Body Part <STRING>
  *
  * Return Value:
- * Can perform closed reduction <BOOL>
+ * Can perform fracture realignment <BOOL>
  *
  * Example:
- * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_canPerformClosedReduction;
+ * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_canPerformFractureRealignment;
  *
  * Public: No
  */

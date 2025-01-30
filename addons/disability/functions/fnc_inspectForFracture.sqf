@@ -19,13 +19,13 @@
 
 params ["_medic", "_patient", "_bodyPart"];
 
-private _partIndex = GET_BODYPART_INDEX(_bodyPart);
-
 private _hint = "";
 private _hintLog = "";
 private _hintHeight = 2;
 
-private _bodyPartString = ["","", ACELLSTRING(Medical_GUI,LeftArm), ACELLSTRING(Medical_GUI,RightArm), ACELLSTRING(Medical_GUI,LeftLeg), ACELLSTRING(Medical_GUI,RightLeg)] select _partIndex;
+private _bodyPartString = [_bodyPart] call EFUNC(core,getBodyPartString);
+
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 private _fractureState = (_patient getVariable [QGVAR(Fracture_State), [0,0,0,0,0,0]]) select _partIndex;
 private _bodyPartDamage = ((_patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]]) select _partIndex);
@@ -60,8 +60,8 @@ switch (true) do {
 private _preparedArray = _patient getVariable [QGVAR(Fracture_Prepared), [false,false,false,false,false,false]];
 
 if (_preparedArray select _partIndex) then {
-    _hint = format ["%1<br />%2", _hint, "Closed reduction performed"];
-    _hintLog = format ["%1, %2", _hintLog, "reduction performed"];
+    _hint = format ["%1<br />%2", _hint, "Fracture realignment performed"];
+    _hintLog = format ["%1, %2", _hintLog, "realignment performed"];
     _hintHeight = 2.5;
 };
 

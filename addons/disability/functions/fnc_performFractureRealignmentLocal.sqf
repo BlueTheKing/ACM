@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Perform closed reduction on patient. (LOCAL)
+ * Perform fracture realignment on patient. (LOCAL)
  *
  * Arguments:
  * 0: Medic <OBJECT>
@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_performClosedReductionLocal;
+ * [player, cursorTarget, "leftleg"] call ACM_disability_fnc_performFractureRealignmentLocal;
  *
  * Public: No
  */
@@ -32,10 +32,10 @@ if (_anestheticEffect < 0.7) then {
 };
 
 if (((_patient getVariable [QGVAR(Fracture_State), [0,0,0,0,0,0]]) select _partIndex) == 0) exitWith {
-    [QACEGVAR(common,displayTextStructured), ["Closed reduction performed", 2, _medic], _medic] call CBA_fnc_targetEvent;
+    [QACEGVAR(common,displayTextStructured), ["Fracture realignment performed", 2, _medic], _medic] call CBA_fnc_targetEvent;
 };
 
-[QACEGVAR(common,displayTextStructured), ["Closed reduction performed successfully", 2, _medic], _medic] call CBA_fnc_targetEvent;
+[QACEGVAR(common,displayTextStructured), ["Fracture realignment performed successfully", 2, _medic], _medic] call CBA_fnc_targetEvent;
 
 private _preparedArray = _patient getVariable [QGVAR(Fracture_Prepared), [false,false,false,false,false,false]];
 

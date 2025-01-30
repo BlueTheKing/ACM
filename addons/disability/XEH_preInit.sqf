@@ -27,9 +27,9 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(allowClosedReduction),
+    QGVAR(allowFractureRealignment),
     "LIST",
-    ["Allow Peforming Closed Reduction", "Training level required to perform closed reduction"],
+    ["Allow Peforming Fracture Realignment", "Training level required to perform fracture realignment"],
     [ACM_SETTINGS_CATEGORY, "Fracture Management"],
     [SETTING_DROPDOWN_SKILL, 0],
     true

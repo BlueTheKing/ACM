@@ -146,17 +146,17 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QEFUNC(disability,canInspectForFracture);
         callbackSuccess = QEFUNC(disability,inspectForFracture);
     };
-    class ClosedReduction: Splint {
-        displayName = "Perform Closed Reduction";
-        displayNameProgress = "Performing Closed Reduction...";
+    class FractureRealignment: Splint {
+        displayName = "Perform Fracture Realignment";
+        displayNameProgress = "Performing Fracture Realignment...";
         icon = "";
-        medicRequired = QEGVAR(disability,allowClosedReduction);
+        medicRequired = QEGVAR(disability,allowFractureRealignment);
         consumeItem = 0;
         items[] = {};
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         treatmentTime = 3;
-        callbackSuccess = QEFUNC(disability,performClosedReduction);
-        condition = QEFUNC(disability,canPerformClosedReduction);
+        callbackSuccess = QEFUNC(disability,performFractureRealignment);
+        condition = QEFUNC(disability,canPerformFractureRealignment);
         litter[] = {};
         ACM_rollToBack = 1;
     };

@@ -12,7 +12,7 @@
 
 [QACEGVAR(medical,fracture), LINKFUNC(handleFracture)] call CBA_fnc_addEventHandler;
 
-[QGVAR(performClosedReductionLocal), LINKFUNC(performClosedReductionLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(performFractureRealignmentLocal), LINKFUNC(performFractureRealignmentLocal)] call CBA_fnc_addEventHandler;
 
 ["multiplier", {
     (GET_TOURNIQUET_NECROSIS(ACE_player)) params ["_leftArm", "_rightArm"];
