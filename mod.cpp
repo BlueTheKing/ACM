@@ -1,4 +1,4 @@
-name = "Advanced Combat Medicine 1.3.1";
+name = "Advanced Combat Medicine 0.0.0.0";
 tooltip = "Advanced Combat Medicine";
 picture = "logo.paa";
 logo = "logo_small.paa";
