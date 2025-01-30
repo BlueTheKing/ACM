@@ -61,14 +61,6 @@ private _cachedItems = [ACE_player, 0] call ACEFUNC(common,uniqueItems);
 private _fluidsArray = +GVAR(Fluids_Array);
 private _fluidsArrayData = +GVAR(Fluids_Array_Data);
 
-private _index = _fluidsArray findIf {_x in _cachedItems};
-
-if (_index < 0) exitWith {};
-
-private _ctrlInventoryPanel = _display displayCtrl IDC_TRANSFUSIONMENU_RIGHTLISTPANEL;
-
-lbClear _ctrlInventoryPanel;
-
 private _activeFreshBloodList = missionNamespace getVariable [QGVAR(FreshBloodList), createHashMap];
 
 if (count _activeFreshBloodList > 0) then {
@@ -80,6 +72,14 @@ if (count _activeFreshBloodList > 0) then {
         _fluidsArrayData pushBack (format ["%1_%2", (["FreshBlood", _volume, -1, true] call FUNC(formatFluidBagName)), _id]);
     } forEach _activeFreshBloodList;
 };
+
+private _index = _fluidsArray findIf {_x in _cachedItems};
+
+if (_index < 0) exitWith {};
+
+private _ctrlInventoryPanel = _display displayCtrl IDC_TRANSFUSIONMENU_RIGHTLISTPANEL;
+
+lbClear _ctrlInventoryPanel;
 
 private _fnc_addToInventoryPanel = {
     params ["_ctrlInventoryPanel", "_fluidsArrayData", "_count", "_entry", "_index"];
