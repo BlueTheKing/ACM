@@ -66,4 +66,4 @@ if (_preparedArray select _partIndex) then {
 };
 
 [_hint, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
-[_patient, "activity", "%1 inspected %2: %3", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _bodyPartString), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "quick_view", "%1 inspected %2: %3", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _bodyPartString), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
