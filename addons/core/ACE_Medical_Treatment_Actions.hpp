@@ -132,6 +132,34 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = QEFUNC(disability,getSplintWrapTime);
         callbackSuccess = QEFUNC(disability,wrapSplint);
     };
+
+    // Disability
+    class InspectForFracture: CheckPulse {
+        displayName = "Inspect For Fracture";
+        displayNameProgress = "Inspecting for fracture...";
+        icon = "";
+        medicRequired = QEGVAR(disability,allowInspectForFracture);
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        treatmentTime = 6;
+        allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
+        animationMedic = "";
+        condition = QEFUNC(disability,canInspectForFracture);
+        callbackSuccess = QEFUNC(disability,inspectForFracture);
+    };
+    class FractureRealignment: Splint {
+        displayName = "Perform Fracture Realignment";
+        displayNameProgress = "Performing Fracture Realignment...";
+        icon = "";
+        medicRequired = QEGVAR(disability,allowFractureRealignment);
+        consumeItem = 0;
+        items[] = {};
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        treatmentTime = 3;
+        callbackSuccess = QEFUNC(disability,performFractureRealignment);
+        condition = QEFUNC(disability,canPerformFractureRealignment);
+        litter[] = {};
+        ACM_rollToBack = 1;
+    };
     class ApplySAMSplint: Splint {
         displayName = ECSTRING(disability,ApplySAMSplint);
         displayNameProgress = ECSTRING(disability,ApplySAMSplint_Progress);

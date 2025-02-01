@@ -22,6 +22,7 @@ params ["_ctrlGroup", "_target", "_selectionN"];
 // Get tourniquets, damage, and blood loss for target
 private _tourniquets = GET_TOURNIQUETS(_target);
 private _fractures = GET_FRACTURES(_target);
+private _splints = GET_SPLINTS(_target);
 private _bodyPartDamage = GET_BODYPART_DAMAGE(_target);
 private _damageThreshold = GET_DAMAGE_THRESHOLD(_target);
 private _bodyPartBloodLoss = [0, 0, 0, 0, 0, 0];
@@ -54,21 +55,18 @@ private _bodyPartBloodLoss = [0, 0, 0, 0, 0, 0];
     // Show or hide fractrue/bones
     if (_fractureIDC != -1) then {
         private _ctrlBone = _ctrlGroup controlsGroupCtrl _fractureIDC;
-        switch (_fractures select _forEachIndex) do {
-            case 0: {
-                _ctrlBone ctrlShow false;
+
+        switch (true) do {
+            case ((_splints select _forEachIndex) > 0): {
+                _ctrlBone ctrlShow true;
+                _ctrlBone ctrlSetTextColor [0, 0, 1, 1];
             };
-            case 1: {
+            case ((_fractures select _forEachIndex) == 1): {
                 _ctrlBone ctrlShow true;
                 _ctrlBone ctrlSetTextColor [1, 0, 0, 1];
             };
-            case -1: {
-                if (ACEGVAR(medical,fractures) in [2, 3]) then {
-                    _ctrlBone ctrlShow true;
-                    _ctrlBone ctrlSetTextColor [0, 0, 1, 1];
-                } else {
-                    _ctrlBone ctrlShow false;
-                };
+            default {
+                _ctrlBone ctrlShow false;
             };
         };
     };

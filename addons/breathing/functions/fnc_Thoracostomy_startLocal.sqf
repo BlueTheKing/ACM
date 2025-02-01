@@ -65,7 +65,7 @@ switch (true) do {
 
 _patient setVariable [QGVAR(Thoracostomy_State), 1, true];
 
-private _anestheticEffect = [_patient, "Lidocaine", false] call ACEFUNC(medical_status,getMedicationCount);
+private _anestheticEffect = [_patient, "Lidocaine", false, BODYPART_N_BODY] call ACEFUNC(medical_status,getMedicationCount);
 
 if (_anestheticEffect < 0.7) then {
     [_patient, (1 - _anestheticEffect)] call ACEFUNC(medical,adjustPainLevel);

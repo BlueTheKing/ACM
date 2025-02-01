@@ -20,7 +20,7 @@ params ["_medic", "_patient"];
 
 private _hint = LLSTRING(AttemptWakeUp_Failure);
 
-addCamShake [5, 0.3, 5];
+addCamShake [5, 0.2, 30];
 
 _patient setVariable [QEGVAR(core,KnockOut_State), false];
 
