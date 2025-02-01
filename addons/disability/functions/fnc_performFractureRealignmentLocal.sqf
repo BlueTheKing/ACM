@@ -19,7 +19,7 @@
 
 params ["_medic", "_patient", "_bodyPart"];
 
-playSound3D [format ["%1%2.wav", (QPATHTO_R(sound\crack)), (round (1 + (random 3)))], _patient, false, getPosASL _patient, 4, 1, 4]; // 0.432s
+playSound3D [format ["%1%2.wav", (QPATHTO_R(sound\crack)), (round (1 + (random 3)))], _patient, false, getPosASL _patient, 10, 1, 10]; // 0.432s
 
 addCamShake [5, 0.4, 20];
 
