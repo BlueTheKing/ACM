@@ -350,13 +350,13 @@
 //// Blood
 #define GET_BLOODTYPE(unit) (unit getVariable [QEGVAR(circulation,BloodType),-1])
 
-#define ACM_BLOODTYPE_O 0
-#define ACM_BLOODTYPE_ON 1
-#define ACM_BLOODTYPE_A 2
-#define ACM_BLOODTYPE_AN 3
-#define ACM_BLOODTYPE_B 4
-#define ACM_BLOODTYPE_BN 5
-#define ACM_BLOODTYPE_AB 6
+#define ACM_BLOODTYPE_O   0
+#define ACM_BLOODTYPE_ON  1
+#define ACM_BLOODTYPE_A   2
+#define ACM_BLOODTYPE_AN  3
+#define ACM_BLOODTYPE_B   4
+#define ACM_BLOODTYPE_BN  5
+#define ACM_BLOODTYPE_AB  6
 #define ACM_BLOODTYPE_ABN 7
 
 #define BLOODTYPE_COMPATIBLE_LIST_O [ACM_BLOODTYPE_O, ACM_BLOODTYPE_ON]
