@@ -249,7 +249,7 @@ private _PFH = [{
             _POStepSpacing = 0;
             _COStepSpacing = 0;
         };
-        case !(HAS_PULSE_P(_patient)): { // VT
+        case (!(HAS_PULSE_P(_patient)) && _hr > 180): { // VT
             if (_padsState) then {
                 _EKGRhythm = ACM_Rhythm_VT;
             };
@@ -503,7 +503,7 @@ private _PFH = [{
             _displayedNIBP_D = "---";
             _displayedNIBP_M = "--";
         } else {
-            _displayedNIBP_M = (2/3) * _displayedNIBP_S + (1/3) * _displayedNIBP_D;
+            _displayedNIBP_M = GET_MAP(_displayedNIBP_S,_displayedNIBP_D);
             _displayedNIBP_M = _displayedNIBP_M toFixed 0;
             _displayedNIBP_S = _displayedNIBP_S toFixed 0;
             _displayedNIBP_D = _displayedNIBP_D toFixed 0;

@@ -96,7 +96,7 @@ if (_iv && _state) then {
     };
 
     if (_successChance > 0.1) then {
-        private _bodyPartDamage = (_patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]]) select _partIndex;
+        private _bodyPartDamage = GET_BODYPART_DAMAGE(_patient) select _partIndex;
         
         private _modifier = 0;
 

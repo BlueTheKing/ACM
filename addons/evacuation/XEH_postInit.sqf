@@ -7,25 +7,24 @@ if !(isMultiplayer) exitWith {};
 GVAR(CasualtyGroup) = createGroup [civilian, false];
 
 if (isServer) then {
-    if (GVAR(ticketCountRespawn) > ([GVAR(playerFaction), 0] call BIS_fnc_respawnTickets)) then {
-        private _missingTickets = GVAR(ticketCountRespawn) - ([GVAR(playerFaction), 0] call BIS_fnc_respawnTickets);
+    if ((round GVAR(ticketCountRespawn)) > ([GVAR(playerFaction), 0] call BIS_fnc_respawnTickets)) then {
+        private _missingTickets = (round GVAR(ticketCountRespawn)) - ([GVAR(playerFaction), 0] call BIS_fnc_respawnTickets);
         [GVAR(playerFaction), _missingTickets] call BIS_fnc_respawnTickets;
     };
 
-    missionNamespace setVariable [QGVAR(CasualtyTicket_Count), GVAR(ticketCountCasualty), true];
+    missionNamespace setVariable [QGVAR(CasualtyTicket_Count), (round GVAR(ticketCountCasualty)), true];
 };
 
 [QACEGVAR(medical,death), {
     params ["_unit"];
 
-    if !(_unit getVariable [QGVAR(playerSpawned), false]) exitWith {};
-
     if (_unit getVariable [QGVAR(casualtyTicketClaimed), false]) then {
         [true] call FUNC(setCasualtyTicket);
+        [GVAR(playerFaction), -(round GVAR(convertedCasualtyDeathPenalty))] call BIS_fnc_respawnTickets;
     };
 }] call CBA_fnc_addEventHandler;
 
-[QGVAR(createReinforcmentAndSwitch), {
+[QGVAR(createReinforcementAndSwitch), {
     params ["_originalUnit"];
 
     if !(hasInterface) exitWith {};

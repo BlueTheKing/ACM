@@ -49,7 +49,7 @@ if (_treatmentTime == 0) exitWith {false};
 private _userAndItem = if (GET_NUMBER_ENTRY(_config >> "consumeItem") == 1) then {
     [_medic, _patient, getArray (_config >> "items")] call ACEFUNC(medical_treatment,useItem);
 } else {
-    [objNull, ""]; // Treatment does not require items to be consumed
+    [objNull, "", false]; // Treatment does not require items to be consumed
 };
 
 _userAndItem params ["_itemUser", "_usedItem", "_createLitter"];
@@ -133,8 +133,8 @@ if (_medic isNotEqualTo player || {!_isInZeus}) then {
     };
 
     // Determine the animation length
-    private _animDuration = ACEGVAR(medical_treatment,animDurations)  get toLowerANSI _medicAnim;
-    if (isNil "_animDuration") then {
+    private _animDuration = ACEGVAR(medical_treatment,animDurations) get toLowerANSI _medicAnim;
+    if (isNil "_animDuration" && !(isNil _medicAnim)) then {
         WARNING_2("animation [%1] for [%2] has no duration defined",_medicAnim,_classname);
         _animDuration = 10;
     };

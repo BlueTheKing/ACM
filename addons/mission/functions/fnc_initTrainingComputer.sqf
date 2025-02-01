@@ -105,6 +105,20 @@ _actions pushBack (["ACM_Training_HealPatient",
 },
 [_spawnLocation]] call ACEFUNC(interact_menu,createAction));
 
+_actions pushBack (["ACM_Training_ClearPatients",
+"Clear Patient(s)",
+"",
+{
+    params ["_object"];
+
+    [_object] call FUNC(clearPatients);
+},
+{
+    params ["_object"];
+
+    count (_object getVariable [QGVAR(ActivePatients), []]) > 0;
+}] call ACEFUNC(interact_menu,createAction));
+
 {
     [_object, 0, ["ACE_MainActions"], _x] call ACEFUNC(interact_menu,addActionToObject);
 } forEach _actions;

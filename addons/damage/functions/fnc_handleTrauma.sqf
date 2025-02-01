@@ -19,7 +19,7 @@
 params ["_patient", ["_bodyPartDamage", []]];
 
 if (_bodyPartDamage isEqualTo []) then {
-    _bodyPartDamage = _patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]];
+    _bodyPartDamage = GET_BODYPART_DAMAGE(_patient);
 };
 
 _bodyPartDamage params ["_headDamage", "_bodyDamage"];

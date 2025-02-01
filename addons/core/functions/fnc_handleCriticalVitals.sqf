@@ -38,7 +38,7 @@ private _PFH = [{
     private _timeUntil = _patient getVariable [QGVAR(CriticalVitals_Time), -1];
 
     private _heartRateLimits = _HR > 240 || _HR < 30;
-    private _pressureLimits = _MAP > 200 || _MAP < 45;
+    private _pressureLimits = _MAP > 200 || _MAP < 55;
 
     if (_HR > 245 || _HR < 10 || _MAP > 220 || _MAP < 30 || ((_heartRateLimits || _pressureLimits) && CBA_missionTime > (_timeUntil + 15)) || !(alive _patient) || IN_CRDC_ARRST(_patient) || !(_currentRhythm in [ACM_Rhythm_Sinus, ACM_Rhythm_VT])) exitWith {
         if (_HR > 200) then {
@@ -60,7 +60,7 @@ private _PFH = [{
         }, {
             params ["_patient"];
 
-            if (alive _patient && !(_patient getVariable [QGVAR(CriticalVitals_Passed), false])) then {
+            if (alive _patient && (_patient getVariable [QGVAR(CriticalVitals_Passed), false])) then {
                 _patient setVariable [QGVAR(CriticalVitals_Passed), false, true];
             };
         }, [_patient, (CBA_missionTime + (15 + (random 15)))], 3600] call CBA_fnc_waitUntilAndExecute;
@@ -71,7 +71,7 @@ private _PFH = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    if (!(IN_CRDC_ARRST(_patient)) && {_HR > 45 && _HR < 200 && _MAP > 55 && _MAP < 180}) exitWith {
+    if (!(IN_CRDC_ARRST(_patient)) && {_HR > 45 && _HR < 200 && _MAP > 60 && _MAP < 180}) exitWith {
         if (_currentRhythm == ACM_Rhythm_VT) then {
             _patient setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Sinus, true];
         };
@@ -85,6 +85,6 @@ private _PFH = [{
     if (!(IS_UNCONSCIOUS(_patient)) && {_heartRateLimits || _pressureLimits || CBA_missionTime > _timeUntil}) then {
         [QACEGVAR(medical,CriticalVitals), _patient] call CBA_fnc_localEvent;
     };
-}, 5, [_patient]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(CriticalVitals_PFH), _PFH];

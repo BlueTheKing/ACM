@@ -46,7 +46,7 @@ if (_type == 0) then {
     if (_fluid <= 0) then {
         _amount = LLSTRING(ThoracostomyDrain_Amount_None);
     } else {
-        _amount = format [LLSTRING(ThoracostomyDrain_Amount_Accurate), round((_fluid * 1000))];
+        _amount = format [LLSTRING(ThoracostomyDrain_Amount_Accurate), ceil ((_fluid * 1000))];
     };
 };
 

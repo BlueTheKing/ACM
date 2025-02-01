@@ -47,4 +47,9 @@ class CfgVehicles {
         icon = QPATHTOF(ui\Icon_Module_SetOxygen_ca.paa);
         curatorInfoType = QGVAR(RscSetOxygen);
     };
+    class GVAR(setBloodType): GVAR(moduleBase) {
+        displayName = CSTRING(Module_SetBloodType);
+        icon = QPATHTOF(ui\Icon_Module_SetBloodType_ca.paa);
+        curatorInfoType = QGVAR(RscSetBloodType);
+    };
 };

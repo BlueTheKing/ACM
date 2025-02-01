@@ -23,21 +23,7 @@
 params ["_object", "_location", "_initiator", "_severity", "_type", ["_singlePatient", true]];
 
 if (_singlePatient) then {
-    private _activePatient = _object getVariable [QGVAR(ActivePatient), objNull];
-
-    if !(isNull _activePatient) then {
-        deleteVehicle _activePatient;
-        _object setVariable [QGVAR(ActivePatient), objNull, true];
-    };
-
-    private _activePatients = _object getVariable [QGVAR(ActivePatients), []];
-
-    if (count _activePatients > 0) then {
-        {
-            deleteVehicle _x;
-        } forEachReversed _activePatients;
-        _object setVariable [QGVAR(ActivePatients), [], true];
-    };
+    [_object] call FUNC(clearPatients);
 };
 
 private _fnc_generateWounds = {
@@ -135,7 +121,7 @@ for "_i" from 1 to _woundCount do {
 } forEach _injuryArray;
 
 if (_singlePatient) then {
-    _object setVariable [QGVAR(ActivePatient), _patient, true];
+    _object setVariable [QGVAR(ActivePatients), [_patient], true];
 };
 
 _patient;

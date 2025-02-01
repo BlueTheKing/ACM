@@ -1,3 +1,5 @@
+PREP(clearPatients);
+PREP(createCustomBloodTypeList);
 PREP(initHealTent);
 PREP(initTrainingComputer);
 PREP(generatePatient);

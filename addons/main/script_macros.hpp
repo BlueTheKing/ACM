@@ -141,6 +141,8 @@
 #define VAR_BANDAGED_WOUNDS   QACEGVAR(medical,bandagedWounds)
 #undef VAR_STITCHED_WOUNDS
 #define VAR_STITCHED_WOUNDS   QACEGVAR(medical,stitchedWounds)
+#undef VAR_BODYPART_DAMAGE
+#define VAR_BODYPART_DAMAGE   QACEGVAR(medical,bodyPartDamage)
 // These variables track gradual adjustments (from medication, etc.)
 #undef VAR_MEDICATIONS
 #define VAR_MEDICATIONS       QACEGVAR(medical,medications)
