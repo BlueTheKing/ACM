@@ -140,151 +140,154 @@
             <English>Sets chance for AI to stay down once unconscious (without intervention)</English>
             <Polish>Szansa na pozostanie jednostki SI w pozycji leżącej, gdy straci przytomność (bez interwencji)</Polish>
             <German>Setzt die Wahrscheinlichkeit, dass eine bewusstloser KI-Einheit ohne Behandlung wieder zu bewusstsein kommt</German>
-        </Key><!--
-            // Settings in CORE // -->
-        <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap">
-            <English>Allow Wrapping</English>
-            <Polish>Pozwól na zawijanie ran</Polish>
-            <German>Erlaube Fixierbinden</German>
         </Key>
-        <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap_Desc">
-            <English>Training level required to use Elastic Wrap</English>
-            <Polish>Poziom wyszkolenia wymagany do zawijania ran</Polish>
-            <German>Benötigtes Qualifikationslevel, um Fixierbinden zu benutzen</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart">
-            <English>Wrap Time</English>
-            <Polish>Czas zawijania ran</Polish>
-            <German>Fixierbindenzeit</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart_Desc">
-            <English>Time to wrap whole body part</English>
-            <Polish>Czas do zawinięcia całej części ciała</Polish>
-            <German>Benötigte Zeit um ein ganzes Körperteil mittels Fixierbinde zu bandagieren</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch">
-            <English>Wrapped Stitch Time</English>
-            <Polish>Czas szycia zawiniętych ran</Polish>
-            <German>Nähzeit bei fixierten Bandagen</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch_Desc">
-            <English>Time to stitch a wrapped wound</English>
-            <Polish>Czas potrzebny na zeszycie zawiniętych wcześniej ran</Polish>
-            <German>Benötigte Zeit um eine bandagierte Wunde zu nähen, die vorher mittels Fixierbinde gesichert wurde</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch">
-            <English>Suture Stitch Time Multiplier</English>
-            <Polish>Mnożnik czasu szycia z użyciem szwów</Polish>
-            <German>Nähzeitmultiplikater</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch_Desc">
-            <English>Time multiplier when stitching wound with sutures</English>
-            <Polish>Mnożnik czasu zszywania ran z użyciem szwów</Polish>
-            <German>Zeitmultiplikator beim Nähen von Wunden mit Nahtmaterial</German>
-        </Key><!-- 
-            // Items // -->
-        <Key ID="STR_ACM_Damage_PressureBandage">
-            <English>Pressure Bandage</English>
-            <Polish>Bandaż uciskowy</Polish>
-            <German>Druckverband</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_PressureBandage_Desc">
-            <English>Standard issue bandage</English>
-            <Polish>Standardowo przydzielany bandaż osobisty</Polish>
-            <German>Millitärischer Druckverband</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_EmergencyTraumaDressing">
-            <English>Emergency Trauma Dressing</English>
-            <Polish>Powiększony bandaż uciskowy</Polish>
-            <German>Notfallverband</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_EmergencyTraumaDressing_Desc">
-            <English>Trauma dressing with large surface area</English>
-            <Polish>Bandaż uciskowy z powiększoną powieszchnią</Polish>
-            <German>Notfallverband mit großer Fläche</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_ElasticWrap">
-            <English>Elastic Wrap</English>
-            <Polish>Bandaż stabilizacyjny</Polish>
-            <German>Fixierbinde</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_ElasticWrap_Desc">
-            <English>Used to wrap bandages, clotted wounds and bruises</English>
-            <Polish>Używany do stabilizacji bandaży, owijania skrzepniętych ran i siniaków</Polish>
-            <German>Wird verwendet, um Bandagen, geronnene Wunden oder Prellungen zu fixieren bzw. zu behandeln</German>
-        </Key><!--
-            // Actions // -->
-        <Key ID="STR_ACM_Damage_ElasticWrap_Progress">
-            <English>Wrapping...</English>
-            <Polish>Zawijanie...</Polish>
-            <German>Benutze Fixierbinde...</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_ElasticWrap_Bruises">
-            <English>Wrap Bruises</English>
-            <Polish>Zawiń siniaki</Polish>
-            <German>Prellung mit Fixierbinde einwickeln</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_ElasticWrap_Bandages">
-            <English>Wrap Bandaged Wounds</English>
-            <Polish>Zawiń zabandażowane rany</Polish>
-            <German>Fixiere bandagierte Wunden</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_ElasticWrap_Clots">
-            <English>Wrap Clotted Wounds</English>
-            <Polish>Zawiń skrzepnięte rany</Polish>
-            <German>Geronnene Wunden einwickeln</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Suture">
-            <English>Use Surgical Kit With Sutures</English>
-            <Polish>Użyj zestawu do szycia ze szwami</Polish>
-            <German>Nähset mit Nähten verwenden</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Suture_Progress">
-            <English>Stitching With Sutures...</English>
-            <Polish>Szycie ze szwami...</Polish>
-            <German>Nähe wunden mit Nadel und Faden...</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped">
-            <English>Use Surgical Kit (Wrapped)</English>
-            <Polish>Użyj zestawu do szycia (zawinięte)</Polish>
-            <German>Nähset verwenden (Eingewickelte Wunden)</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped_Suture">
-            <English>Use Surgical Kit With Sutures (Wrapped)</English>
-            <Polish>Użyj zestawu do szycia ze szwami (zawinięte)</Polish>
-            <German>Nähset mit Nähten verwenden (Eingewickelte Wunden)</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Clotted">
-            <English>Use Surgical Kit (Clotted)</English>
-            <Polish>Użyj zestawu do szycia (skrzepy)</Polish>
-            <German>Nähset verwenden (Geronnene Wunden)</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Clotted_Suture">
-            <English>Use Surgical Kit With Sutures (Clotted)</English>
-            <Polish>Użyj zestawu do szycia ze szwami (skrzepy)</Polish>
-            <German>Nähset mit Nähten verwenden (Geronnene Wunden)</German>
-        </Key><!--
-            // Wrap Body Part Action // -->
-        <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">
-            <English>%1 has wrapped %2</English>
-            <Polish>%1 zawinął %2</Polish>
-            <German>%1 hat %2 mit Fixierbinde umwickelt</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Bandages">
-            <English>bandages</English>
-            <Polish>Bandaże</Polish>
-            <German>Bandagen</German>
-        </Key>
-        <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Clotted">
-            <English>clotted wounds</English>
-            <Polish>skrzepnięte rany</Polish>
-            <German>Geronnene Wunde</German>
-        </Key><!--
-            // Wrap Bruises Action // -->
-        <Key ID="STR_ACM_Damage_WrapBruises_ActionLog">
-            <English>%1 has wrapped bruises</English>
-            <Polish>%1 zawinął siniaki</Polish>
-            <German>%1 hat Prellungen mit Fixierbinde bandagiert</German>
-        </Key>
+        <Container name="// Settings in CORE //">
+            <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap">
+                <English>Allow Wrapping</English>
+                <Polish>Pozwól na zawijanie ran</Polish>
+                <German>Erlaube Fixierbinden</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap_Desc">
+                <English>Training level required to use Elastic Wrap</English>
+                <Polish>Poziom wyszkolenia wymagany do zawijania ran</Polish>
+                <German>Benötigtes Qualifikationslevel, um Fixierbinden zu benutzen</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart">
+                <English>Wrap Time</English>
+                <Polish>Czas zawijania ran</Polish>
+                <German>Fixierbindenzeit</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart_Desc">
+                <English>Time to wrap whole body part</English>
+                <Polish>Czas do zawinięcia całej części ciała</Polish>
+                <German>Benötigte Zeit um ein ganzes Körperteil mittels Fixierbinde zu bandagieren</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch">
+                <English>Wrapped Stitch Time</English>
+                <Polish>Czas szycia zawiniętych ran</Polish>
+                <German>Nähzeit bei fixierten Bandagen</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch_Desc">
+                <English>Time to stitch a wrapped wound</English>
+                <Polish>Czas potrzebny na zeszycie zawiniętych wcześniej ran</Polish>
+                <German>Benötigte Zeit um eine bandagierte Wunde zu nähen, die vorher mittels Fixierbinde gesichert wurde</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch">
+                <English>Suture Stitch Time Multiplier</English>
+                <Polish>Mnożnik czasu szycia z użyciem szwów</Polish>
+                <German>Nähzeitmultiplikater</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch_Desc">
+                <English>Time multiplier when stitching wound with sutures</English>
+                <Polish>Mnożnik czasu zszywania ran z użyciem szwów</Polish>
+                <German>Zeitmultiplikator beim Nähen von Wunden mit Nahtmaterial</German>
+            </Key>
+        </Container>
+        <Container name="// Items //">
+            <Key ID="STR_ACM_Damage_PressureBandage">
+                <English>Pressure Bandage</English>
+                <Polish>Bandaż uciskowy</Polish>
+                <German>Druckverband</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_PressureBandage_Desc">
+                <English>Standard issue bandage</English>
+                <Polish>Standardowo przydzielany bandaż osobisty</Polish>
+                <German>Millitärischer Druckverband</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_EmergencyTraumaDressing">
+                <English>Emergency Trauma Dressing</English>
+                <Polish>Powiększony bandaż uciskowy</Polish>
+                <German>Notfallverband</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_EmergencyTraumaDressing_Desc">
+                <English>Trauma dressing with large surface area</English>
+                <Polish>Bandaż uciskowy z powiększoną powieszchnią</Polish>
+                <German>Notfallverband mit großer Fläche</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_ElasticWrap">
+                <English>Elastic Wrap</English>
+                <Polish>Bandaż stabilizacyjny</Polish>
+                <German>Fixierbinde</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_ElasticWrap_Desc">
+                <English>Used to wrap bandages, clotted wounds and bruises</English>
+                <Polish>Używany do stabilizacji bandaży, owijania skrzepniętych ran i siniaków</Polish>
+                <German>Wird verwendet, um Bandagen, geronnene Wunden oder Prellungen zu fixieren bzw. zu behandeln</German>
+            </Key>
+        </Container>
+        <Container name="// Wrap Actions //">
+            <Key ID="STR_ACM_Damage_ElasticWrap_Progress">
+                <English>Wrapping...</English>
+                <Polish>Zawijanie...</Polish>
+                <German>Benutze Fixierbinde...</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_ElasticWrap_Bruises">
+                <English>Wrap Bruises</English>
+                <Polish>Zawiń siniaki</Polish>
+                <German>Prellung mit Fixierbinde einwickeln</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_ElasticWrap_Bandages">
+                <English>Wrap Bandaged Wounds</English>
+                <Polish>Zawiń zabandażowane rany</Polish>
+                <German>Fixiere bandagierte Wunden</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_ElasticWrap_Clots">
+                <English>Wrap Clotted Wounds</English>
+                <Polish>Zawiń skrzepnięte rany</Polish>
+                <German>Geronnene Wunden einwickeln</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">
+                <English>%1 has wrapped %2</English>
+                <Polish>%1 zawinął %2</Polish>
+                <German>%1 hat %2 mit Fixierbinde umwickelt</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Bandages">
+                <English>bandages</English>
+                <Polish>Bandaże</Polish>
+                <German>Bandagen</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Clotted">
+                <English>clotted wounds</English>
+                <Polish>skrzepnięte rany</Polish>
+                <German>Geronnene Wunde</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_WrapBruises_ActionLog">
+                <English>%1 has wrapped bruises</English>
+                <Polish>%1 zawinął siniaki</Polish>
+                <German>%1 hat Prellungen mit Fixierbinde bandagiert</German>
+            </Key>
+        </Container>
+        <Container name="// Stitch Actions //">
+            <Key ID="STR_ACM_Damage_SurgicalKit_Suture">
+                <English>Use Surgical Kit With Sutures</English>
+                <Polish>Użyj zestawu do szycia ze szwami</Polish>
+                <German>Nähset mit Nähten verwenden</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SurgicalKit_Suture_Progress">
+                <English>Stitching With Sutures...</English>
+                <Polish>Szycie ze szwami...</Polish>
+                <German>Nähe wunden mit Nadel und Faden...</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped">
+                <English>Use Surgical Kit (Wrapped)</English>
+                <Polish>Użyj zestawu do szycia (zawinięte)</Polish>
+                <German>Nähset verwenden (Eingewickelte Wunden)</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped_Suture">
+                <English>Use Surgical Kit With Sutures (Wrapped)</English>
+                <Polish>Użyj zestawu do szycia ze szwami (zawinięte)</Polish>
+                <German>Nähset mit Nähten verwenden (Eingewickelte Wunden)</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SurgicalKit_Clotted">
+                <English>Use Surgical Kit (Clotted)</English>
+                <Polish>Użyj zestawu do szycia (skrzepy)</Polish>
+                <German>Nähset verwenden (Geronnene Wunden)</German>
+            </Key>
+            <Key ID="STR_ACM_Damage_SurgicalKit_Clotted_Suture">
+                <English>Use Surgical Kit With Sutures (Clotted)</English>
+                <Polish>Użyj zestawu do szycia ze szwami (skrzepy)</Polish>
+                <German>Nähset mit Nähten verwenden (Geronnene Wunden)</German>
+            </Key>
+        </Container>
     </Package>
 </Project>

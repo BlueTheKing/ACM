@@ -19,7 +19,7 @@
 
 params ["_medic", "_patient", "_bodyPart"];
 
-playSound3D [format ["%1%2.wav", (QPATHTO_R(sound\crack)), (round (1 + (random 3)))], _patient, false, getPosASL _patient, 10, 1, 10]; // 0.432s
+playSound3D [format ["%1%2.wav", (QPATHTO_R(sound\crack)), (round (1 + (random 3)))], _patient, false, getPosASL _patient, 4, 1, 4]; // 0.432s
 
 addCamShake [5, 0.4, 20];
 
@@ -32,10 +32,10 @@ if (_anestheticEffect < 0.7) then {
 };
 
 if (((_patient getVariable [QGVAR(Fracture_State), [0,0,0,0,0,0]]) select _partIndex) == 0) exitWith {
-    [QACEGVAR(common,displayTextStructured), ["Fracture realignment performed", 2, _medic], _medic] call CBA_fnc_targetEvent;
+    [QACEGVAR(common,displayTextStructured), [LLSTRING(FractureRealignment_Complete), 2, _medic], _medic] call CBA_fnc_targetEvent;
 };
 
-[QACEGVAR(common,displayTextStructured), ["Fracture realignment performed successfully", 2, _medic], _medic] call CBA_fnc_targetEvent;
+[QACEGVAR(common,displayTextStructured), [LLSTRING(FractureRealignment_Complete_Success), 2, _medic], _medic] call CBA_fnc_targetEvent;
 
 private _preparedArray = _patient getVariable [QGVAR(Fracture_Prepared), [false,false,false,false,false,false]];
 

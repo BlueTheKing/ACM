@@ -135,8 +135,8 @@ class ACEGVAR(medical_treatment,actions) {
 
     // Disability
     class InspectForFracture: CheckPulse {
-        displayName = "Inspect For Fracture";
-        displayNameProgress = "Inspecting for fracture...";
+        displayName = CSTRING(InspectFracture);
+        displayNameProgress = CSTRING(InspectFracture_Progress);
         icon = "";
         medicRequired = QEGVAR(disability,allowInspectForFracture);
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
@@ -147,8 +147,8 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QEFUNC(disability,inspectForFracture);
     };
     class FractureRealignment: Splint {
-        displayName = "Perform Fracture Realignment";
-        displayNameProgress = "Performing Fracture Realignment...";
+        displayName = CSTRING(FractureRealignment);
+        displayNameProgress = CSTRING(FractureRealignment_Progress);
         icon = "";
         medicRequired = QEGVAR(disability,allowFractureRealignment);
         consumeItem = 0;

@@ -32,38 +32,38 @@ private _bodyPartDamage = ((_patient getVariable [QACEGVAR(medical,bodyPartDamag
 
 switch (true) do {
     case ((GET_SPLINTS(_patient) select _partIndex) > 0): {
-        _hint = "Patient has splint applied to limb";
-        _hintLog = "Splinted";
+        _hint = LLSTRING(InspectFracture_SplintApplied)
+        _hintLog = LLSTRING(InspectFracture_SplintApplied_Short)
     };
     case (_fractureState == ACM_FRACTURE_COMPLEX): {
-        _hint = "Patient has significant swelling on limb";
-        _hintLog = "Significant Swelling";
+        _hint = LLSTRING(InspectFracture_SignificantSwelling)
+        _hintLog = LLSTRING(InspectFracture_SignificantSwelling_Short)
     };
     case (_fractureState == ACM_FRACTURE_SEVERE): {
-        _hint = "Patient has swelling on limb";
-        _hintLog = "Swelling";
+        _hint = LLSTRING(InspectFracture_Swelling)
+        _hintLog = LLSTRING(InspectFracture_Swelling_Short)
     };
     case (_fractureState == ACM_FRACTURE_MILD): {
-        _hint = "Patient has severe bruising on limb";
-        _hintLog = "Severe Bruising";
+        _hint = LLSTRING(InspectFracture_SevereBruising)
+        _hintLog = LLSTRING(InspectFracture_SevereBruising_Short)
     };
     case (_bodyPartDamage > 1): {
-        _hint = "Patient limb is bruised";
-        _hintLog = "Bruised";
+        _hint = LLSTRING(InspectFracture_Bruised)
+        _hintLog = LLSTRING(InspectFracture_Bruised_Short)
     };
     default {
-        _hint = "Patient has no substantial damage on limb";
-        _hintLog = "No Significant Injury";
+        _hint = LLSTRING(InspectFracture_NoInjury)
+        _hintLog = LLSTRING(InspectFracture_NoInjury_Short)
     };
 };
 
 private _preparedArray = _patient getVariable [QGVAR(Fracture_Prepared), [false,false,false,false,false,false]];
 
 if (_preparedArray select _partIndex) then {
-    _hint = format ["%1<br />%2", _hint, "Fracture realignment performed"];
-    _hintLog = format ["%1, %2", _hintLog, "realignment performed"];
+    _hint = format ["%1<br />%2", _hint, LLSTRING(InspectFracture_RealignmentPerformed)];
+    _hintLog = format ["%1, %2", _hintLog, LLSTRING(InspectFracture_RealignmentPerformed_Short)];
     _hintHeight = 2.5;
 };
 
 [_hint, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
-[_patient, "activity", "%1 inspected %2: %3", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _bodyPartString), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "quick_view", LLSTRING(InspectFracture_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), (toLower _bodyPartString), _hintLog]] call ACEFUNC(medical_treatment,addToLog);

@@ -103,47 +103,48 @@
             <English>Sets locations at which casualty conversion can be performed</English>
             <Polish>Ustawia miejsca w których można przeprowadzić konwersje poszkodowanego</Polish>
             <German>Stellt ein, an welchen Orten eine Konversion möglich ist</German>
-        </Key><!-- 
-            // Actions // -->
-        <Key ID="STR_ACM_Evacuation_ConvertCasualty">
-            <English>Convert Casualty</English>
-            <Polish>Konwertuj poszkodowanego</Polish>
-            <German>Patienten konvertieren</German>
         </Key>
-        <Key ID="STR_ACM_Evacuation_ConvertCasualty_Progress">
-            <English>Converting Casualty...</English>
-            <Polish>Konwersja poszkodwanego...</Polish>
-            <German>Konvertiere Patienten...</German>
-        </Key>
-        <Key ID="STR_ACM_Evacuation_ConvertCasualty_Complete">
-            <English>Casualty Conversion Complete</English>
-            <Polish>Konwersja poszkodowanego zakończona</Polish>
-            <German>Patientenkonversion abgeschlossen</German>
-        </Key>
-        <Key ID="STR_ACM_Evacuation_ConvertCasualty_InProgress">
-            <English>Casualty Conversion In Progress</English>
-            <Polish>Konwersja poszkodowanego w toku</Polish>
-            <German>Patientenkonversion wird durchgeführt</German>
-        </Key>
-        <Key ID="STR_ACM_Evacuation_ConvertCasualty_Cancelled">
-            <English>Casualty Conversion Cancelled</English>
-            <Polish>Konwersja poszkodowanego przerwana</Polish>
-            <German>Patientenkonversion abgebrochen</German>
-        </Key>
-        <Key ID="STR_ACM_Evacuation_ConvertCasualty_Failed">
-            <English>Casualty Conversion Failed</English>
-            <Polish>Konwersja poszkodowanego nieudana</Polish>
-            <German>Patientenkonversion fehlgeschlagen</German>
-        </Key>
-        <Key ID="STR_ACM_Evacuation_EvacuatePatient">
-            <English>Evacuate Patient</English>
-            <Polish>Ewakuuj poszkodowanego</Polish>
-            <German>Evakuiere Patient</German>
-        </Key>
-        <Key ID="STR_ACM_Evacuation_EvacuatePatient_Success">
-            <English>Casualty Successfully Evacuated</English>
-            <Polish>Ewakuacja poszkodwanego udana</Polish>
-            <German>Patient erfolgreich evakuiert</German>
-        </Key>
+        <Container name="// Actions //">
+            <Key ID="STR_ACM_Evacuation_ConvertCasualty">
+                <English>Convert Casualty</English>
+                <Polish>Konwertuj poszkodowanego</Polish>
+                <German>Patienten konvertieren</German>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_ConvertCasualty_Progress">
+                <English>Converting Casualty...</English>
+                <Polish>Konwersja poszkodwanego...</Polish>
+                <German>Konvertiere Patienten...</German>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_ConvertCasualty_Complete">
+                <English>Casualty Conversion Complete</English>
+                <Polish>Konwersja poszkodowanego zakończona</Polish>
+                <German>Patientenkonversion abgeschlossen</German>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_ConvertCasualty_InProgress">
+                <English>Casualty Conversion In Progress</English>
+                <Polish>Konwersja poszkodowanego w toku</Polish>
+                <German>Patientenkonversion wird durchgeführt</German>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_ConvertCasualty_Cancelled">
+                <English>Casualty Conversion Cancelled</English>
+                <Polish>Konwersja poszkodowanego przerwana</Polish>
+                <German>Patientenkonversion abgebrochen</German>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_ConvertCasualty_Failed">
+                <English>Casualty Conversion Failed</English>
+                <Polish>Konwersja poszkodowanego nieudana</Polish>
+                <German>Patientenkonversion fehlgeschlagen</German>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_EvacuatePatient">
+                <English>Evacuate Patient</English>
+                <Polish>Ewakuuj poszkodowanego</Polish>
+                <German>Evakuiere Patient</German>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_EvacuatePatient_Success">
+                <English>Casualty Successfully Evacuated</English>
+                <Polish>Ewakuacja poszkodwanego udana</Polish>
+                <German>Patient erfolgreich evakuiert</German>
+            </Key>
+        </Container>
     </Package>
 </Project>
