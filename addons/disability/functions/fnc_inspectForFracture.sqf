@@ -32,28 +32,28 @@ private _bodyPartDamage = ((_patient getVariable [QACEGVAR(medical,bodyPartDamag
 
 switch (true) do {
     case ((GET_SPLINTS(_patient) select _partIndex) > 0): {
-        _hint = LLSTRING(InspectFracture_SplintApplied)
-        _hintLog = LLSTRING(InspectFracture_SplintApplied_Short)
+        _hint = LLSTRING(InspectFracture_SplintApplied);
+        _hintLog = LLSTRING(InspectFracture_SplintApplied_Short);
     };
     case (_fractureState == ACM_FRACTURE_COMPLEX): {
-        _hint = LLSTRING(InspectFracture_SignificantSwelling)
-        _hintLog = LLSTRING(InspectFracture_SignificantSwelling_Short)
+        _hint = LLSTRING(InspectFracture_SignificantSwelling);
+        _hintLog = LLSTRING(InspectFracture_SignificantSwelling_Short);
     };
     case (_fractureState == ACM_FRACTURE_SEVERE): {
-        _hint = LLSTRING(InspectFracture_Swelling)
-        _hintLog = LLSTRING(InspectFracture_Swelling_Short)
+        _hint = LLSTRING(InspectFracture_Swelling);
+        _hintLog = LLSTRING(InspectFracture_Swelling_Short);
     };
     case (_fractureState == ACM_FRACTURE_MILD): {
-        _hint = LLSTRING(InspectFracture_SevereBruising)
-        _hintLog = LLSTRING(InspectFracture_SevereBruising_Short)
+        _hint = LLSTRING(InspectFracture_SevereBruising);
+        _hintLog = LLSTRING(InspectFracture_SevereBruising_Short);
     };
     case (_bodyPartDamage > 1): {
-        _hint = LLSTRING(InspectFracture_Bruised)
-        _hintLog = LLSTRING(InspectFracture_Bruised_Short)
+        _hint = LLSTRING(InspectFracture_Bruised);
+        _hintLog = LLSTRING(InspectFracture_Bruised_Short);
     };
     default {
-        _hint = LLSTRING(InspectFracture_NoInjury)
-        _hintLog = LLSTRING(InspectFracture_NoInjury_Short)
+        _hint = LLSTRING(InspectFracture_NoInjury);
+        _hintLog = LLSTRING(InspectFracture_NoInjury_Short);
     };
 };
 
