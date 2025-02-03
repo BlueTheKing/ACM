@@ -1166,9 +1166,9 @@
                 <German>Deutliche Schwellung</German>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
-                <English>%1 inspected IV Catheter: %2</English>
-                <Polish>%1 sprawdził wkłucie: %2</Polish>
-                <German>%1 hat einen i.v. Katheter geprüft: %2</German>
+                <English>%1 inspected IV Catheter (%2): %3</English>
+                <Polish>%1 sprawdził wkłucie (%2): %3</Polish>
+                <German>%1 hat einen i.v. Katheter (%2) geprüft: %3</German>
             </Key>
         </Container>
         <Container name="// Pressure Cuff Action //">
