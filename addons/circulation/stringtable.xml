@@ -777,7 +777,7 @@
                 <Polish>Przestano wyczuwać tętno</Polish>
                 <German>Puls tasten beendet</German>
             </Key>
-            <Key ID="STR_ACM_Circulation_FeelPulse_Cartoid">
+            <Key ID="STR_ACM_Circulation_FeelPulse_Carotid">
                 <English>Carotid</English>
                 <Polish>Tętnica szyjna</Polish>
                 <German>Karotispuls</German>

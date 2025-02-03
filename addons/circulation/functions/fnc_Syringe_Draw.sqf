@@ -169,14 +169,10 @@ private _fnc_updateSelectedMedication = {
         _ctrlBText ctrlSetText format ["%1 (%2)", ([_patient, false, true] call ACEFUNC(common,getName)), _bodyPartString];
     };
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
+    params ["_medic", "_patient", "_bodyPart"];
 
     if !(isNull findDisplay IDC_SYRINGEDRAW) then {
         closeDialog 0;
-    };
-    
-    if (_notInVehicle) then {
-        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
     };
 }, {
     params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
@@ -255,4 +251,4 @@ private _fnc_updateSelectedMedication = {
 
         GVAR(SyringeDraw_DrawnAmount) = _amountDrawn;
     };
-}, IDC_SYRINGEDRAW] call EFUNC(core,beginContinuousAction);
+}, true, IDC_SYRINGEDRAW] call EFUNC(core,beginContinuousAction);

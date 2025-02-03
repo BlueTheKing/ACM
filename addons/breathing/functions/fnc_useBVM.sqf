@@ -117,7 +117,7 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
     };
     [LSTRING(BVM_Started), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart", "_extraArgs", "_notInVehicle"];
+    params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
     _extraArgs params ["_useOxygen", "_portableOxygen"];
 
     [GVAR(BVMCancel_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
@@ -138,10 +138,6 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
     GVAR(BVMTarget) = objNull;
 
     "ACM_UseBVM" cutText ["","PLAIN", 0, false];
-
-    if (_notInVehicle) then {
-        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
-    };
 
     [_patient, "activity", LSTRING(BVM_ActionLog_Stop), [[_medic, false, true] call ACEFUNC(common,getName), GVAR(BVM_BreathCount)]] call ACEFUNC(medical_treatment,addToLog);
 

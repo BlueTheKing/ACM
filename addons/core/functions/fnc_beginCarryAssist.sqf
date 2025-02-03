@@ -52,10 +52,6 @@ if (_patient getVariable [QGVAR(CarryAssist_State), false]) exitWith {
 
     "ACM_ContinuousActionText" cutText ["","PLAIN", 0, false];
 
-    if (_notInVehicle) then {
-        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
-    };
-
     [LLSTRING(AssistCarry_Cancelled), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
     _patient setVariable [QGVAR(CarryAssist_State), false, true];
