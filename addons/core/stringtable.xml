@@ -92,6 +92,20 @@
                 <German>Aufstehen</German>
             </Key>
         </Container>
+        <Container name="// Assist Carry Action //">
+            <Key ID="STR_ACM_Core_AssistCarry_Already">
+                <English>Patient is already being carry-assisted</English>
+            </Key>
+            <Key ID="STR_ACM_Core_AssistCarry_Complete">
+                <English>Prepared %1 for carrying</English>
+            </Key>
+            <Key ID="STR_ACM_Core_AssistCarry_Progress">
+                <English>Preparing to carry...</English>
+            </Key>
+            <Key ID="STR_ACM_Core_AssistCarry_Cancelled">
+                <English>Carry-assist cancelled</English>
+            </Key>
+        </Container>
         <Container name="// Treatment Text //">
             <Key ID="STR_ACM_Core_TreatedBy">
                 <English>You are being treated by %1</English>
