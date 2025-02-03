@@ -12,6 +12,7 @@ class ACM_Medication {
         minEffectDose = 1; // mg
         maxEffectDose = 1; // mg
         weightEffect = 0;
+        absorptionEffect = 0;
         minPainReduce = 0;
         maxPainReduce = 1;
 
@@ -246,6 +247,7 @@ class ACM_Medication {
             maxPainReduce = 1;
             viscosityChange = 0;
             weightEffect = 1;
+            bloodlossEffect = 1;
         };
 
         class Morphine: ACM_IM_Medication {
