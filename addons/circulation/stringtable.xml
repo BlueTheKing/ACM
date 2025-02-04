@@ -738,6 +738,12 @@
                 <Polish>Przerwał RKO</Polish>
                 <German>HLW pausiert</German>
             </Key>
+            <Key ID="STR_ACM_Circulation_CPR_SwapToBVM">
+                <English>Swap To BVM</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_CPR_SwappedToBVM">
+                <English>Swapped To BVM</English>
+            </Key>
         </Container>
         <Container name="// Capillary Refill Action //">
             <Key ID="STR_ACM_Circulation_CheckCapillaryRefill">

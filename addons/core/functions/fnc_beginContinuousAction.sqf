@@ -28,6 +28,7 @@ _args params ["_medic", "_patient", "_bodyPart", ["_extraArgs", []]];
 if (GVAR(ContinuousAction_Active)) exitWith {};
 
 GVAR(ContinuousAction_Active) = true;
+GVAR(ContinuousAction_ForceOpenMenu) = true;
 
 ACEGVAR(medical_gui,pendingReopen) = false; // Prevent medical menu from reopening
 
@@ -114,7 +115,10 @@ _args call _onStart;
             [_medic, _animation, 2] call ACEFUNC(common,doAnimation);
         };
 
-        [QGVAR(openMedicalMenu), _patient] call CBA_fnc_localEvent;
+        if (GVAR(ContinuousAction_ForceOpenMenu)) then {
+            [QGVAR(openMedicalMenu), _patient] call CBA_fnc_localEvent;
+        };
+
         ["ace_treatmentFailed", [_medic, _patient, _bodyPart, "ACM_ContinousAction", "", "", false]] call CBA_fnc_localEvent;
     };
 
