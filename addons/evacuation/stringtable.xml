@@ -4,76 +4,91 @@
         <Key ID="STR_ACM_Evacuation_Category">
             <English>ACM: Evacuation</English>
             <Polish>ACM: Ewakuacja</Polish>
+            <French>ACM : Evacuation</French>
             <German>ACM: Evakuierung</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_Tickets">
             <English>Tickets</English>
             <Polish>Punkty odrodzenia</Polish>
+            <French>Billets</French>
             <German>Tickets</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_CasualtyConversion">
             <English>Casualty Conversion</English>
             <Polish>Konwersja poszkodowanego</Polish>
+            <French>Conversion de la victime</French>
             <German>Verwundetenkonversion</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Enable">
             <English>Enable Evacuation Addon</English>
             <Polish>Włącz ewakuację</Polish>
+            <French>Activer l'addon d'évacuation</French>
             <German>Aktiviere Evakuierungs-AddOn</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Enable_Desc">
             <English>Enable Evacuation Addon functionality, respawning and tickets must be enabled on mission to work</English>
             <Polish>Włącz funkcje ewakuacji na misji, szczegóły dotyczące przygotowania od strony misji znajdziesz w dokumencie opisującym zawartość ACMa</Polish>
+            <French>Activer la fonctionnalité de l'addon d'évacuation, le respawning et les tickets doivent être activés sur la mission pour fonctionner.</French>
             <German>Aktiviere die Evakuationsfunktion, Respawn Tickets müssen in der Mission aktiviert sein</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout">
             <English>Clear Casualty Loadout</English>
             <Polish>Oczyść ekwipunek poszkodowanego</Polish>
+            <French>Nettoyer le matériel de la victime</French>
             <German>Lösche Patientenausrüstung</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout_Desc">
             <English>Sets whether casualty's loadout should be cleared after conversion</English>
             <Polish>Definiuje czy ekwipunek poszkodowanego ma zostać wyczyszczony po konwersji</Polish>
+            <French>Définit si l'équipement de la victime doit être effacé après la conversion.</French>
             <German>Stellt ein, ob Patientenausrüstung nach der Konversion gelöscht werden soll</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics">
             <English>Require Antibiotics</English>
             <Polish>Wymaga antybiotyku</Polish>
+            <French>Nécessite des antibiotiques</French>
             <German>Patient benötigt Antibiose</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics_Desc">
             <English>Sets whether antibiotics need to be administered before a casualty can be converted</English>
             <Polish>Definiuje czy do konwersji wymagane jest podanie poszkodowanemu antybiotyków</Polish>
+            <French>Détermine si des antibiotiques doivent être administrés avant qu'un blessé puisse être converti.</French>
             <German>Stellt ein, ob ein Patient eine Antibiose braucht, bevor er konvertiert werden kann</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_PlayerFaction">
             <English>Player Side</English>
             <Polish>Strona gracza</Polish>
+            <French>Côté joueur</French>
             <German>Spielerseite</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_PlayerFaction_Desc">
             <English>Sets player side, reinforced players will join this side upon spawning</English>
             <Polish>Definiuje po której stronie mają się odradzać gracze po konwersji</Polish>
+            <French>Définit le côté du joueur, les joueurs renforcés rejoindront ce côté au moment du réveil.</French>
             <German>Stellt die Spielerseite ein, bei welcher ein respawnter Spieler reinjoint</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn">
             <English>Respawn Ticket Count</English>
             <Polish>Liczba punktów odrodzenia</Polish>
+            <French>Nombre de tickets de réapparition</French>
             <German>Respawn Ticketzahl</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn_Desc">
             <English>Sets amount of available respawn tickets, if mission-set ticket count is higher then that number will be used instead</English>
             <Polish>Ustawia ilość punktów odrodzenia, jeśli punktów odrodzenia w misji będzie więcej będą one użyte zamiast nich</Polish>
+            <French>Définit le nombre de tickets de respawn disponibles. Si le nombre de tickets défini pour la mission est plus élevé, c'est ce nombre qui sera utilisé à la place.</French>
             <German>Stellt die verfügbaren Respawn-Tickets ein. Wenn die Ticket-Anzahl in der Mission höher als diese Nummer eingestellt ist, dann wird diese Nummer stattdessen genutzt</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty">
             <English>Casualty Ticket Count</English>
             <Polish>Liczba punktów poszkodowanych</Polish>
+            <French>Nombre de tickets pour les blessés</French>
             <German>Verwundeten Ticketzahl</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty_Desc">
             <English>Sets amount of available casualty tickets</English>
             <Polish>Ustawia ilość punktów odrodzenia dostępnych dla poszkodowanych</Polish>
+            <French>Définit le nombre de points de récupération disponibles pour les victimes</French>
             <German>Stellt die Nummer der verfügbaren Verwundetentickets ein</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty">
@@ -87,21 +102,25 @@
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert">
             <English>Allow Converting Casualties</English>
             <Polish>Pozwól na konwersje poszkodowanych</Polish>
+            <French>Autoriser les conversions de victimes</French>
             <German>Erlaube das Konvertieren von Patienten</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert_Desc">
             <English>Training level required to convert casualties</English>
             <Polish>Poziom wyszkolenia potrzebny do konwersji poszkodowanych</Polish>
+            <French>Niveau de formation nécessaire pour convertir les victimes</French>
             <German>Benötigtes Qualifikationslevel um Patienten zu konvertieren</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert">
             <English>Converting Casualty Location</English>
             <Polish>Miejsce konwersji poszkodowanych</Polish>
+            <French>Lieu de conversion de la victime</French>
             <German>Konversionsstandort</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert_Desc">
             <English>Sets locations at which casualty conversion can be performed</English>
             <Polish>Ustawia miejsca w których można przeprowadzić konwersje poszkodowanego</Polish>
+            <French>Définit les lieux où la conversion des victimes peut être effectuée</French>
             <German>Stellt ein, an welchen Orten eine Konversion möglich ist</German>
         </Key>
         <Container name="// Actions //">

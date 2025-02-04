@@ -4,96 +4,115 @@
         <Key ID="STR_ACM_Breathing_Category">
             <English>ACM: Breathing</English>
             <Polish>ACM: Oddychanie</Polish>
+            <French>ACM : Respiration</French>
             <German>ACM: Beatmung/Belüftung</German>
         </Key>
         <Key ID="STR_ACM_Breathing_Category_Pneumothorax">
             <English>Pneumothorax</English>
             <Polish>Odma płucna</Polish>
+            <French>Pneumothorax</French>
             <German>Pneumothroax</German>
         </Key>
         <Key ID="STR_ACM_Breathing_Category_Diagnosis">
             <English>Diagnosis</English>
             <Polish>Diagnostyka</Polish>
+            <French>Diagnostic</French>
             <German>Diagnose</German>
         </Key>
         <Key ID="STR_ACM_Breathing_Category_Treatment">
             <English>Treatment</English>
             <Polish>Leczenie</Polish>
+            <French>Traitement</French>
             <German>Behandlung</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen">
             <English>Altitude Affect Oxygen</English>
             <Polish>Wysokość wpływa na saturacje</Polish>
+            <French>L'altitude affecte l'oxygène</French>
             <German>Höhe beeinflusst Sauerstoffsätigung</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen_Desc">
             <English>Sets whether oxygen saturation calculations are affected by altitude of terrain</English>
             <Polish>Określa czy obliczanie saturacji ma uwzględniać wysokość terenu</Polish>
+            <French>Définit si les calculs de la saturation en oxygène sont affectés par l'altitude du terrain</French>
             <German>Stellt ein, ob die Sauerstoffsättigungsberechnung von der Höhe beeinträchtigt wird</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ShowCyanosisSeverity">
             <English>Show Cyanosis Severity</English>
             <Polish>Pokaż poziom sinicy</Polish>
+            <French>Montrer la gravité de la cyanose</French>
             <German>Zeige Zyanoseschweregrad an</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ShowCyanosisSeverity_Desc">
             <English>Show cyanosis severity in overview tab</English>
             <Polish>Pokaż poziom sinicy w widoku ogólnym</Polish>
+            <French>Afficher le niveau de cyanose dans la vue générale</French>
             <German>Zyanoseschweregrad in der Übersichtsansicht anzeigen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxEnabled">
             <English>Pneumothorax Enabled</English>
             <Polish>Odma płucna włączona</Polish>
+            <French>Pneumothorax Activé</French>
             <German>Pneumothorax aktiviert</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ChestInjuryChance">
             <English>Chest Injury Severity Multiplier</English>
             <Polish>Mnożnik urazów klatki piersiowej</Polish>
+            <French>Multiplicateur de gravité des lésions thoraciques</French>
             <German>Brustverletzung Schweregradmultiplikator</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ChestInjuryChance_Desc">
             <English>Chance that a chest injury causes a pneumothorax or hemothorax</English>
             <Polish>Szansa na pojawienie się odmy płucnej przy urazie klatki piersiowej</Polish>
+            <French>Risque qu'une blessure au thorax provoque un pneumothorax ou un hémothorax</French>
             <German>Wahrscheinlichkeit, dass eine Brustverletzung eine Pneumothorax oder Hämatothorax verursacht</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxDeteriorateChance">
             <English>Pneumothorax Deterioration Multiplier</English>
             <Polish>Mnożnik pogarszania się odmy płucnej</Polish>
+            <French>Multiplicateur de détérioration du pneumothorax</French>
             <German>Pneumothorax Verschlechterungsmultiplikator</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxDeteriorateChance_Desc">
             <English>Chance that pneumothorax will deteriorate</English>
             <Polish>Szansa na pogorszenie się stanu odmy płucnej</Polish>
+            <French>Risque de détérioration du pneumothorax</French>
             <German>Wahrscheinlichkeit, dass sich eine Pneumothorax verschlechtert</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance">
             <English>Hemothorax Chance</English>
             <Polish>Szansa na krwiaka opłucnej</Polish>
+            <French>Risque d'hemothorax </French>
             <German>Hämatothorax Wahrscheinlichkeit</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance_Desc">
             <English>Chance that a inflicted severe chest injury is a hemothorax instead of a pneumothorax</English>
             <Polish>Szansa na pourazowego krwiaka opłucnej zamiast odmy prężnej</Polish>
+            <French>Risque qu'un traumatisme thoracique grave soit un hémothorax plutôt qu'un pneumothorax.</French>
             <German>Wahrscheinlichkeit, dass eine schwere Thoraxverletzung eine Hämatothorax statt einer Pneumothorax verursacht</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury">
             <English>[HARDCORE] Chest Injuries</English>
             <Polish>[HARDCORE] Urazy klatki piersiowej</Polish>
+            <French>[HARDCORE] Blessures thoraciques</French>
             <German>[HARDCORE] Thoraxverletzungen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury_Desc">
             <English>[HARDCORE] Sets whether Tension Pneumothorax should require further treatment to fully treat</English>
             <Polish>[HARDCORE] Określa czy odma prężna powinna wymagać dalszego leczenia by zostać wyeliminowana</Polish>
+            <French>[HARDCORE] Définit si le pneumothorax sous tension doit faire l'objet d'un traitement supplémentaire pour être entièrement traité.</French>
             <German>[HARDCORE] Stellt ein, ob eine Spannungspneumothorax eine weitere Behandlung braucht, um voll geheilt zu werden</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding">
             <English>[HARDCORE] Hemothorax Bleeding</English>
             <Polish>[HARDCORE] Krwawienie krwiaka opłucnej</Polish>
+            <French>[HARDCORE] Saignement de l'hémothorax</French>
             <German>[HARDCORE] Hämatothorax Blutung</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding_Desc">
             <English>[HARDCORE] Sets whether Hemothorax should require further treatment to fully stop internal bleeding</English>
             <Polish>[HARDCORE] Określa czy krwiak opłucnej powinien wymagać dalszego leczenia by zostać wyeliminowany</Polish>
+            <French>[HARDCORE] Définit si l'hémothorax doit faire l'objet d'un traitement supplémentaire pour arrêter complètement l'hémorragie interne.</French>
             <German>[HARDCORE] Stellt ein, ob eine Hämatothorax eine weitere Behandlung braucht, um die innere Blutung komplett zu stoppen</German>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_InspectChest">

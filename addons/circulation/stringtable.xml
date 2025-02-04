@@ -4,166 +4,199 @@
         <Key ID="STR_ACM_Circulation_Category">
             <English>ACM: Circulation</English>
             <Polish>ACM: Krążenie</Polish>
+            <French>ACM : Circulation</French>
             <German>ACM: Kreislauf</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Coagulation">
             <English>Coagulation</English>
             <Polish>Krzepnięcie</Polish>
+            <French>Coagulation</French>
             <German>Blutgerinnung</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_CardiacArrest">
             <English>Cardiac Arrest</English>
             <Polish>Zatrzymanie krążenia</Polish>
+            <French>Arrêt cardiaque</French>
             <German>Kreislaufstillstand</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Defibrillator">
             <English>Defibrillator</English>
             <Polish>Defibrylator</Polish>
+            <French>Défibrillateur</French>
             <German>Defibrillator</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_CPR">
             <English>CPR</English>
             <Polish>RKO</Polish>
+            <French>RPC</French>
             <German>HLW</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_IV_IO">
             <English>IV/IO</English>
             <Polish>IV/IO</Polish>
+            <French>IV/IO</French>
             <German>IV/IO</German>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_BloodTypes">
             <English>Blood Types</English>
             <Polish>Grupy krwi</Polish>
+            <French>Types de sang</French>
             <German>Blutgruppen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestBleedRate">
             <English>Cardiac Arrest Bleed Rate</English>
             <Polish>Prędkość krwawienia przy NZK</Polish>
+            <French>Taux de saignement en cas d'arrêt cardiaque</French>
             <German>Kreislaufstillstand Blutungsrate</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestBleedRate_Desc">
             <English>Sets bleed rate while in cardiac arrest</English>
             <Polish>Prędkość wykrwawiania się przy zatrzymaniu krążenia</Polish>
+            <French>Fixe le taux de saignement en cas d'arrêt cardiaque</French>
             <German>Setzt die Blutungsrate bei Kreislaufstillstand</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClotting">
             <English>Enable Clotting</English>
             <Polish>Włącz skrzepy</Polish>
+            <French>Permettre la coagulation</French>
             <German>Blutgerinnung aktivieren</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClotting_Desc">
             <English>Sets whether clotting is enabled</English>
             <Polish>Włącza możliwość tworzenia się skrzepów</Polish>
+            <French>Définit si la coagulation est activée</French>
             <German>Stellt ein, ob das Blutgerinnungssystem aktiviert ist</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClottingAffectAI">
             <English>Clotting for AI</English>
             <Polish>Krzepnięcie dla SI</Polish>
+            <French>Coagulation pour l'IA</French>
             <German>Blutgerinnung für KI</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClottingAffectAI_Desc">
             <English>Sets whether clotting is allowed for AI</English>
             <Polish>Ustawia czy u jednostki SI mają tworzyć się skrzepy</Polish>
+            <French>Définit si la coagulation est autorisée pour l'IA</French>
             <German>Stellt ein, ob KI-Einheiten von Blutgerinnung betroffen sind</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestChance">
             <English>Critical Damage Cardiac Arrest Chance</English>
             <Polish>Szansa na nagłe zatrzymanie krążenia</Polish>
+            <French>Risque d'arrêt cardiaque soudain</French>
             <German>Kritischer Schaden Kreislaufstillstandwahrscheinlichkeit</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestChance_Desc">
             <English>Sets chance for unit to go into cardiac arrest after taking critical damage</English>
             <Polish>Szansa na NZK przy otrzymaniu krytycznych obrażeń</Polish>
+            <French>Définit la probabilité que l'unité fasse un arrêt cardiaque après avoir subi des dégâts critiques</French>
             <German>Setzt die Wahrscheinlichkeit, dass ein Spieler reanimationspflichtig wird, nachdem kritischer Schaden erhalten wurde</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestDeteriorationRate">
             <English>Rhythm Deterioration Multiplier</English>
             <Polish>Mnożnik pogarszania rytmu</Polish>
+            <French>Multiplicateur de détérioration du rythme</French>
             <German>Rhythmusverschlechterungsmultiplikator</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestDeteriorationRate_Desc">
             <English>Chance that rhythm will deteriorate while in cardiac arrest</English>
             <Polish>Szansa na pogorszenie się rytmu serca</Polish>
+            <French>Risque d'aggravation du rythme cardiaque</French>
             <German>Wahrscheinlichkeit, dass sich ein Rhythmus im Laufe der Reanimation verschlechtert</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Hardcore_PostCardiacArrest">
             <English>[HARDCORE] Post Cardiac Arrest Complications</English>
             <Polish>[HARDCORE] Komplikacje po zatrzymaniu krążenia</Polish>
+            <French>[HARDCORE] Complications post-arrêt cardiaque</French>
             <German>[HARDCORE] Post-Reanimation Komplikationen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Hardcore_PostCardiacArrest_Desc">
             <English>[HARDCORE] Sets whether there should be a decrease in cardiac output after ROSC requiring further treatment to fully treat</English>
             <Polish>[HARDCORE] Ustawia czy po spontanicznym powrocie krążenia (ROSC) powinna pojawić się obniżona wydajność serca</Polish>
+            <French>[HARDCORE] Définit si le débit cardiaque doit être réduit après le retour spontané de la circulation (ROSC).</French>
             <German>[HARDCORE] Stellt ein, ob es eine verringerten kardialen Auswurf nach ROSC gibt, welcher weiter behandelt werden muss, um voll geheilt zu werden</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AED">
             <English>Allow AED</English>
             <Polish>Pozwól na defibrylator</Polish>
+            <French>Autoriser le DEA</French>
             <German>Erlaube AED</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AED_Desc">
             <English>Training level required to use AED</English>
             <Polish>Poziom wyszkolenia wymagany do użycia defibrylatora</Polish>
+            <French>Niveau de formation requis pour l'utilisation du DEA</French>
             <German>Benötigtes Qualifikationslevel, um den AED nutzen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_AEDDistanceLimit">
             <English>AED Distance Limit</English>
             <Polish>Odległość do pracy defibrylatora</Polish>
+            <French>Limite de distance des DEA</French>
             <German>AED Entfernungslimit</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_AEDDistanceLimit_Desc">
             <English>Distance over which the AED will disconnect itself from the patient</English>
             <Polish>Odległość w jakiej defibrylator automatycznie odłączy się od pacjenta</Polish>
+            <French>Distance sur laquelle le DEA se déconnecte du patient</French>
             <German>Entfernung bei der sich der AED automatisch vom Patienten diskonnektiert</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CPREffectiveness">
             <English>CPR Effectiveness Multiplier</English>
             <Polish>Mnożnik skuteczności RKO</Polish>
+            <French>Multiplicateur d'efficacité de la RCP</French>
             <German>HLW Effektivitätsmultiplikator</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CPREffectiveness_Desc">
             <English>Sets overall CPR effectiveness</English>
             <Polish>Szansa na spontaniczny powrót krążenia podczas wykonywania resuscytacji krążeniowo-oddechowej</Polish>
+            <French>Définit l'efficacité globale de la RCP</French>
             <German>Stellt die allumfassende HLW Effektivität ein</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplications">
             <English>Enable IV Complications</English>
             <Polish>Włącz komplikacje IV</Polish>
+            <French>Permettre les complications IV</French>
             <German>i.v. Zugang Komplikationen aktivieren</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplications_Desc">
             <English>Sets whether IVs can get complications if inserted on damaged limbs</English>
             <Polish>Ustawia czy mogą pojawić się problemy z wkłuciem IV jeśli zostało wykonane na uszkodzonej kończynie</Polish>
+            <French>Indique si l'insertion d'une perfusion peut poser des problèmes si elle a été effectuée sur un membre endommagé.</French>
             <German>Stellt ein, ob ein i.v. Zugang Komplikationen auslösen kann, wenn diese an verwundeten Extremitäten platziert werden</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplicationsDeteriorate">
             <English>Enable IV Complication Deterioration</English>
             <Polish>Włącz pogarszanie się komplikacji IV</Polish>
+            <French>Activer  l'aggravation des complications IV</French>
             <German>IV-Zugang Komplikationsverschlechterung aktivieren</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplicationsDeteriorate_Desc">
             <English>Sets whether IVs with complications can deteriorate during use, or deteriorate into a complication if one isn't already present</English>
             <Polish>Ustawia czy mogą pojawić się problemy z wkłuciem IV podczas użycia</Polish>
+            <French>Définit si des problèmes d'insertion IV peuvent survenir pendant l'utilisation</French>
             <German>Stellt ein, ob sich die i.v. Zugangskomplikationen bei Benutzung verschlechtern können bzw. ob Komplikationen im Verlauf entstehen können</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IV">
             <English>Allow IV</English>
             <Polish>Pozwól na wkłucie IV</Polish>
+            <French>Autoriser l'IV</French>
             <German>Erlaube i.v. Zugang</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IV_Desc">
             <English>Training level required to insert IVs</English>
             <Polish>Poziom wyszkolenia potrzebny do wykonania wkłucia IV</Polish>
+            <French>Niveau de formation requis pour la pose d'intraveineuses</French>
             <German>Benötigtes Qualifikationslevel, um einen i.v. Zugang zu legen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IO">
             <English>Allow IO</English>
             <Polish>Pozwól na wkłucie IO </Polish>
+            <French>Autoriser les IO</French>
             <German>Erlaube i.o. Zugang</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IO_Desc">
             <English>Training level required to insert IOs</English>
             <Polish>Poziom wyszkolenia potrzebny do wykonania wkłucia IO</Polish>
+            <French>Niveau de formation requis pour l'insertion des IO</French>
             <German>Benötigtes Qualifikationslevel, um einen i.o. Zugang zu legen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_16">
@@ -174,6 +207,7 @@
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_16_Desc">
             <English>Time to insert 16g IV</English>
             <Polish>Czas potrzebny do wykonania wkłucia IV igłą 16g</Polish>
+            <French>Temps pour insérer 16g IV</French>
             <German>Benötigte Zeit, um einen 16g i.v. Zugang zu legen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_14">
@@ -184,6 +218,7 @@
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_14_Desc">
             <English>Time to insert 14g IV</English>
             <Polish>Czas potrzebny do wykonania wkłucia IV igłą 14g</Polish>
+            <French>Temps pour insérer 14g IV</French>
             <German>Benötigte Zeit, um einen 14g i.v. Zugang zu legen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_EZ">
@@ -209,39 +244,47 @@
         <Key ID="STR_ACM_Circulation_SETTING_SelfIV">
             <English>Allow Self IV</English>
             <Polish>Pozwól na IV na sobie</Polish>
+            <French>Autoriser une IV sur soi-même</French>
             <German>Erlaube Selbst-i.v. Zugang</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIV_Desc">
             <English>Allow self-application of IV</English>
             <Polish>Pozwól na wykonanie wkłucia IV na sobie</Polish>
+            <French>Autoriser la pose d'une IV sur soi-même</French>
             <German>Erlaube es, einen i.v. Zugang bei sich selbst zu legen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIO">
             <English>Allow Self IO</English>
             <Polish>Pozwól na IO na sobie</Polish>
+            <French>Autoriser l'IO sur soi-même</French>
             <German>Erlaube Selbst-i.o. Zugang</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIO_Desc">
             <English>Allow self-application of IO</English>
             <Polish>Pozwól na wykonanie wkłucia IO na sobie</Polish>
+            <French>Permettre l'auto-application de l'IO</French>
             <German>Erlaube es, einen i.o. Zugang bei sich selbst zu bohren</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1">
             <English>%1 Ratio</English>
             <Polish>%1 Współczynnik</Polish>
+            <French>%1 Ratio</French>
             <German>%1 Rate</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1_Desc">
             <English>Ratio out of 100 that is taken by the %1 blood type, ratios must add up to exactly 100</English>
             <Polish>Współczynnik ze 100 przydzielony grupy krwi %1, współczynniki muszą dodawać się dokładnie do 100</Polish>
+            <French>Coefficient avec 100 pour le groupe sanguin %1, la somme des coefficients doit être égale à 100.</French>
             <German>Prozentzahl (x von 100) in welcher die Blutgruppe %1 vorkommt. Raten müssen insgesamt 100 ergeben</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList">
             <English>Use Custom List</English>
+            <French>Utiliser une liste personnalisée</French>
             <German>Benutze Custom Liste</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList_Desc">
             <English>Sets whether blood types should be set based on custom list instead of SteamID</English>
+            <French>Définit si les groupes sanguins doivent être définis sur la base d'une liste personnalisée au lieu de l'identifiant SteamID.</French>
             <German>Stellt ein, ob die Blutgruppen aufgrund einer eigenen Liste gesetzt werden, statt von der SteamID</German>
         </Key>
         <Container name="// Items //">

@@ -4,41 +4,49 @@
         <Key ID="STR_ACM_Core_Category">
             <English>ACM: Core</English>
             <Polish>ACM: Core</Polish>
+            <French>ACM: Core</French>
             <German>ACM: Kern</German>
         </Key>
         <Key ID="STR_ACM_Core_Category_Items">
             <English>Items</English>
             <Polish>Przedmioty</Polish>
+            <French>Articles</French>
             <German>Items</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet">
             <English>Take Off Tourniquet Time</English>
             <Polish>Czas zdjęcia opaski uciskowej</Polish>
+            <French>Heure de retrait du garrot</French>
             <German>Tourniquet Entfernungszeit</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet_Desc">
             <English>Time to take off tourniquet</English>
             <Polish>Czas potrzebny na zdjęcie opaski uciskowej</Polish>
+            <French>Temps nécessaire au retrait du garrot</French>
             <German>Zeit um Tourniquet zu entfernen</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight">
             <English>Dogtag list weight</English>
             <Polish>Nieśmiertelniki pokazują wagę</Polish>
+            <French>Poids des plaques d'identification</French>
             <German>Erkennungsmarke zeigt Gewicht an</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
             <English>Set whether dog tags list the unit's weight</English>
             <Polish>Czy na nieśmietelnikach ma się wyświetlać waga jednostki</Polish>
+            <French>Définir si les plaques d'identification indiquent le poids de l'unité</French>
             <German>Stellt ein, ob die Erkennungsmarke das Patientengewicht anzeigt</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
             <English>Ignore Incompatible Addon Warning</English>
             <Polish>Zignoruj ostrzeżenia o niekompatybilności</Polish>
+            <French>Ignorer l'avertissement d'incompatibilité des modules complémentaires</French>
             <German>Ignoriere Inkompatibilitätswarnung</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings_Desc">
             <English>Disables incompatible addon warnings</English>
             <Polish>Wyłącza ostrzeżenia o niekompatybilnych addonach</Polish>
+            <French>Désactive les avertissements relatifs aux modules complémentaires incompatibles</French>
             <German>Deaktiviert die Inkompatibilitätswarnung vom Addon</German>
         </Key>
         <Container name="// Actions //">

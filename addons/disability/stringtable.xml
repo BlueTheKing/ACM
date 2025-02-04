@@ -4,46 +4,55 @@
         <Key ID="STR_ACM_Disability_Category">
             <English>ACM: Disability</English>
             <Polish>ACM: Ograniczenia ruchowe</Polish>
+            <French>ACM : Restrictions de mouvement</French>
             <German>ACM: Defizite</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
             <English>SAM Splint Time</English>
             <Polish>Czas aplikacji szyny SAM splint</Polish>
+            <French>Temps d'application de l'attelle SAM</French>
             <German>SAM Splint Zeit</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint_Desc">
             <English>Time to apply SAM Splint</English>
             <Polish>Czas potrzebny na aplikacje szyny SAM splint</Polish>
+            <French>Temps nécessaire à l'application de l'attelle SAM</French>
             <German>Zeit bis SAM Splint angelegt ist</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint">
             <English>Wrap Splint Time</English>
             <Polish>Czas zawinięcia szyny</Polish>
+            <French>Temps de mise en place de l'attelle</French>
             <German>SAM Splint Fixierbindenzeit</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint_Desc">
             <English>Time to wrap SAM Splint</English>
             <Polish>Czas potrzebny na zawinięcie (stabilizacje) szyny SAM splint</Polish>
+            <French>Temps de mise en place de l'attelle SAM</French>
             <German>Zeit bis SAM Splint mittels Fixierbinde umwickelt ist</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime">
             <English>Splint minimum fall off time</English>
             <Polish>Czas odpadnięcia szyny</Polish>
+            <French>Temps minimal de chute de l'attelle</French>
             <German>Minimale Schienenabfallzeit</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime_Desc">
             <English>Minimum time for unwrapped SAM Splint to fall off</English>
             <Polish>Minimalny czas po którym niezawinięta szyna odpadnie od kończyny</Polish>
+            <French>Temps minimum pour que l'attelle SAM non emballée tombe</French>
             <German>Minimale Dauer, bis eine nicht fixierte/gewickelte SAM Splint ab fällt</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
             <English>Tourniquet Impact Limbs</English>
             <Polish>Opaski uciskowe wpływają na kończyny</Polish>
+            <French>Les garrots affectent les membres</French>
             <German>Tourniquet beeinträchtigt Extremtitäten</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
             <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
             <Polish>Ustala czy założone opaski uciskowe mają wpływać na kołysanie broni w przypadku rąk oraz szybkość chodzenia w przypadku nóg</Polish>
+            <French>Détermine si les garrots appliqués sont destinés à affecter le mouvement des bras dans le cas des bras et la vitesse de marche dans le cas des jambes.</French>
             <German>Stellt ein, ob ein angelegtes Tourniquet am Arm dasie Waffennutzung und am Bein die Mobilität negativ beeinflusst</German>
         </Key>
         <Container name="// Items //">
