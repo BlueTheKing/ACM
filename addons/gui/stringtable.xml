@@ -26,6 +26,12 @@
             <Polish>Pokaż dokładną ilość bólu w zakładce przeglądu</Polish>
             <German>Stellt ein, ob die exakte Schmerzintensität in der Übersicht angezeigt werden soll</German>
         </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
+            <English>Show Action Item Icons</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons_Desc">
+            <English>Show relevant item icons for medical menu actions</English>
+        </Key>
         <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
             <English>Show overlay for selected body part</English>
             <Polish>Pokaż nakładkę dla wybranej części ciała</Polish>

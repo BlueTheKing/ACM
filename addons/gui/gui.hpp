@@ -157,3 +157,16 @@ class ACEGVAR(medical_gui,TriageSelect): RscControlsGroupNoScrollbars {
         };
     };
 };
+
+class ACE_Medical_Menu_ActionButton;
+class ACM_MedicalMenu_ActionButton_None: ACE_Medical_Menu_ActionButton {
+    class ShortcutPos
+    {
+        left = 0.01;
+        top = 0;
+        w = QUOTE(POS_W(1));
+        h = QUOTE(POS_H(1));
+    };
+};
+
+#include "ActionButtons.hpp"

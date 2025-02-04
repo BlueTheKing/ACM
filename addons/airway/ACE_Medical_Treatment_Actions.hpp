@@ -71,6 +71,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,0)] call FUNC(handleSuction));
         ACM_cancelRecovery = 1;
+        ACM_menuIcon = "ACM_SuctionBag";
     };
     class UseAccuvac: UseSuctionBag {
         displayName = CSTRING(UseACCUVAC);
@@ -81,6 +82,7 @@ class ACEGVAR(medical_treatment,actions) {
         items[] = {"ACM_ACCUVAC"};
         consumeItem = 0;
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,1)] call FUNC(handleSuction));
+        ACM_menuIcon = "ACM_ACCUVAC";
     };
 
     class InsertGuedelTube: CheckAirway {
@@ -94,6 +96,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'OPA')] call FUNC(insertAirwayItem));
         ACM_cancelRecovery = 1;
+        ACM_menuIcon = "ACM_GuedelTube";
     };
     class InsertNPA: InsertGuedelTube {
         displayName = CSTRING(InsertNPA);
@@ -104,6 +107,7 @@ class ACEGVAR(medical_treatment,actions) {
         items[] = {"ACM_NPA","ACM_NPA_Used"};
         condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Nasal),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'NPA')] call FUNC(insertAirwayItem));
+        ACM_menuIcon = "ACM_NPA";
     };
     class InsertIGel: InsertGuedelTube {
         displayName = CSTRING(InsertIGel);
@@ -113,6 +117,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = QGVAR(treatmentTimeSGA);
         items[] = {"ACM_IGel","ACM_IGel_Used"};
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'SGA')] call FUNC(insertAirwayItem));
+        ACM_menuIcon = "ACM_IGel";
     };
 
     class RemoveGuedelTube: CheckAirway {
