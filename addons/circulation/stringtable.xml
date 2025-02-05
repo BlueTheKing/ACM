@@ -584,6 +584,12 @@
                 <Polish>Paracetamol</Polish>
                 <German>Paracetamol</German>
             </Key>
+            <Key ID="STR_ACM_Circulation_Paracetamol_SinglePack">
+                <English>Paracetamol (Single Pack)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Paracetamol_DoublePack">
+                <English>Paracetamol (Double Pack)</English>
+            </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_Desc">
                 <English>Used to combat mild to moderate pain</English>
                 <Polish>Używany do walki z małym i średnim bólem</Polish>

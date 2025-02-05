@@ -432,7 +432,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = ECSTRING(circulation,UseParacetamol_Progress);
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         allowedSelections[] = {"Head"};
-        items[] = {"ACM_Paracetamol"};
+        items[] = {"ACM_Paracetamol_SinglePack","ACM_Paracetamol_DoublePack","ACM_Paracetamol"};
         condition = QUOTE([_patient] call ACEFUNC(common,isAwake) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         treatmentTime = 5;
         //animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";

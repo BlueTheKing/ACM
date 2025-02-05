@@ -153,6 +153,17 @@
                 <German>Inkompatible Addons gefunden:</German>
             </Key>
         </Container>
+        <Container name="// Split Medication Action //">
+            <Key ID="STR_ACM_Core_SplitMedicationPack">
+                <English>Split Medication Package</English>
+            </Key>
+            <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
+                <English>Split</English>
+            </Key>
+            <Key ID="STR_ACM_Core_SplitMedicationPack_Complete">
+                <English>%1 package has been split</English>
+            </Key>
+        </Container>
         <Container name="// Common //">
             <Key ID="STR_ACM_Core_Common_Inserted">
                 <English>Inserted</English>

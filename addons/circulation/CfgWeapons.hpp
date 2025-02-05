@@ -190,6 +190,16 @@ class CfgWeapons {
         ACM_isVial = 0;
     };
 
+    class ACM_Paracetamol_SinglePack: ACM_Spray_Naloxone {
+        scope = 1;
+        picture = QPATHTOF(ui\paracetamol_singlepack_ca.paa);
+        displayName = CSTRING(Paracetamol_SinglePack);
+        descriptionShort = CSTRING(Paracetamol_Desc);
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.03;
+        };
+    };
+
     class ACM_FieldBloodTransfusionKit_500: ACE_ItemCore {
         scope = 2;
         author = "Blue";

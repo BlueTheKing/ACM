@@ -229,6 +229,15 @@ class CfgVehicles {
                         icon = QPATHTOEF(circulation,ui\icon_syringe_1_ca.paa);
                     };
                 };
+                class ACM_Action_SplitMedicationPack {
+                    displayName = CSTRING(SplitMedicationPack);
+                    condition = "true";
+                    statement = "";
+                    showDisabled = 0;
+                    exceptions[] = {"isNotInside", "isNotSitting"};
+                    icon = "";
+                    insertChildren = QUOTE([_player] call FUNC(splitMedicationPack_childActions));
+                };
             };
         };
     };
