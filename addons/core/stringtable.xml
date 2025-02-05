@@ -54,31 +54,37 @@
                 <English>Use Morphine Autoinjector</English>
                 <Polish>Użyj autostrzykawki z morfiną</Polish>
                 <German>Morphin-Autoinjektor benutzen</German>
+                <French>Utiliser un auto-injecteur de morphine</French>
             </Key>
             <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
                 <English>Using Morphine Autoinjector...</English>
                 <Polish>Używanie autostrzykawki z morfiną...</Polish>
                 <German>Benutze Morphin-Autoinjektor...</German>
+                <French>Utilisation de l'auto-injecteur de morphine...</French>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
                 <English>Use Epinephrine Autoinjector</English>
                 <Polish>Użyj autostrzykawki z epinefryną</Polish>
                 <German>Adrenalin-Autoinjektor benutzen</German>
+                <French>Utiliser un auto-injecteur d'épinéphrine</French>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
                 <English>Using Epinephrine Autoinjector...</English>
                 <Polish>Używanie autostrzykawki z epinefryną...</Polish>
                 <German>Benutze Adrenalin-Autoinjektor...</German>
+                <French>Utilisation de l'auto-injecteur d'épinéphrine...</French>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector">
                 <English>Use Adenosine Autoinjector</English>
                 <Polish>Użyj autostrzykawki z adenozyną</Polish>
                 <German>Adenosin-Autoinjektor benutzen</German>
+                <French>Utiliser l'auto-injecteur d'adénosine</French>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
                 <English>Using Adenosine Autoinjector...</English>
                 <Polish>Używanie autostrzykawki z adenozyną...</Polish>
                 <German>Benutze Adenosin-Autoinjektor</German>
+                <French>Utilisation de l'auto-injecteur d'adénosine...</French>
             </Key>
         </Container>
         <Container name="// Cancel Carrying //">
@@ -86,11 +92,13 @@
                 <English>Cancel Carrying</English>
                 <Polish>Przestań nieść</Polish>
                 <German>Patient ablegen</German>
+                <French>Annuler le portage</French>
             </Key>
             <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
                 <English>Stopped carrying %1</English>
                 <Polish>Przestano nieść %1</Polish>
                 <German>Patient %1 abgelegt</German>
+                <French>Arrêt du portage %1</French>
             </Key>
         </Container>
         <Container name="// Lying State //">
@@ -98,6 +106,7 @@
                 <English>Get Up</English>
                 <Polish>Wstań</Polish>
                 <German>Aufstehen</German>
+                <French>Se lever</French>
             </Key>
         </Container>
         <Container name="// Treatment Text //">
@@ -105,6 +114,7 @@
                 <English>You are being treated by %1</English>
                 <Polish>%1 udziela ci pomocy</Polish>
                 <German>Du wirst von %1 behandelt</German>
+                <French>Tu es traité par %1</French>
             </Key>
         </Container>
         <Container name="// Vehicle Patient Actions //">
@@ -112,6 +122,7 @@
                 <English>Vehicle Patients</English>
                 <Polish>Pacjenci w pojeździe</Polish>
                 <German>Fahrzeug Verletzte</German>
+                <French>Patients du véhicule</French>
             </Key>
         </Container>
         <Container name="// Unload and carry //">
@@ -119,6 +130,7 @@
                 <English>Carry Patient</English>
                 <Polish>Nieś pacjenta</Polish>
                 <German>Patient tragen</German>
+                <French>Porter le patient</French>
             </Key>
         </Container>
         <Container name="// Boxes //">
@@ -126,11 +138,13 @@
                 <English>[ACM] Basic Medical Supply Crate</English>
                 <Polish>[ACM] Podstawowa skrzynia z zaopatrzeniem medycznym </Polish>
                 <German>[ACM] Basis Versorgungskiste</German>
+                <French>[ACM] Caisse de fournitures médicales de base</French>
             </Key>
             <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
                 <English>[ACM] Advanced Medical Supply Crate</English>
                 <Polish>[ACM] Zaawansowana skrzynia z zaopatrzeniem medycznym </Polish>
                 <German>[ACM] Erweiterte Versorgungskiste</German>
+                <French>[ACM] Caisse d'approvisionnement médical avancé</French>
             </Key>
         </Container>
         <Container name="// Dog Tags //">
@@ -138,6 +152,7 @@
                 <English>%1 is inspecting your dog tags</English>
                 <Polish>%1 sprawdza twój nieśmiertelnik</Polish>
                 <German>%1 schaut sich deine Erkennungsmarke an</German>
+                <French>%1 examine ta plaque d'identification</French>
             </Key>
         </Container>
         <Container name="// Incompatible Addons //">
@@ -145,6 +160,7 @@
                 <English>Incompatible addons found:</English>
                 <Polish>Znaleziono niekompatybilne addony:</Polish>
                 <German>Inkompatible Addons gefunden:</German>
+                <French>Addons incompatibles trouvés :</French>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -152,51 +168,61 @@
                 <English>Inserted</English>
                 <Polish>Włożono</Polish>
                 <German>Eingelegt</German>
+                <French>Inséré</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Attached">
                 <English>Attached</English>
                 <Polish>Przymocowano</Polish>
                 <German>Angehängt</German>
+                <French>Attaché</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Applied">
                 <English>Applied</English>
                 <Polish>Podano</Polish>
                 <German>Appliziert</German>
+                <French>Appliqué</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Removed">
                 <English>Removed</English>
                 <Polish>Usunięto</Polish>
                 <German>Entfernt</German>
+                <French>Supprimé</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Connected">
                 <English>Connected</English>
                 <Polish>Przyczepiono</Polish>
                 <German>Konnektiert</German>
+                <French>Connecté</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Disconnected">
                 <English>Disconnected</English>
                 <Polish>Odczepiono</Polish>
                 <German>Diskonnektiert</German>
+                <French>Déconnecté</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_InProgress">
                 <English>In Progress</English>
                 <Polish>W trakcie</Polish>
                 <German>Im Gange</German>
+                <French>En cours</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Paused">
                 <English>Paused</English>
                 <Polish>Przerwane</Polish>
                 <German>Pausiert</German>
+                <French>En pause</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Active">
                 <English>Active</English>
                 <Polish>Aktywny</Polish>
                 <German>Aktiv</German>
+                <French>Actif</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Empty">
                 <English>Empty</English>
                 <Polish>Pusty </Polish>
                 <German>Leer</German>
+                <French>Vide</French>
             </Key>
         </Container>
         <Container name="// ACE Action //">
@@ -204,6 +230,7 @@
                 <English>Medical Equipment</English>
                 <Polish>Wyposażenie medyczne</Polish>
                 <German>Medizinische Ausrüstung</German>
+                <French>Équipement médical</French>
             </Key>
         </Container>
     </Package>

@@ -60,26 +60,31 @@
                 <English>T1</English>
                 <Polish>T1</Polish>
                 <German>Rot</German>
+                <French>T1</French>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority2_Short">
                 <English>T2</English>
                 <Polish>T2</Polish>
                 <German>Gelb</German>
+                <French>T2</French>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority3_Short">
                 <English>T3</English>
                 <Polish>T3</Polish>
                 <German>Grün</German>
+                <French>T3</French>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4">
                 <English>Expectant</English>
                 <Polish>Oczekujacy</Polish>
                 <German>Blau</German>
+                <French>En attente</French>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
                 <English>T4</English>
                 <Polish>T4</Polish>
                 <German>Schwarz</German>
+                <French>T4</French>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -87,6 +92,7 @@
                 <English>Assist Carry</English>
                 <Polish>Pomóż w niesieniu</Polish>
                 <German>Tragen unterstützen</German>
+                <French>Aide au portage</French>
             </Key>
         </Container>
     </Package>

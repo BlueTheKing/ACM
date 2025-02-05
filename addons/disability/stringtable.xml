@@ -60,21 +60,25 @@
                 <English>Universal Splint</English>
                 <Polish>Szyna uniwersalna</Polish>
                 <German>Universelle Schiene</German>
+                <French>Attelle universelle</French>
             </Key>
             <Key ID="STR_ACM_Disability_UniversalSplint_Desc">
                 <English>Single-use splint kit used to immobilize fracture</English>
                 <Polish>Jednorazowy zestaw szyny używany do unieruchomienia złamania</Polish>
                 <German>Einweg Schienenset, um eine Fraktur zu stabilisieren</German>
+                <French>Kit d'attelle à usage unique utilisé pour immobiliser la fracture</French>
             </Key>
             <Key ID="STR_ACM_Disability_SAMSplint">
                 <English>SAM Splint</English>
                 <Polish>Szyna SAM splint</Polish>
                 <German>SAM Splint Schiene</German>
+                <French>Attelle SAM</French>
             </Key>
             <Key ID="STR_ACM_Disability_SAMSplint_Desc">
                 <English>Re-usable splint used to immobilize fracture, should be wrapped to keep fracture stable</English>
                 <Polish>Wielorazowa szyna używana do stabilizacji złamań, powinna być zawinięta by utrzymać unieruchomione złamanie</Polish>
                 <German>Wiederverwendbare Schiene, um eine Fraktur zu stabilisieren, sollte mittels Fixierbinde umwickelt werden, um die Schiene zu stabilisieren</German>
+                <French>Attelle réutilisable utilisée pour immobiliser la fracture ; elle doit être enveloppée pour maintenir la fracture stable.</French>
             </Key>
         </Container>
         <Container name="// Splint Actions //">
@@ -82,31 +86,37 @@
                 <English>Apply SAM Splint</English>
                 <Polish>Użyj szyny SAM splint</Polish>
                 <German>SAM Splint anlegen</German>
+                <French>Utiliser l'attelle SAM</French>
             </Key>
             <Key ID="STR_ACM_Disability_ApplySAMSplint_Progress">
                 <English>Applying SAM Splint...</English>
                 <Polish>Używanie szyny SAM splint...</Polish>
                 <German>Lege SAM Splint an...</German>
+                <French>Appliquer l'attelle SAM...</French>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSAMSplint">
                 <English>Remove SAM Splint</English>
                 <Polish>Zdejmij szynę SAM splint</Polish>
                 <German>SAM Splint entfernen</German>
+                <French>Retirer l'attelle SAM</French>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSAMSplint_Progress">
                 <English>Removing SAM Splint...</English>
                 <Polish>Zdejmowanie szyny SAM splint...</Polish>
                 <German>Entferne SAM Splint...</German>
+                <French>Retrait de l'attelle SAM...</French>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSplint_ActionLog">
                 <English>%1 removed splint</English>
                 <Polish>%1 zdjął szynę </Polish>
                 <German>%1 entfernte Schiene</German>
+                <French>%1 a enlevé l'attelle</French>
             </Key>
             <Key ID="STR_ACM_Disability_Splint_FellOff">
                 <English>Splint has fallen off</English>
                 <Polish>Szyna odpadła od kończyny</Polish>
                 <German>Schiene ist abgefallen</German>
+                <French>L'attelle est tombée</French>
             </Key>
         </Container>
         <Container name="// Wrap SAM Splint Action //">
@@ -262,6 +272,7 @@
                 <English>Wrapped</English>
                 <Polish>Zawinięte</Polish>
                 <German>Eingewickelt</German>
+                <French>Enveloppé</French>
             </Key>
         </Container>
     </Package>

@@ -203,6 +203,7 @@
             <English>16g IV Time</English>
             <Polish>Czas igły 16g</Polish>
             <German>16g i.v. Zeit</German>
+            <French>Temps 16g</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_16_Desc">
             <English>Time to insert 16g IV</English>
@@ -214,6 +215,7 @@
             <English>14g IV Time</English>
             <Polish>Czas igły 14g</Polish>
             <German>14g i.v. Zeit</German>
+            <French>Temps 14g</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_14_Desc">
             <English>Time to insert 14g IV</English>
@@ -225,21 +227,25 @@
             <English>EZ-IO Time</English>
             <Polish>Czas EZ-IO</Polish>
             <German>EZ-IO Zeit</German>
+            <French>Temps EZ-IO</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_EZ_Desc">
             <English>Time to insert EZ-IO</English>
             <Polish>Czas potrzebny do wykonania wkłucia EZ-IO</Polish>
             <German>Benötigte Zeit, um einen EZ-IO Zugang zu bohren</German>
+            <French>Temps pour insérer EZ-IO</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_FAST1">
             <English>FAST1 IO Time</English>
             <Polish>Czas FAST1 IO</Polish>
             <German>FAST1 IO Zeit</German>
+            <French>Temps FAST1 IO</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_FAST1_Desc">
             <English>Time to insert FAST1 IO</English>
             <Polish>Czas potrzebny do wykonania wkłucia urządzeniem FAST1 IO</Polish>
             <German>Benötigte Zeit, um einen FAST1 IO Zugang zu bohren</German>
+            <French>Temps pour insérer FAST1 IO</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIV">
             <English>Allow Self IV</English>
@@ -292,131 +298,157 @@
                 <English>Automated External Defibrillator</English>
                 <Polish>Defibrylator</Polish>
                 <German>Automatischer Externer Defibrillator</German>
+                <French>Défibrillateur Externe Automatisé</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Short">
                 <English>AED</English>
                 <Polish>Defibrylator</Polish>
                 <German>AED</German>
+                <French>AED</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Desc">
                 <English>Device used to monitor patient vitals and treat cardiac arrest</English>
                 <Polish>Urządzenie używane do monitorowania pacjetnów</Polish>
                 <German>Ein Patientenmonitor um Vitalwerte zu überwachen und den Patienten in der Reanimation zu defibrillieren</German>
+                <French>Dispositif utilisé pour surveiller les constantes vitales du patient et traiter l'arrêt cardiaque</French>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff">
                 <English>Pressure Cuff</English>
                 <Polish>Ciśnieniomierz</Polish>
                 <German>Blutdruckmanschette</German>
+                <French>Brassard de tensiomètre</French>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Desc">
                 <English>Used to measure blood pressure</English>
                 <Polish>Używany do pomiaru ciśnienia krwi</Polish>
                 <German>Wird benutzt, um Blutdruck zu messen</German>
+                <French>Utilisé pour mesurer la tension artérielle</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_16g">
                 <English>16g IV</English>
                 <Polish>Igła 16g</Polish>
                 <German>16g i.v. Katheter</German>
+                <French>16g IV</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_16g_Desc">
                 <English>Used to gain intravenous access to transfuse fluids in case of blood loss</English>
                 <Polish>Używana do uzyskania dostępu dożylnego i przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird benutzt, um einen intravenösen Zugang zu etablieren für Flüssigkeitstransfusionen oder i.v. Medikamentengabe</German>
+                <French>Utilisé pour obtenir un accès intraveineux afin de transfuser des fluides en cas de perte de sang.</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_14g">
                 <English>14g IV</English>
                 <Polish>Igła 14g</Polish>
                 <German>14g i.v. Katheter</German>
+                <French>14g IV</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_14g_Desc">
                 <English>Used to gain intravenous access to rapidly transfuse fluids in case of blood loss</English>
                 <Polish>Używana do uzyskania dostępu dożylnego i szybkiego przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird benutzt, um einen intravenösen Zugang zu etablieren für schnelle Flüssigkeitstransfusion bei Blutverlust</German>
+                <French>Utilisé pour obtenir un accès intraveineux afin de transfuser rapidement des fluides en cas de perte de sang.</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_FAST1">
                 <English>FAST1 IO</English>
                 <Polish>FAST1 IO</Polish>
                 <German>FAST1 IO</German>
+                <French>FAST1 IO</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_FAST1_Desc">
                 <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the sternum</English>
                 <Polish>Używany do uzyskania dostępu doszpikowego w mostku i przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird bei schweren Verletzungen benutzt, um im Sternum einen i.o. Zugang für Flüssigkeitstransfusion oder Medikamentengabe zu legen</German>
+                <French>Utilisé pour obtenir un accès intra-osseux afin de transfuser des fluides en cas de blessure grave, permet un accès au niveau du sternum.</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_EZ">
                 <English>EZ-IO</English>
                 <Polish>EZ-IO</Polish>
                 <German>EZ-IO</German>
+                <French>EZ-IO</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_EZ_Desc">
                 <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the extremities</English>
                 <Polish>Używany do uzyskania dostępu doszpikowego w kończynie i przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird benutzt, um einen i.o. Zugang in die Extremitäten zu bohren</German>
+                <French>Utilisé pour obtenir un accès intra-osseux afin de transfuser des fluides en cas de blessure grave, permet l'accès aux extrémités.</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe">
                 <English>Syringe</English>
                 <Polish>Strzykawka</Polish>
                 <German>Spritze</German>
+                <French>Seringue</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringes">
                 <English>Syringes</English>
                 <Polish>Strzykawki</Polish>
                 <German>Spritzen</German>
+                <French>Seringues</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_%1">
                 <English>Syringe (%1ml)</English>
                 <Polish>Strzykawka (%1ml)</Polish>
                 <German>Spritze (%1 ml)</German>
+                <French>Seringue (%1ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Desc_%1">
                 <English>Used to administer %1ml of medication</English>
                 <Polish>Używana do podania %1ml leku</Polish>
                 <German>Wird benutzt, um %1 ml Medikament zu spritzen</German>
+                <French>Utilisé pour administrer %1ml de médicament</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_PreparedWith">
                 <English>%1ml syringe prepared with %2</English>
                 <Polish>Strzykawka %1ml przygotowana z %2 </Polish>
                 <German>%1 ml Spritze mit %2</German>
+                <French>Seringue de %1ml préparée avec %2</French>
             </Key>
             <Key ID="STR_ACM_Circulation_BloodBag">
                 <English>Blood Bag %1</English>
                 <Polish>Krew %1</Polish>
                 <German>Blutkonserve %1</German>
+                <French>Poche de sang %1</French>
             </Key>
             <Key ID="STR_ACM_Circulation_BloodBag_Desc">
                 <English>Used to replenish lost blood volume</English>
                 <Polish>Używana do transfuzji krwi</Polish>
                 <German>Wird benutzt, um Blutvolumen aufzufüllen</German>
+                <French>Utilisé pour reconstituer le volume sanguin perdu</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit">
                 <English>Field Blood Transfusion Kit</English>
                 <Polish>Polowy zestaw do transfuzji krwi</Polish>
                 <German>Feld-Bluttransfusionskit</German>
+                <French>Kit de transfusion sanguine sur le terrain</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Short">
                 <English>FBTK</English>
                 <Polish>Zestaw do transfuzji</Polish>
                 <German>FBTK</German>
+                <French>FBTK</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Desc">
                 <English>Used to transfuse fresh blood in emergency</English>
                 <Polish>Używany do transfuzji świeżej krwi w nagłych wypadkach</Polish>
                 <German>Wird benutzt, um frisches Vollblut im Notfall zu transfundieren</German>
+                <French>Utilisé pour transfuser du sang frais en cas d'urgence</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag">
                 <English>Fresh Blood Bag %1</English>
                 <Polish>Świeża krew %1</Polish>
                 <German>Frische Vollblutkonserve %1</German>
+                <French>Poche de sang frais %1</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag_Short">
                 <English>FWB Bag %1</English>
                 <Polish>Świeża krew %1</Polish>
                 <German>Frische Vollblutkonserve %1</German>
+                <French>Sang frais %1</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag_Desc">
                 <English>Freshly transfused blood, used to replenish lost blood volume</English>
                 <Polish>Świeżo pozyskana krew, używana do transfuzji krwi</Polish>
                 <German>Frisches Vollblut, wird benutzt um Blutvolumen aufzufüllen</German>
+                <French>Sang fraîchement transfusé, utilisé pour restaurer le volume sanguin perdu.</French>
             </Key>
         </Container>
         <Container name="// Items - Individual Medication //">
@@ -424,71 +456,85 @@
                 <English>Epinephrine</English>
                 <Polish>Epinefryna</Polish>
                 <German>Adrenalin</German>
+                <French>Epinéphrine</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Adenosine">
                 <English>Adenosine</English>
                 <Polish>Adenozyna</Polish>
                 <German>Adenosin</German>
+                <French>Adénosine</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Morphine">
                 <English>Morphine</English>
                 <Polish>Morfina</Polish>
                 <German>Morphin</German>
+                <French>Morphine</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ketamine">
                 <English>Ketamine</English>
                 <Polish>Ketamina</Polish>
                 <German>Ketamin</German>
+                <French>Kétamine</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Lidocaine">
                 <English>Lidocaine</English>
                 <Polish>Lidokaina</Polish>
                 <German>Lidocain</German>
+                <French>Lidocaine</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_TXA">
                 <English>TXA</English>
                 <Polish>TXA</Polish>
                 <German>TXA</German>
+                <French>TXA</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Amiodarone">
                 <English>Amiodarone</English>
                 <Polish>Amiodaron</Polish>
                 <German>Amiodaron</German>
+                <French>Amiodarone</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Fentanyl">
                 <English>Fentanyl</English>
                 <Polish>Fentanyl</Polish>
                 <German>Fentanyl</German>
+                <French>Fentanyl</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ondansetron">
                 <English>Ondansetron</English>
                 <Polish>Ondansetron</Polish>
                 <German>Ondansetron</German>
+                <French>Ondansetron</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_CalciumChloride">
                 <English>Calcium Chloride</English>
                 <Polish>Chlorek wapnia</Polish>
                 <German>Calciumchlorid</German>
+                <French>Chlorure de calcium</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ertapenem">
                 <English>Ertapenem</English>
                 <Polish>Eratapenem</Polish>
                 <German>Ertapenem</German>
+                <French>Ertapenem</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Esmolol">
                 <English>Esmolol</English>
                 <Polish>Esmolol</Polish>
                 <German>Esmolol</German>
+                <French>Esmolol</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Naloxone">
                 <English>Naloxone</English>
                 <Polish>Nalokson</Polish>
                 <German>Naloxon</German>
+                <French>Naloxone</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Penthrox">
                 <English>Penthrox</English>
                 <Polish>Metoksyfluran</Polish>
                 <German>Methoxyfluran</German>
+                <French>Penthrox</French>
             </Key>
         </Container>
         <Container name="// Items - Medication //">
@@ -496,56 +542,67 @@
                 <English>Epinephrine Vial (1mg/1ml)</English>
                 <Polish>Epinefryna (1mg/1ml)</Polish>
                 <German>Adrenalin Ampulle (1mg/1ml)</German>
+                <French>Epinéphrine en flacon (1mg/1ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Epinephrine_Desc">
                 <English>Used to treat cardiac arrest</English>
                 <Polish>Używana do leczenia zatrzymania krążenia</Polish>
                 <German>Wird im Rahmen der Reanimation verwendet</German>
+                <French>Utilisé pour traiter les arrêts cardiaques</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Adenosine">
                 <English>Adenosine Vial (12mg/4ml)</English>
                 <Polish>Adenozyna (12mg/4ml)</Polish>
                 <German>Adenosin Ampulle (12mg/4ml)</German>
+                <French>Adénosine en flacon (12mg/4ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Adenosine_Desc">
                 <English>Used to treat certain heart arrhythmias</English>
                 <Polish>Używana do leczenia niektórych rodzajów arytmii serca </Polish>
                 <German>Behandelt bestimmte Arrhythmien</German>
+                <French>Utilisé pour traiter certaines arythmies cardiaques</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Morphine">
                 <English>Morphine Vial (10mg/2ml)</English>
                 <Polish>Morfina (10mg/2ml)</Polish>
                 <German>Morphin Ampulle (10mg/2ml)</German>
+                <French>Morphine en flacon (10mg/2ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Morphine_Desc">
                 <English>Used to manage moderate to severe pain experiences</English>
                 <Polish>Używana do walki ze średnim i silnym bólem</Polish>
                 <German>Behandelt moderaten bis schweren Schmerz</German>
+                <French>Utilisé pour gérer les douleurs modérées à sévères</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ketamine">
                 <English>Ketamine Vial (500mg/10ml)</English>
                 <Polish>Ketamina (500mg/10ml)</Polish>
                 <German>Ketamin Ampulle (500mg/10ml)</German>
+                <French>Kétamine en flacon (500mg/10ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ketamine_Desc">
                 <English>Used to manage moderate to severe pain, alternative to opioid analgesics</English>
                 <Polish>Używana do walki ze średnim i silnym bólem, alternatywa dla opioidów</Polish>
                 <German>Behandelt moderaten bis schweren Schmerz, alternative zu Opioid-Analgetika</German>
+                <French>Utilisé pour gérer la douleur modérée à sévère, alternative aux analgésiques opioïdes</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Lidocaine">
                 <English>Lidocaine Vial (100mg/5ml)</English>
                 <Polish>Lidokaina (100mg/5ml)</Polish>
                 <German>Lidocain Ampulle (100mg/5ml)</German>
+                <French>Lidocaïne en flacon (100mg/5ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Lidocaine_Desc">
                 <English>Used as local anesthetic for painful surgical procedures, and to treat irregular heart rhythms</English>
                 <Polish>Używana jako lokalne znieczulenie dla bolesnych zabiegów medycznych</Polish>
                 <German>Lokalanästhetikum und Antiarrhythmikum</German>
+                <French>Utilisé comme anesthésique local pour les interventions chirurgicales douloureuses</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_TXA">
                 <English>TXA Vial (1g/10ml)</English>
                 <Polish>TXA (1g/10ml)</Polish>
                 <German>TXA Ampulle (1g/10ml)</German>
+                <French>TXA en flacon (1g/10ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_TXA_Desc">
                 <English>Used to manage catastrophic bleeding by preventing clot dissolvement</English>
@@ -703,16 +760,19 @@
                 <English>IV</English>
                 <Polish>IV</Polish>
                 <German>i.v.</German>
+                <French>IV</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Intraosseous_Short">
                 <English>IO</English>
                 <Polish>IO</Polish>
                 <German>i.o.</German>
+                <French>IO</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Intramuscular_Short">
                 <English>IM</English>
                 <Polish>IM</Polish>
                 <German>i.m.</German>
+                <French>IM</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Push">
                 <English>Push</English>
@@ -1465,71 +1525,85 @@
                 <English>HR</English>
                 <Polish>HR</Polish>
                 <German>HF</German>
+                <French>RC</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_PR">
                 <English>PR</English>
                 <Polish>PR</Polish>
                 <German>PF</German>
+                <French>PR</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_SpO2">
                 <English>SpO2</English>
                 <Polish>SpO2</Polish>
                 <German>SpO2</German>
+                <French>SpO2</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_CO2">
                 <English>CO2</English>
                 <Polish>CO2</Polish>
                 <German>CO2</German>
+                <French>CO2</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_NIBP">
                 <English>NIBP</English>
                 <Polish>NIBP</Polish>
                 <German>NIBP</German>
+                <French>NIBP</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_BP">
                 <English>BP</English>
                 <Polish>BP</Polish>
                 <German>BP</German>
+                <French>BP</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_RR">
                 <English>RR</English>
                 <Polish>RR</Polish>
                 <German>AF</German>
+                <French>RR</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_CPR">
                 <English>CPR Mode Toggle</English>
                 <Polish>Aktywuj tryb RKO</Polish>
                 <German>CPR Modus wechseln</German>
+                <French>Changer de mode RCP</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Analyze">
                 <English>Analyze Rhythm</English>
                 <Polish>Analizuj rytm</Polish>
                 <German>Rhythmusanalyse</German>
+                <French>Analyser le rythme</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_NIBP">
                 <English>Measure NIBP</English>
                 <Polish>Zmierz NIBP</Polish>
                 <German>NIBP Blutdruckmessung</German>
+                <French>Mesure de la PNI</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Alarms">
                 <English>Toggle Alarms</English>
                 <Polish>Włącz alarm</Polish>
                 <German>Alarm umschalten</German>
+                <French>Commuter l'alarme</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Charge">
                 <English>Manual Charge</English>
                 <Polish>Manualne ładowanie</Polish>
                 <German>Manuell laden</German>
+                <French>Charge manuelle</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Shock">
                 <English>Administer Shock</English>
                 <Polish>Wykonaj defibrylacje</Polish>
                 <German>Schock abgeben</German>
+                <French>Délivrer le choc</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_SpeedDial">
                 <English>Speed Dial</English>
                 <Polish>Pokrętło prędkości</Polish>
                 <German>Schnellauswahl</German>
+                <French>Sélection rapide</French>
             </Key>
         </Container>
         <Container name="// GUI //">
@@ -1537,61 +1611,73 @@
                 <English>Transfusing Saline [%1x]</English>
                 <Polish>Przetaczanie soli fizjologicznej [%1x]</Polish>
                 <German>Infundiere Kochsalzlösung [%1x]</German>
+                <French>Transfusion d'une solution saline [%1x]</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingPlasma">
                 <English>Transfusing Plasma [%1x]</English>
                 <Polish>Przetaczanie osocza [%1x]</Polish>
                 <German>Infundiere Plasma [%1x]</German>
+                <French>Transfusion de plasma [%1x]</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingBlood">
                 <English>Transfusing Blood [%1x]</English>
                 <Polish>Przetaczanie krwi [%1x]</Polish>
                 <German>Transfundiere Blut [%1x]</German>
+                <French>Transfusion de sang [%1x]</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingFreshBlood">
                 <English>Transfusing Fresh Blood [%1x]</English>
                 <Polish>Przetaczanie świerzej krwi [%1x]</Polish>
                 <German>Transfundiere frisches Vollblut [%1x]</German>
+                <French>Transfusion de sang frais [%1x]</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_CollectingBlood">
                 <English>Collecting Blood [%1x]</English>
                 <Polish>Pobieranie krwi [%1x]</Polish>
                 <German>Sammle Blut [%1x]</German>
+                <French>Collecte de sang [%1x]</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_BeganTransfusing">
                 <English>%1 began transfusing fluids (%2) into %3</English>
                 <Polish>%1 rozpoczął transfuzje płynu (%2) do %3</Polish>
                 <German>%1 transfundierte %2 in %3</German>
+                <French>%1 a commencé à transfuser des fluides (%2) dans %3</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
                 <English>%1 moved fluid bag (%2) to %3</English>
                 <Polish>%1 przeniusł torebkę (%2) do %3</Polish>
                 <German>%1 bewegte %2 in %3</German>
+                <French>%1 a déplacé la poche de fluide (%2) vers %3</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Saline_Short">
                 <English>S</English>
                 <Polish>S</Polish>
                 <German>NaCl</German>
+                <French>S</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Plasma_Short">
                 <English>P</English>
                 <Polish>O</Polish>
                 <German>P</German>
+                <French>P</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Blood_Short">
                 <English>B</English>
                 <Polish>K</Polish>
                 <German>B</German>
+                <French>S</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FreshWholeBlood_Short">
                 <English>FWB</English>
                 <Polish>ŚK</Polish>
                 <German>VB</German>
+                <French>ST</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FieldBloodTransfusionKit_Short">
                 <English>FBTK</English>
                 <Polish>ZPTK</Polish>
                 <German>FBTK</German>
+                <French>FBTK</French>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -1599,11 +1685,13 @@
                 <English>Change target inventory</English>
                 <Polish>Zmień widziany ekwipunek</Polish>
                 <German>Wechsel Ziel-Inventar</German>
+                <French>Modifier l'inventaire cible</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Available">
                 <English>%1 available</English>
                 <Polish>%1 dostępny</Polish>
                 <German>%1 verfügbar</German>
+                <French>%1 disponible</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_InventoryTarget">
                 <English>Target: %1</English>
@@ -1614,16 +1702,19 @@
                 <English>Self</English>
                 <Polish>Osobisty</Polish>
                 <German>Selbst</German>
+                <French>Personnel</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Patient">
                 <English>Patient</English>
                 <Polish>Pacjent</Polish>
                 <German>Patient</German>
+                <French>Patient</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Vehicle">
                 <English>Vehicle</English>
                 <Polish>Pojazd</Polish>
                 <German>Fahrzeug</German>
+                <French>Véhicule</French>
             </Key>
         </Container>
     </Package>
