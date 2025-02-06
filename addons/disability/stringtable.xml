@@ -124,11 +124,13 @@
                 <English>Wrap SAM Splint</English>
                 <Polish>Zawiń szynę SAM splint</Polish>
                 <German>SAM Splint einwickeln</German>
+                <French>Attelle SAM enveloppante</French>
             </Key>
             <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
                 <English>%1 has wrapped SAM Splint</English>
                 <Polish>%1 zawinął szynę SAM splint</Polish>
                 <German>%1 hat die Schiene eingewickelt</German>
+                <French>%1 a emballé l'attelle SAM</French>
             </Key>
         </Container>
         <Container name="// Patient WakeUp Actions //">
@@ -136,11 +138,13 @@
                 <English>Patient has woken up</English>
                 <Polish>Pacjent się obudził</Polish>
                 <German>Patient ist aufgewacht</German>
+                <French>Le patient s'est réveillé</French>
             </Key>
             <Key ID="STR_ACM_Disability_AttemptWakeUp_Failure">
                 <English>Patient is still asleep</English>
                 <Polish>Pacjent nadal nieprzytomny</Polish>
                 <German>Patient ist weiter bewusstlos</German>
+                <French>Le patient est encore endormi</French>
             </Key>
         </Container>
         <Container name="// Shake Patient Action //">
@@ -148,26 +152,31 @@
                 <English>Attempt To Shake Awake</English>
                 <Polish>Potrząśnij by wybudzić</Polish>
                 <German>Patienten wachrütteln</German>
+                <French>Tentative de réveil</French>
             </Key>
             <Key ID="STR_ACM_Disability_ShakeAwake_Progress">
                 <English>Shaking Patient...</English>
                 <Polish>Potrząsanie...</Polish>
                 <German>Rüttel am Patienten...</German>
+                <French>Secouer le patient...</French>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_ActionLog">
                 <English>%1 shook the patient</English>
                 <Polish>%1 potrząsnął pacjentem</Polish>
                 <German>%1 hat den Patient wachgerüttelt</German>
+                <French>%1 a secoué le patient</French>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_Complete">
                 <English>You shook the patient&lt;br/&gt;%1</English>
                 <Polish>Potrząsnąłeś pacjentem&lt;br/&gt;%1</Polish>
                 <German>Du hast den Patienten gerüttelt&lt;br/&gt;%1</German>
+                <French>Vous avez secoué le patient&lt;br/&gt;%1</French>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_Attempt">
                 <English>You attempt to shake the patient awake&lt;br/&gt;%1</English>
                 <Polish>Próbujesz potrząsnąć pacjentem by się obudził&lt;br/&gt;%1</Polish>
                 <German>Du hast versucht den Patienten wachzurütteln&lt;br/&gt;%1</German>
+                <French>Vous tentez de secouer le patient pour le réveiller&lt;br/&gt;%1</French>
             </Key>
         </Container>
         <Container name="// Slap Patient Action //">
@@ -175,26 +184,31 @@
                 <English>Attempt To Slap Awake</English>
                 <Polish>Uderz by wybudzić</Polish>
                 <German>Schmerzreiz zum Aufwecken setzen</German>
+                <French>Tentative de gifle au réveil</French>
             </Key>
             <Key ID="STR_ACM_Disability_SlapAwake_Progress">
                 <English>Slapping Patient...</English>
                 <Polish>Uderzanie...</Polish>
                 <German>Setze Schmerzreiz...</German>
+                <French>Gifler le patient...</French>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_ActionLog">
                 <English>%1 slapped the patient</English>
                 <Polish>%1 uderzył pacjenta</Polish>
                 <German>%1 setzte einen Schmerzreiz</German>
+                <French>%1 a giflé le patient</French>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_Complete">
                 <English>You slap the patient&lt;br/&gt;%1</English>
                 <Polish>Uderzyłeś pacjenta&lt;br/&gt;%1</Polish>
                 <German>Du setzt einen Schmerzreiz&lt;br/&gt;%1</German>
+                <French>Vous giflez le patient&lt;br/&gt;%1</French>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_Attempt">
                 <English>You attempt to slap the patient awake&lt;br/&gt;%1</English>
                 <Polish>Próbujesz uderzyć pacjenta by się obudził&lt;br/&gt;%1</Polish>
                 <German>Du versuchst einen Schmerzreiz zu setzen&lt;br/&gt;%1</German>
+                <French>Essayer de frapper le patient pour le réveiller&lt;br/&gt;%1</French>
             </Key>
         </Container>
         <Container name="// Inspect For Fracture Action //">
