@@ -10,7 +10,7 @@
         <Key ID="STR_ACM_Evacuation_Category_Tickets">
             <English>Tickets</English>
             <Polish>Punkty odrodzenia</Polish>
-            <French>Billets</French>
+            <French>Tickets</French>
             <German>Tickets</German>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_CasualtyConversion">

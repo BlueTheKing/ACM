@@ -100,13 +100,13 @@
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_NPA">
             <English>NPA Time</English>
             <Polish>Czas rurki nosowo-gardłowej</Polish>
-            <French>Durée de la sonde nasopharyngée (NPA)</French>
+            <French>Durée du tube respiratoire nasopharyngé</French>
             <German>Nasopharyngealtubus Zeit</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_NPA_Desc">
             <English>Time to insert NPA</English>
             <Polish>Czas potrzebny na aplikacje rurki nosowo-gardłowej</Polish>
-            <French>Temps pour insérer la sonde nasopharyngée (NPA)</French>
+            <French>Temps pour insérer le tube respiratoire nasopharyngé</French>
             <German>Zeit bis der Nasopharyngealtubus eingelegt ist</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_SGA">
@@ -136,13 +136,13 @@
         <Key ID="STR_ACM_Airway_SETTING_Allow_NPA">
             <English>Allow NPA</English>
             <Polish>Pozwól na użycie rurki nosowo-gardłowej</Polish>
-            <French>Autoriser l'utilisation d'une sonde nasopharyngée (NPA)</French>
+            <French>Autoriser l'utilisation du tube respiratoire nasopharyngé</French>
             <German>Nasopharyngealtubus erlauben</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_NPA_Desc">
             <English>Training level required to insert NPA</English>
             <Polish>Poziom wyszkolenia potrzebny do użycia rurki nosowo-gardłowej</Polish>
-            <French>Niveau de formation nécessaire pour l'utilisation d'une sonde nasopharyngée (NPA)</French>
+            <French>Niveau de formation nécessaire pour l'utilisation du tube respiratoire nasopharyngé</French>
             <German>Benötigte Qualifikationsstufe um den Nasopharyngealtubus zu benutzen</German>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SGA">

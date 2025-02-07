@@ -118,25 +118,25 @@
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AED">
             <English>Allow AED</English>
             <Polish>Pozwól na defibrylator</Polish>
-            <French>Autoriser le DEA</French>
+            <French>Autoriser le DAE</French>
             <German>Erlaube AED</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AED_Desc">
             <English>Training level required to use AED</English>
             <Polish>Poziom wyszkolenia wymagany do użycia defibrylatora</Polish>
-            <French>Niveau de formation requis pour l'utilisation du DEA</French>
+            <French>Niveau de formation requis pour l'utilisation du DAE</French>
             <German>Benötigtes Qualifikationslevel, um den AED nutzen</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_AEDDistanceLimit">
             <English>AED Distance Limit</English>
             <Polish>Odległość do pracy defibrylatora</Polish>
-            <French>Limite de distance des DEA</French>
+            <French>Limite de distance des DAE</French>
             <German>AED Entfernungslimit</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_AEDDistanceLimit_Desc">
             <English>Distance over which the AED will disconnect itself from the patient</English>
             <Polish>Odległość w jakiej defibrylator automatycznie odłączy się od pacjenta</Polish>
-            <French>Distance sur laquelle le DEA se déconnecte du patient</French>
+            <French>Distance sur laquelle le DAE se déconnecte du patient</French>
             <German>Entfernung bei der sich der AED automatisch vom Patienten diskonnektiert</German>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CPREffectiveness">
