@@ -1106,26 +1106,31 @@
                 <English>Remove</English>
                 <Polish>Odłącz</Polish>
                 <German>Entfernen</German>
+                <French>Débrancher</French>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_ToolTip">
                 <English>Remove fluid bag</English>
                 <Polish>Odłącz torebkę</Polish>
                 <German>Entferne Infusion</German>
+                <French>Retirer la perfusion</French>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_ActionLog">
                 <English>%1 removed fluid bag (%2) from %3</English>
                 <Polish>%1 odłączył torebkę (%1) z %3</Polish>
                 <German>%1 hat eine Infusion (%2) von %3 entfernt</German>
+                <French>%1 a retiré une perfusion (%2) de %3</French>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_Progress">
                 <English>Removing %1...</English>
                 <Polish>Odłączanie %1...</Polish>
                 <German>Entferne %1...</German>
+                <French>Supprimer %1...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_FluidRemaining">
                 <English>%1ml remaining</English>
                 <Polish>Pozostało %1ml</Polish>
                 <German>%1ml übrig</German>
+                <French>%1ml restant</French>
             </Key>
         </Container>
         <Container name="// IV/IO Actions //">
@@ -1133,121 +1138,145 @@
                 <English>Insert 16g IV (Upper)</English>
                 <Polish>Wprowadzanie igły 16g (góra)</Polish>
                 <German>16g i.v. Katheter legen (Oben)</German>
+                <French>16g Pose d'un cathéter IV (haut)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Upper">
                 <English>Remove 16g IV (Upper)</English>
                 <Polish>Wyciąganie igły 16g (góra)</Polish>
-                <German>16 i.v. Katheter entfernen (Oben)</German>
+                <German>16g i.v. Katheter entfernen (Oben)</German>
+                <French>16g Retirer le cathéter IV (haut)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Middle">
                 <English>Insert 16g IV (Middle)</English>
                 <Polish>Wprowadzanie igły 16g (środek)</Polish>
                 <German>16g i.v. Katheter legen (Mittig)</German>
+                <French>16g Pose d'un cathéter IV (au centre)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Middle">
                 <English>Remove 16g IV (Middle)</English>
                 <Polish>Wyciąganie igły 16g (środek)</Polish>
                 <German>16g i.v. Katheter entfernen (Mittig)</German>
+                <French>16g Retirer le cathéter IV (au centre)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Lower">
                 <English>Insert 16g IV (Lower)</English>
                 <Polish>Wprowadzanie igły 16g (dół)</Polish>
                 <German>16g i.v. Katheter legen (Unten)</German>
+                <French>16g Pose d'un cathéter IV (bas)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Lower">
                 <English>Remove 16g IV (Lower)</English>
                 <Polish>Wyciąganie igły 16g (dół)</Polish>
                 <German>16g i.v. Katheter entfernen (Unten)</German>
+                <French>16g Retirer le cathéter IV (bas)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Progress">
                 <English>Inserting 16g IV...</English>
                 <Polish>Wprowadzanie igły 16g...</Polish>
                 <German>Lege 16g i.v. Katheter...</German>
+                <French>Pose d'un cathéter IV de16g</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Progress">
                 <English>Removing 16g IV...</English>
                 <Polish>Wyciąganie igły 16g...</Polish>
                 <German>Entferne 16g i.v. Katheter...</German>
+                <French>Retirer un cathéter IV de 16g</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Upper">
                 <English>Insert 14g IV (Upper)</English>
                 <Polish>Wprowadzanie igły 14g (góra)</Polish>
                 <German>14g i.v. Katheter legen (Oben)</German>
+                <French>14g Pose d'un cathéter IV (haut)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Upper">
                 <English>Remove 14g IV (Upper)</English>
                 <Polish>Wyciąganie igły 14g (góra)</Polish>
                 <German>14g i.v. Katheter entfernen (Oben)</German>
+                <French>14g Retirer le cathéter IV (haut)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Middle">
                 <English>Insert 14g IV (Middle)</English>
                 <Polish>Wprowadzanie igły 14g (środek)</Polish>
                 <German>14g i.v. Katheter legen (Mittig)</German>
+                <French>14g Pose d'un cathéter IV (au centre)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Middle">
                 <English>Remove 14g IV (Middle)</English>
                 <Polish>Wyciąganie igły 14g (środek)</Polish>
                 <German>14g i.v. Katheter entfernen (Mittig)</German>
+                <French>14g Retirer le cathéter IV (au centre)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Lower">
                 <English>Insert 14g IV (Lower)</English>
                 <Polish>Wprowadzanie igły 14g (dół)</Polish>
                 <German>14g i.v. Katheter legen (Unten)</German>
+                <French>14g Pose d'un cathéter IV (bas)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Lower">
                 <English>Remove 14g IV (Lower)</English>
                 <Polish>Wyciąganie igły 14g (dół)</Polish>
                 <German>14g i.v. Katheter entfernen (Unten)</German>
+                <French>14g Retirer le cathéter IV (bas)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Progress">
                 <English>Inserting 14g IV...</English>
                 <Polish>Wprowadzanie igły 14g...</Polish>
                 <German>Lege 14g i.v. Katheter...</German>
+                <French>Pose d'un cathéter IV de14g</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Progress">
                 <English>Removing 14g IV...</English>
                 <Polish>Wyciąganie igły 14g...</Polish>
                 <German>Entferne 14g i.v. Katheter...</German>
+                <French>Retirer un cathéter IV de 14g</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_FAST1">
                 <English>Insert FAST1 IO</English>
                 <Polish>Użyj FAST1 IO</Polish>
                 <German>FAST1 IO Zugang legen</German>
+                <French>Utiliser FAST1 IO</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_FAST1_Progress">
                 <English>Inserting FAST1 IO...</English>
                 <Polish>Używanie FAST1 IO...</Polish>
                 <German>Lege FAST1 IO Zugang...</German>
+                <French>Utilisation de FAST1 IO...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_FAST1">
                 <English>Remove FAST1 IO</English>
                 <Polish>Wyciągnij FAST1 IO</Polish>
                 <German>FAST1 IO Zugang entfernen</German>
+                <French>Extraire FAST1 IO</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_FAST1_Progress">
                 <English>Removing FAST1 IO...</English>
                 <Polish>Wyciąganie FAST1 IO...</Polish>
                 <German>Entferne FAST1 IO Zugang...</German>
+                <French>Extraction FAST1 IO</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_EZ">
                 <English>Insert EZ-IO</English>
                 <Polish>Wprowadź EZ-IO</Polish>
                 <German>EZ-IO Zugang bohren</German>
+                <French>Percer l'accès EZ-IO</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_EZ_Progress">
                 <English>Inserting EZ-IO...</English>
                 <Polish>Wprowadzanie EZ-IO...</Polish>
                 <German>Bohre EZ-IO Zugang...</German>
+                <French>Percer l'accès EZ-IO...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_EZ">
                 <English>Remove EZ-IO</English>
                 <Polish>Usuź EZ-IO</Polish>
                 <German>EZ-IO Zugang entfernen</German>
+                <French>Supprimer l'accès EZ-IO</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_EZ_Progress">
                 <English>Removing EZ-IO...</English>
                 <Polish>Usuwanie EZ-IO...</Polish>
                 <German>Entferne EZ-IO Zugang...</German>
+                <French>Suppression de l'accès EZ-IO...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Upper">
                 <English>Upper</English>
@@ -1271,21 +1300,25 @@
                 <English>Patient already has IV in the %1 (%2)</English>
                 <Polish>IV zostało już podłączone w %1 (%2)</Polish>
                 <German>Patient hat bereits einen i.v. Zugang im %1 (%2)</German>
+                <French>Le patient a déjà une IV dans le %1 (%2)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_Already">
                 <English>Patient already has IO in the %1</English>
                 <Polish>IO zostało już podłączone w %1</Polish>
                 <German>Patient hat bereits einen i.o. Zugang im %1 (%2)</German>
+                <French>Le patient a déjà un IO dans le %1</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_FailedToLocateVein">
                 <English>Failed to locate vein</English>
                 <Polish>Nie udało się wyczuć żyły </Polish>
                 <German>Keine Vene gefunden</German>
+                <French>N'a pas senti la veine</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_BodyPartTooDamaged">
                 <English>Body part too damaged</English>
                 <Polish>Zbyt duże obrażenia na ciele</Polish>
                 <German>Körperteil zu sehr verletzt</German>
+                <French>Trop de blessures sur le corps</French>
             </Key>
         </Container>
         <Container name="// Inspect IV Action //">
@@ -1293,66 +1326,79 @@
                 <English>Inspect IV Catheter (Upper)</English>
                 <Polish>Sprawdź wkłucie (góra)</Polish>
                 <German>i.v. Katheter prüfen (Oben)</German>
+                <French>Vérifier le cathéter IV (haut)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Middle">
                 <English>Inspect IV Catheter (Middle)</English>
                 <Polish>Sprawdź wkłucie (środek)</Polish>
                 <German>i.v. Katheter prüfen (Mittig)</German>
+                <French>Vérifier le cathéter IV (au centre)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Lower">
                 <English>Inspect IV Catheter (Lower)</English>
                 <Polish>Sprawdź wkłucie (dół)</Polish>
                 <German>i.v. Katheter prüfen (Unten)</German>
+                <French>Vérifier le cathéter IV (en bas)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Progress">
                 <English>Inspecting IV Catheter...</English>
                 <Polish>Sprawdzanie wkłucia...</Polish>
                 <German>Prüfe i.v. Katheter...</German>
+                <French>Vérification du cathéter IV ...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Clear">
                 <English>IV Catheter is clear</English>
                 <Polish>Wenflon drożny</Polish>
                 <German>i.v. Katheter ist frei</German>
+                <French>Le cathéter IV est dégagé</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Clear_Short">
                 <English>Clear</English>
                 <Polish>Drożny</Polish>
                 <German>Frei</German>
+                <French>Dégagé</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow">
                 <English>IV Catheter has normal flow</English>
                 <Polish>Wenflon ma normalny przepływ</Polish>
                 <German>i.v. Katheter mit normalen Fluss</German>
+                <French>Cathéter i.v. à débit normal</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow_Short">
                 <English>Normal flow</English>
                 <Polish>Normalny przepływ</Polish>
                 <German>Normaler Fluss</German>
+                <French>Débit normal</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NoFlow">
                 <English>IV Catheter has no flow</English>
                 <Polish>Wenflon jest zatkany</Polish>
                 <German>i.v. Katheter läuft nicht</German>
+                <French>Le cathéter IV ne fonctionne pas</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NoFlow_Short">
                 <English>No flow</English>
                 <Polish>Zatkany</Polish>
                 <German>Läuft nicht</German>
+                <French>Ne fonctionne pas</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Swelling">
                 <English>Swelling on insertion site</English>
                 <Polish>Obrzęk w miejscu wkłucia</Polish>
                 <German>Schwellung am Injektionsort</German>
+                <French>Gonflement au niveau du site d'injection</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Swelling_Short">
                 <English>noticable swelling</English>
                 <Polish>Widoczny obrzęk</Polish>
                 <German>Deutliche Schwellung</German>
+                <French>Oedème significatif</French>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
                 <English>%1 inspected IV Catheter: %2</English>
                 <Polish>%1 sprawdził wkłucie: %2</Polish>
                 <German>%1 hat einen i.v. Katheter geprüft: %2</German>
+                <French>%1 a testé un cathéter IV : %2</French>
             </Key>
         </Container>
         <Container name="// Pressure Cuff Action //">
@@ -1360,6 +1406,7 @@
                 <English>Patient already has pressure cuff on the %1</English>
                 <Polish>Pacjent ma już ciśnieniomierz na %1</Polish>
                 <German>Patient hat bereits eine Blutdruckmanschette am %1</German>
+                <French>Le patient a déjà un brassard de tension sur le %1</French>
             </Key>
         </Container>
         <Container name="// Syringe Actions //">
@@ -1555,81 +1602,97 @@
                 <English>Connect AED Capnograph</English>
                 <Polish>Załóż kapnograf defibrylatora</Polish>
                 <German>AED-Kapnograph verbinden</German>
+                <French>Connecter le capnographe DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectCapnograph_Progress">
                 <English>Connecting AED Capnograph...</English>
                 <Polish>Zakładanie kapnografu defibrylatora...</Polish>
                 <German>Verbinde AED-Kapnograph...</German>
+                <French>Connexion du capnographe DAE...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectCapnograph">
                 <English>Disconnect AED Capnograph</English>
                 <Polish>Zdejmij kapnograf defibrylatora</Polish>
                 <German>AED-Kapnographie entfernen</German>
+                <French>Retirer le capnographe du défibrillateur</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectCapnograph_Progress">
                 <English>Disconnecting AED Capnograph...</English>
                 <Polish>Zdejmowanie kapnografu defibrylatora...</Polish>
                 <German>Entferne AED-Kapnograph...</German>
+                <French>Retrait du capnographe du défibrillateur....</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_AnalyzeRhythm">
                 <English>Analyze Rhythm</English>
                 <Polish>Analizuj rytm</Polish>
                 <German>Rhythmusanalyse</German>
+                <French>Analyse du rythme</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ManualCharge">
                 <English>Charge AED</English>
                 <Polish>Naładuj defibrylator</Polish>
                 <German>Defibrillator laden</German>
+                <French>Défibrillateur chargé</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Shock">
                 <English>Administer Shock</English>
                 <Polish>Przeprowadź defibrylacje</Polish>
                 <German>Schock abgeben</German>
+                <French>Délivrer un choc</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_CancelCharge">
                 <English>Cancel Charge</English>
                 <Polish>Odwołaj defibrylacje</Polish>
                 <German>Defibrillator entladen</German>
+                <French>Décharger le défibrillateur</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_MeasureBP">
                 <English>Measure Blood Pressure (AED)</English>
                 <Polish>Zmierz ciśnienie krwi (defibrylator)</Polish>
                 <German>Blutdruck messen (AED)</German>
+                <French>Prendre la tension (DAE)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Already">
                 <English>Patient already has %1 on the %2</English>
                 <Polish>Pacjent ma już założone %1 na %2</Polish>
                 <German>Patient hat bereits %1 am %2</German>
+                <French>Le patient a déjà %1 sur le %2</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_%1_Disconnected">
                 <English>%1 disconnected AED</English>
                 <Polish>%1 odłączył defibrylator</Polish>
                 <German>%1 entfernte den AED</German>
+                <French>%1 a déconnecté le défibrillateur (DAE)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PatientDisconnected">
                 <English>Patient Disconnected</English>
                 <Polish>Pacjent odłączony</Polish>
                 <German>Patient vom AED diskonnektiert</German>
+                <French>Patient déconnecté du DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Pads">
                 <English>AED pads</English>
                 <Polish>Elektrody defibrylatora</Polish>
                 <German>Defi-Elektroden</German>
+                <French>Electrodes de défibrillation (DAE)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PulseOximeter">
                 <English>AED Pulse Oximeter</English>
                 <Polish>Pulsoksymetr defibrylatora</Polish>
                 <German>AED-Pulsoxymeter</German>
+                <French>Oxymètre de pouls (DAE)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PressureCuff">
                 <English>AED Pressure Cuff</English>
                 <Polish>Ciśnieniomierz defibrylatora</Polish>
                 <German>AED-Blutdruckmannschette</German>
+                <French>Brassard de tensiomètre pour DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Capnograph">
                 <English>AED Capnograph</English>
                 <Polish>Kapnograf defibrylatora</Polish>
                 <German>AED-Kanograph</German>
+                <French>Canographe (DAE)</French>
             </Key>
         </Container>
         <Container name="// AED Monitor //">
@@ -1809,6 +1872,7 @@
                 <English>Target: %1</English>
                 <Polish>Widziany ekwipunek: %1</Polish>
                 <German>Ziel: %1</German>
+                <French>Équipement vu : %1</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Self">
                 <English>Self</English>
