@@ -25,7 +25,9 @@ private _naloxoneEffect = 1;
 {
     _x params ["_medicationClassname", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", "_administrationType", "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust", "_concentration", "_medicationType", "_bodyPartIndex"];
 
-    if (_naloxoneEffect < 1) exitWith {};
+    if (_naloxoneEffect < 1) exitWith {
+        break;
+    };
 
     if (_medicationClassname == "Overdose_Opioid") then {
         _medicationArray deleteAt _forEachIndex;

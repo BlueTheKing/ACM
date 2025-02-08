@@ -190,6 +190,13 @@ class CfgWeapons {
         ACM_isVial = 0;
     };
 
+    class ACM_Lozenge_Fentanyl: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\lozenge_fentanyl_ca.paa);
+        displayName = CSTRING(Lozenge_Fentanyl);
+        descriptionShort = CSTRING(Lozenge_Fentanyl_Desc);
+        ACM_isVial = 0;
+    };
+
     class ACM_Paracetamol_SinglePack: ACM_Spray_Naloxone {
         scope = 1;
         picture = QPATHTOF(ui\paracetamol_singlepack_ca.paa);

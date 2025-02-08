@@ -119,7 +119,11 @@ switch (_weightEffect) do {
         _concentrationRatio = _dose / _maxEffectDose;
 
         if (_painReduce != 0) then {
-            _painReduce = (linearConversion [_minEffectDose, _maxEffectDose, (_dose * _absorptionModifier), _minPainReduce, _painReduce]) min _maxPainReduce;
+            if (_minEffectDose == _maxEffectDose) then {
+                _painReduce = _painReduce min _maxPainReduce;
+            } else {
+                _painReduce = (linearConversion [_minEffectDose, _maxEffectDose, (_dose * _absorptionModifier), _minPainReduce, _painReduce]) min _maxPainReduce;
+            };
         };
     };
 };

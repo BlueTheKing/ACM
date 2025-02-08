@@ -43,6 +43,7 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACM_Spray_Naloxone,QPATHTOEF(circulation,ui\spray_
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Paracetamol,QPATHTOEF(circulation,ui\paracetamol_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_AmmoniaInhalant,QPATHTOEF(circulation,ui\inhalant_ammonia_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Inhaler_Penthrox,QPATHTOEF(circulation,ui\inhaler_penthrox_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(ACM_Lozenge_Fentanyl,QPATHTOEF(circulation,ui\lozenge_fentanyl_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_PressureBandage,QPATHTOEF(damage,ui\pressurebandage.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_EmergencyTraumaDressing,QPATHTOEF(damage,ui\etd.paa));

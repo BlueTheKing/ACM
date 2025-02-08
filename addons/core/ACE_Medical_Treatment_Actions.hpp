@@ -434,7 +434,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Head"};
         items[] = {"ACM_Paracetamol_SinglePack","ACM_Paracetamol_DoublePack","ACM_Paracetamol"};
         condition = QUOTE([_patient] call ACEFUNC(common,isAwake) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
-        treatmentTime = 5;
+        treatmentTime = 4;
         //animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
         sounds[] = {{QPATHTOEF(circulation,sound\paracetamol.wav),10,1,30}};
         litter[] = {};
@@ -444,7 +444,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = ECSTRING(circulation,UsePenthroxInhaler);
         displayNameProgress = ECSTRING(circulation,UsePenthroxInhaler_Progress);
         items[] = {"ACM_Inhaler_Penthrox"};
-        treatmentTime = 5;
+        treatmentTime = 4;
         animationMedic = "";
         sounds[] = {};
         ACM_menuIcon = "ACM_Inhaler_Penthrox";
@@ -467,6 +467,28 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_rollToBack = 1;
         sounds[] = {};
         ACM_menuIcon = "ACM_Spray_Naloxone";
+    };
+    class FentanylLozenge: Paracetamol {
+        displayName = ECSTRING(circulation,GiveFentanylLozenge);
+        displayNameProgress = ECSTRING(circulation,GiveFentanylLozenge_Progress);
+        items[] = {"ACM_Lozenge_Fentanyl"};
+        allowSelfTreatment = 0;
+        treatmentTime = 4;
+        condition = QUOTE(_patient call ACEFUNC(common,isAwake) && ((_patient getVariable [ARR_2(QQEGVAR(circulation,LozengeItem),'')]) == '') && (_patient getVariable [ARR_2(QQGVAR(Lying_State),false)]) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
+        callbackSuccess = QUOTE([ARR_3(_medic,_patient,'Fentanyl')] call EFUNC(circulation,setLozenge));
+        ACM_rollToBack = 1;
+        sounds[] = {};
+        ACM_menuIcon = "ACM_Lozenge_Fentanyl";
+    };
+    class RemoveFentanylLozenge: FentanylLozenge {
+        displayName = ECSTRING(circulation,RemoveFentanylLozenge);
+        displayNameProgress = ECSTRING(circulation,RemoveFentanylLozenge_Progress);
+        items[] = {};
+        consumeItem = 0;
+        allowSelfTreatment = 1;
+        treatmentTime = 2;
+        condition = QUOTE((_patient getVariable [ARR_2(QQEGVAR(circulation,LozengeItem), '')]) == 'Fentanyl');
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call EFUNC(circulation,setLozenge));
     };
 
     class ShakeAwake: CheckResponse {

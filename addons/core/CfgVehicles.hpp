@@ -140,6 +140,7 @@ class CfgVehicles {
             ADDITEM(ACM_Vial_Fentanyl,10);
             ADDITEM(ACM_Vial_Lidocaine,10);
             ADDITEM(ACM_Vial_Ondansetron,10);
+            ADDITEM(ACM_Lozenge_Fentanyl,10);
             ADDITEM(ACE_splint,10);
             ADDITEM(ACM_SAMSplint,10);
             // Other

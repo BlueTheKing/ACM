@@ -447,6 +447,12 @@
                 <Polish>Metoksyfluran</Polish>
                 <German>Methoxyfluran</German>
             </Key>
+            <Key ID="STR_ACM_Circulation_Medication_OTFC">
+                <English>Oral Transmucosal Fentanyl Citrate</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Medication_OTFC_Short">
+                <English>OTFC</English>
+            </Key>
         </Container>
         <Container name="// Items - Medication //">
             <Key ID="STR_ACM_Circulation_Vial_Epinephrine">
@@ -615,6 +621,12 @@
                 <Polish>Używany do walki z silnym bólem na krótki okres czasu</Polish>
                 <German>Pfeife mit Methoxyflurangas um Schmerzen kurzfristig zu behandeln</German>
             </Key>
+            <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl">
+                <English>Fentanyl Lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
+                <English>Used to manage acute severe pain, via oral transmucosal route</English>
+            </Key>
         </Container>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Circulation_UseParacetamol">
@@ -657,6 +669,7 @@
                 <Polish>Używanie naloksonu w spreju...</Polish>
                 <German>Benutze Naloxon Nasenspray...</German>
             </Key>
+            
             <Key ID="STR_ACM_Circulation_UseSyringe">
                 <English>Use Syringe (%1ml)</English>
                 <Polish>Użyj strzykawki (%1ml)</Polish>
@@ -686,6 +699,53 @@
                 <English>Inject</English>
                 <Polish>Podaj (IM)</Polish>
                 <German>Injizieren (IM)</German>
+            </Key>
+        </Container>
+        <Container name="// Fentanyl Lozenge Actions //">
+            <Key ID="STR_ACM_Circulation_GiveFentanylLozenge">
+                <English>Give Fentanyl Lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_GiveFentanylLozenge_Progress">
+                <English>Giving Fentanyl Lozenge...</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge">
+                <English>Remove Fentanyl Lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge_Progress">
+                <English>Removing Fentanyl Lozenge...</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Lozenge">
+                <English>Lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge">
+                <English>Lozenge (OTFC)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Already">
+                <English>Patient already has fentanyl lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Blocked">
+                <English>Patient oral access is blocked by airway adjunct</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Complete">
+                <English>Gave Lozenge (OTFC)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Hint">
+                <English>Fentanyl Lozenge has been placed by %1</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_ActionLog">
+                <English>%1 gave Fentanyl Lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Complete">
+                <English>Removed fentanyl lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Hint">
+                <English>%1 removed lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_HintSelf">
+                <English>Fentanyl lozenge was removed</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
+                <English>Fentanyl lozenge wore off and was removed</English>
             </Key>
         </Container>
         <Container name="// CPR Action //">
