@@ -30,12 +30,14 @@ PREP_RECOMPILE_END;
 
 // Show item icons in medical menu
 [
-    QGVAR(ShowActionItemIcons),
+    QGVAR(showActionItemIcons),
     "CHECKBOX",
     [LLSTRING(SETTING_ShowActionItemIcons), LLSTRING(SETTING_ShowActionItemIcons_Desc)],
     [ACM_SETTINGS_CATEGORY, ""],
     [true],
-    false
+    false,
+    {},
+    true
 ] call CBA_fnc_addSetting;
 
 // Overlay selected body part in medical menu

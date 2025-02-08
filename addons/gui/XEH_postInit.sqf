@@ -7,3 +7,7 @@ if !(hasInterface) exitWith {};
 GVAR(lastSelectedCategory) = "";
 GVAR(lastSelectedBodyPart) = -1;
 GVAR(lastTarget) = objNull;
+
+GVAR(actionsList) = [];
+GVAR(lastActionsList) = [];
+GVAR(lastActionsListReady) = false;

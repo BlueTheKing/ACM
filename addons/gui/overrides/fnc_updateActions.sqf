@@ -88,7 +88,23 @@ private _shownIndex = 0;
         _ctrl ctrlAddEventHandler ["ButtonClick", {ACEGVAR(medical_gui,pendingReopen) = true}];
 
         _shownIndex = _shownIndex + 1;
+        if (GVAR(showActionItemIcons)) then {GVAR(actionsList) pushBack _forEachIndex;};
     };
 } forEach ACEGVAR(medical_gui,actions);
+
+if (GVAR(showActionItemIcons)) then {
+    if (GVAR(lastActionsListReady)) then {
+        if (GVAR(lastActionsList) isNotEqualTo GVAR(actionsList)) then {
+            { ctrlDelete _x } forEach _actionButtons;
+            GVAR(lastActionsListReady) = false;
+            GVAR(lastActionsList) = [];
+        };
+        GVAR(actionsList) = [];
+    } else {
+        GVAR(lastActionsListReady) = true;
+        GVAR(lastActionsList) = +(GVAR(actionsList));
+        GVAR(actionsList) = [];
+    };
+};
 
 { ctrlDelete _x } forEach (_actionButtons select [_shownIndex, 9999]);
