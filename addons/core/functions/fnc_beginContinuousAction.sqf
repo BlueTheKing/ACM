@@ -119,7 +119,7 @@ _args call _onStart;
             [QGVAR(openMedicalMenu), _patient] call CBA_fnc_localEvent;
         };
 
-        ["ace_treatmentFailed", [_medic, _patient, _bodyPart, "ACM_ContinousAction", "", "", false]] call CBA_fnc_localEvent;
+        ["ace_treatmentFailed", [_medic, _patient, _bodyPart, "ACM_ContinuousAction", "", "", false]] call CBA_fnc_localEvent;
     };
 
     _args call _perFrame;
