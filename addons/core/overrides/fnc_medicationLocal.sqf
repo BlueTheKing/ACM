@@ -83,10 +83,16 @@ private _minPainReduce = GET_NUMBER(_medicationConfig >> "minPainReduce",getNumb
 private _maxPainReduce = GET_NUMBER(_medicationConfig >> "maxPainReduce",getNumber (_defaultConfig >> "maxPainReduce"));
 
 private _weightEffect = GET_NUMBER(_medicationConfig >> "weightEffect",getNumber (_defaultConfig >> "weightEffect"));
-
-private _patientWeight = GET_BODYWEIGHT(_patient);
+private _absorptionEffect = GET_NUMBER(_medicationConfig >> "bloodlossEffect",getNumber (_defaultConfig >> "bloodlossEffect"));
 
 private _concentrationRatio = 1;
+private _absorptionModifier = 1;
+
+if (_absorptionEffect > 0) then {
+    _absorptionModifier = linearConversion [4.5, BLOOD_VOLUME_CLASS_4_HEMORRHAGE, GET_BLOOD_VOLUME(_patient), 1, 0.1, true];
+};
+
+private _patientWeight = GET_BODYWEIGHT(_patient);
 
 switch (_weightEffect) do {
     case 1: {
@@ -96,7 +102,7 @@ switch (_weightEffect) do {
         _concentrationRatio = _weightedDose / _maxEffectDose;
 
         if (_painReduce != 0) then {
-            _painReduce = [(linearConversion [_minEffectDose, 0, _weightedDose, _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, _weightedDose, _minPainReduce, _painReduce])] select (_weightedDose > _minEffectDose);
+            _painReduce = [(linearConversion [_minEffectDose, 0, (_weightedDose * _absorptionModifier), _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, (_weightedDose * _absorptionModifier), _minPainReduce, _painReduce])] select (_weightedDose > _minEffectDose);
         };
     };
     case 2: {
@@ -106,17 +112,23 @@ switch (_weightEffect) do {
         _concentrationRatio = _weightedDose / _maxEffectDose;
 
         if (_painReduce != 0) then {
-            _painReduce = [(linearConversion [_minEffectDose, 0, _weightedDose, _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, _weightedDose, _minPainReduce, _painReduce])] select (_weightedDose > _minEffectDose);
+            _painReduce = [(linearConversion [_minEffectDose, 0, (_weightedDose * _absorptionModifier), _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, (_weightedDose * _absorptionModifier), _minPainReduce, _painReduce])] select (_weightedDose > _minEffectDose);
         };
     };
     default {
         _concentrationRatio = _dose / _maxEffectDose;
 
         if (_painReduce != 0) then {
-            _painReduce = (linearConversion [_minEffectDose, _maxEffectDose, _dose, _minPainReduce, _painReduce]) min _maxPainReduce;
+            if (_minEffectDose == _maxEffectDose) then {
+                _painReduce = _painReduce min _maxPainReduce;
+            } else {
+                _painReduce = (linearConversion [_minEffectDose, _maxEffectDose, (_dose * _absorptionModifier), _minPainReduce, _painReduce]) min _maxPainReduce;
+            };
         };
     };
 };
+
+_concentrationRatio = _concentrationRatio * _absorptionModifier;
 
 private _heartRateChange = 0;
 

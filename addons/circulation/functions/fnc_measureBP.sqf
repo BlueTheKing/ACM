@@ -54,15 +54,11 @@ if (_stethoscope) then {
 
     _ctrlText ctrlSetText format ["%1 (%2)", ([_patient, false, true] call ACEFUNC(common,getName)), _bodyPartString];
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
+    params ["_medic", "_patient", "_bodyPart"];
 
     if !(isNull findDisplay IDC_MEASUREBP) then {
         stopSound GVAR(MeasureBP_HeartBeatSoundID);
         closeDialog 0;
-    };
-
-    if (_notInVehicle) then {
-        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
     };
 
     [LSTRING(MeasureBP_Stopped), 2, _medic] call ACEFUNC(common,displayTextStructured);
@@ -191,15 +187,11 @@ if (_stethoscope) then {
 
     _ctrlText ctrlSetText format ["%1 (%2)", ([_patient, false, true] call ACEFUNC(common,getName)), _bodyPartString];
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
+    params ["_medic", "_patient", "_bodyPart"];
 
     if !(isNull findDisplay IDC_MEASUREBP) then {
         stopSound GVAR(MeasureBP_HeartBeatSoundID);
         closeDialog 0;
-    };
-
-    if (_notInVehicle) then {
-        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
     };
 
     [LSTRING(MeasureBP_Stopped), 2, _medic] call ACEFUNC(common,displayTextStructured);

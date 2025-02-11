@@ -41,12 +41,12 @@ switch (_type) do {
     case ACM_IO_FAST1_M: {
         _hintType = LLSTRING(IO_FAST1);
         _classname = "ACM_IO_FAST";
-        _givePain = 0.8;
+        _givePain = 0.31;
     };
     case ACM_IO_EZ_M: {
         _hintType = LLSTRING(IO_EZ);
         _classname = "ACM_IO_EZ";
-        _givePain = 0.8;
+        _givePain = 0.31;
     };
     default {};
 };
@@ -67,9 +67,9 @@ if (_iv) then {
 
 private _severeDamage = false;
 
-if (_iv && _state) then {
-    private _partIndex = GET_BODYPART_INDEX(_bodyPart);
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
+if (_iv && _state) then {
     switch (true) do {
         case !(alive _patient): {
             _successChance = linearConversion [0, 90, (CBA_missionTime - (_patient getVariable [QEGVAR(core,TimeOfDeath), 0])), 0.75, 0, true];
@@ -154,7 +154,8 @@ if (_state) then {
             };
         };
     } else {
-        [_patient, _givePain] call ACEFUNC(medical,adjustPainLevel);
+        private _suppressPain = linearConversion [0, 0.4, ([_patient, "Lidocaine", false, _partIndex] call ACEFUNC(medical_status,getMedicationCount)), 0, 0.3, true]; // 40mg IM
+        [_patient, 0 max (_givePain - _suppressPain)] call ACEFUNC(medical,adjustPainLevel);
     };
 } else {
     _hintState = LELSTRING(core,Common_Removed);

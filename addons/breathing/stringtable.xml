@@ -988,11 +988,22 @@
                 <German>Beatmung pausiert</German>
                 <French>Interrompution de la respiration artificielle</French>
             </Key>
+            <Key ID="STR_ACM_Breathing_BVM_Continue">
+                <English>Continue Rescue Breaths</English>
+                <Polish>Wznów oddechy ratunkowe</Polish>
+                <German>Beatmung fortsetzen</German>
+            </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continued">
                 <English>Continued Rescue Breaths</English>
                 <Polish>Wznowiono oddechy ratunkowe </Polish>
                 <German>Beatmung fortgesetzt</German>
                 <French>Poursuite la respiration artificielle</French>
+            </Key>
+            <Key ID="STR_ACM_Breathing_BVM_SwapToCPR">
+                <English>Swap To CPR</English>
+            </Key>
+            <Key ID="STR_ACM_Breathing_BVM_SwappedToCPR">
+                <English>Swapped To CPR</English>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_ActionLog_Start">
                 <English>%1 started BVM rescue breaths</English>

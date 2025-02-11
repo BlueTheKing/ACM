@@ -221,6 +221,14 @@ if (_selectionN == 0) then {
 
         _entries pushBack [_airwayItem, _airwayColor];
     };
+
+    private _lozengeItem = _target getVariable [QEGVAR(circulation,LozengeItem), ""];
+
+    if (_lozengeItem != "") then {
+        private _item = LELSTRING(circulation,FentanylLozenge);
+
+        _entries pushBack [_item, _circulationColor];
+    };
 };
 
 private _oxygenSaturation = GET_OXYGEN(_target);
