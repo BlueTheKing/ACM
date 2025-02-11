@@ -86,6 +86,7 @@
 #define IDC_BODY_HEAD_NPA                  70101
 #define IDC_BODY_HEAD_IGEL                 70102
 #define IDC_BODY_HEAD_AED_CAPNOGRAPH       70103
+#define IDC_BODY_HEAD_LOZENGE              70104
 
 #define IDC_BODY_TORSO_AED_PADS            70110
 #define IDC_BODY_TORSO_CHESTSEAL           70111

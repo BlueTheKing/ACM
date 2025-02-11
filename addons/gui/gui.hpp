@@ -45,6 +45,11 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             idc = IDC_BODY_HEAD_IGEL;
             text = QPATHTOF(data\body_image\head_igel.paa);
         };
+        class Head_Lozenge: Head_GuedelTube {
+            idc = IDC_BODY_HEAD_LOZENGE;
+            text = QPATHTOF(data\body_image\head_lozenge.paa);
+            colorText[] = COLOR_CIRCULATION;
+        };
         class RightArm_PulseOximeter: Background {
             idc = IDC_BODY_RIGHTARM_PULSEOX;
             text = QPATHTOF(data\body_image\rightarm_pulseoximeter.paa);
