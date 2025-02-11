@@ -67,10 +67,10 @@ private _id = [{
             (_internalWoundsOnPart select _woundIndex) params ["_woundType", "_woundCount", "_woundBleeding"];
             
             private _woundSeverity = _woundType % 10;
-            private _txaEffect = 1 + (1 min _txaCount);
+            private _txaEffect = 1 + (2 min _txaCount);
             private _bloodVolumEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 4.5) min 1;
 
-            if (_woundSeverity == 1 || {_woundSeverity == 2 && (random 1 < 0.7 * _txaEffect * _bloodVolumEffect)}) then {
+            if (_woundSeverity == 1 || {_woundSeverity == 2 && (random 1 < 0.3 * _txaEffect * _bloodVolumEffect)}) then {
                 private _newWoundCount = _woundCount - _clotEffectiveness;
 
                 if (_newWoundCount < 1) then {
