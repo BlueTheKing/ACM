@@ -538,9 +538,11 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_OTFC">
                 <English>Oral Transmucosal Fentanyl Citrate</English>
+                <French>Citrate de fentanyl par voie orale et transmuqueuse</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_OTFC_Short">
                 <English>OTFC</English>
+                <French>OTFC</French>
             </Key>
         </Container>
         <Container name="// Items - Medication //">
@@ -708,9 +710,11 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_SinglePack">
                 <English>Paracetamol (Single Pack)</English>
+                <French>Paracétamol (paquet individuel)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_DoublePack">
                 <English>Paracetamol (Double Pack)</English>
+                <French>Paracétamol (emballage double)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_Desc">
                 <English>Used to combat mild to moderate pain</English>
@@ -744,9 +748,11 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl">
                 <English>Fentanyl Lozenge</English>
+                <French>Pastille de Fentanyl</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
                 <English>Used to manage acute severe pain, via oral transmucosal route</English>
+                <French>Utilisé pour gérer la douleur aiguë sévère, par voie orale transmucosale</French>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -798,7 +804,6 @@
                 <German>Benutze Naloxon Nasenspray...</German>
                 <French>Utilisation de la Naloxone en spray...</French>
             </Key>
-            
             <Key ID="STR_ACM_Circulation_UseSyringe">
                 <English>Use Syringe (%1ml)</English>
                 <Polish>Użyj strzykawki (%1ml)</Polish>
@@ -839,48 +844,63 @@
         <Container name="// Fentanyl Lozenge Actions //">
             <Key ID="STR_ACM_Circulation_GiveFentanylLozenge">
                 <English>Give Fentanyl Lozenge</English>
+                <French>Donner des pastilles de Fentanyl</French>
             </Key>
             <Key ID="STR_ACM_Circulation_GiveFentanylLozenge_Progress">
                 <English>Giving Fentanyl Lozenge...</English>
+                <French>Donner des pastilles de Fentanyl...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge">
                 <English>Remove Fentanyl Lozenge</English>
+                <French>Supprimer la pastille de Fentanyl</French>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge_Progress">
                 <English>Removing Fentanyl Lozenge...</English>
+                <French>Suppression de la pastille de Fentanyl...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Lozenge">
                 <English>Lozenge</English>
+                <French>Pastille</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge">
                 <English>Lozenge (OTFC)</English>
+                <French>Pastille (OTFC)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Already">
                 <English>Patient already has fentanyl lozenge</English>
+                <French>Le patient a déjà des pastilles de fentanyl</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Blocked">
                 <English>Patient oral access is blocked by airway adjunct</English>
+                <French>L'accès oral du patient est bloqué par l'adjuvant des voies aériennes.</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Complete">
                 <English>Gave Lozenge (OTFC)</English>
+                <French>Donner une pastille (OTFC)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Hint">
                 <English>Fentanyl Lozenge has been placed by %1</English>
+                <French>La pastille de Fentanyl a été placée par %1</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_ActionLog">
                 <English>%1 gave Fentanyl Lozenge</English>
+                <French>%1 a donné des pastilles de Fentanyl</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Complete">
                 <English>Removed fentanyl lozenge</English>
+                <French>Suppression de la pastille de fentanyl</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Hint">
                 <English>%1 removed lozenge</English>
+                <French>%1 a supprimé la pastille</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_HintSelf">
                 <English>Fentanyl lozenge was removed</English>
+                <French>La pastille de Fentanyl a été retirée</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
                 <English>Fentanyl lozenge wore off and was removed</English>
+                <French>La pastille de Fentanyl s'est estompée et a été éliminée.</French>
             </Key>
         </Container>
         <Container name="// CPR Action //">
@@ -952,9 +972,11 @@
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwapToBVM">
                 <English>Swap To BVM</English>
+                <French>Remplacer par BVM</French>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwappedToBVM">
                 <English>Swapped To BVM</English>
+                <French>Remplacé par BVM</French>
             </Key>
         </Container>
         <Container name="// Capillary Refill Action //">

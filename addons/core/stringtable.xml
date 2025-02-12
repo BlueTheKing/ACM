@@ -112,15 +112,19 @@
         <Container name="// Assist Carry Action //">
             <Key ID="STR_ACM_Core_AssistCarry_Already">
                 <English>Patient is already being carry-assisted</English>
+                <French>Le patient bénéficie déjà d'une assistance au portage</French>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Complete">
                 <English>Prepared %1 for carrying</English>
+                <French>Préparé %1 pour le transport</French>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Progress">
                 <English>Preparing to carry...</English>
+                <French>Se préparer à transporter...</French>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Cancelled">
                 <English>Carry-assist cancelled</English>
+                <French>L'assistance au portage a été annulée</French>
             </Key>
         </Container>
         <Container name="// Treatment Text //">
@@ -180,12 +184,15 @@
         <Container name="// Split Medication Action //">
             <Key ID="STR_ACM_Core_SplitMedicationPack">
                 <English>Split Medication Package</English>
+                <French>Paquet de médicaments scindé</French>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
                 <English>Split</English>
+                <French>Séparer</French>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Complete">
                 <English>%1 package has been split</English>
+                <French>Le paquet %1 a été scindé</French>
             </Key>
         </Container>
         <Container name="// Common //">

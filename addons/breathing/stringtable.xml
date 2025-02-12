@@ -996,9 +996,11 @@
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_SwapToCPR">
                 <English>Swap To CPR</English>
+                <French>Remplacer par CPR</French>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_SwappedToCPR">
                 <English>Swapped To CPR</English>
+                <French>Remplacé par CPR</French>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_ActionLog_Start">
                 <English>%1 started BVM rescue breaths</English>
