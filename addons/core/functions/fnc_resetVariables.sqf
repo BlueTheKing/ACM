@@ -35,3 +35,4 @@ _patient setVariable [QGVAR(CriticalVitals_Passed), false, true];
 
 [_patient] call FUNC(generateTargetVitals);
 [_patient] call FUNC(getUp);
+_patient setVariable [QGVAR(Sitting_State), false, true];

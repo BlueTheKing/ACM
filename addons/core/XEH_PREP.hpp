@@ -17,6 +17,7 @@ PREP(getBodyPartString);
 PREP(getUp);
 PREP(getUpPrompt);
 PREP(handleRespawn);
+PREP(handleSitting);
 PREP(handleCriticalVitals);
 PREP(handleFatalVitals);
 PREP(handleKnockOut);
