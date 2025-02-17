@@ -242,7 +242,7 @@
                 <English>Perform Head Tilt-Chin Lift</English>
                 <Polish>Wykonaj rękoczyn czołowo-żuchwowy</Polish>
                 <German>Kopf überstrecken</German>
-                <French>Effectuer une hyperextension de la tête et une élévation du menton</French>
+                <French>Effectuer une hyperextension de la tête</French>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTiltChinLift_Already">
                 <English>Patient already has head tilted-chin lifted</English>
@@ -530,13 +530,13 @@
                 <English>%1 inserted</English>
                 <Polish>Użyto: %1</Polish>
                 <German>%1 eingelegt</German>
-                <French>%1 inséré</French>
+                <French>%1 inséré(e)</French>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_ActionLog">
                 <English>%1 has inserted %2</English>
                 <Polish>%1 użył: %2</Polish>
                 <German>%1 hat %2 eingelegt</German>
-                <French>%1 a inséré %2</French>
+                <French>%1 a inséré(e) %2</French>
             </Key>
         </Container>
         <Container name="// Head Turning Action //">

@@ -1016,7 +1016,7 @@
                 <English>Feeling for pulse...</English>
                 <Polish>Wyczuwanie tętna...</Polish>
                 <German>Puls tasten...</German>
-                <French>Prendre le pouls...</French>
+                <French>Prise du pouls...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Stopped">
                 <English>Stopped feeling pulse</English>
@@ -1526,7 +1526,7 @@
                 <English>Draw</English>
                 <Polish>Pobierz</Polish>
                 <German>Aufziehen</German>
-                <French>Enfiler</French>
+                <French>Prélever</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawn">
                 <English>%1 Drawn</English>
@@ -1592,13 +1592,13 @@
                 <English>Draw &amp; Push</English>
                 <Polish>Pobierz i podaj (IV)</Polish>
                 <German>Aufziehen und i.v. injizieren</German>
-                <French>Prélever et injecter par voie IV</French>
+                <French>Injecter par IV</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawInject">
                 <English>Draw &amp; Inject</English>
                 <Polish>Pobierz i podaj (IM)</Polish>
                 <German>Aufziehen und i.m. injizieren</German>
-                <French>Prélever et injecter par voie IM</French>
+                <French>Injecter par IM</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_NoMedicationSelected">
                 <English>No Medication Selected</English>
@@ -1618,79 +1618,79 @@
                 <English>View AED Monitor</English>
                 <Polish>Pokaż monitor defibrylatora</Polish>
                 <German>Patientenmonitor anschauen</German>
-                <French>Voir le moniteur AED</French>
+                <French>Voir le moniteur DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ApplyPads">
                 <English>Apply AED Pads</English>
                 <Polish>Załóż elektrody</Polish>
                 <German>Defi-Elektroden kleben</German>
-                <French>Appliquer les électrodes de DEA</French>
+                <French>Appliquer les électrodes de DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ApplyPads_Progress">
                 <English>Applying AED Pads...</English>
                 <Polish>Zakadanie elektrod...</Polish>
                 <German>Klebe Defi-Elektroden auf...</German>
-                <French>Application des électrodes du DEA...</French>
+                <French>Application des électrodes du DAE...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_RemovePads">
                 <English>Remove AED Pads</English>
                 <Polish>Zdejmij elektrody</Polish>
                 <German>Defi-Elektroden entfernen</German>
-                <French>Retirer les électrodes du DEA</French>
+                <French>Retirer les électrodes du DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_RemovePads_Progress">
                 <English>Removing AED Pads...</English>
                 <Polish>Zdejmowanie elektrod...</Polish>
                 <German>Entferne Defi-Elektroden...</German>
-                <French>Retrait des coussinets de DEA...</French>
+                <French>Retrait des coussinets de DAE...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPulseOximeter">
                 <English>Connect AED Pulse Oximeter</English>
                 <Polish>Załóż pulsoksymetr defibrylatora</Polish>
                 <German>AED-Pulsoxymeter anbringen</German>
-                <French>Fixer l'oxymètre de pouls du DEA</French>
+                <French>Fixer l'oxymètre de pouls du DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPulseOximeter_Progress">
                 <English>Connecting AED Pulse Oximeter...</English>
                 <Polish>Zakadanie pulsoksymetru defibrylatora...</Polish>
                 <German>Bringe AED-Pulsoxymeter an...</German>
-                <French>Connexion de l'oxymètre de pouls du DEA...</French>
+                <French>Connexion de l'oxymètre de pouls du DAE...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPulseOximeter">
                 <English>Disconnect AED Pulse Oximeter</English>
                 <Polish>Zdejmij pulsoksymetr defibrylatora</Polish>
                 <German>AED-Pulsoxymeter entfernen</German>
-                <French>Déconnecter l'oxymètre de pouls du DEA</French>
+                <French>Déconnecter l'oxymètre de pouls du DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPulseOximeter_Progress">
                 <English>Disconnecting AED Pulse Oximeter...</English>
                 <Polish>Zdejmowanie pulsoksymetru defibrylatora...</Polish>
                 <German>Entferne AED-Pulsoxymeter...</German>
-                <French>Déconnexion de l'oxymètre de pouls du DEA...</French>
+                <French>Déconnexion de l'oxymètre de pouls du DAE ...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPressureCuff">
                 <English>Connect AED Pressure Cuff</English>
                 <Polish>Załóż ciśnieniomierz defibrylatora</Polish>
                 <German>AED-Blutdruckmanschette verbinden</German>
-                <French>Connecter le brassard du tensiomètre du DEA</French>
+                <French>Connecter le brassard du tensiomètre du DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPressureCuff_Progress">
                 <English>Connecting AED Pressure Cuff...</English>
                 <Polish>Zakładanie ciśnieniomierza defibrylarota...</Polish>
                 <German>Verbinde AED-Blutdruckmanschette</German>
-                <French>Connexion du brassard du tensiomètre du DEA ...</French>
+                <French>Connexion du brassard du tensiomètre du DAE ...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPressureCuff">
                 <English>Disconnect AED Pressure Cuff</English>
                 <Polish>Zdejmij ciśnieniomierz defibrylatora</Polish>
                 <German>AED-Blutdruckmanschette entfernen</German>
-                <French>Retirer le brassard du tensiomètre du DEA</French>
+                <French>Retirer le brassard du tensiomètre du DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPressureCuff_Progress">
                 <English>Disconnecting AED Pressure Cuff...</English>
                 <Polish>Zdejmowanie ciśnieniomierza defibrylatora...</Polish>
                 <German>Entferne AED-Blutdruckmanschette...</German>
-                <French>Déconnecter le brassard du tensiomètre du DEA</French>
+                <French>Déconnecter le brassard du tensiomètre du DAE</French>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectCapnograph">
                 <English>Connect AED Capnograph</English>
