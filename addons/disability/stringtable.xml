@@ -5,67 +5,80 @@
             <English>ACM: Disability</English>
             <Polish>ACM: Ograniczenia ruchowe</Polish>
             <German>ACM: Defizite</German>
+            <Russian>ACM: Инвалидность</Russian>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
             <English>SAM Splint Time</English>
             <Polish>Czas aplikacji szyny SAM splint</Polish>
             <German>SAM Splint Zeit</German>
+            <Russian>Время наложение шины SAM</Russian>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint_Desc">
             <English>Time to apply SAM Splint</English>
             <Polish>Czas potrzebny na aplikacje szyny SAM splint</Polish>
             <German>Zeit bis SAM Splint angelegt ist</German>
+            <Russian>Время применять SAM Splint</Russian>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint">
             <English>Wrap Splint Time</English>
             <Polish>Czas zawinięcia szyny</Polish>
             <German>SAM Splint Fixierbindenzeit</German>
+            <Russian>Время обертывания шины</Russian>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint_Desc">
             <English>Time to wrap SAM Splint</English>
             <Polish>Czas potrzebny na zawinięcie (stabilizacje) szyny SAM splint</Polish>
             <German>Zeit bis SAM Splint mittels Fixierbinde umwickelt ist</German>
+            <Russian>Время, необходимое для обертывания (стабилизации) шины SAM</Russian>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime">
             <English>Splint minimum fall off time</English>
             <Polish>Czas odpadnięcia szyny</Polish>
             <German>Minimale Schienenabfallzeit</German>
+            <Russian>Минимальное время наложения шины</Russian>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime_Desc">
             <English>Minimum time for unwrapped SAM Splint to fall off</English>
             <Polish>Minimalny czas po którym niezawinięta szyna odpadnie od kończyny</Polish>
             <German>Minimale Dauer, bis eine nicht fixierte/gewickelte SAM Splint ab fällt</German>
+            <Russian>Минимальное время для отпадения развернутой шины SAM Splint</Russian>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
             <English>Tourniquet Impact Limbs</English>
             <Polish>Opaski uciskowe wpływają na kończyny</Polish>
             <German>Tourniquet beeinträchtigt Extremtitäten</German>
+            <Russian>Жгуты воздействуют на конечности</Russian>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
             <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
             <Polish>Ustala czy założone opaski uciskowe mają wpływać na kołysanie broni w przypadku rąk oraz szybkość chodzenia w przypadku nóg</Polish>
             <German>Stellt ein, ob ein angelegtes Tourniquet am Arm dasie Waffennutzung und am Bein die Mobilität negativ beeinflusst</German>
+            <Russian>Устанавливает, будет ли жгут воздействовать на руки, увеличивая раскачивание, и на ноги, уменьшая подвижность.</Russian>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Disability_UniversalSplint">
                 <English>Universal Splint</English>
                 <Polish>Szyna uniwersalna</Polish>
                 <German>Universelle Schiene</German>
+                <Russian>Универсальная шина</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_UniversalSplint_Desc">
                 <English>Single-use splint kit used to immobilize fracture</English>
                 <Polish>Jednorazowy zestaw szyny używany do unieruchomienia złamania</Polish>
                 <German>Einweg Schienenset, um eine Fraktur zu stabilisieren</German>
+                <Russian>Набор одноразовых шин для стабилизации перелома</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_SAMSplint">
                 <English>SAM Splint</English>
                 <Polish>Szyna SAM splint</Polish>
                 <German>SAM Splint Schiene</German>
+                <Russian>SAM шина</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_SAMSplint_Desc">
                 <English>Re-usable splint used to immobilize fracture, should be wrapped to keep fracture stable</English>
                 <Polish>Wielorazowa szyna używana do stabilizacji złamań, powinna być zawinięta by utrzymać unieruchomione złamanie</Polish>
                 <German>Wiederverwendbare Schiene, um eine Fraktur zu stabilisieren, sollte mittels Fixierbinde umwickelt werden, um die Schiene zu stabilisieren</German>
+                <Russian>Шина многоразового использования, используемая для иммобилизации перелома, должна быть обернута, чтобы сохранить стабильность перелома</Russian>
             </Key>
         </Container>
         <Container name="// Splint Actions //">
@@ -73,31 +86,37 @@
                 <English>Apply SAM Splint</English>
                 <Polish>Użyj szyny SAM splint</Polish>
                 <German>SAM Splint anlegen</German>
+                <Russian>Нанести шину SAM</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_ApplySAMSplint_Progress">
                 <English>Applying SAM Splint...</English>
                 <Polish>Używanie szyny SAM splint...</Polish>
                 <German>Lege SAM Splint an...</German>
+                <Russian>Наложение шины SAM...</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSAMSplint">
                 <English>Remove SAM Splint</English>
                 <Polish>Zdejmij szynę SAM splint</Polish>
                 <German>SAM Splint entfernen</German>
+                <Russian>Удалить шину SAM</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSAMSplint_Progress">
                 <English>Removing SAM Splint...</English>
                 <Polish>Zdejmowanie szyny SAM splint...</Polish>
                 <German>Entferne SAM Splint...</German>
+                <Russian>Снятие шины SAM...</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSplint_ActionLog">
                 <English>%1 removed splint</English>
                 <Polish>%1 zdjął szynę </Polish>
                 <German>%1 entfernte Schiene</German>
+                <Russian>%1 удалил шину</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_Splint_FellOff">
                 <English>Splint has fallen off</English>
                 <Polish>Szyna odpadła od kończyny</Polish>
                 <German>Schiene ist abgefallen</German>
+                <Russian>Шина отвалилась</Russian>
             </Key>
         </Container>
         <Container name="// Wrap SAM Splint Action //">
@@ -105,11 +124,13 @@
                 <English>Wrap SAM Splint</English>
                 <Polish>Zawiń szynę SAM splint</Polish>
                 <German>SAM Splint einwickeln</German>
+                <Russian>Обернуть шину SAM</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
                 <English>%1 has wrapped SAM Splint</English>
                 <Polish>%1 zawinął szynę SAM splint</Polish>
                 <German>%1 hat die Schiene eingewickelt</German>
+                <Russian>%1 обернул SAM Шина</Russian>
             </Key>
         </Container>
         <Container name="// Patient WakeUp Actions //">
@@ -117,11 +138,13 @@
                 <English>Patient has woken up</English>
                 <Polish>Pacjent się obudził</Polish>
                 <German>Patient ist aufgewacht</German>
+                <Russian>Пациент проснулся</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_AttemptWakeUp_Failure">
                 <English>Patient is still asleep</English>
                 <Polish>Pacjent nadal nieprzytomny</Polish>
                 <German>Patient ist weiter bewusstlos</German>
+                <Russian>Пациент все еще спит</Russian>
             </Key>
         </Container>
         <Container name="// Shake Patient Action //">
@@ -129,26 +152,31 @@
                 <English>Attempt To Shake Awake</English>
                 <Polish>Potrząśnij by wybudzić</Polish>
                 <German>Patienten wachrütteln</German>
+                <Russian>Попытка встряхнуться и разбудить</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_ShakeAwake_Progress">
                 <English>Shaking Patient...</English>
                 <Polish>Potrząsanie...</Polish>
                 <German>Rüttel am Patienten...</German>
+                <Russian>Трясущийся пациент...</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_ActionLog">
                 <English>%1 shook the patient</English>
                 <Polish>%1 potrząsnął pacjentem</Polish>
                 <German>%1 hat den Patient wachgerüttelt</German>
+                <Russian>%1 потряс пациента</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_Complete">
                 <English>You shook the patient&lt;br/&gt;%1</English>
                 <Polish>Potrząsnąłeś pacjentem&lt;br/&gt;%1</Polish>
                 <German>Du hast den Patienten gerüttelt&lt;br/&gt;%1</German>
+                <Russian>Вы трясли пациента&lt;br/&gt;%1</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_Attempt">
                 <English>You attempt to shake the patient awake&lt;br/&gt;%1</English>
                 <Polish>Próbujesz potrząsnąć pacjentem by się obudził&lt;br/&gt;%1</Polish>
                 <German>Du hast versucht den Patienten wachzurütteln&lt;br/&gt;%1</German>
+                <Russian>Вы пытаетесь разбудить пациента&lt;br/&gt;%1</Russian>
             </Key>
         </Container>
         <Container name="// Slap Patient Action //">
@@ -156,96 +184,123 @@
                 <English>Attempt To Slap Awake</English>
                 <Polish>Uderz by wybudzić</Polish>
                 <German>Schmerzreiz zum Aufwecken setzen</German>
+                <Russian>Попытка разбудить пощечиной</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_SlapAwake_Progress">
                 <English>Slapping Patient...</English>
                 <Polish>Uderzanie...</Polish>
                 <German>Setze Schmerzreiz...</German>
+                <Russian>Шлепать пациента...</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_ActionLog">
                 <English>%1 slapped the patient</English>
                 <Polish>%1 uderzył pacjenta</Polish>
                 <German>%1 setzte einen Schmerzreiz</German>
+                <Russian>%1 дал пациенту пощечину</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_Complete">
                 <English>You slap the patient&lt;br/&gt;%1</English>
                 <Polish>Uderzyłeś pacjenta&lt;br/&gt;%1</Polish>
                 <German>Du setzt einen Schmerzreiz&lt;br/&gt;%1</German>
+                <Russian>Вы даете пациенту пощечину&lt;br/&gt;%1</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_Attempt">
                 <English>You attempt to slap the patient awake&lt;br/&gt;%1</English>
                 <Polish>Próbujesz uderzyć pacjenta by się obudził&lt;br/&gt;%1</Polish>
                 <German>Du versuchst einen Schmerzreiz zu setzen&lt;br/&gt;%1</German>
+                <Russian>Вы пытаетесь разбудить пациента&lt;br/&gt;%1</Russian>
             </Key>
         </Container>
         <Container name="// Inspect For Fracture Action //">
             <Key ID="STR_ACM_Disability_InspectForFracture">
                 <English>Inspect For Fracture</English>
+                <Russian>Осмотреть перелом</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Progress">
                 <English>Inspecting limb for fracture...</English>
+                <Russian>Осмотр конечности на предмет перелома...</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_ActionLog">
                 <English>%1 inspected %2: %3</English>
+                <Russian>%1 проверен %2: %3</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied">
                 <English>Patient has splint applied to limb</English>
+                <Russian>Наложена шина на конечность</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied_Short">
                 <English>Splinted</English>
+                <Russian>Шинирован</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling">
                 <English>Patient has significant swelling on limb</English>
+                <Russian>У пациента значительная опухоль на конечности</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling_Short">
                 <English>Significant Swelling</English>
+                <Russian>Значительный отек</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Swelling">
                 <English>Patient has swelling on limb</English>
+                <Russian>У пациента опухоль на конечности</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Swelling_Short">
                 <English>Swelling</English>
+                <Russian>Припухлость</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising">
                 <English>Patient has severe bruising on limb</English>
+                <Russian>У пациента сильный синяк на конечности</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising_Short">
                 <English>Severe Bruising</English>
+                <Russian>Сильные синяки</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Bruised">
                 <English>Patient limb is bruised</English>
+                <Russian>Конечность пациента ушиблена</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Bruised_Short">
                 <English>Bruised</English>
+                <Russian>в синяках</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury">
                 <English>Patient has no substantial damage on limb</English>
+                <Russian>У пациента нет существенных повреждений конечности</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury_Short">
                 <English>No Significant Injury</English>
+                <Russian>Никаких серьезных травм</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed">
                 <English>Fracture realignment performed</English>
+                <Russian>Выполнено смещение перелома</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed_Short">
                 <English>realignment performed</English>
+                <Russian>реорганизация выполнена</Russian>
             </Key>
         </Container>
         <Container name="// Fracture Realignment Action //">
             <Key ID="STR_ACM_Disability_FractureRealignment">
                 <English>Perform Fracture Realignment</English>
+                <Russian>Выполнить выравнивание перелома</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Progress">
                 <English>Performing fracture realignment...</English>
+                <Russian>Выполнение операции по восстановлению перелома...</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete">
                 <English>Fracture realignment performed</English>
+                <Russian>Выполнено смещение перелома</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete_Success">
                 <English>Fracture realignment performed successfully</English>
+                <Russian>Реконструкция перелома прошла успешно</Russian>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_ActionLog">
                 <English>%1 performed fracture realignment</English>
+                <Russian>%1 выполнил реконфигурацию перелома</Russian>
             </Key>
         </Container>
         <Container name="// GUI //">
@@ -253,6 +308,7 @@
                 <English>Wrapped</English>
                 <Polish>Zawinięte</Polish>
                 <German>Eingewickelt</German>
+                <Russian>Завернутый</Russian>
             </Key>
         </Container>
     </Package>
