@@ -5,78 +5,94 @@
             <English>ACM: GUI</English>
             <Polish>ACM: Interfejs</Polish>
             <German>ACM: GUI</German>
+            <Russian>АСМ: графический интерфейс</Russian>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses">
             <English>Show inactive vitals statuses</English>
             <Polish>Pokaż nieaktywne statusy funkcji życiowych</Polish>
             <German>Zeige inaktive Vitatwerte</German>
+            <Russian>Показывать неактивные жизненные статусы</Russian>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
             <English>Show vitals status in overview tab when inactive (display ""none"")</English>
             <Polish>Pokaż stan funkcji życiowych w zakładce przeglądu, gdy jest nieaktywny (wyświetl "brak")</Polish>
             <German>Stellt ein, ob nicht-gemessene Vitalwerte in der Übersicht angezeigt werden sollen (Anzeige ""kein"")</German>
+            <Russian>Показывать статус жизненно важных показателей на вкладке обзора, когда он неактивен (отображается «нет»)</Russian>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount">
             <English>Show Pain Amount</English>
             <Polish>Pokaż wartość bólu</Polish>
             <German>Zeige Schmerzintensität</German>
+            <Russian>Показать количество боли</Russian>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount_Desc">
             <English>Show exact pain amount in overview tab</English>
             <Polish>Pokaż dokładną ilość bólu w zakładce przeglądu</Polish>
             <German>Stellt ein, ob die exakte Schmerzintensität in der Übersicht angezeigt werden soll</German>
+            <Russian>Показать точную интенсивность боли на вкладке «Обзор»</Russian>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>
+            <Russian>Показать значки элементов действий</Russian>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons_Desc">
             <English>Show relevant item icons for medical menu actions</English>
+            <Russian>Отображение соответствующих значков элементов для действий медицинского меню</Russian>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
             <English>Show overlay for selected body part</English>
             <Polish>Pokaż nakładkę dla wybranej części ciała</Polish>
             <German>Zeige Overlay für ausgewähltes Körperteil</German>
+            <Russian>Показать наложение для выбранной части тела</Russian>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels">
             <English>Show patient side labels</English>
             <Polish>Show patient side labels</Polish>
             <German>Zeige Rechts/Links Markierung an</German>
+            <Russian>Показать этикетки со стороны пациента</Russian>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels_Desc">
             <English>Show patient left/right side labels in medical menu</English>
             <Polish>Pokaż oznaczenia lewej/prawej strony pacjenta w menu medycznym</Polish>
             <German>Kennzeichnet im Menü die Patientenseite (Rechts/Links)</German>
+            <Russian>Показывать метки пациента слева/справа в медицинском меню</Russian>
         </Key>
         <Key ID="STR_ACM_GUI_NoExternalBleeding">
             <English>No external bleeding</English>
             <Polish>Brak krwawienia zewnętrznego</Polish>
             <German>Keine externe Blutung</German>
+            <Russian>Отсутствие внешнего кровотечения</Russian>
         </Key>
         <Container name="// Triage Text //">
             <Key ID="STR_ACM_GUI_Triage_Priority1_Short">
                 <English>T1</English>
                 <Polish>T1</Polish>
                 <German>Rot</German>
+                <Russian>Преть</Russian>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority2_Short">
                 <English>T2</English>
                 <Polish>T2</Polish>
                 <German>Gelb</German>
+                <Russian>Желтизна</Russian>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority3_Short">
                 <English>T3</English>
                 <Polish>T3</Polish>
                 <German>Grün</German>
+                <Russian>Зеленый</Russian>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4">
                 <English>Expectant</English>
                 <Polish>Oczekujacy</Polish>
                 <German>Blau</German>
+                <Russian>Синий</Russian>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
                 <English>T4</English>
                 <Polish>T4</Polish>
                 <German>Schwarz</German>
+                <Russian>Черный</Russian>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -84,6 +100,7 @@
                 <English>Assist Carry</English>
                 <Polish>Pomóż w niesieniu</Polish>
                 <German>Tragen unterstützen</German>
+                <Russian>Помощь в переноске</Russian>
             </Key>
         </Container>
     </Package>
