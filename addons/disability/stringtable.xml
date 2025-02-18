@@ -22,13 +22,13 @@
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint">
             <English>Wrap Splint Time</English>
             <Polish>Czas zawinięcia szyny</Polish>
-            <French>Temps de mise en place de l'attelle</French>
+            <French>Temps nécessaire pour renforcer l'attelle</French>
             <German>SAM Splint Fixierbindenzeit</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint_Desc">
             <English>Time to wrap SAM Splint</English>
             <Polish>Czas potrzebny na zawinięcie (stabilizacje) szyny SAM splint</Polish>
-            <French>Temps de mise en place de l'attelle SAM</French>
+            <French>Temps nécessaire pour renforcer l'attelle SAM</French>
             <German>Zeit bis SAM Splint mittels Fixierbinde umwickelt ist</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime">
@@ -40,7 +40,7 @@
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime_Desc">
             <English>Minimum time for unwrapped SAM Splint to fall off</English>
             <Polish>Minimalny czas po którym niezawinięta szyna odpadnie od kończyny</Polish>
-            <French>Temps minimum pour que la SAM Splint non emballée tombe</French>
+            <French>Temps minimum pour que la SAM Splint non renforcée tombe</French>
             <German>Minimale Dauer, bis eine nicht fixierte/gewickelte SAM Splint ab fällt</German>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
@@ -78,7 +78,7 @@
                 <English>Re-usable splint used to immobilize fracture, should be wrapped to keep fracture stable</English>
                 <Polish>Wielorazowa szyna używana do stabilizacji złamań, powinna być zawinięta by utrzymać unieruchomione złamanie</Polish>
                 <German>Wiederverwendbare Schiene, um eine Fraktur zu stabilisieren, sollte mittels Fixierbinde umwickelt werden, um die Schiene zu stabilisieren</German>
-                <French>Attelle réutilisable qui immobilise la fracture, elle doit être enveloppée pour maintenir la fracture stable</French>
+                <French>Attelle réutilisable qui immobilise la fracture, elle doit être renforcée pour maintenir la fracture stable</French>
             </Key>
         </Container>
         <Container name="// Splint Actions //">
@@ -124,13 +124,13 @@
                 <English>Wrap SAM Splint</English>
                 <Polish>Zawiń szynę SAM splint</Polish>
                 <German>SAM Splint einwickeln</German>
-                <French>SAM Splint enveloppante</French>
+                <French>SAM Splint renforcée</French>
             </Key>
             <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
                 <English>%1 has wrapped SAM Splint</English>
                 <Polish>%1 zawinął szynę SAM splint</Polish>
                 <German>%1 hat die Schiene eingewickelt</German>
-                <French>%1 a emballé l'attelle SAM</French>
+                <French>%1 a renforcé la SAM Splint</French>
             </Key>
         </Container>
         <Container name="// Patient WakeUp Actions //">
@@ -218,7 +218,7 @@
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Progress">
                 <English>Inspecting limb for fracture...</English>
-                <French>Inspecter le membre pour vérifier qu'il n'y a pas de fracture...</French>
+                <French>Inspection du membre pour vérifier qu'il n'y a pas de fracture...</French>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_ActionLog">
                 <English>%1 inspected %2: %3</English>
@@ -254,7 +254,7 @@
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising_Short">
                 <English>Severe Bruising</English>
-                <French>Ecchymoses graves</French>
+                <French>Ecchymoses sévères</French>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Bruised">
                 <English>Patient limb is bruised</English>
@@ -308,7 +308,7 @@
                 <English>Wrapped</English>
                 <Polish>Zawinięte</Polish>
                 <German>Eingewickelt</German>
-                <French>Enveloppé</French>
+                <French>Renforcé</French>
             </Key>
         </Container>
     </Package>
