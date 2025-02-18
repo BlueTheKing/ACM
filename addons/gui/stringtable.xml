@@ -42,7 +42,7 @@
         <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
             <English>Show overlay for selected body part</English>
             <Polish>Pokaż nakładkę dla wybranej części ciała</Polish>
-            <French>Afficher le recouvrement de la partie du corps sélectionnée</French>
+            <French>Entourer la partie du corps sélectionnée</French>
             <German>Zeige Overlay für ausgewähltes Körperteil</German>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels">
