@@ -25,6 +25,13 @@ _patient setVariable [QGVAR(EyesWashed), false, true];
 
 _patient setVariable [QGVAR(Filter_State), 1200];
 
+_patient setVariable [QGVAR(AirwayInflammation), 0, true];
+
+_patient setVariable [QGVAR(SkinIrritation), [0,0,0,0,0,0], true];
+_patient setVariable [QGVAR(LungTissueDamage), 0, true];
+
+_patient setVariable [QGVAR(Chemical_Chlorine_Blindness), false, true];
+
 {
     private _category = _x;
     

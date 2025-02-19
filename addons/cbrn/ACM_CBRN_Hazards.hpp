@@ -12,6 +12,12 @@ class ACM_CBRN_Hazards {
 
         class Chlorine {
             thresholds[] = {0,25};
+            threshold_positiveRate[] = {1,1};
+            threshold_negativeRate[] = {1,0.5};
+            absorption_rate = 0.85;
+            inhalation_rate = 1;
+            elimination_rate = -0.25;
+            thresholdFunction = QFUNC(effectChlorine);
         };
 
         class Sarin {

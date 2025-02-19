@@ -31,7 +31,6 @@ if (_syncValues) then {
     _patient setVariable [QGVAR(ExposureEffects_LastSync), CBA_missionTime];
 };
 
-private _CSExposure = _patient getVariable [QGVAR_BUILDUP(Chemical_CS), 0];
 private _isExposed = false;
 
 {
@@ -50,11 +49,14 @@ private _isExposed = false;
 private _breathingAbility = 1;
 private _breathingAbilityIncrease = 1;
 
-if (_CSExposure > 50) then {
+private _CSExposure = _patient getVariable [QGVAR_BUILDUP(Chemical_CS), 0];
+private _chlorineExposure = _patient getVariable [QGVAR_BUILDUP(Chemical_Chlorine), 0];
+
+if (_CSExposure > 50 || _chlorineExposure > 0.5) then {
     _breathingAbilityIncrease = _breathingAbilityIncrease / 4;
 };
 
-if (_CSExposure >= 100) then {
+if (_CSExposure >= 100 || _chlorineExposure > 25) then {
     _breathingAbility = _breathingAbility / 2;
 };
 

@@ -20,19 +20,28 @@
 params ["_object", "_radiusDimensions", "_hazardType"];
 _radiusDimensions params ["_radiusX", "_radiusY"];
 
-private _width = _radiusX max _radiusY;
-
 if !(hasInterface) exitWith {};
+
+private _width = _radiusX max _radiusY;
 
 private _mistObject = "#particlesource" createVehicle getPosATL _object;
 
+private _colorArray = switch (_hazardType) do {
+    case "chemical_chlorine": {[[0.6,0.63,0,0],[0.6,0.63,0,0.5],[0.6,0.63,0,0]]};
+    case "chemical_sarin": {[[0.5,0.5,0.5,0],[0.5,0.5,0.5,0.5],[0.5,0.5,0.5,0]]};
+    case "chemical_lewisite": {[[1,1,1,0],[1,1,1,0.9],[1,1,1,0]]};
+    default {[[0.8,0.8,0.8,0],[0.8,0.8,0.8,0.2],[0.8,0.8,0.8,0]]};
+};
+
 _mistObject setParticleParams [
     ["\A3\Data_f\cl_basic.p3d",1,0,1,0],
-    "","Billboard",1,30,
-    [0,0,-2],
+    "","Billboard",1,(linearConversion [5, 30, _width, 30, 90, true]),
+    [0,0,-52],
     [0,0,0],
-    15,10,7.84,0.005,[5,5,5],
-    [[0.8,0.8,0.8,0],[0.8,0.8,0.8,0.2],[0.8,0.8,0.8,0]],
+    15,
+    30,7.84,0.005,
+    [5,5,5],
+    _colorArray,
     [1,1],
     10,5,
     "","",
@@ -41,15 +50,15 @@ _mistObject setParticleParams [
     0,[]
 ];
 _mistObject setParticleRandom [
-    0, 
-    [_width, _width, -2],
+    0,
+    [(_width * 0.55), (_width * 0.55), -2],
     [0,0,0],
     0,0,
     [0,0,0,0],
     0,0,0,0
 ];
-_mistObject setParticleCircle [(_width - 2), [0,0,0]];
-_mistObject setDropInterval 0.1;
+_mistObject setParticleCircle [(_width * 0.6), [0,0,0]];
+_mistObject setDropInterval (linearConversion [5, 30, _width, 0.05, 0.005, true]);
 
 [{
     params ["_args", "_idPFH"];

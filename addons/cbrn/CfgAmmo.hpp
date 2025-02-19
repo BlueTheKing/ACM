@@ -23,11 +23,20 @@ class CfgAmmo {
     {
         effectsSmoke = "ACM_Mortar_Shell_CS_Effect";
     };
+    class ACM_Mortar_Shell_Chlorine_Smoke: ACM_Mortar_Shell_CS_Smoke
+    {
+        effectsSmoke = "ACM_Mortar_Shell_Chlorine_Effect";
+    };
 
     class Smoke_82mm_AMOS_White;
     class ACM_Mortar_Shell_CS_A: Smoke_82mm_AMOS_White
     {
         timeToLive = 50;
         submunitionAmmo = "ACM_Mortar_Shell_CS_Smoke";
+    };
+    class ACM_Mortar_Shell_Chlorine_A: ACM_Mortar_Shell_CS_A
+    {
+        timeToLive = 50;
+        submunitionAmmo = "ACM_Mortar_Shell_Chlorine_Smoke";
     };
 };

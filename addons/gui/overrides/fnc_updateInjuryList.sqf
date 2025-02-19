@@ -253,6 +253,22 @@ if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < ACM_CYAN
     };
 };
 
+if (EGVAR(CBRN,enable)) then {
+    private _skinIrritation = (_target getVariable [QEGVAR(CBRN,SkinIrritation), [0,0,0,0,0,0]]) select _selectionN;
+    
+    if (_skinIrritation > 5) then {
+        private _colorMultiplier = linearConversion [5, 85, _skinIrritation, 1, 0.7, true];
+        private _entry = switch (true) do {
+            case (_skinIrritation < 25): {"Slight Skin Irritation"};
+            case (_skinIrritation < 65): {"Moderate Skin Irritation"};
+            default {"Severe Skin Irritation"};
+        };
+
+        _entries pushBack [_entry, [(0.8 * _colorMultiplier), (0.7 * _colorMultiplier), (0.1 * _colorMultiplier), 1]];
+    };
+    
+};
+
 if (_selectionN == 0 && ((CBA_missionTime - (_target getVariable [QEGVAR(breathing,TensionPneumothorax_Time), CBA_missionTime])) > 300)) then {
     _entries pushBack [LELSTRING(breathing,GUI_TrachealDeviation), [0.5, 0.1, 0.9, 1]];
 };

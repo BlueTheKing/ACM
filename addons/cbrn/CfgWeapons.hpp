@@ -11,7 +11,7 @@ class CfgWeapons {
 
     class CannonCore;
     class mortar_82mm: CannonCore {
-        magazines[] += {"ACM_Mortar_Shell_8Rnd_CS"};
+        magazines[] += {"ACM_Mortar_Shell_8Rnd_CS","ACM_Mortar_Shell_8Rnd_Chlorine"};
     };
 
     class ACE_ItemCore;

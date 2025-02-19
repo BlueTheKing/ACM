@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Module to create hazard zone.
+ * Module to create chemical device on object.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [CONTROL] call ACM_CBRN_fnc_moduleCreateHazardZone;
+ * [CONTROL] call ACM_CBRN_fnc_moduleCreateChemicalDevice;
  *
  * Public: No
  */
@@ -25,13 +25,26 @@ TRACE_1("Logic Object",_logic);
 
 _control ctrlRemoveAllEventHandlers "SetFocus";
 
+private _attachedObject = attachedTo _logic;
+
 // Validate module target
 scopeName "Main";
 private _fnc_errorAndClose = {
     params ["_msg"];
+
+    _display closeDisplay 0;
     deleteVehicle _logic;
     [_msg] call ACEFUNC(zeus,showMessage);
     breakOut "Main";
+};
+
+switch (true) do {
+    case (isNull _attachedObject): {
+        [LLSTRING(Module_Generic_Error_SelectObject)] call _fnc_errorAndClose;
+    };
+    case !(alive _attachedObject): {
+        [LLSTRING(Module_Generic_Error_NotDestroyed)] call _fnc_errorAndClose;
+    };
 };
 
 private _fnc_onUnload = {
@@ -50,15 +63,6 @@ private _fnc_sliderMove = {
     _slider ctrlSetTooltip format ["%1%%", (sliderPosition _slider)];
 };
 
-private _fnc_timeSliderMove = {
-    params ["_slider"];
-
-    private _logic = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
-    if (isNull _logic) exitWith {};
-
-    _slider ctrlSetTooltip format ["%1 minutes", (sliderPosition _slider)];
-};
-
 private _fnc_radiusSliderMove = {
     params ["_slider"];
 
@@ -68,13 +72,9 @@ private _fnc_radiusSliderMove = {
     _slider ctrlSetTooltip format ["%1m", (sliderPosition _slider)];
 };
 
-private _sliderRadius = _display displayCtrl IDC_MODULE_CREATE_HAZARDZONE_RADIUS;
+private _sliderRadius = _display displayCtrl IDC_MODULE_CREATE_CHEMICALDEVICE_RADIUS;
 _sliderRadius ctrlAddEventHandler ["SliderPosChanged", _fnc_radiusSliderMove];
 _sliderRadius call _fnc_radiusSliderMove;
-
-private _sliderEffectTime = _display displayCtrl IDC_MODULE_CREATE_HAZARDZONE_EFFECTTIME;
-_sliderEffectTime ctrlAddEventHandler ["SliderPosChanged", _fnc_timeSliderMove];
-_sliderEffectTime call _fnc_timeSliderMove;
 
 private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
@@ -86,26 +86,26 @@ private _fnc_onConfirm = {
     if (isNull _logic) exitWith {};
 
     private _attachedObject = attachedTo _logic;
-    private _attach = (cbChecked (_display displayCtrl IDC_MODULE_CREATE_HAZARDZONE_ATTACH)) && !(isNull _attachedObject); 
-    private _targetObject = [_logic, _attachedObject] select _attach;
 
-    private _hazardTypeSelection = lbCurSel (_display displayCtrl IDC_MODULE_CREATE_HAZARDZONE_LIST);
-    private _hazardType = switch (_hazardTypeSelection) do {
-        case 1: {"chemical_cs"};
-        case 2: {"chemical_chlorine"};
-        case 3: {"chemical_sarin"};
-        case 4: {"chemical_lewisite"};
-        default {"chemical_placebo"};
-    };
+    private _hazardTypeSelection = lbCurSel (_display displayCtrl IDC_MODULE_CREATE_CHEMICALDEVICE_LIST);
+    private _hazardType = ["chemical_chlorine","chemical_sarin","chemical_lewisite"] select _hazardTypeSelection;
 
-    private _radius = sliderPosition (_display displayCtrl IDC_MODULE_CREATE_HAZARDZONE_RADIUS);
-    private _showMist = cbChecked (_display displayCtrl IDC_MODULE_CREATE_HAZARDZONE_SHOWMIST);
-    private _affectAI = cbChecked (_display displayCtrl IDC_MODULE_CREATE_HAZARDZONE_AFFECTAI);
+    private _cloudSizeSelection = lbCurSel (_display displayCtrl IDC_MODULE_CREATE_CHEMICALDEVICE_CLOUDSIZELIST);
+    private _radius = sliderPosition (_display displayCtrl IDC_MODULE_CREATE_CHEMICALDEVICE_RADIUS);
+    private _effectTime = [(20 + (random 15)), -1] select (cbChecked (_display displayCtrl IDC_MODULE_CREATE_CHEMICALDEVICE_PERMANENT));
+    private _affectAI = cbChecked (_display displayCtrl IDC_MODULE_CREATE_CHEMICALDEVICE_AFFECTAI);
+    
+    [{
+        params ["_attachedObject"];
 
-    private _effectTime = sliderPosition (_display displayCtrl IDC_MODULE_CREATE_HAZARDZONE_EFFECTTIME);
-    _effectTime = [-1, (_effectTime * 60)] select (_effectTime > 0);
+        isNull _attachedObject || !(alive _attachedObject);
+    }, {
+        params ["_attachedObject", "_hazardType", "_radius", "_effectTime", "_affectAI", "_cloudSizeSelection"];
 
-    [QGVAR(initHazardZone), [_targetObject, _attach, _hazardType, [_radius,_radius,0,false,-1], _effectTime, _affectAI, true, _showMist, ACE_player]] call CBA_fnc_serverEvent;
+        if (isNull _attachedObject) exitWith {};
+
+        [_attachedObject, _hazardType, _radius, _effectTime, _affectAI, _cloudSizeSelection] call FUNC(detonateChemicalDevice);
+    }, [_attachedObject, _hazardType, _radius, _effectTime, _affectAI, _cloudSizeSelection], 3600] call CBA_fnc_waitUntilAndExecute;
 };
 
 _display displayAddEventHandler ["Unload", _fnc_onUnload];

@@ -4,14 +4,16 @@ class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
         units[] = {
-            "ACM_HazardOriginObject",
+            "ACM_HazardObject",
             QGVAR(moduleCreateHazardZone),
+            QGVAR(moduleCreateChemicalDevice)
         };
         weapons[] = {
             "ACM_Grenade_CS"
         };
         magazines[] = {
-            "ACM_Mortar_Shell_8Rnd_CS"
+            "ACM_Mortar_Shell_8Rnd_CS",
+            "ACM_Mortar_Shell_8Rnd_Chlorine"
         };
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
@@ -35,3 +37,4 @@ class CfgPatches {
 #include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"
 #include "ACM_CBRN_Hazards.hpp"
+#include "RscAttributes.hpp"

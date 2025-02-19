@@ -7,6 +7,9 @@
         <Key ID="STR_ACM_CBRN_Category_Chemical_CS">
             <English>Chemical - CS Gas</English>
         </Key>
+        <Key ID="STR_ACM_CBRN_Category_Chemical_Chlorine">
+            <English>Chemical - Chlorine Gas</English>
+        </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Enable">
             <English>Enable CBRN</English>
         </Key>
@@ -19,9 +22,29 @@
         <Key ID="STR_ACM_CBRN_SETTING_Chemical_CS_Blindness_Desc">
             <English>Sets whether CS gas exposure causes blindness</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_HazardZone">
-            <English>Hazard Zone</English>
+        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Chlorine_Blindness">
+            <English>Chlorine Exposure Cause Blindness</English>
         </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Chlorine_Blindness_Desc">
+            <English>Sets whether Chlorine gas exposure causes blindness</English>
+        </Key>
+        <Container name="// Hazards //">
+            <Key ID="STR_ACM_CBRN_Chemical_Placebo">
+                <English>Placebo</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chemical_CS">
+                <English>CS Gas</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chemical_Chlorine">
+                <English>Chlorine Gas</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chemical_Sarin">
+                <English>Sarin Gas</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chemical_Lewisite">
+                <English>Lewisite</English>
+            </Key>
+        </Container>
         <Container name="// Items //">
             <Key ID="STR_ACM_CBRN_CS_Grenade">
                 <English>CS Grenade</English>
@@ -42,12 +65,23 @@
                 <English>Used with gas mask to allow breathing in hazardous environments</English>
             </Key>
         </Container>
+        <Container name="// Chemical Weapons //">
+            <Key ID="STR_ACM_CBRN_CS_Shell_82mm">
+                <English>Chemical Payload Shell (CS)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chlorine_Shell_82mm">
+                <English>Chemical Payload Shell (Chlorine Gas)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chlorine_Shell_82mm_Short">
+                <English>Chemical Payload Shell (Chlorine)</English>
+            </Key>
+        </Container>
         <Container name="// Wash Eyes Action //">
             <Key ID="STR_ACM_CBRN_WashEyes">
                 <English>Wash Eyes</English>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Progress">
-                <English>Washing Eyes With Water...</English>
+                <English>Washing eyes with water...</English>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Complete">
                 <English>Washed eyes with water</English>
@@ -70,19 +104,79 @@
                 <English>Replace Filter</English>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_Donned">
-                <English>Donned Gas Mask</English>
+                <English>Donned gas mask</English>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_Removed">
-                <English>Took Off Gas Mask</English>
+                <English>Took off gas mask</English>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_DroppedFaceWear">
-                <English>Dropped Face Wear</English>
+                <English>Dropped facewear</English>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter_Complete">
-                <English>Replaced Gas Mask Filter</English>
+                <English>Replaced gas mask filter</English>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter_Progress">
-                <English>Replacing Gas Mask Filter...</English>
+                <English>Replacing gas mask filter...</English>
+            </Key>
+        </Container>
+        <Container name="// Module Generic //">
+            <Key ID="STR_ACM_CBRN_Module_Generic_HazardType">
+                <English>Hazard Type</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_ZoneRadius">
+                <English>Zone Radius</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_EffectTime">
+                <English>Effect Time</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_EffectTime_Tooltip">
+                <English>Sets time in minutes after which hazard zone will remove itself, will last forever if 0</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_AttachToObject">
+                <English>Attach To Object</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_ShowMist">
+                <English>Show Mist</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_ShowMist_Tooltip">
+                <English>Show mist effect over hazard radius</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_AffectAI">
+                <English>Affect AI</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_Error_SelectObject">
+                <English>Must select object</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_Error_NotDestroyed">
+                <English>Object must not be destroyed</English>
+            </Key>
+        </Container>
+        <Container name="// Create Hazard Zone Module //">
+            <Key ID="STR_ACM_CBRN_Module_CreateHazardZone">
+                <English>Create Hazard Zone</English>
+            </Key>
+        </Container>
+        <Container name="// Create Chemical Device Module //">
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice">
+                <English>Create Chemical Device</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_PermanentHazard">
+                <English>Permanent Hazard</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_PermanentHazard_Tooltip">
+                <English>Sets whether the created hazard will not dissipate after activation</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize">
+                <English>Explosion Cloud Size</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_None">
+                <English>None</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_Small">
+                <English>Small</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_Large">
+                <English>Large</English>
             </Key>
         </Container>
     </Package>

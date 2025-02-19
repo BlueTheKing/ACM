@@ -3,6 +3,7 @@
 [QGVAR(initHazardZone), LINKFUNC(initHazardZone)] call CBA_fnc_addEventHandler;
 [QGVAR(initHazardUnit), LINKFUNC(initHazardUnit)] call CBA_fnc_addEventHandler;
 [QGVAR(spawnChemicalMist), LINKFUNC(spawnChemicalMist)] call CBA_fnc_addEventHandler;
+[QGVAR(spawnChemicalDetonationEffect), LINKFUNC(spawnChemicalDetonationEffect)] call CBA_fnc_addEventHandler;
 [QGVAR(showRadius), LINKFUNC(showRadius)] call CBA_fnc_addEventHandler;
 
 if (true) then { // TODO setting
@@ -114,7 +115,7 @@ GVAR(PPE_List) = createHashMapFromArray [
 ["ace_firedPlayerVehicle", {
     params ["_vehicle", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
 
-    if !(_ammo in ["ACM_Mortar_Shell_CS_A"]) exitWith {};
+    if !(_ammo in ["ACM_Mortar_Shell_CS_A","ACM_Mortar_Shell_Chlorine_A"]) exitWith {};
 
     _projectile setVariable [QGVAR(ChemicalPayload), _ammo];
 
@@ -124,10 +125,17 @@ GVAR(PPE_List) = createHashMapFromArray [
         private _agent = "";
         private _lifetime = 60;
         private _payload = _projectile getVariable [QGVAR(ChemicalPayload), ""];
-    
-        if (_payload in ["ACM_Mortar_Shell_CS_A"]) then {
-            _agent = "Chemical_CS";
-            _lifetime = 80;
+
+        switch (true) do {
+            case (_payload in ["ACM_Mortar_Shell_CS_A"]): {
+                _agent = "Chemical_CS";
+                _lifetime = 80;
+            };
+            case (_payload in ["ACM_Mortar_Shell_Chlorine_A"]): {
+                _agent = "Chemical_Chlorine";
+                _lifetime = 70;
+            };
+            default {};
         };
 
         [QGVAR(initHazardZone), [_projectile, false, _agent, [], _lifetime, false, false, true, ACE_player]] call CBA_fnc_serverEvent;

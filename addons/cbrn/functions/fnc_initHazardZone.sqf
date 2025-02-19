@@ -23,35 +23,43 @@
  * Public: No
  */
 
-params ["_target", ["_attached", false], "_hazardType", ["_radiusDimensions", []], ["_effectTime", -1], ["_affectAI", false], ["_manualPlaced", false], ["_showMist", true], ["_spawner", objNull]];
+params ["_target", ["_attached", false], ["_hazardType",""], ["_radiusDimensions", []], ["_effectTime", -1], ["_affectAI", false], ["_manualPlaced", false], ["_showMist", true], ["_spawner", objNull]];
 
-private _originObject = createVehicle ["ACM_HazardOriginObject", position _target, [], 0, "CAN_COLLIDE"];
+if (_hazardType == "") exitWith {};
+
+private _originObject = createVehicle ["ACM_HazardObject", position _target, [], 0, "CAN_COLLIDE"];
 
 if (_radiusDimensions isEqualTo []) then {
     _radiusDimensions = [5,5,0,false,-1];
 };
 
+private _initEffects = !(_hazardType in ["chemical_placebo"]);
+
 if !(_affectAI) then {
     _affectAI = false; //TODO setting
 };
+
+private _zoneID = -1;
+
 // [a (X), b (Y), angle, isRectangle, c (height)]
 private _hazardRadius = [_originObject, "AREA:", _radiusDimensions, "ACT:", ["NONE", "PRESENT", false], "STATE:", ["false", "", ""]] call CBA_fnc_createTrigger;
 _hazardRadius = _hazardRadius select 0;
 
-private _zoneID = -1;
-private _zoneList = missionNamespace getVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), createHashMap];
+if (_initEffects) then {
+    private _zoneList = missionNamespace getVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), createHashMap];
 
-_zoneID = ([1, ((count _zoneList) + 1)] select (count _zoneList > 0));
+    _zoneID = ([1, ((count _zoneList) + 1)] select (count _zoneList > 0));
 
-if ((_zoneList getOrDefault [_zoneID, []]) isEqualTo []) then {
-    while {(_zoneList getOrDefault [_zoneID, []]) isNotEqualTo []} do {
-        _zoneID = _zoneID + 1;
+    if ((_zoneList getOrDefault [_zoneID, []]) isEqualTo []) then {
+        while {(_zoneList getOrDefault [_zoneID, []]) isNotEqualTo []} do {
+            _zoneID = _zoneID + 1;
+        };
     };
+
+    _zoneList set [_zoneID, [_hazardRadius, _affectAI]];
+
+    missionNamespace setVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), _zoneList, true];
 };
-
-_zoneList set [_zoneID, [_hazardRadius, _affectAI]];
-
-missionNamespace setVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), _zoneList, true];
 
 _originObject setVariable [QGVAR(zoneID), _zoneID, true];
 _originObject setVariable [QGVAR(hazardType), _hazardType, true];
@@ -71,7 +79,7 @@ if (_attached) then {
 
 private _PFH = [{
     params ["_args", "_idPFH"];
-    _args params ["_originObject", "_zoneID", "_hazardRadius", "_attached"];
+    _args params ["_originObject", "_zoneID", "_hazardRadius", "_initEffects", "_attached"];
 
     private _hazardType = _originObject getVariable [QGVAR(hazardType), ""];
     private _affectAI = _originObject getVariable [QGVAR(affectAI), false];
@@ -85,7 +93,7 @@ private _PFH = [{
 
         private _allZones = missionNamespace getVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), createHashMap];
 
-        if ((_allZones getOrDefault [_zoneID, []]) isNotEqualTo []) then {
+        if (_zoneID > -1 && {(_allZones getOrDefault [_zoneID, []]) isNotEqualTo []}) then {
             _allZones deleteAt _zoneID;
             missionNamespace setVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), _allZones, true];
         };
@@ -97,25 +105,28 @@ private _PFH = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _unitsInZone = [];
-    
-    if (_affectAI) then {
-        _unitsInZone = allUnits inAreaArray _hazardRadius;
-    } else {
-        _unitsInZone = allPlayers inAreaArray _hazardRadius;
-    };
+    if (_initEffects) then {
+        private _unitsInZone = [];
 
-    {
-        if (_x getVariable [(format ["ACM_CBRN_%1_PFH", toLower _hazardType]), -1] == -1) then {
-            [QGVAR(initHazardUnit), [_x, _hazardType], _x] call CBA_fnc_targetEvent;
+        if (_affectAI) then {
+            _unitsInZone = allUnits inAreaArray _hazardRadius;
+        } else {
+            _unitsInZone = allPlayers inAreaArray _hazardRadius;
         };
-    } forEach _unitsInZone;
+
+        {
+            if (_x getVariable [(format ["ACM_CBRN_%1_PFH", toLower _hazardType]), -1] == -1) then {
+                systemchat format ["%1 -- %2", _x, _hazardType];
+                [QGVAR(initHazardUnit), [_x, _hazardType], _x] call CBA_fnc_targetEvent;
+            };
+        } forEach _unitsInZone;
+    };
 
     if (_attached) then {
         (getPosATL _hazardRadius) params ["_radiusPosX", "_radiusPosY", "_radiusPosZ"];
         _originObject setPos [_radiusPosX, _radiusPosY, 0];
     };
-}, 1, [_originObject, _zoneID, _hazardRadius, _attached]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_originObject, _zoneID, _hazardRadius, _initEffects, _attached]] call CBA_fnc_addPerFrameHandler;
 
 _originObject setVariable [QGVAR(HazardEmitter_PFH), _PFH];
 

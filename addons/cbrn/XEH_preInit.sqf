@@ -28,4 +28,13 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(Chemical_Chlorine_Blindness),
+    "CHECKBOX",
+    [LLSTRING(SETTING_Chemical_Chlorine_Blindness), LLSTRING(SETTING_Chemical_Chlorine_Blindness_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Chemical_Chlorine)],
+    [true], // TODO
+    true
+] call CBA_fnc_addSetting;
+
 ADDON = true;

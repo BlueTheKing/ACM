@@ -1,30 +1,38 @@
 class CfgVehicles {
     class Module_F;
 
-    class GVAR(moduleCreateHazardZone): Module_F {
-        author = "Blue";
-        displayName = "Create Hazard Zone";
+    class GVAR(moduleBase): Module_F {
+        curatorCanAttach = 1;
         category = QGVAR(CBRN);
-        function = QFUNC(moduleCreateHazardZone);
+        displayName = "Module";
         functionPriority = 1;
         isGlobal = 1;
         isTriggerActivated = 0;
         scope = 1;
         scopeCurator = 2;
-        curatorCanAttach = 1;
+        author = AUTHOR;
     };
 
-    class B_TargetSoldier;
-    class ACM_HazardOriginObject: B_TargetSoldier {
-        author = "Blue";
+    class GVAR(moduleCreateHazardZone): GVAR(moduleBase) {
+        displayName = CSTRING(Module_CreateHazardZone);
+        icon = QPATHTOF(ui\Icon_ChemicalHazard_ca.paa);
+        curatorInfoType = QGVAR(RscCreateHazardZone);
+    };
+    class GVAR(moduleCreateChemicalDevice): GVAR(moduleBase) {
+        displayName = CSTRING(Module_CreateChemicalDevice);
+        icon = QPATHTOF(ui\Icon_ChemicalHazard_ca.paa);
+        curatorInfoType = QGVAR(RscCreateChemicalDevice);
+    };
+
+    class ACE_LogicDummy;
+    class ACM_HazardObject: ACE_LogicDummy {
+        author = AUTHOR;
         displayName = "Hazard Origin";
-        scope = 1;
         scopeCurator = 1;
         scopeArsenal = 0;
         model = QCBAPATHTOF(ai,InvisibleTarget.p3d);
-        icon = QPATHTOEF(core,ui\icon_patient_dead.paa);
+        icon = QPATHTOF(ui\Icon_ChemicalHazard_ca.paa);
     };
-    class ACM_HazardHelperObject: ACM_HazardOriginObject {};
 
     class Man;
     class CAManBase: Man {

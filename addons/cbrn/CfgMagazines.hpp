@@ -28,8 +28,15 @@ class CfgMagazines {
     class ACM_Mortar_Shell_8Rnd_CS: 8Rnd_82mm_Mo_Smoke_white
     {
         author = AUTHOR;
-        displayName = "Chemical Payload Shell (CS)";
-        displayNameShort = "Chemical Payload Shell (CS)";
+        displayName = CSTRING(CS_Shell_82mm);
+        displayNameShort = CSTRING(CS_Shell_82mm);
         ammo = "ACM_Mortar_Shell_CS_A";
+    };
+    class ACM_Mortar_Shell_8Rnd_Chlorine: ACM_Mortar_Shell_8Rnd_CS
+    {
+        author = AUTHOR;
+        displayName = CSTRING(Chlorine_Shell_82mm);
+        displayNameShort = CSTRING(Chlorine_Shell_82mm_Short);
+        ammo = "ACM_Mortar_Shell_Chlorine_A";
     };
 };

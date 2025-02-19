@@ -20,7 +20,7 @@
 params ["_unit", "_originObject", "_radiusDimensions"];
 _radiusDimensions params ["_radiusX", "_radiusY"];
 
-private _helperObject = "ACM_HazardHelperObject" createVehicle (position _originObject);
+private _helperObject = "ACM_HazardObject" createVehicle (position _originObject);
 
 (getPos _originObject) params ["_originObjectPosX", "_originObjectPosY", "_originObjectPosZ"];
 
@@ -30,8 +30,8 @@ _originObject setVariable [QGVAR(referenceObject), _helperObject];
 private _blobArray = [];
 
 for "_i" from 1 to 360 do {
-    private _biggerRadius = _radiusX max _radiusY;
-    if (_i % (_biggerRadius * 4) == 0) then {
+    private _divisor = floor(linearConversion [1, 30, (_radiusX max _radiusY), 40, 10, true]);
+    if (_i % _divisor == 0) then {
         private _blob = "Sign_Sphere25cm_F" createVehicle position _helperObject;
         _blob enableSimulation false;
         _blob attachTo [_helperObject, [(_radiusX * cos _i), (_radiusY * sin _i), 50]];
