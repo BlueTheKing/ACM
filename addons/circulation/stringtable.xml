@@ -536,6 +536,12 @@
                 <German>Methoxyfluran</German>
                 <Spanish>Penthrox</Spanish>
             </Key>
+            <Key ID="STR_ACM_Circulation_Medication_OTFC">
+                <English>Oral Transmucosal Fentanyl Citrate</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Medication_OTFC_Short">
+                <English>OTFC</English>
+            </Key>
         </Container>
         <Container name="// Items - Medication //">
             <Key ID="STR_ACM_Circulation_Vial_Epinephrine">
@@ -700,6 +706,12 @@
                 <German>Paracetamol</German>
                 <Spanish>Paracetamol</Spanish>
             </Key>
+            <Key ID="STR_ACM_Circulation_Paracetamol_SinglePack">
+                <English>Paracetamol (Single Pack)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Paracetamol_DoublePack">
+                <English>Paracetamol (Double Pack)</English>
+            </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_Desc">
                 <English>Used to combat mild to moderate pain</English>
                 <Polish>Używany do walki z małym i średnim bólem</Polish>
@@ -729,6 +741,12 @@
                 <Polish>Używany do walki z silnym bólem na krótki okres czasu</Polish>
                 <German>Pfeife mit Methoxyflurangas um Schmerzen kurzfristig zu behandeln</German>
                 <Spanish>Trata rapidamente dolores agudos</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl">
+                <English>Fentanyl Lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
+                <English>Used to manage acute severe pain, via oral transmucosal route</English>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -780,6 +798,7 @@
                 <German>Benutze Naloxon Nasenspray...</German>
                 <Spanish>Utilizando spray de Naloxona...</Spanish>
             </Key>
+            
             <Key ID="STR_ACM_Circulation_UseSyringe">
                 <English>Use Syringe (%1ml)</English>
                 <Polish>Użyj strzykawki (%1ml)</Polish>
@@ -815,6 +834,53 @@
                 <Polish>Podaj (IM)</Polish>
                 <German>Injizieren (IM)</German>
                 <Spanish>Inyectar (IM)</Spanish>
+            </Key>
+        </Container>
+        <Container name="// Fentanyl Lozenge Actions //">
+            <Key ID="STR_ACM_Circulation_GiveFentanylLozenge">
+                <English>Give Fentanyl Lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_GiveFentanylLozenge_Progress">
+                <English>Giving Fentanyl Lozenge...</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge">
+                <English>Remove Fentanyl Lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge_Progress">
+                <English>Removing Fentanyl Lozenge...</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Lozenge">
+                <English>Lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge">
+                <English>Lozenge (OTFC)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Already">
+                <English>Patient already has fentanyl lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Blocked">
+                <English>Patient oral access is blocked by airway adjunct</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Complete">
+                <English>Gave Lozenge (OTFC)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Hint">
+                <English>Fentanyl Lozenge has been placed by %1</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_ActionLog">
+                <English>%1 gave Fentanyl Lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Complete">
+                <English>Removed fentanyl lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Hint">
+                <English>%1 removed lozenge</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_HintSelf">
+                <English>Fentanyl lozenge was removed</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
+                <English>Fentanyl lozenge wore off and was removed</English>
             </Key>
         </Container>
         <Container name="// CPR Action //">
@@ -884,6 +950,12 @@
                 <German>HLW pausiert</German>
                 <Spanish>RCP pausada</Spanish>
             </Key>
+            <Key ID="STR_ACM_Circulation_CPR_SwapToBVM">
+                <English>Swap To BVM</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_CPR_SwappedToBVM">
+                <English>Swapped To BVM</English>
+            </Key>
         </Container>
         <Container name="// Capillary Refill Action //">
             <Key ID="STR_ACM_Circulation_CheckCapillaryRefill">
@@ -930,7 +1002,7 @@
                 <German>Puls tasten beendet</German>
                 <Spanish>Has parado de comprobar el pulso</Spanish>
             </Key>
-            <Key ID="STR_ACM_Circulation_FeelPulse_Cartoid">
+            <Key ID="STR_ACM_Circulation_FeelPulse_Carotid">
                 <English>Carotid</English>
                 <Polish>Tętnica szyjna</Polish>
                 <German>Karotispuls</German>
@@ -1395,10 +1467,12 @@
                 <Spanish>Hinchazón notable</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
+              
                 <English>%1 inspected IV Catheter: %2</English>
                 <Polish>%1 sprawdził wkłucie: %2</Polish>
                 <German>%1 hat einen i.v. Katheter geprüft: %2</German>
                 <Spanish>%1 ha inspeccionado catéter IV: %2</Spanish>
+
             </Key>
         </Container>
         <Container name="// Pressure Cuff Action //">

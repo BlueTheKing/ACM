@@ -216,67 +216,67 @@
                 <English>Inspect For Fracture</English>
                 <Spanish>Inspeccionar fractura</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_Progress">
+            <Key ID="STR_ACM_Disability_InspectForFracture_Progress">
                 <English>Inspecting limb for fracture...</English>
                 <Spanish>Inspeccionando extremidad en busca de fracturas...</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_ActionLog">
+            <Key ID="STR_ACM_Disability_InspectForFracture_ActionLog">
                 <English>%1 inspected %2: %3</English>
                 <Spanish>%1 ha inspeccionado %2: %3</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_SplintApplied">
+            <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied">
                 <English>Patient has splint applied to limb</English>
                 <Spanish>El paciente tiene una férula en la extremidad.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_SplintApplied_Short">
+            <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied_Short">
                 <English>Splinted</English>
                 <Spanish>Con férula.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_SignificantSwelling">
+            <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling">
                 <English>Patient has significant swelling on limb</English>
                 <Spanish>El paciente tiene una hinchazón significativa en la extremidad.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_SignificantSwelling_Short">
+            <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling_Short">
                 <English>Significant Swelling</English>
                 <Spanish>Hinchazón significativa.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_Swelling">
+            <Key ID="STR_ACM_Disability_InspectForFracture_Swelling">
                 <English>Patient has swelling on limb</English>
                 <Spanish>El paciente tiene hinchazón en la extremidad.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_Swelling_Short">
+            <Key ID="STR_ACM_Disability_InspectForFracture_Swelling_Short">
                 <English>Swelling</English>
                 <Spanish>Hinchazón.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_SevereBruising">
+            <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising">
                 <English>Patient has severe bruising on limb</English>
                 <Spanish>El paciente presenta hematomas severos en la extremidad.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_SevereBruising_Short">
+            <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising_Short">
                 <English>Severe Bruising</English>
                 <Spanish>Hematomas severos.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_Bruised">
+            <Key ID="STR_ACM_Disability_InspectForFracture_Bruised">
                 <English>Patient limb is bruised</English>
                 <Spanish>La extremidad del paciente tiene hematomas.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_Bruised_Short">
+            <Key ID="STR_ACM_Disability_InspectForFracture_Bruised_Short">
                 <English>Bruised</English>
                 <Spanish>Con hematomas.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_NoInjury">
+            <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury">
                 <English>Patient has no substantial damage on limb</English>
                 <Spanish>El paciente no presenta daños significativos en la extremidad.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_NoInjury_Short">
+            <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury_Short">
                 <English>No Significant Injury</English>
                 <Spanish>Sin heridas significativas</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_RealignmentPerformed">
+            <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed">
                 <English>Fracture realignment performed</English>
                 <Spanish>Realineación de la fractura realizada.</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectFracture_RealignmentPerformed_Short">
+            <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed_Short">
                 <English>realignment performed</English>
                 <Spanish>Realineación realizada.</Spanish>
             </Key>
@@ -289,6 +289,7 @@
             <Key ID="STR_ACM_Disability_FractureRealignment_Progress">
                 <English>Performing Fracture Realignment...</English>
                 <Spanish>Realizando realineación de la fractura...</Spanish>
+
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete">
                 <English>Fracture realignment performed</English>

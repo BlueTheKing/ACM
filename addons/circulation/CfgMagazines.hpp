@@ -25,6 +25,14 @@ class CfgMagazines {
         mass = 0.3;
     };
 
+    class ACM_Paracetamol_DoublePack: ACM_Paracetamol {
+        scope = 1;
+        picture = QPATHTOF(ui\paracetamol_doublepack_ca.paa);
+        displayName = CSTRING(Paracetamol_DoublePack);
+        count = 2;
+        mass = 0.06;
+    };
+
     class ACM_AmmoniaInhalant: ACM_Paracetamol {
         picture = QPATHTOF(ui\inhalant_ammonia_ca.paa);
         displayName = CSTRING(AmmoniaInhalant);

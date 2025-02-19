@@ -29,6 +29,8 @@ private _hintHeight = 1.5;
 private _hint = LLSTRING(InspectIV_Clear);
 private _hintLog = LLSTRING(InspectIV_Clear_Short);
 
+private _accessSiteHint = [LLSTRING(IV_Upper), LLSTRING(IV_Middle), LLSTRING(IV_Lower)] select _accessSite;
+
 private _hasFlow = GET_IV_FLOW_X(_patient,_partIndex,_accessSite) > 0;
 private _activeBag = false;
 
@@ -67,4 +69,4 @@ if (_leaked) then {
 };
 
 [_hint, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
-[_patient, "quick_view", LLSTRING(InspectIV_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
+[_patient, "quick_view", LLSTRING(InspectIV_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _accessSiteHint, _hintLog]] call ACEFUNC(medical_treatment,addToLog);

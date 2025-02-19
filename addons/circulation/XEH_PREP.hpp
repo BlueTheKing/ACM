@@ -83,6 +83,8 @@ PREP(setAEDLocal);
 PREP(setIV);
 PREP(setIVComplication);
 PREP(setIVLocal);
+PREP(setLozenge);
+PREP(setLozengeLocal);
 PREP(setPressureCuff);
 PREP(setPressureCuffLocal);
 PREP(Syringe_ChildActions);

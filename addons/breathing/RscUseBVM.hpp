@@ -22,7 +22,7 @@ class RscTitles
                 h = QUOTE(safezoneH / 10);
                 colorText[] = {1,1,1,1};
                 colorBackground[] = {0,0,0,0};
-                text = CSTRING(UsingBVM);
+                text = CSTRING(BVM_UsingBVM);
                 lineSpacing = 0;
                 sizeEx = QUOTE(GUI_GRID_H * 1.4 * NORMALIZE_SIZEEX);
                 fixedWidth = 0;

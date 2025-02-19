@@ -27,5 +27,7 @@ PREP(onCardiacArrest);
 PREP(onUnconscious);
 PREP(progressBarAction);
 PREP(resetVariables);
+PREP(splitMedicationPack_childActions);
+PREP(splitMedicationPack);
 PREP(treatmentTextPFH);
 PREP(unloadAndCarryPatient);

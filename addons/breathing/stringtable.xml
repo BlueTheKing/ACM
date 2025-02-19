@@ -969,6 +969,13 @@
                 <Polish>Wznów oddechy ratunkowe</Polish>
                 <German>Beatmung fortsetzen</German>
                 <Spanish>Continuar respiraciones de rescate</Spanish>
+
+            <Key ID="STR_ACM_Breathing_BVM_Stopped">
+                <English>Stopped using BVM</English>
+                <Polish>Przestano używać worka samorozprężalnego</Polish>
+                <German>Beatmung beendet</German>
+                <Spanish>Se ha dejado de usar el ambú</Spanish>
+
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Started">
                 <English>Started Rescue Breaths</English>
@@ -976,11 +983,19 @@
                 <German>Beatmung begonnen</German>
                 <Spanish>Respiraciones de combate iniciadas</Spanish>
             </Key>
+
             <Key ID="STR_ACM_Breathing_BVM_Stopped">
                 <English>Stopped using BVM</English>
                 <Polish>Przestano używać worka samorozprężalnego</Polish>
                 <German>Beatmung beendet</German>
                 <Spanish>Se ha dejado de usar el ambú</Spanish>
+
+            <Key ID="STR_ACM_Breathing_BVM_Pause">
+                <English>Pause Rescue Breaths</English>
+                <Polish>Przerwij oddechy ratunkowe</Polish>
+                <German>Beatmung pausieren</German>
+                <Spanish>Pausar respiraciones de rescate</Spanish>
+
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Paused">
                 <English>Paused Rescue Breaths</English>
@@ -988,11 +1003,22 @@
                 <German>Beatmung pausiert</German>
                 <Spanish>Respiración de rescate pausada</Spanish>
             </Key>
+            <Key ID="STR_ACM_Breathing_BVM_Continue">
+                <English>Continue Rescue Breaths</English>
+                <Polish>Wznów oddechy ratunkowe</Polish>
+                <German>Beatmung fortsetzen</German>
+            </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continued">
                 <English>Continued Rescue Breaths</English>
                 <Polish>Wznowiono oddechy ratunkowe </Polish>
                 <German>Beatmung fortgesetzt</German>
                 <Spanish>Respiración de rescate reanudada</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Breathing_BVM_SwapToCPR">
+                <English>Swap To CPR</English>
+            </Key>
+            <Key ID="STR_ACM_Breathing_BVM_SwappedToCPR">
+                <English>Swapped To CPR</English>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_ActionLog_Start">
                 <English>%1 started BVM rescue breaths</English>

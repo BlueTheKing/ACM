@@ -20,10 +20,10 @@
 params ["_medic", "_patient"];
 
 if (_patient getVariable [QGVAR(CarryAssist_State), false]) exitWith {
-    ["Patient is already being carry-assisted", 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LLSTRING(AssistCarry_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
-[[_medic, _patient, "head"], { // On Start
+[[_medic, _patient, "body"], { // On Start
     params ["_medic", "_patient", "_bodyPart"];
 
     "ACM_ContinuousActionText" cutRsc ["RscContinuousActionText", "PLAIN", 0, false];
@@ -33,13 +33,13 @@ if (_patient getVariable [QGVAR(CarryAssist_State), false]) exitWith {
     }, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
 
     [ACELLSTRING(common,Cancel), "", ""] call ACEFUNC(interaction,showMouseHint);
-    [(format ["Prepared %1 for carrying", ([_patient, false, true] call ACEFUNC(common,getName))]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [(format [LLSTRING(AssistCarry_Complete), ([_patient, false, true] call ACEFUNC(common,getName))]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
     
     private _display = uiNamespace getVariable ["ACM_ContinuousActionText", displayNull];
     private _ctrlTextUpper = _display displayCtrl IDC_CONTINUOUSACTIONTEXT_UPPER;
     private _ctrlTextLower = _display displayCtrl IDC_CONTINUOUSACTIONTEXT_BOTTOM;
 
-    _ctrlTextUpper ctrlSetText "Preparing to carry...";
+    _ctrlTextUpper ctrlSetText LLSTRING(AssistCarry_Progress);
     _ctrlTextLower ctrlSetText ([_patient, false, true] call ACEFUNC(common,getName));
 
     _patient setVariable [QGVAR(CarryAssist_State), true, true];
@@ -52,11 +52,7 @@ if (_patient getVariable [QGVAR(CarryAssist_State), false]) exitWith {
 
     "ACM_ContinuousActionText" cutText ["","PLAIN", 0, false];
 
-    if (_notInVehicle) then {
-        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
-    };
-
-    ["Carry-assist cancelled", 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [LLSTRING(AssistCarry_Cancelled), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
     _patient setVariable [QGVAR(CarryAssist_State), false, true];
 }, { // PerFrame
