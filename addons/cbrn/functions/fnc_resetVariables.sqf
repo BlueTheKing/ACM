@@ -23,14 +23,23 @@ _patient setVariable [QGVAR(BreathingAbility_Increase_State), 1, true];
 
 _patient setVariable [QGVAR(EyesWashed), false, true];
 
-_patient setVariable [QGVAR(Filter_State), 1200];
+_patient setVariable [QGVAR(Filter_State), DEFAULT_FILTER_CONDITION];
+
+_patient setVariable [QGVAR(Nausea_Severity), 0, true];
 
 _patient setVariable [QGVAR(AirwayInflammation), 0, true];
 
 _patient setVariable [QGVAR(SkinIrritation), [0,0,0,0,0,0], true];
 _patient setVariable [QGVAR(LungTissueDamage), 0, true];
+_patient setVariable [QGVAR(CapillaryDamage), 0, true];
 
 _patient setVariable [QGVAR(Chemical_Chlorine_Blindness), false, true];
+
+_patient setVariable [QGVAR(Chemical_Sarin_NextShake), -1];
+
+_patient setVariable [QGVAR(Chemical_Lewisite_Blindness), false, true];
+
+_patient setVariable [QGVAR(IsImmune), false, true];
 
 {
     private _category = _x;

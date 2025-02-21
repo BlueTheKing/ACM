@@ -22,7 +22,7 @@
 
 params ["_enable", "_oxygenSaturation", "_respirationRate", "_chestInjurySeverity", "_criticalState", "_isExposed"];
 
-if (GVAR(ppLowOxygenTunnelVision_Finalized) && (!_enable || {_oxygenSaturation > (ACM_OXYGEN_VISION + 2) && _respirationRate > 12 && _chestInjurySeverity == 0 && !_criticalState && !_isExposed})) exitWith {
+if (!_enable || {GVAR(ppLowOxygenTunnelVision_Finalized) && {_oxygenSaturation > (ACM_OXYGEN_VISION + 2) && _respirationRate > 12 && _chestInjurySeverity == 0 && !_criticalState && !_isExposed}}) exitWith {
     if (GVAR(ppLowOxygenTunnelVision) != -1) then { GVAR(ppLowOxygenTunnelVision) ppEffectEnable false; };
 };
 

@@ -73,6 +73,8 @@ private _PFH = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
+    if (_patient getVariable [QGVAR(IsImmune), false]) exitWith {};
+
     private _lastThreshold = _patient getVariable [(format ["ACM_CBRN_%1_Buildup_Threshold", toLower _hazardType]), -1];
     private _currentThreshold = 0;
 

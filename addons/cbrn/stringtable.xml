@@ -10,6 +10,12 @@
         <Key ID="STR_ACM_CBRN_Category_Chemical_Chlorine">
             <English>Chemical - Chlorine Gas</English>
         </Key>
+        <Key ID="STR_ACM_CBRN_Category_Chemical_Sarin">
+            <English>Chemical - Sarin Gas</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_Category_Chemical_Lewisite">
+            <English>Chemical - Lewisite</English>
+        </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Enable">
             <English>Enable CBRN</English>
         </Key>
@@ -26,7 +32,25 @@
             <English>Chlorine Exposure Cause Blindness</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Chemical_Chlorine_Blindness_Desc">
-            <English>Sets whether Chlorine gas exposure causes blindness</English>
+            <English>Sets whether chlorine gas exposure causes blindness</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Sarin_Colorless">
+            <English>Colorless Sarin Gas</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Sarin_Colorless_Desc">
+            <English>Sets whether sarin gas should be invisible</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Lewisite_Blindness">
+            <English>Lewisite Exposure Cause Blindness</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Lewisite_Blindness_Desc">
+            <English>Sets whether lewisite exposure causes blindness</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Lewisite_Colorless">
+            <English>Colorless Lewisite</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Lewisite_Colorless_Desc">
+            <English>Sets whether lewisite should be invisible</English>
         </Key>
         <Container name="// Hazards //">
             <Key ID="STR_ACM_CBRN_Chemical_Placebo">
@@ -69,11 +93,26 @@
             <Key ID="STR_ACM_CBRN_CS_Shell_82mm">
                 <English>Chemical Payload Shell (CS)</English>
             </Key>
+            <Key ID="STR_ACM_CBRN_CS_Shell_82mm_Short">
+                <English>CWA (CS)</English>
+            </Key>
             <Key ID="STR_ACM_CBRN_Chlorine_Shell_82mm">
                 <English>Chemical Payload Shell (Chlorine Gas)</English>
             </Key>
             <Key ID="STR_ACM_CBRN_Chlorine_Shell_82mm_Short">
-                <English>Chemical Payload Shell (Chlorine)</English>
+                <English>CWA (Chlorine)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Sarin_Shell_82mm">
+                <English>Chemical Payload Shell (Sarin Gas)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Sarin_Shell_82mm_Short">
+                <English>CWA (Sarin)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Lewisite_Shell_82mm">
+                <English>Chemical Payload Shell (Lewisite)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Lewisite_Shell_82mm_Short">
+                <English>CWA (Lewisite)</English>
             </Key>
         </Container>
         <Container name="// Wash Eyes Action //">

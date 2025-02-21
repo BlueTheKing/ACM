@@ -131,10 +131,17 @@ private _PFH = [{
 _originObject setVariable [QGVAR(HazardEmitter_PFH), _PFH];
 
 if (_showMist) then {
+    if (_hazardType == "chemical_sarin" && GVAR(Chemical_Sarin_Colorless) || _hazardType == "chemical_lewisite" && GVAR(Chemical_Lewisite_Colorless)) exitWith {};
     [QGVAR(spawnChemicalMist), [_originObject, _radiusDimensions, _hazardType]] call CBA_fnc_globalEvent;
 };
 
 if (_manualPlaced) then {
+    [{
+        params ["_thisCurator", "_originObject"];
+
+        _thisCurator addCuratorEditableObjects [[_originObject], false]; // Make placed zone visible in zeus
+    }, [_thisCurator, _originObject], 0.1] call CBA_fnc_waitAndExecute;
+
     if (isNull _spawner) exitWith {};
     [QGVAR(showRadius), [_spawner, _originObject, _radiusDimensions], _spawner] call CBA_fnc_targetEvent;
 };

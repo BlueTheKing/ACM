@@ -30,7 +30,14 @@ if (!local _unit) exitWith { ERROR_2("playInjuredSound: Unit not local or null [
 
 if (!_allowUnconscious && {!(_unit call ACEFUNC(common,isAwake))}) exitWith {};
 
-if (_type == "moan" && IS_EXPOSED(_unit)) exitWith {}; // CBRN
+if (_type == "moan" && IS_EXPOSED(_unit)) exitWith { // CBRN
+    _unit setVariable [QACEGVAR(medical_feedback,forceSay3D) + _type, CBA_missionTime + (TIME_OUT_MOAN # _severity)];
+};
+
+if (_type == "hit" && IS_EXPOSEDTO(_unit,Chemical_Lewisite)) exitWith { // CBRN
+    [QACEGVAR(fire,playScream), [format [QACEGVAR(fire,scream_%1), floor (1 + random 15)], _unit]] call CBA_fnc_globalEvent;
+    _unit setVariable [QACEGVAR(medical_feedback,forceSay3D) + _type, CBA_missionTime + 3];
+};
 
 // Limit network traffic by only sending the event to players who can potentially hear it
 private _distance = if (_type == "hit") then {

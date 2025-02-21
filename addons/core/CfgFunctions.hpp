@@ -148,6 +148,9 @@ class CfgFunctions {
             class updateDamageEffects { // Tourniquet effects for legs
                 file = QPATHTOF(overrides\fnc_updateDamageEffects.sqf); //ace/addons/medical_engine/functions/fnc_updateDamageEffects.sqf
             };
+            class handleDamage { // CBRN chemical burns
+                file = QPATHTOF(overrides\fnc_handleDamage.sqf); //ace/addons/medical_engine/functions/fnc_handleDamage.sqf
+            };
         };
     };
     class overwrite_medical_ai {

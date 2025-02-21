@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [player] call ACM_CBRN_fnc_spawnChemicalMist;
+ * [player, [5,5,0,false,-1], "chemical_cs"] call ACM_CBRN_fnc_spawnChemicalMist;
  *
  * Public: No
  */
@@ -28,8 +28,8 @@ private _mistObject = "#particlesource" createVehicle getPosATL _object;
 
 private _colorArray = switch (_hazardType) do {
     case "chemical_chlorine": {[[0.6,0.63,0,0],[0.6,0.63,0,0.5],[0.6,0.63,0,0]]};
-    case "chemical_sarin": {[[0.5,0.5,0.5,0],[0.5,0.5,0.5,0.5],[0.5,0.5,0.5,0]]};
-    case "chemical_lewisite": {[[1,1,1,0],[1,1,1,0.9],[1,1,1,0]]};
+    case "chemical_sarin";
+    case "chemical_lewisite": {[[0.8,0.8,0.8,0],[0.8,0.8,0.8,0.05],[0.8,0.8,0.8,0]]};
     default {[[0.8,0.8,0.8,0],[0.8,0.8,0.8,0.2],[0.8,0.8,0.8,0]]};
 };
 

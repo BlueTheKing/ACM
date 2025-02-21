@@ -50,6 +50,11 @@ if (true) then { // TODO setting
     } forEach GVAR(HazardType_List);
 };
 
+["multiplier", {
+    private _sarinBuildup = ACE_player getVariable [QGVAR_BUILDUP(Chemical_Sarin), 0];
+    [1, (5 min (1 + (_sarinBuildup / 10)))] select (_sarinBuildup > 1);
+}, QUOTE(ADDON)] call ACEFUNC(common,addSwayFactor);
+
 GVAR(PPE_List) = createHashMapFromArray [
     ["gasmask", ["G_RegulatorMask_F","G_AirPurifyingRespirator_01_F","G_AirPurifyingRespirator_02_black_F","G_AirPurifyingRespirator_02_olive_F","G_AirPurifyingRespirator_02_sand_F"]],
     ["suit", ["U_C_CBRN_Suit_01_Blue_F","U_B_CBRN_Suit_01_MTP_F","U_B_CBRN_Suit_01_Tropic_F","U_C_CBRN_Suit_01_White_F","U_B_CBRN_Suit_01_Wdl_F","U_I_CBRN_Suit_01_AAF_F","U_I_E_CBRN_Suit_01_EAF_F"]],
@@ -115,7 +120,7 @@ GVAR(PPE_List) = createHashMapFromArray [
 ["ace_firedPlayerVehicle", {
     params ["_vehicle", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
 
-    if !(_ammo in ["ACM_Mortar_Shell_CS_A","ACM_Mortar_Shell_Chlorine_A"]) exitWith {};
+    if !(_ammo in ["ACM_Mortar_Shell_CS_A","ACM_Mortar_Shell_Chlorine_A","ACM_Mortar_Shell_Sarin_A","ACM_Mortar_Shell_Lewisite_A"]) exitWith {};
 
     _projectile setVariable [QGVAR(ChemicalPayload), _ammo];
 
@@ -128,12 +133,20 @@ GVAR(PPE_List) = createHashMapFromArray [
 
         switch (true) do {
             case (_payload in ["ACM_Mortar_Shell_CS_A"]): {
-                _agent = "Chemical_CS";
+                _agent = "chemical_cs";
                 _lifetime = 80;
             };
             case (_payload in ["ACM_Mortar_Shell_Chlorine_A"]): {
-                _agent = "Chemical_Chlorine";
+                _agent = "chemical_chlorine";
                 _lifetime = 70;
+            };
+            case (_payload in ["ACM_Mortar_Shell_Sarin_A"]): {
+                _agent = "chemical_sarin";
+                _lifetime = 40;
+            };
+            case (_payload in ["ACM_Mortar_Shell_Lewisite_A"]): {
+                _agent = "chemical_lewisite";
+                _lifetime = 50;
             };
             default {};
         };

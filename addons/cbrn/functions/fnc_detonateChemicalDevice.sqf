@@ -25,4 +25,4 @@ params ["_object", "_hazardType", "_radius", "_effectTime", "_affectAI", "_effec
 if (_effectSize > 0) then {
     [QGVAR(spawnChemicalDetonationEffect), [_object, _hazardType, _effectSize]] call CBA_fnc_globalEvent;
 };
-[QGVAR(initHazardZone), [_object, true, _hazardType, [_radius,_radius,0,false,-1], _effectTime, _affectAI, true, true, ACE_player]] call CBA_fnc_serverEvent;
+[QGVAR(initHazardZone), [_object, true, _hazardType, [_radius,_radius,0,false,-1], _effectTime, _affectAI, false, true, ACE_player]] call CBA_fnc_serverEvent;

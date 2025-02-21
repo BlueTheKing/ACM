@@ -211,6 +211,8 @@
 
 #define IN_CRITICAL_STATE(unit) (unit getVariable [QEGVAR(core,CriticalVitals_State), false])
 
+#define ACM_WOUNDS ["ChemicalBurn"]
+
 // Airway
 #define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])
 
@@ -405,10 +407,12 @@
 // CBRN
 #define QGVAR_BUILDUP(type)                        QEGVAR(CBRN,##type##_Buildup)
 
-#define GET_FILTER_CONDITION(unit)                 (unit getVariable [QEGVAR(CBRN,Filter_State), 1200])
+#define DEFAULT_FILTER_CONDITION                   600
+#define GET_FILTER_CONDITION(unit)                 (unit getVariable [QEGVAR(CBRN,Filter_State), DEFAULT_FILTER_CONDITION])
 
 #define IS_EXPOSED(unit)                           (unit getVariable [QEGVAR(CBRN,Exposed_State), false])
-#define GET_EXPOSURE_BREATHINGSTATE(unit)          (unit getVariable [QEGVAR(CBRN,BreathingAbility_State), 1])
+#define IS_EXPOSEDTO(unit,hazard)                  (unit getVariable [QEGVAR(CBRN,##hazard##_Exposed_State), false])
+#define GET_EXPOSURE_BREATHINGSTATE(unit)          (unit getVariable [QEGVAR(CBRN,BreathingAbi lity_State), 1])
 #define GET_EXPOSURE_BREATHING_INCREASESTATE(unit) (unit getVariable [QEGVAR(CBRN,BreathingAbility_Increase_State), 1])
 
 // GUI

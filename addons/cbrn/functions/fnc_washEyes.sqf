@@ -35,6 +35,6 @@ if (_usedItem != "") then {
 
 _patient setVariable [QGVAR(EyesWashed), true, true];
 
-if (_patient getVariable [QGVAR(Chemical_Chlorine_Blindness), false]) exitWith {};
+if ((_patient getVariable [QGVAR(Chemical_Chlorine_Blindness), false]) || (_patient getVariable [QGVAR(Chemical_Lewisite_Blindness), false])) exitWith {};
 
 [_patient, false] call FUNC(setBlind);

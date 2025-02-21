@@ -41,7 +41,7 @@ class CfgVehicles {
                 class ACM_Action_GasMask {
                     displayName = CSTRING(GasMask);
                     exceptions[] = {"isNotInside", "isNotSitting"};
-                    icon = ""; // TODO
+                    icon = QPATHTOF(ui\Icon_Gasmask_ca.paa);
                     class ACM_Action_PutOnGasMask {
                         displayName = CSTRING(GasMask_PutOn);
                         condition = QUOTE([_player] call FUNC(canPutOnGasMask));

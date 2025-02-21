@@ -51,12 +51,14 @@ private _breathingAbilityIncrease = 1;
 
 private _CSExposure = _patient getVariable [QGVAR_BUILDUP(Chemical_CS), 0];
 private _chlorineExposure = _patient getVariable [QGVAR_BUILDUP(Chemical_Chlorine), 0];
+private _sarinExposure = _patient getVariable [QGVAR_BUILDUP(Chemical_Sarin), 0];
+private _lewisiteExposure = _patient getVariable [QGVAR_BUILDUP(Chemical_Lewisite), 0];
 
-if (_CSExposure > 50 || _chlorineExposure > 0.5) then {
+if (_CSExposure > 50 || _chlorineExposure > 0.5 || _sarinExposure > 0.5 || _lewisiteExposure > 0.5) then {
     _breathingAbilityIncrease = _breathingAbilityIncrease / 4;
 };
 
-if (_CSExposure >= 100 || _chlorineExposure > 25) then {
+if (_CSExposure >= 100 || _chlorineExposure > 15 || _sarinExposure > 30 || _lewisiteExposure > 20) then {
     _breathingAbility = _breathingAbility / 2;
 };
 
