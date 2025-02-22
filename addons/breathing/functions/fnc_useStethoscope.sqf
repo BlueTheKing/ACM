@@ -215,4 +215,4 @@ params ["_medic", "_patient"];
             };
         };
     };
-}, IDC_STETHOSCOPE] call EFUNC(core,beginContinuousAction);
+}, false, IDC_STETHOSCOPE] call EFUNC(core,beginContinuousAction);
