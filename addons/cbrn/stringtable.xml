@@ -158,6 +158,41 @@
                 <English>Replacing gas mask filter...</English>
             </Key>
         </Container>
+        <Container name="// Chemical Detector Actions //">
+            <Key ID="STR_ACM_CBRN_ChemicalDetector">
+                <English>Chemical Detector</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnOn">
+                <English>Turn On</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnOff">
+                <English>Turn Off</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_EnableAlarm">
+                <English>Enable Alarm</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_DisableAlarm">
+                <English>Disable Alarm</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_Reset">
+                <English>Reset</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnedOn">
+                <English>Chemical detector turned on</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnedOff">
+                <English>Chemical detector turned off</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_AlarmEnabled">
+                <English>Chemical detector alarm enabled</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_AlarmDisabled">
+                <English>Chemical detector alarm disabled</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_WasReset">
+                <English>Chemical detector has been reset</English>
+            </Key>
+        </Container>
         <Container name="// Module Generic //">
             <Key ID="STR_ACM_CBRN_Module_Generic_HazardType">
                 <English>Hazard Type</English>

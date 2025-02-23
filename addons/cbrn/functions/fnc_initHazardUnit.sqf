@@ -24,8 +24,6 @@ if (_patient getVariable [(format [_PFHVarString, toLower _hazardType]), -1] != 
 
 private _buildupVarString = format ["ACM_CBRN_%1_Buildup", toLower _hazardType];
 
-systemchat format ["%1 - %2",_patient,_hazardType];
-
 private _fnc_inArea = {
     params ["_patient"];
 
@@ -52,11 +50,9 @@ GET_FUNCTION(_thresholdFunction,_hazardClass >> "thresholdFunction");
 
 private _canAbsorbThroughEyes = [true, ((getNumber (_hazardClass >> "absorbant_eyes")) > 0)] select (isNumber (_hazardClass >> "absorbant_eyes"));
 private _canInhale = _inhalationRate > 0;
-private _canAbsorb = _absorptionRate > 0;
+private _canAbsorb = [(_absorptionRate > 0), ((getNumber (_hazardClass >> "absorbant_skin")) > 0)] select (isNumber (_hazardClass >> "absorbant_skin"));
 
 private _configArgs = [_inhalationRate, _absorptionRate, _eliminationRate, _thresholdFunction, _useThreshold, _canInhale, _canAbsorb, _canAbsorbThroughEyes];
-
-_patient setVariable [(format ["ACM_CBRN_%1_WasExposed", toLower _hazardType]), true, true];
 
 private _PFH = [{
     params ["_args", "_idPFH"];
@@ -67,9 +63,17 @@ private _PFH = [{
     private _inArea = _patient call _fnc_inArea;
 
     private _wasExposed = _patient getVariable [(format ["ACM_CBRN_%1_Exposed_State", toLower _hazardType]), false];
+    private _wasExposedExternal = _patient getVariable [(format ["ACM_CBRN_%1_Exposed_External_State", toLower _hazardType]), false];
+
+    _patient setVariable [(format ["ACM_CBRN_%1_Contaminated_State", toLower _hazardType]), _inArea];
 
     if (!_inArea && _buildup <= 0 || !(alive _patient)) exitWith {
         _patient setVariable [_PFHVarString, -1, true];
+
+        _patient setVariable [(format ["ACM_CBRN_%1_Exposed_State", toLower _hazardType]), false];
+        _patient setVariable [(format ["ACM_CBRN_%1_Exposed_External_State", toLower _hazardType]), false];
+        [_patient, true] call FUNC(updateExposureEffects);
+
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
@@ -81,8 +85,9 @@ private _PFH = [{
     private _blocked = false;
     private _filtered = false || !_canInhale;
     private _protectedEyes = false || !_canAbsorbThroughEyes;
-    private _protectedBody = false;
+    private _protectedBody = false || !_canAbsorb;
     private _exposed = false;
+    private _exposedExternal = false;
     private _filterLevel = 0;
 
     private _increaseModifier = 1;
@@ -91,6 +96,20 @@ private _PFH = [{
     private _filterDepletionRate = 1;
 
     if (_inArea) then {
+        private _vehicle = vehicle _patient;
+        private _isTurnedOut = _patient;
+        private _CBRNVehicle = _vehicle in (GVAR(Vehicle_List) get "cbrn");
+
+        _blocked = _CBRNVehicle && !_isTurnedOut;
+
+        if (_blocked) exitWith {};
+
+        private _sealableVehicle = _vehicle in (GVAR(Vehicle_List) get "sealable");
+
+        _blocked = _sealableVehicle && !_isTurnedOut && !(_vehicle getVariable [QGVAR(Vehicle_Contaminated_State), false]);
+
+        if (_blocked) exitWith {};
+
         private _unitUniform = uniform _patient;
         private _unitGoggles = goggles _patient;
         private _unitHeadGear = headgear _patient;
@@ -101,27 +120,26 @@ private _PFH = [{
             _protectedBody = true;
         };
 
-        if (!_blocked || _protectedBody) then {
-            private _gasMaskFound = ([_unitGoggles, _unitHeadGear] findIf {
-                _x in (GVAR(PPE_List) get "gasmask");
-            }) > -1;
+        private _gasMaskFound = ([_unitGoggles, _unitHeadGear] findIf {
+            _x in (GVAR(PPE_List) get "gasmask");
+        }) > -1;
 
-            if (_gasMaskFound) then {
-                _protectedEyes = true;
-                _filtered = true;
-                _filterLevel = 3;
+        if (_gasMaskFound) then {
+            _protectedEyes = true;
+            _filterLevel = 3;
 
-                private _filterCondition = GET_FILTER_CONDITION(_patient);
-                _blocked = _protectedBody && _filterCondition > 0;
+            private _filterCondition = GET_FILTER_CONDITION(_patient);
+            _filtered = _filterCondition > 0;
+            _blocked = _protectedBody && _filtered;
 
-                if (_blocked) then {
-                    _patient setVariable [QGVAR(Filter_State), (_filterCondition - _filterDepletionRate) max 0];
-                };
+            if (_filtered) then {
+                _patient setVariable [QGVAR(Filter_State), (_filterCondition - _filterDepletionRate) max 0];
             };
         };
         
         if (_blocked) exitWith {};
-        _exposed = true;
+        _exposed = !_filtered;
+        _exposedExternal = true;
 
         private _gogglesFound = _unitGoggles in (GVAR(PPE_List) get "goggles");
 
@@ -158,30 +176,32 @@ private _PFH = [{
         };
     };
     
-    if (_exposed && (_inhalationRate max _absorptionRate) > 0) then {
-        _buildup = _buildup + ((_inhalationRate max _absorptionRate) * _increaseModifier);
-        if (_buildup > 100) then {
-            _buildup = 100;
-        };
+    if (_exposed && !_filtered || _exposedExternal && !_protectedBody) then {
+        _buildup = (_buildup + ((_inhalationRate max _absorptionRate) * _increaseModifier)) min 100;
     } else {
-        _buildup = _buildup + (_eliminationRate * _decreaseModifier);
-        if (_buildup < 0) then {
-            _buildup = 0;
-        };
+        _buildup = (_buildup + (_eliminationRate * _decreaseModifier)) max 0;
     };
 
     _patient setVariable [_buildupVarString, _buildup, true];
 
     if (_buildup > 0) then {
-        [_patient, _buildup, _exposed, [_filtered, _protectedBody, _protectedEyes, _filterLevel]] call _thresholdFunction;
+        [_patient, _buildup, _exposed, _exposedExternal, [_filtered, _protectedBody, _protectedEyes, _filterLevel]] call _thresholdFunction;
     };
 
     if (_exposed != _wasExposed) then {
         _patient setVariable [(format ["ACM_CBRN_%1_Exposed_State", toLower _hazardType]), _exposed];
     };
 
+    if (_exposedExternal != _wasExposedExternal) then {
+        _patient setVariable [(format ["ACM_CBRN_%1_Exposed_External_State", toLower _hazardType]), _exposedExternal];
+    };
+
     if (_lastThreshold != _currentThreshold) then {
         _patient setVariable [(format ["ACM_CBRN_%1_Buildup_Threshold", toLower _hazardType]), _currentThreshold, true];
+    };
+
+    if ((_exposed || _exposedExternal) && !(_patient getVariable [(format ["ACM_CBRN_%1_WasExposed", toLower _hazardType]), false])) then {
+        _patient setVariable [(format ["ACM_CBRN_%1_WasExposed", toLower _hazardType]), true, true];
     };
 
     [_patient] call FUNC(updateExposureEffects);

@@ -18,6 +18,9 @@
 params ["_patient"];
 
 _patient setVariable [QGVAR(Exposed_State), false, true];
+_patient setVariable [QGVAR(Exposed_External_State), false, true];
+_patient setVariable [QGVAR(Contaminated_State), false, true];
+
 _patient setVariable [QGVAR(BreathingAbility_State), 1, true];
 _patient setVariable [QGVAR(BreathingAbility_Increase_State), 1, true];
 
@@ -41,6 +44,10 @@ _patient setVariable [QGVAR(Chemical_Lewisite_Blindness), false, true];
 
 _patient setVariable [QGVAR(IsImmune), false, true];
 
+_patient setVariable [QGVAR(Detector_State), false, true];
+_patient setVariable [QGVAR(Detector_Alarm_State), true, true];
+_patient setVariable [QGVAR(Detector_Exposure_Severity), 0];
+
 {
     private _category = _x;
     
@@ -49,6 +56,8 @@ _patient setVariable [QGVAR(IsImmune), false, true];
         _patient setVariable [(format ["ACM_CBRN_%1_Buildup", toLower _hazardType]), 0, true];
         _patient setVariable [(format ["ACM_CBRN_%1_Buildup_Threshold", toLower _hazardType]), -1, true];
         _patient setVariable [(format ["ACM_CBRN_%1_Exposed_State", toLower _hazardType]), false];
+        _patient setVariable [(format ["ACM_CBRN_%1_Exposed_External_State", toLower _hazardType]), false];
+        _patient setVariable [(format ["ACM_CBRN_%1_Contaminated_State", toLower _hazardType]), false];
         _patient setVariable [(format ["ACM_CBRN_%1_WasExposed", toLower _hazardType]), false, true];
     } forEach _y;
 } forEach GVAR(HazardType_List);

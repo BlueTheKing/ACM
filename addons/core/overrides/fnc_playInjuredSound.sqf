@@ -34,7 +34,9 @@ if (_type == "moan" && IS_EXPOSED(_unit)) exitWith { // CBRN
     _unit setVariable [QACEGVAR(medical_feedback,forceSay3D) + _type, CBA_missionTime + (TIME_OUT_MOAN # _severity)];
 };
 
-if (_type == "hit" && IS_EXPOSEDTO(_unit,Chemical_Lewisite)) exitWith { // CBRN
+if (_type == "hit" && IS_EXPOSED_EXTTO(_unit,Chemical_Lewisite)) exitWith { // CBRN
+    if (_unit getVariable [QACEGVAR(medical_feedback,forceSay3D) + _type, -1] > CBA_missionTime) exitWith {};
+
     [QACEGVAR(fire,playScream), [format [QACEGVAR(fire,scream_%1), floor (1 + random 15)], _unit]] call CBA_fnc_globalEvent;
     _unit setVariable [QACEGVAR(medical_feedback,forceSay3D) + _type, CBA_missionTime + 3];
 };

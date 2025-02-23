@@ -116,7 +116,6 @@ private _PFH = [{
 
         {
             if (_x getVariable [(format ["ACM_CBRN_%1_PFH", toLower _hazardType]), -1] == -1) then {
-                systemchat format ["%1 -- %2", _x, _hazardType];
                 [QGVAR(initHazardUnit), [_x, _hazardType], _x] call CBA_fnc_targetEvent;
             };
         } forEach _unitsInZone;

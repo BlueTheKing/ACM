@@ -7,23 +7,26 @@
  * 0: Patient <OBJECT>
  * 1: Buildup <NUMBER>
  * 2: Is Exposed? <BOOL>
- * 3: Active PPE <ARRAY>
+ * 3: Is Exposed Externally? <BOOL>
+ * 4: Active PPE <ARRAY>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, 1, true, [false,false,false,0]] call ACM_CBRN_fnc_effectCS;
+ * [player, 1, true, true, [false,false,false,0]] call ACM_CBRN_fnc_effectCS;
  *
  * Public: No
  */
 
-params ["_patient", "_buildup", "_isExposed", "_activePPE"];
+params ["_patient", "_buildup", "_isExposed", "_isExposedExternal", "_activePPE"];
 _activePPE params ["_filtered", "_protectedBody", "_protectedEyes", "_filterLevel"];
+
+if !(_isExposed) exitWith {};
 
 if (_buildup < 0.1) exitWith {};
 
-if (GET_PAIN(_patient) < 0.9) then {
+if (!_filtered && GET_PAIN(_patient) < 0.9) then {
     [_patient, 1] call ACEFUNC(medical,adjustPainLevel);
 };
 

@@ -412,8 +412,13 @@
 
 #define IS_EXPOSED(unit)                           (unit getVariable [QEGVAR(CBRN,Exposed_State), false])
 #define IS_EXPOSEDTO(unit,hazard)                  (unit getVariable [QEGVAR(CBRN,##hazard##_Exposed_State), false])
-#define GET_EXPOSURE_BREATHINGSTATE(unit)          (unit getVariable [QEGVAR(CBRN,BreathingAbi lity_State), 1])
+#define IS_EXPOSED_EXT(unit)                       (unit getVariable [QEGVAR(CBRN,Exposed_External_State), false])
+#define IS_EXPOSED_EXTTO(unit,hazard)              (unit getVariable [QEGVAR(CBRN,##hazard##_Exposed_External_State), false])
+#define GET_EXPOSURE_BREATHINGSTATE(unit)          (unit getVariable [QEGVAR(CBRN,BreathingAbility_State), 1])
 #define GET_EXPOSURE_BREATHING_INCREASESTATE(unit) (unit getVariable [QEGVAR(CBRN,BreathingAbility_Increase_State), 1])
+
+#define IS_CONTAMINATED(unit)                      (unit getVariable [QEGVAR(CBRN,Contaminated_State), false])
+#define IS_CONTAMINATEDBY(unit,hazard)             (unit getVariable [QEGVAR(CBRN,##hazard##_Contaminated_State), false])
 
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}

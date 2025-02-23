@@ -7,27 +7,31 @@
  * 0: Patient <OBJECT>
  * 1: Buildup <NUMBER>
  * 2: Is Exposed? <BOOL>
- * 3: Active PPE <ARRAY>
+ * 3: Is Exposed Externally? <BOOL>
+ * 4: Active PPE <ARRAY>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, 1, true, [false,false,false,0]] call ACM_CBRN_fnc_effectChlorine;
+ * [player, 1, true, true, [false,false,false,0]] call ACM_CBRN_fnc_effectChlorine;
  *
  * Public: No
  */
 
-params ["_patient", "_buildup", "_isExposed", "_activePPE"];
+params ["_patient", "_buildup", "_isExposed", "_isExposedExternal", "_activePPE"];
 _activePPE params ["_filtered", "_protectedBody", "_protectedEyes", "_filterLevel"];
 
 if (_buildup < 0.1) exitWith {};
 
-if (GET_PAIN(_patient) < 0.4) then {
-    [_patient, 0.5] call ACEFUNC(medical,adjustPainLevel);
+if (_isExposed || _isExposedExternal) then {
+    switch (true) do {
+        case (_isExposed && (GET_PAIN(_patient) < 0.4)): {[_patient, 0.5] call ACEFUNC(medical,adjustPainLevel);};
+        case (_isExposedExternal && (GET_PAIN(_patient) < 0.05)): {[_patient, 0.1] call ACEFUNC(medical,adjustPainLevel);};
+    };
 };
 
-if (_isExposed) then {
+if (_isExposed || _isExposedExternal) then {
     if !(_filtered) then {
         private _airwayInflammation = _patient getVariable [QGVAR(AirwayInflammation), 0];
 
@@ -45,6 +49,7 @@ if (_isExposed) then {
             _skinIrritationArray set [_forEachIndex, ((_x + 1) min _skinIrritationTarget)]
         };
     } forEach _skinIrritationArray;
+
     _patient setVariable [QGVAR(SkinIrritation), _skinIrritationArray, true];
 };
 

@@ -8,6 +8,7 @@ class ACM_CBRN_Hazards {
             inhalation_rate = 0.5;
             elimination_rate = -0.5;
             thresholdFunction = QFUNC(effectCS);
+            absorbant_skin = 0;
         };
 
         class Chlorine {
