@@ -5,245 +5,294 @@
             <English>ACM: Breathing</English>
             <Polish>ACM: Oddychanie</Polish>
             <German>ACM: Beatmung/Belüftung</German>
+            <Russian>ACM: Дыхание</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_Category_Pneumothorax">
             <English>Pneumothorax</English>
             <Polish>Odma płucna</Polish>
             <German>Pneumothroax</German>
+            <Russian>Пневмоторакс</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_Category_Diagnosis">
             <English>Diagnosis</English>
             <Polish>Diagnostyka</Polish>
             <German>Diagnose</German>
+            <Russian>Диагностика</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_Category_Treatment">
             <English>Treatment</English>
             <Polish>Leczenie</Polish>
             <German>Behandlung</German>
+            <Russian>Уход</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen">
             <English>Altitude Affect Oxygen</English>
             <Polish>Wysokość wpływa na saturacje</Polish>
             <German>Höhe beeinflusst Sauerstoffsätigung</German>
+            <Russian>Высота над уровнем моря влияет на кислород</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen_Desc">
             <English>Sets whether oxygen saturation calculations are affected by altitude of terrain</English>
             <Polish>Określa czy obliczanie saturacji ma uwzględniać wysokość terenu</Polish>
             <German>Stellt ein, ob die Sauerstoffsättigungsberechnung von der Höhe beeinträchtigt wird</German>
+            <Russian>Влияет ли на расчеты насыщения кислородом высота местности</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ShowCyanosisSeverity">
             <English>Show Cyanosis Severity</English>
             <Polish>Pokaż poziom sinicy</Polish>
             <German>Zeige Zyanoseschweregrad an</German>
+            <Russian>Показывать уровень цианоза</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ShowCyanosisSeverity_Desc">
             <English>Show cyanosis severity in overview tab</English>
             <Polish>Pokaż poziom sinicy w widoku ogólnym</Polish>
             <German>Zyanoseschweregrad in der Übersichtsansicht anzeigen</German>
+            <Russian>Отображение степени тяжести цианоза на вкладке «Обзор»</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxEnabled">
             <English>Pneumothorax Enabled</English>
             <Polish>Odma płucna włączona</Polish>
             <German>Pneumothorax aktiviert</German>
+            <Russian>Пневмоторакс включен</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ChestInjuryChance">
             <English>Chest Injury Severity Multiplier</English>
             <Polish>Mnożnik urazów klatki piersiowej</Polish>
             <German>Brustverletzung Schweregradmultiplikator</German>
+            <Russian>Множитель тяжести травмы грудной клетки</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ChestInjuryChance_Desc">
             <English>Chance that a chest injury causes a pneumothorax or hemothorax</English>
             <Polish>Szansa na pojawienie się odmy płucnej przy urazie klatki piersiowej</Polish>
             <German>Wahrscheinlichkeit, dass eine Brustverletzung eine Pneumothorax oder Hämatothorax verursacht</German>
+            <Russian>Вероятность того, что травма грудной клетки приведет к пневмотораксу или гемотораксу</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxDeteriorateChance">
             <English>Pneumothorax Deterioration Multiplier</English>
             <Polish>Mnożnik pogarszania się odmy płucnej</Polish>
             <German>Pneumothorax Verschlechterungsmultiplikator</German>
+            <Russian>Множитель ухудшения пневмоторакса</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxDeteriorateChance_Desc">
             <English>Chance that pneumothorax will deteriorate</English>
             <Polish>Szansa na pogorszenie się stanu odmy płucnej</Polish>
             <German>Wahrscheinlichkeit, dass sich eine Pneumothorax verschlechtert</German>
+            <Russian>Вероятность ухудшения пневмоторакса</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance">
             <English>Hemothorax Chance</English>
             <Polish>Szansa na krwiaka opłucnej</Polish>
             <German>Hämatothorax Wahrscheinlichkeit</German>
+            <Russian>Вероятность гемоторакса</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance_Desc">
             <English>Chance that a inflicted severe chest injury is a hemothorax instead of a pneumothorax</English>
             <Polish>Szansa na pourazowego krwiaka opłucnej zamiast odmy prężnej</Polish>
             <German>Wahrscheinlichkeit, dass eine schwere Thoraxverletzung eine Hämatothorax statt einer Pneumothorax verursacht</German>
+            <Russian>Вероятность того, что нанесенная тяжелая травма грудной клетки является гемотораксом, а не пневмотораксом</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury">
             <English>[HARDCORE] Chest Injuries</English>
             <Polish>[HARDCORE] Urazy klatki piersiowej</Polish>
             <German>[HARDCORE] Thoraxverletzungen</German>
+            <Russian>[ХАРДКОР] Травмы груди</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury_Desc">
             <English>[HARDCORE] Sets whether Tension Pneumothorax should require further treatment to fully treat</English>
             <Polish>[HARDCORE] Określa czy odma prężna powinna wymagać dalszego leczenia by zostać wyeliminowana</Polish>
             <German>[HARDCORE] Stellt ein, ob eine Spannungspneumothorax eine weitere Behandlung braucht, um voll geheilt zu werden</German>
+            <Russian>[HARDCORE] Определяет, требуется ли дальнейшее лечение напряженного пневмоторакса для полного излечения</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding">
             <English>[HARDCORE] Hemothorax Bleeding</English>
             <Polish>[HARDCORE] Krwawienie krwiaka opłucnej</Polish>
             <German>[HARDCORE] Hämatothorax Blutung</German>
+            <Russian>[ХАРДКОР] Гемоторакс Кровотечение</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding_Desc">
             <English>[HARDCORE] Sets whether Hemothorax should require further treatment to fully stop internal bleeding</English>
             <Polish>[HARDCORE] Określa czy krwiak opłucnej powinien wymagać dalszego leczenia by zostać wyeliminowany</Polish>
             <German>[HARDCORE] Stellt ein, ob eine Hämatothorax eine weitere Behandlung braucht, um die innere Blutung komplett zu stoppen</German>
+            <Russian>[HARDCORE] Определяет, требуется ли гемотораксу дальнейшее лечение, чтобы полностью остановить внутреннее кровотечение</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_InspectChest">
             <English>Allow Inspect Chest</English>
             <Polish>Sprawdź klatkę piesiową</Polish>
             <German>Erlaube Brustinspektion</German>
+            <Russian>Разрешить осмотр груди</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_InspectChest_Desc">
             <English>Training level required to Inspect Chest</English>
             <Polish>Poziom wyszkolenia potrzebny do sprawdzenia klatki piersiowej</Polish>
             <German>Benötigtes Qualifikationslevel, um eine Brustinspektion durchzuführen</German>
+            <Russian>Уровень подготовки, необходимый для осмотра сундука</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_TreatmentTime_InspectChest">
             <English>Inspect Chest Time</English>
             <Polish>Czas sprawdzenia klatki piersiowej</Polish>
             <German>Brustinspektionszeit</German>
+            <Russian>Сколько нужно времени для осмотра груди</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_TreatmentTime_InspectChest_Desc">
             <English>Time to perform inspect chest action</English>
             <Polish>Czas potrzebny na sprawdzenie klatki piersiowej</Polish>
             <German>Benötigte Zeit, um eine Brust-Nadel-Dekompression durchzuführen</German>
+            <Russian>Время, необходимое для выполнения игольной декомпрессии грудной клетки</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_NCD">
             <English>Allow NCD Kit</English>
             <Polish>Pozwól na użycie zestawu NCD</Polish>
             <German>Erlaube Brust-Nadel-Dekompression</German>
+            <Russian>Разрешить комплект NCD kit</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_NCD_Desc">
             <English>Training level required to use an NCD Kit</English>
             <Polish>Poziom wyszkolenia potrzebny do użycia zestawu NCD</Polish>
             <German>Benötigtes Qualifikationslevel, um eine Nadledekompressierung durchzuführen</German>
+            <Russian>Уровень подготовки, необходимый для использования комплекта NCD Kit</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_Thoracostomy">
             <English>Allow Thoracostomy</English>
             <Polish>Pozwól na wykonanie torakotomii</Polish>
             <German>Erlaube Thorakotomie</German>
+            <Russian>Разрешить торакостомию</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_Thoracostomy_Desc">
             <English>Training level required to perform Thoracostomy</English>
             <Polish>Poziom wyszkolenia potrzebny do wykonania torakotomii</Polish>
             <German>Benötigtes Qualifikationslevel, um eine Nadledekompressierung durchzuführen</German>
+            <Russian>Уровень подготовки, необходимый для выполнения торакостомии</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Location_Thoracostomy">
             <English>Locations Thoracostomy</English>
             <Polish>Miejsca torakotomii</Polish>
             <German>Thorakotomie Standort</German>
+            <Russian>Торакостомия</Russian>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Location_Thoracostomy_Desc">
             <English>Sets locations at which Thoracostomy can be performed</English>
             <Polish>Określa lokalizacje w których można wykonywać torakotomie</Polish>
             <German>Stellt die Standorte ein, an denen eine Thorakotomie durchgeführt werden kann</German>
+            <Russian>Устанавливает места, в которых можно выполнить торакостомию</Russian>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Breathing_ChestSeal">
                 <English>Chest Seal</English>
                 <Polish>Opatrunek Chest Seal</Polish>
                 <German>Chest Seal</German>
+                <Russian>Окклюзионный пластырь</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ChestSeal_Desc">
                 <English>Used to manage penetrating chest injuries</English>
                 <Polish>Używany do zabezpieczania urazów klatki piersiowej</Polish>
                 <German>Wird benutzt, um penetrierende Brustverletzungen abzudecken</German>
+                <Russian>Используется при проникающих ранениях грудной клетки</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PulseOximeter">
                 <English>Pulse Oximeter</English>
                 <Polish>Pulsoksymetr</Polish>
                 <German>Pulsoxymeter</German>
+                <Russian>Пульсоксиметр</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PulseOximeter_Desc">
                 <English>Used to measure patient vitals</English>
                 <Polish>Używany do pomiaru tętna i saturacji pacjenta</Polish>
                 <German>Misst Vitalparameter von Patienten</German>
+                <Russian>Используется для измерения жизненно важных показателей пациента</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope">
                 <English>Stethoscope</English>
                 <Polish>Stetoskop</Polish>
                 <German>Stethoskop</German>
+                <Russian>Стетоскоп</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_Desc">
                 <English>Used to listen to breathing and heart sounds of patient</English>
                 <Polish>Używany do osłuchiwania klatki piersiowej pacjenta</Polish>
                 <German>Wird zur Auskultation der Lunge und des Herzens verwendet</German>
+                <Russian>Используется для прослушивания дыхания и тонов сердца пациента</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_NCDKit">
                 <English>NCD Kit</English>
                 <Polish>Zestaw do dekompresji (NCD)</Polish>
                 <German>Dekompressionsnadel</German>
+                <Russian>NCD Kit</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_NCDKit_Desc">
                 <English>Single-use needle used to decompress tension-pneumothorax</English>
                 <Polish>Jednorazowa igła używana do dekompresji odmy prężnej</Polish>
                 <German>Einmalprodukt, um eine Nadledekommpression bei einem Spannungspneumothorax durchzuführen</German>
+                <Russian>Одноразовая игла, используемая для декомпрессии напряженного пневмоторакса</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ChestTubeKit">
                 <English>Chest Tube Kit</English>
                 <Polish>Rurka do drenażu klatki piersiowej</Polish>
                 <German>Thoraxdrainage-Set</German>
+                <Russian>Грудная дренажная трубка</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ChestTubeKit_Desc">
                 <English>Single-use kit used to insert a chest tube for removal of fluid from the plueral space</English>
                 <Polish>Jednorazowa rurka używana do usuwania nadmiaru płynu z przestrzeni opłucnowej</Polish>
                 <German>Einmalset, um eine Thoraxdrainage zu legen und Flüssigkeit aus dem Pleuraraum zu entfernen</German>
+                <Russian>Одноразовый набор, используемый для введения плевральной дренажной трубки для удаления жидкости из плевральной полости</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyKit">
                 <English>Thoracostomy Kit</English>
                 <German>Thorakotomie-Set</German>
+                <Russian>Набор для торакостомии</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyKit_Desc">
                 <English>Single-use kit used to prepare patient for chest tube insertion</English>
                 <German>Einmalset, um eine Thorakotomie durchzuführen, um den Patienten für die Einlage einer Thoraxdrainage vorzubereiten</German>
+                <Russian>Одноразовый набор, используемый для подготовки пациента к установке плевральной дренажной трубки</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PocketBVM">
                 <English>Pocket BVM</English>
                 <Polish>Kieszonkowy worek samorozprężalny (BVM)</Polish>
                 <German>Taschenbeatmungsbeutel</German>
+                <Russian>Компактный BVM</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PocketBVM_Desc">
                 <English>Compact version of Bag-Valve-Mask</English>
                 <Polish>Kompaktowa wersja worka samorozprężalnego</Polish>
                 <German>Kompakte Version des Beatmungsbeutels</German>
+                <Russian>Компактный вариант мешка амбу </Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM">
                 <English>Bag-Valve-Mask</English>
                 <Polish>Worek samorozprężalny (BVM)</Polish>
                 <German>Beatmungsbeutel</German>
+                <Russian>Сумка-Мешок-Амбу</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Short">
                 <English>BVM</English>
                 <Polish>BVM</Polish>
                 <German>BVM</German>
+                <Russian>BVM (Сервопривод воздушной заслонки)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Desc">
                 <English>Used to ventilate patient that is not breathing, may be connected to oxygen</English>
                 <Polish>Używany do wentylacji pacjenta z nieobecnym lub anormalnym rytmem oddechowym, można przez niego podawać tlen</Polish>
                 <German>Wird verwendet, um den Patienten zu beatmen. Kann mit Sauerstoff konnektiert werden</German>
+                <Russian>Используется для вентиляции пациента, который не дышит, может быть подключен к кислороду</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_OxygenTank_425_Empty">
                 <English>Empty Portable Oxygen Tank (425L)</English>
                 <Polish>Pusta przenośna butla z tlenem (425L)</Polish>
                 <German>Leere tragbare Sauerstoffflasche (425L)</German>
+                <Russian>Пустой портативный кислородный баллон (425 л)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_OxygenTank_425">
                 <English>Portable Oxygen Tank (425L)</English>
                 <Polish>Przenośna butla z tlenem (425L)</Polish>
                 <German>Tragbare Sauerstoffflasche (425L)</German>
+                <Russian>Портативный кислородный баллон (425 л)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_OxygenTank_425_Desc">
                 <English>Used with BVM to provide supplementary oxygen to patients</English>
                 <Polish>Używana razem z workiem samorozprężalnym aby dostarczyć pacjętowi tlen</Polish>
                 <German>Wird mit dem Beatmungsbeutel konnektiert, um zusätzlich mit Sauerstoff zu beatmen</German>
+                <Russian>Используется с BVM для подачи дополнительного кислорода пациентам</Russian>
             </Key>
         </Container>
         <Container name="// Chest Seal Action //">
@@ -251,16 +300,19 @@
                 <English>Apply Chest Seal</English>
                 <Polish>Użyj opatrunku Chest Seal</Polish>
                 <German>Chest Seal aufkleben</German>
+                <Russian>Нанесите окклюзионный пластырь</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ApplyChestSeal_Progress">
                 <English>Applying Chest Seal...</English>
                 <Polish>Używanie opatrnuku Chest Seal...</Polish>
                 <German>Klebe Chest Seal...</German>
+                <Russian>Наложение окклюзиативного пластыря...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ChestSeal_ActionLog">
                 <English>%1 applied Chest Seal</English>
                 <Polish>%1 założył Chest Seal</Polish>
                 <German>%1 legt Chest Seal an</German>
+                <Russian>%1 применен оклюзионный пластырь</Russian>
             </Key>
         </Container>
         <Container name="// Check Breathing Action //">
@@ -268,86 +320,103 @@
                 <English>Check Breathing</English>
                 <Polish>Sprawdź oddychanie</Polish>
                 <German>Atmung überprüfen</German>
+                <Russian>Проверить дыхание</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Progress">
                 <English>Checking Breathing...</English>
                 <Polish>Sprawdzanie oddychania...</Polish>
                 <German>Überprüfe Atmung...</German>
+                <Russian>Проверка дыхания...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_ActionLog">
                 <English>%1 checked breathing: %2</English>
                 <Polish>%1 sprawdził oddychanie: %2</Polish>
                 <German>%1 überprüfte die Atmung: %2</German>
+                <Russian>%1 проверил дыхание: %2</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Normal">
                 <English>Patient is breathing normally</English>
                 <Polish>Pacjent oddycha normalnie</Polish>
                 <German>Patient atmet normal</German>
+                <Russian>Пациент дышит нормально</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Normal_Short">
                 <English>Normal</English>
                 <Polish>Normalny</Polish>
                 <German>Normal</German>
+                <Russian>Нормально</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_None">
                 <English>Patient is not breathing</English>
                 <Polish>Pacjent nie oddycha</Polish>
                 <German>Patient atmet nicht</German>
+                <Russian>Пациент не дышит</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_None_Short">
                 <English>None</English>
                 <Polish>Brak</Polish>
                 <German>Keine Atmung</German>
+                <Russian>Нет дыхания</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Slow">
                 <English>Patient breathing is slow</English>
                 <Polish>Pacjent oddycha powoli</Polish>
                 <German>Patient atmet langsam</German>
+                <Russian>Дыхание пациента замедленное</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Slow_Short">
                 <English>Slow</English>
                 <Polish>Powolny</Polish>
                 <German>Langsam</German>
+                <Russian>Медленно</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Rapid">
                 <English>Patient breathing is rapid</English>
                 <Polish>Pacjent szybko oddycha</Polish>
                 <German>Patient atmet schnell</German>
+                <Russian>Дыхание пациента учащенное</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Rapid_Short">
                 <English>Rapid</English>
                 <Polish>Przyśpieszony</Polish>
                 <German>Schnell</German>
+                <Russian>Стремительное</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Shallow">
                 <English>Patient breathing is shallow</English>
                 <Polish>Pacjent płytko oddycha</Polish>
                 <German>Patient atmet flach</German>
+                <Russian>Больной дышит поверхностно</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Shallow_Short">
                 <English>Shallow</English>
                 <Polish>Płytki</Polish>
                 <German>Flach</German>
+                <Russian>Слабо</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowSlow">
                 <English>Patient breathing is slow and shallow</English>
                 <Polish>Pacjent oddycha powoli i płytko</Polish>
                 <German>Patient atmet langsam und flach</German>
+                <Russian>Дыхание больного замедленное и поверхностное</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowSlow_Short">
                 <English>Slow and shallow</English>
                 <Polish>Powolny i płytki</Polish>
                 <German>Langsam und flach</German>
+                <Russian>Медленно и слабо</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowRapid">
                 <English>Patient breathing is rapid and shallow</English>
                 <Polish>Pacjent oddycha szybko i płytko</Polish>
                 <German>Patient atmet schnell und flach</German>
+                <Russian>Дыхание больного учащенное и поверхностное</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowRapid_Short">
                 <English>Rapid and shallow</English>
                 <Polish>Szybki i płytki</Polish>
                 <German>Schnell und flach</German>
+                <Russian>Быстрое и неглубокое</Russian>
             </Key>
         </Container>
         <Container name="// Inspect Chest Action //">
@@ -355,81 +424,97 @@
                 <English>Inspect Chest</English>
                 <Polish>Sprawdź klatkę piersiową</Polish>
                 <German>Brust inspizieren</German>
+                <Russian>Осмотреть грудь</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Progress">
                 <English>Inspecting Chest...</English>
                 <Polish>Sprawdzanie klatki piersiowej...</Polish>
                 <German>Inspiziere Brust...</German>
+                <Russian>Осмотр груди...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_ActionLog">
                 <English>%1 inspected chest: %2</English>
                 <Polish>%1 sprawdził klatkę piersiową: %2</Polish>
                 <German>%1 inspizierte die Brust: %2</German>
+                <Russian>%1 осмотрен груди: %2</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Normal">
                 <English>Chest rise and fall observed</English>
                 <Polish>Równe unoszenie się klatki zaobserwowane</Polish>
                 <German>Brust hebt und senkt sich</German>
+                <Russian>Наблюдается подъем и опускание грудной клетки</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_None">
                 <English>No chest movement observed</English>
                 <Polish>Brak widocznego unoszenia się klatki</Polish>
                 <German>Brust bewegt sich nicht</German>
+                <Russian>Движений грудной клетки не наблюдается</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_None_Short">
                 <English>No chest movement</English>
                 <Polish>Brak unoszenia się klatki</Polish>
                 <German>Keine Brustbewegung</German>
+                <Russian>Нет движений грудной клетки</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_None_Uneven">
                 <English>Chest sides are uneven</English>
                 <Polish>Strony klatki są nierówne</Polish>
                 <German>Brust ist asymmetrisch</German>
+                <Russian>Стороны груди не симметричны</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_None_Uneven_Short">
                 <English>chest sides uneven</English>
                 <Polish>Strony klatki nierówne</Polish>
                 <German>Asymmetrische Brust</German>
+                <Russian>Бока груди не симметричны</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Bruising">
                 <English>Noticable extensive bruising</English>
                 <Polish>Widoczne rozległe zasinienie</Polish>
                 <German>Wahrnehmbare großflächiges Blutergüsse</German>
+                <Russian>Заметны обширные синяки</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Bruising_Short">
                 <English>Extensive Bruising</English>
                 <Polish>Rozległe zasinienie</Polish>
                 <German>Großflächige Blutergüsse</German>
+                <Russian>Обширные синяки</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Uneven">
                 <English>Uneven chest rise and fall observed</English>
                 <Polish>Nierówne unoszenie się klatki zaobserwowane</Polish>
                 <German>Asymmetrische Atmung beobachtet</German>
+                <Russian>Наблюдается неравномерный подъём и опускание грудной клетки</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Uneven_Short">
                 <English>Uneven chest rise and fall</English>
                 <Polish>Nierówne unoszenie się klatki</Polish>
                 <German>Asymmetrische Atmung</German>
+                <Russian>Неравномерный подъем и опускание груди</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation">
                 <English>Severe Tracheal Deviation</English>
                 <Polish>Ciężkie odchylenie tchawicy</Polish>
                 <German>Schwere Trachealverschiebung</German>
+                <Russian>Огромное отклонение трахеи</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation_Short">
                 <English>Severe tracheal deviation</English>
                 <Polish>Ciężkie odchylenie tchawicy</Polish>
                 <German>Schwere Tracheadeviation</German>
+                <Russian>Сильное отклонение трахеи</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation_Slight">
                 <English>Slight Tracheal Deviation</English>
                 <Polish>Lekkie odchylenie tchawicy</Polish>
                 <German>Leichte Trachealverschiebung</German>
+                <Russian>Среднее отклоение трахеи</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation_Slight_Short">
                 <English>Slight tracheal deviation</English>
                 <Polish>Lekkie odchylenie tchawicy</Polish>
                 <German>Leichte Tracheadeviation</German>
+                <Russian>Легкое отклонение трахеи</Russian>
             </Key>
         </Container>
         <Container name="// NCD Action //">
@@ -437,21 +522,25 @@
                 <English>Perform Needle-Chest-Decompression</English>
                 <Polish>Wykonaj dekompresję klatki piersiowej</Polish>
                 <German>Nadledekompression durchführen</German>
+                <Russian>Выполните игольную декомпрессию грудной клетки</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PerformNCD_Progress">
                 <English>Performing Needle-Chest-Decompression...</English>
                 <Polish>Wykonywanie dekompresji...</Polish>
                 <German>Führe Nadledekompression durch...</German>
+                <Russian>Выполнение игольной декомпрессии грудной клетки...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_NCD_Needle_Decompression">
                 <English>Needle Decompression</English>
                 <Polish>Dekompresja igłowa</Polish>
                 <German>Nadledekompression</German>
+                <Russian>Игольная декомпрессия</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_NCD_ActionLog">
                 <English>%1 performed Needle Chest Decompression</English>
                 <Polish>%1 wykonał dekompresję igłową</Polish>
                 <German>%1 führte eine Nadledekompression durch</German>
+                <Russian>%1 выполнил игольчатую декомпрессию грудной клетки</Russian>
             </Key>
         </Container>
         <Container name="// Oxygen Tank Refill Action //">
@@ -459,21 +548,25 @@
                 <English>Refill Oxygen Tank</English>
                 <Polish>Uzupełnij butlę z tlenem</Polish>
                 <German>Sauerstoffflasche auffüllen</German>
+                <Russian>Заправить кислородный баллон</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_RefillOxygenTank_Complete">
                 <English>Oxygen Tank Refilled</English>
                 <Polish>Butla z tlenem uzupełniona</Polish>
                 <German>Sauerstoffflasche aufgefüllt</German>
+                <Russian>Кислородный баллон заправлен</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_RefillOxygenTank_Cancelled">
                 <English>Oxygen Tank Refilling Cancelled</English>
                 <Polish>Uzupełnianie butli przerwane</Polish>
                 <German>Auffüllen der Sauerstoffflasche abgebrochen</German>
+                <Russian>Заправка кислородного баллона отменена</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_RefillOxygenTank_Progress">
                 <English>Refilling Oxygen Tank...</English>
                 <Polish>Uzupełnianie butli z tlenem...</Polish>
                 <German>Fülle Sauerstoffflasche auf...</German>
+                <Russian>Заправка кислородного баллона...</Russian>
             </Key>
         </Container>
         <Container name="// Pulse Oximeter Actions //">
@@ -481,36 +574,43 @@
                 <English>Place Pulse Oximeter</English>
                 <Polish>Załóż pulsoksymetr</Polish>
                 <German>Pulsoxymeter anhängen</German>
+                <Russian>Поместить пульсоксиметр</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PlacePulseOximeter_Progress">
                 <English>Placing Pulse Oximeter...</English>
                 <Polish>Zakładanie pulsoksymetru...</Polish>
                 <German>Hänge Pulsoxymeter an...</German>
+                <Russian>Установка пульсоксиметра...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_RemovePulseOximeter">
                 <English>Remove Pulse Oximeter</English>
                 <Polish>Zdejmij pulsoksymetr</Polish>
                 <German>Pulsoxymeter entfernen</German>
+                <Russian>Снять пульсоксиметр</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_RemovePulseOximeter_Progress">
                 <English>Removing Pulse Oximeter...</English>
                 <Polish>Zdejmowanie pulsoksymetru...</Polish>
                 <German>Entferne Pulsoxymeter...</German>
+                <Russian>Снятие пульсоксиметра...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PulseOximeter_Already">
                 <English>Patient already has pulse oximeter on the %1</English>
                 <Polish>Pacjęt ma już pulsoksymetr na %1</Polish>
                 <German>Patient hat bereits ein Pulsoxymeter am %1</German>
+                <Russian>Надевание пульсоксиметра %1</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PulseOximeter_ActionLog_Placed">
                 <English>%1 placed Pulse Oximeter</English>
                 <Polish>%1 założył pulsoksymetr</Polish>
                 <German>%1 hängte Pulsoxymeter an</German>
+                <Russian>%1 размещен Пульсоксиметр</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PulseOximeter_ActionLog_Removed">
                 <English>%1 removed Pulse Oximeter</English>
                 <Polish>%1 zdjął pulsoksymetr</Polish>
                 <German>%1 entfernte Pulsoxymeter</German>
+                <Russian>%1 удален пульсоксиметр</Russian>
             </Key>
         </Container>
         <Container name="// Thoracostomy Close Incision Action //">
@@ -518,26 +618,31 @@
                 <English>Close Thoracostomy Incision</English>
                 <Polish>Zaszyj torakotomie</Polish>
                 <German>Thorakotomieschnittwunde verschließen</German>
+                <Russian>Закрыть торакотомную разрезную рану</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_CloseIncision_Progress">
                 <English>Closing Thoracostomy Incision...</English>
                 <Polish>Zaszywanie torakotomii...</Polish>
                 <German>Nähe Thorakotomieschnittwunde...</German>
+                <Russian>Закрытие торакостомического разреза...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyClose_Already">
                 <English>Thoracostomy incision already closed</English>
                 <Polish>Nacięcie drenażu jest już zamknięte</Polish>
                 <German>Thorakotomieschnitt schon vernäht</German>
+                <Russian>Разрез торакостомы закрыт</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyClose_ActionLog">
                 <English>%1 closed up thoracostomy incision</English>
                 <Polish>%1 zamknął nacięcie drenażu</Polish>
                 <German>%1 nähte die Thorakotomieschnittwunde</German>
+                <Russian>%1 закрытый разрез торакостомы</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyClose_Complete">
                 <English>Thoracostomy incision sealed and one-way valve placed</English>
                 <Polish>Nacięcie drenażu zamknięte, zawór jednostronny założony</Polish>
                 <German>Thorakotomieschnittwunde genäht und Einwegventil platziert</German>
+                <Russian>Разрез торакостомы запечатан и установлен односторонний клапан</Russian>
             </Key>
         </Container>
         <Container name="// Thoracostomy Drain Action //">
@@ -545,56 +650,67 @@
                 <English>Drain Fluid (ACCUVAC)</English>
                 <Polish>Odessaj płyny (ACCUVAC)</Polish>
                 <German>Flüssigkeit absaugen (ACCUVAC)</German>
+                <Russian>Слив жидкости (ACCUVAC)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_DrainFluid_SuctionBag">
                 <English>Drain Fluid (Suction Bag)</English>
                 <Polish>Odessaj płyny (Ssak ręczny)</Polish>
                 <German>Flüssigkeit absaugen (Einwegabsaugpumpe)</German>
+                <Russian>Слив жидкости (Вакуумный отсасыватель )</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_DrainFluid_Suction_Progress">
                 <English>Draining Fluid...</English>
                 <Polish>Odsysanie płynów...</Polish>
                 <German>Sauge Flüssigkeit ab...</German>
+                <Russian>Слив жидкости...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_ActionLog">
                 <English>%1 drained plueral space (%2)</English>
                 <Polish>%1 odessał jamę opłucnej (%2)</Polish>
                 <German>%1 saugte Flüssigkeit aus Pleuraraum ab (%2)</German>
+                <Russian>%1 дренировано плевральное пространство (%2)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_QuickViewLog">
                 <English>Thoracostomy Drain: %1</English>
                 <Polish>Ilość usuniętego płynu: %1</Polish>
                 <German>Thorakotomie Absaugung: %1</German>
+                <Russian>Торакостомический дренаж: %1</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Complete">
                 <English>Fluid draining complete</English>
                 <Polish>Odsysanie zakończone</Polish>
                 <German>Flüssigkeit fertig abgesaugt</German>
+                <Russian>Слив жидкости завершен</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Accurate">
                 <English>~%1 ml of blood drained</English>
                 <Polish>Odessano ~%1 ml krwi </Polish>
                 <German>~%1 ml Blut drainiert</German>
+                <Russian>~%1 мл вытекшей крови</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_None">
                 <English>No blood drained</English>
                 <Polish>Brak krwi do odessania</Polish>
                 <German>Kein Blut drainiert</German>
+                <Russian>Кровь не вытекла</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Small">
                 <English>Small amount of blood drained</English>
                 <Polish>Mała ilość krwi odessana</Polish>
                 <German>Kleine Blutmenge drainiert</German>
+                <Russian>Вытекло небольшое количество крови</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Significant">
                 <English>Significant amount of blood drained</English>
                 <Polish>Spora ilość krwi odessana</Polish>
                 <German>Signifikante Blutmenge drainiert</German>
+                <Russian>Вытекло значительное количество крови</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Large">
                 <English>Large amount of blood drained</English>
                 <Polish>Duża ilość krwi odessana</Polish>
                 <German>Große Blutmenge drainiert</German>
+                <Russian>Вытекло большое количество крови</Russian>
             </Key>
         </Container>
         <Container name="// Thoracostomy Insert Chest Tube Action //">
@@ -602,26 +718,31 @@
                 <English>Insert Chest Tube</English>
                 <Polish>Wprowadź rurkę do drenażu</Polish>
                 <German>Thoraxdrainage einlegen</German>
+                <Russian>Вставить грудную дренажную трубку</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_InsertChestTube_Progress">
                 <English>Inserting Chest Tube...</English>
                 <Polish>Wprowadzanie rurki do drenażu...</Polish>
                 <German>Lege Thoraxdrainage ein...</German>
+                <Russian>Вставка грудной дренажной трубки...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_Already">
                 <English>Chest Tube already inserted</English>
                 <Polish>Rurka do drenażu została już włożona</Polish>
                 <German>Thoraxdrainage liegt bereits ein</German>
+                <Russian>Грудная дренажная трубка уже установлена</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_ActionLog">
                 <English>%1 inserted Chest Tube</English>
                 <Polish>%1 włożył rurkę do drenażu</Polish>
                 <German>%1 legte eine Thoraxdrainage ein</German>
+                <Russian>%1 вставлена ​​грудная дренажная трубка</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_Complete">
                 <English>Chest Tube inserted</English>
                 <Polish>Rurka do drenażu włożona</Polish>
                 <German>Thoraxdrainage eingelegt</German>
+                <Russian>Вставлена грудная​ дренажная трубка</Russian>
             </Key>
         </Container>
         <Container name="// Thoracostomy Reseal Chest Tube Action //">
@@ -629,26 +750,31 @@
                 <English>Re-Seal Chest Tube</English>
                 <Polish>Zabezpiecz drenaż opłucnej</Polish>
                 <German>Thoraxdrainage verschließen</German>
+                <Russian>Повторное запечатывание грудной дренажной трубки</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ReSealChestTube_Progress">
                 <English>Re-sealing Chest Tube...</English>
                 <Polish>Zabezpieczanie drenażu opłucnej...</Polish>
                 <German>Verschließe Thoraxdrainage...</German>
+                <Russian>Повторное запечатывание грудной дренажной трубки...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_Already">
                 <English>Chest Tube already re-sealed</English>
                 <Polish>Rurka do drenażu została już ponownie zamknięta</Polish>
                 <German>Thoraxdrainage ist bereits wiederverschlossen</German>
+                <Russian>Грудная дренажная трубка уже запечатана</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_ActionLog">
                 <English>%1 re-sealed Chest Tube</English>
                 <Polish>%1 zamknął ponownie rurkę do drenażu</Polish>
                 <German>%1 verschließte Thoraxdrainage erneut</German>
+                <Russian>%1 повторно запечатанная грудная дренажная трубка</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_Complete">
                 <English>Chest Tube re-sealed</English>
                 <Polish>Rurka do drenażu została już zamknięta </Polish>
                 <German>Thoraxdrainage wiederverschlossen</German>
+                <Russian>Грудная дренажная трубка повторно запечатана</Russian>
             </Key>
         </Container>
         <Container name="// Thoracostomy Sweep (Start) Action //">
@@ -656,94 +782,113 @@
                 <English>Perform Thoracostomy</English>
                 <Polish>Wykonaj torakotomię</Polish>
                 <German>Thorakotomie durchführen</German>
+                <Russian>Выполнить торакостомию</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PerformThoracostomy_Progress">
                 <English>Performing Thoracostomy...</English>
                 <Polish>Wykonywanie torakotomii...</Polish>
                 <German>Führe Thorakotomie durch...</German>
+                <Russian>Выполнение торакостомии...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_PerformThoracostomy_Kit">
                 <English>Perform Thoracostomy (Kit)</English>
                 <German>Thorakotomie (Kit) durchführen</German>
+                <Russian>Выполнение торакостомии (набор)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Already">
                 <English>Thoracostomy sweep already performed</English>
                 <Polish>Przetarcie wnętrza klatki zostało już wykonane</Polish>
                 <German>Thorakotomieabtastung bereits durchgeführt</German>
+                <Russian>Торакостомия уже выполнена</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_ActionLog_Complete">
                 <English>%1 performed thoracostomy</English>
                 <Polish>%1 wykonał torakotomie</Polish>
                 <German>%1 führte Thorakotomie durch</German>
+                <Russian>%1 выполнил торакостомию</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Kit_ActionLog_Complete">
                 <English>%1 performed thoracostomy (Thoracostomy Kit)</English>
                 <German>%1 führte Thorakotomie (Thorakotomie Kit) durch</German>
+                <Russian>%1 выполнил торакостомию (набор для торакостомии)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Complete">
                 <English>Finger Thoracostomy Performed</English>
                 <Polish>Przetarcie wnętrza klatki wykonane</Polish>
                 <German>Finger-Thorakotomie durchgeführt</German>
+                <Russian>Выполнена пальцевая торакостомия</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_ActionLog">
                 <English>Thoracostomy Sweep: %1</English>
                 <Polish>Przetarcie wykonane: </Polish>
                 <German>Thorakotomieabtastung: %1</German>
+                <Russian>Торакостомия: %1</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Normal">
                 <English>Lung is inflating normally</English>
                 <Polish>Płuco pracuje normalnie</Polish>
                 <German>Lunge entfaltet sich normal</German>
+                <Russian>Легкие надуваются нормально</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Normal_Short">
                 <English>lung inflating normally</English>
                 <Polish>Płuco pracuje normalnie</Polish>
                 <German>Normale Lungenentfaltung</German>
+                <Russian>Легкие работают нормально</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_NotInflating">
                 <English>Lung is not inflating</English>
                 <Polish>Płuco nie pracuje</Polish>
                 <German>Lunge entfaltet sich nicht</German>
+                <Russian>Легкие не надуваются</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereCollapse">
                 <English>Lung is severely collapsed</English>
                 <Polish>Płuco jest poważnie zapadnięte</Polish>
                 <German>Lunge stark kollabiert</German>
+                <Russian>Легкое сильно коллапсировано</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereCollapse_Short">
                 <English>Lung is collapsed</English>
                 <Polish>Płuco jest zapadnięte</Polish>
                 <German>Lunge kollabiert</German>
+                <Russian>Легкое разрушено</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Blood">
                 <English>Found blood in pleural space</English>
                 <Polish>Krew w jamie opłucnej</Polish>
                 <German>Blut im Pleuraraum gefunden</German>
+                <Russian>Обнаружена кровь в плевральной полости</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Blood_Short">
                 <English>Blood in pleural space</English>
                 <Polish>Krew w jamie opłucnej</Polish>
                 <German>Blut im Pleuraraum</German>
+                <Russian>Кровь в плевральной полости</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereBlood">
                 <English>Large amount of blood in pleural space</English>
                 <Polish>Duża ilość krwi w jamie opłucnej</Polish>
                 <German>Große Menge an Blut im Pleuraraum</German>
+                <Russian>Большое количество крови в плевральной полости</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereBlood_Short">
                 <English>large amount of blood</English>
                 <Polish>Duża ilość krwi</Polish>
                 <German>Große Menge an Blut</German>
+                <Russian>Много крови</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Bleeding">
                 <English>Noticable bleeding inside pleural space</English>
                 <Polish>Widoczne krwawienie w jamie opłucnej</Polish>
                 <German>Wahrnehmbare Blutung im Pleuraraum</German>
+                <Russian>Видимое кровотечение в плевральной полости</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Bleeding_Short">
                 <English>Bleeding in pleural space</English>
                 <Polish>Krwawienie w jamie opłucnej</Polish>
                 <German>Blutung im Pleuraraum</German>
+                <Russian>Кровотечение в плевральной полости</Russian>
             </Key>
         </Container>
         <Container name="// BVM Actions //">
@@ -751,76 +896,91 @@
                 <English>Use Pocket BVM</English>
                 <Polish>Użyj kieszonkowego worka samorozprężalnego (BVM)</Polish>
                 <German>Taschenbeatmungsbeutel verwenden</German>
+                <Russian>Использовать карманный BVM</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_UseBVM">
                 <English>Use BVM</English>
                 <Polish>Użyj worka samorozprężalnego (BVM)</Polish>
                 <German>Beatmungsbeutel verwenden</German>
+                <Russian>Использовать BVM</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_UseBVM_Oxygen">
                 <English>Use BVM with Oxygen</English>
                 <Polish>Użyj worka samorozprężalnego z tlenem</Polish>
                 <German>Beatmungsbeutel mit Sauerstoff verwenden</German>
+                <Russian>Используйте BVM с кислородом</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_UseBVM_VehicleOxygen">
                 <English>Use BVM with Oxygen (Vehicle)</English>
                 <Polish>Użyj worka samorozprężalnego z tlenem (Pojazd)</Polish>
                 <German>Beatmungsbeutel mit Fahrzeugsauerstoff verwenden</German>
+                <Russian>Используйте BVM с кислородом (транспортное средство)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_UseBVM_PortableOxygen">
                 <English>Use BVM with Oxygen (Portable)</English>
                 <Polish>Użyj worka samorozprężalnego z tlenem (Przenośny)</Polish>
                 <German>Beatmungsbeutel mit tragbarer Sauerstoffflasche verwenden</German>
+                <Russian>Используйте BVM с кислородом (портативный)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Already">
                 <English>Patient already has BVM</English>
                 <Polish>Pacjent ma już worek samorozprężalny</Polish>
                 <German>Patient wird bereits beatmet</German>
+                <Russian>У пациента уже стоит BVM</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_UsingBVM">
                 <English>Using BVM...</English>
                 <Polish>Używanie worka samorozprężalnego...</Polish>
                 <German>Beatme Patient...</German>
+                <Russian>Использование BVM...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_UsingBVM_Assist">
                 <English>Using BVM (Assisting CPR)...</English>
                 <Polish>Używanie worka samorozprężalnego (Wspomaganie RKO)...</Polish>
                 <German>Beatme Patient (im Rahmen der Reanimation)...</German>
+                <Russian>Использование BVM (вспомогательная СЛР)...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_UsingBVM_Oxygen">
                 <English>Using BVM with oxygen...</English>
                 <Polish>Używanie worka samorozprężalnego z tlenem...</Polish>
                 <German>Beatme Patient mit Sauerstoff...</German>
+                <Russian>Использование BVM с кислородом...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_UsingBVM_AssistOxygen">
                 <English>Using BVM with oxygen (Assisting CPR)...</English>
                 <Polish>Używanie worka samorozprężalnego z tlenem (Wspomaganie RKO)...</Polish>
                 <German>Beatme Patient mit Sauerstoff (im Rahmen der Reanimation)...</German>
+                <Russian>Использование BVM с кислородом (помощь при СЛР)...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Stop">
                 <English>Stop using BVM</English>
                 <Polish>Przestań używać worka samorozprężalnego</Polish>
                 <German>Beatmung beenden</German>
+                <Russian>Прекратите использовать BVM</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Stopped">
                 <English>Stopped using BVM</English>
                 <Polish>Przestano używać worka samorozprężalnego</Polish>
                 <German>Beatmung beendet</German>
+                <Russian>Перестал использовать BVM</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Started">
                 <English>Started Rescue Breaths</English>
                 <Polish>Rozpoczęto oddechy ratunkowe</Polish>
                 <German>Beatmung begonnen</German>
+                <Russian>Начало искусственного дыхания</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Pause">
                 <English>Pause Rescue Breaths</English>
                 <Polish>Przerwij oddechy ratunkowe</Polish>
                 <German>Beatmung pausieren</German>
+                <Russian>Пауза в искусственном дыхания</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Paused">
                 <English>Paused Rescue Breaths</English>
                 <Polish>Przerwano oddechy ratunkowe</Polish>
                 <German>Beatmung pausiert</German>
+                <Russian>Приостановленно искусственное дыхание</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continue">
                 <English>Continue Rescue Breaths</English>
@@ -831,27 +991,33 @@
                 <English>Continued Rescue Breaths</English>
                 <Polish>Wznowiono oddechy ratunkowe </Polish>
                 <German>Beatmung fortgesetzt</German>
+                <Russian>Продолжение исскуственого дыхания</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_SwapToCPR">
                 <English>Swap To CPR</English>
+                <Russian>Заменить на СЛР</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_SwappedToCPR">
                 <English>Swapped To CPR</English>
+                <Russian>Заменено на СЛП</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_ActionLog_Start">
                 <English>%1 started BVM rescue breaths</English>
                 <Polish>%1 rozpoczął oddechy ratunkowe (BVM)</Polish>
                 <German>%1 hat begonnen den Patienten zu beatmen</German>
+                <Russian>%1 начал искусственное дыхание BVM</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_ActionLog_Stop">
                 <English>%1 stopped BVM rescue breaths (x%2)</English>
                 <Polish>%1 zakończył oddechy ratunkowe (BVM) (x%2)</Polish>
                 <German>%1 hat aufgehört den Patienten zu beatmen (x%2)</German>
+                <Russian>%1 остановил искусственное дыхание BVM (x%2)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_OxygenTankDepleted">
                 <English>Portable Oxygen Tank Depleted</English>
                 <Polish>Przenośna butla z tlenem wyczerpana</Polish>
                 <German>Sauerstoffflasche ist leer</German>
+                <Russian>Переносной кислородный баллон исчерпан</Russian>
             </Key>
         </Container>
         <Container name="// Stethoscope Action //">
@@ -859,31 +1025,37 @@
                 <English>Inspect Chest With Stethoscope</English>
                 <Polish>Sprwadź klatkę piersiową stetoskopem</Polish>
                 <German>Brust mit Stethoskop inspizieren</German>
+                <Russian>Осмотреть грудь стетоскопом</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_ActionLog">
                 <English>%1 inspected chest with Stethoscope</English>
                 <Polish>%1 zbadał klatkę piersiową stetoskopem</Polish>
                 <German>%1 führte eine Thoraxauskultation mit Stethoskop durch</German>
+                <Russian>%1 осмотрел грудную клетку с помощью стетоскопа</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_Stopped">
                 <English>Stopped using stethoscope</English>
                 <Polish>Przerwano użycie stetoskopu</Polish>
                 <German>Hörte auf mittels Stethoskop zu auskultieren</German>
+                <Russian>Перестал пользоваться стетоскопом</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_Using">
                 <English>Using Stethoscope...</English>
                 <Polish>Używanie stetoskopu...</Polish>
                 <German>Benutze Stethoskop zum Auskultieren...</German>
+                <Russian>Использование стетоскопа...</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_MoveBell">
                 <English>Move Bell</English>
                 <Polish>Przemieść głowicę</Polish>
                 <German>Bewege Bruststück</German>
+                <Russian>Переместить стетоскоп</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_PlaceBell">
                 <English>Place Bell</English>
                 <Polish>Przyłóż głowicę</Polish>
                 <German>Platziere Bruststück</German>
+                <Russian>Остановить стетоскоп</Russian>
             </Key>
         </Container>
         <Container name="// GUI //">
@@ -891,61 +1063,73 @@
                 <English>Cyanosis</English>
                 <Polish>Sinica</Polish>
                 <German>Zyanose</German>
+                <Russian>Цианоз</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_NoticableCyanosis">
                 <English>Noticable Cyanosis</English>
                 <Polish>Widoczna sinica</Polish>
                 <German>Deutliche Zyanose</German>
+                <Russian>Заметный цианоз</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_Slight">
                 <English>Slight</English>
                 <Polish>Lekka</Polish>
                 <German>Leicht</German>
+                <Russian>Легкий</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_Moderate">
                 <English>Moderate</English>
                 <Polish>Umiarkowana</Polish>
                 <German>Moderat</German>
+                <Russian>Умеренный</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_Severe">
                 <English>Severe</English>
                 <Polish>Ciężka</Polish>
                 <German>Schwer</German>
+                <Russian>Серьезный</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_UpperChest">
                 <English>Upper Chest</English>
                 <Polish>Góra klatki piersiowej</Polish>
                 <German>Obere Brust</German>
+                <Russian>Верхняя часть груди</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_%1">
                 <English>Thoracostomy Incision (%1)</English>
                 <Polish>Torakotomia (%1)</Polish>
                 <German>Thorakotomieschnittwunde (%1)</German>
+                <Russian>Торакостомический разрез (%1)</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_Sealed">
                 <English>Sealed</English>
                 <Polish>Zamknięta</Polish>
                 <German>Verschlossen</German>
+                <Russian>Закрыто</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_Open">
                 <English>Open</English>
                 <Polish>Otwarta</Polish>
                 <German>Offen</German>
+                <Russian>Открыто</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_ChestTube">
                 <English>Sealed Chest Tube</English>
                 <Polish>Rurka do drenażu opłucnej zamknięta</Polish>
                 <German>Verschlossene Drainage</German>
+                <Russian>Герметичная грудная дренажная трубка</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_ChestTubeUnsealed">
                 <English>Unsealed Chest Tube</English>
                 <Polish>Rurka do drenażu opłucnej otwarta</Polish>
                 <German>Offene Drainage</German>
+                <Russian>Незапечатанная грудная дренажная трубка</Russian>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_TrachealDeviation">
                 <English>Noticable Tracheal Deviation</English>
                 <Polish>Zauważalne odchylenie tchawicy</Polish>
                 <German>Deutliche Tracheaverschiebung</German>
+                <Russian>Заметное отклонение трахеи</Russian>
             </Key>
         </Container>
     </Package>
