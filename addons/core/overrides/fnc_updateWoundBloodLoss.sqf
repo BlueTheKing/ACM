@@ -59,13 +59,11 @@ if (_bodyPartInternalBleeding isEqualTo [0,0,0,0,0,0]) then {
 
     _unit setVariable [VAR_INTERNAL_BLEEDING, (_bodyBleedingRate + _limbBleedingRate), true];
     
-    if (EGVAR(circulation,coagulationClotting) && (EGVAR(circulation,coagulationClottingAffectAI) || (!(EGVAR(circulation,coagulationClottingAffectAI)) && isPlayer _unit))) then {
-        [{
-            params ["_unit"];
+    [{
+        params ["_unit"];
 
-            [QEGVAR(damage,handleIBCoagulationPFH), [_unit], _unit] call CBA_fnc_targetEvent;
-        }, [_unit], 10] call CBA_fnc_waitAndExecute;
-    };
+        [QEGVAR(damage,handleIBCoagulationPFH), [_unit], _unit] call CBA_fnc_targetEvent;
+    }, [_unit], 10] call CBA_fnc_waitAndExecute;
 };
 
 if (_bodyPartBleeding isEqualTo [0,0,0,0,0,0]) then {

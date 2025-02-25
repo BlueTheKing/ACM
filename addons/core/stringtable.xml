@@ -127,6 +127,17 @@
                 <French>L'assistance au portage a été annulée</French>
             </Key>
         </Container>
+        <Container name="// Supine Position Action //">
+            <Key ID="STR_ACM_Core_SupinePosition_Action">
+                <English>Put In Supine Position</English>
+            </Key>
+            <Key ID="STR_ACM_Core_SupinePosition_Complete">
+                <English>Patient has been placed into the supine position</English>
+            </Key>
+            <Key ID="STR_ACM_Core_SupinePosition_Hint">
+                <English>You have been placed into the supine position</English>
+            </Key>
+        </Container>
         <Container name="// Treatment Text //">
             <Key ID="STR_ACM_Core_TreatedBy">
                 <English>You are being treated by %1</English>

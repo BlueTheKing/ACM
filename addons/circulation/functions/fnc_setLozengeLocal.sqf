@@ -25,9 +25,10 @@ params ["_medic", "_patient", ["_type", ""]];
 
     private _woreOff = CBA_missionTime - _insertTime > 180;
     private _inLyingState = _patient getVariable [QEGVAR(core,Lying_State), false];
+    private _inSittingState = _patient getVariable [QEGVAR(core,Sitting_State), false];
     private _lozengeItem = _patient getVariable [QGVAR(LozengeItem), ""];
 
-    if (_lozengeItem != _type || IS_UNCONSCIOUS(_patient) || _woreOff || !_inLyingState) exitWith {
+    if (_lozengeItem != _type || IS_UNCONSCIOUS(_patient) || _woreOff || (!_inLyingState && !_inSittingState)) exitWith {
         private _classname = format ["%1_BUC", _type];
 
         private _medicationList = +(_patient getVariable [VAR_MEDICATIONS,[]]);
@@ -43,6 +44,8 @@ params ["_medic", "_patient", ["_type", ""]];
 
             _patient setVariable [VAR_MEDICATIONS, _medicationList, true];
         };
+
+        _patient setVariable [QGVAR(LozengeItem), "", true];
 
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };

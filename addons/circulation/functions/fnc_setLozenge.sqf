@@ -31,7 +31,7 @@ if (_type == "") then {
         };
     } else {
         [LLSTRING(FentanylLozenge_Remove_Complete), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-        [QACEGVAR(common,displayTextStructured), [(format [LLSTRING(FentanylLozenge_Remove_Hint), _medic]), 2, _patient], _patient] call CBA_fnc_targetEvent;
+        [QACEGVAR(common,displayTextStructured), [(format [LLSTRING(FentanylLozenge_Remove_Hint), _medic]), 1.5, _patient], _patient] call CBA_fnc_targetEvent;
     };
 } else {
     if ((_patient getVariable [QGVAR(LozengeItem), ""]) != "") exitWith {

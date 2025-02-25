@@ -474,7 +474,7 @@ class ACEGVAR(medical_treatment,actions) {
         items[] = {"ACM_Lozenge_Fentanyl"};
         allowSelfTreatment = 0;
         treatmentTime = 4;
-        condition = QUOTE(_patient call ACEFUNC(common,isAwake) && ((_patient getVariable [ARR_2(QQEGVAR(circulation,LozengeItem),'')]) == '') && (_patient getVariable [ARR_2(QQGVAR(Lying_State),false)]) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
+        condition = QUOTE(_patient call ACEFUNC(common,isAwake) && ((_patient getVariable [ARR_2(QQEGVAR(circulation,LozengeItem),'')]) == '') && ((_patient getVariable [ARR_2(QQGVAR(Lying_State),false)]) || (_patient getVariable [ARR_2(QQGVAR(Sitting_State),false)])) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'Fentanyl')] call EFUNC(circulation,setLozenge));
         ACM_rollToBack = 1;
         sounds[] = {};

@@ -43,7 +43,7 @@ GVAR(ContinuousAction_Cancel_EscapeID) = [0x01, [false, false, false], { // ESC 
 private _notInVehicle = isNull objectParent _medic;
 
 private _medicStance = stance _medic;
-private _isProne = _medicStance == "PRONE" && _allowProne;
+private _isProne = (_medicStance == "PRONE") && _allowProne;
 
 if (_notInVehicle) then {
     switch (stance _medic) do {
