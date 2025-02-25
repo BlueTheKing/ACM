@@ -8,49 +8,47 @@
 
 [QGVAR(detectorPFH), LINKFUNC(detectorPFH)] call CBA_fnc_addEventHandler;
 
-if (GVAR(enable)) then {
-    GVAR(HazardType_List) = createHashMap;
+if !(GVAR(enable)) exitWith {};
+GVAR(HazardType_List) = createHashMap;
 
-    private _hazardCategoryArray = "true" configClasses (configFile >> "ACM_CBRN_Hazards");
+private _hazardCategoryArray = "true" configClasses (configFile >> "ACM_CBRN_Hazards");
 
+{
+    private _hazardTypeArray = [];
+    
     {
-        private _hazardTypeArray = [];
-        
-        {
-            _hazardTypeArray pushBack (configName _x);
-        } forEach ("true" configClasses _x);
+        _hazardTypeArray pushBack (configName _x);
+    } forEach ("true" configClasses _x);
 
-        GVAR(HazardType_List) insert [[configName _x, _hazardTypeArray]];
-    } forEach _hazardCategoryArray;
+    GVAR(HazardType_List) insert [[configName _x, _hazardTypeArray]];
+} forEach _hazardCategoryArray;
 
-    GVAR(HazardType_ThresholdList) = createHashMap;
+GVAR(HazardType_ThresholdList) = createHashMap;
 
+{
+    private _category = _x;
+    
     {
-        private _category = _x;
+        private _hazardClass = configFile >> "ACM_CBRN_Hazards" >> _category >> _x;
+
+        private _thresholdList = [0]; 
+        private _thresholdPositiveRateList = [1]; 
+        private _thresholdNegativeRateList = [1]; 
         
-        {
-            private _hazardClass = configFile >> "ACM_CBRN_Hazards" >> _category >> _x;
+        if ((isArray (_hazardClass >> "thresholds")) && (isArray (_hazardClass >> "threshold_positiveRate"))) then {
+            _thresholdList = getArray (_hazardClass >> "thresholds");
+            _thresholdPositiveRateList = getArray (_hazardClass >> "threshold_positiveRate");
+            _thresholdNegativeRateList = getArray (_hazardClass >> "threshold_negativeRate");
+            _thresholdList pushBack 100;
+        };
+        if (isArray (_hazardClass >> "threshold_positiveRate")) then {
+            _thresholdNegativeRateList = getArray (_hazardClass >> "threshold_negativeRate");
+        };
 
-            private _thresholdList = [0]; 
-            private _thresholdPositiveRateList = [1]; 
-            private _thresholdNegativeRateList = [1]; 
-            
-            if ((isArray (_hazardClass >> "thresholds")) && (isArray (_hazardClass >> "threshold_positiveRate"))) then {
-                _thresholdList = getArray (_hazardClass >> "thresholds");
-                _thresholdPositiveRateList = getArray (_hazardClass >> "threshold_positiveRate");
-                _thresholdNegativeRateList = getArray (_hazardClass >> "threshold_negativeRate");
-                _thresholdList pushBack 100;
-            };
-
-            if (isArray (_hazardClass >> "threshold_positiveRate")) then {
-                _thresholdNegativeRateList = getArray (_hazardClass >> "threshold_negativeRate");
-            };
-
-            GVAR(HazardType_ThresholdList) insert [[toLower (format ["%1_%2", _category, _x]), [_thresholdList, _thresholdPositiveRateList, _thresholdNegativeRateList]]];
-            
-        } forEach _y;
-    } forEach GVAR(HazardType_List);
-};
+        GVAR(HazardType_ThresholdList) insert [[toLower (format ["%1_%2", _category, _x]), [_thresholdList, _thresholdPositiveRateList, _thresholdNegativeRateList]]];
+        
+    } forEach _y;
+} forEach GVAR(HazardType_List);
 
 ["multiplier", {
     private _sarinBuildup = ACE_player getVariable [QGVAR_BUILDUP(Chemical_Sarin), 0];
@@ -64,12 +62,27 @@ GVAR(PPE_List) = createHashMapFromArray [
     ["mask_goggles", ["G_Balaclava_TI_G_blk_F","G_Balaclava_TI_G_tna_F"]],
     ["mask", ["G_Respirator_blue_F","G_Respirator_white_F","G_Respirator_yellow_F"]],
     ["mask_makeshift", ["G_Balaclava_TI_blk_F","G_Balaclava_TI_tna_F","G_Bandanna_aviator","G_Bandanna_beast","G_Bandanna_blk","G_Bandanna_BlueFlame1","G_Bandanna_BlueFlame2","G_Bandanna_CandySkull","G_Bandanna_khk","G_Bandanna_oli","G_Bandanna_OrangeFlame1","G_Bandanna_RedFlame1","G_Bandanna_shades","G_Bandanna_Skull1","G_Bandanna_Skull2","G_Bandanna_sport","G_Bandanna_Syndikat1","G_Bandanna_Syndikat2","G_Bandanna_tan","G_Bandanna_Vampire_01"]]
-]; // TODO setting
+];
 
 GVAR(Vehicle_List) = createHashMapFromArray [
-    ["cbrn", [""]],
-    ["sealable", [""]]
-]; // TODO setting
+    ["cbrn", ["B_APC_Tracked_01_rcws_F"]],
+    ["sealed", ["B_MRAP_01_F"]]
+];
+
+{
+    _x params ["_hashMap", "_key", "_settingsList"];
+
+    private _list = _hashMap get _key;
+    private _customList = _settingsList splitString ",";
+    _list insert [-1, _customList, true];
+
+    _hashMap set [_key, _list];
+} forEach [
+    [GVAR(PPE_List), "gasmask", GVAR(customPPEList_gasmask)],
+    [GVAR(PPE_List), "suit", GVAR(customPPEList_suit)],
+    [GVAR(Vehicle_List), "cbrn", GVAR(customVehicleList_CBRN)],
+    [GVAR(Vehicle_List), "sealed", GVAR(customVehicleList_sealed)]
+];
 
 ["CBA_settingsInitialized", {
     private _action = [QGVAR(Action_WashEyes),

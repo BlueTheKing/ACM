@@ -22,34 +22,58 @@
         <Key ID="STR_ACM_CBRN_SETTING_Enable_Desc">
             <English>Enable CBRN threat functionality</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_Chemical_CS_Blindness">
+        <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask">
+            <English>Gas Mask List</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask_Desc">
+            <English>List of goggles (facewear)/helmets that are gas masks (or equivelant). Each entry should be a goggles/helmet classname and should be seperated with a comma ("","")</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit">
+            <English>CBRN Suit List</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit_Desc">
+            <English>List of uniforms that are CBRN suits. Each entry should be a uniform classname and should be seperated with a comma ("","")</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN">
+            <English>CBRN Protected Vehicle List</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN_Desc">
+            <English>List of vehicles that are CBRN protected (overpressure capability). Each entry should be a vehicle classname and should be seperated with a comma ("","")</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed">
+            <English>Sealed Vehicle List</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed_Desc">
+            <English>List of vehicles that are sealed. Each entry should be a vehicle classname and should be seperated with a comma ("","")</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness">
             <English>CS Exposure Cause Blindness</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_Chemical_CS_Blindness_Desc">
+        <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness_Desc">
             <English>Sets whether CS gas exposure causes blindness</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Chlorine_Blindness">
+        <Key ID="STR_ACM_CBRN_SETTING_ChlorineCauseBlindness">
             <English>Chlorine Exposure Cause Blindness</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Chlorine_Blindness_Desc">
+        <Key ID="STR_ACM_CBRN_SETTING_ChlorineCauseBlindness_Desc">
             <English>Sets whether chlorine gas exposure causes blindness</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Sarin_Colorless">
+        <Key ID="STR_ACM_CBRN_SETTING_SarinIsColorless">
             <English>Colorless Sarin Gas</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Sarin_Colorless_Desc">
+        <Key ID="STR_ACM_CBRN_SETTING_SarinIsColorless_Desc">
             <English>Sets whether sarin gas should be invisible</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Lewisite_Blindness">
+        <Key ID="STR_ACM_CBRN_SETTING_LewisiteCauseBlindness">
             <English>Lewisite Exposure Cause Blindness</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Lewisite_Blindness_Desc">
+        <Key ID="STR_ACM_CBRN_SETTING_LewisiteCauseBlindness_Desc">
             <English>Sets whether lewisite exposure causes blindness</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Lewisite_Colorless">
+        <Key ID="STR_ACM_CBRN_SETTING_LewisiteIsColorless">
             <English>Colorless Lewisite</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_Chemical_Lewisite_Colorless_Desc">
+        <Key ID="STR_ACM_CBRN_SETTING_LewisiteIsColorless_Desc">
             <English>Sets whether lewisite should be invisible</English>
         </Key>
         <Container name="// Hazards //">

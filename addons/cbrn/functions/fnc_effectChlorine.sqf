@@ -68,7 +68,7 @@ if (_isExposed) then {
         _patient setVariable [QGVAR(LungTissueDamage), (_damage + 1), true];
     };
 
-    if (!_protectedEyes && GVAR(Chemical_Chlorine_Blindness)) then {
+    if (!_protectedEyes && GVAR(chlorineCauseBlindness)) then {
         [_patient, true] call FUNC(setBlind);
         _patient setVariable [QGVAR(Chemical_Chlorine_Blindness), true, true];
     };

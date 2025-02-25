@@ -32,6 +32,6 @@ if (!_filtered && GET_PAIN(_patient) < 0.9) then {
 
 if (_buildup < 50) exitWith {};
 
-if (!_protectedEyes && GVAR(Chemical_CS_Blindness)) then {
+if (!_protectedEyes && GVAR(CSCauseBlindness)) then {
     [_patient, true] call FUNC(setBlind);
 };

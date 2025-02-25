@@ -104,9 +104,9 @@ private _PFH = [{
 
         if (_blocked) exitWith {};
 
-        private _sealableVehicle = _vehicle in (GVAR(Vehicle_List) get "sealable");
+        private _sealedVehicle = _vehicle in (GVAR(Vehicle_List) get "sealed");
 
-        _blocked = _sealableVehicle && !_isTurnedOut && !(_vehicle getVariable [QGVAR(Vehicle_Contaminated_State), false]);
+        _blocked = _sealedVehicle && !_isTurnedOut && !(_vehicle getVariable [QGVAR(Vehicle_Contaminated_State), false]);
 
         if (_blocked) exitWith {};
 

@@ -130,7 +130,7 @@ private _PFH = [{
 _originObject setVariable [QGVAR(HazardEmitter_PFH), _PFH];
 
 if (_showMist) then {
-    if (_hazardType == "chemical_sarin" && GVAR(Chemical_Sarin_Colorless) || _hazardType == "chemical_lewisite" && GVAR(Chemical_Lewisite_Colorless)) exitWith {};
+    if (_hazardType == "chemical_sarin" && GVAR(sarinIsColorless) || _hazardType == "chemical_lewisite" && GVAR(lewisiteIsColorless)) exitWith {};
     [QGVAR(spawnChemicalMist), [_originObject, _radiusDimensions, _hazardType]] call CBA_fnc_globalEvent;
 };
 

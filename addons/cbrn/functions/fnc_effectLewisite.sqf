@@ -38,7 +38,7 @@ if (_isExposed || _isExposedExternal) then {
 
     [QACEGVAR(medical,woundReceived), [_patient, [[0.01, _bodyPart, 0.01]], objNull, "lewisiteburn"]] call CBA_fnc_localEvent;
 
-    if (_isExposed && !_protectedEyes && GVAR(Chemical_Lewisite_Blindness)) then {
+    if (_isExposed && !_protectedEyes && GVAR(lewisiteCauseBlindness)) then {
         [_patient, true] call FUNC(setBlind);
         _patient setVariable [QGVAR(Chemical_Lewisite_Blindness), true, true];
     };
