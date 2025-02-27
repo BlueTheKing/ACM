@@ -94,6 +94,18 @@
             </Key>
         </Container>
         <Container name="// Items //">
+            <Key ID="STR_ACM_CBRN_Autoinjector_ATNA">
+                <English>ATNA Autoinjector</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Autoinjector_ATNA_Desc">
+                <English>Antidote Treatment Nerve Agent Autoinjector, used to treat nerve agent exposure</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Autoinjector_Midazolam">
+                <English>Midazolam Autoinjector</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Autoinjector_Midazolam_Desc">
+                <English>Used to manage seizure activity caused by nerve agent exposure</English>
+            </Key>
             <Key ID="STR_ACM_CBRN_CS_Grenade">
                 <English>CS Grenade</English>
             </Key>

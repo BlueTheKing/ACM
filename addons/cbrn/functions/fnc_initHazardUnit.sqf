@@ -205,9 +205,6 @@ private _PFH = [{
     };
 
     [_patient] call FUNC(updateExposureEffects);
-    
-    systemchat format ["%1 - %2",_patient,_buildup];
-
 }, 1, [_patient, _PFHVarString, _buildupVarString, _hazardType, _configArgs, _fnc_inArea]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [(format [_PFHVarString, toLower _hazardType]), _PFH, true];
