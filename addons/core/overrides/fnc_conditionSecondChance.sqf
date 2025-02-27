@@ -18,7 +18,11 @@
 params ["_unit"];
 
 if (EGVAR(damage,enable)) exitWith {
-    [true, false] select ([_unit] call EFUNC(damage,handleTrauma));
+    if (_unit getVariable [QGVAR(InstantDeath), false]) then {
+        false;
+    } else {
+        [true, false] select ([_unit] call EFUNC(damage,handleTrauma));
+    };
 };
 
 if (isPlayer _unit) then {

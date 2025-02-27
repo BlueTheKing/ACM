@@ -42,7 +42,7 @@ private _hemorrhage = switch (true) do {
     case (_bloodVolume < BLOOD_VOLUME_CLASS_4_HEMORRHAGE): { 4 };
     case (_bloodVolume < BLOOD_VOLUME_CLASS_3_HEMORRHAGE): { 3 };
     case (_bloodVolume < BLOOD_VOLUME_CLASS_2_HEMORRHAGE): { 2 };
-    case (_bloodVolume < BLOOD_VOLUME_CLASS_1_HEMORRHAGE): { 1 };
+    case (_bloodVolume < (BLOOD_VOLUME_CLASS_1_HEMORRHAGE - 0.05)): { 1 };
     default {0};
 };
 
@@ -71,14 +71,16 @@ if (_tourniquetPain > 0) then {
 
 // Get Medication Adjustments:
 private _hrTargetAdjustment = 0;
-private _painSupressAdjustment = 0;
+private _painSuppressAdjustment = 0;
 private _peripheralResistanceAdjustment = 0;
 private _respirationRateAdjustment = 0;
 private _coSensitivityAdjustment = 0;
 private _breathingEffectivenessAdjustment = 0;
 private _adjustments = _unit getVariable [VAR_MEDICATIONS,[]];
 
-private _painSuppressAdjustmentMap = +GVAR(MedicationTypes);
+private _HRAdjustmentMap = +GVAR(MedicationTypes_MaxHRAdjust);
+private _RRAdjustmentMap = +GVAR(MedicationTypes_MaxRRAdjust);
+private _painSuppressAdjustmentMap = +GVAR(MedicationTypes_MaxPainAdjust);
 
 if (_adjustments isNotEqualTo []) then {
     private _deleted = false;
@@ -91,25 +93,49 @@ if (_adjustments isNotEqualTo []) then {
         } else {
             private _effectRatio = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime] call EFUNC(circulation,getMedicationEffect);
             if (_hrAdjust != 0 && (GET_HEART_RATE(_unit) > 0)) then {
-                private _HREffect = [(GET_HEART_RATE(_unit) / ACM_TARGETVITALS_HR(_unit)), (ACM_TARGETVITALS_HR(_unit) / GET_HEART_RATE(_unit))] select (_hrAdjust > 0);
-                _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio * _HREffect;
+                private _HREffect = [(GET_HEART_RATE(_unit) / (ACM_TARGETVITALS_HR(_unit) - 20)), ((ACM_TARGETVITALS_HR(_unit) + 20) / GET_HEART_RATE(_unit))] select (_hrAdjust > 0);
+
+                if (_medicationType in _HRAdjustmentMap) then {
+                    (_HRAdjustmentMap get _medicationType) params ["_medHRIncrease", "_medMaxHRIncrease"];
+
+                    private _newHRIncrease = _medHRIncrease + _hrAdjust * _effectRatio * _HREffect;
+                    private _positive = _medMaxHRIncrease > 0;
+
+                    if ([(_medHRIncrease > (_newHRIncrease max _medMaxHRIncrease)), (_medHRIncrease < (_newHRIncrease min _medMaxHRIncrease))] select _positive) then {
+                        private _cappedHRIncrease = [(_newHRIncrease max _medMaxHRIncrease), (_newHRIncrease min _medMaxHRIncrease)] select _positive;
+                        _HRAdjustmentMap set [_medicationType, [_cappedHRIncrease, _medMaxHRIncrease]];
+                    };
+                } else {
+                    _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio * _HREffect;
+                };
             };
             if (_flowAdjust != 0) then { _peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _flowAdjust * _effectRatio; };
-            if (_rrAdjust != 0) then { _respirationRateAdjustment = _respirationRateAdjustment + _rrAdjust * _effectRatio; };
+            if (_rrAdjust != 0) then {
+                if (_medicationType in _RRAdjustmentMap) then {
+                    (_RRAdjustmentMap get _medicationType) params ["_medRRAdjust", "_medMaxRRAdjust"];
+
+                    private _newRRAdjust = _medRRAdjust + _rrAdjust * _effectRatio;
+                    private _positive = _medMaxRRAdjust > 0;
+
+                    if ([(_medRRAdjust > (_newRRAdjust max _medMaxRRAdjust)), (_medRRAdjust < (_newRRAdjust min _medMaxRRAdjust))] select _positive) then {
+                        private _cappedRRAdjust = [(_newRRAdjust max _medMaxRRAdjust), (_newRRAdjust min _medMaxRRAdjust)] select _positive;
+                        _RRAdjustmentMap set [_medicationType, [_cappedRRAdjust, _medMaxRRAdjust]];
+                    };
+                } else {
+                    _respirationRateAdjustment = _respirationRateAdjustment + _rrAdjust * _effectRatio; 
+                };
+            };
             if (_coSensitivityAdjust != 0) then { _coSensitivityAdjustment = _coSensitivityAdjustment + _coSensitivityAdjust * _effectRatio; };
             if (_breathingEffectivenessAdjust != 0) then { _breathingEffectivenessAdjustment = _breathingEffectivenessAdjustment + _breathingEffectivenessAdjust * _effectRatio; };
 
             if (_painAdjust != 0) then {
-                if (_medicationType == "Default") then {
-                    _medicationType = _medication;
-                };
-                (_painSuppressAdjustmentMap get _medicationType) params ["_medClassnames", "_medPainReduce", "_medMaxPainAdjust"];
-                
-                if (_medication in _medClassnames) then {
+                if (_medicationType in _painSuppressAdjustmentMap) then {
+                    (_painSuppressAdjustmentMap get _medicationType) params ["_medPainReduce", "_medMaxPainAdjust"];
+
                     private _newPainAdjust = _medPainReduce + _painAdjust * _effectRatio;
 
                     if (_medPainReduce < (_newPainAdjust min _medMaxPainAdjust)) then {
-                        _painSuppressAdjustmentMap set [_medicationType, [_medClassnames, (_newPainAdjust min _medMaxPainAdjust), _medMaxPainAdjust]];
+                        _painSuppressAdjustmentMap set [_medicationType, [(_newPainAdjust min _medMaxPainAdjust), _medMaxPainAdjust]];
                     };
                 };
             };
@@ -117,10 +143,22 @@ if (_adjustments isNotEqualTo []) then {
     } forEachReversed _adjustments;
 
     {
-        _y params ["", "_medPainAdjust", "_medMaxPainAdjust"];
+        _x params ["_medHRIncrease"];
 
-        _painSupressAdjustment = _painSupressAdjustment + (_medPainAdjust min _medMaxPainAdjust);
-    } forEach _painSuppressAdjustmentMap;
+        _hrTargetAdjustment = _hrTargetAdjustment + _medHRIncrease;
+    } forEach ((toArray _HRAdjustmentMap) select 1);
+
+    {
+        _x params ["_medRRAdjust"];
+
+        _respirationRateAdjustment = _respirationRateAdjustment + _medRRAdjust;
+    } forEach ((toArray _RRAdjustmentMap) select 1);
+
+    {
+        _x params ["_medPainAdjust"];
+
+        _painSuppressAdjustment = _painSuppressAdjustment + _medPainAdjust;
+    } forEach ((toArray _painSuppressAdjustmentMap) select 1);
 
     if (_deleted) then {
         _unit setVariable [VAR_MEDICATIONS, _adjustments, true];
@@ -157,15 +195,57 @@ if ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) > 0.05) 
 };
 
 private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
-[_unit, _painSupressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
+[_unit, _painSuppressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
+
+private _vasoconstriction = GET_VASOCONSTRICTION(_unit);
+private _vasoconstrictionChange = 0;
+private _targetVasoconstriction = 0;
+
+if (_bloodVolume < 5.9) then {
+    _targetVasoconstriction = linearConversion [5.9, 4.5, _bloodVolume, 0, 50, true];
+};
+
+if (_bloodVolume > 4) then {
+    private _MAPAdjustment = 0;
+    private _MAP = GET_MAP_PATIENT(_unit);
+
+    if (_MAP > 94) then {
+        _MAPAdjustment = linearConversion [94, 120, _MAP, 0, -60, true];
+    } else {
+        if (_MAP < 88) then {
+            _MAPAdjustment = linearConversion [88, 60, _MAP, 0, 40, true];
+        };
+    };
+
+    _targetVasoconstriction = (_targetVasoconstriction + _MAPAdjustment) min 50;
+
+    if (IS_BLEEDING(_unit) && _targetVasoconstriction < 0) then {
+        _targetVasoconstriction = _targetVasoconstriction * 0.75;
+    };
+};
+
+if (_targetVasoconstriction > _vasoconstriction) then {
+    _vasoconstrictionChange = ((_targetVasoconstriction - _vasoconstriction) / 10) max 0.05;
+    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) min _targetVasoconstriction;
+} else {
+    _vasoconstrictionChange = ((_targetVasoconstriction - _vasoconstriction) / 10) min -0.05;
+    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) max _targetVasoconstriction;
+};
+
+_unit setVariable [QEGVAR(circulation,Vasoconstriction_State), _vasoconstriction, true];
+
+_peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _vasoconstriction;
+
 [_unit, _peripheralResistanceAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePeripheralResistance);
 
 private _bloodPressure = [_unit] call ACEFUNC(medical_status,getBloodPressure);
 _unit setVariable [VAR_BLOOD_PRESS, _bloodPressure, _syncValues];
 
-_bloodPressure params ["_bloodPressureL", "_bloodPressureH"];
+_bloodPressure params ["_BPDiastolic", "_BPSystolic"];
 
 private _respirationRate = GET_RESPIRATION_RATE(_unit);
+
+private _activeGracePeriod = IN_CRITICAL_STATE(_unit);
 
 // Statements are ordered by most lethal first.
 switch (true) do {
@@ -185,49 +265,7 @@ switch (true) do {
         [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
         [_unit] call EFUNC(circulation,updateCirculationState);
     };
-    case ((_unit getVariable [QEGVAR(circulation,ROSC_Time), -5]) + 5 > CBA_missionTime): {};
-    case (_heartRate < 20 || {_heartRate > 220}): {
-        TRACE_2("heartRate Fatal",_unit,_heartRate);
-        if (_heartRate > 220) then {
-            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
-        } else {
-            if (([_unit, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount)) > 0.9 || ([_unit, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount)) > 0.8) then {
-                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
-            } else {
-                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
-            };
-        };
-
-        [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
-    };
-    case (_bloodPressureH < 50 && {_bloodPressureL < 40}): {
-        _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
-        [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
-    };
-    case (_bloodPressureL > 190): {
-        TRACE_2("bloodPressure L above limits",_unit,_bloodPressureL);
-        [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
-    };
-    case (_heartRate < 30): {  // With a heart rate below 30 but bigger than 20 there is a chance to enter the cardiac arrest state
-        private _nextCheck = _unit getVariable [QACEGVAR(medical_vitals,nextCheckCriticalHeartRate), CBA_missionTime];
-        private _enterCardiacArrest = false;
-        if (CBA_missionTime >= _nextCheck) then {
-            _enterCardiacArrest = random 1 < (0.4 + 0.6*(30 - _heartRate)/10); // Variable chance of getting into cardiac arrest.
-            _unit setVariable [QACEGVAR(medical_vitals,nextCheckCriticalHeartRate), CBA_missionTime + 5];
-        };
-        if (_enterCardiacArrest) then {
-            TRACE_2("Heart rate critical. Cardiac arrest",_unit,_heartRate);
-            if ([_unit, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.5) then { // Amiodarone overdose causes asystole
-                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
-            } else {
-                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
-            };
-            [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
-        } else {
-            TRACE_2("Heart rate critical. Critical vitals",_unit,_heartRate);
-            [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
-        };
-    };
+    case ((_unit getVariable [QEGVAR(circulation,ROSC_Time), 0]) + 10 > CBA_missionTime): {};
     case (_oxygenSaturation < ACM_OXYGEN_HYPOXIA): {
         private _nextCheck = _unit getVariable [QEGVAR(circulation,ReversibleCardiacArrest_HypoxiaTime), CBA_missionTime];
         private _enterCardiacArrest = false;
@@ -242,6 +280,29 @@ switch (true) do {
             [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
         };
     };
+    case (!_activeGracePeriod && {_heartRate < 40 || {_heartRate > 220}}): {
+        TRACE_2("heartRate Fatal",_unit,_heartRate);
+        if (_heartRate > 220) then {
+            _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VT, true];
+            _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
+        } else {
+            if ([_unit, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.5) then {
+                _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Asystole, true];
+                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
+            } else {
+                _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VF, true];
+                _unit setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
+            };
+        };
+        [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
+    };
+    case (GET_MAP(_BPSystolic,_BPDiastolic) < 55): {
+        [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
+    };
+    case (GET_MAP(_BPSystolic,_BPDiastolic) > 200): {
+        [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
+    };
+    case (IS_UNCONSCIOUS(_unit)): {}; // Already unconscious
     case (_woundBloodLoss > BLOOD_LOSS_KNOCK_OUT_THRESHOLD): {
         [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };

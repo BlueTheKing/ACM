@@ -8,11 +8,14 @@
 [QACEGVAR(medical,CPRSucceeded), {
     params ["_patient"];
 
-    _patient setVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus, true];
+    _patient setVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus, true];
 
     if (([_patient, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.1)) exitWith {};
 
     _patient setVariable [QGVAR(ROSC_Time), CBA_missionTime, true];
+    if ([_patient] call FUNC(recentAEDShock)) then {
+        _patient setVariable [QGVAR(AED_LastShock), 0, true];
+    };
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleCPR), LINKFUNC(handleCPR)] call CBA_fnc_addEventHandler;
@@ -31,8 +34,9 @@
 [QGVAR(handleMed_TXALocal), LINKFUNC(handleMed_TXALocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_KetamineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_LidocaineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
-
 [QGVAR(handleMed_CalciumChlorideLocal), LINKFUNC(handleMed_CalciumChlorideLocal)] call CBA_fnc_addEventHandler;
+
+[QGVAR(setLozengeLocal), LINKFUNC(setLozengeLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleHemolyticReaction), LINKFUNC(handleHemolyticReaction)] call CBA_fnc_addEventHandler;
 
@@ -99,4 +103,16 @@ ACM_MEDICATION_VIALS = [];
 
 if (isServer) then {
     missionNamespace setVariable [QGVAR(FreshBloodList), (createHashMapFromArray [[0,[objNull,250,ACM_BLOODTYPE_ON,true,CBA_missionTime]]]), true];
+};
+
+if (hasInterface || isServer) then {
+    [QGVAR(updateFreshBloodBagName), {
+        params ["_size", "_id"];
+
+        private _classname = format ["ACM_FreshBloodBag_%1_%2", _size, _id];
+        private _bloodType = ([_id] call FUNC(getFreshBloodEntry)) select 2;
+        private _bloodTypeString = [_bloodType, 1] call FUNC(convertBloodType);
+        private _newName = format [C_LLSTRING(FreshBloodBag), (format ["%1 (%2ml) [%3]", _bloodTypeString, _size, _id])];
+        [_classname, _newName] call CBA_fnc_renameInventoryItem;
+    }] call CBA_fnc_addEventHandler;
 };

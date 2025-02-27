@@ -26,6 +26,9 @@ class CfgMovesMaleSdr: CfgMovesBasic {
                 0.02
             };
         };
+        class ACM_ProneContinuous: ACM_GenericContinuous {
+            file = "\a3\anims_f\data\anim\sdr\idl\pne\stp\non\non\AidlPpneMstpSnonWnonDnon_G02.rtm";
+        };
         class ainjppnemstpsnonwrfldnon;
         class ACM_LyingState: ainjppnemstpsnonwrfldnon {
             file = QPATHTO_T(anim\ACM_LyingState.rtm);

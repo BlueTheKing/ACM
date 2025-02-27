@@ -69,17 +69,7 @@ if (_amountLeft > 0) then {
 _wounds set [_bodyPart, _woundsOnPart];
 _patient setVariable [VAR_OPEN_WOUNDS, _wounds, true];
 
-private _partIndex = ALL_BODY_PARTS find _bodyPart;
-private _bodyPartDamage = _patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]];
-private _damage = (_bodyPartDamage select _partIndex) - _bruiseDamage * _amountTreated;
-
-if (_damage > 0.05) then {
-    _bodyPartDamage set [_partIndex, _damage];
-} else {
-    _bodyPartDamage set [_partIndex, 0];
-};
-
-_patient setVariable [QACEGVAR(medical,bodyPartDamage), _bodyPartDamage, true];
+[_patient, _bodyPart, -(_bruiseDamage * _amountTreated)] call ACEFUNC(medical_treatment,addTrauma);
 
 if (_wrapRemaining > 0) then { // If some wrap remains try to treat more bruises
     [_medic, _patient, _bodyPart, _wrapRemaining] call FUNC(wrapBruisesLocal);

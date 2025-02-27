@@ -221,6 +221,14 @@ if (_selectionN == 0) then {
 
         _entries pushBack [_airwayItem, _airwayColor];
     };
+
+    private _lozengeItem = _target getVariable [QEGVAR(circulation,LozengeItem), ""];
+
+    if (_lozengeItem != "") then {
+        private _item = LELSTRING(circulation,FentanylLozenge);
+
+        _entries pushBack [_item, _circulationColor];
+    };
 };
 
 private _oxygenSaturation = GET_OXYGEN(_target);
@@ -240,13 +248,17 @@ if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < ACM_CYAN
         _colorScale = _colorScale min (linearConversion [1, 90, _tourniquetTime, 0.47, 0.13, true]);
     };
 
-    private _cyanosis = switch (true) do {
-        case (_oxygenSaturation < ACM_CYANOSIS_T_SEVERE || _tourniquetTime > 120): {LELSTRING(breathing,GUI_Severe)};
-        case (_oxygenSaturation < ACM_CYANOSIS_T_MODERATE || _tourniquetTime > 60): {LELSTRING(breathing,GUI_Moderate)};
-        default {LELSTRING(breathing,GUI_Slight)};
-    };
+    if (EGVAR(breathing,showCyanosisSeverity)) then {
+        private _cyanosis = switch (true) do {
+            case (_oxygenSaturation < ACM_CYANOSIS_T_SEVERE || _tourniquetTime > 120): {LELSTRING(breathing,GUI_Severe)};
+            case (_oxygenSaturation < ACM_CYANOSIS_T_MODERATE || _tourniquetTime > 60): {LELSTRING(breathing,GUI_Moderate)};
+            default {LELSTRING(breathing,GUI_Slight)};
+        };
 
-    _entries pushBack [format ["%1 %2", _cyanosis, LELSTRING(breathing,GUI_Cyanosis)], [0.16, _colorScale, 1, 1]];
+        _entries pushBack [format ["%1 %2", _cyanosis, LELSTRING(breathing,GUI_Cyanosis)], [0.16, _colorScale, 1, 1]];
+    } else {
+        _entries pushBack [LELSTRING(breathing,GUI_NoticableCyanosis), [0.16, _colorScale, 1, 1]];
+    };
 };
 
 if (_selectionN == 0 && ((CBA_missionTime - (_target getVariable [QEGVAR(breathing,TensionPneumothorax_Time), CBA_missionTime])) > 300)) then {
@@ -381,15 +393,23 @@ if (_selectionN in [2,3] && {HAS_PULSEOX(_target,(_selectionN - 2))}) then {
 
 // Damage taken tooltip
 if (ACEGVAR(medical_gui,showDamageEntry)) then {
-    private _bodyPartDamage = (_target getVariable [QACEGVAR(medical,bodyPartDamage), [0, 0, 0, 0, 0, 0]]) select _selectionN;
+    private _bodyPartDamage = GET_BODYPART_DAMAGE(_target) select _selectionN;
     if (_bodyPartDamage > 0) then {
         private _damageThreshold = GET_DAMAGE_THRESHOLD(_target);
         switch (true) do {
             case (_selectionN > 3): { // legs: index 4 & 5
-                _damageThreshold = LIMPING_DAMAGE_THRESHOLD * 4;
+                if (EGVAR(damage,enable) || !([false, !isPlayer _target, true] select ACEGVAR(medical,useLimbDamage)) || ACEGVAR(medical,limbDamageThreshold) == 0) then { // Just indicate how close to the limping threshold we are
+                    _damageThreshold = LIMPING_DAMAGE_THRESHOLD * 4;
+                } else {
+                    _damageThreshold = _damageThreshold * ACEGVAR(medical,limbDamageThreshold);
+                };
             };
             case (_selectionN > 1): { // arms: index 2 & 3
-                _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
+                if (EGVAR(damage,enable) || !([false, !isPlayer _target, true] select ACEGVAR(medical,useLimbDamage)) || ACEGVAR(medical,limbDamageThreshold) == 0) then { // Just indicate how close to the fracture threshold we are
+                    _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
+                } else {
+                    _damageThreshold = _damageThreshold * ACEGVAR(medical,limbDamageThreshold);
+                };
             };
             case (_selectionN == 0): { // head: index 0
                 _damageThreshold = _damageThreshold * 1.25;
@@ -398,6 +418,7 @@ if (ACEGVAR(medical_gui,showDamageEntry)) then {
                 _damageThreshold = _damageThreshold * 1.5;
             };
         };
+        // _bodyPartDamage here should indicate how close unit is to guaranteed death via sum of trauma, so use the same multipliers used in medical_damage/functions/fnc_determineIfFatal.sqf
         _bodyPartDamage = (_bodyPartDamage / _damageThreshold) min 1;
         switch (true) do {
             case (_bodyPartDamage isEqualTo 1): {

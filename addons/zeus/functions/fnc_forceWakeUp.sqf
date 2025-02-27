@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Force wake up patient
+ * Module to force wake up of patient.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>

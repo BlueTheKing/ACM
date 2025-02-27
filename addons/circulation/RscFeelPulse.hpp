@@ -38,12 +38,12 @@ class RscTitles
                 h = QUOTE(safezoneH / 6);
                 text = "";
             };
-            class HeartBack: RscPictureKeepAspect {
+            class HeartBack: RscPicture {
                 idc = -1;
-                x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 40));
-                y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 40));
-                w = QUOTE(safezoneW / 20);
-                h = QUOTE(safezoneH / 20);
+                x = QUOTE(ACM_FEELPULSE_POS_X_CENTER(4));
+                y = QUOTE(ACM_FEELPULSE_POS_Y_CENTER(3));
+                w = QUOTE(ACM_FEELPULSE_POS_W(4));
+                h = QUOTE(ACM_FEELPULSE_POS_H(3));
                 type = 0;
                 size = 0;
                 text = QPATHTOF(ui\feelpulse\heart_ca.paa);
@@ -51,10 +51,10 @@ class RscTitles
             };
             class Heart: HeartBack {
                 idc = IDC_FEELPULSE_HEART;
-                x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 160));
-                y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 160));
-                w = QUOTE(safezoneW / 80);
-                h = QUOTE(safezoneH / 80);
+                x = QUOTE(ACM_FEELPULSE_POS_X_CENTER(ACM_FEELPULSE_FRONT_W));
+                y = QUOTE(ACM_FEELPULSE_POS_Y_CENTER(ACM_FEELPULSE_FRONT_H));
+                w = QUOTE(ACM_FEELPULSE_POS_W(ACM_FEELPULSE_FRONT_W));
+                h = QUOTE(ACM_FEELPULSE_POS_H(ACM_FEELPULSE_FRONT_H));
                 colorText[] = {1, 0, 0, 1};
             };
         };

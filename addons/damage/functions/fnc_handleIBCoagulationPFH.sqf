@@ -20,6 +20,8 @@ params ["_patient", ["_fromTXA", false]];
 
 if (_patient getVariable [QGVAR(IBCoagulation_PFH), -1] != -1 || !(IS_I_BLEEDING(_patient))) exitWith {};
 
+_patient setVariable [QGVAR(IBCoagulation_NextAttempt), 0];
+
 private _id = [{
     params ["_args", "_idPFH"];
     _args params ["_patient", ["_fromTXA", false]];
@@ -31,7 +33,10 @@ private _id = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
     
-    private _txaCount = ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 1.4;
+    private _txaCount = ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 2.2;
+
+    if ((_patient getVariable [QGVAR(IBCoagulation_NextAttempt), 0]) > CBA_missionTime) exitWith {};
+    _patient setVariable [QGVAR(IBCoagulation_NextAttempt), (CBA_missionTime + 15 - ((_txaCount * 3) + _plateletCount))];
 
     if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 0.1 && _txaCount < 0.1) || (GET_EFF_BLOOD_VOLUME(_patient) < 3.6)) exitWith {};
 
@@ -62,10 +67,10 @@ private _id = [{
             (_internalWoundsOnPart select _woundIndex) params ["_woundType", "_woundCount", "_woundBleeding"];
             
             private _woundSeverity = _woundType % 10;
-            private _txaEffect = 1 + (1 min _txaCount);
-            private _bloodVolumEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 4) min 1;
+            private _txaEffect = 1 + (2 min _txaCount);
+            private _bloodVolumEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 4.5) min 1;
 
-            if (_woundSeverity == 1 || {_woundSeverity == 2 && (random 1 < (3.6 * _txaEffect * _bloodVolumEffect))}) then {
+            if (_woundSeverity == 1 || {_woundSeverity == 2 && (random 1 < 0.3 * _txaEffect * _bloodVolumEffect)}) then {
                 private _newWoundCount = _woundCount - _clotEffectiveness;
 
                 if (_newWoundCount < 1) then {
@@ -87,6 +92,6 @@ private _id = [{
         _patient setVariable [QGVAR(IBCoagulation_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
-}, 6, [_patient]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_patient]] call CBA_fnc_addPerFrameHandler;
 
 _patient setVariable [QGVAR(IBCoagulation_PFH), _id];

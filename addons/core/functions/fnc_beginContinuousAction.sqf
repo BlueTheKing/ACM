@@ -17,17 +17,18 @@
  * None
  *
  * Example:
- * [[player, cursorTarget, "Head"], {}, {}, {}] call ACM_core_fnc_beginContinuousAction;
+ * [[player, cursorTarget, "Head", true], {}, {}, {}] call ACM_core_fnc_beginContinuousAction;
  *
  * Public: No
  */
 
-params ["_args", "_onStart", "_onCancel", "_perFrame", ["_dialogID", -1]];
+params ["_args", "_onStart", "_onCancel", "_perFrame", ["_allowProne", false], ["_dialogID", -1]];
 _args params ["_medic", "_patient", "_bodyPart", ["_extraArgs", []]];
 
 if (GVAR(ContinuousAction_Active)) exitWith {};
 
 GVAR(ContinuousAction_Active) = true;
+GVAR(ContinuousAction_ForceOpenMenu) = true;
 
 ACEGVAR(medical_gui,pendingReopen) = false; // Prevent medical menu from reopening
 
@@ -41,10 +42,14 @@ GVAR(ContinuousAction_Cancel_EscapeID) = [0x01, [false, false, false], { // ESC 
 
 private _notInVehicle = isNull objectParent _medic;
 
+private _medicStance = stance _medic;
+private _isProne = (_medicStance == "PRONE") && _allowProne;
+
 if (_notInVehicle) then {
     switch (stance _medic) do {
         case "STAND": {
             [_medic, "AmovPercMstpSnonWnonDnon_AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation); // 0.650
+
             [{
                 params ["_medic"];
 
@@ -54,15 +59,19 @@ if (_notInVehicle) then {
             }, [_medic], 0.65] call CBA_fnc_waitAndExecute;
         };
         case "PRONE": {
-            [_medic, "AmovPpneMstpSnonWnonDnon_AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation); // 1.116
+            if (_allowProne) then {
+                [_medic, "ACM_ProneContinuous", 2] call ACEFUNC(common,doAnimation);
+            } else {
+                [_medic, "AmovPpneMstpSnonWnonDnon_AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation); // 1.116
 
-            [{
-                params ["_medic"];
+                [{
+                    params ["_medic"];
 
-                if (GVAR(ContinuousAction_Active)) then {
-                    [_medic, "ACM_GenericContinuous", 2] call ACEFUNC(common,doAnimation);
-                };
-            }, [_medic], 1.116] call CBA_fnc_waitAndExecute;
+                    if (GVAR(ContinuousAction_Active)) then {
+                        [_medic, "ACM_GenericContinuous", 2] call ACEFUNC(common,doAnimation);
+                    };
+                }, [_medic], 1.116] call CBA_fnc_waitAndExecute;
+            };
         };
         case "CROUCH": {
             [_medic, "ACM_GenericContinuous", 2] call ACEFUNC(common,doAnimation);
@@ -79,7 +88,7 @@ _args call _onStart;
 
 [{
     params ["_args", "_idPFH"];
-    _args params ["_medic", "_patient", "_bodyPart", "_extraArgs", "_notInVehicle", "_perFrame", "_onCancel", "_dialogID"];
+    _args params ["_medic", "_patient", "_bodyPart", "_extraArgs", "_notInVehicle", "_isProne", "_perFrame", "_onCancel", "_dialogID"];
 
     private _patientCondition = (_patient isEqualTo objNull);
     private _medicCondition = (!(alive _medic) || IS_UNCONSCIOUS(_medic) || _medic isEqualTo objNull);
@@ -100,9 +109,18 @@ _args call _onStart;
         GVAR(ContinuousAction_Active) = false;
 
         [_medic, _patient, _bodyPart, _extraArgs, _notInVehicle] call _onCancel;
-        [QGVAR(openMedicalMenu), _patient] call CBA_fnc_localEvent;
-        ["ace_treatmentFailed", [_medic, _patient, _bodyPart, "ACM_ContinousAction", "", "", false]] call CBA_fnc_localEvent;
+
+        if (_notInVehicle) then {
+            private _animation = ["AmovPknlMstpSnonWnonDnon", "AmovPpneMstpSnonWnonDnon"] select _isProne;
+            [_medic, _animation, 2] call ACEFUNC(common,doAnimation);
+        };
+
+        if (GVAR(ContinuousAction_ForceOpenMenu)) then {
+            [QGVAR(openMedicalMenu), _patient] call CBA_fnc_localEvent;
+        };
+
+        ["ace_treatmentFailed", [_medic, _patient, _bodyPart, "ACM_ContinuousAction", "", "", false]] call CBA_fnc_localEvent;
     };
 
     _args call _perFrame;
-}, 0, [_medic, _patient, _bodyPart, _extraArgs, _notInVehicle, _perFrame, _onCancel, _dialogID]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_medic, _patient, _bodyPart, _extraArgs, _notInVehicle, _isProne, _perFrame, _onCancel, _dialogID]] call CBA_fnc_addPerFrameHandler;

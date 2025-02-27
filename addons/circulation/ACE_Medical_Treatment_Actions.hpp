@@ -24,6 +24,7 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,true)] call FUNC(setPressureCuff));
         ACM_cancelRecovery = 1;
         ACM_rollToBack = 1;
+        ACM_menuIcon = "ACM_PressureCuff";
     };
     class PressureCuff_Remove: PressureCuff_Attach {
         displayName = CSTRING(PressureCuff_Remove);
@@ -48,6 +49,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         condition = QUOTE(([ARR_2(_patient,_bodyPart)] call FUNC(hasAED)));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(displayAEDMonitor));
+        ACM_menuIcon = "ACM_AED";
     };
 
     class AED_ApplyPads: CheckPulse {
@@ -65,6 +67,7 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call FUNC(setAED));
         ACM_cancelRecovery = 1;
         ACM_rollToBack = 1;
+        ACM_menuIcon = "ACM_AED";
     };
     class AED_RemovePads: AED_ApplyPads {
         displayName = CSTRING(AED_RemovePads);

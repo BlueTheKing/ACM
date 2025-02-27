@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Module dialog to manually inflict chest injury
+ * Module to manually inflict chest injury.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>
@@ -80,11 +80,13 @@ private _fnc_onConfirm = {
             [_patient] call EFUNC(breathing,handlePneumothorax);
         };
         case 2: {
-            _patient setVariable [QEGVAR(breathing,Hemothorax_State), 2, true];
+            _patient setVariable [QEGVAR(breathing,Hemothorax_State), (5 + round(random 5)), true];
+            [_patient, 1] call ACEFUNC(medical,adjustPainLevel);
             [_patient] call EFUNC(breathing,handleHemothorax);
         };
         case 3: {
-            _patient setVariable [QEGVAR(breathing,Hemothorax_State), 2, true];
+            _patient setVariable [QEGVAR(breathing,Hemothorax_State), (5 + round(random 5)), true];
+            [_patient, 1] call ACEFUNC(medical,adjustPainLevel);
             _patient setVariable [QEGVAR(breathing,Hemothorax_Fluid), 1.2, true];
             [_patient] call EFUNC(breathing,handleHemothorax);
         };

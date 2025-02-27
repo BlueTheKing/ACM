@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Spawn patients
+ * Spawn patients.
  *
  * Arguments:
  * 0: Interaction Object <OBJECT>
@@ -21,20 +21,7 @@
 
 params ["_object", "_location", "_initiator", "_casualtyCount", "_severity"];
 
-private _activePatient = _object getVariable [QGVAR(ActivePatient), objNull];
-private _activePatients = _object getVariable [QGVAR(ActivePatients), []];
-
-if (count _activePatients > 0) then {
-    {
-        deleteVehicle _x;
-    } forEachReversed _activePatients;
-    _object setVariable [QGVAR(ActivePatients), [], true];
-};
-
-if !(isNull _activePatient) then {
-    deleteVehicle _activePatient;
-    _object setVariable [QGVAR(ActivePatient), objNull, true];
-};
+[_object] call FUNC(clearPatients);
 
 private _patientList = [];
 

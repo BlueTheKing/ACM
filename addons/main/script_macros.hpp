@@ -141,6 +141,8 @@
 #define VAR_BANDAGED_WOUNDS   QACEGVAR(medical,bandagedWounds)
 #undef VAR_STITCHED_WOUNDS
 #define VAR_STITCHED_WOUNDS   QACEGVAR(medical,stitchedWounds)
+#undef VAR_BODYPART_DAMAGE
+#define VAR_BODYPART_DAMAGE   QACEGVAR(medical,bodyPartDamage)
 // These variables track gradual adjustments (from medication, etc.)
 #undef VAR_MEDICATIONS
 #define VAR_MEDICATIONS       QACEGVAR(medical,medications)
@@ -206,6 +208,17 @@
 
 #define IDEAL_BODYWEIGHT 83
 
+#define IN_CRITICAL_STATE(unit) (unit getVariable [QEGVAR(core,CriticalVitals_State), false])
+
+// Body Parts
+
+#define BODYPART_N_HEAD     0
+#define BODYPART_N_BODY     1
+#define BODYPART_N_LEFTARM  2
+#define BODYPART_N_RIGHTARM 3
+#define BODYPART_N_LEFTLEG  4
+#define BODYPART_N_RIGHTLEG 5
+
 // Airway
 #define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])
 
@@ -231,6 +244,8 @@
 #define ACM_CYANOSIS_T_MODERATE 82
 #define ACM_CYANOSIS_T_SEVERE   67
 
+#define ACM_OXYGEN_VISION 85
+
 #define ACM_OXYGEN_UNCONSCIOUS 80
 #define ACM_OXYGEN_HYPOXIA 67
 #define ACM_OXYGEN_DEATH 55
@@ -240,7 +255,9 @@
 #define GET_HEMOTHORAX_BLEEDRATE(unit) ([unit] call EFUNC(circulation,getHemothoraxBleedingRate))
 
 // Circulation
-#define GET_CIRCULATIONSTATE(unit) (unit getVariable [QEGVAR(circulation,CirculationState), false])
+#define GET_CIRCULATIONSTATE(unit) (unit getVariable [QEGVAR(circulation,CirculationState), true])
+#define HAS_PULSE(unit) ([unit] call EFUNC(circulation,hasPulse))
+#define HAS_PULSE_P(unit) ([unit, true] call EFUNC(circulation,hasPulse))
 
 #define ACM_ASYSTOLE_BLOODVOLUME 3.1
 #define ACM_REVERSIBLE_CA_BLOODVOLUME 4.2
@@ -250,6 +267,9 @@
 #define GET_PLATELET_COUNT(unit) (unit getVariable [QEGVAR(circulation,Platelet_Count), 3])
 
 #define GET_MAP(systolic,diastolic) (diastolic + ((systolic - diastolic) / 3))
+#define GET_MAP_PATIENT(unit) ([unit] call EFUNC(circulation,getMAP))
+
+#define GET_VASOCONSTRICTION(unit) (unit getVariable [QEGVAR(circulation,Vasoconstriction_State), 0])
 
 #define ACM_Rhythm_NA -5
 #define ACM_Rhythm_CPR -1
@@ -257,6 +277,7 @@
 #define ACM_Rhythm_Asystole 1
 #define ACM_Rhythm_VF 2
 #define ACM_Rhythm_PVT 3
+#define ACM_Rhythm_VT 4
 #define ACM_Rhythm_PEA 5
 
 #define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
@@ -331,13 +352,13 @@
 //// Blood
 #define GET_BLOODTYPE(unit) (unit getVariable [QEGVAR(circulation,BloodType),-1])
 
-#define ACM_BLOODTYPE_O 0
-#define ACM_BLOODTYPE_ON 1
-#define ACM_BLOODTYPE_A 2
-#define ACM_BLOODTYPE_AN 3
-#define ACM_BLOODTYPE_B 4
-#define ACM_BLOODTYPE_BN 5
-#define ACM_BLOODTYPE_AB 6
+#define ACM_BLOODTYPE_O   0
+#define ACM_BLOODTYPE_ON  1
+#define ACM_BLOODTYPE_A   2
+#define ACM_BLOODTYPE_AN  3
+#define ACM_BLOODTYPE_B   4
+#define ACM_BLOODTYPE_BN  5
+#define ACM_BLOODTYPE_AB  6
 #define ACM_BLOODTYPE_ABN 7
 
 #define BLOODTYPE_COMPATIBLE_LIST_O [ACM_BLOODTYPE_O, ACM_BLOODTYPE_ON]
@@ -389,10 +410,19 @@
 #define NECROSIS_THRESHOLD_LIGHT        0.1
 #define NECROSIS_THRESHOLD_LIGHTLOW     0.05
 
+#define ACM_FRACTURE_MILD               1
+#define ACM_FRACTURE_SEVERE             2
+#define ACM_FRACTURE_COMPLEX            3
+
+#define FRACTURE_THRESHOLD_MILD         3
+#define FRACTURE_THRESHOLD_SEVERE       5
+#define FRACTURE_THRESHOLD_COMPLEX      7
+
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}
 
 #define NORMALIZE_SIZEEX               (0.55 / (getResolution select 5))
+#define NORMALIZE_UISCALE              ((0.55 / (getResolution select 5)) min 1)
 
 // Misc
 #define ACM_TARGETVITALS_HR(unit) (unit getVariable [QEGVAR(core,TargetVitals_HeartRate), 77])

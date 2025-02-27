@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Uncardiacarrest patient
+ * Module to uncardiacarrest (TM) patient.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>

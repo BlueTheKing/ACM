@@ -52,10 +52,13 @@ if (GET_INTERNAL_BLEEDING(_unit) > 0.3 || (_plateletCount < 0.1 && _TXAEffect < 
 private _HTXState = _unit getVariable [QEGVAR(breathing,Hemothorax_State), 0];
 private _hemothoraxBleeding = 0;
 
+private _plateletBleedRatio = 0.8 min (linearConversion [2.9, 1.8, _plateletCount, 0.8, 0.5]) max 0;
+private _plateletInternalBleedRatio = 0.8 min (linearConversion [2.4, 1.6, _plateletCount, 0.8, 0.5]) max 0;
+
 if (_HTXState > 0) then {
     _hemothoraxBleeding = -_deltaT * GET_HEMOTHORAX_BLEEDRATE(_unit);
     private _thoraxBlood = _unit getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
-    _thoraxBlood = _thoraxBlood - _hemothoraxBleeding;
+    _thoraxBlood = _thoraxBlood - (_hemothoraxBleeding * (1 - _plateletBleedRatio));
     _unit setVariable [QEGVAR(breathing,Hemothorax_Fluid), (_thoraxBlood min 1.5), _syncValues];
 };
 
@@ -71,26 +74,23 @@ if (_salineVolume > 0) then {
     _activeVolumes = _activeVolumes + 1;
 };
 
-private _plateletBleedRatio = _plateletCount / 2.9;
-private _plateletInternalBleedRation = _plateletCount / 2.4;
-
 if (_plateletCount > 0.1) then {
-    _plateletCountChange = ((_bloodLoss * _plateletBleedRatio) + ((_internalBleeding * 0.7) * _plateletInternalBleedRation) + ((_internalBleeding * 0.7) * _plateletInternalBleedRation)) * 0.6;
+    _plateletCountChange = (_bloodLoss * _plateletBleedRatio) + ((_internalBleeding * 0.6) * _plateletInternalBleedRatio) + (_hemothoraxBleeding * _plateletBleedRatio);
     if (_TXAEffect > 0.1) then {
         _plateletCountChange = _plateletCountChange * 0.9;
     };
 };
 
 if (_bloodVolume > 0) then {
-    _bloodVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRation)) + (_hemothoraxBleeding * (1 - _plateletInternalBleedRation)))) / _activeVolumes;
+    _bloodVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)))) / _activeVolumes;
 };
 
 if (_plasmaVolume > 0) then {
-    _plasmaVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRation)) + (_hemothoraxBleeding * (1 - _plateletInternalBleedRation)))) / _activeVolumes;
+    _plasmaVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)))) / _activeVolumes;
 };
 
 if (_salineVolume > 0) then {
-    _salineVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRation)) + (_hemothoraxBleeding * (1 - _plateletInternalBleedRation)))) / _activeVolumes;
+    _salineVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)))) / _activeVolumes;
 };
 
 private _transfusionPain = 0;
@@ -125,7 +125,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
         _fluidBagsBodyPart = _fluidBagsBodyPart apply {
             _x params ["_type", "_bagVolumeRemaining", "_accessType", "_accessSite", "_iv", ["_bloodType", -1], "_originalVolume", ["_freshBloodID", -1]];
 
-            if ((!(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) || (!_iv && (_partIndex in [2,3]))) && (([(GET_IO_FLOW_X(_unit,_partIndex)),(GET_IV_FLOW_X(_unit,_partIndex,_accessSite))] select _iv) > 0) && {_type != "FBTK" || {_type == "FBTK" && _bagVolumeRemaining <= _originalVolume}}) then {
+            if ((!(HAS_TOURNIQUET_APPLIED_ON(_unit,_partIndex)) || (!_iv && (_partIndex in [2,3]))) && (([(GET_IO_FLOW_X(_unit,_partIndex)),(GET_IV_FLOW_X(_unit,_partIndex,_accessSite))] select _iv) > 0) && {_type != "FBTK" || {_type == "FBTK" && (_bagVolumeRemaining <= _originalVolume && _iv)}}) then {
                 private _fluidFlowRate = 1;
                 private _fluidPassRatio = 1;
                 private _uniqueFreshBloodEntry = [];
@@ -191,7 +191,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                         _plateletCountChange = _plateletCountChange * _fluidPassRatio;
                     };
                     default {
-                        if ([GET_BLOODTYPE(_unit), _bloodType] call EFUNC(circulation,isBloodTypeCompatible) && {_type == "Blood" || (_type == "Fresh Blood" && {_uniqueFreshBloodEntry select 3})}) then {
+                        if ([GET_BLOODTYPE(_unit), _bloodType] call EFUNC(circulation,isBloodTypeCompatible) && {_type == "Blood" || (_type == "FreshBlood" && {_uniqueFreshBloodEntry select 3})}) then {
                             _bloodVolumeChange = _bloodVolumeChange + (_bagChange / 1000);
                             _bloodVolumeChange = _bloodVolumeChange * _fluidPassRatio;
 
@@ -213,8 +213,9 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                 };
                 // Flow pain
                 if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then { // IO
-                    private _IOPain = _bagChange / 3.7;
-                    _transfusionPain = _transfusionPain + _IOPain;
+                    private _IOPain = _bagChange / 3;
+                    private _painSuppression = linearConversion [0, 0.24, ([_unit, "Lidocaine_IV", false, _partIndex] call ACEFUNC(medical_status,getMedicationCount)), 0, 0.95, true]; // 30mg "flush"
+                    _transfusionPain = _transfusionPain + (0 max (_IOPain - _painSuppression));
                 } else { // IV complication
                     private _ivComplicationPain = GET_IV_COMPLICATIONS_PAIN_X(_unit,_partIndex,_accessSite);
 

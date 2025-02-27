@@ -38,7 +38,7 @@ class GVAR(RscSetBloodVolume): RscDisplayAttributes {
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
-                    h = QUOTE(H_PART(6.5));
+                    h = QUOTE(H_PART(3.5));
                     class Controls {
                         class Title_BloodVolume: RscText {
                             idc = -1;
@@ -100,7 +100,7 @@ class GVAR(RscInflictCardiacArrest): RscDisplayAttributes {
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
-                    h = QUOTE(H_PART(6.5));
+                    h = QUOTE(H_PART(3));
                     class Controls {
                         class Title_TargetRhythm: RscText {
                             idc = -1;
@@ -144,7 +144,7 @@ class GVAR(RscInflictChestInjury): RscDisplayAttributes {
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
-                    h = QUOTE(H_PART(6.5));
+                    h = QUOTE(H_PART(3));
                     class Controls {
                         class Title_InjuryType: RscText {
                             idc = -1;
@@ -182,7 +182,7 @@ class GVAR(RscGivePain): RscDisplayAttributes {
         class Title: Title {};
         class Content: Content {
             class Controls {
-                class SetBloodVolumeTab: RscControlsGroupNoScrollbars {
+                class GivePainTab: RscControlsGroupNoScrollbars {
                     onSetFocus = QUOTE(_this call FUNC(givePain));
                     idc = IDC_MODULE_GIVE_PAIN;
                     x = 0;
@@ -208,6 +208,94 @@ class GVAR(RscGivePain): RscDisplayAttributes {
                             sliderStep = 0.01;
                             sliderRange[] = {0,1};
                             sliderPosition = 0;
+                        };
+                    };
+                };
+            };
+        };
+        class ButtonOK: ButtonOK {};
+        class ButtonCancel: ButtonCancel {};
+    };
+};
+
+class GVAR(RscSetOxygen): RscDisplayAttributes {
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscSetOxygen))] call ACEFUNC(zeus,zeusAttributes));
+    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscSetOxygen))] call ACEFUNC(zeus,zeusAttributes));
+    class Controls: Controls {
+        class Background: Background {};
+        class Title: Title {};
+        class Content: Content {
+            class Controls {
+                class SetOxygenTab: RscControlsGroupNoScrollbars {
+                    onSetFocus = QUOTE(_this call FUNC(setOxygen));
+                    idc = IDC_MODULE_SET_OXYGEN;
+                    x = 0;
+                    y = 0;
+                    w = QUOTE(W_PART(26));
+                    h = QUOTE(H_PART(1.1));
+                    class Controls {
+                        class Title_SetOxygen: RscText {
+                            idc = -1;
+                            text = CSTRING(Module_SetOxygen_OxygenLevel);
+                            x = 0;
+                            y = 0;
+                            w = QUOTE(W_PART(10));
+                            h = QUOTE(H_PART(1));
+                            colorBackground[] = {0,0,0,0.5};
+                        };
+                        class Slider_OxygenSaturation: RscXSliderH {
+                            idc = IDC_MODULE_SET_OXYGEN_SLIDER;
+                            x = QUOTE(W_PART(10.1));
+                            y = 0;
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));
+                            sliderStep = 0.01;
+                            sliderRange[] = {0,100};
+                            sliderPosition = 0;
+                        };
+                    };
+                };
+            };
+        };
+        class ButtonOK: ButtonOK {};
+        class ButtonCancel: ButtonCancel {};
+    };
+};
+
+class GVAR(RscSetBloodType): RscDisplayAttributes {
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscSetBloodType))] call ACEFUNC(zeus,zeusAttributes));
+    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscSetBloodType))] call ACEFUNC(zeus,zeusAttributes));
+    class Controls: Controls {
+        class Background: Background {};
+        class Title: Title {};
+        class Content: Content {
+            class Controls {
+                class SetBloodTypeTab: RscControlsGroupNoScrollbars {
+                    onSetFocus = QUOTE(_this call FUNC(setBloodType));
+                    idc = IDC_MODULE_SET_BLOODTYPE;
+                    x = 0;
+                    y = 0;
+                    w = QUOTE(W_PART(26));
+                    h = QUOTE(H_PART(5));
+                    class Controls {
+                        class Title_SetBloodType: RscText {
+                            idc = -1;
+                            text = CSTRING(Module_SetBloodType);
+                            x = 0;
+                            y = 0;
+                            w = QUOTE(W_PART(10));
+                            h = QUOTE(H_PART(5));
+                            colorBackground[] = {0,0,0,0.5};
+                        };
+                        class List_BloodType: ctrlToolbox {
+                            idc = IDC_MODULE_SET_BLOODTYPE_LIST;
+                            x = QUOTE(W_PART(10.1));
+                            y = 0;
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(5));
+                            rows = 4;
+                            columns = 2;
+                            strings[] = {"O+","O-","A+","A-","B+","B-","AB+","AB-"};
                         };
                     };
                 };

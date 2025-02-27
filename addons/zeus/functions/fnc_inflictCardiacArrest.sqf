@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Module dialog to manually inflict cardiac arrest
+ * Module to manually inflict cardiac arrest.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>
@@ -72,28 +72,28 @@ private _fnc_onConfirm = {
     switch (_selection) do {
         case 0: {
             _patient setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus];
-            _patient setVariable [QEGVAR(circulation,CardiacArrest_RhythmState), ACM_Rhythm_Sinus, true];
+            _patient setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Sinus, true];
             [QEGVAR(circulation,attemptROSC), [_patient], _patient] call CBA_fnc_targetEvent;
         };
         case 1: {
             _patient setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Asystole];
-            _patient setVariable [QEGVAR(circulation,CardiacArrest_RhythmState), ACM_Rhythm_Asystole, true];
+            _patient setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Asystole, true];
             [QACEGVAR(medical,FatalVitals), [_patient], _patient] call CBA_fnc_targetEvent;
         };
         case 2: {
             _patient setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
-            _patient setVariable [QEGVAR(circulation,CardiacArrest_RhythmState), ACM_Rhythm_VF, true];
+            _patient setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_VF, true];
             [QACEGVAR(medical,FatalVitals), [_patient], _patient] call CBA_fnc_targetEvent;
         };
         case 3: {
             _patient setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
-            _patient setVariable [QEGVAR(circulation,CardiacArrest_RhythmState), ACM_Rhythm_PVT, true];
+            _patient setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_PVT, true];
             [QACEGVAR(medical,FatalVitals), [_patient], _patient] call CBA_fnc_targetEvent;
         };
         case 4: {
             private _targetRhythm = [ACM_Rhythm_Asystole,ACM_Rhythm_VF,ACM_Rhythm_PVT] select (round (random 2));
             _patient setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), _targetRhythm];
-            _patient setVariable [QEGVAR(circulation,CardiacArrest_RhythmState), _targetRhythm, true];
+            _patient setVariable [QEGVAR(circulation,Cardiac_RhythmState), _targetRhythm, true];
             [QACEGVAR(medical,FatalVitals), [_patient], _patient] call CBA_fnc_targetEvent;
         };
     };

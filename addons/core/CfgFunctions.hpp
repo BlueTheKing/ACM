@@ -111,6 +111,9 @@ class CfgFunctions {
             class initEffects { // Oxygen Effect
                 file = QPATHTOF(overrides\fnc_initEffects.sqf); //ace/addons/medical_feedback/functions/fnc_initEffects.sqf
             };
+            class effectUnconscious { // Oxygen Effect
+                file = QPATHTOF(overrides\fnc_effectUnconscious.sqf); //ace/addons/medical_feedback/functions/fnc_effectUnconscious.sqf
+            };
         };
     };
     class overwrite_medical_statemachine {
@@ -166,6 +169,17 @@ class CfgFunctions {
             };
             class showDogtag { // Blood type, weight display
                 file = QPATHTOF(overrides\fnc_showDogtag.sqf); //ace/addons/dogtags/functions/fnc_showDogtag.sqf
+            };
+            class checkDogtag { // Dog tags being checked hint
+                file = QPATHTOF(overrides\fnc_checkDogtag.sqf); //ace/addons/dogtags/functions/fnc_checkDogtag.sqf
+            };
+        };
+    };
+    class overwrite_ace_advanced_fatigue {
+        tag = "ace_advanced_fatigue";
+        class ace_advanced_fatigue {
+            class handleEffects { // Pneumothorax
+                file = QPATHTOF(overrides\fnc_handleEffects_AF.sqf); //ace/addons/advanced_fatigue/functions/fnc_handleEffects.sqf
             };
         };
     };

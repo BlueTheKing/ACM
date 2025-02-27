@@ -18,7 +18,7 @@
 
 params ["_medic", "_patient"];
 
-addCamShake [5, 0.3, 5];
+addCamShake [2, 0.2, 10];
 
 private _soundVariant = round (1 + (random 2));
 playSound3D [format ["%1%2.wav", (QPATHTO_R(sound\slap)), _soundVariant], _patient, false, getPosASL _patient, 10, 1, 10];

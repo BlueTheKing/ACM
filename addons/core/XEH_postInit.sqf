@@ -25,6 +25,8 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
 ["ace_cardiacArrest", LINKFUNC(onCardiacArrest)] call CBA_fnc_addEventHandler;
 ["ace_unconscious", LINKFUNC(onUnconscious)] call CBA_fnc_addEventHandler;
 
+[QGVAR(handleFatalVitals), LINKFUNC(handleFatalVitals)] call CBA_fnc_addEventHandler;
+
 [QACEGVAR(medical_treatment,fullHealLocalMod), LINKFUNC(fullHealLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(showTreatmentText), LINKFUNC(handleTreatmentText)] call CBA_fnc_addEventHandler;
@@ -84,7 +86,7 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
 [QACEGVAR(medical,death), {
     params ["_unit"];
 
-    _unit setVariable [QEGVAR(circulation,CardiacArrest_RhythmState), ACM_Rhythm_Asystole, true];
+    _unit setVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Asystole, true];
     _unit setVariable [QGVAR(TimeOfDeath), CBA_missionTime, true];
 }] call CBA_fnc_addEventHandler;
 
@@ -112,4 +114,25 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
 
 ["isNotInLyingState", {!((_this select 0) getVariable [QGVAR(Lying_State), false])}] call ACEFUNC(common,addCanInteractWithCondition);
 
-call FUNC(generateMedicationTypeMap);
+GVAR(MedicationTypes_MaxPainAdjust) = ["maxPainReduce", "painReduce"] call FUNC(generateMedicationTypeMap);
+GVAR(MedicationTypes_MaxHRAdjust) = ["maxHRIncrease", "hrIncrease"] call FUNC(generateMedicationTypeMap);
+GVAR(MedicationTypes_MaxRRAdjust) = ["maxRRAdjust", "rrAdjust"] call FUNC(generateMedicationTypeMap);
+
+[QGVAR(handleSitting), LINKFUNC(handleSitting)] call CBA_fnc_addEventHandler;
+
+ACE_player addEventHandler ["AnimDone", {
+    params ["_unit", "_anim"];
+
+    if !(local _unit) exitWith {};
+    if (_anim == "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground") then {
+        [{
+            params ["_unit"];
+
+            animationState _unit == "amovpsitmstpsnonwnondnon_ground";
+        }, {
+            params ["_unit"];
+
+            [QGVAR(handleSitting), _unit] call CBA_fnc_localEvent; 
+        }, [_unit], 2] call CBA_fnc_waitUntilAndExecute;
+    };
+}];

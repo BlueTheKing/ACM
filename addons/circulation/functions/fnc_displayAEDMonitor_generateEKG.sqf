@@ -69,7 +69,7 @@ private _rhythmArray = [];
 private _safeSpacingArray = [];
 
 switch (_rhythm) do {
-    case -1: { // CPR
+    case ACM_Rhythm_CPR: { // CPR
         private _cleanRhythmStep = [0,-5,-10,-20,-40 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-45 + (random 5),-40 + (random 5),-20,-10,-5]; // 15
         private _noiseRange = 8;
         private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStep) + _spacing));
@@ -83,8 +83,8 @@ switch (_rhythm) do {
             _safeSpacingArray = _safeSpacingArray + ([_spacing, true] call _generateSafeSpacing) + ([15] call _generateSafeSpacing);
         };
     };
-    case 5; // PEA
-    case 0: { // Sinus
+    case ACM_Rhythm_PEA; // PEA
+    case ACM_Rhythm_Sinus: { // Sinus
         private _cleanRhythmStep = [0,-1,-5,2,-4,-40,25,5,0,-5,-7,-1,5,4,0.8]; // 15
         private _noiseRange = 3;
         private _repeat = ceil(AED_MONITOR_WIDTH / ((count _cleanRhythmStep) + _spacing));
@@ -98,7 +98,7 @@ switch (_rhythm) do {
             _safeSpacingArray = _safeSpacingArray + ([_spacing, true] call _generateSafeSpacing) + ([15] call _generateSafeSpacing);
         };
     };
-    case 1: { // Asystole
+    case ACM_Rhythm_Asystole: { // Asystole
         private _cleanRhythmStep = [0];
         private _noiseRange = 3;
         private _repeat = ceil(AED_MONITOR_WIDTH / (count _cleanRhythmStep));
@@ -111,7 +111,7 @@ switch (_rhythm) do {
             _rhythmArray = _rhythmArray + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
         };
     };
-    case 2: { // VF
+    case ACM_Rhythm_VF: { // VF
         private _cleanRhythmStep = [0];
         private _noiseRange = 30;
         private _repeat = ceil(AED_MONITOR_WIDTH / (count _cleanRhythmStep));
@@ -124,7 +124,22 @@ switch (_rhythm) do {
             _rhythmArray = _rhythmArray + ([_cleanRhythmStep, _noiseRange] call _generateNoisyRhythmStep);
         };
     };
-    case 3: { // PVT
+    case ACM_Rhythm_PVT: { // PVT
+        private _cleanRhythmStep = [5,-30,-47,-49,-49,-49,-44,-39,-30]; // 9
+        private _noiseRange = 3;
+        private _repeat = ceil(AED_MONITOR_WIDTH / (count _cleanRhythmStep));
+
+        if (_arrayOffset > 0) then {
+            _repeat = _repeat + 1;
+        };
+
+        for "_i" from 0 to _repeat do {
+            private _cleanRhythmStepRandomized = _cleanRhythmStep;
+            _cleanRhythmStepRandomized set [0, ((_cleanRhythmStepRandomized select 0) + (2 - (random 4)))];
+            _rhythmArray = _rhythmArray + ([_cleanRhythmStepRandomized, _noiseRange] call _generateNoisyRhythmStep);
+        };
+    };
+    case ACM_Rhythm_VT: { // VT
         private _cleanRhythmStep = [5,-30,-47,-49,-49,-49,-44,-39,-30]; // 9
         private _noiseRange = 3;
         private _repeat = ceil(AED_MONITOR_WIDTH / (count _cleanRhythmStep));

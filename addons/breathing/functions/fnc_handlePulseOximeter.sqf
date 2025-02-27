@@ -45,7 +45,9 @@ private _PFH = [{
 
     {
         if (((_patient getVariable [QGVAR(PulseOximeter_LastSync), [-1,-1]] select _x) + 3) < CBA_missionTime) then {
-            if (!(HAS_TOURNIQUET_APPLIED_ON(_patient,(_x + 2))) && !(IN_CRDC_ARRST(_patient)) && (alive _patient)) then {
+            (GET_BLOOD_PRESSURE(_patient)) params ["", "_BPSystolic"];
+
+            if (!(HAS_TOURNIQUET_APPLIED_ON(_patient,(_x + 2))) && _BPSystolic >= 80 && HAS_PULSE_P(_patient)) then {
                 private _pr = GET_HEART_RATE(_patient);
                 private _displayedSPO2 = 0;
 

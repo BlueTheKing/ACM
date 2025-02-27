@@ -18,7 +18,7 @@
 
 params ["_patient", "_active"];
 
-if (_patient getVariable [QEGVAR(circulation,CardiacArrest_RhythmState), ACM_Rhythm_Sinus] == ACM_Rhythm_Asystole || !_active) exitWith {};
+if (_patient getVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Sinus] == ACM_Rhythm_Asystole || !_active) exitWith {};
 
 [_patient] call EFUNC(circulation,updateCirculationState);
 

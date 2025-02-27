@@ -17,7 +17,7 @@
 
 params ["_patient"];
 
-if !(IS_UNCONSCIOUS(_patient)) exitWith {};
+if (!(GVAR(enable)) || !(IS_UNCONSCIOUS(_patient))) exitWith {};
 
 private _airwayReflexDelay = 20 + (random 25);
 

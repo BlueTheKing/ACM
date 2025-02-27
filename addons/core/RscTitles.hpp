@@ -2,8 +2,6 @@
 #include "TreatmentText_defines.hpp"
 #include "ContinuousActionText_defines.hpp"
 
-#define NORMALIZE_UISCALE ((0.55 / (getResolution select 5)) min 1)
-
 class RscText;
 class RscPicture;
 class RscStructuredText;

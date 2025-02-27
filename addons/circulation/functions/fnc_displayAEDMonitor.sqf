@@ -45,7 +45,7 @@ private _etco2 = _patient getVariable [QGVAR(AED_CO2_Display), 0];
 private _rr = GET_RESPIRATION_RATE(_patient);
 _patient setVariable [QGVAR(AED_Monitor_EtCO2), _etco2];
 
-private _rhythm = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
+private _rhythm = _patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus];
 
 if !(alive _patient) then {
     _rhythm = ACM_Rhythm_Asystole;
@@ -73,7 +73,7 @@ if (count (_patient getVariable [QGVAR(AED_EKGDisplay), []]) < AED_MONITOR_WIDTH
     //_ekgDisplay resize [AED_MONITOR_WIDTH, 0];
     if (_padsState) then {
         _patient setVariable [QGVAR(AED_Monitor_Pads_State), true, true];
-        if (_rhythm in [ACM_Rhythm_CPR,ACM_Rhythm_Sinus,ACM_Rhythm_PEA]) then {
+        if (_rhythm in [ACM_Rhythm_CPR,ACM_Rhythm_Sinus,ACM_Rhythm_PEA,ACM_Rhythm_VT]) then {
             _patient setVariable [QGVAR(AED_EKGDisplay), (([_rhythm, _HRSpacing, 0] call FUNC(displayAEDMonitor_generateEKG)) select 0)];
         } else {
             if (_recentShock) then {
@@ -88,7 +88,7 @@ if (count (_patient getVariable [QGVAR(AED_EKGDisplay), []]) < AED_MONITOR_WIDTH
 if (count (_patient getVariable [QGVAR(AED_PODisplay), []]) < AED_MONITOR_WIDTH || !(_patient getVariable [QGVAR(AED_Monitor_PulseOximeter_State), false])) then { // Initial
     if (_pulseOximeterState) then {
         _patient setVariable [QGVAR(AED_Monitor_PulseOximeter_State), true, true];
-        if (_rhythm in [ACM_Rhythm_CPR,ACM_Rhythm_Sinus,ACM_Rhythm_PEA]) then {
+        if (_rhythm in [ACM_Rhythm_CPR,ACM_Rhythm_Sinus,ACM_Rhythm_PEA,ACM_Rhythm_VT]) then {
             _patient setVariable [QGVAR(AED_PODisplay), (([_rhythm, _HRSpacing, 0, _saturation] call FUNC(displayAEDMonitor_generatePO)) select 0)];
         } else {
             if (_recentShock) then {
@@ -103,7 +103,7 @@ if (count (_patient getVariable [QGVAR(AED_PODisplay), []]) < AED_MONITOR_WIDTH 
 if (count (_patient getVariable [QGVAR(AED_CODisplay), []]) < AED_MONITOR_WIDTH || !(_patient getVariable [QGVAR(AED_Monitor_Capnograph_State), false])) then { // Initial
     if (_capnographState) then {
         _patient setVariable [QGVAR(AED_Monitor_Capnograph_State), true, true];
-        if (_rhythm in [ACM_Rhythm_CPR,ACM_Rhythm_Sinus,ACM_Rhythm_PEA]) then {
+        if (_rhythm in [ACM_Rhythm_CPR,ACM_Rhythm_Sinus,ACM_Rhythm_PEA,ACM_Rhythm_VT]) then {
             _patient setVariable [QGVAR(AED_CODisplay), (([_rhythm, _HRSpacing, 0, _etco2, _rr] call FUNC(displayAEDMonitor_generateCO)) select 0)];
         } else {
             if (_recentShock) then {
@@ -179,7 +179,7 @@ private _PFH = [{
     };
 
     private _hr = GET_HEART_RATE(_patient);
-    private _rhythmState = _patient getVariable [QGVAR(CardiacArrest_RhythmState), ACM_Rhythm_Sinus];
+    private _rhythmState = _patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus];
     private _rr = GET_RESPIRATION_RATE(_patient);
     private _EKGRhythm = ACM_Rhythm_NA;
     private _PORhythm = ACM_Rhythm_NA;
@@ -248,6 +248,28 @@ private _PFH = [{
             _EKGStepSpacing = 0;
             _POStepSpacing = 0;
             _COStepSpacing = 0;
+        };
+        case (!(HAS_PULSE_P(_patient)) && _hr > 180): { // VT
+            if (_padsState) then {
+                _EKGRhythm = ACM_Rhythm_VT;
+            };
+            if (_pulseOximeterState) then {
+                if (_oxygenSaturation != -1) then {
+                    _PORhythm = ACM_Rhythm_VT;
+                } else {
+                    _PORhythm = ACM_Rhythm_Asystole;
+                };
+            };
+            if (_capnographState) then {
+                if (_etco2 != -1) then {
+                    _CORhythm = ACM_Rhythm_VT;
+                } else {
+                    _CORhythm = ACM_Rhythm_Asystole;
+                };
+            };
+            _EKGStepSpacing = (60 / _hr) * AED_SPACING_MULTIPLIER;
+            _POStepSpacing = _EKGStepSpacing;
+            _COStepSpacing = _EKGStepSpacing;
         };
         default { // Sinus
             if (_padsState) then {
@@ -481,7 +503,7 @@ private _PFH = [{
             _displayedNIBP_D = "---";
             _displayedNIBP_M = "--";
         } else {
-            _displayedNIBP_M = (2/3) * _displayedNIBP_S + (1/3) * _displayedNIBP_D;
+            _displayedNIBP_M = GET_MAP(_displayedNIBP_S,_displayedNIBP_D);
             _displayedNIBP_M = _displayedNIBP_M toFixed 0;
             _displayedNIBP_S = _displayedNIBP_S toFixed 0;
             _displayedNIBP_D = _displayedNIBP_D toFixed 0;

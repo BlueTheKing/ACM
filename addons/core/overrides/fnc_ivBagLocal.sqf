@@ -30,6 +30,7 @@ private _IVBags = _patient getVariable [QEGVAR(circulation,IV_Bags), createHashM
 private _IVBagsBodyPart = _IVBags getOrDefault [_bodyPart, []];
 
 private _donorBloodType = -1;
+private _isFBTK = false;
 
 switch (true) do {
     case (_freshBlood): {
@@ -41,6 +42,7 @@ switch (true) do {
         _IVBagsBodyPart pushBack ["FreshBlood", (parseNumber _volume), _accessType, _accessSite, _iv, _bloodType, (parseNumber _volume), (parseNumber _id)];
     };
     case (_classname in FBTK_ARRAY_DATA): {
+        _isFBTK = true;
         private _volume = parseNumber ((_classname splitString "_") select 1);
 
         _IVBagsBodyPart pushBack ["FBTK", 0, _accessType, _accessSite, _iv, -1, _volume];
@@ -71,6 +73,6 @@ if (GET_BLOODTYPE(_patient) == -1) then {
     [_patient] call EFUNC(circulation,generateBloodType);
 };
 
-if (_donorBloodType > -1 && !([GET_BLOODTYPE(_patient), _donorBloodType] call EFUNC(circulation,isBloodTypeCompatible))) then {
+if (!_isFBTK && {_donorBloodType > -1 && !([GET_BLOODTYPE(_patient), _donorBloodType] call EFUNC(circulation,isBloodTypeCompatible))}) then {
     [QEGVAR(circulation,handleHemolyticReaction), [_patient], _patient] call CBA_fnc_targetEvent;
 };

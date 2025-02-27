@@ -18,4 +18,4 @@
 
 params ["_patient", "_bodyPart"];
 
-[_patient, "head"] call FUNC(getBodyPartBleeding) > 0;
+[_patient, _bodyPart] call FUNC(getBodyPartBleeding) > 0;

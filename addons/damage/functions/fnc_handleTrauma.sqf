@@ -19,7 +19,7 @@
 params ["_patient", ["_bodyPartDamage", []]];
 
 if (_bodyPartDamage isEqualTo []) then {
-    _bodyPartDamage = _patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]];
+    _bodyPartDamage = GET_BODYPART_DAMAGE(_patient);
 };
 
 _bodyPartDamage params ["_headDamage", "_bodyDamage"];
@@ -28,10 +28,22 @@ if !(isPlayer _patient) exitWith {
     private _headTraumaThreshold = GVAR(headTraumaDeathThresholdAI);
     private _bodyTraumaThreshold = GVAR(bodyTraumaDeathThresholdAI);
 
-    ((_headDamage > _headTraumaThreshold && _headTraumaThreshold > 0) || (_bodyDamage > _bodyTraumaThreshold && _bodyTraumaThreshold > 0));
+    private _exceeded = ((_headDamage > _headTraumaThreshold && _headTraumaThreshold > 0) || (_bodyDamage > _bodyTraumaThreshold && _bodyTraumaThreshold > 0));
+
+    if (_exceeded) then {
+        _patient setVariable [QGVAR(InstantDeath), true];
+    };
+
+    _exceeded;
 };
 
 private _headTraumaThreshold = GVAR(headTraumaDeathThreshold);
 private _bodyTraumaThreshold = GVAR(bodyTraumaDeathThreshold);
 
-((_headDamage > _headTraumaThreshold && _headTraumaThreshold > 0) || (_bodyDamage > _bodyTraumaThreshold && _bodyTraumaThreshold > 0));
+private _exceeded = ((_headDamage > _headTraumaThreshold && _headTraumaThreshold > 0) || (_bodyDamage > _bodyTraumaThreshold && _bodyTraumaThreshold > 0));
+
+if (_exceeded) then {
+    _patient setVariable [QGVAR(InstantDeath), true];
+};
+
+_exceeded; 

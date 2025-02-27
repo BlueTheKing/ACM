@@ -61,14 +61,6 @@ private _cachedItems = [ACE_player, 0] call ACEFUNC(common,uniqueItems);
 private _fluidsArray = +GVAR(Fluids_Array);
 private _fluidsArrayData = +GVAR(Fluids_Array_Data);
 
-private _index = _fluidsArray findIf {_x in _cachedItems};
-
-if (_index < 0) exitWith {};
-
-private _ctrlInventoryPanel = _display displayCtrl IDC_TRANSFUSIONMENU_RIGHTLISTPANEL;
-
-lbClear _ctrlInventoryPanel;
-
 private _activeFreshBloodList = missionNamespace getVariable [QGVAR(FreshBloodList), createHashMap];
 
 if (count _activeFreshBloodList > 0) then {
@@ -81,6 +73,36 @@ if (count _activeFreshBloodList > 0) then {
     } forEach _activeFreshBloodList;
 };
 
+private _index = _fluidsArray findIf {_x in _cachedItems};
+
+if (_index < 0) exitWith {};
+
+private _ctrlInventoryPanel = _display displayCtrl IDC_TRANSFUSIONMENU_RIGHTLISTPANEL;
+
+lbClear _ctrlInventoryPanel;
+
+private _fnc_addToInventoryPanel = {
+    params ["_ctrlInventoryPanel", "_fluidsArrayData", "_count", "_entry", "_index"];
+
+    private _config = (configFile >> "CfgWeapons" >> _entry);
+    private _name = "";
+
+    if ((getNumber (_config >> "uniqueBag")) > 0) then {
+        ((configName _config) splitString "_") params ["","","_volume","_id"];
+
+        private _bloodType = ([(parseNumber _id)] call FUNC(getFreshBloodEntry)) select 2;
+        private _bloodTypeString = [_bloodType, 1] call FUNC(convertBloodType);
+        _name = format [C_LLSTRING(FreshBloodBag_Short), (format ["%1 (%2ml) [%3]", _bloodTypeString, _volume, _id])];
+    } else {
+        _name = [(getText (_config >> "displayName")), (getText (_config >> "shortName"))] select (isText (_config >> "shortName"));
+    };
+
+    private _i = _ctrlInventoryPanel lbAdd _name;
+    _ctrlInventoryPanel lbSetPicture [_i, getText (_config >> "picture")];
+    _ctrlInventoryPanel lbSetData [_i, (format ["%1|%2",_entry,_fluidsArrayData select _index])];
+    _ctrlInventoryPanel lbSetTooltip [_i, (format [LLSTRING(Common_Available), _count])];
+};
+
 if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
     {
         private _inventory = getItemCargo _vehicle;
@@ -91,13 +113,8 @@ if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
         };
         private _count = (_inventory select 1) select _targetIndex;
 
-        if (_count > 0) then { 
-            private _config = (configFile >> "CfgWeapons" >> _x);
-            private _name = [(getText (_config >> "displayName")), (getText (_config >> "shortName"))] select (isText (_config >> "shortName"));
-            private _i = _ctrlInventoryPanel lbAdd _name;
-            _ctrlInventoryPanel lbSetPicture [_i, getText (_config >> "picture")];
-            _ctrlInventoryPanel lbSetData [_i, (format ["%1|%2",_x,_fluidsArrayData select _forEachIndex])];
-            _ctrlInventoryPanel lbSetTooltip [_i, (format [LLSTRING(Common_Available), _count])];
+        if (_count > 0) then {
+            [_ctrlInventoryPanel, _fluidsArrayData, _count, _x, _forEachIndex] call _fnc_addToInventoryPanel;
         };
     } forEach _fluidsArray;
 } else {
@@ -105,12 +122,7 @@ if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
         private _count = [_target, _x] call ACEFUNC(common,getCountOfItem);
 
         if (_count > 0) then { 
-            private _config = (configFile >> "CfgWeapons" >> _x);
-            private _name = [(getText (_config >> "displayName")), (getText (_config >> "shortName"))] select (isText (_config >> "shortName"));
-            private _i = _ctrlInventoryPanel lbAdd _name;
-            _ctrlInventoryPanel lbSetPicture [_i, getText (_config >> "picture")];
-            _ctrlInventoryPanel lbSetData [_i, (format ["%1|%2",_x,_fluidsArrayData select _forEachIndex])];
-            _ctrlInventoryPanel lbSetTooltip [_i, (format [LLSTRING(Common_Available), _count])];
+            [_ctrlInventoryPanel, _fluidsArrayData, _count, _x, _forEachIndex] call _fnc_addToInventoryPanel;
         };
     } forEach _fluidsArray;
 };
