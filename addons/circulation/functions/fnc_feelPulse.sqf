@@ -38,15 +38,15 @@ params ["_medic", "_patient", "_bodyPart"];
 
     private _bodyPartString = switch (_bodyPart) do {
         case "head": {
-            "Carotid";
+            LLSTRING(FeelPulse_Carotid);
         };
         case "leftarm";
         case "rightarm": {
-            "Radial";
+            LLSTRING(FeelPulse_Radial);
         };
         case "leftleg";
         case "rightleg": {
-            "Femoral";
+            LLSTRING(FeelPulse_Femoral);
         };
     };
 
@@ -56,13 +56,9 @@ params ["_medic", "_patient", "_bodyPart"];
 
     "ACM_FeelPulse" cutText ["","PLAIN", 0, false];
 
-    if (_notInVehicle) then {
-        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
-    };
-
     [LSTRING(FeelPulse_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 }, { // PerFrame
-    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
+    params ["_medic", "_patient", "_bodyPart"];
 
     private _display = uiNamespace getVariable ["ACM_FeelPulse", displayNull];
     private _ctrlHeart = _display displayCtrl IDC_FEELPULSE_HEART;
@@ -126,4 +122,4 @@ params ["_medic", "_patient", "_bodyPart"];
 
     private _color = linearConversion [_w_pos(1.1), _w_pos(2.8), ((ctrlPosition _ctrlHeart) select 2), 0.1, 1, false];
     _ctrlHeart ctrlSetTextColor [1, 0, 0, _color];
-}] call EFUNC(core,beginContinuousAction);
+}, true] call EFUNC(core,beginContinuousAction);

@@ -13,6 +13,9 @@
     if (([_patient, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.1)) exitWith {};
 
     _patient setVariable [QGVAR(ROSC_Time), CBA_missionTime, true];
+    if ([_patient] call FUNC(recentAEDShock)) then {
+        _patient setVariable [QGVAR(AED_LastShock), 0, true];
+    };
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleCPR), LINKFUNC(handleCPR)] call CBA_fnc_addEventHandler;
@@ -32,6 +35,8 @@
 [QGVAR(handleMed_KetamineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_LidocaineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_CalciumChlorideLocal), LINKFUNC(handleMed_CalciumChlorideLocal)] call CBA_fnc_addEventHandler;
+
+[QGVAR(setLozengeLocal), LINKFUNC(setLozengeLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleHemolyticReaction), LINKFUNC(handleHemolyticReaction)] call CBA_fnc_addEventHandler;
 

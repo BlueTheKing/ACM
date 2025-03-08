@@ -83,10 +83,16 @@ private _minPainReduce = GET_NUMBER(_medicationConfig >> "minPainReduce",getNumb
 private _maxPainReduce = GET_NUMBER(_medicationConfig >> "maxPainReduce",getNumber (_defaultConfig >> "maxPainReduce"));
 
 private _weightEffect = GET_NUMBER(_medicationConfig >> "weightEffect",getNumber (_defaultConfig >> "weightEffect"));
-
-private _patientWeight = GET_BODYWEIGHT(_patient);
+private _absorptionEffect = GET_NUMBER(_medicationConfig >> "bloodlossEffect",getNumber (_defaultConfig >> "bloodlossEffect"));
 
 private _concentrationRatio = 1;
+private _absorptionModifier = 1;
+
+if (_absorptionEffect > 0) then {
+    _absorptionModifier = linearConversion [4.5, BLOOD_VOLUME_CLASS_4_HEMORRHAGE, GET_BLOOD_VOLUME(_patient), 1, 0.1, true];
+};
+
+private _patientWeight = GET_BODYWEIGHT(_patient);
 
 switch (_weightEffect) do {
     case 1: {
@@ -96,7 +102,7 @@ switch (_weightEffect) do {
         _concentrationRatio = _weightedDose / _maxEffectDose;
 
         if (_painReduce != 0) then {
-            _painReduce = [(linearConversion [_minEffectDose, 0, _weightedDose, _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, _weightedDose, _minPainReduce, _painReduce])] select (_weightedDose > _minEffectDose);
+            _painReduce = [(linearConversion [_minEffectDose, 0, (_weightedDose * _absorptionModifier), _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, (_weightedDose * _absorptionModifier), _minPainReduce, _painReduce])] select (_weightedDose > _minEffectDose);
         };
     };
     case 2: {
@@ -106,17 +112,23 @@ switch (_weightEffect) do {
         _concentrationRatio = _weightedDose / _maxEffectDose;
 
         if (_painReduce != 0) then {
-            _painReduce = [(linearConversion [_minEffectDose, 0, _weightedDose, _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, _weightedDose, _minPainReduce, _painReduce])] select (_weightedDose > _minEffectDose);
+            _painReduce = [(linearConversion [_minEffectDose, 0, (_weightedDose * _absorptionModifier), _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, (_weightedDose * _absorptionModifier), _minPainReduce, _painReduce])] select (_weightedDose > _minEffectDose);
         };
     };
     default {
         _concentrationRatio = _dose / _maxEffectDose;
 
         if (_painReduce != 0) then {
-            _painReduce = (linearConversion [_minEffectDose, _maxEffectDose, _dose, _minPainReduce, _painReduce]) min _maxPainReduce;
+            if (_minEffectDose == _maxEffectDose) then {
+                _painReduce = _painReduce min _maxPainReduce;
+            } else {
+                _painReduce = (linearConversion [_minEffectDose, _maxEffectDose, (_dose * _absorptionModifier), _minPainReduce, _painReduce]) min _maxPainReduce;
+            };
         };
     };
 };
+
+_concentrationRatio = _concentrationRatio * _absorptionModifier;
 
 private _heartRateChange = 0;
 
@@ -149,6 +161,10 @@ if ((_breathingEffectivenessAdjust select 0) + (_breathingEffectivenessAdjust se
 
 private _medicationType = GET_STRING(_medicationConfig >> "medicationType",getText (_defaultConfig >> "medicationType"));
 
+if (_medicationType == "Default") then {
+    _medicationType = _classname;
+};
+
 // Adjust the medication effects and add the medication to the list
 TRACE_3("adjustments",_heartRateChange,_painReduce,_viscosityChange);
 
@@ -167,7 +183,7 @@ if (_partIndex == 0 && GET_AIRWAYSTATE(_patient) < 0.9) then {
 
 if !(_continue) exitWith {};
 
-[_patient, _classname, _timeTillMaxEffect / (0.5 max _concentrationRatio min 1.1), _timeInSystem * (0.5 max _concentrationRatio min 1.1), _heartRateChange, _painReduce, _viscosityChange * _concentrationRatio, _administrationType, _maxEffectTime * (0.01 max _concentrationRatio min 1.1), _rrAdjustment, _coSensitivityAdjustment, _breathingEffectivenessAdjustment, _concentrationRatio, _medicationType] call ACEFUNC(medical_status,addMedicationAdjustment);
+[_patient, _classname, _timeTillMaxEffect / (0.5 max _concentrationRatio min 1.1), _timeInSystem * (0.5 max _concentrationRatio min 1.1), _heartRateChange, _painReduce, _viscosityChange * _concentrationRatio, _administrationType, _maxEffectTime * (0.01 max _concentrationRatio min 1.1), _rrAdjustment, _coSensitivityAdjustment, _breathingEffectivenessAdjustment, _concentrationRatio, _medicationType, _partIndex] call ACEFUNC(medical_status,addMedicationAdjustment);
 
 // Check for medication compatiblity
 [_patient, _classname, _maxDose, _maxDoseDeviation, _concentrationRatio, _maxEffectDose, _patientWeight, _incompatibleMedication] call ACEFUNC(medical_treatment,onMedicationUsage);

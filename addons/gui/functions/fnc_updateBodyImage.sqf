@@ -46,6 +46,15 @@ if (_airwayItemNPA isEqualTo "NPA") then {
     _ctrlNPA ctrlShow false;
 };
 
+private _ctrlLozenge = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_LOZENGE;
+private _lozengeItem = _target getVariable [QEGVAR(circulation,LozengeItem), ""];
+
+if (_lozengeItem isNotEqualTo "") then {
+    _ctrlLozenge ctrlShow true;
+} else {
+    _ctrlLozenge ctrlShow false;
+};
+
 // Breathing
 private _ctrlPulseOximeterRight = _ctrlGroup controlsGroupCtrl IDC_BODY_RIGHTARM_PULSEOX;
 private _ctrlPulseOximeterLeft = _ctrlGroup controlsGroupCtrl IDC_BODY_LEFTARM_PULSEOX;

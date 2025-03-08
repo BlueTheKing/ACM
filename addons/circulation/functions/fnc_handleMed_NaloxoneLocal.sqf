@@ -36,7 +36,7 @@ private _removedAdjustments = [_patient, "Opioid", _naloxoneEffect] call FUNC(re
         private _mitigatedArray = _patient getVariable [QGVAR(MitigatedMedication), []];
 
         /*{
-            _x params ["_medicationClassname", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust"];
+            _x params ["_medicationClassname", "_injectTime", "_timeToMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust", "_administrationType", "_maxEffectTime", "_rrAdjust", "_coSensitivityAdjust", "_breathingEffectivenessAdjust", "_concentration", "_medicationType", "_bodyPartIndex"];
 
             if (_injectTime + _maxTimeInSystem > CBA_missionTime) then {
                 private _timeRemaining = CBA_missionTime - _injectTime;
@@ -46,7 +46,7 @@ private _removedAdjustments = [_patient, "Opioid", _naloxoneEffect] call FUNC(re
                     _newTimeToMaxEffect = _timeToMaxEffect - (_maxTimeInSystem - _timeRemaining);
                 };
 
-                [_patient, _medicationClassname, _newTimeToMaxEffect, _timeRemaining, _hrAdjust, _painAdjust, _flowAdjust] call ACEFUNC(medical_status,addMedicationAdjustment);
+                [_patient, _medicationClassname, _newTimeToMaxEffect, _timeRemaining, _hrAdjust, _painAdjust, _flowAdjust, _administrationType, _maxEffectTime, _rrAdjust, _coSensitivityAdjust, _breathingEffectivenessAdjust, _concentration, _medicationType, _bodyPartIndex] call ACEFUNC(medical_status,addMedicationAdjustment);
             };
         } forEach _mitigatedArray;*/
 

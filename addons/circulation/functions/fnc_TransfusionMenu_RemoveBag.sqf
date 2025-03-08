@@ -25,24 +25,24 @@ if (_selectionIndex < 0) exitWith {};
 private _fnc_completeRemoval = {
     params ["_IVBags", "_IVBagsOnBodyPart", "_targetIndex", "_itemClassName", "_type", "_returnVolume", "_totalVolume"];
 
-    private _returned = true;
+    private _returnedItem = [true];
 
     if (_returnVolume > 0) then {
         if (_type == "FBTK" && _returnVolume >= 250) then {
             private _className = ["FreshBlood", _returnVolume] call FUNC(formatFluidBagName);
             private _freshBloodID = [GVAR(TransfusionMenu_Target), _returnVolume] call FUNC(generateFreshBloodEntry);
-            _returned = [ACE_player, (format ["%1_%2", _className, _freshBloodID])] call ACEFUNC(common,addToInventory);
+            _returnedItem = [ACE_player, (format ["%1_%2", _className, _freshBloodID])] call ACEFUNC(common,addToInventory);
             [QGVAR(updateFreshBloodBagName), [_returnVolume, _freshBloodID]] call CBA_fnc_globalEvent;
         } else {
-            _returned = [ACE_player, _itemClassName] call ACEFUNC(common,addToInventory);
+            _returnedItem = [ACE_player, _itemClassName] call ACEFUNC(common,addToInventory);
         };
     } else {
         if (_type == "FBTK") then {
-            _returned = [ACE_player, (format ["ACM_FieldBloodTransfusion_%1", _totalVolume])] call ACEFUNC(common,addToInventory);
+            _returnedItem = [ACE_player, (format ["ACM_FieldBloodTransfusionKit_%1", _totalVolume])] call ACEFUNC(common,addToInventory);
         };
     };
 
-    _returned = (_returned select 0);
+    private _returned = (_returnedItem select 0);
 
     if !(_returned) then {
         [ACELLSTRING(common,Inventory_Full), 1.5, ACE_player] call ACEFUNC(common,displayTextStructured);

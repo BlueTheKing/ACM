@@ -4,153 +4,235 @@
         <Key ID="STR_ACM_Core_Category">
             <English>ACM: Core</English>
             <Polish>ACM: Core</Polish>
+            <German>ACM: Kern</German>
         </Key>
         <Key ID="STR_ACM_Core_Category_Items">
             <English>Items</English>
             <Polish>Przedmioty</Polish>
+            <German>Items</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet">
             <English>Take Off Tourniquet Time</English>
             <Polish>Czas zdjęcia opaski uciskowej</Polish>
+            <German>Tourniquet Entfernungszeit</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet_Desc">
             <English>Time to take off tourniquet</English>
             <Polish>Czas potrzebny na zdjęcie opaski uciskowej</Polish>
+            <German>Zeit um Tourniquet zu entfernen</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight">
             <English>Dogtag list weight</English>
             <Polish>Nieśmiertelniki pokazują wagę</Polish>
+            <German>Erkennungsmarke zeigt Gewicht an</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
             <English>Set whether dog tags list the unit's weight</English>
             <Polish>Czy na nieśmietelnikach ma się wyświetlać waga jednostki</Polish>
+            <German>Stellt ein, ob die Erkennungsmarke das Patientengewicht anzeigt</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
             <English>Ignore Incompatible Addon Warning</English>
             <Polish>Zignoruj ostrzeżenia o niekompatybilności</Polish>
+            <German>Ignoriere Inkompatibilitätswarnung</German>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings_Desc">
             <English>Disables incompatible addon warnings</English>
             <Polish>Wyłącza ostrzeżenia o niekompatybilnych addonach</Polish>
-        </Key><!--
-            // Actions // -->
-        <Key ID="STR_ACM_Core_MorphineAutoinjector">
-            <English>Use Morphine Autoinjector</English>
-            <Polish>Użyj autostrzykawki z morfiną</Polish>
+            <German>Deaktiviert die Inkompatibilitätswarnung vom Addon</German>
         </Key>
-        <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
-            <English>Using Morphine Autoinjector...</English>
-            <Polish>Używanie autostrzykawki z morfiną...</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
-            <English>Use Epinephrine Autoinjector</English>
-            <Polish>Użyj autostrzykawki z epinefryną</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
-            <English>Using Epinephrine Autoinjector...</English>
-            <Polish>Używanie autostrzykawki z epinefryną...</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_AdenosineAutoinjector">
-            <English>Use Adenosine Autoinjector</English>
-            <Polish>Użyj autostrzykawki z adenozyną</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
-            <English>Using Adenosine Autoinjector...</English>
-            <Polish>Używanie autostrzykawki z adenozyną...</Polish>
-        </Key><!--
-            // Cancel Carrying // -->
-        <Key ID="STR_ACM_Core_CancelCarrying">
-            <English>Cancel Carrying</English>
-            <Polish>Przestań nieść</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
-            <English>Stopped carrying %1</English>
-            <Polish>Przestano nieść %1</Polish>
-        </Key><!--
-            // Lying State // -->
-        <Key ID="STR_ACM_Core_LyingState_GetUp">
-            <English>Get Up</English>
-            <Polish>Wstań</Polish>
-        </Key><!--
-            // Treatment Text // -->
-        <Key ID="STR_ACM_Core_TreatedBy">
-            <English>You are being treated by %1</English>
-            <Polish>%1 udziela ci pomocy</Polish>
-        </Key><!--
-            // Vehicle Patient Actions // -->
-        <Key ID="STR_ACM_Core_VehiclePatients">
-            <English>Vehicle Patients</English>
-            <Polish>Pacjenci w pojeździe</Polish>
-        </Key><!--
-            // Unload and carry // -->
-        <Key ID="STR_ACM_Core_CarryPatient">
-            <English>Carry Patient</English>
-            <Polish>Nieś pacjenta</Polish>
-        </Key><!--
-            // Boxes // -->
-        <Key ID="STR_ACM_Core_MedicalSupplyCrate_Basic_Display">
-            <English>[ACM] Basic Medical Supply Crate</English>
-            <Polish>[ACM] Podstawowa skrzynia z zaopatrzeniem medycznym </Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
-            <English>[ACM] Advanced Medical Supply Crate</English>
-            <Polish>[ACM] Zaawansowana skrzynia z zaopatrzeniem medycznym </Polish>
-        </Key><!--
-            // Dog Tags // -->
-        <Key ID="STR_ACM_Core_DogTags_InspectingDogtags">
-		    <English>%1 is inspecting your dog tags</English>
-		    <Polish>%1 sprawdza twój nieśmiertelnik</Polish>
-        </Key><!--
-            // Incompatible Addons // -->
-        <Key ID="STR_ACM_Core_IncompatibleAddons_Found">
-            <English>Incompatible addons found:</English>
-            <Polish>Znaleziono niekompatybilne addony:</Polish>
-        </Key><!--
-            // Common // -->
-        <Key ID="STR_ACM_Core_Common_Inserted">
-            <English>Inserted</English>
-            <Polish>Włożono</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_Common_Attached">
-            <English>Attached</English>
-            <Polish>Przymocowano</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_Common_Applied">
-            <English>Applied</English>
-            <Polish>Podano</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_Common_Removed">
-            <English>Removed</English>
-            <Polish>Usunięto</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_Common_Connected">
-            <English>Connected</English>
-            <Polish>Przyczepiono</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_Common_Disconnected">
-            <English>Disconnected</English>
-            <Polish>Odczepiono</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_Common_InProgress">
-            <English>In Progress</English>
-            <Polish>W trakcie</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_Common_Paused">
-            <English>Paused</English>
-            <Polish>Przerwane</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_Common_Active">
-            <English>Active</English>
-            <Polish>Aktywny</Polish>
-        </Key>
-        <Key ID="STR_ACM_Core_Common_Empty">
-            <English>Empty</English>
-            <Polish>Pusty </Polish>
-        </Key><!--
-            // ACE Action // -->
-        <Key ID="STR_ACM_Core_MedicalEquipment">
-            <English>Medical Equipment</English>
-            <Polish>Wyposażenie medyczne</Polish>
-        </Key>
+        <Container name="// Actions //">
+            <Key ID="STR_ACM_Core_MorphineAutoinjector">
+                <English>Use Morphine Autoinjector</English>
+                <Polish>Użyj autostrzykawki z morfiną</Polish>
+                <German>Morphin-Autoinjektor benutzen</German>
+            </Key>
+            <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
+                <English>Using Morphine Autoinjector...</English>
+                <Polish>Używanie autostrzykawki z morfiną...</Polish>
+                <German>Benutze Morphin-Autoinjektor...</German>
+            </Key>
+            <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
+                <English>Use Epinephrine Autoinjector</English>
+                <Polish>Użyj autostrzykawki z epinefryną</Polish>
+                <German>Adrenalin-Autoinjektor benutzen</German>
+            </Key>
+            <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
+                <English>Using Epinephrine Autoinjector...</English>
+                <Polish>Używanie autostrzykawki z epinefryną...</Polish>
+                <German>Benutze Adrenalin-Autoinjektor...</German>
+            </Key>
+            <Key ID="STR_ACM_Core_AdenosineAutoinjector">
+                <English>Use Adenosine Autoinjector</English>
+                <Polish>Użyj autostrzykawki z adenozyną</Polish>
+                <German>Adenosin-Autoinjektor benutzen</German>
+            </Key>
+            <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
+                <English>Using Adenosine Autoinjector...</English>
+                <Polish>Używanie autostrzykawki z adenozyną...</Polish>
+                <German>Benutze Adenosin-Autoinjektor</German>
+            </Key>
+        </Container>
+        <Container name="// Cancel Carrying //">
+            <Key ID="STR_ACM_Core_CancelCarrying">
+                <English>Cancel Carrying</English>
+                <Polish>Przestań nieść</Polish>
+                <German>Patient ablegen</German>
+            </Key>
+            <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
+                <English>Stopped carrying %1</English>
+                <Polish>Przestano nieść %1</Polish>
+                <German>Patient %1 abgelegt</German>
+            </Key>
+        </Container>
+        <Container name="// Lying State //">
+            <Key ID="STR_ACM_Core_LyingState_GetUp">
+                <English>Get Up</English>
+                <Polish>Wstań</Polish>
+                <German>Aufstehen</German>
+            </Key>
+        </Container>
+        <Container name="// Assist Carry Action //">
+            <Key ID="STR_ACM_Core_AssistCarry_Already">
+                <English>Patient is already being carry-assisted</English>
+            </Key>
+            <Key ID="STR_ACM_Core_AssistCarry_Complete">
+                <English>Prepared %1 for carrying</English>
+            </Key>
+            <Key ID="STR_ACM_Core_AssistCarry_Progress">
+                <English>Preparing to carry...</English>
+            </Key>
+            <Key ID="STR_ACM_Core_AssistCarry_Cancelled">
+                <English>Carry-assist cancelled</English>
+            </Key>
+        </Container>
+        <Container name="// Supine Position Action //">
+            <Key ID="STR_ACM_Core_SupinePosition_Action">
+                <English>Put In Supine Position</English>
+            </Key>
+            <Key ID="STR_ACM_Core_SupinePosition_Complete">
+                <English>Patient has been placed into the supine position</English>
+            </Key>
+            <Key ID="STR_ACM_Core_SupinePosition_Hint">
+                <English>You have been placed into the supine position</English>
+            </Key>
+        </Container>
+        <Container name="// Treatment Text //">
+            <Key ID="STR_ACM_Core_TreatedBy">
+                <English>You are being treated by %1</English>
+                <Polish>%1 udziela ci pomocy</Polish>
+                <German>Du wirst von %1 behandelt</German>
+            </Key>
+        </Container>
+        <Container name="// Vehicle Patient Actions //">
+            <Key ID="STR_ACM_Core_VehiclePatients">
+                <English>Vehicle Patients</English>
+                <Polish>Pacjenci w pojeździe</Polish>
+                <German>Fahrzeug Verletzte</German>
+            </Key>
+        </Container>
+        <Container name="// Unload and carry //">
+            <Key ID="STR_ACM_Core_CarryPatient">
+                <English>Carry Patient</English>
+                <Polish>Nieś pacjenta</Polish>
+                <German>Patient tragen</German>
+            </Key>
+        </Container>
+        <Container name="// Boxes //">
+            <Key ID="STR_ACM_Core_MedicalSupplyCrate_Basic_Display">
+                <English>[ACM] Basic Medical Supply Crate</English>
+                <Polish>[ACM] Podstawowa skrzynia z zaopatrzeniem medycznym </Polish>
+                <German>[ACM] Basis Versorgungskiste</German>
+            </Key>
+            <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
+                <English>[ACM] Advanced Medical Supply Crate</English>
+                <Polish>[ACM] Zaawansowana skrzynia z zaopatrzeniem medycznym </Polish>
+                <German>[ACM] Erweiterte Versorgungskiste</German>
+            </Key>
+        </Container>
+        <Container name="// Dog Tags //">
+            <Key ID="STR_ACM_Core_DogTags_InspectingDogtags">
+                <English>%1 is inspecting your dog tags</English>
+                <Polish>%1 sprawdza twój nieśmiertelnik</Polish>
+                <German>%1 schaut sich deine Erkennungsmarke an</German>
+            </Key>
+        </Container>
+        <Container name="// Incompatible Addons //">
+            <Key ID="STR_ACM_Core_IncompatibleAddons_Found">
+                <English>Incompatible addons found:</English>
+                <Polish>Znaleziono niekompatybilne addony:</Polish>
+                <German>Inkompatible Addons gefunden:</German>
+            </Key>
+        </Container>
+        <Container name="// Split Medication Action //">
+            <Key ID="STR_ACM_Core_SplitMedicationPack">
+                <English>Split Medication Package</English>
+            </Key>
+            <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
+                <English>Split</English>
+            </Key>
+            <Key ID="STR_ACM_Core_SplitMedicationPack_Complete">
+                <English>%1 package has been split</English>
+            </Key>
+        </Container>
+        <Container name="// Common //">
+            <Key ID="STR_ACM_Core_Common_Inserted">
+                <English>Inserted</English>
+                <Polish>Włożono</Polish>
+                <German>Eingelegt</German>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_Attached">
+                <English>Attached</English>
+                <Polish>Przymocowano</Polish>
+                <German>Angehängt</German>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_Applied">
+                <English>Applied</English>
+                <Polish>Podano</Polish>
+                <German>Appliziert</German>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_Removed">
+                <English>Removed</English>
+                <Polish>Usunięto</Polish>
+                <German>Entfernt</German>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_Connected">
+                <English>Connected</English>
+                <Polish>Przyczepiono</Polish>
+                <German>Konnektiert</German>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_Disconnected">
+                <English>Disconnected</English>
+                <Polish>Odczepiono</Polish>
+                <German>Diskonnektiert</German>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_InProgress">
+                <English>In Progress</English>
+                <Polish>W trakcie</Polish>
+                <German>Im Gange</German>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_Paused">
+                <English>Paused</English>
+                <Polish>Przerwane</Polish>
+                <German>Pausiert</German>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_Active">
+                <English>Active</English>
+                <Polish>Aktywny</Polish>
+                <German>Aktiv</German>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_Empty">
+                <English>Empty</English>
+                <Polish>Pusty </Polish>
+                <German>Leer</German>
+            </Key>
+        </Container>
+        <Container name="// ACE Action //">
+            <Key ID="STR_ACM_Core_MedicalEquipment">
+                <English>Medical Equipment</English>
+                <Polish>Wyposażenie medyczne</Polish>
+                <German>Medizinische Ausrüstung</German>
+            </Key>
+        </Container>
     </Package>
 </Project>

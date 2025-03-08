@@ -144,6 +144,8 @@
 #define VAR_BANDAGED_WOUNDS   QACEGVAR(medical,bandagedWounds)
 #undef VAR_STITCHED_WOUNDS
 #define VAR_STITCHED_WOUNDS   QACEGVAR(medical,stitchedWounds)
+#undef VAR_BODYPART_DAMAGE
+#define VAR_BODYPART_DAMAGE   QACEGVAR(medical,bodyPartDamage)
 // These variables track gradual adjustments (from medication, etc.)
 #undef VAR_MEDICATIONS
 #define VAR_MEDICATIONS       QACEGVAR(medical,medications)
@@ -212,6 +214,14 @@
 #define IN_CRITICAL_STATE(unit) (unit getVariable [QEGVAR(core,CriticalVitals_State), false])
 
 #define ACM_WOUNDS ["ChemicalBurn"]
+
+// Body Parts
+#define BODYPART_N_HEAD     0
+#define BODYPART_N_BODY     1
+#define BODYPART_N_LEFTARM  2
+#define BODYPART_N_RIGHTARM 3
+#define BODYPART_N_LEFTLEG  4
+#define BODYPART_N_RIGHTLEG 5
 
 // Airway
 #define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])
@@ -346,13 +356,13 @@
 //// Blood
 #define GET_BLOODTYPE(unit) (unit getVariable [QEGVAR(circulation,BloodType),-1])
 
-#define ACM_BLOODTYPE_O 0
-#define ACM_BLOODTYPE_ON 1
-#define ACM_BLOODTYPE_A 2
-#define ACM_BLOODTYPE_AN 3
-#define ACM_BLOODTYPE_B 4
-#define ACM_BLOODTYPE_BN 5
-#define ACM_BLOODTYPE_AB 6
+#define ACM_BLOODTYPE_O   0
+#define ACM_BLOODTYPE_ON  1
+#define ACM_BLOODTYPE_A   2
+#define ACM_BLOODTYPE_AN  3
+#define ACM_BLOODTYPE_B   4
+#define ACM_BLOODTYPE_BN  5
+#define ACM_BLOODTYPE_AB  6
 #define ACM_BLOODTYPE_ABN 7
 
 #define BLOODTYPE_COMPATIBLE_LIST_O [ACM_BLOODTYPE_O, ACM_BLOODTYPE_ON]
@@ -403,6 +413,14 @@
 #define NECROSIS_THRESHOLD_MODERATELOW  0.4
 #define NECROSIS_THRESHOLD_LIGHT        0.1
 #define NECROSIS_THRESHOLD_LIGHTLOW     0.05
+
+#define ACM_FRACTURE_MILD               1
+#define ACM_FRACTURE_SEVERE             2
+#define ACM_FRACTURE_COMPLEX            3
+
+#define FRACTURE_THRESHOLD_MILD         3
+#define FRACTURE_THRESHOLD_SEVERE       5
+#define FRACTURE_THRESHOLD_COMPLEX      7
 
 // CBRN
 #define QGVAR_BUILDUP(type)                        QEGVAR(CBRN,##type##_Buildup)

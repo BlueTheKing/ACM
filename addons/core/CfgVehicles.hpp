@@ -103,6 +103,7 @@ class CfgVehicles {
             ADDITEM(ACM_BVM,4);
             ADDITEM(ACM_NCDKit,10);
             ADDITEM(ACM_PulseOximeter,5);
+            ADDITEM(ACM_ThoracostomyKit,5);
             ADDITEM(ACM_ChestTubeKit,5);
             // Circulation
             ADDITEM(ACM_AED,3);
@@ -139,6 +140,7 @@ class CfgVehicles {
             ADDITEM(ACM_Vial_Fentanyl,10);
             ADDITEM(ACM_Vial_Lidocaine,10);
             ADDITEM(ACM_Vial_Ondansetron,10);
+            ADDITEM(ACM_Lozenge_Fentanyl,10);
             ADDITEM(ACE_splint,10);
             ADDITEM(ACM_SAMSplint,10);
             // Other
@@ -227,6 +229,15 @@ class CfgVehicles {
                         statement = QUOTE([ARR_4(_player,objNull,'',1)] call EFUNC(circulation,Syringe_Draw));
                         icon = QPATHTOEF(circulation,ui\icon_syringe_1_ca.paa);
                     };
+                };
+                class ACM_Action_SplitMedicationPack {
+                    displayName = CSTRING(SplitMedicationPack);
+                    condition = "true";
+                    statement = "";
+                    showDisabled = 0;
+                    exceptions[] = {"isNotInside", "isNotSitting"};
+                    icon = "";
+                    insertChildren = QUOTE([_player] call FUNC(splitMedicationPack_childActions));
                 };
             };
         };

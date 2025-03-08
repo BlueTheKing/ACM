@@ -135,8 +135,29 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
 
 ["isNotInLyingState", {!((_this select 0) getVariable [QGVAR(Lying_State), false])}] call ACEFUNC(common,addCanInteractWithCondition);
 
-call FUNC(generateMedicationTypeMap);
-
 if (hasInterface) then {
     GVAR(ppLowOxygenTunnelVision_Finalized) = false;
 };
+
+GVAR(MedicationTypes_MaxPainAdjust) = ["maxPainReduce", "painReduce"] call FUNC(generateMedicationTypeMap);
+GVAR(MedicationTypes_MaxHRAdjust) = ["maxHRIncrease", "hrIncrease"] call FUNC(generateMedicationTypeMap);
+GVAR(MedicationTypes_MaxRRAdjust) = ["maxRRAdjust", "rrAdjust"] call FUNC(generateMedicationTypeMap);
+
+[QGVAR(handleSitting), LINKFUNC(handleSitting)] call CBA_fnc_addEventHandler;
+
+ACE_player addEventHandler ["AnimDone", {
+    params ["_unit", "_anim"];
+
+    if !(local _unit) exitWith {};
+    if (_anim == "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground") then {
+        [{
+            params ["_unit"];
+
+            animationState _unit == "amovpsitmstpsnonwnondnon_ground";
+        }, {
+            params ["_unit"];
+
+            [QGVAR(handleSitting), _unit] call CBA_fnc_localEvent; 
+        }, [_unit], 2] call CBA_fnc_waitUntilAndExecute;
+    };
+}];

@@ -12,6 +12,7 @@ class ACM_Medication {
         minEffectDose = 1; // mg
         maxEffectDose = 1; // mg
         weightEffect = 0;
+        absorptionEffect = 0;
         minPainReduce = 0;
         maxPainReduce = 1;
 
@@ -52,7 +53,9 @@ class ACM_Medication {
 
         class AmmoniaInhalant: ACM_Inhalant_Medication {
             hrIncrease[] = {5, 25};
-            rrAdjust[] = {1,3};
+            maxHRIncrease = 25;
+            rrAdjust[] = {3,3};
+            maxRRAdjust = 4;
         };
 
         class Penthrox: ACM_Inhalant_Medication {
@@ -60,7 +63,7 @@ class ACM_Medication {
             painReduce = 0.75;
             maxPainReduce = 0.9;
             hrIncrease[] = {-0.1, -0.5};
-            timeInSystem = 420;
+            timeInSystem = 240;
             maxEffectTime = 90;
             maxDose = 5;
             maxDoseDeviation = 1;
@@ -244,12 +247,13 @@ class ACM_Medication {
             maxPainReduce = 1;
             viscosityChange = 0;
             weightEffect = 1;
+            bloodlossEffect = 1;
         };
 
         class Morphine: ACM_IM_Medication {
             medicationType = "Opioid";
             minPainReduce = 0.5;
-            painReduce = 0.7;
+            painReduce = 0.9;
             maxPainReduce = 0.95;
             hrIncrease[] = {-2, -8};
             timeInSystem = 1800;
@@ -293,8 +297,7 @@ class ACM_Medication {
         class Ketamine: ACM_IM_Medication {
             medicationType = "Ketamine";
             minPainReduce = 0.4;
-            painReduce = 0.7;
-            maxPainReduce = 0.95;
+            painReduce = 0.95;
             timeInSystem = 900;
             timeTillMaxEffect = 20;
             maxEffectTime = 600;
@@ -307,7 +310,7 @@ class ACM_Medication {
         class Fentanyl: ACM_IM_Medication {
             medicationType = "Opioid";
             minPainReduce = 0.5;
-            painReduce = 0.8;
+            painReduce = 0.99;
             hrIncrease[] = {-0.5, -3};
             timeInSystem = 1200;
             timeTillMaxEffect = 30;
@@ -341,6 +344,33 @@ class ACM_Medication {
             maxEffectDose = 1000;
             weightEffect = 0;
         };
+
+        class ACM_BUC_Medication {
+            painReduce = 0;
+            timeInSystem = 900;
+            timeTillMaxEffect = 90;
+            maxEffectTime = 600;
+            maxDose = 0;
+            maxDoseDeviation = 0;
+            incompatibleMedication[] = {};
+            administrationType = ACM_ROUTE_IM;
+            medicationType = "Default";
+            maxPainReduce = 1;
+            viscosityChange = 0;
+            weightEffect = 0;
+        };
+
+        class Fentanyl_BUC: ACM_BUC_Medication {
+            medicationType = "Opioid";
+            minPainReduce = 0.25;
+            painReduce = 0.95;
+            hrIncrease[] = {-0.5, -2};
+            coSensitivityAdjust[] = {-0.05,-0.06};
+            breathingEffectivenessAdjust[] = {-0.01,-0.02};
+            viscosityChange = 8;
+            maxDose = 2;
+            maxDoseDeviation = 1;
+        };
     };
     class MedicationType {
         class Default {};
@@ -348,7 +378,7 @@ class ACM_Medication {
             classnames[] = {"Epinephrine_IV", "Epinephrine"};
         };
         class Opioid {
-            classnames[] = {"Morphine_IV", "Morphine", "Fentanyl_IV", "Fentanyl"};
+            classnames[] = {"Morphine_IV", "Morphine", "Fentanyl_IV", "Fentanyl", "Fentanyl_BUC"};
         };
         class Ketamine {
             classnames[] = {"Ketamine_IV", "Ketamine"};

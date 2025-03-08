@@ -20,7 +20,7 @@ params ["_medic", "_patient"];
 
 [false] call FUNC(setCasualtyTicket);
 
-[QGVAR(createReinforcmentAndSwitch), [_patient], _patient] call CBA_fnc_targetEvent;
+[QGVAR(createReinforcementAndSwitch), [_patient], _patient] call CBA_fnc_targetEvent;
 _patient setVariable [QGVAR(casualtyTicketClaimed), true, true];
 
 [{

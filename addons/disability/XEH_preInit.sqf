@@ -17,4 +17,22 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(allowInspectForFracture),
+    "LIST",
+    ["Allow Inspecting For Fracture", "Training level required to inspect for fractures"],
+    [ACM_SETTINGS_CATEGORY, "Fracture Management"],
+    [SETTING_DROPDOWN_SKILL, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowFractureRealignment),
+    "LIST",
+    ["Allow Peforming Fracture Realignment", "Training level required to perform fracture realignment"],
+    [ACM_SETTINGS_CATEGORY, "Fracture Management"],
+    [SETTING_DROPDOWN_SKILL, 0],
+    true
+] call CBA_fnc_addSetting;
+
 ADDON = true;

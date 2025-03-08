@@ -45,7 +45,7 @@ if (_bloodVolume < 4.8) then {
 };
 
 private _bleedEffect = 1 - (0.2 * GET_WOUND_BLEEDING(_unit)); // Lower blood pressure if person is actively bleeding
-private _hemothoraxBleeding = 0.4 * ((_unit getVariable [QEGVAR(breathing,Hemothorax_State), 0]) / 4);
+private _hemothoraxBleeding = 0.5 * ((_unit getVariable [QEGVAR(breathing,Hemothorax_State), 0]) / 10);
 private _internalBleedingEffect = 1 min (1 - (0.8 * (GET_INTERNAL_BLEEDING(_unit) + _hemothoraxBleeding))) max 0.5; // Lower blood pressure if person has uncontrolled internal bleeding
 
 private _tensionEffect = 0;

@@ -40,16 +40,20 @@ private _PFH = [{
     if (_bloodVolume < BLOOD_VOLUME_CLASS_4_HEMORRHAGE) exitWith {};
 
     private _medicSkill = switch (true) do {
-        case ([_medic, 2] call ACEFUNC(medical_treatment,isMedic)): {0.65}; // Doctor
-        case ([_medic, 1] call ACEFUNC(medical_treatment,isMedic)): {0.45}; // Medic
-        default {0.25}; // Other
+        case ([_medic, 2] call ACEFUNC(medical_treatment,isMedic)): {0.55}; // Doctor
+        case ([_medic, 1] call ACEFUNC(medical_treatment,isMedic)): {0.4}; // Medic
+        default {0.2}; // Other
     };
 
     private _lastCPRTime = _patient getVariable [QGVAR(CPR_StoppedTotal), 0];
     private _lastCPRStoppedTime = _patient getVariable [QGVAR(CPR_StoppedTime), 0];
 
-    private _lastConsistencyEffect = 1.2 min ((_lastCPRTime / 120) * (((CBA_missionTime - _lastCPRStoppedTime) / 60))) max 1;
-    private _consistencyEffect = _lastConsistencyEffect * (((CBA_missionTime - _CPRStartTime) / 120) min 2);
+    private _noFlowTime = CBA_missionTime - _lastCPRStoppedTime;
+
+    private _lastConsistencyEffect = 1.5 min ((linearConversion [65, 120, _lastCPRTime, 0.1, 1, false]) * ((30 / (_noFlowTime max 0.1)))) max 0.5;
+
+    private _CPRTime = CBA_missionTime - _CPRStartTime;
+    private _consistencyEffect = 1.2 min _lastConsistencyEffect * (linearConversion [65, 120, _CPRTime, 0.1, 1, false]);
     private _bloodlossEffect = linearConversion [BLOOD_VOLUME_CLASS_4_HEMORRHAGE, BLOOD_VOLUME_CLASS_2_HEMORRHAGE, _bloodVolume, 0, 1, true];
 
     private _shockEffect = ((120 / (CBA_missionTime - (_patient getVariable [QGVAR(AED_LastShock), -120]))) min 1.7) max 0.8;
@@ -79,7 +83,7 @@ private _PFH = [{
         };
     };
 
-    private _chance = _medicSkill * GVAR(CPREffectiveness) * _bloodlossEffect * _consistencyEffect * _rhythmEffect * _medicationEffect;
+    private _chance = (_medicSkill * GVAR(CPREffectiveness) * _bloodlossEffect * _consistencyEffect * _rhythmEffect * _medicationEffect) max 0;
 
     if (_chance > 0.1 && {random 1 < _chance}) then {
         if (_rhythmState == 1) then {

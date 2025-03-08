@@ -19,16 +19,12 @@
  * Medication effect <NUMBER>
  *
  * Example:
- * [0, 10, 60, 120, 60, 1] call ACM_circulation_fnc_getMedicationEffect;
+ * [0, 10, 60, 180, 60, 1] call ACM_circulation_fnc_getMedicationEffect;
  *
  * Public: No
  */
 
 params ["_administrationType", "_timeInSystem", "_timeTillMaxEffect", "_maxTimeInSystem", "_maxEffectTime", "_concentration"];
-
-//_maxTimeInSystem = _maxTimeInSystem * (0.1 max _concentration min 1.2);
-//_timeTillMaxEffect = _timeTillMaxEffect / (0.1 max _concentration min 1.2);
-//_maxEffectTime = _maxEffectTime * (0.01 max _concentration min 1.1);
 
 private _eliminationTime = (_maxTimeInSystem - _maxEffectTime - _timeTillMaxEffect);
 private _currentEliminationTime = (_timeInSystem - _maxEffectTime - _timeTillMaxEffect);

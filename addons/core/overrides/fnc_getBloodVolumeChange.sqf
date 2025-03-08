@@ -52,8 +52,8 @@ if (GET_INTERNAL_BLEEDING(_unit) > 0.3 || (_plateletCount < 0.1 && _TXAEffect < 
 private _HTXState = _unit getVariable [QEGVAR(breathing,Hemothorax_State), 0];
 private _hemothoraxBleeding = 0;
 
-private _plateletBleedRatio = (_plateletCount / 2.9) min 1;
-private _plateletInternalBleedRatio = (_plateletCount / 2.4) min 1;
+private _plateletBleedRatio = 0.8 min (linearConversion [2.9, 1.8, _plateletCount, 0.8, 0.5]) max 0;
+private _plateletInternalBleedRatio = 0.8 min (linearConversion [2.4, 1.6, _plateletCount, 0.8, 0.5]) max 0;
 
 if (_HTXState > 0) then {
     _hemothoraxBleeding = -_deltaT * GET_HEMOTHORAX_BLEEDRATE(_unit);
@@ -213,8 +213,9 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                 };
                 // Flow pain
                 if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then { // IO
-                    private _IOPain = _bagChange / 3.7;
-                    _transfusionPain = _transfusionPain + _IOPain;
+                    private _IOPain = _bagChange / 3;
+                    private _painSuppression = linearConversion [0, 0.24, ([_unit, "Lidocaine_IV", false, _partIndex] call ACEFUNC(medical_status,getMedicationCount)), 0, 0.95, true]; // 30mg "flush"
+                    _transfusionPain = _transfusionPain + (0 max (_IOPain - _painSuppression));
                 } else { // IV complication
                     private _ivComplicationPain = GET_IV_COMPLICATIONS_PAIN_X(_unit,_partIndex,_accessSite);
 
