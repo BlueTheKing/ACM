@@ -530,7 +530,8 @@ private _fnc_processWounds = {
 
             private _className = ACEGVAR(medical_damage,woundClassNames) select _classIndex;
             private _suffix = ["Minor", "Medium", "Large"] select _category;
-            private _woundName = [(localize format [ACELSTRING(medical_damage,%1_%2), _className, _suffix]), (format ["%1_%2", _className, _suffix])] select (_className in ACM_WOUNDS); // TODO
+
+            private _woundName = localize ([(format [ACELSTRING(medical_damage,%1_%2), _className, _suffix]), (format [ELSTRING(damage,Wounds_%1_%2), _className, _suffix])] select (_className in ACM_WOUNDS));
 
             private _woundDescription = if (_amountOf >= 1) then {
                 format ["%1x %2", ceil _amountOf, _woundName]
