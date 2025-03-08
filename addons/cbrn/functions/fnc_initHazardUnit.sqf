@@ -97,7 +97,7 @@ private _PFH = [{
 
     if (_inArea) then {
         private _vehicle = vehicle _patient;
-        private _isTurnedOut = _patient;
+        private _isTurnedOut = isTurnedOut _patient;
         private _CBRNVehicle = _vehicle in (GVAR(Vehicle_List) get "cbrn");
 
         _blocked = _CBRNVehicle && !_isTurnedOut;
