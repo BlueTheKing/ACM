@@ -130,12 +130,15 @@
         <Container name="// Supine Position Action //">
             <Key ID="STR_ACM_Core_SupinePosition_Action">
                 <English>Put In Supine Position</English>
+                <French>Mettre en position couchée</French>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Complete">
                 <English>Patient has been placed into the supine position</English>
+                <French>Le patient a été placé en position couchée.</French>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Hint">
                 <English>You have been placed into the supine position</English>
+                <French>Vous avez été placé en position couchée</French>
             </Key>
         </Container>
         <Container name="// Treatment Text //">
