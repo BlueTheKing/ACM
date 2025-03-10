@@ -4,6 +4,9 @@
         <Key ID="STR_ACM_CBRN_Category">
             <English>ACM: CBRN</English>
         </Key>
+        <Key ID="STR_ACM_CBRN_Category_Autoinjectors">
+            <English>Autoinjectors</English>
+        </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_CS">
             <English>Chemical - CS Gas</English>
         </Key>
@@ -45,6 +48,18 @@
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed_Desc">
             <English>List of vehicles that are sealed. Each entry should be a vehicle classname and should be seperated with a comma ("","")</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Allow_ATNAAutoinjector">
+            <English>Allow ATNA Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Allow_ATNAAutoinjector_Desc">
+            <English>Training level required to use ATNA Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Allow_MidazolamAutoinjector">
+            <English>Allow Midazolam Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Allow_MidazolamAutoinjector_Desc">
+            <English>Training level required to use Midazolam Autoinjector</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness">
             <English>CS Exposure Cause Blindness</English>
@@ -123,6 +138,28 @@
             </Key>
             <Key ID="STR_ACM_CBRN_GasMaskFilter_Desc">
                 <English>Used with gas mask to allow breathing in hazardous environments</English>
+            </Key>
+        </Container>
+        <Container name="// Autoinjector Actions //">
+            <Key ID="STR_ACM_CBRN_ATNAAutoinjector">
+                <English>Use ATNA Autoinjector</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ATNAAutoinjector_Progress">
+                <English>Using ATNA Autoinjector...</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_MidazolamAutoinjector">
+                <English>Use Midazolam Autoinjector</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_MidazolamAutoinjector_Progress">
+                <English>Using Midazolam Autoinjector...</English>
+            </Key>
+        </Container>
+        <Container name="// Supply Crate //">
+            <Key ID="STR_ACM_CBRN_SupplyCrate_Display">
+                <English>[ACM] CBRN Supply Crate</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_SupplyCrate_PPE_Display">
+                <English>[ACM] CBRN PPE Supply Crate</English>
             </Key>
         </Container>
         <Container name="// Chemical Weapons //">

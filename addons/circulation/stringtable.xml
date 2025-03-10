@@ -412,6 +412,9 @@
                 <Polish>Amiodaron</Polish>
                 <German>Amiodaron</German>
             </Key>
+            <Key ID="STR_ACM_Circulation_Medication_Atropine">
+                <English>Atropine</English>
+            </Key>
             <Key ID="STR_ACM_Circulation_Medication_Fentanyl">
                 <English>Fentanyl</English>
                 <Polish>Fentanyl</Polish>
@@ -524,6 +527,12 @@
                 <English>Used to treat irregular heart rhythms</English>
                 <Polish>Używany do walki z nieregularnymi rytmami serca</Polish>
                 <German>Antiarrhythmikum</German>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Vial_Atropine">
+                <English>Atropine Vial (1mg/1ml)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Vial_Atropine_Desc">
+                <English>Used to treat nerve agent exposure and increase heart rate</English>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Fentanyl">
                 <English>Fentanyl Vial (100mcg/2ml)</English>
@@ -669,7 +678,6 @@
                 <Polish>Używanie naloksonu w spreju...</Polish>
                 <German>Benutze Naloxon Nasenspray...</German>
             </Key>
-            
             <Key ID="STR_ACM_Circulation_UseSyringe">
                 <English>Use Syringe (%1ml)</English>
                 <Polish>Użyj strzykawki (%1ml)</Polish>

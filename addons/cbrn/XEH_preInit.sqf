@@ -69,6 +69,26 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// Autoinjectors
+
+[
+    QGVAR(allowATNAAutoinjector),
+    "LIST",
+    [LLSTRING(SETTING_Allow_ATNAAutoinjector), LLSTRING(SETTING_Allow_ATNAAutoinjector_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Autoinjectors)],
+    [SETTING_DROPDOWN_SKILL, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowMidazolamAutoinjector),
+    "LIST",
+    [LLSTRING(SETTING_Allow_MidazolamAutoinjector), LLSTRING(SETTING_Allow_MidazolamAutoinjector_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Autoinjectors)],
+    [SETTING_DROPDOWN_SKILL, 0],
+    true
+] call CBA_fnc_addSetting;
+
 // CS Gas
 
 [

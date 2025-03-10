@@ -153,6 +153,12 @@ class CfgWeapons {
         descriptionShort = CSTRING(Vial_Amiodarone_Desc);
     };
 
+    class ACM_Vial_Atropine: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_atropine_ca.paa);
+        displayName = CSTRING(Vial_Atropine);
+        descriptionShort = CSTRING(Vial_Atropine_Desc);
+    };
+
     class ACM_Vial_Fentanyl: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_fentanyl_ca.paa);
         displayName = CSTRING(Vial_Fentanyl);
