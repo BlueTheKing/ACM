@@ -34,6 +34,7 @@ switch (_usedItem) do {
     };
     case "ACM_Autoinjector_ATNA": {
         _classname = "Atropine";
+        _dose = 2;
     };
     case "ACM_Autoinjector_Midazolam": {
         _classname = "Midazolam";

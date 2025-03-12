@@ -383,15 +383,17 @@
 #define FBTK_ARRAY_DATA ['FieldBloodTransfusionKit_500','FieldBloodTransfusionKit_250']
 
 // Damage
-#define VAR_WRAPPED_WOUNDS             QEGVAR(damage,WrappedWounds)
-#define GET_WRAPPED_WOUNDS(unit)       (unit getVariable [VAR_WRAPPED_WOUNDS, createHashMap])
-#define VAR_CLOTTED_WOUNDS             QEGVAR(damage,ClottedWounds)
-#define GET_CLOTTED_WOUNDS(unit)       (unit getVariable [VAR_CLOTTED_WOUNDS, createHashMap])
+#define VAR_WRAPPED_WOUNDS                  QEGVAR(damage,WrappedWounds)
+#define GET_WRAPPED_WOUNDS(unit)            (unit getVariable [VAR_WRAPPED_WOUNDS, createHashMap])
+#define VAR_CLOTTED_WOUNDS                  QEGVAR(damage,ClottedWounds)
+#define GET_CLOTTED_WOUNDS(unit)            (unit getVariable [VAR_CLOTTED_WOUNDS, createHashMap])
 
-#define VAR_INTERNAL_BLEEDING          QEGVAR(damage,InternalBleeding)
-#define GET_INTERNAL_BLEEDING(unit)    (unit getVariable [VAR_INTERNAL_BLEEDING, 0])
-#define IS_I_BLEEDING(unit)            (GET_INTERNAL_BLEEDING(unit) > 0)
-#define GET_INTERNAL_BLEEDRATE(unit)   ([unit] call EFUNC(circulation,getInternalBleedingRate))
+#define VAR_INTERNAL_BLEEDING               QEGVAR(damage,InternalBleeding)
+#define GET_INTERNAL_BLEEDING(unit)         (unit getVariable [VAR_INTERNAL_BLEEDING, 0])
+#define IS_I_BLEEDING(unit)                 (GET_INTERNAL_BLEEDING(unit) > 0)
+#define GET_INTERNAL_BLEEDRATE(unit)        ([unit] call EFUNC(circulation,getInternalBleedingRate))
+
+#define GET_CAPILLARYDAMAGE_BLEEDRATE(unit) ([unit] call EFUNC(circulation,getCapillaryDamageBleedingRate))
 
 #define VAR_INTERNAL_WOUNDS            QEGVAR(damage,InternalWounds)
 #define GET_INTERNAL_WOUNDS(unit)      (unit getVariable [VAR_INTERNAL_WOUNDS, createHashMap])
@@ -437,6 +439,20 @@
 
 #define IS_CONTAMINATED(unit)                      (unit getVariable [QEGVAR(CBRN,Contaminated_State), false])
 #define IS_CONTAMINATEDBY(unit,hazard)             (unit getVariable [QEGVAR(CBRN,##hazard##_Contaminated_State), false])
+
+#define GET_AIRWAY_INFLAMMATION(unit)              (unit getVariable [QEGVAR(CBRN,AirwayInflammation), 0])
+
+#define AIRWAY_INFLAMMATION_THRESHOLD_SEVERE       70
+#define AIRWAY_INFLAMMATION_THRESHOLD_SERIOUS      40
+#define AIRWAY_INFLAMMATION_THRESHOLD_MILD         15
+
+#define GET_LUNG_TISSUEDAMAGE(unit)                (unit getVariable [QEGVAR(CBRN,LungTissueDamage), 0])
+
+#define LUNG_TISSUEDAMAGE_THRESHOLD_MILD           20
+
+#define GET_CAPILLARY_DAMAGE(unit)                (unit getVariable [QEGVAR(CBRN,CapillaryDamage), 0])
+
+#define HAS_AIRWAY_SPASM(unit)                    (unit getVariable [QEGVAR(CBRN,AirwaySpasm), false])
 
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}

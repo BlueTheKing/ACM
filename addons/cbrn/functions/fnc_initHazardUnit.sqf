@@ -186,6 +186,10 @@ private _PFH = [{
 
     if (_buildup > 0) then {
         [_patient, _buildup, _exposed, _exposedExternal, [_filtered, _protectedBody, _protectedEyes, _filterLevel]] call _thresholdFunction;
+        
+        if !(isPlayer _patient) then {
+            [_patient, _hazardType, _exposed, _exposedExternal, [_filtered, _protectedBody, _protectedEyes, _filterLevel]] call FUNC(handleAIEffects);
+        };
     };
 
     if (_exposed != _wasExposed) then {

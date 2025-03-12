@@ -20,18 +20,18 @@
  * Public: No
  */
 
-params ["_unit", "_respirationRateAdjustment", "_coSensitivityAdjustment", "_breathingEffectivenessAdjustment", "_deltaT", "_syncValue"];
+params ["_patient", "_respirationRateAdjustment", "_coSensitivityAdjustment", "_breathingEffectivenessAdjustment", "_deltaT", "_syncValue"];
 
 //if (!ACEGVAR(medical_vitals,simulateSpO2)) exitWith {}; // changing back to default is handled in initSettings.inc.sqf
 
-private _desiredOxygenSaturation = ACM_TARGETVITALS_OXYGEN(_unit);
+private _desiredOxygenSaturation = ACM_TARGETVITALS_OXYGEN(_patient);
 
 #define IDEAL_PPO2 0.255
 
-private _currentOxygenSaturation = GET_OXYGEN(_unit);
-private _heartRate = GET_HEART_RATE(_unit);
+private _currentOxygenSaturation = GET_OXYGEN(_patient);
+private _heartRate = GET_HEART_RATE(_patient);
 
-private _altitude = ACEGVAR(common,mapAltitude) + ((getPosASL _unit) select 2);
+private _altitude = ACEGVAR(common,mapAltitude) + ((getPosASL _patient) select 2);
 private _po2 = if (missionNamespace getVariable [QACEGVAR(weather,enabled), false]) then {
     private _temperature = _altitude call ACEFUNC(weather,calculateTemperatureAtHeight);
     private _pressure = _altitude call ACEFUNC(weather,calculateBarometricPressure);
@@ -47,7 +47,7 @@ if (EGVAR(breathing,altitudeAffectOxygen)) then {
     _airOxygenSaturation = (IDEAL_PPO2 min _po2) / IDEAL_PPO2;
 
     // Check gear for oxygen supply
-    [goggles _unit, headgear _unit, vest _unit] findIf {
+    [goggles _patient, headgear _patient, vest _patient] findIf {
         _x in ACEGVAR(medical_vitals,oxygenSupplyConditionCache) &&
         {ACE_player call (ACEGVAR(medical_vitals,oxygenSupplyConditionCache) get _x)} &&
         { // Will only run this if other conditions are met due to lazy eval
@@ -66,11 +66,11 @@ if (EGVAR(breathing,altitudeAffectOxygen)) then {
 // Ref: https://academic.oup.com/bjaed/article-pdf/4/6/185/894114/mkh050.pdf table 2, though we don't take stroke volume change into account
 private _negativeChange = BASE_OXYGEN_USE;
 
-if (_unit == ACE_player && {missionNamespace getVariable [QACEGVAR(advanced_fatigue,enabled), false]}) then {
+if (_patient == ACE_player && {missionNamespace getVariable [QACEGVAR(advanced_fatigue,enabled), false]}) then {
     _negativeChange = _negativeChange - ((1 - ACEGVAR(advanced_fatigue,aeReservePercentage)) * 0.1) - ((1 - ACEGVAR(advanced_fatigue,anReservePercentage)) * 0.05);
 };
 
-private _respirationRate = [_unit, _currentOxygenSaturation, (_negativeChange - BASE_OXYGEN_USE), _respirationRateAdjustment, _coSensitivityAdjustment, _deltaT, _syncValue] call EFUNC(breathing,updateRespirationRate);
+private _respirationRate = [_patient, _currentOxygenSaturation, (_negativeChange - BASE_OXYGEN_USE), _respirationRateAdjustment, _coSensitivityAdjustment, _deltaT, _syncValue] call EFUNC(breathing,updateRespirationRate);
 
 private _targetOxygenSaturation = _desiredOxygenSaturation;
 
@@ -79,24 +79,24 @@ private _targetOxygenSaturation = _desiredOxygenSaturation;
 // but falls off quickly as po2 drops further
 private _capture = 1 max ((_po2 / IDEAL_PPO2) ^ (-_po2 * 3));
 
-private _effectiveBloodVolume = [linearConversion [DEFAULT_BLOOD_VOLUME, 5, GET_EFF_BLOOD_VOLUME(_unit), 1, 0.92, true],(linearConversion [5, 4, GET_EFF_BLOOD_VOLUME(_unit), 0.92, 0.84])] select (GET_EFF_BLOOD_VOLUME(_unit) < 5);
-private _airwayState = GET_AIRWAYSTATE(_unit);
-private _breathingState = GET_BREATHINGSTATE(_unit) * GET_EXPOSURE_BREATHINGSTATE(_unit);
+private _effectiveBloodVolume = [linearConversion [DEFAULT_BLOOD_VOLUME, 5, GET_EFF_BLOOD_VOLUME(_patient), 1, 0.92, true],(linearConversion [5, 4, GET_EFF_BLOOD_VOLUME(_patient), 0.92, 0.84])] select (GET_EFF_BLOOD_VOLUME(_patient) < 5);
+private _airwayState = GET_AIRWAYSTATE(_patient);
+private _breathingState = GET_BREATHINGSTATE(_patient) * GET_EXPOSURE_BREATHINGSTATE(_patient);
 
 private _oxygenSaturation = _currentOxygenSaturation;
 private _oxygenChange = 0;
 
-private _activeBVM = [_unit] call FUNC(bvmActive);
-private _BVMOxygenAssisted = _unit getVariable [QEGVAR(breathing,BVM_ConnectedOxygen), false];
+private _activeBVM = [_patient] call FUNC(bvmActive);
+private _BVMOxygenAssisted = _patient getVariable [QEGVAR(breathing,BVM_ConnectedOxygen), false];
 
-private _freshBloodEffectiveness = _unit getVariable [QEGVAR(circulation,IV_Bags_FreshBloodEffect), 0];
+private _freshBloodEffectiveness = _patient getVariable [QEGVAR(circulation,IV_Bags_FreshBloodEffect), 0];
 
-private _timeSinceLastBreath = CBA_missionTime - (_unit getVariable [QEGVAR(breathing,BVM_lastBreath), -35]);
+private _timeSinceLastBreath = CBA_missionTime - (_patient getVariable [QEGVAR(breathing,BVM_lastBreath), -35]);
 
 private _BVMLastingEffect = 0;
 
 if (_timeSinceLastBreath < 35) then {
-    _BVMOxygenAssisted = (CBA_missionTime - (_unit getVariable [QEGVAR(breathing,BVM_lastBreathOxygen), -35])) < 30;
+    _BVMOxygenAssisted = (CBA_missionTime - (_patient getVariable [QEGVAR(breathing,BVM_lastBreathOxygen), -35])) < 30;
     _BVMLastingEffect = 1 min 25 / (_timeSinceLastBreath max 0.001);
 };
 
@@ -104,27 +104,27 @@ private _maxDecrease = [-ACM_BREATHING_MINDECREASE, (linearConversion [90, 75, _
 private _maxPositiveGain = 0.5;
 
 if !(_activeBVM) then {
-    if IS_EXPOSED(_unit) then { // CBRN
-        _maxPositiveGain = _maxPositiveGain * GET_EXPOSURE_BREATHING_INCREASESTATE(_unit);
+    if IS_EXPOSED(_patient) then { // CBRN
+        _maxPositiveGain = _maxPositiveGain * GET_EXPOSURE_BREATHING_INCREASESTATE(_patient);
     };
-    if IS_UNCONSCIOUS(_unit) then {
+    if IS_UNCONSCIOUS(_patient) then {
         _maxPositiveGain = (_maxPositiveGain) * 0.25;
     };
     _maxDecrease = _maxDecrease * (1 - (0.7 * _BVMLastingEffect));
 } else {
     if (_BVMOxygenAssisted) then {
         _maxPositiveGain = _maxPositiveGain * 0.8;
-        if IN_CRDC_ARRST(_unit) then {
+        if IN_CRDC_ARRST(_patient) then {
             _maxDecrease = _maxDecrease * 0.3;
         } else {
             _maxDecrease = _maxDecrease * 0.1;
         };
     } else {
-        if IS_EXPOSED(_unit) then { // CBRN
-            _maxPositiveGain = _maxPositiveGain * GET_EXPOSURE_BREATHING_INCREASESTATE(_unit);
+        if IS_EXPOSED(_patient) then { // CBRN
+            _maxPositiveGain = _maxPositiveGain * GET_EXPOSURE_BREATHING_INCREASESTATE(_patient);
         };
         _maxPositiveGain = _maxPositiveGain * 0.75;
-        if IN_CRDC_ARRST(_unit) then {
+        if IN_CRDC_ARRST(_patient) then {
             _maxDecrease = _maxDecrease * 0.9;
         } else {
             _maxDecrease = _maxDecrease * 0.7;
@@ -132,14 +132,34 @@ if !(_activeBVM) then {
     };
 };
 
-switch (true) do {
-    case (_respirationRate > 0 && HAS_PULSE(_unit)): {
-        private _airSaturation = _airOxygenSaturation * _capture;
+if (EGVAR(CBRN,enable)) then {
+    private _airwayInflammation = GET_AIRWAY_INFLAMMATION(_patient);
 
-        private _breathingEffectiveness = _effectiveBloodVolume min _airwayState * _breathingState;
+    if (_airwayInflammation >= 100 || HAS_AIRWAY_SPASM(_patient)) then {
+        _respirationRate = 0;
+    } else {
+        _maxPositiveGain = _maxPositiveGain * (linearConversion [30, 100, _airwayInflammation, 1, 0, true]);
+        _breathingState = _breathingState * (linearConversion [10, 100, _airwayInflammation, 1, 0.2, true]);
+    };
+
+    private _lungTissueDamage = GET_LUNG_TISSUEDAMAGE(_patient);
+
+    if (_lungTissueDamage >= 100) then {
+        _breathingState = 0;
+    } else {
+        _breathingState = _breathingState * (linearConversion [20, 95, _lungTissueDamage, 1, 0.1, true]);
+    };
+};
+
+private _breathingEffectiveness = _effectiveBloodVolume min _airwayState * _breathingState;
+
+switch (true) do {
+    case (_respirationRate > 0 && HAS_PULSE(_patient)): {
+        private _airSaturation = _airOxygenSaturation * _capture;
         private _cardiacEffect = 1;
 
-        private _MAP = GET_MAP_PATIENT(_unit);
+        private _MAP = GET_MAP_PATIENT(_patient);
+
         if (_MAP > 90) then {
             _cardiacEffect = _cardiacEffect * ([(linearConversion [95, 120, _MAP, 1, 1.15, true]), (linearConversion [120, 150, _MAP, 1.15, 0.85, true])] select (_MAP > 120));
         } else {
@@ -147,7 +167,7 @@ switch (true) do {
         };
 
         if (_activeBVM) then {
-            if (IN_CRDC_ARRST(_unit)) then {
+            if (IN_CRDC_ARRST(_patient)) then {
                 _breathingEffectiveness = _breathingEffectiveness * 1.2;
             } else {
                 _breathingEffectiveness = _breathingEffectiveness * 1.3;
@@ -170,8 +190,8 @@ switch (true) do {
 
         private _respirationEffect = 1;
 
-        if (_respirationRate > ACM_TARGETVITALS_RR(_unit)) then {
-            [(1 max (_respirationRate / ACM_TARGETVITALS_RR(_unit)) min 1.3), (0.9 max (34 / _respirationRate) min 1.3)] select (_respirationRate > 30);
+        if (_respirationRate > ACM_TARGETVITALS_RR(_patient)) then {
+            [(1 max (_respirationRate / ACM_TARGETVITALS_RR(_patient)) min 1.3), (0.9 max (34 / _respirationRate) min 1.3)] select (_respirationRate > 30);
         } else {
             _respirationEffect = 0.8 max (_respirationRate / 12) min 1;
         };
@@ -186,9 +206,7 @@ switch (true) do {
             _oxygenSaturation = _currentOxygenSaturation + ((_maxPositiveGain / 2) max _oxygenChange min _maxPositiveGain) * _deltaT;
         };
     };
-    case (IN_CRDC_ARRST(_unit) && ([_unit] call FUNC(cprActive))): {
-        private _breathingEffectiveness = _effectiveBloodVolume min _airwayState * _breathingState;
-
+    case (IN_CRDC_ARRST(_patient) && ([_patient] call FUNC(cprActive))): {
         _maxPositiveGain = _maxPositiveGain * (0.5 + (0.5 * _BVMLastingEffect));
         _breathingEffectiveness = _breathingEffectiveness * 0.75 * (1 + (0.3 * _BVMLastingEffect));
 
@@ -218,7 +236,7 @@ switch (true) do {
 
 _oxygenSaturation = 100 min _oxygenSaturation max 0;
 
-_unit setVariable [VAR_OXYGEN_DEMAND, _negativeChange - BASE_OXYGEN_USE];
-_unit setVariable [VAR_SPO2, _oxygenSaturation, _syncValue];
+_patient setVariable [VAR_OXYGEN_DEMAND, _negativeChange - BASE_OXYGEN_USE];
+_patient setVariable [VAR_SPO2, _oxygenSaturation, _syncValue];
 
 _oxygenSaturation;

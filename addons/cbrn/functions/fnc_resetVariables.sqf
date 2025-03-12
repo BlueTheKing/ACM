@@ -28,13 +28,13 @@ _patient setVariable [QGVAR(EyesWashed), false, true];
 
 _patient setVariable [QGVAR(Filter_State), DEFAULT_FILTER_CONDITION];
 
-_patient setVariable [QGVAR(Nausea_Severity), 0, true];
-
 _patient setVariable [QGVAR(AirwayInflammation), 0, true];
 
 _patient setVariable [QGVAR(SkinIrritation), [0,0,0,0,0,0], true];
 _patient setVariable [QGVAR(LungTissueDamage), 0, true];
 _patient setVariable [QGVAR(CapillaryDamage), 0, true];
+
+_patient setVariable [QGVAR(AirwaySpasm), false, true];
 
 _patient setVariable [QGVAR(Chemical_Chlorine_Blindness), false, true];
 

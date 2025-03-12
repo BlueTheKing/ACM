@@ -7,6 +7,9 @@
         <Key ID="STR_ACM_CBRN_Category_Autoinjectors">
             <English>Autoinjectors</English>
         </Key>
+        <Key ID="STR_ACM_CBRN_Category_Chemical">
+            <English>Chemical</English>
+        </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_CS">
             <English>Chemical - CS Gas</English>
         </Key>
@@ -60,6 +63,12 @@
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_MidazolamAutoinjector_Desc">
             <English>Training level required to use Midazolam Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI">
+            <English>Chemical Agents Affect AI</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI_Desc">
+            <English>Sets whether AI will be affected by chemical agent exposure</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness">
             <English>CS Exposure Cause Blindness</English>

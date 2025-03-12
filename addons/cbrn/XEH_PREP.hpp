@@ -11,6 +11,7 @@ PREP(effectChlorine);
 PREP(effectCS);
 PREP(effectLewisite);
 PREP(effectSarin);
+PREP(handleAIEffects);
 PREP(initHazardUnit);
 PREP(initHazardZone);
 PREP(initUnit);

@@ -35,8 +35,8 @@ if (_radiusDimensions isEqualTo []) then {
 
 private _initEffects = !(_hazardType in ["chemical_placebo"]);
 
-if !(_affectAI) then {
-    _affectAI = false; //TODO setting
+if !(GVAR(chemicalAffectAI)) then {
+    _affectAI = false;
 };
 
 private _zoneID = -1;

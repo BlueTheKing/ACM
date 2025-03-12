@@ -47,15 +47,15 @@ if (_isExposed || _isExposedExternal) then {
 if (_buildup < 40) exitWith {};
 
 if (_isExposed && !_filtered) then {
-    private _airwayInflammation = _patient getVariable [QGVAR(AirwayInflammation), 0];
+    private _airwayInflammation = GET_AIRWAY_INFLAMMATION(_patient); 
 
     _patient setVariable [QGVAR(AirwayInflammation), (_airwayInflammation + 1), true];
 };
 
 if (_buildup < 70) exitWith {};
 
-private _capillaryDamage = _patient getVariable [QGVAR(CapillaryDamage), 0];
-private _targetSeverity = linearConversion [70, 90, _buildup, 0.1, 10, true];
+private _capillaryDamage = GET_CAPILLARY_DAMAGE(_patient);
+private _targetSeverity = linearConversion [70, 90, _buildup, 0, 100, true];
 
 _patient setVariable [QGVAR(CapillaryDamage), ((_capillaryDamage + 1) min _targetSeverity), true];
 

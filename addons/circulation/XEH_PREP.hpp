@@ -38,6 +38,7 @@ PREP(checkCapillaryRefillLocal);
 PREP(convertBloodType);
 PREP(getAccessType);
 PREP(getApplyPadsTime);
+PREP(getCapillaryDamageBleedingRate);
 PREP(getCardiacMedicationEffects);
 PREP(getEKGHeartRate);
 PREP(getFluidBagConfigName);

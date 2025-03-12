@@ -33,7 +33,7 @@ if (_isExposed || _isExposedExternal) then {
 
 if (_isExposed || _isExposedExternal) then {
     if !(_filtered) then {
-        private _airwayInflammation = _patient getVariable [QGVAR(AirwayInflammation), 0];
+        private _airwayInflammation = GET_AIRWAY_INFLAMMATION(_patient);
 
         _patient setVariable [QGVAR(AirwayInflammation), (_airwayInflammation + 1), true];
     };
@@ -63,7 +63,7 @@ if (_buildup < 50) exitWith {};
 
 if (_isExposed) then {
     if (!_filtered) then {
-        private _damage = _patient getVariable [QGVAR(LungTissueDamage), 0];
+        private _damage = GET_LUNG_TISSUEDAMAGE(_patient);
 
         _patient setVariable [QGVAR(LungTissueDamage), (_damage + 1), true];
     };

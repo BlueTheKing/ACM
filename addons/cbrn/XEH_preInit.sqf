@@ -89,6 +89,19 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// Chemical General
+
+[
+    QGVAR(chemicalAffectAI),
+    "CHECKBOX",
+    [LLSTRING(SETTING_ChemicalAffectAI), LLSTRING(SETTING_ChemicalAffectAI_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Chemical)],
+    [true],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
 // CS Gas
 
 [

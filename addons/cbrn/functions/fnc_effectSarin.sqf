@@ -28,7 +28,7 @@ if (_isExposed && GET_PAIN(_patient) < 0.3) then {
     [_patient, 0.2] call ACEFUNC(medical,adjustPainLevel);
 };
 
-_patient setVariable [QGVAR(Nausea_Severity), _buildup, true];
+//_patient setVariable [QGVAR(Nausea_Severity), _buildup, true];
 
 if (_buildup < 10) exitWith {};
 
@@ -40,6 +40,10 @@ if ((_patient getVariable [QGVAR(Chemical_Sarin_NextShake), -1]) < CBA_missionTi
 };
 
 if (_buildup < 60) exitWith {};
+
+if !(HAS_AIRWAY_SPASM(_patient)) then {
+    _patient setVariable [QGVAR(AirwaySpasm), true, true];
+};
 
 if !(IS_UNCONSCIOUS(_patient)) then {
     [QACEGVAR(medical,CriticalVitals), _patient] call CBA_fnc_localEvent;

@@ -69,7 +69,7 @@ if (_context != 2 && {_context == 4 || _newDamage == 0}) exitWith {
 private _realDamage = _newDamage * _armor;
 if (!_structuralDamage) then {
     private _armorCoef = _armor/_armorScaled;
-    private _damageCoef = linearConversion [0, 1, GVAR(damagePassThroughEffect), 1, _armorCoef];
+    private _damageCoef = linearConversion [0, 1, ACEGVAR(medical_engine,damagePassThroughEffect), 1, _armorCoef];
     _newDamage = _newDamage * _damageCoef;
 };
 TRACE_6("Received hit",_hitpoint,_ammo,_newDamage,_realDamage,_directHit,_context);
@@ -95,7 +95,7 @@ private _environmentDamage = _ammo == "";
 // Crashing a vehicle doesn't fire the EH for each hitpoint and never triggers _context=2 (LastHitPoint)
 // It does fire the EH multiple times, but this seems to scale with the intensity of the crash
 if (
-    EGVAR(medical,enableVehicleCrashes) &&
+    ACEGVAR(medical,enableVehicleCrashes) &&
     {_environmentDamage && _inVehicle && _structuralDamage} &&
     {vectorMagnitude (velocity _vehicle) > 5}
     // todo: no way to detect if stationary and another vehicle hits you

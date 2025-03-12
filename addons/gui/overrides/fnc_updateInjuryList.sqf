@@ -274,7 +274,6 @@ if (EGVAR(CBRN,enable)) then {
 
         _entries pushBack [_entry, [(0.8 * _colorMultiplier), (0.7 * _colorMultiplier), (0.1 * _colorMultiplier), 1]];
     };
-    
 };
 
 if (_selectionN == 0 && ((CBA_missionTime - (_target getVariable [QEGVAR(breathing,TensionPneumothorax_Time), CBA_missionTime])) > 300)) then {
