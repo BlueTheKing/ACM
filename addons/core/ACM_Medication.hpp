@@ -360,10 +360,10 @@ class ACM_Medication {
         };
 
         class Ondansetron: ACM_IM_Medication {
-            hrIncrease[] = {-0.1, -2};
             timeInSystem = 900;
             timeTillMaxEffect = 45;
             maxEffectTime = 720;
+            hrIncrease[] = {-0.1, -2};
             maxDose = 8;
             maxDoseDeviation = 8;
             maxEffectDose = 4;
@@ -388,6 +388,17 @@ class ACM_Medication {
             maxDoseDeviation = 1;
             maxEffectDose = 1;
             weightEffect = 0;
+        };
+
+        class Dimercaprol: ACM_IM_Medication {
+            timeInSystem = 1800;
+            timeTillMaxEffect = 30;
+            maxEffectTime = 900;
+            hrIncrease[] = {10, 20};
+            maxDose = 600;
+            maxDoseDeviation = 50;
+            maxEffectDose = 249;
+            viscosityChange = -5;
         };
 
         class ACM_BUC_Medication {
@@ -535,6 +546,12 @@ class ACM_Medication {
             concentration = 10;
             dose = "100mg/10ml";
             volume = 10;
+        };
+
+        class Dimercaprol {
+            concentration = 100;
+            dose = "300mg/3ml";
+            volume = 3;
         };
     };
 };

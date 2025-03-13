@@ -203,6 +203,12 @@ class CfgWeapons {
         ACM_isVial = 0;
     };
 
+    class ACM_Ampule_Dimercaprol: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\ampule_dimercaprol_ca.paa);
+        displayName = CSTRING(Ampule_Dimercaprol);
+        descriptionShort = CSTRING(Ampule_Dimercaprol_Desc);
+    };
+
     class ACM_Paracetamol_SinglePack: ACM_Spray_Naloxone {
         scope = 1;
         picture = QPATHTOF(ui\paracetamol_singlepack_ca.paa);

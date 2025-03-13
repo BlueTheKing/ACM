@@ -456,6 +456,9 @@
             <Key ID="STR_ACM_Circulation_Medication_OTFC_Short">
                 <English>OTFC</English>
             </Key>
+            <Key ID="STR_ACM_Circulation_Medication_Dimercaprol">
+                <English>Dimercaprol</English>
+            </Key>
         </Container>
         <Container name="// Items - Medication //">
             <Key ID="STR_ACM_Circulation_Vial_Epinephrine">
@@ -635,6 +638,12 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
                 <English>Used to manage acute severe pain, via oral transmucosal route</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol">
+                <English>Dimercaprol Ampule (300mg/3ml)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol_Desc">
+                <English>Used to treat lewisite exposure, administered intramuscularly</English>
             </Key>
         </Container>
         <Container name="// Actions //">

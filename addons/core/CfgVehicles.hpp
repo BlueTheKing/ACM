@@ -165,6 +165,7 @@ class CfgVehicles {
             // Treatment
             ADDITEM(ACM_Autoinjector_ATNA,30);
             ADDITEM(ACM_Autoinjector_Midazolam,10);
+            ADDITEM(ACM_Ampule_Dimercaprol,10);
             // Other
             ADDITEM(ACM_GasMaskFilter,30);
         };
