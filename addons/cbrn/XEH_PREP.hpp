@@ -1,3 +1,4 @@
+PREP(addWaterSourceActions);
 PREP(canPutOnGasMask);
 PREP(canReplaceFilter);
 PREP(canTakeOffGasMask);

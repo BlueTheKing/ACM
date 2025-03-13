@@ -86,35 +86,9 @@ GVAR(Vehicle_List) = createHashMapFromArray [
 ];
 
 ["CBA_settingsInitialized", {
-    private _action = [QGVAR(Action_WashEyes),
-    LLSTRING(WashEyes),
-    "",
     {
-        params ["_object", "_unit"];
-
-        [3, [_object, _unit], {
-            params ["_args"];
-            _args params ["_object", "_unit"];
-
-            private _waterSource = _object getVariable [QACEGVAR(field_rations,waterSource), objNull];
-            private _waterRemaining = _waterSource call ACEFUNC(field_rations,getRemainingWater);
-
-            [_waterSource, (_waterRemaining - 1) max 0] call ACEFUNC(field_rations,setRemainingWater);
-
-            [_unit, _unit] call FUNC(washEyes);
-        }, {}, LLSTRING(WashEyes_Progress), {true}, ["isNotInside"]] call ACEFUNC(common,progressBar);
-    },
-    {
-        params ["_object", "_unit"];
-
-        if !([_unit] call FUNC(canWashEyes)) exitWith {false};
-
-        private _waterSource = _object getVariable [QACEGVAR(field_rations,waterSource), objNull];
-        private _waterRemaining = _waterSource call ACEFUNC(field_rations,getRemainingWater);
-        _waterRemaining == -10 || _waterRemaining > 0;
-    }] call ACEFUNC(interact_menu,createAction);
-
-    [QACEGVAR(field_rations,helper), 0, [QACEGVAR(field_rations,waterSource)], _action] call ACEFUNC(interact_menu,addActionToClass);
+        [QACEGVAR(field_rations,helper), 0, [QACEGVAR(field_rations,waterSource)], _x] call ACEFUNC(interact_menu,addActionToClass);
+    } forEach (call FUNC(addWaterSourceActions));
 }] call CBA_fnc_addEventHandler;
 
 ["ace_firedPlayer", {
