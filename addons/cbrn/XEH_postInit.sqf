@@ -52,6 +52,7 @@ GVAR(HazardType_ThresholdList) = createHashMap;
 
 ["multiplier", {
     private _sarinBuildup = ACE_player getVariable [QGVAR_BUILDUP(Chemical_Sarin), 0];
+    if (([_patient, "Midazolam", false] call ACEFUNC(medical_status,getMedicationCount)) > 0.95) exitWith {1};
     [1, (5 min (1 + (_sarinBuildup / 10)))] select (_sarinBuildup > 1);
 }, QUOTE(ADDON)] call ACEFUNC(common,addSwayFactor);
 
