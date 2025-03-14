@@ -74,6 +74,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 1;
         condition = QUOTE([ARR_3(_patient,_bodyPart,1)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,0,false)] call FUNC(setAED));
+        ACM_cancelRecovery = 0;
     };
     class AED_ConnectPulseOximeter: AED_ApplyPads {
         displayName = CSTRING(AED_ConnectPulseOximeter);
