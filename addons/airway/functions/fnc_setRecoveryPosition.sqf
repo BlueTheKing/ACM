@@ -28,8 +28,6 @@ _patient setVariable [QGVAR(RecoveryPosition_State), _state, true];
 _patient setVariable [QGVAR(HeadTilt_State), _state, true];
 [_patient] call FUNC(updateAirwayState);
 
-[QGVAR(handleRecoveryPosition), [_medic, _patient], _patient] call CBA_fnc_targetEvent;
-
 if (_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0] == 1) then {
     _patient setVariable [QGVAR(AirwayObstructionVomit_State), 0, true];
 };
@@ -42,6 +40,7 @@ private _hint = LSTRING(RecoveryPosition_Established);
 private _hintLog = LSTRING(RecoveryPosition_Established_ActionLog);
 
 if (_state) then {
+    [QGVAR(handleRecoveryPosition), [_medic, _patient], _patient] call CBA_fnc_targetEvent;
     [_patient, "ACM_RecoveryPosition", 2] call ACEFUNC(common,doAnimation);
 } else {
     _hint = LSTRING(RecoveryPosition_Cancelled);
