@@ -19,3 +19,24 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "RscDisplayMain.hpp"
+
+class CfgMissions {
+    class Missions
+    {
+        class ACM_TestZone
+        {
+            directory = "x\ACM\addons\mission\ACM_TestZone.VR";
+            overviewPicture = "x\ACM\addons\main\logo.paa";
+            overviewText = "#1 Malpractice Simulator™";
+        };
+    };
+    class MPMissions
+    {
+        class ACM_TestZone
+        {
+            directory = "x\ACM\addons\mission\ACM_TestZone.VR";
+            overviewPicture = "x\ACM\addons\main\logo.paa";
+            overviewText = "#1 Malpractice Simulator™";
+        };
+    };
+};
