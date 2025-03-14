@@ -83,6 +83,27 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
     [QACEGVAR(medical_feedback,forceSay3D), [_patient, _sound, _distance], _targets] call CBA_fnc_targetEvent;
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(forceSay3D), { // medical_feedback/postInit
+    params ["_patient", "_sound", "_distance", "_pitch"];
+
+    if (ACE_player distance _patient > _distance) exitWith {};
+
+    if (isNull objectParent _patient) then {
+        // say3D waits for the previous sound to finish, so use a dummy instead
+        private _dummy = "#dynamicsound" createVehicleLocal [0, 0, 0];
+        _dummy attachTo [_patient, [0, 0, 0], "camera"];
+        _dummy say3D [_sound, _distance, 1, false];
+
+        [{
+            detach _this;
+            deleteVehicle _this;
+        }, _dummy, 5] call CBA_fnc_waitAndExecute;
+    } else {
+        // Fallback: attachTo doesn't work within vehicles
+        _patient say3D [_sound, _distance, _pitch, false];
+    };
+}] call CBA_fnc_addEventHandler;
+
 [QACEGVAR(medical,death), {
     params ["_unit"];
 
@@ -113,6 +134,10 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
 [QGVAR(getUpPrompt), LINKFUNC(getUpPrompt)] call CBA_fnc_addEventHandler;
 
 ["isNotInLyingState", {!((_this select 0) getVariable [QGVAR(Lying_State), false])}] call ACEFUNC(common,addCanInteractWithCondition);
+
+if (hasInterface) then {
+    GVAR(ppLowOxygenTunnelVision_Finalized) = false;
+};
 
 GVAR(MedicationTypes_MaxPainAdjust) = ["maxPainReduce", "painReduce"] call FUNC(generateMedicationTypeMap);
 GVAR(MedicationTypes_MaxHRAdjust) = ["maxHRIncrease", "hrIncrease"] call FUNC(generateMedicationTypeMap);

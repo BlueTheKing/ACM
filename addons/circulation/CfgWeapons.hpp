@@ -153,6 +153,12 @@ class CfgWeapons {
         descriptionShort = CSTRING(Vial_Amiodarone_Desc);
     };
 
+    class ACM_Vial_Atropine: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_atropine_ca.paa);
+        displayName = CSTRING(Vial_Atropine);
+        descriptionShort = CSTRING(Vial_Atropine_Desc);
+    };
+
     class ACM_Vial_Fentanyl: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_fentanyl_ca.paa);
         displayName = CSTRING(Vial_Fentanyl);
@@ -195,6 +201,12 @@ class CfgWeapons {
         displayName = CSTRING(Lozenge_Fentanyl);
         descriptionShort = CSTRING(Lozenge_Fentanyl_Desc);
         ACM_isVial = 0;
+    };
+
+    class ACM_Ampule_Dimercaprol: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\ampule_dimercaprol_ca.paa);
+        displayName = CSTRING(Ampule_Dimercaprol);
+        descriptionShort = CSTRING(Ampule_Dimercaprol_Desc);
     };
 
     class ACM_Paracetamol_SinglePack: ACM_Spray_Naloxone {

@@ -25,11 +25,25 @@
 
 params ["_medic", "_patient", "_bodyPart", "_classname", "", "_usedItem", "", ["_dose", 1], ["_iv", false]];
 
-if (_usedItem == "ACE_morphine") then {
-    _dose = 10; // Autoinjector has dose of 10mg
+switch (_usedItem) do {
+    case "ACE_morphine": {
+        _dose = 10; // Autoinjector has dose of 10mg
+    };
+    case "ACE_epinephrine": {
+        _dose = 0.3; // Autoinjector has dose of 0.3mg
+    };
+    case "ACM_Autoinjector_ATNA": {
+        _classname = "Atropine";
+        _dose = 2;
+    };
+    case "ACM_Autoinjector_Midazolam": {
+        _classname = "Midazolam";
+    };
+    default { };
 };
-if (_usedItem == "ACE_epinephrine") then {
-    _dose = 0.3; // Autoinjector has dose of 0.3mg
+
+if (_dose < 1 && _classname in ["Atropine_IV", "Atropine"]) then {
+    _classname = format ["%1_L", _classname];
 };
 
 private _cfg = ["CfgWeapons", "CfgMagazines"] select (isClass (configFile >> "CfgMagazines" >> _usedItem));

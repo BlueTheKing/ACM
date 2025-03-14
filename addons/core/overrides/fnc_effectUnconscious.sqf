@@ -41,7 +41,7 @@ switch (_mode) do {
                 ACEGVAR(medical_feedback,ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0], [0.25, 0.2, 0, 0, 0, 0, 1]];
                 ACEGVAR(medical_feedback,ppUnconsciousBlackout) ppEffectCommit 0;
 
-                ACEGVAR(medical_feedback,ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1]];
+                ACEGVAR(medical_feedback,ppUnconsciousBlackout) ppEffectAdjust [0, 1, 0, [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1]];
             } else {
                 ACEGVAR(medical_feedback,ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1]];
                 ACEGVAR(medical_feedback,ppUnconsciousBlackout) ppEffectCommit 0;

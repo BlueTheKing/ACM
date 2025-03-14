@@ -494,6 +494,9 @@
                 <German>Amiodaron</German>
                 <French>Amiodarone</French>
             </Key>
+            <Key ID="STR_ACM_Circulation_Medication_Atropine">
+                <English>Atropine</English>
+            </Key>
             <Key ID="STR_ACM_Circulation_Medication_Fentanyl">
                 <English>Fentanyl</English>
                 <Polish>Fentanyl</Polish>
@@ -543,6 +546,9 @@
             <Key ID="STR_ACM_Circulation_Medication_OTFC_Short">
                 <English>OTFC</English>
                 <French>OTFC</French>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Medication_Dimercaprol">
+                <English>Dimercaprol</English>
             </Key>
         </Container>
         <Container name="// Items - Medication //">
@@ -629,6 +635,12 @@
                 <Polish>Używany do walki z nieregularnymi rytmami serca</Polish>
                 <German>Antiarrhythmikum</German>
                 <French>Utilisé pour traiter les rythmes cardiaques irréguliers</French>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Vial_Atropine">
+                <English>Atropine Vial (1mg/1ml)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Vial_Atropine_Desc">
+                <English>Used to treat nerve agent exposure and increase heart rate</English>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Fentanyl">
                 <English>Fentanyl Vial (100mcg/2ml)</English>
@@ -753,6 +765,12 @@
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
                 <English>Used to manage acute severe pain, via oral transmucosal route</English>
                 <French>Utilisé pour gérer la douleur aiguë sévère, par voie orale transmucosale</French>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol">
+                <English>Dimercaprol Ampule (300mg/3ml)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol_Desc">
+                <English>Used to treat lewisite exposure, administered intramuscularly</English>
             </Key>
         </Container>
         <Container name="// Actions //">

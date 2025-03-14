@@ -93,8 +93,8 @@ class ACM_Medication {
         class Epinephrine_IV: ACM_IV_Medication {
             medicationType = "Epinephrine";
             hrIncrease[] = {10, 20};
-            rrAdjust[] = {2,8};
-            breathingEffectivenessAdjust[] = {0.01,0.04};
+            rrAdjust[] = {2, 8};
+            breathingEffectivenessAdjust[] = {0.01, 0.04};
             viscosityChange = 5;
             maxEffectDose = 1;
             weightEffect = 2;
@@ -118,7 +118,7 @@ class ACM_Medication {
             timeInSystem = 1300;
             timeTillMaxEffect = 25;
             maxEffectTime = 900;
-            coSensitivityAdjust[] = {-0.05,-0.09};
+            coSensitivityAdjust[] = {-0.05, -0.09};
             viscosityChange = -10;
             maxDose = 12;
             maxDoseDeviation = 3;
@@ -129,7 +129,7 @@ class ACM_Medication {
 
         class Amiodarone_IV: ACM_IV_Medication {
             medicationType = "Amiodarone";
-            hrIncrease[] = {-8, -15};
+            hrIncrease[] = {-5, -12};
             timeInSystem = 720;
             timeTillMaxEffect = 10;
             maxEffectTime = 480;
@@ -137,6 +137,23 @@ class ACM_Medication {
             maxDoseDeviation = 200;
             maxEffectDose = 150;
             weightEffect = 0;
+        };
+
+        class Atropine_IV: ACM_IV_Medication {
+            medicationType = "Atropine";
+            hrIncrease[] = {10, 30};
+            timeInSystem = 900;
+            maxEffectTime = 600;
+            rrAdjust[] = {2, 8};
+            breathingEffectivenessAdjust[] = {0.01, 0.04};
+            maxDose = 20;
+            maxDoseDeviation = 2;
+            maxEffectDose = 1;
+            weightEffect = 0;
+        };
+
+        class Atropine_IV_L: Atropine_IV {
+            hrIncrease[] = {-18, 0};
         };
 
         class Lidocaine_IV: ACM_IV_Medication {
@@ -268,9 +285,8 @@ class ACM_Medication {
         };
         class Epinephrine: ACM_IM_Medication { // EpiPen
             medicationType = "Epinephrine";
-            painReduce = 0;
             hrIncrease[] = {2, 10};
-            rrAdjust[] = {1,6};
+            rrAdjust[] = {1, 6};
             breathingEffectivenessAdjust[] = {0,0.01};
             maxEffectDose = 0.3;
             weightEffect = 0;
@@ -282,6 +298,24 @@ class ACM_Medication {
 
         class Amiodarone: ACM_IM_Medication {
             weightEffect = 0;
+        };
+
+        class Atropine: ACM_IM_Medication {
+            medicationType = "Atropine";
+            timeInSystem = 900;
+            timeTillMaxEffect = 15;
+            maxEffectTime = 600;
+            hrIncrease[] = {8, 15};
+            rrAdjust[] = {1, 4};
+            breathingEffectivenessAdjust[] = {0,0.01};
+            maxDose = 20;
+            maxDoseDeviation = 2;
+            maxEffectDose = 2;
+            weightEffect = 0;
+        };
+
+        class Atropine_L: Atropine {
+            hrIncrease[] = {-10, 0};
         };
 
         class Lidocaine: ACM_IM_Medication {
@@ -326,10 +360,10 @@ class ACM_Medication {
         };
 
         class Ondansetron: ACM_IM_Medication {
-            hrIncrease[] = {-0.1, -2};
             timeInSystem = 900;
             timeTillMaxEffect = 45;
             maxEffectTime = 720;
+            hrIncrease[] = {-0.1, -2};
             maxDose = 8;
             maxDoseDeviation = 8;
             maxEffectDose = 4;
@@ -343,6 +377,28 @@ class ACM_Medication {
             maxEffectTime = 900;
             maxEffectDose = 1000;
             weightEffect = 0;
+        };
+
+        class Midazolam: ACM_IM_Medication {
+            timeInSystem = 1200;
+            maxEffectTime = 900;
+            hrIncrease[] = {-1, -5};
+            rrAdjust[] = {-1, -4};
+            maxDose = 3;
+            maxDoseDeviation = 1;
+            maxEffectDose = 1;
+            weightEffect = 0;
+        };
+
+        class Dimercaprol: ACM_IM_Medication {
+            timeInSystem = 1800;
+            timeTillMaxEffect = 30;
+            maxEffectTime = 900;
+            hrIncrease[] = {10, 20};
+            maxDose = 600;
+            maxDoseDeviation = 50;
+            maxEffectDose = 249;
+            viscosityChange = -5;
         };
 
         class ACM_BUC_Medication {
@@ -374,24 +430,35 @@ class ACM_Medication {
     };
     class MedicationType {
         class Default {};
+
         class Epinephrine {
             classnames[] = {"Epinephrine_IV", "Epinephrine"};
         };
+
         class Opioid {
             classnames[] = {"Morphine_IV", "Morphine", "Fentanyl_IV", "Fentanyl", "Fentanyl_BUC"};
         };
+
         class Ketamine {
             classnames[] = {"Ketamine_IV", "Ketamine"};
         };
+
         class TXA {
             classnames[] = {"TXA_IV"};
         };
+
         class Amiodarone {
             classnames[] = {"Amiodarone_IV"};
         };
+
+        class Atropine {
+            classnames[] = {"Atropine_IV", "Atropine"};
+        };
+
         class Lidocaine {
             classnames[] = {"Lidocaine_IV"};
         };
+
         class Ertapenem {
             classnames[] = {"Ertapenem_IV", "Ertapenem"};
         };
@@ -407,6 +474,12 @@ class ACM_Medication {
             concentration = 50;
             dose = "150mg/3ml";
             volume = 3;
+        };
+
+        class Atropine {
+            concentration = 1;
+            dose = "1mg/1ml";
+            volume = 1;
         };
 
         class TXA {
@@ -473,6 +546,12 @@ class ACM_Medication {
             concentration = 10;
             dose = "100mg/10ml";
             volume = 10;
+        };
+
+        class Dimercaprol {
+            concentration = 100;
+            dose = "300mg/3ml";
+            volume = 3;
         };
     };
 };
