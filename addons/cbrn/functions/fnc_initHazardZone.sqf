@@ -142,7 +142,7 @@ if (_manualPlaced) then {
     }, [_thisCurator, _originObject], 0.1] call CBA_fnc_waitAndExecute;
 
     if (isNull _spawner) exitWith {};
-    [QGVAR(showRadius), [_spawner, _originObject, _radiusDimensions], _spawner] call CBA_fnc_targetEvent;
+    //[QGVAR(showRadius), [_spawner, _originObject, _radiusDimensions], _spawner] call CBA_fnc_targetEvent;
 };
 
 _originObject;
