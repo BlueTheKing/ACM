@@ -40,6 +40,7 @@ private _activeVolumes = 0;
 
 private _bloodLoss = -_deltaT * GET_BLOOD_LOSS(_unit);
 private _internalBleeding = -_deltaT * GET_INTERNAL_BLEEDRATE(_unit);
+private _capillaryBleeding = -_deltaT * GET_CAPILLARYDAMAGE_BLEEDRATE(_unit);
 
 private _TXAEffect = ([_unit, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount));
 
@@ -75,22 +76,22 @@ if (_salineVolume > 0) then {
 };
 
 if (_plateletCount > 0.1) then {
-    _plateletCountChange = (_bloodLoss * _plateletBleedRatio) + ((_internalBleeding * 0.6) * _plateletInternalBleedRatio) + (_hemothoraxBleeding * _plateletBleedRatio);
+    _plateletCountChange = (_bloodLoss * _plateletBleedRatio) + ((_internalBleeding * 0.6) * _plateletInternalBleedRatio) + (_hemothoraxBleeding * _plateletBleedRatio) + (_capillaryBleeding * _plateletBleedRatio);
     if (_TXAEffect > 0.1) then {
         _plateletCountChange = _plateletCountChange * 0.9;
     };
 };
 
 if (_bloodVolume > 0) then {
-    _bloodVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)))) / _activeVolumes;
+    _bloodVolumeChange = ((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)) + (_capillaryBleeding * (1 - _plateletBleedRatio))) / _activeVolumes;
 };
 
 if (_plasmaVolume > 0) then {
-    _plasmaVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)))) / _activeVolumes;
+    _plasmaVolumeChange = ((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)) + (_capillaryBleeding * (1 - _plateletBleedRatio))) / _activeVolumes;
 };
 
 if (_salineVolume > 0) then {
-    _salineVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)))) / _activeVolumes;
+    _salineVolumeChange = ((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)) + (_capillaryBleeding * (1 - _plateletBleedRatio))) / _activeVolumes;
 };
 
 private _transfusionPain = 0;

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle amiodarone effects (LOCAL)
+ * Handle Amiodarone effects (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>

@@ -55,6 +55,12 @@ private _PTXState = _unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0];
 
 private _overloadEffect = linearConversion [0, 1, (_unit getVariable [QEGVAR(circulation,Overload_Volume), 0]), 1, 1.5];
 
+private _poisonEffect = 1;
+
+if (EGVAR(CBRN,enable)) then {
+    _poisonEffect = linearConversion [0, 100, GET_CAPILLARY_DAMAGE(_unit), 1, 0.7];
+};
+
 private _diastolicModifier = 1;
 
 if (GET_BLOOD_VOLUME(_unit) < DEFAULT_BLOOD_VOLUME) then {
@@ -69,4 +75,4 @@ if ((_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) || 
     _tensionEffect = 35;
 };
 
-[(round(((_bloodPressure * MODIFIER_BP_LOW * _diastolicModifier) - _tensionEffect) * _bleedEffect * _internalBleedingEffect * _overloadEffect)) max 0, (round(((_bloodPressure * MODIFIER_BP_HIGH) - _tensionEffect) * _bleedEffect * _internalBleedingEffect * _overloadEffect)) max 0]
+[(round(((_bloodPressure * MODIFIER_BP_LOW * _diastolicModifier) - _tensionEffect) * _bleedEffect * _internalBleedingEffect * _overloadEffect * _poisonEffect)) max 0, (round(((_bloodPressure * MODIFIER_BP_HIGH) - _tensionEffect) * _bleedEffect * _internalBleedingEffect * _overloadEffect * _poisonEffect)) max 0]

@@ -331,6 +331,24 @@
                 <Polish>Niedrożność</Polish>
                 <German>Blockierung</German>
             </Key>
+            <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Severe">
+                <English>Airway has severe inflammation</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Severe_Short">
+                <English>Severe inflammation</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Serious">
+                <English>Airway has significant inflammation</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Serious_Short">
+                <English>Significant inflammation</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Mild">
+                <English>Airway has noticable inflammation</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Mild_Short">
+                <English>Noticable inflammation</English>
+            </Key>
         </Container>
         <Container name="// Airway Suction Actions //">
             <Key ID="STR_ACM_Airway_UseSuctionBag">
@@ -439,6 +457,9 @@
                 <English>Failed to insert %1</English>
                 <Polish>Nie udało się użyć: %1</Polish>
                 <German>Fehler beim Einlegen von %1</German>
+            </Key>
+            <Key ID="STR_ACM_Airway_Adjunct_Failed_Inflammation">
+                <English>Blocked by airway inflammation</English>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_%1_Inserted">
                 <English>%1 inserted</English>

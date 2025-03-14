@@ -51,6 +51,20 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = CSTRING(EpinephrineAutoinjector_Progress);
         ACM_menuIcon = "ACE_epinephrine";
     };
+    class ATNA_Autoinjector: Morphine {
+        displayName = ECSTRING(CBRN,ATNAAutoinjector);
+        displayNameProgress = ECSTRING(CBRN,ATNAAutoinjector_Progress);
+        medicRequired = QGVAR(allowATNAAutoinjector);
+        items[] = {"ACM_Autoinjector_ATNA"};
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        litter[] = {{"ACE_MedicalLitter_atropine"}};
+    };
+    class Midazolam_Autoinjector: ATNA_Autoinjector {
+        displayName = ECSTRING(CBRN,MidazolamAutoinjector);
+        displayNameProgress = ECSTRING(CBRN,MidazolamAutoinjector_Progress);
+        medicRequired = QGVAR(allowMidazolamAutoinjector);
+        items[] = {"ACM_Autoinjector_Midazolam"};
+    };
     class CheckPulse;
     class CheckResponse: CheckPulse {
         treatmentTime = 2.5;
@@ -594,6 +608,11 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IV(Amiodarone,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Amiodarone,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Amiodarone)));
     SYRINGE_ACTION_IV(Amiodarone,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Amiodarone,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Amiodarone)));
 
+    SYRINGE_ACTION_IV(Atropine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Atropine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Atropine)));
+    SYRINGE_ACTION_IV(Atropine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Atropine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Atropine)));
+    SYRINGE_ACTION_IV(Atropine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Atropine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Atropine)));
+    SYRINGE_ACTION_IV(Atropine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Atropine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Atropine)));
+
     SYRINGE_ACTION_IV(Morphine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Morphine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Morphine)));
     SYRINGE_ACTION_IV(Morphine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Morphine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Morphine)));
     SYRINGE_ACTION_IV(Morphine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Morphine,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Morphine)));
@@ -643,6 +662,11 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IV(Esmolol,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Esmolol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Esmolol)));
     SYRINGE_ACTION_IV(Esmolol,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Esmolol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Esmolol)));
     SYRINGE_ACTION_IV(Esmolol,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Esmolol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Esmolol)));
+
+    SYRINGE_ACTION_IV(Dimercaprol,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,10,Dimercaprol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Dimercaprol)));
+    SYRINGE_ACTION_IV(Dimercaprol,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,5,Dimercaprol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Dimercaprol)));
+    SYRINGE_ACTION_IV(Dimercaprol,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,3,Dimercaprol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Dimercaprol)));
+    SYRINGE_ACTION_IV(Dimercaprol,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Push,1,Dimercaprol,Intravenous)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Pushing,Dimercaprol)));
 
     // IM
     class Epinephrine_10_IM: Epinephrine_10_IV {
@@ -709,6 +733,11 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IM(Amiodarone,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Amiodarone,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Amiodarone)));
     SYRINGE_ACTION_IM(Amiodarone,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Amiodarone,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Amiodarone)));
 
+    SYRINGE_ACTION_IM(Atropine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Atropine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Atropine)));
+    SYRINGE_ACTION_IM(Atropine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Atropine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Atropine)));
+    SYRINGE_ACTION_IM(Atropine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Atropine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Atropine)));
+    SYRINGE_ACTION_IM(Atropine,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Atropine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Atropine)));
+
     SYRINGE_ACTION_IM(Adenosine,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Adenosine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Adenosine)));
     SYRINGE_ACTION_IM(Adenosine,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Adenosine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Adenosine)));
     SYRINGE_ACTION_IM(Adenosine,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Adenosine,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Adenosine)));
@@ -733,4 +762,28 @@ class ACEGVAR(medical_treatment,actions) {
     SYRINGE_ACTION_IM(Esmolol,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Esmolol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Esmolol)));
     SYRINGE_ACTION_IM(Esmolol,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Esmolol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Esmolol)));
     SYRINGE_ACTION_IM(Esmolol,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Esmolol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Esmolol)));
+
+    SYRINGE_ACTION_IM(Dimercaprol,10,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,10,Dimercaprol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Dimercaprol)));
+    SYRINGE_ACTION_IM(Dimercaprol,5,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,5,Dimercaprol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Dimercaprol)));
+    SYRINGE_ACTION_IM(Dimercaprol,3,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,3,Dimercaprol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Dimercaprol)));
+    SYRINGE_ACTION_IM(Dimercaprol,1,__EVAL(call compile SYRINGE_ACTION_FORMAT(Inject,1,Dimercaprol,Intramuscular)),__EVAL(call compile SYRINGE_PROGRESS_FORMAT(Injecting,Dimercaprol)));
+
+    // CBRN
+    class WashEyes: CheckPulse {
+        displayName = ECSTRING(CBRN,WashEyes);
+        displayNameProgress = ECSTRING(CBRN,WashEyes_Progress);
+        icon = "";
+        category = "medication";
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        medicRequired = 0;
+        treatmentTime = 3;
+        allowedSelections[] = {"Head"};
+        allowSelfTreatment = 1;
+        items[] = {"ACE_WaterBottle","ACE_WaterBottle_Half","ACE_Canteen","ACE_Canteen_Half"};
+        consumeItem = 1;
+        condition = QUOTE(_patient call EFUNC(CBRN,canWashEyes));
+        callbackSuccess = QUOTE([ARR_3(_medic,_patient,_usedItem)] call EFUNC(CBRN,washEyes));
+        animationMedicSelf = "";
+        ACM_rollToBack = 1;
+    };
 };
