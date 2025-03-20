@@ -195,7 +195,7 @@ if ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) > 0.05) 
 };
 
 if (EGVAR(CBRN,enable)) then {
-    _hrTargetAdjustment = _hrTargetAdjustment - (linearConversion [15, 100, (_unit getVariable [QGVAR_BUILDUP(Chemical_Sarin), 0]), 0, 35]) - (linearConversion [15, 100, (_unit getVariable [QGVAR_BUILDUP(Chemical_Lewisite), 0]), 0, 35]);
+    _hrTargetAdjustment = _hrTargetAdjustment - (linearConversion [15, 100, (_unit getVariable [QGVAR_BUILDUP(Chemical_Sarin), 0]), 0, 35, true]) - (linearConversion [15, 100, (_unit getVariable [QGVAR_BUILDUP(Chemical_Lewisite), 0]), 0, 35, true]);
 };
 
 private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
