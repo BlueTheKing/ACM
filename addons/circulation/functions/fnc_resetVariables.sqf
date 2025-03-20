@@ -114,5 +114,5 @@ _patient setVariable [QGVAR(isPerformingCPR), false, true];
 
 _patient setVariable [QGVAR(AmmoniaInhalant_LastUse), -1, true];
 
-[_patient] call FUNC(updateCirculationState);
+_patient setVariable [QGVAR(CirculationState), true, true];
 [_patient] call FUNC(generateBloodType);

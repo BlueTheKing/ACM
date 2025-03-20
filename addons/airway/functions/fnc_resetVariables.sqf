@@ -33,4 +33,4 @@ _patient setVariable [QGVAR(HeadTilt_State), false, true];
 _patient setVariable [QGVAR(AirwayItem_Oral), "", true];
 _patient setVariable [QGVAR(AirwayItem_Nasal), "", true];
 
-[_patient] call FUNC(updateAirwayState);
+_patient setVariable [QGVAR(AirwayState), 1, true];
