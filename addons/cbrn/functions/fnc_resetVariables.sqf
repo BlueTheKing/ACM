@@ -48,6 +48,8 @@ _patient setVariable [QGVAR(Detector_State), false, true];
 _patient setVariable [QGVAR(Detector_Alarm_State), true, true];
 _patient setVariable [QGVAR(Detector_Exposure_Severity), 0];
 
+[_patient, false] call FUNC(setBlind);
+
 {
     private _category = _x;
     
