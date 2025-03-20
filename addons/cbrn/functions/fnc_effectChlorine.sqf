@@ -70,8 +70,13 @@ if (_isExposed) then {
 
     if (!_protectedEyes && GVAR(chlorineCauseBlindness)) then {
         [_patient, true] call FUNC(setBlind);
-        _patient setVariable [QGVAR(Chemical_Chlorine_Blindness), true, true];
     };
+};
+
+if (_buildup < 70) exitWith {};
+
+if (_isExposed && !_protectedEyes && IS_BLINDED(_patient) && GVAR(chlorineCauseBlindness)) then {
+    _patient setVariable [QGVAR(Chemical_Chlorine_Blindness), true, true];
 };
 
 if (_buildup >= 100) then {

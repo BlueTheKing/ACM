@@ -454,6 +454,8 @@
 
 #define HAS_AIRWAY_SPASM(unit)                    (unit getVariable [QEGVAR(CBRN,AirwaySpasm), false])
 
+#define IS_BLINDED(unit)                          (unit getVariable [QEGVAR(CBRN,Blindness_State), false])
+
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}
 

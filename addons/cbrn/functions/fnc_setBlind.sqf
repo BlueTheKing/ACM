@@ -42,7 +42,7 @@ if (_active) then {
         params ["_patient"];
 
         GVAR(blindnessEffectActive) = false;
-        _patient setVariable [QGVAR(Blindness_State), true, true];
+        _patient setVariable [QGVAR(Blindness_State), false, true];
         EGVAR(core,ppBlindness) ppEffectEnable false;
     }, [_patient], 25] call CBA_fnc_waitAndExecute;
 };

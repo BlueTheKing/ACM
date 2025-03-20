@@ -40,7 +40,6 @@ if (_isExposed || _isExposedExternal) then {
 
     if (_isExposed && !_protectedEyes && GVAR(lewisiteCauseBlindness)) then {
         [_patient, true] call FUNC(setBlind);
-        _patient setVariable [QGVAR(Chemical_Lewisite_Blindness), true, true];
     };
 };
 
@@ -53,6 +52,10 @@ if (_isExposed && !_filtered) then {
 };
 
 if (_buildup < 70) exitWith {};
+
+if (_isExposed && !_protectedEyes && IS_BLINDED(_patient) && GVAR(lewisiteCauseBlindness)) then {
+    _patient setVariable [QGVAR(Chemical_Lewisite_Blindness), true, true];
+};
 
 private _capillaryDamage = GET_CAPILLARY_DAMAGE(_patient);
 private _targetSeverity = linearConversion [70, 90, _buildup, 0, 100, true];
