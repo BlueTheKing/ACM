@@ -58,9 +58,9 @@ class ACM_Medication {
         };
 
         class Penthrox: ACM_Inhalant_Medication {
-            minPainReduce = 0.75;
-            painReduce = 0.75;
-            maxPainReduce = 0.9;
+            minPainReduce = 0.5;
+            painReduce = 0.5;
+            maxPainReduce = 0.7;
             hrIncrease[] = {-0.1, -0.5};
             timeInSystem = 420;
             maxEffectTime = 90;
