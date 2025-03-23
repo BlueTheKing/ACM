@@ -34,3 +34,5 @@ _patient setVariable [QGVAR(AirwayItem_Oral), "", true];
 _patient setVariable [QGVAR(AirwayItem_Nasal), "", true];
 
 _patient setVariable [QGVAR(AirwayState), 1, true];
+
+_patient setVariable [QGVAR(AirwayChecked_Time), nil, true];
