@@ -135,7 +135,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
                 };
             };
             if (EGVAR(breathing,pneumothoraxEnabled) && _bodyPart isEqualTo "body" && {_woundClassIDToAdd in [1,6,7]}) then {
-                [QEGVAR(breathing,handleChestInjury), [_unit, _classComplex]] call CBA_fnc_localEvent;
+                [QEGVAR(breathing,handleChestInjury), [_unit, _classComplex, _woundDamage]] call CBA_fnc_localEvent;
             };
         };
 
