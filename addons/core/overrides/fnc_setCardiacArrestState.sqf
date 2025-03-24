@@ -26,6 +26,7 @@ if (_active isEqualTo IN_CRDC_ARRST(_unit)) exitWith { TRACE_2("no change",_acti
 
 // No heart rate in cardiac arrest, heart rate if revived
 _unit setVariable [VAR_CRDC_ARRST, _active, true];
+_unit setVariable [QEGVAR(circulation,HeartRate_Last), GET_HEART_RATE(_unit), true];
 _unit setVariable [VAR_HEART_RATE, [100, 0] select _active, true];
 
 // Cardiac arrest is an extension of unconsciousness, but only set when entering Cardiac arrest

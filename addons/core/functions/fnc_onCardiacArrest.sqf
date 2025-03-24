@@ -18,18 +18,15 @@
 
 params ["_patient", "_active"];
 
-if (_patient getVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Sinus] == ACM_Rhythm_Asystole || !_active) exitWith {};
+if ((_patient getVariable [QEGVAR(circulation,Cardiac_RhythmState), ACM_Rhythm_Sinus]) == ACM_Rhythm_Asystole || !_active) exitWith {};
 
 [_patient] call EFUNC(circulation,updateCirculationState);
 
 if (!(GET_CIRCULATIONSTATE(_patient)) || (GET_BLOOD_VOLUME(_patient) < ACM_REVERSIBLE_CA_BLOODVOLUME)) then {
-    if !(IN_CRDC_ARRST(_patient)) then {
-        [QACEGVAR(medical,FatalVitals), _patient] call CBA_fnc_localEvent;
-    };
     [QEGVAR(circulation,handleReversibleCardiacArrest), [_patient], _patient] call CBA_fnc_targetEvent;
     _patient setVariable [QEGVAR(circulation,CardiacArrest_Time), CBA_missionTime, true];
 } else {
-    if (random 1 < EGVAR(circulation,cardiacArrestChance) || _patient getVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus] != ACM_Rhythm_Sinus) then {
+    if ((IS_OVERDOSED(_patient) || random 1 < EGVAR(circulation,cardiacArrestChance)) || (_patient getVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus]) != ACM_Rhythm_Sinus) then {
         [QEGVAR(circulation,handleCardiacArrest), _patient] call CBA_fnc_localEvent;
         _patient setVariable [QEGVAR(circulation,CardiacArrest_Time), CBA_missionTime, true];
     } else {

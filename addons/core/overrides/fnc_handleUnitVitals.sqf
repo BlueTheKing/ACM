@@ -229,10 +229,10 @@ if (_bloodVolume > 4) then {
 };
 
 if (_targetVasoconstriction > _vasoconstriction) then {
-    _vasoconstrictionChange = ((_targetVasoconstriction - _vasoconstriction) / 10) max 0.05;
+    _vasoconstrictionChange = (_targetVasoconstriction - _vasoconstriction) / 10;
     _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) min _targetVasoconstriction;
 } else {
-    _vasoconstrictionChange = ((_targetVasoconstriction - _vasoconstriction) / 10) min -0.05;
+    _vasoconstrictionChange = (_targetVasoconstriction - _vasoconstriction) / 10;
     _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) max _targetVasoconstriction;
 };
 

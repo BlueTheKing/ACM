@@ -287,6 +287,8 @@
 #define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
 #define HAS_PRESSURECUFF(unit,index) (GET_PRESSURECUFF(unit) select index)
 
+#define IS_OVERDOSED(unit) ([unit] call EFUNC(circulation,isOverdosed))
+
 //// Access
 #define ACM_IV_16G_M 1
 #define ACM_IV_14G_M 2

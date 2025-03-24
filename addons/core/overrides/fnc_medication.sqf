@@ -38,6 +38,7 @@ switch (_usedItem) do {
     };
     case "ACM_Autoinjector_Midazolam": {
         _classname = "Midazolam";
+        _dose = 10;
     };
     default { };
 };

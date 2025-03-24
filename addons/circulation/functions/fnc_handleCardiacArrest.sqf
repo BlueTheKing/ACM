@@ -38,7 +38,7 @@ if (GET_BLOOD_VOLUME(_patient) < ACM_ASYSTOLE_BLOODVOLUME) exitWith {
 
 private _targetRhythm = _patient getVariable [QGVAR(CardiacArrest_TargetRhythm), ACM_Rhythm_Sinus];
 
-if (_targetRhythm in [ACM_Rhythm_Sinus, ACM_Rhythm_VT]) then {
+if (_targetRhythm in [ACM_Rhythm_Sinus, ACM_Rhythm_VT, ACM_Rhythm_PVT]) then {
     _targetRhythm = [ACM_Rhythm_VF,ACM_Rhythm_PVT] select (((random 100) * (GET_BLOOD_VOLUME(_patient) / BLOOD_VOLUME_CLASS_2_HEMORRHAGE)) > 50);
 };
 _patient setVariable [QGVAR(Cardiac_RhythmState), _targetRhythm, true];
