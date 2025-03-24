@@ -471,6 +471,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = QPATHTOEF(circulation,ui\icon_syringe_10_ca.paa);
         allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
         items[] = {"ACM_Syringe_10_Epinephrine"};
+        consumeItem = 0;
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO));
         treatmentTime = 2;
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',10,true,true)] call EFUNC(circulation,Syringe_Inject));
