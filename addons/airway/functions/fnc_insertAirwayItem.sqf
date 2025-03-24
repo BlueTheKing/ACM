@@ -42,7 +42,7 @@ if (_airwayItem != "") exitWith {
 };
 
 if ((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient getVariable [QGVAR(AirwayObstructionBlood_State), 0]) > 0) exitWith {
-    private _hint = format [LLSTRING(Adjunct_Failed), localize _item];
+    private _hint = format [LLSTRING(Adjunct_Failed), _item];
     [format ["%1<br />%2", _hint, LLSTRING(CheckAirway_Obstruction)], 2, _medic] call ACEFUNC(common,displayTextStructured);
     [_medic, _classname] call ACEFUNC(common,addToInventory);
 };
@@ -52,7 +52,7 @@ if (_type == "SGA" && GET_AIRWAY_INFLAMMATION(_patient) > AIRWAY_INFLAMMATION_TH
     [_medic, _classname] call ACEFUNC(common,addToInventory);
 };
 
-[format [LLSTRING(Adjunct_%1_Inserted), localize _item], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+[format [LLSTRING(Adjunct_%1_Inserted), _item], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 [_patient, _item] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", LSTRING(Adjunct_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _item]] call ACEFUNC(medical_treatment,addToLog);
 
