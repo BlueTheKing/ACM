@@ -25,6 +25,8 @@ if (hasInterface) then {
 _patient setVariable [QGVAR(LozengeItem), "", true];
 _patient setVariable [QGVAR(LozengeItem_InsertTime), -1, true];
 
+_patient setVariable [QGVAR(PressureCuff_Placement), [false,false], true];
+
 _patient setVariable [QGVAR(ROSC_Time), nil, true];
 _patient setVariable [QGVAR(CardiacArrest_Time), nil, true];
 
