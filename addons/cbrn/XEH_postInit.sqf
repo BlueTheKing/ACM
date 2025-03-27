@@ -6,6 +6,12 @@
 [QGVAR(spawnChemicalDetonationEffect), LINKFUNC(spawnChemicalDetonationEffect)] call CBA_fnc_addEventHandler;
 [QGVAR(showRadius), LINKFUNC(showRadius)] call CBA_fnc_addEventHandler;
 
+[QGVAR(updateHazardZoneSize), {
+    params ["_hazardRadius", "_radiusDimensions"];
+
+    _hazardRadius setTriggerArea _radiusDimensions;
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(detectorPFH), LINKFUNC(detectorPFH)] call CBA_fnc_addEventHandler;
 
 if !(GVAR(enable)) exitWith {};

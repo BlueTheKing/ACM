@@ -59,24 +59,19 @@ class GVAR(RscCreateHazardZone): RscDisplayAttributes {
                             class Items {
                                 class Chemical_Placebo {
                                     text = CSTRING(Chemical_Placebo);
-                                    //picture = "\a3\ui_f_curator\data\displays\rscdisplaycurator\modegroups_ca.paa";
                                     default = 1;
                                 };
                                 class Chemical_CS {
                                     text = CSTRING(Chemical_CS);
-                                    //picture = "\a3\ui_f\data\map\diary\icons\playerwest_ca.paa";
                                 };
                                 class Chemical_Chlorine {
                                     text = CSTRING(Chemical_Chlorine);
-                                    //picture = "\a3\ui_f\data\map\diary\icons\playereast_ca.paa";
                                 };
                                 class Chemical_Sarin {
                                     text = CSTRING(Chemical_Sarin);
-                                    //picture = "\a3\ui_f\data\map\diary\icons\playerguer_ca.paa";
                                 };
                                 class Chemical_Lewisite {
                                     text = CSTRING(Chemical_Lewisite);
-                                    //picture = "\a3\ui_f\data\map\diary\icons\playerciv_ca.paa";
                                 };
                             };
                         };

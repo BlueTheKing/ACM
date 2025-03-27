@@ -18,7 +18,7 @@
  * Hazard Origin Object <OBJECT>
  *
  * Example:
- * [cursorTarget, false, "Chemical_CS", [5,5,0,false,-1], -1, false, false, true, player] call ACM_CBRN_fnc_initHazardZone;
+ * [cursorTarget, false, "Chemical_CS", [2.5,2.5,0,false,2.5], -1, false, false, true, player] call ACM_CBRN_fnc_initHazardZone;
  *
  * Public: No
  */
@@ -27,10 +27,10 @@ params ["_target", ["_attached", false], ["_hazardType",""], ["_radiusDimensions
 
 if (_hazardType == "") exitWith {};
 
-private _originObject = createVehicle ["ACM_HazardObject", position _target, [], 0, "CAN_COLLIDE"];
+private _originObject = createVehicle ["ACM_HazardObject", [((position _target) select 0), ((position _target) select 1), 0], [], 0, "CAN_COLLIDE"];
 
 if (_radiusDimensions isEqualTo []) then {
-    _radiusDimensions = [5,5,0,false,-1];
+    _radiusDimensions = [2.5,2.5,0,false,2.5];
 };
 
 private _initEffects = !(_hazardType in ["chemical_placebo"]);
@@ -43,7 +43,10 @@ private _zoneID = -1;
 
 // [a (X), b (Y), angle, isRectangle, c (height)]
 private _hazardRadius = [_originObject, "AREA:", _radiusDimensions, "ACT:", ["NONE", "PRESENT", false], "STATE:", ["false", "", ""]] call CBA_fnc_createTrigger;
+
 _hazardRadius = _hazardRadius select 0;
+
+[QGVAR(updateHazardZoneSize), [_hazardRadius, _radiusDimensions]] call CBA_fnc_globalEvent;
 
 if (_initEffects) then {
     private _zoneList = missionNamespace getVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), createHashMap];
