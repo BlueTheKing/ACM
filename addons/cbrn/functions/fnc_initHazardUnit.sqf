@@ -28,7 +28,7 @@ private _fnc_inArea = {
     params ["_patient", "_hazardType"];
 
     private _zoneList = missionNamespace getVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), createHashMap];
-    private _index = (keys _zoneList) findIf {_patient inArea ((_zoneList getOrDefault [_x, []]) select 0)};
+    private _index = (keys _zoneList) findIf {_patient inArea ((_zoneList getOrDefault [_x, []]) select 1)};
 
     if (_index > -1) exitWith {true};
     false
