@@ -32,7 +32,7 @@ private _PFH = [{
 
     if (_dose < 3) exitWith {};
 
-    private _reduce = 5 * (_dose / 3);
+    private _reduce = 2 * (_dose / 3);
     _reduce = ([_reduce, (_reduce / 2)] select (IN_CRDC_ARRST(_patient)));
 
     private _buildup = _patient getVariable [QGVAR_BUILDUP(Chemical_Sarin), 0];
@@ -40,7 +40,7 @@ private _PFH = [{
 
     if (_dose < 4) exitWith {};
 
-    if (HAS_AIRWAY_SPASM(_patient) && random 1 < 0.3) then {
+    if (HAS_AIRWAY_SPASM(_patient) && ((random 1 < 0.3) || (_buildup <= 1 && random 1 < 0.8))) then {
         _patient setVariable [QGVAR(AirwaySpasm), false, true];
     };
 }, (20 + (random 10)), [_patient]] call CBA_fnc_addPerFrameHandler;
