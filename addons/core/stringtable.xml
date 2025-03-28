@@ -5,72 +5,86 @@
             <English>ACM: Core</English>
             <Polish>ACM: Core</Polish>
             <German>ACM: Kern</German>
+            <Spanish>ACM: Core</Spanish>
         </Key>
         <Key ID="STR_ACM_Core_Category_Items">
             <English>Items</English>
             <Polish>Przedmioty</Polish>
             <German>Items</German>
+            <Spanish>Objetos</Spanish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet">
             <English>Take Off Tourniquet Time</English>
             <Polish>Czas zdjęcia opaski uciskowej</Polish>
             <German>Tourniquet Entfernungszeit</German>
+            <Spanish>Tiempo para quitar torniquete</Spanish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet_Desc">
             <English>Time to take off tourniquet</English>
             <Polish>Czas potrzebny na zdjęcie opaski uciskowej</Polish>
             <German>Zeit um Tourniquet zu entfernen</German>
+            <Spanish>Tiempo para quitar torniquete</Spanish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight">
             <English>Dogtag list weight</English>
             <Polish>Nieśmiertelniki pokazują wagę</Polish>
             <German>Erkennungsmarke zeigt Gewicht an</German>
+            <Spanish>Peso en chapas de identificación</Spanish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
             <English>Set whether dog tags list the unit's weight</English>
             <Polish>Czy na nieśmietelnikach ma się wyświetlać waga jednostki</Polish>
             <German>Stellt ein, ob die Erkennungsmarke das Patientengewicht anzeigt</German>
+            <Spanish>Establece si en las chapas idntificadoras aparece el peso de la persona.</Spanish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
             <English>Ignore Incompatible Addon Warning</English>
             <Polish>Zignoruj ostrzeżenia o niekompatybilności</Polish>
             <German>Ignoriere Inkompatibilitätswarnung</German>
+            <Spanish>Ignorar advertencias de Addons incompatibles</Spanish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings_Desc">
             <English>Disables incompatible addon warnings</English>
             <Polish>Wyłącza ostrzeżenia o niekompatybilnych addonach</Polish>
             <German>Deaktiviert die Inkompatibilitätswarnung vom Addon</German>
+            <Spanish>Desactivar advertencias de Addons incompatibles</Spanish>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Core_MorphineAutoinjector">
                 <English>Use Morphine Autoinjector</English>
                 <Polish>Użyj autostrzykawki z morfiną</Polish>
                 <German>Morphin-Autoinjektor benutzen</German>
+                <Spanish>Utilizar autoinyector de morfina</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
                 <English>Using Morphine Autoinjector...</English>
                 <Polish>Używanie autostrzykawki z morfiną...</Polish>
                 <German>Benutze Morphin-Autoinjektor...</German>
+                <Spanish>Utilizando autoinyector de mofina...</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
                 <English>Use Epinephrine Autoinjector</English>
                 <Polish>Użyj autostrzykawki z epinefryną</Polish>
                 <German>Adrenalin-Autoinjektor benutzen</German>
+                <Spanish>Utilizar autoinyector de epinefrina</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
                 <English>Using Epinephrine Autoinjector...</English>
                 <Polish>Używanie autostrzykawki z epinefryną...</Polish>
                 <German>Benutze Adrenalin-Autoinjektor...</German>
+                <Spanish>Utilizando autoinyector de epinefrina...</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector">
                 <English>Use Adenosine Autoinjector</English>
                 <Polish>Użyj autostrzykawki z adenozyną</Polish>
                 <German>Adenosin-Autoinjektor benutzen</German>
+                <Spanish>Utilizar autoinyector de adenosina</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
                 <English>Using Adenosine Autoinjector...</English>
                 <Polish>Używanie autostrzykawki z adenozyną...</Polish>
                 <German>Benutze Adenosin-Autoinjektor</German>
+                <Spanish>Utilizando autoinyector de adenosina...</Spanish>
             </Key>
         </Container>
         <Container name="// Cancel Carrying //">
@@ -78,11 +92,13 @@
                 <English>Cancel Carrying</English>
                 <Polish>Przestań nieść</Polish>
                 <German>Patient ablegen</German>
+                <Spanish>Cancelar cargar</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
                 <English>Stopped carrying %1</English>
                 <Polish>Przestano nieść %1</Polish>
                 <German>Patient %1 abgelegt</German>
+                <Spanish>Ha parado de cargar %1</Spanish>
             </Key>
         </Container>
         <Container name="// Lying State //">
@@ -90,6 +106,7 @@
                 <English>Get Up</English>
                 <Polish>Wstań</Polish>
                 <German>Aufstehen</German>
+                <Spanish>Levantar</Spanish>
             </Key>
         </Container>
         <Container name="// Assist Carry Action //">
@@ -122,6 +139,7 @@
                 <English>You are being treated by %1</English>
                 <Polish>%1 udziela ci pomocy</Polish>
                 <German>Du wirst von %1 behandelt</German>
+                <Spanish>Estás siendo tratado por %1</Spanish>
             </Key>
         </Container>
         <Container name="// Vehicle Patient Actions //">
@@ -129,6 +147,7 @@
                 <English>Vehicle Patients</English>
                 <Polish>Pacjenci w pojeździe</Polish>
                 <German>Fahrzeug Verletzte</German>
+                <Spanish>Pacientes del vehículo</Spanish>
             </Key>
         </Container>
         <Container name="// Unload and carry //">
@@ -136,6 +155,7 @@
                 <English>Carry Patient</English>
                 <Polish>Nieś pacjenta</Polish>
                 <German>Patient tragen</German>
+                <Spanish>Cargar paciente</Spanish>
             </Key>
         </Container>
         <Container name="// Boxes //">
@@ -143,11 +163,13 @@
                 <English>[ACM] Basic Medical Supply Crate</English>
                 <Polish>[ACM] Podstawowa skrzynia z zaopatrzeniem medycznym </Polish>
                 <German>[ACM] Basis Versorgungskiste</German>
+                <Spanish>[ACM] Caja de suministros médicos básicos</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
                 <English>[ACM] Advanced Medical Supply Crate</English>
                 <Polish>[ACM] Zaawansowana skrzynia z zaopatrzeniem medycznym </Polish>
                 <German>[ACM] Erweiterte Versorgungskiste</German>
+                <Spanish>[ACM] Caja de suministros médicos avanzados</Spanish>
             </Key>
         </Container>
         <Container name="// Dog Tags //">
@@ -155,6 +177,7 @@
                 <English>%1 is inspecting your dog tags</English>
                 <Polish>%1 sprawdza twój nieśmiertelnik</Polish>
                 <German>%1 schaut sich deine Erkennungsmarke an</German>
+                <Spanish>%1 está inspeccionando tus chapas identificativas</Spanish>
             </Key>
         </Container>
         <Container name="// Incompatible Addons //">
@@ -162,6 +185,7 @@
                 <English>Incompatible addons found:</English>
                 <Polish>Znaleziono niekompatybilne addony:</Polish>
                 <German>Inkompatible Addons gefunden:</German>
+                <Spanish>Addons incompatinles encontrados: </Spanish>
             </Key>
         </Container>
         <Container name="// Split Medication Action //">
@@ -180,51 +204,61 @@
                 <English>Inserted</English>
                 <Polish>Włożono</Polish>
                 <German>Eingelegt</German>
+                <Spanish>Insertado</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Attached">
                 <English>Attached</English>
                 <Polish>Przymocowano</Polish>
                 <German>Angehängt</German>
+                <Spanish>Adjunto</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Applied">
                 <English>Applied</English>
                 <Polish>Podano</Polish>
                 <German>Appliziert</German>
+                <Spanish>Aplicado</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Removed">
                 <English>Removed</English>
                 <Polish>Usunięto</Polish>
                 <German>Entfernt</German>
+                <Spanish>Retirado</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Connected">
                 <English>Connected</English>
                 <Polish>Przyczepiono</Polish>
                 <German>Konnektiert</German>
+                <Spanish>Conectado</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Disconnected">
                 <English>Disconnected</English>
                 <Polish>Odczepiono</Polish>
                 <German>Diskonnektiert</German>
+                <Spanish>Desconectado</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_InProgress">
                 <English>In Progress</English>
                 <Polish>W trakcie</Polish>
                 <German>Im Gange</German>
+                <Spanish>En progreso</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Paused">
                 <English>Paused</English>
                 <Polish>Przerwane</Polish>
                 <German>Pausiert</German>
+                <Spanish>Pausado</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Active">
                 <English>Active</English>
                 <Polish>Aktywny</Polish>
                 <German>Aktiv</German>
+                <Spanish>Activo</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Empty">
                 <English>Empty</English>
                 <Polish>Pusty </Polish>
                 <German>Leer</German>
+                <Spanish>Vacío</Spanish>
             </Key>
         </Container>
         <Container name="// ACE Action //">
@@ -232,6 +266,7 @@
                 <English>Medical Equipment</English>
                 <Polish>Wyposażenie medyczne</Polish>
                 <German>Medizinische Ausrüstung</German>
+                <Spanish>Equipamiento médico</Spanish>
             </Key>
         </Container>
     </Package>
