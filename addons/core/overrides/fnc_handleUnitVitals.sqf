@@ -195,7 +195,7 @@ if ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) > 0.05) 
 };
 
 if (EGVAR(CBRN,enable)) then {
-    _hrTargetAdjustment = _hrTargetAdjustment - (linearConversion [15, 100, (_unit getVariable [QGVAR_BUILDUP(Chemical_Sarin), 0]), 0, 35]) - (linearConversion [15, 100, (_unit getVariable [QGVAR_BUILDUP(Chemical_Lewisite), 0]), 0, 35]);
+    _hrTargetAdjustment = _hrTargetAdjustment - (linearConversion [15, 100, (_unit getVariable [QGVAR_BUILDUP(Chemical_Sarin), 0]), 0, 35, true]) - (linearConversion [15, 100, (_unit getVariable [QGVAR_BUILDUP(Chemical_Lewisite), 0]), 0, 35, true]);
 };
 
 private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
@@ -229,10 +229,10 @@ if (_bloodVolume > 4) then {
 };
 
 if (_targetVasoconstriction > _vasoconstriction) then {
-    _vasoconstrictionChange = ((_targetVasoconstriction - _vasoconstriction) / 10) max 0.05;
+    _vasoconstrictionChange = (_targetVasoconstriction - _vasoconstriction) / 10;
     _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) min _targetVasoconstriction;
 } else {
-    _vasoconstrictionChange = ((_targetVasoconstriction - _vasoconstriction) / 10) min -0.05;
+    _vasoconstrictionChange = (_targetVasoconstriction - _vasoconstriction) / 10;
     _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) max _targetVasoconstriction;
 };
 

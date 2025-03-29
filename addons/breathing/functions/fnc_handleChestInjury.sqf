@@ -6,23 +6,28 @@
  * Arguments:
  * 0: Patient <OBJECT>
  * 1: Wound ID <NUMBER>
+ * 2: Wound Damage <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, 60] call ACM_breathing_fnc_handleChestInjury;
+ * [player, 60, 1] call ACM_breathing_fnc_handleChestInjury;
  *
  * Public: No
  */
 
-params ["_patient", "_woundID"];
+params ["_patient", "_woundID", "_woundDamage"];
 
 if !(_patient getVariable [QGVAR(ChestInjury_State), false]) then {
     _patient setVariable [QGVAR(ChestInjury_State), true, true];
 };
 
-private _chance = GVAR(ChestInjury_Chances) get _woundID;
+if !(_woundID in GVAR(ChestInjury_Chances)) exitWith {};
+
+(GVAR(ChestInjury_Chances) get _woundID) params ["_minDamage", "_minChance", "_maxDamage", "_maxChance"];
+
+private _chance = linearConversion [_minDamage, _maxDamage, _woundDamage, _minChance, _maxChance, true];
 
 if (random 1 < (_chance * GVAR(chestInjuryChance))) then {
     if (random 1 < GVAR(hemothoraxChance)) then {

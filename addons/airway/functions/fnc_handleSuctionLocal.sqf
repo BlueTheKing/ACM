@@ -20,4 +20,5 @@ params ["_patient"];
 _patient setVariable [QGVAR(AirwayObstructionVomit_State), 0, true];
 _patient setVariable [QGVAR(AirwayObstructionBlood_State), 0, true];
 _patient setVariable [QGVAR(AirwayObstructionVomit_GracePeriod), CBA_missionTime, true];
+_patient setVariable [QGVAR(AirwayChecked_Time), nil, true];
 [_patient] call FUNC(updateAirwayState);

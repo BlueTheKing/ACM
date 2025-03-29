@@ -41,6 +41,7 @@ private _handleOverdoseEffect = {
         };
         case "Fentanyl";
         case "Fentanyl_IV";
+        case "Fentanyl_BUC";
         case "Morphine";
         case "Morphine_IV": {
             [_patient, "Overdose_Opioid", 60, 360, (random [-10, -15, -20]), 0, 0, ACM_ROUTE_IM, 240, (random [-40, -45, -50]), (random [-0.9, -0.95, -1]), (random [-0.01, -0.05, -0.1]), 1, "Overdose_Opioid"] call ACEFUNC(medical_status,addMedicationAdjustment);

@@ -8,7 +8,7 @@
  * 0: The patient <OBJECT>
  * 1: Medication (not case sensitive) <STRING>
  * 2: Get raw count (true) or effect ratio (false) <BOOL>(default: true)
- * 2: Target Body Part Index
+ * 2: Target Body Part Index <NUMBER>
  *
  * Return Value:
  * Medication count (float) <NUMBER>

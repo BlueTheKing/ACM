@@ -75,6 +75,7 @@ PREP(hasPulse);
 PREP(initUnit);
 PREP(inspectIV);
 PREP(isBloodTypeCompatible);
+PREP(isOverdosed);
 PREP(MeasureBP_press);
 PREP(MeasureBP_updateCuffPressure);
 PREP(measureBP);

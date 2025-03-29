@@ -287,6 +287,8 @@
 #define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
 #define HAS_PRESSURECUFF(unit,index) (GET_PRESSURECUFF(unit) select index)
 
+#define IS_OVERDOSED(unit) ([unit] call EFUNC(circulation,isOverdosed))
+
 //// Access
 #define ACM_IV_16G_M 1
 #define ACM_IV_14G_M 2
@@ -453,6 +455,8 @@
 #define GET_CAPILLARY_DAMAGE(unit)                (unit getVariable [QEGVAR(CBRN,CapillaryDamage), 0])
 
 #define HAS_AIRWAY_SPASM(unit)                    (unit getVariable [QEGVAR(CBRN,AirwaySpasm), false])
+
+#define IS_BLINDED(unit)                          (unit getVariable [QEGVAR(CBRN,Blindness_State), false])
 
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}

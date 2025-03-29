@@ -254,3 +254,5 @@ if (_doubleSpace) then {
 } else {
     [_patient, "quick_view", LLSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
 };
+
+_patient setVariable [QGVAR(AirwayChecked_Time), CBA_missionTime, true];
