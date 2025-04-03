@@ -37,18 +37,20 @@ if (_isExposed || _isExposedExternal) then {
     private _bodyPart = [(ALL_BODY_PARTS selectRandomWeighted [0.7,0.5,0.75,0.75,0.3,0.3]), "head"] select _protectedBody;
 
     [QACEGVAR(medical,woundReceived), [_patient, [[0.01, _bodyPart, 0.01]], objNull, "lewisiteburn"]] call CBA_fnc_localEvent;
-
-    if (_isExposed && !_protectedEyes && GVAR(lewisiteCauseBlindness)) then {
-        [_patient, true] call FUNC(setBlind);
-    };
 };
 
 if (_buildup < 40) exitWith {};
 
-if (_isExposed && !_filtered) then {
-    private _airwayInflammation = GET_AIRWAY_INFLAMMATION(_patient); 
+if (_isExposed) then {
+    if (!_filtered) then {
+        private _airwayInflammation = GET_AIRWAY_INFLAMMATION(_patient); 
 
-    _patient setVariable [QGVAR(AirwayInflammation), (_airwayInflammation + 1), true];
+        _patient setVariable [QGVAR(AirwayInflammation), (_airwayInflammation + 1), true];
+    };
+    
+    if (!_protectedEyes && GVAR(lewisiteCauseBlindness)) then {
+        [_patient, true] call FUNC(setBlind);
+    };
 };
 
 if (_buildup < 70) exitWith {};
