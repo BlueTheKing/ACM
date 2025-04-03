@@ -27,7 +27,7 @@ params ["_medic", "_patient", "_bodyPart", "_classname", "", "_usedItem", "", ["
 
 switch (_usedItem) do {
     case "ACE_morphine": {
-        _dose = 10; // Autoinjector has dose of 10mg
+        _dose = 5; // Autoinjector has dose of 5mg
     };
     case "ACE_epinephrine": {
         _dose = 0.3; // Autoinjector has dose of 0.3mg
