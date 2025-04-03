@@ -3,7 +3,6 @@
         textureNoShortcut = picture; \
     }
 
-ACM_MEDICALMENU_ACTION_BUTTON(ACE_splint,QACEPATHTOF(medical_treatment,ui\splint_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_tourniquet,QACEPATHTOF(medical_treatment,ui\tourniquet_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_surgicalKit,QACEPATHTOF(medical_treatment,ui\surgicalKit_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_personalAidKit,QACEPATHTOF(medical_treatment,ui\surgicalKit_ca.paa));

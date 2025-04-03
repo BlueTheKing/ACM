@@ -161,3 +161,5 @@ ACE_player addEventHandler ["AnimDone", {
         }, [_unit], 2] call CBA_fnc_waitUntilAndExecute;
     };
 }];
+
+["ACE_splint", "ACM_SAMSplint"] call ACEFUNC(common,registerItemReplacement);

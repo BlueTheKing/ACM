@@ -71,7 +71,6 @@ class CfgVehicles {
             ADDITEM(ACE_epinephrine,10);
             // Disability
             ADDITEM(ACE_morphine,10);
-            ADDITEM(ACE_splint,10);
             ADDITEM(ACM_SAMSplint,10);
             // Other
             ADDITEM(ACM_Spray_Naloxone,10);
@@ -142,7 +141,6 @@ class CfgVehicles {
             ADDITEM(ACM_Vial_Lidocaine,10);
             ADDITEM(ACM_Vial_Ondansetron,10);
             ADDITEM(ACM_Lozenge_Fentanyl,10);
-            ADDITEM(ACE_splint,10);
             ADDITEM(ACM_SAMSplint,10);
             // Other
             ADDITEM(ACM_Spray_Naloxone,10);
