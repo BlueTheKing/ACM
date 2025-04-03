@@ -40,7 +40,7 @@ private _PFH = [{
 
     if (_dose < 4) exitWith {};
 
-    if (HAS_AIRWAY_SPASM(_patient) && ((random 1 < 0.3) || (_buildup <= 1 && random 1 < 0.8))) then {
+    if (HAS_AIRWAY_SPASM(_patient) && ((random 1 < 0.3) || _buildup <= 1)) then {
         _patient setVariable [QGVAR(AirwaySpasm), false, true];
     };
 }, (20 + (random 10)), [_patient]] call CBA_fnc_addPerFrameHandler;

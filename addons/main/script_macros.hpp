@@ -455,6 +455,7 @@
 #define GET_CAPILLARY_DAMAGE(unit)                (unit getVariable [QEGVAR(CBRN,CapillaryDamage), 0])
 
 #define HAS_AIRWAY_SPASM(unit)                    (unit getVariable [QEGVAR(CBRN,AirwaySpasm), false])
+#define HAS_AIRWAY_SPASM_UNMITIGATED(unit)        (HAS_AIRWAY_SPASM(unit) && (([_patient, 'Atropine', false] call ACEFUNC(medical_status,getMedicationCount)) + ([_patient, 'Atropine_IV', false] call ACEFUNC(medical_status,getMedicationCount)) < 3))
 
 #define IS_BLINDED(unit)                          (unit getVariable [QEGVAR(CBRN,Blindness_State), false])
 
