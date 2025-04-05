@@ -1177,6 +1177,9 @@
                 <Polish>IV zostało już podłączone w %1 (%2)</Polish>
                 <German>Patient hat bereits einen i.v. Zugang im %1 (%2)</German>
             </Key>
+            <Key ID="STR_ACM_Circulation_IV_Blocked_PressureCuff">
+                <English>IV placement blocked by applied pressure cuff</English>
+            </Key>
             <Key ID="STR_ACM_Circulation_IO_Already">
                 <English>Patient already has IO in the %1</English>
                 <Polish>IO zostało już podłączone w %1</Polish>
@@ -1265,6 +1268,9 @@
                 <English>Patient already has pressure cuff on the %1</English>
                 <Polish>Pacjent ma już ciśnieniomierz na %1</Polish>
                 <German>Patient hat bereits eine Blutdruckmanschette am %1</German>
+            </Key>
+            <Key ID="STR_ACM_Circulation_PressureCuff_Blocked_IV">
+                <English>Pressure cuff placement blocked by IV</English>
             </Key>
         </Container>
         <Container name="// Syringe Actions //">

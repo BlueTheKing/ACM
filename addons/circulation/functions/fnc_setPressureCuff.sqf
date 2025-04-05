@@ -27,8 +27,14 @@ if (_bodyPart == "rightarm") then {
     _bodyPartHint = ACELLSTRING(Medical_GUI,RightArm);
 };
 
-if (_state && (([_patient, _bodyPart, 3] call FUNC(hasAED)) || [_patient, _bodyPart] call FUNC(hasPressureCuff))) exitWith {
-    [(format [LLSTRING(PressureCuff_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+if (_state && (([_patient, _bodyPart, 3] call FUNC(hasAED)) || [_patient, _bodyPart] call FUNC(hasPressureCuff) || [_patient, _bodyPart, 0, 0] call FUNC(hasIV))) exitWith {
+    private _hint = format [LLSTRING(PressureCuff_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))];
+
+    if ([_patient, _bodyPart, 0, 0] call FUNC(hasIV)) then {
+        _hint = LLSTRING(PressureCuff_Blocked_IV);
+    };
+
+    [_hint, 2, _medic] call ACEFUNC(common,displayTextStructured);
     [_medic, "ACM_PressureCuff"] call ACEFUNC(common,addToInventory);
 };
 
