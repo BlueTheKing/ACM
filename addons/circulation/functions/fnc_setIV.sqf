@@ -60,7 +60,7 @@ if (_iv) then {
             [(format [LLSTRING(IV_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString)), _accessSiteHint]), 2, _medic] call ACEFUNC(common,displayTextStructured);
         };
 
-        if (([_patient, _bodyPart] call FUNC(hasPressureCuff) || ([_patient, _bodyPart, 3] call FUNC(hasAED))) && _accessSite == 0) exitWith {
+        if (_accessSite == 0 && _bodyPart in ["leftarm","rightarm"] && {([_patient, _bodyPart] call FUNC(hasPressureCuff) || ([_patient, _bodyPart, 3] call FUNC(hasAED)))}) exitWith {
             _exit = true;
             [LLSTRING(IV_Blocked_PressureCuff), 2, _medic] call ACEFUNC(common,displayTextStructured);
         };

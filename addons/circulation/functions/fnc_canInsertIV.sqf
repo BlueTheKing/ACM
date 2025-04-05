@@ -24,7 +24,7 @@ if ([_patient, _bodyPart, _type, _accessSite] call FUNC(hasIV)) exitWith {
     false;
 };
 
-if (_accessSite == 0 && ([_patient, _bodyPart] call FUNC(hasPressureCuff) || [_patient, _bodyPart, 3] call FUNC(hasAED))) exitWith {
+if (_accessSite == 0 && _bodyPart in ["leftarm","rightarm"] && {([_patient, _bodyPart] call FUNC(hasPressureCuff) || [_patient, _bodyPart, 3] call FUNC(hasAED))}) exitWith {
     false;
 };
 
