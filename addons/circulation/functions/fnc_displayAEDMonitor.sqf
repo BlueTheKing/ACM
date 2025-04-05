@@ -153,7 +153,7 @@ private _PFH = [{
     private _oxygenSaturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), -1];
     private _etco2 = _patient getVariable [QGVAR(AED_CO2_Display), -1];
 
-    private _monitorUpdateStep = (_patient getVariable [QGVAR(AED_UpdateStep), (floor ((CBA_missionTime - (_patient getvariable [QGVAR(AED_StartTime), CBA_missionTime])) mod 6.2304 / 0.0354))]); // x1.18
+    private _monitorUpdateStep = (_patient getVariable [QGVAR(AED_UpdateStep), (floor ((CBA_missionTime - (_patient getVariable [QGVAR(AED_StartTime), CBA_missionTime])) mod 6.2304 / 0.0354))]); // x1.18
     private _monitorArray_Offset = _patient getVariable [QGVAR(AED_Offset), 0];
 
     private _monitorArray_EKG = _patient getVariable [QGVAR(AED_EKGDisplay), []];

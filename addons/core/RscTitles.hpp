@@ -21,10 +21,10 @@ class RscTitles {
                 idc = IDC_TREATMENTTEXT_TEXT;
                 style = ST_CENTER;
                 font = "RobotoCondensed";
-                x = QUOTE(safezoneX);
-                y = QUOTE(safezoneY);
-                w = QUOTE(safezoneW);
-                h = QUOTE(safezoneH * 1.5);
+                x = QUOTE(safeZoneX);
+                y = QUOTE(safeZoneY);
+                w = QUOTE(safeZoneW);
+                h = QUOTE(safeZoneH * 1.5);
                 colorText[] = {1,1,1,1};
                 colorBackground[] = {0,0,0,0};
                 text = "";
@@ -54,10 +54,10 @@ class RscTitles {
                 idc = IDC_CONTINUOUSACTIONTEXT_UPPER;
                 style = ST_CENTER;
                 font = "RobotoCondensed";
-                x = QUOTE(safezoneX);
-                y = QUOTE(safezoneY);
-                w = QUOTE(safezoneW);
-                h = QUOTE(safezoneH / 10);
+                x = QUOTE(safeZoneX);
+                y = QUOTE(safeZoneY);
+                w = QUOTE(safeZoneW);
+                h = QUOTE(safeZoneH / 10);
                 colorText[] = {1,1,1,1};
                 colorBackground[] = {0,0,0,0};
                 text = "";
@@ -73,7 +73,7 @@ class RscTitles {
             };
             class BottomText: TopText {
                 idc = IDC_CONTINUOUSACTIONTEXT_BOTTOM;
-                h = QUOTE(safezoneH / 6);
+                h = QUOTE(safeZoneH / 6);
                 text = "";
             };
         };

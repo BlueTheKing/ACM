@@ -71,8 +71,8 @@ GVAR(Fluids_Array_Data) = FLUIDS_ARRAY_DATA;
 
     {
         private _entry = format ["BloodBag_%1_%2", _bloodType, _x];
-        GVAR(Fluids_Array_Data) pushback _entry;
-        GVAR(Fluids_Array) pushback format ["ACM_%1", _entry];
+        GVAR(Fluids_Array_Data) pushBack _entry;
+        GVAR(Fluids_Array) pushBack format ["ACM_%1", _entry];
     } forEach [1000,500,250];
 } forEach ["O","ON","A","AN","B","BN","AB","ABN"];
 

@@ -15,7 +15,7 @@
  * Public: No
  */
 
-GVAR(ChestInjury_Chances) = createHashMapfromArray [
+GVAR(ChestInjury_Chances) = createHashMapFromArray [
     [61,[0.25, 0, 0.5, 0.3]],
     [62,[0.5, 0.5, 1, 0.9]],
     [71,[0.25, 0, 0.5, 0.25]],

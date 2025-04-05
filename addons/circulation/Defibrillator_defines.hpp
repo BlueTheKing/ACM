@@ -1,9 +1,9 @@
 // UI stuff
 #define ACM_GUI_AED_SIZEM 1.05
-#define ACM_GUI_AED_GRID_W (safezoneW * 0.55)
+#define ACM_GUI_AED_GRID_W (safeZoneW * 0.55)
 #define ACM_GUI_AED_GRID_H (ACM_GUI_AED_GRID_W * 4/3)
-#define ACM_GUI_AED_GRID_X (safezoneX + (safezoneW - ACM_GUI_AED_GRID_W) / 2) * ACM_GUI_AED_SIZEM
-#define ACM_GUI_AED_GRID_Y (safezoneY + (safezoneH - ACM_GUI_AED_GRID_H) / 2) * ACM_GUI_AED_SIZEM
+#define ACM_GUI_AED_GRID_X (safeZoneX + (safeZoneW - ACM_GUI_AED_GRID_W) / 2) * ACM_GUI_AED_SIZEM
+#define ACM_GUI_AED_GRID_Y (safeZoneY + (safeZoneH - ACM_GUI_AED_GRID_H) / 2) * ACM_GUI_AED_SIZEM
 
 #define ACM_AED_pxToScreen_X(X) (X / 2048 * ACM_GUI_AED_GRID_W + ACM_GUI_AED_GRID_X)
 #define ACM_AED_pxToScreen_Y(X) (X / 2048 * ACM_GUI_AED_GRID_H + ACM_GUI_AED_GRID_Y)

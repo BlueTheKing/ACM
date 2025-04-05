@@ -146,7 +146,7 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
 
         private _patientCondition = (!(IS_UNCONSCIOUS(_patient)) && alive _patient || _patient isEqualTo objNull);
         private _medicCondition = (!(alive _medic) || IS_UNCONSCIOUS(_medic) || _medic isEqualTo objNull);
-        private _vehicleCondition = !(objectParent _medic isEqualTo objectParent _patient);
+        private _vehicleCondition = (objectParent _medic isNotEqualTo objectParent _patient);
         private _distanceCondition = (_patient distance2D _medic > ACEGVAR(medical_gui,maxDistance));
 
         if (_patientCondition || _medicCondition || !(alive (_patient getVariable [QGVAR(CPR_Medic), objNull])) || GVAR(SwapToBVM) || dialog || {(!_notInVehicle && _vehicleCondition) || {(_notInVehicle && _distanceCondition)}}) exitWith { // Stop CPR
@@ -169,7 +169,7 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
             _patient setVariable [QGVAR(CPR_StoppedTotal), _CPRTime, true];
             _patient setVariable [QGVAR(CPR_StoppedTime), CBA_missionTime, true];
 
-            if !(_patient getVariable [QACEGVAR(medical,CPR_provider), objNull] isEqualTo objNull) then {
+            if (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull] isNotEqualTo objNull) then {
                 _patient setVariable [QACEGVAR(medical,CPR_provider), objNull, true];
             };
 

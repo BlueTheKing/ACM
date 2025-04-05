@@ -507,7 +507,7 @@ class ACEGVAR(medical_treatment,actions) {
         consumeItem = 0;
         allowSelfTreatment = 1;
         treatmentTime = 2;
-        condition = QUOTE((_patient getVariable [ARR_2(QQEGVAR(circulation,LozengeItem), '')]) == 'Fentanyl');
+        condition = QUOTE((_patient getVariable [ARR_2(QQEGVAR(circulation,LozengeItem),'')]) == 'Fentanyl');
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call EFUNC(circulation,setLozenge));
     };
 
