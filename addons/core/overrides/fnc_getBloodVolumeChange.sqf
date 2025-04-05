@@ -42,6 +42,8 @@ private _bloodLoss = -_deltaT * GET_BLOOD_LOSS(_unit);
 private _internalBleeding = -_deltaT * GET_INTERNAL_BLEEDRATE(_unit);
 private _capillaryBleeding = -_deltaT * GET_CAPILLARYDAMAGE_BLEEDRATE(_unit);
 
+private _inCardiacArrest = IN_CRDC_ARRST(_unit);
+
 private _TXAEffect = ([_unit, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount));
 
 private _internalBleedingSeverity = 0;
@@ -53,8 +55,8 @@ if (GET_INTERNAL_BLEEDING(_unit) > 0.3 || (_plateletCount < 0.1 && _TXAEffect < 
 private _HTXState = _unit getVariable [QEGVAR(breathing,Hemothorax_State), 0];
 private _hemothoraxBleeding = 0;
 
-private _plateletBleedRatio = 0.8 min (linearConversion [2.9, 1.8, _plateletCount, 0.8, 0.5]) max 0;
-private _plateletInternalBleedRatio = 0.8 min (linearConversion [2.4, 1.6, _plateletCount, 0.8, 0.5]) max 0;
+private _plateletBleedRatio = [(0.8 min (linearConversion [2.9, 1.8, _plateletCount, 0.8, 0.5]) max 0), 0] select _inCardiacArrest;
+private _plateletInternalBleedRatio = [(0.8 min (linearConversion [2.4, 1.6, _plateletCount, 0.8, 0.5]) max 0), 0] select _inCardiacArrest;
 
 if (_HTXState > 0) then {
     _hemothoraxBleeding = -_deltaT * GET_HEMOTHORAX_BLEEDRATE(_unit);
@@ -76,8 +78,16 @@ if (_salineVolume > 0) then {
 };
 
 if (_plateletCount > 0.1) then {
+    if (_TXAEffect > 0.5 && !_inCardiacArrest) then {
+        _bloodLoss = _bloodLoss * (linearConversion [0.5, 2, _TXAEffect, 1, 0.9, true]);
+        _internalBleeding = _internalBleeding * (linearConversion [0.5, 2, _TXAEffect, 1, 0.85, true]);
+        _hemothoraxBleeding = _hemothoraxBleeding * (linearConversion [0.5, 2, _TXAEffect, 1, 0.8, true]);
+        _capillaryBleeding = _capillaryBleeding * (linearConversion [0.5, 2, _TXAEffect, 1, 0.85, true]);
+    };
+
     _plateletCountChange = (_bloodLoss * _plateletBleedRatio) + ((_internalBleeding * 0.6) * _plateletInternalBleedRatio) + (_hemothoraxBleeding * _plateletBleedRatio) + (_capillaryBleeding * _plateletBleedRatio);
-    if (_TXAEffect > 0.1) then {
+    
+    if (_TXAEffect > 0.1 && !_inCardiacArrest) then {
         _plateletCountChange = _plateletCountChange * 0.9;
     };
 };
