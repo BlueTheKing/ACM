@@ -52,7 +52,7 @@ private _fnc_updateSelectedMedication = {
     private _concentration = getText (configFile >> "ACM_Medication" >> "Concentration" >> GVAR(SyringeDraw_Medication) >> "dose");
 
     private _ctrlText = _display displayCtrl IDC_SYRINGEDRAW_TEXT;
-    _ctrlText ctrlSetText format [LLSTRING(Syringe_Drawing), GVAR(SyringeDraw_Medication), _concentration, GVAR(SyringeDraw_Size)];
+    _ctrlText ctrlSetText format [LLSTRING(Syringe_DrawingInto), GVAR(SyringeDraw_Medication), _concentration, GVAR(SyringeDraw_Size)];
     GVAR(SyringeDraw_MaxDose) = getNumber (configFile >> "ACM_Medication" >> "Concentration" >> GVAR(SyringeDraw_Medication) >> "volume");
 };
 
@@ -82,7 +82,7 @@ private _fnc_updateSelectedMedication = {
 
     if (GVAR(SyringeDraw_MedicationSelected)) then {
         private _concentration = getText (configFile >> "ACM_Medication" >> "Concentration" >> GVAR(SyringeDraw_Medication) >> "dose");
-        _ctrlText ctrlSetText format [LLSTRING(Syringe_Drawing), GVAR(SyringeDraw_Medication), _concentration, _size];
+        _ctrlText ctrlSetText format [LLSTRING(Syringe_DrawingInto), GVAR(SyringeDraw_Medication), _concentration, _size];
         GVAR(SyringeDraw_MaxDose) = getNumber (configFile >> "ACM_Medication" >> "Concentration" >> GVAR(SyringeDraw_Medication) >> "volume");
     }; 
 

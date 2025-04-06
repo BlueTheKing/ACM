@@ -1320,6 +1320,9 @@
                 <German>Injiziere %1...</German>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawing">
+                <English>Drawing %1...</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Syringe_DrawingInto">
                 <English>Drawing %1 (%2) into %3ml syringe</English>
                 <Polish>Pobrano %1 (%2) do strzykawki (%3ml)</Polish>
                 <German>Ziehe %1 (%2) in %3ml Spritze auf</German>
