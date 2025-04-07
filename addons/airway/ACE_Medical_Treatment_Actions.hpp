@@ -126,14 +126,14 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         medicRequired = 0;
         treatmentTime = 1.5;
-        condition = QUOTE(GVAR(enable) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == 'OPA'));
+        condition = QUOTE(GVAR(enable) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == 'OPA'));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,false)] call FUNC(removeAirwayItem));
     };
     class RemoveNPA: RemoveGuedelTube {
         displayName = CSTRING(RemoveNPA);
         displayNameProgress = CSTRING(RemoveNPA_Progress);
         icon = "";
-        condition = QUOTE(GVAR(enable) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Nasal),'')] == 'NPA'));
+        condition = QUOTE(GVAR(enable) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Nasal),'')] == 'NPA'));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(removeAirwayItem));
     };
     class RemoveIGel: RemoveGuedelTube {
@@ -141,6 +141,6 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = CSTRING(RemoveIGel_Progress);
         icon = "";
         treatmentTime = 2;
-        condition = QUOTE(GVAR(enable) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == 'SGA'));
+        condition = QUOTE(GVAR(enable) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == 'SGA'));
     };
 };
