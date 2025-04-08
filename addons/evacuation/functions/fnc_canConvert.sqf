@@ -19,7 +19,7 @@
 params ["_medic", "_patient"];
 
 switch (true) do {
-    case !(GVAR(enabled));
+    case !(GVAR(enable));
     case !(isPlayer _patient);
     case (_patient getVariable [QGVAR(casualtyTicketClaimed), false]);
     case !(IS_UNCONSCIOUS(_patient));
