@@ -6,6 +6,8 @@
 [QGVAR(spawnChemicalDetonationEffect), LINKFUNC(spawnChemicalDetonationEffect)] call CBA_fnc_addEventHandler;
 [QGVAR(showRadius), LINKFUNC(showRadius)] call CBA_fnc_addEventHandler;
 
+[QGVAR(showBlindEffect), LINKFUNC(showBlindEffect)] call CBA_fnc_addEventHandler;
+
 [QGVAR(updateHazardZoneSize), {
     params ["_hazardRadius", "_radiusDimensions"];
 
@@ -92,6 +94,20 @@
         [GVAR(Vehicle_List), "cbrn", GVAR(customVehicleList_CBRN)],
         [GVAR(Vehicle_List), "sealed", GVAR(customVehicleList_sealed)]
     ];
+
+    ["featureCamera", {
+        params ["_unit", "_newCamera"];
+
+        if (_newCamera == "") then { // switched back to player view
+            if IS_BLINDED(_unit) then {
+                [_unit, true, true] call FUNC(showBlindEffect);
+            };
+        } else { // camera view
+            if IS_BLINDED(_unit) then {
+                [_unit, false, true] call FUNC(showBlindEffect);
+            };
+        };
+    }] call CBA_fnc_addPlayerEventHandler;
 
     {
         [QACEGVAR(field_rations,helper), 0, [QACEGVAR(field_rations,waterSource)], _x] call ACEFUNC(interact_menu,addActionToClass);

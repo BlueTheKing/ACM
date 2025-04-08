@@ -22,6 +22,7 @@ PREP(putOnGasMask);
 PREP(replaceFilter);
 PREP(resetVariables);
 PREP(setBlind);
+PREP(showBlindEffect);
 PREP(showRadius);
 PREP(spawnChemicalDetonationEffect);
 PREP(spawnChemicalMist);
