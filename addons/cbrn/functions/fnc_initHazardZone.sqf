@@ -33,7 +33,7 @@ if (_radiusDimensions isEqualTo []) then {
     _radiusDimensions = [2.5,2.5,0,false,2.5];
 };
 
-private _initEffects = !(_hazardType in ["chemical_placebo"]);
+private _initEffects = !(_hazardType in ["chemical_placebo"]) && GVAR(enable);
 
 if !(GVAR(chemicalAffectAI)) then {
     _affectAI = false;
