@@ -39,7 +39,6 @@ private _PFH = [{
 
     if ((!_cardiacArrest && (random 1 < _obstructChance)) || {_cardiacArrest && (random 1 < (_obstructChance / 2))}) then {
         _patient setVariable [QGVAR(AirwayObstructionBlood_State), (_obstructionState + 1), true];
-        [_patient] call FUNC(updateAirwayState);
     };
 
 }, 5 max (random 10), [_patient]] call CBA_fnc_addPerFrameHandler;

@@ -31,7 +31,7 @@ switch (true) do {
     case !(_isBreathing): {
         _respirationRate = 0;
     };
-    case (EGVAR(CBRN,enable) && ((GET_AIRWAY_INFLAMMATION(_patient) >= 100) || HAS_AIRWAY_SPASM_UNMITIGATED(_unit))): { // CBRN
+    case (EGVAR(CBRN,enable) && HAS_AIRWAY_SPASM_UNMITIGATED(_unit)): { // CBRN
         _respirationRate = 0;
     };
     case ([_unit] call EFUNC(core,bvmActive)): {

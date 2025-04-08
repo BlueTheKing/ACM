@@ -51,3 +51,5 @@ _patient setVariable [QGVAR(BVM_lastBreath), nil, true];
 _patient setVariable [QGVAR(BVM_lastBreathOxygen), nil, true];
 
 _patient setVariable [QGVAR(RespirationRate), (ACM_TARGETVITALS_RR(_patient)), true];
+
+[_patient, true] call FUNC(updateLungState);

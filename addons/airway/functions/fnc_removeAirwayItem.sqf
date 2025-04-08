@@ -23,7 +23,6 @@ if (_nasalAirway) then {
     private _airway = _patient getVariable [QGVAR(AirwayItem_Nasal), ""];
 
     _patient setVariable [QGVAR(AirwayItem_Nasal), "", true];
-    [_patient] call FUNC(updateAirwayState);
 
     if (GVAR(airwayAdjunctReusable)) then {
         if (_airway == "NPA") then {
@@ -34,7 +33,6 @@ if (_nasalAirway) then {
     private _airway = _patient getVariable [QGVAR(AirwayItem_Oral), ""];
 
     _patient setVariable [QGVAR(AirwayItem_Oral), "", true];
-    [_patient] call FUNC(updateAirwayState);
 
     if (GVAR(airwayAdjunctReusable)) then {
         if (_airway == "OPA") then {

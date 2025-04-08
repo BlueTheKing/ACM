@@ -26,7 +26,6 @@ if (_state && _patient getVariable [QGVAR(RecoveryPosition_State), false]) exitW
 
 _patient setVariable [QGVAR(RecoveryPosition_State), _state, true];
 _patient setVariable [QGVAR(HeadTilt_State), _state, true];
-[_patient] call FUNC(updateAirwayState);
 
 if (_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0] == 1) then {
     _patient setVariable [QGVAR(AirwayObstructionVomit_State), 0, true];

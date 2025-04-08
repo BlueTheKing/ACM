@@ -42,7 +42,6 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
     _ctrlText ctrlSetText ([_patient, false, true] call ACEFUNC(common,getName));
 
     _patient setVariable [QGVAR(HeadTilt_State), true, true];
-    [_patient] call FUNC(updateAirwayState);
 }, { // On cancel
     params ["_medic", "_patient", "_bodyPart"];
 
@@ -55,7 +54,6 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
     [LLSTRING(HeadTiltChinLift_ActionCancelled), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
     _patient setVariable [QGVAR(HeadTilt_State), false, true];
-    [_patient] call FUNC(updateAirwayState);
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart"];
 

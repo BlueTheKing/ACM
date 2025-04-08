@@ -67,5 +67,3 @@ if (_type == "NPA") then {
 } else {
     _patient setVariable [QGVAR(AirwayItem_Oral), _type, true];
 };
-
-[_patient] call FUNC(updateAirwayState);

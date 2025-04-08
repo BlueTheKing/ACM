@@ -224,18 +224,20 @@
 #define BODYPART_N_RIGHTLEG 5
 
 // Airway
-#define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])
+#define GET_AIRWAYSTATE(unit) ([unit] call EFUNC(airway,getAirwayState))
 
 #define IN_RECOVERYPOSITION(unit) (unit getVariable [QQEGVAR(airway,RecoveryPosition_State), false])
 
 #define GET_AIRWAYADJUNCT_ORAL(unit)  (unit getVariable [QEGVAR(airway,AirwayItem_Oral), ""])
 #define GET_AIRWAYADJUNCT_NASAL(unit) (unit getVariable [QEGVAR(airway,AirwayItem_Nasal), ""])
 
+#define HAS_SURGICAL_AIRWAY(unit) (unit getVariable [QEGVAR(airway,AirwaySurgical_State), false])
+
 // Breathing
 #define ACM_BREATHING_MINDECREASE 0.1
 #define ACM_BREATHING_MAXDECREASE 0.12
 
-#define GET_BREATHINGSTATE(unit) (unit getVariable [QEGVAR(breathing,BreathingState), 1])
+#define GET_BREATHINGSTATE(unit) ([unit] call EFUNC(breathing,getBreathingState))
 
 #define GET_OXYGEN(unit) (unit getVariable [VAR_SPO2, 99])
 

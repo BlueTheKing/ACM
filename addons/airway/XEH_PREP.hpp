@@ -1,5 +1,6 @@
 PREP(beginHeadTiltChinLift);
 PREP(checkAirway);
+PREP(getAirwayState);
 PREP(getSuctionTime);
 PREP(handleAirway);
 PREP(handleAirwayCollapse);
@@ -15,4 +16,3 @@ PREP(performHeadTurn);
 PREP(removeAirwayItem);
 PREP(resetVariables);
 PREP(setRecoveryPosition);
-PREP(updateAirwayState);

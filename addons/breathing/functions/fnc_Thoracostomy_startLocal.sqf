@@ -78,5 +78,4 @@ _patient setVariable [QGVAR(Pneumothorax_State), 3, true];
 _patient setVariable [QGVAR(TensionPneumothorax_State), false, true];
 _patient setVariable [QGVAR(TensionPneumothorax_Time), nil, true];
 _patient setVariable [QGVAR(Thoracostomy_UsedKit), _usedKit, true];
-
-[_patient] call FUNC(updateBreathingState);
+[_patient] call FUNC(updateLungState);

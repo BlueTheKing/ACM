@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Update airway state of patient
+ * Get airway state of patient
  *
  * Arguments:
  * 0: Patient <OBJECT>
  *
  * Return Value:
- * None
+ * Airway State <NUMBER>
  *
  * Example:
- * [player] call ACM_airway_fnc_updateAirwayState;
+ * [player] call ACM_airway_fnc_getAirwayState;
  *
  * Public: No
  */
@@ -20,7 +20,11 @@ params ["_patient"];
 private _state = 1;
 
 if !(IS_UNCONSCIOUS(_patient)) exitWith {
-    _patient setVariable [QGVAR(AirwayState), _state, true];
+    _state;
+};
+
+if (_patient getVariable [QGVAR(AirwaySurgical_State), false]) exitWith {
+    _state;
 };
 
 private _airwayReflex = _patient getVariable [QGVAR(AirwayReflex_State), false];
@@ -54,4 +58,14 @@ if (((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient
     };
 };
 
-_patient setVariable [QGVAR(AirwayState), _state, true];
+private _airwayInflammation = GET_AIRWAY_INFLAMMATION(_patient);
+
+if (_airwayInflammation > 10) then {
+    if (_airwayInflammation >= 100) then {
+        _state = 0;
+    } else {
+        _state = _state * (linearConversion [10, 100, _airwayInflammation, 1, 0.2, true]);
+    };
+};
+
+_state;
