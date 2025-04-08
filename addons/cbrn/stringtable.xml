@@ -32,7 +32,7 @@
             <English>Gas Mask List</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask_Desc">
-            <English>List of goggles (facewear)/helmets that are gas masks (or equivelant). Each entry should be a goggles/helmet classname and should be seperated with a comma ("","")</English>
+            <English>List of goggles (facewear)/helmets that are gas masks (or equivalent). Each entry should be a goggles/helmet classname and should be seperated with a comma ("","")</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit">
             <English>CBRN Suit List</English>
