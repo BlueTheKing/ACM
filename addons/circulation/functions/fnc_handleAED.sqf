@@ -202,7 +202,7 @@ if (_inVehicle) then {
     [{
         params ["_patient", "_medic"];
 
-        !((objectParent _medic) isEqualTo (objectParent _patient));
+        (objectParent _medic) isNotEqualTo (objectParent _patient);
     }, {
         params ["_patient", "_medic"];
 
@@ -219,7 +219,7 @@ if (_inVehicle) then {
     [{
         params ["_patient", "_medic"];
     
-        (!((objectParent _medic) isEqualTo (objectParent _patient)) || ((_patient distance _medic) > GVAR(AEDDistanceLimit)));
+        (((objectParent _medic) isNotEqualTo (objectParent _patient)) || ((_patient distance _medic) > GVAR(AEDDistanceLimit)));
     }, {
         params ["_patient", "_medic"];
         

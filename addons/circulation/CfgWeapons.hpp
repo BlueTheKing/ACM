@@ -244,5 +244,9 @@ class CfgWeapons {
         scope = 0;
     };
 
+    class ACE_morphine: ACE_ItemCore {
+        picture = QPATHTOEF(core,ui\override\morphine_ca.paa);
+    };
+
     #include "CfgWeapons_Blood.hpp"
 };

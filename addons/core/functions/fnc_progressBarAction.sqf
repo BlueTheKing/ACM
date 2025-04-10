@@ -46,8 +46,8 @@ if (!_inVehicle && stance _medic in ["STAND","CROUCH"]) then {
     _args params ["_medic", "_patient"];
     _extraArgs params ["_inVehicle"];
 
-    private _patientCondition = !(_patient isEqualTo objNull);
-    private _medicCondition = ((alive _medic) && !(IS_UNCONSCIOUS(_medic)) && !(_medic isEqualTo objNull));
+    private _patientCondition = (_patient isNotEqualTo objNull);
+    private _medicCondition = ((alive _medic) && !(IS_UNCONSCIOUS(_medic)) && (_medic isNotEqualTo objNull));
     private _vehicleCondition = (objectParent _medic isEqualTo objectParent _patient);
     private _distanceCondition = (_patient distance2D _medic <= ACEGVAR(medical_gui,maxDistance));
 

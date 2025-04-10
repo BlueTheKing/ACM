@@ -10,20 +10,20 @@ class GVAR(TransfusionMenu_Dialog) {
     class ControlsBackground {
         class MenuBackground: RscText {
             idc = -1;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 4));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 4));
-            w = QUOTE(safezoneW / 2);
-            h = QUOTE(safezoneH / 2);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 4));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 4));
+            w = QUOTE(safeZoneW / 2);
+            h = QUOTE(safeZoneH / 2);
             colorBackground[] = {0,0,0,0.7};
         };
         class PatientName: RscText {
             idc = IDC_TRANSFUSIONMENU_PATIENTNAME;
             style = ST_CENTER;
             font = "RobotoCondensed";
-            x = QUOTE(safezoneX);
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 4.1));
-            w = QUOTE(safezoneW);
-            h = QUOTE(safezoneH / 20);
+            x = QUOTE(safeZoneX);
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 4.1));
+            w = QUOTE(safeZoneW);
+            h = QUOTE(safeZoneH / 20);
             colorText[] = {1,1,1,1};
             colorBackground[] = {0,0,0,0};
             text = "";
@@ -34,24 +34,24 @@ class GVAR(TransfusionMenu_Dialog) {
         };
         class SelectedLimbText: PatientName {
             idc = IDC_TRANSFUSIONMENU_SELECTIONTEXT;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 4.2));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 4.2));
-            w = QUOTE(safezoneW / 10);
-            h = QUOTE(safezoneH / 25);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 4.2));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 4.2));
+            w = QUOTE(safeZoneW / 10);
+            h = QUOTE(safeZoneH / 25);
             text = "";
             sizeEx = QUOTE(GUI_GRID_H * 1.1 * NORMALIZE_SIZEEX);
         };
         class SelectedInventoryText: SelectedLimbText {
             idc = IDC_TRANSFUSIONMENU_SELECTION_INV_TEXT;
-            x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 7.2));
+            x = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneW / 7.2));
             text = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Common_InventoryTarget),C_LLSTRING(Common_Self))]));
         };
         class BodyBackground: RscPictureKeepAspect {
             idc = -1;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 8));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 4.5));
-            w = QUOTE(safezoneW / 4);
-            h = QUOTE(safezoneH / 2);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 8));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 4.5));
+            w = QUOTE(safeZoneW / 4);
+            h = QUOTE(safeZoneH / 2);
             type = 0;
             size = 0;
             text = QPATHTOEF(gui,ui\body_background.paa);
@@ -59,10 +59,10 @@ class GVAR(TransfusionMenu_Dialog) {
         /*class SelectionRemainingText: PatientName {
             idc = -1;
             style = 0;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 7.7));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 6));
-            w = QUOTE(safezoneW / 20);
-            h = QUOTE(safezoneH / 40);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 7.7));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 6));
+            w = QUOTE(safeZoneW / 20);
+            h = QUOTE(safeZoneH / 40);
             text = "Remaining: 1000ml";
             sizeEx = QUOTE(GUI_GRID_H * 0.65 * NORMALIZE_SIZEEX);
         };*/
@@ -133,10 +133,10 @@ class GVAR(TransfusionMenu_Dialog) {
             colorBorder[] = {0,0,0,0};
             idc = -1;
             style = 0;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 54));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 9));
-            w = QUOTE(safezoneW / 27);
-            h = QUOTE(safezoneH / 7.15);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 54));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 9));
+            w = QUOTE(safeZoneW / 27);
+            h = QUOTE(safeZoneH / 7.15);
             shadow = 0;
             font = "RobotoCondensed";
             sizeEx = "0";
@@ -145,91 +145,91 @@ class GVAR(TransfusionMenu_Dialog) {
         };
         /*class BodyPart_Head: BodyPart_Torso {
             idc = -1;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 68));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 5.9));
-            w = QUOTE(safezoneW / 34);
-            h = QUOTE(safezoneH / 17.1);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 68));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 5.9));
+            w = QUOTE(safeZoneW / 34);
+            h = QUOTE(safeZoneH / 17.1);
             tooltip = "Head";
         };*/
         class BodyPart_RightArm_Upper: BodyPart_Torso {
             idc = -1;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 22));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 9.4));
-            w = QUOTE(safezoneW / 37);
-            h = QUOTE(safezoneH / 13.9);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 22));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 9.4));
+            w = QUOTE(safeZoneW / 37);
+            h = QUOTE(safeZoneH / 13.9);
             tooltip = __EVAL(call compile BODYPART_PART(RightArm,Upper));
             action = QUOTE([ARR_2('rightarm',0)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_RightArm_Middle: BodyPart_RightArm_Upper {
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 29));
-            h = QUOTE(safezoneH / 26);
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 29));
+            h = QUOTE(safeZoneH / 26);
             tooltip = __EVAL(call compile BODYPART_PART(RightArm,Middle));
             action = QUOTE([ARR_2('rightarm',1)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_RightArm_Lower: BodyPart_RightArm_Upper {
-            y = QUOTE(safezoneY + (safezoneH / 2) + (safezoneH / 300));
-            h = QUOTE(safezoneH / 20);
+            y = QUOTE(safeZoneY + (safeZoneH / 2) + (safeZoneH / 300));
+            h = QUOTE(safeZoneH / 20);
             tooltip = __EVAL(call compile BODYPART_PART(RightArm,Lower));
             action = QUOTE([ARR_2('rightarm',2)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_LeftArm_Upper: BodyPart_RightArm_Upper {
-            x = QUOTE(safezoneY + (safezoneH / 2) + (safezoneW / 54));
+            x = QUOTE(safeZoneY + (safeZoneH / 2) + (safeZoneW / 54));
             tooltip = __EVAL(call compile BODYPART_PART(LeftArm,Upper));
             action = QUOTE([ARR_2('leftarm',0)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_LeftArm_Middle: BodyPart_LeftArm_Upper {
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 29));
-            h = QUOTE(safezoneH / 26);
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 29));
+            h = QUOTE(safeZoneH / 26);
             tooltip = __EVAL(call compile BODYPART_PART(LeftArm,Middle));
             action = QUOTE([ARR_2('leftarm',1)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_LeftArm_Lower: BodyPart_LeftArm_Upper {
-            y = QUOTE(safezoneY + (safezoneH / 2) + (safezoneH / 300));
-            h = QUOTE(safezoneH / 20);
+            y = QUOTE(safeZoneY + (safeZoneH / 2) + (safeZoneH / 300));
+            h = QUOTE(safeZoneH / 20);
             tooltip = __EVAL(call compile BODYPART_PART(LeftArm,Lower));
             action = QUOTE([ARR_2('leftarm',2)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_RightLeg_Upper: BodyPart_Torso {
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 47));
-            y = QUOTE(safezoneY + (safezoneH / 2) + (safezoneH / 35));
-            w = QUOTE(safezoneW / 47);
-            h = QUOTE(safezoneH / 16);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 47));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) + (safeZoneH / 35));
+            w = QUOTE(safeZoneW / 47);
+            h = QUOTE(safeZoneH / 16);
             tooltip = __EVAL(call compile BODYPART_PART(RightLeg,Upper));
             action = QUOTE([ARR_2('rightleg',0)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_RightLeg_Middle: BodyPart_RightLeg_Upper {
-            y = QUOTE(safezoneX + (safezoneW / 2) + (safezoneH / 11));
+            y = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneH / 11));
             tooltip = __EVAL(call compile BODYPART_PART(RightLeg,Middle));
             action = QUOTE([ARR_2('rightleg',1)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_RightLeg_Lower: BodyPart_RightLeg_Upper {
-            y = QUOTE(safezoneX + (safezoneW / 2) + (safezoneH / 6.55));
+            y = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneH / 6.55));
             tooltip = __EVAL(call compile BODYPART_PART(RightLeg,Lower));
             action = QUOTE([ARR_2('rightleg',2)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_LeftLeg_Upper: BodyPart_RightLeg_Upper {
-            x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 5000));
+            x = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneW / 5000));
             tooltip = __EVAL(call compile BODYPART_PART(LeftLeg,Upper));
             action = QUOTE([ARR_2('leftleg',0)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_LeftLeg_Middle: BodyPart_LeftLeg_Upper {
-            y = QUOTE(safezoneX + (safezoneW / 2) + (safezoneH / 11));
+            y = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneH / 11));
             tooltip = __EVAL(call compile BODYPART_PART(LeftLeg,Middle));
             action = QUOTE([ARR_2('leftleg',1)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class BodyPart_LeftLeg_Lower: BodyPart_LeftLeg_Upper {
-            y = QUOTE(safezoneX + (safezoneW / 2) + (safezoneH / 6.55));
+            y = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneH / 6.55));
             tooltip = __EVAL(call compile BODYPART_PART(LeftLeg,Lower));
             action = QUOTE([ARR_2('leftleg',2)] call FUNC(TransfusionMenu_SelectBodyPart));
         };
         class LeftPanelList: RscListBox
         {
             idc = IDC_TRANSFUSIONMENU_LEFTLISTPANEL;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 4.05));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 6));
-            w = QUOTE(safezoneW / 8.5);
-            h = QUOTE(safezoneH / 2.5);
-            rowHeight = QUOTE(safezoneH / 20);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 4.05));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 6));
+            w = QUOTE(safeZoneW / 8.5);
+            h = QUOTE(safeZoneH / 2.5);
+            rowHeight = QUOTE(safeZoneH / 20);
             colorText[] = {1,1,1,1};
             colorSelect[] = {0,0,0,1};
             colorSelect2[] = {0,0,0,1};
@@ -241,10 +241,10 @@ class GVAR(TransfusionMenu_Dialog) {
         };
         class ToggleIV: RscButtonMenu {
             idc = -1;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 6.9));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 4.3));
-            w = QUOTE(safezoneW / 65);
-            h = QUOTE(safezoneH / 35);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 6.9));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 4.3));
+            w = QUOTE(safeZoneW / 65);
+            h = QUOTE(safeZoneH / 35);
             shadow = 0;
             font = "RobotoCondensed";
             sizeEx = "0";
@@ -260,8 +260,8 @@ class GVAR(TransfusionMenu_Dialog) {
             {
                 left = 0;
                 top = 0;
-                w = QUOTE(safezoneW / 55);
-                h = QUOTE(safezoneH / 30);
+                w = QUOTE(safeZoneW / 55);
+                h = QUOTE(safeZoneH / 30);
             };
         };
         class StopTransfusionButton: RscButton {
@@ -275,10 +275,10 @@ class GVAR(TransfusionMenu_Dialog) {
             colorBorder[] = {0,0,0,0};
             idc = IDC_TRANSFUSIONMENU_BUTTON_STOPIV;
             style = ST_CENTER;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 4.35));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 5.1));
-            w = QUOTE(safezoneW / 12);
-            h = QUOTE(safezoneH / 40);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 4.35));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 5.1));
+            w = QUOTE(safeZoneW / 12);
+            h = QUOTE(safeZoneH / 40);
             shadow = 0;
             font = "RobotoCondensed";
             sizeEx = QUOTE(GUI_GRID_H * 0.9 * NORMALIZE_SIZEEX);
@@ -288,23 +288,23 @@ class GVAR(TransfusionMenu_Dialog) {
         class MoveBagButton: StopTransfusionButton {
             text = CSTRING(TransfusionMenu_MoveBag_Display);
             idc = IDC_TRANSFUSIONMENU_BUTTON_MOVEBAG;
-            x = QUOTE(safezoneX + (safezoneW / 2) - (safezoneW / 8));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 6));
-            w = QUOTE(safezoneW / 22);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - (safeZoneW / 8));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 6));
+            w = QUOTE(safeZoneW / 22);
             action = QUOTE(call FUNC(TransfusionMenu_MoveBag));
             tooltip = CSTRING(TransfusionMenu_MoveBag_ToolTip);
         };
         class RemoveBagButton: MoveBagButton {
             text = CSTRING(TransfusionMenu_RemoveBag_Display);
             idc = IDC_TRANSFUSIONMENU_BUTTON_REMOVEBAG;
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 7.5));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 7.5));
             action = QUOTE(call FUNC(TransfusionMenu_RemoveBag));
             tooltip = CSTRING(TransfusionMenu_RemoveBag_ToolTip);
         };
         /*class InfuseBagButton: MoveBagButton {
             text = "Infuse";
             idc = -1;
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 10));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 10));
             action = "";
             tooltip = "Infuse medication into fluid bag";
         };*/
@@ -312,11 +312,11 @@ class GVAR(TransfusionMenu_Dialog) {
         class RightPanelList: LeftPanelList
         {
             idc = IDC_TRANSFUSIONMENU_RIGHTLISTPANEL;
-            x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 7.75));
+            x = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneW / 7.75));
         };
         class SwitchTargetInventory: ToggleIV {
             idc = -1;
-            x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 7.8));
+            x = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneW / 7.8));
             action = QUOTE(call FUNC(TransfusionMenu_SwitchTargetInventory));
             textureNoShortcut = QPATHTOF(ui\transfusionmenu\inventory_select_ca.paa);
             tooltip = CSTRING(Common_SwitchTargetInventory);
@@ -324,7 +324,7 @@ class GVAR(TransfusionMenu_Dialog) {
         class AddBagButton: StopTransfusionButton {
             text = CSTRING(TransfusionMenu_AddBag_Display);
             idc = -1;
-            x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 6.8));
+            x = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneW / 6.8));
             action = QUOTE(call FUNC(TransfusionMenu_AddBag));
             tooltip = CSTRING(TransfusionMenu_AddBag_ToolTip);
         };

@@ -36,6 +36,12 @@ switch (_type) do {
     default {};
 };
 
+if !(IS_UNCONSCIOUS(_patient)) exitWith {
+    private _hint = format [LLSTRING(Adjunct_Failed), _item];
+    [format ["%1<br />%2", _hint, LLSTRING(Adjunct_Failed_Awake)], 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [_medic, _classname] call ACEFUNC(common,addToInventory);
+};
+
 if (_airwayItem != "") exitWith {
     [LSTRING(Adjunct_Already), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
     [_medic, _classname] call ACEFUNC(common,addToInventory);

@@ -71,10 +71,10 @@ class GVAR(SyringeDraw_Dialog) {
             idc = IDC_SYRINGEDRAW_TEXT;
             style = ST_CENTER;
             font = "RobotoCondensed";
-            x = QUOTE(safezoneX);
-            y = QUOTE(safezoneY);
-            w = QUOTE(safezoneW);
-            h = QUOTE(safezoneH / 10);
+            x = QUOTE(safeZoneX);
+            y = QUOTE(safeZoneY);
+            w = QUOTE(safeZoneW);
+            h = QUOTE(safeZoneH / 10);
             colorText[] = {1,1,1,1};
             colorBackground[] = {0,0,0,0};
             text = CSTRING(Syringe_NoMedicationSelected);
@@ -90,16 +90,16 @@ class GVAR(SyringeDraw_Dialog) {
         };
         class BottomText: TopText {
             idc = IDC_SYRINGEDRAW_BOTTOMTEXT;
-            h = QUOTE(safezoneH / 6);
+            h = QUOTE(safeZoneH / 6);
             text = "";
         };
         class MedicationListSelection: TopText {
             idc = IDC_SYRINGEDRAW_MEDLIST_SELECTION_TEXT;
             sizeEx = QUOTE(GUI_GRID_H * 1.1 * NORMALIZE_SIZEEX);
-            x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 3.05));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 4.2));
-            w = QUOTE(safezoneW / 10);
-            h = QUOTE(safezoneH / 25);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneW / 3.05));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 4.2));
+            w = QUOTE(safeZoneW / 10);
+            h = QUOTE(safeZoneH / 25);
             text = __EVAL(call compile QUOTE(format [ARR_2(C_LLSTRING(Common_InventoryTarget),C_LLSTRING(Common_Self))]));
         };
     };
@@ -144,10 +144,10 @@ class GVAR(SyringeDraw_Dialog) {
             soundEscape[] = {};
             idc = IDC_SYRINGEDRAW_BUTTON_DRAW;
             style = ST_CENTER;
-            x = QUOTE(safezoneX + (safezoneW / 2) - ((safezoneW / 24) / 2) - ((safezoneW / 24) * 1.1));
-            y = QUOTE(safezoneY + (safezoneH / 1.2));
-            w = QUOTE(safezoneW / 24);
-            h = QUOTE(safezoneH / 30);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - ((safeZoneW / 24) / 2) - ((safeZoneW / 24) * 1.1));
+            y = QUOTE(safeZoneY + (safeZoneH / 1.2));
+            w = QUOTE(safeZoneW / 24);
+            h = QUOTE(safeZoneH / 30);
             shadow = 0;
             font = "RobotoCondensed";
             sizeEx = QUOTE(GUI_GRID_H * NORMALIZE_SIZEEX);
@@ -157,23 +157,23 @@ class GVAR(SyringeDraw_Dialog) {
         class Button_Inject: Button_Draw {
             text = CSTRING(Syringe_DrawInject);
             idc = IDC_SYRINGEDRAW_BUTTON_INJECT;
-            x = QUOTE(safezoneX + (safezoneW / 2) - ((safezoneW / 24) / 2) + ((safezoneW / 24) * 1.1));
-            w = QUOTE(safezoneW / 13);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) - ((safeZoneW / 24) / 2) + ((safeZoneW / 24) * 1.1));
+            w = QUOTE(safeZoneW / 13);
             onButtonClick = QUOTE([2] call FUNC(Syringe_Draw_Button));
         };
         class Button_Push: Button_Inject {
             text = CSTRING(Syringe_DrawPush);
             idc = IDC_SYRINGEDRAW_BUTTON_PUSH;
-            y = QUOTE(safezoneY + (safezoneH / 1.14));
+            y = QUOTE(safeZoneY + (safeZoneH / 1.14));
             onButtonClick = QUOTE([1] call FUNC(Syringe_Draw_Button));
             show = 0;
         };
         class SwitchTargetInventory: RscButtonMenu {
             idc = IDC_SYRINGEDRAW_MEDLIST_SELECTION_BUTTON;
-            x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 3.1));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 4.3));
-            w = QUOTE(safezoneW / 65);
-            h = QUOTE(safezoneH / 35);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneW / 3.1));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 4.3));
+            w = QUOTE(safeZoneW / 65);
+            h = QUOTE(safeZoneH / 35);
             shadow = 0;
             font = "RobotoCondensed";
             sizeEx = "0";
@@ -190,18 +190,18 @@ class GVAR(SyringeDraw_Dialog) {
             {
                 left = 0;
                 top = 0;
-                w = QUOTE(safezoneW / 55);
-                h = QUOTE(safezoneH / 30);
+                w = QUOTE(safeZoneW / 55);
+                h = QUOTE(safeZoneH / 30);
             };
         };
         class MedicationListPanel: RscListBox
         {
             idc = IDC_SYRINGEDRAW_MEDLIST;
-            x = QUOTE(safezoneX + (safezoneW / 2) + (safezoneW / 3.3));
-            y = QUOTE(safezoneY + (safezoneH / 2) - (safezoneH / 5.3));
-            w = QUOTE(safezoneW / 6.5);
-            h = QUOTE(safezoneH / 2.5);
-            rowHeight = QUOTE(safezoneH / 20);
+            x = QUOTE(safeZoneX + (safeZoneW / 2) + (safeZoneW / 3.3));
+            y = QUOTE(safeZoneY + (safeZoneH / 2) - (safeZoneH / 5.3));
+            w = QUOTE(safeZoneW / 6.5);
+            h = QUOTE(safeZoneH / 2.5);
+            rowHeight = QUOTE(safeZoneH / 20);
             colorText[] = {1,1,1,1};
             colorSelect[] = {0,0,0,1};
             colorSelect2[] = {0,0,0,1};

@@ -1414,6 +1414,9 @@
                 <German>Patient hat bereits einen i.v. Zugang im %1 (%2)</German>
                 <French>Le patient a déjà une IV dans le %1 (%2)</French>
             </Key>
+            <Key ID="STR_ACM_Circulation_IV_Blocked_PressureCuff">
+                <English>IV placement blocked by applied pressure cuff</English>
+            </Key>
             <Key ID="STR_ACM_Circulation_IO_Already">
                 <English>Patient already has IO in the %1</English>
                 <Polish>IO zostało już podłączone w %1</Polish>
@@ -1520,6 +1523,9 @@
                 <German>Patient hat bereits eine Blutdruckmanschette am %1</German>
                 <French>Le patient a déjà un brassard de tension sur le %1</French>
             </Key>
+            <Key ID="STR_ACM_Circulation_PressureCuff_Blocked_IV">
+                <English>Pressure cuff placement blocked by IV</English>
+            </Key>
         </Container>
         <Container name="// Syringe Actions //">
             <Key ID="STR_ACM_Circulation_Syringe_Discard">
@@ -1577,6 +1583,9 @@
                 <French>Injecter %1...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawing">
+                <English>Drawing %1...</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Syringe_DrawingInto">
                 <English>Drawing %1 (%2) into %3ml syringe</English>
                 <Polish>Pobrano %1 (%2) do strzykawki (%3ml)</Polish>
                 <German>Ziehe %1 (%2) in %3ml Spritze auf</German>

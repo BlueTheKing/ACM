@@ -544,6 +544,9 @@
                 <German>Fehler beim Einlegen von %1</German>
                 <French>Échec de l'insertion de %1</French>
             </Key>
+            <Key ID="STR_ACM_Airway_Adjunct_Failed_Awake">
+                <English>Patient is awake</English>
+            </Key>
             <Key ID="STR_ACM_Airway_Adjunct_Failed_Inflammation">
                 <English>Blocked by airway inflammation</English>
             </Key>

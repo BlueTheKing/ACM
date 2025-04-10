@@ -3,7 +3,6 @@
         textureNoShortcut = picture; \
     }
 
-ACM_MEDICALMENU_ACTION_BUTTON(ACE_splint,QACEPATHTOF(medical_treatment,ui\splint_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_tourniquet,QACEPATHTOF(medical_treatment,ui\tourniquet_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_surgicalKit,QACEPATHTOF(medical_treatment,ui\surgicalKit_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_personalAidKit,QACEPATHTOF(medical_treatment,ui\surgicalKit_ca.paa));
@@ -12,7 +11,7 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACE_bodyBag_blue,QACEPATHTOF(medical_treatment,ui\
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_bodyBag_white,QACEPATHTOF(medical_treatment,ui\bodybag_white_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_adenosine,QACEPATHTOF(medical_treatment,ui\adenosine_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_epinephrine,QACEPATHTOF(medical_treatment,ui\epinephrine_ca.paa));
-ACM_MEDICALMENU_ACTION_BUTTON(ACE_morphine,QACEPATHTOF(medical_treatment,ui\morphine_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(ACE_morphine,QPATHTOEF(core,ui\override\morphine_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_GuedelTube,QPATHTOEF(airway,ui\guedeltube_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_IGel,QPATHTOEF(airway,ui\igel_ca.paa));

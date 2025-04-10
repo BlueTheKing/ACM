@@ -40,14 +40,14 @@ class CfgVehicles {
             class ACE_Equipment {
                 class ACM_Action_GasMask {
                     displayName = CSTRING(GasMask);
-                    exceptions[] = {"isNotInside", "isNotSitting"};
+                    exceptions[] = {"isNotInside","isNotSitting"};
                     icon = QPATHTOF(ui\Icon_Gasmask_ca.paa);
                     class ACM_Action_PutOnGasMask {
                         displayName = CSTRING(GasMask_PutOn);
                         condition = QUOTE([_player] call FUNC(canPutOnGasMask));
                         statement = QUOTE([_player] call FUNC(putOnGasMask));
                         showDisabled = 0;
-                        exceptions[] = {"isNotInside", "isNotSitting"};
+                        exceptions[] = {"isNotInside","isNotSitting"};
                     };
                     class ACM_Action_TakeOffGasMask: ACM_Action_PutOnGasMask {
                         displayName = CSTRING(GasMask_TakeOff);
@@ -63,33 +63,33 @@ class CfgVehicles {
                 class ACM_Action_ChemicalDetector {
                     displayName = CSTRING(ChemicalDetector);
                     condition = QUOTE((_player getSlotItemName 610) == 'ChemicalDetector_01_watch_F');
-                    exceptions[] = {"isNotInside", "isNotSitting"};
+                    exceptions[] = {"isNotInside","isNotSitting"};
                     icon = "";
                     class ACM_Action_TurnOnDetector {
                         displayName = CSTRING(ChemicalDetector_TurnOn);
-                        condition = QUOTE(!(_player getVariable [ARR_2(QQGVAR(Detector_State), false)]));
-                        statement = QUOTE([ARR_2(_player, true)] call FUNC(detector_toggle));
+                        condition = QUOTE(!(_player getVariable [ARR_2(QQGVAR(Detector_State),false)]));
+                        statement = QUOTE([ARR_2(_player,true)] call FUNC(detector_toggle));
                         showDisabled = 0;
-                        exceptions[] = {"isNotInside", "isNotSitting"};
+                        exceptions[] = {"isNotInside","isNotSitting"};
                     };
                     class ACM_Action_TurnOffDetector: ACM_Action_TurnOnDetector {
                         displayName = CSTRING(ChemicalDetector_TurnOff);
-                        condition = QUOTE(_player getVariable [ARR_2(QQGVAR(Detector_State), false)]);
-                        statement = QUOTE([ARR_2(_player, false)] call FUNC(detector_toggle));
+                        condition = QUOTE(_player getVariable [ARR_2(QQGVAR(Detector_State),false)]);
+                        statement = QUOTE([ARR_2(_player,false)] call FUNC(detector_toggle));
                     };
                     class ACM_Action_EnableDetectorAlarm: ACM_Action_TurnOnDetector {
                         displayName = CSTRING(ChemicalDetector_EnableAlarm);
-                        condition = QUOTE(!(_player getVariable [ARR_2(QQGVAR(Detector_Alarm_State), false)]));
-                        statement = QUOTE([ARR_2(_player, true)] call FUNC(detector_setAlarm));
+                        condition = QUOTE(!(_player getVariable [ARR_2(QQGVAR(Detector_Alarm_State),false)]));
+                        statement = QUOTE([ARR_2(_player,true)] call FUNC(detector_setAlarm));
                     };
                     class ACM_Action_DisableDetectorAlarm: ACM_Action_TurnOnDetector {
                         displayName = CSTRING(ChemicalDetector_DisableAlarm);
-                        condition = QUOTE(_player getVariable [ARR_2(QQGVAR(Detector_Alarm_State), false)]);
-                        statement = QUOTE([ARR_2(_player, false)] call FUNC(detector_setAlarm));
+                        condition = QUOTE(_player getVariable [ARR_2(QQGVAR(Detector_Alarm_State),false)]);
+                        statement = QUOTE([ARR_2(_player,false)] call FUNC(detector_setAlarm));
                     };
                     class ACM_Action_ResetDetector: ACM_Action_TurnOnDetector {
                         displayName = CSTRING(ChemicalDetector_Reset);
-                        condition = QUOTE(_player getVariable [ARR_2(QQGVAR(Detector_State), false)]);
+                        condition = QUOTE(_player getVariable [ARR_2(QQGVAR(Detector_State),false)]);
                         statement = QUOTE([_player] call FUNC(detector_reset));
                     };
                 };

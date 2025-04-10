@@ -92,6 +92,8 @@ class ACM_Medication {
 
         class Epinephrine_IV: ACM_IV_Medication {
             medicationType = "Epinephrine";
+            timeInSystem = 300;
+            maxEffectTime = 180;
             hrIncrease[] = {10, 20};
             rrAdjust[] = {2, 8};
             breathingEffectivenessAdjust[] = {0.01, 0.04};
@@ -295,6 +297,7 @@ class ACM_Medication {
         };
         class Epinephrine: ACM_IM_Medication { // EpiPen
             medicationType = "Epinephrine";
+            timeInSystem = 360;
             hrIncrease[] = {2, 10};
             rrAdjust[] = {1, 6};
             breathingEffectivenessAdjust[] = {0,0.01};

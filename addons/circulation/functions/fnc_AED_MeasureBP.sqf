@@ -55,6 +55,7 @@ private _sound = playSound3D [QPATHTO_R(sound\aed_pressurecuff.wav), _patient, f
     params ["", "", "_sound"];
 
     stopSound _sound;
+    _patient setVariable [QGVAR(AED_PressureCuffBusy), false, true];
 }, [_medic, _patient, _sound], 10, 
 {
     params ["", "_patient"];

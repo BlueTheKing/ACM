@@ -145,6 +145,9 @@ class CfgFunctions {
             class setUnconsciousAnim { // Force lying animation when waking up
                 file = QPATHTOF(overrides\fnc_setUnconsciousAnim.sqf); //ace/addons/medical_engine/functions/fnc_setUnconsciousAnim.sqf
             };
+            class applyAnimAfterRagdoll { // Lying state
+                file = QPATHTOF(overrides\fnc_applyAnimAfterRagdoll.sqf); //ace/addons/medical_engine/functions/fnc_applyAnimAfterRagdoll.sqf
+            };
             class updateDamageEffects { // Tourniquet effects for legs
                 file = QPATHTOF(overrides\fnc_updateDamageEffects.sqf); //ace/addons/medical_engine/functions/fnc_updateDamageEffects.sqf
             };

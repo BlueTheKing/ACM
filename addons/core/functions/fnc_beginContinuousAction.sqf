@@ -92,7 +92,7 @@ _args call _onStart;
 
     private _patientCondition = (_patient isEqualTo objNull);
     private _medicCondition = (!(alive _medic) || IS_UNCONSCIOUS(_medic) || _medic isEqualTo objNull);
-    private _vehicleCondition = !(objectParent _medic isEqualTo objectParent _patient);
+    private _vehicleCondition = (objectParent _medic isNotEqualTo objectParent _patient);
     private _distanceCondition = (_patient distance2D _medic > ACEGVAR(medical_gui,maxDistance));
 
     private _dialogCondition = dialog;

@@ -321,7 +321,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = QEGVAR(circulation,selfIV);
         items[] = {"ACM_IV_16g"};
         consumeItem = 1;
-        condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,0)] call EFUNC(circulation,hasIV)));
+        condition = QUOTE([ARR_4(_patient,_bodyPart,0,0)] call EFUNC(circulation,canInsertIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,true,true,0)] call EFUNC(circulation,setIV));
         ACM_rollToBack = 1;
         ACM_menuIcon = "ACM_IV_16g";
@@ -341,7 +341,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class InsertIV_16_Middle: InsertIV_16_Upper {
         displayName = ECSTRING(circulation,InsertIV_16_Middle);
-        condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,1)] call EFUNC(circulation,hasIV)));
+        condition = QUOTE([ARR_4(_patient,_bodyPart,0,1)] call EFUNC(circulation,canInsertIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,true,true,1)] call EFUNC(circulation,setIV));
     };
     class RemoveIV_16_Middle: RemoveIV_16_Upper {
@@ -351,7 +351,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class InsertIV_16_Lower: InsertIV_16_Upper {
         displayName = ECSTRING(circulation,InsertIV_16_Lower);
-        condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,2)] call EFUNC(circulation,hasIV)));
+        condition = QUOTE([ARR_4(_patient,_bodyPart,0,2)] call EFUNC(circulation,canInsertIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_16G_M,true,true,2)] call EFUNC(circulation,setIV));
     };
     class RemoveIV_16_Lower: RemoveIV_16_Upper {
@@ -379,7 +379,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class InsertIV_14_Middle: InsertIV_14_Upper {
         displayName = ECSTRING(circulation,InsertIV_14_Middle);
-        condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,1)] call EFUNC(circulation,hasIV)));
+        condition = QUOTE([ARR_4(_patient,_bodyPart,0,1)] call EFUNC(circulation,canInsertIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,true,true,1)] call EFUNC(circulation,setIV));
     };
     class RemoveIV_14_Middle: RemoveIV_14_Upper {
@@ -389,7 +389,7 @@ class ACEGVAR(medical_treatment,actions) {
     };
     class InsertIV_14_Lower: InsertIV_14_Upper {
         displayName = ECSTRING(circulation,InsertIV_14_Lower);
-        condition = QUOTE(!([ARR_4(_patient,_bodyPart,0,2)] call EFUNC(circulation,hasIV)));
+        condition = QUOTE([ARR_4(_patient,_bodyPart,0,2)] call EFUNC(circulation,canInsertIV));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,ACM_IV_14G_M,true,true,2)] call EFUNC(circulation,setIV));
     };
     class RemoveIV_14_Lower: RemoveIV_14_Upper {
@@ -507,7 +507,7 @@ class ACEGVAR(medical_treatment,actions) {
         consumeItem = 0;
         allowSelfTreatment = 1;
         treatmentTime = 2;
-        condition = QUOTE((_patient getVariable [ARR_2(QQEGVAR(circulation,LozengeItem), '')]) == 'Fentanyl');
+        condition = QUOTE((_patient getVariable [ARR_2(QQEGVAR(circulation,LozengeItem),'')]) == 'Fentanyl');
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call EFUNC(circulation,setLozenge));
     };
 

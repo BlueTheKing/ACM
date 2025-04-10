@@ -20,15 +20,15 @@ params ["_patient", "_hazardType"];
 
 private _PFHVarString = format ["ACM_CBRN_%1_PFH", toLower _hazardType];
 
-if (_patient getVariable [(format [_PFHVarString, toLower _hazardType]), -1] != -1) exitWith {};
+if (_patient getVariable [_PFHVarString, -1] != -1) exitWith {};
 
 private _buildupVarString = format ["ACM_CBRN_%1_Buildup", toLower _hazardType];
 
 private _fnc_inArea = {
-    params ["_patient"];
+    params ["_patient", "_hazardType"];
 
     private _zoneList = missionNamespace getVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), createHashMap];
-    private _index = (keys _zoneList) findIf {_patient inArea ((_zoneList getOrDefault [_x, []]) select 0)};
+    private _index = (keys _zoneList) findIf {_patient inArea ((_zoneList getOrDefault [_x, []]) select 1)};
 
     if (_index > -1) exitWith {true};
     false
@@ -60,7 +60,7 @@ private _PFH = [{
     _configArgs params ["_inhalationRate", "_absorptionRate", "_eliminationRate", "_thresholdFunction", "_useThreshold", "_canInhale", "_canAbsorb", "_canAbsorbThroughEyes"];
 
     private _buildup = _patient getVariable [_buildupVarString, 0];
-    private _inArea = _patient call _fnc_inArea;
+    private _inArea = [_patient, _hazardType] call _fnc_inArea;
 
     private _wasExposed = _patient getVariable [(format ["ACM_CBRN_%1_Exposed_State", toLower _hazardType]), false];
     private _wasExposedExternal = _patient getVariable [(format ["ACM_CBRN_%1_Exposed_External_State", toLower _hazardType]), false];
@@ -175,6 +175,18 @@ private _PFH = [{
             _decreaseModifier = _thresholdNegativeRateList select _targetThresholdIndex;
         };
     };
+
+    switch (true) do {
+        case (_exposed && !_filtered): {
+            _buildup = (_buildup + (_inhalationRate * _increaseModifier)) min 100;
+        };
+        case (_exposedExternal && !_protectedBody): {
+            _buildup = (_buildup + (_absorptionRate * _increaseModifier)) min 100;
+        };
+        default {
+            _buildup = (_buildup + (_eliminationRate * _decreaseModifier)) max 0;
+        };
+    };
     
     if (_exposed && !_filtered || _exposedExternal && !_protectedBody) then {
         _buildup = (_buildup + ((_inhalationRate max _absorptionRate) * _increaseModifier)) min 100;
@@ -211,7 +223,7 @@ private _PFH = [{
     [_patient] call FUNC(updateExposureEffects);
 }, 1, [_patient, _PFHVarString, _buildupVarString, _hazardType, _configArgs, _fnc_inArea]] call CBA_fnc_addPerFrameHandler;
 
-_patient setVariable [(format [_PFHVarString, toLower _hazardType]), _PFH, true];
+_patient setVariable [_PFHVarString, _PFH, true];
 
 if (_patient getVariable [QGVAR(CoughPFH), -1] > -1) exitWith {};
 

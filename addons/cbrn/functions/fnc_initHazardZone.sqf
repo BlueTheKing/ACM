@@ -18,7 +18,7 @@
  * Hazard Origin Object <OBJECT>
  *
  * Example:
- * [cursorTarget, false, "Chemical_CS", [5,5,0,false,-1], -1, false, false, true, player] call ACM_CBRN_fnc_initHazardZone;
+ * [cursorTarget, false, "Chemical_CS", [2.5,2.5,0,false,2.5], -1, false, false, true, player] call ACM_CBRN_fnc_initHazardZone;
  *
  * Public: No
  */
@@ -27,13 +27,13 @@ params ["_target", ["_attached", false], ["_hazardType",""], ["_radiusDimensions
 
 if (_hazardType == "") exitWith {};
 
-private _originObject = createVehicle ["ACM_HazardObject", position _target, [], 0, "CAN_COLLIDE"];
+private _originObject = createVehicle ["ACM_HazardObject", [((position _target) select 0), ((position _target) select 1), 0], [], 0, "CAN_COLLIDE"];
 
 if (_radiusDimensions isEqualTo []) then {
-    _radiusDimensions = [5,5,0,false,-1];
+    _radiusDimensions = [2.5,2.5,0,false,2.5];
 };
 
-private _initEffects = !(_hazardType in ["chemical_placebo"]);
+private _initEffects = !(_hazardType in ["chemical_placebo"]) && GVAR(enable);
 
 if !(GVAR(chemicalAffectAI)) then {
     _affectAI = false;
@@ -43,23 +43,24 @@ private _zoneID = -1;
 
 // [a (X), b (Y), angle, isRectangle, c (height)]
 private _hazardRadius = [_originObject, "AREA:", _radiusDimensions, "ACT:", ["NONE", "PRESENT", false], "STATE:", ["false", "", ""]] call CBA_fnc_createTrigger;
+
 _hazardRadius = _hazardRadius select 0;
 
-if (_initEffects) then {
-    private _zoneList = missionNamespace getVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), createHashMap];
+[QGVAR(updateHazardZoneSize), [_hazardRadius, _radiusDimensions]] call CBA_fnc_globalEvent;
 
-    _zoneID = ([1, ((count _zoneList) + 1)] select (count _zoneList > 0));
+private _zoneList = missionNamespace getVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), createHashMap];
 
-    if ((_zoneList getOrDefault [_zoneID, []]) isEqualTo []) then {
-        while {(_zoneList getOrDefault [_zoneID, []]) isNotEqualTo []} do {
-            _zoneID = _zoneID + 1;
-        };
+_zoneID = ([1, ((count _zoneList) + 1)] select (count _zoneList > 0));
+
+if ((_zoneList getOrDefault [_zoneID, []]) isEqualTo []) then {
+    while {(_zoneList getOrDefault [_zoneID, []]) isNotEqualTo []} do {
+        _zoneID = _zoneID + 1;
     };
-
-    _zoneList set [_zoneID, [_hazardRadius, _affectAI]];
-
-    missionNamespace setVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), _zoneList, true];
 };
+
+_zoneList set [_zoneID, [_originObject, _hazardRadius, _affectAI]];
+
+missionNamespace setVariable [(format ["ACM_CBRN_%1_HazardZones", toLower _hazardType]), _zoneList, true];
 
 _originObject setVariable [QGVAR(zoneID), _zoneID, true];
 _originObject setVariable [QGVAR(hazardType), _hazardType, true];
@@ -131,7 +132,8 @@ _originObject setVariable [QGVAR(HazardEmitter_PFH), _PFH];
 
 if (_showMist) then {
     if (_hazardType == "chemical_sarin" && GVAR(sarinIsColorless) || _hazardType == "chemical_lewisite" && GVAR(lewisiteIsColorless)) exitWith {};
-    [QGVAR(spawnChemicalMist), [_originObject, _radiusDimensions, _hazardType]] call CBA_fnc_globalEvent;
+    private _jipID = [QGVAR(spawnChemicalMist), [_originObject, _radiusDimensions, _hazardType]] call CBA_fnc_globalEventJIP;
+    [_jipID, _originObject] call CBA_fnc_removeGlobalEventJIP;
 };
 
 if (_manualPlaced) then {

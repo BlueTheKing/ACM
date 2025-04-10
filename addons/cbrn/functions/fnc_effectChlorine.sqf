@@ -73,7 +73,7 @@ if (_isExposed) then {
     };
 };
 
-if (_buildup < 70) exitWith {};
+if (_buildup < 80) exitWith {};
 
 if (_isExposed && !_protectedEyes && IS_BLINDED(_patient) && GVAR(chlorineCauseBlindness)) then {
     _patient setVariable [QGVAR(Chemical_Chlorine_Blindness), true, true];
