@@ -38,7 +38,7 @@ if (_TPTXState) then {
 };
 
 if (_hardcorePTX) then {
-    _state = _state min 0.8;
+    _state = _state min ([0.8, 0.95] select (IN_CRDC_ARRST(_patient)));
 };
 
 private _exposureBreathingState = GET_EXPOSURE_BREATHINGSTATE(_patient);
