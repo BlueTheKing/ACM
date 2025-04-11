@@ -5,145 +5,174 @@
             <English>ACM: Evacuation</English>
             <Polish>ACM: Ewakuacja</Polish>
             <German>ACM: Evakuierung</German>
+            <Spanish>ACM: Evacuación</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_Tickets">
             <English>Tickets</English>
             <Polish>Punkty odrodzenia</Polish>
             <German>Tickets</German>
+            <Spanish>Tickets</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_CasualtyConversion">
             <English>Casualty Conversion</English>
             <Polish>Konwersja poszkodowanego</Polish>
             <German>Verwundetenkonversion</German>
+            <Spanish>Conversión de bajas</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Enable">
             <English>Enable Evacuation Addon</English>
             <Polish>Włącz ewakuację</Polish>
             <German>Aktiviere Evakuierungs-AddOn</German>
+            <Spanish>Activar evacuación</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Enable_Desc">
             <English>Enable Evacuation Addon functionality, respawning and tickets must be enabled on mission to work</English>
             <Polish>Włącz funkcje ewakuacji na misji, szczegóły dotyczące przygotowania od strony misji znajdziesz w dokumencie opisującym zawartość ACMa</Polish>
             <German>Aktiviere die Evakuationsfunktion, Respawn Tickets müssen in der Mission aktiviert sein</German>
+            <Spanish>Activar el complemento de evacuación. El respawn y los tickets deben estar activados para que funcione correctamente.</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout">
             <English>Clear Casualty Loadout</English>
             <Polish>Oczyść ekwipunek poszkodowanego</Polish>
             <German>Lösche Patientenausrüstung</German>
+            <Spanish>Limpiar el equipamiento del herido</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout_Desc">
             <English>Sets whether casualty's loadout should be cleared after conversion</English>
             <Polish>Definiuje czy ekwipunek poszkodowanego ma zostać wyczyszczony po konwersji</Polish>
             <German>Stellt ein, ob Patientenausrüstung nach der Konversion gelöscht werden soll</German>
+            <Spanish>Establece si el equipamiento debe reiniciarse tras la conversión.</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics">
             <English>Require Antibiotics</English>
             <Polish>Wymaga antybiotyku</Polish>
             <German>Patient benötigt Antibiose</German>
+            <Spanish>Necesita antibióticos</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics_Desc">
             <English>Sets whether antibiotics need to be administered before a casualty can be converted</English>
             <Polish>Definiuje czy do konwersji wymagane jest podanie poszkodowanemu antybiotyków</Polish>
             <German>Stellt ein, ob ein Patient eine Antibiose braucht, bevor er konvertiert werden kann</German>
+            <Spanish>Establece si es obligatorio administrar antibióticos para poder convertir las bajas.</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_PlayerFaction">
             <English>Player Side</English>
             <Polish>Strona gracza</Polish>
             <German>Spielerseite</German>
+            <Spanish>Bando del jugador</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_PlayerFaction_Desc">
             <English>Sets player side, reinforced players will join this side upon spawning</English>
             <Polish>Definiuje po której stronie mają się odradzać gracze po konwersji</Polish>
             <German>Stellt die Spielerseite ein, bei welcher ein respawnter Spieler reinjoint</German>
+            <Spanish>Establece a qué bando pertenecerán los jugadores convertidos.</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn">
             <English>Respawn Ticket Count</English>
             <Polish>Liczba punktów odrodzenia</Polish>
             <German>Respawn Ticketzahl</German>
+            <Spanish>Contador de tickets (respawn)</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn_Desc">
             <English>Sets amount of available respawn tickets, if mission-set ticket count is higher then that number will be used instead</English>
             <Polish>Ustawia ilość punktów odrodzenia, jeśli punktów odrodzenia w misji będzie więcej będą one użyte zamiast nich</Polish>
             <German>Stellt die verfügbaren Respawn-Tickets ein. Wenn die Ticket-Anzahl in der Mission höher als diese Nummer eingestellt ist, dann wird diese Nummer stattdessen genutzt</German>
+            <Spanish>Establece la cantidad de tickets disponibles. Si la misión tiene una mayor cantidad de tickets, sobrescribirá este apartado.</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty">
             <English>Casualty Ticket Count</English>
             <Polish>Liczba punktów poszkodowanych</Polish>
             <German>Verwundeten Ticketzahl</German>
+            <Spanish>Contador de tickets (heridos)</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty_Desc">
             <English>Sets amount of available casualty tickets</English>
             <Polish>Ustawia ilość punktów odrodzenia dostępnych dla poszkodowanych</Polish>
             <German>Stellt die Nummer der verfügbaren Verwundetentickets ein</German>
+            <Spanish>Establece la cantidad de tickets de bajas disponibles.</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty">
             <English>Converted Casualty Death Ticket Penalty</English>
             <German>Konvertierte Patienten Strafe bei Versterben</German>
+            <Spanish>Penalización por muerte de herido</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty_Desc">
             <English>Sets amount of respawn tickets subtracted upon converted casualty death</English>
             <German>Stellt ein, wie viele Respawntickets bei Versterben eines konvertierten Patienten abgezogen werden</German>
+            <Spanish>Establece la cantidad de tickets de respawn que se consume al fallecer un herido que ha sido convertido</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert">
             <English>Allow Converting Casualties</English>
             <Polish>Pozwól na konwersje poszkodowanych</Polish>
             <German>Erlaube das Konvertieren von Patienten</German>
+            <Spanish>Permitir convertir heridos</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert_Desc">
             <English>Training level required to convert casualties</English>
             <Polish>Poziom wyszkolenia potrzebny do konwersji poszkodowanych</Polish>
             <German>Benötigtes Qualifikationslevel um Patienten zu konvertieren</German>
+            <Spanish>Nivel de entrenamiento requerido para convertir heridos</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert">
             <English>Converting Casualty Location</English>
             <Polish>Miejsce konwersji poszkodowanych</Polish>
             <German>Konversionsstandort</German>
+            <Spanish>Lugar habilitado para convertir heridos</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert_Desc">
             <English>Sets locations at which casualty conversion can be performed</English>
             <Polish>Ustawia miejsca w których można przeprowadzić konwersje poszkodowanego</Polish>
             <German>Stellt ein, an welchen Orten eine Konversion möglich ist</German>
+            <Spanish>Establece en que lugares se puede realizar la conversión</Spanish>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Evacuation_ConvertCasualty">
                 <English>Convert Casualty</English>
                 <Polish>Konwertuj poszkodowanego</Polish>
                 <German>Patienten konvertieren</German>
+                <Spanish>Convertir herido</Spanish>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Progress">
                 <English>Converting Casualty...</English>
                 <Polish>Konwersja poszkodwanego...</Polish>
                 <German>Konvertiere Patienten...</German>
+                <Spanish>Convirtiendo herido...</Spanish>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Complete">
                 <English>Casualty Conversion Complete</English>
                 <Polish>Konwersja poszkodowanego zakończona</Polish>
                 <German>Patientenkonversion abgeschlossen</German>
+                <Spanish>Conversión realizada con éxito</Spanish>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_InProgress">
                 <English>Casualty Conversion In Progress</English>
                 <Polish>Konwersja poszkodowanego w toku</Polish>
                 <German>Patientenkonversion wird durchgeführt</German>
+                <Spanish>Conversión en proceso</Spanish>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Cancelled">
                 <English>Casualty Conversion Cancelled</English>
                 <Polish>Konwersja poszkodowanego przerwana</Polish>
                 <German>Patientenkonversion abgebrochen</German>
+                <Spanish>Conversión cancelada</Spanish>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Failed">
                 <English>Casualty Conversion Failed</English>
                 <Polish>Konwersja poszkodowanego nieudana</Polish>
                 <German>Patientenkonversion fehlgeschlagen</German>
+                <Spanish>Conversión fallida</Spanish>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient">
                 <English>Evacuate Patient</English>
                 <Polish>Ewakuuj poszkodowanego</Polish>
                 <German>Evakuiere Patient</German>
+                <Spanish>Evacuar paciente</Spanish>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient_Success">
                 <English>Casualty Successfully Evacuated</English>
                 <Polish>Ewakuacja poszkodwanego udana</Polish>
                 <German>Patient erfolgreich evakuiert</German>
+                <Spanish>Baja evacuada correctamente.</Spanish>
             </Key>
         </Container>
     </Package>

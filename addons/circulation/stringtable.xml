@@ -5,375 +5,450 @@
             <English>ACM: Circulation</English>
             <Polish>ACM: Krążenie</Polish>
             <German>ACM: Kreislauf</German>
+            <Spanish>ACM: Circulación</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Coagulation">
             <English>Coagulation</English>
             <Polish>Krzepnięcie</Polish>
             <German>Blutgerinnung</German>
+            <Spanish>Coagulación</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_CardiacArrest">
             <English>Cardiac Arrest</English>
             <Polish>Zatrzymanie krążenia</Polish>
             <German>Kreislaufstillstand</German>
+            <Spanish>Paro cardiaco</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Defibrillator">
             <English>Defibrillator</English>
             <Polish>Defibrylator</Polish>
             <German>Defibrillator</German>
+            <Spanish>Desfibrilador</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_CPR">
             <English>CPR</English>
             <Polish>RKO</Polish>
             <German>HLW</German>
+            <Spanish>RCP</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_IV_IO">
             <English>IV/IO</English>
             <Polish>IV/IO</Polish>
             <German>IV/IO</German>
+            <Spanish>IV/IO</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_BloodTypes">
             <English>Blood Types</English>
             <Polish>Grupy krwi</Polish>
             <German>Blutgruppen</German>
+            <Spanish>Tipos de sangre</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestBleedRate">
             <English>Cardiac Arrest Bleed Rate</English>
             <Polish>Prędkość krwawienia przy NZK</Polish>
             <German>Kreislaufstillstand Blutungsrate</German>
+            <Spanish>Ratio de sangrado en paro cardiaco</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestBleedRate_Desc">
             <English>Sets bleed rate while in cardiac arrest</English>
             <Polish>Prędkość wykrwawiania się przy zatrzymaniu krążenia</Polish>
             <German>Setzt die Blutungsrate bei Kreislaufstillstand</German>
+            <Spanish>Establece la frecuencia de sangrado cuando el paciente se encuentra en paro cardíaco</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClotting">
             <English>Enable Clotting</English>
             <Polish>Włącz skrzepy</Polish>
             <German>Blutgerinnung aktivieren</German>
+            <Spanish>Activar coagulación</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClotting_Desc">
             <English>Sets whether clotting is enabled</English>
             <Polish>Włącza możliwość tworzenia się skrzepów</Polish>
             <German>Stellt ein, ob das Blutgerinnungssystem aktiviert ist</German>
+            <Spanish>Establece si se activa la coagulación</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClottingAffectAI">
             <English>Clotting for AI</English>
             <Polish>Krzepnięcie dla SI</Polish>
             <German>Blutgerinnung für KI</German>
+            <Spanish>Coagulación para IA</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClottingAffectAI_Desc">
             <English>Sets whether clotting is allowed for AI</English>
             <Polish>Ustawia czy u jednostki SI mają tworzyć się skrzepy</Polish>
             <German>Stellt ein, ob KI-Einheiten von Blutgerinnung betroffen sind</German>
+            <Spanish>Establece si se activa la coagulación para la IA</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestChance">
             <English>Critical Damage Cardiac Arrest Chance</English>
             <Polish>Szansa na nagłe zatrzymanie krążenia</Polish>
             <German>Kritischer Schaden Kreislaufstillstandwahrscheinlichkeit</German>
+            <Spanish>Paro cardiaco por daño crítico</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestChance_Desc">
             <English>Sets chance for unit to go into cardiac arrest after taking critical damage</English>
             <Polish>Szansa na NZK przy otrzymaniu krytycznych obrażeń</Polish>
             <German>Setzt die Wahrscheinlichkeit, dass ein Spieler reanimationspflichtig wird, nachdem kritischer Schaden erhalten wurde</German>
+            <Spanish>Establece la posibilidad de que una unidad entre en paro cardíaco tras recibir daño crítico</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestDeteriorationRate">
             <English>Rhythm Deterioration Multiplier</English>
             <Polish>Mnożnik pogarszania rytmu</Polish>
             <German>Rhythmusverschlechterungsmultiplikator</German>
+            <Spanish>Multiplicador del deterioro del ritmo cardiaco</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestDeteriorationRate_Desc">
             <English>Chance that rhythm will deteriorate while in cardiac arrest</English>
             <Polish>Szansa na pogorszenie się rytmu serca</Polish>
             <German>Wahrscheinlichkeit, dass sich ein Rhythmus im Laufe der Reanimation verschlechtert</German>
+            <Spanish>Establece la probailidad de que el ritmo se deteriore con el paso del tiempo durante un paro cardíaco</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Hardcore_PostCardiacArrest">
             <English>[HARDCORE] Post Cardiac Arrest Complications</English>
             <Polish>[HARDCORE] Komplikacje po zatrzymaniu krążenia</Polish>
             <German>[HARDCORE] Post-Reanimation Komplikationen</German>
+            <Spanish>[HARDCORE] Complicaciones de paro cardíaco</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Hardcore_PostCardiacArrest_Desc">
             <English>[HARDCORE] Sets whether there should be a decrease in cardiac output after ROSC requiring further treatment to fully treat</English>
             <Polish>[HARDCORE] Ustawia czy po spontanicznym powrocie krążenia (ROSC) powinna pojawić się obniżona wydajność serca</Polish>
             <German>[HARDCORE] Stellt ein, ob es eine verringerten kardialen Auswurf nach ROSC gibt, welcher weiter behandelt werden muss, um voll geheilt zu werden</German>
+            <Spanish>[HARDCORE] Establece si debe haber una disminución en el gasto cardiaco tras RCE, lo que implica tratamiento adicional para estabilizar al paciente.</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AED">
             <English>Allow AED</English>
             <Polish>Pozwól na defibrylator</Polish>
             <German>Erlaube AED</German>
+            <Spanish>Permitir DEA</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AED_Desc">
             <English>Training level required to use AED</English>
             <Polish>Poziom wyszkolenia wymagany do użycia defibrylatora</Polish>
             <German>Benötigtes Qualifikationslevel, um den AED nutzen</German>
+            <Spanish>Nivel de entrenamiento requerido para utilizar DEA</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_AEDDistanceLimit">
             <English>AED Distance Limit</English>
             <Polish>Odległość do pracy defibrylatora</Polish>
             <German>AED Entfernungslimit</German>
+            <Spanish>Límite de distancia para el DEA</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_AEDDistanceLimit_Desc">
             <English>Distance over which the AED will disconnect itself from the patient</English>
             <Polish>Odległość w jakiej defibrylator automatycznie odłączy się od pacjenta</Polish>
             <German>Entfernung bei der sich der AED automatisch vom Patienten diskonnektiert</German>
+            <Spanish>Establece la distancia a la que se desconectará automáticamente del paciente</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CPREffectiveness">
             <English>CPR Effectiveness Multiplier</English>
             <Polish>Mnożnik skuteczności RKO</Polish>
             <German>HLW Effektivitätsmultiplikator</German>
+            <Spanish>Multiplicador de efectividad de RCP</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CPREffectiveness_Desc">
             <English>Sets overall CPR effectiveness</English>
             <Polish>Szansa na spontaniczny powrót krążenia podczas wykonywania resuscytacji krążeniowo-oddechowej</Polish>
             <German>Stellt die allumfassende HLW Effektivität ein</German>
+            <Spanish>Establece la efectividad del RCP </Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplications">
             <English>Enable IV Complications</English>
             <Polish>Włącz komplikacje IV</Polish>
             <German>i.v. Zugang Komplikationen aktivieren</German>
+            <Spanish>Activar compliaciones IV</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplications_Desc">
             <English>Sets whether IVs can get complications if inserted on damaged limbs</English>
             <Polish>Ustawia czy mogą pojawić się problemy z wkłuciem IV jeśli zostało wykonane na uszkodzonej kończynie</Polish>
             <German>Stellt ein, ob ein i.v. Zugang Komplikationen auslösen kann, wenn diese an verwundeten Extremitäten platziert werden</German>
+            <Spanish>Establece si la inserción IV puede verse afectada por el daño recibido en la extremidad a la que se aplique.</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplicationsDeteriorate">
             <English>Enable IV Complication Deterioration</English>
             <Polish>Włącz pogarszanie się komplikacji IV</Polish>
             <German>IV-Zugang Komplikationsverschlechterung aktivieren</German>
+            <Spanish>Activar deterioro de las complicaciones IV</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplicationsDeteriorate_Desc">
             <English>Sets whether IVs with complications can deteriorate during use, or deteriorate into a complication if one isn't already present</English>
             <Polish>Ustawia czy mogą pojawić się problemy z wkłuciem IV podczas użycia</Polish>
             <German>Stellt ein, ob sich die i.v. Zugangskomplikationen bei Benutzung verschlechtern können bzw. ob Komplikationen im Verlauf entstehen können</German>
+            <Spanish>Establece si las complicaciones IV puede verse deterioradas.</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IV">
             <English>Allow IV</English>
             <Polish>Pozwól na wkłucie IV</Polish>
             <German>Erlaube i.v. Zugang</German>
+            <Spanish>Permitir IV</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IV_Desc">
             <English>Training level required to insert IVs</English>
             <Polish>Poziom wyszkolenia potrzebny do wykonania wkłucia IV</Polish>
             <German>Benötigtes Qualifikationslevel, um einen i.v. Zugang zu legen</German>
+            <Spanish>Nivel de entrenamiento requerido para insertar IV</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IO">
             <English>Allow IO</English>
             <Polish>Pozwól na wkłucie IO </Polish>
             <German>Erlaube i.o. Zugang</German>
+            <Spanish>Permitir IO</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IO_Desc">
             <English>Training level required to insert IOs</English>
             <Polish>Poziom wyszkolenia potrzebny do wykonania wkłucia IO</Polish>
             <German>Benötigtes Qualifikationslevel, um einen i.o. Zugang zu legen</German>
+            <Spanish>Nivel requerido para insertar IO</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_16">
             <English>16g IV Time</English>
             <Polish>Czas igły 16g</Polish>
             <German>16g i.v. Zeit</German>
+            <Spanish>Duración de 16g IV</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_16_Desc">
             <English>Time to insert 16g IV</English>
             <Polish>Czas potrzebny do wykonania wkłucia IV igłą 16g</Polish>
             <German>Benötigte Zeit, um einen 16g i.v. Zugang zu legen</German>
+            <Spanish>Tiempo para insertar 16g IV</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_14">
             <English>14g IV Time</English>
             <Polish>Czas igły 14g</Polish>
             <German>14g i.v. Zeit</German>
+            <Spanish>Duración de 14g IV</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_14_Desc">
             <English>Time to insert 14g IV</English>
             <Polish>Czas potrzebny do wykonania wkłucia IV igłą 14g</Polish>
             <German>Benötigte Zeit, um einen 14g i.v. Zugang zu legen</German>
+            <Spanish>Tiempo para insertar 14g IV</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_EZ">
             <English>EZ-IO Time</English>
             <Polish>Czas EZ-IO</Polish>
             <German>EZ-IO Zeit</German>
+            <Spanish>Duración de EZ-IO</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_EZ_Desc">
             <English>Time to insert EZ-IO</English>
             <Polish>Czas potrzebny do wykonania wkłucia EZ-IO</Polish>
             <German>Benötigte Zeit, um einen EZ-IO Zugang zu bohren</German>
+            <Spanish>Tiempo para insertar EZ-IO</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_FAST1">
             <English>FAST1 IO Time</English>
             <Polish>Czas FAST1 IO</Polish>
             <German>FAST1 IO Zeit</German>
+            <Spanish>Duración de FAST1 IO</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_FAST1_Desc">
             <English>Time to insert FAST1 IO</English>
             <Polish>Czas potrzebny do wykonania wkłucia urządzeniem FAST1 IO</Polish>
             <German>Benötigte Zeit, um einen FAST1 IO Zugang zu bohren</German>
+            <Spanish>Tiempo para insertar IO</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIV">
             <English>Allow Self IV</English>
             <Polish>Pozwól na IV na sobie</Polish>
             <German>Erlaube Selbst-i.v. Zugang</German>
+            <Spanish>Permitir auto IV</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIV_Desc">
             <English>Allow self-application of IV</English>
             <Polish>Pozwól na wykonanie wkłucia IV na sobie</Polish>
             <German>Erlaube es, einen i.v. Zugang bei sich selbst zu legen</German>
+            <Spanish>Permitir aplicar IV a uno mismo</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIO">
             <English>Allow Self IO</English>
             <Polish>Pozwól na IO na sobie</Polish>
             <German>Erlaube Selbst-i.o. Zugang</German>
+            <Spanish>Permitir auto IO</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIO_Desc">
             <English>Allow self-application of IO</English>
             <Polish>Pozwól na wykonanie wkłucia IO na sobie</Polish>
             <German>Erlaube es, einen i.o. Zugang bei sich selbst zu bohren</German>
+            <Spanish>Permitir aplicar IO a uno mismo</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1">
             <English>%1 Ratio</English>
             <Polish>%1 Współczynnik</Polish>
             <German>%1 Rate</German>
+            <Spanish>%1 Ratio</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1_Desc">
             <English>Ratio out of 100 that is taken by the %1 blood type, ratios must add up to exactly 100</English>
             <Polish>Współczynnik ze 100 przydzielony grupy krwi %1, współczynniki muszą dodawać się dokładnie do 100</Polish>
             <German>Prozentzahl (x von 100) in welcher die Blutgruppe %1 vorkommt. Raten müssen insgesamt 100 ergeben</German>
+            <Spanish>Porcentaje que se toma por el tipo de sangre %1, debe sumar exactamente 100</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList">
             <English>Use Custom List</English>
             <German>Benutze Custom Liste</German>
+            <Spanish>Utilizar lista personalizada</Spanish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList_Desc">
             <English>Sets whether blood types should be set based on custom list instead of SteamID</English>
             <German>Stellt ein, ob die Blutgruppen aufgrund einer eigenen Liste gesetzt werden, statt von der SteamID</German>
+            <Spanish>Establece si los tipos de sangre de seleccionan mediante una lista personalizada en lugar del Stem ID</Spanish>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Circulation_AED">
                 <English>Automated External Defibrillator</English>
                 <Polish>Defibrylator</Polish>
                 <German>Automatischer Externer Defibrillator</German>
+                <Spanish>Desfibrilador (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Short">
                 <English>AED</English>
                 <Polish>Defibrylator</Polish>
                 <German>AED</German>
+                <Spanish>DEA</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Desc">
                 <English>Device used to monitor patient vitals and treat cardiac arrest</English>
                 <Polish>Urządzenie używane do monitorowania pacjetnów</Polish>
                 <German>Ein Patientenmonitor um Vitalwerte zu überwachen und den Patienten in der Reanimation zu defibrillieren</German>
+                <Spanish>Se utiliza para monitorizar al paciente y tratar paros cardiacos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff">
                 <English>Pressure Cuff</English>
                 <Polish>Ciśnieniomierz</Polish>
                 <German>Blutdruckmanschette</German>
+                <Spanish>Manguito de presión</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Desc">
                 <English>Used to measure blood pressure</English>
                 <Polish>Używany do pomiaru ciśnienia krwi</Polish>
                 <German>Wird benutzt, um Blutdruck zu messen</German>
+                <Spanish>Se utiliza para medir la presión sanguínea</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_16g">
                 <English>16g IV</English>
                 <Polish>Igła 16g</Polish>
                 <German>16g i.v. Katheter</German>
+                <Spanish>16g IV</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_16g_Desc">
                 <English>Used to gain intravenous access to transfuse fluids in case of blood loss</English>
                 <Polish>Używana do uzyskania dostępu dożylnego i przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird benutzt, um einen intravenösen Zugang zu etablieren für Flüssigkeitstransfusionen oder i.v. Medikamentengabe</German>
+                <Spanish>Se utiliza para suministrar líquidos de manera intravenosa</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_14g">
                 <English>14g IV</English>
                 <Polish>Igła 14g</Polish>
                 <German>14g i.v. Katheter</German>
+                <Spanish>16g IV</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_14g_Desc">
                 <English>Used to gain intravenous access to rapidly transfuse fluids in case of blood loss</English>
                 <Polish>Używana do uzyskania dostępu dożylnego i szybkiego przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird benutzt, um einen intravenösen Zugang zu etablieren für schnelle Flüssigkeitstransfusion bei Blutverlust</German>
+                <Spanish>Se utiliza para suministrar líquidos de manera intravenosa</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_FAST1">
                 <English>FAST1 IO</English>
                 <Polish>FAST1 IO</Polish>
                 <German>FAST1 IO</German>
+                <Spanish>FAST1 IO</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_FAST1_Desc">
                 <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the sternum</English>
                 <Polish>Używany do uzyskania dostępu doszpikowego w mostku i przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird bei schweren Verletzungen benutzt, um im Sternum einen i.o. Zugang für Flüssigkeitstransfusion oder Medikamentengabe zu legen</German>
+                <Spanish>Se utiliza para suministrar líquidos de manera intraósea por el esternón</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_EZ">
                 <English>EZ-IO</English>
                 <Polish>EZ-IO</Polish>
                 <German>EZ-IO</German>
+                <Spanish>EZ-IO</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_EZ_Desc">
                 <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the extremities</English>
                 <Polish>Używany do uzyskania dostępu doszpikowego w kończynie i przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird benutzt, um einen i.o. Zugang in die Extremitäten zu bohren</German>
+                <Spanish>Se utiliza para suministrar líquidos de manera intraósea por las extremidades</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe">
                 <English>Syringe</English>
                 <Polish>Strzykawka</Polish>
                 <German>Spritze</German>
+                <Spanish>Jeringuilla</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringes">
                 <English>Syringes</English>
                 <Polish>Strzykawki</Polish>
                 <German>Spritzen</German>
+                <Spanish>Jeringuillas</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_%1">
                 <English>Syringe (%1ml)</English>
                 <Polish>Strzykawka (%1ml)</Polish>
                 <German>Spritze (%1 ml)</German>
+                <Spanish>Jeringuilla (%1ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Desc_%1">
                 <English>Used to administer %1ml of medication</English>
                 <Polish>Używana do podania %1ml leku</Polish>
                 <German>Wird benutzt, um %1 ml Medikament zu spritzen</German>
+                <Spanish>Se utiliza para administrar %1ml de medicamentos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_PreparedWith">
                 <English>%1ml syringe prepared with %2</English>
                 <Polish>Strzykawka %1ml przygotowana z %2 </Polish>
                 <German>%1 ml Spritze mit %2</German>
+                <Spanish>Jeringuilla de %1ml preparada con %2</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_BloodBag">
                 <English>Blood Bag %1</English>
                 <Polish>Krew %1</Polish>
                 <German>Blutkonserve %1</German>
+                <Spanish>Bolsa de sangre %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_BloodBag_Desc">
                 <English>Used to replenish lost blood volume</English>
                 <Polish>Używana do transfuzji krwi</Polish>
                 <German>Wird benutzt, um Blutvolumen aufzufüllen</German>
+                <Spanish>Se utiliza para recuperar volumen de sangre perdido</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit">
                 <English>Field Blood Transfusion Kit</English>
                 <Polish>Polowy zestaw do transfuzji krwi</Polish>
                 <German>Feld-Bluttransfusionskit</German>
+                <Spanish>Kit de transfusión de sangre</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Short">
                 <English>FBTK</English>
                 <Polish>Zestaw do transfuzji</Polish>
                 <German>FBTK</German>
+                <Spanish>Kit de transfusión de sangre</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Desc">
                 <English>Used to transfuse fresh blood in emergency</English>
                 <Polish>Używany do transfuzji świeżej krwi w nagłych wypadkach</Polish>
                 <German>Wird benutzt, um frisches Vollblut im Notfall zu transfundieren</German>
+                <Spanish>Si utiliza para transfundir sangre fresca en situaciones de emergencia</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag">
                 <English>Fresh Blood Bag %1</English>
                 <Polish>Świeża krew %1</Polish>
                 <German>Frische Vollblutkonserve %1</German>
+                <Spanish>Bolsa de sangre fresca %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag_Short">
                 <English>FWB Bag %1</English>
                 <Polish>Świeża krew %1</Polish>
                 <German>Frische Vollblutkonserve %1</German>
+                <Spanish>Bolsa de sangre fresca %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag_Desc">
                 <English>Freshly transfused blood, used to replenish lost blood volume</English>
                 <Polish>Świeżo pozyskana krew, używana do transfuzji krwi</Polish>
                 <German>Frisches Vollblut, wird benutzt um Blutvolumen aufzufüllen</German>
+                <Spanish>Sangre recién transfundida, rellena el volumen de sangre perdida</Spanish>
             </Key>
         </Container>
         <Container name="// Items - Individual Medication //">
@@ -381,36 +456,43 @@
                 <English>Epinephrine</English>
                 <Polish>Epinefryna</Polish>
                 <German>Adrenalin</German>
+                <Spanish>Epinefrina</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Adenosine">
                 <English>Adenosine</English>
                 <Polish>Adenozyna</Polish>
                 <German>Adenosin</German>
+                <Spanish>Adenosina</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Morphine">
                 <English>Morphine</English>
                 <Polish>Morfina</Polish>
                 <German>Morphin</German>
+                <Spanish>Morfina</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ketamine">
                 <English>Ketamine</English>
                 <Polish>Ketamina</Polish>
                 <German>Ketamin</German>
+                <Spanish>Ketamina</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Lidocaine">
                 <English>Lidocaine</English>
                 <Polish>Lidokaina</Polish>
                 <German>Lidocain</German>
+                <Spanish>Lidocaina</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_TXA">
                 <English>TXA</English>
                 <Polish>TXA</Polish>
                 <German>TXA</German>
+                <Spanish>ATX</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Amiodarone">
                 <English>Amiodarone</English>
                 <Polish>Amiodaron</Polish>
                 <German>Amiodaron</German>
+                <Spanish>Amiodarona</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Atropine">
                 <English>Atropine</English>
@@ -419,36 +501,43 @@
                 <English>Fentanyl</English>
                 <Polish>Fentanyl</Polish>
                 <German>Fentanyl</German>
+                <Spanish>Fentanilo</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ondansetron">
                 <English>Ondansetron</English>
                 <Polish>Ondansetron</Polish>
                 <German>Ondansetron</German>
+                <Spanish>Ondansetron</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_CalciumChloride">
                 <English>Calcium Chloride</English>
                 <Polish>Chlorek wapnia</Polish>
                 <German>Calciumchlorid</German>
+                <Spanish>Cloruro de calcio</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ertapenem">
                 <English>Ertapenem</English>
                 <Polish>Eratapenem</Polish>
                 <German>Ertapenem</German>
+                <Spanish>Ertapenem</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Esmolol">
                 <English>Esmolol</English>
                 <Polish>Esmolol</Polish>
                 <German>Esmolol</German>
+                <Spanish>Esmolol</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Naloxone">
                 <English>Naloxone</English>
                 <Polish>Nalokson</Polish>
                 <German>Naloxon</German>
+                <Spanish>Naloxona</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Penthrox">
                 <English>Penthrox</English>
                 <Polish>Metoksyfluran</Polish>
                 <German>Methoxyfluran</German>
+                <Spanish>Penthrox</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_OTFC">
                 <English>Oral Transmucosal Fentanyl Citrate</English>
@@ -465,71 +554,85 @@
                 <English>Epinephrine Vial (1mg/1ml)</English>
                 <Polish>Epinefryna (1mg/1ml)</Polish>
                 <German>Adrenalin Ampulle (1mg/1ml)</German>
+                <Spanish>Vial de Epinefrina (1mg/1ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Epinephrine_Desc">
                 <English>Used to treat cardiac arrest</English>
                 <Polish>Używana do leczenia zatrzymania krążenia</Polish>
                 <German>Wird im Rahmen der Reanimation verwendet</German>
+                <Spanish>Se usa para tratar paradas caridacas</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Adenosine">
                 <English>Adenosine Vial (12mg/4ml)</English>
                 <Polish>Adenozyna (12mg/4ml)</Polish>
                 <German>Adenosin Ampulle (12mg/4ml)</German>
+                <Spanish>Vial de Adenosina (12mg/4ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Adenosine_Desc">
                 <English>Used to treat certain heart arrhythmias</English>
                 <Polish>Używana do leczenia niektórych rodzajów arytmii serca </Polish>
                 <German>Behandelt bestimmte Arrhythmien</German>
+                <Spanish>Ayuda a tratar ciertas arritmias</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Morphine">
                 <English>Morphine Vial (10mg/2ml)</English>
                 <Polish>Morfina (10mg/2ml)</Polish>
                 <German>Morphin Ampulle (10mg/2ml)</German>
+                <Spanish>Vial de Morfina (10mg/2ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Morphine_Desc">
                 <English>Used to manage moderate to severe pain experiences</English>
                 <Polish>Używana do walki ze średnim i silnym bólem</Polish>
                 <German>Behandelt moderaten bis schweren Schmerz</German>
+                <Spanish>Ayuda a tratar desde el dolor moderado al severo</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ketamine">
                 <English>Ketamine Vial (500mg/10ml)</English>
                 <Polish>Ketamina (500mg/10ml)</Polish>
                 <German>Ketamin Ampulle (500mg/10ml)</German>
+                <Spanish>Vial de Ketamina (500mg/ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ketamine_Desc">
                 <English>Used to manage moderate to severe pain, alternative to opioid analgesics</English>
                 <Polish>Używana do walki ze średnim i silnym bólem, alternatywa dla opioidów</Polish>
                 <German>Behandelt moderaten bis schweren Schmerz, alternative zu Opioid-Analgetika</German>
+                <Spanish>Ayuda a tratar desde el dolor moderado al severo, es una alternativa a los opiácieos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Lidocaine">
                 <English>Lidocaine Vial (100mg/5ml)</English>
                 <Polish>Lidokaina (100mg/5ml)</Polish>
                 <German>Lidocain Ampulle (100mg/5ml)</German>
+                <Spanish>Vial de Lidocaina (100mg/5ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Lidocaine_Desc">
                 <English>Used as local anesthetic for painful surgical procedures, and to treat irregular heart rhythms</English>
                 <Polish>Używana jako lokalne znieczulenie dla bolesnych zabiegów medycznych</Polish>
                 <German>Lokalanästhetikum und Antiarrhythmikum</German>
+                <Spanish>Se utiliza para anestesia durante procesos quirúrgicos dolorosos, y para tratar ritmos cardiacos irregulares.</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_TXA">
                 <English>TXA Vial (1g/10ml)</English>
                 <Polish>TXA (1g/10ml)</Polish>
                 <German>TXA Ampulle (1g/10ml)</German>
+                <Spanish>Vial de ATX (1g/10ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_TXA_Desc">
                 <English>Used to manage catastrophic bleeding by preventing clot dissolvement</English>
                 <Polish>Używany do walki z krwawieniem wewnętrznym przez ograniczenie rozbijania skrzepów w krwioobiegu</Polish>
                 <German>Antifibrinolytikum, um katastrophale Blutungen zu stoppen</German>
+                <Spanish>Se utiliza para gestionar sangrados catastróficos, previniendo la disolución de coágulos.</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Amiodarone">
                 <English>Amiodarone Vial (150mg/3ml)</English>
                 <Polish>Amiodaron (150mg/3ml)</Polish>
                 <German>Amiodaron Ampulle (150mg/3ml)</German>
+                <Spanish>Vial de Amiodarona (150mg/3ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Amiodarone_Desc">
                 <English>Used to treat irregular heart rhythms</English>
                 <Polish>Używany do walki z nieregularnymi rytmami serca</Polish>
                 <German>Antiarrhythmikum</German>
+                <Spanish>Utilizado para tratar ritmos cardiacos irregulares</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Atropine">
                 <English>Atropine Vial (1mg/1ml)</English>
@@ -541,66 +644,79 @@
                 <English>Fentanyl Vial (100mcg/2ml)</English>
                 <Polish>Fentanyl (100mcg/2ml)</Polish>
                 <German>Fentanyl Ampulle (100μg/2ml)</German>
+                <Spanish>Vial de Fentanilo (100μg/2ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Fentanyl_Desc">
                 <English>Used to manage acute severe pain</English>
                 <Polish>Używana do walki z silnym bólem</Polish>
                 <German>Behandelt schweren Schmerz</German>
+                <Spanish>Se utiliza para tratar dolores severos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ondansetron">
                 <English>Ondansetron Vial (4mg/2ml)</English>
                 <Polish>Ondansetron (4mg/2ml)</Polish>
                 <German>Ondansetron Ampulle (4mg/2ml)</German>
+                <Spanish>Vial de Ondanestron (4mg/2ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ondansetron_Desc">
                 <English>Used to manage nausea and vomiting</English>
                 <Polish>Używany do walki z mdłościami i wymiotami</Polish>
                 <German>Antiemetikum, um Übelkeit und Ebrechen zu behandeln.</German>
+                <Spanish>Se utiliza para tratar nauseas y vómitos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_CalciumChloride">
                 <English>Calcium Chloride Vial (1g/10ml)</English>
                 <Polish>Chlorek wapnia (1g/10ml)</Polish>
                 <German>Calciumchlorid Ampulle (1g/10ml)</German>
+                <Spanish>Vial de Cloruro de calcio (1g/10ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_CalciumChloride_Desc">
                 <English>Used to manage low calcium after blood transfusion</English>
                 <Polish>Używany do walki z niskimi poziomami wapnia po transfuzji krwi</Polish>
                 <German>Behandelt einen niedrigen Calciumpsiegel nach Bluttransfusion</German>
+                <Spanish>Se utiliza para gestionar bajos niveles de calcio tras una transfusión.</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ertapenem">
                 <English>Ertapenem Vial (1g/3.2ml)</English>
                 <Polish>Ertapenem (1g/3.2ml)</Polish>
                 <German>Ertapanem Ampulle (1g/3.2ml)</German>
+                <Spanish>Vial de Ertapenem (1g/3,2ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ertapenem_Desc">
                 <English>Used to manage infections from open wounds, required before evacuation of casualty</English>
                 <Polish>Używany do walki z infekcjami otwartych ran, wymagany do ewakuacji </Polish>
                 <German>Antibiotika, um Wundinfektionen bei offenen Wunden vorzubeugen. Wird vor Evakuierung benötigt.</German>
+                <Spanish>Se utiliza para tratar infecciones en heridas abiertas, requerido para poder efectuar evacuaciones.</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Esmolol">
                 <English>Esmolol Vial (100mg/10ml)</English>
                 <Polish>Esmolol (100mg/10ml)</Polish>
                 <German>Esmolol Ampulle (100mg/10ml)</German>
+                <Spanish>Vial de Esmolol (100mg/10ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Esmolol_Desc">
                 <English>Used to lower heart rate for a short time</English>
                 <Polish>Używany do obniżenia tętna na krótki czas </Polish>
                 <German>Betablocker, um kurzfristig die Herzfrequenz zu senken</German>
+                <Spanish>Se utiliza para reducir el ritmo cardiaco duranto un corto periodo de tiempo</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Spray_Naloxone">
                 <English>Naloxone Nasal Spray</English>
                 <Polish>Nalokson w spreju</Polish>
                 <German>Naloxon Nasenspray</German>
+                <Spanish>Spray nasal de naloxona</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Spray_Naloxone_Desc">
                 <English>Used to rapidly reverse opioid overdose</English>
                 <Polish>Używany do odwrócenia efektów opioidów</Polish>
                 <German>Wird bei Opioidüberdosis verwendet</German>
+                <Spanish>Trata la sobredosis de opiáceos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol">
                 <English>Paracetamol</English>
                 <Polish>Paracetamol</Polish>
                 <German>Paracetamol</German>
+                <Spanish>Paracetamol</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_SinglePack">
                 <English>Paracetamol (Single Pack)</English>
@@ -612,26 +728,31 @@
                 <English>Used to combat mild to moderate pain</English>
                 <Polish>Używany do walki z małym i średnim bólem</Polish>
                 <German>Behandelt leichten bis moderaten Schmerz</German>
+                <Spanish>Trata el dolor leve y moderado</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AmmoniaInhalant">
                 <English>Ammonia Inhalant</English>
                 <Polish>Amoniak wziewny</Polish>
                 <German>Ammoniak Inhalant</German>
+                <Spanish>Carbonato de amonio</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AmmoniaInhalant_Desc">
                 <English>Used to wake up patients who've fainted</English>
                 <Polish>Używany do budzenia nieprzytomnych pacjentów</Polish>
                 <German>Wird verwendet, um bewusstlose Patienten aufzuwecken</German>
+                <Spanish>Despierta a pacientes estables</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Inhaler_Penthrox">
                 <English>Penthrox Inhaler</English>
                 <Polish>Inhalator Penthrox</Polish>
                 <German>Penthroxpfeife</German>
+                <Spanish>Inhalador de Phentrox</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Inhaler_Penthrox_Desc">
                 <English>Used to rapidly manage acute pain for a short time</English>
                 <Polish>Używany do walki z silnym bólem na krótki okres czasu</Polish>
                 <German>Pfeife mit Methoxyflurangas um Schmerzen kurzfristig zu behandeln</German>
+                <Spanish>Trata rapidamente dolores agudos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl">
                 <English>Fentanyl Lozenge</English>
@@ -651,71 +772,85 @@
                 <English>Use Paracetamol</English>
                 <Polish>Użyj paracetamolu</Polish>
                 <German>Paracetamol verabreichen</German>
+                <Spanish>Utilizar paracetamol</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_UseParacetamol_Progress">
                 <English>Using Paracetamol...</English>
                 <Polish>Używanie paracetamolu...</Polish>
                 <German>Verabreiche Paracetamol...</German>
+                <Spanish>Utilizando paracetamol...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_UsePenthroxInhaler">
                 <English>Use Penthrox Inhaler</English>
                 <Polish>Użyj inhalatora pentrox</Polish>
                 <German>Penthroxpfeife benutzen</German>
+                <Spanish>Utilizar inhalador de Phentrox</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_UsePenthroxInhaler_Progress">
                 <English>Using Penthrox Inhaler...</English>
                 <Polish>Używanie inhalatora pentorx...</Polish>
                 <German>Benutze Penthroxpfeife...</German>
+                <Spanish>Utilizando inhalador de Phentrox...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_UseAmmoniaInhalant">
                 <English>Use Ammonia Inhalant</English>
                 <Polish>Użyj amoniaku wziewnego</Polish>
                 <German>Ammoniak-Inhalant benutzen</German>
+                <Spanish>Utilizar carbonato de amonio</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_UseAmmoniaInhalant_Progress">
                 <English>Using Ammonia Inhalant...</English>
                 <Polish>Używanie amoniaku wziewnego...</Polish>
                 <German>Benutze Ammoniak-Inhalant...</German>
+                <Spanish>Utilizando carbonato de amonio...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_UseNaloxoneSpray">
                 <English>Use Naloxone Spray</English>
                 <Polish>Użyj naloxonu w spreju</Polish>
                 <German>Naloxon Nasenspray verwenden</German>
+                <Spanish>Utilizar spray de Naloxona</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_UseNaloxoneSpray_Progress">
                 <English>Using Naloxone Spray...</English>
                 <Polish>Używanie naloksonu w spreju...</Polish>
                 <German>Benutze Naloxon Nasenspray...</German>
+                <Spanish>Utilizando spray de Naloxona...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_UseSyringe">
                 <English>Use Syringe (%1ml)</English>
                 <Polish>Użyj strzykawki (%1ml)</Polish>
                 <German>Spritze (%1ml) applizieren</German>
+                <Spanish>Utilizar Jeringuilla (%1ml)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Intravenous_Short">
                 <English>IV</English>
                 <Polish>IV</Polish>
                 <German>i.v.</German>
+                <Spanish>IV</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Intraosseous_Short">
                 <English>IO</English>
                 <Polish>IO</Polish>
                 <German>i.o.</German>
+                <Spanish>IO</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Intramuscular_Short">
                 <English>IM</English>
                 <Polish>IM</Polish>
                 <German>i.m.</German>
+                <Spanish>IM</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Push">
                 <English>Push</English>
                 <Polish>Podaj (IV/IO)</Polish>
                 <German>Injizieren (IV/IO)</German>
+                <Spanish>Administrar (IV/IO)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Inject">
                 <English>Inject</English>
                 <Polish>Podaj (IM)</Polish>
                 <German>Injizieren (IM)</German>
+                <Spanish>Inyectar (IM)</Spanish>
             </Key>
         </Container>
         <Container name="// Fentanyl Lozenge Actions //">
@@ -770,56 +905,67 @@
                 <English>Begin CPR</English>
                 <Polish>Rozpocznij RKO</Polish>
                 <German>HLW starten</German>
+                <Spanish>Comenzar RCP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Already">
                 <English>Patient already has CPR provider</English>
                 <Polish>RKO jest już prowadzone na poszkodowanym</Polish>
                 <German>Patient erhält bereits HLW</German>
+                <Spanish>Al paciente ya le están haciendo RCP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_ActionLog_Started">
                 <English>%1 started CPR</English>
                 <Polish>%1 rozpoczął RKO</Polish>
                 <German>%1 startet HLW</German>
+                <Spanish>%1 ha comenzado RCP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_ActionLog_Stopped">
                 <English>%1 stopped CPR (%2)</English>
                 <Polish>%1 zakończył RKO (2%)</Polish>
                 <German>%1 stoppt HLW (%2)</German>
+                <Spanish>%1 ha pausado RCP (%2)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Stop">
                 <English>Stop CPR</English>
                 <Polish>Zakończ RKO</Polish>
                 <German>Stopp HLW</German>
+                <Spanish>Detener RCP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Stopped">
                 <English>Stopped CPR</English>
                 <Polish>Zakończono RKO</Polish>
                 <German>HLW gestoppt</German>
+                <Spanish>Pausar RCP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Started">
                 <English>Started CPR</English>
                 <Polish>Rozpoczęto RKO</Polish>
                 <German>Startete HLW</German>
+                <Spanish>RCP comenzada</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Continue">
                 <English>Continue CPR</English>
                 <Polish>Kontynuuj RKO</Polish>
                 <German>HLW fortsetzen</German>
+                <Spanish>Continuar RCP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Continued">
                 <English>Continued CPR</English>
                 <Polish>Kontynuuje RKO</Polish>
                 <German>setzte HLW fort</German>
+                <Spanish>RCP reanudada</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Pause">
                 <English>Pause CPR</English>
                 <Polish>Przerwij RKO</Polish>
                 <German>HLW pausieren</German>
+                <Spanish>Pausar RCP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Paused">
                 <English>Paused CPR</English>
                 <Polish>Przerwał RKO</Polish>
                 <German>HLW pausiert</German>
+                <Spanish>RCP pausada</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwapToBVM">
                 <English>Swap To BVM</English>
@@ -833,21 +979,25 @@
                 <English>Check Capillary Refill Time</English>
                 <Polish>Sprawdź nawrót kapilarny</Polish>
                 <German>Rekapillarisierungszeit prüfen</German>
+                <Spanish>Comprobar respuesta capilar</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CheckCapillaryRefill_Progress">
                 <English>Checking Capillary Refill Time...</English>
                 <Polish>Sprawdzanie nawrotu kapilarnego...</Polish>
                 <German>Überprüfe Rekapillarisierungszeit...</German>
+                <Spanish>comprobando respuesta capilar...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CapillaryRefill_Hint">
                 <English>Measured Capillary Refill Time&lt;br/&gt;%1 seconds</English>
                 <Polish>Zmierzono nawrót kapilarny: &lt;br/&gt;%1 sekundy</Polish>
                 <German>Rekapillarisierungszeit gemessen: &lt;br/&gt;%1 Sekunden</German>
+                <Spanish>Tiempo de respuesta capilar medido &lt;br/&gt;%1 segundos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_CapillaryRefill_ActionLog">
                 <English>%1 measured capillary refill time: %2s (%3)</English>
                 <Polish>%1 sprawdził nawrót kapilarny: %2s (%3)</Polish>
                 <German>%1 hat die Rekapillarisierungszeit gemessen: %2s (%3)</German>
+                <Spanish>%1 ha medido el tiempo de respuesta capilar: %2s (%3)</Spanish>
             </Key>
         </Container>
         <Container name="// Feel Pulse Action //">
@@ -855,31 +1005,37 @@
                 <English>Feel Pulse</English>
                 <Polish>Sprawdź puls</Polish>
                 <German>Puls fühlen</German>
+                <Spanish>Comprobar pulso</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_FeelingForPulse">
                 <English>Feeling for pulse...</English>
                 <Polish>Wyczuwanie tętna...</Polish>
                 <German>Puls tasten...</German>
+                <Spanish>Comprobando pulso...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Stopped">
                 <English>Stopped feeling pulse</English>
                 <Polish>Przestano wyczuwać tętno</Polish>
                 <German>Puls tasten beendet</German>
+                <Spanish>Has parado de comprobar el pulso</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Carotid">
                 <English>Carotid</English>
                 <Polish>Tętnica szyjna</Polish>
                 <German>Karotispuls</German>
+                <Spanish>Carótida</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Radial">
                 <English>Radial</English>
                 <Polish>Promień</Polish>
                 <German>Radialispuls</German>
+                <Spanish>Radial</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Femoral">
                 <English>Femoral</English>
                 <Polish>Udo</Polish>
                 <German>Femoralispuls</German>
+                <Spanish>Femoral</Spanish>
             </Key>
         </Container>
         <Container name="// Measure Blood Pressure Action //">
@@ -887,51 +1043,61 @@
                 <English>Attach Pressure Cuff</English>
                 <Polish>Załóż ciśnieniomierz</Polish>
                 <German>Blutdruckmanschette anbringen</German>
+                <Spanish>Colocar manguito de presión arterial</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Attach_Progress">
                 <English>Attaching Pressure Cuff...</English>
                 <Polish>Zakładanie ciśnieniomierza...</Polish>
                 <German>Befestige Blutdruckmanschette...</German>
+                <Spanish>Colocando manguito de presión...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Remove">
                 <English>Remove Pressure Cuff</English>
                 <Polish>Zdejmij ciśnieniomierz</Polish>
                 <German>Blutdruckmanschette entfernen</German>
+                <Spanish>Retirar manguito de presión arterial</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Remove_Progress">
                 <English>Removing Pressure Cuff...</English>
                 <Polish>Zdejmowanie ciśnieniomierza...</Polish>
                 <German>Entferne Blutdruckmanschette...</German>
+                <Spanish>Reitrando manguito de presión...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Measure">
                 <English>Measure Blood Pressure</English>
                 <Polish>Sprawdź ciśnienie krwi</Polish>
                 <German>Blutdruck messen</German>
+                <Spanish>Medir presión sanguínea</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Measure_Stethoscope">
                 <English>Measure Blood Pressure (Stethoscope)</English>
                 <Polish>Sprawdź ciśnienie krwi (stetoskop)</Polish>
                 <German>Blutdruck messen (Stethoskop)</German>
+                <Spanish>Medir presión sanguínea (Estetoscopio)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Stopped">
                 <English>Stopped measuring blood pressure</English>
                 <Polish>Przestano mierzyć ciśnienie</Polish>
                 <German>Blutdruckmessung unterbrochen</German>
+                <Spanish>Has parado de medir la presión sanguínea</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Measuring">
                 <English>Measuring Blood Pressure...</English>
                 <Polish>Pomiar ciśnienia...</Polish>
                 <German>Messe Blutdruck...</German>
+                <Spanish>Midiendo presión sanguínea</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Hint_Bulb">
                 <English>Squeeze Bulb\n+50 (LMB) | +30 (RMB)</English>
                 <Polish>Napompuj \n+50 (LPM) | +30 (PPM)</Polish>
                 <German>Manschette aufpumpen \n+50 (Linke Maus) | +30 (Rechte Maus)</German>
+                <Spanish>Apretar bomba\n+50 (BIR) | +30 (BDR)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Hint_Valve">
                 <English>Release Pressure\n-10 (LMB) | -2 (RMB)</English>
                 <Polish>Spuść ciśnienie \n-10 (LMB) | -2 (RMB)</Polish>
                 <German>Druck ablassen \n-10 (Linke Maus) | -2 (Rechte Maus)</German>
+                <Spanish>Liberar presión\n-10 (BIR) | -2 (BDR)</Spanish>
             </Key>
         </Container>
         <Container name="// Transfusion Menu //">
@@ -939,101 +1105,121 @@
                 <English>Transfuse Fluids</English>
                 <Polish>Przeprowadź tranfuzje</Polish>
                 <German>Flüssigkeiten transfundieren</German>
+                <Spanish>Transfundir fluidos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StopTransfusion_Display">
                 <English>Stop %1 Transfusion</English>
                 <Polish>Zatrzymaj transfuzję: %1</Polish>
                 <German>Beende %1 Transfusion</German>
+                <Spanish>Detener tansfusión de %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StopTransfusion_ToolTip">
                 <English>Stop fluid transfusion on selected %1</English>
                 <Polish>Zatrzymaj transfuzje na wybranym: %1</Polish>
                 <German>Beende %1 Transfusion am ausgewählten %1</German>
+                <Spanish>Transfusión de %1 detenida</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StartTransfusion_Display">
                 <English>Start %1 Transfusion</English>
                 <Polish>Rozpocznij transfuzje: %1</Polish>
                 <German>Beginne %1Transfusion</German>
+                <Spanish>Comenzar transfusión de %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StartTransfusion_ToolTip">
                 <English>Start fluid transfusion on selected %1</English>
                 <Polish>Rozpocznij transfuzje na wybranym: %1</Polish>
                 <German>Beginne Transfusion am ausgewählten %1</German>
+                <Spanish>Comenzar transfusión del líquido seleccionado (%1)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_ToggleIV">
                 <English>Toggle IV/IO</English>
                 <Polish>Włącz IV/IO</Polish>
                 <German>IV/IO umschalten</German>
+                <Spanish>Alternar IV/IO</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_AddBag_Display">
                 <English>Add Bag</English>
                 <Polish>Dodaj torebkę</Polish>
                 <German>Infusion hinzufügen</German>
+                <Spanish>Añadir bolsa</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_AddBag_ToolTip">
                 <English>Add new fluid bag</English>
                 <Polish>Dodaj nową torebkę</Polish>
                 <German>Neue Infusion hinzufügen</German>
+                <Spanish>Añadir nueva bolsa de líquidos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_AddBag_Progress">
                 <English>Connecting %1...</English>
                 <Polish>Podłączanie %1...</Polish>
                 <German>Verbinde %1...</German>
+                <Spanish>Conectando %1...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Display">
                 <English>Move</English>
                 <Polish>Przenieś</Polish>
                 <German>Verschieben</German>
+                <Spanish>Mover</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Progress">
                 <English>Moving %1 to %2...</English>
                 <Polish>Przenoszenie %1 do %2...</Polish>
                 <German>Verschiebe %1 zu %2...</German>
+                <Spanish>Moviendo %1 a %2</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Hint">
                 <English>Began moving %1</English>
                 <Polish>Rozpoczęto przenoszenie %1</Polish>
                 <German>Beginne %1 zu verschieben</German>
+                <Spanish>Ha comenzado a mover %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Place_Display">
                 <English>Place</English>
                 <Polish>Podłącz</Polish>
                 <German>Platzieren</German>
+                <Spanish>Colocar</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_ToolTip">
                 <English>Move fluid bag from IV</English>
                 <Polish>Przenieś torebkę z IV</Polish>
                 <German>Verschiebe Infusion von i.v. Zugang</German>
+                <Spanish>Mover bolsa de fluidos IV</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Place_ToolTip">
                 <English>Place fluid bag on selected IV line</English>
                 <Polish>Podłącz torebkę z wybraną linią IV</Polish>
                 <German>Verschiebe Infusion zu ausgewähltem i.v. Zugang</German>
+                <Spanish>colocar bolsa de fluidos en la linea IV seleccionada</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_Display">
                 <English>Remove</English>
                 <Polish>Odłącz</Polish>
                 <German>Entfernen</German>
+                <Spanish>Retirar</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_ToolTip">
                 <English>Remove fluid bag</English>
                 <Polish>Odłącz torebkę</Polish>
                 <German>Entferne Infusion</German>
+                <Spanish>Retirar bolsa de fluidos</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_ActionLog">
                 <English>%1 removed fluid bag (%2) from %3</English>
                 <Polish>%1 odłączył torebkę (%1) z %3</Polish>
                 <German>%1 hat eine Infusion (%2) von %3 entfernt</German>
+                <Spanish>%1 ha retirado bolsa de fluidos (%2) de %3</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_Progress">
                 <English>Removing %1...</English>
                 <Polish>Odłączanie %1...</Polish>
                 <German>Entferne %1...</German>
+                <Spanish>Retirando %1...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_FluidRemaining">
                 <English>%1ml remaining</English>
                 <Polish>Pozostało %1ml</Polish>
                 <German>%1ml übrig</German>
+                <Spanish>%1ml restantes</Spanish>
             </Key>
         </Container>
         <Container name="// IV/IO Actions //">
@@ -1041,141 +1227,169 @@
                 <English>Insert 16g IV (Upper)</English>
                 <Polish>Wprowadzanie igły 16g (góra)</Polish>
                 <German>16g i.v. Katheter legen (Oben)</German>
+                <Spanish>Insertar 16gIV (superior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Upper">
                 <English>Remove 16g IV (Upper)</English>
                 <Polish>Wyciąganie igły 16g (góra)</Polish>
                 <German>16 i.v. Katheter entfernen (Oben)</German>
+                <Spanish>Retirar 16g IV (superior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Middle">
                 <English>Insert 16g IV (Middle)</English>
                 <Polish>Wprowadzanie igły 16g (środek)</Polish>
                 <German>16g i.v. Katheter legen (Mittig)</German>
+                <Spanish>Insertar 16g IV (media)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Middle">
                 <English>Remove 16g IV (Middle)</English>
                 <Polish>Wyciąganie igły 16g (środek)</Polish>
                 <German>16g i.v. Katheter entfernen (Mittig)</German>
+                <Spanish>Retirar 16g IV (media)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Lower">
                 <English>Insert 16g IV (Lower)</English>
                 <Polish>Wprowadzanie igły 16g (dół)</Polish>
                 <German>16g i.v. Katheter legen (Unten)</German>
+                <Spanish>Insertar 16g IV (inferior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Lower">
                 <English>Remove 16g IV (Lower)</English>
                 <Polish>Wyciąganie igły 16g (dół)</Polish>
                 <German>16g i.v. Katheter entfernen (Unten)</German>
+                <Spanish>Retirar 16g IV (Inferior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Progress">
                 <English>Inserting 16g IV...</English>
                 <Polish>Wprowadzanie igły 16g...</Polish>
                 <German>Lege 16g i.v. Katheter...</German>
+                <Spanish>Insertando 16g IV...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Progress">
                 <English>Removing 16g IV...</English>
                 <Polish>Wyciąganie igły 16g...</Polish>
                 <German>Entferne 16g i.v. Katheter...</German>
+                <Spanish>Reitrando 16g IV...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Upper">
                 <English>Insert 14g IV (Upper)</English>
                 <Polish>Wprowadzanie igły 14g (góra)</Polish>
                 <German>14g i.v. Katheter legen (Oben)</German>
+                <Spanish>Insertar 14g IV (superior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Upper">
                 <English>Remove 14g IV (Upper)</English>
                 <Polish>Wyciąganie igły 14g (góra)</Polish>
                 <German>14g i.v. Katheter entfernen (Oben)</German>
+                <Spanish>Retirar 14g IV (superior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Middle">
                 <English>Insert 14g IV (Middle)</English>
                 <Polish>Wprowadzanie igły 14g (środek)</Polish>
                 <German>14g i.v. Katheter legen (Mittig)</German>
+                <Spanish>Insertar 14g IV (media)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Middle">
                 <English>Remove 14g IV (Middle)</English>
                 <Polish>Wyciąganie igły 14g (środek)</Polish>
                 <German>14g i.v. Katheter entfernen (Mittig)</German>
+                <Spanish>Retirar 14g IV (media)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Lower">
                 <English>Insert 14g IV (Lower)</English>
                 <Polish>Wprowadzanie igły 14g (dół)</Polish>
                 <German>14g i.v. Katheter legen (Unten)</German>
+                <Spanish>Insertar 14g IV (inferior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Lower">
                 <English>Remove 14g IV (Lower)</English>
                 <Polish>Wyciąganie igły 14g (dół)</Polish>
                 <German>14g i.v. Katheter entfernen (Unten)</German>
+                <Spanish>Retirar 14g IV (inferior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Progress">
                 <English>Inserting 14g IV...</English>
                 <Polish>Wprowadzanie igły 14g...</Polish>
                 <German>Lege 14g i.v. Katheter...</German>
+                <Spanish>Insertando 14g IV...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Progress">
                 <English>Removing 14g IV...</English>
                 <Polish>Wyciąganie igły 14g...</Polish>
                 <German>Entferne 14g i.v. Katheter...</German>
+                <Spanish>Retirando 14g IV...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_FAST1">
                 <English>Insert FAST1 IO</English>
                 <Polish>Użyj FAST1 IO</Polish>
                 <German>FAST1 IO Zugang legen</German>
+                <Spanish>Insertar FAST1 IO</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_FAST1_Progress">
                 <English>Inserting FAST1 IO...</English>
                 <Polish>Używanie FAST1 IO...</Polish>
                 <German>Lege FAST1 IO Zugang...</German>
+                <Spanish>Insertando FAST1 IO...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_FAST1">
                 <English>Remove FAST1 IO</English>
                 <Polish>Wyciągnij FAST1 IO</Polish>
                 <German>FAST1 IO Zugang entfernen</German>
+                <Spanish>Retirar FAST1 IO</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_FAST1_Progress">
                 <English>Removing FAST1 IO...</English>
                 <Polish>Wyciąganie FAST1 IO...</Polish>
                 <German>Entferne FAST1 IO Zugang...</German>
+                <Spanish>Retirando FAST1 IO...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_EZ">
                 <English>Insert EZ-IO</English>
                 <Polish>Wprowadź EZ-IO</Polish>
                 <German>EZ-IO Zugang bohren</German>
+                <Spanish>Insertar EZ-IO</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_EZ_Progress">
                 <English>Inserting EZ-IO...</English>
                 <Polish>Wprowadzanie EZ-IO...</Polish>
                 <German>Bohre EZ-IO Zugang...</German>
+                <Spanish>Insertando EZ-IO...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_EZ">
                 <English>Remove EZ-IO</English>
                 <Polish>Usuź EZ-IO</Polish>
                 <German>EZ-IO Zugang entfernen</German>
+                <Spanish>Retirar EZ-IO</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_EZ_Progress">
                 <English>Removing EZ-IO...</English>
                 <Polish>Usuwanie EZ-IO...</Polish>
                 <German>Entferne EZ-IO Zugang...</German>
+                <Spanish>Retirando EZ-IO...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Upper">
                 <English>Upper</English>
                 <Polish>Góra</Polish>
                 <German>Oben</German>
+                <Spanish>Superior</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Middle">
                 <English>Middle</English>
                 <Polish>Środek</Polish>
                 <German>Mittig</German>
+                <Spanish>Media</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Lower">
                 <English>Lower</English>
                 <Polish>Dół</Polish>
                 <German>Unten</German>
+                <Spanish>Inferior</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Already">
                 <English>Patient already has IV in the %1 (%2)</English>
                 <Polish>IV zostało już podłączone w %1 (%2)</Polish>
                 <German>Patient hat bereits einen i.v. Zugang im %1 (%2)</German>
+                <Spanish>El paciente ya tiene una IV en %1 (%2)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Blocked_PressureCuff">
                 <English>IV placement blocked by applied pressure cuff</English>
@@ -1184,16 +1398,19 @@
                 <English>Patient already has IO in the %1</English>
                 <Polish>IO zostało już podłączone w %1</Polish>
                 <German>Patient hat bereits einen i.o. Zugang im %1 (%2)</German>
+                <Spanish>El paciente ya tiene  una IO en %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_FailedToLocateVein">
                 <English>Failed to locate vein</English>
                 <Polish>Nie udało się wyczuć żyły </Polish>
                 <German>Keine Vene gefunden</German>
+                <Spanish>Fallo al localizar la vena</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_BodyPartTooDamaged">
                 <English>Body part too damaged</English>
                 <Polish>Zbyt duże obrażenia na ciele</Polish>
                 <German>Körperteil zu sehr verletzt</German>
+                <Spanish>Parte del cuerpo demasiado dañada</Spanish>
             </Key>
         </Container>
         <Container name="// Inspect IV Action //">
@@ -1201,66 +1418,81 @@
                 <English>Inspect IV Catheter (Upper)</English>
                 <Polish>Sprawdź wkłucie (góra)</Polish>
                 <German>i.v. Katheter prüfen (Oben)</German>
+                <Spanish>Insepccionar catéter IV (superior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Middle">
                 <English>Inspect IV Catheter (Middle)</English>
                 <Polish>Sprawdź wkłucie (środek)</Polish>
                 <German>i.v. Katheter prüfen (Mittig)</German>
+                <Spanish>Insepccionar catéter IV (medio)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Lower">
                 <English>Inspect IV Catheter (Lower)</English>
                 <Polish>Sprawdź wkłucie (dół)</Polish>
                 <German>i.v. Katheter prüfen (Unten)</German>
+                <Spanish>Insepccionar catéter IV (inferior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Progress">
                 <English>Inspecting IV Catheter...</English>
                 <Polish>Sprawdzanie wkłucia...</Polish>
                 <German>Prüfe i.v. Katheter...</German>
+                <Spanish>Inspeccionando catéter...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Clear">
                 <English>IV Catheter is clear</English>
                 <Polish>Wenflon drożny</Polish>
                 <German>i.v. Katheter ist frei</German>
+                <Spanish>El catéter IV está despejado</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Clear_Short">
                 <English>Clear</English>
                 <Polish>Drożny</Polish>
                 <German>Frei</German>
+                <Spanish>Despejado</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow">
                 <English>IV Catheter has normal flow</English>
                 <Polish>Wenflon ma normalny przepływ</Polish>
                 <German>i.v. Katheter mit normalen Fluss</German>
+                <Spanish>El catéter IV tiene un flujo normal</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow_Short">
                 <English>Normal flow</English>
                 <Polish>Normalny przepływ</Polish>
                 <German>Normaler Fluss</German>
+                <Spanish>Flujo Normal</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NoFlow">
                 <English>IV Catheter has no flow</English>
                 <Polish>Wenflon jest zatkany</Polish>
                 <German>i.v. Katheter läuft nicht</German>
+                <Spanish>El catéter IV no tiene flujo</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NoFlow_Short">
                 <English>No flow</English>
                 <Polish>Zatkany</Polish>
                 <German>Läuft nicht</German>
+                <Spanish>Sin flujo</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Swelling">
                 <English>Swelling on insertion site</English>
                 <Polish>Obrzęk w miejscu wkłucia</Polish>
                 <German>Schwellung am Injektionsort</German>
+                <Spanish>Hinchazón en el lugar de inserción</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Swelling_Short">
                 <English>noticable swelling</English>
                 <Polish>Widoczny obrzęk</Polish>
                 <German>Deutliche Schwellung</German>
+                <Spanish>Hinchazón notable</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
-                <English>%1 inspected IV Catheter (%2): %3</English>
-                <Polish>%1 sprawdził wkłucie (%2): %3</Polish>
-                <German>%1 hat einen i.v. Katheter (%2) geprüft: %3</German>
+              
+                <English>%1 inspected IV Catheter: %2</English>
+                <Polish>%1 sprawdził wkłucie: %2</Polish>
+                <German>%1 hat einen i.v. Katheter geprüft: %2</German>
+                <Spanish>%1 ha inspeccionado catéter IV: %2</Spanish>
+
             </Key>
         </Container>
         <Container name="// Pressure Cuff Action //">
@@ -1268,6 +1500,7 @@
                 <English>Patient already has pressure cuff on the %1</English>
                 <Polish>Pacjent ma już ciśnieniomierz na %1</Polish>
                 <German>Patient hat bereits eine Blutdruckmanschette am %1</German>
+                <Spanish>El paciente ya tiene un manguito de presión en: %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Blocked_IV">
                 <English>Pressure cuff placement blocked by IV</English>
@@ -1278,46 +1511,55 @@
                 <English>Discard</English>
                 <Polish>Odrzuć</Polish>
                 <German>Verwerfen</German>
+                <Spanish>Descartar</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Discard_Complete">
                 <English>Discarded syringe contents</English>
                 <Polish>Odrzucono zawartość strzykawki</Polish>
                 <German>Spritzeninhalt verworfen</German>
+                <Spanish>Contenido de la jeringuilla descartado</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Discard_Progress">
                 <English>Discarding %1 from %2 syringe...</English>
                 <Polish>Odrzucanie %1 ze strzykawki %2...</Polish>
                 <German>Verwerfe %1 von %2 Spritze...</German>
+                <Spanish>Descartanto %1 de la jeringuilla de %2...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Draw">
                 <English>Draw</English>
                 <Polish>Pobierz</Polish>
                 <German>Aufziehen</German>
+                <Spanish>Extraer</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawn">
                 <English>%1 Drawn</English>
                 <Polish>Pobrano: %1</Polish>
                 <German>%1 aufgezogen</German>
+                <Spanish>Se ha extraido %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Push">
                 <English>Push %1 (%2)</English>
                 <Polish>Podaj (IV) %1 (%2)</Polish>
                 <German>Injiziere (IV) %1 (%2)</German>
+                <Spanish>Administrar %1 (%2)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Pushing">
                 <English>Pushing %1...</English>
                 <Polish>Podawanie %1...</Polish>
                 <German>Injiziere %1...</German>
+                <Spanish>Administrando %1...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Inject">
                 <English>Inject %1 (%2)</English>
                 <Polish>Podaj (IM) %1 (%2)</Polish>
                 <German>Injiziere (IM)%1 (%2)</German>
+                <Spanish>Inyectar %1 (%2)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Injecting">
                 <English>Injecting %1...</English>
                 <Polish>Podawanie %1...</Polish>
                 <German>Injiziere %1...</German>
+                <Spanish>Inyerctando %1...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawing">
                 <English>Drawing %1...</English>
@@ -1326,41 +1568,49 @@
                 <English>Drawing %1 (%2) into %3ml syringe</English>
                 <Polish>Pobrano %1 (%2) do strzykawki (%3ml)</Polish>
                 <German>Ziehe %1 (%2) in %3ml Spritze auf</German>
+                <Spanish>Extrayendo %1 (%2) a una jeringuilla de %3ml.</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_MovePlunger">
                 <English>Move Plunger</English>
                 <Polish>Przesuń tłok</Polish>
                 <German>Kolben bewegen</German>
+                <Spanish>Mover émbolo</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_PushFailed">
                 <English>Medication push failed&lt;br/&gt;Patient has no IV access on the %1</English>
                 <Polish>Podanie (IV) nieudane&lt;br/&gt;Pacjent nie ma dostępu dożylnego</Polish>
                 <German>Injektion (IV) fehlgeschlagen&lt;br/&gt;Patient hat keinen i.v. Zugang am %1</German>
+                <Spanish>Administración de medicación fallida &lt;br/&gt; El paciente no tiene IV en %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Injected">
                 <English>Injected</English>
                 <Polish>Podano (IM)</Polish>
                 <German>Injiziert (IM)</German>
+                <Spanish>Inyectado</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Pushed">
                 <English>Pushed</English>
                 <Polish>Podano (IV)</Polish>
                 <German>Injiziert (IV)</German>
+                <Spanish>Administrado (IV)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawPush">
                 <English>Draw &amp; Push</English>
                 <Polish>Pobierz i podaj (IV)</Polish>
                 <German>Aufziehen und i.v. injizieren</German>
+                <Spanish>Extraer y administrar</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawInject">
                 <English>Draw &amp; Inject</English>
                 <Polish>Pobierz i podaj (IM)</Polish>
                 <German>Aufziehen und i.m. injizieren</German>
+                <Spanish>Extraer e inyectar</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_NoMedicationSelected">
                 <English>No Medication Selected</English>
                 <Polish>Nie wybrano leku</Polish>
                 <German>Kein Medikament ausgewählt</German>
+                <Spanish>No se ha seleccionado medicamento</Spanish>
             </Key>
         </Container>
         <Container name="// AED Actions //">
@@ -1368,151 +1618,181 @@
                 <English>View Monitor</English>
                 <Polish>Pokaż monitor</Polish>
                 <German>Patientenmonitor anschauen</German>
+                <Spanish>Ver monitor</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ViewMonitor">
                 <English>View AED Monitor</English>
                 <Polish>Pokaż monitor defibrylatora</Polish>
                 <German>Patientenmonitor anschauen</German>
+                <Spanish>Ver monitor del DEA</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ApplyPads">
                 <English>Apply AED Pads</English>
                 <Polish>Załóż elektrody</Polish>
                 <German>Defi-Elektroden kleben</German>
+                <Spanish>Colocar electrodos del DEA</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ApplyPads_Progress">
                 <English>Applying AED Pads...</English>
                 <Polish>Zakadanie elektrod...</Polish>
                 <German>Klebe Defi-Elektroden auf...</German>
+                <Spanish>Colocando electrodos...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_RemovePads">
                 <English>Remove AED Pads</English>
                 <Polish>Zdejmij elektrody</Polish>
                 <German>Defi-Elektroden entfernen</German>
+                <Spanish>Reitrar electrodos del DEA</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_RemovePads_Progress">
                 <English>Removing AED Pads...</English>
                 <Polish>Zdejmowanie elektrod...</Polish>
                 <German>Entferne Defi-Elektroden...</German>
+                <Spanish>Retirando electrodos...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPulseOximeter">
                 <English>Connect AED Pulse Oximeter</English>
                 <Polish>Załóż pulsoksymetr defibrylatora</Polish>
                 <German>AED-Pulsoxymeter anbringen</German>
+                <Spanish>Conectar pulsioxímetro (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPulseOximeter_Progress">
                 <English>Connecting AED Pulse Oximeter...</English>
                 <Polish>Zakadanie pulsoksymetru defibrylatora...</Polish>
                 <German>Bringe AED-Pulsoxymeter an...</German>
+                <Spanish>Conectando pulsioxímetro (DEA)...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPulseOximeter">
                 <English>Disconnect AED Pulse Oximeter</English>
                 <Polish>Zdejmij pulsoksymetr defibrylatora</Polish>
                 <German>AED-Pulsoxymeter entfernen</German>
+                <Spanish>Desconectar pulsioxímetro (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPulseOximeter_Progress">
                 <English>Disconnecting AED Pulse Oximeter...</English>
                 <Polish>Zdejmowanie pulsoksymetru defibrylatora...</Polish>
                 <German>Entferne AED-Pulsoxymeter...</German>
+                <Spanish>Desconectando pulsioxímetro (DEA)...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPressureCuff">
                 <English>Connect AED Pressure Cuff</English>
                 <Polish>Załóż ciśnieniomierz defibrylatora</Polish>
                 <German>AED-Blutdruckmanschette verbinden</German>
+                <Spanish>Conectar manguito de presión (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPressureCuff_Progress">
                 <English>Connecting AED Pressure Cuff...</English>
                 <Polish>Zakładanie ciśnieniomierza defibrylarota...</Polish>
                 <German>Verbinde AED-Blutdruckmanschette</German>
+                <Spanish>Conectando manguito de presión (DEA)...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPressureCuff">
                 <English>Disconnect AED Pressure Cuff</English>
                 <Polish>Zdejmij ciśnieniomierz defibrylatora</Polish>
                 <German>AED-Blutdruckmanschette entfernen</German>
+                <Spanish>Desconectar manguito de presión (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPressureCuff_Progress">
                 <English>Disconnecting AED Pressure Cuff...</English>
                 <Polish>Zdejmowanie ciśnieniomierza defibrylatora...</Polish>
                 <German>Entferne AED-Blutdruckmanschette...</German>
+                <Spanish>Desconectando manguito de presión (DEA)...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectCapnograph">
                 <English>Connect AED Capnograph</English>
                 <Polish>Załóż kapnograf defibrylatora</Polish>
                 <German>AED-Kapnograph verbinden</German>
+                <Spanish>Conectar capnógrafo (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectCapnograph_Progress">
                 <English>Connecting AED Capnograph...</English>
                 <Polish>Zakładanie kapnografu defibrylatora...</Polish>
                 <German>Verbinde AED-Kapnograph...</German>
+                <Spanish>Conectando capnógrafo (DEA)...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectCapnograph">
                 <English>Disconnect AED Capnograph</English>
                 <Polish>Zdejmij kapnograf defibrylatora</Polish>
                 <German>AED-Kapnographie entfernen</German>
+                <Spanish>Desconectar capnógrafo (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectCapnograph_Progress">
                 <English>Disconnecting AED Capnograph...</English>
                 <Polish>Zdejmowanie kapnografu defibrylatora...</Polish>
                 <German>Entferne AED-Kapnograph...</German>
+                <Spanish>Desconectando capnógrafo (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_AnalyzeRhythm">
                 <English>Analyze Rhythm</English>
                 <Polish>Analizuj rytm</Polish>
                 <German>Rhythmusanalyse</German>
+                <Spanish>Analizar ritmo</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ManualCharge">
                 <English>Charge AED</English>
                 <Polish>Naładuj defibrylator</Polish>
                 <German>Defibrillator laden</German>
+                <Spanish>Cargar DEA</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Shock">
                 <English>Administer Shock</English>
                 <Polish>Przeprowadź defibrylacje</Polish>
                 <German>Schock abgeben</German>
+                <Spanish>Administrar descarga</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_CancelCharge">
                 <English>Cancel Charge</English>
                 <Polish>Odwołaj defibrylacje</Polish>
                 <German>Defibrillator entladen</German>
+                <Spanish>Cancelar carga</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_MeasureBP">
                 <English>Measure Blood Pressure (AED)</English>
                 <Polish>Zmierz ciśnienie krwi (defibrylator)</Polish>
                 <German>Blutdruck messen (AED)</German>
+                <Spanish>Medir presión sanguínea (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Already">
                 <English>Patient already has %1 on the %2</English>
                 <Polish>Pacjent ma już założone %1 na %2</Polish>
                 <German>Patient hat bereits %1 am %2</German>
+                <Spanish>El paciente ya ha %1 en el %2</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_%1_Disconnected">
                 <English>%1 disconnected AED</English>
                 <Polish>%1 odłączył defibrylator</Polish>
                 <German>%1 entfernte den AED</German>
+                <Spanish>%1 ha desconectado el DEA</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PatientDisconnected">
                 <English>Patient Disconnected</English>
                 <Polish>Pacjent odłączony</Polish>
                 <German>Patient vom AED diskonnektiert</German>
+                <Spanish>Peciente desconectado</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Pads">
                 <English>AED pads</English>
                 <Polish>Elektrody defibrylatora</Polish>
                 <German>Defi-Elektroden</German>
+                <Spanish>Electrodos del DEA</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PulseOximeter">
                 <English>AED Pulse Oximeter</English>
                 <Polish>Pulsoksymetr defibrylatora</Polish>
                 <German>AED-Pulsoxymeter</German>
+                <Spanish>Pulsioxímetro (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PressureCuff">
                 <English>AED Pressure Cuff</English>
                 <Polish>Ciśnieniomierz defibrylatora</Polish>
                 <German>AED-Blutdruckmannschette</German>
+                <Spanish>Manguito de presión (DEA)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Capnograph">
                 <English>AED Capnograph</English>
                 <Polish>Kapnograf defibrylatora</Polish>
                 <German>AED-Kanograph</German>
+                <Spanish>Capnógrafo (DEA)</Spanish>
             </Key>
         </Container>
         <Container name="// AED Monitor //">
@@ -1520,71 +1800,85 @@
                 <English>HR</English>
                 <Polish>HR</Polish>
                 <German>HF</German>
+                <Spanish>FC</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_PR">
                 <English>PR</English>
                 <Polish>PR</Polish>
                 <German>PF</German>
+                <Spanish>FC</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_SpO2">
                 <English>SpO2</English>
                 <Polish>SpO2</Polish>
                 <German>SpO2</German>
+                <Spanish>SpO2</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_CO2">
                 <English>CO2</English>
                 <Polish>CO2</Polish>
                 <German>CO2</German>
+                <Spanish>CO2</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_NIBP">
                 <English>NIBP</English>
                 <Polish>NIBP</Polish>
                 <German>NIBP</German>
+                <Spanish>NIBP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_BP">
                 <English>BP</English>
                 <Polish>BP</Polish>
                 <German>BP</German>
+                <Spanish>BP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_RR">
                 <English>RR</English>
                 <Polish>RR</Polish>
                 <German>AF</German>
+                <Spanish>FR</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_CPR">
                 <English>CPR Mode Toggle</English>
                 <Polish>Aktywuj tryb RKO</Polish>
                 <German>CPR Modus wechseln</German>
+                <Spanish>Alternar modo RCP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Analyze">
                 <English>Analyze Rhythm</English>
                 <Polish>Analizuj rytm</Polish>
                 <German>Rhythmusanalyse</German>
+                <Spanish>Analizar Ritmo</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_NIBP">
                 <English>Measure NIBP</English>
                 <Polish>Zmierz NIBP</Polish>
                 <German>NIBP Blutdruckmessung</German>
+                <Spanish>Medir NIBP</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Alarms">
                 <English>Toggle Alarms</English>
                 <Polish>Włącz alarm</Polish>
                 <German>Alarm umschalten</German>
+                <Spanish>Alternar alarma</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Charge">
                 <English>Manual Charge</English>
                 <Polish>Manualne ładowanie</Polish>
                 <German>Manuell laden</German>
+                <Spanish>Carga manual</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Shock">
                 <English>Administer Shock</English>
                 <Polish>Wykonaj defibrylacje</Polish>
                 <German>Schock abgeben</German>
+                <Spanish>Administrar carga</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_SpeedDial">
                 <English>Speed Dial</English>
                 <Polish>Pokrętło prędkości</Polish>
                 <German>Schnellauswahl</German>
+                <Spanish>Selección rápida</Spanish>
             </Key>
         </Container>
         <Container name="// GUI //">
@@ -1592,61 +1886,73 @@
                 <English>Transfusing Saline [%1x]</English>
                 <Polish>Przetaczanie soli fizjologicznej [%1x]</Polish>
                 <German>Infundiere Kochsalzlösung [%1x]</German>
+                <Spanish>Transfundiendo salino [%1x]</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingPlasma">
                 <English>Transfusing Plasma [%1x]</English>
                 <Polish>Przetaczanie osocza [%1x]</Polish>
                 <German>Infundiere Plasma [%1x]</German>
+                <Spanish>Transfundiendo plasma [%1x]</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingBlood">
                 <English>Transfusing Blood [%1x]</English>
                 <Polish>Przetaczanie krwi [%1x]</Polish>
                 <German>Transfundiere Blut [%1x]</German>
+                <Spanish>Transfundiendo sangre [%1x]</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingFreshBlood">
                 <English>Transfusing Fresh Blood [%1x]</English>
                 <Polish>Przetaczanie świerzej krwi [%1x]</Polish>
                 <German>Transfundiere frisches Vollblut [%1x]</German>
+                <Spanish>Transfundiendo sangre fresca [%1x]</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_CollectingBlood">
                 <English>Collecting Blood [%1x]</English>
                 <Polish>Pobieranie krwi [%1x]</Polish>
                 <German>Sammle Blut [%1x]</German>
+                <Spanish>Tomando sangre [%1x]</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_BeganTransfusing">
                 <English>%1 began transfusing fluids (%2) into %3</English>
                 <Polish>%1 rozpoczął transfuzje płynu (%2) do %3</Polish>
                 <German>%1 transfundierte %2 in %3</German>
+                <Spanish>%1 ha comenzado tranfusiñon de fluidos (%2) en %3</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
                 <English>%1 moved fluid bag (%2) to %3</English>
                 <Polish>%1 przeniusł torebkę (%2) do %3</Polish>
                 <German>%1 bewegte %2 in %3</German>
+                <Spanish>%1 ha movido una bolsa de fluidos (%2) a %3</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Saline_Short">
                 <English>S</English>
                 <Polish>S</Polish>
                 <German>NaCl</German>
+                <Spanish>S</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Plasma_Short">
                 <English>P</English>
                 <Polish>O</Polish>
                 <German>P</German>
+                <Spanish>P</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Blood_Short">
                 <English>B</English>
                 <Polish>K</Polish>
                 <German>B</German>
+                <Spanish>B</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FreshWholeBlood_Short">
                 <English>FWB</English>
                 <Polish>ŚK</Polish>
                 <German>VB</German>
+                <Spanish>FWB</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FieldBloodTransfusionKit_Short">
                 <English>FBTK</English>
                 <Polish>ZPTK</Polish>
                 <German>FBTK</German>
+                <Spanish>Kit de transfusión</Spanish>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -1654,31 +1960,37 @@
                 <English>Change target inventory</English>
                 <Polish>Zmień widziany ekwipunek</Polish>
                 <German>Wechsel Ziel-Inventar</German>
+                <Spanish>Destino del inventario modificado</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Available">
                 <English>%1 available</English>
                 <Polish>%1 dostępny</Polish>
                 <German>%1 verfügbar</German>
+                <Spanish>%1 disponible</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_InventoryTarget">
                 <English>Target: %1</English>
                 <Polish>Widziany ekwipunek: %1</Polish>
                 <German>Ziel: %1</German>
+                <Spanish>Paciente: %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Self">
                 <English>Self</English>
                 <Polish>Osobisty</Polish>
                 <German>Selbst</German>
+                <Spanish>Propio</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Patient">
                 <English>Patient</English>
                 <Polish>Pacjent</Polish>
                 <German>Patient</German>
+                <Spanish>Paciente</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Vehicle">
                 <English>Vehicle</English>
                 <Polish>Pojazd</Polish>
                 <German>Fahrzeug</German>
+                <Spanish>Vehículo</Spanish>
             </Key>
         </Container>
     </Package>

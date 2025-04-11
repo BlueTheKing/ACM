@@ -5,26 +5,31 @@
             <English>ACM: GUI</English>
             <Polish>ACM: Interfejs</Polish>
             <German>ACM: GUI</German>
+            <Spanish>ACM: Inerfaz</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses">
             <English>Show inactive vitals statuses</English>
             <Polish>Pokaż nieaktywne statusy funkcji życiowych</Polish>
             <German>Zeige inaktive Vitatwerte</German>
+            <Spanish>Mostrar valores vitales inactivos</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
             <English>Show vitals status in overview tab when inactive (display ""none"")</English>
             <Polish>Pokaż stan funkcji życiowych w zakładce przeglądu, gdy jest nieaktywny (wyświetl "brak")</Polish>
             <German>Stellt ein, ob nicht-gemessene Vitalwerte in der Übersicht angezeigt werden sollen (Anzeige ""kein"")</German>
+            <Spanish>Mostrar signos vitales en el menú médico cuando se encuentra inactivo.</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount">
             <English>Show Pain Amount</English>
             <Polish>Pokaż wartość bólu</Polish>
             <German>Zeige Schmerzintensität</German>
+            <Spanish>Mostrar cantidad de daño</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount_Desc">
             <English>Show exact pain amount in overview tab</English>
             <Polish>Pokaż dokładną ilość bólu w zakładce przeglądu</Polish>
             <German>Stellt ein, ob die exakte Schmerzintensität in der Übersicht angezeigt werden soll</German>
+            <Spanish>Mostrar cantidad de daño exacta en el menú médico</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>
@@ -36,47 +41,56 @@
             <English>Show overlay for selected body part</English>
             <Polish>Pokaż nakładkę dla wybranej części ciała</Polish>
             <German>Zeige Overlay für ausgewähltes Körperteil</German>
+            <Spanish>Mostrar superposición para la parte del cuerpo seleccionada</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels">
             <English>Show patient side labels</English>
             <Polish>Show patient side labels</Polish>
             <German>Zeige Rechts/Links Markierung an</German>
+            <Spanish>Mostrar etiquetas al lado del paciente</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels_Desc">
             <English>Show patient left/right side labels in medical menu</English>
             <Polish>Pokaż oznaczenia lewej/prawej strony pacjenta w menu medycznym</Polish>
             <German>Kennzeichnet im Menü die Patientenseite (Rechts/Links)</German>
+            <Spanish>Muestra las etiquetas en el menú médico (izquierda / derecho)</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_NoExternalBleeding">
             <English>No external bleeding</English>
             <Polish>Brak krwawienia zewnętrznego</Polish>
             <German>Keine externe Blutung</German>
+            <Spanish>Sin sangrado externo</Spanish>
         </Key>
         <Container name="// Triage Text //">
             <Key ID="STR_ACM_GUI_Triage_Priority1_Short">
                 <English>T1</English>
                 <Polish>T1</Polish>
                 <German>Rot</German>
+                <Spanish>T1</Spanish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority2_Short">
                 <English>T2</English>
                 <Polish>T2</Polish>
                 <German>Gelb</German>
+                <Spanish>T2</Spanish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority3_Short">
                 <English>T3</English>
                 <Polish>T3</Polish>
                 <German>Grün</German>
+                <Spanish>T3</Spanish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4">
                 <English>Expectant</English>
                 <Polish>Oczekujacy</Polish>
                 <German>Blau</German>
+                <Spanish>Expectante</Spanish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
                 <English>T4</English>
                 <Polish>T4</Polish>
                 <German>Schwarz</German>
+                <Spanish>T4</Spanish>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -84,6 +98,7 @@
                 <English>Assist Carry</English>
                 <Polish>Pomóż w niesieniu</Polish>
                 <German>Tragen unterstützen</German>
+                <Spanish>Ayudar a cargar herido</Spanish>
             </Key>
         </Container>
     </Package>
