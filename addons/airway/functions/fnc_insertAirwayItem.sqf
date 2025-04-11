@@ -19,21 +19,27 @@
 
 params ["_medic", "_patient", "_type"];
 
-private _item = LSTRING(GuedelTube);
+private _item = LLSTRING(GuedelTube);
 private _classname = "ACM_GuedelTube";
 private _airwayItem = _patient getVariable [QGVAR(AirwayItem_Oral), ""];
 
 switch (_type) do {
     case "NPA": {
-        _item = LSTRING(NPA);
+        _item = LLSTRING(NPA);
         _classname = "ACM_NPA";
         _airwayItem = _patient getVariable [QGVAR(AirwayItem_Nasal), ""];
     };
     case "SGA": {
-        _item = LSTRING(IGel);
+        _item = LLSTRING(IGel);
         _classname = "ACM_IGel";
     };
     default {};
+};
+
+if !(IS_UNCONSCIOUS(_patient)) exitWith {
+    private _hint = format [LLSTRING(Adjunct_Failed), _item];
+    [format ["%1<br />%2", _hint, LLSTRING(Adjunct_Failed_Awake)], 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [_medic, _classname] call ACEFUNC(common,addToInventory);
 };
 
 if (_airwayItem != "") exitWith {
@@ -41,17 +47,18 @@ if (_airwayItem != "") exitWith {
     [_medic, _classname] call ACEFUNC(common,addToInventory);
 };
 
-if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {
-    [_medic, _patient, false] call FUNC(setHeadTiltChinLift);
-};
-
 if ((_patient getVariable [QGVAR(AirwayObstructionVomit_State), 0]) + (_patient getVariable [QGVAR(AirwayObstructionBlood_State), 0]) > 0) exitWith {
-    private _hint = format [LLSTRING(Adjunct_Failed), localize _item];
+    private _hint = format [LLSTRING(Adjunct_Failed), _item];
     [format ["%1<br />%2", _hint, LLSTRING(CheckAirway_Obstruction)], 2, _medic] call ACEFUNC(common,displayTextStructured);
     [_medic, _classname] call ACEFUNC(common,addToInventory);
 };
 
-[format [LLSTRING(Adjunct_%1_Inserted), localize _item], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+if (_type == "SGA" && GET_AIRWAY_INFLAMMATION(_patient) > AIRWAY_INFLAMMATION_THRESHOLD_SERIOUS) exitWith {
+    [format ["%1 %2<br />%3", LLSTRING(Adjunct_Failed), LLSTRING(IGel), LLSTRING(Adjunct_Failed_Inflammation)], 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [_medic, _classname] call ACEFUNC(common,addToInventory);
+};
+
+[format [LLSTRING(Adjunct_%1_Inserted), _item], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 [_patient, _item] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", LSTRING(Adjunct_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _item]] call ACEFUNC(medical_treatment,addToLog);
 

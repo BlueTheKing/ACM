@@ -41,29 +41,36 @@ private _PFH = [{
     private _pressureLimits = _MAP > 200 || _MAP < 55;
 
     if (_HR > 245 || _HR < 10 || _MAP > 220 || _MAP < 30 || ((_heartRateLimits || _pressureLimits) && CBA_missionTime > (_timeUntil + 15)) || !(alive _patient) || IN_CRDC_ARRST(_patient) || !(_currentRhythm in [ACM_Rhythm_Sinus, ACM_Rhythm_VT])) exitWith {
-        if (_HR > 200) then {
-            _patient setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
-        } else {
-            _patient setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
-        };
-
-        if !(IN_CRDC_ARRST(_patient)) then {
-            [QACEGVAR(medical,FatalVitals), _patient] call CBA_fnc_localEvent;
-        };
-
-        _patient setVariable [QGVAR(CriticalVitals_Passed), true, true];
-
-        [{
-            params ["_patient", "_time"];
-
-            !(IN_CRITICAL_STATE(_patient)) && !(IN_CRDC_ARRST(_patient)) && _time < CBA_missionTime;
-        }, {
-            params ["_patient"];
-
-            if (alive _patient && (_patient getVariable [QGVAR(CriticalVitals_Passed), false])) then {
-                _patient setVariable [QGVAR(CriticalVitals_Passed), false, true];
+        if (alive _patient) then {
+            if !(GET_CIRCULATIONSTATE(_patient)) then {
+                _patient setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PEA];
+            } else {
+                if (_HR > 200) then {
+                    _patient setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_PVT];
+                } else {
+                    _patient setVariable [QEGVAR(circulation,CardiacArrest_TargetRhythm), ACM_Rhythm_VF];
+                };
             };
-        }, [_patient, (CBA_missionTime + (15 + (random 15)))], 3600] call CBA_fnc_waitUntilAndExecute;
+
+
+            if !(IN_CRDC_ARRST(_patient)) then {
+                [QACEGVAR(medical,FatalVitals), _patient] call CBA_fnc_localEvent;
+            };
+
+            _patient setVariable [QGVAR(CriticalVitals_Passed), true, true];
+
+            [{
+                params ["_patient", "_time"];
+
+                !(IN_CRITICAL_STATE(_patient)) && !(IN_CRDC_ARRST(_patient)) && _time < CBA_missionTime;
+            }, {
+                params ["_patient"];
+
+                if (alive _patient && (_patient getVariable [QGVAR(CriticalVitals_Passed), false])) then {
+                    _patient setVariable [QGVAR(CriticalVitals_Passed), false, true];
+                };
+            }, [_patient, (CBA_missionTime + (15 + (random 15)))], 3600] call CBA_fnc_waitUntilAndExecute;
+        };
 
         _patient setVariable [QGVAR(CriticalVitals_State), false, true];
         _patient setVariable [QGVAR(CriticalVitals_PFH), -1];

@@ -25,6 +25,8 @@ if (hasInterface) then {
 _patient setVariable [QGVAR(LozengeItem), "", true];
 _patient setVariable [QGVAR(LozengeItem_InsertTime), -1, true];
 
+_patient setVariable [QGVAR(PressureCuff_Placement), [false,false], true];
+
 _patient setVariable [QGVAR(ROSC_Time), nil, true];
 _patient setVariable [QGVAR(CardiacArrest_Time), nil, true];
 
@@ -103,6 +105,7 @@ _patient setVariable [QGVAR(AED_CO2_Display), 0, true];
 _patient setVariable [QGVAR(AED_RR_Display), 0, true];
 
 _patient setVariable [QGVAR(AED_Placement_PressureCuff), -1, true];
+_patient setVariable [QGVAR(AED_PressureCuffBusy), false, true];
 _patient setVariable [QGVAR(AED_NIBP_Display), [0,0], true];
 //
 
@@ -114,5 +117,5 @@ _patient setVariable [QGVAR(isPerformingCPR), false, true];
 
 _patient setVariable [QGVAR(AmmoniaInhalant_LastUse), -1, true];
 
-[_patient] call FUNC(updateCirculationState);
+_patient setVariable [QGVAR(CirculationState), true, true];
 [_patient] call FUNC(generateBloodType);

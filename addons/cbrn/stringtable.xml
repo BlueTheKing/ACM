@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ACM">
+    <Package name="CBRN">
+        <Key ID="STR_ACM_CBRN_Category">
+            <English>ACM: CBRN</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_Category_Autoinjectors">
+            <English>Autoinjectors</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_Category_Chemical">
+            <English>Chemical</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_Category_Chemical_CS">
+            <English>Chemical - CS Gas</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_Category_Chemical_Chlorine">
+            <English>Chemical - Chlorine Gas</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_Category_Chemical_Sarin">
+            <English>Chemical - Sarin Gas</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_Category_Chemical_Lewisite">
+            <English>Chemical - Lewisite</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Enable">
+            <English>Enable CBRN</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Enable_Desc">
+            <English>Enable CBRN threat functionality</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask">
+            <English>Gas Mask List</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask_Desc">
+            <English>List of goggles (facewear)/helmets that are gas masks (or equivalent). Each entry should be a goggles/helmet classname and should be seperated with a comma ("","")</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit">
+            <English>CBRN Suit List</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit_Desc">
+            <English>List of uniforms that are CBRN suits. Each entry should be a uniform classname and should be seperated with a comma ("","")</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN">
+            <English>CBRN Protected Vehicle List</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN_Desc">
+            <English>List of vehicles that are CBRN protected (overpressure capability). Each entry should be a vehicle classname and should be seperated with a comma ("","")</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed">
+            <English>Sealed Vehicle List</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed_Desc">
+            <English>List of vehicles that are sealed. Each entry should be a vehicle classname and should be seperated with a comma ("","")</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Allow_ATNAAutoinjector">
+            <English>Allow ATNA Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Allow_ATNAAutoinjector_Desc">
+            <English>Training level required to use ATNA Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Allow_MidazolamAutoinjector">
+            <English>Allow Midazolam Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_Allow_MidazolamAutoinjector_Desc">
+            <English>Training level required to use Midazolam Autoinjector</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI">
+            <English>Chemical Agents Affect AI</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI_Desc">
+            <English>Sets whether AI will be affected by chemical agent exposure</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness">
+            <English>CS Exposure Cause Blindness</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness_Desc">
+            <English>Sets whether CS gas exposure causes blindness</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_ChlorineCauseBlindness">
+            <English>Chlorine Exposure Cause Blindness</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_ChlorineCauseBlindness_Desc">
+            <English>Sets whether chlorine gas exposure causes blindness</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_SarinIsColorless">
+            <English>Colorless Sarin Gas</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_SarinIsColorless_Desc">
+            <English>Sets whether sarin gas should be invisible</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_LewisiteCauseBlindness">
+            <English>Lewisite Exposure Cause Blindness</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_LewisiteCauseBlindness_Desc">
+            <English>Sets whether lewisite exposure causes blindness</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_LewisiteIsColorless">
+            <English>Colorless Lewisite</English>
+        </Key>
+        <Key ID="STR_ACM_CBRN_SETTING_LewisiteIsColorless_Desc">
+            <English>Sets whether lewisite should be invisible</English>
+        </Key>
+        <Container name="// Hazards //">
+            <Key ID="STR_ACM_CBRN_Chemical_Placebo">
+                <English>Placebo</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chemical_CS">
+                <English>CS Gas</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chemical_Chlorine">
+                <English>Chlorine Gas</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chemical_Sarin">
+                <English>Sarin Gas</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chemical_Lewisite">
+                <English>Lewisite</English>
+            </Key>
+        </Container>
+        <Container name="// Items //">
+            <Key ID="STR_ACM_CBRN_Autoinjector_ATNA">
+                <English>ATNA Autoinjector</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Autoinjector_ATNA_Desc">
+                <English>Antidote Treatment Nerve Agent Autoinjector, used to treat nerve agent exposure</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Autoinjector_Midazolam">
+                <English>Midazolam Autoinjector</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Autoinjector_Midazolam_Desc">
+                <English>Used to manage seizure activity caused by nerve agent exposure</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_CS_Grenade">
+                <English>CS Grenade</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_CS_Grenade_Desc">
+                <English>Type: CS Grenade&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: Hand</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_CS_Shell_40mm">
+                <English>CS Grenade Shell</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_CS_Shell_40mm_Desc">
+                <English>Type: CS Gas Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: EGLM, 3GL</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMaskFilter">
+                <English>Gas Mask Filter</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMaskFilter_Desc">
+                <English>Used with gas mask to allow breathing in hazardous environments</English>
+            </Key>
+        </Container>
+        <Container name="// Autoinjector Actions //">
+            <Key ID="STR_ACM_CBRN_ATNAAutoinjector">
+                <English>Use ATNA Autoinjector</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ATNAAutoinjector_Progress">
+                <English>Using ATNA Autoinjector...</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_MidazolamAutoinjector">
+                <English>Use Midazolam Autoinjector</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_MidazolamAutoinjector_Progress">
+                <English>Using Midazolam Autoinjector...</English>
+            </Key>
+        </Container>
+        <Container name="// Supply Crate //">
+            <Key ID="STR_ACM_CBRN_SupplyCrate_Display">
+                <English>[ACM] CBRN Supply Crate</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_SupplyCrate_PPE_Display">
+                <English>[ACM] CBRN PPE Supply Crate</English>
+            </Key>
+        </Container>
+        <Container name="// Chemical Weapons //">
+            <Key ID="STR_ACM_CBRN_CS_Shell_82mm">
+                <English>Chemical Payload Shell (CS)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_CS_Shell_82mm_Short">
+                <English>CWA (CS)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chlorine_Shell_82mm">
+                <English>Chemical Payload Shell (Chlorine Gas)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Chlorine_Shell_82mm_Short">
+                <English>CWA (Chlorine)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Sarin_Shell_82mm">
+                <English>Chemical Payload Shell (Sarin Gas)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Sarin_Shell_82mm_Short">
+                <English>CWA (Sarin)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Lewisite_Shell_82mm">
+                <English>Chemical Payload Shell (Lewisite)</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Lewisite_Shell_82mm_Short">
+                <English>CWA (Lewisite)</English>
+            </Key>
+        </Container>
+        <Container name="// Wash Eyes Action //">
+            <Key ID="STR_ACM_CBRN_WashEyes">
+                <English>Wash Eyes</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_WashEyesOf">
+                <English>Wash Eyes Of</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_WashEyes_Progress">
+                <English>Washing eyes with water...</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_WashEyes_Complete">
+                <English>Washed eyes with water</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_WashEyes_Complete_Self">
+                <English>%1 washed your eyes with water</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_WashEyes_Complete_Other">
+                <English>Washed %1's eyes with water</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_WashEyes_ActionLog">
+                <English>%1 washed eyes with water</English>
+            </Key>
+        </Container>
+        <Container name="// Gas Mask Actions //">
+            <Key ID="STR_ACM_CBRN_GasMask">
+                <English>Gas Mask</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_PutOn">
+                <English>Put On</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_TakeOff">
+                <English>Take Off</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter">
+                <English>Replace Filter</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_Donned">
+                <English>Donned gas mask</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_Removed">
+                <English>Took off gas mask</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_DroppedFaceWear">
+                <English>Dropped facewear</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter_Complete">
+                <English>Replaced gas mask filter</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter_Progress">
+                <English>Replacing gas mask filter...</English>
+            </Key>
+        </Container>
+        <Container name="// Chemical Detector Actions //">
+            <Key ID="STR_ACM_CBRN_ChemicalDetector">
+                <English>Chemical Detector</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnOn">
+                <English>Turn On</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnOff">
+                <English>Turn Off</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_EnableAlarm">
+                <English>Enable Alarm</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_DisableAlarm">
+                <English>Disable Alarm</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_Reset">
+                <English>Reset</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnedOn">
+                <English>Chemical detector turned on</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnedOff">
+                <English>Chemical detector turned off</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_AlarmEnabled">
+                <English>Chemical detector alarm enabled</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_AlarmDisabled">
+                <English>Chemical detector alarm disabled</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_ChemicalDetector_WasReset">
+                <English>Chemical detector has been reset</English>
+            </Key>
+        </Container>
+        <Container name="// Module Generic //">
+            <Key ID="STR_ACM_CBRN_Module_Generic_HazardType">
+                <English>Hazard Type</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_ZoneRadius">
+                <English>Zone Radius</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_EffectTime">
+                <English>Effect Time</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_EffectTime_Tooltip">
+                <English>Sets time in minutes after which hazard zone will remove itself, will last forever if 0</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_AttachToObject">
+                <English>Attach To Object</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_ShowMist">
+                <English>Show Mist</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_ShowMist_Tooltip">
+                <English>Show mist effect over hazard radius</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_AffectAI">
+                <English>Affect AI</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_Error_SelectObject">
+                <English>Must select object</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_Error_NotDestroyed">
+                <English>Object must not be destroyed</English>
+            </Key>
+        </Container>
+        <Container name="// Create Hazard Zone Module //">
+            <Key ID="STR_ACM_CBRN_Module_CreateHazardZone">
+                <English>Create Hazard Zone</English>
+            </Key>
+        </Container>
+        <Container name="// Create Chemical Device Module //">
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice">
+                <English>Create Chemical Device</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_PermanentHazard">
+                <English>Permanent Hazard</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_PermanentHazard_Tooltip">
+                <English>Sets whether the created hazard will not dissipate after activation</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize">
+                <English>Explosion Cloud Size</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_None">
+                <English>None</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_Small">
+                <English>Small</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_Large">
+                <English>Large</English>
+            </Key>
+        </Container>
+    </Package>
+</Project>

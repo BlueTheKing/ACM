@@ -219,6 +219,17 @@
                 <Spanish>Multiplicador de tiempo que se aplica cuando se sutura una herida.</Spanish>
             </Key>
         </Container>
+        <Container name="// Wounds //">
+            <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Large">
+                <English>Extensive Chemical Burn</English>
+            </Key>
+            <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Medium">
+                <English>Moderate Chemical Burn</English>
+            </Key>
+            <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Minor">
+                <English>Minor Chemical Burn</English>
+            </Key>
+        </Container>
         <Container name="// Items //">
             <Key ID="STR_ACM_Damage_PressureBandage">
                 <English>Pressure Bandage</English>

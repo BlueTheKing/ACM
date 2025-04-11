@@ -116,7 +116,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         // Create a new injury. Format [0:classComplex, 1:amountOf, 2:bleedingRate, 3:woundDamage]
         private _injury = [_classComplex, 1, _bleeding, _woundDamage];
 
-        if (_bodyPart isEqualTo "head" || {_bodyPart isEqualTo "body" && {_woundDamage > PENETRATION_THRESHOLD}}) then {
+        if (_bodyPart isEqualTo "head" || {_bodyPart isEqualTo "body" && {_woundDamage > PENETRATION_THRESHOLD && !(_woundTypeToAdd in ["ThermalBurn","ChemicalBurn"])}}) then {
             _criticalDamage = true;
             if (EGVAR(damage,enable)) then {
                 if ([_unit, _bodyPartDamage] call EFUNC(damage,handleTrauma)) then {
@@ -135,7 +135,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
                 };
             };
             if (EGVAR(breathing,pneumothoraxEnabled) && _bodyPart isEqualTo "body" && {_woundClassIDToAdd in [1,6,7]}) then {
-                [QEGVAR(breathing,handleChestInjury), [_unit, _classComplex]] call CBA_fnc_localEvent;
+                [QEGVAR(breathing,handleChestInjury), [_unit, _classComplex, _woundDamage]] call CBA_fnc_localEvent;
             };
         };
 

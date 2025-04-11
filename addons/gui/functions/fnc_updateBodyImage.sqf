@@ -27,7 +27,7 @@ private _ctrlIGel = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_IGEL;
 private _airwayItemOral = _target getVariable [QEGVAR(airway,AirwayItem_Oral), ""];
 private _airwayItemNPA = _target getVariable [QEGVAR(airway,AirwayItem_Nasal), ""];
 
-if !(_airwayItemOral isEqualTo "") then {
+if (_airwayItemOral isNotEqualTo "") then {
     if (_airwayItemOral isEqualTo "SGA") then {
         _ctrlGuedelTube ctrlShow false;
         _ctrlIGel ctrlShow true;

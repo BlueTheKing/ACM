@@ -71,7 +71,6 @@ class CfgVehicles {
             ADDITEM(ACE_epinephrine,10);
             // Disability
             ADDITEM(ACE_morphine,10);
-            ADDITEM(ACE_splint,10);
             ADDITEM(ACM_SAMSplint,10);
             // Other
             ADDITEM(ACM_Spray_Naloxone,10);
@@ -120,6 +119,7 @@ class CfgVehicles {
             ADDITEM(ACM_Vial_Esmolol,10);
             ADDITEM(ACM_Vial_TXA,10);
             ADDITEM(ACM_Vial_Amiodarone,10);
+            ADDITEM(ACM_Vial_Atropine,10);
             ADDITEM(ACE_epinephrine,5);
             ADDITEM(ACM_BloodBag_ON_1000,10);
             ADDITEM(ACM_BloodBag_ON_500,10);
@@ -141,7 +141,6 @@ class CfgVehicles {
             ADDITEM(ACM_Vial_Lidocaine,10);
             ADDITEM(ACM_Vial_Ondansetron,10);
             ADDITEM(ACM_Lozenge_Fentanyl,10);
-            ADDITEM(ACE_splint,10);
             ADDITEM(ACM_SAMSplint,10);
             // Other
             ADDITEM(ACM_Spray_Naloxone,10);
@@ -150,6 +149,32 @@ class CfgVehicles {
             ADDITEM(ACE_bodyBag,5);
             ADDITEM(ACE_suture,60);
             ADDITEM(ACM_Vial_Ertapenem,10);
+        };
+    };
+    class ACM_CBRN_SupplyCrate: ACE_medicalSupplyCrate {
+        displayName = ECSTRING(CBRN,SupplyCrate_Display);
+        author = "Blue";
+        editorCategory = "EdCat_Supplies";
+        editorSubcategory = QGVAR(EditorCategory);
+        /*hiddenSelections[] = {"camo"};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\supplyBox.paa)};*/
+        class TransportMagazines {};
+        class TransportItems {
+            // Treatment
+            ADDITEM(ACM_Autoinjector_ATNA,30);
+            ADDITEM(ACM_Autoinjector_Midazolam,10);
+            ADDITEM(ACM_Ampule_Dimercaprol,10);
+            // Other
+            ADDITEM(ACM_GasMaskFilter,30);
+        };
+    };
+    class ACM_CBRN_PPE_SupplyCrate: ACM_CBRN_SupplyCrate {
+        displayName = ECSTRING(CBRN,SupplyCrate_PPE_Display);
+        class TransportItems {
+            ADDITEM(U_C_CBRN_Suit_01_Blue_F,10);
+            ADDITEM(G_AirPurifyingRespirator_02_black_F,10);
+            ADDITEM(ChemicalDetector_01_watch_F,2);
+            ADDITEM(ACM_GasMaskFilter,10);
         };
     };
 

@@ -124,6 +124,17 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+if (systemTime select 0 == 2025 && systemTime select 1 == 4 && systemTime select 2 <= 10) then {
+[
+    QACEGVAR(medical_treatment,allowBodyBalling),
+    "CHECKBOX",
+    [ACELSTRING(medical_treatment,AllowBodyBalling_DisplayName), ACELSTRING(medical_treatment,AllowBodyBalling_Description)],
+    ACELSTRING(medical,Category),
+    [false],
+    true
+] call CBA_fnc_addSetting;
+};
+
 GVAR(itemHash) = uiNamespace getVariable QGVAR(itemHash); // Medic AI
 
 ADDON = true;

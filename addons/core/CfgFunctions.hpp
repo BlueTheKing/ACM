@@ -114,6 +114,9 @@ class CfgFunctions {
             class effectUnconscious { // Oxygen Effect
                 file = QPATHTOF(overrides\fnc_effectUnconscious.sqf); //ace/addons/medical_feedback/functions/fnc_effectUnconscious.sqf
             };
+            class playInjuredSound { // Prevent overlapping sounds
+                file = QPATHTOF(overrides\fnc_playInjuredSound.sqf); //ace/addons/medical_feedback/functions/fnc_playInjuredSound.sqf
+            };
         };
     };
     class overwrite_medical_statemachine {
@@ -142,8 +145,14 @@ class CfgFunctions {
             class setUnconsciousAnim { // Force lying animation when waking up
                 file = QPATHTOF(overrides\fnc_setUnconsciousAnim.sqf); //ace/addons/medical_engine/functions/fnc_setUnconsciousAnim.sqf
             };
+            class applyAnimAfterRagdoll { // Lying state
+                file = QPATHTOF(overrides\fnc_applyAnimAfterRagdoll.sqf); //ace/addons/medical_engine/functions/fnc_applyAnimAfterRagdoll.sqf
+            };
             class updateDamageEffects { // Tourniquet effects for legs
                 file = QPATHTOF(overrides\fnc_updateDamageEffects.sqf); //ace/addons/medical_engine/functions/fnc_updateDamageEffects.sqf
+            };
+            class handleDamage { // CBRN chemical burns
+                file = QPATHTOF(overrides\fnc_handleDamage.sqf); //ace/addons/medical_engine/functions/fnc_handleDamage.sqf
             };
         };
     };

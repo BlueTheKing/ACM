@@ -96,23 +96,23 @@ private _patientWeight = GET_BODYWEIGHT(_patient);
 
 switch (_weightEffect) do {
     case 1: {
-        private _weightModifier = [(linearConversion [IDEAL_BODYWEIGHT, 75, _patientWeight, 1, 1.1]), (linearConversion [IDEAL_BODYWEIGHT, 91, _patientWeight, 1, 0.9])] select (_patientWeight > IDEAL_BODYWEIGHT);
-        private _weightedDose = _dose * _weightModifier;
+        _maxEffectDose = (_maxEffectDose / IDEAL_BODYWEIGHT) * _patientWeight;
+        _minEffectDose = (_minEffectDose / IDEAL_BODYWEIGHT) * _patientWeight;
 
-        _concentrationRatio = _weightedDose / _maxEffectDose;
+        _concentrationRatio = _dose / _maxEffectDose;
 
         if (_painReduce != 0) then {
-            _painReduce = [(linearConversion [_minEffectDose, 0, (_weightedDose * _absorptionModifier), _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, (_weightedDose * _absorptionModifier), _minPainReduce, _painReduce])] select (_weightedDose > _minEffectDose);
+            _painReduce = [(linearConversion [_minEffectDose, 0, (_dose * _absorptionModifier), _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, (_dose * _absorptionModifier), _minPainReduce, _painReduce])] select (_dose > _minEffectDose);
         };
     };
     case 2: {
-        private _weightModifier = [(linearConversion [IDEAL_BODYWEIGHT, 75, _patientWeight, 1, 1.01]), (linearConversion [IDEAL_BODYWEIGHT, 91, _patientWeight, 1, 0.99])] select (_patientWeight > IDEAL_BODYWEIGHT);
-        private _weightedDose = _dose * (_weightModifier ^ 2);
+        _maxEffectDose = (_maxEffectDose / IDEAL_BODYWEIGHT) * _patientWeight;
+        _minEffectDose = (_minEffectDose / IDEAL_BODYWEIGHT) * _patientWeight;
 
-        _concentrationRatio = _weightedDose / _maxEffectDose;
+        _concentrationRatio = _dose / _maxEffectDose;
 
         if (_painReduce != 0) then {
-            _painReduce = [(linearConversion [_minEffectDose, 0, (_weightedDose * _absorptionModifier), _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, (_weightedDose * _absorptionModifier), _minPainReduce, _painReduce])] select (_weightedDose > _minEffectDose);
+            _painReduce = [(linearConversion [_minEffectDose, 0, (_dose * _absorptionModifier), _minPainReduce, 0]), (linearConversion [_minEffectDose, _maxEffectDose, (_dose * _absorptionModifier), _minPainReduce, _painReduce])] select (_dose > _minEffectDose);
         };
     };
     default {
@@ -135,7 +135,7 @@ private _heartRateChange = 0;
 _hrIncrease params ["_hrIncreaseLow", "_hrIncreaseHigh"];
 
 if ((_hrIncreaseLow + _hrIncreaseHigh) != 0) then {
-    _heartRateChange = (linearConversion [0.5, 1, _concentrationRatio, _hrIncreaseLow, _hrIncreaseHigh]) * 1.4;
+    _heartRateChange = (linearConversion [0.5, 1, _concentrationRatio, _hrIncreaseLow, _hrIncreaseHigh]) * 1.2;
 };
 
 private _rrAdjust = GET_ARRAY(_medicationConfig >> "rrAdjust",getArray (_defaultConfig >> "rrAdjust"));

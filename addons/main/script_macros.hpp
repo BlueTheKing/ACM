@@ -19,7 +19,10 @@
 
 #define CBA_EGVAR(module,var)       TRIPLES(CBA_PREFIX,module,var)
 
-#define CBA_FUNC(function)   TRIPLES(CBA_PREFIX,fnc,function)
+#define CBA_FUNC(function)          TRIPLES(CBA_PREFIX,fnc,function)
+
+#define CBAPATHTOF(component,path)  \x\cba\addons\component\path
+#define QCBAPATHTOF(component,path) QUOTE(CBAPATHTOF(component,path))
 
 // ACE3 reference macros
 #define ACE_PREFIX ace
@@ -210,8 +213,9 @@
 
 #define IN_CRITICAL_STATE(unit) (unit getVariable [QEGVAR(core,CriticalVitals_State), false])
 
-// Body Parts
+#define ACM_WOUNDS ["ChemicalBurn"]
 
+// Body Parts
 #define BODYPART_N_HEAD     0
 #define BODYPART_N_BODY     1
 #define BODYPART_N_LEFTARM  2
@@ -282,6 +286,8 @@
 
 #define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
 #define HAS_PRESSURECUFF(unit,index) (GET_PRESSURECUFF(unit) select index)
+
+#define IS_OVERDOSED(unit) ([unit] call EFUNC(circulation,isOverdosed))
 
 //// Access
 #define ACM_IV_16G_M 1
@@ -379,15 +385,17 @@
 #define FBTK_ARRAY_DATA ['FieldBloodTransfusionKit_500','FieldBloodTransfusionKit_250']
 
 // Damage
-#define VAR_WRAPPED_WOUNDS             QEGVAR(damage,WrappedWounds)
-#define GET_WRAPPED_WOUNDS(unit)       (unit getVariable [VAR_WRAPPED_WOUNDS, createHashMap])
-#define VAR_CLOTTED_WOUNDS             QEGVAR(damage,ClottedWounds)
-#define GET_CLOTTED_WOUNDS(unit)       (unit getVariable [VAR_CLOTTED_WOUNDS, createHashMap])
+#define VAR_WRAPPED_WOUNDS                  QEGVAR(damage,WrappedWounds)
+#define GET_WRAPPED_WOUNDS(unit)            (unit getVariable [VAR_WRAPPED_WOUNDS, createHashMap])
+#define VAR_CLOTTED_WOUNDS                  QEGVAR(damage,ClottedWounds)
+#define GET_CLOTTED_WOUNDS(unit)            (unit getVariable [VAR_CLOTTED_WOUNDS, createHashMap])
 
-#define VAR_INTERNAL_BLEEDING          QEGVAR(damage,InternalBleeding)
-#define GET_INTERNAL_BLEEDING(unit)    (unit getVariable [VAR_INTERNAL_BLEEDING, 0])
-#define IS_I_BLEEDING(unit)            (GET_INTERNAL_BLEEDING(unit) > 0)
-#define GET_INTERNAL_BLEEDRATE(unit)   ([unit] call EFUNC(circulation,getInternalBleedingRate))
+#define VAR_INTERNAL_BLEEDING               QEGVAR(damage,InternalBleeding)
+#define GET_INTERNAL_BLEEDING(unit)         (unit getVariable [VAR_INTERNAL_BLEEDING, 0])
+#define IS_I_BLEEDING(unit)                 (GET_INTERNAL_BLEEDING(unit) > 0)
+#define GET_INTERNAL_BLEEDRATE(unit)        ([unit] call EFUNC(circulation,getInternalBleedingRate))
+
+#define GET_CAPILLARYDAMAGE_BLEEDRATE(unit) ([unit] call EFUNC(circulation,getCapillaryDamageBleedingRate))
 
 #define VAR_INTERNAL_WOUNDS            QEGVAR(damage,InternalWounds)
 #define GET_INTERNAL_WOUNDS(unit)      (unit getVariable [VAR_INTERNAL_WOUNDS, createHashMap])
@@ -417,6 +425,39 @@
 #define FRACTURE_THRESHOLD_MILD         3
 #define FRACTURE_THRESHOLD_SEVERE       5
 #define FRACTURE_THRESHOLD_COMPLEX      7
+
+// CBRN
+#define QGVAR_BUILDUP(type)                        QEGVAR(CBRN,##type##_Buildup)
+
+#define DEFAULT_FILTER_CONDITION                   600
+#define GET_FILTER_CONDITION(unit)                 (unit getVariable [QEGVAR(CBRN,Filter_State), DEFAULT_FILTER_CONDITION])
+
+#define IS_EXPOSED(unit)                           (unit getVariable [QEGVAR(CBRN,Exposed_State), false])
+#define IS_EXPOSEDTO(unit,hazard)                  (unit getVariable [QEGVAR(CBRN,##hazard##_Exposed_State), false])
+#define IS_EXPOSED_EXT(unit)                       (unit getVariable [QEGVAR(CBRN,Exposed_External_State), false])
+#define IS_EXPOSED_EXTTO(unit,hazard)              (unit getVariable [QEGVAR(CBRN,##hazard##_Exposed_External_State), false])
+#define GET_EXPOSURE_BREATHINGSTATE(unit)          (unit getVariable [QEGVAR(CBRN,BreathingAbility_State), 1])
+#define GET_EXPOSURE_BREATHING_INCREASESTATE(unit) (unit getVariable [QEGVAR(CBRN,BreathingAbility_Increase_State), 1])
+
+#define IS_CONTAMINATED(unit)                      (unit getVariable [QEGVAR(CBRN,Contaminated_State), false])
+#define IS_CONTAMINATEDBY(unit,hazard)             (unit getVariable [QEGVAR(CBRN,##hazard##_Contaminated_State), false])
+
+#define GET_AIRWAY_INFLAMMATION(unit)              (unit getVariable [QEGVAR(CBRN,AirwayInflammation), 0])
+
+#define AIRWAY_INFLAMMATION_THRESHOLD_SEVERE       70
+#define AIRWAY_INFLAMMATION_THRESHOLD_SERIOUS      40
+#define AIRWAY_INFLAMMATION_THRESHOLD_MILD         15
+
+#define GET_LUNG_TISSUEDAMAGE(unit)                (unit getVariable [QEGVAR(CBRN,LungTissueDamage), 0])
+
+#define LUNG_TISSUEDAMAGE_THRESHOLD_MILD           20
+
+#define GET_CAPILLARY_DAMAGE(unit)                (unit getVariable [QEGVAR(CBRN,CapillaryDamage), 0])
+
+#define HAS_AIRWAY_SPASM(unit)                    (unit getVariable [QEGVAR(CBRN,AirwaySpasm), false])
+#define HAS_AIRWAY_SPASM_UNMITIGATED(unit)        (HAS_AIRWAY_SPASM(unit) && (([_patient, 'Atropine', false] call ACEFUNC(medical_status,getMedicationCount)) + ([_patient, 'Atropine_IV', false] call ACEFUNC(medical_status,getMedicationCount)) < 3))
+
+#define IS_BLINDED(unit)                          (unit getVariable [QEGVAR(CBRN,Blindness_State), false])
 
 // GUI
 #define COLOR_CIRCULATION              {0.2, 0.65, 0.2, 1}

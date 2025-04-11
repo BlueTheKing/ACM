@@ -76,7 +76,7 @@ if (isNumber (_config >> "ACM_cancelRecovery")) then {
     _cancelsRecoveryPosition = [false,true] select (getNumber (_config >> "ACM_cancelRecovery"));
 
     if ((_patient getVariable [QEGVAR(airway,RecoveryPosition_State), false]) && _cancelsRecoveryPosition) then {
-        _patient setVariable [QEGVAR(airway,RecoveryPosition_State), false, true];
+        [_medic, _patient, false, true] call EFUNC(airway,setRecoveryPosition);
     };
 };
 
@@ -135,7 +135,7 @@ if (_medic isNotEqualTo player || {!_isInZeus}) then {
     // Determine the animation length
     private _animDuration = ACEGVAR(medical_treatment,animDurations) get toLowerANSI _medicAnim;
     if (isNil "_animDuration" && !(isNil _medicAnim)) then {
-        WARNING_2("animation [%1] for [%2] has no duration defined",_medicAnim,_classname);
+        if (_medicAnim != "") then { WARNING_2("animation [%1] for [%2] has no duration defined",_medicAnim,_classname); };
         _animDuration = 10;
     };
 

@@ -30,11 +30,13 @@
 [QGVAR(handleMed_AdenosineLocal), LINKFUNC(handleMed_AdenosineLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_AmiodaroneLocal), LINKFUNC(handleMed_AmiodaroneLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_AmmoniaInhalantLocal), LINKFUNC(handleMed_AmmoniaInhalantLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_AtropineLocal), LINKFUNC(handleMed_AtropineLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_CalciumChlorideLocal), LINKFUNC(handleMed_CalciumChlorideLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_DimercaprolLocal), LINKFUNC(handleMed_DimercaprolLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_NaloxoneLocal), LINKFUNC(handleMed_NaloxoneLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_TXALocal), LINKFUNC(handleMed_TXALocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_KetamineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_LidocaineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_CalciumChlorideLocal), LINKFUNC(handleMed_CalciumChlorideLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(setLozengeLocal), LINKFUNC(setLozengeLocal)] call CBA_fnc_addEventHandler;
 
@@ -44,7 +46,7 @@
     params ["_patient", "_bodyPart", "_classname", ["_dose", 1]];
 
     // Handle special medication effects
-    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine", "CalciumChloride_IV", "Adenosine_IV"]) then {
+    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine", "CalciumChloride_IV", "Adenosine_IV", "Atropine", "Atropine_IV", "Dimercaprol"]) then {
         private _shortClassname = (_classname splitString "_") select 0;
         [(format ["ACM_circulation_handleMed_%1Local", toLower _shortClassname]), [_patient, _bodyPart, _classname, _dose], _patient] call CBA_fnc_targetEvent;
     };
@@ -69,8 +71,8 @@ GVAR(Fluids_Array_Data) = FLUIDS_ARRAY_DATA;
 
     {
         private _entry = format ["BloodBag_%1_%2", _bloodType, _x];
-        GVAR(Fluids_Array_Data) pushback _entry;
-        GVAR(Fluids_Array) pushback format ["ACM_%1", _entry];
+        GVAR(Fluids_Array_Data) pushBack _entry;
+        GVAR(Fluids_Array) pushBack format ["ACM_%1", _entry];
     } forEach [1000,500,250];
 } forEach ["O","ON","A","AN","B","BN","AB","ABN"];
 
