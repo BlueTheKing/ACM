@@ -5,72 +5,86 @@
             <English>ACM: Core</English>
             <Polish>ACM: Core</Polish>
             <German>ACM: Kern</German>
+            <Russian>ACM: ядро</Russian>
         </Key>
         <Key ID="STR_ACM_Core_Category_Items">
             <English>Items</English>
             <Polish>Przedmioty</Polish>
             <German>Items</German>
+            <Russian>Предметы</Russian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet">
             <English>Take Off Tourniquet Time</English>
             <Polish>Czas zdjęcia opaski uciskowej</Polish>
             <German>Tourniquet Entfernungszeit</German>
+            <Russian>Время снятия жгута</Russian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet_Desc">
             <English>Time to take off tourniquet</English>
             <Polish>Czas potrzebny na zdjęcie opaski uciskowej</Polish>
             <German>Zeit um Tourniquet zu entfernen</German>
+            <Russian>Пора снимать жгут</Russian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight">
             <English>Dogtag list weight</English>
             <Polish>Nieśmiertelniki pokazują wagę</Polish>
             <German>Erkennungsmarke zeigt Gewicht an</German>
+            <Russian>Бирка бойца указывает вес</Russian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
             <English>Set whether dog tags list the unit's weight</English>
             <Polish>Czy na nieśmietelnikach ma się wyświetlać waga jednostki</Polish>
             <German>Stellt ein, ob die Erkennungsmarke das Patientengewicht anzeigt</German>
+            <Russian>Установите, будет ли на жетонах указан вес</Russian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
             <English>Ignore Incompatible Addon Warning</English>
             <Polish>Zignoruj ostrzeżenia o niekompatybilności</Polish>
             <German>Ignoriere Inkompatibilitätswarnung</German>
+            <Russian>Игнорировать предупреждение о несовместимости аддона</Russian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings_Desc">
             <English>Disables incompatible addon warnings</English>
             <Polish>Wyłącza ostrzeżenia o niekompatybilnych addonach</Polish>
             <German>Deaktiviert die Inkompatibilitätswarnung vom Addon</German>
+            <Russian>Отключает предупреждения о несовместимости аддонов</Russian>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Core_MorphineAutoinjector">
                 <English>Use Morphine Autoinjector</English>
                 <Polish>Użyj autostrzykawki z morfiną</Polish>
                 <German>Morphin-Autoinjektor benutzen</German>
+                <Russian>Используйте автоинжектор морфия</Russian>
             </Key>
             <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
                 <English>Using Morphine Autoinjector...</English>
                 <Polish>Używanie autostrzykawki z morfiną...</Polish>
                 <German>Benutze Morphin-Autoinjektor...</German>
+                <Russian>Использование автоинъектора морфия...</Russian>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
                 <English>Use Epinephrine Autoinjector</English>
                 <Polish>Użyj autostrzykawki z epinefryną</Polish>
                 <German>Adrenalin-Autoinjektor benutzen</German>
+                <Russian>Используйте автоинжектор адреналина</Russian>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
                 <English>Using Epinephrine Autoinjector...</English>
                 <Polish>Używanie autostrzykawki z epinefryną...</Polish>
                 <German>Benutze Adrenalin-Autoinjektor...</German>
+                <Russian>Использование автоинжектора адреналина...</Russian>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector">
                 <English>Use Adenosine Autoinjector</English>
                 <Polish>Użyj autostrzykawki z adenozyną</Polish>
                 <German>Adenosin-Autoinjektor benutzen</German>
+                <Russian>Используйте автоинжектор аденозина</Russian>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
                 <English>Using Adenosine Autoinjector...</English>
                 <Polish>Używanie autostrzykawki z adenozyną...</Polish>
                 <German>Benutze Adenosin-Autoinjektor</German>
+                <Russian>Использование автоинжектора аденозина...</Russian>
             </Key>
         </Container>
         <Container name="// Cancel Carrying //">
@@ -78,11 +92,13 @@
                 <English>Cancel Carrying</English>
                 <Polish>Przestań nieść</Polish>
                 <German>Patient ablegen</German>
+                <Russian>Отменить перенос</Russian>
             </Key>
             <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
                 <English>Stopped carrying %1</English>
                 <Polish>Przestano nieść %1</Polish>
                 <German>Patient %1 abgelegt</German>
+                <Russian>Перестал нести %1</Russian>
             </Key>
         </Container>
         <Container name="// Lying State //">
@@ -90,20 +106,25 @@
                 <English>Get Up</English>
                 <Polish>Wstań</Polish>
                 <German>Aufstehen</German>
+                <Russian>Поднять</Russian>
             </Key>
         </Container>
         <Container name="// Assist Carry Action //">
             <Key ID="STR_ACM_Core_AssistCarry_Already">
                 <English>Patient is already being carry-assisted</English>
+                <Russian>Пациенту уже оказывают помощь при переноске</Russian>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Complete">
                 <English>Prepared %1 for carrying</English>
+                <Russian>Подготовлен %1 к переноске</Russian>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Progress">
                 <English>Preparing to carry...</English>
+                <Russian>Готовимся к переноске...</Russian>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Cancelled">
                 <English>Carry-assist cancelled</English>
+                <Russian>Помощь при переноске отменена</Russian>
             </Key>
         </Container>
         <Container name="// Supine Position Action //">
@@ -122,6 +143,7 @@
                 <English>You are being treated by %1</English>
                 <Polish>%1 udziela ci pomocy</Polish>
                 <German>Du wirst von %1 behandelt</German>
+                <Russian>Вас лечит %1</Russian>
             </Key>
         </Container>
         <Container name="// Vehicle Patient Actions //">
@@ -129,6 +151,7 @@
                 <English>Vehicle Patients</English>
                 <Polish>Pacjenci w pojeździe</Polish>
                 <German>Fahrzeug Verletzte</German>
+                <Russian>Транспортные пациенты</Russian>
             </Key>
         </Container>
         <Container name="// Unload and carry //">
@@ -136,6 +159,7 @@
                 <English>Carry Patient</English>
                 <Polish>Nieś pacjenta</Polish>
                 <German>Patient tragen</German>
+                <Russian>Нести пациента</Russian>
             </Key>
         </Container>
         <Container name="// Boxes //">
@@ -143,11 +167,13 @@
                 <English>[ACM] Basic Medical Supply Crate</English>
                 <Polish>[ACM] Podstawowa skrzynia z zaopatrzeniem medycznym </Polish>
                 <German>[ACM] Basis Versorgungskiste</German>
+                <Russian>[ACM] Ящик с базовыми медикаментами</Russian>
             </Key>
             <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
                 <English>[ACM] Advanced Medical Supply Crate</English>
                 <Polish>[ACM] Zaawansowana skrzynia z zaopatrzeniem medycznym </Polish>
                 <German>[ACM] Erweiterte Versorgungskiste</German>
+                <Russian>[ACM] Ящик с улучшенными медицинскими принадлежностями</Russian>
             </Key>
         </Container>
         <Container name="// Dog Tags //">
@@ -155,6 +181,7 @@
                 <English>%1 is inspecting your dog tags</English>
                 <Polish>%1 sprawdza twój nieśmiertelnik</Polish>
                 <German>%1 schaut sich deine Erkennungsmarke an</German>
+                <Russian>%1 проверяет ваши жетоны</Russian>
             </Key>
         </Container>
         <Container name="// Incompatible Addons //">
@@ -162,17 +189,21 @@
                 <English>Incompatible addons found:</English>
                 <Polish>Znaleziono niekompatybilne addony:</Polish>
                 <German>Inkompatible Addons gefunden:</German>
+                <Russian>Обнаружены несовместимые аддоны:</Russian>
             </Key>
         </Container>
         <Container name="// Split Medication Action //">
             <Key ID="STR_ACM_Core_SplitMedicationPack">
                 <English>Split Medication Package</English>
+                <Russian>Разделенный пакет лекарств</Russian>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
                 <English>Split</English>
+                <Russian>Расколоть</Russian>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Complete">
                 <English>%1 package has been split</English>
+                <Russian>%1 пакет был разделен</Russian>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -180,51 +211,61 @@
                 <English>Inserted</English>
                 <Polish>Włożono</Polish>
                 <German>Eingelegt</German>
+                <Russian>Вставлено</Russian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Attached">
                 <English>Attached</English>
                 <Polish>Przymocowano</Polish>
                 <German>Angehängt</German>
+                <Russian>Прикрепил</Russian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Applied">
                 <English>Applied</English>
                 <Polish>Podano</Polish>
                 <German>Appliziert</German>
+                <Russian>Применяемый</Russian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Removed">
                 <English>Removed</English>
                 <Polish>Usunięto</Polish>
                 <German>Entfernt</German>
+                <Russian>Удаленный</Russian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Connected">
                 <English>Connected</English>
                 <Polish>Przyczepiono</Polish>
                 <German>Konnektiert</German>
+                <Russian>Подключено</Russian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Disconnected">
                 <English>Disconnected</English>
                 <Polish>Odczepiono</Polish>
                 <German>Diskonnektiert</German>
+                <Russian>Отключено</Russian>
             </Key>
             <Key ID="STR_ACM_Core_Common_InProgress">
                 <English>In Progress</English>
                 <Polish>W trakcie</Polish>
                 <German>Im Gange</German>
+                <Russian>В ходе выполнения</Russian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Paused">
                 <English>Paused</English>
                 <Polish>Przerwane</Polish>
                 <German>Pausiert</German>
+                <Russian>Приостановлено</Russian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Active">
                 <English>Active</English>
                 <Polish>Aktywny</Polish>
                 <German>Aktiv</German>
+                <Russian>Активный</Russian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Empty">
                 <English>Empty</English>
                 <Polish>Pusty </Polish>
                 <German>Leer</German>
+                <Russian>Пустой</Russian>
             </Key>
         </Container>
         <Container name="// ACE Action //">
@@ -232,6 +273,7 @@
                 <English>Medical Equipment</English>
                 <Polish>Wyposażenie medyczne</Polish>
                 <German>Medizinische Ausrüstung</German>
+                <Russian>Медицинское оборудование</Russian>
             </Key>
         </Container>
     </Package>
