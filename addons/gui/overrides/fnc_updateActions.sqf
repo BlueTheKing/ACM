@@ -35,7 +35,7 @@ if (_showTriage) exitWith {
     [_ctrlTriage, ACEGVAR(medical_gui,target)] call ACEFUNC(medical_gui,updateTriageCard);
 };
 
-if (GVAR(showActionItemIcons) && (GVAR(lastSelectedCategory) != ACEGVAR(medical_gui,selectedCategory) || GVAR(lastSelectedBodyPart) != ACEGVAR(medical_gui,selectedBodyPart) || GVAR(lastTarget) != ACEGVAR(medical_gui,target))) exitWith {
+if (GVAR(showActionItemIcons) && (GVAR(lastSelectedCategory) != ACEGVAR(medical_gui,selectedCategory) || GVAR(lastSelectedBodyPart) != ACEGVAR(medical_gui,selectedBodyPart) || (!(isNull ACEGVAR(medical_gui,target)) && !(isNull GVAR(lastTarget)) && {GVAR(lastTarget) != ACEGVAR(medical_gui,target)}))) exitWith {
     { ctrlDelete _x } forEach _actionButtons;
     GVAR(lastSelectedCategory) = ACEGVAR(medical_gui,selectedCategory);
     GVAR(lastSelectedBodyPart) = ACEGVAR(medical_gui,selectedBodyPart);

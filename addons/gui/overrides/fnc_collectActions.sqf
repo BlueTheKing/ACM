@@ -25,7 +25,7 @@ ACEGVAR(medical_gui,actions) = [];
     private _condition = compile format [QUOTE([ARR_4(ACE_player,ACEGVAR(medical_gui,target),%1 select ACEGVAR(medical_gui,selectedBodyPart),'%2')] call DACEFUNC(ACE_ADDON(medical_treatment),canTreatCached)), ALL_BODY_PARTS, _configName];
     private _statement = compile format [QUOTE([ARR_4(ACE_player,ACEGVAR(medical_gui,target),%1 select ACEGVAR(medical_gui,selectedBodyPart),'%2')] call DACEFUNC(ACE_ADDON(medical_treatment),treatment)), ALL_BODY_PARTS, _configName];
     private _items = getArray (_x >> "items");
-    private _menuIcon = getText (["", (_x >> "ACM_menuIcon")] select GVAR(showActionItemIcons));
+    private _menuIcon = (["",getText (_x >> "ACM_menuIcon")] select GVAR(showActionItemIcons));
 
     ACEGVAR(medical_gui,actions) pushBack [_displayName, _category, _condition, _statement, _items, _menuIcon];
 } forEach configProperties [configFile >> QACEGVAR(medical_treatment,actions), "isClass _x"];
