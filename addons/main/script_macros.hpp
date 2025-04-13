@@ -355,8 +355,6 @@
 #define ACM_SYRINGES_3 EGVAR(circulation,SyringeList_3)
 #define ACM_SYRINGES_1 EGVAR(circulation,SyringeList_13)
 
-#define ACM_NASAL_MEDICATION ['AmmoniaInhalant','Naloxone']
-
 //// Blood
 #define GET_BLOODTYPE(unit) (unit getVariable [QEGVAR(circulation,BloodType),-1])
 
