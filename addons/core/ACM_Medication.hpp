@@ -317,7 +317,7 @@ class ACM_Medication {
         class Atropine: ACM_IM_Medication {
             medicationType = "Atropine";
             timeInSystem = 900;
-            timeTillMaxEffect = 15;
+            timeTillMaxEffect = 30;
             maxEffectTime = 600;
             hrIncrease[] = {8, 15};
             rrAdjust[] = {1, 4};
