@@ -53,7 +53,7 @@ if (_type == 0) then {
             private _returnAmount = [_volume] call FUNC(getReturnVolume);
 
             if (_returnAmount > 0) then {
-                private _itemClassName = [_type, _targetVolume, _bloodType] call FUNC(formatFluidBagName);
+                private _itemClassName = [_bagType, _targetVolume, _bloodType] call FUNC(formatFluidBagName);
                 [_medic, _itemClassname] call ACEFUNC(common,addToInventory);
             };
             _ivBagsBodyPart deleteAt _forEachIndex;
