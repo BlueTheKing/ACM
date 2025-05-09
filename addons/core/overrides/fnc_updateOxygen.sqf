@@ -135,9 +135,7 @@ if !(_activeBVM) then {
 if (EGVAR(CBRN,enable) && _respirationRate > 0) then {
     private _airwayInflammation = GET_AIRWAY_INFLAMMATION(_patient);
 
-    if (_airwayInflammation >= 100 || HAS_AIRWAY_SPASM(_patient)) then {
-        _respirationRate = 0;
-    } else {
+    if (!(HAS_SURGICAL_AIRWAY(_patient)) && _airwayInflammation > 30) then {
         _maxPositiveGain = _maxPositiveGain * (linearConversion [30, 100, _airwayInflammation, 1, 0, true]);
     };
 

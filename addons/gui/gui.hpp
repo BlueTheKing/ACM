@@ -45,6 +45,14 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             idc = IDC_BODY_HEAD_IGEL;
             text = QPATHTOF(data\body_image\head_igel.paa);
         };
+        class Head_SurgicalAirway_0: Head_GuedelTube {
+            idc = IDC_BODY_HEAD_SURGICAL_AIRWAY_0;
+            text = QPATHTOF(data\body_image\head_surgical_airway_0.paa);
+        };
+        class Head_SurgicalAirway_1: Head_SurgicalAirway_0 {
+            idc = IDC_BODY_HEAD_SURGICAL_AIRWAY_1;
+            text = QPATHTOF(data\body_image\head_surgical_airway_1.paa);
+        };
         class Head_Lozenge: Head_GuedelTube {
             idc = IDC_BODY_HEAD_LOZENGE;
             text = QPATHTOF(data\body_image\head_lozenge.paa);

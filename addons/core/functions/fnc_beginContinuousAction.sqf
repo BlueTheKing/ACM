@@ -11,13 +11,14 @@
  * 1: On Start <CODE>
  * 2: On Cancel <CODE>
  * 3: Per Frame Code <CODE>
- * 4: Dialog ID <NUMBER>
+ * 4: Allowed Prone <BOOL>
+ * 5: Dialog ID <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [[player, cursorTarget, "Head", true], {}, {}, {}] call ACM_core_fnc_beginContinuousAction;
+ * [[player, cursorTarget, "Head"], {}, {}, {}] call ACM_core_fnc_beginContinuousAction;
  *
  * Public: No
  */

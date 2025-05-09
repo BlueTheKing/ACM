@@ -231,7 +231,9 @@
 #define GET_AIRWAYADJUNCT_ORAL(unit)  (unit getVariable [QEGVAR(airway,AirwayItem_Oral), ""])
 #define GET_AIRWAYADJUNCT_NASAL(unit) (unit getVariable [QEGVAR(airway,AirwayItem_Nasal), ""])
 
-#define HAS_SURGICAL_AIRWAY(unit) (unit getVariable [QEGVAR(airway,AirwaySurgical_State), false])
+#define HAS_SURGICAL_AIRWAY(unit) (unit getVariable [QEGVAR(airway,SurgicalAirway_State), false])
+
+#define GET_SURGICAL_AIRWAY_BLEEDRATE(unit) ([unit] call EFUNC(airway,getAirwayIncisionBleedRate))
 
 // Breathing
 #define ACM_BREATHING_MINDECREASE 0.1

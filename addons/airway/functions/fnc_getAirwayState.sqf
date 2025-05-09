@@ -17,15 +17,15 @@
 
 params ["_patient"];
 
-private _state = 1;
+if HAS_SURGICAL_AIRWAY(_patient) exitWith {
+    [1, 0.75] select (_patient getVariable [QGVAR(SurgicalAirway_TubeUnSecure), false]);
+};
 
 if !(IS_UNCONSCIOUS(_patient)) exitWith {
-    _state;
+    1;
 };
 
-if (_patient getVariable [QGVAR(AirwaySurgical_State), false]) exitWith {
-    _state;
-};
+private _state = 1;
 
 private _airwayReflex = _patient getVariable [QGVAR(AirwayReflex_State), false];
 

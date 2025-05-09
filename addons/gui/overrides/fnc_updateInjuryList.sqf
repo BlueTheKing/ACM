@@ -222,6 +222,25 @@ if (_selectionN == 0) then {
         _entries pushBack [_airwayItem, _airwayColor];
     };
 
+    if ((_target getVariable [QEGVAR(airway,SurgicalAirway_State), false]) || (_target getVariable [QEGVAR(airway,SurgicalAirway_InProgress), false])) then {
+        private _entry = LELSTRING(airway,SurgicalAirway);
+
+        if (_target getVariable [QEGVAR(airway,SurgicalAirway_State), false]) then {
+            if (_target getVariable [QEGVAR(airway,SurgicalAirway_StrapSecure), false]) then {
+                _entry = format ["%1 [%2]", _entry, LELSTRING(airway,GUI_SurgicalAirway_Strapped)];
+            };
+            if (_target getVariable [QEGVAR(airway,SurgicalAirway_Incision), false] && !(_target getVariable [QEGVAR(airway,SurgicalAirway_IncisionStitched), false])) then {
+                _entry = format ["%1 [%2]", _entry, LELSTRING(airway,GUI_SurgicalAirway_OpenIncision)]; 
+            };
+        } else {
+            if (_target getVariable [QEGVAR(airway,SurgicalAirway_InProgress), false]) then {
+                _entry = format ["%1 [%2]", _entry, LELSTRING(core,Common_InProgress)];
+            };
+        };
+
+        _entries pushBack [_entry, _airwayColor];
+    };
+
     private _lozengeItem = _target getVariable [QEGVAR(circulation,LozengeItem), ""];
 
     if (_lozengeItem != "") then {

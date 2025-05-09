@@ -131,6 +131,17 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// Surgical Airway
+
+[
+    QGVAR(allowSurgicalAirway),
+    "LIST",
+    [LSTRING(SETTING_Allow_SurgicalAirway), LSTRING(SETTING_Allow_SurgicalAirway_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_SurgicalAirway)],
+    [SETTING_DROPDOWN_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
 [
     QGVAR(airwayAdjunctReusable),
     "CHECKBOX",

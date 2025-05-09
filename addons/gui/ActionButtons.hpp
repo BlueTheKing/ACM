@@ -18,6 +18,7 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACM_IGel,QPATHTOEF(airway,ui\igel_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_NPA,QPATHTOEF(airway,ui\npa_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_SuctionBag,QPATHTOEF(airway,ui\suctionbag_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_ACCUVAC,QPATHTOEF(airway,ui\accuvac_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(ACM_CricKit,QPATHTOEF(airway,ui\crickit_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_ChestSeal,QPATHTOEF(breathing,ui\chestseal_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_PulseOximeter,QPATHTOEF(breathing,ui\pulseoximeter_ca.paa));

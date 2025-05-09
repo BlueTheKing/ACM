@@ -166,6 +166,51 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QEFUNC(disability,wrapSplint);
     };
 
+    // Surgical Airway
+    class StitchAirwayIncision: FieldDressing {
+        displayName = ECSTRING(airway,SurgicalAirwayStitch);
+        displayNameProgress = ACECSTRING(medical_treatment,Stitching);
+        icon = QACEPATHTOF(medical_gui,ui\surgical_kit.paa);
+        category = "airway";
+        items[] = {"ACE_surgicalKit"};
+        treatmentLocations = QACEGVAR(medical_treatment,locationSurgicalKit);
+        allowSelfTreatment = 0;
+        medicRequired = QACEGVAR(medical_treatment,medicSurgicalKit);
+        treatmentTime = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,getStitchAirwayIncisionTime));
+        allowedSelections[] = {"Head"};
+        condition = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,canStitchAirwayIncision));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,stitchAirwayIncision));
+        callbackStart = "";
+        callbackProgress = "";
+        consumeItem = QACEGVAR(medical_treatment,consumeSurgicalKit);
+        animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
+        litter[] = {{"ACE_MedicalLitter_gloves"}};
+        ACM_rollToBack = 1;
+        ACM_menuIcon = "ACE_surgicalKit";
+    };
+    class StitchAirwayIncision_Suture: StitchAirwayIncision {
+        displayName = ECSTRING(airway,SurgicalAirwayStitch_Suture);
+        displayNameProgress = ECSTRING(damage,SurgicalKit_Suture_Progress);
+        treatmentTime = QUOTE([ARR_3(_medic,_patient,true)] call EFUNC(airway,getStitchAirwayIncisionTime));
+        condition = QUOTE([ARR_3(_medic,_patient,1)] call EFUNC(airway,canStitchAirwayIncision));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,stitchAirwayIncision));
+    };
+    class SurgicalAirway_SecureStrap: StitchAirwayIncision {
+        displayName = ECSTRING(airway,SurgicalAirwayStrap_Action);
+        displayNameProgress = ECSTRING(airway,SurgicalAirwayStrap_Progress);
+        icon = "";
+        items[] = {};
+        consumeItem = 0;
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        medicRequired = 0;
+        treatmentTime = 5;
+        condition = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,canSecureSurgicalAirway));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,secureSurgicalAirway));
+        animationMedic = "";
+        litter[] = {};
+        ACM_menuIcon = "";
+    };
+
     // Disability
     class InspectForFracture: CheckPulse {
         displayName = ECSTRING(disability,InspectForFracture);

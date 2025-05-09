@@ -16,6 +16,9 @@
             <Polish>Stabilizacja dróg oddechowych</Polish>
             <German>Atemwegs-Hilfe</German>
         </Key>
+        <Key ID="STR_ACM_Airway_Category_SurgicalAirway">
+            <English>Surgical Airway</English>
+        </Key>
         <Key ID="STR_ACM_Airway_SETTING_Enable">
             <English>Enable Airway</English>
             <Polish>Włącz drogi oddechowe</Polish>
@@ -131,6 +134,12 @@
             <Polish>Poziom wyszkolenia potrzebny do użycia maski krtaniowej i-gel</Polish>
             <German>Benötigte Qualifikationsstufe um die i-gel-Maske zu benutzen</German>
         </Key>
+        <Key ID="STR_ACM_Airway_SETTING_Allow_SurgicalAirway">
+            <English>Allow Surgical Airway</English>
+        </Key>
+        <Key ID="STR_ACM_Airway_SETTING_Allow_SurgicalAirway_Desc">
+            <English>Training level required to establish surgical airway</English>
+        </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayAdjunctsReusable">
             <English>Airway Adjuncts Reusable</English>
             <Polish>Przedmioty dróg oddechowych ponownego użytku</Polish>
@@ -196,6 +205,12 @@
                 <English>Device used to clear airway obstructions</English>
                 <Polish>Urządzenie służące do oczyszczania zatorów dróg oddechowych</Polish>
                 <German>Eine elektronische Absaugpump, um Blockierungen im Rachenraum abzusaugen</German>
+            </Key>
+            <Key ID="STR_ACM_Airway_CricKit">
+                <English>Cric Kit</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_CricKit_Desc">
+                <English>Single-use kit used to establish emergency surgical airway</English>
             </Key>
         </Container>
         <Container name="// Head tilt-chin lift Action //">
@@ -564,11 +579,134 @@
                 <German>%1 hat die stabile Seitenlage abgebrochen</German>
             </Key>
         </Container>
+        <Container name="// Surgical Airway Action //">
+            <Key ID="STR_ACM_Airway_SurgicalAirway">
+                <English>Surgical Airway</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_Action">
+                <English>Establish Surgical Airway</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_ActionProgress">
+                <English>Establishing Surgical Airway...</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_ActionLog">
+                <English>%1 established surgical airway</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_AlreadyInProgress">
+                <English>Surgical airway already in progress</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_Failed">
+                <English>Surgical airway failed</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_Cancelled">
+                <English>Cancelled surgical airway</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_Cancelled_ActionLog">
+                <English>%1 cancelled surgical airway</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_Scalpel">
+                <English>Scalpel</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_Hook">
+                <English>Tracheal Hook</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_Tube">
+                <English>Cric-Key</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_Syringe">
+                <English>Syringe</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_Strap">
+                <English>Neck Strap</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_IncisionExpanded">
+                <English>Expanded incision with finger</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_LiftIncision">
+                <English>Lift Incision</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_LiftIncision_Complete">
+                <English>Lifted incision with tracheal hook</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_RemoveHook">
+                <English>Remove Tracheal Hook</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_RemoveHook_Complete">
+                <English>Removed tracheal hook</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_InsertTube">
+                <English>Insert Cric-Key</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_InsertTube_Complete">
+                <English>Inserted cric-key</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_InflateTubeCuff">
+                <English>Inflate Tube Cuff</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_InflateTubeCuff_Complete">
+                <English>Inflated cric-key cuff</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_RemoveTubeStylet">
+                <English>Remove Stylet</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_RemoveTubeStylet_Complete">
+                <English>Removed cric-key stylet</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_ConnectStrap">
+                <English>Connect Strap</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_ConnectStrap_Complete">
+                <English>Connected neck strap</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_SecureStrap">
+                <English>Secure Strap</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_SecureStrap_Complete">
+                <English>Secured neck strap</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirway_PutBack">
+                <English>Put Back</English>
+            </Key>
+        </Container>
+        <Container name="// Surgical Airway Strap Action //">
+            <Key ID="STR_ACM_Airway_SurgicalAirwayStrap_Action">
+                <English>Secure Surgical Airway Strap</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirwayStrap_Progress">
+                <English>Securing neck strap...</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirwayStrap_Complete">
+                <English>Secured neck strap</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirwayStrap_ActionLog">
+                <English>%1 secured surgical airway neck strap</English>
+            </Key>
+        </Container>
+        <Container name="// Surgical Airway Stitch Action //">
+            <Key ID="STR_ACM_Airway_SurgicalAirwayStitch">
+                <English>Stitch Airway Incision</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirwayStitch_Suture">
+                <English>Stitch Airway Incision (Suture)</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirwayStitch_Complete">
+                <English>Stitched surgical airway incision</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_SurgicalAirwayStitch_ActionLog">
+                <English>%1 stitched surgical airway incision</English>
+            </Key>
+        </Container>
         <Container name="// GUI //">
             <Key ID="STR_ACM_Airway_GUI_HeadTiltedChinLifted">
                 <English>Head Tilted &amp; Chin Lifted</English>
                 <Polish>Rękoczyn czoło-żuchwa w toku</Polish>
                 <German>Kopf überstreckt</German>
+            </Key>
+            <Key ID="STR_ACM_Airway_GUI_SurgicalAirway_OpenIncision">
+                <English>Open Incision</English>
+            </Key>
+            <Key ID="STR_ACM_Airway_GUI_SurgicalAirway_Strapped">
+                <English>Strapped</English>
             </Key>
         </Container>
     </Package>

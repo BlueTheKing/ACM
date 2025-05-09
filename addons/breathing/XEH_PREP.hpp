@@ -32,7 +32,6 @@ PREP(Thoracostomy_resealChestTubeLocal);
 PREP(Thoracostomy_start);
 PREP(Thoracostomy_startLocal);
 PREP(updateLungState);
-//PREP(updateOxygenSaturation);
 PREP(updateRespirationRate);
 PREP(useBVM);
 PREP(useOxygenTankReserve);

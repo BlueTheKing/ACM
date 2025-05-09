@@ -67,4 +67,13 @@ class CfgWeapons {
             mass = 20;
         };
     };
+
+    class ACM_CricKit: ACM_GuedelTube {
+        picture = QPATHTOF(ui\crickit_ca.paa);
+        displayName = CSTRING(CricKit);
+        descriptionShort = CSTRING(CricKit_Desc);
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 2.5;
+        };
+    };
 };

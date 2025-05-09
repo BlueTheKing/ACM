@@ -23,6 +23,21 @@ params ["_ctrlGroup", "_target", "_selectionN"];
 private _ctrlGuedelTube = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_GUEDELTUBE;
 private _ctrlNPA = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_NPA;
 private _ctrlIGel = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_IGEL;
+private _ctrlSurgicalAirway = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_SURGICAL_AIRWAY_0;
+private _ctrlSurgicalAirwayStrapped = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_SURGICAL_AIRWAY_1;
+
+if (_target getVariable [QEGVAR(airway,SurgicalAirway_State), false]) then {
+    if (_target getVariable [QEGVAR(airway,SurgicalAirway_StrapSecure), false]) then {
+        _ctrlSurgicalAirway ctrlShow false;
+        _ctrlSurgicalAirwayStrapped ctrlShow true;
+    } else {
+        _ctrlSurgicalAirway ctrlShow true;
+        _ctrlSurgicalAirwayStrapped ctrlShow false;
+    };
+} else {
+    _ctrlSurgicalAirway ctrlShow false;
+    _ctrlSurgicalAirwayStrapped ctrlShow false;
+};
 
 private _airwayItemOral = _target getVariable [QEGVAR(airway,AirwayItem_Oral), ""];
 private _airwayItemNPA = _target getVariable [QEGVAR(airway,AirwayItem_Nasal), ""];

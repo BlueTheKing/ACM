@@ -65,6 +65,12 @@ if (_HTXState > 0) then {
     _unit setVariable [QEGVAR(breathing,Hemothorax_Fluid), (_thoraxBlood min 1.5), _syncValues];
 };
 
+private _incisionBleedRate = GET_SURGICAL_AIRWAY_BLEEDRATE(_unit);
+
+if (_incisionBleedRate > 0 && !(_unit getVariable [QEGVAR(airway,SurgicalAirway_IncisionStitched), false])) then {
+    _bloodLoss = _bloodLoss + (-_deltaT * _incisionBleedRate);
+};
+
 if (_bloodVolume > 0) then {
     _activeVolumes = _activeVolumes + 1;
 };
@@ -369,7 +375,7 @@ if (_plateletCount != _targetPlateletCount) then {
     if (_TXAEffect > 0.1) then {
         _adjustSpeed = _adjustSpeed / 2;
     };
-    if (!(IS_BLEEDING(_unit)) && !(IS_I_BLEEDING(_unit)) && _HTXState < 1 && _plateletCount > _targetPlateletCount) then {
+    if ((_bloodVolumeChange >= 0) && _plateletCount > _targetPlateletCount) then {
         _adjustSpeed = 100;
     };
     _plateletCountChange = _plateletCountChange + ((_targetPlateletCount - _plateletCount) / _adjustSpeed) * _deltaT;
