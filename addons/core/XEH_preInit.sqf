@@ -135,6 +135,27 @@ if (systemTime select 0 == 2025 && systemTime select 1 == 4 && systemTime select
 ] call CBA_fnc_addSetting;
 };
 
+// DISABLED SETTINGS
+
+[
+    QACEGVAR(medical_statemachine,cardiacArrestTime),
+    "TIME",
+    [ACELSTRING(medical_statemachine,CardiacArrestTime_DisplayName), "[ACM] SETTING DISABLED"],
+    [ACELSTRING(medical,Category), ACELSTRING(medical_statemachine,SubCategory)],
+    [1, 3600, 300],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QACEGVAR(medical_vitals,simulateSpO2),
+    "CHECKBOX",
+    [ACELSTRING(medical_vitals,simulateSpO2_DisplayName), "[ACM] SETTING DISABLED"],
+    [ACELSTRING(medical,Category), ACELSTRING(medical_vitals,SubCategory)],
+    true,
+    1,
+    {}
+] call CBA_fnc_addSetting;
+
 GVAR(itemHash) = uiNamespace getVariable QGVAR(itemHash); // Medic AI
 
 ADDON = true;
