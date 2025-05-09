@@ -24,5 +24,6 @@ if !(local _unit) exitWith {};
 [_unit] call EFUNC(airway,resetVariables);
 [_unit] call EFUNC(breathing,resetVariables);
 [_unit] call EFUNC(circulation,resetVariables);
+[_unit] call EFUNC(CBRN,resetVariables);
 [_unit] call EFUNC(damage,resetVariables);
 [_unit] call EFUNC(disability,resetVariables);

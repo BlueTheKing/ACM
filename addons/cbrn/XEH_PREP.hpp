@@ -3,6 +3,7 @@ PREP(canPutOnGasMask);
 PREP(canReplaceFilter);
 PREP(canTakeOffGasMask);
 PREP(canWashEyes);
+PREP(clearBlindEffect);
 PREP(detector_reset);
 PREP(detector_setAlarm);
 PREP(detector_toggle);

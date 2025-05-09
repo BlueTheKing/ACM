@@ -103,9 +103,7 @@
                 [_unit, true, true] call FUNC(showBlindEffect);
             };
         } else { // camera view
-            if IS_BLINDED(_unit) then {
-                [_unit, false, true] call FUNC(showBlindEffect);
-            };
+            [_unit, false, true] call FUNC(showBlindEffect);
         };
     }] call CBA_fnc_addPlayerEventHandler;
 

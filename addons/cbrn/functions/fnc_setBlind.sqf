@@ -20,16 +20,4 @@ params ["_patient", "_active"];
 
 [QGVAR(showBlindEffect), [_patient, _active], _patient] call CBA_fnc_targetEvent;
 
-if (_active) then {
-    [{
-        params ["_patient"];
-
-        _patient setVariable [QGVAR(Blindness_State), true, true];
-    }, [_patient], 1] call CBA_fnc_waitAndExecute;
-} else {
-    [{
-        params ["_patient"];
-
-        _patient setVariable [QGVAR(Blindness_State), false, true];
-    }, [_patient], 6] call CBA_fnc_waitAndExecute;
-};
+_patient setVariable [QGVAR(Blindness_State), _active, true];
