@@ -81,6 +81,8 @@ removeGoggles _patient;
 
 [_patient, true, 30] call ACEFUNC(medical,setUnconscious);
 
+_patient setVariable [QEGVAR(damage,InstantDeathImmune), true, true];
+
 private _injuryArray = [];
 
 if (_severity == 0) then { // Random

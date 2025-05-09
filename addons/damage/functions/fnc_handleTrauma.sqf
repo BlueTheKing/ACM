@@ -18,6 +18,8 @@
 
 params ["_patient", ["_bodyPartDamage", []]];
 
+if (_patient getVariable [QGVAR(InstantDeathImmune), false]) exitWith {false};
+
 if (_bodyPartDamage isEqualTo []) then {
     _bodyPartDamage = GET_BODYPART_DAMAGE(_patient);
 };
