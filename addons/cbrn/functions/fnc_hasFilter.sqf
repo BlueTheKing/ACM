@@ -1,20 +1,20 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Check if unit can take off gas mask.
+ * Check if unit has filter in inventory.
  *
  * Arguments:
  * 0: Unit <OBJECT>
  *
  * Return Value:
- * Can take off gas mask? <BOOL>
+ * Has filter? <BOOL>
  *
  * Example:
- * [player] call ACM_CBRN_fnc_canTakeOffGasMask;
+ * [player] call ACM_CBRN_fnc_hasFilter;
  *
  * Public: No
  */
 
 params ["_unit"];
 
-[_unit] call FUNC(isWearingGasMask);
+[_unit, "ACM_GasMaskFilter"] call ACEFUNC(common,hasItem);

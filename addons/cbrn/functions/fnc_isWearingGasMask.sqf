@@ -1,20 +1,20 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Check if unit can take off gas mask.
+ * Check if unit is wearing a gas mask.
  *
  * Arguments:
  * 0: Unit <OBJECT>
  *
  * Return Value:
- * Can take off gas mask? <BOOL>
+ * None
  *
  * Example:
- * [player] call ACM_CBRN_fnc_canTakeOffGasMask;
+ * [player] call ACM_CBRN_fnc_isWearingGasMask;
  *
  * Public: No
  */
 
 params ["_unit"];
 
-[_unit] call FUNC(isWearingGasMask);
+(goggles _unit) in (GVAR(PPE_List) get "gasmask")
