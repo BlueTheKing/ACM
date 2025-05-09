@@ -35,11 +35,12 @@ if (_buildup < 5) exitWith {};
 
 if (_isExposed || _isExposedExternal) then {
     private _bodyPart = [(ALL_BODY_PARTS selectRandomWeighted [0.7,0.5,0.75,0.75,0.3,0.3]), "head"] select _protectedBody;
+    private _severity = linearConversion [10, 60, _buildup, 0.01, 1, true];
 
-    [QACEGVAR(medical,woundReceived), [_patient, [[0.01, _bodyPart, 0.01]], objNull, "lewisiteburn"]] call CBA_fnc_localEvent;
+    [QACEGVAR(medical,woundReceived), [_patient, [[_severity, _bodyPart, _severity]], objNull, "lewisiteburn"]] call CBA_fnc_localEvent;
 };
 
-if (_buildup < 40) exitWith {};
+if (_buildup < 30) exitWith {};
 
 if (_isExposed) then {
     if (!_filtered) then {
@@ -53,7 +54,7 @@ if (_isExposed) then {
     };
 };
 
-if (_buildup < 70) exitWith {};
+if (_buildup < 50) exitWith {};
 
 if (_isExposed && !_protectedEyes && IS_BLINDED(_patient) && GVAR(lewisiteCauseBlindness)) then {
     _patient setVariable [QGVAR(Chemical_Lewisite_Blindness), true, true];
@@ -63,6 +64,12 @@ private _capillaryDamage = GET_CAPILLARY_DAMAGE(_patient);
 private _targetSeverity = linearConversion [70, 90, _buildup, 0, 100, true];
 
 _patient setVariable [QGVAR(CapillaryDamage), ((_capillaryDamage + 1) min _targetSeverity), true];
+
+if (_buildup < 70) exitWith {};
+
+if !(IS_UNCONSCIOUS(_patient)) then {
+    [QACEGVAR(medical,CriticalVitals), _patient] call CBA_fnc_localEvent;
+};
 
 if (_buildup >= 100) then {
     [_patient, "Lewisite Poisoning"] call ACEFUNC(medical_status,setDead);

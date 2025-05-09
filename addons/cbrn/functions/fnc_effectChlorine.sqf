@@ -53,13 +53,13 @@ if (_isExposed || _isExposedExternal) then {
     _patient setVariable [QGVAR(SkinIrritation), _skinIrritationArray, true];
 };
 
-if (_buildup < 25) exitWith {};
+if (_buildup < 15) exitWith {};
 
 if (_isExposed && GET_PAIN(_patient) < 0.9) then {
     [_patient, 1] call ACEFUNC(medical,adjustPainLevel);
 };
 
-if (_buildup < 50) exitWith {};
+if (_buildup < 40) exitWith {};
 
 if (_isExposed) then {
     if (!_filtered) then {
@@ -73,10 +73,16 @@ if (_isExposed) then {
     };
 };
 
-if (_buildup < 80) exitWith {};
+if (_buildup < 50) exitWith {};
 
 if (_isExposed && !_protectedEyes && IS_BLINDED(_patient) && GVAR(chlorineCauseBlindness)) then {
     _patient setVariable [QGVAR(Chemical_Chlorine_Blindness), true, true];
+};
+
+if (_buildup < 70) exitWith {};
+
+if !(IS_UNCONSCIOUS(_patient)) then {
+    [QACEGVAR(medical,CriticalVitals), _patient] call CBA_fnc_localEvent;
 };
 
 if (_buildup >= 100) then {

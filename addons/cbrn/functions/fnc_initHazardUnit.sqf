@@ -187,12 +187,6 @@ private _PFH = [{
             _buildup = (_buildup + (_eliminationRate * _decreaseModifier)) max 0;
         };
     };
-    
-    if (_exposed && !_filtered || _exposedExternal && !_protectedBody) then {
-        _buildup = (_buildup + ((_inhalationRate max _absorptionRate) * _increaseModifier)) min 100;
-    } else {
-        _buildup = (_buildup + (_eliminationRate * _decreaseModifier)) max 0;
-    };
 
     _patient setVariable [_buildupVarString, _buildup, true];
 

@@ -285,13 +285,13 @@ if (EGVAR(CBRN,enable)) then {
     
     if (_skinIrritation > 5) then {
         private _colorMultiplier = linearConversion [5, 85, _skinIrritation, 1, 0.7, true];
-        private _entry = switch (true) do {
-            case (_skinIrritation < 25): {"Slight Skin Irritation"};
-            case (_skinIrritation < 65): {"Moderate Skin Irritation"};
-            default {"Severe Skin Irritation"};
+        private _severity = switch (true) do {
+            case (_skinIrritation < 25): {LELSTRING(CBRN,GUI_Slight)};
+            case (_skinIrritation < 65): {LELSTRING(CBRN,GUI_Moderate)};
+            default {LELSTRING(CBRN,GUI_Severe)};
         };
 
-        _entries pushBack [_entry, [(0.8 * _colorMultiplier), (0.7 * _colorMultiplier), (0.1 * _colorMultiplier), 1]];
+        _entries pushBack [format ["%1 %2", _severity, LELSTRING(CBRN,GUI_SkinIrritation)], [(0.8 * _colorMultiplier), (0.7 * _colorMultiplier), (0.1 * _colorMultiplier), 1]];
     };
 };
 

@@ -344,5 +344,19 @@
                 <English>Large</English>
             </Key>
         </Container>
+        <Container name="// GUI //">
+            <Key ID="STR_ACM_CBRN_GUI_SkinIrritation">
+                <English>Skin Irritation</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GUI_Slight">
+                <English>Slight</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GUI_Moderate">
+                <English>Moderate</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_GUI_Severe">
+                <English>Severe</English>
+            </Key>
+        </Container>
     </Package>
 </Project>
