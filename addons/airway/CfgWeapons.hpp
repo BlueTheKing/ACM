@@ -14,11 +14,11 @@ class CfgWeapons {
         };
     };
 
-    class ACM_GuedelTube_Used: ACM_GuedelTube {
+    /*class ACM_GuedelTube_Used: ACM_GuedelTube {
         scope = 1;
         displayName = "Guedel Tube (Used)";
         descriptionShort = "Already used? ew";
-    };
+    };*/
 
     class ACM_IGel: ACM_GuedelTube {
         picture = QPATHTOF(ui\igel_ca.paa);
@@ -29,11 +29,11 @@ class CfgWeapons {
         };
     };
 
-    class ACM_IGel_Used: ACM_IGel {
+    /*class ACM_IGel_Used: ACM_IGel {
         scope = 1;
         displayName = "i-gel (Used)";
         descriptionShort = "Already used? ew";
-    };
+    };*/
 
     class ACM_NPA: ACM_GuedelTube {
         picture = QPATHTOF(ui\npa_ca.paa);
@@ -44,11 +44,11 @@ class CfgWeapons {
         };
     };
 
-    class ACM_NPA_Used: ACM_NPA {
+    /*class ACM_NPA_Used: ACM_NPA {
         scope = 1;
         displayName = "NPA (Used)";
         descriptionShort = "Already used? ew";
-    };
+    };*/
 
     class ACM_SuctionBag: ACM_GuedelTube {
         picture = QPATHTOF(ui\suctionbag_ca.paa);

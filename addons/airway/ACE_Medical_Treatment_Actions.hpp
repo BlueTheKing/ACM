@@ -91,7 +91,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         medicRequired = QGVAR(allowOPA);
         treatmentTime = QGVAR(treatmentTimeOPA);
-        items[] = {"ACM_GuedelTube","ACM_GuedelTube_Used"};
+        items[] = {"ACM_GuedelTube"};
         consumeItem = 1;
         condition = QUOTE(GVAR(enable) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'OPA')] call FUNC(insertAirwayItem));
@@ -104,7 +104,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         medicRequired = QGVAR(allowNPA);
         treatmentTime = QGVAR(treatmentTimeNPA);
-        items[] = {"ACM_NPA","ACM_NPA_Used"};
+        items[] = {"ACM_NPA"};
         condition = QUOTE(GVAR(enable) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Nasal),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'NPA')] call FUNC(insertAirwayItem));
         ACM_menuIcon = "ACM_NPA";
@@ -115,7 +115,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         medicRequired = QGVAR(allowSGA);
         treatmentTime = QGVAR(treatmentTimeSGA);
-        items[] = {"ACM_IGel","ACM_IGel_Used"};
+        items[] = {"ACM_IGel"};
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'SGA')] call FUNC(insertAirwayItem));
         ACM_menuIcon = "ACM_IGel";
     };

@@ -23,22 +23,8 @@ if (_nasalAirway) then {
     private _airway = _patient getVariable [QGVAR(AirwayItem_Nasal), ""];
 
     _patient setVariable [QGVAR(AirwayItem_Nasal), "", true];
-
-    if (GVAR(airwayAdjunctReusable)) then {
-        if (_airway == "NPA") then {
-            [_medic, "ACM_NPA_Used"] call ACEFUNC(common,addToInventory);
-        };
-    };
 } else {
     private _airway = _patient getVariable [QGVAR(AirwayItem_Oral), ""];
 
     _patient setVariable [QGVAR(AirwayItem_Oral), "", true];
-
-    if (GVAR(airwayAdjunctReusable)) then {
-        if (_airway == "OPA") then {
-            [_medic, "ACM_GuedelTube_Used"] call ACEFUNC(common,addToInventory);
-        } else {
-            [_medic, "ACM_IGel_Used"] call ACEFUNC(common,addToInventory);
-        };
-    };
 };
