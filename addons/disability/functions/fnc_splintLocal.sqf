@@ -41,7 +41,7 @@ if (_classname isEqualTo "ApplySAMSplint" && ACEGVAR(medical,fractures) > 1) the
     _patient setVariable [VAR_SPLINTS, _splints, true];
 
     // Splint falls off after a while
-    private _fallOffTime = EGVAR(core,splintFallOffTime);
+    private _fallOffTime = GVAR(splintFallOffTime);
     [{
         params ["_patient", "", "_partIndex"];
 

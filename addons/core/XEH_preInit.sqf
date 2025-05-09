@@ -58,33 +58,6 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(treatmentTimeSAMSplint),
-    "SLIDER",
-    [LELSTRING(disability,SETTING_TreatmentTime_SAMSplint), LELSTRING(disability,SETTING_TreatmentTime_SAMSplint_Desc)],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Items)],
-    [1, 30, 3, 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(treatmentTimeWrapSplint),
-    "SLIDER",
-    [LELSTRING(disability,SETTING_TreatmentTime_WrapSplint), LELSTRING(disability,SETTING_TreatmentTime_WrapSplint_Desc)],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Items)],
-    [1, 30, 5, 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(splintFallOffTime),
-    "SLIDER",
-    [LELSTRING(disability,SETTING_SplintFallOffTime), LELSTRING(disability,SETTING_SplintFallOffTime_Desc)],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Items)],
-    [1, 300, 60, 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
     QGVAR(Dogtag_ShowWeight),
     "CHECKBOX",
     [LLSTRING(SETTING_Dogtag_ShowWeight), LLSTRING(SETTING_Dogtag_ShowWeight_Desc)],

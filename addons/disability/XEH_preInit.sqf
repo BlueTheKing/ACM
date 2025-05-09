@@ -44,4 +44,31 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(treatmentTimeSAMSplint),
+    "SLIDER",
+    [LLSTRING(SETTING_TreatmentTime_SAMSplint), LLSTRING(SETTING_TreatmentTime_SAMSplint_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_FractureManagement)],
+    [1, 30, 3, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(treatmentTimeWrapSplint),
+    "SLIDER",
+    [LLSTRING(SETTING_TreatmentTime_WrapSplint), LLSTRING(SETTING_TreatmentTime_WrapSplint_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_FractureManagement)],
+    [1, 30, 5, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(splintFallOffTime),
+    "SLIDER",
+    [LLSTRING(SETTING_SplintFallOffTime), LLSTRING(SETTING_SplintFallOffTime_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_FractureManagement)],
+    [1, 300, 60, 1],
+    true
+] call CBA_fnc_addSetting;
+
 ADDON = true;

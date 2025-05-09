@@ -247,7 +247,7 @@ class ACEGVAR(medical_treatment,actions) {
         items[] = {"ACM_SAMSplint"};
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
         condition = QACEFUNC(medical_treatment,canSplint);
-        treatmentTime = QGVAR(treatmentTimeSAMSplint);
+        treatmentTime = QEGVAR(disability,treatmentTimeSAMSplint);
         callbackSuccess = QEFUNC(disability,splint);
         ACM_menuIcon = "ACM_SAMSplint";
     };
