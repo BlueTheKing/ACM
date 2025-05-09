@@ -486,23 +486,26 @@ if (HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN)) then {
     _entries pushBack [format ["%1 [%2]",localize ACELSTRING(medical_gui,Status_Tourniquet_Applied), ((_target getVariable [QEGVAR(disability,Tourniquet_Time), [0,0,0,0,0,0]]) select _selectionN)], [0.77, 0.51, 0.08, 1]];
 };
 
-// Indicate current body part fracture status
-switch (GET_FRACTURES(_target) select _selectionN) do {
-    case 1: {
-        _entries pushBack [localize ACELSTRING(medical_gui,Status_Fractured), [1, 0, 0, 1]];
-    };
-    case -1: {
-        if (ACEGVAR(medical,fractures) in [2, 3]) then { // Ignore if the splint has no effect
-            private _splintStatus = GET_SPLINTS(_target) select _selectionN;
-            if (_splintStatus > 0) then {
-                if (_splintStatus == 1) then {
-                    _entries pushBack [(format ["%1 %2", LELSTRING(disability,SAMSplint), LELSTRING(core,Common_Applied)]), [0.2, 0.2, 1, 1]];
-                } else {
-                    _entries pushBack [(format ["%1 %2 (%3)", LELSTRING(disability,SAMSplint), LELSTRING(core,Common_Applied), LELSTRING(disability,GUI_Wrapped)]), [0.2, 0.2, 1, 1]];
-                };
-            } else {
+// Fractures
+private _fractureState = GET_FRACTURES(_target) select _selectionN;
+if (_fractureState != 0) then {
+    private _splintStatus = GET_SPLINTS(_target) select _selectionN;
+
+    if (_splintStatus != 0) then {
+        switch (_splintStatus) do {
+            case 2: {
+                _entries pushBack [(format ["%1 %2 (%3)", LELSTRING(disability,SAMSplint), LELSTRING(core,Common_Applied), LELSTRING(disability,GUI_Wrapped)]), [0.2, 0.2, 1, 1]];
+            };
+            case 1: {
+                _entries pushBack [(format ["%1 %2", LELSTRING(disability,SAMSplint), LELSTRING(core,Common_Applied)]), [0.2, 0.2, 1, 1]];
+            };
+            default {
                 _entries pushBack [localize ACELSTRING(medical_gui,Status_SplintApplied), [0.2, 0.2, 1, 1]];
             };
+        };
+    } else {
+        if (_fractureState > 0) then {
+            _entries pushBack [localize ACELSTRING(medical_gui,Status_Fractured), [1, 0, 0, 1]];
         };
     };
 };

@@ -246,7 +246,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = ECSTRING(disability,ApplySAMSplint_Progress);
         items[] = {"ACM_SAMSplint"};
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
-        condition = QACEFUNC(medical_treatment,canSplint);
+        condition = QEFUNC(disability,canApplySplint);
         treatmentTime = QEGVAR(disability,treatmentTimeSAMSplint);
         callbackSuccess = QEFUNC(disability,splint);
         ACM_menuIcon = "ACM_SAMSplint";

@@ -18,6 +18,15 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(enableFractureSeverity),
+    "CHECKBOX",
+    [LLSTRING(SETTING_EnableFractureSeverity), LLSTRING(SETTING_Allow_EnableFractureSeverity_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_FractureManagement)],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(allowInspectForFracture),
     "LIST",
     [LLSTRING(SETTING_Allow_InspectForFracture), LLSTRING(SETTING_Allow_InspectForFracture_Desc)],

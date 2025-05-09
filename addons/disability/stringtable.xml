@@ -19,6 +19,12 @@
             <Polish>Ustala czy założone opaski uciskowe mają wpływać na kołysanie broni w przypadku rąk oraz szybkość chodzenia w przypadku nóg</Polish>
             <German>Stellt ein, ob ein angelegtes Tourniquet am Arm dasie Waffennutzung und am Bein die Mobilität negativ beeinflusst</German>
         </Key>
+        <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity">
+            <English>Enable Fracture Severity</English>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity_Desc">
+            <English>Enables fracture severity and performing fracture realignment</English>
+        </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
             <English>SAM Splint Time</English>
             <Polish>Czas aplikacji szyny SAM splint</Polish>
