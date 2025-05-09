@@ -16,9 +16,6 @@
             <Polish>Stabilizacja dróg oddechowych</Polish>
             <German>Atemwegs-Hilfe</German>
         </Key>
-        <Key ID="STR_ACM_Airway_Category_SurgicalAirway">
-            <English>Surgical Airway</English>
-        </Key>
         <Key ID="STR_ACM_Airway_SETTING_Enable">
             <English>Enable Airway</English>
             <Polish>Włącz drogi oddechowe</Polish>
