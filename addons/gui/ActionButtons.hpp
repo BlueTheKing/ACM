@@ -50,3 +50,6 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACM_EmergencyTraumaDressing,QPATHTOEF(damage,ui\et
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_ElasticWrap,QACEPATHTOF(medical_treatment,ui\elasticbandage_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_SAMSplint,QPATHTOEF(disability,ui\samSplint.paa));
+
+ACM_MEDICALMENU_ACTION_BUTTON(ACM_ATNA_Autoinjector,QPATHTOEF(cbrn,ui\autoinjector_ATNA_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(ACM_Midazolam_Autoinjector,QPATHTOEF(cbrn,ui\autoinjector_midazolam_ca.paa));

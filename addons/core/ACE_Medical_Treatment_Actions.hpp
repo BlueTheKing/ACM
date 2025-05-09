@@ -58,12 +58,14 @@ class ACEGVAR(medical_treatment,actions) {
         items[] = {"ACM_Autoinjector_ATNA"};
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         litter[] = {{"ACE_MedicalLitter_atropine"}};
+        ACM_menuIcon = "ACM_ATNA_Autoinjector";
     };
     class Midazolam_Autoinjector: ATNA_Autoinjector {
         displayName = ECSTRING(CBRN,MidazolamAutoinjector);
         displayNameProgress = ECSTRING(CBRN,MidazolamAutoinjector_Progress);
         medicRequired = QGVAR(allowMidazolamAutoinjector);
         items[] = {"ACM_Autoinjector_Midazolam"};
+        ACM_menuIcon = "ACM_Midazolam_Autoinjector";
     };
     class CheckPulse;
     class CheckResponse: CheckPulse {
