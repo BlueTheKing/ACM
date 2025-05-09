@@ -6,6 +6,19 @@
             <Polish>ACM: Ograniczenia ruchowe</Polish>
             <German>ACM: Defizite</German>
         </Key>
+        <Key ID="STR_ACM_Disability_Category_FractureManagement">
+            <English>Fracture Management</English>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
+            <English>Tourniquet Impact Limbs</English>
+            <Polish>Opaski uciskowe wpływają na kończyny</Polish>
+            <German>Tourniquet beeinträchtigt Extremtitäten</German>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
+            <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
+            <Polish>Ustala czy założone opaski uciskowe mają wpływać na kołysanie broni w przypadku rąk oraz szybkość chodzenia w przypadku nóg</Polish>
+            <German>Stellt ein, ob ein angelegtes Tourniquet am Arm dasie Waffennutzung und am Bein die Mobilität negativ beeinflusst</German>
+        </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
             <English>SAM Splint Time</English>
             <Polish>Czas aplikacji szyny SAM splint</Polish>
@@ -36,15 +49,23 @@
             <Polish>Minimalny czas po którym niezawinięta szyna odpadnie od kończyny</Polish>
             <German>Minimale Dauer, bis eine nicht fixierte/gewickelte SAM Splint ab fällt</German>
         </Key>
-        <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
-            <English>Tourniquet Impact Limbs</English>
-            <Polish>Opaski uciskowe wpływają na kończyny</Polish>
-            <German>Tourniquet beeinträchtigt Extremtitäten</German>
+        <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture">
+            <English>Allow Inspecting For Fracture</English>
         </Key>
-        <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
-            <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
-            <Polish>Ustala czy założone opaski uciskowe mają wpływać na kołysanie broni w przypadku rąk oraz szybkość chodzenia w przypadku nóg</Polish>
-            <German>Stellt ein, ob ein angelegtes Tourniquet am Arm dasie Waffennutzung und am Bein die Mobilität negativ beeinflusst</German>
+        <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture_Desc">
+            <English>Training level required to inspect for fractures</English>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment">
+            <English>Allow Peforming Fracture Realignment</English>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment_Desc">
+            <English>Training level required to perform fracture realignment</English>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture">
+            <English>[HARDCORE] Complex Fractures</English>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture_Desc">
+            <English>[HARDCORE] Sets whether certain fractures cannot be treated in the field, requiring evacuation</English>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Disability_UniversalSplint">

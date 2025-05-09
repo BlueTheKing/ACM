@@ -36,7 +36,7 @@ private _givePain = false;
 private _canReFracture = false;
 
 switch (true) do {
-    case (_bodyPartDamage > FRACTURE_THRESHOLD_COMPLEX): {
+    case (GVAR(Hardcore_ComplexFracture) && _bodyPartDamage > FRACTURE_THRESHOLD_COMPLEX): {
         _givePain = true;
         _splintNoEffect = true;
         _targetFracture = ACM_FRACTURE_COMPLEX;
@@ -88,7 +88,7 @@ if (!_reFractureState && _canReFracture) then {
 private _noEffectArray = _patient getVariable [QGVAR(Fracture_NoEffect), [false,false,false,false,false,false]];
 private _noEffectState = _noEffectArray select _partIndex;
 
-if (_splintNoEffect && !_noEffectState) then {
+if (GVAR(Hardcore_ComplexFracture) && _splintNoEffect && !_noEffectState) then {
     _noEffectArray set [_partIndex, true];
     _patient setVariable [QGVAR(Fracture_NoEffect), _noEffectArray, true];
 };

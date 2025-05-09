@@ -20,18 +20,27 @@ PREP_RECOMPILE_END;
 [
     QGVAR(allowInspectForFracture),
     "LIST",
-    ["Allow Inspecting For Fracture", "Training level required to inspect for fractures"],
-    [ACM_SETTINGS_CATEGORY, "Fracture Management"],
-    [SETTING_DROPDOWN_SKILL, 0],
+    [LLSTRING(SETTING_Allow_InspectForFracture), LLSTRING(SETTING_Allow_InspectForFracture_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_FractureManagement)],
+    [SETTING_DROPDOWN_SKILL, 1],
     true
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowFractureRealignment),
     "LIST",
-    ["Allow Peforming Fracture Realignment", "Training level required to perform fracture realignment"],
-    [ACM_SETTINGS_CATEGORY, "Fracture Management"],
-    [SETTING_DROPDOWN_SKILL, 0],
+    [LLSTRING(SETTING_Allow_FractureRealignment), LLSTRING(SETTING_Allow_FractureRealignment_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_FractureManagement)],
+    [SETTING_DROPDOWN_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Hardcore_ComplexFracture),
+    "CHECKBOX",
+    [LLSTRING(SETTING_Hardcore_ComplexFracture), LLSTRING(SETTING_Hardcore_ComplexFracture_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_FractureManagement)],
+    [false],
     true
 ] call CBA_fnc_addSetting;
 
