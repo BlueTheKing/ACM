@@ -209,6 +209,35 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// Medication
+
+[
+    QGVAR(allowSyringe),
+    "LIST",
+    [LLSTRING(SETTING_Allow_Syringe), LLSTRING(SETTING_Allow_Syringe_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Medication)],
+    [SETTING_DROPDOWN_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowAmmoniaInhalant),
+    "LIST",
+    [LLSTRING(SETTING_Allow_AmmoniaInhalant), LLSTRING(SETTING_Allow_AmmoniaInhalant_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Medication)],
+    [SETTING_DROPDOWN_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowFentanylLozenge),
+    "LIST",
+    [LLSTRING(SETTING_Allow_FentanylLozenge), LLSTRING(SETTING_Allow_FentanylLozenge_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Medication)],
+    [SETTING_DROPDOWN_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
 // Blood Types
 
 {

@@ -31,6 +31,9 @@
             <Polish>IV/IO</Polish>
             <German>IV/IO</German>
         </Key>
+        <Key ID="STR_ACM_Circulation_Category_Medication">
+            <English>Medication</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_Category_BloodTypes">
             <English>Blood Types</English>
             <Polish>Grupy krwi</Polish>
@@ -225,6 +228,24 @@
             <English>Allow self-application of IO</English>
             <Polish>Pozwól na wykonanie wkłucia IO na sobie</Polish>
             <German>Erlaube es, einen i.o. Zugang bei sich selbst zu bohren</German>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
+            <English>Allow Syringe</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe_Desc">
+            <English>Training level required to use syringes</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant">
+            <English>Allow Ammonia Inhalant</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant_Desc">
+            <English>Training level required to use ammonia inhalant</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge">
+            <English>Allow Fentanyl Lozenge</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge_Desc">
+            <English>Training level required to administer fentanyl lozenges</English>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1">
             <English>%1 Ratio</English>
