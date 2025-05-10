@@ -194,7 +194,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = ECSTRING(airway,SurgicalAirwayStitch_Suture);
         displayNameProgress = ECSTRING(damage,SurgicalKit_Suture_Progress);
         treatmentTime = QUOTE([ARR_3(_medic,_patient,true)] call EFUNC(airway,getStitchAirwayIncisionTime));
-        condition = QUOTE([ARR_3(_medic,_patient,1)] call EFUNC(airway,canStitchAirwayIncision));
+        condition = QUOTE([ARR_3(_medic,_patient,true)] call EFUNC(airway,canStitchAirwayIncision));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,stitchAirwayIncision));
     };
     class SurgicalAirway_SecureStrap: StitchAirwayIncision {
