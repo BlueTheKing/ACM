@@ -147,9 +147,9 @@ class GVAR(SurgicalAirway_Dialog) {
 
         class Space_Landmark_Entry: Space_Landmark_Upper {
             idc = IDC_SURGICAL_AIRWAY_SPACE_LANDMARK_ENTRY;
-            x = QUOTE(ACM_SURGICAL_AIRWAY_POS_X(19.1));
+            x = QUOTE(ACM_SURGICAL_AIRWAY_POS_X(19.5));
             y = QUOTE(ACM_SURGICAL_AIRWAY_POS_Y(9.7));
-            w = QUOTE(ACM_SURGICAL_AIRWAY_POS_W(3));
+            w = QUOTE(ACM_SURGICAL_AIRWAY_POS_W(2.2));
             h = QUOTE(ACM_SURGICAL_AIRWAY_POS_H(0.7));
             colorBackground[] = {0.6,0,0,1};
         };
@@ -358,10 +358,10 @@ class GVAR(SurgicalAirway_Dialog) {
 
         class Action_RemoveHook: Action_LiftIncision {
             idc = IDC_SURGICAL_AIRWAY_ACTION_REMOVEHOOK;
-            x = QUOTE(ACM_SURGICAL_AIRWAY_POS_X(18.4));
-            y = QUOTE(ACM_SURGICAL_AIRWAY_POS_Y(8.5));
-            w = QUOTE(ACM_SURGICAL_AIRWAY_POS_W(3.5));
-            h = QUOTE(ACM_SURGICAL_AIRWAY_POS_H(3.5));
+            x = QUOTE(ACM_SURGICAL_AIRWAY_POS_X(20.2));
+            y = QUOTE(ACM_SURGICAL_AIRWAY_POS_Y(10));
+            w = QUOTE(ACM_SURGICAL_AIRWAY_POS_W(5.5));
+            h = QUOTE(ACM_SURGICAL_AIRWAY_POS_H(8.5));
             onButtonClick = QUOTE([3] call FUNC(SurgicalAirway_action));
             tooltip = CSTRING(SurgicalAirway_RemoveHook);
         };

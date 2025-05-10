@@ -17,7 +17,7 @@
 
 params ["_patient"];
 
-private _incisionBleeding = (_patient getVariable [QGVAR(SurgicalAirway_IncisionCount), 0]) * 0.01;
+private _incisionBleeding = (_patient getVariable [QGVAR(SurgicalAirway_IncisionCount), 0]) * (0.02 * (_patient getVariable [QGVAR(SurgicalAirway_IncisionSeverity), 0]));
 if (_incisionBleeding == 0 || _patient getVariable [QGVAR(SurgicalAirway_IncisionStitched), false]) exitWith {0};
 
 private _cardiacOutput = [_patient] call ACEFUNC(medical_status,getCardiacOutput);

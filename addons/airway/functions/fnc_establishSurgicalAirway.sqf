@@ -41,6 +41,7 @@ _patient setVariable [QGVAR(SurgicalAirway_InProgress), true, true];
     GVAR(SurgicalAirway_IsCutting) = false;
     GVAR(SurgicalAirway_IncisionStartPos) = nil;
     GVAR(SurgicalAirway_IncisionSize) = 0;
+    GVAR(SurgicalAirway_IncisionEnd) = 0;
     GVAR(SurgicalAirway_IncisionX) = -1;
 
     GVAR(SurgicalAirway_IncisionAngleVertical) = true;
@@ -55,6 +56,7 @@ _patient setVariable [QGVAR(SurgicalAirway_InProgress), true, true];
     _patient setVariable [QGVAR(SurgicalAirway_IncisionStitched), false, true];
 
     _patient setVariable [QGVAR(SurgicalAirway_IncisionCount), 0, true];
+    _patient setVariable [QGVAR(SurgicalAirway_IncisionSeverity), 0, true];
 
     _patient setVariable [QGVAR(SurgicalAirway_IncisionVerticalSuccess), false, true];
     _patient setVariable [QGVAR(SurgicalAirway_IncisionHorizontalSuccess), false, true];
@@ -109,18 +111,26 @@ _patient setVariable [QGVAR(SurgicalAirway_InProgress), true, true];
 
     _patient setVariable [QGVAR(SurgicalAirway_InProgress), false, true];
 
+    private _incisionCount = _patient getVariable [QGVAR(SurgicalAirway_IncisionCount), 0]; 
+
     if (GVAR(SurgicalAirway_Failed)) exitWith {
         [LLSTRING(SurgicalAirway_Failed), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-        [_patient, (_patient getVariable [QGVAR(SurgicalAirway_IncisionCount), 0]), "head", "incision", _medic] call ACEFUNC(medical,addDamageToUnit);
-        
+
+        for "_i" from 1 to _incisionCount do {
+            [_patient, 1, "head", "incision", _medic] call ACEFUNC(medical,addDamageToUnit);
+        };
+
         [_patient, "activity", LLSTRING(SurgicalAirway_Cancelled_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
     };
 
     if !(_patient getVariable [QGVAR(SurgicalAirway_State), false]) then {
-        if ((_patient getVariable [QGVAR(SurgicalAirway_Progress), 0]) == 0) then {
+        if (_incisionCount == 0) then {
             [_medic, "ACM_CricKit"] call ACEFUNC(common,addToInventory);
         } else {
-            [_patient, (_patient getVariable [QGVAR(SurgicalAirway_IncisionCount), 0]), "head", "incision", _medic] call ACEFUNC(medical,addDamageToUnit);
+            for "_i" from 1 to _incisionCount do {
+                [_patient, 1, "head", "incision", _medic] call ACEFUNC(medical,addDamageToUnit);
+            };
+
             [_patient, "activity", LLSTRING(SurgicalAirway_Cancelled_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
         };
 
@@ -220,6 +230,16 @@ _patient setVariable [QGVAR(SurgicalAirway_InProgress), true, true];
 
         _ctrlMarker ctrlSetTextColor _color;
         _ctrlMarker ctrlShow true;
+
+        if (_patient getVariable [QGVAR(SurgicalAirway_IncisionVerticalSuccess), false] && [(ctrlPosition (_display displayCtrl IDC_SURGICAL_AIRWAY_SPACE_LANDMARK_ENTRY)), [_mouseX, _mouseY]] call EFUNC(GUI,inZone) && !(GVAR(SurgicalAirway_IncisionSpread))) then {
+            GVAR(SurgicalAirway_IncisionSpread) = true;
+            private _ctrlIncisionVisual = _display displayCtrl IDC_SURGICAL_AIRWAY_VISUAL_INCISIONBIG;
+
+            _ctrlIncisionVisual ctrlSetPositionX GVAR(SurgicalAirway_IncisionX);
+            _ctrlIncisionVisual ctrlCommit 0;
+            _ctrlIncisionVisual ctrlShow true;
+            [LLSTRING(SurgicalAirway_IncisionExpanded), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+        };
     } else {
         _ctrlMarker ctrlSetTextColor [1,0,0,0.7];
         _ctrlMarker ctrlShow false;
@@ -253,22 +273,26 @@ _patient setVariable [QGVAR(SurgicalAirway_InProgress), true, true];
             private _ctrlIncisionVisual = (GVAR(SurgicalAirway_ActiveIncision_VisualCtrl) select 0);
             (ctrlPosition _ctrlIncisionVisual) params ["_incisionX", "_incisionY", "_incisionW", "_incisionH"];
 
-            _ctrlIncisionVisual ctrlSetPosition [_incisionStartX - (_incisionW / 2), _incisionStartY, _incisionW, (((GVAR(SurgicalAirway_IncisionSize) + 0.055) - _incisionStartY) max 0)];
+            private _incisionVisualAdd = linearConversion [0, 0.1, GVAR(SurgicalAirway_IncisionSize), 0, 0.04, true];
+
+            _ctrlIncisionVisual ctrlSetPosition [_incisionStartX - (_incisionW / 2), _incisionStartY, _incisionW, ((GVAR(SurgicalAirway_IncisionEnd) + _incisionVisualAdd - _incisionStartY) max 0)];
             _ctrlIncisionVisual ctrlCommit 0;
 
-            _ctrlIncisionSpace ctrlSetPosition [_incisionStartX - (_incisionSpaceW / 2), _incisionStartY, ACM_SURGICAL_AIRWAY_SPACE_INCISION_W, ((GVAR(SurgicalAirway_IncisionSize) - _incisionStartY) max 0)];
+            _ctrlIncisionSpace ctrlSetPosition [_incisionStartX - (_incisionSpaceW / 2), _incisionStartY, ACM_SURGICAL_AIRWAY_SPACE_INCISION_W, ((GVAR(SurgicalAirway_IncisionEnd) - _incisionStartY) max 0)];
             _ctrlIncisionSpace ctrlCommit 0;
 
-            GVAR(SurgicalAirway_IncisionSize) = _mouseY max GVAR(SurgicalAirway_IncisionSize);
+            GVAR(SurgicalAirway_IncisionEnd) = _mouseY max GVAR(SurgicalAirway_IncisionEnd);
 
-            setMousePosition [_incisionStartX, GVAR(SurgicalAirway_IncisionSize) max _mouseY];
+            GVAR(SurgicalAirway_IncisionSize) = GVAR(SurgicalAirway_IncisionEnd) - _incisionStartY;
+
+            setMousePosition [_incisionStartX, GVAR(SurgicalAirway_IncisionEnd) max _mouseY];
         } else {
-            _ctrlIncisionSpace ctrlSetPosition [_incisionStartX, _incisionStartY - (_incisionSpaceH / 2), ((GVAR(SurgicalAirway_IncisionSize) - _incisionStartX) max 0), ACM_SURGICAL_AIRWAY_SPACE_INCISION_H];
+            _ctrlIncisionSpace ctrlSetPosition [_incisionStartX, _incisionStartY - (_incisionSpaceH / 2), ((GVAR(SurgicalAirway_IncisionEnd) - _incisionStartX) max 0), ACM_SURGICAL_AIRWAY_SPACE_INCISION_H];
             _ctrlIncisionSpace ctrlCommit 0;
 
-            GVAR(SurgicalAirway_IncisionSize) = _mouseX max GVAR(SurgicalAirway_IncisionSize);
+            GVAR(SurgicalAirway_IncisionEnd) = _mouseX max GVAR(SurgicalAirway_IncisionEnd);
 
-            setMousePosition [GVAR(SurgicalAirway_IncisionSize) max _mouseX, _incisionStartY];
+            setMousePosition [GVAR(SurgicalAirway_IncisionEnd) max _mouseX, _incisionStartY];
         };
     };
 }, false, IDC_SURGICAL_AIRWAY] call EFUNC(core,beginContinuousAction);

@@ -193,7 +193,7 @@ if ((_target getVariable [QEGVAR(circulation,AED_Placement_PressureCuff), -1]) !
 };
 
 if (_target getVariable [QEGVAR(circulation,AED_Placement_Capnograph), false]) then {
-    if (_airwayItemOral isEqualTo "") then {
+    if (_airwayItemOral isEqualTo "" && !(HAS_SURGICAL_AIRWAY(_target))) then {
         _ctrlAEDCapnograph ctrlShow true;
     } else {
         _ctrlAEDCapnograph ctrlShow false;

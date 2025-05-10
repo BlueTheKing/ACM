@@ -30,7 +30,7 @@ if (_button == 0) then { // Left
 
     if (_type == 0) then {
         GVAR(SurgicalAirway_IsCutting) = true;
-        GVAR(SurgicalAirway_IncisionSize) = 0;
+        GVAR(SurgicalAirway_IncisionEnd) = 0;
         GVAR(SurgicalAirway_IncisionStartPos) = [_mouseX, _mouseY];
 
         private _incisionCount = GVAR(SurgicalAirway_Target) getVariable [QGVAR(SurgicalAirway_IncisionCount), 0];
@@ -73,7 +73,7 @@ if (_button == 0) then { // Left
             
             if (!(GVAR(SurgicalAirway_Target) getVariable [QGVAR(SurgicalAirway_IncisionVerticalSuccess), false]) && ([(ctrlPosition _ctrlIncision), (ctrlPosition _ctrlVerticalIncisionSite)] call EFUNC(GUI,isZoneOverlapping)) && {(_startPosition select 1) < _incisionSiteY && (_endPosition select 1) > (_incisionSiteY + _incisionSiteH)}) then {
                 GVAR(SurgicalAirway_Target) setVariable [QGVAR(SurgicalAirway_IncisionVerticalSuccess), true, true];
-                GVAR(SurgicalAirway_IncisionX) = (ctrlPosition (GVAR(SurgicalAirway_ActiveIncision_VisualCtrl) select 0) select 0);
+                GVAR(SurgicalAirway_IncisionX) = (ctrlPosition (GVAR(SurgicalAirway_ActiveIncision_VisualCtrl) select 0)) select 0;
             };
         } else {
             private _ctrlHorizontalIncisionSite = _display displayCtrl IDC_SURGICAL_AIRWAY_SPACE_INCISION_HORIZONTAL;
@@ -87,6 +87,19 @@ if (_button == 0) then { // Left
                 (_display displayCtrl IDC_SURGICAL_AIRWAY_VISUAL_INCISIONBIG) ctrlSetText QPATHTOF(ui\surgical_airway\incision_1_0.paa);
             };
         };
+
+        private _incisionSeverity = GVAR(SurgicalAirway_Target) getVariable [QGVAR(SurgicalAirway_IncisionSeverity), 0];
+        private _addIncisionSeverity = 0;
+
+        if (GVAR(SurgicalAirway_IncisionSize) == 0) then {
+            _addIncisionSeverity = 0.5;
+        } else {
+            _addIncisionSeverity = linearConversion [0, 0.09, GVAR(SurgicalAirway_IncisionSize), 0.5, 1];
+        };
+
+        GVAR(SurgicalAirway_Target) setVariable [QGVAR(SurgicalAirway_IncisionSeverity), _incisionSeverity + _addIncisionSeverity, true];
+
+        GVAR(SurgicalAirway_IncisionSize) = 0;
     };
 } else { // Right
     if (GVAR(SurgicalAirway_SelectedItem) == SURGICAL_AIRWAY_SELECTED_SCALPEL) then {
@@ -107,16 +120,6 @@ if (_button == 0) then { // Left
 
         if (_type == 0) then {
             GVAR(SurgicalAirway_IsPalpating) = true;
-
-            if ([(ctrlPosition (_display displayCtrl IDC_SURGICAL_AIRWAY_SPACE_LANDMARK_ENTRY)), [_mouseX, _mouseY]] call EFUNC(GUI,inZone) && !(GVAR(SurgicalAirway_IncisionSpread))) then {
-                GVAR(SurgicalAirway_IncisionSpread) = true;
-                private _ctrlIncisionVisual = _display displayCtrl IDC_SURGICAL_AIRWAY_VISUAL_INCISIONBIG;
-
-                _ctrlIncisionVisual ctrlSetPositionX GVAR(SurgicalAirway_IncisionX);
-                _ctrlIncisionVisual ctrlCommit 0;
-                _ctrlIncisionVisual ctrlShow true;
-                [LLSTRING(SurgicalAirway_IncisionExpanded), 1.5, ACE_player] call ACEFUNC(common,displayTextStructured);
-            };
 
             [{
                 params ["_display"];
