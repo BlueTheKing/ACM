@@ -194,7 +194,7 @@ private _PFH = [{
         [_patient, _buildup, _exposed, _exposedExternal, [_filtered, _protectedBody, _protectedEyes, _filterLevel]] call _thresholdFunction;
         
         if !(isPlayer _patient) then {
-            [_patient, _hazardType, _exposed, _exposedExternal, [_filtered, _protectedBody, _protectedEyes, _filterLevel]] call FUNC(handleAIEffects);
+            [_patient, _buildup, _hazardType, _exposed, _exposedExternal, [_filtered, _protectedBody, _protectedEyes, _filterLevel]] call FUNC(handleAIEffects);
         };
     };
 
