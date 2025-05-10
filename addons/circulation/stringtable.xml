@@ -1671,6 +1671,12 @@
             </Key>
         </Container>
         <Container name="// Common //">
+            <Key ID="STR_ACM_Circulation_Blood">
+                <English>Blood</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FreshBlood">
+                <English>Fresh Blood</English>
+            </Key>
             <Key ID="STR_ACM_Circulation_Common_SwitchTargetInventory">
                 <English>Change target inventory</English>
                 <Polish>Zmień widziany ekwipunek</Polish>
