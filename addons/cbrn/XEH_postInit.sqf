@@ -20,17 +20,21 @@
     if !(GVAR(enable)) exitWith {};
 
     GVAR(HazardType_List) = createHashMap;
+    GVAR(HazardType_Array) = [];
 
     private _hazardCategoryArray = "true" configClasses (configFile >> "ACM_CBRN_Hazards");
 
     {
         private _hazardTypeArray = [];
+        private _hazardCategory = configName _x;
 
         {
-            _hazardTypeArray pushBack (configName _x);
+            private _entry = configName _x;
+            _hazardTypeArray pushBack _entry;
+            GVAR(HazardType_Array) pushBack (format ["%1_%2", _hazardCategory, _entry]);
         } forEach ("true" configClasses _x);
 
-        GVAR(HazardType_List) insert [[configName _x, _hazardTypeArray]];
+        GVAR(HazardType_List) insert [[_hazardCategory, _hazardTypeArray]];
     } forEach _hazardCategoryArray;
 
     GVAR(HazardType_ThresholdList) = createHashMap;
@@ -111,64 +115,11 @@
         [QACEGVAR(field_rations,helper), 0, [QACEGVAR(field_rations,waterSource)], _x] call ACEFUNC(interact_menu,addActionToClass);
     } forEach (call FUNC(addWaterSourceActions));
 
-    ["ace_firedPlayer", {
-        params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];
-
-        if !(_ammo in ["ACM_Grenade_CS_A", "ACM_Grenade_Shell_CS_A"]) exitWith {};
-
-        private _agent = "";
-        private _fuseTime = 0;
-        private _lifetime = 52;
-
-        if (_ammo in ["ACM_Grenade_CS_A", "ACM_Grenade_Shell_CS_A"]) then {
-            _agent = "Chemical_CS";
-            _fuseTime = 2;
-        };
-
-        [{
-            params ["_unit", "_projectile", "_agent", "_lifetime"];
-
-            [QGVAR(initHazardZone), [_projectile, true, _agent, [], _lifetime, true, false, false, ACE_player]] call CBA_fnc_serverEvent;
-        }, [_unit, _projectile, _agent, _lifetime], _fuseTime] call CBA_fnc_waitAndExecute;
-    }] call CBA_fnc_addEventHandler;
-
-    ["ace_firedPlayerVehicle", {
-        params ["_vehicle", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
-
-        if !(_ammo in ["ACM_Mortar_Shell_CS_A","ACM_Mortar_Shell_Chlorine_A","ACM_Mortar_Shell_Sarin_A","ACM_Mortar_Shell_Lewisite_A"]) exitWith {};
-
-        _projectile setVariable [QGVAR(ChemicalPayload), _ammo];
-
-        _projectile addEventHandler ["Explode", {
-    	    params ["_projectile", "_pos", "_velocity"];
-
-            private _agent = "";
-            private _lifetime = 60;
-            private _payload = _projectile getVariable [QGVAR(ChemicalPayload), ""];
-
-            switch (true) do {
-                case (_payload in ["ACM_Mortar_Shell_CS_A"]): {
-                    _agent = "chemical_cs";
-                    _lifetime = 80;
-                };
-                case (_payload in ["ACM_Mortar_Shell_Chlorine_A"]): {
-                    _agent = "chemical_chlorine";
-                    _lifetime = 70;
-                };
-                case (_payload in ["ACM_Mortar_Shell_Sarin_A"]): {
-                    _agent = "chemical_sarin";
-                    _lifetime = 40;
-                };
-                case (_payload in ["ACM_Mortar_Shell_Lewisite_A"]): {
-                    _agent = "chemical_lewisite";
-                    _lifetime = 50;
-                };
-                default {};
-            };
-
-            [QGVAR(initHazardZone), [_projectile, false, _agent, [], _lifetime, true, false, true, ACE_player]] call CBA_fnc_serverEvent;
-
-            _projectile removeEventHandler [_thisEvent, _thisEventHandler];
-        }];
-    }] call CBA_fnc_addEventHandler;
+    ["ace_firedPlayer", LINKFUNC(handleFiredGrenade)] call CBA_fnc_addEventHandler;
+    ["ace_firedNonPlayer", LINKFUNC(handleFiredGrenade)] call CBA_fnc_addEventHandler;
+    ["ace_firedPlayerVehicle", LINKFUNC(handleFiredArtillery)] call CBA_fnc_addEventHandler;
+    ["ace_firedNonPlayerVehicle", LINKFUNC(handleFiredArtillery)] call CBA_fnc_addEventHandler;
+    
+    ["GetInMan", LINKFUNC(handleVehicleDoorOpen)] call CBA_fnc_addEventHandler;
+    ["GetOutMan", LINKFUNC(handleVehicleDoorOpen)] call CBA_fnc_addEventHandler;
 }] call CBA_fnc_addEventHandler;

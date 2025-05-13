@@ -30,7 +30,7 @@ if (_hazardType == "") exitWith {};
 private _originObject = createVehicle ["ACM_HazardObject", [((position _target) select 0), ((position _target) select 1), 0], [], 0, "CAN_COLLIDE"];
 
 if (_radiusDimensions isEqualTo []) then {
-    _radiusDimensions = [2.5,2.5,0,false,2.5];
+    _radiusDimensions = [5,5,0,false,2.5];
 };
 
 private _initEffects = !(_hazardType in ["chemical_placebo"]) && GVAR(enable);
