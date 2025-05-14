@@ -25,13 +25,14 @@ private _PFH = [{
 
     private _isBleeding = [_patient, "head"] call EFUNC(damage,isBodyPartBleeding);
     private _inRecovery = _patient getVariable [QGVAR(RecoveryPosition_State), false];
+    private _hasSGA = (_patient getVariable [QGVAR(AirwayItem_Oral), ""]) == "SGA";
 
     if (!(IS_UNCONSCIOUS(_patient)) || !_isBleeding) exitWith {
         _patient setVariable [QGVAR(AirwayObstructionBlood_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    if (_inRecovery) exitWith {}; // TODO check for pose
+    if (_inRecovery || _hasSGA) exitWith {}; // TODO check for pose
 
     private _cardiacArrest = GET_HEART_RATE(_patient) < 20;
     private _obstructChance = (linearConversion [0.05, 0.5, ([_patient, "head"] call EFUNC(damage,getBodyPartBleeding)), 0, 0.5, true]) * GVAR(airwayObstructionBloodChance);
