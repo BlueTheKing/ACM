@@ -59,7 +59,7 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart"];
 
-    if (_patient getVariable [QGVAR(AirwayItem_Oral), ""] == "SGA" || _patient getVariable [QGVAR(SurgicalAirway_InProgress), false] || _patient getVariable [QGVAR(SurgicalAirway_State), false] || _patient getVariable [QGVAR(RecoveryPosition_State), false] || _patient call ACEFUNC(medical_status,isBeingDragged) || _patient call ACEFUNC(medical_status,isBeingCarried)) then {
+    if (_patient getVariable [QGVAR(AirwayItem_Oral), ""] == "SGA" || _patient getVariable [QGVAR(SurgicalAirway_InProgress), false] || _patient getVariable [QGVAR(SurgicalAirway_State), false] || _patient getVariable [QGVAR(RecoveryPosition_State), false] || _patient call ACEFUNC(common,isBeingDragged) || _patient call ACEFUNC(common,isBeingCarried)) then {
         EGVAR(core,ContinuousAction_Active) = false;
     };
 }] call EFUNC(core,beginContinuousAction);

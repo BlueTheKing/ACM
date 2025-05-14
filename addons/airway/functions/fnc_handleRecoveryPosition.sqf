@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle cancelling recovery position state (locally)
+ * Handle cancelling recovery position state. (LOCAL)
  *
  * Arguments:
  * 0: Medic <OBJECT>
@@ -21,7 +21,7 @@ params ["_medic", "_patient"];
 [{
     params ["_patient"];
 
-    _patient call ACEFUNC(medical_status,isBeingDragged) || _patient call ACEFUNC(medical_status,isBeingCarried) || !(_patient getVariable [QGVAR(RecoveryPosition_State), false]) || !(isNull objectParent _patient);
+    [_patient] call ACEFUNC(common,isBeingDragged) || [_patient] call ACEFUNC(common,isBeingCarried) || !(_patient getVariable [QGVAR(RecoveryPosition_State), false]) || !(isNull objectParent _patient);
 }, {
     params ["_patient", "_medic"];
 

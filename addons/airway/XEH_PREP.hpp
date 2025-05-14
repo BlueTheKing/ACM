@@ -22,6 +22,7 @@ PREP(performHeadTurn);
 PREP(removeAirwayItem);
 PREP(resetVariables);
 PREP(secureSurgicalAirway);
+PREP(setRecoveryPosition);
 PREP(stitchAirwayIncision);
 PREP(SurgicalAirway_action);
 PREP(SurgicalAirway_action);

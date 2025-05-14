@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle setting patient recovery position
+ * Handle setting patient recovery position.
  *
  * Arguments:
  * 0: Medic <OBJECT>
@@ -23,6 +23,8 @@ params ["_medic", "_patient", "_state", ["_noLog", false]];
 if (_state && _patient getVariable [QGVAR(RecoveryPosition_State), false]) exitWith {
     [LSTRING(RecoveryPosition_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
+
+if (!_state && !(_patient getVariable [QGVAR(RecoveryPosition_State), false])) exitWith {};
 
 _patient setVariable [QGVAR(RecoveryPosition_State), _state, true];
 _patient setVariable [QGVAR(HeadTilt_State), _state, true];

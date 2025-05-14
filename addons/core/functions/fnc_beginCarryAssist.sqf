@@ -58,7 +58,7 @@ if (_patient getVariable [QGVAR(CarryAssist_State), false]) exitWith {
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart"];
 
-    if (_patient call ACEFUNC(medical_status,isBeingDragged) || _patient call ACEFUNC(medical_status,isBeingCarried)) then {
+    if (_patient call ACEFUNC(common,isBeingDragged) || _patient call ACEFUNC(common,isBeingCarried)) then {
         GVAR(ContinuousAction_Active) = false;
     };
 }] call EFUNC(core,beginContinuousAction);
