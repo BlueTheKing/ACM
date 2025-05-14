@@ -135,7 +135,7 @@ private _actions = [];
                 [
                 "ACM_PatientActions_OpenTransfusionMenu",
                 LELSTRING(circulation,OpenTransfusionMenu),
-                "", // TODO icon
+                QPATHTOF(ui\icon_patient_transfusionmenu.paa),
                 {
                     params ["", "", "_args"];
                     _args params ["_patient", "_medic"];
