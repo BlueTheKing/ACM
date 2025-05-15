@@ -7,7 +7,8 @@ class ACEGVAR(medical,replacementItems) {
         {"ACE_morphine", 1},
         {"ACE_tourniquet", 1},
         {"ACM_ChestSeal", 1},
-        {"ACM_NPA", 1}
+        {"ACM_NPA", 1},
+        {"ACM_Paracetamol",1}
     };
     DOUBLES(ItemType,TYPE_MEDIKIT)[] = {
         {"ACM_PressureBandage", 3},
