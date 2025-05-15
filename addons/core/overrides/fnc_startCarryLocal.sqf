@@ -7,6 +7,7 @@
  * 0: Unit that should do the carrying <OBJECT>
  * 1: Object to carry <OBJECT>
  * 2: If object was successfully claimed <BOOL>
+ * 3: Skip animation <BOOL>
  *
  * Return Value:
  * None
@@ -17,7 +18,7 @@
  * Public: No
  */
 
-params ["_unit", "_target", "_claimed"];
+params ["_unit", "_target", "_claimed", ["_skip", false]];
 TRACE_3("params",_unit,_target,_claimed);
 
 if (!_claimed) exitWith { WARNING_1("already claimed %1",_this) };
@@ -61,8 +62,8 @@ if (_target isKindOf "CAManBase") then {
     [QACEGVAR(common,setDir), [_target, getDir _unit + 180], _target] call CBA_fnc_targetEvent;
     _target setPosASL (getPosASL _unit vectorAdd (vectorDir _unit));
 
-    if (_target getVariable [QGVAR(CarryAssist_State), false]) then {
-        _timer = CBA_missionTime + 1;
+    if (_target getVariable [QGVAR(CarryAssist_State), false] || _skip) then {
+        _timer = CBA_missionTime + ([1, 0.25] select _skip);
     } else {
         [_unit, "AcinPknlMstpSnonWnonDnon_AcinPercMrunSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
         [_target, "AinjPfalMstpSnonWrflDnon_carried_Up", 2] call ACEFUNC(common,doAnimation);
