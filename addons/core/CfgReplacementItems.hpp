@@ -4,7 +4,6 @@
 class ACEGVAR(medical,replacementItems) {
     DOUBLES(ItemType,TYPE_FIRST_AID_KIT)[] = {
         {"ACM_PressureBandage", 2},
-        {"ACE_morphine", 1},
         {"ACE_tourniquet", 1},
         {"ACM_ChestSeal", 1},
         {"ACM_NPA", 1},
