@@ -512,15 +512,23 @@ if (_fractureState != 0) then {
 
 // Internal bleeding indicator
 private _selectionN_InternalBleeding = [_target, _selectionN] call EFUNC(damage,getBodyPartInternalBleeding);
-if (_selectionN_InternalBleeding > 0.15) then {
-    private _colorAdjustment = linearConversion [0.15, 0.5, _selectionN_InternalBleeding, 0.75, 0.45, true];
-    _entries pushBack [LELSTRING(breathing,InspectChest_Bruising_Short), [_colorAdjustment, 0.1, 0.6, 1]];
-} else {
-    private _HTXFluid = _target getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
-    if (_selectionN == 1 && _HTXFluid > 0.5) then {
+private _HTXFluid = _target getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
+
+switch (true) do {
+    case (_selectionN == 1 && _HTXFluid > 0.5): {
         private _colorAdjustment = linearConversion [0.5, 1.5, _HTXFluid, 0.75, 0.45, true];
-        _entries pushBack [(format ["%1 (%2)", LELSTRING(breathing,InspectChest_Bruising_Short), LELSTRING(breathing,GUI_UpperChest)]), [_colorAdjustment, 0.1, 0.6, 1]];
+        if (_selectionN_InternalBleeding > 0.15) then {
+            _colorAdjustment = _colorAdjustment max (linearConversion [0.15, 0.5, _selectionN_InternalBleeding, 0.75, 0.45, true]);
+            _entries pushBack [(format ["%1 (%2)", LELSTRING(breathing,InspectChest_Bruising_Short), LELSTRING(breathing,GUI_LowerAndUpperChest)]), [_colorAdjustment, 0.1, 0.6, 1]];
+        } else {
+            _entries pushBack [(format ["%1 (%2)", LELSTRING(breathing,InspectChest_Bruising_Short), LELSTRING(breathing,GUI_UpperChest)]), [_colorAdjustment, 0.1, 0.6, 1]];
+        };
     };
+    case (_selectionN_InternalBleeding > 0.15): {
+        private _colorAdjustment = linearConversion [0.15, 0.5, _selectionN_InternalBleeding, 0.75, 0.45, true];
+        _entries pushBack [LELSTRING(breathing,InspectChest_Bruising_Short), [_colorAdjustment, 0.1, 0.6, 1]];
+    };
+    default {};
 };
 
 // Thoracostomy status
