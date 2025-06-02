@@ -175,6 +175,11 @@
                 <English>%1 package has been split</English>
             </Key>
         </Container>
+        <Container name="// Body Bag Return Items //">
+            <Key ID="STR_ACM_Core_BodyBagReturnedItems">
+                <English>Medical items returned from body bag</English>
+            </Key>
+        </Container>
         <Container name="// Common //">
             <Key ID="STR_ACM_Core_Common_Inserted">
                 <English>Inserted</English>

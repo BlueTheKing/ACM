@@ -89,6 +89,9 @@ class CfgFunctions {
             class handleBandageOpening { // Bandage reopening chance with platelets
                 file = QPATHTOF(overrides\fnc_handleBandageOpening.sqf); //ace/addons/medical_treatment/functions/fnc_handleBandageOpening.sqf
             };
+            class placeInBodyBag { // Return medical items on body bag use
+                file = QPATHTOF(overrides\fnc_placeInBodyBag.sqf); //ace/addons/medical_treatment/functions/fnc_placeInBodyBag.sqf
+            };
         };
     };
     class overwrite_medical_damage {
