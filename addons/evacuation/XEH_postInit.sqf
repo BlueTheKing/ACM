@@ -41,6 +41,9 @@ if !(isMultiplayer) exitWith {};
 
             selectPlayer _unit;
 
+            removeGoggles _unit;
+            _unit addGoggles (goggles _originalUnit);
+
             if (_saved) then { // Prevent restore loadout from breaking
                 _unit setVariable ["ENH_savedLoadout", getUnitLoadout _unit];
             };
