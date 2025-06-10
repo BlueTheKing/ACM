@@ -25,6 +25,26 @@ if !(isMultiplayer) exitWith {};
         };
     }] call CBA_fnc_addEventHandler;
 
+    if (isServer) then {
+        [QGVAR(transferCurator), {
+            params ["_unit", "_originalUnit"];
+
+            private _curatorLogic = getAssignedCuratorLogic _originalUnit;
+
+            unassignCurator _curatorLogic;
+
+            [{
+                params ["_curatorLogic"];
+
+                isNull getAssignedCuratorUnit _curatorLogic;
+            }, {
+                params ["_curatorLogic", "_unit"];
+
+                _unit assignCurator _curatorLogic;
+            }, [_curatorLogic, _unit]] call CBA_fnc_waitUntilAndExecute;
+        }] call CBA_fnc_addEventHandler;
+    };
+
     [QGVAR(createReinforcementAndSwitch), {
         params ["_originalUnit"];
 
@@ -66,6 +86,10 @@ if !(isMultiplayer) exitWith {};
 
                 private _medicLevel = _originalUnit getVariable [QACEGVAR(medical,medicClass), parseNumber (_originalUnit getUnitTrait "medic")];
                 _unit setVariable [QACEGVAR(medical,medicClass), _medicLevel, true];
+
+                if !(isNull (getAssignedCuratorLogic _originalUnit)) then {
+                    [QGVAR(transferCurator), [_unit, _originalUnit]] call CBA_fnc_serverEvent;
+                };
 
                 ["ACM_casualtyEvacuated", [_unit, _originalUnit], _unit] call CBA_fnc_targetEvent;
             }, [_unit, _originalUnit], 1] call CBA_fnc_waitAndExecute;
