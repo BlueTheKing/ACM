@@ -32,25 +32,25 @@
             <English>Gas Mask List</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask_Desc">
-            <English>List of goggles (facewear)/helmets that are gas masks (or equivalent). Each entry should be a goggles/helmet classname and should be seperated with a comma ("","")</English>
+            <English>List of goggles (facewear)/helmets that are gas masks (or equivalent). Each entry should be a goggles/helmet classname and should be seperated with a comma (",")</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit">
             <English>CBRN Suit List</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit_Desc">
-            <English>List of uniforms that are CBRN suits. Each entry should be a uniform classname and should be seperated with a comma ("","")</English>
+            <English>List of uniforms that are CBRN suits. Each entry should be a uniform classname and should be seperated with a comma (",")</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN">
             <English>CBRN Protected Vehicle List</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN_Desc">
-            <English>List of vehicles that are CBRN protected (overpressure capability). Each entry should be a vehicle classname and should be seperated with a comma ("","")</English>
+            <English>List of vehicles that are CBRN protected (overpressure capability). Each entry should be a vehicle classname and should be seperated with a comma (",")</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed">
             <English>Sealed Vehicle List</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed_Desc">
-            <English>List of vehicles that are sealed. Each entry should be a vehicle classname and should be seperated with a comma ("","")</English>
+            <English>List of vehicles that are sealed. Each entry should be a vehicle classname and should be seperated with a comma (",")</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_ATNAAutoinjector">
             <English>Allow ATNA Autoinjector</English>
