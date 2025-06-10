@@ -270,6 +270,8 @@ if (true) then {
         _treatmentItem = "@bandage";
     };
 
+    if !(GVAR(MedicAI_AllowIntermediateTreatment)) exitWith {};
+
     private _isUnconscious = IS_UNCONSCIOUS(_target);
     private _inCardiacArrest = IN_CRDC_ARRST(_target);
 
@@ -465,7 +467,7 @@ if (true) then {
         _treatmentEvent = QACEGVAR(medical_treatment,splintLocal);
         _treatmentTime = 6;
         _treatmentArgs = [_healer, _target, ALL_BODY_PARTS select (_index + 4)];
-        _treatmentItem = "splint";
+        _treatmentItem = "SAMSplint";
     };
 
     // Wait until the injured has enough blood before administering drugs

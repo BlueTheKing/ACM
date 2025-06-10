@@ -41,6 +41,12 @@
             <Polish>Wyłącza ostrzeżenia o niekompatybilnych addonach</Polish>
             <German>Deaktiviert die Inkompatibilitätswarnung vom Addon</German>
         </Key>
+        <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment">
+            <English>Medic AI Allow Intermediate Treatment</English>
+        </Key>
+        <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment_Desc">
+            <English>Sets whether medic AI is allowed to perform any actions other than bandaging and tourniqueting</English>
+        </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Core_MorphineAutoinjector">
                 <English>Use Morphine Autoinjector</English>

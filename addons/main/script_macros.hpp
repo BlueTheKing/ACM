@@ -207,6 +207,8 @@
 
 #define LYING_ANIMATION ["ainjppnemstpsnonwrfldnon", "acm_lyingstate"]
 
+#define IN_LYING_STATE(unit) (unit getVariable [QEGVAR(core,Lying_State), false])
+
 #define GET_BODYWEIGHT(unit) (unit getVariable [QEGVAR(core,BodyWeight), 80])
 
 #define IDEAL_BODYWEIGHT 83

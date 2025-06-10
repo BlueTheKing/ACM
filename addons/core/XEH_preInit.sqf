@@ -10,6 +10,35 @@ PREP_RECOMPILE_END;
 
 //ACEGVAR(medical,STATE_MACHINE) = (configFile >> "ACM_StateMachine") call CBA_statemachine_fnc_createFromConfig;
 
+[
+    QGVAR(Dogtag_ShowWeight),
+    "CHECKBOX",
+    [LLSTRING(SETTING_Dogtag_ShowWeight), LLSTRING(SETTING_Dogtag_ShowWeight_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(ignoreIncompatibleAddonWarning),
+    "CHECKBOX",
+    [LLSTRING(SETTING_IgnoreIncompatibleAddonWarnings), LLSTRING(SETTING_IgnoreIncompatibleAddonWarnings_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [false],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(MedicAI_AllowIntermediateTreatment),
+    "CHECKBOX",
+    [LLSTRING(SETTING_MedicAI_AllowIntermediateTreatment), LLSTRING(SETTING_MedicAI_AllowIntermediateTreatment_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
 // Items
 
 [
@@ -54,26 +83,6 @@ PREP_RECOMPILE_END;
     [LELSTRING(damage,SETTING_TreatmentTime_SutureStitch), LELSTRING(damage,SETTING_TreatmentTime_SutureStitch_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Items)],
     [0.1, 1, 0.5, 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(Dogtag_ShowWeight),
-    "CHECKBOX",
-    [LLSTRING(SETTING_Dogtag_ShowWeight), LLSTRING(SETTING_Dogtag_ShowWeight_Desc)],
-    [ACM_SETTINGS_CATEGORY, ""],
-    [true],
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(ignoreIncompatibleAddonWarning),
-    "CHECKBOX",
-    [LLSTRING(SETTING_IgnoreIncompatibleAddonWarnings), LLSTRING(SETTING_IgnoreIncompatibleAddonWarnings_Desc)],
-    [ACM_SETTINGS_CATEGORY, ""],
-    [false],
     true
 ] call CBA_fnc_addSetting;
 
