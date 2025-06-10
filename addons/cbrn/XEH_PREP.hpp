@@ -25,6 +25,7 @@ PREP(initUnit);
 PREP(isWearingGasMask);
 PREP(moduleCreateChemicalDevice);
 PREP(moduleCreateHazardZone);
+PREP(moduleCreateHazardZone_Eden);
 PREP(putOnGasMask);
 PREP(replaceFilter);
 PREP(resetVariables);
