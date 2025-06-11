@@ -23,6 +23,10 @@ private _medic = _patient getVariable [QGVAR(AED_Provider), objNull];
 
 if (isNull _medic) exitWith {};
 
+if (_patient getVariable [QGVAR(AED_Analyze_Busy), false]) exitWith {
+    _patient setVariable [QGVAR(AED_Analyze_Busy), false, true];
+};
+
 if ([_medic, _patient] call FUNC(AED_CanAnalyzeRhythm)) then {
     [_medic, _patient] call FUNC(AED_AnalyzeRhythm);
 };

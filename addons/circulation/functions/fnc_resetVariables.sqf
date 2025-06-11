@@ -107,6 +107,8 @@ _patient setVariable [QGVAR(AED_RR_Display), 0, true];
 _patient setVariable [QGVAR(AED_Placement_PressureCuff), -1, true];
 _patient setVariable [QGVAR(AED_PressureCuffBusy), false, true];
 _patient setVariable [QGVAR(AED_NIBP_Display), [0,0], true];
+
+_patient setVariable [QGVAR(AED_Analyze_Busy), false, true];
 //
 
 _patient setVariable [QGVAR(CPR_StoppedTotal), nil, true];

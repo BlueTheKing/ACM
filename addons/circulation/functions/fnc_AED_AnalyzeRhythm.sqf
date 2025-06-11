@@ -6,6 +6,7 @@
  * Arguments:
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
+ * 2: Retried <BOOL>
  *
  * Return Value:
  * None
@@ -16,7 +17,9 @@
  * Public: No
  */
 
-params ["_medic", "_patient"];
+params ["_medic", "_patient", ["_retry", false]];
+
+if ((_patient getVariable [QGVAR(AED_TrackingCPR), false]) || ((_patient getVariable [QGVAR(AED_Analyze_Busy), false]) && !_retry)) exitWith {};
 
 _patient setVariable [QGVAR(AED_AnalyzeRhythm_State), false, true];
 
@@ -32,11 +35,22 @@ _patient setVariable [QGVAR(AED_Analyze_Busy), true, true];
 [{
     params ["_medic", "_patient"];
 
-    !([_patient, "", 1] call FUNC(hasAED));
+    !([_patient, "", 1] call FUNC(hasAED)) || !(_patient getVariable [QGVAR(AED_Analyze_Busy), false]) || (alive (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull])) || (alive (_patient getVariable [QEGVAR(breathing,BVM_provider), objNull]));
 }, {
     params ["_medic", "_patient"];
 
-    playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.624s
+    if (!([_patient, "", 1] call FUNC(hasAED)) || !(_patient getVariable [QGVAR(AED_Analyze_Busy), false])) then {
+        playSound3D [QPATHTO_R(sound\aed_3beep.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.624s
+
+        _patient setVariable [QGVAR(AED_InUse), false, true];
+        _medic setVariable [QGVAR(AED_Medic_InUse), false, true];
+
+        if (_patient getVariable [QGVAR(AED_Analyze_Busy), false]) then {
+            _patient setVariable [QGVAR(AED_Analyze_Busy), false, true];
+        };
+    } else {
+        [_medic, _patient] call FUNC(AED_MotionDetected);
+    };
 }, [_medic, _patient], _timeToAnalyze, 
 {
     params ["_medic", "_patient"];
