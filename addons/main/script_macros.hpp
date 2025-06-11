@@ -401,6 +401,8 @@
 
 #define GET_CAPILLARYDAMAGE_BLEEDRATE(unit) ([unit] call EFUNC(circulation,getCapillaryDamageBleedingRate))
 
+#define INTERNAL_WOUND_TYPES           [10,20,30,60,70]
+
 #define VAR_INTERNAL_WOUNDS            QEGVAR(damage,InternalWounds)
 #define GET_INTERNAL_WOUNDS(unit)      (unit getVariable [VAR_INTERNAL_WOUNDS, createHashMap])
 

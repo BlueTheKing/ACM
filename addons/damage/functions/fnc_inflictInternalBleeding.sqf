@@ -21,9 +21,37 @@
 
 params ["_patient", "_bodyPart", "_woundTypeID", "_woundSeverityID", "_bleedRate"];
 
-if (_woundSeverityID < 1 || _woundTypeID in [20,40,80]) exitWith {};
+if (_woundSeverityID < 1 || !(_woundTypeID in INTERNAL_WOUND_TYPES)) exitWith {};
 
-if ((_woundSeverityID == 1 && (random 1) < (0.5 * GVAR(internalBleedingChanceMultiplier))) || (_woundSeverityID == 1 && (random 1) < (0.3 * GVAR(internalBleedingChanceMultiplier)))) exitWith {};
+private _chance = switch (_woundTypeID) do {
+    case 70: { // Puncture
+       ([0, 0.3, 0.7] select _woundSeverityID);
+    };
+    case 60: { // Velocity
+       ([0, 0.45, 1] select _woundSeverityID);
+    };
+    case 10: { // Avulsion
+       ([0, 0.2, 0.4] select _woundSeverityID);
+    };
+    case 30: { // Crush
+        ([0, 0.2, 0.3] select _woundSeverityID);
+    };
+    default {
+        ([0, 0.01, 0.1] select _woundSeverityID);
+    };
+};
+
+_chance = _chance * GVAR(internalBleedingChanceMultiplier);
+
+private _inflict = (_chance >= 1);
+
+if !(_inflict) then {
+    private _partDamage = GET_BODYPART_DAMAGE(_patient) select GET_BODYPART_INDEX(_bodyPart);
+    _chance = _chance + ((linearConversion [2, 4, _partDamage, 0, 0.5]) min 0.8);
+    _inflict = (random 1 < _chance);
+};
+
+if !(_inflict) exitWith {};
 
 private _targetWoundID = _woundTypeID + _woundSeverityID;
 
