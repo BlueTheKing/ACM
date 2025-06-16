@@ -13,6 +13,10 @@
 class CfgMagazines {
     class CA_Magazine;
 
+    class ACE_painkillers: CA_Magazine {
+        scope = 1;
+    };
+
     class ACM_Paracetamol: CA_Magazine {
         scope = 2;
         author = "Blue";
