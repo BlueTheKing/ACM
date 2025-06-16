@@ -27,6 +27,7 @@ _actions pushBack (["ACM_Training_HealTent",
     private _targetUnits = _object nearEntities ["Man", 5.5];
 
     {
+        if (_x getVariable [QEGVAR(evacuation,casualtyTicketClaimed), false]) exitWith {};
         [QACEGVAR(medical_treatment,fullHealLocal), [_x], _x] call CBA_fnc_targetEvent;
     } forEach _targetUnits;
 },
@@ -39,7 +40,7 @@ _actions pushBack (["ACM_Training_HealTent",
     private _actions = [];
 
     {
-        if (_x != _unit) then {
+        if ((_x != _unit) && !(_x getVariable [QEGVAR(evacuation,casualtyTicketClaimed), false])) then {
             _actions pushBack ([[format ["ACM_Training_HealTent_%1", [_x, false, true] call ACEFUNC(common,getName)],
             [_x, false, true] call ACEFUNC(common,getName),
             "",
