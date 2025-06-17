@@ -20,7 +20,7 @@ PREP_RECOMPILE_END;
 [
     QGVAR(enableFractureSeverity),
     "CHECKBOX",
-    [LLSTRING(SETTING_EnableFractureSeverity), LLSTRING(SETTING_Allow_EnableFractureSeverity_Desc)],
+    [LLSTRING(SETTING_EnableFractureSeverity), LLSTRING(SETTING_EnableFractureSeverity_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_FractureManagement)],
     [true],
     true

@@ -70,10 +70,10 @@
         <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI_Desc">
             <English>Sets whether AI will be affected by chemical agent exposure</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI">
+        <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAISkill">
             <English>Chemical Agents Affect AI Skill</English>
         </Key>
-        <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI_Desc">
+        <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAISkill_Desc">
             <English>Sets whether AI skill will be affected by chemical agent exposure</English>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness">
