@@ -255,7 +255,7 @@ private _coughPFH = [{
 
     private _addTime = 0.2 + random 0.2;
 
-    private _distance = 8;
+    private _distance = 12;
 
     private _targets = allPlayers inAreaArray [ASLToAGL getPosASL _patient, _distance, _distance, 0, false, _distance];
 
