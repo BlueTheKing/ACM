@@ -62,16 +62,11 @@ if (_context != 2 && {_context == 4 || _newDamage == 0}) exitWith {
     _oldDamage
 };
 
-// Get scaled armor value of hitpoint and calculate damage before armor
+// Get armor value of hitpoint and calculate damage before armor
 // We scale using passThrough to handle explosive-resistant armor properly (#9063)
 // We need realDamage to determine which limb was hit correctly
-[_unit, _hitpoint] call ACEFUNC(medical_engine,getHitpointArmor) params ["_armor", "_armorScaled"];
+private _armor = [_unit, _hitpoint] call ACEFUNC(medical_engine,getHitpointArmor);
 private _realDamage = _newDamage * _armor;
-if (!_structuralDamage) then {
-    private _armorCoef = _armor/_armorScaled;
-    private _damageCoef = linearConversion [0, 1, ACEGVAR(medical_engine,damagePassThroughEffect), 1, _armorCoef];
-    _newDamage = _newDamage * _damageCoef;
-};
 TRACE_6("Received hit",_hitpoint,_ammo,_newDamage,_realDamage,_directHit,_context);
 
 // Drowning doesn't fire the EH for each hitpoint and never triggers _context=2 (LastHitPoint)
@@ -118,16 +113,16 @@ if (
 ) exitWith {
     TRACE_5("Vehicle hit",_unit,_shooter,_instigator,_damage,_newDamage);
 
-    _unit setVariable [QACEGVAR(medical,lastDamageSource), _shooter];
-    _unit setVariable [QACEGVAR(medical,lastInstigator), _instigator];
+    _unit setVariable [QEGVAR(medical,lastDamageSource), _shooter];
+    _unit setVariable [QEGVAR(medical,lastInstigator), _instigator];
 
-    [QACEGVAR(medical,woundReceived), [_unit, [[_newDamage, _hitPoint, _newDamage]], _shooter, "vehiclehit"]] call CBA_fnc_localEvent;
+    [QEGVAR(medical,woundReceived), [_unit, [[_newDamage, _hitPoint, _newDamage]], _shooter, "vehiclehit"]] call CBA_fnc_localEvent;
 
     0
 };
 
 // Damages are stored for last iteration of the HandleDamage event (_context == 2)
-_unit setVariable [format [QACEGVAR(medical_engine,$%1), _hitPoint], [_realDamage, _newDamage]];
+_unit setVariable [format [QGVAR($%1), _hitPoint], [_realDamage, _newDamage]];
 
 // Ref https://community.bistudio.com/wiki/Arma_3:_Event_Handlers#HandleDamage
 // Context 2 means this is the last iteration of HandleDamage, so figure out which hitpoint took the most real damage and send wound event
