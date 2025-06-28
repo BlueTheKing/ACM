@@ -44,25 +44,25 @@ private _PFH = [{
     if (GVAR(Hardcore_HemothoraxBleeding) && _hemothoraxState <= 2) exitWith {};
 
     private _plateletCount = _patient getVariable [QEGVAR(circulation,Platelet_Count), 3];
-    private _TXAEffect = ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 2;
+    private _TXACount = ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 2;
 
     if (!(alive _patient) || _hemothoraxState == 0) exitWith {
         _patient setVariable [QGVAR(Hemothorax_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    if (_plateletCount > 1 || _TXAEffect > 0.1) then {
-        if (random 1 < ((0.25 * _plateletCount / 4) max (0.5 * (_TXAEffect min 1.2)))) then {
-            private _clearAmount = 1;
-            
-            if (_TXAEffect >= 1) then {
-                _clearAmount = ([2,3] select (random 1 < (0.25 * _TXAEffect)));
-            };
-
-            _hemothoraxState = (_hemothoraxState - _clearAmount) max 0;
-
-            _patient setVariable [QGVAR(Hemothorax_State), _hemothoraxState, true];
+    if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 1 && _TXACount < 0.1) || (GET_EFF_BLOOD_VOLUME(_patient) < 3.6)) exitWith {};
+    
+    if (random 1 < ((0.25 * _plateletCount / 4) max (0.5 * (_TXACount min 1.2)))) then {
+        private _clearAmount = 1;
+        
+        if (_TXACount >= 1) then {
+            _clearAmount = ([2,3] select (random 1 < (0.25 * _TXACount)));
         };
+
+        _hemothoraxState = (_hemothoraxState - _clearAmount) max 0;
+
+        _patient setVariable [QGVAR(Hemothorax_State), _hemothoraxState, true];
     };
 }, _time, [_patient]] call CBA_fnc_addPerFrameHandler;
 
