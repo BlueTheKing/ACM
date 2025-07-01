@@ -5,94 +5,116 @@
             <English>ACM: Disability</English>
             <Polish>ACM: Ograniczenia ruchowe</Polish>
             <German>ACM: Defizite</German>
+            <Portuguese>ACM: Deficiência</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_Category_FractureManagement">
             <English>Fracture Management</English>
+            <Portuguese>Gerenciamento de fraturas</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
             <English>Tourniquet Impact Limbs</English>
             <Polish>Opaski uciskowe wpływają na kończyny</Polish>
             <German>Tourniquet beeinträchtigt Extremtitäten</German>
+            <Portuguese>Torniquete impacta os membros</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
             <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
             <Polish>Ustala czy założone opaski uciskowe mają wpływać na kołysanie broni w przypadku rąk oraz szybkość chodzenia w przypadku nóg</Polish>
             <German>Stellt ein, ob ein angelegtes Tourniquet am Arm dasie Waffennutzung und am Bein die Mobilität negativ beeinflusst</German>
+            <Portuguese>Define se o torniquete terá impacto nos braços, aumentando a oscilação, e, nas pernas, reduzindo a mobilidade</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity">
             <English>Enable Fracture Severity</English>
+            <Portuguese>Habilitar a gravidade da fratura</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity_Desc">
             <English>Enables fracture severity and performing fracture realignment</English>
+            <Portuguese>Habilita a gravidade de fratura e a realização do realinhamento da fratura</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
             <English>SAM Splint Time</English>
             <Polish>Czas aplikacji szyny SAM splint</Polish>
             <German>SAM Splint Zeit</German>
+            <Portuguese>Tempo para tala moldável</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint_Desc">
             <English>Time to apply SAM Splint</English>
             <Polish>Czas potrzebny na aplikacje szyny SAM splint</Polish>
             <German>Zeit bis SAM Splint angelegt ist</German>
+            <Portuguese>Tempo para aplicar tala moldável</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint">
             <English>Wrap Splint Time</English>
             <Polish>Czas zawinięcia szyny</Polish>
             <German>SAM Splint Fixierbindenzeit</German>
+            <Portuguese>Tempo para enfaixar tala</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint_Desc">
             <English>Time to wrap SAM Splint</English>
             <Polish>Czas potrzebny na zawinięcie (stabilizacje) szyny SAM splint</Polish>
             <German>Zeit bis SAM Splint mittels Fixierbinde umwickelt ist</German>
+            <Portuguese>Tempo necessário para enfaixar uma tala moldável</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime">
             <English>Splint minimum fall off time</English>
             <Polish>Czas odpadnięcia szyny</Polish>
             <German>Minimale Schienenabfallzeit</German>
+            <Portuguese>Tempo mínimo para queda da tala</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime_Desc">
             <English>Minimum time for unwrapped SAM Splint to fall off</English>
             <Polish>Minimalny czas po którym niezawinięta szyna odpadnie od kończyny</Polish>
             <German>Minimale Dauer, bis eine nicht fixierte/gewickelte SAM Splint ab fällt</German>
+            <Portuguese>Tempo mínimo para queda de uma tala moldável não enfaixada</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture">
             <English>Allow Inspecting For Fracture</English>
+            <Portuguese>Permitir inspecionar por fraturas</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture_Desc">
             <English>Training level required to inspect for fractures</English>
+            <Portuguese>Nível de treinamento necessário para inspecionar por fraturas</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment">
             <English>Allow Performing Fracture Realignment</English>
+            <Portuguese>Permitir realinhamento de fraturas</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment_Desc">
             <English>Training level required to perform fracture realignment</English>
+            <Portuguese>Nível de treinamento necessário para performar o realinhamento de fraturas</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture">
             <English>[HARDCORE] Complex Fractures</English>
+            <Portuguese>[HARDCORE] Fraturas complexas</Portuguese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture_Desc">
             <English>[HARDCORE] Sets whether certain fractures cannot be treated in the field, requiring evacuation</English>
+            <Portuguese>[HARDCORE] Define se certas fraturas não podem ser tratadas em campo e requerem evacuação</Portuguese>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Disability_UniversalSplint">
                 <English>Universal Splint</English>
                 <Polish>Szyna uniwersalna</Polish>
                 <German>Universelle Schiene</German>
+                <Portuguese>Tala universal</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_UniversalSplint_Desc">
                 <English>Single-use splint kit used to immobilize fracture</English>
                 <Polish>Jednorazowy zestaw szyny używany do unieruchomienia złamania</Polish>
                 <German>Einweg Schienenset, um eine Fraktur zu stabilisieren</German>
+                <Portuguese>Kit de tala de uso único para imobilizar fraturas</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_SAMSplint">
                 <English>SAM Splint</English>
                 <Polish>Szyna SAM splint</Polish>
                 <German>SAM Splint Schiene</German>
+                <Portuguese>Tala moldável</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_SAMSplint_Desc">
                 <English>Re-usable splint used to immobilize fracture, should be wrapped to keep fracture stable</English>
                 <Polish>Wielorazowa szyna używana do stabilizacji złamań, powinna być zawinięta by utrzymać unieruchomione złamanie</Polish>
                 <German>Wiederverwendbare Schiene, um eine Fraktur zu stabilisieren, sollte mittels Fixierbinde umwickelt werden, um die Schiene zu stabilisieren</German>
+                <Portuguese>Tala reutilizável utilizada para imobilizar fraturas, deve ser enfaixada para manter a fratura estável</Portuguese>
             </Key>
         </Container>
         <Container name="// Splint Actions //">
@@ -100,31 +122,37 @@
                 <English>Apply SAM Splint</English>
                 <Polish>Użyj szyny SAM splint</Polish>
                 <German>SAM Splint anlegen</German>
+                <Portuguese>Aplicar tala moldável</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_ApplySAMSplint_Progress">
                 <English>Applying SAM Splint...</English>
                 <Polish>Używanie szyny SAM splint...</Polish>
                 <German>Lege SAM Splint an...</German>
+                <Portuguese>Aplicando tala moldável...</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSAMSplint">
                 <English>Remove SAM Splint</English>
                 <Polish>Zdejmij szynę SAM splint</Polish>
                 <German>SAM Splint entfernen</German>
+                <Portuguese>Remover tala moldável</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSAMSplint_Progress">
                 <English>Removing SAM Splint...</English>
                 <Polish>Zdejmowanie szyny SAM splint...</Polish>
                 <German>Entferne SAM Splint...</German>
+                <Portuguese>Removendo tala moldável...</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSplint_ActionLog">
                 <English>%1 removed splint</English>
                 <Polish>%1 zdjął szynę </Polish>
                 <German>%1 entfernte Schiene</German>
+                <Portuguese>%1 removendo tala</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_Splint_FellOff">
                 <English>Splint has fallen off</English>
                 <Polish>Szyna odpadła od kończyny</Polish>
                 <German>Schiene ist abgefallen</German>
+                <Portuguese>Tala caiu</Portuguese>
             </Key>
         </Container>
         <Container name="// Wrap SAM Splint Action //">
@@ -132,11 +160,13 @@
                 <English>Wrap SAM Splint</English>
                 <Polish>Zawiń szynę SAM splint</Polish>
                 <German>SAM Splint einwickeln</German>
+                <Portuguese>Enfaixar tala moldável</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
                 <English>%1 has wrapped SAM Splint</English>
                 <Polish>%1 zawinął szynę SAM splint</Polish>
                 <German>%1 hat die Schiene eingewickelt</German>
+                <Portuguese>%1 enfaixou a tala moldável</Portuguese>
             </Key>
         </Container>
         <Container name="// Patient WakeUp Actions //">
@@ -144,11 +174,13 @@
                 <English>Patient has woken up</English>
                 <Polish>Pacjent się obudził</Polish>
                 <German>Patient ist aufgewacht</German>
+                <Portuguese>Paciente acordou</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_AttemptWakeUp_Failure">
                 <English>Patient is still asleep</English>
                 <Polish>Pacjent nadal nieprzytomny</Polish>
                 <German>Patient ist weiter bewusstlos</German>
+                <Portuguese>Paciente está desacordado</Portuguese>
             </Key>
         </Container>
         <Container name="// Shake Patient Action //">
@@ -156,26 +188,31 @@
                 <English>Attempt To Shake Awake</English>
                 <Polish>Potrząśnij by wybudzić</Polish>
                 <German>Patienten wachrütteln</German>
+                <Portuguese>Tentar acordar o paciente sacudindo</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_ShakeAwake_Progress">
                 <English>Shaking Patient...</English>
                 <Polish>Potrząsanie...</Polish>
                 <German>Rüttel am Patienten...</German>
+                <Portuguese>Sacudindo o paciente...</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_ActionLog">
                 <English>%1 shook the patient</English>
                 <Polish>%1 potrząsnął pacjentem</Polish>
                 <German>%1 hat den Patient wachgerüttelt</German>
+                <Portuguese>%1 sacudiu o padiente</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_Complete">
                 <English>You shook the patient&lt;br/&gt;%1</English>
                 <Polish>Potrząsnąłeś pacjentem&lt;br/&gt;%1</Polish>
                 <German>Du hast den Patienten gerüttelt&lt;br/&gt;%1</German>
+                <Portuguese>Você sacodiu o paciente&lt;br/&gt;%1</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_Attempt">
                 <English>You attempt to shake the patient awake&lt;br/&gt;%1</English>
                 <Polish>Próbujesz potrząsnąć pacjentem by się obudził&lt;br/&gt;%1</Polish>
                 <German>Du hast versucht den Patienten wachzurütteln&lt;br/&gt;%1</German>
+                <Portuguese>Você tentou sacudir um paciente acordado&lt;br/&gt;%1</Portuguese>
             </Key>
         </Container>
         <Container name="// Slap Patient Action //">
@@ -183,96 +220,123 @@
                 <English>Attempt To Slap Awake</English>
                 <Polish>Uderz by wybudzić</Polish>
                 <German>Schmerzreiz zum Aufwecken setzen</German>
+                <Portuguese>Tentar acordar o paciente estapeando</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_SlapAwake_Progress">
                 <English>Slapping Patient...</English>
                 <Polish>Uderzanie...</Polish>
                 <German>Setze Schmerzreiz...</German>
+                <Portuguese>Estapeando paciente...</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_ActionLog">
                 <English>%1 slapped the patient</English>
                 <Polish>%1 uderzył pacjenta</Polish>
                 <German>%1 setzte einen Schmerzreiz</German>
+                <Portuguese>%1 estapeou o paciente</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_Complete">
                 <English>You slap the patient&lt;br/&gt;%1</English>
                 <Polish>Uderzyłeś pacjenta&lt;br/&gt;%1</Polish>
                 <German>Du setzt einen Schmerzreiz&lt;br/&gt;%1</German>
+                <Portuguese>Você estapeou o paciente&lt;br/&gt;%1</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_Attempt">
                 <English>You attempt to slap the patient awake&lt;br/&gt;%1</English>
                 <Polish>Próbujesz uderzyć pacjenta by się obudził&lt;br/&gt;%1</Polish>
                 <German>Du versuchst einen Schmerzreiz zu setzen&lt;br/&gt;%1</German>
+                <Portuguese>Você tentou estapear um paciente acordado&lt;br/&gt;%1</Portuguese>
             </Key>
         </Container>
         <Container name="// Inspect For Fracture Action //">
             <Key ID="STR_ACM_Disability_InspectForFracture">
                 <English>Inspect For Fracture</English>
+                <Portuguese>Inspecionar por fratura</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Progress">
                 <English>Inspecting limb for fracture...</English>
+                <Portuguese>Inspecionando membro por fratura...</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_ActionLog">
                 <English>%1 inspected %2: %3</English>
+                <Portuguese>%1 inspecionou %2: %3</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied">
                 <English>Patient has splint applied to limb</English>
+                <Portuguese>Paciente tem uma tala aplicada ao membro</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied_Short">
                 <English>Splinted</English>
+                <Portuguese>Imobilizado</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling">
                 <English>Patient has significant swelling on limb</English>
+                <Portuguese>O paciente apresenta inchaço significativo no membro</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling_Short">
                 <English>Significant Swelling</English>
+                <Portuguese>Inchaço significativo</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Swelling">
                 <English>Patient has swelling on limb</English>
+                <Portuguese>O paciente apresenta inchaço no membro</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Swelling_Short">
                 <English>Swelling</English>
+                <Portuguese>Inchaço</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising">
                 <English>Patient has severe bruising on limb</English>
+                <Portuguese>O paciente apresenta hematomas graves no membro</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising_Short">
                 <English>Severe Bruising</English>
+                <Portuguese>Hematomas graves</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Bruised">
                 <English>Patient limb is bruised</English>
+                <Portuguese>O membro do paciente tem hematomas</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Bruised_Short">
                 <English>Bruised</English>
+                <Portuguese>Com hematomas</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury">
                 <English>Patient has no substantial damage on limb</English>
+                <Portuguese>O paciente não apresenta danos substanciais no membro</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury_Short">
                 <English>No Significant Injury</English>
+                <Portuguese>Nenhum lesão significante</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed">
-                <English>Fracture realignment performed</English>
+                <English>Realignment Performed</English>
+                <Portuguese>Realinhamento realizado</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed_Short">
                 <English>realignment performed</English>
+                <Portuguese>realinhado</Portuguese>
             </Key>
         </Container>
         <Container name="// Fracture Realignment Action //">
             <Key ID="STR_ACM_Disability_FractureRealignment">
                 <English>Perform Fracture Realignment</English>
+                <Portuguese>Realizar realinhamento de fratura</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Progress">
                 <English>Performing fracture realignment...</English>
+                <Portuguese>Realizando realinhamento de fratura...</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete">
                 <English>Fracture realignment performed</English>
+                <Portuguese>Realizado realinhamento </Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete_Success">
                 <English>Fracture realignment performed successfully</English>
+                <Portuguese>Realinhamento de fratura performado com sucesso</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_ActionLog">
                 <English>%1 performed fracture realignment</English>
+                <Portuguese>%1 realizou realinhamento de fratura</Portuguese>
             </Key>
         </Container>
         <Container name="// GUI //">
@@ -280,6 +344,7 @@
                 <English>Wrapped</English>
                 <Polish>Zawinięte</Polish>
                 <German>Eingewickelt</German>
+                <Portuguese>Enfaixado</Portuguese>
             </Key>
         </Container>
     </Package>
