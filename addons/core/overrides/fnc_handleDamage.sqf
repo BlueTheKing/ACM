@@ -113,16 +113,16 @@ if (
 ) exitWith {
     TRACE_5("Vehicle hit",_unit,_shooter,_instigator,_damage,_newDamage);
 
-    _unit setVariable [QEGVAR(medical,lastDamageSource), _shooter];
-    _unit setVariable [QEGVAR(medical,lastInstigator), _instigator];
+    _unit setVariable [QACEGVAR(medical,lastDamageSource), _shooter];
+    _unit setVariable [QACEGVAR(medical,lastInstigator), _instigator];
 
-    [QEGVAR(medical,woundReceived), [_unit, [[_newDamage, _hitPoint, _newDamage]], _shooter, "vehiclehit"]] call CBA_fnc_localEvent;
+    [QACEGVAR(medical,woundReceived), [_unit, [[_newDamage, _hitPoint, _newDamage]], _shooter, "vehiclehit"]] call CBA_fnc_localEvent;
 
     0
 };
 
 // Damages are stored for last iteration of the HandleDamage event (_context == 2)
-_unit setVariable [format [QGVAR($%1), _hitPoint], [_realDamage, _newDamage]];
+_unit setVariable [format [QACEGVAR(medical_engine,$%1), _hitPoint], [_realDamage, _newDamage]];
 
 // Ref https://community.bistudio.com/wiki/Arma_3:_Event_Handlers#HandleDamage
 // Context 2 means this is the last iteration of HandleDamage, so figure out which hitpoint took the most real damage and send wound event
