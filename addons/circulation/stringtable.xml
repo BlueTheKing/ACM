@@ -902,6 +902,9 @@
                 <Polish>Udo</Polish>
                 <German>Femoralispuls</German>
             </Key>
+            <Key ID="STR_ACM_Circulation_FeelPulse_ActionLog">
+                <English>%1 felt for a %2 pulse</English>
+            </Key>
         </Container>
         <Container name="// Measure Blood Pressure Action //">
             <Key ID="STR_ACM_Circulation_PressureCuff_Attach">
