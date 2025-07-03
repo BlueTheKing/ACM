@@ -40,7 +40,6 @@ private _PFH = [{
 
     if (random 1 < (0.3 * GVAR(airwayCollapseChance))) then {
         _patient setVariable [QGVAR(AirwayCollapse_State), (_collapseState + 1), true];
-        [_patient] call FUNC(updateAirwayState);
     };
 
 }, (30 + (random 15)), [_patient]] call CBA_fnc_addPerFrameHandler;

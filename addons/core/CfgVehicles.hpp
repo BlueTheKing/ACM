@@ -96,6 +96,7 @@ class CfgVehicles {
             ADDITEM(ACM_GuedelTube,10);
             ADDITEM(ACM_NPA,10);
             ADDITEM(ACM_SuctionBag,10);
+            ADDITEM(ACM_CricKit,10);
             // Breathing
             ADDITEM(ACM_Stethoscope,4);
             ADDITEM(ACM_ChestSeal,20);
@@ -163,7 +164,7 @@ class CfgVehicles {
             // Treatment
             ADDITEM(ACM_Autoinjector_ATNA,30);
             ADDITEM(ACM_Autoinjector_Midazolam,10);
-            ADDITEM(ACM_Ampule_Dimercaprol,10);
+            //ADDITEM(ACM_Ampule_Dimercaprol,10);
             // Other
             ADDITEM(ACM_GasMaskFilter,30);
         };

@@ -58,12 +58,14 @@ class ACEGVAR(medical_treatment,actions) {
         items[] = {"ACM_Autoinjector_ATNA"};
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         litter[] = {{"ACE_MedicalLitter_atropine"}};
+        ACM_menuIcon = "ACM_ATNA_Autoinjector";
     };
     class Midazolam_Autoinjector: ATNA_Autoinjector {
         displayName = ECSTRING(CBRN,MidazolamAutoinjector);
         displayNameProgress = ECSTRING(CBRN,MidazolamAutoinjector_Progress);
         medicRequired = QGVAR(allowMidazolamAutoinjector);
         items[] = {"ACM_Autoinjector_Midazolam"};
+        ACM_menuIcon = "ACM_Midazolam_Autoinjector";
     };
     class CheckPulse;
     class CheckResponse: CheckPulse {
@@ -166,6 +168,51 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QEFUNC(disability,wrapSplint);
     };
 
+    // Surgical Airway
+    class StitchAirwayIncision: FieldDressing {
+        displayName = ECSTRING(airway,SurgicalAirwayStitch);
+        displayNameProgress = ACECSTRING(medical_treatment,Stitching);
+        icon = QACEPATHTOF(medical_gui,ui\surgical_kit.paa);
+        category = "airway";
+        items[] = {"ACE_surgicalKit"};
+        treatmentLocations = QACEGVAR(medical_treatment,locationSurgicalKit);
+        allowSelfTreatment = 0;
+        medicRequired = QACEGVAR(medical_treatment,medicSurgicalKit);
+        treatmentTime = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,getStitchAirwayIncisionTime));
+        allowedSelections[] = {"Head"};
+        condition = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,canStitchAirwayIncision));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,stitchAirwayIncision));
+        callbackStart = "";
+        callbackProgress = "";
+        consumeItem = QACEGVAR(medical_treatment,consumeSurgicalKit);
+        animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
+        litter[] = {{"ACE_MedicalLitter_gloves"}};
+        ACM_rollToBack = 1;
+        ACM_menuIcon = "ACE_surgicalKit";
+    };
+    class StitchAirwayIncision_Suture: StitchAirwayIncision {
+        displayName = ECSTRING(airway,SurgicalAirwayStitch_Suture);
+        displayNameProgress = ECSTRING(damage,SurgicalKit_Suture_Progress);
+        treatmentTime = QUOTE([ARR_3(_medic,_patient,true)] call EFUNC(airway,getStitchAirwayIncisionTime));
+        condition = QUOTE([ARR_3(_medic,_patient,true)] call EFUNC(airway,canStitchAirwayIncision));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,stitchAirwayIncision));
+    };
+    class SurgicalAirway_SecureStrap: StitchAirwayIncision {
+        displayName = ECSTRING(airway,SurgicalAirwayStrap_Action);
+        displayNameProgress = ECSTRING(airway,SurgicalAirwayStrap_Progress);
+        icon = "";
+        items[] = {};
+        consumeItem = 0;
+        treatmentLocations = TREATMENT_LOCATIONS_ALL;
+        medicRequired = 0;
+        treatmentTime = 5;
+        condition = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,canSecureSurgicalAirway));
+        callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call EFUNC(airway,secureSurgicalAirway));
+        animationMedic = "";
+        litter[] = {};
+        ACM_menuIcon = "";
+    };
+
     // Disability
     class InspectForFracture: CheckPulse {
         displayName = ECSTRING(disability,InspectForFracture);
@@ -199,8 +246,8 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = ECSTRING(disability,ApplySAMSplint_Progress);
         items[] = {"ACM_SAMSplint"};
         allowedSelections[] = {"LeftArm","RightArm","LeftLeg","RightLeg"};
-        condition = QACEFUNC(medical_treatment,canSplint);
-        treatmentTime = QGVAR(treatmentTimeSAMSplint);
+        condition = QEFUNC(disability,canApplySplint);
+        treatmentTime = QEGVAR(disability,treatmentTimeSAMSplint);
         callbackSuccess = QEFUNC(disability,splint);
         ACM_menuIcon = "ACM_SAMSplint";
     };
@@ -453,8 +500,9 @@ class ACEGVAR(medical_treatment,actions) {
         //icon = QACEPATHTOF(medical_gui,ui\auto_injector.paa);
         allowedSelections[] = {"Head"};
         items[] = {"ACM_Paracetamol_SinglePack","ACM_Paracetamol_DoublePack","ACM_Paracetamol"};
-        condition = QUOTE([_patient] call ACEFUNC(common,isAwake) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
+        medicRequired = 0;
         treatmentTime = 4;
+        condition = QUOTE([_patient] call ACEFUNC(common,isAwake) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         //animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
         sounds[] = {{QPATHTOEF(circulation,sound\paracetamol.wav),10,1,30}};
         litter[] = {};
@@ -473,6 +521,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = ECSTRING(circulation,UseAmmoniaInhalant);
         displayNameProgress = ECSTRING(circulation,UseAmmoniaInhalant_Progress);
         items[] = {"ACM_AmmoniaInhalant"};
+        medicRequired = QEGVAR(circulation,allowAmmoniaInhalant);
         treatmentTime = 3;
         condition = QUOTE(!(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         ACM_rollToBack = 1;
@@ -492,6 +541,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = ECSTRING(circulation,GiveFentanylLozenge);
         displayNameProgress = ECSTRING(circulation,GiveFentanylLozenge_Progress);
         items[] = {"ACM_Lozenge_Fentanyl"};
+        medicRequired = QEGVAR(circulation,allowFentanylLozenge);
         allowSelfTreatment = 0;
         treatmentTime = 4;
         condition = QUOTE(_patient call ACEFUNC(common,isAwake) && ((_patient getVariable [ARR_2(QQEGVAR(circulation,LozengeItem),'')]) == '') && ((_patient getVariable [ARR_2(QQGVAR(Lying_State),false)]) || (_patient getVariable [ARR_2(QQGVAR(Sitting_State),false)])) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
@@ -505,6 +555,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayNameProgress = ECSTRING(circulation,RemoveFentanylLozenge_Progress);
         items[] = {};
         consumeItem = 0;
+        medicRequired = 0;
         allowSelfTreatment = 1;
         treatmentTime = 2;
         condition = QUOTE((_patient getVariable [ARR_2(QQEGVAR(circulation,LozengeItem),'')]) == 'Fentanyl');
@@ -537,7 +588,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = __EVAL(call compile QUOTE(format [ARR_2(localize 'STR_ACM_Circulation_UseSyringe',10)]));
         displayNameProgress = "";
         category = "medication";
-        medicRequired = 0;
+        medicRequired = QEGVAR(circulation,allowSyringe);
         icon = QPATHTOEF(circulation,ui\icon_syringe_10_ca.paa);
         allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
         treatmentTime = 0.01;
@@ -575,8 +626,9 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
         items[] = {"ACM_Syringe_10_Epinephrine"};
         consumeItem = 0;
-        condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO));
+        medicRequired = QEGVAR(circulation,allowSyringe);
         treatmentTime = 2;
+        condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO));
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',10,true,true)] call EFUNC(circulation,Syringe_Inject));
         //animationMedic = "AinvPknlMstpSnonWnonDnon_medic1";
         sounds[] = {};
@@ -677,7 +729,6 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
         items[] = {"ACM_Syringe_10_Epinephrine"};
         condition = "true";
-        treatmentTime = 2;
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'Epinephrine',10,false,true)] call EFUNC(circulation,Syringe_Inject));
         sounds[] = {};
         litter[] = {};

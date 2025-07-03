@@ -1096,6 +1096,9 @@
                 <German>Obere Brust</German>
                 <French>Poitrine supérieure</French>
             </Key>
+            <Key ID="STR_ACM_Breathing_GUI_LowerAndUpperChest">
+                <English>Lower &amp; Upper Chest</English>
+            </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_%1">
                 <English>Thoracostomy Incision (%1)</English>
                 <Polish>Torakotomia (%1)</Polish>

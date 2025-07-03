@@ -81,6 +81,8 @@ removeGoggles _patient;
 
 [_patient, true, 30] call ACEFUNC(medical,setUnconscious);
 
+_patient setVariable [QEGVAR(damage,InstantDeathImmune), true, true];
+
 private _injuryArray = [];
 
 if (_severity == 0) then { // Random
@@ -117,7 +119,7 @@ for "_i" from 1 to _woundCount do {
 {
     _x params ["_targetPart", "_mechanism", "_damageAmount"];
 
-    [_patient, _damageAmount, _targetPart, _mechanism, _initiator] call ACEFUNC(medical,addDamageToUnit);
+    [_patient, _damageAmount, _targetPart, _mechanism, objNull] call ACEFUNC(medical,addDamageToUnit);
 } forEach _injuryArray;
 
 if (_singlePatient) then {

@@ -77,29 +77,48 @@ private _bodyPartBloodLoss = [0, 0, 0, 0, 0, 0];
         [_bloodLoss] call ACEFUNC(medical_gui,bloodLossToRGBA);
     } else {
         private _damage = _bodyPartDamage select _forEachIndex;
-        // _damageThreshold here indicates how close unit is to guaranteed death via sum of trauma, so use the same multipliers used in medical_damage/functions/fnc_determineIfFatal.sqf
-        switch (true) do { // torso damage threshold doesn't need scaling
-            case (_forEachIndex > 3): { // legs: index 4 & 5
-                if (EGVAR(damage,enable) || (ACEGVAR(medical,limbDamageThreshold) != 0 && {[false, !isPlayer _target, true] select ACEGVAR(medical,useLimbDamage)})) then { // Just indicate how close to the fracture threshold we are
-                    _damageThreshold = _damageThreshold * ACEGVAR(medical,limbDamageThreshold);
-                } else {
+        
+        if (EGVAR(damage,enable)) then {
+            switch (true) do {
+                case (_forEachIndex > 3): { // legs: index 4 & 5
+                    _damageThreshold = LIMPING_DAMAGE_THRESHOLD * 4;
+                };
+                case (_forEachIndex > 1): { // arms: index 2 & 3
                     _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
                 };
-            };
-            case (_forEachIndex > 1): { // arms: index 2 & 3
-                if (EGVAR(damage,enable) || (ACEGVAR(medical,limbDamageThreshold) != 0 && {[false, !isPlayer _target, true] select ACEGVAR(medical,useLimbDamage)})) then { // Just indicate how close to the fracture threshold we are
-                    _damageThreshold = _damageThreshold * ACEGVAR(medical,limbDamageThreshold);
-                } else {
-                    _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
+                case (_forEachIndex == 0): { // head: index 0
+                    _damageThreshold = [EGVAR(damage,headTraumaDeathThresholdAI), EGVAR(damage,headTraumaDeathThreshold)] select (isPlayer _target);
+                };
+                default { // torso: index 1
+                    _damageThreshold = [EGVAR(damage,bodyTraumaDeathThresholdAI), EGVAR(damage,bodyTraumaDeathThreshold)] select (isPlayer _target);
                 };
             };
-            case (_forEachIndex == 0): { // head: index 0
-                _damageThreshold = _damageThreshold * 1.25;
-            };
-            default { // torso: index 1
-                _damageThreshold = _damageThreshold * 1.5
+        } else {
+            switch (true) do { // torso damage threshold doesn't need scaling
+                case (_forEachIndex > 3): { // legs: index 4 & 5
+                    if (ACEGVAR(medical,limbDamageThreshold) != 0 && {[false, !isPlayer _target, true] select ACEGVAR(medical,useLimbDamage)}) then { // Just indicate how close to the limping threshold we are
+                        _damageThreshold = _damageThreshold * ACEGVAR(medical,limbDamageThreshold);
+                    } else {
+                        _damageThreshold = LIMPING_DAMAGE_THRESHOLD * 4;
+                    };
+                };
+                case (_forEachIndex > 1): { // arms: index 2 & 3
+                    if (ACEGVAR(medical,limbDamageThreshold) != 0 && {[false, !isPlayer _target, true] select ACEGVAR(medical,useLimbDamage)}) then { // Just indicate how close to the fracture threshold we are
+                        _damageThreshold = _damageThreshold * ACEGVAR(medical,limbDamageThreshold);
+                    } else {
+                        _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
+                    };
+                };
+                case (_forEachIndex == 0): { // head: index 0
+                    _damageThreshold = _damageThreshold * 1.25;
+                };
+                default { // torso: index 1
+                    _damageThreshold = _damageThreshold * 1.5
+                };
             };
         };
+
+        // _damageThreshold here indicates how close unit is to guaranteed death via sum of trauma, so use the same multipliers used in medical_damage/functions/fnc_determineIfFatal.sqf
         _damage = (_damage / (0.01 max _damageThreshold)) min 1;
         [_damage] call ACEFUNC(medical_gui,damageToRGBA);
     };

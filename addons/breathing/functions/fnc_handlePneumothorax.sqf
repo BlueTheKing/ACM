@@ -29,8 +29,6 @@ if (_state > 3) then {
     _patient setVariable [QGVAR(Pneumothorax_State), _state, true];
 };
 
-[_patient] call FUNC(updateBreathingState);
-
 if (_patient getVariable [QGVAR(Pneumothorax_PFH), -1] != -1) exitWith {};
 
 private _PFH = [{
@@ -58,10 +56,10 @@ private _PFH = [{
             if (GVAR(Hardcore_ChestInjury)) then {
                 _patient setVariable [QGVAR(Hardcore_Pneumothorax), true, true];
             };
+            [_patient] call FUNC(updateLungState);
         } else {
             _patient setVariable [QGVAR(Pneumothorax_State), _pneumothoraxState, true];
         };
-        [_patient] call FUNC(updateBreathingState);
     };
 
 }, (40 + (random 40)), [_patient]] call CBA_fnc_addPerFrameHandler;

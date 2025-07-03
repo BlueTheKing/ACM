@@ -1,22 +1,21 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Update breathing state of patient
+ * Get breathing state of patient
  *
  * Arguments:
  * 0: Patient <OBJECT>
- * 1: Was Healed <BOOL>
  *
  * Return Value:
- * None
+ * Breathing State <NUMBER>
  *
  * Example:
- * [player, false] call ACM_airway_fnc_updateBreathingState;
+ * [player, false] call ACM_airway_fnc_getBreathingState;
  *
  * Public: No
  */
 
-params ["_patient", ["_healed", false]];
+params ["_patient"];
 
 private _state = 1;
 
@@ -38,14 +37,14 @@ if (_TPTXState) then {
     _state = _state - (_PTXState / 10);
 };
 
-[_patient, _healed] call FUNC(updateLungState);
-
 if (_hardcorePTX) then {
-    _state = _state min 0.8;
+    _state = _state min ([0.8, 0.95] select (IN_CRDC_ARRST(_patient)));
 };
 
-if (_healed) then {
-    _state = 1;
+private _exposureBreathingState = GET_EXPOSURE_BREATHINGSTATE(_patient);
+
+if (_exposureBreathingState < 1) then {
+    _state = _state * _exposureBreathingState;
 };
 
-_patient setVariable [QGVAR(BreathingState), _state, true];
+_state;

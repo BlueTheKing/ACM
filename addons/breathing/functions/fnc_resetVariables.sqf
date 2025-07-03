@@ -39,8 +39,6 @@ _patient setVariable [QGVAR(PulseOximeter_LastSync), [-1,-1]];
 
 _patient setVariable [QGVAR(Hardcore_Pneumothorax), false, true];
 
-_patient setVariable [QGVAR(BreathingState), 1, true];
-
 _patient setVariable [QGVAR(BVM_provider), objNull, true];
 _patient setVariable [QGVAR(BVM_Medic), objNull, true];
 _patient setVariable [QGVAR(isUsingBVM), false, true];
@@ -51,3 +49,5 @@ _patient setVariable [QGVAR(BVM_lastBreath), nil, true];
 _patient setVariable [QGVAR(BVM_lastBreathOxygen), nil, true];
 
 _patient setVariable [QGVAR(RespirationRate), (ACM_TARGETVITALS_RR(_patient)), true];
+
+[_patient, true] call FUNC(updateLungState);

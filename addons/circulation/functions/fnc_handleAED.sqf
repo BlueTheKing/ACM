@@ -87,6 +87,8 @@ private _PFH = [{
 
         _patient setVariable [QGVAR(AED_MuteAlarm), false, true];
 
+        _patient setVariable [QGVAR(AED_Analyze_Busy), false, true];
+
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 

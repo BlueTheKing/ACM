@@ -27,7 +27,7 @@ private _itemHash = createHashMap;
     ["@io", ["InsertIO_FAST1", "InsertIO_EZ"]],
     ["@fluid", ["SalineIV", "SalineIV_500", "SalineIV_250", "PlasmaIV", "PlasmaIV_500", "PlasmaIV_250"]],
     ["tourniquet", ["ApplyTourniquet"]],
-    ["splint", ["Splint", "ApplySAMSplint"]],
+    ["splint", ["ApplySAMSplint"]],
     ["morphine", ["morphine"]],
     ["naloxone", ["naloxone"]],
     ["paracetamol", ["paracetamol"]],

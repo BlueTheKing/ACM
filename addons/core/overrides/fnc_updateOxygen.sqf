@@ -81,7 +81,7 @@ private _capture = 1 max ((_po2 / IDEAL_PPO2) ^ (-_po2 * 3));
 
 private _effectiveBloodVolume = [linearConversion [DEFAULT_BLOOD_VOLUME, 5, GET_EFF_BLOOD_VOLUME(_patient), 1, 0.92, true],(linearConversion [5, 4, GET_EFF_BLOOD_VOLUME(_patient), 0.92, 0.84])] select (GET_EFF_BLOOD_VOLUME(_patient) < 5);
 private _airwayState = GET_AIRWAYSTATE(_patient);
-private _breathingState = GET_BREATHINGSTATE(_patient) * GET_EXPOSURE_BREATHINGSTATE(_patient);
+private _breathingState = GET_BREATHINGSTATE(_patient);
 
 private _oxygenSaturation = _currentOxygenSaturation;
 private _oxygenChange = 0;
@@ -132,14 +132,11 @@ if !(_activeBVM) then {
     };
 };
 
-if (EGVAR(CBRN,enable)) then {
+if (EGVAR(CBRN,enable) && _respirationRate > 0) then {
     private _airwayInflammation = GET_AIRWAY_INFLAMMATION(_patient);
 
-    if (_airwayInflammation >= 100 || HAS_AIRWAY_SPASM(_patient)) then {
-        _respirationRate = 0;
-    } else {
+    if (!(HAS_SURGICAL_AIRWAY(_patient)) && _airwayInflammation > 30) then {
         _maxPositiveGain = _maxPositiveGain * (linearConversion [30, 100, _airwayInflammation, 1, 0, true]);
-        _breathingState = _breathingState * (linearConversion [10, 100, _airwayInflammation, 1, 0.2, true]);
     };
 
     private _lungTissueDamage = GET_LUNG_TISSUEDAMAGE(_patient);

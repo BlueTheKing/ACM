@@ -187,12 +187,6 @@ private _PFH = [{
             _buildup = (_buildup + (_eliminationRate * _decreaseModifier)) max 0;
         };
     };
-    
-    if (_exposed && !_filtered || _exposedExternal && !_protectedBody) then {
-        _buildup = (_buildup + ((_inhalationRate max _absorptionRate) * _increaseModifier)) min 100;
-    } else {
-        _buildup = (_buildup + (_eliminationRate * _decreaseModifier)) max 0;
-    };
 
     _patient setVariable [_buildupVarString, _buildup, true];
 
@@ -200,7 +194,7 @@ private _PFH = [{
         [_patient, _buildup, _exposed, _exposedExternal, [_filtered, _protectedBody, _protectedEyes, _filterLevel]] call _thresholdFunction;
         
         if !(isPlayer _patient) then {
-            [_patient, _hazardType, _exposed, _exposedExternal, [_filtered, _protectedBody, _protectedEyes, _filterLevel]] call FUNC(handleAIEffects);
+            [_patient, _buildup, _hazardType, _exposed, _exposedExternal, [_filtered, _protectedBody, _protectedEyes, _filterLevel]] call FUNC(handleAIEffects);
         };
     };
 
@@ -261,7 +255,7 @@ private _coughPFH = [{
 
     private _addTime = 0.2 + random 0.2;
 
-    private _distance = 8;
+    private _distance = 12;
 
     private _targets = allPlayers inAreaArray [ASLToAGL getPosASL _patient, _distance, _distance, 0, false, _distance];
 

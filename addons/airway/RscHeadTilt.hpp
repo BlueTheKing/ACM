@@ -1,7 +1,5 @@
 #include "HeadTilt_defines.hpp"
 
-class RscText;
-
 class RscTitles
 {
     class RscHeadTilt

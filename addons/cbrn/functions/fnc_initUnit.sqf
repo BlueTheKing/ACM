@@ -19,3 +19,7 @@ params ["_patient"];
 
 _patient setVariable [QGVAR(Detector_State), false, true];
 _patient setVariable [QGVAR(Detector_Alarm_State), true, true];
+
+if (!(isPlayer _patient) && GVAR(chemicalAffectAISkill)) then {
+    _patient setVariable [QGVAR(AISkill_Initial), (skill _patient)];
+};

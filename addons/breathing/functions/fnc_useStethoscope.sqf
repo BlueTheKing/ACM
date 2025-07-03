@@ -24,6 +24,8 @@ params ["_medic", "_patient"];
 [[_medic, _patient, _bodyPart], { // On Start
     params ["_medic", "_patient", "_bodyPart"];
 
+    [_patient] call FUNC(updateLungState); // TODO to be moved probably
+
     GVAR(Stethoscope_BellMoving) = false;
     GVAR(Stethoscope_NextBreath) = -1;
     GVAR(Stethoscope_NextBeat) = -1;

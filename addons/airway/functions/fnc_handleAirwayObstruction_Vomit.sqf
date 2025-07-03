@@ -46,7 +46,6 @@ private _PFH = [{
 
         if !(_inRecovery) then { // TODO check for pose
             _patient setVariable [QGVAR(AirwayObstructionVomit_State), (_obstructionState + 1), true];
-            [_patient] call FUNC(updateAirwayState);
         };
 
         playSound3D [format ["%1%2.wav", QPATHTOF(sound\vomit),(1 + round(random 5))], _patient, false, getPosASL _patient, 10, (0.9 + (random 0.2)), 10];

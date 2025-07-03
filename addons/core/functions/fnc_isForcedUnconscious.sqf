@@ -17,4 +17,4 @@
 
 params ["_patient"];
 
-(_patient getVariable [QEGVAR(evacuation,casualtyTicketClaimed), false]);
+(_patient getVariable [QEGVAR(evacuation,casualtyTicketClaimed), false]) || (_patient getVariable [QEGVAR(airway,SurgicalAirway_State), false]);

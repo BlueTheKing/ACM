@@ -102,6 +102,17 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(chemicalAffectAISkill),
+    "CHECKBOX",
+    [LLSTRING(SETTING_ChemicalAffectAISkill), LLSTRING(SETTING_ChemicalAffectAISkill_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Chemical)],
+    [true],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
 // CS Gas
 
 [
@@ -109,7 +120,7 @@ PREP_RECOMPILE_END;
     "CHECKBOX",
     [LLSTRING(SETTING_CSCauseBlindness), LLSTRING(SETTING_CSCauseBlindness_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Chemical_CS)],
-    [false],
+    [true],
     true,
     {},
     true
@@ -122,7 +133,7 @@ PREP_RECOMPILE_END;
     "CHECKBOX",
     [LLSTRING(SETTING_ChlorineCauseBlindness), LLSTRING(SETTING_ChlorineCauseBlindness_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Chemical_Chlorine)],
-    [false],
+    [true],
     true,
     {},
     true
@@ -135,7 +146,7 @@ PREP_RECOMPILE_END;
     "CHECKBOX",
     [LLSTRING(SETTING_SarinIsColorless), LLSTRING(SETTING_SarinIsColorless_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Chemical_Sarin)],
-    [false],
+    [true],
     true,
     {},
     true
@@ -148,7 +159,7 @@ PREP_RECOMPILE_END;
     "CHECKBOX",
     [LLSTRING(SETTING_LewisiteCauseBlindness), LLSTRING(SETTING_LewisiteCauseBlindness_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Chemical_Lewisite)],
-    [false],
+    [true],
     true,
     {},
     true
@@ -159,7 +170,7 @@ PREP_RECOMPILE_END;
     "CHECKBOX",
     [LLSTRING(SETTING_LewisiteIsColorless), LLSTRING(SETTING_LewisiteIsColorless_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Chemical_Lewisite)],
-    [false],
+    [true],
     true,
     {},
     true

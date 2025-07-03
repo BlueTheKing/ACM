@@ -89,6 +89,9 @@ class CfgFunctions {
             class handleBandageOpening { // Bandage reopening chance with platelets
                 file = QPATHTOF(overrides\fnc_handleBandageOpening.sqf); //ace/addons/medical_treatment/functions/fnc_handleBandageOpening.sqf
             };
+            class placeInBodyBag { // Return medical items on body bag use
+                file = QPATHTOF(overrides\fnc_placeInBodyBag.sqf); //ace/addons/medical_treatment/functions/fnc_placeInBodyBag.sqf
+            };
         };
     };
     class overwrite_medical_damage {
@@ -159,8 +162,14 @@ class CfgFunctions {
     class overwrite_medical_ai {
         tag = "ace_medical_ai";
         class ace_medical_ai {
-            class healingLogic { // Use new items
+            class healingLogic { // Use new items, setting
                 file = QPATHTOF(overrides\fnc_healingLogic.sqf); //ace/addons/medical_ai/functions/fnc_healingLogic.sqf
+            };
+            class healSelf { // Prevent treatment from lying state
+                file = QPATHTOF(overrides\fnc_healSelf.sqf); //ace/addons/medical_ai/functions/fnc_healSelf.sqf
+            };
+            class healUnit { // Prevent treatment from lying state
+                file = QPATHTOF(overrides\fnc_healUnit.sqf); //ace/addons/medical_ai/functions/fnc_healUnit.sqf
             };
             class itemCheck { // Use own item list
                 file = QPATHTOF(overrides\fnc_itemCheck.sqf); //ace/addons/medical_ai/functions/fnc_itemCheck.sqf

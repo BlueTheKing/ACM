@@ -23,5 +23,4 @@ params ["_medic", "_patient"];
 _patient setVariable [QGVAR(Thoracostomy_State), 0, true];
 _patient setVariable [QGVAR(Pneumothorax_State), 0, true];
 _patient setVariable [QGVAR(Thoracostomy_UsedKit), false, true];
-
-[_patient] call FUNC(updateBreathingState);
+[_patient] call FUNC(updateLungState);

@@ -37,3 +37,7 @@ if (random 1 < (_chance * GVAR(chestInjuryChance))) then {
     };
     [_patient] call FUNC(updateLungState);
 };
+
+if (_patient getVariable [QGVAR(ChestSeal_State), false]) then {
+    _patient setVariable [QGVAR(ChestSeal_State), false, true];
+};

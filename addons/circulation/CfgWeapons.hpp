@@ -207,6 +207,7 @@ class CfgWeapons {
         picture = QPATHTOF(ui\ampule_dimercaprol_ca.paa);
         displayName = CSTRING(Ampule_Dimercaprol);
         descriptionShort = CSTRING(Ampule_Dimercaprol_Desc);
+        scope = 1;
     };
 
     class ACM_Paracetamol_SinglePack: ACM_Spray_Naloxone {

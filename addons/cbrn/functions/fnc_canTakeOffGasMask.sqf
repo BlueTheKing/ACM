@@ -7,7 +7,7 @@
  * 0: Unit <OBJECT>
  *
  * Return Value:
- * None
+ * Can take off gas mask? <BOOL>
  *
  * Example:
  * [player] call ACM_CBRN_fnc_canTakeOffGasMask;
@@ -17,4 +17,4 @@
 
 params ["_unit"];
 
-(goggles _unit) in (GVAR(PPE_List) get "gasmask")
+[_unit] call FUNC(isWearingGasMask);

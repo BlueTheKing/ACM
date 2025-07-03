@@ -196,7 +196,7 @@
 #define CARDIAC_OUTPUT_MIN ACEGVAR(medical,const_minCardiacOutput)
 
 // ACM
-#define ACM_INCOMPATIBLE_ADDONS [["pir","Project Injury Reaction"],["kat_main","KAT Advanced Medical"],["MIRA_Vehicle_Medical","ACE Vehicle Medical"],["KJW_MedicalExpansion_core", "KJW's Medical Expansion"]]
+#define ACM_INCOMPATIBLE_ADDONS [["pir","Project Injury Reaction"],["kat_main","KAT Advanced Medical"],["MIRA_Vehicle_Medical","ACE Vehicle Medical"],["KJW_MedicalExpansion_core", "KJW's Medical Expansion"],["CBRN_scripts","Chemical Warfare PLUS"]]
 
 #define ALL_BODY_PARTS_PRIORITY ["body", "head", "leftarm", "rightarm", "leftleg", "rightleg"]
 
@@ -206,6 +206,8 @@
 #define SETTING_DROPDOWN_LOCATION [0, 1, 2, 3, 4], [ACELSTRING(common,Anywhere), ACELSTRING(common,Vehicle), ACELSTRING(medical_treatment,MedicalFacilities), ACELSTRING(medical_treatment,VehiclesAndFacilities), ACELSTRING(common,Disabled)]
 
 #define LYING_ANIMATION ["ainjppnemstpsnonwrfldnon", "acm_lyingstate"]
+
+#define IN_LYING_STATE(unit) (unit getVariable [QEGVAR(core,Lying_State), false])
 
 #define GET_BODYWEIGHT(unit) (unit getVariable [QEGVAR(core,BodyWeight), 80])
 
@@ -224,18 +226,22 @@
 #define BODYPART_N_RIGHTLEG 5
 
 // Airway
-#define GET_AIRWAYSTATE(unit) (unit getVariable [QEGVAR(airway,AirwayState), 1])
+#define GET_AIRWAYSTATE(unit) ([unit] call EFUNC(airway,getAirwayState))
 
 #define IN_RECOVERYPOSITION(unit) (unit getVariable [QQEGVAR(airway,RecoveryPosition_State), false])
 
 #define GET_AIRWAYADJUNCT_ORAL(unit)  (unit getVariable [QEGVAR(airway,AirwayItem_Oral), ""])
 #define GET_AIRWAYADJUNCT_NASAL(unit) (unit getVariable [QEGVAR(airway,AirwayItem_Nasal), ""])
 
+#define HAS_SURGICAL_AIRWAY(unit) (unit getVariable [QEGVAR(airway,SurgicalAirway_State), false])
+
+#define GET_SURGICAL_AIRWAY_BLEEDRATE(unit) ([unit] call EFUNC(airway,getAirwayIncisionBleedRate))
+
 // Breathing
 #define ACM_BREATHING_MINDECREASE 0.1
 #define ACM_BREATHING_MAXDECREASE 0.12
 
-#define GET_BREATHINGSTATE(unit) (unit getVariable [QEGVAR(breathing,BreathingState), 1])
+#define GET_BREATHINGSTATE(unit) ([unit] call EFUNC(breathing,getBreathingState))
 
 #define GET_OXYGEN(unit) (unit getVariable [VAR_SPO2, 99])
 
@@ -353,8 +359,6 @@
 #define ACM_SYRINGES_3 EGVAR(circulation,SyringeList_3)
 #define ACM_SYRINGES_1 EGVAR(circulation,SyringeList_13)
 
-#define ACM_NASAL_MEDICATION ['AmmoniaInhalant','Naloxone']
-
 //// Blood
 #define GET_BLOODTYPE(unit) (unit getVariable [QEGVAR(circulation,BloodType),-1])
 
@@ -396,6 +400,8 @@
 #define GET_INTERNAL_BLEEDRATE(unit)        ([unit] call EFUNC(circulation,getInternalBleedingRate))
 
 #define GET_CAPILLARYDAMAGE_BLEEDRATE(unit) ([unit] call EFUNC(circulation,getCapillaryDamageBleedingRate))
+
+#define INTERNAL_WOUND_TYPES           [10,20,30,60,70]
 
 #define VAR_INTERNAL_WOUNDS            QEGVAR(damage,InternalWounds)
 #define GET_INTERNAL_WOUNDS(unit)      (unit getVariable [VAR_INTERNAL_WOUNDS, createHashMap])

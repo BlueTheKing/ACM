@@ -1,3 +1,4 @@
+PREP(canApplySplint);
 PREP(canInspectForFracture);
 PREP(canPerformFractureRealignment);
 PREP(canRemoveSplint);

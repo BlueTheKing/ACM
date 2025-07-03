@@ -1,5 +1,93 @@
 class CfgVehicles {
-    class Module_F;
+    class Logic;
+    class Module_F: Logic {
+        class AttributesBase {
+            class Default;
+            class Combo;
+            class Edit;
+            class Checkbox;
+            class ModuleDescription;
+        };
+    };
+
+    class GVAR(Eden_HazardZone): Module_F {
+        scope = 2;
+        displayName = CSTRING(Module_CreateHazardZone);
+        icon = QPATHTOF(ui\Icon_ChemicalHazard_ca.paa);
+        category = QGVAR(CBRN);
+        function = QFUNC(moduleCreateHazardZone_Eden);
+        functionPriority = 1;
+        isGlobal = 1;
+        isTriggerActivated = 0;
+        author = AUTHOR;
+        class AttributeValues
+		{
+			size3[] = {5,5,2.5};
+			isRectangle = 0;
+		};
+        class Attributes: AttributesBase {
+            class HazardType: Combo {
+                displayName = CSTRING(Module_Generic_HazardType);
+                property = QGVAR(Eden_HazardZone_HazardType);
+                typeName = "NUMBER";
+                defaultValue = 0;
+                class values {
+                    class Chemical_Placebo {
+                        name = CSTRING(Chemical_Placebo);
+                        value = 0;
+                    };
+                    class Chemical_CS {
+                        name = CSTRING(Chemical_CS);
+                        value = 1;
+                    };
+                    class Chemical_Chlorine {
+                        name = CSTRING(Chemical_Chlorine);
+                        value = 2;
+                    };
+                    class Chemical_Sarin {
+                        name = CSTRING(Chemical_Sarin);
+                        value = 3;
+                    };
+                    class Chemical_Lewisite {
+                        name = CSTRING(Chemical_Lewisite);
+                        value = 4;
+                    };
+                };
+            };
+            class ZoneRadius: Edit {
+                property = QGVAR(Eden_HazardZone_ZoneRadius);
+                displayName = CSTRING(Module_Generic_ZoneRadius);
+                typeName = "NUMBER";
+                defaultValue = 5;
+            };
+            class EffectTime: Edit {
+                property = QGVAR(Eden_HazardZone_EffectTime);
+                displayName = CSTRING(Module_Generic_EffectTime);
+                tooltip = CSTRING(Module_Generic_EffectTime_Tooltip);
+                typeName = "NUMBER";
+                defaultValue = 0;
+            };
+            class AttachToObject: Checkbox {
+                property = QGVAR(Eden_HazardZone_AttachToObject);
+                displayName = CSTRING(Module_Generic_AttachToObject);
+                tooltip = CSTRING(Module_Generic_AttachToObject_TooltipEden);
+                typeName = "BOOL";
+            };
+            class ShowMist: Checkbox {
+                property = QGVAR(Eden_HazardZone_ShowMist);
+                displayName = CSTRING(Module_Generic_ShowMist);
+                tooltip = CSTRING(Module_Generic_ShowMist_Tooltip);
+                typeName = "BOOL";
+                defaultValue = 1;
+            };
+            class AffectAI: Checkbox {
+                property = QGVAR(Eden_HazardZone_AffectAI);
+                displayName = CSTRING(Module_Generic_AffectAI);
+                typeName = "BOOL";
+                defaultValue = 1;
+            };
+        };
+    };
 
     class GVAR(moduleBase): Module_F {
         curatorCanAttach = 1;
@@ -36,12 +124,39 @@ class CfgVehicles {
 
     class Man;
     class CAManBase: Man {
+        class ACE_Actions {
+            class ACM_Action_GasMask_Other {
+                displayName = CSTRING(GasMask);
+                icon = QPATHTOF(ui\Icon_Gasmask_ca.paa);
+                exceptions[] = {"isNotInside","isNotSitting"};
+                distance = 1.75;
+                selection = "head";
+                class ACM_Action_PutOnGasMask_Other {
+                    displayName = CSTRING(GasMask_PutOn);
+                    icon = QPATHTOF(ui\Icon_Gasmask_ca.paa);
+                    condition = QUOTE(!(_target call ACEFUNC(common,isAwake)) && !([_target] call FUNC(isWearingGasMask)) && {([_target] call FUNC(hasGasMask) || [_player] call FUNC(hasGasMask))});
+                    statement = QUOTE([ARR_2(_target,_player)] call FUNC(putOnGasMask));
+                    exceptions[] = {"isNotInside","isNotSitting"};
+                    showDisabled = 0;
+                };
+                class ACM_Action_TakeOffGasMask_Other: ACM_Action_PutOnGasMask_Other {
+                    displayName = CSTRING(GasMask_TakeOff);
+                    condition = QUOTE([_target] call FUNC(canTakeOffGasMask));
+                    statement = QUOTE([ARR_2(_target,_player)] call FUNC(takeOffGasMask));
+                };
+                class ACM_Action_ReplaceGasMaskFilter_Other: ACM_Action_PutOnGasMask_Other {
+                    displayName = CSTRING(GasMask_ReplaceFilter);
+                    condition = QUOTE([_target] call FUNC(isWearingGasMask) && {([_target] call FUNC(hasFilter) || [_player] call FUNC(hasFilter))});
+                    statement = QUOTE([_player] call FUNC(replaceFilter));
+                };
+            };
+        };
         class ACE_SelfActions {
             class ACE_Equipment {
                 class ACM_Action_GasMask {
                     displayName = CSTRING(GasMask);
-                    exceptions[] = {"isNotInside","isNotSitting"};
                     icon = QPATHTOF(ui\Icon_Gasmask_ca.paa);
+                    exceptions[] = {"isNotInside","isNotSitting"};
                     class ACM_Action_PutOnGasMask {
                         displayName = CSTRING(GasMask_PutOn);
                         condition = QUOTE([_player] call FUNC(canPutOnGasMask));

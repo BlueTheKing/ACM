@@ -27,5 +27,6 @@ class CfgPatches {
 #include "CfgSounds.hpp"
 #include "CfgReplacementItems.hpp"
 #include "CfgVehicles.hpp"
+
 #include "UI_defines.hpp"
 #include "RscTitles.hpp"

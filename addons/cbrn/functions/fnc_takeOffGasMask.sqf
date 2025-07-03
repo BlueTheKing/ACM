@@ -1,10 +1,11 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Make unit take off gas mask.
+ * Make target take off gas mask.
  *
  * Arguments:
- * 0: Unit <OBJECT>
+ * 0: Target <OBJECT>
+ * 1: Unit <OBJECT>
  *
  * Return Value:
  * None
@@ -15,20 +16,31 @@
  * Public: No
  */
 
-params ["_unit"];
+params ["_target", ["_unit", objNull]];
 
-private _classname = goggles _unit;
+private _classname = goggles _target;
 
-_unit unlinkItem _classname;
-
-private _added = ([_unit, _classname] call ACEFUNC(common,addToInventory)) select 0;
+_target unlinkItem _classname;
 
 private _hint = LLSTRING(GasMask_Removed);
 private _hintSize = 1.5;
+
+if !(isNull _unit) exitWith {
+    private _added = ([_unit, _classname] call ACEFUNC(common,addToInventory)) select 0;
+
+    if !(_added) then {
+        _hint = format ["%1<br/>%2", _hint, ACELLSTRING(common,Inventory_Full)];
+        _hintSize = 2;
+    };
+
+    [_hint, _hintSize, _unit] call ACEFUNC(common,displayTextStructured);
+};
+
+private _added = ([_target, _classname] call ACEFUNC(common,addToInventory)) select 0;
 
 if !(_added) then {
     _hint = format ["%1<br/>%2", _hint, ACELLSTRING(common,Inventory_Full)];
     _hintSize = 2;
 };
 
-[_hint, _hintSize, _unit] call ACEFUNC(common,displayTextStructured);
+[_hint, _hintSize, _target] call ACEFUNC(common,displayTextStructured);

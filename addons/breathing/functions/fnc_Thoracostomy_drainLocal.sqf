@@ -54,5 +54,4 @@ if (_type == 0) then {
 [QACEGVAR(common,displayTextStructured), [(format ["%1<br/>%2", _hint, _amount]), 2, _medic], _medic] call CBA_fnc_targetEvent;
 
 _patient setVariable [QGVAR(Hemothorax_Fluid), 0, true];
-
-[_patient] call FUNC(updateBreathingState);
+[_patient] call FUNC(updateLungState);

@@ -135,7 +135,7 @@ private _actions = [];
                 [
                 "ACM_PatientActions_OpenTransfusionMenu",
                 LELSTRING(circulation,OpenTransfusionMenu),
-                "", // TODO icon
+                QPATHTOF(ui\icon_patient_transfusionmenu.paa),
                 {
                     params ["", "", "_args"];
                     _args params ["_patient", "_medic"];
@@ -175,7 +175,7 @@ private _actions = [];
                 [
                 "ACM_PatientActions_Unload",
                 ACELLSTRING(medical_treatment,Unload),
-                "", // TODO icon
+                QPATHTOF(ui\person_unload.paa),
                 {
                     params ["", "", "_args"];
                     _args params ["_patient", "_medic"];

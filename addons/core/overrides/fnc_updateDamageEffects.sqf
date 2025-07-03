@@ -34,17 +34,35 @@ if (ACEGVAR(medical,fractures) > 0) then {
     if ((_fractures select 2) == 1) then { _aimFracture = _aimFracture + 4; };
     if ((_fractures select 3) == 1) then { _aimFracture = _aimFracture + 4; };
 
-    if (ACEGVAR(medical,fractures) in [2, 3]) then { // the limp with a splint will still cause effects
-        // Block sprint / force walking based on fracture setting and leg splint status
-        private _hasLegSplint = (_fractures select 4) == -1 || {(_fractures select 5) == -1};
-        if (ACEGVAR(medical,fractures) == 2) then {
-            _blockSprint = _hasLegSplint;
-        } else {
-            _forceWalk = _hasLegSplint;
+    if (EGVAR(disability,enableFractureSeverity)) then {
+        (_unit getVariable [QEGVAR(disability,Fracture_Prepared), [false,false,false,false,false,false]]) params ["","", "_preparedLeftArm", "_preparedRightArm", "_preparedLeftLeg", "_preparedRightLeg"];
+        GET_SPLINTS(_unit) params ["","", "_splintLeftArm", "_splintRightArm", "_splintLeftLeg", "_splintRightLeg"];
+
+        if (_isLimping) then {
+            private _mitigated = ((_fractures select 4) == 1) && (_splintLeftLeg > 0) || ((_fractures select 5) == 1) && (_splintRightLeg > 0);
+            _isLimping = !_mitigated;
+            _blockSprint = _mitigated;
         };
 
-        if ((_fractures select 2) == -1) then { _aimFracture = _aimFracture + 2; };
-        if ((_fractures select 3) == -1) then { _aimFracture = _aimFracture + 2; };
+        if ((_fractures select 2) == -1 && _splintLeftArm > 0) then {
+            _aimFracture = ([(_aimFracture + 4), (_aimFracture + 1)] select _preparedLeftArm);
+        };
+        if ((_fractures select 3) == -1 && _splintRightArm > 0) then {
+            _aimFracture = ([(_aimFracture + 4), (_aimFracture + 1)] select _preparedRightArm);
+        };
+    } else {
+        if (ACEGVAR(medical,fractures) in [2, 3]) then { // the limp with a splint will still cause effects
+            // Block sprint / force walking based on fracture setting and leg splint status
+            private _hasLegSplint = (_fractures select 4) == -1 || {(_fractures select 5) == -1};
+            if (ACEGVAR(medical,fractures) == 2) then {
+                _blockSprint = _hasLegSplint;
+            } else {
+                _forceWalk = _hasLegSplint;
+            };
+
+            if ((_fractures select 2) == -1) then { _aimFracture = _aimFracture + 2; };
+            if ((_fractures select 3) == -1) then { _aimFracture = _aimFracture + 2; };
+        };
     };
     _unit setVariable [QACEGVAR(medical_engine,aimFracture), _aimFracture, false]; // local only var, used in ace_medical's postInit to set ACE_setCustomAimCoef
 };

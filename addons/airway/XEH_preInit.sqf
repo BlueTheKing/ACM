@@ -75,6 +75,17 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// Surgical Airway
+
+[
+    QGVAR(allowSurgicalAirway),
+    "LIST",
+    [LSTRING(SETTING_Allow_SurgicalAirway), LSTRING(SETTING_Allow_SurgicalAirway_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayManagement)],
+    [SETTING_DROPDOWN_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
 // Airway Adjunct
 
 [
@@ -131,13 +142,13 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
-[
+/*[
     QGVAR(airwayAdjunctReusable),
     "CHECKBOX",
     [LSTRING(SETTING_AirwayAdjunctsReusable), LSTRING(SETTING_AirwayAdjunctsReusable_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayAdjunct)],
     [false],
     true
-] call CBA_fnc_addSetting;
+] call CBA_fnc_addSetting;*/
 
 ADDON = true;

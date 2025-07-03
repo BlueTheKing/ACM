@@ -24,7 +24,7 @@ ADDON = true;
     "SLIDER",
     [LLSTRING(SETTING_HeadTraumaDeathThreshold), LLSTRING(SETTING_HeadTraumaDeathThreshold_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Thresholds)],
-    [0, 40, 19, 1],
+    [0, 40, 9, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -33,7 +33,7 @@ ADDON = true;
     "SLIDER",
     [LLSTRING(SETTING_BodyTraumaDeathThreshold), LLSTRING(SETTING_BodyTraumaDeathThreshold_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Thresholds)],
-    [0, 40, 24, 1],
+    [0, 40, 12, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -42,7 +42,7 @@ ADDON = true;
     "SLIDER",
     [LLSTRING(SETTING_HeadTraumaCardiacArrestThreshold), LLSTRING(SETTING_HeadTraumaCardiacArrestThreshold_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Thresholds)],
-    [0, 40, 12, 1],
+    [0, 40, 8, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -51,7 +51,7 @@ ADDON = true;
     "SLIDER",
     [LLSTRING(SETTING_BodyTraumaCardiacArrestThreshold), LLSTRING(SETTING_BodyTraumaCardiacArrestThreshold_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Thresholds)],
-    [0, 40, 20, 1],
+    [0, 40, 11, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -78,7 +78,7 @@ ADDON = true;
     "SLIDER",
     [LLSTRING(SETTING_HeadTraumaDeathThresholdAI), LLSTRING(SETTING_HeadTraumaDeathThresholdAI_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AIUnits)],
-    [0, 40, 19, 1],
+    [0, 40, 4, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -87,7 +87,7 @@ ADDON = true;
     "SLIDER",
     [LLSTRING(SETTING_BodyTraumaDeathThresholdAI), LLSTRING(SETTING_BodyTraumaDeathThresholdAI_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AIUnits)],
-    [0, 40, 24, 1],
+    [0, 40, 7, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -96,7 +96,7 @@ ADDON = true;
     "SLIDER",
     [LLSTRING(SETTING_HeadTraumaCardiacArrestThresholdAI), LLSTRING(SETTING_HeadTraumaCardiacArrestThresholdAI_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AIUnits)],
-    [0, 40, 12, 1],
+    [0, 40, 2, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -105,7 +105,7 @@ ADDON = true;
     "SLIDER",
     [LLSTRING(SETTING_BodyTraumaCardiacArrestThresholdAI), LLSTRING(SETTING_BodyTraumaCardiacArrestThresholdAI_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AIUnits)],
-    [0, 40, 20, 1],
+    [0, 40, 5, 1],
     true
 ] call CBA_fnc_addSetting;
 
