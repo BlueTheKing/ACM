@@ -42,8 +42,8 @@ LLSTRING(EvacuatePatient),
 
     private _casualty = _unit getVariable [QACEGVAR(dragging,carriedObject), objNull];
     ((_casualty getVariable [QGVAR(casualtyTicketClaimed), false]) && IS_UNCONSCIOUS(_casualty));
-}] call ACEFUNC(interact_menu,createAction));
+}, {}, [], [0,0,0], 4] call ACEFUNC(interact_menu,createAction));
 
 {
-    [_object, 0, ["ACE_MainActions"], _x] call ACEFUNC(interact_menu,addActionToObject);
+    [_object, 0, [], _x] call ACEFUNC(interact_menu,addActionToObject);
 } forEach _actions;
