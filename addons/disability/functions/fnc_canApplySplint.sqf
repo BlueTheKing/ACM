@@ -19,4 +19,4 @@
 
 params ["_medic", "_patient", "_bodyPart"];
 
-(GET_SPLINTS(_patient) select GET_BODYPART_INDEX(_bodyPart)) == 0;
+(GET_SPLINTS(_patient) select GET_BODYPART_INDEX(_bodyPart)) == 0 && (GET_BODYPART_DAMAGE(_patient) select GET_BODYPART_INDEX(_bodyPart)) > 0;
