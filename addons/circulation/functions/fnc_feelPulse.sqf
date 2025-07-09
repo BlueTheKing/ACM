@@ -86,7 +86,7 @@ private _bodyPartString = switch (_bodyPart) do {
         if (GVAR(FeelPulse_NextPulse) > CBA_missionTime) exitWith {};
 
         private _delay = 60 / _HR;
-        private _pressureModifier = [0.6, 1] select (HAS_PULSE_P(_patient));
+        private _pressureModifier = [0.6, 1] select (HAS_PULSE_P(_patient) || _partIndex == 0);
         private _fullStrength = (linearConversion [_pressureCutoff, (_pressureCutoff + 60), _BPSystolic * _pressureModifier, 0.8, 3, true]);
         private _releaseStrength = (linearConversion [_pressureCutoff, (_pressureCutoff + 60), _BPSystolic * _pressureModifier, 0.5, 2, true]);
 
