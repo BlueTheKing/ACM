@@ -35,7 +35,7 @@ if (_type > 0) then { // Push/Inject
     [2.5, [_iv], {
         (_this select 0) params ["_iv"];
 
-        [ACE_player, GVAR(SyringeDraw_Target), GVAR(SyringeDraw_TargetPart), GVAR(SyringeDraw_Medication), GVAR(SyringeDraw_Size), _iv, true] call FUNC(Syringe_Inject);
+        [ACE_player, GVAR(SyringeDraw_Target), GVAR(SyringeDraw_TargetPart), GVAR(SyringeDraw_Medication), GVAR(SyringeDraw_Size), _iv, GVAR(reusableSyringe)] call FUNC(Syringe_Inject);
     }, {}, (format[([LLSTRING(Syringe_Injecting), LLSTRING(Syringe_Pushing)] select _iv), _medicationName]), {true}, ["isNotInside", "isNotSwimming", "isNotInZeus"]] call ACEFUNC(common,progressBar);
 } else { // Draw
     
