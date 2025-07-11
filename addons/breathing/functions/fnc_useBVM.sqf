@@ -239,6 +239,10 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
     };
 
     if (alive (_patient getVariable [QGVAR(BVM_provider), objNull])) then {
+        if !([_medic, _patient, true] call FUNC(canUseBVM)) exitWith {
+            EGVAR(core,ContinuousAction_Active) = false;
+        };
+
         if (GVAR(BVM_NextBreath) < CBA_missionTime) then {
             GVAR(BVM_NextBreath) = CBA_missionTime + 6;
             playSound3D [QPATHTO_R(sound\bvm_squeeze.wav), _patient, false, getPosASL _patient, 12, 1, 12]; // 1.227s

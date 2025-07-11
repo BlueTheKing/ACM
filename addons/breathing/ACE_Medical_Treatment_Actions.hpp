@@ -45,7 +45,7 @@ class ACEGVAR(medical_treatment,actions) {
         icon = "";
         allowedSelections[] = {"Head"};
         items[] = {"ACM_BVM","ACM_PocketBVM"};
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
+        condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(canUseBVM));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,false)] call FUNC(useBVM));
         ACM_cancelRecovery = 1;
         ACM_menuIcon = "ACM_BVM";
@@ -54,7 +54,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = CSTRING(UseBVM_Oxygen);
         treatmentLocations = TREATMENT_LOCATIONS_FACILITIES;
         items[] = {"ACM_BVM"};
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
+        condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(canUseBVM));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(useBVM));
         ACM_menuIcon = "ACM_BVM";
     };
@@ -66,7 +66,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = CSTRING(UseBVM_PortableOxygen);
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         items[] = {"ACM_BVM"};
-        condition = QUOTE(!(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])) && ('ACM_OxygenTank_425' in ([ARR_2(_medic,2)] call ACEFUNC(common,uniqueItems))));
+        condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(canUseBVM) && ('ACM_OxygenTank_425' in ([ARR_2(_medic,2)] call ACEFUNC(common,uniqueItems))));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,true,true)] call FUNC(useBVM));
     };
 
