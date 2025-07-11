@@ -36,5 +36,5 @@ private _text = format ["%1 %2", LLSTRING(IncompatibleAddons_Found), _addonText]
 
 if (_count > 0) then {
     ["[ACM] ERROR", (composeText [parseText format ["<t align='center'>%1</t>", _text]]), {findDisplay 46 closeDisplay 0}] call ACEFUNC(common,errorMessage);
-    ERROR_1("INCOMPATIBLE ADDONS FOUND: %1", _addonText);
+    ERROR_1("INCOMPATIBLE ADDONS FOUND: %1",_addonText);
 };
