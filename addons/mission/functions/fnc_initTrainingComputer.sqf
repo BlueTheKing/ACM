@@ -18,8 +18,6 @@
 
 params ["_object", "_spawnLocation"];
 
-GVAR(TrainingCasualtyGroup) = createGroup [civilian, false];
-
 private _actions = [];
 
 _actions pushBack (["ACM_Training_SpawnPatient",
