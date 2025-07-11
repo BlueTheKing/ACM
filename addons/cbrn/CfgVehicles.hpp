@@ -27,8 +27,8 @@ class CfgVehicles {
 		};
         class Attributes: AttributesBase {
             class HazardType: Combo {
-                displayName = CSTRING(Module_Generic_HazardType);
                 property = QGVAR(Eden_HazardZone_HazardType);
+                displayName = CSTRING(Module_Generic_HazardType);
                 typeName = "NUMBER";
                 defaultValue = 0;
                 class values {
@@ -82,6 +82,84 @@ class CfgVehicles {
             };
             class AffectAI: Checkbox {
                 property = QGVAR(Eden_HazardZone_AffectAI);
+                displayName = CSTRING(Module_Generic_AffectAI);
+                typeName = "BOOL";
+                defaultValue = 1;
+            };
+        };
+    };
+
+    class GVAR(Eden_ChemicalDevice): Module_F {
+        scope = 2;
+        displayName = CSTRING(Module_CreateChemicalDevice);
+        icon = QPATHTOF(ui\Icon_ChemicalHazard_ca.paa);
+        category = QGVAR(CBRN);
+        function = QFUNC(moduleCreateChemicalDevice_Eden);
+        functionPriority = 1;
+        isGlobal = 1;
+        isTriggerActivated = 0;
+        author = AUTHOR;
+        class AttributeValues
+		{
+			size3[] = {5,5,2.5};
+			isRectangle = 0;
+		};
+        class Attributes: AttributesBase {
+            class HazardType: Combo {
+                property = QGVAR(Eden_ChemicalDevice_HazardType);
+                displayName = CSTRING(Module_Generic_HazardType);
+                typeName = "NUMBER";
+                defaultValue = 0;
+                class values {
+                    class Chemical_Chlorine {
+                        name = CSTRING(Chemical_Chlorine);
+                        value = 0;
+                    };
+                    class Chemical_Sarin {
+                        name = CSTRING(Chemical_Sarin);
+                        value = 1;
+                    };
+                    class Chemical_Lewisite {
+                        name = CSTRING(Chemical_Lewisite);
+                        value = 2;
+                    };
+                };
+            };
+            class ExplosionCloudSize: Combo {
+                property = QGVAR(Eden_ChemicalDevice_ExplosionCloud);
+                displayName = CSTRING(Module_CreateChemicalDevice_CloudSize);
+                typeName = "NUMBER";
+                defaultValue = 0;
+                class values {
+                    class CloudSize_None {
+                        name = CSTRING(Module_CreateChemicalDevice_CloudSize_None);
+                        value = 0;
+                    };
+                    class CloudSize_Small {
+                        name = CSTRING(Module_CreateChemicalDevice_CloudSize_Small);
+                        value = 1;
+                    };
+                    class CloudSize_Large {
+                        name = CSTRING(Module_CreateChemicalDevice_CloudSize_Large);
+                        value = 2;
+                    };
+                };
+            };
+            class ZoneRadius: Edit {
+                property = QGVAR(Eden_ChemicalDevice_ZoneRadius);
+                displayName = CSTRING(Module_Generic_ZoneRadius);
+                typeName = "NUMBER";
+                defaultValue = 5;
+            };
+            class PermanentHazard: Checkbox {
+                property = QGVAR(Eden_ChemicalDevice_PermanentHazard);
+                displayName = CSTRING(Module_CreateChemicalDevice_PermanentHazard);
+                tooltip = CSTRING(Module_CreateChemicalDevice_PermanentHazard_Tooltip);
+                typeName = "BOOL";
+                defaultValue = 0;
+            };
+            class AffectAI: Checkbox {
+                property = QGVAR(Eden_ChemicalDevice_AffectAI);
                 displayName = CSTRING(Module_Generic_AffectAI);
                 typeName = "BOOL";
                 defaultValue = 1;
