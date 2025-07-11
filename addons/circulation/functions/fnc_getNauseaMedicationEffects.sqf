@@ -79,22 +79,22 @@ private _ondansetronIV = 0;
     };
 } forEach (_patient getVariable [VAR_MEDICATIONS, []]);
 
-_morphineIV = linearConversion [0.3, 1, _morphineIV, 0, 1];
-_morphine = linearConversion [0.3, 1, (_morphine * 0.5), 0, 1];
+_morphineIV = (linearConversion [0.3, 1, _morphineIV, 0, 1]) max 0;
+_morphine = (linearConversion [0.3, 1, (_morphine * 0.5), 0, 1]) max 0;
 
-_fentanylIV = linearConversion [0.5, 1, _fentanylIV, 0, 1];
-_fentanyl = linearConversion [0.5, 1, (_fentanyl * 0.5), 0, 1];
+_fentanylIV = (linearConversion [0.5, 1, _fentanylIV, 0, 1]) max 0;
+_fentanyl = (linearConversion [0.5, 1, (_fentanyl * 0.5), 0, 1]) max 0;
 
-_ketamineIV = linearConversion [0.3, 1, _ketamineIV, 0, 1];
-_ketamine = linearConversion [0.3, 1, (_ketamine * 0.5), 0, 1];
+_ketamineIV = (linearConversion [0.3, 1, _ketamineIV, 0, 1]) max 0;
+_ketamine = (linearConversion [0.3, 1, (_ketamine * 0.5), 0, 1]) max 0;
 
-_lidocaineIV = linearConversion [0.6, 1, _lidocaineIV, 0, 1];
-_lidocaine = linearConversion [0.4, 1, (_lidocaine * 0.5), 0, 1];
+_lidocaineIV = (linearConversion [0.6, 1, _lidocaineIV, 0, 1]) max 0;
+_lidocaine = (linearConversion [0.4, 1, (_lidocaine * 0.5), 0, 1]) max 0;
 
-_amiodaroneIV = linearConversion [0.5, 1, _amiodaroneIV, 0, 1];
+_amiodaroneIV = (linearConversion [0.5, 1, _amiodaroneIV, 0, 1]) max 0;
 
-_ondansetronIV = linearConversion [0.5, 1, _ondansetronIV, 0, 0.9, true];
-_ondansetron = linearConversion [0.5, 1, (_ondansetron * 0.6), 0, 0.5, true];
+_ondansetronIV = (linearConversion [0.5, 1, _ondansetronIV, 0, 0.9, true]) max 0;
+_ondansetron = (linearConversion [0.5, 1, (_ondansetron * 0.6), 0, 0.5, true]) max 0;
 
 private _ondansetronSuppression = [(_ondansetronIV + _ondansetron), ((_ondansetronIV + _ondansetron) * 0.5)] select ((([_patient, "Ondansetron_IV", false] call ACEFUNC(medical_status,getMedicationCount)) + (([_patient, "Ondansetron", false] call ACEFUNC(medical_status,getMedicationCount)) * 0.5)) > 2);
 

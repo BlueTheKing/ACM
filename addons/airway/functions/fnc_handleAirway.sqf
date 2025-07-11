@@ -41,10 +41,10 @@ private _airwayReflexDelay = 20 + (random 25);
 
 private _medicationEffect = [_patient] call EFUNC(circulation,getNauseaMedicationEffects);
 
-if (random 1 < (0.5 + _medicationEffect)) then {
+if ((((GET_BODYPART_DAMAGE(_patient) select 0) > 1) && (random 1 < (0.8 + _medicationEffect))) || random 1 < (0.3 + _medicationEffect)) then {
     [{
         params ["_patient"];
 
         [QGVAR(handleAirwayObstruction_Vomit), [_patient], _patient] call CBA_fnc_targetEvent;
-    }, [_patient], (_airwayReflexDelay + (90 + (random 60)))] call CBA_fnc_waitAndExecute;
+    }, [_patient], (_airwayReflexDelay + (60 + (random 60)))] call CBA_fnc_waitAndExecute;
 };
