@@ -18,7 +18,7 @@
 
 params ["_medic", "_patient"];
 
-//playSound3D [QPATHTO_R(sound\aed_shock.wav), _patient, false, getPosASL _patient, 15, 1, 15]; // 0.1s
+playSound3D [format [QPATHTO_R(sound\shock_jolt%1.wav), (1 + round (random 3))], _patient, false, getPosASL _patient, 15, 1, 15]; // 0.713s
 
 _patient setVariable [QGVAR(AED_Charged), false, true];
 _patient setVariable [QGVAR(AED_InUse), false, true];
