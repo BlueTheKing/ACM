@@ -26,7 +26,7 @@ if !(isMultiplayer) exitWith {};
     }] call CBA_fnc_addEventHandler;
 
     if (isServer) then {
-        [QGVAR(transferCurator), {
+        /*[QGVAR(transferCurator), {
             params ["_unit", "_originalUnit"];
 
             private _curatorLogic = getAssignedCuratorLogic _originalUnit;
@@ -42,6 +42,23 @@ if !(isMultiplayer) exitWith {};
 
                 _unit assignCurator _curatorLogic;
             }, [_curatorLogic, _unit]] call CBA_fnc_waitUntilAndExecute;
+        }] call CBA_fnc_addEventHandler;*/
+
+        [QGVAR(createCurator), {
+            params ["_unit"];
+            
+            if !(isPlayer _unit) exitWith {};
+
+            private _unitID = getPlayerUID _unit;
+            private _group = createGroup [sideLogic, true];
+            private _module = _group createUnit ["ModuleCurator_F", [0, 0, 0], [], 0, "NONE"];
+
+            _module setVariable ["owner", _unitID, true];
+            _module setVariable ["Addons", 3, true];
+            _module setVariable ["BIS_fnc_initModules_disableAutoActivation", false];
+
+            _module setCuratorCoef ["place", 0];
+            _module setCuratorCoef ["delete", 0];
         }] call CBA_fnc_addEventHandler;
     };
 
@@ -87,8 +104,28 @@ if !(isMultiplayer) exitWith {};
                 private _medicLevel = _originalUnit getVariable [QACEGVAR(medical,medicClass), parseNumber (_originalUnit getUnitTrait "medic")];
                 _unit setVariable [QACEGVAR(medical,medicClass), _medicLevel, true];
 
+                private _persistentVariableArray = _originalUnit getVariable ["ACM_PersistentVariables", []];
+
+                if (count _persistentVariableArray > 0) then {
+                    {
+                        _x params ["_variableName", "_variableValue"];
+
+                        _unit setVariable [_variableName, _variableValue, true];
+                    } forEach _persistentVariableArray;
+                };
+
+                private _persistentFunctionArray = _originalUnit getVariable ["ACM_PersistentFunctions", []];
+
+                if (count _persistentFunctionArray > 0) then {
+                    {
+                        _x params ["_functionName", ["_functionArguments", []]];
+
+                        _functionArguments call _functionName;
+                    } forEach _persistentFunctionArray;
+                };
+
                 if !(isNull (getAssignedCuratorLogic _originalUnit)) then {
-                    [QGVAR(transferCurator), [_unit, _originalUnit]] call CBA_fnc_serverEvent;
+                    [QGVAR(createCurator), _unit] call CBA_fnc_serverEvent;
                 };
 
                 ["ACM_casualtyEvacuated", [_unit, _originalUnit], _unit] call CBA_fnc_targetEvent;
