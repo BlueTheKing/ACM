@@ -5,4 +5,5 @@ PREP(inflictChestInjury);
 PREP(setBloodType);
 PREP(setBloodVolume);
 PREP(setOxygen);
+PREP(togglePlotArmor);
 PREP(unCardiacArrest);

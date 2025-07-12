@@ -11,7 +11,8 @@ class CfgPatches {
             QGVAR(unCardiacArrest),
             QGVAR(givePain),
             QGVAR(setOxygen),
-            QGVAR(setBloodType)
+            QGVAR(setBloodType),
+            QGVAR(togglePlotArmor)
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
