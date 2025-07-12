@@ -61,7 +61,7 @@ private _bodyPartBloodLoss = [0, 0, 0, 0, 0, 0];
                 _ctrlBone ctrlShow true;
                 _ctrlBone ctrlSetTextColor [0, 0, 1, 1];
             };
-            case ((_fractures select _forEachIndex) == 1): {
+            case ((_fractures select _forEachIndex) == 1 && GVAR(showFracture)): {
                 _ctrlBone ctrlShow true;
                 _ctrlBone ctrlSetTextColor [1, 0, 0, 1];
             };

@@ -26,6 +26,12 @@
             <Polish>Pokaż dokładną ilość bólu w zakładce przeglądu</Polish>
             <German>Stellt ein, ob die exakte Schmerzintensität in der Übersicht angezeigt werden soll</German>
         </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowFracture">
+            <English>Show Fracture</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
+            <English>Show fractured limb(s) on patient and overview tab</English>
+        </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>
         </Key>

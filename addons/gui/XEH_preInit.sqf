@@ -28,6 +28,16 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// Show fracture
+[
+    QGVAR(showFracture),
+    "CHECKBOX",
+    [LLSTRING(SETTING_ShowFracture), LLSTRING(SETTING_ShowFracture_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
 // Show item icons in medical menu
 [
     QGVAR(showActionItemIcons),
