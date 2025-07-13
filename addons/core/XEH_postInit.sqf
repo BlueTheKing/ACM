@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 if (GVAR(ignoreIncompatibleAddonWarning)) then {
-    INFO("Incompatible Addon Warning Disabled");
+    WARNING("Incompatible Addon Warning Disabled");
 } else {
     ["CBA_settingsInitialized", {
         [] call FUNC(checkIncompatibleAddons);

@@ -81,6 +81,15 @@
 #define ICON_FRACTURE_PATH QPATHTOF(data\fracture.paa)
 
 // ace_medical_engine
+
+#define PRIORITY_HEAD       3
+#define PRIORITY_BODY       4
+#define PRIORITY_LEFT_ARM   (1 + random 1)
+#define PRIORITY_RIGHT_ARM  (1 + random 1)
+#define PRIORITY_LEFT_LEG   (1 + random 1)
+#define PRIORITY_RIGHT_LEG  (1 + random 1)
+#define PRIORITY_STRUCTURAL 1
+
 // don't change, these reflect hard coded engine behaviour
 #define DAMAGED_MIN_THRESHOLD 0.45
 #define LIMPING_MIN_DAMAGE 0.5

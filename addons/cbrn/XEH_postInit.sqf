@@ -16,11 +16,11 @@
 
 [QGVAR(detectorPFH), LINKFUNC(detectorPFH)] call CBA_fnc_addEventHandler;
 
+GVAR(HazardType_List) = createHashMap;
+GVAR(HazardType_Array) = [];
+
 ["CBA_settingsInitialized", {
     if !(GVAR(enable)) exitWith {};
-
-    GVAR(HazardType_List) = createHashMap;
-    GVAR(HazardType_Array) = [];
 
     private _hazardCategoryArray = "true" configClasses (configFile >> "ACM_CBRN_Hazards");
 

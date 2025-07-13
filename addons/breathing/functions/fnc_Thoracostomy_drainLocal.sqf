@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle draining blood from plueral space (LOCAL)
+ * Handle draining blood from pleural space (LOCAL)
  *
  * Arguments:
  * 0: Medic <OBJECT>

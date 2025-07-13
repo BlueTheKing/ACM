@@ -18,8 +18,6 @@
 
 params ["_object", "_spawnLocation"];
 
-GVAR(TrainingCasualtyGroup) = createGroup [civilian, false];
-
 private _actions = [];
 
 _actions pushBack (["ACM_Training_SpawnPatient",
@@ -38,7 +36,7 @@ _actions pushBack (["ACM_Training_SpawnPatient",
 
     [_object, _spawnPos] call FUNC(spawnPatient_childActions);
 },
-[_spawnLocation]] call ACEFUNC(interact_menu,createAction));
+[_spawnLocation], [0,0,0], 5] call ACEFUNC(interact_menu,createAction));
 
 _actions pushBack (["ACM_Training_SpawnPatients",
 "Spawn Patients",
@@ -56,7 +54,7 @@ _actions pushBack (["ACM_Training_SpawnPatients",
 
     [_object, _spawnPos] call FUNC(spawnPatients_childActions);
 },
-[_spawnLocation]] call ACEFUNC(interact_menu,createAction));
+[_spawnLocation], [0,0,0], 5] call ACEFUNC(interact_menu,createAction));
 
 _actions pushBack (["ACM_Training_HealPatient",
 "Heal Patient(s)",
@@ -103,7 +101,7 @@ _actions pushBack (["ACM_Training_HealPatient",
         _actions;
     } forEach _targetUnits;
 },
-[_spawnLocation]] call ACEFUNC(interact_menu,createAction));
+[_spawnLocation], [0,0,0], 5] call ACEFUNC(interact_menu,createAction));
 
 _actions pushBack (["ACM_Training_ClearPatients",
 "Clear Patient(s)",
@@ -117,7 +115,7 @@ _actions pushBack (["ACM_Training_ClearPatients",
     params ["_object"];
 
     count (_object getVariable [QGVAR(ActivePatients), []]) > 0;
-}] call ACEFUNC(interact_menu,createAction));
+}, {}, [], [0,0,0], 5] call ACEFUNC(interact_menu,createAction));
 
 {
     [_object, 0, ["ACE_MainActions"], _x] call ACEFUNC(interact_menu,addActionToObject);

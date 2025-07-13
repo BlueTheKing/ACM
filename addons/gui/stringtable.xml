@@ -31,6 +31,12 @@
             <German>Stellt ein, ob die exakte Schmerzintensität in der Übersicht angezeigt werden soll</German>
             <Portuguese>Mostrar a quantidade exata de dor na guia de visão geral</Portuguese>
         </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowFracture">
+            <English>Show Fracture</English>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
+            <English>Show fractured limb(s) on patient and overview tab</English>
+        </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>
             <Portuguese>Mostrar ícones de itens nas ações</Portuguese>

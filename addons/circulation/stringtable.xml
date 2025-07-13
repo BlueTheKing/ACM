@@ -275,6 +275,12 @@
             <German>Erlaube es, einen i.o. Zugang bei sich selbst zu bohren</German>
             <Portuguese>Permitir a autoaplicação de IO</Portuguese>
         </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe">
+            <English>Reusable Syringes</English>
+        </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Desc">
+            <English>Sets whether syringes are reusable instead of consumed on medication administration</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
             <Portuguese>Permitir seringa</Portuguese>
@@ -1093,6 +1099,9 @@
                 <Polish>Udo</Polish>
                 <German>Femoralispuls</German>
                 <Portuguese>Femoral</Portuguese>
+            </Key>
+            <Key ID="STR_ACM_Circulation_FeelPulse_ActionLog">
+                <English>%1 felt for a %2 pulse</English>
             </Key>
         </Container>
         <Container name="// Measure Blood Pressure Action //">

@@ -2,6 +2,7 @@ PREP(applyChestSeal);
 PREP(applyChestSealLocal);
 PREP(canPlacePulseOximeter);
 PREP(canRefillOxygenTank);
+PREP(canUseBVM);
 PREP(checkBreathing);
 PREP(checkBreathingLocal);
 PREP(generatePTXMap);
