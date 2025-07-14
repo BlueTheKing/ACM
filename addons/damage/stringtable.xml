@@ -5,193 +5,232 @@
             <English>ACM: Damage</English>
             <Polish>ACM: Obrażenia</Polish>
             <German>ACM: Schaden</German>
+            <Portuguese>ACM: Dano</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_Category_Thresholds">
             <English>Thresholds</English>
             <Polish>Progi</Polish>
             <German>Grenze</German>
+            <Portuguese>Limiares</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_Category_InternalBleeding">
             <English>Internal Bleeding</English>
             <Polish>Krwotok wewnętrzny</Polish>
             <German>Innere Blutung</German>
+            <Portuguese>Hemorragia interna</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_Category_AIUnits">
             <English>AI Units</English>
             <Polish>Jednostki SI</Polish>
             <German>KI Einheiten</German>
+            <Portuguese>Unidades IA</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Enable">
             <English>Enable Damage Addon</English>
             <Polish>Włącz obrażenia</Polish>
             <German>Aktiviere Schadens-AddOn</German>
+            <Portuguese>Habilitar dano de addon</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Enable_Desc">
             <English>Enable modified damage thresholds</English>
             <Polish>Włącz modyfikowanie progów obrażeń</Polish>
             <German>Aktiviere modifizierte Schadensgrenzen</German>
+            <Portuguese>Habilita limiares de dano modificados</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold">
             <English>Head Trauma Death Threshold</English>
             <Polish>Próg śmiertelnych obrażeń w głowę</Polish>
             <German>Kopfschaden Todesgrenze</German>
+            <Portuguese>Limiar de morte por trauma na cabeça</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold_Desc">
             <English>Sets threshold for instant death from trauma to the head, disabled if 0</English>
             <Polish>Im mniejsza wartość tym szybsza śmierć. 0 wyłącza możliwość śmierci</Polish>
             <German>Setzt die Grenze die bei Kopfschaden direkt zum Tod führt, bei 0 deaktiviert</German>
+            <Portuguese>Define o limiar para morte instantânea por trauma na cabeça, desativado se for 0</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold">
             <English>Torso Trauma Death Threshold</English>
             <Polish>Próg śmiertelnych obrażeń w tors</Polish>
             <German>Torsoschaden Todesgrenze</German>
+            <Portuguese>Limiar de morte por trauma no troco</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold_Desc">
             <English>Sets threshold for instant death from trauma to the torso, disabled if 0</English>
             <Polish>Im mniejsza wartość tym szybsza śmierć. 0 wyłącza możliwość śmierci</Polish>
             <German>Setzt die Grenze die bei Torsoschaden direkt zum Tod führt, bei 0 deaktiviert</German>
+            <Portuguese>Define o limiar para morte instantânea por trauma no tronco, desativado se for 0</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold">
             <English>Head Trauma Cardiac Arrest Threshold</English>
             <Polish>Próg obrażeń w głowę powodujących zatrzymanie krążenia</Polish>
             <German>Kopfschaden Kreislaufstillstand-Grenze</German>
+            <Portuguese>Limiar de parada cardíaca por traumatismo craniano</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the head, disabled if 0</English>
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
             <German>Setzt die Grenze die bei Kopfschaden möglicherweise zu einem direkten Kreislaufstillstand führt, deaktiviert bei 0</German>
+            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma na cabeça, desativado se for 0</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold">
             <English>Torso Trauma Cardiac Arrest Threshold</English>
             <Polish>Próg obrażeń w tors powodujących zatrzymanie krążenia</Polish>
             <German>Torsoschaden Kreislaufstillstand-Grenze</German>
+            <Portuguese>Limiar de parada cardíaca por trauma no tronco</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the torso, disabled if 0</English>
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
             <German>Setzt die Grenze die bei Torsoschaden möglicherweise zu einem direkten Kreislaufstillstand führt, deaktiviert bei 0</German>
+            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma no tronco, desativado se for 0</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier">
             <English>Internal Bleeding Chance Multiplier</English>
             <Polish>Szansa na krwawienie wewnątrzne</Polish>
             <German>Innere Blutung Wahrscheinlichkeitmultiplikator</German>
+            <Portuguese>Multiplicador de chance de hemorragia interna</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier_Desc">
             <English>Chance for internal bleeding to occur from inflicted wounds</English>
             <Polish>Szansa na pojawienie się krwawienia wewnętrzego na skutek odniesionych ran</Polish>
             <German>Wahrscheinlichkeit, dass eine Wunde innere Blutungen auslöst</German>
+            <Portuguese>Possibilidade de ocorrência de hemorragia interna em ferimentos infligidos</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Hardcore_InternalBleeding">
             <English>[HARDCORE] Internal Bleeding</English>
             <Polish>[HARDCORE] Krwawienie wewnętrzne</Polish>
             <German>[HARDCORE] Innere Blutung</German>
+            <Portuguese>[HARDCORE] Hemorragia interna</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Hardcore_InternalBleeding_Desc">
             <English>[HARDCORE] Sets whether internal bleeding should require further treatment to fully stop</English>
             <Polish>[HARDCORE] Określa czy krwawienie wewnętrzne będzie wymagało dalszych działań by je powstrzymać</Polish>
             <German>[HARDCORE] Stellt ein, ob eine innere Blutung eine weitergehende Behandlung benötigt, um geheilt zu werden</German>
+            <Portuguese>[HARDCORE] Define se a hemorragia deve exigir tratamento adicional para ser totalmente interrompido</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThresholdAI">
             <English>AI Head Trauma Death Threshold</English>
             <Polish>Próg śmiertelnych obrażeń w głowę dla jednostek SI</Polish>
             <German>KI Kopfschaden Todesgrenze</German>
+            <Portuguese>Limiar de morte por trauma na cabeça para IA</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThresholdAI_Desc">
             <English>Sets threshold for instant death from trauma to the head for AI, disabled if 0</English>
             <Polish>Im mniejsza wartość tym szybsza śmierć jednostki SI. 0 wyłącza możliwość śmierci</Polish>
             <German>Setzt die Todesgrenze die bei Kopfschaden an KI-Einheiten direkt zum Tod führt, deaktiviert bei 0</German>
+            <Portuguese>Define o limiar para morte instantânea por trauma na cabeça para IA, desativado se for 0</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThresholdAI">
             <English>AI Torso Trauma Death Threshold</English>
             <Polish>Próg śmiertelnych obrażeń w tors dla jednostek SI</Polish>
             <German>KI Torsoschaden Todesgrenze</German>
+            <Portuguese>Limiar de morte para IA por dano no torso</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThresholdAI_Desc">
             <English>Sets threshold for instant death from trauma to the torso for AI, disabled if 0</English>
             <Polish>Im mniejsza wartość tym szybsza śmierć jednostki SI. 0 wyłącza możliwość śmierci</Polish>
             <German>Setzt die Todesgrenze die bei Torsoschaden an KI-Einheiten direkt zum Tod führt, deaktiviert bei 0</German>
+            <Portuguese>Define o limiar para morte instantânea por trauma no tronco para IA, desativado se for 0</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThresholdAI">
             <English>AI Head Trauma Cardiac Arrest Threshold</English>
             <Polish>Próg obrażeń w głowę powodujących zatrzymanie krążenia dla jednostek SI</Polish>
             <German>KI Kopfschaden Reanimationsgrenze</German>
+            <Portuguese>Limiar de parada cardíaca por trauma na cabeça para IA</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThresholdAI_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the head for AI, disabled if 0</English>
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia u jednostki SI. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
             <German>Setzt die Grenze die bei Kopfschaden möglicherweise direkt zu einem Kreislaufstillstand an KI-Einheiten führt, deaktiviert bei 0</German>
+            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma na cabeça para IA, desativado se for 0</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThresholdAI">
             <English>AI Torso Trauma Cardiac Arrest Threshold</English>
             <Polish>Próg obrażeń w tors powodujących zatrzymanie krążenia dla jednostek SI</Polish>
             <German>KI Torsoschaden Reanimationsgrenze</German>
+            <Portuguese>Limiar de parada cardíaca por dano no torso para IA</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThresholdAI_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the torso for AI, disabled if 0</English>
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia u jednostki SI. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
             <German>Setzt die Grenze die bei Torsoschaden möglicherweise direkt zu einem Kreislaufstillstand an KI-Einheiten führt, deaktiviert bei 0</German>
+            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma no tronco para IA, desativado se for 0</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance">
             <English>AI Stay Down Chance</English>
             <Polish>Szansa że jednostka SI pozostanie na na ziemi</Polish>
             <German>KI Bewusstseinswahrscheinlichkeit</German>
+            <Portuguese>Chance de ficar caído para IA</Portuguese>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance_Desc">
             <English>Sets chance for AI to stay down once unconscious (without intervention)</English>
             <Polish>Szansa na pozostanie jednostki SI w pozycji leżącej, gdy straci przytomność (bez interwencji)</Polish>
             <German>Setzt die Wahrscheinlichkeit, dass eine bewusstloser KI-Einheit ohne Behandlung wieder zu bewusstsein kommt</German>
+            <Portuguese>Define a chance de a IA permanecer no chão quando estiver inconsciente (sem intervenção)</Portuguese>
         </Key>
         <Container name="// Settings in CORE //">
             <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap">
                 <English>Allow Wrapping</English>
                 <Polish>Pozwól na zawijanie ran</Polish>
                 <German>Erlaube Fixierbinden</German>
+                <Portuguese>Permitir enfaixar</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap_Desc">
                 <English>Training level required to use Elastic Wrap</English>
                 <Polish>Poziom wyszkolenia wymagany do zawijania ran</Polish>
                 <German>Benötigtes Qualifikationslevel, um Fixierbinden zu benutzen</German>
+                <Portuguese>Nível de treinamento necessário para usar a atadura elástica</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart">
                 <English>Wrap Time</English>
                 <Polish>Czas zawijania ran</Polish>
                 <German>Fixierbindenzeit</German>
+                <Portuguese>Tempo para enfaixar</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart_Desc">
                 <English>Time to wrap whole body part</English>
                 <Polish>Czas do zawinięcia całej części ciała</Polish>
                 <German>Benötigte Zeit um ein ganzes Körperteil mittels Fixierbinde zu bandagieren</German>
+                <Portuguese>Tempo para enfaixar uma parte inteira do corpo</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch">
                 <English>Wrapped Stitch Time</English>
                 <Polish>Czas szycia zawiniętych ran</Polish>
                 <German>Nähzeit bei fixierten Bandagen</German>
+                <Portuguese>Tempo para suturar ferida enfaixada</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch_Desc">
                 <English>Time to stitch a wrapped wound</English>
                 <Polish>Czas potrzebny na zeszycie zawiniętych wcześniej ran</Polish>
                 <German>Benötigte Zeit um eine bandagierte Wunde zu nähen, die vorher mittels Fixierbinde gesichert wurde</German>
+                <Portuguese>Tempo para suturar uma ferida enfaixada</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch">
                 <English>Suture Stitch Time Multiplier</English>
                 <Polish>Mnożnik czasu szycia z użyciem szwów</Polish>
                 <German>Nähzeitmultiplikater</German>
+                <Portuguese>Multiplicador de tempo para suturar pontos</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch_Desc">
                 <English>Time multiplier when stitching wound with sutures</English>
                 <Polish>Mnożnik czasu zszywania ran z użyciem szwów</Polish>
                 <German>Zeitmultiplikator beim Nähen von Wunden mit Nahtmaterial</German>
+                <Portuguese>Multiplicador de tempo para dar pontos com sutura</Portuguese>
             </Key>
         </Container>
         <Container name="// Wounds //">
             <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Large">
                 <English>Extensive Chemical Burn</English>
+                <Portuguese>Queimadura química extensa</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Medium">
                 <English>Moderate Chemical Burn</English>
+                <Portuguese>Queimadura química moderada</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Minor">
                 <English>Minor Chemical Burn</English>
+                <Portuguese>Queimadura química leve</Portuguese>
             </Key>
         </Container>
         <Container name="// Items //">
@@ -199,31 +238,37 @@
                 <English>Pressure Bandage</English>
                 <Polish>Bandaż uciskowy</Polish>
                 <German>Druckverband</German>
+                <Portuguese>Bandagem de pressão</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_PressureBandage_Desc">
                 <English>Standard issue bandage</English>
                 <Polish>Standardowo przydzielany bandaż osobisty</Polish>
                 <German>Millitärischer Druckverband</German>
+                <Portuguese>Bandagem padrão</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_EmergencyTraumaDressing">
                 <English>Emergency Trauma Dressing</English>
                 <Polish>Powiększony bandaż uciskowy</Polish>
                 <German>Notfallverband</German>
+                <Portuguese>Curativo de emergência para trauma</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_EmergencyTraumaDressing_Desc">
                 <English>Trauma dressing with large surface area</English>
                 <Polish>Bandaż uciskowy z powiększoną powieszchnią</Polish>
                 <German>Notfallverband mit großer Fläche</German>
+                <Portuguese>Curativo para trauma com grande área de superfície</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap">
                 <English>Elastic Wrap</English>
                 <Polish>Bandaż stabilizacyjny</Polish>
                 <German>Fixierbinde</German>
+                <Portuguese>Atadura elástica</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Desc">
                 <English>Used to wrap bandages, clotted wounds and bruises</English>
                 <Polish>Używany do stabilizacji bandaży, owijania skrzepniętych ran i siniaków</Polish>
                 <German>Wird verwendet, um Bandagen, geronnene Wunden oder Prellungen zu fixieren bzw. zu behandeln</German>
+                <Portuguese>Usado para enfaixar, talas, bandagens, ferimentos coagulados e hematomas</Portuguese>
             </Key>
         </Container>
         <Container name="// Wrap Actions //">
@@ -231,41 +276,49 @@
                 <English>Wrapping...</English>
                 <Polish>Zawijanie...</Polish>
                 <German>Benutze Fixierbinde...</German>
+                <Portuguese>Enfaixando...</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Bruises">
                 <English>Wrap Bruises</English>
                 <Polish>Zawiń siniaki</Polish>
                 <German>Prellung mit Fixierbinde einwickeln</German>
+                <Portuguese>Enfaixar hematomas</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Bandages">
                 <English>Wrap Bandaged Wounds</English>
                 <Polish>Zawiń zabandażowane rany</Polish>
                 <German>Fixiere bandagierte Wunden</German>
+                <Portuguese>Enfaixar ferimentos coagulados</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Clots">
                 <English>Wrap Clotted Wounds</English>
                 <Polish>Zawiń skrzepnięte rany</Polish>
                 <German>Geronnene Wunden einwickeln</German>
+                <Portuguese>Enfaixar ferimentos coagulados</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">
                 <English>%1 has wrapped %2</English>
                 <Polish>%1 zawinął %2</Polish>
                 <German>%1 hat %2 mit Fixierbinde umwickelt</German>
+                <Portuguese>%1 enfaixou %2</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Bandages">
                 <English>bandages</English>
                 <Polish>Bandaże</Polish>
                 <German>Bandagen</German>
+                <Portuguese>bandagens</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Clotted">
                 <English>clotted wounds</English>
                 <Polish>skrzepnięte rany</Polish>
                 <German>Geronnene Wunde</German>
+                <Portuguese>ferimentos coagulados</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBruises_ActionLog">
                 <English>%1 has wrapped bruises</English>
                 <Polish>%1 zawinął siniaki</Polish>
                 <German>%1 hat Prellungen mit Fixierbinde bandagiert</German>
+                <Portuguese>%1 enfaixou hematomas</Portuguese>
             </Key>
         </Container>
         <Container name="// Stitch Actions //">
@@ -273,31 +326,37 @@
                 <English>Use Surgical Kit With Sutures</English>
                 <Polish>Użyj zestawu do szycia ze szwami</Polish>
                 <German>Nähset mit Nähten verwenden</German>
+                <Portuguese>Usar kit cirúrgico com fio de sutura</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Suture_Progress">
                 <English>Stitching With Sutures...</English>
                 <Polish>Szycie ze szwami...</Polish>
                 <German>Nähe wunden mit Nadel und Faden...</German>
+                <Portuguese>Suturando com fio de sutura...</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped">
                 <English>Use Surgical Kit (Wrapped)</English>
                 <Polish>Użyj zestawu do szycia (zawinięte)</Polish>
                 <German>Nähset verwenden (Eingewickelte Wunden)</German>
+                <Portuguese>Usar kit cirúrgico (enfaixado)</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped_Suture">
                 <English>Use Surgical Kit With Sutures (Wrapped)</English>
                 <Polish>Użyj zestawu do szycia ze szwami (zawinięte)</Polish>
                 <German>Nähset mit Nähten verwenden (Eingewickelte Wunden)</German>
+                <Portuguese>Usar kit cirúrgico com fio de sutura</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Clotted">
                 <English>Use Surgical Kit (Clotted)</English>
                 <Polish>Użyj zestawu do szycia (skrzepy)</Polish>
                 <German>Nähset verwenden (Geronnene Wunden)</German>
+                <Portuguese>Usar kit cirúrgico (coagulado)</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Clotted_Suture">
                 <English>Use Surgical Kit With Sutures (Clotted)</English>
                 <Polish>Użyj zestawu do szycia ze szwami (skrzepy)</Polish>
                 <German>Nähset mit Nähten verwenden (Geronnene Wunden)</German>
+                <Portuguese>Usar kit cirúrgico com fios de sutura (coagulado)</Portuguese>
             </Key>
         </Container>
     </Package>

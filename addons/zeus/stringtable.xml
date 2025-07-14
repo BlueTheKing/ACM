@@ -5,32 +5,38 @@
             <English>Un-Cardiac Arrest</English>
             <Polish>Wznowienie akcji serca</Polish>
             <German>Kreislaufstillstand aufheben</German>
+            <Portuguese>Desfazer parada cardíaca</Portuguese>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_ForceWakeUp">
             <English>Force Wake-up</English>
             <Polish>Wymuszenie ocknięcia się</Polish>
             <German>Erzwinge Wachwerden</German>
+            <Portuguese>Forçar acordar</Portuguese>
         </Key>
         <Container name="// Set Blood Volume Module //">
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume">
                 <English>Set Blood Volume</English>
                 <Polish>Ustawienie ilości krwi</Polish>
                 <German>Setze Blutvolumen</German>
+                <Portuguese>Definir volume de sangue</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_BloodVolume">
                 <English>Blood Volume</English>
                 <Polish>Ilość krwi</Polish>
                 <German>Blutvolumen</German>
+                <Portuguese>Volume de sangue</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_PlasmaVolume">
                 <English>Plasma Volume</English>
                 <Polish>Ilość osocza</Polish>
                 <German>Plasmavolumen</German>
+                <Portuguese>Volume de plasma</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_SalineVolume">
                 <English>Saline Volume</English>
                 <Polish>Ilość soli fizjologicznej</Polish>
                 <German>Kochsalzvolumen</German>
+                <Portuguese>Volume de soro</Portuguese>
             </Key>
         </Container>
         <Container name="// Inflict Cardiac Arrest Module //">
@@ -38,36 +44,43 @@
                 <English>Inflict Cardiac Arrest</English>
                 <Polish>Zatrzymanie akcję serca</Polish>
                 <German>Kreislaufstillstand erzwingen</German>
+                <Portuguese>Inflingir parada cardíaca</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm">
                 <English>Target Rhythm</English>
                 <Polish>Docelowy rytm</Polish>
                 <German>Setze Herzrhythmus</German>
+                <Portuguese>Ritmo alvo</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Sinus">
                 <English>Sinus</English>
                 <Polish>Sinus</Polish>
                 <German>Sinusrhythmus</German>
+                <Portuguese>Sinusal</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Asystole">
                 <English>Asystole</English>
                 <Polish>Asystolia</Polish>
                 <German>Asystolie</German>
+                <Portuguese>Assistolia </Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_VF">
                 <English>Ventricular Fibrillation</English>
                 <Polish>Migotanie komór</Polish>
                 <German>Kammerflimmern</German>
+                <Portuguese>Fibrilação ventricular</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_PVT">
                 <English>Ventricular Tachycardia</English>
                 <Polish>Częstoskurcz komorowy (Tachykardia)</Polish>
                 <German>pulslose Ventrikuläre Tachykardie</German>
+                <Portuguese>Taquicardia ventricular</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Random">
                 <English>Random</English>
                 <Polish>Losowy</Polish>
                 <German>Zufällig</German>
+                <Portuguese>Aleatório</Portuguese>
             </Key>
         </Container>
         <Container name="// Inflict Chest Injury Module //">
@@ -75,31 +88,37 @@
                 <English>Inflict Chest Injury</English>
                 <Polish>Uraz klatki piersiowej</Polish>
                 <German>Pleuraverletzung erwzingen</German>
+                <Portuguese>Inflingir lesão torácica</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_InjuryType">
                 <English>Injury Type</English>
                 <Polish>Typ urazu</Polish>
                 <German>Verletzungsart</German>
+                <Portuguese>Tipo de lesão</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Pneumothorax">
                 <English>Pneumothorax</English>
                 <Polish>Odma płucna</Polish>
                 <German>Pneumothorax</German>
+                <Portuguese>Pneumotórax</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionPneumothorax">
                 <English>Tension Pneumothorax</English>
                 <Polish>Odma prężna</Polish>
                 <German>Spannungspneumothorax</German>
+                <Portuguese>Pneumotórax hipertensivo</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Hemothorax">
                 <English>Hemothorax</English>
                 <Polish>Odma krwotoczna</Polish>
                 <German>Hämatothorax</German>
+                <Portuguese>Hemotórax</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionHemothorax">
                 <English>Tension Hemothorax</English>
                 <Polish>Odma prężno-krwotoczna</Polish>
                 <German>Spannungshämatothorax</German>
+                <Portuguese>Hemotórax hipertensivo</Portuguese>
             </Key>
         </Container>
         <Container name="// Give Pain Module //">
@@ -107,11 +126,13 @@
                 <English>Give Pain</English>
                 <Polish>Zadanie bólu</Polish>
                 <German>Schmerz zufügen</German>
+                <Portuguese>Inflingir dor</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_GivePain_PainAmount">
                 <English>Pain Amount</English>
                 <Polish>Ilość bólu</Polish>
                 <German>Schmerzintensität</German>
+                <Portuguese>Montante de dor</Portuguese>
             </Key>
         </Container>
         <Container name="// Set Oxygen Module //">
@@ -119,21 +140,25 @@
                 <English>Set Oxygen</English>
                 <Polish>Ustawienie tlenu</Polish>
                 <German>Setze Sauerstoffsättigung</German>
+                <Portuguese>Definir oxigenação</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetOxygen_OxygenLevel">
                 <English>Oxygen Level</English>
                 <Polish>Ustawienie poziomu tlenu</Polish>
                 <German>Sauerstoffsättigung</German>
+                <Portuguese>Nível de oxigenação</Portuguese>
             </Key>
         </Container>
         <Container name="// Set Blood Type Module //">
             <Key ID="STR_ACM_Zeus_Module_SetBloodType">
                 <English>Set Blood Type</English>
                 <German>Setze Blutgruppe</German>
+                <Portuguese>Definir tipo sanguíneo</Portuguese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodType_List">
                 <English>Blood Type List</English>
                 <German>Blutgruppenliste</German>
+                <Portuguese>Lista de tipo sanguíneo</Portuguese>
             </Key>
         </Container>
         <Container name="// Plot Armor Module //">
