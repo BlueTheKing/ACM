@@ -21,6 +21,8 @@ params ["_medic", "_patient", "_bodyPart"];
 
 [_patient, "activity", LLSTRING(FractureRealignment_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
 
-addCamShake [5, 0.4, 10];
+if (ACE_player == _medic) then {
+    addCamShake [5, 0.4, 10];
+};
 
 [QGVAR(performFractureRealignmentLocal), [_medic, _patient, _bodyPart], _patient] call CBA_fnc_targetEvent;

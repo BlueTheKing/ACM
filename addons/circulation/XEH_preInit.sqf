@@ -79,24 +79,6 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
-/*[
-    QGVAR(treatmentTimePads),
-    "SLIDER",
-    ["Apply Pads Time", "Time to apply AED pads"],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Defibrillator)],
-    [1, 30, 6, 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(treatmentTimePulseOximeter),
-    "SLIDER",
-    ["Connect Pulse Oximeter Time", "Time to connect AED Pulse Oximeter"],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Defibrillator)],
-    [1, 30, 6, 1],
-    true
-] call CBA_fnc_addSetting;*/
-
 [
     QGVAR(AEDDistanceLimit),
     "SLIDER",
@@ -210,6 +192,15 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 // Medication
+
+[
+    QGVAR(reusableSyringe),
+    "CHECKBOX",
+    [LLSTRING(SETTING_ReusableSyringe), LLSTRING(SETTING_ReusableSyringe_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Medication)],
+    [true],
+    true
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(allowSyringe),

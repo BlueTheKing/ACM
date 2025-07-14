@@ -17,12 +17,17 @@
  * Public: No
  */
 
-params ["_bodyPart", "_accessSite"];
+params [["_bodyPart", ""], "_accessSite"];
 
-private _targetPartIndex = ALL_BODY_PARTS find _bodyPart;
 private _initialBodyPart = GVAR(TransfusionMenu_Selected_BodyPart);
 private _initialSelectIV = GVAR(TransfusionMenu_SelectIV);
 private _initialAccessSite = GVAR(TransfusionMenu_Selected_AccessSite);
+
+if (_bodyPart == "") then {
+    _bodyPart = _initialBodyPart;
+};
+
+private _targetPartIndex = GET_BODYPART_INDEX(_bodyPart);
 
 if (GVAR(TransfusionMenu_SelectIV)) then {
     if ([GVAR(TransfusionMenu_Target), _bodyPart, 0, _accessSite] call FUNC(hasIV)) then {

@@ -58,8 +58,8 @@ _actions pushBack (["ACM_Training_HealTent",
     } forEach _targetUnits;
 
     _actions;
-}] call ACEFUNC(interact_menu,createAction));
+}, [], [0,0,0], 5] call ACEFUNC(interact_menu,createAction));
 
 {
-    [_object, 0, ["ACE_MainActions"], _x] call ACEFUNC(interact_menu,addActionToObject);
+    [_object, 0, [], _x] call ACEFUNC(interact_menu,addActionToObject);
 } forEach _actions;

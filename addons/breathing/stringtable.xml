@@ -231,7 +231,7 @@
                 <French>Kit de drainage thoracique</French>
             </Key>
             <Key ID="STR_ACM_Breathing_ChestTubeKit_Desc">
-                <English>Single-use kit used to insert a chest tube for removal of fluid from the plueral space</English>
+                <English>Single-use kit used to insert a chest tube for removal of fluid from the pleural space</English>
                 <Polish>Jednorazowa rurka używana do usuwania nadmiaru płynu z przestrzeni opłucnowej</Polish>
                 <German>Einmalset, um eine Thoraxdrainage zu legen und Flüssigkeit aus dem Pleuraraum zu entfernen</German>
                 <French>Kit à usage unique utilisé pour insérer un drain thoracique afin d'évacuer le liquide de l'espace pleural.</French>
@@ -665,7 +665,7 @@
                 <French>Aspire le liquide...</French>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_ActionLog">
-                <English>%1 drained plueral space (%2)</English>
+                <English>%1 drained pleural space (%2)</English>
                 <Polish>%1 odessał jamę opłucnej (%2)</Polish>
                 <German>%1 saugte Flüssigkeit aus Pleuraraum ab (%2)</German>
                 <French>%1 a aspiré du liquide de l'espace pleural (%2)</French>

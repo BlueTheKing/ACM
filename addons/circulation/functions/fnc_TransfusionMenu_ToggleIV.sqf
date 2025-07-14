@@ -2,7 +2,7 @@
 #include "..\TransfusionMenu_defines.hpp"
 /*
  * Author: Blue
- * Handle toggle IV button.
+ * Handle pressing toggle IV button.
  *
  * Arguments:
  * None

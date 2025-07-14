@@ -21,7 +21,9 @@ params ["_medic", "_patient", "_bodyPart"];
 
 playSound3D [format ["%1%2.wav", (QPATHTO_R(sound\crack)), (round (1 + (random 3)))], _patient, false, getPosASL _patient, 4, 1, 4]; // 0.432s
 
-addCamShake [5, 0.4, 20];
+if (ACE_player == _patient) then {
+    addCamShake [5, 0.4, 20];
+};
 
 private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 

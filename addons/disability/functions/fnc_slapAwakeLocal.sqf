@@ -20,7 +20,9 @@ params ["_medic", "_patient"];
 
 private _hint = LLSTRING(AttemptWakeUp_Failure);
 
-addCamShake [5, 0.2, 30];
+if (ACE_player == _patient) then {
+    addCamShake [5, 0.2, 30];
+};
 
 _patient setVariable [QEGVAR(core,KnockOut_State), false];
 

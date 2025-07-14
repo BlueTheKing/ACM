@@ -52,4 +52,9 @@ class CfgVehicles {
         icon = QPATHTOF(ui\Icon_Module_SetBloodType_ca.paa);
         curatorInfoType = QGVAR(RscSetBloodType);
     };
+    class GVAR(togglePlotArmor): GVAR(moduleBase) {
+        displayName = CSTRING(Module_PlotArmor);
+        function = QFUNC(togglePlotArmor);
+        icon = QPATHTOF(ui\Icon_Module_PlotArmor_ca.paa);
+    };
 };
