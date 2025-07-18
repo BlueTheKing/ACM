@@ -80,6 +80,7 @@ private _fnc_onConfirm = {
         case 1: {
             _patient setVariable [QEGVAR(breathing,Pneumothorax_State), 4, true];
             _patient setVariable [QEGVAR(breathing,TensionPneumothorax_State), true, true];
+            _patient setVariable [QEGVAR(breathing,TensionPneumothorax_Time), CBA_missionTime, true];
         };
         case 2: {
             _patient setVariable [QEGVAR(breathing,Hemothorax_State), (5 + round(random 5)), true];
