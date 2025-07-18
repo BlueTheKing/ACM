@@ -67,8 +67,6 @@ class CfgVehicles {
             ADDITEM(ACM_ChestSeal,10);
             ADDITEM(ACM_PocketBVM,2);
             ADDITEM(ACM_NCDKit,5);
-            // Circulation
-            ADDITEM(ACE_epinephrine,10);
             // Disability
             ADDITEM(ACE_morphine,10);
             ADDITEM(ACM_SAMSplint,10);
@@ -121,7 +119,6 @@ class CfgVehicles {
             ADDITEM(ACM_Vial_TXA,10);
             ADDITEM(ACM_Vial_Amiodarone,10);
             ADDITEM(ACM_Vial_Atropine,10);
-            ADDITEM(ACE_epinephrine,5);
             ADDITEM(ACM_BloodBag_ON_1000,10);
             ADDITEM(ACM_BloodBag_ON_500,10);
             ADDITEM(ACM_BloodBag_ON_250,10);
