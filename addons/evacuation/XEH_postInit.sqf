@@ -132,6 +132,8 @@ if !(isMultiplayer) exitWith {};
                     [QGVAR(createCurator), _unit] call CBA_fnc_serverEvent;
                 };
 
+                [LLSTRING(ConvertCasualty_ReinforceHint), 1.5, _unit, 15] call ACEFUNC(common,displayTextStructured);
+
                 ["ACM_casualtyEvacuated", [_unit, _originalUnit], _unit] call CBA_fnc_targetEvent;
             }, [_unit, _originalUnit], 1] call CBA_fnc_waitAndExecute;
         }, [_unit, _originalUnit], 1] call CBA_fnc_waitAndExecute;

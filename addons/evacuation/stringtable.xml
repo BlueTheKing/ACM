@@ -162,6 +162,9 @@
                 <German>Patientenkonversion fehlgeschlagen</German>
                 <Portuguese>Conversão de vítima falhou</Portuguese>
             </Key>
+            <Key ID="STR_ACM_Evacuation_ConvertCasualty_ReinforceHint">
+                <English>You have taken control of a new reinforcement</English>
+            </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient">
                 <English>Evacuate Patient</English>
                 <Polish>Ewakuuj poszkodowanego</Polish>
