@@ -97,9 +97,9 @@ _actions pushBack (["ACM_Training_HealPatient",
         {},
         [_x]
         ] call ACEFUNC(interact_menu,createAction), [], (_this select 1)];
-
-        _actions;
     } forEach _targetUnits;
+
+    _actions;
 },
 [_spawnLocation], [0,0,0], 5] call ACEFUNC(interact_menu,createAction));
 

@@ -80,7 +80,11 @@ private _totalPain = 0;
 
     private _bodyPartSeverity = [0.6,0.6,0.3,0.3,0.45,0.45] select _partIndex;
 
-    _internalWoundsPart pushBack [_targetWoundID, 1, (_bleeding * _bodyPartSeverity)]
+    _internalWoundsPart pushBack [_targetWoundID, 1, (_bleeding * _bodyPartSeverity)];
+
+    if (!(_patient getVariable [QEGVAR(breathing,ChestInjury_State), false]) && _bodyPart == "body" && _name in ["VelocityWound","PunctureWound","Avulsion"]) then {
+        _patient setVariable [QEGVAR(breathing,ChestInjury_State), true, true];
+    };
 } forEach _woundArray;
 
 _patient setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
