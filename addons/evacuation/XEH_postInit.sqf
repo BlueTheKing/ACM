@@ -104,6 +104,10 @@ if !(isMultiplayer) exitWith {};
                 private _medicLevel = _originalUnit getVariable [QACEGVAR(medical,medicClass), parseNumber (_originalUnit getUnitTrait "medic")];
                 _unit setVariable [QACEGVAR(medical,medicClass), _medicLevel, true];
 
+                private _targetGroup = _originalUnit getVariable [QGVAR(TargetGroup), grpNull];
+                _unit setVariable [QGVAR(TargetGroup), _targetGroup, true];
+                [_unit] joinSilent _targetGroup;
+
                 private _persistentVariableArray = _originalUnit getVariable ["ACM_PersistentVariables", []];
 
                 if (count _persistentVariableArray > 0) then {
