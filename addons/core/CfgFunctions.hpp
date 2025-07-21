@@ -151,7 +151,7 @@ class CfgFunctions {
             class applyAnimAfterRagdoll { // Lying state
                 file = QPATHTOF(overrides\fnc_applyAnimAfterRagdoll.sqf); //ace/addons/medical_engine/functions/fnc_applyAnimAfterRagdoll.sqf
             };
-            class updateDamageEffects { // Tourniquet effects for legs
+            class updateDamageEffects { // Tourniquet effects for legs, splints/fractures
                 file = QPATHTOF(overrides\fnc_updateDamageEffects.sqf); //ace/addons/medical_engine/functions/fnc_updateDamageEffects.sqf
             };
             class handleDamage { // CBRN chemical burns
