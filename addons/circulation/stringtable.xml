@@ -49,6 +49,7 @@
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Medication">
             <English>Medication</English>
+            <Portuguese>Medicamentos</Portuguese>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_BloodTypes">
             <English>Blood Types</English>
@@ -257,6 +258,7 @@
             <English>14g IV Time</English>
             <Polish>Czas igły 14g</Polish>
             <German>14g i.v. Zeit</German>
+            <French>Temps 14g</French>
             <Portuguese>Tempo para IV 14g</Portuguese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_14_Desc">
@@ -270,24 +272,28 @@
             <English>EZ-IO Time</English>
             <Polish>Czas EZ-IO</Polish>
             <German>EZ-IO Zeit</German>
+            <French>Temps EZ-IO</French>
             <Portuguese>Tempo para EZ-IO</Portuguese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_EZ_Desc">
             <English>Time to insert EZ-IO</English>
             <Polish>Czas potrzebny do wykonania wkłucia EZ-IO</Polish>
             <German>Benötigte Zeit, um einen EZ-IO Zugang zu bohren</German>
+            <French>Temps pour insérer EZ-IO</French>
             <Portuguese>Tempo para inserir EZ-IO</Portuguese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_FAST1">
             <English>FAST1 IO Time</English>
             <Polish>Czas FAST1 IO</Polish>
             <German>FAST1 IO Zeit</German>
+            <French>Temps FAST1 IO</French>
             <Portuguese>Tempo para FAST1 IO </Portuguese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_FAST1_Desc">
             <English>Time to insert FAST1 IO</English>
             <Polish>Czas potrzebny do wykonania wkłucia urządzeniem FAST1 IO</Polish>
             <German>Benötigte Zeit, um einen FAST1 IO Zugang zu bohren</German>
+            <French>Temps pour insérer FAST1 IO</French>
             <Portuguese>Tempo para inserir FAST1 IO</Portuguese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIV">
@@ -379,93 +385,105 @@
                 <English>Automated External Defibrillator</English>
                 <Polish>Defibrylator</Polish>
                 <German>Automatischer Externer Defibrillator</German>
-<<<<<<< HEAD
                 <French>Défibrillateur Externe Automatisé</French>
-=======
                 <Portuguese>Desfibrilador externo automático</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Short">
                 <English>AED</English>
                 <Polish>Defibrylator</Polish>
                 <German>AED</German>
+                <French>AED</French>
                 <Portuguese>DEA</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Desc">
                 <English>Device used to monitor patient vitals and treat cardiac arrest</English>
                 <Polish>Urządzenie używane do monitorowania pacjetnów</Polish>
                 <German>Ein Patientenmonitor um Vitalwerte zu überwachen und den Patienten in der Reanimation zu defibrillieren</German>
+                <French>Dispositif utilisé pour surveiller les constantes vitales du patient et traiter l'arrêt cardiaque</French>
                 <Portuguese>Dispositivo usado para monitorar os sinais vitais do paciente e tratar a parada cardíaca</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff">
                 <English>Pressure Cuff</English>
                 <Polish>Ciśnieniomierz</Polish>
                 <German>Blutdruckmanschette</German>
+                <French>Brassard de tensiomètre</French>
                 <Portuguese>Esfigmomanômetro</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Desc">
                 <English>Used to measure blood pressure</English>
                 <Polish>Używany do pomiaru ciśnienia krwi</Polish>
                 <German>Wird benutzt, um Blutdruck zu messen</German>
+                <French>Utilisé pour mesurer la tension artérielle</French>
                 <Portuguese>Usado para medir a pressão arterial</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_16g">
                 <English>16g IV</English>
                 <Polish>Igła 16g</Polish>
                 <German>16g i.v. Katheter</German>
+                <French>16g IV</French>
                 <Portuguese>IV 16g</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_16g_Desc">
                 <English>Used to gain intravenous access to transfuse fluids in case of blood loss</English>
                 <Polish>Używana do uzyskania dostępu dożylnego i przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird benutzt, um einen intravenösen Zugang zu etablieren für Flüssigkeitstransfusionen oder i.v. Medikamentengabe</German>
+                <French>Utilisé pour obtenir un accès intraveineux afin de transfuser des fluides en cas de perte de sang.</French>
                 <Portuguese>Usado para obter acesso intravenoso para transfusão de fluidos em caso de perda de sangue</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_14g">
                 <English>14g IV</English>
                 <Polish>Igła 14g</Polish>
                 <German>14g i.v. Katheter</German>
+                <French>14g IV</French>
                 <Portuguese>IV 14g</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_14g_Desc">
                 <English>Used to gain intravenous access to rapidly transfuse fluids in case of blood loss</English>
                 <Polish>Używana do uzyskania dostępu dożylnego i szybkiego przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird benutzt, um einen intravenösen Zugang zu etablieren für schnelle Flüssigkeitstransfusion bei Blutverlust</German>
+                <French>Utilisé pour obtenir un accès intraveineux afin de transfuser rapidement des fluides en cas de perte de sang.</French>
                 <Portuguese>Usado para obter acesso intravenoso para transfusão rápida de fluidos em caso de perda de sangue</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_FAST1">
                 <English>FAST1 IO</English>
                 <Polish>FAST1 IO</Polish>
                 <German>FAST1 IO</German>
+                <French>FAST1 IO</French>
                 <Portuguese>FAST1 IO</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_FAST1_Desc">
                 <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the sternum</English>
                 <Polish>Używany do uzyskania dostępu doszpikowego w mostku i przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird bei schweren Verletzungen benutzt, um im Sternum einen i.o. Zugang für Flüssigkeitstransfusion oder Medikamentengabe zu legen</German>
+                <French>Utilisé pour obtenir un accès intra-osseux afin de transfuser des fluides en cas de blessure grave, permet un accès au niveau du sternum.</French>
                 <Portuguese>Usado para obter acesso intraósseo para transfusão de fluidos em caso de lesão grave, permite acesso no esterno</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_EZ">
                 <English>EZ-IO</English>
                 <Polish>EZ-IO</Polish>
                 <German>EZ-IO</German>
+                <French>EZ-IO</French>
                 <Portuguese>EZ-IO</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_EZ_Desc">
                 <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the extremities</English>
                 <Polish>Używany do uzyskania dostępu doszpikowego w kończynie i przetaczania płynów oraz podawania leków</Polish>
                 <German>Wird benutzt, um einen i.o. Zugang in die Extremitäten zu bohren</German>
+                <French>Utilisé pour obtenir un accès intra-osseux afin de transfuser des fluides en cas de blessure grave, permet l'accès aux extrémités.</French>
                 <Portuguese>Usado para obter acesso intraósseo para transfusão de fluidos em caso de lesão grave, permite o acesso nas extremidades</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe">
                 <English>Syringe</English>
                 <Polish>Strzykawka</Polish>
                 <German>Spritze</German>
+                <French>Seringue</French>
                 <Portuguese>Seringa</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringes">
                 <English>Syringes</English>
                 <Polish>Strzykawki</Polish>
                 <German>Spritzen</German>
+                <French>Seringues</French>
                 <Portuguese>Seringas</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_%1">
@@ -488,7 +506,6 @@
                 <German>%1 ml Spritze mit %2</German>
                 <French>Seringue de %1ml préparée avec %2</French>
                 <Portuguese>Seringa de %1ml preparada com %2</Portuguese>
->>>>>>> c6ec944e89890815e14b60a99ec4276aa5a4e620
             </Key>
             <Key ID="STR_ACM_Circulation_BloodBag">
                 <English>Blood Bag %1</English>
@@ -647,27 +664,18 @@
                 <English>Penthrox</English>
                 <Polish>Metoksyfluran</Polish>
                 <German>Methoxyfluran</German>
-<<<<<<< HEAD
                 <French>Penthrox</French>
-            </Key>
-            <Key ID="STR_ACM_Circulation_Medication_OTFC">
-                <English>Oral Transmucosal Fentanyl Citrate</English>
-                <French>Citrate de fentanyl par voie orale et transmuqueuse</French>
-            </Key>
-            <Key ID="STR_ACM_Circulation_Medication_OTFC_Short">
-                <English>OTFC</English>
-                <French>OTFC</French>
-=======
                 <Portuguese>Penthrox</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_OTFC">
                 <English>Oral Transmucosal Fentanyl Citrate</English>
+                <French>Citrate de fentanyl par voie orale et transmuqueuse</French>
                 <Portuguese>Citrato de Fentanil Transmucoso Oral</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_OTFC_Short">
                 <English>OTFC</English>
+                <French>OTFC</French>
                 <Portuguese>CFTO</Portuguese>
->>>>>>> c6ec944e89890815e14b60a99ec4276aa5a4e620
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Dimercaprol">
                 <English>Dimercaprol</English>
@@ -869,27 +877,18 @@
                 <English>Paracetamol</English>
                 <Polish>Paracetamol</Polish>
                 <German>Paracetamol</German>
-<<<<<<< HEAD
                 <French>Paracétamol</French>
-            </Key>
-            <Key ID="STR_ACM_Circulation_Paracetamol_SinglePack">
-                <English>Paracetamol (Single Pack)</English>
-                <French>Paracétamol (paquet individuel)</French>
-            </Key>
-            <Key ID="STR_ACM_Circulation_Paracetamol_DoublePack">
-                <English>Paracetamol (Double Pack)</English>
-                <French>Paracétamol (emballage double)</French>
-=======
                 <Portuguese>Paracetamol</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_SinglePack">
                 <English>Paracetamol (Single Pack)</English>
+                <French>Paracétamol (paquet individuel)</French>
                 <Portuguese>Paracetamol (embalagem individual)</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_DoublePack">
                 <English>Paracetamol (Double Pack)</English>
+                <French>Paracétamol (emballage double)</French>
                 <Portuguese>Paracetamol (embalagem dupla)</Portuguese>
->>>>>>> c6ec944e89890815e14b60a99ec4276aa5a4e620
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_Desc">
                 <English>Used to combat mild to moderate pain</English>
@@ -909,12 +908,14 @@
                 <English>Used to wake up patients who've fainted</English>
                 <Polish>Używany do budzenia nieprzytomnych pacjentów</Polish>
                 <German>Wird verwendet, um bewusstlose Patienten aufzuwecken</German>
+                <French>Utilisé pour réveiller les patients qui se sont évanouis</French>
                 <Portuguese>Usado para acordar pacientes que desmaiaram</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Inhaler_Penthrox">
                 <English>Penthrox Inhaler</English>
                 <Polish>Inhalator Penthrox</Polish>
                 <German>Penthroxpfeife</German>
+                <French>Inhalateur Penthrox</French>
                 <Portuguese>Inalador Penthrox</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Inhaler_Penthrox_Desc">
@@ -922,10 +923,12 @@
                 <Polish>Używany do walki z silnym bólem na krótki okres czasu</Polish>
                 <German>Pfeife mit Methoxyflurangas um Schmerzen kurzfristig zu behandeln</German>
                 <French>Utilisé pour gérer rapidement la douleur aiguë pendant une courte période</French>
+                <Portuguese>Usado para controlar rapidamente a dor aguda por um curto período de tempo</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl">
                 <English>Fentanyl Lozenge</English>
                 <French>Pastille de Fentanyl</French>
+                <Portuguese>Pirulito de Fentanil</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
                 <English>Used to manage acute severe pain, via oral transmucosal route</English>
@@ -1054,63 +1057,76 @@
                 <English>Give Fentanyl Lozenge</English>
 <<<<<<< HEAD
                 <French>Donner des pastilles de Fentanyl</French>
+                <Portuguese>Administrar pirulito de fentanil</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_GiveFentanylLozenge_Progress">
                 <English>Giving Fentanyl Lozenge...</English>
                 <French>Donner des pastilles de Fentanyl...</French>
+                <Portuguese>Administrando pirulito de fentanil...</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge">
                 <English>Remove Fentanyl Lozenge</English>
                 <French>Supprimer la pastille de Fentanyl</French>
+                <Portuguese>Remover pirulito de fentanil</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge_Progress">
                 <English>Removing Fentanyl Lozenge...</English>
                 <French>Suppression de la pastille de Fentanyl...</French>
+                <Portuguese>Removendo pirulito de fentanil...</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Lozenge">
                 <English>Lozenge</English>
                 <French>Pastille</French>
+                <Portuguese>Pirulito</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge">
                 <English>Lozenge (OTFC)</English>
                 <French>Pastille (OTFC)</French>
+                <Portuguese>Pirulito (CFTO)</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Already">
                 <English>Patient already has fentanyl lozenge</English>
                 <French>Le patient a déjà des pastilles de fentanyl</French>
+                <Portuguese>O paciente já tem um pirulito de fentanil</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Blocked">
                 <English>Patient oral access is blocked by airway adjunct</English>
                 <French>L'accès oral du patient est bloqué par l'adjuvant des voies aériennes.</French>
+                <Portuguese>O acesso oral do paciente está bloqueado por um adjuvante de vias aéreas</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Complete">
                 <English>Gave Lozenge (OTFC)</English>
                 <French>Donner une pastille (OTFC)</French>
+                <Portuguese>Deu pirulito (CFTO)</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Hint">
                 <English>Fentanyl Lozenge has been placed by %1</English>
                 <French>La pastille de Fentanyl a été placée par %1</French>
+                <Portuguese>Pirulito de fentanil foi colocado by %1</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_ActionLog">
                 <English>%1 gave Fentanyl Lozenge</English>
                 <French>%1 a donné des pastilles de Fentanyl</French>
+                <Portuguese>%1 deu pirulito de fentanil</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Complete">
                 <English>Removed fentanyl lozenge</English>
                 <French>Suppression de la pastille de fentanyl</French>
+                <Portuguese>Removeu pirulito de fentanil</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Hint">
                 <English>%1 removed lozenge</English>
                 <French>%1 a supprimé la pastille</French>
+                <Portuguese>%1 removeu </Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_HintSelf">
                 <English>Fentanyl lozenge was removed</English>
                 <French>La pastille de Fentanyl a été retirée</French>
+                <Portuguese>Pirulito de fentanil foi removido</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
                 <English>Fentanyl lozenge wore off and was removed</English>
                 <French>La pastille de Fentanyl s'est estompée et a été éliminée.</French>
-=======
                 <Portuguese>Administrar pirulito de fentanil</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_GiveFentanylLozenge_Progress">
@@ -1168,7 +1184,6 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
                 <English>Fentanyl lozenge wore off and was removed</English>
                 <Portuguese>Pirulito de fentanil acabou e foi removido</Portuguese>
->>>>>>> c6ec944e89890815e14b60a99ec4276aa5a4e620
             </Key>
         </Container>
         <Container name="// CPR Action //">
@@ -1246,19 +1261,13 @@
                 <English>Paused CPR</English>
                 <Polish>Przerwał RKO</Polish>
                 <German>HLW pausiert</German>
-<<<<<<< HEAD
                 <French>RPC interrompue</French>
+                <Portuguese>Pausada RCP</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwapToBVM">
                 <English>Swap To BVM</English>
                 <French>Remplacer par BVM</French>
-            </Key>
-            <Key ID="STR_ACM_Circulation_CPR_SwappedToBVM">
-                <English>Swapped To BVM</English>
-                <French>Remplacé par BVM</French>
-=======
-            <French>RPC interrompue</French>                
-            <Portuguese>Pausada RCP</Portuguese>
+                <Portuguese>Trocar para o BVM</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwapToBVM">
                 <English>Swap To BVM</English>
@@ -1269,7 +1278,7 @@
                 <English>Swapped To BVM</English>
                 <Portuguese>Trocado para o BVM</Portuguese>
                 <French>Remplacé par BVM</French>
->>>>>>> c6ec944e89890815e14b60a99ec4276aa5a4e620
+                <Portuguese>Trocado para o BVM</Portuguese>
             </Key>
         </Container>
         <Container name="// Capillary Refill Action //">

@@ -1120,6 +1120,7 @@
                 <German>Beatmung pausieren</German>
                 <French>Interrompre la respiration artificielle</French>
                 <Portuguese>Ventilação pausada</Portuguese>
+                <Portuguese>Pausar ventilação</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continue">
                 <English>Continue Rescue Breaths</English>
@@ -1147,6 +1148,7 @@
                 <Polish>Przerwano oddechy ratunkowe</Polish>
                 <German>Beatmung pausiert</German>
                 <French>Interrompution de la respiration artificielle</French>
+                <Portuguese>Ventilação pausada</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continued">
                 <English>Continued Rescue Breaths</English>
@@ -1280,6 +1282,7 @@
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_LowerAndUpperChest">
                 <English>Lower &amp; Upper Chest</English>
+                <Portuguese>Tórax inferior e superior</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_%1">
                 <English>Thoracostomy Incision (%1)</English>
