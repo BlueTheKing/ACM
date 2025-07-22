@@ -6,30 +6,35 @@
             <Polish>ACM: Interfejs</Polish>
             <French>ACM : INTERFACE</French>
             <German>ACM: GUI</German>
+            <Portuguese>ACM: Interface</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses">
             <English>Show inactive vitals statuses</English>
             <Polish>Pokaż nieaktywne statusy funkcji życiowych</Polish>
             <French>Afficher les états vitaux inactifs</French>
             <German>Zeige inaktive Vitatwerte</German>
+            <Portuguese>Mostrar status de sinais vitais inexistentes</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
             <English>Show vitals status in overview tab when inactive (display ""none"")</English>
             <Polish>Pokaż stan funkcji życiowych w zakładce przeglądu, gdy jest nieaktywny (wyświetl "brak")</Polish>
             <French>Afficher le statut des fonctions vitales dans l'onglet «vue d'ensemble» lorsqu'elles sont inactives (affichage «none»)</French>
             <German>Stellt ein, ob nicht-gemessene Vitalwerte in der Übersicht angezeigt werden sollen (Anzeige ""kein"")</German>
+            <Portuguese>Mostrar o status dos sinais vitais na guia de visão geral quando estiver inativo (exibir "nenhum")</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount">
             <English>Show Pain Amount</English>
             <Polish>Pokaż wartość bólu</Polish>
             <French>Afficher l'intensité de la douleur</French>
             <German>Zeige Schmerzintensität</German>
+            <Portuguese>Mostrar quantidade de dor</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount_Desc">
             <English>Show exact pain amount in overview tab</English>
             <Polish>Pokaż dokładną ilość bólu w zakładce przeglądu</Polish>
             <French>Afficher le montant exact de la douleur dans l'onglet «Vue d'ensemble»</French>
             <German>Stellt ein, ob die exakte Schmerzintensität in der Übersicht angezeigt werden soll</German>
+            <Portuguese>Mostrar a quantidade exata de dor na guia de visão geral</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture">
             <English>Show Fracture</English>
@@ -40,34 +45,44 @@
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>
             <French>Afficher les icônes des actions</French>
+            <Portuguese>Mostrar ícones de itens nas ações</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons_Desc">
             <English>Show relevant item icons for medical menu actions</English>
             <French>Afficher les icônes des éléments pertinents pour les actions du menu médical</French>
+            <Portuguese>Mostrar ícones de itens nas ações</Portuguese>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons_Desc">
+            <English>Show relevant item icons for medical menu actions</English>
+            <Portuguese>Mostrar ícones de itens relevantes para ações do menu médico</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
             <English>Show overlay for selected body part</English>
             <Polish>Pokaż nakładkę dla wybranej części ciała</Polish>
             <French>Entourer la partie du corps sélectionnée</French>
             <German>Zeige Overlay für ausgewähltes Körperteil</German>
+            <Portuguese>Mostrar sobreposição para a parte do corpo selecionada</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels">
             <English>Show patient side labels</English>
             <Polish>Show patient side labels</Polish>
             <French>Afficher les étiquettes côté patient</French>
             <German>Zeige Rechts/Links Markierung an</German>
+            <Portuguese>Mostrar legenda dos lados do paciente</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels_Desc">
             <English>Show patient left/right side labels in medical menu</English>
             <Polish>Pokaż oznaczenia lewej/prawej strony pacjenta w menu medycznym</Polish>
             <French>Afficher les étiquettes du côté gauche/droit du patient dans le menu médical</French>
             <German>Kennzeichnet im Menü die Patientenseite (Rechts/Links)</German>
+            <Portuguese>Mostrar legenda do lado esquerdo/direito do paciente no menu médico</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_NoExternalBleeding">
             <English>No external bleeding</English>
             <Polish>Brak krwawienia zewnętrznego</Polish>
             <French>Pas de saignement externe</French>
             <German>Keine externe Blutung</German>
+            <Portuguese>Sem sangramento externo</Portuguese>
         </Key>
         <Container name="// Triage Text //">
             <Key ID="STR_ACM_GUI_Triage_Priority1_Short">
@@ -75,30 +90,35 @@
                 <Polish>T1</Polish>
                 <German>Rot</German>
                 <French>T1</French>
+                <Portuguese>T1</Portuguese>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority2_Short">
                 <English>T2</English>
                 <Polish>T2</Polish>
                 <German>Gelb</German>
                 <French>T2</French>
+                <Portuguese>T2</Portuguese>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority3_Short">
                 <English>T3</English>
                 <Polish>T3</Polish>
                 <German>Grün</German>
                 <French>T3</French>
+                <Portuguese>T3</Portuguese>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4">
                 <English>Expectant</English>
                 <Polish>Oczekujacy</Polish>
                 <German>Blau</German>
                 <French>En attente</French>
+                <Portuguese>Expectante</Portuguese>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
                 <English>T4</English>
                 <Polish>T4</Polish>
                 <German>Schwarz</German>
                 <French>T4</French>
+                <Portuguese>T4</Portuguese>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -107,6 +127,7 @@
                 <Polish>Pomóż w niesieniu</Polish>
                 <German>Tragen unterstützen</German>
                 <French>Aide au portage</French>
+                <Portuguese>Auxiliar carregamento</Portuguese>
             </Key>
         </Container>
     </Package>
