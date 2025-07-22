@@ -87,7 +87,7 @@ private _actions = [];
             };
         };
 
-        private _triageText = ["",LELSTRING(GUI,Triage_Priority1_Short), LELSTRING(GUI,Triage_Priority2_Short), LELSTRING(GUI,Triage_Priority3_Short), LELSTRING(GUI,Triage_Priority4_Short)] select _triageLevel;
+        private _triageText = ["",LELSTRING(GUI,Triage_Priority3_Short), LELSTRING(GUI,Triage_Priority2_Short), LELSTRING(GUI,Triage_Priority1_Short), LELSTRING(GUI,Triage_Priority4_Short)] select _triageLevel;
         private _patientName = [_unit, true] call ACEFUNC(common,getName);
         private _actionText = [_patientName, (format ["%1 [%2]", _patientName, _triageText])] select (_triageLevel > 0);
 
