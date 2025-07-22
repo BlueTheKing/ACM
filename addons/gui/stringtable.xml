@@ -52,10 +52,6 @@
             <French>Afficher les icônes des éléments pertinents pour les actions du menu médical</French>
             <Portuguese>Mostrar ícones de itens nas ações</Portuguese>
         </Key>
-        <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons_Desc">
-            <English>Show relevant item icons for medical menu actions</English>
-            <Portuguese>Mostrar ícones de itens relevantes para ações do menu médico</Portuguese>
-        </Key>
         <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
             <English>Show overlay for selected body part</English>
             <Polish>Pokaż nakładkę dla wybranej części ciała</Polish>

@@ -47,10 +47,6 @@
             <English>Medication</English>
             <Portuguese>Medicamentos</Portuguese>
         </Key>
-        <Key ID="STR_ACM_Circulation_Category_Medication">
-            <English>Medication</English>
-            <Portuguese>Medicamentos</Portuguese>
-        </Key>
         <Key ID="STR_ACM_Circulation_Category_BloodTypes">
             <English>Blood Types</English>
             <Polish>Grupy krwi</Polish>
@@ -935,14 +931,6 @@
                 <French>Utilisé pour gérer la douleur aiguë sévère, par voie orale transmucosale</French>
                 <Portuguese>Usado para controlar rapidamente a dor aguda por um curto período de tempo</Portuguese>
             </Key>
-            <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl">
-                <English>Fentanyl Lozenge</English>
-                <Portuguese>Pirulito de Fentanil</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
-                <English>Used to manage acute severe pain, via oral transmucosal route</English>
-                <Portuguese>Usado para controlar a dor aguda grave, por via transmucosa oral</Portuguese>
-            </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol">
                 <English>Dimercaprol Ampule (300mg/3ml)</English>
                 <Portuguese>Dimercaprol Ampola (300mg/3ml)</Portuguese>
@@ -1055,7 +1043,6 @@
         <Container name="// Fentanyl Lozenge Actions //">
             <Key ID="STR_ACM_Circulation_GiveFentanylLozenge">
                 <English>Give Fentanyl Lozenge</English>
-<<<<<<< HEAD
                 <French>Donner des pastilles de Fentanyl</French>
                 <Portuguese>Administrar pirulito de fentanil</Portuguese>
             </Key>
@@ -1128,62 +1115,6 @@
                 <English>Fentanyl lozenge wore off and was removed</English>
                 <French>La pastille de Fentanyl s'est estompée et a été éliminée.</French>
                 <Portuguese>Administrar pirulito de fentanil</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_GiveFentanylLozenge_Progress">
-                <English>Giving Fentanyl Lozenge...</English>
-                <Portuguese>Administrando pirulito de fentanil...</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge">
-                <English>Remove Fentanyl Lozenge</English>
-                <Portuguese>Remover pirulito de fentanil</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge_Progress">
-                <English>Removing Fentanyl Lozenge...</English>
-                <Portuguese>Removendo pirulito de fentanil...</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge_Lozenge">
-                <English>Lozenge</English>
-                <Portuguese>Pirulito</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge">
-                <English>Lozenge (OTFC)</English>
-                <Portuguese>Pirulito (CFTO)</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge_Already">
-                <English>Patient already has fentanyl lozenge</English>
-                <Portuguese>O paciente já tem um pirulito de fentanil</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge_Blocked">
-                <English>Patient oral access is blocked by airway adjunct</English>
-                <Portuguese>O acesso oral do paciente está bloqueado por um adjuvante de vias aéreas</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Complete">
-                <English>Gave Lozenge (OTFC)</English>
-                <Portuguese>Deu pirulito (CFTO)</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Hint">
-                <English>Fentanyl Lozenge has been placed by %1</English>
-                <Portuguese>Pirulito de fentanil foi colocado by %1</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_ActionLog">
-                <English>%1 gave Fentanyl Lozenge</English>
-                <Portuguese>%1 deu pirulito de fentanil</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Complete">
-                <English>Removed fentanyl lozenge</English>
-                <Portuguese>Removeu pirulito de fentanil</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Hint">
-                <English>%1 removed lozenge</English>
-                <Portuguese>%1 removeu </Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_HintSelf">
-                <English>Fentanyl lozenge was removed</English>
-                <Portuguese>Pirulito de fentanil foi removido</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
-                <English>Fentanyl lozenge wore off and was removed</English>
-                <Portuguese>Pirulito de fentanil acabou e foi removido</Portuguese>
             </Key>
         </Container>
         <Container name="// CPR Action //">
@@ -1269,14 +1200,8 @@
                 <French>Remplacer par BVM</French>
                 <Portuguese>Trocar para o BVM</Portuguese>
             </Key>
-            <Key ID="STR_ACM_Circulation_CPR_SwapToBVM">
-                <English>Swap To BVM</English>
-                <French>Remplacer par BVM</French>
-                <Portuguese>Trocar para o BVM</Portuguese>
-            </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwappedToBVM">
                 <English>Swapped To BVM</English>
-                <Portuguese>Trocado para o BVM</Portuguese>
                 <French>Remplacé par BVM</French>
                 <Portuguese>Trocado para o BVM</Portuguese>
             </Key>

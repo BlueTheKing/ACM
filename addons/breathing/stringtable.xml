@@ -1120,7 +1120,6 @@
                 <German>Beatmung pausieren</German>
                 <French>Interrompre la respiration artificielle</French>
                 <Portuguese>Ventilação pausada</Portuguese>
-                <Portuguese>Pausar ventilação</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continue">
                 <English>Continue Rescue Breaths</English>
@@ -1275,10 +1274,6 @@
                 <German>Obere Brust</German>
                 <French>Poitrine supérieure</French>
                 <Portuguese>Parte superior do tórax</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Breathing_GUI_LowerAndUpperChest">
-                <English>Lower &amp; Upper Chest</English>
-                <Portuguese>Tórax inferior e superior</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_LowerAndUpperChest">
                 <English>Lower &amp; Upper Chest</English>

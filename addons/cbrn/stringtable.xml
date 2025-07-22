@@ -406,10 +406,6 @@
                 <English>Attaches hazard zone to synchronized object</English>
                 <Portuguese>Anexa a zona de perigo ao objeto sincronizado</Portuguese>
             </Key>
-            <Key ID="STR_ACM_CBRN_Module_Generic_AttachToObject_TooltipEden">
-                <English>Attaches hazard zone to synchronized object</English>
-                <Portuguese>Anexa a zona de perigo ao objeto sincronizado</Portuguese>
-            </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_ShowMist">
                 <English>Show Mist</English>
                 <Portuguese>Mostrar névoa</Portuguese>
@@ -465,24 +461,6 @@
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_Large">
                 <English>Large</English>
                 <Portuguese>Grande</Portuguese>
-            </Key>
-        </Container>
-        <Container name="// GUI //">
-            <Key ID="STR_ACM_CBRN_GUI_SkinIrritation">
-                <English>Skin Irritation</English>
-                <Portuguese>Irritação da pele</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_CBRN_GUI_Slight">
-                <English>Slight</English>
-                <Portuguese>Leve</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_CBRN_GUI_Moderate">
-                <English>Moderate</English>
-                <Portuguese>Moderado</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_CBRN_GUI_Severe">
-                <English>Severe</English>
-                <Portuguese>Grave</Portuguese>
             </Key>
         </Container>
         <Container name="// GUI //">
