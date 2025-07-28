@@ -29,9 +29,15 @@ _control ctrlRemoveAllEventHandlers "SetFocus";
 scopeName "Main";
 private _fnc_errorAndClose = {
     params ["_msg"];
+
+    _display closeDisplay 0;
     deleteVehicle _logic;
     [_msg] call ACEFUNC(zeus,showMessage);
     breakOut "Main";
+};
+
+if !(GVAR(enable)) then {
+    [LLSTRING(Module_Generic_Error_AddonDisabled)] call _fnc_errorAndClose;
 };
 
 private _fnc_onUnload = {

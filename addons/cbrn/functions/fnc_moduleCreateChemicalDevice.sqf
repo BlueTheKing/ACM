@@ -45,6 +45,9 @@ switch (true) do {
     case !(alive _attachedObject): {
         [LLSTRING(Module_Generic_Error_NotDestroyed)] call _fnc_errorAndClose;
     };
+    case !(GVAR(enable)): {
+        [LLSTRING(Module_Generic_Error_AddonDisabled)] call _fnc_errorAndClose;
+    };
 };
 
 private _fnc_onUnload = {

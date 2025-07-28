@@ -418,6 +418,9 @@
                 <English>Affect AI</English>
                 <Portuguese>Afeta IA</Portuguese>
             </Key>
+            <Key ID="STR_ACM_CBRN_Module_Generic_Error_AddonDisabled">
+                <English>CBRN Addon must be enabled</English>
+            </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_Error_SelectObject">
                 <English>Must select object</English>
                 <Portuguese>Deve selecionar o objeto</Portuguese>
