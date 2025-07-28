@@ -1133,7 +1133,7 @@
                 <Polish>Przerwij oddechy ratunkowe</Polish>
                 <German>Beatmung pausieren</German>
                 <French>Interrompre la respiration artificielle</French>
-                <Portuguese>Ventilação pausada</Portuguese>
+                <Portuguese>Pausar ventilação</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Paused">
                 <English>Paused Rescue Breaths</English>
