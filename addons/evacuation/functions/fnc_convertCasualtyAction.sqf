@@ -26,7 +26,7 @@ if (isNull (objectParent _medic)) then {
     params ["_args"];
     _args params ["_medic", "_patient"];
 
-    if !([_medic, _patient] call FUNC(canConvert)) exitWith {
+    if (!([_medic, _patient] call FUNC(canConvert)) || isNull GVAR(ReinforcePoint)) exitWith {
         [LLSTRING(ConvertCasualty_Failed), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
     };
 

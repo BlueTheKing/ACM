@@ -97,4 +97,6 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+GVAR(ReinforcePoint) = objNull;
+
 ADDON = true;
