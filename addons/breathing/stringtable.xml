@@ -1114,19 +1114,12 @@
                 <French>Cesser d'utiliser le BVM</French>
                 <Portuguese>Parar de usar BVM</Portuguese>
             </Key>
-            <Key ID="STR_ACM_Breathing_BVM_Pause">
-                <English>Pause Rescue Breaths</English>
-                <Polish>Przerwij oddechy ratunkowe</Polish>
-                <German>Beatmung pausieren</German>
-                <French>Interrompre la respiration artificielle</French>
-                <Portuguese>Ventilação pausada</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Breathing_BVM_Continue">
-                <English>Continue Rescue Breaths</English>
-                <Polish>Wznów oddechy ratunkowe</Polish>
-                <German>Beatmung fortsetzen</German>
-                <French>Continuer la respiration artificielle</French>
-                <Portuguese>Continuar ventilação</Portuguese>
+            <Key ID="STR_ACM_Breathing_BVM_Stopped">
+                <English>Stopped using BVM</English>
+                <Polish>Przestano używać worka samorozprężalnego</Polish>
+                <German>Beatmung beendet</German>
+                <French>Stopper la respiration artificielle</French>
+                <Portuguese>Interrompido uso do BVM</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Started">
                 <English>Started Rescue Breaths</English>
@@ -1135,12 +1128,12 @@
                 <French>Début de la respiration artificielle</French>
                 <Portuguese>Iniciada ventilação</Portuguese>
             </Key>
-            <Key ID="STR_ACM_Breathing_BVM_Stopped">
-                <English>Stopped using BVM</English>
-                <Polish>Przestano używać worka samorozprężalnego</Polish>
-                <German>Beatmung beendet</German>
-                <French>Stopper la respiration artificielle</French>
-                <Portuguese>Interrompido uso do BVM</Portuguese>
+            <Key ID="STR_ACM_Breathing_BVM_Pause">
+                <English>Pause Rescue Breaths</English>
+                <Polish>Przerwij oddechy ratunkowe</Polish>
+                <German>Beatmung pausieren</German>
+                <French>Interrompre la respiration artificielle</French>
+                <Portuguese>Ventilação pausada</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Paused">
                 <English>Paused Rescue Breaths</English>
@@ -1148,6 +1141,13 @@
                 <German>Beatmung pausiert</German>
                 <French>Interrompution de la respiration artificielle</French>
                 <Portuguese>Ventilação pausada</Portuguese>
+            </Key>
+            <Key ID="STR_ACM_Breathing_BVM_Continue">
+                <English>Continue Rescue Breaths</English>
+                <Polish>Wznów oddechy ratunkowe</Polish>
+                <German>Beatmung fortsetzen</German>
+                <French>Continuer la respiration artificielle</French>
+                <Portuguese>Continuar ventilação</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continued">
                 <English>Continued Rescue Breaths</English>

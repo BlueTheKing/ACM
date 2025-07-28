@@ -391,7 +391,7 @@
                 <Polish>Rękoczyn czoło-żuchwa wykonany</Polish>
                 <German>Kopf überstreckt</German>
                 <French>Tête en hyperextension</French>
-                <Portuguese> Vias aéreas hiperextendidas</Portuguese>
+                <Portuguese>Vias aéreas hiperextendidas</Portuguese>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_HeadTiltChinLift_Short">
                 <English>Head Tilted</English>
@@ -788,7 +788,6 @@
                 <Polish>Przerwano pozycję bezpieczną</Polish>
                 <German>Stabile Seitenlage abgebrochen</German>
                 <French>Interruption de la position latérale de sécurité</French>
-
                 <Portuguese>Cancelada posição de recuperação</Portuguese>
             </Key>
             <Key ID="STR_ACM_Airway_RecoveryPosition_Cancelled_ActionLog">

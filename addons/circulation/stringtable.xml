@@ -929,7 +929,7 @@
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
                 <English>Used to manage acute severe pain, via oral transmucosal route</English>
                 <French>Utilisé pour gérer la douleur aiguë sévère, par voie orale transmucosale</French>
-                <Portuguese>Usado para controlar rapidamente a dor aguda por um curto período de tempo</Portuguese>
+                <Portuguese>Usado para controlar a dor aguda grave, por via transmucosa oral</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol">
                 <English>Dimercaprol Ampule (300mg/3ml)</English>
@@ -1114,7 +1114,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
                 <English>Fentanyl lozenge wore off and was removed</English>
                 <French>La pastille de Fentanyl s'est estompée et a été éliminée.</French>
-                <Portuguese>Administrar pirulito de fentanil</Portuguese>
+                <Portuguese>Pirulito de fentanil acabou e foi removido</Portuguese>
             </Key>
         </Container>
         <Container name="// CPR Action //">
@@ -1803,13 +1803,13 @@
                 <Polish>Widoczny obrzęk</Polish>
                 <German>Deutliche Schwellung</German>
                 <French>Oedème significatif</French>
-                <Portuguese>inchaço perceptível</Portuguese>                
+                <Portuguese>inchaço perceptível</Portuguese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
-                <English>%1 inspected IV Catheter: %2</English>
-                <Polish>%1 sprawdził wkłucie: %2</Polish>
-                <German>%1 hat einen i.v. Katheter geprüft: %2</German>
-                <French>%1 a testé un cathéter IV : %2</French>
+                <English>%1 inspected IV Catheter (%2): %3</English>
+                <Polish>%1 sprawdził wkłucie (%2): %3</Polish>
+                <German>%1 hat einen i.v. Katheter (%2) geprüft: %3</German>
+                <French>%1 a testé un cathéter IV (%2) : %3</French>
                 <Portuguese>%1 inspecionou o cateter IV (%2): %3</Portuguese>
             </Key>
         </Container>

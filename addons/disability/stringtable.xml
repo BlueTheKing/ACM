@@ -368,12 +368,11 @@
         <Container name="// Fracture Realignment Action //">
             <Key ID="STR_ACM_Disability_FractureRealignment">
                 <English>Perform Fracture Realignment</English>
-
                 <French>Réaliser un réalignement de fracture</French>
                 <Portuguese>Realizar realinhamento de fratura</Portuguese>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Progress">
-                <English>Performing Fracture Realignment...</English>
+                <English>Performing fracture realignment...</English>
                 <French>Réaliser un réalignement de fracture...</French>
                 <Portuguese>Realizando realinhamento de fratura...</Portuguese>
             </Key>
