@@ -26,7 +26,6 @@ scopeName "Main";
 private _fnc_errorAndClose = {
     params ["_msg"];
 
-    _display closeDisplay 0;
     deleteVehicle _logic;
     [_msg] call ACEFUNC(zeus,showMessage);
     breakOut "Main";
