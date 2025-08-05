@@ -22,6 +22,7 @@ params ["_medic", "_patient"];
 
 [QGVAR(createReinforcementAndSwitch), [_patient], _patient] call CBA_fnc_targetEvent;
 _patient setVariable [QGVAR(casualtyTicketClaimed), true, true];
+_patient setVariable [QACEGVAR(medical_statemachine,AIUnconsciousness), true, true];
 
 [{
     params ["_medic", "_patient"];
