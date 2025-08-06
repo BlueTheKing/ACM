@@ -59,6 +59,15 @@ class CfgWeapons {
         };
     };
 
+    class ACM_HandPump: ACM_ChestSeal {
+        picture = QPATHTOF(ui\handPump_ca.paa);
+        displayName = CSTRING(HandPump);
+        descriptionShort = CSTRING(HandPump_Desc);
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 4;
+        };
+    };
+
     class ACM_PocketBVM: ACM_ChestSeal {
         picture = QPATHTOF(ui\pocketbvm_ca.paa);
         displayName = CSTRING(PocketBVM);

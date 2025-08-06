@@ -287,6 +287,18 @@
                 <French>Kit à usage unique utilisé pour préparer le patient à l'insertion d'un drain thoracique</French>
                 <Portuguese>Kit de uso único usado para preparar o paciente para a inserção do dreno torácico</Portuguese>
             </Key>
+            <Key ID="STR_ACM_Breathing_HandPump">
+                <English>Hand Pump</English>
+                <German>Handpumpe</German>
+                <French>Pompe à main</French>
+                <Portuguese>Bomba manual</Portuguese>
+            </Key>
+            <Key ID="STR_ACM_Breathing_HandPump_Desc">
+                <English>Reusable hand-held suction pump used to drain fluids from a chest tube</English>
+                <German>Wiederverwendbare Handabsaugpumpe zum Ablassen von Flüssigkeiten aus einem Thoraxschlauch</German>
+                <French>Pompe d'aspiration portative réutilisable utilisée pour drainer les fluides d'un drain thoracique</French>
+                <Portuguese>Bomba de sucção manual reutilizável usada para drenar fluidos de um dreno torácico</Portuguese>
+            </Key>
             <Key ID="STR_ACM_Breathing_PocketBVM">
                 <English>Pocket BVM</English>
                 <Polish>Kieszonkowy worek samorozprężalny (BVM)</Polish>
@@ -764,6 +776,13 @@
                 <German>Flüssigkeit absaugen (Einwegabsaugpumpe)</German>
                 <French>Aspirer le liquide (pompe d'aspiration à usage unique)</French>
                 <Portuguese>Drenar fluido (Aspirador manual)</Portuguese>
+            </Key>
+            <Key ID="STR_ACM_Breathing_DrainFluid_HandPump">
+                <English>Drain Fluid (Hand Pump)</English>
+                <Polish>Odessaj płyny (Pompka ręczna)</Polish>
+                <German>Flüssigkeit absaugen (Handpumpe)</German>
+                <French>Aspirer le liquide (Pompe à main)</French>
+                <Portuguese>Drenar fluido (Bomba manual)</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_DrainFluid_Suction_Progress">
                 <English>Draining Fluid...</English>

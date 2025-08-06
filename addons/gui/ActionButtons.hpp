@@ -26,6 +26,7 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACM_Stethoscope,QPATHTOEF(breathing,ui\stethoscope
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_NCDKit,QPATHTOEF(breathing,ui\ncdkit_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_ChestTubeKit,QPATHTOEF(breathing,ui\chestTubeKit_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_ThoracostomyKit,QPATHTOEF(breathing,ui\thoracostomyKit_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(ACM_HandPump,QPATHTOEF(breathing,ui\handPump_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_PocketBVM,QPATHTOEF(breathing,ui\pocketbvm_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_BVM,QPATHTOEF(breathing,ui\bvm_ca.paa));
 
