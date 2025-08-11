@@ -326,6 +326,9 @@
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Desc">
             <English>Sets whether syringes are reusable instead of consumed on medication administration</English>
         </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Option">
+            <English>IV Only</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
             <Portuguese>Permitir seringa</Portuguese>
