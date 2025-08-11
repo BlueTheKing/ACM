@@ -12,7 +12,7 @@ class CfgVehicles {
 
     class GVAR(Eden_HazardZone): Module_F {
         scope = 2;
-        displayName = CSTRING(Module_CreateHazardZone);
+        displayName = CSTRING(Module_HazardZone);
         icon = QPATHTOF(ui\Icon_ChemicalHazard_ca.paa);
         category = QGVAR(CBRN);
         function = QFUNC(moduleCreateHazardZone_Eden);
@@ -91,7 +91,7 @@ class CfgVehicles {
 
     class GVAR(Eden_ChemicalDevice): Module_F {
         scope = 2;
-        displayName = CSTRING(Module_CreateChemicalDevice);
+        displayName = CSTRING(Module_ChemicalDevice);
         icon = QPATHTOF(ui\Icon_ChemicalHazard_ca.paa);
         category = QGVAR(CBRN);
         function = QFUNC(moduleCreateChemicalDevice_Eden);
