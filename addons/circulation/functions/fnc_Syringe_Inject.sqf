@@ -21,7 +21,7 @@
  * Public: No
  */
 
-params ["_medic", "_patient", "_bodyPart", "_classname", ["_size", 10], ["_iv", true], ["_returnSyringe", true]];
+params ["_medic", "_patient", "_bodyPart", "_classname", ["_size", 10], ["_iv", true], ["_returnSyringe", 1]];
 
 if (_iv && !([_patient, _bodyPart, 0] call FUNC(hasIV)) && !([_patient, _bodyPart, 0] call FUNC(hasIO))) exitWith {
     [(format [LLSTRING(Syringe_PushFailed), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic, 13] call ACEFUNC(common,displayTextStructured);
@@ -88,7 +88,7 @@ if (_stringDose < 1 && !_microDose) then {
 [_patient, "activity", "%1 %2 %3 %4 (%5%6)", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _actionString), _medicationName, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToLog);
 [(format ["%1 %2 %3", _actionString, _administrationString, _medicationName]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
-if (_returnSyringe) then {
+if ((_returnSyringe == 1) || (_returnSyringe == 2 && _iv)) then {
     [_medic, (format ["ACM_Syringe_%1", _size])] call ACEFUNC(common,addToInventory);
 };
 
