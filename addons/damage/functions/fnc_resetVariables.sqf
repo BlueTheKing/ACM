@@ -20,3 +20,6 @@ params ["_patient"];
 _patient setVariable [VAR_WRAPPED_WOUNDS, createHashMap, true];
 _patient setVariable [VAR_CLOTTED_WOUNDS, createHashMap, true];
 _patient setVariable [VAR_INTERNAL_WOUNDS, createHashMap, true];
+
+_patient setVariable [QGVAR(Coagulation_Active), false, true];
+_patient setVariable [QGVAR(IBCoagulation_Active), false, true];
