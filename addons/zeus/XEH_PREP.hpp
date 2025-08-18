@@ -7,3 +7,4 @@ PREP(setBloodVolume);
 PREP(setOxygen);
 PREP(togglePlotArmor);
 PREP(unCardiacArrest);
+PREP(addFullHeal);

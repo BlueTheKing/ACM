@@ -15,6 +15,13 @@
             <French>Forcer le réveil</French>
             <Portuguese>Forçar acordar</Portuguese>
         </Key>
+        <Key ID="STR_ACM_Zeus_Module_AddFullHeal">
+            <English>Make Heal Tent</English>
+            <Polish>Zrób namiot leczniczy</Polish>
+            <German>Heilzelt bauen</German>
+            <French>Tente de guérison</French>
+            <Portuguese>Tenda de cura</Portuguese>
+        </Key>
         <Container name="// Set Blood Volume Module //">
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume">
                 <English>Set Blood Volume</English>

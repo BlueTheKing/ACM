@@ -57,4 +57,9 @@ class CfgVehicles {
         function = QFUNC(togglePlotArmor);
         icon = QPATHTOF(ui\Icon_Module_PlotArmor_ca.paa);
     };
+    class GVAR(addFullHeal): GVAR(moduleBase) {
+        displayName = CSTRING(Module_AddFullHeal);
+        function = QFUNC(addFullHeal);
+        icon = QACEPATHTOF(zeus,ui\Icon_Module_Zeus_Heal_ca.paa);
+    };
 };
