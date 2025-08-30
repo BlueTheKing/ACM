@@ -126,7 +126,7 @@ class CfgVehicles {
                 };
             };
             class ExplosionCloudSize: Combo {
-                property = QGVAR(Eden_ChemicalDevice_ExplosionCloud);
+                property = QGVAR(Eden_ChemicalDevice_ExplosionCloudSize);
                 displayName = CSTRING(Module_CreateChemicalDevice_CloudSize);
                 typeName = "NUMBER";
                 defaultValue = 0;
