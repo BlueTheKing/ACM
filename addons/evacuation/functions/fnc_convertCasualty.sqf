@@ -18,16 +18,26 @@
 
 params ["_medic", "_patient"];
 
-[false] call FUNC(setCasualtyTicket);
+private _group = group _patient;
+
+_patient setVariable [QGVAR(TargetGroup), _group, true];
+
+private _casualtySide = GET_SIDE_NUM(side _group);
+
+_patient setVariable [QGVAR(CasualtySide), _casualtySide, true];
+
+[false, _casualtySide] call FUNC(setCasualtyTicket);
 
 [QGVAR(createReinforcementAndSwitch), [_patient], _patient] call CBA_fnc_targetEvent;
+
 _patient setVariable [QGVAR(casualtyTicketClaimed), true, true];
+_patient setVariable [QACEGVAR(medical_statemachine,AIUnconsciousness), true, true];
 
 [{
     params ["_medic", "_patient"];
 
     _patient disableAI "ALL";
-    _patient setVariable [QGVAR(TargetGroup), (group _patient), true];
+
     [_patient] joinSilent GVAR(CasualtyGroup);
     [LLSTRING(ConvertCasualty_Complete), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 }, [_medic, _patient], 2] call CBA_fnc_waitAndExecute;

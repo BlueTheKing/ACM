@@ -64,20 +64,6 @@
             <German>Stellt ein, ob ein Patient eine Antibiose braucht, bevor er konvertiert werden kann</German>
             <Portuguese>Define se os antibióticos precisam ser administrados antes que uma vítima possa ser convertida</Portuguese>
         </Key>
-        <Key ID="STR_ACM_Evacuation_SETTING_PlayerFaction">
-            <English>Player Side</English>
-            <Polish>Strona gracza</Polish>
-            <French>Côté joueur</French>
-            <German>Spielerseite</German>
-            <Portuguese>Lado do jogador</Portuguese>
-        </Key>
-        <Key ID="STR_ACM_Evacuation_SETTING_PlayerFaction_Desc">
-            <English>Sets player side, reinforced players will join this side upon spawning</English>
-            <Polish>Definiuje po której stronie mają się odradzać gracze po konwersji</Polish>
-            <French>Définit le côté du joueur, les joueurs renforcés rejoindront ce côté au moment du réveil.</French>
-            <German>Stellt die Spielerseite ein, bei welcher ein respawnter Spieler reinjoint</German>
-            <Portuguese>Define o lado do jogador, os jogadores se juntarão como reforços a esse lado ao resurgirem</Portuguese>
-        </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn">
             <English>Respawn Ticket Count</English>
             <Polish>Liczba punktów odrodzenia</Polish>
@@ -205,6 +191,21 @@
                 <German>Patient erfolgreich evakuiert</German>
                 <French>Patient évacué avec succès</French>
                 <Portuguese>Vítima evacuada com sucesso</Portuguese>
+            </Key>
+        </Container>
+        <Container name="// Module //">
+            <Key ID="STR_ACM_Evacuation_Module_EvacuationPoint">
+                <English>Evacuation Point</English>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_Module_ReinforcePoint">
+                <English>Reinforce Point</English>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_Module_PlayerFaction">
+                <English>Player Side</English>
+                <Polish>Strona gracza</Polish>
+                <French>Côté joueur</French>
+                <German>Spielerseite</German>
+                <Portuguese>Lado do jogador</Portuguese>
             </Key>
         </Container>
     </Package>

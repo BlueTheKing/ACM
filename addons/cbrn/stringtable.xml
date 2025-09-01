@@ -431,12 +431,18 @@
             </Key>
         </Container>
         <Container name="// Create Hazard Zone Module //">
+            <Key ID="STR_ACM_CBRN_Module_HazardZone">
+                <English>Hazard Zone</English>
+            </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateHazardZone">
                 <English>Create Hazard Zone</English>
                 <Portuguese>Criar zona de risco</Portuguese>
             </Key>
         </Container>
         <Container name="// Create Chemical Device Module //">
+            <Key ID="STR_ACM_CBRN_Module_ChemicalDevice">
+                <English>Chemical Device</English>
+            </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice">
                 <English>Create Chemical Device</English>
                 <Portuguese>Criar dispositivo químico</Portuguese>

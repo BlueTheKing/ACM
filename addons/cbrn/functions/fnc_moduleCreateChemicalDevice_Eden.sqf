@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [LOGIC, [], true] call ACM_CBRN_fnc_moduleCreateHazardZone_Eden;
+ * [LOGIC, [], true] call ACM_CBRN_fnc_moduleCreateChemicalDevice_Eden;
  *
  * Public: No
  */

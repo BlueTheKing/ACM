@@ -28,8 +28,9 @@ _args params ["_medic", "_patient", "_bodyPart", ["_extraArgs", []]];
 
 if (GVAR(ContinuousAction_Active)) exitWith {};
 
+GVAR(ContinuousAction_IsDialog) = (_dialogID != -1);
 GVAR(ContinuousAction_Active) = true;
-GVAR(ContinuousAction_ForceOpenMenu) = true;
+GVAR(ContinuousAction_ShouldReopen) = false;
 
 ACEGVAR(medical_gui,pendingReopen) = false; // Prevent medical menu from reopening
 
@@ -37,9 +38,15 @@ if (dialog) then { // If another dialog is open (medical menu) close it
     closeDialog 0;
 };
 
-GVAR(ContinuousAction_Cancel_EscapeID) = [0x01, [false, false, false], { // ESC to close
-    GVAR(ContinuousAction_Active) = false;
-}, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
+if (GVAR(ContinuousAction_IsDialog)) then {
+    GVAR(ContinuousAction_OpenMedicalMenu_ID) = [0x23, [false, false, false], { // H to close and open medical menu
+        GVAR(ContinuousAction_ShouldReopen) = true;
+    }, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
+} else {
+    GVAR(ContinuousAction_Cancel_EscapeID) = [0x01, [false, false, false], { // ESC to close
+        GVAR(ContinuousAction_Active) = false;
+    }, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
+};
 
 private _notInVehicle = isNull objectParent _medic;
 
@@ -98,14 +105,18 @@ _args call _onStart;
 
     private _dialogCondition = dialog;
     
-    if (_dialogID != -1) then {
+    if (GVAR(ContinuousAction_IsDialog)) then {
         _dialogCondition = isNull (findDisplay _dialogID);
     };
     
     if (_patientCondition || _medicCondition || !GVAR(ContinuousAction_Active) || _dialogCondition || {(!_notInVehicle && _vehicleCondition) || {(_notInVehicle && _distanceCondition)}}) exitWith {
         [_idPFH] call CBA_fnc_removePerFrameHandler;
 
-        [GVAR(ContinuousAction_Cancel_EscapeID), "keydown"] call CBA_fnc_removeKeyHandler;
+        if (GVAR(ContinuousAction_IsDialog)) then {
+            [GVAR(ContinuousAction_OpenMedicalMenu_ID), "keydown"] call CBA_fnc_removeKeyHandler;
+        } else {
+            [GVAR(ContinuousAction_Cancel_EscapeID), "keydown"] call CBA_fnc_removeKeyHandler;
+        };
 
         GVAR(ContinuousAction_Active) = false;
 
@@ -116,11 +127,11 @@ _args call _onStart;
             [_medic, _animation, 2] call ACEFUNC(common,doAnimation);
         };
 
-        if (GVAR(ContinuousAction_ForceOpenMenu)) then {
+        ["ace_treatmentFailed", [_medic, _patient, _bodyPart, "ACM_ContinuousAction", "", "", false]] call CBA_fnc_localEvent;
+
+        if (GVAR(ContinuousAction_ShouldReopen)) then {
             [QGVAR(openMedicalMenu), _patient] call CBA_fnc_localEvent;
         };
-
-        ["ace_treatmentFailed", [_medic, _patient, _bodyPart, "ACM_ContinuousAction", "", "", false]] call CBA_fnc_localEvent;
     };
 
     _args call _perFrame;
