@@ -21,16 +21,9 @@ params ["_logic", "", "_activated"];
 
 if (!_activated || !(GVAR(enable))) exitWith {};
 
-[{
-    params ["_logic"];
+private _syncedObjects = synchronizedObjects _logic;
+private _sideSelection = _logic getVariable ["Side", 0];
 
-    private _syncedObjects = synchronizedObjects _logic;
-
-    private _sideSelection = _logic getVariable ["Side", 0];
-
-    {
-        [_x, _sideSelection] call FUNC(defineEvacuationPoint);
-    } forEach _syncedObjects;
-
-    deleteVehicle _logic;
-}, [_logic], 1] call CBA_fnc_waitAndExecute;
+{
+    [_x, _sideSelection] call FUNC(defineEvacuationPoint);
+} forEach _syncedObjects;

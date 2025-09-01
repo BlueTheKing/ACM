@@ -21,10 +21,6 @@ params ["_logic", "", "_activated"];
 
 if (!_activated || !(GVAR(enable))) exitWith {};
 
-[{
-    params ["_logic"];
+private _sideSelection = _logic getVariable ["Side", 0];
 
-    private _sideSelection = _logic getVariable ["Side", 0];
-
-    [_logic, _sideSelection] call FUNC(defineReinforcePoint);
-}, [_logic], 1] call CBA_fnc_waitAndExecute;
+[_logic, _sideSelection] call FUNC(defineReinforcePoint);
