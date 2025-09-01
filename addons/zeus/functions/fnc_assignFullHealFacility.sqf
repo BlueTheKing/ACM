@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Mighty
- * Module to call initHealTent through Zeus.
+ * Module to assign full heal facility.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [LOGIC] call ACM_zeus_fnc_addFullHeal;
+ * [LOGIC] call ACM_zeus_fnc_assignFullHealFacility;
  *
  * Public: No
  */
@@ -19,7 +19,7 @@ params ["_logic"];
 
 if !(local _logic) exitWith {};
 
-private _unit = attachedTo _logic;
+private _object = attachedTo _logic;
 
 // Validate module target
 scopeName "Main";
@@ -33,17 +33,17 @@ private _fnc_errorAndClose = {
 };
 
 switch (true) do {
-    case (isNull _unit): {
+    case (isNull _object): {
         [ACELSTRING(zeus,NothingSelected)] call _fnc_errorAndClose;
     };
-    case (_unit isKindOf "Man" || {!(_unit isKindOf "Building")}): {
+    case (_object isKindOf "Man" || {!(_object isKindOf "Building")}): {
         [ACELSTRING(zeus,OnlyStructures)] call _fnc_errorAndClose;
     };
-    case !(alive _unit): {
+    case !(alive _object): {
         [ACELSTRING(zeus,OnlyAlive)] call _fnc_errorAndClose;
     };
 };
 
-[_unit] call ACM_mission_fnc_initHealTent;
+[QEGVAR(mission,initFullHealFacility), [_object]] call CBA_fnc_globalEvent;
 
 deleteVehicle _logic;
