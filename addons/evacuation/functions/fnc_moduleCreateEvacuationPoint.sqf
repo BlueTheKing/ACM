@@ -5,7 +5,7 @@
  *
  * Arguments:
  * 0: The module logic <OBJECT>
- * 1: Synchronized units <ARRAY>
+ * 1: Synchronized objects <ARRAY>
  * 2: Activated <BOOL>
  *
  * Return Value:
@@ -17,11 +17,10 @@
  * Public: No
  */
 
-params ["_logic", "", "_activated"];
+params ["_logic", "_syncedObjects", "_activated"];
 
 if (!_activated || !(GVAR(enable))) exitWith {};
 
-private _syncedObjects = synchronizedObjects _logic;
 private _sideSelection = _logic getVariable ["Side", 0];
 
 {
