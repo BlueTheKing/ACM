@@ -1,3 +1,4 @@
+PREP(assignFullHealFacility);
 PREP(forceWakeUp);
 PREP(givePain);
 PREP(inflictCardiacArrest);

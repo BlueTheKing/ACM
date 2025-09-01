@@ -5,6 +5,8 @@
  *
  * Arguments:
  * 0: Tent Object <OBJECT>
+ * 1: Interaction Distance <NUMBER>
+ * 2: Interaction Position <ARRAY>
  *
  * Return Value:
  * None
@@ -15,7 +17,7 @@
  * Public: No
  */
 
-params ["_object"];
+params ["_object", ["_distance", 5], ["_position", [0,0,0]]];
 
 private _actions = [];
 _actions pushBack (["ACM_Training_HealTent",
@@ -58,7 +60,7 @@ _actions pushBack (["ACM_Training_HealTent",
     } forEach _targetUnits;
 
     _actions;
-}, [], [0,0,0], 5] call ACEFUNC(interact_menu,createAction));
+}, [], _position, _distance] call ACEFUNC(interact_menu,createAction));
 
 {
     [_object, 0, [], _x] call ACEFUNC(interact_menu,addActionToObject);
