@@ -60,6 +60,6 @@ class CfgVehicles {
     class GVAR(assignFullHealFacility): GVAR(moduleBase) {
         displayName = CSTRING(Module_AssignFullHealFacility);
         function = QFUNC(assignFullHealFacility);
-        icon = QACEPATHTOF(zeus,ui\Icon_Module_Zeus_Heal_ca.paa);
+        icon = QPATHTOEF(mission,ui\Icon_Module_FullHealFacility_ca.paa);
     };
 };
