@@ -6,13 +6,12 @@
  * Arguments:
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
- * 2: Body Part Index <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, cursorTarget, 2] call ACM_circulation_fnc_handleAED;
+ * [player, cursorTarget] call ACM_circulation_fnc_handleAED;
  *
  * Public: No
  */
