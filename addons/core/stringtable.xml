@@ -7,6 +7,8 @@
             <French>ACM: Core</French>
             <German>ACM: Kern</German>
             <Portuguese>ACM: Núcleo</Portuguese>
+            <Russian>ACM: Основной модуль</Russian>
+            <Ukrainian>ACM: Основний модуль</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Core_Category_Items">
             <English>Items</English>
@@ -14,6 +16,8 @@
             <French>Articles</French>
             <German>Items</German>
             <Portuguese>Itens</Portuguese>
+            <Russian>Предметы</Russian>
+            <Ukrainian>Предмети</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet">
             <English>Take Off Tourniquet Time</English>
@@ -21,6 +25,8 @@
             <French>Heure de retrait du garrot</French>
             <German>Tourniquet Entfernungszeit</German>
             <Portuguese>Tempo para retirada do torniquete</Portuguese>
+            <Russian>Время снятия жгута</Russian>
+            <Ukrainian>Час зняття турнікету</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet_Desc">
             <English>Time to take off tourniquet</English>
@@ -28,6 +34,8 @@
             <French>Temps nécessaire au retrait du garrot</French>
             <German>Zeit um Tourniquet zu entfernen</German>
             <Portuguese>Tempo para retirar o torniquete</Portuguese>
+            <Russian>Время для снятия жгута</Russian>
+            <Ukrainian>Час для зняття турнікету</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight">
             <English>Dogtag list weight</English>
@@ -35,6 +43,8 @@
             <French>Poids des plaques d'identification</French>
             <German>Erkennungsmarke zeigt Gewicht an</German>
             <Portuguese>Plaqueta de identificação exibe o peso</Portuguese>
+            <Russian>Показывать вес на жетонах</Russian>
+            <Ukrainian>Показувати вагу на жетонах</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
             <English>Set whether dog tags list the unit's weight</English>
@@ -42,6 +52,8 @@
             <French>Définir si les plaques d'identification indiquent le poids de l'unité</French>
             <German>Stellt ein, ob die Erkennungsmarke das Patientengewicht anzeigt</German>
             <Portuguese>Define se as plaquetas de identificação listam o peso da unidade</Portuguese>
+            <Russian>Задаёт, указывают ли жетоны вес бойца</Russian>
+            <Ukrainian>Визначає, чи вказується вага бійця на жетонах</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
             <English>Ignore Incompatible Addon Warning</English>
@@ -49,6 +61,8 @@
             <French>Ignorer l'avertissement d'incompatibilité des modules complémentaires</French>
             <German>Ignoriere Inkompatibilitätswarnung</German>
             <Portuguese>Ignorar advertências de incompatibilidade de addon</Portuguese>
+            <Russian>Игнорировать предупреждение о несовместимых аддонах</Russian>
+            <Ukrainian>Ігнорувати попередження про несумісні аддони</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings_Desc">
             <English>Disables incompatible addon warnings</English>
@@ -56,14 +70,20 @@
             <French>Désactive les avertissements relatifs aux modules complémentaires incompatibles</French>
             <German>Deaktiviert die Inkompatibilitätswarnung vom Addon</German>
             <Portuguese>Desabilitar advertência de incompatibilidade de addon</Portuguese>
+            <Russian>Отключает предупреждения о несовместимых аддонах</Russian>
+            <Ukrainian>Вимикає попередження про несумісні аддони</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment">
             <English>Medic AI Allow Intermediate Treatment</English>
             <Portuguese>Tratamento intermediário por médico IA</Portuguese>
+            <Russian>Разрешить ИИ-медику промежуточное лечение</Russian>
+            <Ukrainian>Дозволити ШІ-медику проміжне лікування</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment_Desc">
             <English>Sets whether medic AI is allowed to perform any actions other than bandaging and tourniqueting</English>
             <Portuguese>Define se um médico IA tem permissão para realizar outras ações além de curativos e torniquetes</Portuguese>
+            <Russian>Задаёт, может ли ИИ-медик выполнять действия помимо бинтования и наложения жгута</Russian>
+            <Ukrainian>Визначає, чи може ШІ-медик виконувати дії, окрім бинтування та накладання джгута</Ukrainian>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Core_MorphineAutoinjector">
@@ -72,6 +92,8 @@
                 <German>Morphin-Autoinjektor benutzen</German>
                 <French>Utiliser un auto-injecteur de morphine</French>
                 <Portuguese>Usar autoinjetor de morfina</Portuguese>
+                <Russian>Использовать автоинъектор морфина</Russian>
+                <Ukrainian>Використати автоінʼєктор морфіну</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
                 <English>Using Morphine Autoinjector...</English>
@@ -79,6 +101,8 @@
                 <German>Benutze Morphin-Autoinjektor...</German>
                 <French>Utilisation de l'auto-injecteur de morphine...</French>
                 <Portuguese>Usando autoinjetor de morfina...</Portuguese>
+                <Russian>Использование автоинъектора морфина...</Russian>
+                <Ukrainian>Використання автоінʼєктора морфіну...</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
                 <English>Use Epinephrine Autoinjector</English>
@@ -86,6 +110,8 @@
                 <German>Adrenalin-Autoinjektor benutzen</German>
                 <French>Utiliser un auto-injecteur d'épinéphrine</French>
                 <Portuguese>Usar autoinjeto de epinefrina</Portuguese>
+                <Russian>Использовать автоинъектор адреналина</Russian>
+                <Ukrainian>Використати автоінʼєктор епінефрину</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
                 <English>Using Epinephrine Autoinjector...</English>
@@ -93,6 +119,8 @@
                 <German>Benutze Adrenalin-Autoinjektor...</German>
                 <French>Utilisation de l'auto-injecteur d'épinéphrine...</French>
                 <Portuguese>Usando autoinjetor de epinefrina...</Portuguese>
+                <Russian>Использование автоинъектора адреналина...</Russian>
+                <Ukrainian>Використання автоінʼєктора епінефрину...</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector">
                 <English>Use Adenosine Autoinjector</English>
@@ -100,6 +128,8 @@
                 <German>Adenosin-Autoinjektor benutzen</German>
                 <French>Utiliser l'auto-injecteur d'adénosine</French>
                 <Portuguese>Usar autoinjetor de adenosina</Portuguese>
+                <Russian>Использовать автоинъектор аденозина</Russian>
+                <Ukrainian>Використати автоінʼєктор аденозину</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
                 <English>Using Adenosine Autoinjector...</English>
@@ -107,6 +137,8 @@
                 <German>Benutze Adenosin-Autoinjektor</German>
                 <French>Utilisation de l'auto-injecteur d'adénosine...</French>
                 <Portuguese>Usando autoinjetor de adenosina...</Portuguese>
+                <Russian>Использование автоинъектора аденозина...</Russian>
+                <Ukrainian>Використання автоінʼєктора аденозину...</Ukrainian>
             </Key>
         </Container>
         <Container name="// Cancel Carrying //">
@@ -116,6 +148,8 @@
                 <German>Patient ablegen</German>
                 <French>Annuler le portage</French>
                 <Portuguese>Cancelar carregamento</Portuguese>
+                <Russian>Отменить переноску</Russian>
+                <Ukrainian>Скасувати перенесення</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
                 <English>Stopped carrying %1</English>
@@ -123,6 +157,8 @@
                 <German>Patient %1 abgelegt</German>
                 <French>Arrêt du portage %1</French>
                 <Portuguese>Parou de carregar %1</Portuguese>
+                <Russian>Переноска %1 прекращена</Russian>
+                <Ukrainian>Перенесення %1 припинено</Ukrainian>
             </Key>
         </Container>
         <Container name="// Lying State //">
@@ -132,6 +168,8 @@
                 <German>Aufstehen</German>
                 <French>Se lever</French>
                 <Portuguese>Levantar</Portuguese>
+                <Russian>Подняться</Russian>
+                <Ukrainian>Підвестися</Ukrainian>
             </Key>
         </Container>
         <Container name="// Assist Carry Action //">
@@ -139,21 +177,29 @@
                 <English>Patient is already being carry-assisted</English>
                 <French>Le patient bénéficie déjà d'une assistance au portage</French>
                 <Portuguese>O paciente já está sendo assistido para carregamento</Portuguese>
+                <Russian>Пациента уже подготовлен к переноске</Russian>
+                <Ukrainian>Пацієнт вже підготовлений до перенесення</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Complete">
                 <English>Prepared %1 for carrying</English>
                 <French>Préparé %1 pour le transport</French>
                 <Portuguese>Preparou %1 para carregamento</Portuguese>
+                <Russian>%1 подготовлен к переноске</Russian>
+                <Ukrainian>%1 підготовлено до перенесення</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Progress">
                 <English>Preparing to carry...</English>
                 <French>Se préparer à transporter...</French>
                 <Portuguese>Preparando para carregamento...</Portuguese>
+                <Russian>Подготовка к переноске...</Russian>
+                <Ukrainian>Підготовка до перенесення...</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Cancelled">
                 <English>Carry-assist cancelled</English>
                 <French>L'assistance au portage a été annulée</French>
                 <Portuguese>Assistência ao carregamento cancelada</Portuguese>
+                <Russian>Подготовка к переноске отменена</Russian>
+                <Ukrainian>Підготовка до перенесення скасовано</Ukrainian>
             </Key>
         </Container>
         <Container name="// Supine Position Action //">
@@ -161,16 +207,22 @@
                 <English>Put In Supine Position</English>
                 <French>Mettre en position couchée</French>
                 <Portuguese>Colocar em posição supinada</Portuguese>
+                <Russian>Уложить на спину</Russian>
+                <Ukrainian>Покласти на спину</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Complete">
                 <English>Patient has been placed into the supine position</English>
                 <French>Le patient a été placé en position couchée.</French>
                 <Portuguese>Paciente já foi colocado em posição supinada</Portuguese>
+                <Russian>Пациент уложен на спину</Russian>
+                <Ukrainian>Пацієнта покладено на спину</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Hint">
                 <English>You have been placed into the supine position</English>
                 <French>Vous avez été placé en position couchée</French>
                 <Portuguese>Você foi colocado em posição supinada</Portuguese>
+                <Russian>Вас уложили на спину</Russian>
+                <Ukrainian>Вас поклали на спину</Ukrainian>
             </Key>
         </Container>
         <Container name="// Treatment Text //">
@@ -180,6 +232,8 @@
                 <German>Du wirst von %1 behandelt</German>
                 <French>Tu es traité par %1</French>
                 <Portuguese>Você está sendo tratado por %1</Portuguese>
+                <Russian>Вас лечит %1</Russian>
+                <Ukrainian>Вас лікує %1</Ukrainian>
             </Key>
         </Container>
         <Container name="// Vehicle Patient Actions //">
@@ -189,6 +243,8 @@
                 <German>Fahrzeug Verletzte</German>
                 <French>Patients du véhicule</French>
                 <Portuguese>Pacientes em veículos</Portuguese>
+                <Russian>Пациенты в транспорте</Russian>
+                <Ukrainian>Пацієнти в транспорті</Ukrainian>
             </Key>
         </Container>
         <Container name="// Unload and carry //">
@@ -198,6 +254,8 @@
                 <German>Patient tragen</German>
                 <French>Porter le patient</French>
                 <Portuguese>Carregar paciente</Portuguese>
+                <Russian>Нести пациента</Russian>
+                <Ukrainian>Нести пацієнта</Ukrainian>
             </Key>
         </Container>
         <Container name="// Boxes //">
@@ -207,6 +265,8 @@
                 <German>[ACM] Basis Versorgungskiste</German>
                 <French>[ACM] Caisse de fournitures médicales de base</French>
                 <Portuguese>[ACM] Caixa de Suprimentos Médicos Básicos</Portuguese>
+                <Russian>[ACM] Ящик базового медснабжения</Russian>
+                <Ukrainian>[ACM] Ящик базового медзабезпечення</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
                 <English>[ACM] Advanced Medical Supply Crate</English>
@@ -214,6 +274,8 @@
                 <German>[ACM] Erweiterte Versorgungskiste</German>
                 <French>[ACM] Caisse d'approvisionnement médical avancé</French>
                 <Portuguese>[ACM] Caixa de Suprimentos Médicos Avançados</Portuguese>
+                <Russian>[ACM] Ящик расширенного медснабжения</Russian>
+                <Ukrainian>[ACM] Ящик розширеного медзабезпечення</Ukrainian>
             </Key>
         </Container>
         <Container name="// Dog Tags //">
@@ -223,6 +285,8 @@
                 <German>%1 schaut sich deine Erkennungsmarke an</German>
                 <French>%1 examine ta plaque d'identification</French>
                 <Portuguese>%1 está inspecionando sua plaqueta de identificação</Portuguese>
+                <Russian>%1 проверяет ваши жетоны</Russian>
+                <Ukrainian>%1 перевіряє ваші жетони</Ukrainian>
             </Key>
         </Container>
         <Container name="// Incompatible Addons //">
@@ -232,6 +296,8 @@
                 <German>Inkompatible Addons gefunden:</German>
                 <French>Addons incompatibles trouvés :</French>
                 <Portuguese>Addon incompatível encontrado:</Portuguese>
+                <Russian>Обнаружены несовместимые аддоны:</Russian>
+                <Ukrainian>Знайдено несумісні аддони:</Ukrainian>
             </Key>
         </Container>
         <Container name="// Split Medication Action //">
@@ -239,22 +305,30 @@
                 <English>Split Medication Package</English>
                 <French>Paquet de médicaments scindé</French>
                 <Portuguese>Dividir caixa de medicação</Portuguese>
+                <Russian>Разделить упаковку медикаментов</Russian>
+                <Ukrainian>Розділити упаковку медикаментів</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
                 <English>Split</English>
                 <French>Séparer</French>
                 <Portuguese>Dividir</Portuguese>
+                <Russian>Разделить</Russian>
+                <Ukrainian>Розділити</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Complete">
                 <English>%1 package has been split</English>
                 <French>Le paquet %1 a été scindé</French>
                 <Portuguese>Caixa de %1 foi dividida</Portuguese>
+                <Russian>Упаковка %1 разделена</Russian>
+                <Ukrainian>Упаковку %1 розділено</Ukrainian>
             </Key>
         </Container>
         <Container name="// Body Bag Return Items //">
             <Key ID="STR_ACM_Core_BodyBagReturnedItems">
                 <English>Medical items returned from body bag</English>
                 <Portuguese>Itens médicos recuperados do saco de cadáver</Portuguese>
+                <Russian>Медицинские предметы возвращены из мешка для тел</Russian>
+                <Ukrainian>Медичні предмети повернено з мішка для тіл</Ukrainian>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -264,6 +338,8 @@
                 <German>Eingelegt</German>
                 <French>Inséré</French>
                 <Portuguese>Inserido</Portuguese>
+                <Russian>Вставлено</Russian>
+                <Ukrainian>Вставлено</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Attached">
                 <English>Attached</English>
@@ -271,6 +347,8 @@
                 <German>Angehängt</German>
                 <French>Attaché</French>
                 <Portuguese>Acoplado</Portuguese>
+                <Russian>Прикреплено</Russian>
+                <Ukrainian>Прикріплено</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Applied">
                 <English>Applied</English>
@@ -278,6 +356,8 @@
                 <German>Appliziert</German>
                 <French>Appliqué</French>
                 <Portuguese>Aplicado</Portuguese>
+                <Russian>Применено</Russian>
+                <Ukrainian>Застосовано</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Removed">
                 <English>Removed</English>
@@ -285,6 +365,8 @@
                 <German>Entfernt</German>
                 <French>Supprimé</French>
                 <Portuguese>Removido</Portuguese>
+                <Russian>Удалено</Russian>
+                <Ukrainian>Видалено</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Connected">
                 <English>Connected</English>
@@ -292,6 +374,8 @@
                 <German>Konnektiert</German>
                 <French>Connecté</French>
                 <Portuguese>Conectado</Portuguese>
+                <Russian>Подключено</Russian>
+                <Ukrainian>Підключено</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Disconnected">
                 <English>Disconnected</English>
@@ -299,6 +383,8 @@
                 <German>Diskonnektiert</German>
                 <French>Déconnecté</French>
                 <Portuguese>Disconectado</Portuguese>
+                <Russian>Отключено</Russian>
+                <Ukrainian>Відключено</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_Common_InProgress">
                 <English>In Progress</English>
@@ -306,6 +392,8 @@
                 <German>Im Gange</German>
                 <French>En cours</French>
                 <Portuguese>Em progresso</Portuguese>
+                <Russian>Выполняется</Russian>
+                <Ukrainian>Виконується</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Paused">
                 <English>Paused</English>
@@ -313,6 +401,8 @@
                 <German>Pausiert</German>
                 <French>En pause</French>
                 <Portuguese>Pausado</Portuguese>
+                <Russian>Приостановлено</Russian>
+                <Ukrainian>Призупинено</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Active">
                 <English>Active</English>
@@ -320,6 +410,8 @@
                 <German>Aktiv</German>
                 <French>Actif</French>
                 <Portuguese>Ativo</Portuguese>
+                <Russian>Активно</Russian>
+                <Ukrainian>Активно</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Core_Common_Empty">
                 <English>Empty</English>
@@ -327,6 +419,8 @@
                 <German>Leer</German>
                 <French>Vide</French>
                 <Portuguese>Vazio</Portuguese>
+                <Russian>Пусто</Russian>
+                <Ukrainian>Порожньо</Ukrainian>
             </Key>
         </Container>
         <Container name="// ACE Action //">
@@ -336,6 +430,8 @@
                 <German>Medizinische Ausrüstung</German>
                 <French>Équipement médical</French>
                 <Portuguese>Equipamento médico</Portuguese>
+                <Russian>Медицинское оборудование</Russian>
+                <Ukrainian>Медичне обладнання</Ukrainian>
             </Key>
         </Container>
     </Package>
