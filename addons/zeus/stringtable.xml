@@ -7,6 +7,8 @@
             <German>Kreislaufstillstand aufheben</German>
             <French>Reprise du rythme cardiaque</French>
             <Portuguese>Desfazer parada cardíaca</Portuguese>
+            <Russian>Вывести из состояния остановки сердца</Russian>
+            <Ukrainian>Вивести зі стану зупинки серця</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_ForceWakeUp">
             <English>Force Wake-up</English>
@@ -14,9 +16,13 @@
             <German>Erzwinge Wachwerden</German>
             <French>Forcer le réveil</French>
             <Portuguese>Forçar acordar</Portuguese>
+            <Russian>Принудительно разбудить</Russian>
+            <Ukrainian>Примусово розбудити</Ukrainian>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_AssignFullHealFacility">
             <English>Assign Full Heal Facility</English>
+            <Russian>Назначить объектом полного медицинского восстановления</Russian>
+            <Ukrainian>Призначити об'єктом повного медичного відновлення</Ukrainian>
         </Key>
         <Container name="// Set Blood Volume Module //">
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume">
@@ -25,6 +31,8 @@
                 <German>Setze Blutvolumen</German>
                 <French>Paramétrage du volume sanguin</French>
                 <Portuguese>Definir volume de sangue</Portuguese>
+                <Russian>Задать объём крови</Russian>
+                <Ukrainian>Задати об’єм крові</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_BloodVolume">
                 <English>Blood Volume</English>
@@ -32,6 +40,8 @@
                 <German>Blutvolumen</German>
                 <French>Quantité de sang</French>
                 <Portuguese>Volume de sangue</Portuguese>
+                <Russian>Объём крови</Russian>
+                <Ukrainian>Об’єм крові</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_PlasmaVolume">
                 <English>Plasma Volume</English>
@@ -39,6 +49,8 @@
                 <German>Plasmavolumen</German>
                 <French>Volume de plasma</French>
                 <Portuguese>Volume de plasma</Portuguese>
+                <Russian>Объём плазмы</Russian>
+                <Ukrainian>Об’єм плазми</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_SalineVolume">
                 <English>Saline Volume</English>
@@ -46,6 +58,8 @@
                 <German>Kochsalzvolumen</German>
                 <French>Volume de solution saline</French>
                 <Portuguese>Volume de soro</Portuguese>
+                <Russian>Объём физиологического раствора</Russian>
+                <Ukrainian>Об’єм фізіологічного розчину</Ukrainian>
             </Key>
         </Container>
         <Container name="// Inflict Cardiac Arrest Module //">
@@ -55,6 +69,8 @@
                 <German>Kreislaufstillstand erzwingen</German>
                 <French>Provoquer un arrêt cardique</French>
                 <Portuguese>Inflingir parada cardíaca</Portuguese>
+                <Russian>Вызвать остановку сердца</Russian>
+                <Ukrainian>Викликати зупинку серця</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm">
                 <English>Target Rhythm</English>
@@ -62,6 +78,8 @@
                 <German>Setze Herzrhythmus</German>
                 <French>Définir le rythme cardiaque</French>
                 <Portuguese>Ritmo alvo</Portuguese>
+                <Russian>Целевой ритм</Russian>
+                <Ukrainian>Цільовий ритм</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Sinus">
                 <English>Sinus</English>
@@ -69,6 +87,8 @@
                 <German>Sinusrhythmus</German>
                 <French>Rythme sinusal</French>
                 <Portuguese>Sinusal</Portuguese>
+                <Russian>Синусовый ритм</Russian>
+                <Ukrainian>Синусовий ритм</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Asystole">
                 <English>Asystole</English>
@@ -76,6 +96,8 @@
                 <German>Asystolie</German>
                 <French>Asystolie</French>
                 <Portuguese>Assistolia </Portuguese>
+                <Russian>Асистолия</Russian>
+                <Ukrainian>Асистолія</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_VF">
                 <English>Ventricular Fibrillation</English>
@@ -83,6 +105,8 @@
                 <German>Kammerflimmern</German>
                 <French>Fibrillation ventriculaire</French>
                 <Portuguese>Fibrilação ventricular</Portuguese>
+                <Russian>Фибрилляция желудочков</Russian>
+                <Ukrainian>Фібриляція шлуночків</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_PVT">
                 <English>Ventricular Tachycardia</English>
@@ -90,6 +114,8 @@
                 <German>pulslose Ventrikuläre Tachykardie</German>
                 <French>Tachycardie ventriculaire</French>
                 <Portuguese>Taquicardia ventricular</Portuguese>
+                <Russian>Желудочковая тахикардия</Russian>
+                <Ukrainian>Шлуночкова тахікардія</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Random">
                 <English>Random</English>
@@ -97,6 +123,8 @@
                 <German>Zufällig</German>
                 <French>Aléatoire</French>
                 <Portuguese>Aleatório</Portuguese>
+                <Russian>Случайный</Russian>
+                <Ukrainian>Випадковий</Ukrainian>
             </Key>
         </Container>
         <Container name="// Inflict Chest Injury Module //">
@@ -106,6 +134,8 @@
                 <German>Pleuraverletzung erwzingen</German>
                 <French>Infliger un lésion thoracique</French>
                 <Portuguese>Inflingir lesão torácica</Portuguese>
+                <Russian>Нанести травму грудной клетки</Russian>
+                <Ukrainian>Нанести травму грудної клітки</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_InjuryType">
                 <English>Injury Type</English>
@@ -113,6 +143,8 @@
                 <German>Verletzungsart</German>
                 <French>Type de blessure</French>
                 <Portuguese>Tipo de lesão</Portuguese>
+                <Russian>Тип травмы</Russian>
+                <Ukrainian>Тип травми</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Pneumothorax">
                 <English>Pneumothorax</English>
@@ -120,6 +152,8 @@
                 <German>Pneumothorax</German>
                 <French>Pneumothorax</French>
                 <Portuguese>Pneumotórax</Portuguese>
+                <Russian>Пневмоторакс</Russian>
+                <Ukrainian>Пневмоторакс</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionPneumothorax">
                 <English>Tension Pneumothorax</English>
@@ -127,6 +161,8 @@
                 <German>Spannungspneumothorax</German>
                 <French>Pneumothorax sous tension</French>
                 <Portuguese>Pneumotórax hipertensivo</Portuguese>
+                <Russian>Напряжённый пневмоторакс</Russian>
+                <Ukrainian>Напружений пневмоторакс</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Hemothorax">
                 <English>Hemothorax</English>
@@ -134,6 +170,8 @@
                 <German>Hämatothorax</German>
                 <French>Hémothorax</French>
                 <Portuguese>Hemotórax</Portuguese>
+                <Russian>Гемоторакс</Russian>
+                <Ukrainian>Гемоторакс</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionHemothorax">
                 <English>Tension Hemothorax</English>
@@ -141,6 +179,8 @@
                 <German>Spannungshämatothorax</German>
                 <French>Hémothorax sous tension</French>
                 <Portuguese>Hemotórax hipertensivo</Portuguese>
+                <Russian>Напряжённый гемоторакс</Russian>
+                <Ukrainian>Напружений гемоторакс</Ukrainian>
             </Key>
         </Container>
         <Container name="// Give Pain Module //">
@@ -150,6 +190,8 @@
                 <German>Schmerz zufügen</German>
                 <French>Infliger une douleur</French>
                 <Portuguese>Inflingir dor</Portuguese>
+                <Russian>Нанести боль</Russian>
+                <Ukrainian>Спричинити біль</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_GivePain_PainAmount">
                 <English>Pain Amount</English>
@@ -157,6 +199,8 @@
                 <German>Schmerzintensität</German>
                 <French>Intensité de la douleur</French>
                 <Portuguese>Montante de dor</Portuguese>
+                <Russian>Количество боли</Russian>
+                <Ukrainian>Кількість болю</Ukrainian>
             </Key>
         </Container>
         <Container name="// Set Oxygen Module //">
@@ -166,6 +210,8 @@
                 <German>Setze Sauerstoffsättigung</German>
                 <French>Régler l'oxygène</French>
                 <Portuguese>Definir oxigenação</Portuguese>
+                <Russian>Задать уровень кислорода</Russian>
+                <Ukrainian>Задати рівень кисню</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetOxygen_OxygenLevel">
                 <English>Oxygen Level</English>
@@ -173,6 +219,8 @@
                 <German>Sauerstoffsättigung</German>
                 <French>Réglage du niveau d'oxygène</French>
                 <Portuguese>Nível de oxigenação</Portuguese>
+                <Russian>Уровень кислорода</Russian>
+                <Ukrainian>Рівень кисню</Ukrainian>
             </Key>
         </Container>
         <Container name="// Set Blood Type Module //">
@@ -181,23 +229,33 @@
                 <German>Setze Blutgruppe</German>
                 <French>Définir le groupe sanguin</French>
                 <Portuguese>Definir tipo sanguíneo</Portuguese>
+                <Russian>Задать группу крови</Russian>
+                <Ukrainian>Задати групу крові</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodType_List">
                 <English>Blood Type List</English>
                 <German>Blutgruppenliste</German>
                 <French>Liste des groupes sanguins</French>
                 <Portuguese>Lista de tipo sanguíneo</Portuguese>
+                <Russian>Список групп крови</Russian>
+                <Ukrainian>Список груп крові</Ukrainian>
             </Key>
         </Container>
         <Container name="// Plot Armor Module //">
             <Key ID="STR_ACM_Zeus_Module_PlotArmor">
                 <English>Toggle Plot Armor</English>
+                <Russian>Переключить: сюжетную броню</Russian>
+                <Ukrainian>Перемкнути: сюжетну броню</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_PlotArmor_Enabled">
                 <English>Plot armor enabled on unit</English>
+                <Russian>Сюжетная броня включена у бойца</Russian>
+                <Ukrainian>Сюжетна броня увімкнена у бійця</Ukrainian>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_PlotArmor_Disabled">
                 <English>Plot armor disabled on unit</English>
+                <Russian>Сюжетная броня отключена у бойца</Russian>
+                <Ukrainian>Сюжетна броня вимкнена у бійця</Ukrainian>
             </Key>
         </Container>
     </Package>
