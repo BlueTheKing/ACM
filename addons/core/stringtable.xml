@@ -7,6 +7,7 @@
             <French>ACM: Core</French>
             <German>ACM: Kern</German>
             <Portuguese>ACM: Núcleo</Portuguese>
+            <Korean>ACM: 코어</Korean>
         </Key>
         <Key ID="STR_ACM_Core_Category_Items">
             <English>Items</English>
@@ -14,6 +15,7 @@
             <French>Articles</French>
             <German>Items</German>
             <Portuguese>Itens</Portuguese>
+            <Korean>항목</Korean>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet">
             <English>Take Off Tourniquet Time</English>
@@ -21,6 +23,7 @@
             <French>Heure de retrait du garrot</French>
             <German>Tourniquet Entfernungszeit</German>
             <Portuguese>Tempo para retirada do torniquete</Portuguese>
+            <Korean>지혈대 제거 시간</Korean>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet_Desc">
             <English>Time to take off tourniquet</English>
@@ -28,6 +31,7 @@
             <French>Temps nécessaire au retrait du garrot</French>
             <German>Zeit um Tourniquet zu entfernen</German>
             <Portuguese>Tempo para retirar o torniquete</Portuguese>
+            <Korean>지혈대를 제거하는 시간</Korean>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight">
             <English>Dogtag list weight</English>
@@ -35,6 +39,7 @@
             <French>Poids des plaques d'identification</French>
             <German>Erkennungsmarke zeigt Gewicht an</German>
             <Portuguese>Plaqueta de identificação exibe o peso</Portuguese>
+            <Korean>군번줄에 체중 표시</Korean>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
             <English>Set whether dog tags list the unit's weight</English>
@@ -42,6 +47,7 @@
             <French>Définir si les plaques d'identification indiquent le poids de l'unité</French>
             <German>Stellt ein, ob die Erkennungsmarke das Patientengewicht anzeigt</German>
             <Portuguese>Define se as plaquetas de identificação listam o peso da unidade</Portuguese>
+            <Korean>군번줄에 부대원의 체중을 표시할지 설정 </Korean>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
             <English>Ignore Incompatible Addon Warning</English>
@@ -49,6 +55,7 @@
             <French>Ignorer l'avertissement d'incompatibilité des modules complémentaires</French>
             <German>Ignoriere Inkompatibilitätswarnung</German>
             <Portuguese>Ignorar advertências de incompatibilidade de addon</Portuguese>
+            <Korean>호환되지 않는 애드온 경고 무시</Korean>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings_Desc">
             <English>Disables incompatible addon warnings</English>
@@ -56,14 +63,17 @@
             <French>Désactive les avertissements relatifs aux modules complémentaires incompatibles</French>
             <German>Deaktiviert die Inkompatibilitätswarnung vom Addon</German>
             <Portuguese>Desabilitar advertência de incompatibilidade de addon</Portuguese>
+            <Korean>호환되지 않는 애드온 경고를 비활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment">
             <English>Medic AI Allow Intermediate Treatment</English>
             <Portuguese>Tratamento intermediário por médico IA</Portuguese>
+            <Korean>의무병 AI 중간 처치 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment_Desc">
             <English>Sets whether medic AI is allowed to perform any actions other than bandaging and tourniqueting</English>
             <Portuguese>Define se um médico IA tem permissão para realizar outras ações além de curativos e torniquetes</Portuguese>
+            <Korean>의무병 AI가 붕대 감기와 지혈대 적용 외의 행동을 수행할 수 있는지 설정</Korean>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Core_MorphineAutoinjector">
@@ -72,6 +82,7 @@
                 <German>Morphin-Autoinjektor benutzen</German>
                 <French>Utiliser un auto-injecteur de morphine</French>
                 <Portuguese>Usar autoinjetor de morfina</Portuguese>
+                <Korean>모르핀 자동주사기 사용</Korean>
             </Key>
             <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
                 <English>Using Morphine Autoinjector...</English>
@@ -79,6 +90,7 @@
                 <German>Benutze Morphin-Autoinjektor...</German>
                 <French>Utilisation de l'auto-injecteur de morphine...</French>
                 <Portuguese>Usando autoinjetor de morfina...</Portuguese>
+                <Korean>모르핀 자동주사기 사용 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
                 <English>Use Epinephrine Autoinjector</English>
@@ -86,6 +98,7 @@
                 <German>Adrenalin-Autoinjektor benutzen</German>
                 <French>Utiliser un auto-injecteur d'épinéphrine</French>
                 <Portuguese>Usar autoinjeto de epinefrina</Portuguese>
+                <Korean>에피네프린 자동주사기 사용</Korean>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
                 <English>Using Epinephrine Autoinjector...</English>
@@ -93,6 +106,7 @@
                 <German>Benutze Adrenalin-Autoinjektor...</German>
                 <French>Utilisation de l'auto-injecteur d'épinéphrine...</French>
                 <Portuguese>Usando autoinjetor de epinefrina...</Portuguese>
+                <Korean>에피네프린 자동주사기 사용 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector">
                 <English>Use Adenosine Autoinjector</English>
@@ -100,6 +114,7 @@
                 <German>Adenosin-Autoinjektor benutzen</German>
                 <French>Utiliser l'auto-injecteur d'adénosine</French>
                 <Portuguese>Usar autoinjetor de adenosina</Portuguese>
+                <Korean>아데노신 자동주사기 사용</Korean>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
                 <English>Using Adenosine Autoinjector...</English>
@@ -107,6 +122,7 @@
                 <German>Benutze Adenosin-Autoinjektor</German>
                 <French>Utilisation de l'auto-injecteur d'adénosine...</French>
                 <Portuguese>Usando autoinjetor de adenosina...</Portuguese>
+                <Korean>아데노신 자동주사기 사용 중...</Korean>
             </Key>
         </Container>
         <Container name="// Cancel Carrying //">
@@ -116,6 +132,7 @@
                 <German>Patient ablegen</German>
                 <French>Annuler le portage</French>
                 <Portuguese>Cancelar carregamento</Portuguese>
+                <Korean>들기 취소</Korean>
             </Key>
             <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
                 <English>Stopped carrying %1</English>
@@ -123,6 +140,7 @@
                 <German>Patient %1 abgelegt</German>
                 <French>Arrêt du portage %1</French>
                 <Portuguese>Parou de carregar %1</Portuguese>
+                <Korean>%1 들기를 중단했습니다</Korean>
             </Key>
         </Container>
         <Container name="// Lying State //">
@@ -132,6 +150,7 @@
                 <German>Aufstehen</German>
                 <French>Se lever</French>
                 <Portuguese>Levantar</Portuguese>
+                <Korean>일어나기</Korean>
             </Key>
         </Container>
         <Container name="// Assist Carry Action //">
@@ -139,21 +158,25 @@
                 <English>Patient is already being carry-assisted</English>
                 <French>Le patient bénéficie déjà d'une assistance au portage</French>
                 <Portuguese>O paciente já está sendo assistido para carregamento</Portuguese>
+                <Korean>환자가 이미 들기 보조를 받고 있는 상태입니다</Korean>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Complete">
                 <English>Prepared %1 for carrying</English>
                 <French>Préparé %1 pour le transport</French>
                 <Portuguese>Preparou %1 para carregamento</Portuguese>
+                <Korean>%1 들기를 준비했습니다</Korean>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Progress">
                 <English>Preparing to carry...</English>
                 <French>Se préparer à transporter...</French>
                 <Portuguese>Preparando para carregamento...</Portuguese>
+                <Korean>들기 준비 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Cancelled">
                 <English>Carry-assist cancelled</English>
                 <French>L'assistance au portage a été annulée</French>
                 <Portuguese>Assistência ao carregamento cancelada</Portuguese>
+                <Korean>들기 보조 취소</Korean>
             </Key>
         </Container>
         <Container name="// Supine Position Action //">
@@ -161,16 +184,19 @@
                 <English>Put In Supine Position</English>
                 <French>Mettre en position couchée</French>
                 <Portuguese>Colocar em posição supinada</Portuguese>
+                <Korean>바로 누이기</Korean>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Complete">
                 <English>Patient has been placed into the supine position</English>
                 <French>Le patient a été placé en position couchée.</French>
                 <Portuguese>Paciente já foi colocado em posição supinada</Portuguese>
+                <Korean>환자가 바로 누운 자세가 되었습니다 </Korean>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Hint">
                 <English>You have been placed into the supine position</English>
                 <French>Vous avez été placé en position couchée</French>
                 <Portuguese>Você foi colocado em posição supinada</Portuguese>
+                <Korean>바로 누운 자세가 되었습니다</Korean>
             </Key>
         </Container>
         <Container name="// Treatment Text //">
@@ -180,6 +206,7 @@
                 <German>Du wirst von %1 behandelt</German>
                 <French>Tu es traité par %1</French>
                 <Portuguese>Você está sendo tratado por %1</Portuguese>
+                <Korean>%1에게 치료받고 있습니다</Korean>
             </Key>
         </Container>
         <Container name="// Vehicle Patient Actions //">
@@ -189,6 +216,7 @@
                 <German>Fahrzeug Verletzte</German>
                 <French>Patients du véhicule</French>
                 <Portuguese>Pacientes em veículos</Portuguese>
+                <Korean>차량 내 환자</Korean>
             </Key>
         </Container>
         <Container name="// Unload and carry //">
@@ -198,6 +226,7 @@
                 <German>Patient tragen</German>
                 <French>Porter le patient</French>
                 <Portuguese>Carregar paciente</Portuguese>
+                <Korean>환자 들</Korean>
             </Key>
         </Container>
         <Container name="// Boxes //">
@@ -207,6 +236,7 @@
                 <German>[ACM] Basis Versorgungskiste</German>
                 <French>[ACM] Caisse de fournitures médicales de base</French>
                 <Portuguese>[ACM] Caixa de Suprimentos Médicos Básicos</Portuguese>
+                <Korean>[ACM] 기본 의료 보급 상자</Korean>
             </Key>
             <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
                 <English>[ACM] Advanced Medical Supply Crate</English>
@@ -214,6 +244,7 @@
                 <German>[ACM] Erweiterte Versorgungskiste</German>
                 <French>[ACM] Caisse d'approvisionnement médical avancé</French>
                 <Portuguese>[ACM] Caixa de Suprimentos Médicos Avançados</Portuguese>
+                <Korean>[ACM] 고급 의료 보급 상자</Korean>
             </Key>
         </Container>
         <Container name="// Dog Tags //">
@@ -223,6 +254,7 @@
                 <German>%1 schaut sich deine Erkennungsmarke an</German>
                 <French>%1 examine ta plaque d'identification</French>
                 <Portuguese>%1 está inspecionando sua plaqueta de identificação</Portuguese>
+                <Korean>%1이 당신의 군번줄을 확인 중입니다</Korean>
             </Key>
         </Container>
         <Container name="// Incompatible Addons //">
@@ -232,6 +264,7 @@
                 <German>Inkompatible Addons gefunden:</German>
                 <French>Addons incompatibles trouvés :</French>
                 <Portuguese>Addon incompatível encontrado:</Portuguese>
+                <Korean>호환되지 않는 애드온 발견: </Korean>
             </Key>
         </Container>
         <Container name="// Split Medication Action //">
@@ -239,22 +272,26 @@
                 <English>Split Medication Package</English>
                 <French>Paquet de médicaments scindé</French>
                 <Portuguese>Dividir caixa de medicação</Portuguese>
+                <Korean>약물 패키지 분할</Korean>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
                 <English>Split</English>
                 <French>Séparer</French>
                 <Portuguese>Dividir</Portuguese>
+                <Korean>분할 (Split)</Korean>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Complete">
                 <English>%1 package has been split</English>
                 <French>Le paquet %1 a été scindé</French>
                 <Portuguese>Caixa de %1 foi dividida</Portuguese>
+                <Korean>%1 패키지가 분할되었습니다</Korean>
             </Key>
         </Container>
         <Container name="// Body Bag Return Items //">
             <Key ID="STR_ACM_Core_BodyBagReturnedItems">
                 <English>Medical items returned from body bag</English>
                 <Portuguese>Itens médicos recuperados do saco de cadáver</Portuguese>
+                <Korean>시체가방에서 의료 아이템 반환</Korean>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -264,6 +301,7 @@
                 <German>Eingelegt</German>
                 <French>Inséré</French>
                 <Portuguese>Inserido</Portuguese>
+                <Korean>삽입됨</Korean>
             </Key>
             <Key ID="STR_ACM_Core_Common_Attached">
                 <English>Attached</English>
@@ -271,6 +309,7 @@
                 <German>Angehängt</German>
                 <French>Attaché</French>
                 <Portuguese>Acoplado</Portuguese>
+                <Korean>부착됨</Korean>
             </Key>
             <Key ID="STR_ACM_Core_Common_Applied">
                 <English>Applied</English>
@@ -278,6 +317,7 @@
                 <German>Appliziert</German>
                 <French>Appliqué</French>
                 <Portuguese>Aplicado</Portuguese>
+                <Korean>적용됨</Korean>
             </Key>
             <Key ID="STR_ACM_Core_Common_Removed">
                 <English>Removed</English>
@@ -285,6 +325,7 @@
                 <German>Entfernt</German>
                 <French>Supprimé</French>
                 <Portuguese>Removido</Portuguese>
+                <Korean>제거됨 </Korean>
             </Key>
             <Key ID="STR_ACM_Core_Common_Connected">
                 <English>Connected</English>
@@ -292,6 +333,7 @@
                 <German>Konnektiert</German>
                 <French>Connecté</French>
                 <Portuguese>Conectado</Portuguese>
+                <Korean>연결됨 </Korean>
             </Key>
             <Key ID="STR_ACM_Core_Common_Disconnected">
                 <English>Disconnected</English>
@@ -299,6 +341,7 @@
                 <German>Diskonnektiert</German>
                 <French>Déconnecté</French>
                 <Portuguese>Disconectado</Portuguese>
+                <Korean>연결 해제됨</Korean>
             </Key>
             <Key ID="STR_ACM_Core_Common_InProgress">
                 <English>In Progress</English>
@@ -306,6 +349,7 @@
                 <German>Im Gange</German>
                 <French>En cours</French>
                 <Portuguese>Em progresso</Portuguese>
+                <Korean>진행 중</Korean>
             </Key>
             <Key ID="STR_ACM_Core_Common_Paused">
                 <English>Paused</English>
@@ -313,6 +357,7 @@
                 <German>Pausiert</German>
                 <French>En pause</French>
                 <Portuguese>Pausado</Portuguese>
+                <Korean>일시정지</Korean>
             </Key>
             <Key ID="STR_ACM_Core_Common_Active">
                 <English>Active</English>
@@ -320,6 +365,7 @@
                 <German>Aktiv</German>
                 <French>Actif</French>
                 <Portuguese>Ativo</Portuguese>
+                <Korean>활성</Korean>
             </Key>
             <Key ID="STR_ACM_Core_Common_Empty">
                 <English>Empty</English>
@@ -327,6 +373,7 @@
                 <German>Leer</German>
                 <French>Vide</French>
                 <Portuguese>Vazio</Portuguese>
+                <Korean>비어 있음</Korean>
             </Key>
         </Container>
         <Container name="// ACE Action //">
@@ -336,6 +383,7 @@
                 <German>Medizinische Ausrüstung</German>
                 <French>Équipement médical</French>
                 <Portuguese>Equipamento médico</Portuguese>
+                <Korean>의료 장비</Korean>
             </Key>
         </Container>
     </Package>

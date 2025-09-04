@@ -7,6 +7,7 @@
             <French>ACM : Evacuation</French>
             <German>ACM: Evakuierung</German>
             <Portuguese>ACM: Evacuação</Portuguese>
+            <Korean>ACM: 퇴출 (Evacuation)</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_Tickets">
             <English>Tickets</English>
@@ -14,6 +15,7 @@
             <French>Tickets</French>
             <German>Tickets</German>
             <Portuguese>Tíquetes</Portuguese>
+            <Korean>티켓</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_CasualtyConversion">
             <English>Casualty Conversion</English>
@@ -21,6 +23,7 @@
             <French>Conversion de la victime</French>
             <German>Verwundetenkonversion</German>
             <Portuguese>Conversão de vítimas</Portuguese>
+            <Korean>사상자 전환</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Enable">
             <English>Enable Evacuation Addon</English>
@@ -28,6 +31,7 @@
             <French>Activer l'addon d'évacuation</French>
             <German>Aktiviere Evakuierungs-AddOn</German>
             <Portuguese>Habilitar complemento Evacuação</Portuguese>
+            <Korean>퇴출 기능 활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Enable_Desc">
             <English>Enable Evacuation Addon functionality, respawning and tickets must be enabled on mission to work</English>
@@ -35,6 +39,7 @@
             <French>Activer la fonctionnalité de l'addon d'évacuation, le respawning et les tickets doivent être activés sur la mission pour fonctionner.</French>
             <German>Aktiviere die Evakuationsfunktion, Respawn Tickets müssen in der Mission aktiviert sein</German>
             <Portuguese>Habilite a funcionalidade do complemento Evacuação, o ressurgimento e os tíquetes devem ser habilitados na missão para funcionar</Portuguese>
+            <Korean>퇴출 기능 활성화, 작동하려면 미션에서 리스폰 및 티켓 활성화 필요</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout">
             <English>Clear Casualty Loadout</English>
@@ -42,6 +47,7 @@
             <French>Nettoyer le matériel de la victime</French>
             <German>Lösche Patientenausrüstung</German>
             <Portuguese>Limpar o inventário da vítima</Portuguese>
+            <Korean>사상자 장비 초기화</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout_Desc">
             <English>Sets whether casualty's loadout should be cleared after conversion</English>
@@ -49,6 +55,7 @@
             <French>Définit si l'équipement de la victime doit être effacé après la conversion.</French>
             <German>Stellt ein, ob Patientenausrüstung nach der Konversion gelöscht werden soll</German>
             <Portuguese>Define se o inventário da vítima deve ser limpo após a conversão</Portuguese>
+            <Korean>사상자 전환 후 장비를 초기화할지 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics">
             <English>Require Antibiotics</English>
@@ -56,6 +63,7 @@
             <French>Nécessite des antibiotiques</French>
             <German>Patient benötigt Antibiose</German>
             <Portuguese>Requer antibióticos</Portuguese>
+            <Korean>항생제 필요</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics_Desc">
             <English>Sets whether antibiotics need to be administered before a casualty can be converted</English>
@@ -63,6 +71,7 @@
             <French>Détermine si des antibiotiques doivent être administrés avant qu'un blessé puisse être converti.</French>
             <German>Stellt ein, ob ein Patient eine Antibiose braucht, bevor er konvertiert werden kann</German>
             <Portuguese>Define se os antibióticos precisam ser administrados antes que uma vítima possa ser convertida</Portuguese>
+            <Korean>사상자 전환 전에 항생제 투여 필요 여부 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn">
             <English>Respawn Ticket Count</English>
@@ -70,6 +79,7 @@
             <French>Nombre de tickets de réapparition</French>
             <German>Respawn Ticketzahl</German>
             <Portuguese>Contagem de tíquetes de ressurgimento</Portuguese>
+            <Korean>리스폰 티켓 수</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn_Desc">
             <English>Sets amount of available respawn tickets, if mission-set ticket count is higher then that number will be used instead</English>
@@ -77,6 +87,7 @@
             <French>Définit le nombre de tickets de respawn disponibles. Si le nombre de tickets défini pour la mission est plus élevé, c'est ce nombre qui sera utilisé à la place.</French>
             <German>Stellt die verfügbaren Respawn-Tickets ein. Wenn die Ticket-Anzahl in der Mission höher als diese Nummer eingestellt ist, dann wird diese Nummer stattdessen genutzt</German>
             <Portuguese>Define a quantidade de tíquetes de ressurgimento disponíveis; se a contagem de tíquetes definida pela missão for maior, esse número será usado em seu lugar</Portuguese>
+            <Korean>사용 가능한 리스폰 티켓 수 설정, 미션 설정 티켓 수가 더 높으면 그 수치 사용 </Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty">
             <English>Casualty Ticket Count</English>
@@ -84,6 +95,7 @@
             <French>Nombre de tickets pour les blessés</French>
             <German>Verwundeten Ticketzahl</German>
             <Portuguese>Quantidade de tíquetes de vítimas</Portuguese>
+            <Korean>사상자 티켓 수</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty_Desc">
             <English>Sets amount of available casualty tickets</English>
@@ -91,18 +103,21 @@
             <French>Définit le nombre de points de récupération disponibles pour les victimes</French>
             <German>Stellt die Nummer der verfügbaren Verwundetentickets ein</German>
             <Portuguese>Define a quantidade de tíquetes de vítimas disponíveis</Portuguese>
+            <Korean>사용 가능한 부상자 티켓 수 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty">
             <English>Converted Casualty Death Ticket Penalty</English>
             <German>Konvertierte Patienten Strafe bei Versterben</German>
             <French>Patients convertis Peine en cas de décès</French>
             <Portuguese>Penalidade por morte de vítima convertida</Portuguese>
+            <Korean>전환된 사상자 사망 시 리스폰 티켓 차감</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty_Desc">
             <English>Sets amount of respawn tickets subtracted upon converted casualty death</English>
             <German>Stellt ein, wie viele Respawntickets bei Versterben eines konvertierten Patienten abgezogen werden</German>
             <French>Définit combien de tickets de respawn sont déduits lors de la mort d'un patient converti</French>
             <Portuguese>Define a quantidade de tíquetes de ressurgimento subtraídos após a morte da vítima convertida</Portuguese>
+            <Korean>전환된 사상자 사망 시 차감될 리스폰 티켓 수 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert">
             <English>Allow Converting Casualties</English>
@@ -110,6 +125,7 @@
             <French>Autoriser les conversions de victimes</French>
             <German>Erlaube das Konvertieren von Patienten</German>
             <Portuguese>Permitir a conversão de vítimas</Portuguese>
+            <Korean>사상자 전환 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert_Desc">
             <English>Training level required to convert casualties</English>
@@ -117,6 +133,7 @@
             <French>Niveau de formation nécessaire pour convertir les victimes</French>
             <German>Benötigtes Qualifikationslevel um Patienten zu konvertieren</German>
             <Portuguese>Nível de treinamento necessário para converter vítimas</Portuguese>
+            <Korean>사상자 전환에 필요한 훈련 레벨 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert">
             <English>Converting Casualty Location</English>
@@ -124,6 +141,7 @@
             <French>Lieu de conversion de la victime</French>
             <German>Konversionsstandort</German>
             <Portuguese>Local para converter vítima</Portuguese>
+            <Korean>사상자 전환 위치 </Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert_Desc">
             <English>Sets locations at which casualty conversion can be performed</English>
@@ -131,6 +149,7 @@
             <French>Définit les lieux où la conversion des victimes peut être effectuée</French>
             <German>Stellt ein, an welchen Orten eine Konversion möglich ist</German>
             <Portuguese>Define os locais em que a conversão de vítimas pode ser realizada</Portuguese>
+            <Korean>사상자 전환을 수행할 수 있는 위치 설정 </Korean>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Evacuation_ConvertCasualty">
@@ -139,6 +158,7 @@
                 <German>Patienten konvertieren</German>
                 <French>Convertir les patients</French>
                 <Portuguese>Converter vítima</Portuguese>
+                <Korean>사상자 전환</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Progress">
                 <English>Converting Casualty...</English>
@@ -146,6 +166,7 @@
                 <German>Konvertiere Patienten...</German>
                 <French>Convertir les patients...</French>
                 <Portuguese>Convertendo vítima...</Portuguese>
+                <Korean>사상자 전환 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Complete">
                 <English>Casualty Conversion Complete</English>
@@ -153,6 +174,7 @@
                 <German>Patientenkonversion abgeschlossen</German>
                 <French>Conversion des patients terminée</French>
                 <Portuguese>Conversão de vítima completada</Portuguese>
+                <Korean>사상자 전환 완료</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_InProgress">
                 <English>Casualty Conversion In Progress</English>
@@ -160,6 +182,7 @@
                 <German>Patientenkonversion wird durchgeführt</German>
                 <French>Conversion du patient en cours</French>
                 <Portuguese>Conversão de vítima em progesso</Portuguese>
+                <Korean>사상자 전환 진행 중</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Cancelled">
                 <English>Casualty Conversion Cancelled</English>
@@ -167,6 +190,7 @@
                 <German>Patientenkonversion abgebrochen</German>
                 <French>Conversion du patient annulée</French>
                 <Portuguese>Conversão de vítima cancelado</Portuguese>
+                <Korean>사상자 전환 취소됨</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Failed">
                 <English>Casualty Conversion Failed</English>
@@ -174,9 +198,11 @@
                 <German>Patientenkonversion fehlgeschlagen</German>
                 <French>Échec de la conversion du patient</French>
                 <Portuguese>Conversão de vítima falhou</Portuguese>
+                <Korean>사상자 전환 실패</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_ReinforceHint">
                 <English>You have taken control of a new reinforcement</English>
+                <Korean>증원군 제어권을 획득했습니다</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient">
                 <English>Evacuate Patient</English>
@@ -184,6 +210,7 @@
                 <German>Evakuiere Patient</German>
                 <French>Évacuer le patient</French>
                 <Portuguese>Evacuar paciente</Portuguese>
+                <Korean>환자 대피</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient_Success">
                 <English>Casualty Successfully Evacuated</English>
@@ -191,14 +218,17 @@
                 <German>Patient erfolgreich evakuiert</German>
                 <French>Patient évacué avec succès</French>
                 <Portuguese>Vítima evacuada com sucesso</Portuguese>
+                <Korean>사상자 성공적으로 대피됨</Korean>
             </Key>
         </Container>
         <Container name="// Module //">
             <Key ID="STR_ACM_Evacuation_Module_EvacuationPoint">
                 <English>Evacuation Point</English>
+                <Korean>대피 지점</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_ReinforcePoint">
                 <English>Reinforce Point</English>
+                <Korean>증원 지점</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_PlayerFaction">
                 <English>Player Side</English>
@@ -206,6 +236,7 @@
                 <French>Côté joueur</French>
                 <German>Spielerseite</German>
                 <Portuguese>Lado do jogador</Portuguese>
+                <Korean>플레이어 측</Korean>
             </Key>
         </Container>
     </Package>

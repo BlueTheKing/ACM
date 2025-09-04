@@ -7,6 +7,7 @@
             <German>Kreislaufstillstand aufheben</German>
             <French>Reprise du rythme cardiaque</French>
             <Portuguese>Desfazer parada cardíaca</Portuguese>
+            <Korean>심정지 해제</Korean>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_ForceWakeUp">
             <English>Force Wake-up</English>
@@ -14,9 +15,11 @@
             <German>Erzwinge Wachwerden</German>
             <French>Forcer le réveil</French>
             <Portuguese>Forçar acordar</Portuguese>
+            <Korean>강제 일으키기</Korean>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_AssignFullHealFacility">
             <English>Assign Full Heal Facility</English>
+            <Korean>완전 회복 시설 지정</Korean>
         </Key>
         <Container name="// Set Blood Volume Module //">
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume">
@@ -25,6 +28,7 @@
                 <German>Setze Blutvolumen</German>
                 <French>Paramétrage du volume sanguin</French>
                 <Portuguese>Definir volume de sangue</Portuguese>
+                <Korean>혈액량 설정</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_BloodVolume">
                 <English>Blood Volume</English>
@@ -32,6 +36,7 @@
                 <German>Blutvolumen</German>
                 <French>Quantité de sang</French>
                 <Portuguese>Volume de sangue</Portuguese>
+                <Korean>혈액량</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_PlasmaVolume">
                 <English>Plasma Volume</English>
@@ -39,6 +44,7 @@
                 <German>Plasmavolumen</German>
                 <French>Volume de plasma</French>
                 <Portuguese>Volume de plasma</Portuguese>
+                <Korean>혈장량</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_SalineVolume">
                 <English>Saline Volume</English>
@@ -46,6 +52,7 @@
                 <German>Kochsalzvolumen</German>
                 <French>Volume de solution saline</French>
                 <Portuguese>Volume de soro</Portuguese>
+                <Korean>생리식염수량</Korean>
             </Key>
         </Container>
         <Container name="// Inflict Cardiac Arrest Module //">
@@ -55,6 +62,7 @@
                 <German>Kreislaufstillstand erzwingen</German>
                 <French>Provoquer un arrêt cardique</French>
                 <Portuguese>Inflingir parada cardíaca</Portuguese>
+                <Korean>심정지 유발</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm">
                 <English>Target Rhythm</English>
@@ -62,6 +70,7 @@
                 <German>Setze Herzrhythmus</German>
                 <French>Définir le rythme cardiaque</French>
                 <Portuguese>Ritmo alvo</Portuguese>
+                <Korean>목표 리듬 (Target Rhythm)</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Sinus">
                 <English>Sinus</English>
@@ -69,6 +78,7 @@
                 <German>Sinusrhythmus</German>
                 <French>Rythme sinusal</French>
                 <Portuguese>Sinusal</Portuguese>
+                <Korean>정상 동리듬 (Sinus)</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Asystole">
                 <English>Asystole</English>
@@ -76,6 +86,7 @@
                 <German>Asystolie</German>
                 <French>Asystolie</French>
                 <Portuguese>Assistolia </Portuguese>
+                <Korean>무수축 (Asystole)</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_VF">
                 <English>Ventricular Fibrillation</English>
@@ -83,6 +94,7 @@
                 <German>Kammerflimmern</German>
                 <French>Fibrillation ventriculaire</French>
                 <Portuguese>Fibrilação ventricular</Portuguese>
+                <Korean>심실 세동 (V.Fibrillation)</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_PVT">
                 <English>Ventricular Tachycardia</English>
@@ -90,6 +102,7 @@
                 <German>pulslose Ventrikuläre Tachykardie</German>
                 <French>Tachycardie ventriculaire</French>
                 <Portuguese>Taquicardia ventricular</Portuguese>
+                <Korean>심실 빈맥 (VT)</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Random">
                 <English>Random</English>
@@ -97,6 +110,7 @@
                 <German>Zufällig</German>
                 <French>Aléatoire</French>
                 <Portuguese>Aleatório</Portuguese>
+                <Korean>무작위</Korean>
             </Key>
         </Container>
         <Container name="// Inflict Chest Injury Module //">
@@ -106,6 +120,7 @@
                 <German>Pleuraverletzung erwzingen</German>
                 <French>Infliger un lésion thoracique</French>
                 <Portuguese>Inflingir lesão torácica</Portuguese>
+                <Korean>흉부 부상 유발 </Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_InjuryType">
                 <English>Injury Type</English>
@@ -113,6 +128,7 @@
                 <German>Verletzungsart</German>
                 <French>Type de blessure</French>
                 <Portuguese>Tipo de lesão</Portuguese>
+                <Korean>부상 유형</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Pneumothorax">
                 <English>Pneumothorax</English>
@@ -120,6 +136,7 @@
                 <German>Pneumothorax</German>
                 <French>Pneumothorax</French>
                 <Portuguese>Pneumotórax</Portuguese>
+                <Korean>기흉 (Pneumothorax)</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionPneumothorax">
                 <English>Tension Pneumothorax</English>
@@ -127,6 +144,7 @@
                 <German>Spannungspneumothorax</German>
                 <French>Pneumothorax sous tension</French>
                 <Portuguese>Pneumotórax hipertensivo</Portuguese>
+                <Korean>긴장성 기흉 (Tension Pneumothorax)</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Hemothorax">
                 <English>Hemothorax</English>
@@ -134,6 +152,7 @@
                 <German>Hämatothorax</German>
                 <French>Hémothorax</French>
                 <Portuguese>Hemotórax</Portuguese>
+                <Korean>혈기흉 (Hemothorax)</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionHemothorax">
                 <English>Tension Hemothorax</English>
@@ -141,6 +160,7 @@
                 <German>Spannungshämatothorax</German>
                 <French>Hémothorax sous tension</French>
                 <Portuguese>Hemotórax hipertensivo</Portuguese>
+                <Korean>긴장성 혈기흉 (Tension Hemothorax)</Korean>
             </Key>
         </Container>
         <Container name="// Give Pain Module //">
@@ -150,6 +170,7 @@
                 <German>Schmerz zufügen</German>
                 <French>Infliger une douleur</French>
                 <Portuguese>Inflingir dor</Portuguese>
+                <Korean>통증 부여</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_GivePain_PainAmount">
                 <English>Pain Amount</English>
@@ -157,6 +178,7 @@
                 <German>Schmerzintensität</German>
                 <French>Intensité de la douleur</French>
                 <Portuguese>Montante de dor</Portuguese>
+                <Korean>통증 수치</Korean>
             </Key>
         </Container>
         <Container name="// Set Oxygen Module //">
@@ -166,6 +188,7 @@
                 <German>Setze Sauerstoffsättigung</German>
                 <French>Régler l'oxygène</French>
                 <Portuguese>Definir oxigenação</Portuguese>
+                <Korean>산소량 설정</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetOxygen_OxygenLevel">
                 <English>Oxygen Level</English>
@@ -173,6 +196,7 @@
                 <German>Sauerstoffsättigung</German>
                 <French>Réglage du niveau d'oxygène</French>
                 <Portuguese>Nível de oxigenação</Portuguese>
+                <Korean>산소 수치</Korean>
             </Key>
         </Container>
         <Container name="// Set Blood Type Module //">
@@ -181,23 +205,28 @@
                 <German>Setze Blutgruppe</German>
                 <French>Définir le groupe sanguin</French>
                 <Portuguese>Definir tipo sanguíneo</Portuguese>
+                <Korean>혈액형 설정</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodType_List">
                 <English>Blood Type List</English>
                 <German>Blutgruppenliste</German>
                 <French>Liste des groupes sanguins</French>
                 <Portuguese>Lista de tipo sanguíneo</Portuguese>
+                <Korean>혈액형 목록 </Korean>
             </Key>
         </Container>
         <Container name="// Plot Armor Module //">
             <Key ID="STR_ACM_Zeus_Module_PlotArmor">
                 <English>Toggle Plot Armor</English>
+                <Korean>주인공 버프 활성화</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_PlotArmor_Enabled">
                 <English>Plot armor enabled on unit</English>
+                <Korean>유닛에 주인공 버프 활성화</Korean>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_PlotArmor_Disabled">
                 <English>Plot armor disabled on unit</English>
+                <Korean>유닛에 주인공 버프 비활성화</Korean>
             </Key>
         </Container>
     </Package>
