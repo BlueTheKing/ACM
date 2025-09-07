@@ -6,18 +6,17 @@
  * Arguments:
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
- * 2: Body Part Index <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, cursorTarget, 2] call ACM_breathing_fnc_handlePulseOximeter;
+ * [player, cursorTarget] call ACM_breathing_fnc_handlePulseOximeter;
  *
  * Public: No
  */
 
-params ["_medic", "_patient", "_bodyPartIndex"];
+params ["_medic", "_patient"];
 
 if ((_patient getVariable [QGVAR(PulseOximeter_PFH), -1]) != -1) exitWith {};
 
