@@ -19,6 +19,8 @@
 
 params ["_medic", "_patient"];
 
+GVAR(AED_ReOpenMenu) = ACEGVAR(medical_gui,pendingReopen);
+
 ACEGVAR(medical_gui,pendingReopen) = false; // Prevent medical menu from reopening
 
 if (dialog) then { // If another dialog is open (medical menu) close it
@@ -174,6 +176,11 @@ private _PFH = [{
         _patient setVariable [QGVAR(AED_Offset), 0];
         
         _patient setVariable [QGVAR(AEDMonitorDisplay_PFH), -1];
+
+        if (GVAR(AED_ReOpenMenu)) then {
+            GVAR(AED_ReOpenMenu) = false;
+            [QEGVAR(core,openMedicalMenu), _patient] call CBA_fnc_localEvent;
+        };
         
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
