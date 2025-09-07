@@ -55,7 +55,7 @@ params ["_medic", "_patient"];
 
     [LSTRING(Stethoscope_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
-    call ACEFUNC(hearing,updateHearingProtection);
+    [-1] call ACEFUNC(hearing,updateHearingProtection);
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart"];
 

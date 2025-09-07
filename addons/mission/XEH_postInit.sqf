@@ -3,7 +3,7 @@
 [QGVAR(initFullHealFacility), {
     params ["_object"];
 
-    [_object] call FUNC(initHealTent);
+    [_object] call FUNC(initFullHealFacility);
 }] call CBA_fnc_addEventHandler;
 
 ["CBA_settingsInitialized", {

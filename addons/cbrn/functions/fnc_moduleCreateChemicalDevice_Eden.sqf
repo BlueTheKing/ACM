@@ -5,7 +5,7 @@
  *
  * Arguments:
  * 0: The module logic <OBJECT>
- * 1: Synchronized units <ARRAY>
+ * 1: Synchronized objects <ARRAY>
  * 2: Activated <BOOL>
  *
  * Return Value:
@@ -17,14 +17,13 @@
  * Public: No
  */
 
-params ["_logic", "", "_activated"];
+params ["_logic", "_syncedObjects", "_activated"];
 
 if (!_activated || !(GVAR(enable))) exitWith {};
 
 [{
-    params ["_logic"];
+    params ["_logic", "_syncedObjects"];
 
-    private _syncedObjects = synchronizedObjects _logic;
     private _attachedObject = _syncedObjects select 0;
 
     private _hazardTypeSelection = _logic getVariable ["HazardType", 0];
@@ -54,4 +53,4 @@ if (!_activated || !(GVAR(enable))) exitWith {};
     }, [_attachedObject, _hazardType, _radius, _effectTime, _affectAI, _cloudSizeSelection], 3600] call CBA_fnc_waitUntilAndExecute;
 
     deleteVehicle _logic;
-}, [_logic], 1] call CBA_fnc_waitAndExecute;
+}, [_logic, _syncedObjects], 1] call CBA_fnc_waitAndExecute;

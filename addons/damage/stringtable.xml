@@ -9,6 +9,7 @@
             <Portuguese>ACM: Dano</Portuguese>
             <Russian>ACM: Повреждения</Russian>
             <Ukrainian>ACM: Ураження</Ukrainian>
+            <Korean>ACM: 데미지</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_Category_Thresholds">
             <English>Thresholds</English>
@@ -18,6 +19,7 @@
             <Portuguese>Limiares</Portuguese>
             <Russian>Пороги</Russian>
             <Ukrainian>Пороги</Ukrainian>
+            <Korean>임계값</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_Category_InternalBleeding">
             <English>Internal Bleeding</English>
@@ -27,6 +29,7 @@
             <Portuguese>Hemorragia interna</Portuguese>
             <Russian>Внутреннее кровотечение</Russian>
             <Ukrainian>Внутрішня кровотеча</Ukrainian>
+            <Korean>내부 출혈</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_Category_AIUnits">
             <English>AI Units</English>
@@ -36,6 +39,7 @@
             <Portuguese>Unidades IA</Portuguese>
             <Russian>Подразделения ИИ</Russian>
             <Ukrainian>Підрозділи ШІ</Ukrainian>
+            <Korean>AI 유닛</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Enable">
             <English>Enable Damage Addon</English>
@@ -45,6 +49,7 @@
             <Portuguese>Habilitar dano de addon</Portuguese>
             <Russian>Включить модуль повреждений</Russian>
             <Ukrainian>Увімкнути модуль ушкоджень</Ukrainian>
+            <Korean>데미지 애드온 활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Enable_Desc">
             <English>Enable modified damage thresholds</English>
@@ -54,6 +59,7 @@
             <Portuguese>Habilita limiares de dano modificados</Portuguese>
             <Russian>Включить изменённые пороги повреждений</Russian>
             <Ukrainian>Увімкнути змінені пороги ушкоджень</Ukrainian>
+            <Korean>수정된 데미지 임계값 활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold">
             <English>Head Trauma Death Threshold</English>
@@ -63,6 +69,7 @@
             <Portuguese>Limiar de morte por trauma na cabeça</Portuguese>
             <Russian>Порог смертельной черепно-мозговой травмы</Russian>
             <Ukrainian>Поріг смертельної черепно-мозкової травми</Ukrainian>
+            <Korean>머리 외상 즉사 임계값</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold_Desc">
             <English>Sets threshold for instant death from trauma to the head, disabled if 0</English>
@@ -72,6 +79,7 @@
             <Portuguese>Define o limiar para morte instantânea por trauma na cabeça, desativado se for 0</Portuguese>
             <Russian>Задаёт порог мгновенной смерти от травмы головы; 0 — отключено</Russian>
             <Ukrainian>Визначає поріг миттєвої смерті від травми голови; 0 — вимкнено</Ukrainian>
+            <Korean>머리 외상으로 인한 즉사 임계값 설정, 0이면 비활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold">
             <English>Torso Trauma Death Threshold</English>
@@ -81,6 +89,7 @@
             <Portuguese>Limiar de morte por trauma no troco</Portuguese>
             <Russian>Порог смертельной травмы торса</Russian>
             <Ukrainian>Поріг смертельної травми торса</Ukrainian>
+            <Korean>몸통 외상 즉사 임계값</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold_Desc">
             <English>Sets threshold for instant death from trauma to the torso, disabled if 0</English>
@@ -90,6 +99,7 @@
             <Portuguese>Define o limiar para morte instantânea por trauma no tronco, desativado se for 0</Portuguese>
             <Russian>Задаёт порог мгновенной смерти от травмы торса; 0 — отключено</Russian>
             <Ukrainian>Визначає поріг миттєвої смерті від травми торса; 0 — вимкнено</Ukrainian>
+            <Korean>몸통 외상으로 인한 즉사 임계값 설정, 0이면 비활성화 </Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold">
             <English>Head Trauma Cardiac Arrest Threshold</English>
@@ -99,6 +109,7 @@
             <Portuguese>Limiar de parada cardíaca por traumatismo craniano</Portuguese>
             <Russian>Порог остановки сердца при травме головы</Russian>
             <Ukrainian>Поріг зупинки серця при травмі голови</Ukrainian>
+            <Korean>머리 외상 심정지 임계값</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the head, disabled if 0</English>
@@ -108,6 +119,7 @@
             <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma na cabeça, desativado se for 0</Portuguese>
             <Russian>Задаёт порог риска остановки сердца от травмы головы; 0 — отключено</Russian>
             <Ukrainian>Визначає поріг ризику зупинки серця від травми голови; 0 — вимкнено</Ukrainian>
+            <Korean>머리 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화 </Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold">
             <English>Torso Trauma Cardiac Arrest Threshold</English>
@@ -117,6 +129,7 @@
             <Portuguese>Limiar de parada cardíaca por trauma no tronco</Portuguese>
             <Russian>Порог остановки сердца при травме торса</Russian>
             <Ukrainian>Поріг зупинки серця при травмі торса</Ukrainian>
+            <Korean>몸통 외상 심정지 임계값</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the torso, disabled if 0</English>
@@ -126,6 +139,7 @@
             <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma no tronco, desativado se for 0</Portuguese>
             <Russian>Задаёт порог риска остановки сердца от травмы торса; 0 — отключено</Russian>
             <Ukrainian>Визначає поріг ризику зупинки серця від травми торса; 0 — вимкнено</Ukrainian>
+            <Korean>몸통 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier">
             <English>Internal Bleeding Chance Multiplier</English>
@@ -135,6 +149,7 @@
             <Portuguese>Multiplicador de chance de hemorragia interna</Portuguese>
             <Russian>Множитель вероятности внутреннего кровотечения</Russian>
             <Ukrainian>Множник імовірності внутрішньої кровотечі</Ukrainian>
+            <Korean>내부 출혈 확률 배율</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier_Desc">
             <English>Chance for internal bleeding to occur from inflicted wounds</English>
@@ -144,6 +159,7 @@
             <Portuguese>Possibilidade de ocorrência de hemorragia interna em ferimentos infligidos</Portuguese>
             <Russian>Шанс развития внутреннего кровотечения от нанесённых ран</Russian>
             <Ukrainian>Шанс розвитку внутрішньої кровотечі від завданих поранень</Ukrainian>
+            <Korean>상처로 인한 내부 출혈 발생 확률</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Hardcore_InternalBleeding">
             <English>[HARDCORE] Internal Bleeding</English>
@@ -153,6 +169,7 @@
             <Portuguese>[HARDCORE] Hemorragia interna</Portuguese>
             <Russian>[ХАРДКОР] Внутреннее кровотечение</Russian>
             <Ukrainian>[ХАРДКОР] Внутрішня кровотеча</Ukrainian>
+            <Korean>[HARDCORE] 내부 출혈</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Hardcore_InternalBleeding_Desc">
             <English>[HARDCORE] Sets whether internal bleeding should require further treatment to fully stop</English>
@@ -162,6 +179,7 @@
             <Portuguese>[HARDCORE] Define se a hemorragia deve exigir tratamento adicional para ser totalmente interrompido</Portuguese>
             <Russian>[ХАРДКОР] Устанавливает, требуется ли дальнейшее лечение для полного прекращения внутреннего кровотечения</Russian>
             <Ukrainian>[ХАРДКОР] Встановлює, чи потрібне подальше лікування для повного припинення внутрішньої кровотечі</Ukrainian>
+            <Korean>[HARDCORE] 내부 출혈이 완전히 멈추려면 추가 치료 필요 여부 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThresholdAI">
             <English>AI Head Trauma Death Threshold</English>
@@ -171,6 +189,7 @@
             <Portuguese>Limiar de morte por trauma na cabeça para IA</Portuguese>
             <Russian>Порог смертельной травмы головы (ИИ)</Russian>
             <Ukrainian>Поріг смертельної травми голови (ШІ)</Ukrainian>
+            <Korean>AI 머리 외상 즉사 임계값</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThresholdAI_Desc">
             <English>Sets threshold for instant death from trauma to the head for AI, disabled if 0</English>
@@ -180,6 +199,7 @@
             <Portuguese>Define o limiar para morte instantânea por trauma na cabeça para IA, desativado se for 0</Portuguese>
             <Russian>Порог мгновенной смерти от травмы головы для ИИ; 0 — отключено</Russian>
             <Ukrainian>Поріг миттєвої смерті від травми голови для ШІ; 0 — вимкнено</Ukrainian>
+            <Korean>AI 머리 외상으로 인한 즉사 임계값 설정, 0이면 비활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThresholdAI">
             <English>AI Torso Trauma Death Threshold</English>
@@ -189,6 +209,7 @@
             <Portuguese>Limiar de morte para IA por dano no torso</Portuguese>
             <Russian>Порог смертельной травмы торса (ИИ)</Russian>
             <Ukrainian>Поріг смертельної травми торса (ШІ)</Ukrainian>
+            <Korean>AI 몸통 외상 즉사 임계값</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThresholdAI_Desc">
             <English>Sets threshold for instant death from trauma to the torso for AI, disabled if 0</English>
@@ -198,6 +219,7 @@
             <Portuguese>Define o limiar para morte instantânea por trauma no tronco para IA, desativado se for 0</Portuguese>
             <Russian>Порог мгновенной смерти от травмы торса для ИИ; 0 — отключено</Russian>
             <Ukrainian>Поріг миттєвої смерті від травми торса для ШІ; 0 — вимкнено</Ukrainian>
+            <Korean>AI 몸통 외상으로 인한 즉사 임계값 설정, 0이면 비활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThresholdAI">
             <English>AI Head Trauma Cardiac Arrest Threshold</English>
@@ -207,6 +229,7 @@
             <Portuguese>Limiar de parada cardíaca por trauma na cabeça para IA</Portuguese>
             <Russian>Порог остановки сердца при травме головы (ИИ)</Russian>
             <Ukrainian>Поріг зупинки серця при травмі голови (ШІ)</Ukrainian>
+            <Korean>AI 머리 외상 심정지 임계값</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThresholdAI_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the head for AI, disabled if 0</English>
@@ -216,6 +239,7 @@
             <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma na cabeça para IA, desativado se for 0</Portuguese>
             <Russian>Порог риска остановки сердца от травмы головы для ИИ; 0 — отключено</Russian>
             <Ukrainian>Поріг ризику зупинки серця від травми голови для ШІ; 0 — вимкнено</Ukrainian>
+            <Korean>AI 머리 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThresholdAI">
             <English>AI Torso Trauma Cardiac Arrest Threshold</English>
@@ -225,6 +249,7 @@
             <Portuguese>Limiar de parada cardíaca por dano no torso para IA</Portuguese>
             <Russian>Порог остановки сердца при травме торса (ИИ)</Russian>
             <Ukrainian>Поріг зупинки серця при травмі торса (ШІ)</Ukrainian>
+            <Korean>AI 몸통 외상 심정지 임계값</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThresholdAI_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the torso for AI, disabled if 0</English>
@@ -234,6 +259,7 @@
             <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma no tronco para IA, desativado se for 0</Portuguese>
             <Russian>Порог риска остановки сердца от травмы торса для ИИ; 0 — отключено</Russian>
             <Ukrainian>Поріг ризику зупинки серця від травми торса для ШІ; 0 — вимкнено</Ukrainian>
+            <Korean>AI 몸통 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance">
             <English>AI Stay Down Chance</English>
@@ -243,6 +269,7 @@
             <Portuguese>Chance de ficar caído para IA</Portuguese>
             <Russian>Шанс, что ИИ останется лежать</Russian>
             <Ukrainian>Шанс, що ШІ залишиться лежати</Ukrainian>
+            <Korean>AI 다운 상태 유지 확률</Korean>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance_Desc">
             <English>Sets chance for AI to stay down once unconscious (without intervention)</English>
@@ -252,6 +279,7 @@
             <Portuguese>Define a chance de a IA permanecer no chão quando estiver inconsciente (sem intervenção)</Portuguese>
             <Russian>Вероятность, что ИИ не встанет после потери сознания (без вмешательства)</Russian>
             <Ukrainian>Ймовірність, що ШІ не підведеться після втрати свідомості (без втручання)</Ukrainian>
+            <Korean>무의식 상태가 된 AI가 개입 없이 눕혀진 상태로 있을 확률 설정</Korean>
         </Key>
         <Container name="// Settings in CORE //">
             <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap">
@@ -262,6 +290,7 @@
                 <Portuguese>Permitir enfaixar</Portuguese>
                 <Russian>Разрешить обмотку</Russian>
                 <Ukrainian>Дозволити обмотування</Ukrainian>
+                <Korean>탄성 붕대 감기 허용</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap_Desc">
                 <English>Training level required to use Elastic Wrap</English>
@@ -271,6 +300,7 @@
                 <Portuguese>Nível de treinamento necessário para usar a atadura elástica</Portuguese>
                 <Russian>Уровень подготовки для использования эластичного бинта</Russian>
                 <Ukrainian>Рівень підготовки для використання еластичного бинта</Ukrainian>
+                <Korean>탄성 붕대 사용 가능 훈련 레벨</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart">
                 <English>Wrap Time</English>
@@ -280,6 +310,7 @@
                 <Portuguese>Tempo para enfaixar</Portuguese>
                 <Russian>Время обмотки</Russian>
                 <Ukrainian>Час обмотування</Ukrainian>
+                <Korean>탄성 붕대 감는 시간</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart_Desc">
                 <English>Time to wrap whole body part</English>
@@ -289,6 +320,7 @@
                 <Portuguese>Tempo para enfaixar uma parte inteira do corpo</Portuguese>
                 <Russian>Время на обмотку всей части тела</Russian>
                 <Ukrainian>Час на обмотування всієї частини тіла</Ukrainian>
+                <Korean>전체 신체 부위 고정 붕대 감는 시간</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch">
                 <English>Wrapped Stitch Time</English>
@@ -298,6 +330,7 @@
                 <Portuguese>Tempo para suturar ferida enfaixada</Portuguese>
                 <Russian>Время наложения швов обмотанной раны</Russian>
                 <Ukrainian>Час накладання швів обмотаної рани</Ukrainian>
+                <Korean>탄성 붕대 봉합 시간</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch_Desc">
                 <English>Time to stitch a wrapped wound</English>
@@ -307,6 +340,7 @@
                 <Portuguese>Tempo para suturar uma ferida enfaixada</Portuguese>
                 <Russian>Время на наложение швов по обмотанной ране</Russian>
                 <Ukrainian>Час на накладання швів по обмотаній рані</Ukrainian>
+                <Korean>탄성 붕대 감은 상처를 봉합하는 시간 </Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch">
                 <English>Suture Stitch Time Multiplier</English>
@@ -316,6 +350,7 @@
                 <Portuguese>Multiplicador de tempo para suturar pontos</Portuguese>
                 <Russian>Множитель времени наложения швов</Russian>
                 <Ukrainian>Множник часу накладання швів</Ukrainian>
+                <Korean>봉합 시 시간 배율</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch_Desc">
                 <English>Time multiplier when stitching wound with sutures</English>
@@ -325,6 +360,7 @@
                 <Portuguese>Multiplicador de tempo para dar pontos com sutura</Portuguese>
                 <Russian>Множитель времени при наложения швов (не обмотаной раны)</Russian>
                 <Ukrainian>Множник часу при накладенні швів (не обмотаної рани)</Ukrainian>
+                <Korean>봉합사로 상처를 봉합할 때 시간 배율</Korean>
             </Key>
         </Container>
         <Container name="// Wounds //">
@@ -333,18 +369,21 @@
                 <Portuguese>Queimadura química extensa</Portuguese>
                 <Russian>Обширный химический ожог</Russian>
                 <Ukrainian>Великий хімічний опік</Ukrainian>
+                <Korean>광범위 화학 화상</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Medium">
                 <English>Moderate Chemical Burn</English>
                 <Portuguese>Queimadura química moderada</Portuguese>
                 <Russian>Умеренный химический ожог</Russian>
                 <Ukrainian>Помірний хімічний опік</Ukrainian>
+                <Korean>중등도 화학 화상</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Minor">
                 <English>Minor Chemical Burn</English>
                 <Portuguese>Queimadura química leve</Portuguese>
                 <Russian>Незначительный химический ожог</Russian>
                 <Ukrainian>Незначний хімічний опік</Ukrainian>
+                <Korean>경미 화학 화상</Korean>
             </Key>
         </Container>
         <Container name="// Items //">
@@ -356,6 +395,7 @@
                 <Portuguese>Bandagem de pressão</Portuguese>
                 <Russian>Компрессионная повязка</Russian>
                 <Ukrainian>Компресійна пов’язка</Ukrainian>
+                <Korean>압박 붕대 (Pressure Bandage)</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_PressureBandage_Desc">
                 <English>Standard issue bandage</English>
@@ -365,6 +405,7 @@
                 <Portuguese>Bandagem padrão</Portuguese>
                 <Russian>Стандартная повязка</Russian>
                 <Ukrainian>Стандартна пов’язка</Ukrainian>
+                <Korean>표준 붕대 (Standard issue bandage)</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_EmergencyTraumaDressing">
                 <English>Emergency Trauma Dressing</English>
@@ -374,6 +415,7 @@
                 <Portuguese>Curativo de emergência para trauma</Portuguese>
                 <Russian>Экстренная травматическая повязка</Russian>
                 <Ukrainian>Екстрена травматична пов’язка</Ukrainian>
+                <Korean>응급 외상 드레싱 (Emergency Trauma Dressing)</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_EmergencyTraumaDressing_Desc">
                 <English>Trauma dressing with large surface area</English>
@@ -383,6 +425,7 @@
                 <Portuguese>Curativo para trauma com grande área de superfície</Portuguese>
                 <Russian>Травматическая повязка с большой площадью покрытия</Russian>
                 <Ukrainian>Травматична пов’язка з великою площею покриття</Ukrainian>
+                <Korean>넓은 면적의 외상 드레싱 (Trauma dressing with large surface area)</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap">
                 <English>Elastic Wrap</English>
@@ -392,6 +435,7 @@
                 <Portuguese>Atadura elástica</Portuguese>
                 <Russian>Эластичный бинт</Russian>
                 <Ukrainian>Еластичний бинт</Ukrainian>
+                <Korean>탄성 붕대 (Elastic Wrap)</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Desc">
                 <English>Used to wrap bandages, clotted wounds and bruises</English>
@@ -401,6 +445,7 @@
                 <Portuguese>Usado para enfaixar, talas, bandagens, ferimentos coagulados e hematomas</Portuguese>
                 <Russian>Используется для обмотки повязок, коагулированных ран и ушибов</Russian>
                 <Ukrainian>Використовується для обмотування пов'язок, коагульованих ран і забоїв</Ukrainian>
+                <Korean>붕대를 감싸거나, 응고된 상처(Clotted wounds) 및 멍(bruises)을 감싸는데 사용</Korean>
             </Key>
         </Container>
         <Container name="// Wrap Actions //">
@@ -412,6 +457,7 @@
                 <Portuguese>Enfaixando...</Portuguese>
                 <Russian>Обмотка...</Russian>
                 <Ukrainian>Обмотування...</Ukrainian>
+                <Korean>감는 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Bruises">
                 <English>Wrap Bruises</English>
@@ -421,6 +467,7 @@
                 <Portuguese>Enfaixar hematomas</Portuguese>
                 <Russian>Обмотать ушибы</Russian>
                 <Ukrainian>Обмотати забої</Ukrainian>
+                <Korean>멍에 탄성 붕대 감기</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Bandages">
                 <English>Wrap Bandaged Wounds</English>
@@ -430,6 +477,7 @@
                 <Portuguese>Enfaixar ferimentos coagulados</Portuguese>
                 <Russian>Обмотать перевязанные раны</Russian>
                 <Ukrainian>Обмотати перев’язані рани</Ukrainian>
+                <Korean>붕대에 탄성 붕대 감기 </Korean>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Clots">
                 <English>Wrap Clotted Wounds</English>
@@ -439,6 +487,7 @@
                 <Portuguese>Enfaixar ferimentos coagulados</Portuguese>
                 <Russian>Обмотать коагулированные раны</Russian>
                 <Ukrainian>Обмотати коагульовані рани</Ukrainian>
+                <Korean>응고된 상처에 탄성 붕대 감기</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">
                 <English>%1 has wrapped %2</English>
@@ -448,6 +497,7 @@
                 <Portuguese>%1 enfaixou %2</Portuguese>
                 <Russian>%1 обмотал(а) %2</Russian>
                 <Ukrainian>%1 обмотав(ла) %2</Ukrainian>
+                <Korean>%1이 %2을(를) 탄성 붕대로 감았습니다</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Bandages">
                 <English>bandages</English>
@@ -457,6 +507,7 @@
                 <Portuguese>bandagens</Portuguese>
                 <Russian>повязка</Russian>
                 <Ukrainian>пов’язка</Ukrainian>
+                <Korean>붕대</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Clotted">
                 <English>clotted wounds</English>
@@ -466,6 +517,7 @@
                 <Portuguese>ferimentos coagulados</Portuguese>
                 <Russian>коагулированные раны</Russian>
                 <Ukrainian>коагульовані рани</Ukrainian>
+                <Korean>응고 상처</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBruises_ActionLog">
                 <English>%1 has wrapped bruises</English>
@@ -475,6 +527,7 @@
                 <Portuguese>%1 enfaixou hematomas</Portuguese>
                 <Russian>%1 обмотал(а) ушибы</Russian>
                 <Ukrainian>%1 обмотав(ла) забої</Ukrainian>
+                <Korean>%1이 멍을 탄성 붕대로 감았습니다</Korean>
             </Key>
         </Container>
         <Container name="// Stitch Actions //">
@@ -486,6 +539,7 @@
                 <Portuguese>Usar kit cirúrgico com fio de sutura</Portuguese>
                 <Russian>Использовать хирургический набор с нитью</Russian>
                 <Ukrainian>Використати хірургічний набір із ниткою</Ukrainian>
+                <Korean>봉합사와 함께 수술 도구 사용</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Suture_Progress">
                 <English>Stitching With Sutures...</English>
@@ -495,6 +549,7 @@
                 <Portuguese>Suturando com fio de sutura...</Portuguese>
                 <Russian>Наложение швов...</Russian>
                 <Ukrainian>Накладання швів...</Ukrainian>
+                <Korean>봉합사로 봉합 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped">
                 <English>Use Surgical Kit (Wrapped)</English>
@@ -504,6 +559,7 @@
                 <Portuguese>Usar kit cirúrgico (enfaixado)</Portuguese>
                 <Russian>Использовать хирургический набор (обмотка)</Russian>
                 <Ukrainian>Використати хірургічний набір (обмотка)</Ukrainian>
+                <Korean>수술 키트 사용 (감은 상처)</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped_Suture">
                 <English>Use Surgical Kit With Sutures (Wrapped)</English>
@@ -513,6 +569,7 @@
                 <Portuguese>Usar kit cirúrgico com fio de sutura</Portuguese>
                 <Russian>Использовать хирургический набор с нитью (обмотка)</Russian>
                 <Ukrainian>Використати хірургічний набір із ниткою (обмотка)</Ukrainian>
+                <Korean>봉합사와 함께 수술 도구 사용 (감은 상처)</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Clotted">
                 <English>Use Surgical Kit (Clotted)</English>
@@ -522,6 +579,7 @@
                 <Portuguese>Usar kit cirúrgico (coagulado)</Portuguese>
                 <Russian>Использовать хирургический набор (коагулированные)</Russian>
                 <Ukrainian>Використати хірургічний набір (коагульовані)</Ukrainian>
+                <Korean>수술 키트 사용 (응고 상처)</Korean>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Clotted_Suture">
                 <English>Use Surgical Kit With Sutures (Clotted)</English>
@@ -531,6 +589,7 @@
                 <Portuguese>Usar kit cirúrgico com fios de sutura (coagulado)</Portuguese>
                 <Russian>Использовать хирургический набор с нитью (коагулированные)</Russian>
                 <Ukrainian>Використати хірургічний набір із ниткою (коагульовані)</Ukrainian>
+                <Korean>봉합사와 함께 수술 도구 사용 (응고 상처)</Korean>
             </Key>
         </Container>
     </Package>

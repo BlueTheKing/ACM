@@ -9,6 +9,7 @@
             <Portuguese>ACM: Evacuação</Portuguese>
             <Russian>ACM: Эвакуация</Russian>
             <Ukrainian>ACM: Евакуація</Ukrainian>
+            <Korean>ACM: 퇴출 (Evacuation)</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_Tickets">
             <English>Tickets</English>
@@ -18,6 +19,7 @@
             <Portuguese>Tíquetes</Portuguese>
             <Russian>Тикеты</Russian>
             <Ukrainian>Тікети</Ukrainian>
+            <Korean>티켓</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_CasualtyConversion">
             <English>Casualty Conversion</English>
@@ -27,6 +29,7 @@
             <Portuguese>Conversão de vítimas</Portuguese>
             <Russian>Конвертация потерь</Russian>
             <Ukrainian>Конвертація втрат</Ukrainian>
+            <Korean>사상자 전환</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Enable">
             <English>Enable Evacuation Addon</English>
@@ -36,6 +39,7 @@
             <Portuguese>Habilitar complemento Evacuação</Portuguese>
             <Russian>Включить модуль эвакуации</Russian>
             <Ukrainian>Увімкнути модуль евакуації</Ukrainian>
+            <Korean>퇴출 기능 활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Enable_Desc">
             <English>Enable Evacuation Addon functionality, respawning and tickets must be enabled on mission to work</English>
@@ -45,6 +49,7 @@
             <Portuguese>Habilite a funcionalidade do complemento Evacuação, o ressurgimento e os tíquetes devem ser habilitados na missão para funcionar</Portuguese>
             <Russian>Включить функционал модуля эвакуации, требуется включённый респаун и тикеты на миссии</Russian>
             <Ukrainian>Увімкнути функціонал модуля евакуації, потрібен увімкнений респаун і тікети на місії</Ukrainian>
+            <Korean>퇴출 기능 활성화, 작동하려면 미션에서 리스폰 및 티켓 활성화 필요</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout">
             <English>Clear Casualty Loadout</English>
@@ -54,6 +59,7 @@
             <Portuguese>Limpar o inventário da vítima</Portuguese>
             <Russian>Очищать снаряжение раненого</Russian>
             <Ukrainian>Очищати спорядження пораненого</Ukrainian>
+            <Korean>사상자 장비 초기화</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout_Desc">
             <English>Sets whether casualty's loadout should be cleared after conversion</English>
@@ -63,6 +69,7 @@
             <Portuguese>Define se o inventário da vítima deve ser limpo após a conversão</Portuguese>
             <Russian>Задаёт, будет ли очищаться снаряжение у раненого после конвертации</Russian>
             <Ukrainian>Визначає, чи буде очищатися спорядження у пораненого після конвертації</Ukrainian>
+            <Korean>사상자 전환 후 장비를 초기화할지 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics">
             <English>Require Antibiotics</English>
@@ -72,6 +79,7 @@
             <Portuguese>Requer antibióticos</Portuguese>
             <Russian>Требовать антибиотики</Russian>
             <Ukrainian>Вимагати антибіотики</Ukrainian>
+            <Korean>항생제 필요</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics_Desc">
             <English>Sets whether antibiotics need to be administered before a casualty can be converted</English>
@@ -81,6 +89,7 @@
             <Portuguese>Define se os antibióticos precisam ser administrados antes que uma vítima possa ser convertida</Portuguese>
             <Russian>Задаёт, нужно ли ввести антибиотики перед конвертацией раненого</Russian>
             <Ukrainian>Визначає, чи потрібно ввести антибіотики перед конвертацією пораненого</Ukrainian>
+            <Korean>사상자 전환 전에 항생제 투여 필요 여부 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn">
             <English>Respawn Ticket Count</English>
@@ -90,6 +99,7 @@
             <Portuguese>Contagem de tíquetes de ressurgimento</Portuguese>
             <Russian>Количество тикетов возрождения</Russian>
             <Ukrainian>Кількість тікетів відродження</Ukrainian>
+            <Korean>리스폰 티켓 수</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn_Desc">
             <English>Sets amount of available respawn tickets, if mission-set ticket count is higher then that number will be used instead</English>
@@ -99,6 +109,7 @@
             <Portuguese>Define a quantidade de tíquetes de ressurgimento disponíveis; se a contagem de tíquetes definida pela missão for maior, esse número será usado em seu lugar</Portuguese>
             <Russian>Задаёт количество доступных тикетов возрождения; если на миссии задано большее число, будет использовано оно</Russian>
             <Ukrainian>Визначає кількість доступних тікетів відродження; якщо на місії задано більше, буде використано його</Ukrainian>
+            <Korean>사용 가능한 리스폰 티켓 수 설정, 미션 설정 티켓 수가 더 높으면 그 수치 사용 </Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty">
             <English>Casualty Ticket Count</English>
@@ -108,6 +119,7 @@
             <Portuguese>Quantidade de tíquetes de vítimas</Portuguese>
             <Russian>Количество тикетов для раненых</Russian>
             <Ukrainian>Кількість квитків для поранених</Ukrainian>
+            <Korean>사상자 티켓 수</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty_Desc">
             <English>Sets amount of available casualty tickets</English>
@@ -117,6 +129,7 @@
             <Portuguese>Define a quantidade de tíquetes de vítimas disponíveis</Portuguese>
             <Russian>Задаёт количество доступных тикетов раненых</Russian>
             <Ukrainian>Визначає кількість доступних тікетів поранених</Ukrainian>
+            <Korean>사용 가능한 부상자 티켓 수 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty">
             <English>Converted Casualty Death Ticket Penalty</English>
@@ -125,6 +138,7 @@
             <Portuguese>Penalidade por morte de vítima convertida</Portuguese>
             <Russian>Штраф за смерть сконвертированного раненого</Russian>
             <Ukrainian>Штраф за смерть сконвертованого пораненого</Ukrainian>
+            <Korean>전환된 사상자 사망 시 리스폰 티켓 차감</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty_Desc">
             <English>Sets amount of respawn tickets subtracted upon converted casualty death</English>
@@ -133,6 +147,7 @@
             <Portuguese>Define a quantidade de tíquetes de ressurgimento subtraídos após a morte da vítima convertida</Portuguese>
             <Russian>Задаёт количество тикетов возрождения, которые будут вычтены при смерти сконвертированного раненого</Russian>
             <Ukrainian>Визначає кількість тікетів відродження, які будуть відняті при смерті сконвертованого пораненого</Ukrainian>
+            <Korean>전환된 사상자 사망 시 차감될 리스폰 티켓 수 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert">
             <English>Allow Converting Casualties</English>
@@ -142,6 +157,7 @@
             <Portuguese>Permitir a conversão de vítimas</Portuguese>
             <Russian>Разрешить конвертацию раненых</Russian>
             <Ukrainian>Дозволити конвертацію поранених</Ukrainian>
+            <Korean>사상자 전환 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert_Desc">
             <English>Training level required to convert casualties</English>
@@ -151,6 +167,7 @@
             <Portuguese>Nível de treinamento necessário para converter vítimas</Portuguese>
             <Russian>Уровень подготовки, необходимый для конвертации раненого</Russian>
             <Ukrainian>Рівень підготовки, необхідний для конвертації пораненого</Ukrainian>
+            <Korean>사상자 전환에 필요한 훈련 레벨 설정</Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert">
             <English>Converting Casualty Location</English>
@@ -160,6 +177,7 @@
             <Portuguese>Local para converter vítima</Portuguese>
             <Russian>Место конвертации раненых</Russian>
             <Ukrainian>Місце конвертації поранених</Ukrainian>
+            <Korean>사상자 전환 위치 </Korean>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert_Desc">
             <English>Sets locations at which casualty conversion can be performed</English>
@@ -169,6 +187,7 @@
             <Portuguese>Define os locais em que a conversão de vítimas pode ser realizada</Portuguese>
             <Russian>Задаёт локации, в которых может выполняться конвертация раненых</Russian>
             <Ukrainian>Визначає локації, де може виконуватися конвертація поранених</Ukrainian>
+            <Korean>사상자 전환을 수행할 수 있는 위치 설정 </Korean>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Evacuation_ConvertCasualty">
@@ -179,6 +198,7 @@
                 <Portuguese>Converter vítima</Portuguese>
                 <Russian>Конвертировать раненого</Russian>
                 <Ukrainian>Конвертувати пораненого</Ukrainian>
+                <Korean>사상자 전환</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Progress">
                 <English>Converting Casualty...</English>
@@ -188,6 +208,7 @@
                 <Portuguese>Convertendo vítima...</Portuguese>
                 <Russian>Конвертация раненого...</Russian>
                 <Ukrainian>Конвертація пораненого...</Ukrainian>
+                <Korean>사상자 전환 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Complete">
                 <English>Casualty Conversion Complete</English>
@@ -197,6 +218,7 @@
                 <Portuguese>Conversão de vítima completada</Portuguese>
                 <Russian>Конвертация раненого завершена</Russian>
                 <Ukrainian>Конвертація пораненого завершена</Ukrainian>
+                <Korean>사상자 전환 완료</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_InProgress">
                 <English>Casualty Conversion In Progress</English>
@@ -206,6 +228,7 @@
                 <Portuguese>Conversão de vítima em progesso</Portuguese>
                 <Russian>Конвертация раненого в процессе</Russian>
                 <Ukrainian>Конвертація пораненого триває</Ukrainian>
+                <Korean>사상자 전환 진행 중</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Cancelled">
                 <English>Casualty Conversion Cancelled</English>
@@ -215,6 +238,7 @@
                 <Portuguese>Conversão de vítima cancelado</Portuguese>
                 <Russian>Конвертация раненого отменена</Russian>
                 <Ukrainian>Конвертація пораненого скасована</Ukrainian>
+                <Korean>사상자 전환 취소됨</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Failed">
                 <English>Casualty Conversion Failed</English>
@@ -229,6 +253,11 @@
                 <English>You have taken control of a new reinforcement</English>
                 <Russian>Вы взяли под контроль новое подкрепление</Russian>
                 <Ukrainian>Ви взяли під контроль нове підкріплення</Ukrainian>
+                <Korean>사상자 전환 실패</Korean>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_ConvertCasualty_ReinforceHint">
+                <English>You have taken control of a new reinforcement</English>
+                <Korean>증원군 제어권을 획득했습니다</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient">
                 <English>Evacuate Patient</English>
@@ -238,6 +267,7 @@
                 <Portuguese>Evacuar paciente</Portuguese>
                 <Russian>Эвакуировать пациента</Russian>
                 <Ukrainian>Евакуювати пацієнта</Ukrainian>
+                <Korean>환자 대피</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient_Success">
                 <English>Casualty Successfully Evacuated</English>
@@ -247,6 +277,7 @@
                 <Portuguese>Vítima evacuada com sucesso</Portuguese>
                 <Russian>Потеря успешно эвакуирована</Russian>
                 <Ukrainian>Втрату успішно евакуйовано</Ukrainian>
+                <Korean>사상자 성공적으로 대피됨</Korean>
             </Key>
         </Container>
         <Container name="// Module //">
@@ -259,6 +290,11 @@
                 <English>Reinforce Point</English>
                 <Russian>Точка подкрепления</Russian>
                 <Ukrainian>Точка підкріплення</Ukrainian>
+                <Korean>대피 지점</Korean>
+            </Key>
+            <Key ID="STR_ACM_Evacuation_Module_ReinforcePoint">
+                <English>Reinforce Point</English>
+                <Korean>증원 지점</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_PlayerFaction">
                 <English>Player Side</English>
@@ -268,6 +304,7 @@
                 <Portuguese>Lado do jogador</Portuguese>
                 <Russian>Сторона игрока</Russian>
                 <Ukrainian>Сторона гравця</Ukrainian>
+                <Korean>플레이어 측</Korean>
             </Key>
         </Container>
     </Package>
