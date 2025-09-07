@@ -7,6 +7,7 @@
             <French>ACM : Circulation</French>
             <German>ACM: Kreislauf</German>
             <Portuguese>ACM: Circulação</Portuguese>
+            <Korean>ACM: 순환 (Circulation)</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Coagulation">
             <English>Coagulation</English>
@@ -14,6 +15,7 @@
             <French>Coagulation</French>
             <German>Blutgerinnung</German>
             <Portuguese>Coagulação</Portuguese>
+            <Korean>응고 (Coagulation)</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_CardiacArrest">
             <English>Cardiac Arrest</English>
@@ -21,6 +23,7 @@
             <French>Arrêt cardiaque</French>
             <German>Kreislaufstillstand</German>
             <Portuguese>Parada cardíaca</Portuguese>
+            <Korean>심정지 (Cardiac Arrest)</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Defibrillator">
             <English>Defibrillator</English>
@@ -28,6 +31,7 @@
             <French>Défibrillateur</French>
             <German>Defibrillator</German>
             <Portuguese>Desfibrilador</Portuguese>
+            <Korean>제세동기 (Defibrillator)</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_CPR">
             <English>CPR</English>
@@ -35,6 +39,7 @@
             <French>RCP</French>
             <German>HLW</German>
             <Portuguese>RCP</Portuguese>
+            <Korean>심폐소생술 (CPR)</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_IV_IO">
             <English>IV/IO</English>
@@ -42,10 +47,12 @@
             <French>IV/IO</French>
             <German>IV/IO</German>
             <Portuguese>IV/IO</Portuguese>
+            <Korean>정맥/골내 주사 (IV/IO)</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Medication">
             <English>Medication</English>
             <Portuguese>Medicamentos</Portuguese>
+            <Korean>투약</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_BloodTypes">
             <English>Blood Types</English>
@@ -53,6 +60,7 @@
             <French>Types de sang</French>
             <German>Blutgruppen</German>
             <Portuguese>Tipos sanguíneos</Portuguese>
+            <Korean>혈액형</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestBleedRate">
             <English>Cardiac Arrest Bleed Rate</English>
@@ -60,6 +68,7 @@
             <French>Taux de saignement en cas d'arrêt cardiaque</French>
             <German>Kreislaufstillstand Blutungsrate</German>
             <Portuguese>Taxa de sangramento em parada cardíaca</Portuguese>
+            <Korean>심정지 출혈 속도</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestBleedRate_Desc">
             <English>Sets bleed rate while in cardiac arrest</English>
@@ -67,6 +76,7 @@
             <French>Fixe le taux de saignement en cas d'arrêt cardiaque</French>
             <German>Setzt die Blutungsrate bei Kreislaufstillstand</German>
             <Portuguese>Define a taxa de sangramento durante uma parada cardíaca</Portuguese>
+            <Korean>심정지 중 출혈 속도를 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClotting">
             <English>Enable Clotting</English>
@@ -74,6 +84,7 @@
             <French>Permettre la coagulation</French>
             <German>Blutgerinnung aktivieren</German>
             <Portuguese>Habilitar coagulamento</Portuguese>
+            <Korean>응고 활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClotting_Desc">
             <English>Sets whether clotting is enabled</English>
@@ -81,6 +92,7 @@
             <French>Définit si la coagulation est activée</French>
             <German>Stellt ein, ob das Blutgerinnungssystem aktiviert ist</German>
             <Portuguese>Define se a coagulação está ativada</Portuguese>
+            <Korean>응고 기능을 사용할지 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClottingAffectAI">
             <English>Clotting for AI</English>
@@ -88,6 +100,7 @@
             <French>Coagulation pour l'IA</French>
             <German>Blutgerinnung für KI</German>
             <Portuguese>Coagulamento para IA</Portuguese>
+            <Korean>AI 응고 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClottingAffectAI_Desc">
             <English>Sets whether clotting is allowed for AI</English>
@@ -95,6 +108,7 @@
             <French>Définit si la coagulation est autorisée pour l'IA</French>
             <German>Stellt ein, ob KI-Einheiten von Blutgerinnung betroffen sind</German>
             <Portuguese>Define se a coagulamento é permitida para IA</Portuguese>
+            <Korean>AI에게 응고를 허용할지 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestChance">
             <English>Critical Damage Cardiac Arrest Chance</English>
@@ -102,6 +116,7 @@
             <French>Risque d'arrêt cardiaque soudain</French>
             <German>Kritischer Schaden Kreislaufstillstandwahrscheinlichkeit</German>
             <Portuguese>Dano crítico chance de parada cardíaca</Portuguese>
+            <Korean>치명상 시 심정지 확률</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestChance_Desc">
             <English>Sets chance for unit to go into cardiac arrest after taking critical damage</English>
@@ -109,6 +124,7 @@
             <French>Définit la probabilité que l'unité fasse un arrêt cardiaque après avoir subi des dégâts critiques</French>
             <German>Setzt die Wahrscheinlichkeit, dass ein Spieler reanimationspflichtig wird, nachdem kritischer Schaden erhalten wurde</German>
             <Portuguese>Define a chance de a unidade entrar em parada cardíaca após sofrer dano crítico</Portuguese>
+            <Korean>중상 후 유닛이 심정지에 빠질 확률을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestDeteriorationRate">
             <English>Rhythm Deterioration Multiplier</English>
@@ -116,6 +132,7 @@
             <French>Multiplicateur de détérioration du rythme</French>
             <German>Rhythmusverschlechterungsmultiplikator</German>
             <Portuguese>Multiplicador de deterioração do ritmo</Portuguese>
+            <Korean>리듬 악화 배수</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestDeteriorationRate_Desc">
             <English>Chance that rhythm will deteriorate while in cardiac arrest</English>
@@ -123,6 +140,7 @@
             <French>Risque d'aggravation du rythme cardiaque</French>
             <German>Wahrscheinlichkeit, dass sich ein Rhythmus im Laufe der Reanimation verschlechtert</German>
             <Portuguese>Chance de deterioração do ritmo durante a parada cardíaca</Portuguese>
+            <Korean>심정지 동안 심장 리듬이 악화될 확률을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Hardcore_PostCardiacArrest">
             <English>[HARDCORE] Post Cardiac Arrest Complications</English>
@@ -130,6 +148,7 @@
             <French>[HARDCORE] Complications post-arrêt cardiaque</French>
             <German>[HARDCORE] Post-Reanimation Komplikationen</German>
             <Portuguese>[HARDCORE] Complicações pós-parada cardíaca</Portuguese>
+            <Korean>[HARDCORE] 심정지 후 합병증</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Hardcore_PostCardiacArrest_Desc">
             <English>[HARDCORE] Sets whether there should be a decrease in cardiac output after ROSC requiring further treatment to fully treat</English>
@@ -137,6 +156,7 @@
             <French>[HARDCORE] Définit si le débit cardiaque doit être réduit après le retour spontané de la circulation (ROSC).</French>
             <German>[HARDCORE] Stellt ein, ob es eine verringerten kardialen Auswurf nach ROSC gibt, welcher weiter behandelt werden muss, um voll geheilt zu werden</German>
             <Portuguese>[HARDCORE] Define se deve haver uma diminuição na eficiência cardíaco após o ROSC, exigindo tratamento adicional para o tratamento completo</Portuguese>
+            <Korean>[HARDCORE] ROSC(자발순환 회복) 후 심박출량 감소 여부를 설정합니다. 완전 치료를 위해 추가 처치가 필요합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AED">
             <English>Allow AED</English>
@@ -144,6 +164,7 @@
             <French>Autoriser le DAE</French>
             <German>Erlaube AED</German>
             <Portuguese>Permitir DEA</Portuguese>
+            <Korean>AED 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AED_Desc">
             <English>Training level required to use AED</English>
@@ -151,6 +172,7 @@
             <French>Niveau de formation requis pour l'utilisation du DAE</French>
             <German>Benötigtes Qualifikationslevel, um den AED nutzen</German>
             <Portuguese>Nível de treinamento necessário para usar o DEA</Portuguese>
+            <Korean>AED 사용에 필요한 훈련 수준을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_AEDDistanceLimit">
             <English>AED Distance Limit</English>
@@ -158,6 +180,7 @@
             <French>Limite de distance des DAE</French>
             <German>AED Entfernungslimit</German>
             <Portuguese>Limite de distância do DEA</Portuguese>
+            <Korean>AED 거리 제한</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_AEDDistanceLimit_Desc">
             <English>Distance over which the AED will disconnect itself from the patient</English>
@@ -165,6 +188,7 @@
             <French>Distance sur laquelle le DAE se déconnecte du patient</French>
             <German>Entfernung bei der sich der AED automatisch vom Patienten diskonnektiert</German>
             <Portuguese>Distância na qual o DEA se desconectará do paciente</Portuguese>
+            <Korean>AED가 환자와 자동으로 연결이 끊어지는 거리 한계를 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CPREffectiveness">
             <English>CPR Effectiveness Multiplier</English>
@@ -172,6 +196,7 @@
             <French>Multiplicateur d'efficacité de la RCP</French>
             <German>HLW Effektivitätsmultiplikator</German>
             <Portuguese>Multiplicador de eficiência da RCP</Portuguese>
+            <Korean>CPR 효과 배수</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CPREffectiveness_Desc">
             <English>Sets overall CPR effectiveness</English>
@@ -179,6 +204,7 @@
             <French>Définit l'efficacité globale de la RCP</French>
             <German>Stellt die allumfassende HLW Effektivität ein</German>
             <Portuguese>Define a eficácia geral da RCP</Portuguese>
+            <Korean>CPR의 전반적 효과를 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplications">
             <English>Enable IV Complications</English>
@@ -186,6 +212,7 @@
             <French>Permettre les complications IV</French>
             <German>i.v. Zugang Komplikationen aktivieren</German>
             <Portuguese>Habilitar complicações com IV</Portuguese>
+            <Korean>IV 합병증 활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplications_Desc">
             <English>Sets whether IVs can get complications if inserted on damaged limbs</English>
@@ -193,6 +220,7 @@
             <French>Indique si l'insertion d'une perfusion peut poser des problèmes si elle a été effectuée sur un membre endommagé.</French>
             <German>Stellt ein, ob ein i.v. Zugang Komplikationen auslösen kann, wenn diese an verwundeten Extremitäten platziert werden</German>
             <Portuguese>Define se os IVs podem causar complicações se inseridos em membros lesionados</Portuguese>
+            <Korean>손상된 사지에 IV 삽입 시 합병증 발생 가능 여부를 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplicationsDeteriorate">
             <English>Enable IV Complication Deterioration</English>
@@ -200,6 +228,7 @@
             <French>Activer  l'aggravation des complications IV</French>
             <German>IV-Zugang Komplikationsverschlechterung aktivieren</German>
             <Portuguese>Deterioração de complicações de habilitação IV</Portuguese>
+            <Korean>IV 합병증 악화 활성화</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplicationsDeteriorate_Desc">
             <English>Sets whether IVs with complications can deteriorate during use, or deteriorate into a complication if one isn't already present</English>
@@ -207,6 +236,7 @@
             <French>Définit si des problèmes d'insertion IV peuvent survenir pendant l'utilisation</French>
             <German>Stellt ein, ob sich die i.v. Zugangskomplikationen bei Benutzung verschlechtern können bzw. ob Komplikationen im Verlauf entstehen können</German>
             <Portuguese>Define se os IVs com complicações podem se deteriorar durante o uso ou se deteriorar em uma complicação, caso ela ainda não esteja presente</Portuguese>
+            <Korean>합병증이 있는 IV가 사용 중 악화되거나, 없던 합병증이 발생할 수 있는지 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IV">
             <English>Allow IV</English>
@@ -214,6 +244,7 @@
             <French>Autoriser l'IV</French>
             <German>Erlaube i.v. Zugang</German>
             <Portuguese>Permitir IV</Portuguese>
+            <Korean>IV 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IV_Desc">
             <English>Training level required to insert IVs</English>
@@ -221,6 +252,7 @@
             <French>Niveau de formation requis pour la pose d'intraveineuses</French>
             <German>Benötigtes Qualifikationslevel, um einen i.v. Zugang zu legen</German>
             <Portuguese>Nível de treinamento necessário para inserir IVs</Portuguese>
+            <Korean>IV(정맥주사) 삽입에 필요한 훈련 수준을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IO">
             <English>Allow IO</English>
@@ -228,6 +260,7 @@
             <French>Autoriser les IO</French>
             <German>Erlaube i.o. Zugang</German>
             <Portuguese>Permitir IO</Portuguese>
+            <Korean>IO 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IO_Desc">
             <English>Training level required to insert IOs</English>
@@ -235,6 +268,7 @@
             <French>Niveau de formation requis pour l'insertion des IO</French>
             <German>Benötigtes Qualifikationslevel, um einen i.o. Zugang zu legen</German>
             <Portuguese>Nível de treinamento necessário para inserir IOs</Portuguese>
+            <Korean>IO(골내주사) 삽입에 필요한 훈련 수준을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_16">
             <English>16g IV Time</English>
@@ -242,6 +276,7 @@
             <German>16g i.v. Zeit</German>
             <French>Temps 16g</French>
             <Portuguese>Tempo para IV 16g </Portuguese>
+            <Korean>16g IV 시간</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_16_Desc">
             <English>Time to insert 16g IV</English>
@@ -249,6 +284,7 @@
             <French>Temps pour insérer 16g IV</French>
             <German>Benötigte Zeit, um einen 16g i.v. Zugang zu legen</German>
             <Portuguese>Tempo para inserir IV 16g</Portuguese>
+            <Korean>16g IV 삽입에 걸리는 시간을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_14">
             <English>14g IV Time</English>
@@ -256,6 +292,7 @@
             <German>14g i.v. Zeit</German>
             <French>Temps 14g</French>
             <Portuguese>Tempo para IV 14g</Portuguese>
+            <Korean>14g IV 시간</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_14_Desc">
             <English>Time to insert 14g IV</English>
@@ -263,6 +300,7 @@
             <French>Temps pour insérer 14g IV</French>
             <German>Benötigte Zeit, um einen 14g i.v. Zugang zu legen</German>
             <Portuguese>Tempo para inserir IV 14g</Portuguese>
+            <Korean>14g IV 삽입에 걸리는 시간을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_EZ">
             <English>EZ-IO Time</English>
@@ -270,6 +308,7 @@
             <German>EZ-IO Zeit</German>
             <French>Temps EZ-IO</French>
             <Portuguese>Tempo para EZ-IO</Portuguese>
+            <Korean>EZ-IO 시간</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_EZ_Desc">
             <English>Time to insert EZ-IO</English>
@@ -277,6 +316,7 @@
             <German>Benötigte Zeit, um einen EZ-IO Zugang zu bohren</German>
             <French>Temps pour insérer EZ-IO</French>
             <Portuguese>Tempo para inserir EZ-IO</Portuguese>
+            <Korean>EZ-IO 삽입에 걸리는 시간을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_FAST1">
             <English>FAST1 IO Time</English>
@@ -284,6 +324,7 @@
             <German>FAST1 IO Zeit</German>
             <French>Temps FAST1 IO</French>
             <Portuguese>Tempo para FAST1 IO </Portuguese>
+            <Korean>FAST1 IO 시간</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_FAST1_Desc">
             <English>Time to insert FAST1 IO</English>
@@ -291,6 +332,7 @@
             <German>Benötigte Zeit, um einen FAST1 IO Zugang zu bohren</German>
             <French>Temps pour insérer FAST1 IO</French>
             <Portuguese>Tempo para inserir FAST1 IO</Portuguese>
+            <Korean>FAST1 IO 삽입에 걸리는 시간을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIV">
             <English>Allow Self IV</English>
@@ -298,6 +340,7 @@
             <French>Autoriser une IV sur soi-même</French>
             <German>Erlaube Selbst-i.v. Zugang</German>
             <Portuguese>Permitir auto IV</Portuguese>
+            <Korean>자가 IV 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIV_Desc">
             <English>Allow self-application of IV</English>
@@ -305,6 +348,7 @@
             <French>Autoriser la pose d'une IV sur soi-même</French>
             <German>Erlaube es, einen i.v. Zugang bei sich selbst zu legen</German>
             <Portuguese>Permitir a autoaplicação de IV</Portuguese>
+            <Korean>자기 자신에게 IV 적용을 허용합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIO">
             <English>Allow Self IO</English>
@@ -312,6 +356,7 @@
             <French>Autoriser l'IO sur soi-même</French>
             <German>Erlaube Selbst-i.o. Zugang</German>
             <Portuguese>Permitir auto IO</Portuguese>
+            <Korean>자가 IO 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIO_Desc">
             <English>Allow self-application of IO</English>
@@ -319,36 +364,45 @@
             <French>Permettre l'auto-application de l'IO</French>
             <German>Erlaube es, einen i.o. Zugang bei sich selbst zu bohren</German>
             <Portuguese>Permitir a autoaplicação de IO</Portuguese>
+            <Korean>자기 자신에게 IO 적용을 허용합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe">
             <English>Reusable Syringes</English>
+            <Korean>주사기 재사용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Desc">
             <English>Sets whether syringes are reusable instead of consumed on medication administration</English>
+            <Korean>약물 투여 시 주사기를 소비하지 않고 재사용할지 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
             <Portuguese>Permitir seringa</Portuguese>
+            <Korean>주사기 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe_Desc">
             <English>Training level required to use syringes</English>
             <Portuguese>Nível de treinamento necessário para usar seringas</Portuguese>
+            <Korean>주사기 사용에 필요한 훈련 수준을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant">
             <English>Allow Ammonia Inhalant</English>
             <Portuguese>Permitir inalador de amônia</Portuguese>
+            <Korean>암모니아 흡입제 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant_Desc">
             <English>Training level required to use ammonia inhalant</English>
             <Portuguese>Nível de treinamento necessário para usar o inalador de amônia</Portuguese>
+            <Korean>암모니아 흡입제 사용에 필요한 훈련 수준을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge">
             <English>Allow Fentanyl Lozenge</English>
             <Portuguese>Permitir pirulito de fentanil</Portuguese>
+            <Korean>펜타닐 로젠지 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge_Desc">
             <English>Training level required to administer fentanyl lozenges</English>
             <Portuguese>Nível de treinamento necessário para administrar pirulitos de fentanil</Portuguese>
+            <Korean>펜타닐 로젠지 투여에 필요한 훈련 수준을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1">
             <English>%1 Ratio</English>
@@ -356,6 +410,7 @@
             <French>%1 Ratio</French>
             <German>%1 Rate</German>
             <Portuguese>%1 Razão</Portuguese>
+            <Korean>%1 비율</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1_Desc">
             <English>Ratio out of 100 that is taken by the %1 blood type, ratios must add up to exactly 100</English>
@@ -363,18 +418,21 @@
             <French>Coefficient avec 100 pour le groupe sanguin %1, la somme des coefficients doit être égale à 100.</French>
             <German>Prozentzahl (x von 100) in welcher die Blutgruppe %1 vorkommt. Raten müssen insgesamt 100 ergeben</German>
             <Portuguese>Proporção de 100 que é obtida pelo tipo sanguíneo %1; as proporções devem somar exatamente 100</Portuguese>
+            <Korean>혈액형 %1이 차지하는 비율(100 기준)을 설정합니다. 총합은 반드시 100이 되어야 합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList">
             <English>Use Custom List</English>
             <French>Utiliser une liste personnalisée</French>
             <German>Benutze Custom Liste</German>
             <Portuguese>Usar lista personalizada</Portuguese>
+            <Korean>사용자 정의 목록 사용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList_Desc">
             <English>Sets whether blood types should be set based on custom list instead of SteamID</English>
             <French>Définit si les groupes sanguins doivent être définis sur la base d'une liste personnalisée au lieu de l'identifiant SteamID.</French>
             <German>Stellt ein, ob die Blutgruppen aufgrund einer eigenen Liste gesetzt werden, statt von der SteamID</German>
             <Portuguese>Define se os tipos de sangue devem ser definidos com base na lista personalizada em vez do SteamID</Portuguese>
+            <Korean>혈액형을 SteamID가 아닌 사용자 정의 목록으로 설정할지 여부를 정합니다.</Korean>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Circulation_AED">
@@ -383,6 +441,7 @@
                 <German>Automatischer Externer Defibrillator</German>
                 <French>Défibrillateur Externe Automatisé</French>
                 <Portuguese>Desfibrilador externo automático</Portuguese>
+                <Korean>자동심장충격기 (Automated External Defibrillator)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Short">
                 <English>AED</English>
@@ -390,6 +449,7 @@
                 <German>AED</German>
                 <French>AED</French>
                 <Portuguese>DEA</Portuguese>
+                <Korean>AED</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Desc">
                 <English>Device used to monitor patient vitals and treat cardiac arrest</English>
@@ -397,6 +457,7 @@
                 <German>Ein Patientenmonitor um Vitalwerte zu überwachen und den Patienten in der Reanimation zu defibrillieren</German>
                 <French>Dispositif utilisé pour surveiller les constantes vitales du patient et traiter l'arrêt cardiaque</French>
                 <Portuguese>Dispositivo usado para monitorar os sinais vitais do paciente e tratar a parada cardíaca</Portuguese>
+                <Korean>환자의 활력징후를 모니터링하고 심정지를 치료하는 장치입니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff">
                 <English>Pressure Cuff</English>
@@ -404,6 +465,7 @@
                 <German>Blutdruckmanschette</German>
                 <French>Brassard de tensiomètre</French>
                 <Portuguese>Esfigmomanômetro</Portuguese>
+                <Korean>수동 혈압계</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Desc">
                 <English>Used to measure blood pressure</English>
@@ -411,6 +473,7 @@
                 <German>Wird benutzt, um Blutdruck zu messen</German>
                 <French>Utilisé pour mesurer la tension artérielle</French>
                 <Portuguese>Usado para medir a pressão arterial</Portuguese>
+                <Korean>혈압을 측정하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_16g">
                 <English>16g IV</English>
@@ -418,6 +481,7 @@
                 <German>16g i.v. Katheter</German>
                 <French>16g IV</French>
                 <Portuguese>IV 16g</Portuguese>
+                <Korean>16g IV</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_16g_Desc">
                 <English>Used to gain intravenous access to transfuse fluids in case of blood loss</English>
@@ -425,6 +489,7 @@
                 <German>Wird benutzt, um einen intravenösen Zugang zu etablieren für Flüssigkeitstransfusionen oder i.v. Medikamentengabe</German>
                 <French>Utilisé pour obtenir un accès intraveineux afin de transfuser des fluides en cas de perte de sang.</French>
                 <Portuguese>Usado para obter acesso intravenoso para transfusão de fluidos em caso de perda de sangue</Portuguese>
+                <Korean>출혈 시 체액 수혈/주입을 위해 정맥 접근을 확보하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_14g">
                 <English>14g IV</English>
@@ -432,6 +497,7 @@
                 <German>14g i.v. Katheter</German>
                 <French>14g IV</French>
                 <Portuguese>IV 14g</Portuguese>
+                <Korean>14g IV</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_14g_Desc">
                 <English>Used to gain intravenous access to rapidly transfuse fluids in case of blood loss</English>
@@ -439,6 +505,7 @@
                 <German>Wird benutzt, um einen intravenösen Zugang zu etablieren für schnelle Flüssigkeitstransfusion bei Blutverlust</German>
                 <French>Utilisé pour obtenir un accès intraveineux afin de transfuser rapidement des fluides en cas de perte de sang.</French>
                 <Portuguese>Usado para obter acesso intravenoso para transfusão rápida de fluidos em caso de perda de sangue</Portuguese>
+                <Korean>대량 출혈 시 빠른 수액 주입을 위해 정맥 접근을 확보하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_FAST1">
                 <English>FAST1 IO</English>
@@ -446,6 +513,7 @@
                 <German>FAST1 IO</German>
                 <French>FAST1 IO</French>
                 <Portuguese>FAST1 IO</Portuguese>
+                <Korean>FAST1 IO</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_FAST1_Desc">
                 <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the sternum</English>
@@ -453,6 +521,7 @@
                 <German>Wird bei schweren Verletzungen benutzt, um im Sternum einen i.o. Zugang für Flüssigkeitstransfusion oder Medikamentengabe zu legen</German>
                 <French>Utilisé pour obtenir un accès intra-osseux afin de transfuser des fluides en cas de blessure grave, permet un accès au niveau du sternum.</French>
                 <Portuguese>Usado para obter acesso intraósseo para transfusão de fluidos em caso de lesão grave, permite acesso no esterno</Portuguese>
+                <Korean>중상 시 흉골에 골내 접근을 확보하여 체액을 주입하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_EZ">
                 <English>EZ-IO</English>
@@ -460,6 +529,7 @@
                 <German>EZ-IO</German>
                 <French>EZ-IO</French>
                 <Portuguese>EZ-IO</Portuguese>
+                <Korean>EZ-IO</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_EZ_Desc">
                 <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the extremities</English>
@@ -467,6 +537,7 @@
                 <German>Wird benutzt, um einen i.o. Zugang in die Extremitäten zu bohren</German>
                 <French>Utilisé pour obtenir un accès intra-osseux afin de transfuser des fluides en cas de blessure grave, permet l'accès aux extrémités.</French>
                 <Portuguese>Usado para obter acesso intraósseo para transfusão de fluidos em caso de lesão grave, permite o acesso nas extremidades</Portuguese>
+                <Korean>중상 시 사지에 골내 접근을 확보하여 체액을 주입하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe">
                 <English>Syringe</English>
@@ -474,6 +545,7 @@
                 <German>Spritze</German>
                 <French>Seringue</French>
                 <Portuguese>Seringa</Portuguese>
+                <Korean>주사기</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringes">
                 <English>Syringes</English>
@@ -481,6 +553,7 @@
                 <German>Spritzen</German>
                 <French>Seringues</French>
                 <Portuguese>Seringas</Portuguese>
+                <Korean>주사기들</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_%1">
                 <English>Syringe (%1ml)</English>
@@ -488,6 +561,7 @@
                 <German>Spritze (%1 ml)</German>
                 <French>Seringue (%1ml)</French>
                 <Portuguese>Seringa (%1ml)</Portuguese>
+                <Korean>주사기 (%1ml)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Desc_%1">
                 <English>Used to administer %1ml of medication</English>
@@ -495,6 +569,7 @@
                 <German>Wird benutzt, um %1 ml Medikament zu spritzen</German>
                 <French>Utilisé pour administrer %1ml de médicament</French>
                 <Portuguese>Usado para administrar %1ml de medicamento</Portuguese>
+                <Korean>약물 %1ml를 투여하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_PreparedWith">
                 <English>%1ml syringe prepared with %2</English>
@@ -502,6 +577,7 @@
                 <German>%1 ml Spritze mit %2</German>
                 <French>Seringue de %1ml préparée avec %2</French>
                 <Portuguese>Seringa de %1ml preparada com %2</Portuguese>
+                <Korean>%1ml 주사기에 %2 준비됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_BloodBag">
                 <English>Blood Bag %1</English>
@@ -509,6 +585,7 @@
                 <German>Blutkonserve %1</German>
                 <French>Poche de sang %1</French>
                 <Portuguese>Bolsa de sangue %1</Portuguese>
+                <Korean>혈액 백 %1</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_BloodBag_Desc">
                 <English>Used to replenish lost blood volume</English>
@@ -516,6 +593,7 @@
                 <German>Wird benutzt, um Blutvolumen aufzufüllen</German>
                 <French>Utilisé pour reconstituer le volume sanguin perdu</French>
                 <Portuguese>Usado para repor o volume de sangue perdido</Portuguese>
+                <Korean>손실된 혈액량을 보충하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit">
                 <English>Field Blood Transfusion Kit</English>
@@ -523,6 +601,7 @@
                 <German>Feld-Bluttransfusionskit</German>
                 <French>Kit de transfusion sanguine sur le terrain</French>
                 <Portuguese>Kit de transfusão de sangue em campo</Portuguese>
+                <Korean>현장 수혈 키트 (Field Blood Transfusion Kit)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Short">
                 <English>FBTK</English>
@@ -530,6 +609,7 @@
                 <German>FBTK</German>
                 <French>FBTK</French>
                 <Portuguese>FBTK</Portuguese>
+                <Korean>FBTK</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Desc">
                 <English>Used to transfuse fresh blood in emergency</English>
@@ -537,6 +617,7 @@
                 <German>Wird benutzt, um frisches Vollblut im Notfall zu transfundieren</German>
                 <French>Utilisé pour transfuser du sang frais en cas d'urgence</French>
                 <Portuguese>Usado para transfusão de sangue fresco em casos de emergência</Portuguese>
+                <Korean>응급 상황에서 신선한 혈액을 수혈하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag">
                 <English>Fresh Blood Bag %1</English>
@@ -544,6 +625,7 @@
                 <German>Frische Vollblutkonserve %1</German>
                 <French>Poche de sang frais %1</French>
                 <Portuguese>Bolsa de sangue fresco %1</Portuguese>
+                <Korean>신선 혈액 백 %1 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag_Short">
                 <English>FWB Bag %1</English>
@@ -551,6 +633,7 @@
                 <German>Frische Vollblutkonserve %1</German>
                 <French>Sang frais %1</French>
                 <Portuguese>Bolsa SF %1</Portuguese>
+                <Korean>FWB 백 %1</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag_Desc">
                 <English>Freshly transfused blood, used to replenish lost blood volume</English>
@@ -558,6 +641,7 @@
                 <German>Frisches Vollblut, wird benutzt um Blutvolumen aufzufüllen</German>
                 <French>Sang fraîchement transfusé, utilisé pour restaurer le volume sanguin perdu.</French>
                 <Portuguese>Sangue recém-transfundido, usado para repor o volume de sangue perdido</Portuguese>
+                <Korean>막 수혈한 신선 혈액으로, 손실된 혈액량 보충에 사용됩니다.</Korean>
             </Key>
         </Container>
         <Container name="// Items - Individual Medication //">
@@ -567,6 +651,7 @@
                 <German>Adrenalin</German>
                 <French>Epinéphrine</French>
                 <Portuguese>Epinefrina</Portuguese>
+                <Korean>에피네프린 (Epinephrine)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Adenosine">
                 <English>Adenosine</English>
@@ -574,6 +659,7 @@
                 <German>Adenosin</German>
                 <French>Adénosine</French>
                 <Portuguese>Adenosina</Portuguese>
+                <Korean>아데노신 (Adenosine)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Morphine">
                 <English>Morphine</English>
@@ -581,6 +667,7 @@
                 <German>Morphin</German>
                 <French>Morphine</French>
                 <Portuguese>Morfina</Portuguese>
+                <Korean>모르핀 (Morphine)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ketamine">
                 <English>Ketamine</English>
@@ -588,6 +675,7 @@
                 <German>Ketamin</German>
                 <French>Kétamine</French>
                 <Portuguese>Quetamina</Portuguese>
+                <Korean>케타민 (Ketamine)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Lidocaine">
                 <English>Lidocaine</English>
@@ -595,6 +683,7 @@
                 <German>Lidocain</German>
                 <French>Lidocaine</French>
                 <Portuguese>Lidocaína</Portuguese>
+                <Korean>리도카인 (Lidocaine)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_TXA">
                 <English>TXA</English>
@@ -602,6 +691,7 @@
                 <German>TXA</German>
                 <French>TXA</French>
                 <Portuguese>TXA</Portuguese>
+                <Korean>트라넥사믹산 (TXA)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Amiodarone">
                 <English>Amiodarone</English>
@@ -609,10 +699,12 @@
                 <German>Amiodaron</German>
                 <French>Amiodarone</French>
                 <Portuguese>Amiodarona</Portuguese>
+                <Korean>아미오다론 (Amiodarone)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Atropine">
                 <English>Atropine</English>
                 <Portuguese>Atropina</Portuguese>
+                <Korean>아트로핀 (Atropine)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Fentanyl">
                 <English>Fentanyl</English>
@@ -620,6 +712,7 @@
                 <German>Fentanyl</German>
                 <French>Fentanyl</French>
                 <Portuguese>Fentanil</Portuguese>
+                <Korean>펜타닐 (Fentanyl)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ondansetron">
                 <English>Ondansetron</English>
@@ -627,6 +720,7 @@
                 <German>Ondansetron</German>
                 <French>Ondansetron</French>
                 <Portuguese>Ondansetrona</Portuguese>
+                <Korean>온단세트론 (Ondansetron)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_CalciumChloride">
                 <English>Calcium Chloride</English>
@@ -634,6 +728,7 @@
                 <German>Calciumchlorid</German>
                 <French>Chlorure de calcium</French>
                 <Portuguese>Cloreto de cálcio</Portuguese>
+                <Korean>염화칼슘 (Calcium Chloride)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ertapenem">
                 <English>Ertapenem</English>
@@ -641,6 +736,7 @@
                 <German>Ertapenem</German>
                 <French>Ertapenem</French>
                 <Portuguese>Ertapenem</Portuguese>
+                <Korean>에르타페넴 (Ertapenem)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Esmolol">
                 <English>Esmolol</English>
@@ -648,6 +744,7 @@
                 <German>Esmolol</German>
                 <French>Esmolol</French>
                 <Portuguese>Esmolol</Portuguese>
+                <Korean>에스몰롤 (Esmolol)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Naloxone">
                 <English>Naloxone</English>
@@ -655,6 +752,7 @@
                 <German>Naloxon</German>
                 <French>Naloxone</French>
                 <Portuguese>Naloxona</Portuguese>
+                <Korean>날록손 (Naloxone)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Penthrox">
                 <English>Penthrox</English>
@@ -662,20 +760,24 @@
                 <German>Methoxyfluran</German>
                 <French>Penthrox</French>
                 <Portuguese>Penthrox</Portuguese>
+                <Korean>흡입식 진통 마취제 (Penthrox)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_OTFC">
                 <English>Oral Transmucosal Fentanyl Citrate</English>
                 <French>Citrate de fentanyl par voie orale et transmuqueuse</French>
                 <Portuguese>Citrato de Fentanil Transmucoso Oral</Portuguese>
+                <Korean>구강점막 펜타닐 시트르산염 (Oral Transmucosal Fentanyl Citrate)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_OTFC_Short">
                 <English>OTFC</English>
                 <French>OTFC</French>
                 <Portuguese>CFTO</Portuguese>
+                <Korean>OTFC</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Dimercaprol">
                 <English>Dimercaprol</English>
                 <Portuguese>Dimercaprol</Portuguese>
+                <Korean>디메르캅롤 (Dimercaprol)</Korean>
             </Key>
         </Container>
         <Container name="// Items - Medication //">
@@ -685,6 +787,7 @@
                 <German>Adrenalin Ampulle (1mg/1ml)</German>
                 <French>Epinéphrine en flacon (1mg/1ml)</French>
                 <Portuguese>Frasco de epinefrina (1mg/1ml)</Portuguese>
+                <Korean>에피네프린 바이알 (1mg/1ml) (Epinephrine Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Epinephrine_Desc">
                 <English>Used to treat cardiac arrest</English>
@@ -692,6 +795,7 @@
                 <German>Wird im Rahmen der Reanimation verwendet</German>
                 <French>Utilisé pour traiter les arrêts cardiaques</French>
                 <Portuguese>Usado para tratar parada cardíaca</Portuguese>
+                <Korean>심정지 치료에 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Adenosine">
                 <English>Adenosine Vial (12mg/4ml)</English>
@@ -699,6 +803,7 @@
                 <German>Adenosin Ampulle (12mg/4ml)</German>
                 <French>Adénosine en flacon (12mg/4ml)</French>
                 <Portuguese>Frasco de adenosina (12mg/4ml)</Portuguese>
+                <Korean>아데노신 바이알 (12mg/4ml) (Adenosine Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Adenosine_Desc">
                 <English>Used to treat certain heart arrhythmias</English>
@@ -706,6 +811,7 @@
                 <German>Behandelt bestimmte Arrhythmien</German>
                 <French>Utilisé pour traiter certaines arythmies cardiaques</French>
                 <Portuguese>Usado para tratar certas arritmias cardíacas</Portuguese>
+                <Korean>특정 심장 부정맥(Arrhythmia) 치료에 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Morphine">
                 <English>Morphine Vial (10mg/2ml)</English>
@@ -713,6 +819,7 @@
                 <German>Morphin Ampulle (10mg/2ml)</German>
                 <French>Morphine en flacon (10mg/2ml)</French>
                 <Portuguese>Frasco de morfina (10 mg/2 ml)</Portuguese>
+                <Korean>모르핀 바이알 (10mg/2ml) (Morphine Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Morphine_Desc">
                 <English>Used to manage moderate to severe pain experiences</English>
@@ -720,6 +827,7 @@
                 <German>Behandelt moderaten bis schweren Schmerz</German>
                 <French>Utilisé pour gérer les douleurs modérées à sévères</French>
                 <Portuguese>Usado para controlar experiências de dor moderada a grave</Portuguese>
+                <Korean>중등도~중증 통증 관리를 위해 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ketamine">
                 <English>Ketamine Vial (500mg/10ml)</English>
@@ -727,6 +835,7 @@
                 <German>Ketamin Ampulle (500mg/10ml)</German>
                 <French>Kétamine en flacon (500mg/10ml)</French>
                 <Portuguese>Frasco de quetamina (500mg/10ml)</Portuguese>
+                <Korean>케타민 바이알 (500mg/10ml) (Ketamine Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ketamine_Desc">
                 <English>Used to manage moderate to severe pain, alternative to opioid analgesics</English>
@@ -734,6 +843,7 @@
                 <German>Behandelt moderaten bis schweren Schmerz, alternative zu Opioid-Analgetika</German>
                 <French>Utilisé pour gérer la douleur modérée à sévère, alternative aux analgésiques opioïdes</French>
                 <Portuguese>Usado para controlar a dor moderada a grave, alternativa aos analgésicos opioides</Portuguese>
+                <Korean>중등도~중증 통증 관리에 사용되며, 오피오이드 진통제의 대안입니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Lidocaine">
                 <English>Lidocaine Vial (100mg/5ml)</English>
@@ -741,6 +851,7 @@
                 <German>Lidocain Ampulle (100mg/5ml)</German>
                 <French>Lidocaïne en flacon (100mg/5ml)</French>
                 <Portuguese>Frasco de lidocaína (100mg/5ml)</Portuguese>
+                <Korean>리도카인 바이알 (100mg/5ml) (Lidocaine Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Lidocaine_Desc">
                 <English>Used as local anesthetic for painful surgical procedures, and to treat irregular heart rhythms</English>
@@ -748,6 +859,7 @@
                 <German>Lokalanästhetikum und Antiarrhythmikum</German>
                 <French>Utilisé comme anesthésique local pour les interventions chirurgicales douloureuses</French>
                 <Portuguese>Usado como anestésico local para procedimentos cirúrgicos dolorosos e para tratar ritmos cardíacos irregulares</Portuguese>
+                <Korean>통증을 수반하는 외과적 처치의 국소마취 및 부정맥(Arrhythmia) 치료에 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_TXA">
                 <English>TXA Vial (1g/10ml)</English>
@@ -755,6 +867,7 @@
                 <German>TXA Ampulle (1g/10ml)</German>
                 <French>TXA en flacon (1g/10ml)</French>
                 <Portuguese>Frasco de TXA (1g/10ml)</Portuguese>
+                <Korean>트라넥사믹산 바이알 (1g/10ml) (TXA Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_TXA_Desc">
                 <English>Used to manage catastrophic bleeding by preventing clot dissolvement</English>
@@ -762,6 +875,7 @@
                 <German>Antifibrinolytikum, um katastrophale Blutungen zu stoppen</German>
                 <French>Utilisé pour lutter contre les hémorragies internes en réduisant la décomposition des caillots dans la circulation sanguine.</French>
                 <Portuguese>Usado para controlar sangramentos catastróficos, impedindo a dissolução do coágulo</Portuguese>
+                <Korean>혈전 용해를 억제하여 대량 출혈을 관리하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Amiodarone">
                 <English>Amiodarone Vial (150mg/3ml)</English>
@@ -769,6 +883,7 @@
                 <German>Amiodaron Ampulle (150mg/3ml)</German>
                 <French>Amiodarone en flacon (150mg/3ml)</French>
                 <Portuguese>Frasco de amiodarona (150mg/3ml)</Portuguese>
+                <Korean>아미오다론 바이알 (150mg/3ml) (Amiodarone Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Amiodarone_Desc">
                 <English>Used to treat irregular heart rhythms</English>
@@ -776,14 +891,17 @@
                 <German>Antiarrhythmikum</German>
                 <French>Utilisé pour traiter les rythmes cardiaques irréguliers</French>
                 <Portuguese>Usado para tratar ritmos cardíacos irregulares</Portuguese>
+                <Korean>부정맥(Arrhythmia) 치료에 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Atropine">
                 <English>Atropine Vial (1mg/1ml)</English>
                 <Portuguese>Frasco de Atropina (1mg/1ml)</Portuguese>
+                <Korean>아트로핀 바이알 (1mg/1ml) (Atropine Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Atropine_Desc">
                 <English>Used to treat nerve agent exposure and increase heart rate</English>
                 <Portuguese>Usado para tratar a exposição a agentes nervosos e aumentar a frequência cardíaca</Portuguese>
+                <Korean>신경작용제 노출 치료 및 심박수 증가에 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Fentanyl">
                 <English>Fentanyl Vial (100mcg/2ml)</English>
@@ -791,6 +909,7 @@
                 <German>Fentanyl Ampulle (100μg/2ml)</German>
                 <French>Fentanyl en flacon (100mcg/2ml)</French>
                 <Portuguese>Frasco de fentanil (100mcg/2ml)</Portuguese>
+                <Korean>펜타닐 바이알 (100mcg/2ml) (Fentanyl Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Fentanyl_Desc">
                 <English>Used to manage acute severe pain</English>
@@ -798,6 +917,7 @@
                 <German>Behandelt schweren Schmerz</German>
                 <French>Utilisé pour gérer une douleur aiguë sévère</French>
                 <Portuguese>Usado para controlar a dor aguda grave</Portuguese>
+                <Korean>급성 중증 통증 관리를 위해 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ondansetron">
                 <English>Ondansetron Vial (4mg/2ml)</English>
@@ -805,6 +925,7 @@
                 <German>Ondansetron Ampulle (4mg/2ml)</German>
                 <French>Ondansétron en flacon (4mg/2ml)</French>
                 <Portuguese>Frasco de Ondansetrona (4mg/2ml)</Portuguese>
+                <Korean>온단세트론 바이알 (4mg/2ml) (Ondansetron Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ondansetron_Desc">
                 <English>Used to manage nausea and vomiting</English>
@@ -812,6 +933,7 @@
                 <German>Antiemetikum, um Übelkeit und Ebrechen zu behandeln.</German>
                 <French>Utilisé pour gérer les nausées et les vomissements</French>
                 <Portuguese>Usado para controlar náuseas e vômitos</Portuguese>
+                <Korean>오심 및 구토 관리를 위해 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_CalciumChloride">
                 <English>Calcium Chloride Vial (1g/10ml)</English>
@@ -819,6 +941,7 @@
                 <German>Calciumchlorid Ampulle (1g/10ml)</German>
                 <French>Chlorure de calcium en flacon (1g/10ml)</French>
                 <Portuguese>Frasco de cloreto de cálcio (1g/10ml)</Portuguese>
+                <Korean>염화칼슘 바이알 (1g/10ml) (Calcium Chloride Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_CalciumChloride_Desc">
                 <English>Used to manage low calcium after blood transfusion</English>
@@ -826,6 +949,7 @@
                 <German>Behandelt einen niedrigen Calciumpsiegel nach Bluttransfusion</German>
                 <French>Utilisé pour gérer le manque de calcium après une transfusion sanguine</French>
                 <Portuguese>Usado para controlar o baixo nível de cálcio após uma transfusão de sangue</Portuguese>
+                <Korean>수혈 후 저칼슘혈증 관리에 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ertapenem">
                 <English>Ertapenem Vial (1g/3.2ml)</English>
@@ -833,6 +957,7 @@
                 <German>Ertapanem Ampulle (1g/3.2ml)</German>
                 <French>Ertapenem Flacon (1g/3.2ml)</French>
                 <Portuguese>Frasco de Ertapenem (1g/3,2 ml)</Portuguese>
+                <Korean>에르타페넴 바이알 (1g/3.2ml) (Ertapenem Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ertapenem_Desc">
                 <English>Used to manage infections from open wounds, required before evacuation of casualty</English>
@@ -840,6 +965,7 @@
                 <German>Antibiotika, um Wundinfektionen bei offenen Wunden vorzubeugen. Wird vor Evakuierung benötigt.</German>
                 <French>Utilisé pour traiter les infections des plaies ouvertes, nécessaire avant l'évacuation de la victime.</French>
                 <Portuguese>Usado para tratar infecções de feridas abertas, necessário antes da evacuação da vítima</Portuguese>
+                <Korean>개방창 감염 관리에 사용되며, 환자 후송 전에 필요합니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Esmolol">
                 <English>Esmolol Vial (100mg/10ml)</English>
@@ -847,6 +973,7 @@
                 <German>Esmolol Ampulle (100mg/10ml)</German>
                 <French>Esmolol Flacon (100mg/10ml)</French>
                 <Portuguese>Frasco de Esmolol (100mg/10ml)</Portuguese>
+                <Korean>에스몰롤 바이알 (100mg/10ml) (Esmolol Vial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Esmolol_Desc">
                 <English>Used to lower heart rate for a short time</English>
@@ -854,6 +981,7 @@
                 <German>Betablocker, um kurzfristig die Herzfrequenz zu senken</German>
                 <French>Utilisé pour réduire la fréquence cardiaque pendant une courte période</French>
                 <Portuguese>Usado para diminuir a frequência cardíaca por um curto período de tempo</Portuguese>
+                <Korean>단시간 심박수를 낮추는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Spray_Naloxone">
                 <English>Naloxone Nasal Spray</English>
@@ -861,6 +989,7 @@
                 <German>Naloxon Nasenspray</German>
                 <French>Naloxone en spray nasal</French>
                 <Portuguese>Naloxona Spray Nasal</Portuguese>
+                <Korean>날록손 비강 분무 (Naloxone Nasal Spray)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Spray_Naloxone_Desc">
                 <English>Used to rapidly reverse opioid overdose</English>
@@ -868,6 +997,7 @@
                 <German>Wird bei Opioidüberdosis verwendet</German>
                 <French>Utilisé pour inverser rapidement une overdose d'opioïdes</French>
                 <Portuguese>Usado para reverter rapidamente a overdose de opioides</Portuguese>
+                <Korean>오피오이드 과량 복용을 신속히 역전시키는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol">
                 <English>Paracetamol</English>
@@ -875,16 +1005,19 @@
                 <German>Paracetamol</German>
                 <French>Paracétamol</French>
                 <Portuguese>Paracetamol</Portuguese>
+                <Korean>파라세타몰 (Paracetamol)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_SinglePack">
                 <English>Paracetamol (Single Pack)</English>
                 <French>Paracétamol (paquet individuel)</French>
                 <Portuguese>Paracetamol (embalagem individual)</Portuguese>
+                <Korean>파라세타몰 (단일 포장) (Paracetamol (Single Pack))</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_DoublePack">
                 <English>Paracetamol (Double Pack)</English>
                 <French>Paracétamol (emballage double)</French>
                 <Portuguese>Paracetamol (embalagem dupla)</Portuguese>
+                <Korean>파라세타몰 (이중 포장) (Paracetamol (Double Pack))</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_Desc">
                 <English>Used to combat mild to moderate pain</English>
@@ -892,6 +1025,7 @@
                 <German>Behandelt leichten bis moderaten Schmerz</German>
                 <French>Utilisé pour lutter contre les douleurs légères à modérées</French>
                 <Portuguese>Usado para combater a dor leve a moderada</Portuguese>
+                <Korean>경증~중등도 통증 완화에 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AmmoniaInhalant">
                 <English>Ammonia Inhalant</English>
@@ -899,6 +1033,7 @@
                 <German>Ammoniak Inhalant</German>
                 <French>Inhalation d'ammoniac</French>
                 <Portuguese>Inalante de amônia</Portuguese>
+                <Korean>암모니아 흡입제 (Ammonia Inhalant)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AmmoniaInhalant_Desc">
                 <English>Used to wake up patients who've fainted</English>
@@ -906,6 +1041,7 @@
                 <German>Wird verwendet, um bewusstlose Patienten aufzuwecken</German>
                 <French>Utilisé pour réveiller les patients qui se sont évanouis</French>
                 <Portuguese>Usado para acordar pacientes que desmaiaram</Portuguese>
+                <Korean>실신한 환자를 깨우는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Inhaler_Penthrox">
                 <English>Penthrox Inhaler</English>
@@ -913,6 +1049,7 @@
                 <German>Penthroxpfeife</German>
                 <French>Inhalateur Penthrox</French>
                 <Portuguese>Inalador Penthrox</Portuguese>
+                <Korean>Penthrox 흡입기 (Penthrox Inhaler)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Inhaler_Penthrox_Desc">
                 <English>Used to rapidly manage acute pain for a short time</English>
@@ -920,24 +1057,29 @@
                 <German>Pfeife mit Methoxyflurangas um Schmerzen kurzfristig zu behandeln</German>
                 <French>Utilisé pour gérer rapidement la douleur aiguë pendant une courte période</French>
                 <Portuguese>Usado para controlar rapidamente a dor aguda por um curto período de tempo</Portuguese>
+                <Korean>급성 통증을 단시간 신속히 조절하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl">
                 <English>Fentanyl Lozenge</English>
                 <French>Pastille de Fentanyl</French>
                 <Portuguese>Pirulito de Fentanil</Portuguese>
+                <Korean>펜타닐 로젠지 (Fentanyl Lozenge)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
                 <English>Used to manage acute severe pain, via oral transmucosal route</English>
                 <French>Utilisé pour gérer la douleur aiguë sévère, par voie orale transmucosale</French>
                 <Portuguese>Usado para controlar a dor aguda grave, por via transmucosa oral</Portuguese>
+                <Korean>구강점막 경로로 급성 중증 통증을 관리하는 데 사용됩니다.</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol">
                 <English>Dimercaprol Ampule (300mg/3ml)</English>
                 <Portuguese>Dimercaprol Ampola (300mg/3ml)</Portuguese>
+                <Korean>디메르캅롤 앰플 (300mg/3ml) (Dimercaprol Ampule)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol_Desc">
                 <English>Used to treat lewisite exposure, administered intramuscularly</English>
                 <Portuguese>Usado para tratar a exposição à lewisite, administrado por via intramuscular</Portuguese>
+                <Korean>루이사이트(Lewisite) 노출 치료에 사용되며, 근육주사로 투여합니다.</Korean>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -947,6 +1089,7 @@
                 <German>Paracetamol verabreichen</German>
                 <French>Utiliser du paracétamol</French>
                 <Portuguese>Usar de Paracetamol</Portuguese>
+                <Korean>파라세타몰 사용 (Use Paracetamol)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_UseParacetamol_Progress">
                 <English>Using Paracetamol...</English>
@@ -954,6 +1097,7 @@
                 <German>Verabreiche Paracetamol...</German>
                 <French>Utilisation du paracétamol...</French>
                 <Portuguese>Usando Paracetamol...</Portuguese>
+                <Korean>파라세타몰 사용하는 중... (Using Paracetamol...)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_UsePenthroxInhaler">
                 <English>Use Penthrox Inhaler</English>
@@ -961,6 +1105,7 @@
                 <German>Penthroxpfeife benutzen</German>
                 <French>Utiliser l'inhalateur Penthrox</French>
                 <Portuguese>Usar do Inalador Penthrox</Portuguese>
+                <Korean>Penthrox 흡입기 사용 (Use Penthrox Inhaler)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_UsePenthroxInhaler_Progress">
                 <English>Using Penthrox Inhaler...</English>
@@ -968,6 +1113,7 @@
                 <German>Benutze Penthroxpfeife...</German>
                 <French>Utilisation de l'inhalateur Penthrox...</French>
                 <Portuguese>Usando Inalador Penthrox...</Portuguese>
+                <Korean>Penthrox 흡입기 사용하는 중... (Using Penthrox Inhaler...)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_UseAmmoniaInhalant">
                 <English>Use Ammonia Inhalant</English>
@@ -975,6 +1121,7 @@
                 <German>Ammoniak-Inhalant benutzen</German>
                 <French>Utilisation des inhalations d'ammoniac</French>
                 <Portuguese>Uso de inalante de amônia</Portuguese>
+                <Korean>암모니아 흡입제 사용 (Use Ammonia Inhalant)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_UseAmmoniaInhalant_Progress">
                 <English>Using Ammonia Inhalant...</English>
@@ -982,6 +1129,7 @@
                 <German>Benutze Ammoniak-Inhalant...</German>
                 <French>Utilisation d'un inhalant à base d'ammoniac...</French>
                 <Portuguese>Usando inalador de amônia</Portuguese>
+                <Korean>암모니아 흡입제 사용하는 중... (Using Ammonia Inhalant...)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_UseNaloxoneSpray">
                 <English>Use Naloxone Spray</English>
@@ -989,6 +1137,7 @@
                 <German>Naloxon Nasenspray verwenden</German>
                 <French>Utiliser la Naloxone en spray</French>
                 <Portuguese>Use o spray de naloxona</Portuguese>
+                <Korean>날록손 스프레이 사용 (Use Naloxone Spray)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_UseNaloxoneSpray_Progress">
                 <English>Using Naloxone Spray...</English>
@@ -996,6 +1145,7 @@
                 <German>Benutze Naloxon Nasenspray...</German>
                 <French>Utilisation de la Naloxone en spray...</French>
                 <Portuguese>Usando o spray de naloxona...</Portuguese>
+                <Korean>날록손 스프레이 사용하는 중... (Using Naloxone Spray...)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_UseSyringe">
                 <English>Use Syringe (%1ml)</English>
@@ -1003,6 +1153,7 @@
                 <German>Spritze (%1ml) applizieren</German>
                 <French>Utiliser la seringue (%1ml)</French>
                 <Portuguese>Usar seringa (%1ml)</Portuguese>
+                <Korean>주사기 사용 (%1ml) (Use Syringe (%1ml))</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Intravenous_Short">
                 <English>IV</English>
@@ -1010,6 +1161,7 @@
                 <German>i.v.</German>
                 <French>IV</French>
                 <Portuguese>IV</Portuguese>
+                <Korean>IV</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Intraosseous_Short">
                 <English>IO</English>
@@ -1017,6 +1169,7 @@
                 <German>i.o.</German>
                 <French>IO</French>
                 <Portuguese>IO</Portuguese>
+                <Korean>IO</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Intramuscular_Short">
                 <English>IM</English>
@@ -1024,6 +1177,7 @@
                 <German>i.m.</German>
                 <French>IM</French>
                 <Portuguese>IM</Portuguese>
+                <Korean>IM</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Push">
                 <English>Push</English>
@@ -1031,6 +1185,7 @@
                 <German>Injizieren (IV/IO)</German>
                 <French>Injecter (IV/IO)</French>
                 <Portuguese>Injetar (IV)</Portuguese>
+                <Korean>푸시 (Push)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Inject">
                 <English>Inject</English>
@@ -1038,6 +1193,7 @@
                 <German>Injizieren (IM)</German>
                 <French>Injecter (IM)</French>
                 <Portuguese>Injetar (IM)</Portuguese>
+                <Korean>주입 (Inject)</Korean>
             </Key>
         </Container>
         <Container name="// Fentanyl Lozenge Actions //">
@@ -1045,76 +1201,91 @@
                 <English>Give Fentanyl Lozenge</English>
                 <French>Donner des pastilles de Fentanyl</French>
                 <Portuguese>Administrar pirulito de fentanil</Portuguese>
+                <Korean>펜타닐 로젠지 투여 (Give Fentanyl Lozenge)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GiveFentanylLozenge_Progress">
                 <English>Giving Fentanyl Lozenge...</English>
                 <French>Donner des pastilles de Fentanyl...</French>
                 <Portuguese>Administrando pirulito de fentanil...</Portuguese>
+                <Korean>펜타닐 로젠지 투여 중... (Giving Fentanyl Lozenge...)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge">
                 <English>Remove Fentanyl Lozenge</English>
                 <French>Supprimer la pastille de Fentanyl</French>
                 <Portuguese>Remover pirulito de fentanil</Portuguese>
+                <Korean>펜타닐 로젠지 제거 (Remove Fentanyl Lozenge)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge_Progress">
                 <English>Removing Fentanyl Lozenge...</English>
                 <French>Suppression de la pastille de Fentanyl...</French>
                 <Portuguese>Removendo pirulito de fentanil...</Portuguese>
+                <Korean>펜타닐 로젠지 제거 중... (Removing Fentanyl Lozenge...)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Lozenge">
                 <English>Lozenge</English>
                 <French>Pastille</French>
                 <Portuguese>Pirulito</Portuguese>
+                <Korean>로젠지</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge">
                 <English>Lozenge (OTFC)</English>
                 <French>Pastille (OTFC)</French>
                 <Portuguese>Pirulito (CFTO)</Portuguese>
+                <Korean>로젠지 (OTFC)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Already">
                 <English>Patient already has fentanyl lozenge</English>
                 <French>Le patient a déjà des pastilles de fentanyl</French>
                 <Portuguese>O paciente já tem um pirulito de fentanil</Portuguese>
+                <Korean>환자는 이미 펜타닐 로젠지를 보유함</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Blocked">
                 <English>Patient oral access is blocked by airway adjunct</English>
                 <French>L'accès oral du patient est bloqué par l'adjuvant des voies aériennes.</French>
                 <Portuguese>O acesso oral do paciente está bloqueado por um adjuvante de vias aéreas</Portuguese>
+                <Korean>환자의 구강 접근이 기도 보조기구로 막혀 있음</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Complete">
                 <English>Gave Lozenge (OTFC)</English>
                 <French>Donner une pastille (OTFC)</French>
                 <Portuguese>Deu pirulito (CFTO)</Portuguese>
+                <Korean>로젠지(OTFC) 투여 완료</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Hint">
                 <English>Fentanyl Lozenge has been placed by %1</English>
                 <French>La pastille de Fentanyl a été placée par %1</French>
                 <Portuguese>Pirulito de fentanil foi colocado by %1</Portuguese>
+                <Korean>%1이 펜타닐 로젠지를 적용함</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_ActionLog">
                 <English>%1 gave Fentanyl Lozenge</English>
                 <French>%1 a donné des pastilles de Fentanyl</French>
                 <Portuguese>%1 deu pirulito de fentanil</Portuguese>
+                <Korean>%1이 펜타닐 로젠지를 투여함</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Complete">
                 <English>Removed fentanyl lozenge</English>
                 <French>Suppression de la pastille de fentanyl</French>
                 <Portuguese>Removeu pirulito de fentanil</Portuguese>
+                <Korean>펜타닐 로젠지 제거됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Hint">
                 <English>%1 removed lozenge</English>
                 <French>%1 a supprimé la pastille</French>
                 <Portuguese>%1 removeu </Portuguese>
+                <Korean>%1이 로젠지를 제거함</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_HintSelf">
                 <English>Fentanyl lozenge was removed</English>
                 <French>La pastille de Fentanyl a été retirée</French>
                 <Portuguese>Pirulito de fentanil foi removido</Portuguese>
+                <Korean>펜타닐 로젠지가 제거됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
                 <English>Fentanyl lozenge wore off and was removed</English>
                 <French>La pastille de Fentanyl s'est estompée et a été éliminée.</French>
                 <Portuguese>Pirulito de fentanil acabou e foi removido</Portuguese>
+                <Korean>펜타닡 로젠지 효과가 사라져 제거됨</Korean>
             </Key>
         </Container>
         <Container name="// CPR Action //">
@@ -1124,6 +1295,7 @@
                 <German>HLW starten</German>
                 <French>Commencez la RCP</French>
                 <Portuguese>Começou RCP</Portuguese>
+                <Korean>CPR 시작</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Already">
                 <English>Patient already has CPR provider</English>
@@ -1131,6 +1303,7 @@
                 <German>Patient erhält bereits HLW</German>
                 <French>Le patient reçoit déjà une RCP</French>
                 <Portuguese>Paciente já tem um provedor de RCP</Portuguese>
+                <Korean>환자는 이미 CPR 제공자가 있음</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_ActionLog_Started">
                 <English>%1 started CPR</English>
@@ -1138,6 +1311,7 @@
                 <German>%1 startet HLW</German>
                 <French>%1 a commencé la RCP</French>
                 <Portuguese>%1 iniciou RCP</Portuguese>
+                <Korean>%1이 CPR 시작</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_ActionLog_Stopped">
                 <English>%1 stopped CPR (%2)</English>
@@ -1145,6 +1319,7 @@
                 <German>%1 stoppt HLW (%2)</German>
                 <French>%1 a arrêté la RCP (%2)</French>
                 <Portuguese>%1 parou RCP (%2)</Portuguese>
+                <Korean>%1이 CPR 중단 (%2)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Stop">
                 <English>Stop CPR</English>
@@ -1152,6 +1327,7 @@
                 <German>Stopp HLW</German>
                 <French>Arrêter la RCP</French>
                 <Portuguese>Parar RCP</Portuguese>
+                <Korean>CPR 중단</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Stopped">
                 <English>Stopped CPR</English>
@@ -1159,6 +1335,7 @@
                 <German>HLW gestoppt</German>
                 <French>Arrêt de la RCP</French>
                 <Portuguese>Parou RCP</Portuguese>
+                <Korean>CPR 중단됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Started">
                 <English>Started CPR</English>
@@ -1166,6 +1343,7 @@
                 <German>Startete HLW</German>
                 <French>Début de la RCP</French>
                 <Portuguese>Iniciada RCP</Portuguese>
+                <Korean>CPR 시작됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Continue">
                 <English>Continue CPR</English>
@@ -1173,6 +1351,7 @@
                 <German>HLW fortsetzen</German>
                 <French>Poursuivre la RCP</French>
                 <Portuguese>Continuar RCP</Portuguese>
+                <Korean>CPR 계속</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Continued">
                 <English>Continued CPR</English>
@@ -1180,6 +1359,7 @@
                 <German>setzte HLW fort</German>
                 <French>Poursuite de la RCP</French>
                 <Portuguese>Continuada RCP</Portuguese>
+                <Korean>CPR 계속됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Pause">
                 <English>Pause CPR</English>
@@ -1187,6 +1367,7 @@
                 <German>HLW pausieren</German>
                 <French>Interruption RPC</French>
                 <Portuguese>Pausar RCP</Portuguese>
+                <Korean>CPR 일시 중지</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Paused">
                 <English>Paused CPR</English>
@@ -1194,16 +1375,19 @@
                 <German>HLW pausiert</German>
                 <French>RPC interrompue</French>
                 <Portuguese>Pausada RCP</Portuguese>
+                <Korean>CPR 일시 중지됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwapToBVM">
                 <English>Swap To BVM</English>
                 <French>Remplacer par BVM</French>
                 <Portuguese>Trocar para o BVM</Portuguese>
+                <Korean>BVM로 전환</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwappedToBVM">
                 <English>Swapped To BVM</English>
                 <French>Remplacé par BVM</French>
                 <Portuguese>Trocado para o BVM</Portuguese>
+                <Korean>BVM로 전환됨</Korean>
             </Key>
         </Container>
         <Container name="// Capillary Refill Action //">
@@ -1213,6 +1397,7 @@
                 <German>Rekapillarisierungszeit prüfen</German>
                 <French>Vérifier le temps de recapillarisation</French>
                 <Portuguese>Verificar tempo de recarga de capilar</Portuguese>
+                <Korean>모세혈관 재충혈 시간 확인</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CheckCapillaryRefill_Progress">
                 <English>Checking Capillary Refill Time...</English>
@@ -1220,6 +1405,7 @@
                 <German>Überprüfe Rekapillarisierungszeit...</German>
                 <French>Vérification du temps de remplissage du capillaire...</French>
                 <Portuguese>Verificando tempo de recarga capilar</Portuguese>
+                <Korean>모세혈관 재충혈 시간 확인 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CapillaryRefill_Hint">
                 <English>Measured Capillary Refill Time&lt;br/&gt;%1 seconds</English>
@@ -1227,6 +1413,7 @@
                 <German>Rekapillarisierungszeit gemessen: &lt;br/&gt;%1 Sekunden</German>
                 <French>Temps de remplissage capillaire mesuré&lt;br/&gt;%1 secondes</French>
                 <Portuguese>Mensurou o tempo de recarga capilar&lt;br/&gt;%1 segundos</Portuguese>
+                <Korean>모세혈관 재충혈 시간 측정&lt;br/&gt;%1초</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_CapillaryRefill_ActionLog">
                 <English>%1 measured capillary refill time: %2s (%3)</English>
@@ -1234,6 +1421,7 @@
                 <German>%1 hat die Rekapillarisierungszeit gemessen: %2s (%3)</German>
                 <French>%1 a mesuré le temps de recapillation : %2s (%3)</French>
                 <Portuguese>%1 tempo de enchimento capilar medido: %2s (%3)</Portuguese>
+                <Korean>%1이 모세혈관 재충혈 시간 측정: %2초 (%3)</Korean>
             </Key>
         </Container>
         <Container name="// Feel Pulse Action //">
@@ -1243,6 +1431,7 @@
                 <German>Puls fühlen</German>
                 <French>Prendre le pouls</French>
                 <Portuguese>Sentir o pulso</Portuguese>
+                <Korean>맥박 촉지</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_FeelingForPulse">
                 <English>Feeling for pulse...</English>
@@ -1250,6 +1439,7 @@
                 <German>Puls tasten...</German>
                 <French>Prise du pouls...</French>
                 <Portuguese>Sentindo o pulso...</Portuguese>
+                <Korean>맥박 확인 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Stopped">
                 <English>Stopped feeling pulse</English>
@@ -1257,6 +1447,7 @@
                 <German>Puls tasten beendet</German>
                 <French>Arrêt de la prise du pouls</French>
                 <Portuguese>Parou de sentir o pulso</Portuguese>
+                <Korean>맥박 확인 중단</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Carotid">
                 <English>Carotid</English>
@@ -1264,6 +1455,7 @@
                 <German>Karotispuls</German>
                 <French>Carotide</French>
                 <Portuguese>Carótida</Portuguese>
+                <Korean>경동맥 (Carotid)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Radial">
                 <English>Radial</English>
@@ -1271,6 +1463,7 @@
                 <German>Radialispuls</German>
                 <French>Radiales</French>
                 <Portuguese>Radial</Portuguese>
+                <Korean>요골 (Radial)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Femoral">
                 <English>Femoral</English>
@@ -1278,9 +1471,11 @@
                 <German>Femoralispuls</German>
                 <French>Fémorale</French>
                 <Portuguese>Femoral</Portuguese>
+                <Korean>대퇴 (Femoral)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_ActionLog">
                 <English>%1 felt for a %2 pulse</English>
+                <Korean>%1이 %2 맥박을 촉지함</Korean>
             </Key>
         </Container>
         <Container name="// Measure Blood Pressure Action //">
@@ -1290,6 +1485,7 @@
                 <German>Blutdruckmanschette anbringen</German>
                 <French>Fixer le brassard du tensiomètre</French>
                 <Portuguese>Acoplar esfigmomanômetro</Portuguese>
+                <Korean>수동 혈압계 부착</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Attach_Progress">
                 <English>Attaching Pressure Cuff...</English>
@@ -1297,6 +1493,7 @@
                 <German>Befestige Blutdruckmanschette...</German>
                 <French>Fixation du brassard du tensiomètre...</French>
                 <Portuguese>Acoplando esfigmomanômetro...</Portuguese>
+                <Korean>수동 혈압계 부착 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Remove">
                 <English>Remove Pressure Cuff</English>
@@ -1304,6 +1501,7 @@
                 <German>Blutdruckmanschette entfernen</German>
                 <French>Retirer le brassard de tensiomètre</French>
                 <Portuguese>Remover esfigmomanômetro</Portuguese>
+                <Korean>수동 혈압계 제거</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Remove_Progress">
                 <English>Removing Pressure Cuff...</English>
@@ -1311,6 +1509,7 @@
                 <German>Entferne Blutdruckmanschette...</German>
                 <French>Retrait du brassard du tensiomètre...</French>
                 <Portuguese>Removendo esfigmomanômetro...</Portuguese>
+                <Korean>수동 혈압계 제거 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Measure">
                 <English>Measure Blood Pressure</English>
@@ -1318,6 +1517,7 @@
                 <German>Blutdruck messen</German>
                 <French>Mesure de la pression artérielle</French>
                 <Portuguese>Aferir pressão sanguínea</Portuguese>
+                <Korean>혈압 측정</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Measure_Stethoscope">
                 <English>Measure Blood Pressure (Stethoscope)</English>
@@ -1325,6 +1525,7 @@
                 <German>Blutdruck messen (Stethoskop)</German>
                 <French>Mesure de la pression artérielle (stéthoscope)</French>
                 <Portuguese>Aferir pressão sanguínea (estetoscópio)</Portuguese>
+                <Korean>혈압 측정 (청진기)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Stopped">
                 <English>Stopped measuring blood pressure</English>
@@ -1332,6 +1533,7 @@
                 <German>Blutdruckmessung unterbrochen</German>
                 <French>Arrêt de la mesure de la pression artérielle</French>
                 <Portuguese>Parou de aferir a pressão sanguínea</Portuguese>
+                <Korean>혈압 측정 중단</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Measuring">
                 <English>Measuring Blood Pressure...</English>
@@ -1339,6 +1541,7 @@
                 <German>Messe Blutdruck...</German>
                 <French>Mesure de la pression artérielle...</French>
                 <Portuguese>Aferindo pressão sanguínea...</Portuguese>
+                <Korean>혈압 측정 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Hint_Bulb">
                 <English>Squeeze Bulb\n+50 (LMB) | +30 (RMB)</English>
@@ -1346,6 +1549,7 @@
                 <German>Manschette aufpumpen \n+50 (Linke Maus) | +30 (Rechte Maus)</German>
                 <French>Gonfler le brassard\n+50 (Clique Gauche) | +30 (Clique Droite)</French>
                 <Portuguese>Apertar bulbo\n+50 (LMB) | +30 (RMB)</Portuguese>
+                <Korean>벌브 압착\n+50 (좌클릭) | +30 (우클릭)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Hint_Valve">
                 <English>Release Pressure\n-10 (LMB) | -2 (RMB)</English>
@@ -1353,6 +1557,7 @@
                 <German>Druck ablassen \n-10 (Linke Maus) | -2 (Rechte Maus)</German>
                 <French>Relâcher la pression\n-10 (Clique Gauche) | -2 (Clique Droite)</French>
                 <Portuguese>Liberar pressão\n-10 (LMB) | -2 (RMB)</Portuguese>
+                <Korean>압력 해제\n-10 (좌클릭) | -2 (우클릭)</Korean>
             </Key>
         </Container>
         <Container name="// Transfusion Menu //">
@@ -1362,6 +1567,7 @@
                 <German>Flüssigkeiten transfundieren</German>
                 <French>Transfuser des liquides</French>
                 <Portuguese>Transfundir fluidos</Portuguese>
+                <Korean>수액/혈액 주입 (Transfuse Fluids)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StopTransfusion_Display">
                 <English>Stop %1 Transfusion</English>
@@ -1369,6 +1575,7 @@
                 <German>Beende %1 Transfusion</German>
                 <French>Arrêter la transfusion de %1</French>
                 <Portuguese>Interromper %1 Transfusão</Portuguese>
+                <Korean>%1 수혈/주입 중지</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StopTransfusion_ToolTip">
                 <English>Stop fluid transfusion on selected %1</English>
@@ -1376,6 +1583,7 @@
                 <German>Beende %1 Transfusion am ausgewählten %1</German>
                 <French>Arrêter la transfusion de liquide sur le %1 sélectionné</French>
                 <Portuguese>Interromper a transfusão no selecionado %1</Portuguese>
+                <Korean>선택된 %1에서 수액/수혈을 중지</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StartTransfusion_Display">
                 <English>Start %1 Transfusion</English>
@@ -1383,6 +1591,7 @@
                 <German>Beginne %1Transfusion</German>
                 <French>Début de la transfusion %1</French>
                 <Portuguese>Iniciar %1 transfusão</Portuguese>
+                <Korean>%1 수혈/주입 시작</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StartTransfusion_ToolTip">
                 <English>Start fluid transfusion on selected %1</English>
@@ -1390,6 +1599,7 @@
                 <German>Beginne Transfusion am ausgewählten %1</German>
                 <French>Commencer la transfusion de liquide sur le %1 sélectionné</French>
                 <Portuguese>Iniciar a transfusão no selecionado %1</Portuguese>
+                <Korean>선택된 %1로 수액/수혈 시작</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_ToggleIV">
                 <English>Toggle IV/IO</English>
@@ -1397,6 +1607,7 @@
                 <German>IV/IO umschalten</German>
                 <French>Commutation IV/IO</French>
                 <Portuguese>Alternar IV/IO</Portuguese>
+                <Korean>IV/IO 전환</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_AddBag_Display">
                 <English>Add Bag</English>
@@ -1404,6 +1615,7 @@
                 <German>Infusion hinzufügen</German>
                 <French>Ajouter un sac</French>
                 <Portuguese>Adicionar bolsa</Portuguese>
+                <Korean>수액백 추가</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_AddBag_ToolTip">
                 <English>Add new fluid bag</English>
@@ -1411,6 +1623,7 @@
                 <German>Neue Infusion hinzufügen</German>
                 <French>Ajouter une nouvelle perfusion</French>
                 <Portuguese>Adicionar nova bolsa de fluido</Portuguese>
+                <Korean>새로운 수액 백 추가</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_AddBag_Progress">
                 <English>Connecting %1...</English>
@@ -1418,6 +1631,7 @@
                 <German>Verbinde %1...</German>
                 <French>Connexion %1...</French>
                 <Portuguese>Conectando %1...</Portuguese>
+                <Korean>%1 연결 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Display">
                 <English>Move</English>
@@ -1425,6 +1639,7 @@
                 <German>Verschieben</German>
                 <French>Déplacer</French>
                 <Portuguese>Mover</Portuguese>
+                <Korean>이동</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Progress">
                 <English>Moving %1 to %2...</English>
@@ -1432,6 +1647,7 @@
                 <German>Verschiebe %1 zu %2...</German>
                 <French>Déplacement de %1 à %2...</French>
                 <Portuguese>Movendo %1 para %2...</Portuguese>
+                <Korean>%1을 %2로 이동 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Hint">
                 <English>Began moving %1</English>
@@ -1439,6 +1655,7 @@
                 <German>Beginne %1 zu verschieben</German>
                 <French>Début du déplacement %1</French>
                 <Portuguese>Começar a mover %1</Portuguese>
+                <Korean>%1 이동 시작</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Place_Display">
                 <English>Place</English>
@@ -1446,6 +1663,7 @@
                 <German>Platzieren</German>
                 <French>Connecter</French>
                 <Portuguese>Colocar</Portuguese>
+                <Korean>설치</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_ToolTip">
                 <English>Move fluid bag from IV</English>
@@ -1453,6 +1671,7 @@
                 <German>Verschiebe Infusion von i.v. Zugang</German>
                 <French>Déplacer la poche de liquide de la perfusion</French>
                 <Portuguese>Move a bolsa de fluido do IV</Portuguese>
+                <Korean>IV에서 수액 백 이동</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Place_ToolTip">
                 <English>Place fluid bag on selected IV line</English>
@@ -1460,6 +1679,7 @@
                 <German>Verschiebe Infusion zu ausgewähltem i.v. Zugang</German>
                 <French>Placer la poche de liquide sur la ligne IV sélectionnée</French>
                 <Portuguese>Coloque a bolsa de fluido na linha IV selecionada</Portuguese>
+                <Korean>선택한 IV 라인에 수액 백 설치</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_Display">
                 <English>Remove</English>
@@ -1467,6 +1687,7 @@
                 <German>Entfernen</German>
                 <French>Débrancher</French>
                 <Portuguese>Remover</Portuguese>
+                <Korean>제거</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_ToolTip">
                 <English>Remove fluid bag</English>
@@ -1474,6 +1695,7 @@
                 <German>Entferne Infusion</German>
                 <French>Retirer la perfusion</French>
                 <Portuguese>Remover bolsa de fluido</Portuguese>
+                <Korean>수액 백 제거</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_ActionLog">
                 <English>%1 removed fluid bag (%2) from %3</English>
@@ -1481,6 +1703,7 @@
                 <German>%1 hat eine Infusion (%2) von %3 entfernt</German>
                 <French>%1 a retiré une perfusion (%2) de %3</French>
                 <Portuguese>%1 removeu a bolsa de fluido (%2) do %3</Portuguese>
+                <Korean>%1이 %3에서 수액 백(%2)을 제거함</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_Progress">
                 <English>Removing %1...</English>
@@ -1488,6 +1711,7 @@
                 <German>Entferne %1...</German>
                 <French>Supprimer %1...</French>
                 <Portuguese>Removendo %1...</Portuguese>
+                <Korean>%1 제거 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_FluidRemaining">
                 <English>%1ml remaining</English>
@@ -1495,6 +1719,7 @@
                 <German>%1ml übrig</German>
                 <French>%1ml restant</French>
                 <Portuguese>%1ml restante</Portuguese>
+                <Korean>%1ml 남음</Korean>
             </Key>
         </Container>
         <Container name="// IV/IO Actions //">
@@ -1504,6 +1729,7 @@
                 <German>16g i.v. Katheter legen (Oben)</German>
                 <French>16g Pose d'un cathéter IV (haut)</French>
                 <Portuguese>Inserir IV 16g (superior)</Portuguese>
+                <Korean>16g IV 삽입 (상부) </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Upper">
                 <English>Remove 16g IV (Upper)</English>
@@ -1511,6 +1737,7 @@
                 <German>16 i.v. Katheter entfernen (Oben)</German>
                 <French>16g Retirer le cathéter IV (haut)</French>
                 <Portuguese>Remover IV 16g (superior)</Portuguese>
+                <Korean>16g IV 제거 (상부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Middle">
                 <English>Insert 16g IV (Middle)</English>
@@ -1518,6 +1745,7 @@
                 <German>16g i.v. Katheter legen (Mittig)</German>
                 <French>16g Pose d'un cathéter IV (au centre)</French>
                 <Portuguese>Inserir IV 16g (medial)</Portuguese>
+                <Korean>16g IV 삽입 (중부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Middle">
                 <English>Remove 16g IV (Middle)</English>
@@ -1525,6 +1753,7 @@
                 <German>16g i.v. Katheter entfernen (Mittig)</German>
                 <French>16g Retirer le cathéter IV (au centre)</French>
                 <Portuguese>Remover IV 16g (medial)</Portuguese>
+                <Korean>16g IV 제거 (중부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Lower">
                 <English>Insert 16g IV (Lower)</English>
@@ -1532,6 +1761,7 @@
                 <German>16g i.v. Katheter legen (Unten)</German>
                 <French>16g Pose d'un cathéter IV (bas)</French>
                 <Portuguese>Inserir IV 16g (inferior)</Portuguese>
+                <Korean>16g IV 삽입 (하부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Lower">
                 <English>Remove 16g IV (Lower)</English>
@@ -1539,6 +1769,7 @@
                 <German>16g i.v. Katheter entfernen (Unten)</German>
                 <French>16g Retirer le cathéter IV (bas)</French>
                 <Portuguese>Remover IV 16g (inferior)</Portuguese>
+                <Korean>16g IV 제거 (하부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Progress">
                 <English>Inserting 16g IV...</English>
@@ -1546,6 +1777,7 @@
                 <German>Lege 16g i.v. Katheter...</German>
                 <French>Pose d'un cathéter IV de16g</French>
                 <Portuguese>Inserindo IV 16g...</Portuguese>
+                <Korean>16g IV 삽입 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Progress">
                 <English>Removing 16g IV...</English>
@@ -1553,6 +1785,7 @@
                 <German>Entferne 16g i.v. Katheter...</German>
                 <French>Retirer un cathéter IV de 16g</French>
                 <Portuguese>Removendo IV 16g...</Portuguese>
+                <Korean>16g IV 제거 중... </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Upper">
                 <English>Insert 14g IV (Upper)</English>
@@ -1560,6 +1793,7 @@
                 <German>14g i.v. Katheter legen (Oben)</German>
                 <French>14g Pose d'un cathéter IV (haut)</French>
                 <Portuguese>Inserir IV 14g (superior)</Portuguese>
+                <Korean>14g IV 삽입 (상부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Upper">
                 <English>Remove 14g IV (Upper)</English>
@@ -1567,6 +1801,7 @@
                 <German>14g i.v. Katheter entfernen (Oben)</German>
                 <French>14g Retirer le cathéter IV (haut)</French>
                 <Portuguese>Remover IV 14g (superior)</Portuguese>
+                <Korean>14g IV 제거 (상부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Middle">
                 <English>Insert 14g IV (Middle)</English>
@@ -1574,6 +1809,7 @@
                 <German>14g i.v. Katheter legen (Mittig)</German>
                 <French>14g Pose d'un cathéter IV (au centre)</French>
                 <Portuguese>Inserir IV 14g (medial)</Portuguese>
+                <Korean>14g IV 삽입 (중부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Middle">
                 <English>Remove 14g IV (Middle)</English>
@@ -1581,6 +1817,7 @@
                 <German>14g i.v. Katheter entfernen (Mittig)</German>
                 <French>14g Retirer le cathéter IV (au centre)</French>
                 <Portuguese>Remover IV 14g (medial)</Portuguese>
+                <Korean>14g IV 제거 (중부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Lower">
                 <English>Insert 14g IV (Lower)</English>
@@ -1588,6 +1825,7 @@
                 <German>14g i.v. Katheter legen (Unten)</German>
                 <French>14g Pose d'un cathéter IV (bas)</French>
                 <Portuguese>Inserir IV 14g (inferior)</Portuguese>
+                <Korean>14g IV 삽입 (하부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Lower">
                 <English>Remove 14g IV (Lower)</English>
@@ -1595,6 +1833,7 @@
                 <German>14g i.v. Katheter entfernen (Unten)</German>
                 <French>14g Retirer le cathéter IV (bas)</French>
                 <Portuguese>Remover IV 14g (inferior)</Portuguese>
+                <Korean>14g IV 제거 (하부)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Progress">
                 <English>Inserting 14g IV...</English>
@@ -1602,6 +1841,7 @@
                 <German>Lege 14g i.v. Katheter...</German>
                 <French>Pose d'un cathéter IV de14g</French>
                 <Portuguese>Inserindo IV 14g...</Portuguese>
+                <Korean>14g IV 삽입 중... </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Progress">
                 <English>Removing 14g IV...</English>
@@ -1609,6 +1849,7 @@
                 <German>Entferne 14g i.v. Katheter...</German>
                 <French>Retirer un cathéter IV de 14g</French>
                 <Portuguese>Removendo IV 14g...</Portuguese>
+                <Korean>14g IV 제거 중... </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_FAST1">
                 <English>Insert FAST1 IO</English>
@@ -1616,6 +1857,7 @@
                 <German>FAST1 IO Zugang legen</German>
                 <French>Utiliser FAST1 IO</French>
                 <Portuguese>Inserir FAST1 IO</Portuguese>
+                <Korean>FAST1 IO 삽입</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_FAST1_Progress">
                 <English>Inserting FAST1 IO...</English>
@@ -1623,6 +1865,7 @@
                 <German>Lege FAST1 IO Zugang...</German>
                 <French>Utilisation de FAST1 IO...</French>
                 <Portuguese>Inserindo FAST1 IO...</Portuguese>
+                <Korean>FAST1 IO 삽입 중... </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_FAST1">
                 <English>Remove FAST1 IO</English>
@@ -1630,6 +1873,7 @@
                 <German>FAST1 IO Zugang entfernen</German>
                 <French>Extraire FAST1 IO</French>
                 <Portuguese>Remover FAST1 IO</Portuguese>
+                <Korean>FAST1 IO 제거 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_FAST1_Progress">
                 <English>Removing FAST1 IO...</English>
@@ -1637,6 +1881,7 @@
                 <German>Entferne FAST1 IO Zugang...</German>
                 <French>Extraction FAST1 IO</French>
                 <Portuguese>Removendo FAST1 IO...</Portuguese>
+                <Korean>FAST1 IO 제거 중... </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_EZ">
                 <English>Insert EZ-IO</English>
@@ -1644,6 +1889,7 @@
                 <German>EZ-IO Zugang bohren</German>
                 <French>Percer l'accès EZ-IO</French>
                 <Portuguese>Inserir EZ-IO</Portuguese>
+                <Korean>EZ-IO 삽입 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_EZ_Progress">
                 <English>Inserting EZ-IO...</English>
@@ -1651,6 +1897,7 @@
                 <German>Bohre EZ-IO Zugang...</German>
                 <French>Percer l'accès EZ-IO...</French>
                 <Portuguese>Inserindo EZ-IO...</Portuguese>
+                <Korean>EZ-IO 삽입 중... </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_EZ">
                 <English>Remove EZ-IO</English>
@@ -1658,6 +1905,7 @@
                 <German>EZ-IO Zugang entfernen</German>
                 <French>Supprimer l'accès EZ-IO</French>
                 <Portuguese>Remover EZ-IO</Portuguese>
+                <Korean>EZ-IO 제거 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_EZ_Progress">
                 <English>Removing EZ-IO...</English>
@@ -1665,6 +1913,7 @@
                 <German>Entferne EZ-IO Zugang...</German>
                 <French>Suppression de l'accès EZ-IO...</French>
                 <Portuguese>Removendo EZ-IO...</Portuguese>
+                <Korean>EZ-IO 제거 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Upper">
                 <English>Upper</English>
@@ -1672,6 +1921,7 @@
                 <German>Oben</German>
                 <French>Haut</French>
                 <Portuguese>Superior</Portuguese>
+                <Korean>상부 (Upper)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Middle">
                 <English>Middle</English>
@@ -1679,6 +1929,7 @@
                 <German>Mittig</German>
                 <French>Milieu</French>
                 <Portuguese>Medial</Portuguese>
+                <Korean>중부 (Middle)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Lower">
                 <English>Lower</English>
@@ -1686,6 +1937,7 @@
                 <German>Unten</German>
                 <French>Bas</French>
                 <Portuguese>Inferior</Portuguese>
+                <Korean>하부 (Lower)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Already">
                 <English>Patient already has IV in the %1 (%2)</English>
@@ -1693,10 +1945,12 @@
                 <German>Patient hat bereits einen i.v. Zugang im %1 (%2)</German>
                 <French>Le patient a déjà une IV dans le %1 (%2)</French>
                 <Portuguese>Paciente já tem uma linha IV no %1 (%2)</Portuguese>
+                <Korean>환자는 이미 %1(%2)에 IV가 있음</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Blocked_PressureCuff">
                 <English>IV placement blocked by applied pressure cuff</English>
                 <Portuguese>Colocação de IV bloqueada pelo esfigmomanômetro</Portuguese>
+                <Korean>부착된 혈압 커프로 IV 삽입이 차단됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_Already">
                 <English>Patient already has IO in the %1</English>
@@ -1704,6 +1958,7 @@
                 <German>Patient hat bereits einen i.o. Zugang im %1 (%2)</German>
                 <French>Le patient a déjà un IO dans le %1</French>
                 <Portuguese>Paciente já tem IO no %1</Portuguese>
+                <Korean>환자는 이미 %1에 IO가 있음 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_FailedToLocateVein">
                 <English>Failed to locate vein</English>
@@ -1711,6 +1966,7 @@
                 <German>Keine Vene gefunden</German>
                 <French>N'a pas senti la veine</French>
                 <Portuguese>Falha em localizar a veia</Portuguese>
+                <Korean>정맥을 찾지 못함 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_BodyPartTooDamaged">
                 <English>Body part too damaged</English>
@@ -1718,6 +1974,7 @@
                 <German>Körperteil zu sehr verletzt</German>
                 <French>Trop de blessures sur le corps</French>
                 <Portuguese>Parte do corpo muito danificada</Portuguese>
+                <Korean>해당 부위 손상이 심함</Korean>
             </Key>
         </Container>
         <Container name="// Inspect IV Action //">
@@ -1727,6 +1984,7 @@
                 <German>i.v. Katheter prüfen (Oben)</German>
                 <French>Vérifier le cathéter IV (haut)</French>
                 <Portuguese>Inspecionar cateter IV (superior)</Portuguese>
+                <Korean>IV 카테터 검사 (상부) </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Middle">
                 <English>Inspect IV Catheter (Middle)</English>
@@ -1734,6 +1992,7 @@
                 <German>i.v. Katheter prüfen (Mittig)</German>
                 <French>Vérifier le cathéter IV (au centre)</French>
                 <Portuguese>Inspecionar cateter IV (medial)</Portuguese>
+                <Korean>IV 카테터 검사 (중부) </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Lower">
                 <English>Inspect IV Catheter (Lower)</English>
@@ -1741,6 +2000,7 @@
                 <German>i.v. Katheter prüfen (Unten)</German>
                 <French>Vérifier le cathéter IV (en bas)</French>
                 <Portuguese>Inspecionar cateter (inferior)</Portuguese>
+                <Korean>IV 카테터 검사 (하부) </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Progress">
                 <English>Inspecting IV Catheter...</English>
@@ -1748,6 +2008,7 @@
                 <German>Prüfe i.v. Katheter...</German>
                 <French>Vérification du cathéter IV ...</French>
                 <Portuguese>Inspecionando cateter IV</Portuguese>
+                <Korean>IV 카테터 검사 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Clear">
                 <English>IV Catheter is clear</English>
@@ -1755,6 +2016,7 @@
                 <German>i.v. Katheter ist frei</German>
                 <French>Le cathéter IV est dégagé</French>
                 <Portuguese>Cateter IV está livre</Portuguese>
+                <Korean>IV 카테터 막힘 없음 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Clear_Short">
                 <English>Clear</English>
@@ -1762,6 +2024,7 @@
                 <German>Frei</German>
                 <French>Dégagé</French>
                 <Portuguese>Livre</Portuguese>
+                <Korean>정상 (Clear)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow">
                 <English>IV Catheter has normal flow</English>
@@ -1769,6 +2032,7 @@
                 <German>i.v. Katheter mit normalen Fluss</German>
                 <French>Cathéter i.v. à débit normal</French>
                 <Portuguese>Fluxo normal do cateter IV</Portuguese>
+                <Korean>IV 카테터 정상 유속 (Normal flow)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow_Short">
                 <English>Normal flow</English>
@@ -1776,6 +2040,7 @@
                 <German>Normaler Fluss</German>
                 <French>Débit normal</French>
                 <Portuguese>Fluxo normal</Portuguese>
+                <Korean>정상 유속 (Normal flow)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NoFlow">
                 <English>IV Catheter has no flow</English>
@@ -1783,6 +2048,7 @@
                 <German>i.v. Katheter läuft nicht</German>
                 <French>Le cathéter IV ne fonctionne pas</French>
                 <Portuguese>Cateter IV sem fluxo</Portuguese>
+                <Korean>IV 카테터 유속 없음 (no flow)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NoFlow_Short">
                 <English>No flow</English>
@@ -1790,6 +2056,7 @@
                 <German>Läuft nicht</German>
                 <French>Ne fonctionne pas</French>
                 <Portuguese>Sem fluxo</Portuguese>
+                <Korean>유속 없음 (No flow)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Swelling">
                 <English>Swelling on insertion site</English>
@@ -1797,6 +2064,7 @@
                 <German>Schwellung am Injektionsort</German>
                 <French>Gonflement au niveau du site d'injection</French>
                 <Portuguese>Inchaço no local de inserção</Portuguese>
+                <Korean>삽입 부위 부종 (Swelling on insertion site)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Swelling_Short">
                 <English>noticable swelling</English>
@@ -1804,6 +2072,7 @@
                 <German>Deutliche Schwellung</German>
                 <French>Oedème significatif</French>
                 <Portuguese>inchaço perceptível</Portuguese>
+                <Korean>뚜렷한 부종 (noticable swelling)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
                 <English>%1 inspected IV Catheter (%2): %3</English>
@@ -1811,6 +2080,7 @@
                 <German>%1 hat einen i.v. Katheter (%2) geprüft: %3</German>
                 <French>%1 a testé un cathéter IV (%2) : %3</French>
                 <Portuguese>%1 inspecionou o cateter IV (%2): %3</Portuguese>
+                <Korean>%1이 IV 카테터(%2) 검사: %3</Korean>
             </Key>
         </Container>
         <Container name="// Pressure Cuff Action //">
@@ -1820,10 +2090,12 @@
                 <German>Patient hat bereits eine Blutdruckmanschette am %1</German>
                 <French>Le patient a déjà un brassard de tension sur le %1</French>
                 <Portuguese>O paciente já tem um esfigmomanômetro no %1</Portuguese>
+                <Korean>환자는 이미 %1에 혈압 커프가 있음</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Blocked_IV">
                 <English>Pressure cuff placement blocked by IV</English>
                 <Portuguese>Esfigmomanômetro bloqueado pelo IV</Portuguese>
+                <Korean>IV 때문에 혈압계 부착 불가</Korean>
             </Key>
         </Container>
         <Container name="// Syringe Actions //">
@@ -1833,6 +2105,7 @@
                 <German>Verwerfen</German>
                 <French>Rejeter</French>
                 <Portuguese>Descartar</Portuguese>
+                <Korean>폐기</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Discard_Complete">
                 <English>Discarded syringe contents</English>
@@ -1840,6 +2113,7 @@
                 <German>Spritzeninhalt verworfen</German>
                 <French>Contenu de seringue jeté</French>
                 <Portuguese>Descartado conteúdo da seringa</Portuguese>
+                <Korean>주사기 내용물 폐기됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Discard_Progress">
                 <English>Discarding %1 from %2 syringe...</English>
@@ -1847,6 +2121,7 @@
                 <German>Verwerfe %1 von %2 Spritze...</German>
                 <French>Rejeter %1 de %2 seringue</French>
                 <Portuguese>Descartando %1 da seringa %2...</Portuguese>
+                <Korean>%2 주사기에서 %1 폐기 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Draw">
                 <English>Draw</English>
@@ -1854,6 +2129,7 @@
                 <German>Aufziehen</German>
                 <French>Prélever</French>
                 <Portuguese>Aspirar</Portuguese>
+                <Korean>약물 뽑기 (Draw)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawn">
                 <English>%1 Drawn</English>
@@ -1861,6 +2137,7 @@
                 <German>%1 aufgezogen</German>
                 <French>%1 élevé</French>
                 <Portuguese>%1 aspirado</Portuguese>
+                <Korean>%1 흡인됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Push">
                 <English>Push %1 (%2)</English>
@@ -1868,6 +2145,7 @@
                 <German>Injiziere (IV) %1 (%2)</German>
                 <French>Injecter (IV) %1 (%2)</French>
                 <Portuguese>Infundir (IV) %1 (%2)</Portuguese>
+                <Korean>%1 푸시 (%2) </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Pushing">
                 <English>Pushing %1...</English>
@@ -1875,6 +2153,7 @@
                 <German>Injiziere %1...</German>
                 <French>Injecter %1...</French>
                 <Portuguese>Infundindo (IV) %1...</Portuguese>
+                <Korean>%1 푸시 중... </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Inject">
                 <English>Inject %1 (%2)</English>
@@ -1882,6 +2161,7 @@
                 <German>Injiziere (IM)%1 (%2)</German>
                 <French>Injecter (IM)%1 (%2)</French>
                 <Portuguese>Infundir (IM) %1 (%2)</Portuguese>
+                <Korean>%1 주입 (%2) </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Injecting">
                 <English>Injecting %1...</English>
@@ -1889,10 +2169,12 @@
                 <German>Injiziere %1...</German>
                 <French>Injecter %1...</French>
                 <Portuguese>Infundindo (IM) %1...</Portuguese>
+                <Korean>%1 주입 중... </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawing">
                 <English>Drawing %1...</English>
                 <Portuguese>Extraindo</Portuguese>
+                <Korean>%1 흡인 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawingInto">
                 <English>Drawing %1 (%2) into %3ml syringe</English>
@@ -1900,6 +2182,7 @@
                 <German>Ziehe %1 (%2) in %3ml Spritze auf</German>
                 <French>Prélever %1 (%2) dans une seringue de %3ml</French>
                 <Portuguese>Aspirando %1 (%2) na seringa de %3ml </Portuguese>
+                <Korean>%1(%2)를 %3ml 주사기에 뽑는 중</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_MovePlunger">
                 <English>Move Plunger</English>
@@ -1907,6 +2190,7 @@
                 <German>Kolben bewegen</German>
                 <French>Déplacer le piston</French>
                 <Portuguese>Mover o êmbulo</Portuguese>
+                <Korean>플런저 이동</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_PushFailed">
                 <English>Medication push failed&lt;br/&gt;Patient has no IV access on the %1</English>
@@ -1914,6 +2198,7 @@
                 <German>Injektion (IV) fehlgeschlagen&lt;br/&gt;Patient hat keinen i.v. Zugang am %1</German>
                 <French>Échec de l'administration (IV)&lt;br/&gt;Le patient n'a pas d'accès intraveineux</French>
                 <Portuguese>Falha na infusão (IV) da medicação&lt;br/&gt;O paciente não tem acesso intravenoso no %1</Portuguese>
+                <Korean>약물 푸시 실패&lt;br/&gt;환자의 %1 부위에 IV 라인 없음</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Injected">
                 <English>Injected</English>
@@ -1921,6 +2206,7 @@
                 <German>Injiziert (IM)</German>
                 <French>Injecté (IM)</French>
                 <Portuguese>Infundido (IM)</Portuguese>
+                <Korean>주입 완료 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Pushed">
                 <English>Pushed</English>
@@ -1928,6 +2214,7 @@
                 <German>Injiziert (IV)</German>
                 <French>Injecté (IV)</French>
                 <Portuguese>Infundido (IV)</Portuguese>
+                <Korean>푸시 완료</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawPush">
                 <English>Draw &amp; Push</English>
@@ -1935,6 +2222,7 @@
                 <German>Aufziehen und i.v. injizieren</German>
                 <French>Injecter par IV</French>
                 <Portuguese>Aspirar e infundir (IV)</Portuguese>
+                <Korean>약물 뽑기 &amp; 푸시</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawInject">
                 <English>Draw &amp; Inject</English>
@@ -1942,6 +2230,7 @@
                 <German>Aufziehen und i.m. injizieren</German>
                 <French>Injecter par IM</French>
                 <Portuguese>Aspirar e infundir (IM)</Portuguese>
+                <Korean>약물 뽑기 &amp; 주입</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_NoMedicationSelected">
                 <English>No Medication Selected</English>
@@ -1949,6 +2238,7 @@
                 <German>Kein Medikament ausgewählt</German>
                 <French>Aucun médicament sélectionné</French>
                 <Portuguese>Nenhuma medicação selecionada</Portuguese>
+                <Korean>선택된 약물 없음 </Korean>
             </Key>
         </Container>
         <Container name="// AED Actions //">
@@ -1958,6 +2248,7 @@
                 <German>Patientenmonitor anschauen</German>
                 <French>Afficher le moniteur</French>
                 <Portuguese>Exibir monitor</Portuguese>
+                <Korean>모니터 보기</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ViewMonitor">
                 <English>View AED Monitor</English>
@@ -1965,6 +2256,7 @@
                 <German>Patientenmonitor anschauen</German>
                 <French>Voir le moniteur DAE</French>
                 <Portuguese>Exibir o monitor do DEA</Portuguese>
+                <Korean>AED 모니터 보기</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ApplyPads">
                 <English>Apply AED Pads</English>
@@ -1972,6 +2264,7 @@
                 <German>Defi-Elektroden kleben</German>
                 <French>Appliquer les électrodes de DAE</French>
                 <Portuguese>Aplicar eletrodos do DEA</Portuguese>
+                <Korean>AED 패드 부착</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ApplyPads_Progress">
                 <English>Applying AED Pads...</English>
@@ -1979,6 +2272,7 @@
                 <German>Klebe Defi-Elektroden auf...</German>
                 <French>Application des électrodes du DAE...</French>
                 <Portuguese>Aplicando eletrodos do DEA...</Portuguese>
+                <Korean>AED 패드 부착 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_RemovePads">
                 <English>Remove AED Pads</English>
@@ -1986,6 +2280,7 @@
                 <German>Defi-Elektroden entfernen</German>
                 <French>Retirer les électrodes du DAE</French>
                 <Portuguese>Remover eletrodos do DEA</Portuguese>
+                <Korean>AED 패드 제거</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_RemovePads_Progress">
                 <English>Removing AED Pads...</English>
@@ -1993,6 +2288,7 @@
                 <German>Entferne Defi-Elektroden...</German>
                 <French>Retrait des coussinets de DAE...</French>
                 <Portuguese>Removendo eletrodos do DEA</Portuguese>
+                <Korean>AED 패드 제거 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPulseOximeter">
                 <English>Connect AED Pulse Oximeter</English>
@@ -2000,6 +2296,7 @@
                 <German>AED-Pulsoxymeter anbringen</German>
                 <French>Fixer l'oxymètre de pouls du DAE</French>
                 <Portuguese>Conectar oxímetro do DEA</Portuguese>
+                <Korean>AED 옥시미터 연결</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPulseOximeter_Progress">
                 <English>Connecting AED Pulse Oximeter...</English>
@@ -2007,6 +2304,7 @@
                 <German>Bringe AED-Pulsoxymeter an...</German>
                 <French>Connexion de l'oxymètre de pouls du DAE...</French>
                 <Portuguese>Conectando oxímento do DEA...</Portuguese>
+                <Korean>AED 옥시미터 연결 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPulseOximeter">
                 <English>Disconnect AED Pulse Oximeter</English>
@@ -2014,6 +2312,7 @@
                 <German>AED-Pulsoxymeter entfernen</German>
                 <French>Déconnecter l'oxymètre de pouls du DAE</French>
                 <Portuguese>Desconectar oxímetro do DEA</Portuguese>
+                <Korean>AED 옥시미터 연결 해제</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPulseOximeter_Progress">
                 <English>Disconnecting AED Pulse Oximeter...</English>
@@ -2021,6 +2320,7 @@
                 <German>Entferne AED-Pulsoxymeter...</German>
                 <French>Déconnexion de l'oxymètre de pouls du DAE ...</French>
                 <Portuguese>Desconectando oxímetro do DEA...</Portuguese>
+                <Korean>AED 옥시미터 연결 해제 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPressureCuff">
                 <English>Connect AED Pressure Cuff</English>
@@ -2028,6 +2328,7 @@
                 <German>AED-Blutdruckmanschette verbinden</German>
                 <French>Connecter le brassard du tensiomètre du DAE</French>
                 <Portuguese>Conectar esfigmomanômetro do DEA</Portuguese>
+                <Korean>AED 혈압계 연결</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPressureCuff_Progress">
                 <English>Connecting AED Pressure Cuff...</English>
@@ -2035,6 +2336,7 @@
                 <German>Verbinde AED-Blutdruckmanschette</German>
                 <French>Connexion du brassard du tensiomètre du DAE ...</French>
                 <Portuguese>Conectando esfigmomanômetro do DEA...</Portuguese>
+                <Korean>AED 혈압계 연결 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPressureCuff">
                 <English>Disconnect AED Pressure Cuff</English>
@@ -2042,6 +2344,7 @@
                 <German>AED-Blutdruckmanschette entfernen</German>
                 <French>Retirer le brassard du tensiomètre du DAE</French>
                 <Portuguese>Desconectar esfigmomanômetro do DEA</Portuguese>
+                <Korean>AED 혈압계 해제</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPressureCuff_Progress">
                 <English>Disconnecting AED Pressure Cuff...</English>
@@ -2049,6 +2352,7 @@
                 <German>Entferne AED-Blutdruckmanschette...</German>
                 <French>Déconnecter le brassard du tensiomètre du DAE</French>
                 <Portuguese>Desconectando esfigmomanômetro do DEA</Portuguese>
+                <Korean>AED 혈압계 해제 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectCapnograph">
                 <English>Connect AED Capnograph</English>
@@ -2056,6 +2360,7 @@
                 <German>AED-Kapnograph verbinden</German>
                 <French>Connecter le capnographe DAE</French>
                 <Portuguese>Conectar capnógrafo do DEA</Portuguese>
+                <Korean>AED 카프노그래프 연결</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectCapnograph_Progress">
                 <English>Connecting AED Capnograph...</English>
@@ -2063,6 +2368,7 @@
                 <German>Verbinde AED-Kapnograph...</German>
                 <French>Connexion du capnographe DAE...</French>
                 <Portuguese>Conectando capnógrafo do DEA</Portuguese>
+                <Korean>AED 카프노그래프 연결 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectCapnograph">
                 <English>Disconnect AED Capnograph</English>
@@ -2070,6 +2376,7 @@
                 <German>AED-Kapnographie entfernen</German>
                 <French>Retirer le capnographe du défibrillateur</French>
                 <Portuguese>Desconectar capnógrafo do DEA</Portuguese>
+                <Korean>AED 카프노그래프 해제</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectCapnograph_Progress">
                 <English>Disconnecting AED Capnograph...</English>
@@ -2077,6 +2384,7 @@
                 <German>Entferne AED-Kapnograph...</German>
                 <French>Retrait du capnographe du défibrillateur....</French>
                 <Portuguese>Desconectando capnógrafo do DEA...</Portuguese>
+                <Korean>AED 카프노그래프 해제 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_AnalyzeRhythm">
                 <English>Analyze Rhythm</English>
@@ -2084,6 +2392,7 @@
                 <German>Rhythmusanalyse</German>
                 <French>Analyse du rythme</French>
                 <Portuguese>Analisar o ritmo</Portuguese>
+                <Korean>리듬 분석</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ManualCharge">
                 <English>Charge AED</English>
@@ -2091,6 +2400,7 @@
                 <German>Defibrillator laden</German>
                 <French>Défibrillateur chargé</French>
                 <Portuguese>Carregar o DEA</Portuguese>
+                <Korean>AED 충전</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Shock">
                 <English>Administer Shock</English>
@@ -2098,6 +2408,7 @@
                 <German>Schock abgeben</German>
                 <French>Délivrer un choc</French>
                 <Portuguese>Administrar o choque</Portuguese>
+                <Korean>전기 충격 시행</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_CancelCharge">
                 <English>Cancel Charge</English>
@@ -2105,6 +2416,7 @@
                 <German>Defibrillator entladen</German>
                 <French>Décharger le défibrillateur</French>
                 <Portuguese>Cancelar carga</Portuguese>
+                <Korean>충전 취소</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_MeasureBP">
                 <English>Measure Blood Pressure (AED)</English>
@@ -2112,6 +2424,7 @@
                 <German>Blutdruck messen (AED)</German>
                 <French>Prendre la tension (DAE)</French>
                 <Portuguese>Mensurar pressão sanguínea (DEA)</Portuguese>
+                <Korean>혈압 측정 (AED)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Already">
                 <English>Patient already has %1 on the %2</English>
@@ -2119,6 +2432,7 @@
                 <German>Patient hat bereits %1 am %2</German>
                 <French>Le patient a déjà %1 sur le %2</French>
                 <Portuguese>Paciente já tem %1 no(a) %2</Portuguese>
+                <Korean>환자는 이미 %2에 %1 부착됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_%1_Disconnected">
                 <English>%1 disconnected AED</English>
@@ -2126,6 +2440,7 @@
                 <German>%1 entfernte den AED</German>
                 <French>%1 a déconnecté le défibrillateur (DAE)</French>
                 <Portuguese>%1 desconectou o DEA</Portuguese>
+                <Korean>%1이 AED 연결을 해제함</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PatientDisconnected">
                 <English>Patient Disconnected</English>
@@ -2133,6 +2448,7 @@
                 <German>Patient vom AED diskonnektiert</German>
                 <French>Patient déconnecté du DAE</French>
                 <Portuguese>Paciente desconectado</Portuguese>
+                <Korean>환자 연결 해제됨</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Pads">
                 <English>AED pads</English>
@@ -2140,6 +2456,7 @@
                 <German>Defi-Elektroden</German>
                 <French>Electrodes de défibrillation (DAE)</French>
                 <Portuguese>Eletródos do DEA</Portuguese>
+                <Korean>AED 패드</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PulseOximeter">
                 <English>AED Pulse Oximeter</English>
@@ -2147,6 +2464,7 @@
                 <German>AED-Pulsoxymeter</German>
                 <French>Oxymètre de pouls (DAE)</French>
                 <Portuguese>Oxímetro do DEA</Portuguese>
+                <Korean>AED 옥시미터</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PressureCuff">
                 <English>AED Pressure Cuff</English>
@@ -2154,6 +2472,7 @@
                 <German>AED-Blutdruckmannschette</German>
                 <French>Brassard de tensiomètre pour DAE</French>
                 <Portuguese>Esfigmomanômetro do DEA</Portuguese>
+                <Korean>AED 혈압계</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Capnograph">
                 <English>AED Capnograph</English>
@@ -2161,6 +2480,7 @@
                 <German>AED-Kanograph</German>
                 <French>Canographe (DAE)</French>
                 <Portuguese>Capnógrafo do DEA</Portuguese>
+                <Korean>AED 카프노그래프</Korean>
             </Key>
         </Container>
         <Container name="// AED Monitor //">
@@ -2170,6 +2490,7 @@
                 <German>HF</German>
                 <French>RC</French>
                 <Portuguese>FC</Portuguese>
+                <Korean>HR</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_PR">
                 <English>PR</English>
@@ -2177,6 +2498,7 @@
                 <German>PF</German>
                 <French>PR</French>
                 <Portuguese>FP</Portuguese>
+                <Korean>PR</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_SpO2">
                 <English>SpO2</English>
@@ -2184,6 +2506,7 @@
                 <German>SpO2</German>
                 <French>SpO2</French>
                 <Portuguese>SpO2</Portuguese>
+                <Korean>SpO2</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_CO2">
                 <English>CO2</English>
@@ -2191,6 +2514,7 @@
                 <German>CO2</German>
                 <French>CO2</French>
                 <Portuguese>CO2</Portuguese>
+                <Korean>CO2</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_NIBP">
                 <English>NIBP</English>
@@ -2198,6 +2522,7 @@
                 <German>NIBP</German>
                 <French>NIBP</French>
                 <Portuguese>PANI (Pressão Arterial Não Invasiva)</Portuguese>
+                <Korean>NIBP</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_BP">
                 <English>BP</English>
@@ -2205,6 +2530,7 @@
                 <German>BP</German>
                 <French>BP</French>
                 <Portuguese>PA</Portuguese>
+                <Korean>BP</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_RR">
                 <English>RR</English>
@@ -2212,6 +2538,7 @@
                 <German>AF</German>
                 <French>RR</French>
                 <Portuguese>FR</Portuguese>
+                <Korean>RR</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_CPR">
                 <English>CPR Mode Toggle</English>
@@ -2219,6 +2546,7 @@
                 <German>CPR Modus wechseln</German>
                 <French>Changer de mode RCP</French>
                 <Portuguese>Alternar modo RCP</Portuguese>
+                <Korean>CPR 모드 전환</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Analyze">
                 <English>Analyze Rhythm</English>
@@ -2226,6 +2554,7 @@
                 <German>Rhythmusanalyse</German>
                 <French>Analyser le rythme</French>
                 <Portuguese>Analisar ritmo</Portuguese>
+                <Korean>리듬 분석</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_NIBP">
                 <English>Measure NIBP</English>
@@ -2233,6 +2562,7 @@
                 <German>NIBP Blutdruckmessung</German>
                 <French>Mesure de la PNI</French>
                 <Portuguese>Aferir PANI</Portuguese>
+                <Korean>NIBP 측정</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Alarms">
                 <English>Toggle Alarms</English>
@@ -2240,6 +2570,7 @@
                 <German>Alarm umschalten</German>
                 <French>Commuter l'alarme</French>
                 <Portuguese>Alternar alarmes</Portuguese>
+                <Korean>알람 전환 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Charge">
                 <English>Manual Charge</English>
@@ -2247,6 +2578,7 @@
                 <German>Manuell laden</German>
                 <French>Charge manuelle</French>
                 <Portuguese>Carregamento manual</Portuguese>
+                <Korean>수동 충전</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Shock">
                 <English>Administer Shock</English>
@@ -2254,6 +2586,7 @@
                 <German>Schock abgeben</German>
                 <French>Délivrer le choc</French>
                 <Portuguese>Administrar choque</Portuguese>
+                <Korean>전기 충격 시행</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_SpeedDial">
                 <English>Speed Dial</English>
@@ -2261,6 +2594,7 @@
                 <German>Schnellauswahl</German>
                 <French>Sélection rapide</French>
                 <Portuguese>Discagem rápida</Portuguese>
+                <Korean>빠른 다이얼</Korean>
             </Key>
         </Container>
         <Container name="// GUI //">
@@ -2270,6 +2604,7 @@
                 <German>Infundiere Kochsalzlösung [%1x]</German>
                 <French>Transfusion d'une solution saline [%1x]</French>
                 <Portuguese>Tranfundindo soro [%1x]</Portuguese>
+                <Korean>생리식염수 주입 중 [%1x]</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingPlasma">
                 <English>Transfusing Plasma [%1x]</English>
@@ -2277,6 +2612,7 @@
                 <German>Infundiere Plasma [%1x]</German>
                 <French>Transfusion de plasma [%1x]</French>
                 <Portuguese>Transfundindo plasma [%1x]</Portuguese>
+                <Korean>혈장 주입 중 [%1x] </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingBlood">
                 <English>Transfusing Blood [%1x]</English>
@@ -2284,6 +2620,7 @@
                 <German>Transfundiere Blut [%1x]</German>
                 <French>Transfusion de sang [%1x]</French>
                 <Portuguese>Transfundindo sangue [%1x]</Portuguese>
+                <Korean>혈액 수혈 중 [%1x]</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingFreshBlood">
                 <English>Transfusing Fresh Blood [%1x]</English>
@@ -2291,6 +2628,7 @@
                 <German>Transfundiere frisches Vollblut [%1x]</German>
                 <French>Transfusion de sang frais [%1x]</French>
                 <Portuguese>Transfundindo sangue fresco [%1x]</Portuguese>
+                <Korean>신선 혈액 수혈 중 [%1x] </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_CollectingBlood">
                 <English>Collecting Blood [%1x]</English>
@@ -2298,6 +2636,7 @@
                 <German>Sammle Blut [%1x]</German>
                 <French>Collecte de sang [%1x]</French>
                 <Portuguese>Coletando sangue [%1x]</Portuguese>
+                <Korean>채혈 중 [%1x]</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_BeganTransfusing">
                 <English>%1 began transfusing fluids (%2) into %3</English>
@@ -2305,6 +2644,7 @@
                 <German>%1 transfundierte %2 in %3</German>
                 <French>%1 a commencé à transfuser des fluides (%2) dans %3</French>
                 <Portuguese>%1 começou a transmissção de fluido (%2) em %3</Portuguese>
+                <Korean>%1이 %3에 체액(%2) 주입을 시작함</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
                 <English>%1 moved fluid bag (%2) to %3</English>
@@ -2312,6 +2652,7 @@
                 <German>%1 bewegte %2 in %3</German>
                 <French>%1 a déplacé la poche de fluide (%2) vers %3</French>
                 <Portuguese>%1 moveu a bolsa de fluido (%2) para %3</Portuguese>
+                <Korean>%1이 수액 백(%2)을 %3로 이동함</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Saline_Short">
                 <English>S</English>
@@ -2319,6 +2660,7 @@
                 <German>NaCl</German>
                 <French>S</French>
                 <Portuguese>NaCl</Portuguese>
+                <Korean>S</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Plasma_Short">
                 <English>P</English>
@@ -2326,6 +2668,7 @@
                 <German>P</German>
                 <French>P</French>
                 <Portuguese>P</Portuguese>
+                <Korean>P</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Blood_Short">
                 <English>B</English>
@@ -2333,6 +2676,7 @@
                 <German>B</German>
                 <French>S</French>
                 <Portuguese>S</Portuguese>
+                <Korean>B</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FreshWholeBlood_Short">
                 <English>FWB</English>
@@ -2340,6 +2684,7 @@
                 <German>VB</German>
                 <French>ST</French>
                 <Portuguese>Sangue fresco</Portuguese>
+                <Korean>FWB</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FieldBloodTransfusionKit_Short">
                 <English>FBTK</English>
@@ -2347,16 +2692,19 @@
                 <German>FBTK</German>
                 <French>FBTK</French>
                 <Portuguese>KTSC</Portuguese>
+                <Korean>FBTK</Korean>
             </Key>
         </Container>
         <Container name="// Common //">
             <Key ID="STR_ACM_Circulation_Blood">
                 <English>Blood</English>
                 <Portuguese>Sangue</Portuguese>
+                <Korean>혈액</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBlood">
                 <English>Fresh Blood</English>
                 <Portuguese>Sangue fresco</Portuguese>
+                <Korean>신선 혈액</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_SwitchTargetInventory">
                 <English>Change target inventory</English>
@@ -2364,6 +2712,7 @@
                 <German>Wechsel Ziel-Inventar</German>
                 <French>Modifier l'inventaire cible</French>
                 <Portuguese>Alterar inventário alvo</Portuguese>
+                <Korean>대상 인벤토리 변경</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Available">
                 <English>%1 available</English>
@@ -2371,6 +2720,7 @@
                 <German>%1 verfügbar</German>
                 <French>%1 disponible</French>
                 <Portuguese>%1 disponível</Portuguese>
+                <Korean>%1 사용 가능</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_InventoryTarget">
                 <English>Target: %1</English>
@@ -2378,6 +2728,7 @@
                 <German>Ziel: %1</German>
                 <French>Équipement vu : %1</French>
                 <Portuguese>Alvo: %1</Portuguese>
+                <Korean>대상: %1 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Self">
                 <English>Self</English>
@@ -2385,6 +2736,7 @@
                 <German>Selbst</German>
                 <French>Personnel</French>
                 <Portuguese>Próprio</Portuguese>
+                <Korean>자신</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Patient">
                 <English>Patient</English>
@@ -2392,6 +2744,7 @@
                 <German>Patient</German>
                 <French>Patient</French>
                 <Portuguese>Paciente</Portuguese>
+                <Korean>환자 </Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Vehicle">
                 <English>Vehicle</English>
@@ -2399,6 +2752,7 @@
                 <German>Fahrzeug</German>
                 <French>Véhicule</French>
                 <Portuguese>Veículo</Portuguese>
+                <Korean>차량</Korean>
             </Key>
         </Container>
     </Package>
