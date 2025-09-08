@@ -24,16 +24,16 @@ class CfgVehicles {
         class Attributes: AttributesBase {
             class InteractionDistance: Edit {
                 property = QGVAR(Eden_FullHealFacility_InteractionDistance);
-                displayName = CSTRING(FullHealFacility_Module_InteractionDistance);
+                displayName = ECSTRING(core,Common_Module_InteractionDistance);
                 typeName = "NUMBER";
                 defaultValue = 5;
             };
             class InteractionPosition: Edit {
                 property = QGVAR(Eden_FullHealFacility_InteractionPosition);
-                displayName = CSTRING(FullHealFacility_Module_InteractionPosition);
-                tooltip = CSTRING(FullHealFacility_Module_InteractionPosition_Tooltip);
+                displayName = ECSTRING(core,Common_Module_InteractionPosition);
+                tooltip = ECSTRING(core,Common_Module_InteractionPosition_Tooltip);
                 typeName = "STRING";
-                defaultValue = "0,0,0";
+                defaultValue = "[0,0,0]";
             };
         };
     };

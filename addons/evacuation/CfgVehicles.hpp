@@ -41,6 +41,19 @@ class CfgVehicles {
                     };
                 };
             };
+            class InteractionDistance: Edit {
+                property = QGVAR(Eden_EvacuationPoint_InteractionDistance);
+                displayName = ECSTRING(core,Common_Module_InteractionDistance);
+                typeName = "NUMBER";
+                defaultValue = 5;
+            };
+            class InteractionPosition: Edit {
+                property = QGVAR(Eden_EvacuationPoint_InteractionPosition);
+                displayName = ECSTRING(core,Common_Module_InteractionPosition);
+                tooltip = ECSTRING(core,Common_Module_InteractionPosition_Tooltip);
+                typeName = "STRING";
+                defaultValue = "[0,0,0]";
+            };
         };
     };
 

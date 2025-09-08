@@ -470,6 +470,17 @@
                 <Korean>비어 있음</Korean>
             </Key>
         </Container>
+        <Container name="// Module Common //">
+            <Key ID="STR_ACM_Core_Common_Module_InteractionDistance">
+                <English>Interaction Distance</English>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_Module_InteractionPosition">
+                <English>Interaction Position</English>
+            </Key>
+            <Key ID="STR_ACM_Core_Common_Module_InteractionPosition_Tooltip">
+                <English>Interaction position relative to center of object, must be an array containing 3 numbers</English>
+            </Key>
+        </Container>
         <Container name="// ACE Action //">
             <Key ID="STR_ACM_Core_MedicalEquipment">
                 <English>Medical Equipment</English>

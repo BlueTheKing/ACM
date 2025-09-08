@@ -8,15 +8,6 @@
             <Key ID="STR_ACM_Mission_FullHealFacility_Module">
                 <English>Full Heal Facility</English>
             </Key>
-            <Key ID="STR_ACM_Mission_FullHealFacility_Module_InteractionDistance">
-                <English>Interaction Distance</English>
-            </Key>
-            <Key ID="STR_ACM_Mission_FullHealFacility_Module_InteractionPosition">
-                <English>Interaction Position</English>
-            </Key>
-            <Key ID="STR_ACM_Mission_FullHealFacility_Module_InteractionPosition_Tooltip">
-                <English>Interaction position relative to center of object, must be 3 numbers seperated with a comma</English>
-            </Key>
         </Container>
     </Package>
 </Project>

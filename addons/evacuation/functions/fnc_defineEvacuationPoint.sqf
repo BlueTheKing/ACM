@@ -9,17 +9,19 @@
  *   0: BLUFOR
  *   1: REDFOR
  *   2: GREENFOR
+ * 2: Interaction Point Distance <NUMBER>
+ * 3: Interaction Point Position <ARRAY>
  *
  * Return Value:
  * None
  *
  * Example:
- * [_object, _side] call ACM_evacuation_fnc_defineEvacuationPoint;
+ * [_object, 0, 4, [0,0,0]] call ACM_evacuation_fnc_defineEvacuationPoint;
  *
  * Public: No
  */
 
-params ["_object", ["_side", 0]];
+params ["_object", ["_side", 0], ["_distance", 4], ["_position", [0,0,0]]];
 
 _object setVariable [QGVAR(EvacuationSide), GET_SIDE(_side), true];
 
@@ -55,7 +57,7 @@ LLSTRING(EvacuatePatient),
     if (_evacuationSide != GET_SIDE(_casualtySide)) exitWith {false};
 
     ((_casualty getVariable [QGVAR(casualtyTicketClaimed), false]) && IS_UNCONSCIOUS(_casualty));
-}, {}, [], [0,0,0], 4] call ACEFUNC(interact_menu,createAction));
+}, {}, [], _position, _distance] call ACEFUNC(interact_menu,createAction));
 
 {
     [_object, 0, [], _x] call ACEFUNC(interact_menu,addActionToObject);
