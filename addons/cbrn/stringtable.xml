@@ -72,10 +72,10 @@
             <Korean>방독면 목록</Korean>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask_Desc">
-            <English>List of goggles (facewear)/helmets that are gas masks (or equivalent). Each entry should be a goggles/helmet classname and should be seperated with a comma (",")</English>
-            <Portuguese>Lista de óculos de proteção (faciais)/capacetes que são máscaras de gás (ou equivalentes). Cada entrada deve ser um nome de classe de óculos/capacete e deve ser separada por uma vírgula (“,”)</Portuguese>
-            <Russian>Список очков (масок)/шлемов, которые являются противогазами (или эквивалентом). Каждый элемент должен быть классом очков/шлема и разделяться запятой (",")</Russian>
-            <Ukrainian>Список окулярів (масок)/шоломів, що є протигазами (або еквівалентом). Кожен елемент має бути класом окулярів/шолома та розділятися комою (",")</Ukrainian>
+            <English>List of goggles (facewear)/helmets that are gas masks (or equivalent). Each entry should be a goggles/helmet classname and should be seperated with a comma</English>
+            <Portuguese>Lista de óculos de proteção (faciais)/capacetes que são máscaras de gás (ou equivalentes). Cada entrada deve ser um nome de classe de óculos/capacete e deve ser separada por uma vírgula</Portuguese>
+            <Russian>Список очков (масок)/шлемов, которые являются противогазами (или эквивалентом). Каждый элемент должен быть классом очков/шлема и разделяться запятой</Russian>
+            <Ukrainian>Список окулярів (масок)/шоломів, що є протигазами (або еквівалентом). Кожен елемент має бути класом окулярів/шолома та розділятися комою</Ukrainian>
             <Korean>방독면(또는 동등 장비)으로 간주되는 고글/헬멧 목록. 각 항목은 클래스명으로 콤마(",")로 구분</Korean>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit">
@@ -86,10 +86,10 @@
             <Korean>CBRN 슈트 목록</Korean>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit_Desc">
-            <English>List of uniforms that are CBRN suits. Each entry should be a uniform classname and should be seperated with a comma (",")</English>
-            <Portuguese>Lista de uniformes que são trajes QBRN. Cada entrada deve ser um nome de classe de uniforme e deve ser separada por uma vírgula (“,”)</Portuguese>
-            <Russian>Список униформ, которые являются защитными костюмами ХБРЯ. Каждый элемент должен быть классом униформы и разделяться запятой (",")</Russian>
-            <Ukrainian>Список одностроїв, що є захисними костюмами ХБРЯ. Кожен елемент має бути класом однострою та розділятися комою (",")</Ukrainian>
+            <English>List of uniforms that are CBRN suits. Each entry should be a uniform classname and should be seperated with a comma</English>
+            <Portuguese>Lista de uniformes que são trajes QBRN. Cada entrada deve ser um nome de classe de uniforme e deve ser separada por uma vírgula</Portuguese>
+            <Russian>Список униформ, которые являются защитными костюмами ХБРЯ. Каждый элемент должен быть классом униформы и разделяться запятой</Russian>
+            <Ukrainian>Список одностроїв, що є захисними костюмами ХБРЯ. Кожен елемент має бути класом однострою та розділятися комою</Ukrainian>
             <Korean>CBRN 슈트로 간주되는 유니폼 목록. 각 항목은 클래스명으로 콤마(",")로 구분</Korean>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN">
@@ -100,10 +100,10 @@
             <Korean>CBRN 보호 차량 목록</Korean>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN_Desc">
-            <English>List of vehicles that are CBRN protected (overpressure capability). Each entry should be a vehicle classname and should be seperated with a comma (",")</English>
-            <Portuguese>Lista de veículos que são protegidos contra QBRN (capacidade de sobrepressão). Cada entrada deve ser um nome de classe de veículo e deve ser separada por uma vírgula (“,”)</Portuguese>
-            <Russian>Список машин, защищённых от ХБРЯ (с избыточным давлением). Каждый элемент должен быть классом машины и разделяться запятой (",")</Russian>
-            <Ukrainian>Список машин, захищених від ХБРЯ (з надлишковим тиском). Кожен елемент має бути класом машини та розділятися комою (",")</Ukrainian>
+            <English>List of vehicles that are CBRN protected (overpressure capability). Each entry should be a vehicle classname and should be seperated with a comma</English>
+            <Portuguese>Lista de veículos que são protegidos contra QBRN (capacidade de sobrepressão). Cada entrada deve ser um nome de classe de veículo e deve ser separada por uma vírgula</Portuguese>
+            <Russian>Список машин, защищённых от ХБРЯ (с избыточным давлением). Каждый элемент должен быть классом машины и разделяться запятой</Russian>
+            <Ukrainian>Список машин, захищених від ХБРЯ (з надлишковим тиском). Кожен елемент має бути класом машини та розділятися комою</Ukrainian>
             <Korean>CBRN 보호(과압 기능) 차량 목록. 각 항목은 클래스명으로 콤마(",")로 구분</Korean>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed">
@@ -114,10 +114,10 @@
             <Korean>밀폐 차량 목록</Korean>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed_Desc">
-            <English>List of vehicles that are sealed. Each entry should be a vehicle classname and should be seperated with a comma (",")</English>
-            <Portuguese>Lista de veículos que são lacrados. Cada entrada deve ser um nome de classe de veículo e deve ser separada por uma vírgula (“,”)</Portuguese>
-            <Russian>Список машин, которые являются герметичными. Каждый элемент должен быть классом машины и разделяться запятой (",")</Russian>
-            <Ukrainian>Список машин, що є герметичними. Кожен елемент має бути класом машини та розділятися комою (",")</Ukrainian>
+            <English>List of vehicles that are sealed. Each entry should be a vehicle classname and should be seperated with a comma</English>
+            <Portuguese>Lista de veículos que são lacrados. Cada entrada deve ser um nome de classe de veículo e deve ser separada por uma vírgula</Portuguese>
+            <Russian>Список машин, которые являются герметичными. Каждый элемент должен быть классом машины и разделяться запятой</Russian>
+            <Ukrainian>Список машин, що є герметичними. Кожен елемент має бути класом машини та розділятися комою</Ukrainian>
             <Korean>밀폐 차량 목록. 각 항목은 클래스명으로 콤마(",")로 구분</Korean>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_ATNAAutoinjector">
