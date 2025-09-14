@@ -456,24 +456,18 @@
             <Portuguese>Permitir a autoaplicação de IO</Portuguese>
             <Russian>Разрешить самостоятельную установку IO</Russian>
             <Ukrainian>Дозволити самостійне встановлення IO</Ukrainian>
+            <Korean>자기 자신에게 IO 적용을 허용합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe">
             <English>Reusable Syringes</English>
             <Russian>Многоразовые шприцы</Russian>
             <Ukrainian>Багаторазові шприци</Ukrainian>
+            <Korean>주사기 재사용</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Desc">
             <English>Sets whether syringes are reusable instead of consumed on medication administration</English>
             <Russian>Задаёт, являются ли шприцы многоразовыми вместо расходуемых</Russian>
             <Ukrainian>Визначає, чи є шприци багаторазовими замість витратних</Ukrainian>
-            <Korean>자기 자신에게 IO 적용을 허용합니다.</Korean>
-        </Key>
-        <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe">
-            <English>Reusable Syringes</English>
-            <Korean>주사기 재사용</Korean>
-        </Key>
-        <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Desc">
-            <English>Sets whether syringes are reusable instead of consumed on medication administration</English>
             <Korean>약물 투여 시 주사기를 소비하지 않고 재사용할지 설정합니다.</Korean>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
@@ -1865,15 +1859,12 @@
                 <Portuguese>Femoral</Portuguese>
                 <Russian>Бедренный</Russian>
                 <Ukrainian>Стегнова</Ukrainian>
+                <Korean>대퇴 (Femoral)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_ActionLog">
                 <English>%1 felt for a %2 pulse</English>
                 <Russian>%1 оценил пульс на %2 артерии</Russian>
                 <Ukrainian>%1 оцінив пульс на %2 артерії</Ukrainian>
-                <Korean>대퇴 (Femoral)</Korean>
-            </Key>
-            <Key ID="STR_ACM_Circulation_FeelPulse_ActionLog">
-                <English>%1 felt for a %2 pulse</English>
                 <Korean>%1이 %2 맥박을 촉지함</Korean>
             </Key>
         </Container>

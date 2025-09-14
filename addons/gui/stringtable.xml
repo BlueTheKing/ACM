@@ -49,24 +49,18 @@
             <Portuguese>Mostrar a quantidade exata de dor na guia de visão geral</Portuguese>
             <Russian>Показывать точный уровень боли во вкладке обзора</Russian>
             <Ukrainian>Показувати точний рівень болю на вкладці огляду</Ukrainian>
+            <Korean>개요 탭에 정확한 통증 수치 표시</Korean>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture">
             <English>Show Fracture</English>
             <Russian>Показывать перелом</Russian>
             <Ukrainian>Показувати перелом</Ukrainian>
+            <Korean>골절 표시</Korean>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
             <English>Show fractured limb(s) on patient and overview tab</English>
             <Russian>Показывать переломы конечностей у пациента и во вкладке обзора</Russian>
             <Ukrainian>Показувати переломи кінцівок у пацієнта та на вкладці огляду</Ukrainian>
-            <Korean>개요 탭에 정확한 통증 수치 표시</Korean>
-        </Key>
-        <Key ID="STR_ACM_GUI_SETTING_ShowFracture">
-            <English>Show Fracture</English>
-            <Korean>골절 표시</Korean>
-        </Key>
-        <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
-            <English>Show fractured limb(s) on patient and overview tab</English>
             <Korean>환자 및 개요 탭에 골절된 팔다리 표시</Korean>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
