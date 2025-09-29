@@ -5,7 +5,7 @@
  *
  * Arguments:
  * 0: The module logic <OBJECT>
- * 1: Synchronized units <ARRAY>
+ * 1: Synchronized objects <ARRAY>
  * 2: Activated <BOOL>
  *
  * Return Value:
@@ -17,14 +17,13 @@
  * Public: No
  */
 
-params ["_logic", "", "_activated"];
+params ["_logic", "_syncedObjects", "_activated"];
 
 if (!_activated || !(GVAR(enable))) exitWith {};
 
 [{
-    params ["_logic"];
+    params ["_logic", "_syncedObjects"];
 
-    private _syncedObjects = synchronizedObjects _logic;
     private _attach = (_logic getVariable ["AttachToObject", false]) && (count _syncedObjects > 0);
     private _targetObject = [_logic, (_syncedObjects select 0)] select _attach;
 
@@ -46,4 +45,4 @@ if (!_activated || !(GVAR(enable))) exitWith {};
 
     [QGVAR(initHazardZone), [_targetObject, _attach, _hazardType, [_radius,_radius,0,false,-1], _effectTime, _affectAI, false, _showMist]] call CBA_fnc_serverEvent;
     deleteVehicle _logic;
-}, [_logic], 1] call CBA_fnc_waitAndExecute;
+}, [_logic, _syncedObjects], 1] call CBA_fnc_waitAndExecute;

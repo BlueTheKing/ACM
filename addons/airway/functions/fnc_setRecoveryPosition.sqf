@@ -24,7 +24,7 @@ if (_state && _patient getVariable [QGVAR(RecoveryPosition_State), false]) exitW
     [LSTRING(RecoveryPosition_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
-if (!_state && !(_patient getVariable [QGVAR(RecoveryPosition_State), false])) exitWith {};
+if ((!_state && !(_patient getVariable [QGVAR(RecoveryPosition_State), false])) || !(IS_UNCONSCIOUS(_patient))) exitWith {};
 
 _patient setVariable [QGVAR(RecoveryPosition_State), _state, true];
 _patient setVariable [QGVAR(HeadTilt_State), _state, true];

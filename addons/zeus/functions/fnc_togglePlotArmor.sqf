@@ -48,6 +48,7 @@ private _immune = _unit getVariable [QEGVAR(damage,InstantDeathImmune), false];
 _immune = !_immune;
 
 _unit setVariable [QEGVAR(damage,InstantDeathImmune), _immune, true];
+_unit setVariable [QACEGVAR(medical_statemachine,AIUnconsciousness), _immune, true];
 
 [([LLSTRING(Module_PlotArmor_Disabled), LLSTRING(Module_PlotArmor_Enabled)] select _immune)] call ACEFUNC(zeus,showMessage);
 

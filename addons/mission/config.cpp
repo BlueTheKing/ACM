@@ -17,6 +17,8 @@ class CfgPatches {
     };
 };
 
+#include "CfgVehicles.hpp"
+#include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"
 #include "RscDisplayMain.hpp"
 

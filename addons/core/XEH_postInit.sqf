@@ -20,7 +20,12 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
     -1 * _count;
 }] call ACEFUNC(field_rations,addStatusModifier);
 
-[QGVAR(openMedicalMenu), ACELINKFUNC(medical_gui,openMenu)] call CBA_fnc_addEventHandler;
+[QGVAR(openMedicalMenu), {
+    params ["_target"];
+
+    ACEGVAR(medical_gui,pendingReopen) = false;
+    [ACEFUNC(medical_gui,openMenu), _target] call CBA_fnc_execNextFrame;
+}] call CBA_fnc_addEventHandler;
 
 ["ace_cardiacArrest", LINKFUNC(onCardiacArrest)] call CBA_fnc_addEventHandler;
 ["ace_unconscious", LINKFUNC(onUnconscious)] call CBA_fnc_addEventHandler;

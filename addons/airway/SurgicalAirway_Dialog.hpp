@@ -194,10 +194,10 @@ class GVAR(SurgicalAirway_Dialog) {
 
         class Inventory_Scalpel_ImageBG: RscText {
             idc = -1;
-            x = QUOTE(ACM_SURGICAL_AIRWAY_POS_X(55));
+            x = QUOTE(ACM_SURGICAL_AIRWAY_POS_X_INV(1.285));
             y = QUOTE(SURGICAL_AIRWAY_BUTTON_SCALPEL_Y);
-            w = QUOTE(ACM_SURGICAL_AIRWAY_POS_W(5));
-            h = QUOTE(ACM_SURGICAL_AIRWAY_POS_H(5));
+            w = QUOTE(ACM_SURGICAL_AIRWAY_POS_W_INV(0.115));
+            h = QUOTE(ACM_SURGICAL_AIRWAY_POS_H_INV(0.115));
             colorBackground[] = {0,0,0,0.7};
         };
 
@@ -219,10 +219,10 @@ class GVAR(SurgicalAirway_Dialog) {
 
         class Inventory_Scalpel_Image: RscPicture {
             idc = IDC_SURGICAL_AIRWAY_INVBUTTON_SCALPEL_IMG;
-            x = QUOTE(ACM_SURGICAL_AIRWAY_POS_X(55));
+            x = QUOTE(ACM_SURGICAL_AIRWAY_POS_X_INV(1.285));
             y = QUOTE(SURGICAL_AIRWAY_BUTTON_SCALPEL_Y);
-            w = QUOTE(ACM_SURGICAL_AIRWAY_POS_W(5));
-            h = QUOTE(ACM_SURGICAL_AIRWAY_POS_H(5));
+            w = QUOTE(ACM_SURGICAL_AIRWAY_POS_W_INV(0.115));
+            h = QUOTE(ACM_SURGICAL_AIRWAY_POS_H_INV(0.115));
             type = 0;
             size = 0;
             text = QPATHTOF(ui\surgical_airway\inv_scalpel.paa);
@@ -254,10 +254,10 @@ class GVAR(SurgicalAirway_Dialog) {
 
         class Inventory_Scalpel: RscButton {
             idc = IDC_SURGICAL_AIRWAY_INVBUTTON_SCALPEL;
-            x = QUOTE(ACM_SURGICAL_AIRWAY_POS_X(55));
+            x = QUOTE(ACM_SURGICAL_AIRWAY_POS_X_INV(1.285));
             y = QUOTE(SURGICAL_AIRWAY_BUTTON_SCALPEL_Y);
-            w = QUOTE(ACM_SURGICAL_AIRWAY_POS_W(5));
-            h = QUOTE(ACM_SURGICAL_AIRWAY_POS_H(5));
+            w = QUOTE(ACM_SURGICAL_AIRWAY_POS_W_INV(0.115));
+            h = QUOTE(ACM_SURGICAL_AIRWAY_POS_H_INV(0.115));
             colorText[] = {0,0,0,0};
             colorDisabled[] = {0,0,0,0};
             colorBackground[] = {0,0,0,0};

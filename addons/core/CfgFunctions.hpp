@@ -10,6 +10,17 @@ class CfgFunctions {
             };
         };
     };
+    class overwrite_medical {
+        tag = "ace_medical";
+        class ace_medical {
+            class deserializeState { // Serialize/Deserialize
+                file = QPATHTOF(overrides\fnc_deserializeState.sqf); //ace/addons/medical/functions/fnc_deserializeState.sqf
+            };
+            class serializeState { // Serialize/Deserialize
+                file = QPATHTOF(overrides\fnc_serializeState.sqf); //ace/addons/medical/functions/fnc_serializeState.sqf
+            };
+        };
+    };
     class overwrite_medical_vitals {
         tag = "ace_medical_vitals";
         class ace_medical_vitals {

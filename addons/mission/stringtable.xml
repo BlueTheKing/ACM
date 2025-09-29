@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ACM">
+    <Package name="Mission">
+        <Container name="// Full Heal Facility //">
+            <Key ID="STR_ACM_Mission_FullHealFacility_Action">
+                <English>Full Heal</English>
+            </Key>
+            <Key ID="STR_ACM_Mission_FullHealFacility_Module">
+                <English>Full Heal Facility</English>
+            </Key>
+        </Container>
+    </Package>
+</Project>

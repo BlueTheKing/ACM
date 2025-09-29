@@ -20,8 +20,10 @@ params ["_patient", ["_fromTXA", false]];
 
 if (_patient getVariable [QGVAR(Coagulation_PFH), -1] != -1 || !(IS_BLEEDING(_patient))) exitWith {};
 
+_patient setVariable [QGVAR(Coagulation_Active), true, true];
+
 _patient setVariable [QGVAR(Coagulation_LastClotTime), CBA_missionTime];
-_patient setVariable [QGVAR(Coagulation_NextAttempt), 0];
+_patient setVariable [QGVAR(Coagulation_NextAttempt), (CBA_missionTime + (9 + random 5))];
 
 private _id = [{
     params ["_args", "_idPFH"];
@@ -31,19 +33,21 @@ private _id = [{
 
     if (!(alive _patient) || ((_patient getVariable [QGVAR(Coagulation_LastClotTime), -1]) + 120 < CBA_missionTime)) exitWith {
         _patient setVariable [QGVAR(Coagulation_PFH), -1];
+        _patient setVariable [QGVAR(Coagulation_Active), false, true];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
     private _txaCount = ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 2;
 
     if ((_patient getVariable [QGVAR(Coagulation_NextAttempt), 0]) > CBA_missionTime) exitWith {};
-    _patient setVariable [QGVAR(Coagulation_NextAttempt), (CBA_missionTime + 15 - ((_txaCount * 3) + _plateletCount))];
+
+    _patient setVariable [QGVAR(Coagulation_NextAttempt), (CBA_missionTime + 12 - ((_txaCount * 3) + _plateletCount))];
 
     if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 1 && _txaCount < 0.5) || (GET_EFF_BLOOD_VOLUME(_patient) < 3.8)) exitWith {};
 
     private _exit = true;
 
-    private _maximumWoundSeverity = ceil (_plateletCount / 2);
+    private _maximumWoundSeverity = (ceil (_plateletCount / 2)) max (ceil _txaCount);
 
     {
         private _openWounds = GET_OPEN_WOUNDS(_patient);
@@ -64,6 +68,7 @@ private _id = [{
 
     if (_exit) exitWith {
         _patient setVariable [QGVAR(Coagulation_PFH), -1];
+        _patient setVariable [QGVAR(Coagulation_Active), false, true];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 }, 1, [_patient]] call CBA_fnc_addPerFrameHandler;

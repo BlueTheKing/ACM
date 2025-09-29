@@ -20,7 +20,9 @@ params ["_patient", ["_fromTXA", false]];
 
 if (_patient getVariable [QGVAR(IBCoagulation_PFH), -1] != -1 || !(IS_I_BLEEDING(_patient))) exitWith {};
 
-_patient setVariable [QGVAR(IBCoagulation_NextAttempt), 0];
+_patient setVariable [QGVAR(IBCoagulation_Active), true, true];
+
+_patient setVariable [QGVAR(IBCoagulation_NextAttempt), (CBA_missionTime + (5 + random 4))];
 
 private _id = [{
     params ["_args", "_idPFH"];
@@ -30,13 +32,14 @@ private _id = [{
 
     if !(alive _patient) exitWith {
         _patient setVariable [QGVAR(IBCoagulation_PFH), -1];
+        _patient setVariable [QGVAR(IBCoagulation_Active), false, true];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
     
     private _txaCount = ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 2.2;
 
     if ((_patient getVariable [QGVAR(IBCoagulation_NextAttempt), 0]) > CBA_missionTime) exitWith {};
-    _patient setVariable [QGVAR(IBCoagulation_NextAttempt), (CBA_missionTime + 15 - ((_txaCount * 3) + _plateletCount))];
+    _patient setVariable [QGVAR(IBCoagulation_NextAttempt), (CBA_missionTime + 9 - ((_txaCount * 3) + _plateletCount))];
 
     if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 0.1 && _txaCount < 0.1) || (GET_EFF_BLOOD_VOLUME(_patient) < 3.6)) exitWith {};
 

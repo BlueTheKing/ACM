@@ -8,42 +8,34 @@ if !(isMultiplayer) exitWith {};
     GVAR(CasualtyGroup) = createGroup [civilian, false];
 
     if (isServer) then {
-        if ((round GVAR(ticketCountRespawn)) > ([GVAR(playerFaction), 0] call BIS_fnc_respawnTickets)) then {
-            private _missingTickets = (round GVAR(ticketCountRespawn)) - ([GVAR(playerFaction), 0] call BIS_fnc_respawnTickets);
-            [GVAR(playerFaction), _missingTickets] call BIS_fnc_respawnTickets;
-        };
+        {
+            _x params ["_side", "_ticketCountNamespace"];
 
-        missionNamespace setVariable [QGVAR(CasualtyTicket_Count), (round GVAR(ticketCountCasualty)), true];
+            if ((round GVAR(ticketCountRespawn)) > ([_side, 0] call BIS_fnc_respawnTickets)) then {
+                private _missingTickets = (round GVAR(ticketCountRespawn)) - ([_side, 0] call BIS_fnc_respawnTickets);
+                [_side, _missingTickets] call BIS_fnc_respawnTickets;
+            };
+
+            missionNamespace setVariable [_ticketCountNamespace, (round GVAR(ticketCountCasualty)), true];
+        } forEach [
+            [west, QGVAR(CasualtyTicket_Count_BLUFOR)],
+            [east, QGVAR(CasualtyTicket_Count_REDFOR)],
+            [resistance, QGVAR(CasualtyTicket_Count_GREENFOR)]
+        ];
     };
 
     [QACEGVAR(medical,death), {
         params ["_unit"];
 
         if (_unit getVariable [QGVAR(casualtyTicketClaimed), false]) then {
-            [true] call FUNC(setCasualtyTicket);
-            [GVAR(playerFaction), -(round GVAR(convertedCasualtyDeathPenalty))] call BIS_fnc_respawnTickets;
+            private _casualtySide = _unit getVariable [QGVAR(CasualtySide), 0];
+
+            [true, _casualtySide] call FUNC(setCasualtyTicket);
+            [GET_SIDE(_casualtySide), -(round GVAR(convertedCasualtyDeathPenalty))] call BIS_fnc_respawnTickets;
         };
     }] call CBA_fnc_addEventHandler;
 
     if (isServer) then {
-        /*[QGVAR(transferCurator), {
-            params ["_unit", "_originalUnit"];
-
-            private _curatorLogic = getAssignedCuratorLogic _originalUnit;
-
-            unassignCurator _curatorLogic;
-
-            [{
-                params ["_curatorLogic"];
-
-                isNull getAssignedCuratorUnit _curatorLogic;
-            }, {
-                params ["_curatorLogic", "_unit"];
-
-                _unit assignCurator _curatorLogic;
-            }, [_curatorLogic, _unit]] call CBA_fnc_waitUntilAndExecute;
-        }] call CBA_fnc_addEventHandler;*/
-
         [QGVAR(createCurator), {
             params ["_unit"];
             
@@ -67,7 +59,9 @@ if !(isMultiplayer) exitWith {};
 
         if !(hasInterface) exitWith {};
 
-        private _unit = (createGroup GVAR(playerFaction)) createUnit [(typeOf _originalUnit), (getPosATL GVAR(ReinforcePoint)), [], 0, "FORM"];
+        private _casualtySide = _originalUnit getVariable [QGVAR(CasualtySide), 0];
+
+        private _unit = (createGroup GET_SIDE(_casualtySide)) createUnit [(typeOf _originalUnit), (getPosATL GET_REINFORCE_POINT(_casualtySide)), [], 0, "FORM"];
 
         [_unit, ([_originalUnit] call CBA_fnc_getLoadout)] call CBA_fnc_setLoadout;
 

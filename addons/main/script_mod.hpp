@@ -6,10 +6,8 @@
 #include "script_version.hpp"
 
 #define VERSION     MAJOR.MINOR
-#define VERSION_STR MAJOR.MINOR.PATCH
-#define VERSION_AR  MAJOR,MINOR,PATCHLVL,BUILD
-
-#define VERSION_CONFIG version = MAJOR.MINOR; versionStr = QUOTE(MAJOR.MINOR.PATCH); versionAr[] = {MAJOR,MINOR,PATCH}
+#define VERSION_STR MAJOR.MINOR.PATCH.BUILD
+#define VERSION_AR  MAJOR,MINOR,PATCH,BUILD
 
 // MINIMAL required version for the Mod. Components can specify others..
 #define REQUIRED_VERSION 2.18
