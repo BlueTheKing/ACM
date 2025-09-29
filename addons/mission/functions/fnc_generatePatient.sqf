@@ -79,6 +79,8 @@ removeAllItems _patient;
 removeAllAssignedItems _patient;
 removeGoggles _patient;
 
+_patient setVariable [QACEGVAR(medical_statemachine,AIUnconsciousness), true, true];
+
 [_patient, true, 30] call ACEFUNC(medical,setUnconscious);
 
 _patient setVariable [QEGVAR(damage,InstantDeathImmune), true, true];

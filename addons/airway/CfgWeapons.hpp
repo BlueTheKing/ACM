@@ -55,7 +55,7 @@ class CfgWeapons {
         displayName = CSTRING(SuctionBag);
         descriptionShort = CSTRING(SuctionBag_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 4;
+            mass = 2;
         };
     };
 

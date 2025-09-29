@@ -196,6 +196,10 @@ if (_rowCount > 0) then {
         };
 
         if (_showInflammation) then {
+            if (_airwayInflammationState <= AIRWAY_INFLAMMATION_THRESHOLD_SEVERE) then {
+                _hintHeight = _hintHeight + 0.5;
+            };
+
             if (_collapseShow || _obstructionShow) then {
                 _hint = format ["%1<br />%2", _hint, _inflammationState];
                 _hintLog = format ["%1, %2", _hintLog, _inflammationStateLog];

@@ -100,3 +100,5 @@ if (!_iv && ([_patient, "Lidocaine", false, GET_BODYPART_INDEX(_bodyPart)] call 
     [_patient, (linearConversion [1, 10, (_dose / 100), 0.1, 0.4])] call ACEFUNC(medical,adjustPainLevel);
     [_patient, "hit"] call ACEFUNC(medical_feedback,playInjuredSound);
 };
+
+[QEGVAR(core,openMedicalMenu), _patient] call CBA_fnc_localEvent;

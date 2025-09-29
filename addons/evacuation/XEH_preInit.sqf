@@ -38,17 +38,6 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(playerFaction),
-    "LIST",
-    [LLSTRING(SETTING_PlayerFaction), LLSTRING(SETTING_PlayerFaction_Desc)],
-    [ACM_SETTINGS_CATEGORY, ""],
-    [[west, east, resistance], ["BLUFOR", "REDFOR", "GREENFOR"], 0],
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
     QGVAR(ticketCountRespawn),
     "SLIDER",
     [LLSTRING(SETTING_TicketCountRespawn), LLSTRING(SETTING_TicketCountRespawn_Desc)],
@@ -97,6 +86,8 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
-GVAR(ReinforcePoint) = objNull;
+GVAR(ReinforcePoint_BLUFOR) = objNull;
+GVAR(ReinforcePoint_REDFOR) = objNull;
+GVAR(ReinforcePoint_GREENFOR) = objNull;
 
 ADDON = true;

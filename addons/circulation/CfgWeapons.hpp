@@ -242,7 +242,7 @@ class CfgWeapons {
     };
 
     class ACE_adenosine: ACE_ItemCore {
-        scope = 0;
+        scope = 1;
     };
 
     class ACE_morphine: ACE_ItemCore {

@@ -432,6 +432,16 @@
 #define FRACTURE_THRESHOLD_SEVERE       5
 #define FRACTURE_THRESHOLD_COMPLEX      7
 
+// Evacuation
+#define ALL_SIDES [west, east, resistance]
+
+#define GET_SIDE(num) (ALL_SIDES select num)
+#define GET_SIDE_NUM(side) (ALL_SIDES find side)
+
+#define GET_REINFORCE_POINT(side) ([EGVAR(evacuation,ReinforcePoint_BLUFOR), EGVAR(evacuation,ReinforcePoint_REDFOR), EGVAR(evacuation,ReinforcePoint_GREENFOR)] select side)
+
+#define GET_NAMESPACE_TICKETCOUNT(side) ([QEGVAR(evacuation,CasualtyTicket_Count_BLUFOR), QEGVAR(evacuation,CasualtyTicket_Count_REDFOR), QEGVAR(evacuation,CasualtyTicket_Count_GREENFOR)] select side)
+
 // CBRN
 #define QGVAR_BUILDUP(type)                        QEGVAR(CBRN,##type##_Buildup)
 
