@@ -171,6 +171,15 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,0)] call FUNC(Thoracostomy_drain));
         ACM_menuIcon = "ACM_SuctionBag";
     };
+    class DrainFluid_HandPump: DrainFluid_ACCUVAC {
+        displayName = CSTRING(DrainFluid_HandPump);
+        icon = "";
+        treatmentTime = 8;
+        items[] = {"ACM_HandPump"};
+        consumeItem = 0;
+        callbackSuccess = QUOTE([ARR_3(_medic,_patient,2)] call FUNC(Thoracostomy_drain));
+        ACM_menuIcon = "ACM_HandPump";
+    };
 
     class CloseIncision: PerformThoracostomy {
         displayName = CSTRING(CloseIncision);

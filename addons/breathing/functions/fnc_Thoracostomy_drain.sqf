@@ -9,6 +9,7 @@
  * 2: Device type <NUMBER>
     * 0: Suction Bag
     * 1: ACCUVAC
+    * 2: Hand Pump
  *
  * Return Value:
  * None
@@ -21,7 +22,7 @@
 
 params ["_medic", "_patient", ["_type", 1]];
 
-private _item = [LELSTRING(airway,SuctionBag_Short), LELSTRING(airway,ACCUVAC)] select _type;
+private _item = [LELSTRING(airway,SuctionBag_Short), LELSTRING(airway,ACCUVAC), LELSTRING(breathing,HandPump)] select _type;
 
 [_patient, "activity", LLSTRING(ThoracostomyDrain_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _item]] call ACEFUNC(medical_treatment,addToLog);
 
