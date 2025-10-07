@@ -17,4 +17,6 @@
 
 params ["_unit"];
 
+if !(GVAR(enable)) exitWith {false};
+
 (goggles _unit) in (GVAR(PPE_List) get "gasmask")

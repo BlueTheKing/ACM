@@ -17,6 +17,8 @@
 
 params ["_unit"];
 
+if !(GVAR(enable)) exitWith {false};
+
 private _gasMaskList = GVAR(PPE_List) get "gasmask";
 
 private _index = _gasMaskList findIf {[_unit, _x] call ACEFUNC(common,hasItem)};
