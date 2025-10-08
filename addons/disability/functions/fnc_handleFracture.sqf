@@ -18,6 +18,8 @@
 
 params ["_patient", "_partIndex"];
 
+if !(GVAR(enableFractureSeverity)) exitWith {};
+
 private _bodyDamage = _patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]];
 private _bodyPartDamage = _bodyDamage select _partIndex;
 
