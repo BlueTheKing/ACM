@@ -85,20 +85,20 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_menuIcon = "ACM_ACCUVAC";
     };
 
-    class InsertGuedelTube: CheckAirway {
-        displayName = CSTRING(InsertGuedelTube);
-        displayNameProgress = CSTRING(InsertGuedelTube_Progress);
+    class InsertOPA: CheckAirway {
+        displayName = CSTRING(InsertOPA);
+        displayNameProgress = CSTRING(InsertOPA_Progress);
         icon = "";
         medicRequired = QGVAR(allowOPA);
         treatmentTime = QGVAR(treatmentTimeOPA);
-        items[] = {"ACM_GuedelTube"};
+        items[] = {"ACM_OPA"};
         consumeItem = 1;
         condition = QUOTE(GVAR(enable) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'OPA')] call FUNC(insertAirwayItem));
         ACM_cancelRecovery = 1;
-        ACM_menuIcon = "ACM_GuedelTube";
+        ACM_menuIcon = "ACM_OPA";
     };
-    class InsertNPA: InsertGuedelTube {
+    class InsertNPA: InsertOPA {
         displayName = CSTRING(InsertNPA);
         displayNameProgress = CSTRING(InsertNPA_Progress);
         icon = "";
@@ -109,7 +109,7 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,'NPA')] call FUNC(insertAirwayItem));
         ACM_menuIcon = "ACM_NPA";
     };
-    class InsertIGel: InsertGuedelTube {
+    class InsertIGel: InsertOPA {
         displayName = CSTRING(InsertIGel);
         displayNameProgress = CSTRING(InsertIGel_Progress);
         icon = "";
@@ -120,23 +120,23 @@ class ACEGVAR(medical_treatment,actions) {
         ACM_menuIcon = "ACM_IGel";
     };
 
-    class RemoveGuedelTube: CheckAirway {
-        displayName = CSTRING(RemoveGuedelTube);
-        displayNameProgress = CSTRING(RemoveGuedelTube_Progress);
+    class RemoveOPA: CheckAirway {
+        displayName = CSTRING(RemoveOPA);
+        displayNameProgress = CSTRING(RemoveOPA_Progress);
         icon = "";
         medicRequired = 0;
         treatmentTime = 1.5;
         condition = QUOTE(GVAR(enable) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == 'OPA') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,false)] call FUNC(removeAirwayItem));
     };
-    class RemoveNPA: RemoveGuedelTube {
+    class RemoveNPA: RemoveOPA {
         displayName = CSTRING(RemoveNPA);
         displayNameProgress = CSTRING(RemoveNPA_Progress);
         icon = "";
         condition = QUOTE(GVAR(enable) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Nasal),'')] == 'NPA') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(removeAirwayItem));
     };
-    class RemoveIGel: RemoveGuedelTube {
+    class RemoveIGel: RemoveOPA {
         displayName = CSTRING(RemoveIGel);
         displayNameProgress = CSTRING(RemoveIGel_Progress);
         icon = "";

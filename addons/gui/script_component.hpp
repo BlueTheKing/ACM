@@ -82,7 +82,7 @@
 #define IDC_SIDE_LABEL_LEFT 8001
 #define IDC_SIDE_LABEL_RIGHT 8002
 
-#define IDC_BODY_HEAD_GUEDELTUBE           70100
+#define IDC_BODY_HEAD_OPA           70100
 #define IDC_BODY_HEAD_NPA                  70101
 #define IDC_BODY_HEAD_IGEL                 70102
 #define IDC_BODY_HEAD_SURGICAL_AIRWAY_0    70103

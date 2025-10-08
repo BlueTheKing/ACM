@@ -19,8 +19,8 @@
 
 params ["_medic", "_patient", "_type"];
 
-private _item = LLSTRING(GuedelTube);
-private _classname = "ACM_GuedelTube";
+private _item = LLSTRING(OPA);
+private _classname = "ACM_OPA";
 private _airwayItem = _patient getVariable [QGVAR(AirwayItem_Oral), ""];
 
 switch (_type) do {

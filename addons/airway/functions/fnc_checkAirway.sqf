@@ -70,7 +70,7 @@ if (_airwayItemInsertedOral != "" || _airwayItemInsertedNasal != "") then {
 
         _oralAdjunct = (switch (_airwayItemInsertedOral) do {
             case "OPA": {
-                LSTRING(GuedelTube);
+                LSTRING(OPA);
             };
             default {
                 _airwaySecure = true;
