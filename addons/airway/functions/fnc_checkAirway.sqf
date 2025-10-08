@@ -181,8 +181,8 @@ if (_showManeuver || _showAdjunct || _showObstruction || _showInflammation || _s
         _rowCount = _rowCount + 1;
 
         if (_doubleAdjunct) then {
-            _hintArray append [_oralAdjunct, _nasalAdjunct, LSTRING(Adjunct_%1_Inserted)];
-            _hintLogArray append [_oralAdjunct, _nasalAdjunct, LSTRING(Adjunct_%1_Inserted)];
+            _hintArray append [_oralAdjunct, _nasalAdjunct, LSTRING(CheckAirway_%1_Inserted)];
+            _hintLogArray append [_oralAdjunct, _nasalAdjunct, LSTRING(CheckAirway_%1_Inserted)];
 
             if (_showManeuver) then {
                 _entryCount = 4;
@@ -197,10 +197,10 @@ if (_showManeuver || _showAdjunct || _showObstruction || _showInflammation || _s
             };
         } else {
             _hintArray pushBack ([_nasalAdjunct, _oralAdjunct] select (_oralAdjunct != ""));
-            _hintArray pushBack LSTRING(Adjunct_%1_Inserted);
+            _hintArray pushBack LSTRING(CheckAirway_%1_Inserted);
 
             _hintLogArray pushBack ([_nasalAdjunct, _oralAdjunct] select (_oralAdjunct != ""));
-            _hintLogArray pushBack LSTRING(Adjunct_%1_Inserted);
+            _hintLogArray pushBack LSTRING(CheckAirway_%1_Inserted);
 
             if (_showManeuver) then {
                 _entryCount = 3;

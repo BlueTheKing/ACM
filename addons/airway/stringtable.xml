@@ -575,14 +575,14 @@
                 <Korean>목 기울여짐</Korean>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_%1_Inserted">
-                <English>%1 Inserted</English>
-                <Polish>Wprowadzono: %1</Polish>
-                <German>%1 eingelegt</German>
-                <French>%1 Inséré</French>
-                <Portuguese>%1 Inseriu</Portuguese>
-                <Russian>%1 вставлено</Russian>
-                <Ukrainian>%1 вставлено</Ukrainian>
-                <Korean>%1 삽입 완료</Korean>
+                <English>inserted</English>
+                <Polish>wprowadzono</Polish>
+                <German>eingelegt</German>
+                <French>inséré</French>
+                <Portuguese>inseriu</Portuguese>
+                <Russian>вставлено</Russian>
+                <Ukrainian>вставлено</Ukrainian>
+                <Korean>삽입 완료</Korean>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Mild">
                 <English>Airway mildly collapsed</English>
@@ -955,14 +955,14 @@
                 <Korean>기도 (Airway) 염증으로 차단됨</Korean>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_%1_Inserted">
-                <English>inserted</English>
-                <Polish>Użyto</Polish>
-                <German>eingelegt</German>
-                <French>inséré(e)</French>
-                <Portuguese>inseriu</Portuguese>
-                <Russian>вставлено</Russian>
-                <Ukrainian>вставлено</Ukrainian>
-                <Korean>삽입 완료</Korean>
+                <English>%1 inserted</English>
+                <Polish>Użyto: %1</Polish>
+                <German>%1 eingelegt</German>
+                <French>%1 inséré(e)</French>
+                <Portuguese>%1 inseriu</Portuguese>
+                <Russian>%1 вставлено</Russian>
+                <Ukrainian>%1 вставлено</Ukrainian>
+                <Korean>%1 삽입 완료</Korean>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_ActionLog">
                 <English>%1 has inserted %2</English>
