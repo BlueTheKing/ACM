@@ -26,10 +26,11 @@ private _leaked = false;
 
 private _hintHeight = 1.5;
 
-private _hint = LLSTRING(InspectIV_Clear);
-private _hintLog = LLSTRING(InspectIV_Clear_Short);
+private _hintArray = ["%1",LSTRING(InspectIV_Clear)];
+private _hintLogArray = [LSTRING(InspectIV_Clear_Short)];
+private _hintLogFormat = "%1 %2 (%3): %4";
 
-private _accessSiteHint = [LLSTRING(IV_Upper), LLSTRING(IV_Middle), LLSTRING(IV_Lower)] select _accessSite;
+private _accessSiteHint = [LSTRING(IV_Upper), LSTRING(IV_Middle), LSTRING(IV_Lower)] select _accessSite;
 
 private _hasFlow = GET_IV_FLOW_X(_patient,_partIndex,_accessSite) > 0;
 private _activeBag = false;
@@ -48,25 +49,32 @@ if (_hasFlow) then {
 
 switch (true) do {
     case !(_hasFlow): {
-        _hint = LLSTRING(InspectIV_NoFlow);
-        _hintLog = LLSTRING(InspectIV_NoFlow_Short);
+        _hintArray set [1, LSTRING(InspectIV_NoFlow)];
+        _hintLogArray set [0, LSTRING(InspectIV_NoFlow_Short)];
     };
     case (_activeBag): {
-        _hint = LLSTRING(InspectIV_NormalFlow);
-        _hintLog = LLSTRING(InspectIV_NormalFlow_Short);
+        _hintArray set [1, LSTRING(InspectIV_NormalFlow)];
+        _hintLogArray set [0, LSTRING(InspectIV_NormalFlow_Short)];
     };
     /*case (false): {
-       _hint =  "IV Catheter is loose";
-       _hintLog = "loose";
+        _hintArray set [1, "IV Catheter is loose"];
+        _hintLogArray set [1, "loose"];
     };*/
     default {};
 };
 
 if (_leaked) then {
-    _hint = format ["%1<br/>%2", _hint, LLSTRING(InspectIV_Swelling)];
-    _hintLog = format ["%1, %2", _hint, LLSTRING(InspectIV_Swelling_Short)];
+    _hintArray set [0, "%1<br/>%2"];
+    _hintArray pushBack LSTRING(InspectIV_Swelling);
+
+    _hintLogArray pushBack LSTRING(InspectIV_Swelling_Short);
+    _hintLogFormat = "%1 %2 (%3): %4, %5";
+
     _hintHeight = 2;
 };
 
-[_hint, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
-[_patient, "quick_view", LLSTRING(InspectIV_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _accessSiteHint, _hintLog]] call ACEFUNC(medical_treatment,addToLog);
+private _logArray = [[_medic, false, true] call ACEFUNC(common,getName), LSTRING(InspectIV_ActionLog), _accessSiteHint];
+_logArray append _hintLogArray;
+
+[_hintArray, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
+[_patient, "quick_view", _hintLogFormat, _logArray] call ACEFUNC(medical_treatment,addToLog);

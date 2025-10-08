@@ -18,8 +18,10 @@
 
 params ["_medic", "_patient"];
 
-private _hint = LLSTRING(InspectChest_Normal);
-private _hintLog = LLSTRING(InspectChest_Normal);
+private _hintArray = ["%1", LSTRING(InspectChest_Normal)];
+private _hintLogArray = [LSTRING(InspectChest_Normal)];
+private _hintLogFormat = "%1";
+
 private _hintSecondLog = "";
 private _hintHeight = 1.5;
 
@@ -27,6 +29,8 @@ private _pneumothorax = _patient getVariable [QGVAR(Pneumothorax_State), 0] > 0;
 private _tensionPneumothorax = _patient getVariable [QGVAR(TensionPneumothorax_State), false];
 private _hemothorax = _patient getVariable [QGVAR(Hemothorax_Fluid), 0] > 0.5;
 private _tensionHemothorax = _patient getVariable [QGVAR(Hemothorax_Fluid), 0] > 1.4;
+
+private _hasPneumothorax = _pneumothorax || _tensionPneumothorax;
 
 private _trachealDeviationTime = CBA_missionTime - (_patient getVariable [QGVAR(TensionPneumothorax_Time), CBA_missionTime]);
 
@@ -37,48 +41,70 @@ private _secondEntry = false;
 
 switch (true) do {
     case (_respiratoryArrest || _airwayBlocked): {
-        _hint = LLSTRING(InspectChest_None);
-        _hintLog = LLSTRING(InspectChest_None_Short);
+        _hintArray set [1, LSTRING(InspectChest_None)];
+        _hintLogArray set [0, LSTRING(InspectChest_None_Short)];
         
-        if (_pneumothorax || _tensionPneumothorax) then {
-            _hint = format ["%1<br/>%2", _hint, LLSTRING(InspectChest_None_Uneven)];
-            _hintLog = format ["%1, %2", _hintLog, LLSTRING(InspectChest_None_Uneven_Short)];
+        if (_hasPneumothorax) then {
+            _hintArray set [0, "%1<br/>%2"];
+            _hintArray pushBack LSTRING(InspectChest_None_Uneven);
+
+            _hintLogArray pushBack LSTRING(InspectChest_None_Uneven_Short);
+            _hintLogFormat = "%1, %2";
+
             _hintHeight = 2;
 
             if (_trachealDeviationTime > 200) then {
                 _secondEntry = true;
                 _hintHeight = 2.5;
+
+                _hintArray set [0, "%1<br/>%2<br/>%3"];
+
                 if (_trachealDeviationTime > 300) then {
-                    _hint = format ["%1<br/>%2", _hint, LLSTRING(InspectChest_TrachealDeviation)];
-                    _hintSecondLog = LLSTRING(InspectChest_TrachealDeviation_Short);
+                    _hintArray pushBack LSTRING(InspectChest_TrachealDeviation);
+
+                    _hintSecondLog = LSTRING(InspectChest_TrachealDeviation_Short);
                 } else {
-                    _hint = format ["%1<br/>%2", _hint, LLSTRING(InspectChest_TrachealDeviation_Slight)];
-                    _hintSecondLog = LLSTRING(InspectChest_TrachealDeviation_Slight_Short);
+                    _hintArray pushBack LSTRING(InspectChest_TrachealDeviation_Slight);
+
+                    _hintSecondLog = LSTRING(InspectChest_TrachealDeviation_Slight_Short);
                 };
             };
         };
 
         if (_hemothorax) then {
-            _hint = format ["%1<br/>%2", _hint, LLSTRING(InspectChest_Bruising)];
-            _hintLog = format ["%1, %2", _hintLog, toLower (LLSTRING(InspectChest_Bruising_Short))];
             _hintHeight = _hintHeight + 0.5;
+
+            _hintArray set [0, (["%1<br/>%2",
+                (["%1<br/>%2<br/>%3","%1<br/>%2<br/>%3<br/>%4"] select _secondEntry)
+            ] select _hasPneumothorax)];
+
+            _hintArray pushBack LSTRING(InspectChest_Bruising);
+
+            _hintLogArray pushBack LSTRING(InspectChest_Bruising_Short);
+            _hintLogFormat = ["%1, %2", "%1, %2, %3"] select _hasPneumothorax;
         };
     };
     case (_pneumothorax): {
-        _hint = LLSTRING(InspectChest_Uneven);
-        _hintLog = LLSTRING(InspectChest_Uneven_Short);
+        _hintArray pushBack LSTRING(InspectChest_Uneven);
+        _hintLogArray pushBack LSTRING(InspectChest_Uneven_Short);
     };
     case (_hemothorax): {
-        _hint = format ["%1<br/>%2", LLSTRING(InspectChest_Uneven), LLSTRING(InspectChest_Bruising)];
-        _hintLog = format ["%1, %2", LLSTRING(InspectChest_Uneven_Short), toLower (LLSTRING(InspectChest_Bruising_Short))];
         _hintHeight = 2.5;
+
+        _hintArray set [0, "%1<br/>%2"];
+        _hintArray append [LSTRING(InspectChest_Uneven), LSTRING(InspectChest_Bruising)];
+
+        _hintLogArray append [LSTRING(InspectChest_Uneven_Short), LSTRING(InspectChest_Bruising_Short)];
+        _hintLogFormat = "%1, %2";
     };
     default {};
 };
 
-[QACEGVAR(common,displayTextStructured), [_hint, _hintHeight, _medic], _medic] call CBA_fnc_targetEvent;
-[_patient, "quick_view", LSTRING(InspectChest_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
+private _logArray = [[_medic, false, true] call ACEFUNC(common,getName), LSTRING(InspectChest_ActionLog)];
+
+[QACEGVAR(common,displayTextStructured), [_hintArray, _hintHeight, _medic], _medic] call CBA_fnc_targetEvent;
+[_patient, "quick_view", _hintLogFormat, (_logArray + _hintLogArray)] call ACEFUNC(medical_treatment,addToLog);
 
 if (_secondEntry) then {
-    [_patient, "quick_view", LSTRING(InspectChest_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintSecondLog]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "quick_view", _hintLogFormat, (_logArray + _hintSecondLog)] call ACEFUNC(medical_treatment,addToLog);
 };
