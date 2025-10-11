@@ -9,6 +9,7 @@
         items[] = {QUOTE(ACM_Syringe_##size##_##medication##)}; \
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO)); \
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'##medication##',##size##,true,true)] call EFUNC(circulation,Syringe_Inject)); \
+        ACM_menuIcon = "Syringe"; \
     }
 
 #define SYRINGE_ACTION_IM(medication,size,name,progress) \
@@ -19,6 +20,7 @@
         items[] = {QUOTE(ACM_Syringe_##size##_##medication##)}; \
         condition = "true"; \
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'##medication##',##size##,false,true)] call EFUNC(circulation,Syringe_Inject)); \
+        ACM_menuIcon = "Syringe"; \
     }
 
 class ACEGVAR(medical_treatment,actions) {
@@ -328,6 +330,7 @@ class ACEGVAR(medical_treatment,actions) {
         animationMedic = "";
         condition = QUOTE([ARR_4(_patient,_bodyPart,0,-1)] call EFUNC(circulation,hasIV) || [ARR_3(_patient,_bodyPart,0)] call EFUNC(circulation,hasIO));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call EFUNC(circulation,openTransfusionMenu));
+        ACM_menuIcon = "TransfusionMenu";
     };
 
     // IV Catheter Examination
