@@ -18,22 +18,22 @@
 
 params ["_medic", "_patient"];
 
-private _hint = LLSTRING(CheckAirway_AirwayIsClear);
-private _hintLog = LLSTRING(CheckAirway_AirwayIsClear_Short);
-private _hintHeight = 1.5;
-private _rowCount = 0;
+private _hintArray = [LSTRING(CheckAirway_AirwayIsClear)];
+private _hintFormat = "%1";
 
-private _collapseState = "";
-private _collapseStateLog = "";
-private _obstructionState = "";
-private _obstructionStateLog = "";
+private _hintLogArray = [LSTRING(CheckAirway_AirwayIsClear_Short)];
+private _hintLogArrayAdditional = [];
+private _hintLogFormat = "%1 %2: %3";
+private _hintLogFormatAdditional = "%1 %2: %3";
 
 private _airwayCollapseState = _patient getVariable [QGVAR(AirwayCollapse_State), 0];
+private _obstructionVomitState = _patient getVariable [QGVAR(AirwayObstructionVomit_State), 0];
+private _obstructionBloodState = _patient getVariable [QGVAR(AirwayObstructionBlood_State), 0];
+
 private _airwayItemInsertedOral = _patient getVariable [QGVAR(AirwayItem_Oral), ""];
 private _airwayItemInsertedNasal = _patient getVariable [QGVAR(AirwayItem_Nasal), ""];
 
-private _collapseShow = _airwayCollapseState > 0;
-private _obstructionShow = false;
+private _airwayInflammationState = GET_AIRWAY_INFLAMMATION(_patient);
 
 private _collapseManaged = false;
 private _airwaySecure = false;
@@ -46,217 +46,256 @@ private _maneuverHintLog = "";
 if (_patient getVariable [QGVAR(RecoveryPosition_State), false]) then {
     _showManeuver = true;
     _collapseManaged = true;
-    _maneuverHint = LLSTRING(CheckAirway_RecoveryPosition);
-    _maneuverHintLog = LLSTRING(CheckAirway_RecoveryPosition_Short);
+    _maneuverHint = LSTRING(CheckAirway_RecoveryPosition);
+    _maneuverHintLog = LSTRING(CheckAirway_RecoveryPosition_Short);
 } else {
     if (_patient getVariable [QGVAR(HeadTilt_State), false]) then {
         _showManeuver = true;
         _collapseManaged = true;
-        _maneuverHint = LLSTRING(CheckAirway_HeadTiltChinLift);
-        _maneuverHintLog = LLSTRING(CheckAirway_HeadTiltChinLift_Short);
+        _maneuverHint = LSTRING(CheckAirway_HeadTiltChinLift);
+        _maneuverHintLog = LSTRING(CheckAirway_HeadTiltChinLift_Short);
     };
 };
 
-if (_showManeuver) then {
-    _rowCount = _rowCount + 1;
-};
-
 private _showAdjunct = false;
+private _doubleAdjunct = false;
 
-private _adjunctHint = "";
-private _adjunctHintLog = "";
+private _oralAdjunct = "";
+private _nasalAdjunct = "";
 
 if (_airwayItemInsertedOral != "" || _airwayItemInsertedNasal != "") then {
     _showAdjunct = true;
 
-    private _nasal = "";
+    if (_airwayItemInsertedOral != "") then {
+
+        _oralAdjunct = (switch (_airwayItemInsertedOral) do {
+            case "OPA": {
+                LSTRING(OPA);
+            };
+            default {
+                _airwaySecure = true;
+                LSTRING(IGel);
+            };
+        });
+    };
+
     if (_airwayItemInsertedNasal == "NPA") then {
-        _rowCount = _rowCount + 1;
-
-        _nasal = LLSTRING(NPA);
+        _nasalAdjunct = LSTRING(NPA);
     };
 
-    private _oral = "";
-
-    switch (_airwayItemInsertedOral) do {
-        case "OPA": {
-            _rowCount = _rowCount + 1;
-
-            _oral = LLSTRING(GuedelTube);
-            if (_nasal == "NPA") then {
-                _adjunctHint = format ["%1 &amp; %2", _nasal, _oral];
-                _adjunctHintLog = format ["%1 & %2", _nasal, _oral];
-            } else {
-                _adjunctHint = _oral;
-                _adjunctHintLog = _oral;
-            };
-        };
-        case "SGA": {
-            _rowCount = _rowCount + 1;
-
-            _airwaySecure = true;
-            _oral = LLSTRING(IGel);
-            if (_nasal == "NPA") then {
-                _adjunctHint = format ["%1 &amp; %2", _nasal, _oral];
-                _adjunctHintLog = format ["%1 & %2", _nasal, _oral];
-            } else {
-                _adjunctHint = _oral;
-                _adjunctHintLog = _oral;
-            };
-        };
-        default {
-            _adjunctHint = _nasal;
-            _adjunctHintLog = _nasal;
-        };
-    };
-
-    _adjunctHint = format [LLSTRING(CheckAirway_%1_Inserted), _adjunctHint];
-    _adjunctHintLog = format [LLSTRING(CheckAirway_%1_Inserted), _adjunctHintLog];
+    _doubleAdjunct = (_oralAdjunct != "" && _nasalAdjunct != "");
 };
 
-_collapseManaged = _collapseManaged || _airwaySecure;
+private _showObstruction = false;
 
-private _airwayInflammationState = GET_AIRWAY_INFLAMMATION(_patient);
+private _obstructionState = "";
+private _obstructionStateLog = "";
+
+if (_obstructionVomitState > 0 || _obstructionBloodState > 0) then {
+    _showObstruction = true;
+    _obstructionState = LSTRING(CheckAirway_Obstruction_Light);
+    _obstructionStateLog = LSTRING(CheckAirway_Obstruction_Light_Short);
+    
+    if (_obstructionVomitState > 1 || _obstructionBloodState > 1) then {
+        _obstructionState = LSTRING(CheckAirway_Obstruction);
+        _obstructionStateLog = LSTRING(CheckAirway_Obstruction_Short);
+    };
+};
+
 private _showInflammation = _airwayInflammationState > AIRWAY_INFLAMMATION_THRESHOLD_MILD;
 
 private _inflammationState = "";
 private _inflammationStateLog = "";
 
 if (_showInflammation) then {
-    _rowCount = _rowCount + 1;
     switch (true) do {
         case (_airwayInflammationState > AIRWAY_INFLAMMATION_THRESHOLD_SEVERE): {
-            _inflammationState = LLSTRING(CheckAirway_Inflammation_Severe);
-            _inflammationStateLog = LLSTRING(CheckAirway_Inflammation_Severe_Short);
+            _inflammationState = LSTRING(CheckAirway_Inflammation_Severe);
+            _inflammationStateLog = LSTRING(CheckAirway_Inflammation_Severe_Short);
         };
         case (_airwayInflammationState > AIRWAY_INFLAMMATION_THRESHOLD_SERIOUS): {
-            _inflammationState = LLSTRING(CheckAirway_Inflammation_Serious);
-            _inflammationStateLog = LLSTRING(CheckAirway_Inflammation_Serious_Short);
+            _inflammationState = LSTRING(CheckAirway_Inflammation_Serious);
+            _inflammationStateLog = LSTRING(CheckAirway_Inflammation_Serious_Short);
         };
         default {
-            _inflammationState = LLSTRING(CheckAirway_Inflammation_Mild);
-            _inflammationStateLog = LLSTRING(CheckAirway_Inflammation_Mild_Short);
+            _inflammationState = LSTRING(CheckAirway_Inflammation_Mild);
+            _inflammationStateLog = LSTRING(CheckAirway_Inflammation_Mild_Short);
         };
     };
 };
 
+_collapseManaged = _collapseManaged || _airwaySecure;
+
+private _showCollapse = _airwayCollapseState > 0;
+
+private _collapseState = "";
+private _collapseStateLog = "";
+
 if (!_showInflammation && !_collapseManaged) then {
-    if (_collapseShow) then {
-        _rowCount = _rowCount + 1;
+    if (_showCollapse) then {
 
         switch (_airwayCollapseState) do {
             case 1: {
-                _collapseState = LLSTRING(CheckAirway_Collapse_Mild);
-                _collapseStateLog = LLSTRING(CheckAirway_Collapse_Mild_Short);
+                _collapseState = LSTRING(CheckAirway_Collapse_Mild);
+                _collapseStateLog = LSTRING(CheckAirway_Collapse_Mild_Short);
             };
             case 2: {
-                _collapseState = LLSTRING(CheckAirway_Collapse_Moderate);
-                _collapseStateLog = LLSTRING(CheckAirway_Collapse_Moderate_Short);
+                _collapseState = LSTRING(CheckAirway_Collapse_Moderate);
+                _collapseStateLog = LSTRING(CheckAirway_Collapse_Moderate_Short);
             };
             case 3: {
-                _collapseState = LLSTRING(CheckAirway_Collapse_Severe);
-                _collapseStateLog = LLSTRING(CheckAirway_Collapse_Severe_Short);
+                _collapseState = LSTRING(CheckAirway_Collapse_Severe);
+                _collapseStateLog = LSTRING(CheckAirway_Collapse_Severe_Short);
             };
         };
     };
 } else {
-    _collapseShow = false;
+    _showCollapse = false;
 };
 
-private _obstructionVomitState = _patient getVariable [QGVAR(AirwayObstructionVomit_State), 0];
-private _obstructionBloodState = _patient getVariable [QGVAR(AirwayObstructionBlood_State), 0];
-
-if (_obstructionVomitState > 0 || _obstructionBloodState > 0) then {
-    _rowCount = _rowCount + 1;
-    _obstructionShow = true;
-    _obstructionState = LLSTRING(CheckAirway_Obstruction_Light);
-    _obstructionStateLog = LLSTRING(CheckAirway_Obstruction_Light_Short);
-    if (_obstructionVomitState > 1 || _obstructionBloodState > 1) then {
-        _obstructionState = LLSTRING(CheckAirway_Obstruction);
-        _obstructionStateLog = LLSTRING(CheckAirway_Obstruction_Short);
-    };
-};
+private _hintHeight = 1.5;
+private _rowCount = 0;
 
 private _doubleSpace = false;
-private _doubleSpaceLog = "";
 
-private _addHint = "";
-private _addHintLog = "";
+if (_showManeuver || _showAdjunct || _showObstruction || _showInflammation || _showCollapse) then {
+    private _entryCount = 0;
+    private _startEntryCount = 1;
 
-if (_rowCount > 0) then {
-    _collapseShow = _collapseShow && !_airwaySecure && !_showInflammation;
-    if (_collapseShow && _obstructionShow) then {
-        _hintHeight = _hintHeight + 0.5;
-        _hint = format ["%1<br />%2", _collapseState, _obstructionState];
-        _hintLog = format ["%1, %2", _collapseStateLog, _obstructionStateLog];
-    } else {
-        if (_collapseShow || _obstructionShow) then {
-            _hint = format ["%1%2", _collapseState, _obstructionState];
-            _hintLog = format ["%1%2", _collapseStateLog, _obstructionStateLog];
-        };
+    private _entryCountLog = 0;
+    private _startEntryCountLog = 1;
 
-        if (_showInflammation) then {
-            if (_airwayInflammationState <= AIRWAY_INFLAMMATION_THRESHOLD_SEVERE) then {
-                _hintHeight = _hintHeight + 0.5;
-            };
-
-            if (_collapseShow || _obstructionShow) then {
-                _hint = format ["%1<br />%2", _hint, _inflammationState];
-                _hintLog = format ["%1, %2", _hintLog, _inflammationStateLog];
-            } else {
-                _hint = _inflammationState;
-                _hintLog = _inflammationStateLog;
-            };
-        };
-    };
+    _hintArray = [];
+    _hintLogArray = [];
 
     if (_showManeuver) then {
-        if (_showAdjunct) then {
-            if (_airwaySecure) then {
-                _hintHeight = _hintHeight + 0.5;
-                _addHint = _adjunctHint;
-                _addHintLog = _adjunctHintLog;
+        _entryCount = _entryCount + 1;
+        _rowCount = _rowCount + 1;
+
+        _hintArray pushBack _maneuverHint;
+        _hintLogArray pushBack _maneuverHintLog;
+    };
+
+    if (_showAdjunct) then {
+        _entryCount = _entryCount + 2;
+        _rowCount = _rowCount + 1;
+
+        if (_doubleAdjunct) then {
+            _hintArray append [_oralAdjunct, _nasalAdjunct, LSTRING(CheckAirway_%1_Inserted)];
+            _hintLogArray append [_oralAdjunct, _nasalAdjunct, LSTRING(CheckAirway_%1_Inserted)];
+
+            if (_showManeuver) then {
+                _entryCount = 4;
+                _startEntryCount = 4;
+                _hintFormat = "%1<br/>%2 &amp; %3 %4";
+                _hintLogFormat = "%1 %2: %3, %4 & %5 %6";
             } else {
-                _hintHeight = _hintHeight + 1;
-                _addHint = format ["%1<br />%2", _maneuverHint, _adjunctHint];
-                _addHintLog = format ["%1, %2", _maneuverHintLog, _adjunctHintLog];
+                _entryCount = 3;
+                _startEntryCount = 3;
+                _hintFormat = "%1 &amp; %2 %3";
+                _hintLogFormat = "%1 %2: %3 & %4 %5";
             };
         } else {
-            _hintHeight = _hintHeight + 0.5;
-            _addHint = _maneuverHint;
-            _addHintLog = _maneuverHintLog;
+            _hintArray pushBack ([_nasalAdjunct, _oralAdjunct] select (_oralAdjunct != ""));
+            _hintArray pushBack LSTRING(CheckAirway_%1_Inserted);
+
+            _hintLogArray pushBack ([_nasalAdjunct, _oralAdjunct] select (_oralAdjunct != ""));
+            _hintLogArray pushBack LSTRING(CheckAirway_%1_Inserted);
+
+            if (_showManeuver) then {
+                _entryCount = 3;
+                _startEntryCount = 3;
+                _hintFormat = "%1<br/>%2 %3";
+                _hintLogFormat = "%1 %2: %3, %4 %5";
+            } else {
+                _entryCount = 2;
+                _startEntryCount = 2;
+                _hintFormat = "%1 %2";
+                _hintLogFormat = "%1 %2: %3 %4";
+            };
         };
+    };
+
+    if (((_showManeuver && _showAdjunct) || _doubleAdjunct) && _showInflammation && _showObstruction) then {
+        _doubleSpace = true;
+
+        _hintLogArrayAdditional = _hintLogArray;
+        _hintLogArray = [];
+
+        _hintLogFormat = "%1 %2 (%3): %4";
+
+        _hintLogFormatAdditional = (switch (true) do {
+            case (_doubleAdjunct && _showManeuver): {
+                "%1 %2 (%3): %4, %5 & %6 %7";
+            };
+            case (_doubleAdjunct && !_showManeuver): {
+                "%1 %2 (%3): %4 & %5 %6";
+            };
+            case (!_doubleAdjunct && _showManeuver): {
+                "%1 %2 (%3): %4, %5 %6";
+            };
+            default {
+                "%1";
+            };
+        });
+
+        _entryCountLog = _entryCountLog + 1;
+        _startEntryCountLog = _startEntryCountLog + 1;
     } else {
-        if (_showAdjunct) then {
-            _hintHeight = _hintHeight + 0.5;
-            _addHint = _adjunctHint;
-            _addHintLog = _adjunctHintLog;
+        _entryCountLog = _entryCount;
+        _startEntryCountLog = _startEntryCount;
+    };
+
+    if (_showObstruction) then {
+        _entryCount = _entryCount + 1;
+        _rowCount = _rowCount + 1;
+
+        _entryCountLog = _entryCountLog + 1;
+
+        _hintArray pushBack _obstructionState;
+        _hintLogArray pushBack _obstructionStateLog;
+    };
+
+    if (_showInflammation) then {
+        _entryCount = _entryCount + 1;
+        _rowCount = _rowCount + 1;
+
+        _entryCountLog = _entryCountLog + 1;
+
+        _hintArray pushBack _inflammationState;
+        _hintLogArray pushBack _inflammationStateLog;
+    } else {
+        if (_showCollapse) then {
+            _entryCount = _entryCount + 1;
+            _rowCount = _rowCount + 1;
+
+            _entryCountLog = _entryCountLog + 1;
+
+            _hintArray pushBack _collapseState;
+            _hintLogArray pushBack _collapseStateLog;
         };
     };
 
-    if (_addHint != "") then {
-        _doubleSpaceLog = _hintLog;
-        _hint = format ["%1<br />%2", _addHint, _hint];
-        
-        if (_rowCount > 3) then {
-            _doubleSpace = true;
-        } else {
-            _hintLog = format ["%1, %2", _addHintLog, _hintLog];
-        };
+    _hintHeight = 1 + _rowCount * 0.5;
+
+    for "_i" from (_startEntryCount + 1) to _entryCount do {
+        _hintFormat = format ["%1<br/>%2", _hintFormat, (format ["%%%1", _i])];
     };
 
-    if (_rowCount > 3) then {
-        _hintHeight = [2.5, 3] select (_rowCount > 4);
+    for "_i" from (_startEntryCountLog + 1) to _entryCountLog do {
+        _hintLogFormat = format ["%1, %2", _hintLogFormat, (format ["%%%1", (_i + 2)])];
     };
 };
 
-[_hint, _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
+private _logArray = [[_medic, false, true] call ACEFUNC(common,getName), LSTRING(CheckAirway_ActionLog)];
+
+[([_hintFormat] + _hintArray), _hintHeight, _medic] call ACEFUNC(common,displayTextStructured);
 
 if (_doubleSpace) then {
-    [_patient, "quick_view", LLSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _addHintLog]] call ACEFUNC(medical_treatment,addToLog);
-    [_patient, "quick_view", LLSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _doubleSpaceLog]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "quick_view", _hintLogFormatAdditional, (_logArray + [1] + _hintLogArrayAdditional)] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "quick_view", _hintLogFormat, (_logArray + [2] + _hintLogArray)] call ACEFUNC(medical_treatment,addToLog);
 } else {
-    [_patient, "quick_view", LLSTRING(CheckAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _hintLog]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "quick_view", _hintLogFormat, (_logArray + _hintLogArray)] call ACEFUNC(medical_treatment,addToLog);
 };
 
 _patient setVariable [QGVAR(AirwayChecked_Time), CBA_missionTime, true];

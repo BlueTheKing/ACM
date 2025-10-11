@@ -60,7 +60,7 @@ class CfgVehicles {
             ADDITEM(ACM_ElasticWrap,40);
             ADDITEM(ACE_tourniquet,24);
             // Airway
-            ADDITEM(ACM_GuedelTube,10);
+            ADDITEM(ACM_OPA,10);
             ADDITEM(ACM_NPA,10);
             ADDITEM(ACM_SuctionBag,5);
             // Breathing
@@ -91,7 +91,7 @@ class CfgVehicles {
             // Airway
             ADDITEM(ACM_IGel,20);
             ADDITEM(ACM_ACCUVAC,5);
-            ADDITEM(ACM_GuedelTube,10);
+            ADDITEM(ACM_OPA,10);
             ADDITEM(ACM_NPA,10);
             ADDITEM(ACM_SuctionBag,10);
             ADDITEM(ACM_CricKit,10);

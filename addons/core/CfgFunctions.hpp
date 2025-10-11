@@ -139,9 +139,6 @@ class CfgFunctions {
             class enteredStateCardiacArrest { // Disable cardiac arrest timer
                 file = QPATHTOF(overrides\fnc_enteredStateCardiacArrest.sqf); //ace/addons/medical_statemachine/functions/fnc_enteredStateCardiacArrest.sqf
             };
-            class conditionCardiacArrestTimer { // Disable cardiac arrest timer
-                file = QPATHTOF(overrides\fnc_conditionCardiacArrestTimer.sqf); //ace/addons/medical_statemachine/functions/fnc_conditionCardiacArrestTimer.sqf
-            };
             class handleStateUnconscious { // KnockOut state
                 file = QPATHTOF(overrides\fnc_handleStateUnconscious.sqf); //ace/addons/medical_statemachine/functions/fnc_handleStateUnconscious.sqf
             };

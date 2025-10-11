@@ -21,6 +21,10 @@ private _lastTimeUpdated = _unit getVariable [QACEGVAR(medical_vitals,lastTimeUp
 private _deltaT = (CBA_missionTime - _lastTimeUpdated) min 10;
 if (_deltaT < 1) exitWith { false }; // state machines could be calling this very rapidly depending on number of local units
 
+if (_deltaT > 7) then {
+    WARNING_1("VITALS TIME BETWEEN SYNC IS LONG (%1s)",_deltaT);
+};
+
 BEGIN_COUNTER(Vitals);
 
 _unit setVariable [QACEGVAR(medical_vitals,lastTimeUpdated), CBA_missionTime];
@@ -201,8 +205,7 @@ if (EGVAR(CBRN,enable)) then {
 private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
 [_unit, _painSuppressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
 
-private _vasoconstriction = GET_VASOCONSTRICTION(_unit);
-private _vasoconstrictionChange = 0;
+private _vasoconstriction = 0;
 private _targetVasoconstriction = 0;
 
 if (_bloodVolume < 5.9) then {
@@ -228,12 +231,12 @@ if (_bloodVolume > 4) then {
     };
 };
 
+private _vasoconstrictionChange = (_targetVasoconstriction - _vasoconstriction) / 4;
+
 if (_targetVasoconstriction > _vasoconstriction) then {
-    _vasoconstrictionChange = (_targetVasoconstriction - _vasoconstriction) / 10;
-    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) min _targetVasoconstriction;
+    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * (_deltaT min 1.2)) min _targetVasoconstriction;
 } else {
-    _vasoconstrictionChange = (_targetVasoconstriction - _vasoconstriction) / 10;
-    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) max _targetVasoconstriction;
+    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * (_deltaT min 1.2)) max _targetVasoconstriction;
 };
 
 _unit setVariable [QEGVAR(circulation,Vasoconstriction_State), _vasoconstriction, true];

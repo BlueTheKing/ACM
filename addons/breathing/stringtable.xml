@@ -717,14 +717,14 @@
                 <Korean>흉부 확인 중</Korean>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_ActionLog">
-                <English>%1 inspected chest: %2</English>
-                <Polish>%1 sprawdził klatkę piersiową: %2</Polish>
-                <German>%1 inspizierte die Brust: %2</German>
-                <French>%1 a inspecté le thorax : %2</French>
-                <Portuguese>%1 tórax inspecionado: %2</Portuguese>
-                <Russian>%1 осмотрел грудную клетку: %2</Russian>
-                <Ukrainian>%1 оглянув грудну клітку: %2</Ukrainian>
-                <Korean>%1 이 흉부 확인: %2</Korean>
+                <English>inspected chest</English>
+                <Polish>sprawdził klatkę piersiową</Polish>
+                <German>inspizierte die Brust</German>
+                <French>a inspecté le thorax</French>
+                <Portuguese>tórax inspecionado</Portuguese>
+                <Russian>осмотрел грудную клетку</Russian>
+                <Ukrainian>оглянув грудну клітку</Ukrainian>
+                <Korean>이 흉부 확인</Korean>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Normal">
                 <English>Chest rise and fall observed</English>
@@ -1351,14 +1351,14 @@
                 <Korean>수지 흉강 천자 (Finger Thoracostomy) 수행됨</Korean>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_ActionLog">
-                <English>Thoracostomy Sweep: %1</English>
-                <Polish>Przetarcie wykonane: </Polish>
-                <German>Thorakotomieabtastung: %1</German>
-                <French>Nettoyage de la thoracostomie : %1</French>
-                <Portuguese>Varredura de toracostomia: %1</Portuguese>
-                <Russian>Осмотр торакостомии: %1</Russian>
-                <Ukrainian>Огляд торакостомії: %1</Ukrainian>
-                <Korean>흉강 천자 (Thoracostomy) Sweep: %1</Korean>
+                <English>Thoracostomy Sweep</English>
+                <Polish>Przetarcie wykonane</Polish>
+                <German>Thorakotomieabtastung</German>
+                <French>Nettoyage de la thoracostomie</French>
+                <Portuguese>Varredura de toracostomia</Portuguese>
+                <Russian>Осмотр торакостомии</Russian>
+                <Ukrainian>Огляд торакостомії</Ukrainian>
+                <Korean>흉강 천자 (Thoracostomy) Sweep</Korean>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Normal">
                 <English>Lung is inflating normally</English>

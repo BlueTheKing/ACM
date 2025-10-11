@@ -76,8 +76,14 @@ GVAR(Fluids_Array_Data) = FLUIDS_ARRAY_DATA;
     } forEach [1000,500,250];
 } forEach ["O","ON","A","AN","B","BN","AB","ABN"];
 
-GVAR(Fluids_Array) append FBTK_ARRAY; 
-GVAR(Fluids_Array_Data) append FBTK_ARRAY_DATA; 
+GVAR(Fluids_Array) append FBTK_ARRAY;
+GVAR(Fluids_Array_Data) append FBTK_ARRAY_DATA;
+
+["ACE_bloodIV", "ACM_BloodBag_ON_1000"] call ACEFUNC(common,registerItemReplacement);
+["ACE_bloodIV_500", "ACM_BloodBag_ON_500"] call ACEFUNC(common,registerItemReplacement);
+["ACE_bloodIV_250", "ACM_BloodBag_ON_250"] call ACEFUNC(common,registerItemReplacement);
+
+// Syringes
 
 ACM_SYRINGES_10 = ['ACM_Syringe_10'];
 ACM_SYRINGES_5 = ['ACM_Syringe_5'];
@@ -96,6 +102,8 @@ ACM_SYRINGES_1 = ['ACM_Syringe_1'];
 
     _targetArray pushBack (configName _x);
 } forEach ("getNumber (_x >> 'ACM_isSyringe') > 0" configClasses (configFile >> "CfgMagazines"));
+
+// Vials
 
 ACM_MEDICATION_VIALS = [];
 

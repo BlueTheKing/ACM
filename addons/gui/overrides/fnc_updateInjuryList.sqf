@@ -213,7 +213,7 @@ if (_selectionN == 0) then {
     };
 
     if (_airwayItemTypeOral != "") then {
-        private _airwayItem = LELSTRING(airway,GuedelTube);
+        private _airwayItem = LELSTRING(airway,OPA);
 
         if (_airwayItemTypeOral isEqualTo "SGA") then {
             _airwayItem = LELSTRING(airway,IGel);

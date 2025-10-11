@@ -20,7 +20,7 @@ private _itemHash = createHashMap;
     _itemHash set [_itemType, _typeHash];
 } forEach [
     ["@bandage", ["PressureBandage", "EmergencyTraumaDressing", "FieldDressing", "PackingBandage", "ElasticBandage", "QuikClot"]],
-    ["@airway", ["InsertNPA", "InsertGuedelTube", "InsertIGel"]],
+    ["@airway", ["InsertNPA", "InsertOPA", "InsertIGel"]],
     ["@suction", ["UseSuctionBag", "UseACCUVAC"]],
     ["chestseal", ["ApplyChestSeal"]],
     ["@iv", ["InsertIV_16_Upper", "InsertIV_16_Middle", "InsertIV_16_Lower"]],

@@ -2613,14 +2613,14 @@
                 <Korean>뚜렷한 부종 (noticable swelling)</Korean>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
-                <English>%1 inspected IV Catheter (%2): %3</English>
-                <Polish>%1 sprawdził wkłucie (%2): %3</Polish>
-                <German>%1 hat einen i.v. Katheter (%2) geprüft: %3</German>
-                <French>%1 a testé un cathéter IV (%2) : %3</French>
-                <Portuguese>%1 inspecionou o cateter IV (%2): %3</Portuguese>
-                <Russian>%1 осмотрел катетер IV (%2): %3</Russian>
-                <Ukrainian>%1 оглянув катетер IV (%2): %3</Ukrainian>
-                <Korean>%1이 IV 카테터(%2) 검사: %3</Korean>
+                <English>inspected IV Catheter</English>
+                <Polish>sprawdził wkłucie</Polish>
+                <German>hat einen i.v. Katheter geprüft</German>
+                <French>a testé un cathéter IV</French>
+                <Portuguese>inspecionou o cateter IV</Portuguese>
+                <Russian>осмотрел катетер IV</Russian>
+                <Ukrainian>оглянув катетер IV</Ukrainian>
+                <Korean>이 IV 카테터 검사</Korean>
             </Key>
         </Container>
         <Container name="// Pressure Cuff Action //">

@@ -9,3 +9,5 @@
 [QGVAR(handleSuctionLocal), LINKFUNC(handleSuctionLocal)] call CBA_fnc_addEventHandler;
 
 ["ace_unconscious", LINKFUNC(onUnconscious)] call CBA_fnc_addEventHandler;
+
+["ACM_GuedelTube", "ACM_OPA"] call ACEFUNC(common,registerItemReplacement); // TODO remove after 1.5
