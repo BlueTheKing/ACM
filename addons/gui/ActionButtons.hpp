@@ -41,11 +41,13 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACM_Syringe_10,QPATHTOEF(circulation,ui\syringe_10
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Syringe_5,QPATHTOEF(circulation,ui\syringe_5_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Syringe_3,QPATHTOEF(circulation,ui\syringe_3_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Syringe_1,QPATHTOEF(circulation,ui\syringe_1_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(Syringe,QPATHTOEF(circulation,ui\syringe_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Spray_Naloxone,QPATHTOEF(circulation,ui\spray_naloxone_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Paracetamol,QPATHTOEF(circulation,ui\paracetamol_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_AmmoniaInhalant,QPATHTOEF(circulation,ui\inhalant_ammonia_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Inhaler_Penthrox,QPATHTOEF(circulation,ui\inhaler_penthrox_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Lozenge_Fentanyl,QPATHTOEF(circulation,ui\lozenge_fentanyl_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(TransfusionMenu,QPATHTOEF(circulation,ui\fieldBloodTransfusionKit_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_PressureBandage,QPATHTOEF(damage,ui\pressurebandage.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_EmergencyTraumaDressing,QPATHTOEF(damage,ui\etd.paa));
