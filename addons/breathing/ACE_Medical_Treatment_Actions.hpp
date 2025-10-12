@@ -13,6 +13,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE(!(alive (_patient getVariable [ARR_2(QQGVAR(BVM_Medic),objNull)])));
         callbackSuccess = QFUNC(checkBreathing);
         ACM_rollToBack = 1;
+        ACM_menuIcon = "";
     };
     class InspectChest: CheckBreathing {
         displayName = CSTRING(InspectChest);
