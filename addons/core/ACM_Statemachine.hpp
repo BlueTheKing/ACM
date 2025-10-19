@@ -100,6 +100,7 @@ class ACE_Medical_StateMachine {
             condition = QUOTE((ACEGVAR(medical_statemachine,cardiacArrestBleedoutEnabled))); // wrap to ensure cba uses this as code and not a direct variable
             events[] = {QACEGVAR(medical,Bleedout)};
         };
+        delete Timeout;
     };
     class Dead {
         // When the unit is killed it's no longer handled by the statemachine
