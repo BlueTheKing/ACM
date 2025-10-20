@@ -25,7 +25,7 @@ private _PFH = [{
 
     private _inRecovery = _patient getVariable [QGVAR(RecoveryPosition_State), false];
     private _keepAirwayIntact = (_patient getVariable [QGVAR(AirwayItem_Oral), ""] == "SGA"); // TODO consciousness state
-    private _gracePeriod = (_patient getVariable [QGVAR(AirwayObstructionVomit_GracePeriod), -1]) + 10 > CBA_missionTime;
+    private _gracePeriod = (_patient getVariable [QGVAR(AirwayObstructionVomit_GracePeriod), -1]) + 20 > CBA_missionTime;
     private _obstructionState = _patient getVariable [QGVAR(AirwayObstructionVomit_State), 0];
     private _vomitCount = _patient getVariable [QGVAR(AirwayObstructionVomit_Count), 0];
 
