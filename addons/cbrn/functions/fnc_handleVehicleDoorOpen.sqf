@@ -21,4 +21,8 @@
 
 params ["_unit", "_role", "_vehicle", "_turret", ["_isEject", false]];
 
-if !(_vehicle in (GVAR(Vehicle_List) get "sealed")) exitWith {};
+if !((typeOf _vehicle) in (GVAR(Vehicle_List) get "sealed")) exitWith {};
+
+if (_vehicle getVariable [QGVAR(Vehicle_Exposed_State), false]) then {
+    _vehicle setVariable [QGVAR(Vehicle_Contaminated_State), true, true];
+};
