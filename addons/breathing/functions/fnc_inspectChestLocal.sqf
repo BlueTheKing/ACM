@@ -20,7 +20,7 @@ params ["_medic", "_patient"];
 
 private _hintArray = ["%1", LSTRING(InspectChest_Normal)];
 private _hintLogArray = [LSTRING(InspectChest_Normal)];
-private _hintLogFormat = "%1";
+private _hintLogFormat = "%1 %2: %3";
 
 private _hintSecondLog = "";
 private _hintHeight = 1.5;
@@ -49,7 +49,7 @@ switch (true) do {
             _hintArray pushBack LSTRING(InspectChest_None_Uneven);
 
             _hintLogArray pushBack LSTRING(InspectChest_None_Uneven_Short);
-            _hintLogFormat = "%1, %2";
+            _hintLogFormat = "%1 %2: %3, %4";
 
             _hintHeight = 2;
 
@@ -81,7 +81,7 @@ switch (true) do {
             _hintArray pushBack LSTRING(InspectChest_Bruising);
 
             _hintLogArray pushBack LSTRING(InspectChest_Bruising_Short);
-            _hintLogFormat = ["%1, %2", "%1, %2, %3"] select _hasPneumothorax;
+            _hintLogFormat = ["%1 %2: %3, %4", "%1 %2: %3, %4, %5"] select _hasPneumothorax;
         };
     };
     case (_pneumothorax): {
@@ -95,7 +95,7 @@ switch (true) do {
         _hintArray append [LSTRING(InspectChest_Uneven), LSTRING(InspectChest_Bruising)];
 
         _hintLogArray append [LSTRING(InspectChest_Uneven_Short), LSTRING(InspectChest_Bruising_Short)];
-        _hintLogFormat = "%1, %2";
+        _hintLogFormat = "%1 %2: %3, %4";
     };
     default {};
 };
