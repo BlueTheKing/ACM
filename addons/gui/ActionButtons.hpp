@@ -13,6 +13,8 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACE_adenosine,QACEPATHTOF(medical_treatment,ui\ade
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_epinephrine,QACEPATHTOF(medical_treatment,ui\epinephrine_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(CPR,QPATHTOEF(core,ui\icon_patient_cpr.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(Dogtag,QPATHTOEF(core,ui\dogtag_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(TransfusionMenu,QPATHTOEF(core,ui\icon_patient_bloodvolume_4_3.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_morphine,QPATHTOEF(core,ui\override\morphine_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_OPA,QPATHTOEF(airway,ui\opa_ca.paa));
@@ -31,6 +33,7 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACM_ThoracostomyKit,QPATHTOEF(breathing,ui\thoraco
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_PocketBVM,QPATHTOEF(breathing,ui\pocketbvm_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_BVM,QPATHTOEF(breathing,ui\bvm_ca.paa));
 
+ACM_MEDICALMENU_ACTION_BUTTON(Feel_Pulse,QPATHTOEF(circulation,ui\feel_pulse_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_AED,QPATHTOEF(circulation,ui\AED_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_PressureCuff,QPATHTOEF(circulation,ui\pressureCuff_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_IV_16G,QPATHTOEF(circulation,ui\IV_16g_ca.paa));
@@ -41,6 +44,7 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACM_Syringe_10,QPATHTOEF(circulation,ui\syringe_10
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Syringe_5,QPATHTOEF(circulation,ui\syringe_5_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Syringe_3,QPATHTOEF(circulation,ui\syringe_3_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Syringe_1,QPATHTOEF(circulation,ui\syringe_1_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(Syringe,QPATHTOEF(circulation,ui\syringe_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Spray_Naloxone,QPATHTOEF(circulation,ui\spray_naloxone_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Paracetamol,QPATHTOEF(circulation,ui\paracetamol_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_AmmoniaInhalant,QPATHTOEF(circulation,ui\inhalant_ammonia_ca.paa));
@@ -52,6 +56,7 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACM_EmergencyTraumaDressing,QPATHTOEF(damage,ui\et
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_ElasticWrap,QACEPATHTOF(medical_treatment,ui\elasticbandage_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_SAMSplint,QPATHTOEF(disability,ui\samSplint.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(Fracture,"\z\ace\addons\medical_feedback\data\fracture.paa");
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_ATNA_Autoinjector,QPATHTOEF(cbrn,ui\autoinjector_ATNA_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Midazolam_Autoinjector,QPATHTOEF(cbrn,ui\autoinjector_midazolam_ca.paa));
