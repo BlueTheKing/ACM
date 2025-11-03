@@ -9,7 +9,6 @@
         items[] = {QUOTE(ACM_Syringe_##size##_##medication##)}; \
         condition = QUOTE([ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIV) || [ARR_2(_patient,_bodyPart)] call EFUNC(circulation,hasIO)); \
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'##medication##',##size##,true,true)] call EFUNC(circulation,Syringe_Inject)); \
-        ACM_menuIcon = "Syringe"; \
     }
 
 #define SYRINGE_ACTION_IM(medication,size,name,progress) \
@@ -20,7 +19,6 @@
         items[] = {QUOTE(ACM_Syringe_##size##_##medication##)}; \
         condition = "true"; \
         callbackSuccess = QUOTE([ARR_7(_medic,_patient,_bodyPart,'##medication##',##size##,false,true)] call EFUNC(circulation,Syringe_Inject)); \
-        ACM_menuIcon = "Syringe"; \
     }
 
 class ACEGVAR(medical_treatment,actions) {
