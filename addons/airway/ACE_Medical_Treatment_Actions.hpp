@@ -13,6 +13,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE(GVAR(enable) && !(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QFUNC(checkAirway);
         ACM_rollToBack = 1;
+        ACM_menuIcon = "";
     };
 
     class HeadTurn: CheckAirway {
