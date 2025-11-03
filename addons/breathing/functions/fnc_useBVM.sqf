@@ -25,6 +25,33 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
     [LLSTRING(BVM_Already), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
+GVAR(BVMCancel_MouseID) = [0xF0, [false, false, false], {
+        GVAR(BVMTarget) setVariable [QGVAR(BVM_provider), objNull, true];
+        GVAR(BVMTarget) setVariable [QGVAR(BVM_Medic), objNull, true];
+        EGVAR(core,ContinuousAction_Active) = false;
+}, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
+
+GVAR(BVMToggle_MouseID) = [0xF1, [false, false, false], {
+    if (GVAR(BVMTarget) getVariable [QGVAR(BVM_provider), objNull] isEqualTo objNull) then {
+        if ((GVAR(BVMTarget) getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA") then {
+            GVAR(BVMTarget) setVariable [QGVAR(BVM_provider), ACE_player, true];
+        } else {
+            if !([GVAR(BVMTarget)] call EFUNC(core,cprActive)) then {
+                GVAR(BVMTarget) setVariable [QGVAR(BVM_provider), ACE_player, true];
+            };
+        };
+    } else {
+        GVAR(BVMTarget) setVariable [QGVAR(BVM_provider), objNull, true];
+    };
+}, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
+
+GVAR(BVMSwap_MouseID) = [0xF2, [false, false, false], {
+    if (isNull (GVAR(BVMTarget) getVariable [QGVAR(BVM_provider), objNull]) && isNull (GVAR(BVMTarget) getVariable [QEGVAR(circulation,CPR_Medic), objNull])) then {
+        GVAR(SwapToCPR) = true;
+        EGVAR(core,ContinuousAction_Active) = false;
+    };
+}, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
+
 [[_medic, _patient, "head", [_useOxygen, _portableOxygen]], { // On Start
     params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
     _extraArgs params ["_useOxygen", "_portableOxygen"];
@@ -47,33 +74,6 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
     GVAR(BVM_BreathCount) = 0;
 
     GVAR(BVMTarget_Intubated) = ((_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA");
-
-    GVAR(BVMCancel_MouseID) = [0xF0, [false, false, false], {
-        GVAR(BVMTarget) setVariable [QGVAR(BVM_provider), objNull, true];
-        GVAR(BVMTarget) setVariable [QGVAR(BVM_Medic), objNull, true];
-        EGVAR(core,ContinuousAction_Active) = false;
-    }, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
-
-    GVAR(BVMToggle_MouseID) = [0xF1, [false, false, false], {
-        if (GVAR(BVMTarget) getVariable [QGVAR(BVM_provider), objNull] isEqualTo objNull) then {
-            if ((GVAR(BVMTarget) getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA") then {
-                GVAR(BVMTarget) setVariable [QGVAR(BVM_provider), ACE_player, true];
-            } else {
-                if !([GVAR(BVMTarget)] call EFUNC(core,cprActive)) then {
-                    GVAR(BVMTarget) setVariable [QGVAR(BVM_provider), ACE_player, true];
-                };
-            };
-        } else {
-            GVAR(BVMTarget) setVariable [QGVAR(BVM_provider), objNull, true];
-        };
-    }, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
-
-    GVAR(BVMSwap_MouseID) = [0xF2, [false, false, false], {
-        if (isNull (GVAR(BVMTarget) getVariable [QGVAR(BVM_provider), objNull]) && isNull (GVAR(BVMTarget) getVariable [QEGVAR(circulation,CPR_Medic), objNull])) then {
-            GVAR(SwapToCPR) = true;
-            EGVAR(core,ContinuousAction_Active) = false;
-        };
-    }, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
 
     private _display = uiNamespace getVariable ["ACM_UseBVM", displayNull];
     private _ctrlTopText = _display displayCtrl IDC_USEBVM_TOPTEXT; 
@@ -138,7 +138,7 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
     [GVAR(BVMToggle_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
     [GVAR(BVMSwap_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
 
-    ["", "", ""] call ACEFUNC(interaction,showMouseHint);
+    [] call ACEFUNC(interaction,hideMouseHint);
 
     if ((_patient getVariable [QGVAR(BVM_provider), objNull]) isNotEqualTo objNull) then {
         _patient setVariable [QGVAR(BVM_provider), objNull, true];
@@ -150,11 +150,11 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
 
     _patient setVariable [QGVAR(BVM_ConnectedOxygen), false, true];
 
-    GVAR(BVMTarget) = objNull;
-
     "ACM_UseBVM" cutText ["","PLAIN", 0, false];
 
     [_patient, "activity", LLSTRING(BVM_ActionLog_Stop), [[_medic, false, true] call ACEFUNC(common,getName), GVAR(BVM_BreathCount)]] call ACEFUNC(medical_treatment,addToLog);
+
+    closeDialog 0;
 
     if (GVAR(SwapToCPR)) then {
         EGVAR(core,ContinuousAction_ForceOpenMenu) = false;
@@ -167,7 +167,10 @@ if !(isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])) exitWith {
         }, [_medic, _patient], 0.1] call CBA_fnc_waitAndExecute;
     } else {
         [LLSTRING(BVM_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+        [QEGVAR(core,openMedicalMenu), GVAR(BVMTarget)] call CBA_fnc_localEvent;
     };
+
+    GVAR(BVMTarget) = objNull;
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
     _extraArgs params ["_useOxygen", "_portableOxygen"];
