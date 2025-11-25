@@ -7,7 +7,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Head","LeftArm","RightArm","LeftLeg","RightLeg"};
         condition = "true";
         callbackSuccess = QFUNC(feelPulse);
-        ACM_menuIcon = "Feel_Pulse";
+        ACM_menuIcon = "CheckPulse";
     };
 
     class PressureCuff_Attach: CheckPulse {
