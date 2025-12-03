@@ -18,23 +18,8 @@
 #define TYPE_FIRST_AID_KIT 401
 #define TYPE_MEDIKIT 619
 
-#define SM_QACEFUNC(module,function) QUOTE(_this call ACEFUNC(module,function)) // statemachine stuff
-
 #define CBA_QEGVAR(module,var)     QUOTE(TRIPLES(CBA,module,var))
 #define CBA_EFUNC(module,function) TRIPLES(DOUBLES(CBA,module),fnc,function)
-
-#define TRANSITIONS(var) (var + "_transitions")
-#define EVENTTRANSITIONS(var) (var + "_eventTransitions")
-#define ONSTATE(var) (var + "_onState")
-#define ONSTATEENTERED(var) (var + "_onStateEntered")
-#define ONSTATELEAVING(var) (var + "_onStateLeaving")
-#define SM_GET_FUNCTION(var,cfg) private var = getText (cfg); \
-    if (isNil var || {!((missionNamespace getVariable var) isEqualType {})}) then { \
-        var = compile var; \
-    } else { \
-        var = missionNamespace getVariable var;\
-    }
-
 
 // ace_medical_feedback
 

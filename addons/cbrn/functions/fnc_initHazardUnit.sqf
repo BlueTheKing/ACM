@@ -95,18 +95,25 @@ private _PFH = [{
 
     private _filterDepletionRate = 1;
 
+    private _vehicle = objectParent _patient;
+
     if (_inArea) then {
-        private _vehicle = vehicle _patient;
-        private _isTurnedOut = isTurnedOut _patient;
-        private _CBRNVehicle = _vehicle in (GVAR(Vehicle_List) get "cbrn");
+        if !(isNull _vehicle) then {
+            private _isTurnedOut = isTurnedOut _patient;
+            private _CBRNVehicle = (typeOf _vehicle) in (GVAR(Vehicle_List) get "cbrn");
 
-        _blocked = _CBRNVehicle && !_isTurnedOut;
+            _blocked = _CBRNVehicle && !_isTurnedOut;
 
-        if (_blocked) exitWith {};
+            if !(_blocked) then {
+                private _sealedVehicle = (typeOf _vehicle) in (GVAR(Vehicle_List) get "sealed");
 
-        private _sealedVehicle = _vehicle in (GVAR(Vehicle_List) get "sealed");
+                if !(_vehicle getVariable [QGVAR(Vehicle_Exposed_State), false]) then {
+                    _vehicle setVariable [QGVAR(Vehicle_Exposed_State), true, true];
+                };
 
-        _blocked = _sealedVehicle && !_isTurnedOut && !(_vehicle getVariable [QGVAR(Vehicle_Contaminated_State), false]);
+                _blocked = _sealedVehicle && !_isTurnedOut && !(_vehicle getVariable [QGVAR(Vehicle_Contaminated_State), false]);
+            };
+        };
 
         if (_blocked) exitWith {};
 
@@ -158,6 +165,14 @@ private _PFH = [{
                 if (_makeshiftMaskFound) then {
                     _inhalationRate = _inhalationRate * 0.9;
                     _filterLevel = 1;
+                };
+            };
+        };
+    } else {
+        if !(isNull _vehicle) then {
+            if (_vehicle getVariable [QGVAR(Vehicle_Exposed_State), false]) then {
+                if ((typeOf _vehicle) in (GVAR(Vehicle_List) get "sealed")) then {
+                    _vehicle setVariable [QGVAR(Vehicle_Exposed_State), false, true];
                 };
             };
         };

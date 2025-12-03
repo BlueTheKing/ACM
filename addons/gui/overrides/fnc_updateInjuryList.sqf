@@ -213,7 +213,7 @@ if (_selectionN == 0) then {
     };
 
     if (_airwayItemTypeOral != "") then {
-        private _airwayItem = LELSTRING(airway,GuedelTube);
+        private _airwayItem = LELSTRING(airway,OPA);
 
         if (_airwayItemTypeOral isEqualTo "SGA") then {
             _airwayItem = LELSTRING(airway,IGel);
@@ -472,7 +472,7 @@ if (ACEGVAR(medical_gui,showDamageEntry)) then {
         };
 
         // _bodyPartDamage here should indicate how close unit is to guaranteed death via sum of trauma, so use the same multipliers used in medical_damage/functions/fnc_determineIfFatal.sqf
-        _bodyPartDamage = (_bodyPartDamage / _damageThreshold) min 1;
+        _bodyPartDamage = (_bodyPartDamage / (_damageThreshold max 0.01)) min 1;
         switch (true) do {
             case (_bodyPartDamage isEqualTo 1): {
                 _entries pushBack [localize ACELSTRING(medical_gui,traumaSustained4), [_bodyPartDamage] call ACEFUNC(medical_gui,damageToRGBA)];

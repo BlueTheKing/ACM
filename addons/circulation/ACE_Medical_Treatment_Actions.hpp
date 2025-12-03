@@ -183,6 +183,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE([ARR_2(_medic,_patient)] call ACEFUNC(medical_treatment,canCPR) && ((_patient getVariable [ARR_2(QQEGVAR(airway,AirwayItem_Oral),'')] == 'SGA') || !([_patient] call EFUNC(core,bvmActive))));
         ACM_rollToBack = 1;
         ACM_cancelRecovery = 1;
+        ACM_menuIcon = "CPR";
     };
 
     class BasicBandage;

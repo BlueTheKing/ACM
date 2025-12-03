@@ -19,49 +19,75 @@
 
 params ["_medic", "_patient", ["_usedKit", false]];
 
-private _hint = LLSTRING(ThoracostomySweep_Complete);
+private _hintArray = ["%1", LSTRING(ThoracostomySweep_Complete)];
+private _hintLogArray = [];
+private _hintLogFormat = "%1: %2";
+
 private _height = 2.5;
-private _diagnose = "";
-private _hintLog = "";
 
 private _RR = GET_RESPIRATION_RATE(_patient);
 
 switch (true) do {
     case (_patient getVariable [QGVAR(Hemothorax_Fluid), 0] > 0.8): {
         _height = 3;
-        _diagnose = format ["%1<br/>%2",LLSTRING(ThoracostomySweep_SevereBlood), LLSTRING(ThoracostomySweep_SevereCollapse)];
-        _hintLog = format ["%1, %2",LLSTRING(ThoracostomySweep_SevereCollapse_Short), LLSTRING(ThoracostomySweep_SevereBlood_Short)];
+
+        _hintArray set [0, "%1<br/><br/>%2<br/>%3"];
+        _hintArray append [LSTRING(ThoracostomySweep_SevereBlood), LSTRING(ThoracostomySweep_SevereCollapse)];
+
+        _hintLogArray append [LSTRING(ThoracostomySweep_SevereCollapse_Short), LSTRING(ThoracostomySweep_SevereBlood_Short)];
+        _hintLogFormat = "%1: %2, %3";
     };
     case (_patient getVariable [QGVAR(TensionPneumothorax_State), false]): {
-        _diagnose = LLSTRING(ThoracostomySweep_SevereCollapse);
-        _hintLog = LLSTRING(ThoracostomySweep_SevereCollapse_Short);
+        _hintArray set [0, "%1<br/><br/>%2"];
+        _hintArray pushBack LSTRING(ThoracostomySweep_SevereCollapse);
+
+        _hintLogArray pushBack LSTRING(ThoracostomySweep_SevereCollapse_Short);
     };
     case (_patient getVariable [QGVAR(Hemothorax_State), 0] > 0): {
-        _diagnose = LLSTRING(ThoracostomySweep_Bleeding);
-        _hintLog = LLSTRING(ThoracostomySweep_Bleeding_Short);
+        _hintArray set [0, "%1<br/><br/>%2"];
+        _hintArray pushBack LSTRING(ThoracostomySweep_Bleeding);
+
+        _hintLogArray pushBack LSTRING(ThoracostomySweep_Bleeding_Short);
     };
     case (_patient getVariable [QGVAR(Hemothorax_Fluid), 0] > 0): {
         _height = 3;
+
+        _hintArray pushBack LSTRING(ThoracostomySweep_Blood);
+        _hintLogArray pushBack LSTRING(ThoracostomySweep_Blood_Short);
+
+        _hintLogFormat = "%1: %2, %3";
+
         if (_RR < 1) then {
-            _diagnose = format ["%1<br/>%2",LLSTRING(ThoracostomySweep_Blood), LLSTRING(ThoracostomySweep_NotInflating)];
-            _hintLog = format ["%1, %2",LLSTRING(ThoracostomySweep_Blood_Short), toLower (LLSTRING(ThoracostomySweep_NotInflating))];
+            _hintArray set [0, "%1<br/><br/>%2<br/>%3"];
+            _hintArray pushBack LSTRING(ThoracostomySweep_NotInflating);
+
+            _hintLogArray pushBack LSTRING(ThoracostomySweep_NotInflating);
         } else {
-            _diagnose = format ["%1<br/>%2",LLSTRING(ThoracostomySweep_Blood), LLSTRING(ThoracostomySweep_Normal)];
-            _hintLog = format ["%1, %2",LLSTRING(ThoracostomySweep_Blood_Short), LLSTRING(ThoracostomySweep_Normal_Short)];
+            _hintArray set [0, "%1<br/><br/>%2<br/>%3"];
+            _hintArray pushBack LSTRING(ThoracostomySweep_Normal);
+
+            _hintLogArray pushBack LSTRING(ThoracostomySweep_Normal_Short);
         };
     };
     case (_RR < 1 || !(alive _patient)): {
-        _diagnose = LLSTRING(ThoracostomySweep_NotInflating);
-        _hintLog = LLSTRING(ThoracostomySweep_NotInflating);
+        _hintArray set [0, "%1<br/><br/>%2"];
+        _hintArray pushBack LSTRING(ThoracostomySweep_NotInflating);
+
+        _hintLogArray pushBack LSTRING(ThoracostomySweep_NotInflating);
     };
     default {
-        _diagnose = LLSTRING(ThoracostomySweep_Normal);
-        _hintLog = LLSTRING(ThoracostomySweep_Normal);
+        _hintArray set [0, "%1<br/><br/>%2"];
+        _hintArray pushBack LSTRING(ThoracostomySweep_Normal);
+
+        _hintLogArray pushBack LSTRING(ThoracostomySweep_Normal);
     };
 };
 
-[QACEGVAR(common,displayTextStructured), [(format ["%1<br/><br/>%2", _hint, _diagnose]), _height, _medic, 13], _medic] call CBA_fnc_targetEvent;
-[_patient, "quick_view", LLSTRING(ThoracostomySweep_ActionLog), [_hintLog]] call ACEFUNC(medical_treatment,addToLog);
+private _logArray = [LSTRING(ThoracostomySweep_ActionLog)];
+_logArray append _hintLogArray;
+
+[QACEGVAR(common,displayTextStructured), [_hintArray, _height, _medic, 13], _medic] call CBA_fnc_targetEvent;
+[_patient, "quick_view", _hintLogFormat, _logArray] call ACEFUNC(medical_treatment,addToLog);
 
 _patient setVariable [QGVAR(Thoracostomy_State), 1, true];
 

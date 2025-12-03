@@ -20,7 +20,7 @@
 params ["_ctrlGroup", "_target", "_selectionN"];
 
 // Airway
-private _ctrlGuedelTube = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_GUEDELTUBE;
+private _ctrlOPA = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_OPA;
 private _ctrlNPA = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_NPA;
 private _ctrlIGel = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_IGEL;
 private _ctrlSurgicalAirway = _ctrlGroup controlsGroupCtrl IDC_BODY_HEAD_SURGICAL_AIRWAY_0;
@@ -44,14 +44,14 @@ private _airwayItemNPA = _target getVariable [QEGVAR(airway,AirwayItem_Nasal), "
 
 if (_airwayItemOral isNotEqualTo "") then {
     if (_airwayItemOral isEqualTo "SGA") then {
-        _ctrlGuedelTube ctrlShow false;
+        _ctrlOPA ctrlShow false;
         _ctrlIGel ctrlShow true;
     } else {
-        _ctrlGuedelTube ctrlShow true;
+        _ctrlOPA ctrlShow true;
         _ctrlIGel ctrlShow false;
     };
 } else {
-    _ctrlGuedelTube ctrlShow false;
+    _ctrlOPA ctrlShow false;
     _ctrlIGel ctrlShow false;
 };
 

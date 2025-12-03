@@ -248,15 +248,12 @@
                 <Portuguese>Conversão de vítima falhou</Portuguese>
                 <Russian>Конвертация раненого не удалась</Russian>
                 <Ukrainian>Конвертація пораненого не вдалася</Ukrainian>
+                <Korean>사상자 전환 실패</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_ReinforceHint">
                 <English>You have taken control of a new reinforcement</English>
                 <Russian>Вы взяли под контроль новое подкрепление</Russian>
                 <Ukrainian>Ви взяли під контроль нове підкріплення</Ukrainian>
-                <Korean>사상자 전환 실패</Korean>
-            </Key>
-            <Key ID="STR_ACM_Evacuation_ConvertCasualty_ReinforceHint">
-                <English>You have taken control of a new reinforcement</English>
                 <Korean>증원군 제어권을 획득했습니다</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient">
@@ -285,15 +282,12 @@
                 <English>Evacuation Point</English>
                 <Russian>Точка эвакуации</Russian>
                 <Ukrainian>Точка евакуації</Ukrainian>
+                <Korean>대피 지점</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_ReinforcePoint">
                 <English>Reinforce Point</English>
                 <Russian>Точка подкрепления</Russian>
                 <Ukrainian>Точка підкріплення</Ukrainian>
-                <Korean>대피 지점</Korean>
-            </Key>
-            <Key ID="STR_ACM_Evacuation_Module_ReinforcePoint">
-                <English>Reinforce Point</English>
                 <Korean>증원 지점</Korean>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_PlayerFaction">

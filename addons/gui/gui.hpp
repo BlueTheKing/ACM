@@ -32,20 +32,20 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             colorText[] = {1, 0.95, 0, 1};
             show = 0;
         };
-        class Head_GuedelTube: Torso_ChestSeal {
-            idc = IDC_BODY_HEAD_GUEDELTUBE;
-            text = QPATHTOF(data\body_image\head_guedeltube.paa);
+        class Head_OPA: Torso_ChestSeal {
+            idc = IDC_BODY_HEAD_OPA;
+            text = QPATHTOF(data\body_image\head_opa.paa);
             colorText[] = {0.19, 0.91, 0.93, 1};
         };
-        class Head_NPA: Head_GuedelTube {
+        class Head_NPA: Head_OPA {
             idc = IDC_BODY_HEAD_NPA;
             text = QPATHTOF(data\body_image\head_npa.paa);
         };
-        class Head_iGel: Head_GuedelTube {
+        class Head_iGel: Head_OPA {
             idc = IDC_BODY_HEAD_IGEL;
             text = QPATHTOF(data\body_image\head_igel.paa);
         };
-        class Head_SurgicalAirway_0: Head_GuedelTube {
+        class Head_SurgicalAirway_0: Head_OPA {
             idc = IDC_BODY_HEAD_SURGICAL_AIRWAY_0;
             text = QPATHTOF(data\body_image\head_surgical_airway_0.paa);
         };
@@ -53,7 +53,7 @@ class ACEGVAR(medical_gui,BodyImage): RscControlsGroupNoScrollbars {
             idc = IDC_BODY_HEAD_SURGICAL_AIRWAY_1;
             text = QPATHTOF(data\body_image\head_surgical_airway_1.paa);
         };
-        class Head_Lozenge: Head_GuedelTube {
+        class Head_Lozenge: Head_OPA {
             idc = IDC_BODY_HEAD_LOZENGE;
             text = QPATHTOF(data\body_image\head_lozenge.paa);
             colorText[] = COLOR_CIRCULATION;

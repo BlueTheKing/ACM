@@ -106,6 +106,17 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QACEGVAR(medical,fractures),
+    "LIST",
+    [ACELSTRING(medical,Fractures_DisplayName), ACELSTRING(medical,Fractures_Description)],
+    ACELSTRING(medical,Category),
+    [[0, 1, 2, 3], [ACELSTRING(common,Disabled), ACELSTRING(medical,Fractures_SplintHealsFully), ACELSTRING(medical,Fractures_SplintHealsNoSprint), ACELSTRING(medical,Fractures_SplintHealsNoJog)], 2],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
 if (systemTime select 0 == 2025 && systemTime select 1 == 4 && systemTime select 2 <= 10) then {
 [
     QACEGVAR(medical_treatment,allowBodyBalling),

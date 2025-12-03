@@ -1,4 +1,4 @@
-class ACM_StateMachine {
+class ACE_Medical_StateMachine {
     list = QUOTE(call ACEFUNC(common,getLocalUnits));
     skipNull = 1;
     class Default {
@@ -21,7 +21,7 @@ class ACM_StateMachine {
         };
     };
     class Injured {
-        onState = QFUNC(handleStateInjured);
+        onState = QACEFUNC(medical_statemachine,handleStateInjured);
         class FullHeal {
             targetState = "Default";
             events[] = {QACEGVAR(medical,FullHeal)};
@@ -48,7 +48,7 @@ class ACM_StateMachine {
         };
         class WakeUp {
             targetState = "Injured";
-            condition = SM_QACEFUNC(medical_status,hasStableVitals);
+            condition = QACEFUNC(medical_status,hasStableVitals);
             events[] = {QACEGVAR(medical,WakeUp)};
             onTransition = QUOTE([ARR_2(_this,false)] call ACEFUNC(medical_status,setUnconsciousState));
         };
@@ -68,7 +68,7 @@ class ACM_StateMachine {
         class SecondChance {
             events[] = {QACEGVAR(medical,FatalInjuryInstantTransition)};
             targetState = "CardiacArrest";
-            condition = SM_QACEFUNC(medical_statemachine,conditionSecondChance);
+            condition = QACEFUNC(medical_statemachine,conditionSecondChance);
             onTransition = QACEFUNC(medical_statemachine,transitionSecondChance);
         };
         class Death {
@@ -84,7 +84,7 @@ class ACM_StateMachine {
             // If an AI unit reanimates, they will immediately die upon entering unconsciousness if AI Unconsciousness is disabled
             // As a result, we immediately kill the AI unit since cardiac arrest is effectively useless for it
             targetState = "Dead";
-            condition = QUOTE(!(ACEGVAR(medical_statemachine,AIUnconsciousness)) && {!isPlayer _this});
+            condition = QUOTE(!(_this getVariable [ARR_2(QQACEGVAR(medical_statemachine,AIUnconsciousness),ACEGVAR(medical_statemachine,AIUnconsciousness))]) && {!isPlayer _this});
         };
         class Reanimation {
             targetState = "Unconscious";
@@ -92,7 +92,7 @@ class ACM_StateMachine {
         };
         class Execution {
             targetState = "Dead";
-            condition = SM_QACEFUNC(medical_statemachine,conditionExecutionDeath);
+            condition = QACEFUNC(medical_statemachine,conditionExecutionDeath);
             events[] = {QACEGVAR(medical,FatalInjury)};
         };
         class Bleedout {
@@ -100,6 +100,7 @@ class ACM_StateMachine {
             condition = QUOTE((ACEGVAR(medical_statemachine,cardiacArrestBleedoutEnabled))); // wrap to ensure cba uses this as code and not a direct variable
             events[] = {QACEGVAR(medical,Bleedout)};
         };
+        delete Timeout;
     };
     class Dead {
         // When the unit is killed it's no longer handled by the statemachine

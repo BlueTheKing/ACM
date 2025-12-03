@@ -10,7 +10,7 @@
  * Breathing State <NUMBER>
  *
  * Example:
- * [player, false] call ACM_airway_fnc_getBreathingState;
+ * [player] call ACM_breathing_fnc_getBreathingState;
  *
  * Public: No
  */

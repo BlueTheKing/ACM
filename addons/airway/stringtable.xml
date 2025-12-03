@@ -142,7 +142,7 @@
             <Korean>ACCUVAC 사용에 필요한 훈련 수준</Korean>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_OPA">
-            <English>Guedel Tube Time</English>
+            <English>OPA Time</English>
             <Polish>Czas rurki ustno-gardłowej</Polish>
             <French>Durée d'installation de la canule de Guedel</French>
             <German>Guedel-Tubus Zeit</German>
@@ -152,7 +152,7 @@
             <Korean>Guedel Tube 삽입 시간</Korean>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_OPA_Desc">
-            <English>Time to insert Guedel Tube</English>
+            <English>Time to insert OPA</English>
             <Polish>Czas potrzebny na aplikacje rurki ustno-gardłowej</Polish>
             <French>Temps pour insérer la canule de Guedel</French>
             <German>Zeit bis Guedeltubus eingelegt ist</German>
@@ -202,7 +202,7 @@
             <Korean>i-gel 삽입에 걸리는 시간</Korean>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_OPA">
-            <English>Allow Guedel Tube</English>
+            <English>Allow OPA</English>
             <Polish>Pozwól na użycie rurki ustno-gardłowej</Polish>
             <French>Autoriser la canule de Guedel</French>
             <German>Guedel-Tubus erlauben</German>
@@ -212,7 +212,7 @@
             <Korean>Guedel Tube 허용</Korean>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_OPA_Desc">
-            <English>Training level required to insert Guedel Tube</English>
+            <English>Training level required to insert OPA</English>
             <Polish>Poziom wyszkolenia potrzebny do użycia rurki ustno-gardłowej</Polish>
             <French>Niveau de formation requis pour utiliser la canule de Guedel</French>
             <German>Benötigte Qualifikationsstufe um den Gudel Tubus zu benutzen</German>
@@ -296,8 +296,8 @@
             <Korean>제거 시 버리지 않고 유지됨</Korean>
         </Key>
         <Container name="// Items //">
-            <Key ID="STR_ACM_Airway_GuedelTube">
-                <English>Guedel Tube</English>
+            <Key ID="STR_ACM_Airway_OPA">
+                <English>OPA</English>
                 <Polish>Rurka ustno-gardłowa</Polish>
                 <German>Guedel-Tubus</German>
                 <French>Canule de Guedel</French>
@@ -306,7 +306,7 @@
                 <Ukrainian>Трубка Геделя</Ukrainian>
                 <Korean>Guedel Tube</Korean>
             </Key>
-            <Key ID="STR_ACM_Airway_GuedelTube_Desc">
+            <Key ID="STR_ACM_Airway_OPA_Desc">
                 <English>Used to keep airway open through the oral route</English>
                 <Polish>Udrażnia drogi oddechowe przez usta</Polish>
                 <German>Hält den Atemweg offen</German>
@@ -505,14 +505,14 @@
                 <Korean>기도 (Airway) 확인 중...</Korean>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_ActionLog">
-                <English>%1 checked airway: %2</English>
-                <Polish>%1 sprawdził drogi oddechowe: %2</Polish>
-                <German>%1 hat den Atemweg überprüft: %2</German>
-                <French>%1 a vérifié les voies respiratoires : %2</French>
-                <Portuguese>%1 verificou vias aéreas: %2</Portuguese>
-                <Russian>%1 проверил дыхательные пути: %2</Russian>
-                <Ukrainian>%1 перевірив дихальні шляхи: %2</Ukrainian>
-                <Korean>%1 이 기도 확인: %2</Korean>
+                <English>checked airway</English>
+                <Polish>sprawdził drogi oddechowe</Polish>
+                <German>hat den Atemweg überprüft</German>
+                <French>a vérifié les voies respiratoires</French>
+                <Portuguese>verificou vias aéreas</Portuguese>
+                <Russian>проверил дыхательные пути</Russian>
+                <Ukrainian>перевірив дихальні шляхи</Ukrainian>
+                <Korean>이 기도 확인</Korean>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_AirwayIsClear">
                 <English>Airway is clear</English>
@@ -575,14 +575,14 @@
                 <Korean>목 기울여짐</Korean>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_%1_Inserted">
-                <English>%1 Inserted</English>
-                <Polish>Wprowadzono: %1</Polish>
-                <German>%1 eingelegt</German>
-                <French>%1 Inséré</French>
-                <Portuguese>%1 Inseriu</Portuguese>
-                <Russian>%1 вставлено</Russian>
-                <Ukrainian>%1 вставлено</Ukrainian>
-                <Korean>%1 삽입 완료</Korean>
+                <English>inserted</English>
+                <Polish>wprowadzono</Polish>
+                <German>eingelegt</German>
+                <French>inséré</French>
+                <Portuguese>inseriu</Portuguese>
+                <Russian>вставлено</Russian>
+                <Ukrainian>вставлено</Ukrainian>
+                <Korean>삽입 완료</Korean>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Mild">
                 <English>Airway mildly collapsed</English>
@@ -800,8 +800,8 @@
             </Key>
         </Container>
         <Container name="// Adjunct Actions //">
-            <Key ID="STR_ACM_Airway_InsertGuedelTube">
-                <English>Insert Guedel Tube</English>
+            <Key ID="STR_ACM_Airway_InsertOPA">
+                <English>Insert OPA</English>
                 <Polish>Wprowadź rurki ustno-gardłowej</Polish>
                 <German>Gudel-Tubus einlegen</German>
                 <French>Insérer la Canule de Guedel</French>
@@ -810,8 +810,8 @@
                 <Ukrainian>Ввести трубку Геделя</Ukrainian>
                 <Korean>Guedel Tube 삽입</Korean>
             </Key>
-            <Key ID="STR_ACM_Airway_InsertGuedelTube_Progress">
-                <English>Inserting Guedel Tube...</English>
+            <Key ID="STR_ACM_Airway_InsertOPA_Progress">
+                <English>Inserting OPA...</English>
                 <Polish>Wprowadzanie rurki ustno-gardłowej...</Polish>
                 <German>Lege Guedel-Tubus ein...</German>
                 <French>Insertion de la Canule de Guedel</French>
@@ -860,8 +860,8 @@
                 <Ukrainian>Введення i-gel...</Ukrainian>
                 <Korean>i-gel 삽입 중...</Korean>
             </Key>
-            <Key ID="STR_ACM_Airway_RemoveGuedelTube">
-                <English>Remove Guedel Tube</English>
+            <Key ID="STR_ACM_Airway_RemoveOPA">
+                <English>Remove OPA</English>
                 <Polish>Wyjmij rurkę ustno-gardłową</Polish>
                 <German>Guedel-Tubus entfernen</German>
                 <French>Retirer la Canule de Guedel</French>
@@ -870,8 +870,8 @@
                 <Ukrainian>Витягнути трубку Геделя</Ukrainian>
                 <Korean>Guedel Tube 제거</Korean>
             </Key>
-            <Key ID="STR_ACM_Airway_RemoveGuedelTube_Progress">
-                <English>Removing Guedel Tube...</English>
+            <Key ID="STR_ACM_Airway_RemoveOPA_Progress">
+                <English>Removing OPA...</English>
                 <Polish>Wyjmowanie rurki ustno-gardłowej...</Polish>
                 <German>Entferne Guedel-Tubus...</German>
                 <French>Retrait de la Canule de Guedel</French>

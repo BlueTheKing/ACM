@@ -120,6 +120,6 @@ GVAR(HazardType_Array) = [];
     ["ace_firedPlayerVehicle", LINKFUNC(handleFiredArtillery)] call CBA_fnc_addEventHandler;
     ["ace_firedNonPlayerVehicle", LINKFUNC(handleFiredArtillery)] call CBA_fnc_addEventHandler;
     
-    ["GetInMan", LINKFUNC(handleVehicleDoorOpen)] call CBA_fnc_addEventHandler;
-    ["GetOutMan", LINKFUNC(handleVehicleDoorOpen)] call CBA_fnc_addEventHandler;
+    ["CAManBase", "GetInMan", LINKFUNC(handleVehicleDoorOpen)] call CBA_fnc_addClassEventHandler;
+    ["CAManBase", "GetOutMan", LINKFUNC(handleVehicleDoorOpen)] call CBA_fnc_addClassEventHandler;
 }] call CBA_fnc_addEventHandler;

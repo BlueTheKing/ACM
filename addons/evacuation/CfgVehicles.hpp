@@ -14,6 +14,7 @@ class CfgVehicles {
         scope = 2;
         displayName = CSTRING(Module_EvacuationPoint);
         icon = QPATHTOF(ui\Icon_Evacuation_ca.paa);
+        portrait = QPATHTOF(ui\Icon_Evacuation_ca.paa);
         category = QGVAR(Category_Evacuation);
         function = QFUNC(moduleCreateEvacuationPoint);
         functionPriority = 1;
@@ -61,6 +62,7 @@ class CfgVehicles {
         scope = 2;
         displayName = CSTRING(Module_ReinforcePoint);
         icon = QPATHTOF(ui\Icon_Evacuation_ca.paa);
+        portrait = QPATHTOF(ui\Icon_Evacuation_ca.paa);
         category = QGVAR(Category_Evacuation);
         function = QFUNC(moduleCreateReinforcePoint);
         functionPriority = 1;

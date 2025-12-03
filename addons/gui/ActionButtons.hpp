@@ -11,9 +11,11 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACE_bodyBag_blue,QACEPATHTOF(medical_treatment,ui\
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_bodyBag_white,QACEPATHTOF(medical_treatment,ui\bodybag_white_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_adenosine,QACEPATHTOF(medical_treatment,ui\adenosine_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_epinephrine,QACEPATHTOF(medical_treatment,ui\epinephrine_ca.paa));
+
+ACM_MEDICALMENU_ACTION_BUTTON(CPR,QPATHTOEF(core,ui\icon_patient_cpr.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_morphine,QPATHTOEF(core,ui\override\morphine_ca.paa));
 
-ACM_MEDICALMENU_ACTION_BUTTON(ACM_GuedelTube,QPATHTOEF(airway,ui\guedeltube_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(ACM_OPA,QPATHTOEF(airway,ui\opa_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_IGel,QPATHTOEF(airway,ui\igel_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_NPA,QPATHTOEF(airway,ui\npa_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_SuctionBag,QPATHTOEF(airway,ui\suctionbag_ca.paa));
