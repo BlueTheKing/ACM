@@ -71,15 +71,15 @@ private _PFH = [{
     switch (_rhythmState) do {
         case ACM_Rhythm_PVT: {
             _rhythmEffect = 0.9 * _shockEffect;
-            _medicationEffect = ((1 max ((_epinephrine + _amiodarone + _lidocaine) min 2.2)) - _morphine) - _fentanyl;
+            _medicationEffect = (((1 + _epinephrine + _amiodarone + _lidocaine) min 2.2) - _morphine) - _fentanyl;
         };
         case ACM_Rhythm_VF: {
             _rhythmEffect = 0.85 * _shockEffect;
-            _medicationEffect = ((1 max ((_epinephrine + _amiodarone + _lidocaine) min 2.2)) - _morphine) - _fentanyl;
+            _medicationEffect = (((1 + _epinephrine + _amiodarone + _lidocaine) min 2.2) - _morphine) - _fentanyl;
         };
         case ACM_Rhythm_Asystole: {
             _rhythmEffect = 1.2;
-            _medicationEffect = ((1 max _epinephrine) - _morphine) - _fentanyl;
+            _medicationEffect = ((1 + _epinephrine) - _morphine) - _fentanyl;
         };
     };
 

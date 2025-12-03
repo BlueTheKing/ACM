@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call ACM_circulation_fnc_handleMed_AtropineLocal;
+ * [player] call ACM_circulation_fnc_effectAtropine;
  *
  * Public: No
  */
@@ -23,7 +23,7 @@ private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient"];
 
-    private _dose = ([_patient, "Atropine", false] call ACEFUNC(medical_status,getMedicationCount)) + ([_patient, "Atropine_IV", false] call ACEFUNC(medical_status,getMedicationCount));
+    private _dose = [_patient, "Atropine"] call FUNC(getMedicationConcentration);
 
     if (!(alive _patient) || _dose < 1) exitWith {
         _patient setVariable [QGVAR(Atropine_PFH), -1];

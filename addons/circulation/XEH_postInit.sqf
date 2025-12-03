@@ -3,6 +3,8 @@
 [QGVAR(handleCardiacArrest), LINKFUNC(handleCardiacArrest)] call CBA_fnc_addEventHandler;
 [QGVAR(handleReversibleCardiacArrest), LINKFUNC(handleReversibleCardiacArrest)] call CBA_fnc_addEventHandler;
 
+[QGVAR(administerMedicationLocal), LINKFUNC(administerMedicationLocal)] call CBA_fnc_addEventHandler;
+
 [QGVAR(attemptROSC), LINKFUNC(attemptROSC)] call CBA_fnc_addEventHandler;
 
 [QACEGVAR(medical,CPRSucceeded), {
@@ -10,7 +12,7 @@
 
     _patient setVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus, true];
 
-    if (([_patient, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.1)) exitWith {};
+    if (([_patient, "Adenosine", [ACM_ROUTE_IV]] call FUNC(getMedicationConcentration) > 1)) exitWith {};
 
     _patient setVariable [QGVAR(ROSC_Time), CBA_missionTime, true];
     if ([_patient] call FUNC(recentAEDShock)) then {
@@ -27,30 +29,45 @@
 [QGVAR(setAEDLocal), LINKFUNC(setAEDLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(setPressureCuffLocal), LINKFUNC(setPressureCuffLocal)] call CBA_fnc_addEventHandler;
 
-[QGVAR(handleMed_AdenosineLocal), LINKFUNC(handleMed_AdenosineLocal)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_AmiodaroneLocal), LINKFUNC(handleMed_AmiodaroneLocal)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_AmmoniaInhalantLocal), LINKFUNC(handleMed_AmmoniaInhalantLocal)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_AtropineLocal), LINKFUNC(handleMed_AtropineLocal)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_CalciumChlorideLocal), LINKFUNC(handleMed_CalciumChlorideLocal)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_DimercaprolLocal), LINKFUNC(handleMed_DimercaprolLocal)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_NaloxoneLocal), LINKFUNC(handleMed_NaloxoneLocal)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_TXALocal), LINKFUNC(handleMed_TXALocal)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_KetamineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_LidocaineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
-
 [QGVAR(setLozengeLocal), LINKFUNC(setLozengeLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleHemolyticReaction), LINKFUNC(handleHemolyticReaction)] call CBA_fnc_addEventHandler;
 
-[QGVAR(handleMedicationEffects), {
-    params ["_patient", "_bodyPart", "_classname", ["_dose", 1]];
+// Medication
 
-    // Handle special medication effects
-    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine", "CalciumChloride_IV", "Adenosine_IV", "Atropine", "Atropine_IV", "Dimercaprol"]) then {
-        private _shortClassname = (_classname splitString "_") select 0;
-        [(format ["ACM_circulation_handleMed_%1Local", toLower _shortClassname]), [_patient, _bodyPart, _classname, _dose], _patient] call CBA_fnc_targetEvent;
+[QGVAR(handleNauseaEffects), LINKFUNC(handleNauseaEffects)] call CBA_fnc_addEventHandler;
+
+private _medicationConfig = (configFile >> "ACM_Medication" >> "Medication");
+
+private _medicationList = [];
+
+{
+    _medicationList pushBack (configName _x);
+} forEach ("true" configClasses _medicationConfig);
+
+GVAR(MedicationList) = [];
+GVAR(MedicationList_MinimumThreshold) = [];
+GVAR(MedicationList_VitalsFunction) = [];
+GVAR(MedicationList_EffectFunction) = [];
+
+{
+    private _minimumConcentration = (getNumber (_medicationConfig >> _x >> "minimumConcentration"));
+    private _vitalsFunctionConfig = (_medicationConfig >> _x >> "vitalsFunction");
+
+    if (_minimumConcentration > -1 && isText _vitalsFunctionConfig) then {
+        GVAR(MedicationList) pushBack _x;
+        GVAR(MedicationList_MinimumThreshold) pushBack (getNumber (_medicationConfig >> _x >> "minimumConcentration"));    
+        GVAR(MedicationList_VitalsFunction) pushBack (getText _vitalsFunctionConfig);
+        
+        private _effectFunctionConfig = (_medicationConfig >> _x >> "effectFunction");
+
+        if (isText _effectFunctionConfig) then {
+            GVAR(MedicationList_EffectFunction) pushBack (getText _effectFunctionConfig);
+        } else {
+            GVAR(MedicationList_EffectFunction) pushBack "";
+        };
     };
-}] call CBA_fnc_addEventHandler;
+} forEach _medicationList;
 
 call FUNC(generateBloodTypeList);
 

@@ -27,7 +27,7 @@ if (ACE_player == _patient) then {
 
 private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
-private _anestheticEffect = [_patient, "Lidocaine", false, _partIndex] call ACEFUNC(medical_status,getMedicationCount);
+private _anestheticEffect = linearConversion [0, 100, ([_patient, "Lidocaine", [ACM_ROUTE_IM], _partIndex] call EFUNC(circulation,getMedicationConcentration)), 0, 1, true];
 
 if (_anestheticEffect < 0.7) then {
     [_patient, (1 - _anestheticEffect)] call ACEFUNC(medical,adjustPainLevel);

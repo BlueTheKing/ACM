@@ -156,10 +156,10 @@ if (_woundsRemaining <= 0) then {
 };
 
 private _bloodVolumeEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 5.2) min 1;
-private _TXAEffect = (1 + ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount))) min 1.5;
+private _coagulationMedicationEffect = (1 + ([_patient] call EFUNC(circulation,getCoagulationMedicationEffect))) min 1.5;
 
 if (_woundSeverity > 1) then {
-    _clotSuccess = (random 1) <= ((1 - 0.9 * (_woundSeverity / 3)) * _TXAEffect * _bloodVolumeEffect);
+    _clotSuccess = (random 1) <= ((1 - 0.9 * (_woundSeverity / 3)) * _coagulationMedicationEffect * _bloodVolumeEffect);
 } else {
     _clotSuccess = true;
 };
@@ -202,7 +202,7 @@ if (_clotSuccess) then {
 
     private _reopenChance = [0, (0.5 / _plateletCount)] select (_plateletCount < 2.5);
 
-    private _hasTXA = _TXAEffect > 0.15;
+    private _hasTXA = _coagulationMedicationEffect > 0.15;
 
     if (_hasTXA || !_unstable) then {
         _reopenChance = _reopenChance * 0.5;

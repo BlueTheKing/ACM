@@ -144,10 +144,6 @@ if (hasInterface) then {
     GVAR(ppLowOxygenTunnelVision_Finalized) = false;
 };
 
-GVAR(MedicationTypes_MaxPainAdjust) = ["maxPainReduce", "painReduce"] call FUNC(generateMedicationTypeMap);
-GVAR(MedicationTypes_MaxHRAdjust) = ["maxHRIncrease", "hrIncrease"] call FUNC(generateMedicationTypeMap);
-GVAR(MedicationTypes_MaxRRAdjust) = ["maxRRAdjust", "rrAdjust"] call FUNC(generateMedicationTypeMap);
-
 [QGVAR(handleSitting), LINKFUNC(handleSitting)] call CBA_fnc_addEventHandler;
 
 ACE_player addEventHandler ["AnimDone", {

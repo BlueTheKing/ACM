@@ -49,11 +49,11 @@ private _fnc_updateSelectedMedication = {
     GVAR(SyringeDraw_Medication) = _ctrlMedList lbData (lbCurSel _ctrlMedList);
     GVAR(SyringeDraw_MedicationSelected_Index) = lbCurSel _ctrlMedList ;
 
-    private _concentration = getText (configFile >> "ACM_Medication" >> "Concentration" >> GVAR(SyringeDraw_Medication) >> "dose");
+    private _vialDoseText = getText (configFile >> "ACM_Medication" >> "Medication" >> GVAR(SyringeDraw_Medication) >> "Vial" >> "doseString");
 
     private _ctrlText = _display displayCtrl IDC_SYRINGEDRAW_TEXT;
-    _ctrlText ctrlSetText format [LLSTRING(Syringe_DrawingInto), GVAR(SyringeDraw_Medication), _concentration, GVAR(SyringeDraw_Size)];
-    GVAR(SyringeDraw_MaxDose) = getNumber (configFile >> "ACM_Medication" >> "Concentration" >> GVAR(SyringeDraw_Medication) >> "volume");
+    _ctrlText ctrlSetText format [LLSTRING(Syringe_DrawingInto), GVAR(SyringeDraw_Medication), _vialDoseText, GVAR(SyringeDraw_Size)];
+    GVAR(SyringeDraw_MaxDose) = getNumber (configFile >> "ACM_Medication" >> "Medication" >> GVAR(SyringeDraw_Medication) >> "Vial" >> "volume");
 };
 
 [[_medic, _patient, _bodyPart, [_inject, _size, _fnc_updateSelectedMedication]], { // On Start
@@ -81,9 +81,10 @@ private _fnc_updateSelectedMedication = {
     };
 
     if (GVAR(SyringeDraw_MedicationSelected)) then {
-        private _concentration = getText (configFile >> "ACM_Medication" >> "Concentration" >> GVAR(SyringeDraw_Medication) >> "dose");
-        _ctrlText ctrlSetText format [LLSTRING(Syringe_DrawingInto), GVAR(SyringeDraw_Medication), _concentration, _size];
-        GVAR(SyringeDraw_MaxDose) = getNumber (configFile >> "ACM_Medication" >> "Concentration" >> GVAR(SyringeDraw_Medication) >> "volume");
+        private _vialDoseText = getText (configFile >> "ACM_Medication" >> "Medication" >> GVAR(SyringeDraw_Medication) >> "Vial" >> "doseString");
+    
+        _ctrlText ctrlSetText format [LLSTRING(Syringe_DrawingInto), GVAR(SyringeDraw_Medication), _vialDoseText, _size];
+        GVAR(SyringeDraw_MaxDose) = getNumber (configFile >> "ACM_Medication" >> "Medication" >> GVAR(SyringeDraw_Medication) >> "Vial" >> "volume");
     }; 
 
     GVAR(SyringeDraw_Ctrl_PlungerVisual) = IDC_SYRINGEDRAW_SYRINGE_10_PLUNGER;

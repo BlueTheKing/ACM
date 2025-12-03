@@ -161,7 +161,7 @@ if (_state) then {
             };
         };
     } else {
-        private _suppressPain = linearConversion [0, 0.4, ([_patient, "Lidocaine", false, _partIndex] call ACEFUNC(medical_status,getMedicationCount)), 0, 0.3, true]; // 40mg IM
+        private _suppressPain = linearConversion [0, 40, ([_patient, "Lidocaine", [ACM_ROUTE_IM], _partIndex] call FUNC(getMedicationConcentration)), 0, 0.3, true]; // 40mg IM
         private _pain = 0 max (_givePain - _suppressPain);
 
         [_patient, _pain] call ACEFUNC(medical,adjustPainLevel);

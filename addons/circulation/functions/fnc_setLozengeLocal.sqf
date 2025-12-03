@@ -29,20 +29,18 @@ params ["_medic", "_patient", ["_type", ""]];
     private _lozengeItem = _patient getVariable [QGVAR(LozengeItem), ""];
 
     if (_lozengeItem != _type || IS_UNCONSCIOUS(_patient) || _woreOff || (!_inLyingState && !_inSittingState)) exitWith {
-        private _classname = format ["%1_BUC", _type];
-
-        private _medicationList = +(_patient getVariable [VAR_MEDICATIONS,[]]);
-        private _index = _medicationList findIf {(_x select 0) == _classname};
+        private _medicationList = +(_patient getVariable [QGVAR(ActiveMedication), []]);
+        private _index = _medicationList findIf {(_x select 0) == _type && (_x select 1) == ACM_ROUTE_BUCC && (_x select 4) < (CBA_missionTime + 5)};
 
         if (!_woreOff && _index > -1) then {
-            (_medicationList select _index) params ["", "_medAdministrationTime", "_medTimeToMaxEffect", "_medMaxTimeInSystem", "_medHRAdjust", "_medPainAdjust", "_medFlowAdjust", "_medAdministrationType", "_medMaxEffectTime", "_medRRAdjust", "_medCOSensitivityAdjust", "_medBreathingEffectivenessAdjust", "", "_medMedicationType"];
+            (_medicationList select _index) params ["_entryMedication", "_entryRoute", "_entryPartIndex", "_entryDose", "_entryAdministrationTime", "_entryAbsorptionTime", "_entryMaintainTime", "_entryEliminateTime", "_entryRouteMaximumConcentration"];
 
-            private _timePassed = CBA_missionTime - _medAdministrationTime;
-            private _effectReached = [_medAdministrationType, _timePassed, _medTimeToMaxEffect, _medMaxTimeInSystem, _medMaxEffectTime] call FUNC(getMedicationEffect);
+            private _timePassed = CBA_missionTime - _entryAdministrationTime;
+            private _effectReached = [_entryDose, _entryAdministrationTime, _entryAbsorptionTime, _entryMaintainTime, _entryEliminateTime] call FUNC(getMedicationConcentration_Single);
 
-            _medicationList set [_index, [_classname, _medAdministrationTime, _timePassed, _medMaxTimeInSystem, _medHRAdjust * _effectReached, _medPainAdjust * _effectReached, _medFlowAdjust * _effectReached, _medAdministrationType, _medMaxEffectTime * _effectReached, _medRRAdjust * _effectReached, _medCOSensitivityAdjust * _effectReached, _medBreathingEffectivenessAdjust * _effectReached, _effectReached, _medMedicationType, 0]];
+            _medicationList set [_index, [_entryMedication, _entryRoute, _entryPartIndex, _entryDose * _effectReached, _entryAdministrationTime, _timePassed, _entryMaintainTime - _timePassed, _entryEliminateTime - _timePassed, _entryRouteMaximumConcentration]];
 
-            _patient setVariable [VAR_MEDICATIONS, _medicationList, true];
+            _patient setVariable [QGVAR(ActiveMedication), _medicationList, true];
         };
 
         _patient setVariable [QGVAR(LozengeItem), "", true];

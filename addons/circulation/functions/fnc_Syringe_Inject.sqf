@@ -34,14 +34,14 @@ private _medicationName = localize (format ["STR_ACM_Circulation_Medication_%1",
 private _medicationClassname = _classname;
 
 if (_iv) then {
-    _medicationClassname = format ["%1_IV", _classname];
+    //_medicationClassname = format ["%1_IV", _classname];
     _administrationString = LLSTRING(Intravenous_Short);
     _actionString = LLSTRING(Syringe_Pushed);
 };
 
 _itemClassname = format ["ACM_Syringe_%1_%2", _size, _classname];
 
-private _dose = 0;
+private _doseVolume = 0;
 
 {
     private _targetItems = [];
@@ -54,27 +54,29 @@ private _dose = 0;
     _targetItems sort false;
 
     private _count = ((_targetItems select 0) select 1);
-    _dose = _count;
+    _doseVolume = _count;
 
     _x addMagazineAmmoCargo [_itemClassname, -1, _count];
     break;
 } forEach [uniformContainer _medic, vestContainer _medic, backpackContainer _medic];
 
-if (_dose < 1) exitWith {};
+if (_doseVolume < 1) exitWith {};
 
-private _medicationConcentration = getNumber (configFile >> "ACM_Medication" >> "Concentration" >> _classname >> "concentration");
+private _vialDose = getNumber (configFile >> "ACM_Medication" >> "Medication" >> _classname >> "Vial" >> "dose");
+private _vialVolume = getNumber (configFile >> "ACM_Medication" >> "Medication" >> _classname >> "Vial" >> "volume");
 
-private _stringDose = (_dose / 100) * _medicationConcentration;
+private _vialConcentration = _vialDose / _vialVolume;
 
-private _microDose = (_classname == "Fentanyl");
+private _stringDose = _vialConcentration * (_doseVolume / 100);
+
+private _microDose = [false, true] select (getNumber (configFile >> "ACM_Medication" >> "Medication" >> _classname >> "isMicroDose"));
+
 private _doseMeasurement = ["mg", "mcg"] select _microDose;
 
-if (_stringDose < 1 && !_microDose) then {
-    _stringDose = round (_stringDose * 10);
-    _stringDose = (_stringDose / 10);
-} else {
-    if (_microDose) then {
-        _stringDose = round(_stringDose * 1000);
+if !(_microDose) then {
+    if (_stringDose < 1) then {
+        _stringDose = round (_stringDose * 10);
+        _stringDose = (_stringDose / 10);
     } else {
         _stringDose = round(_stringDose);
         if (_stringDose >= 1000) then {
@@ -92,12 +94,10 @@ if (_returnSyringe) then {
     [_medic, (format ["ACM_Syringe_%1", _size])] call ACEFUNC(common,addToInventory);
 };
 
-private _concentrationDose = _medicationConcentration * (_dose / 100);
+[QGVAR(administerMedicationLocal), [_patient, GET_BODYPART_INDEX(_bodyPart), _medicationClassname, (_vialConcentration * (_doseVolume / 100)), ([ACM_ROUTE_IM, ACM_ROUTE_IV] select _iv)], _patient] call CBA_fnc_targetEvent;
 
-[QACEGVAR(medical_treatment,medicationLocal), [_patient, _bodyPart, _medicationClassname, _concentrationDose, _iv], _patient] call CBA_fnc_targetEvent;
-
-if (!_iv && ([_patient, "Lidocaine", false, GET_BODYPART_INDEX(_bodyPart)] call ACEFUNC(medical_status,getMedicationCount)) < 0.5) then {
-    [_patient, (linearConversion [1, 10, (_dose / 100), 0.1, 0.4])] call ACEFUNC(medical,adjustPainLevel);
+if (!_iv && (([_patient, "Lidocaine", [ACM_ROUTE_IM], GET_BODYPART_INDEX(_bodyPart)] call FUNC(getMedicationConcentration)) < 0.5)) then {
+    [_patient, (linearConversion [1, 10, (_doseVolume / 100), 0.1, 0.8])] call ACEFUNC(medical,adjustPainLevel);
     [_patient, "hit"] call ACEFUNC(medical_feedback,playInjuredSound);
 };
 

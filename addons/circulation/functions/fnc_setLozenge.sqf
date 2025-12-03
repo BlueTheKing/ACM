@@ -51,7 +51,7 @@ if (_type == "") then {
     _patient setVariable [QGVAR(LozengeItem_InsertTime), CBA_missionTime, true];
     _patient setVariable [QGVAR(LozengeItem), _type, true];
 
-    [QACEGVAR(medical_treatment,medicationLocal), [_patient, "head", (format ["%1_BUC", _type]), 1, false], _patient] call CBA_fnc_targetEvent;
+    [QGVAR(administerMedicationLocal), [_patient, BODYPART_INDEX_HEAD, _type, 800, ACM_ROUTE_BUCC], _patient] call CBA_fnc_targetEvent;
 
     [QGVAR(setLozengeLocal), [_medic, _patient, _type], _patient] call CBA_fnc_targetEvent;
 };

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle add bag button.
+ * Perform action that requires progress bar.
  *
  * Arguments:
  * 0: Arguments <ARRAY>

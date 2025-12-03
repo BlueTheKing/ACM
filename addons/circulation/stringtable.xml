@@ -956,6 +956,9 @@
                 <Ukrainian>Налоксон</Ukrainian>
                 <Korean>날록손 (Naloxone)</Korean>
             </Key>
+            <Key ID="STR_ACM_Circulation_Medication_Midazolam">
+                <English>Midazolam</English>
+            </Key>
             <Key ID="STR_ACM_Circulation_Medication_Penthrox">
                 <English>Penthrox</English>
                 <Polish>Metoksyfluran</Polish>
@@ -1244,6 +1247,18 @@
                 <Russian>Кратковременное снижение ЧСС</Russian>
                 <Ukrainian>Короткочасне зниження ЧСС</Ukrainian>
                 <Korean>단시간 심박수를 낮추는 데 사용됩니다.</Korean>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Vial_Naloxone">
+                <English>Naloxone Vial (4mg/10ml)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Vial_Naloxone_Desc">
+                <English>Used to reverse opioid overdose</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Vial_Midazolam">
+                <English>Midazolam Vial (50mg/10ml)</English>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Vial_Midazolam_Desc">
+                <English>Used to induce sedation</English>
             </Key>
             <Key ID="STR_ACM_Circulation_Spray_Naloxone">
                 <English>Naloxone Nasal Spray</English>

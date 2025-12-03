@@ -114,11 +114,11 @@ class CfgVehicles {
             ADDITEM(ACM_Syringe_10,2);
             ADDITEM(ACM_IO_FAST,15);
             ADDITEM(ACM_IO_EZ,15);
+            ADDITEM(ACM_Vial_Amiodarone,10);
+            ADDITEM(ACM_Vial_Atropine,10);
             ADDITEM(ACM_Vial_Epinephrine,10);
             ADDITEM(ACM_Vial_Esmolol,10);
             ADDITEM(ACM_Vial_TXA,10);
-            ADDITEM(ACM_Vial_Amiodarone,10);
-            ADDITEM(ACM_Vial_Atropine,10);
             ADDITEM(ACM_BloodBag_ON_1000,10);
             ADDITEM(ACM_BloodBag_ON_500,10);
             ADDITEM(ACM_BloodBag_ON_250,10);
@@ -133,20 +133,21 @@ class CfgVehicles {
             ADDITEM(ACM_Vial_CalciumChloride,10);
             // Disability
             ADDITEM(ACE_morphine,5);
-            ADDITEM(ACM_Vial_Morphine,10);
-            ADDITEM(ACM_Vial_Ketamine,10);
             ADDITEM(ACM_Vial_Fentanyl,10);
+            ADDITEM(ACM_Vial_Ketamine,10);
             ADDITEM(ACM_Vial_Lidocaine,10);
+            ADDITEM(ACM_Vial_Morphine,10);
             ADDITEM(ACM_Vial_Ondansetron,10);
             ADDITEM(ACM_Lozenge_Fentanyl,10);
             ADDITEM(ACM_SAMSplint,10);
             // Other
-            ADDITEM(ACM_Spray_Naloxone,10);
             ADDITEM(ACE_personalAidKit,1);
             ADDITEM(ACE_surgicalKit,2);
             ADDITEM(ACE_bodyBag,5);
             ADDITEM(ACE_suture,60);
             ADDITEM(ACM_Vial_Ertapenem,10);
+            ADDITEM(ACM_Vial_Midazolam,5);
+            ADDITEM(ACM_Vial_Naloxone,10);
         };
     };
     class ACM_CBRN_SupplyCrate: ACE_medicalSupplyCrate {

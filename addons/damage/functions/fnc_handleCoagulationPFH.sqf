@@ -37,17 +37,17 @@ private _id = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _txaCount = ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 2;
+    private _coagulationMedicationEffect = ([_patient] call EFUNC(circulation,getCoagulationMedicationEffect)) min 2;
 
     if ((_patient getVariable [QGVAR(Coagulation_NextAttempt), 0]) > CBA_missionTime) exitWith {};
 
-    _patient setVariable [QGVAR(Coagulation_NextAttempt), (CBA_missionTime + 12 - ((_txaCount * 3) + _plateletCount))];
+    _patient setVariable [QGVAR(Coagulation_NextAttempt), (CBA_missionTime + 12 - ((_coagulationMedicationEffect * 3) + _plateletCount))];
 
-    if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 1 && _txaCount < 0.5) || (GET_EFF_BLOOD_VOLUME(_patient) < 3.8)) exitWith {};
+    if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 1 && _coagulationMedicationEffect < 0.5) || (GET_EFF_BLOOD_VOLUME(_patient) < 3.8)) exitWith {};
 
     private _exit = true;
 
-    private _maximumWoundSeverity = (ceil (_plateletCount / 2)) max (ceil _txaCount);
+    private _maximumWoundSeverity = (ceil (_plateletCount / 2)) max (ceil _coagulationMedicationEffect);
 
     {
         private _openWounds = GET_OPEN_WOUNDS(_patient);

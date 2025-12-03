@@ -105,7 +105,7 @@ if (_finishTime > 0) exitWith {
                     [_target, LELSTRING(breathing,ChestSeal)] call ACEFUNC(medical_treatment,addToTriageCard);
                     [_target, "activity", LELSTRING(breathing,ChestSeal_ActionLog), [[_healer, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
                 };
-                case QACEGVAR(medical_treatment,medicationLocal): {
+                case QEGVAR(circulation,administerMedicationItem): {
                     _usedItem = switch (_treatmentItem) do {
                         case "morphine": {
                             "ACE_morphine"
@@ -334,7 +334,7 @@ if (true) then {
         _treatmentItem = "chestseal";
     };
 
-    private _opioidDose = ([_target, "Morphine"] call ACEFUNC(medical_status,getMedicationCount)) + ([_target, "Morphine_IV"] call ACEFUNC(medical_status,getMedicationCount)) + ([_target, "Fentanyl"] call ACEFUNC(medical_status,getMedicationCount)) + ([_target, "Fentanyl_IV"] call ACEFUNC(medical_status,getMedicationCount));
+    private _opioidDose = ([_target, "Morphine"] call EFUNC(circulation,getMedicationConcentration)) + ([_target, "Fentanyl"] call EFUNC(circulation,getMedicationConcentration));
 
     if (_isUnconscious && (_inCardiacArrest || GET_RESPIRATION_RATE(_target) < 8) && _opioidDose > 1 && ([_healer, "naloxone", _target] call ACEFUNC(medical_ai,itemCheck)) # 0) exitWith {
         if (CBA_missionTime < (_target getVariable [QACEGVAR(medical_ai,nextNaloxone), -1])) exitWith {
@@ -343,9 +343,9 @@ if (true) then {
 
         _target setVariable [QACEGVAR(medical_ai,nextNaloxone), CBA_missionTime + 60];
 
-        _treatmentEvent = QACEGVAR(medical_treatment,medicationLocal);
+        _treatmentEvent = QEGVAR(circulation,administerMedicationItem);
         _treatmentTime = 5;
-        _treatmentArgs = [_target, "head", "Naloxone"];
+        _treatmentArgs = [_healer, _target, "head", "Naloxone", "ACM_Spray_Naloxone"];
         _treatmentItem = "naloxone";
     };
     
@@ -504,8 +504,8 @@ if (true) then {
 
     // Otherwise, if the healer is either done or out of bandages, continue
     if (!(_treatmentEvent in ["#needsFewerMeds", "#waitForIV"]) && !_isUnconscious && {(GET_PAIN_PERCEIVED(_target) > 0.25)}) exitWith {
-        private _penthroxDose = [_target, "Penthrox"] call ACEFUNC(medical_status,getMedicationCount);
-        private _paracetamolDose = [_target, "Paracetamol"] call ACEFUNC(medical_status,getMedicationCount);
+        private _penthroxDose = [_target, "Methoxyflurane"] call EFUNC(circulation,getMedicationConcentration);
+        private _paracetamolDose = [_target, "Paracetamol"] call EFUNC(circulation,getMedicationConcentration);
         
         switch (true) do {
             case (GET_PAIN_PERCEIVED(_target) > 0.5 && !_hasChestInjury && _heartRate > 60 && _opioidDose < 0.5 && {([_healer, "morphine"] call ACEFUNC(medical_ai,itemCheck)) # 0}): {
@@ -520,9 +520,9 @@ if (true) then {
 
                 _target setVariable [QACEGVAR(medical_ai,nextMorphine), CBA_missionTime + 1800];
 
-                _treatmentEvent = QACEGVAR(medical_treatment,medicationLocal);
+                _treatmentEvent = QEGVAR(circulation,administerMedicationItem);
                 _treatmentTime = 4;
-                _treatmentArgs = [_target, _bodyPart, "Morphine", 10];
+                _treatmentArgs = [_healer, _target, _bodyPart, "Morphine", "ACE_morphine"];
                 _treatmentItem = "morphine";
             };
             case (_penthroxDose < 2 && {([_healer, "penthrox"] call ACEFUNC(medical_ai,itemCheck)) # 0}): {
@@ -536,9 +536,9 @@ if (true) then {
 
                 _target setVariable [QACEGVAR(medical_ai,nextPenthrox), CBA_missionTime + 60];
 
-                _treatmentEvent = QACEGVAR(medical_treatment,medicationLocal);
+                _treatmentEvent = QEGVAR(circulation,administerMedicationItem);
                 _treatmentTime = 5;
-                _treatmentArgs = [_target, "head", "Penthrox"];
+                _treatmentArgs = [_healer, _target, "head", "Penthrox", "ACM_Inhaler_Penthrox"];
                 _treatmentItem = "penthrox";
             };
             case (_paracetamolDose < 2 && {([_healer, "paracetamol"] call ACEFUNC(medical_ai,itemCheck)) # 0}): {
@@ -556,9 +556,9 @@ if (true) then {
 
                 _target setVariable [QACEGVAR(medical_ai,nextParacetamol), CBA_missionTime + 120];
 
-                _treatmentEvent = QACEGVAR(medical_treatment,medicationLocal);
+                _treatmentEvent = QEGVAR(circulation,administerMedicationItem);
                 _treatmentTime = 5;
-                _treatmentArgs = [_target, "head", "Paracetamol"];
+                _treatmentArgs = [_healer, _target, "head", "Paracetamol", "ACM_Paracetamol"];
                 _treatmentItem = "paracetamol";
             };
         };

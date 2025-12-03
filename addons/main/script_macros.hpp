@@ -218,12 +218,12 @@
 #define ACM_WOUNDS ["ChemicalBurn"]
 
 // Body Parts
-#define BODYPART_N_HEAD     0
-#define BODYPART_N_BODY     1
-#define BODYPART_N_LEFTARM  2
-#define BODYPART_N_RIGHTARM 3
-#define BODYPART_N_LEFTLEG  4
-#define BODYPART_N_RIGHTLEG 5
+#define BODYPART_INDEX_HEAD     0
+#define BODYPART_INDEX_BODY     1
+#define BODYPART_INDEX_LEFTARM  2
+#define BODYPART_INDEX_RIGHTARM 3
+#define BODYPART_INDEX_LEFTLEG  4
+#define BODYPART_INDEX_RIGHTLEG 5
 
 // Airway
 #define GET_AIRWAYSTATE(unit) ([unit] call EFUNC(airway,getAirwayState))
@@ -293,8 +293,6 @@
 #define GET_PRESSURECUFF(unit) (unit getVariable [QEGVAR(circulation,PressureCuff_Placement),[false,false]])
 #define HAS_PRESSURECUFF(unit,index) (GET_PRESSURECUFF(unit) select index)
 
-#define IS_OVERDOSED(unit) ([unit] call EFUNC(circulation,isOverdosed))
-
 //// Access
 #define ACM_IV_16G_M 1
 #define ACM_IV_14G_M 2
@@ -351,6 +349,7 @@
 #define ACM_ROUTE_IV 1
 #define ACM_ROUTE_PO 2
 #define ACM_ROUTE_INHALE 3
+#define ACM_ROUTE_BUCC 4
 
 #define ACM_MEDICATION_VIALS EGVAR(circulation,MedicationVialList)
 
@@ -358,6 +357,17 @@
 #define ACM_SYRINGES_5 EGVAR(circulation,SyringeList_5)
 #define ACM_SYRINGES_3 EGVAR(circulation,SyringeList_3)
 #define ACM_SYRINGES_1 EGVAR(circulation,SyringeList_13)
+
+#define MAINTAIN_TIME 5
+
+#define GET_ROUTE_CONFIG(route) (['IM','IV','PO','Inhale','BUCC'] select route)
+
+#define MEDICATION_VITALS_FUNCTION(index) (missionNamespace getVariable (EGVAR(circulation,MedicationList_VitalsFunction) select index))
+
+#define GET_MEDICATION_INDEX(medication) (GVAR(MedicationList) find medication)
+#define MEDICATION_EFFECT_FUNCTION(medication) (missionNamespace getVariable (EGVAR(circulation,MedicationList_EffectFunction) select GET_MEDICATION_INDEX(medication)))
+
+#define GET_OPIOID_ANTAGONIST_DOSE(unit) ([ARR_2(unit,'Naloxone')] call EFUNC(circulation,getMedicationConcentration))
 
 //// Blood
 #define GET_BLOODTYPE(unit) (unit getVariable [QEGVAR(circulation,BloodType),-1])
@@ -471,7 +481,7 @@
 #define GET_CAPILLARY_DAMAGE(unit)                (unit getVariable [QEGVAR(CBRN,CapillaryDamage), 0])
 
 #define HAS_AIRWAY_SPASM(unit)                    (unit getVariable [QEGVAR(CBRN,AirwaySpasm), false])
-#define HAS_AIRWAY_SPASM_UNMITIGATED(unit)        (HAS_AIRWAY_SPASM(unit) && (([_patient, 'Atropine', false] call ACEFUNC(medical_status,getMedicationCount)) + ([_patient, 'Atropine_IV', false] call ACEFUNC(medical_status,getMedicationCount)) < 3))
+#define HAS_AIRWAY_SPASM_UNMITIGATED(unit)        (HAS_AIRWAY_SPASM(unit) && (([ARR_2(unit,'Atropine')] call EFUNC(circulation,getMedicationConcentration)) < 3))
 
 #define IS_BLINDED(unit)                          (unit getVariable [QEGVAR(CBRN,Blindness_State), false])
 

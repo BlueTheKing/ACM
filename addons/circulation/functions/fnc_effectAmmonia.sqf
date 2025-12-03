@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call ACM_circulation_fnc_handleMed_AmmoniaInhalantLocal;
+ * [player] call ACM_circulation_fnc_effectAmmonia;
  *
  * Public: No
  */

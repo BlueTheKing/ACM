@@ -5,20 +5,18 @@
  *
  * Arguments:
  * 0: Patient <OBJECT>
- * 1: Body Part <STRING>
- * 2: Classname <STRING>
- * 3: Dose <NUMBER>
+ * 1: Dose <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, leftarm, "CalciumChloride_IV", 1000] call ACM_circulation_fnc_handleMed_CalciumChlorideLocal;
+ * [player, 1000] call ACM_circulation_fnc_effectCalciumChloride;
  *
  * Public: No
  */
 
-params ["_patient", "", "", ["_dose", 0]];
+params ["_patient", ["_dose", 0]];
 
 if (_dose < 900) exitWith {};
 

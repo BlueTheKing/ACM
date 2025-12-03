@@ -22,7 +22,7 @@ params ["_medic", "_patient", "_bodyPart"];
 TRACE_3("tourniquetRemove",_medic,_patient,_bodyPart);
 
 // Remove tourniquet from body part, exit if no tourniquet applied
-private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 private _tourniquets = GET_TOURNIQUETS(_patient);
 
 if (_tourniquets select _partIndex == 0) exitWith {
@@ -50,25 +50,22 @@ if (_medic call ACEFUNC(common,isPlayer)) then {
     };
 };
 
-// Handle occluded medications that were blocked due to tourniquet
-private _occludedMedications = _patient getVariable [QACEGVAR(medical,occludedMedications), []];
-private _arrayModified = false;
+private _blockedMedication = _patient getVariable [QGVAR(BlockedMedication), []];
+private _updateArray = false;
 
 {
-    _x params ["_bodyPartN", "_medication", "_dose", "_iv"];
+    _x params ["_entryMedication", "_entryRoute", "_entryPartIndex", "_entryDose"];
+    
+    if (_entryPartIndex == _partIndex) then {
+        _updateArray = true;
 
-    if (_partIndex == _bodyPartN) then {
-        TRACE_1("delayed medication call after tourniquet removeal",_x);
-        [QACEGVAR(medical_treatment,medicationLocal), [_patient, _bodyPart, _medication, _dose, _iv], _patient] call CBA_fnc_targetEvent;
-        _occludedMedications set [_forEachIndex, []];
-        _arrayModified = true;
+        [_patient, _entryPartIndex, _entryMedication, _entryDose, _entryRoute] call EFUNC(circulation,administerMedication);
+        _blockedMedication deleteAt _forEachIndex;
     };
+} forEachReversed _blockedMedication;
 
-} forEach _occludedMedications;
-
-if (_arrayModified) then {
-    _occludedMedications = _occludedMedications - [[]];
-    _patient setVariable [QACEGVAR(medical,occludedMedications), _occludedMedications, true];
+if (_updateArray) then {
+    _patient setVariable [QGVAR(BlockedMedication), _blockedMedication, true];
 };
 
 private _tourniquetsTime = _patient getVariable [QEGVAR(disability,Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]];

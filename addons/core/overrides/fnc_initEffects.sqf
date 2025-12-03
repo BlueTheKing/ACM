@@ -124,23 +124,55 @@ ACEGVAR(medical_feedback,ppIncapacitationBlur) = [
     [0]
 ] call _fnc_createEffect;
 
-// - Low Oxygen Tunnels Vision ------------------------------------------------
+// - Low Oxygen Tunnel Vision ------------------------------------------------
 GVAR(ppLowOxygenTunnelVision) = [
     "ColorCorrections",
     13505,
     [1, 1, 0, [0, 0, 0, 0], [0, 0, 0, 0], [0.1, 0.1, 0.1, 0.1], [0.85, 0.8, 0, 0, 0, 0, 8]]
 ] call _fnc_createEffect;
 
-// - Anesthetic Effect --------------------------------------------------------
-GVAR(ppAnestheticEffect_chrom) = [
+// - Nausea Effect --------------------------------------------------------
+GVAR(ppNauseaEffect_chrom) = [
     "ChromAberration",
     13506,
-    [0, 0, false]
+    [0, 0, true]
+] call _fnc_createEffect;
+
+GVAR(ppNauseaEffect_blur) = [
+    "DynamicBlur",
+    816,
+    [0]
+] call _fnc_createEffect;
+
+// - Dissociate Effect --------------------------------------------------------
+
+/*GVAR(ppDisocciateEffect_color) = [
+    "ColorCorrections",
+    13507,
+    [1, 1, 0, [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 0, 0]]
+] call _fnc_createEffect;
+
+GVAR(ppDisocciateEffect_grain) = [
+    "FilmGrain",
+    13508,
+    [0.3, 20, 1, 2, 0, 0]
+] call _fnc_createEffect;*/
+
+GVAR(ppDisocciateEffect_chrom) = [
+    "ChromAberration",
+    13507,
+    [0, 0, true]
+] call _fnc_createEffect;
+
+GVAR(ppDisocciateEffect_color) = [
+    "ColorInversion",
+    13508,
+    [0, 0, 0]
 ] call _fnc_createEffect;
 
 // - Blindness ----------------------------------------------------------------
 GVAR(ppBlindness) = [
     "ColorCorrections",
-    13507,
+    13509,
     [1, 1, 0, [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
 ] call _fnc_createEffect;

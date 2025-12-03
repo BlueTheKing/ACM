@@ -5,20 +5,18 @@
  *
  * Arguments:
  * 0: Patient <OBJECT>
- * 1: Body Part <STRING>
- * 2: Classname <STRING>
- * 3: Dose <NUMBER>
+ * 1: Dose <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, "rightarm", "Amiodarone_IV", 1] call ACM_circulation_fnc_handleMed_AmiodaroneLocal;
+ * [player, 150] call ACM_circulation_fnc_effectAmiodarone;
  *
  * Public: No
  */
 
-params ["_patient", "_bodyPart", "_classname", ["_dose", 1]];
+params ["_patient", ["_dose", 0]];
 
 _patient setVariable [QGVAR(Amiodarone_LastDoseTime), CBA_missionTime, true];
 _patient setVariable [QGVAR(Amiodarone_LastDoseEffect), (_dose / 150), true];
@@ -36,8 +34,8 @@ private _PFH = [{
     private _timeSinceROSC = CBA_missionTime - (_patient getVariable [QGVAR(ROSC_Time), -30]);
 
     private _rhythm = _patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus];
-    private _effect = [_patient, "Amiodarone_IV", false] call ACEFUNC(medical_status,getMedicationCount);
-    private _actualEffectiveness = _effect / 2;
+    private _effect = [_patient, "Amiodarone", [ACM_ROUTE_IV]] call FUNC(getMedicationConcentration);
+    private _actualEffectiveness = _effect / 300;
 
     if ((!_inCardiacArrest && _timeSinceROSC > 30) || ((_effect < 0.05) && ((_initialDose + 180) < CBA_missionTime))) exitWith {
         _patient setVariable [QGVAR(Amiodarone_PFH), -1];

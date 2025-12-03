@@ -36,18 +36,18 @@ private _id = [{
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
     
-    private _txaCount = ([_patient, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount)) min 2.2;
+    private _coagulationMedicationEffect = ([_patient] call EFUNC(circulation,getCoagulationMedicationEffect)) min 2.2;
 
     if ((_patient getVariable [QGVAR(IBCoagulation_NextAttempt), 0]) > CBA_missionTime) exitWith {};
-    _patient setVariable [QGVAR(IBCoagulation_NextAttempt), (CBA_missionTime + 9 - ((_txaCount * 3) + _plateletCount))];
+    _patient setVariable [QGVAR(IBCoagulation_NextAttempt), (CBA_missionTime + 9 - ((_coagulationMedicationEffect * 3) + _plateletCount))];
 
-    if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 0.1 && _txaCount < 0.1) || (GET_EFF_BLOOD_VOLUME(_patient) < 3.6)) exitWith {};
+    if (GET_HEART_RATE(_patient) < 20 || (_plateletCount < 0.1 && _coagulationMedicationEffect < 0.1) || (GET_EFF_BLOOD_VOLUME(_patient) < 3.6)) exitWith {};
 
     private _exit = true;
 
     private _clotEffectiveness = 1;
 
-    if (_plateletCount > 4 || _txaCount > 0.35) then {
+    if (_plateletCount > 4 || _coagulationMedicationEffect > 0.35) then {
         _clotEffectiveness = 2;
     };
 
@@ -70,7 +70,7 @@ private _id = [{
             (_internalWoundsOnPart select _woundIndex) params ["_woundType", "_woundCount", "_woundBleeding"];
             
             private _woundSeverity = _woundType % 10;
-            private _txaEffect = 1 + (2 min _txaCount);
+            private _txaEffect = 1 + (2 min _coagulationMedicationEffect);
             private _bloodVolumEffect = (GET_EFF_BLOOD_VOLUME(_patient) / 4.5) min 1;
 
             if (_woundSeverity == 1 || {_woundSeverity == 2 && (random 1 < 0.3 * _txaEffect * _bloodVolumEffect)}) then {

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call ACM_circulation_fnc_handleMed_DimercaprolLocal;
+ * [player] call ACM_circulation_fnc_effectDimercaprol;
  *
  * Public: No
  */
@@ -23,16 +23,16 @@ private _PFH = [{
     params ["_args", "_idPFH"];
     _args params ["_patient"];
 
-    private _dose = ([_patient, "Dimercaprol", false] call ACEFUNC(medical_status,getMedicationCount));
+    private _dose = [_patient, "Dimercaprol", [ACM_ROUTE_IM]] call FUNC(getMedicationConcentration);
 
-    if (!(alive _patient) || _dose < 0.1) exitWith {
+    if (!(alive _patient) || _dose < 1) exitWith {
         _patient setVariable [QGVAR(Dimercaprol_PFH), -1];
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    if (_dose < 0.5) exitWith {};
+    if (_dose < 100) exitWith {};
 
-    private _reduce = 8 * (_dose min 2);
+    private _reduce = 8 * ((_dose min 600) / 300);
     _reduce = ([_reduce, (_reduce / 2)] select (IN_CRDC_ARRST(_patient)));
 
     private _buildup = _patient getVariable [QGVAR_BUILDUP(Chemical_Lewisite), 0];

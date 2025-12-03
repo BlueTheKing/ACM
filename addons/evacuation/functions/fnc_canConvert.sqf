@@ -29,6 +29,6 @@ switch (true) do {
     case ([false, !([_medic] call ACEFUNC(medical_treatment,isInMedicalVehicle)), !([_medic] call ACEFUNC(medical_treatment,isInMedicalFacility)),
     (!([_medic] call ACEFUNC(medical_treatment,isInMedicalVehicle)) && !([_medic] call ACEFUNC(medical_treatment,isInMedicalFacility))), false] select GVAR(locationConvert));
     case (IS_BLEEDING(_patient));
-    case (GVAR(RequireAntibiotics) && {(([_patient, "Ertapenem_IV", false] call ACEFUNC(medical_status,getMedicationCount)) + ([_patient, "Ertapenem", false] call ACEFUNC(medical_status,getMedicationCount))) < 0.9}): {false};
+    case (GVAR(RequireAntibiotics) && {([_patient, "Ertapenem"] call EFUNC(circulation,getMedicationConcentration)) < 900}): {false};
     default {true};
 };

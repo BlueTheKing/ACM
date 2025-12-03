@@ -44,11 +44,11 @@ private _capillaryBleeding = -_deltaT * GET_CAPILLARYDAMAGE_BLEEDRATE(_unit);
 
 private _inCardiacArrest = IN_CRDC_ARRST(_unit);
 
-private _TXAEffect = ([_unit, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount));
+private _coagulationMedicationEffect = ([_patient] call EFUNC(circulation,getCoagulationMedicationEffect));
 
 private _internalBleedingSeverity = 0;
 
-if (GET_INTERNAL_BLEEDING(_unit) > 0.3 || (_plateletCount < 0.1 && _TXAEffect < 0.1)) then {
+if (GET_INTERNAL_BLEEDING(_unit) > 0.3 || (_plateletCount < 0.1 && _coagulationMedicationEffect < 0.1)) then {
     _internalBleedingSeverity = 1;
 };
 
@@ -84,16 +84,16 @@ if (_salineVolume > 0) then {
 };
 
 if (_plateletCount > 0.1) then {
-    if (_TXAEffect > 0.5 && !_inCardiacArrest) then {
-        _bloodLoss = _bloodLoss * (linearConversion [0.5, 2, _TXAEffect, 1, 0.9, true]);
-        _internalBleeding = _internalBleeding * (linearConversion [0.5, 2, _TXAEffect, 1, 0.85, true]);
-        _hemothoraxBleeding = _hemothoraxBleeding * (linearConversion [0.5, 2, _TXAEffect, 1, 0.8, true]);
-        _capillaryBleeding = _capillaryBleeding * (linearConversion [0.5, 2, _TXAEffect, 1, 0.85, true]);
+    if (_coagulationMedicationEffect > 0.5 && !_inCardiacArrest) then {
+        _bloodLoss = _bloodLoss * (linearConversion [0.5, 2, _coagulationMedicationEffect, 1, 0.9, true]);
+        _internalBleeding = _internalBleeding * (linearConversion [0.5, 2, _coagulationMedicationEffect, 1, 0.85, true]);
+        _hemothoraxBleeding = _hemothoraxBleeding * (linearConversion [0.5, 2, _coagulationMedicationEffect, 1, 0.8, true]);
+        _capillaryBleeding = _capillaryBleeding * (linearConversion [0.5, 2, _coagulationMedicationEffect, 1, 0.85, true]);
     };
 
     _plateletCountChange = (_bloodLoss * _plateletBleedRatio) + ((_internalBleeding * 0.6) * _plateletInternalBleedRatio) + (_hemothoraxBleeding * _plateletBleedRatio) + (_capillaryBleeding * _plateletBleedRatio);
     
-    if (_TXAEffect > 0.1 && !_inCardiacArrest) then {
+    if (_coagulationMedicationEffect > 0.1 && !_inCardiacArrest) then {
         _plateletCountChange = _plateletCountChange * 0.9;
     };
 };
@@ -231,7 +231,7 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                 // Flow pain
                 if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then { // IO
                     private _IOPain = _bagChange / 3;
-                    private _painSuppression = linearConversion [0, 0.24, ([_unit, "Lidocaine_IV", false, _partIndex] call ACEFUNC(medical_status,getMedicationCount)), 0, 0.95, true]; // 30mg "flush"
+                    private _painSuppression = linearConversion [0, 30, ([_patient, "Lidocaine", [ACM_ROUTE_IV], _partIndex] call EFUNC(circulation,getMedicationConcentration)), 0, 0.95, true]; // 30mg "flush"
                     _transfusionPain = _transfusionPain + (0 max (_IOPain - _painSuppression));
                 } else { // IV complication
                     private _ivComplicationPain = GET_IV_COMPLICATIONS_PAIN_X(_unit,_partIndex,_accessSite);
@@ -372,7 +372,7 @@ private _targetPlateletCount = 3;
 
 if (_plateletCount != _targetPlateletCount) then {
     private _adjustSpeed = linearConversion [3, 6, _bloodVolume, 10000, 1000, true]; 
-    if (_TXAEffect > 0.1) then {
+    if (_coagulationMedicationEffect > 0.1) then {
         _adjustSpeed = _adjustSpeed / 2;
     };
     if ((_bloodVolumeChange >= 0) && _plateletCount > _targetPlateletCount) then {

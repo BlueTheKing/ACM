@@ -74,7 +74,7 @@ private _amiodarone = ([_patient] call FUNC(getCardiacMedicationEffects)) get "a
 private _continue = false;
 
 if (_patient getVariable [QGVAR(CardiacArrest_ShockResistant), false]) then {
-    if (_amiodarone > 1.9) then {
+    if (_amiodarone > 0.9) then {
         _continue = true;
     };
 } else {

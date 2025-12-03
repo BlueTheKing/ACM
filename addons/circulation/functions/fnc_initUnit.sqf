@@ -16,7 +16,3 @@
  */
 
 params ["_patient"];
-
-if (_patient == ACE_player) then {
-    _patient setVariable [QGVAR(AnestheticEffect_Ketamine_Absorbed), false];
-};

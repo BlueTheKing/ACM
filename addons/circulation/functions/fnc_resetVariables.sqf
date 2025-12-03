@@ -18,8 +18,11 @@
 params ["_patient"];
 
 if (hasInterface) then {
-    _patient setVariable [QGVAR(AnestheticEffect_Ketamine_Absorbed), false];
-    _patient setVariable [QGVAR(AnestheticEffect_PFH), -1];
+    _patient setVariable [QGVAR(NauseaEffect_PFH), -1];
+    _patient setVariable [QGVAR(NauseaEffect_Strength), 0];
+    _patient setVariable [QGVAR(DissociateEffect_PFH), -1];
+    _patient setVariable [QGVAR(DissociateEffect_Active), false];
+    _patient setVariable [QGVAR(DissociateEffect_Strength), 0];
 };
 
 _patient setVariable [QGVAR(LozengeItem), "", true];
@@ -121,3 +124,8 @@ _patient setVariable [QGVAR(AmmoniaInhalant_LastUse), -1, true];
 
 _patient setVariable [QGVAR(CirculationState), true, true];
 [_patient] call FUNC(generateBloodType);
+
+// Medication 
+
+_patient setVariable [QGVAR(ActiveMedication), [], true];
+_patient setVariable [QGVAR(BlockedMedication), [], true];

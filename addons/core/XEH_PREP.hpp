@@ -10,7 +10,6 @@ PREP(checkIncompatibleAddons);
 PREP(cprActive);
 PREP(effectOxygen);
 PREP(fullHealLocal);
-PREP(generateMedicationTypeMap);
 PREP(generateTargetVitals);
 PREP(getBleedSeverity);
 PREP(getBodyPartString);

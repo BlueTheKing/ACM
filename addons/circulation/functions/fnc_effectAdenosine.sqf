@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call ACM_circulation_fnc_handleMed_AdenosineLocal;
+ * [player] call ACM_circulation_fnc_effectAdenosine;
  *
  * Public: No
  */
@@ -28,7 +28,7 @@ if (!(alive _patient) || _targetRhythm == ACM_Rhythm_Asystole) exitWith {};
 [{
     params ["_patient"];
 
-    !(alive _patient) || ((_patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus]) == ACM_Rhythm_Asystole) || ([_patient, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.9);
+    !(alive _patient) || ((_patient getVariable [QGVAR(Cardiac_RhythmState), ACM_Rhythm_Sinus]) == ACM_Rhythm_Asystole) || ([_patient, "Adenosine", [ACM_ROUTE_IV]] call FUNC(getMedicationConcentration) > 5.5);
 }, {
     params ["_patient", "_targetRhythm"];
 
@@ -42,7 +42,7 @@ if (!(alive _patient) || _targetRhythm == ACM_Rhythm_Asystole) exitWith {};
     [{
         params ["_patient"];
 
-        !(alive _patient) || ([_patient, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) < 0.5);
+        !(alive _patient) || ([_patient, "Adenosine", [ACM_ROUTE_IV]] call FUNC(getMedicationConcentration) < 3);
     }, {
         params ["_patient", "_targetRhythm"];
 

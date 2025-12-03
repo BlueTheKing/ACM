@@ -53,12 +53,6 @@ class CfgFunctions {
             class updateWoundBloodLoss { // Internal bleeding
                 file = QPATHTOF(overrides\fnc_updateWoundBloodLoss.sqf); //ace/addons/medical_status/functions/fnc_updateWoundBloodLoss.sqf
             };
-            class addMedicationAdjustment { // Administration route, respiration rate adjust
-                file = QPATHTOF(overrides\fnc_addMedicationAdjustment.sqf); //ace/addons/medical_status/functions/fnc_addMedicationAdjustment.sqf
-            };
-            class getMedicationCount { // Administration route, respiration rate adjust
-                file = QPATHTOF(overrides\fnc_getMedicationCount.sqf); //ace/addons/medical_status/functions/fnc_getMedicationCount.sqf
-            };
             class setCardiacArrestState { // Fix weird heart rate on ROSC
                 file = QPATHTOF(overrides\fnc_setCardiacArrestState.sqf); //ace/addons/medical_status/functions/fnc_setCardiacArrestState.sqf
             };
@@ -78,12 +72,6 @@ class CfgFunctions {
             };
             class medication { // Fix magazine names in triage card
                 file = QPATHTOF(overrides\fnc_medication.sqf); //ace/addons/medical_treatment/functions/fnc_medication.sqf
-            };
-            class medicationLocal { // Respiration rate adjust
-                file = QPATHTOF(overrides\fnc_medicationLocal.sqf); //ace/addons/medical_treatment/functions/fnc_medicationLocal.sqf
-            };
-            class onMedicationUsage { // Overdose changes
-                file = QPATHTOF(overrides\fnc_onMedicationUsage.sqf); //ace/addons/medical_treatment/functions/fnc_onMedicationUsage.sqf
             };
             class checkPulseLocal { // CPR rate
                 file = QPATHTOF(overrides\fnc_checkPulseLocal.sqf); //ace/addons/medical_treatment/functions/fnc_checkPulseLocal.sqf

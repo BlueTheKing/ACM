@@ -28,13 +28,11 @@ if (_isExposed && GET_PAIN(_patient) < 0.3) then {
     [_patient, 0.2] call ACEFUNC(medical,adjustPainLevel);
 };
 
-//_patient setVariable [QGVAR(Nausea_Severity), _buildup, true];
-
 if (_buildup < 10) exitWith {};
 
-private _midazolamDose = ([_patient, "Midazolam", false] call ACEFUNC(medical_status,getMedicationCount));
+private _midazolamDose = [_patient, "Midazolam"] call EFUNC(circulation,getMedicationConcentration);
 
-if (ACE_player == _patient && _midazolamDose < 0.95 && ((_patient getVariable [QGVAR(Chemical_Sarin_NextShake), -1]) < CBA_missionTime)) then {
+if (ACE_player == _patient && _midazolamDose < 8 && ((_patient getVariable [QGVAR(Chemical_Sarin_NextShake), -1]) < CBA_missionTime)) then {
     private _nextShakeTime = (linearConversion [10, 60, _buildup, 10, 2, true]) + random (linearConversion [10, 60, _buildup, 10, 3, true]);
     _patient setVariable [QGVAR(Chemical_Sarin_NextShake), (CBA_missionTime + _nextShakeTime)];
     private _severity = 10 min ((linearConversion [10, 60, _buildup, 0.05, 10, true]) + random (linearConversion [10, 60, _buildup, 0.05, 5, true]));
@@ -43,7 +41,7 @@ if (ACE_player == _patient && _midazolamDose < 0.95 && ((_patient getVariable [Q
 
 if (_buildup < 60) exitWith {};
 
-private _atropineDose = ([_patient, "Atropine", false] call ACEFUNC(medical_status,getMedicationCount)) + ([_patient, "Atropine_IV", false] call ACEFUNC(medical_status,getMedicationCount));
+private _atropineDose = [_patient, "Atropine"] call EFUNC(circulation,getMedicationConcentration);
 
 if (_atropineDose < 4 && !(HAS_AIRWAY_SPASM(_patient))) then {
     _patient setVariable [QGVAR(AirwaySpasm), true, true];
