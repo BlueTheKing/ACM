@@ -257,7 +257,7 @@ private _activeGracePeriod = IN_CRITICAL_STATE(_unit);
 
 // Statements are ordered by most lethal first.
 switch (true) do {
-    case (_bloodVolume < BLOOD_VOLUME_FATAL): {
+    case (ACEGVAR(medical_statemachine,cardiacArrestBleedoutEnabled) && _bloodVolume < BLOOD_VOLUME_FATAL): {
         TRACE_3("BloodVolume Fatal",_unit,BLOOD_VOLUME_FATAL,_bloodVolume);
         [QACEGVAR(medical,Bleedout), _unit] call CBA_fnc_localEvent;
     };
