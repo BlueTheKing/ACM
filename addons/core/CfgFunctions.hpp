@@ -122,6 +122,9 @@ class CfgFunctions {
             class effectHeartBeat { // Lower high HR threshold
                 file = QPATHTOF(overrides\fnc_effectHeartBeat.sqf); //ace/addons/medical_feedback/functions/fnc_effectHeartBeat.sqf
             };
+            class effectPain { // Pain effect intensity
+                file = QPATHTOF(overrides\fnc_effectPain.sqf); //ace/addons/medical_feedback/functions/fnc_effectPain.sqf
+            };
             class initEffects { // Oxygen Effect
                 file = QPATHTOF(overrides\fnc_initEffects.sqf); //ace/addons/medical_feedback/functions/fnc_initEffects.sqf
             };
