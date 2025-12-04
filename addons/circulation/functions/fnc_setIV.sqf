@@ -160,15 +160,6 @@ if (_state) then {
                 [_patient, _type, _bodyPart, _accessSite] call FUNC(setIVComplication);
             };
         };
-    } else {
-        private _suppressPain = linearConversion [0, 40, ([_patient, "Lidocaine", [ACM_ROUTE_IM], _partIndex] call FUNC(getMedicationConcentration)), 0, 0.3, true]; // 40mg IM
-        private _pain = 0 max (_givePain - _suppressPain);
-
-        [_patient, _pain] call ACEFUNC(medical,adjustPainLevel);
-
-        if (_pain > 0.15) then {
-            [_patient, "hit"] call ACEFUNC(medical_feedback,playInjuredSound);
-        };
     };
 } else {
     _hintState = LELSTRING(core,Common_Removed);

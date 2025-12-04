@@ -63,4 +63,17 @@ if (_type == 0) then {
     _ivBags set [_bodyPart, _ivBagsBodyPart];
 
     _patient setVariable [QGVAR(IV_Bags), _ivBags, true];
+} else {
+    if !(_iv) then {
+        private _givePain = [0, 0.31] select (_type in [ACM_IO_FAST1_M,ACM_IO_EZ_M]);
+
+        private _suppressPain = linearConversion [0, 40, ([_patient, "Lidocaine", [ACM_ROUTE_IM], _partIndex] call FUNC(getMedicationConcentration)), 0, 0.3, true]; // 40mg IM
+        private _pain = 0 max (_givePain - _suppressPain);
+
+        [_patient, _pain] call ACEFUNC(medical,adjustPainLevel);
+
+        if (_pain > 0.15) then {
+            [_patient, "hit"] call ACEFUNC(medical_feedback,playInjuredSound);
+        };
+    };
 };
