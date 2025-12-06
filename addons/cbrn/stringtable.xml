@@ -7,6 +7,7 @@
             <Russian>ACM: ХБРЯ</Russian>
             <Ukrainian>ACM: ХБРЯ</Ukrainian>
             <Korean>ACM: CBRN</Korean>
+            <Spanish>ACM: CBRN</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Autoinjectors">
             <English>Autoinjectors</English>
@@ -14,6 +15,7 @@
             <Russian>Автоинъекторы</Russian>
             <Ukrainian>Автоінʼєктори</Ukrainian>
             <Korean>자동주사기</Korean>
+            <Spanish>Autoinyectores</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical">
             <English>Chemical</English>
@@ -21,6 +23,7 @@
             <Russian>Химическое</Russian>
             <Ukrainian>Хімічне</Ukrainian>
             <Korean>화학</Korean>
+            <Spanish>Químico</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_CS">
             <English>Chemical - CS Gas</English>
@@ -28,6 +31,8 @@
             <Russian>Химическое – CS газ</Russian>
             <Ukrainian>Хімічне – CS газ</Ukrainian>
             <Korean>화학 - CS 가스</Korean>
+            <Spanish>Químico – Gas CS
+</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_Chlorine">
             <English>Chemical - Chlorine Gas</English>
@@ -35,6 +40,7 @@
             <Russian>Химическое – хлорный газ</Russian>
             <Ukrainian>Хімічне – хлорний газ</Ukrainian>
             <Korean>화학 - 염소 가스</Korean>
+            <Spanish>Químico – Gas Cloro</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_Sarin">
             <English>Chemical - Sarin Gas</English>
@@ -42,6 +48,7 @@
             <Russian>Химическое – зарин</Russian>
             <Ukrainian>Хімічне – зарин</Ukrainian>
             <Korean>화학 - 사린 가스</Korean>
+            <Spanish>Químico – Gas Sarín</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_Lewisite">
             <English>Chemical - Lewisite</English>
@@ -49,6 +56,7 @@
             <Russian>Химическое – люизит</Russian>
             <Ukrainian>Хімічне – люїзит</Ukrainian>
             <Korean>화학 - 루이사이트</Korean>
+            <Spanish>Químico – Lewisita</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Enable">
             <English>Enable CBRN</English>
@@ -56,6 +64,7 @@
             <Russian>Включить ХБРЯ</Russian>
             <Ukrainian>Увімкнути ХБРЯ</Ukrainian>
             <Korean>CBRN 활성화</Korean>
+            <Spanish>Habilitar CBRN</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Enable_Desc">
             <English>Enable CBRN threat functionality</English>
@@ -63,6 +72,7 @@
             <Russian>Включить функционал химико-биологической угрозы</Russian>
             <Ukrainian>Увімкнути функціонал хімічно-біологічної загрози</Ukrainian>
             <Korean>CBRN 위협 기능 활성화</Korean>
+            <Spanish>Habilitar funcionalidad de amenaza CBRN</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask">
             <English>Gas Mask List</English>
@@ -70,6 +80,7 @@
             <Russian>Список противогазов</Russian>
             <Ukrainian>Список протигазів</Ukrainian>
             <Korean>방독면 목록</Korean>
+            <Spanish>Lista de Máscaras de Gas</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask_Desc">
             <English>List of goggles (facewear)/helmets that are gas masks (or equivalent). Each entry should be a goggles/helmet classname and should be seperated with a comma</English>
@@ -77,6 +88,7 @@
             <Russian>Список очков (масок)/шлемов, которые являются противогазами (или эквивалентом). Каждый элемент должен быть классом очков/шлема и разделяться запятой</Russian>
             <Ukrainian>Список окулярів (масок)/шоломів, що є протигазами (або еквівалентом). Кожен елемент має бути класом окулярів/шолома та розділятися комою</Ukrainian>
             <Korean>방독면(또는 동등 장비)으로 간주되는 고글/헬멧 목록. 각 항목은 클래스명으로 콤마(",")로 구분</Korean>
+            <Spanish>Lista de gafas (accesorios faciales)/cascos que son máscaras de gas (o equivalentes). Cada entrada debe ser un classname de gafas/casco separada por coma.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit">
             <English>CBRN Suit List</English>
@@ -84,6 +96,7 @@
             <Russian>Список ХБРЯ-костюмов</Russian>
             <Ukrainian>Список костюмів ХБРЯ</Ukrainian>
             <Korean>CBRN 슈트 목록</Korean>
+            <Spanish>Lista de Trajes CBRN</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit_Desc">
             <English>List of uniforms that are CBRN suits. Each entry should be a uniform classname and should be seperated with a comma</English>
@@ -91,6 +104,7 @@
             <Russian>Список униформ, которые являются защитными костюмами ХБРЯ. Каждый элемент должен быть классом униформы и разделяться запятой</Russian>
             <Ukrainian>Список одностроїв, що є захисними костюмами ХБРЯ. Кожен елемент має бути класом однострою та розділятися комою</Ukrainian>
             <Korean>CBRN 슈트로 간주되는 유니폼 목록. 각 항목은 클래스명으로 콤마(",")로 구분</Korean>
+            <Spanish>Lista de uniformes que son trajes CBRN. Cada entrada debe ser un classname de uniforme separada por coma.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN">
             <English>CBRN Protected Vehicle List</English>
@@ -98,6 +112,7 @@
             <Russian>Список защищённых ХБРЯ машин</Russian>
             <Ukrainian>Список захищених ХБРЯ машин</Ukrainian>
             <Korean>CBRN 보호 차량 목록</Korean>
+            <Spanish>Lista de Vehículos con Protección CBRN</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN_Desc">
             <English>List of vehicles that are CBRN protected (overpressure capability). Each entry should be a vehicle classname and should be seperated with a comma</English>
@@ -105,6 +120,7 @@
             <Russian>Список машин, защищённых от ХБРЯ (с избыточным давлением). Каждый элемент должен быть классом машины и разделяться запятой</Russian>
             <Ukrainian>Список машин, захищених від ХБРЯ (з надлишковим тиском). Кожен елемент має бути класом машини та розділятися комою</Ukrainian>
             <Korean>CBRN 보호(과압 기능) 차량 목록. 각 항목은 클래스명으로 콤마(",")로 구분</Korean>
+            <Spanish>Lista de vehículos con protección CBRN (capacidad de sobrepresión). Cada entrada debe ser un classname de vehículo separada por coma.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed">
             <English>Sealed Vehicle List</English>
@@ -112,6 +128,7 @@
             <Russian>Список герметичных машин</Russian>
             <Ukrainian>Список герметичних машин</Ukrainian>
             <Korean>밀폐 차량 목록</Korean>
+            <Spanish>Lista de Vehículos Sellados</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed_Desc">
             <English>List of vehicles that are sealed. Each entry should be a vehicle classname and should be seperated with a comma</English>
@@ -119,6 +136,7 @@
             <Russian>Список машин, которые являются герметичными. Каждый элемент должен быть классом машины и разделяться запятой</Russian>
             <Ukrainian>Список машин, що є герметичними. Кожен елемент має бути класом машини та розділятися комою</Ukrainian>
             <Korean>밀폐 차량 목록. 각 항목은 클래스명으로 콤마(",")로 구분</Korean>
+            <Spanish>Lista de vehículos que están sellados. Cada entrada debe ser un classname de vehículo separada por coma.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_ATNAAutoinjector">
             <English>Allow ATNA Autoinjector</English>
@@ -126,6 +144,7 @@
             <Russian>Разрешить автоинъектор ATNA</Russian>
             <Ukrainian>Дозволити автоінʼєктор ATNA</Ukrainian>
             <Korean>ATNA 자동주사기 사용 허용</Korean>
+            <Spanish>Permitir Autoinyector ATNA</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_ATNAAutoinjector_Desc">
             <English>Training level required to use ATNA Autoinjector</English>
@@ -133,6 +152,7 @@
             <Russian>Уровень подготовки, необходимый для использования автоинъектора ATNA</Russian>
             <Ukrainian>Рівень підготовки, необхідний для використання автоінʼєктора ATNA</Ukrainian>
             <Korean>ATNA 자동주사기 사용을 위한 훈련 레벨</Korean>
+            <Spanish>Nivel de entrenamiento requerido para usar el Autoinyector ATNA.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_MidazolamAutoinjector">
             <English>Allow Midazolam Autoinjector</English>
@@ -140,6 +160,7 @@
             <Russian>Разрешить автоинъектор мидазолама</Russian>
             <Ukrainian>Дозволити автоінʼєктор мідазоламу</Ukrainian>
             <Korean>미다졸람 자동주사기 사용 허용</Korean>
+            <Spanish>Permitir Autoinyector de Midazolam</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_MidazolamAutoinjector_Desc">
             <English>Training level required to use Midazolam Autoinjector</English>
@@ -147,6 +168,7 @@
             <Russian>Уровень подготовки, необходимый для использования автоинъектора мидазолама</Russian>
             <Ukrainian>Рівень підготовки, необхідний для використання автоінʼєктора мідазоламу</Ukrainian>
             <Korean>미다졸람 자동주사기 사용을 위한 훈련 레벨</Korean>
+            <Spanish>Nivel de entrenamiento requerido para usar el Autoinyector de Midazolam.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI">
             <English>Chemical Agents Affect AI</English>
@@ -154,6 +176,7 @@
             <Russian>Воздействие химических агентов на ИИ</Russian>
             <Ukrainian>Вплив хімічних агентів на ШІ</Ukrainian>
             <Korean>화학제 AI 영향</Korean>
+            <Spanish>Los Agentes Químicos Afectan a la IA</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI_Desc">
             <English>Sets whether AI will be affected by chemical agent exposure</English>
@@ -161,6 +184,7 @@
             <Russian>Определяет, будет ли ИИ подвержен воздействию химических агентов</Russian>
             <Ukrainian>Визначає, чи буде ШІ піддаватися впливу хімічних агентів</Ukrainian>
             <Korean>AI가 화학제 노출 영향을 받을지 설정</Korean>
+            <Spanish>Define si la IA será afectada por exposición a agentes químicos.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAISkill">
             <English>Chemical Agents Affect AI Skill</English>
@@ -168,6 +192,7 @@
             <Russian>Влияние химических агентов на навыки ИИ</Russian>
             <Ukrainian>Вплив хімічних агентів на навички ШІ</Ukrainian>
             <Korean>화학제 AI 스킬 영향</Korean>
+            <Spanish>Los Agentes Químicos Afectan a la Habilidad de IA</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAISkill_Desc">
             <English>Sets whether AI skill will be affected by chemical agent exposure</English>
@@ -175,6 +200,7 @@
             <Russian>Определяет, будут ли навыки ИИ снижаться под воздействием химических агентов</Russian>
             <Ukrainian>Визначає, чи будуть навички ШІ знижуватися під впливом хімічних агентів</Ukrainian>
             <Korean>AI 스킬이 화학제 노출 영향을 받을지 설정</Korean>
+            <Spanish>Define si la habilidad de la IA será afectada por exposición a agentes químicos.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness">
             <English>CS Exposure Cause Blindness</English>
@@ -182,6 +208,7 @@
             <Russian>CS вызывает слепоту</Russian>
             <Ukrainian>CS викликає сліпоту</Ukrainian>
             <Korean>CS 노출로 인한 실명</Korean>
+            <Spanish>La Exposición a Gas CS Causa Ceguera</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness_Desc">
             <English>Sets whether CS gas exposure causes blindness</English>
@@ -189,6 +216,7 @@
             <Russian>Определяет, вызывает ли CS газ слепоту</Russian>
             <Ukrainian>Визначає, чи викликає CS газ сліпоту</Ukrainian>
             <Korean>CS 가스 노출로 실명 여부 설정</Korean>
+            <Spanish>Define si la exposición al gas CS provoca ceguera.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChlorineCauseBlindness">
             <English>Chlorine Exposure Cause Blindness</English>
@@ -196,6 +224,7 @@
             <Russian>Хлор вызывает слепоту</Russian>
             <Ukrainian>Хлор викликає сліпоту</Ukrainian>
             <Korean>염소 노출로 인한 실명</Korean>
+            <Spanish>Exposición a Cloro Causa Ceguera</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChlorineCauseBlindness_Desc">
             <English>Sets whether chlorine gas exposure causes blindness</English>
@@ -203,6 +232,7 @@
             <Russian>Определяет, вызывает ли хлорный газ слепоту</Russian>
             <Ukrainian>Визначає, чи викликає хлорний газ сліпоту</Ukrainian>
             <Korean>염소 가스 노출로 실명 여부 설정</Korean>
+            <Spanish>Define si la exposición al gas cloro provoca ceguera.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_SarinIsColorless">
             <English>Colorless Sarin Gas</English>
@@ -210,6 +240,7 @@
             <Russian>Бесцветный зарин</Russian>
             <Ukrainian>Безбарвний зарин</Ukrainian>
             <Korean>무색 사린 가스</Korean>
+            <Spanish>Gas Sarín Incoloro</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_SarinIsColorless_Desc">
             <English>Sets whether sarin gas should be invisible</English>
@@ -217,6 +248,7 @@
             <Russian>Определяет, должен ли зарин быть невидимым</Russian>
             <Ukrainian>Визначає, чи має зарин бути невидимим</Ukrainian>
             <Korean>사린 가스가 눈에 보이지 않도록 설정</Korean>
+            <Spanish>Define si el sarín debe ser invisible.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteCauseBlindness">
             <English>Lewisite Exposure Cause Blindness</English>
@@ -224,6 +256,7 @@
             <Russian>Люизит вызывает слепоту</Russian>
             <Ukrainian>Люїзит викликає сліпоту</Ukrainian>
             <Korean>루이사이트 노출로 인한 실명</Korean>
+            <Spanish>Exposición a Lewisita Causa Ceguera</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteCauseBlindness_Desc">
             <English>Sets whether lewisite exposure causes blindness</English>
@@ -231,6 +264,7 @@
             <Russian>Определяет, вызывает ли люизит слепоту</Russian>
             <Ukrainian>Визначає, чи викликає люїзит сліпоту</Ukrainian>
             <Korean>루이사이트 노출로 실명 여부 설정</Korean>
+            <Spanish>Define si la exposición a lewisita provoca ceguera.</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteIsColorless">
             <English>Colorless Lewisite</English>
@@ -238,6 +272,8 @@
             <Russian>Бесцветный люизит</Russian>
             <Ukrainian>Безбарвний люїзит</Ukrainian>
             <Korean>무색 루이사이트</Korean>
+            <Spanish>Lewisita Incolora
+</Spanish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteIsColorless_Desc">
             <English>Sets whether lewisite should be invisible</English>
@@ -245,6 +281,7 @@
             <Russian>Определяет, должен ли люизит быть невидимым</Russian>
             <Ukrainian>Визначає, чи має люїзит бути невидимим</Ukrainian>
             <Korean>루이사이트가 눈에 보이지 않도록 설정</Korean>
+            <Spanish>Define si la lewisita debe ser invisible.</Spanish>
         </Key>
         <Container name="// Hazards //">
             <Key ID="STR_ACM_CBRN_Chemical_Placebo">
@@ -253,6 +290,7 @@
                 <Russian>Плацебо</Russian>
                 <Ukrainian>Плацебо</Ukrainian>
                 <Korean>플라세보 (Placebo)</Korean>
+                <Spanish>Placebo</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chemical_CS">
                 <English>CS Gas</English>
@@ -260,6 +298,8 @@
                 <Russian>CS газ</Russian>
                 <Ukrainian>CS газ</Ukrainian>
                 <Korean>CS 가스 (CS Gas)</Korean>
+                <Spanish>Gas CS
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chemical_Chlorine">
                 <English>Chlorine Gas</English>
@@ -267,6 +307,8 @@
                 <Russian>Хлорный газ</Russian>
                 <Ukrainian>Хлорний газ</Ukrainian>
                 <Korean>염소 가스 (Chlorine Gas)</Korean>
+                <Spanish>Gas Cloro
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chemical_Sarin">
                 <English>Sarin Gas</English>
@@ -274,6 +316,8 @@
                 <Russian>Зарин</Russian>
                 <Ukrainian>Зарин</Ukrainian>
                 <Korean>사린 가스 (Sarin Gas)</Korean>
+                <Spanish>Gas Sarín
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chemical_Lewisite">
                 <English>Lewisite</English>
@@ -281,6 +325,7 @@
                 <Russian>Люизит</Russian>
                 <Ukrainian>Люїзит</Ukrainian>
                 <Korean>루이사이트 (Lewisite)</Korean>
+                <Spanish>Lewisita</Spanish>
             </Key>
         </Container>
         <Container name="// Items //">
@@ -290,6 +335,8 @@
                 <Russian>Автоинъектор ATNA</Russian>
                 <Ukrainian>Автоінʼєктор ATNA</Ukrainian>
                 <Korean>ATNA 자동주사기 (ATNA Autoinjector)</Korean>
+                <Spanish>Autoinyector ATNA
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Autoinjector_ATNA_Desc">
                 <English>Antidote Treatment Nerve Agent Autoinjector, used to treat nerve agent exposure</English>
@@ -297,6 +344,7 @@
                 <Russian>Антидот от нервно-паралитических веществ, автоинъектор для лечения отравления</Russian>
                 <Ukrainian>Антидот проти нервово-паралітичних агентів, автоінʼєктор для лікування отруєння</Ukrainian>
                 <Korean>신경작용제 치료용 자동주사기, 신경작용제 노출 치료용</Korean>
+                <Spanish>Autoinyector Antídoto para Agentes Nerviosos, usado para tratar exposición a agentes neurotóxicos.</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Autoinjector_Midazolam">
                 <English>Midazolam Autoinjector</English>
@@ -304,6 +352,8 @@
                 <Russian>Автоинъектор мидазолама</Russian>
                 <Ukrainian>Автоінʼєктор мідазоламу</Ukrainian>
                 <Korean>미다졸람 자동주사기</Korean>
+                <Spanish>Autoinyector de Midazolam
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Autoinjector_Midazolam_Desc">
                 <English>Used to manage seizure activity caused by nerve agent exposure</English>
@@ -311,6 +361,7 @@
                 <Russian>Используется для контроля судорожной активности, вызванной воздействием нервно-паралитических веществ.</Russian>
                 <Ukrainian>Використовується для контролю судомної активності, спричиненої впливом нервово-паралітичних речовин.</Ukrainian>
                 <Korean>신경작용제 노출로 인한 발작 관리용</Korean>
+                <Spanish>Usado para manejar actividad convulsiva causada por exposición a agentes nerviosos.</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_CS_Grenade">
                 <English>CS Grenade</English>
@@ -318,6 +369,8 @@
                 <Russian>CS граната</Russian>
                 <Ukrainian>CS граната</Ukrainian>
                 <Korean>CS 수류탄</Korean>
+                <Spanish>Granada CS
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_CS_Grenade_Desc">
                 <English>Type: CS Grenade&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: Hand</English>
@@ -325,6 +378,7 @@
                 <Russian>Тип: граната CS&lt;br /&gt;Выстрелов: 1&lt;br /&gt;Используется: вручную</Russian>
                 <Ukrainian>Тип: CS граната&lt;br /&gt;Пострілів: 1&lt;br /&gt;Використовується: вручну</Ukrainian>
                 <Korean>유형: CS 수류탄&lt;br /&gt;발사 수: 1&lt;br /&gt;사용: 손</Korean>
+                <Spanish>Tipo: Granada CS&lt;br/&gt;Munición: 1&lt;br/&gt;Usado en: Mano</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_CS_Shell_40mm">
                 <English>CS Grenade Shell</English>
@@ -332,6 +386,7 @@
                 <Russian>CS граната (подствольная)</Russian>
                 <Ukrainian>CS граната (підствольна)</Ukrainian>
                 <Korean>CS 수류탄 탄환</Korean>
+                <Spanish>Proyectil de Gas CS</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_CS_Shell_40mm_Desc">
                 <English>Type: CS Gas Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: EGLM, 3GL</English>
@@ -339,6 +394,7 @@
                 <Russian>Тип: выстрел CS&lt;br /&gt;Выстрелов: 1&lt;br /&gt;Используется: EGLM, 3GL</Russian>
                 <Ukrainian>Тип: постріл CS&lt;br /&gt;Пострілів: 1&lt;br /&gt;Використовується: EGLM, 3GL</Ukrainian>
                 <Korean>유형: CS 가스 탄환&lt;br /&gt;발사 수: 1&lt;br /&gt;사용: EGLM, 3GL </Korean>
+                <Spanish>Tipo: Munición de Gas CS&lt;br/&gt;Munición: 1&lt;br/&gt;Usado en: EGLM, 3GL</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMaskFilter">
                 <English>Gas Mask Filter</English>
@@ -346,6 +402,8 @@
                 <Russian>Фильтр противогаза</Russian>
                 <Ukrainian>Фільтр протигаза</Ukrainian>
                 <Korean>방독면 필터</Korean>
+                <Spanish>Filtro de Máscara de Gas
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMaskFilter_Desc">
                 <English>Used with gas mask to allow breathing in hazardous environments</English>
@@ -353,6 +411,7 @@
                 <Russian>Используется с противогазом для дыхания в опасной среде</Russian>
                 <Ukrainian>Використовується з протигазом для дихання в небезпечному середовищі</Ukrainian>
                 <Korean>방독면과 함께 사용, 위험 환경에서 호흡 가능</Korean>
+                <Spanish>Usado con una máscara de gas para permitir respiración en ambientes peligrosos.</Spanish>
             </Key>
         </Container>
         <Container name="// Autoinjector Actions //">
@@ -362,6 +421,8 @@
                 <Russian>Использовать автоинъектор ATNA</Russian>
                 <Ukrainian>Використати автоінʼєктор ATNA</Ukrainian>
                 <Korean>ATNA 자동주사기 사용 </Korean>
+                <Spanish>Usar Autoinyector ATNA
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ATNAAutoinjector_Progress">
                 <English>Using ATNA Autoinjector...</English>
@@ -369,6 +430,7 @@
                 <Russian>Использование автоинъектора ATNA...</Russian>
                 <Ukrainian>Використання автоінʼєктора ATNA...</Ukrainian>
                 <Korean>ATNA 자동주사기 사용 중... </Korean>
+                <Spanish>Usando el Autoinyector ATNA…</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_MidazolamAutoinjector">
                 <English>Use Midazolam Autoinjector</English>
@@ -376,6 +438,8 @@
                 <Russian>Использовать автоинъектор мидазолама</Russian>
                 <Ukrainian>Використати автоінʼєктор мідазоламу</Ukrainian>
                 <Korean>미다졸람 자동주사기 사용</Korean>
+                <Spanish>Usar Autoinyector de Midazolam
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_MidazolamAutoinjector_Progress">
                 <English>Using Midazolam Autoinjector...</English>
@@ -383,6 +447,7 @@
                 <Russian>Использование автоинъектора мидазолама...</Russian>
                 <Ukrainian>Використання автоінʼєктора мідазоламу...</Ukrainian>
                 <Korean>미다졸람 자동주사기 사용 중... </Korean>
+                <Spanish>Usando el Autoinyector de Midazolam…</Spanish>
             </Key>
         </Container>
         <Container name="// Supply Crate //">
@@ -392,6 +457,8 @@
                 <Russian>[ACM] Ящик снабжения ХБРЯ</Russian>
                 <Ukrainian>[ACM] Ящик постачання ХБРЯ</Ukrainian>
                 <Korean>[ACM] CBRN 보급 상자</Korean>
+                <Spanish>[ACM] Caja de Suministros CBRN
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_SupplyCrate_PPE_Display">
                 <English>[ACM] CBRN PPE Supply Crate</English>
@@ -399,6 +466,7 @@
                 <Russian>[ACM] Ящик СИЗ ХБРЯ</Russian>
                 <Ukrainian>[ACM] Ящик ЗІЗ ХБРЯ</Ukrainian>
                 <Korean>[ACM] CBRN PPE 보급 상자</Korean>
+                <Spanish>[ACM] Caja de Suministros EPI CBRN</Spanish>
             </Key>
         </Container>
         <Container name="// Chemical Weapons //">
@@ -408,6 +476,8 @@
                 <Russian>Химический снаряд (CS)</Russian>
                 <Ukrainian>Хімічний снаряд (CS)</Ukrainian>
                 <Korean>화학 탄두 탄환 (CS)</Korean>
+                <Spanish>Proyectil Químico (CS)
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_CS_Shell_82mm_Short">
                 <English>CWA (CS)</English>
@@ -415,6 +485,8 @@
                 <Russian>БОВ (CS)</Russian>
                 <Ukrainian>БОР (CS)</Ukrainian>
                 <Korean>CWA (CS) (CWA (CS))</Korean>
+                <Spanish>Cargas Químicas (CS)
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chlorine_Shell_82mm">
                 <English>Chemical Payload Shell (Chlorine Gas)</English>
@@ -422,6 +494,8 @@
                 <Russian>Химический снаряд (хлор)</Russian>
                 <Ukrainian>Хімічний снаряд (хлор)</Ukrainian>
                 <Korean>화학 탄두 탄환 (염소 가스) </Korean>
+                <Spanish>Proyectil Químico (Gas Cloro)
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chlorine_Shell_82mm_Short">
                 <English>CWA (Chlorine)</English>
@@ -429,6 +503,8 @@
                 <Russian>БОВ (хлор)</Russian>
                 <Ukrainian>БОР (хлор)</Ukrainian>
                 <Korean>CWA (염소) (CWA (Chlorine))</Korean>
+                <Spanish>Cargas Químicas (Gas Cloro)
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Sarin_Shell_82mm">
                 <English>Chemical Payload Shell (Sarin Gas)</English>
@@ -436,6 +512,8 @@
                 <Russian>Химический снаряд (зарин)</Russian>
                 <Ukrainian>Хімічний снаряд (зарин)</Ukrainian>
                 <Korean>화학 탄두 탄환 (사린 가스) </Korean>
+                <Spanish>Proyectil Químico (Gas Sarín)
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Sarin_Shell_82mm_Short">
                 <English>CWA (Sarin)</English>
@@ -443,6 +521,8 @@
                 <Russian>БОВ (зарин)</Russian>
                 <Ukrainian>БОР (зарин)</Ukrainian>
                 <Korean>CWA (사린) (CWA (Sarin))</Korean>
+                <Spanish>Cargas Químicas (Gas Sarín)
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Lewisite_Shell_82mm">
                 <English>Chemical Payload Shell (Lewisite)</English>
@@ -450,6 +530,8 @@
                 <Russian>Химический снаряд (люизит)</Russian>
                 <Ukrainian>Хімічний снаряд (люїзит)</Ukrainian>
                 <Korean>화학 탄두 탄환 (루이사이트)</Korean>
+                <Spanish>Proyectil Químico (Lewisita)
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Lewisite_Shell_82mm_Short">
                 <English>CWA (Lewisite)</English>
@@ -457,6 +539,8 @@
                 <Russian>БОВ (люизит)</Russian>
                 <Ukrainian>БОР (люїзит)</Ukrainian>
                 <Korean>CWA (루이사이트)</Korean>
+                <Spanish>Cargas Químicas (Lewisita)
+</Spanish>
             </Key>
         </Container>
         <Container name="// Wash Eyes Action //">
@@ -466,6 +550,7 @@
                 <Russian>Промыть глаза</Russian>
                 <Ukrainian>Промити очі</Ukrainian>
                 <Korean>눈 씻기 </Korean>
+                <Spanish>Lavar ojos</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyesOf">
                 <English>Wash Eyes Of</English>
@@ -473,6 +558,7 @@
                 <Russian>Промыть глаза у</Russian>
                 <Ukrainian>Промити очі у</Ukrainian>
                 <Korean>눈 씻기 대상 </Korean>
+                <Spanish>Lavar los ojos de</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Progress">
                 <English>Washing eyes with water...</English>
@@ -480,6 +566,7 @@
                 <Russian>Промывание глаз водой...</Russian>
                 <Ukrainian>Промивання очей водою...</Ukrainian>
                 <Korean>물로 눈 씻는 중... </Korean>
+                <Spanish>Lavando ojos con agua...</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Complete">
                 <English>Washed eyes with water</English>
@@ -487,6 +574,8 @@
                 <Russian>Глаза промыты водой</Russian>
                 <Ukrainian>Очі промито водою</Ukrainian>
                 <Korean>물로 눈 씻음 </Korean>
+                <Spanish>Ojos lavados con agua
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Complete_Self">
                 <English>%1 washed your eyes with water</English>
@@ -494,6 +583,8 @@
                 <Russian>%1 промыл вам глаза водой</Russian>
                 <Ukrainian>%1 промив вам очі водою</Ukrainian>
                 <Korean>%1이 당신의 눈을 물로 씻어줌 </Korean>
+                <Spanish>%1 te lavó los ojos con agua
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Complete_Other">
                 <English>Washed %1's eyes with water</English>
@@ -501,6 +592,8 @@
                 <Russian>Глаза %1 промыты водой</Russian>
                 <Ukrainian>Очі %1 промито водою</Ukrainian>
                 <Korean>%1의 눈을 물로 씻음</Korean>
+                <Spanish>Lavaste los ojos de %1 con agua
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_ActionLog">
                 <English>%1 washed eyes with water</English>
@@ -508,6 +601,7 @@
                 <Russian>%1 промыл глаза водой</Russian>
                 <Ukrainian>%1 промив очі водою</Ukrainian>
                 <Korean>%1이 눈을 물로 씻음 </Korean>
+                <Spanish>%1 lavó los ojos con agua</Spanish>
             </Key>
         </Container>
         <Container name="// Gas Mask Actions //">
@@ -517,6 +611,8 @@
                 <Russian>Противогаз</Russian>
                 <Ukrainian>Протигаз</Ukrainian>
                 <Korean>방독면</Korean>
+                <Spanish>Máscara de Gas
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_PutOn">
                 <English>Put On</English>
@@ -524,6 +620,7 @@
                 <Russian>Надеть</Russian>
                 <Ukrainian>Надіти</Ukrainian>
                 <Korean>착용</Korean>
+                <Spanish>Poner</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_TakeOff">
                 <English>Take Off</English>
@@ -531,6 +628,7 @@
                 <Russian>Снять</Russian>
                 <Ukrainian>Зняти</Ukrainian>
                 <Korean>제거</Korean>
+                <Spanish>Quitar</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter">
                 <English>Replace Filter</English>
@@ -538,6 +636,7 @@
                 <Russian>Заменить фильтр</Russian>
                 <Ukrainian>Замінити фільтр</Ukrainian>
                 <Korean>필터 교체</Korean>
+                <Spanish>Reemplazar Filtro</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_Donned">
                 <English>Donned gas mask</English>
@@ -545,6 +644,8 @@
                 <Russian>Противогаз надет</Russian>
                 <Ukrainian>Протигаз надіто</Ukrainian>
                 <Korean>방독면 착용됨</Korean>
+                <Spanish>Máscara de gas colocada
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_Removed">
                 <English>Took off gas mask</English>
@@ -552,6 +653,8 @@
                 <Russian>Противогаз снят</Russian>
                 <Ukrainian>Протигаз знято</Ukrainian>
                 <Korean>방독면 제거됨 </Korean>
+                <Spanish>Máscara de gas retirada
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_DroppedFaceWear">
                 <English>Dropped facewear</English>
@@ -559,6 +662,7 @@
                 <Russian>Маска сброшена</Russian>
                 <Ukrainian>Маску скинуто</Ukrainian>
                 <Korean>페이스웨어 버림 </Korean>
+                <Spanish>Accesorio facial tirado</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter_Complete">
                 <English>Replaced gas mask filter</English>
@@ -566,6 +670,8 @@
                 <Russian>Фильтр противогаза заменён</Russian>
                 <Ukrainian>Фільтр протигаза замінено</Ukrainian>
                 <Korean>방독면 필터 교체됨</Korean>
+                <Spanish>El filtro de máscara de gas ha sido reemplazado
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter_Progress">
                 <English>Replacing gas mask filter...</English>
@@ -573,6 +679,7 @@
                 <Russian>Замена фильтра противогаза...</Russian>
                 <Ukrainian>Заміна фільтра протигаза...</Ukrainian>
                 <Korean>방독면 필터 교체 중...</Korean>
+                <Spanish>máscara </Spanish>
             </Key>
         </Container>
         <Container name="// Chemical Detector Actions //">
@@ -582,6 +689,8 @@
                 <Russian>Химический детектор</Russian>
                 <Ukrainian>Хімічний детектор</Ukrainian>
                 <Korean>화학 탐지기 </Korean>
+                <Spanish>Detector Químico
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnOn">
                 <English>Turn On</English>
@@ -589,6 +698,8 @@
                 <Russian>Включить</Russian>
                 <Ukrainian>Увімкнути</Ukrainian>
                 <Korean>켜기</Korean>
+                <Spanish>Encender
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnOff">
                 <English>Turn Off</English>
@@ -596,6 +707,7 @@
                 <Russian>Выключить</Russian>
                 <Ukrainian>Вимкнути</Ukrainian>
                 <Korean>끄기 </Korean>
+                <Spanish>Apagar</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_EnableAlarm">
                 <English>Enable Alarm</English>
@@ -603,6 +715,8 @@
                 <Russian>Включить сигнализацию</Russian>
                 <Ukrainian>Увімкнути сигналізацію</Ukrainian>
                 <Korean>경보 활성화 </Korean>
+                <Spanish>Habilitar Alarma
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_DisableAlarm">
                 <English>Disable Alarm</English>
@@ -610,6 +724,8 @@
                 <Russian>Выключить сигнализацию</Russian>
                 <Ukrainian>Вимкнути сигналізацію</Ukrainian>
                 <Korean>경보 비활성화 </Korean>
+                <Spanish>Deshabilitar Alarma
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_Reset">
                 <English>Reset</English>
@@ -617,6 +733,7 @@
                 <Russian>Сброс</Russian>
                 <Ukrainian>Скидання</Ukrainian>
                 <Korean>리셋</Korean>
+                <Spanish>Reiniciar</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnedOn">
                 <English>Chemical detector turned on</English>
@@ -624,6 +741,8 @@
                 <Russian>Химический детектор включён</Russian>
                 <Ukrainian>Хімічний детектор увімкнено</Ukrainian>
                 <Korean>화학 탐지기 켜짐 </Korean>
+                <Spanish>Detector químico encendido
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnedOff">
                 <English>Chemical detector turned off</English>
@@ -631,6 +750,8 @@
                 <Russian>Химический детектор выключен</Russian>
                 <Ukrainian>Хімічний детектор вимкнено</Ukrainian>
                 <Korean>화학 탐지기 꺼짐 </Korean>
+                <Spanish>Detector químico apagado
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_AlarmEnabled">
                 <English>Chemical detector alarm enabled</English>
@@ -638,6 +759,8 @@
                 <Russian>Сигнализация химического детектора включена</Russian>
                 <Ukrainian>Сигналізацію хімічного детектора увімкнено</Ukrainian>
                 <Korean>화학 탐지기 경보 활성화됨 </Korean>
+                <Spanish>Alarma del detector habilitada
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_AlarmDisabled">
                 <English>Chemical detector alarm disabled</English>
@@ -645,6 +768,8 @@
                 <Russian>Сигнализация химического детектора выключена</Russian>
                 <Ukrainian>Сигналізацію хімічного детектора вимкнено</Ukrainian>
                 <Korean>화학 탐지기 경보 비활성화됨</Korean>
+                <Spanish>Alarma del detector deshabilitada
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_WasReset">
                 <English>Chemical detector has been reset</English>
@@ -652,6 +777,7 @@
                 <Russian>Химический детектор сброшен</Russian>
                 <Ukrainian>Хімічний детектор скинуто</Ukrainian>
                 <Korean>화학 탐지기 리셋됨 </Korean>
+                <Spanish>El detector químico ha sido reiniciado</Spanish>
             </Key>
         </Container>
         <Container name="// Module Generic //">
@@ -661,6 +787,8 @@
                 <Russian>Тип угрозы</Russian>
                 <Ukrainian>Тип загрози</Ukrainian>
                 <Korean>위험 유형 </Korean>
+                <Spanish>Tipo de Peligro
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_ZoneRadius">
                 <English>Zone Radius</English>
@@ -668,6 +796,8 @@
                 <Russian>Радиус зоны</Russian>
                 <Ukrainian>Радіус зони</Ukrainian>
                 <Korean>영역 반경 </Korean>
+                <Spanish>Radio de la Zona
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_EffectTime">
                 <English>Effect Time</English>
@@ -675,6 +805,8 @@
                 <Russian>Время действия</Russian>
                 <Ukrainian>Час дії</Ukrainian>
                 <Korean>효과 시간 </Korean>
+                <Spanish>Tiempo de Efecto
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_EffectTime_Tooltip">
                 <English>Sets time in minutes after which hazard zone will remove itself, will last forever if 0</English>
@@ -682,6 +814,7 @@
                 <Russian>Задаёт время в минутах, после которого зона угрозы исчезнет; если 0 — бесконечно</Russian>
                 <Ukrainian>Визначає час у хвилинах, після якого зона загрози зникне; якщо 0 — безстроково</Ukrainian>
                 <Korean>위험 영역이 자동으로 제거될 시간(분) 설정, 0이면 지속</Korean>
+                <Spanish>Define el tiempo en minutos tras el cual la zona de peligro se eliminará; durará para siempre si es 0.</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_AttachToObject">
                 <English>Attach To Object</English>
@@ -689,6 +822,7 @@
                 <Russian>Привязать к объекту</Russian>
                 <Ukrainian>Привʼязати до обʼєкта</Ukrainian>
                 <Korean>객체에 부착</Korean>
+                <Spanish>Poner en objeto</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_AttachToObject_TooltipEden">
                 <English>Attaches hazard zone to synchronized object</English>
@@ -696,6 +830,7 @@
                 <Russian>Привязывает зону угрозы к синхронизированному объекту</Russian>
                 <Ukrainian>Привʼязує зону загрози до синхронізованого обʼєкта</Ukrainian>
                 <Korean>동기화 객체에 위험 영역 부착 </Korean>
+                <Spanish>Adjunta la zona de peligro al objeto sincronizado.</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_ShowMist">
                 <English>Show Mist</English>
@@ -703,6 +838,8 @@
                 <Russian>Показывать туман</Russian>
                 <Ukrainian>Показувати туман</Ukrainian>
                 <Korean>안개 표시</Korean>
+                <Spanish>Mostrar Niebla
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_ShowMist_Tooltip">
                 <English>Show mist effect over hazard radius</English>
@@ -710,6 +847,7 @@
                 <Russian>Показывать туман над зоной угрозы</Russian>
                 <Ukrainian>Показувати туман над зоною загрози</Ukrainian>
                 <Korean>위험 반경에 안개 효과 표시 </Korean>
+                <Spanish>Muestra el efecto de niebla sobre el radio de peligro.</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_AffectAI">
                 <English>Affect AI</English>
@@ -717,12 +855,15 @@
                 <Russian>Воздействие на ИИ</Russian>
                 <Ukrainian>Вплив на ШІ</Ukrainian>
                 <Korean>AI 영향</Korean>
+                <Spanish>Afectar a la IA</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_Error_AddonDisabled">
                 <English>CBRN Addon must be enabled</English>
                 <Russian>Необходимо включить модуль ХБРЯ</Russian>
                 <Ukrainian>Потрібно увімкнути модуль ХБРЯ</Ukrainian>
                 <Korean>CBRN 애드온 활성화 필요</Korean>
+                <Spanish>El Addon CBRN debe estar habilitado
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_Error_SelectObject">
                 <English>Must select object</English>
@@ -730,6 +871,8 @@
                 <Russian>Нужно выбрать объект</Russian>
                 <Ukrainian>Потрібно вибрати обʼєкт</Ukrainian>
                 <Korean>객체 선택 필요 </Korean>
+                <Spanish>Debe seleccionar un objeto
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_Error_NotDestroyed">
                 <English>Object must not be destroyed</English>
@@ -737,6 +880,7 @@
                 <Russian>Объект не должен быть уничтожен</Russian>
                 <Ukrainian>Обʼєкт не має бути знищений</Ukrainian>
                 <Korean>객체가 파괴되지 않아야 함</Korean>
+                <Spanish>El objeto no debe estar destruido</Spanish>
             </Key>
         </Container>
         <Container name="// Create Hazard Zone Module //">
@@ -745,6 +889,8 @@
                 <Russian>Опасная зона</Russian>
                 <Ukrainian>Небезпечна зона</Ukrainian>
                 <Korean>위험 영역</Korean>
+                <Spanish>Zona de Peligro
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateHazardZone">
                 <English>Create Hazard Zone</English>
@@ -752,6 +898,7 @@
                 <Russian>Создать зону угрозы</Russian>
                 <Ukrainian>Створити зону загрози</Ukrainian>
                 <Korean>위험 영역 생성 </Korean>
+                <Spanish>Crear Zona de Peligro</Spanish>
             </Key>
         </Container>
         <Container name="// Create Chemical Device Module //">
@@ -760,6 +907,8 @@
                 <Russian>Химическое устройство</Russian>
                 <Ukrainian>Хімічний пристрій</Ukrainian>
                 <Korean>화학 장치</Korean>
+                <Spanish>Dispositivo Químico
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice">
                 <English>Create Chemical Device</English>
@@ -767,6 +916,7 @@
                 <Russian>Создать химическое устройство</Russian>
                 <Ukrainian>Створити хімічний пристрій</Ukrainian>
                 <Korean>화학 장치 생성 </Korean>
+                <Spanish>Crear Dispositivo Químico</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_PermanentHazard">
                 <English>Permanent Hazard</English>
@@ -774,6 +924,8 @@
                 <Russian>Постоянная угроза</Russian>
                 <Ukrainian>Постійна загроза</Ukrainian>
                 <Korean>영구 위험 </Korean>
+                <Spanish>Peligro Permanente
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_PermanentHazard_Tooltip">
                 <English>Sets whether the created hazard will not dissipate after activation</English>
@@ -781,6 +933,7 @@
                 <Russian>Определяет, будет ли созданная угроза сохраняться после активации</Russian>
                 <Ukrainian>Визначає, чи буде створена загроза зберігатися після активації</Ukrainian>
                 <Korean>생성된 위험이 활성화 후 사라지지 않도록 설정</Korean>
+                <Spanish>Define si el peligro creado no se disipará tras activación.</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize">
                 <English>Explosion Cloud Size</English>
@@ -788,6 +941,8 @@
                 <Russian>Размер облака взрыва</Russian>
                 <Ukrainian>Розмір хмари вибуху</Ukrainian>
                 <Korean>폭발 구름 크기</Korean>
+                <Spanish>Tamaño de la Nube de Explosión
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_None">
                 <English>None</English>
@@ -795,6 +950,7 @@
                 <Russian>Нет</Russian>
                 <Ukrainian>Немає</Ukrainian>
                 <Korean>없음</Korean>
+                <Spanish>Ninguno</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_Small">
                 <English>Small</English>
@@ -802,6 +958,8 @@
                 <Russian>Малый</Russian>
                 <Ukrainian>Малий</Ukrainian>
                 <Korean>작음 </Korean>
+                <Spanish>Pequeño
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_Large">
                 <English>Large</English>
@@ -809,6 +967,7 @@
                 <Russian>Большой</Russian>
                 <Ukrainian>Великий</Ukrainian>
                 <Korean>큼 </Korean>
+                <Spanish>Grande</Spanish>
             </Key>
         </Container>
         <Container name="// GUI //">
@@ -818,6 +977,8 @@
                 <Russian>Раздражение кожи</Russian>
                 <Ukrainian>Подразнення шкіри</Ukrainian>
                 <Korean>피부 자극</Korean>
+                <Spanish>Irritación Cutánea
+</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GUI_Slight">
                 <English>Slight</English>
@@ -825,6 +986,7 @@
                 <Russian>Лёгкое</Russian>
                 <Ukrainian>Легке</Ukrainian>
                 <Korean>경미</Korean>
+                <Spanish>Leve</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GUI_Moderate">
                 <English>Moderate</English>
@@ -832,6 +994,7 @@
                 <Russian>Умеренное</Russian>
                 <Ukrainian>Помірне</Ukrainian>
                 <Korean>중등도</Korean>
+                <Spanish>Moderada</Spanish>
             </Key>
             <Key ID="STR_ACM_CBRN_GUI_Severe">
                 <English>Severe</English>
@@ -839,6 +1002,7 @@
                 <Russian>Сильное</Russian>
                 <Ukrainian>Сильне</Ukrainian>
                 <Korean>심함</Korean>
+                <Spanish>Severa</Spanish>
             </Key>
         </Container>
     </Package>
