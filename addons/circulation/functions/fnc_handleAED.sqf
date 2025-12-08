@@ -168,7 +168,7 @@ private _PFH = [{
     if (_pulseOximeterPlacement != -1) then {
         private _lastSync = _patient getVariable [QGVAR(AED_PulseOximeter_LastSync), -1];
 
-        if (_lastSync + 3 < CBA_missionTime) then {
+        if (_lastSync + PULSEOX_REFRESH_RATE < CBA_missionTime) then {
             _patient setVariable [QGVAR(AED_PulseOximeter_LastSync), CBA_missionTime];
 
             (GET_BLOOD_PRESSURE(_patient)) params ["", "_BPSystolic"];

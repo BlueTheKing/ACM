@@ -250,6 +250,8 @@
 #define GET_PULSEOX(unit) (unit getVariable [QEGVAR(breathing,PulseOximeter_Placement),[false,false]])
 #define HAS_PULSEOX(unit,index) (GET_PULSEOX(unit) select index)
 
+#define PULSEOX_REFRESH_RATE 4
+
 #define ACM_CYANOSIS_T_SLIGHT   91
 #define ACM_CYANOSIS_T_MODERATE 82
 #define ACM_CYANOSIS_T_SEVERE   67

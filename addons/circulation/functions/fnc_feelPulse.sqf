@@ -74,7 +74,7 @@ private _bodyPartString = switch (_bodyPart) do {
 
     (GET_BLOOD_PRESSURE(_patient)) params ["", "_BPSystolic"];
 
-    private _pressureTooLow = _pressureCutoff > _BPSystolic;
+    private _pressureTooLow = (_pressureCutoff > _BPSystolic) && (_partIndex != 0);
 
     if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex) || (!(HAS_PULSE_P(_patient)) && _partIndex != 0)) then {
         _HR = 0;

@@ -23,8 +23,8 @@ params ["_unit", "_hrTargetAdjustment", "_deltaT", "_syncValue"];
 private _desiredHR = ACM_TARGETVITALS_HR(_unit);
 private _heartRate = GET_HEART_RATE(_unit);
 
-if (!(HAS_PULSE(_unit)) || alive (_unit getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
-    if (alive (_unit getVariable [QACEGVAR(medical,CPR_provider), objNull])) then {
+if (IN_CRDC_ARRST(_patient) || [_patient] call FUNC(cprActive)) then {
+    if ([_patient] call FUNC(cprActive)) then {
         if (_heartRate == 0) then { _syncValue = true }; // always sync on large change
         _heartRate = random [100, 110, 120];
     } else {

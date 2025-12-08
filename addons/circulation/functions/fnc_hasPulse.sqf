@@ -18,6 +18,8 @@
 
 params ["_patient", ["_palpable", false]];
 
+if ([_patient] call EFUNC(core,cprActive)) exitWith {true};
+
 if (!(alive _patient) || [_patient] call FUNC(recentAEDShock) || !(GET_CIRCULATIONSTATE(_patient)) || IN_CRDC_ARRST(_patient)) exitWith {false};
 
 if (_palpable) exitWith {!(IN_CRITICAL_STATE(_patient))};
