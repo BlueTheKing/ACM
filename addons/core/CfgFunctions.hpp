@@ -76,9 +76,6 @@ class CfgFunctions {
             class medication { // Fix magazine names in triage card
                 file = QPATHTOF(overrides\fnc_medication.sqf); //ace/addons/medical_treatment/functions/fnc_medication.sqf
             };
-            class checkPulseLocal { // CPR rate
-                file = QPATHTOF(overrides\fnc_checkPulseLocal.sqf); //ace/addons/medical_treatment/functions/fnc_checkPulseLocal.sqf
-            };
             class tourniquetRemove { // Tourniquet time
                 file = QPATHTOF(overrides\fnc_tourniquetRemove.sqf); //ace/addons/medical_treatment/functions/fnc_tourniquetRemove.sqf
             };
