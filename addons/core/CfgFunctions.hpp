@@ -33,6 +33,9 @@ class CfgFunctions {
             class updateOxygen { // Breathing
                 file = QPATHTOF(overrides\fnc_updateOxygen.sqf); //ace/addons/medical_vitals/functions/fnc_updateOxygen.sqf
             };
+            class updatePainSuppress { // Pain fade
+                file = QPATHTOF(overrides\fnc_updatePainSuppress.sqf); //ace/addons/medical_vitals/functions/fnc_updatePainSuppress.sqf
+            };
         };
     };
     class overwrite_medical_status {

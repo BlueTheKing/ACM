@@ -55,12 +55,9 @@ if (!(HAS_PULSE(_unit)) || alive (_unit getVariable [QACEGVAR(medical,CPR_provid
         };
 
         if (_painLevel > 0.2) then {
-            if !(IS_UNCONSCIOUS(_unit)) then {
-                _targetHR = _targetHR max (_desiredHR + 50 * _painLevel);
-            } else {
-                _targetHR = _targetHR max (_desiredHR + 40 * _painLevel);
-            };
+            _targetHR = _targetHR max (_desiredHR + 50 * _painLevel);
         };
+
         // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
         private _oxygenDemand = _unit getVariable [VAR_OXYGEN_DEMAND, 0];
         private _missingOxygen = (ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation);
