@@ -366,27 +366,16 @@
                 <Korean>%1이 환자를 흔들었습니다</Korean>
                 <Spanish>%1 sacudió al paciente</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_ShakePatient_Complete">
-                <English>You shook the patient&lt;br/&gt;%1</English>
-                <Polish>Potrząsnąłeś pacjentem&lt;br/&gt;%1</Polish>
-                <German>Du hast den Patienten gerüttelt&lt;br/&gt;%1</German>
-                <French>Vous avez secoué le patient&lt;br/&gt;%1</French>
-                <Portuguese>Você sacodiu o paciente&lt;br/&gt;%1</Portuguese>
-                <Russian>Вы встряхнули пациента&lt;br/&gt;%1</Russian>
-                <Ukrainian>Ви струснули пацієнта&lt;br/&gt;%1</Ukrainian>
-                <Korean>당신이 환자를 흔들었습니다&lt;br/&gt;%1</Korean>
-                <Spanish>Sacudiste al paciente&lt;br/&gt;%1</Spanish>
-            </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_Attempt">
-                <English>You attempt to shake the patient awake&lt;br/&gt;%1</English>
-                <Polish>Próbujesz potrząsnąć pacjentem by się obudził&lt;br/&gt;%1</Polish>
-                <German>Du hast versucht den Patienten wachzurütteln&lt;br/&gt;%1</German>
-                <French>Vous tentez de secouer le patient pour le réveiller&lt;br/&gt;%1</French>
-                <Portuguese>Você tentou sacudir um paciente acordado&lt;br/&gt;%1</Portuguese>
-                <Russian>Вы пытаетесь разбудить пациента встряхиванием&lt;br/&gt;%1</Russian>
-                <Ukrainian>Ви намагаєтесь розбудити пацієнта струшуванням&lt;br/&gt;%1</Ukrainian>
-                <Korean>당신이 환자를 흔들어 깨우려 합니다&lt;br/&gt;%1</Korean>
-                <Spanish>Intentaste sacudir al paciente para despertarlo&lt;br/&gt;%1</Spanish>
+                <English>You attempt to shake the patient awake</English>
+                <Polish>Próbujesz potrząsnąć pacjentem by się obudził</Polish>
+                <German>Du hast versucht den Patienten wachzurütteln</German>
+                <French>Vous tentez de secouer le patient pour le réveiller</French>
+                <Portuguese>Você tentou sacudir um paciente acordado</Portuguese>
+                <Russian>Вы пытаетесь разбудить пациента встряхиванием</Russian>
+                <Ukrainian>Ви намагаєтесь розбудити пацієнта струшуванням</Ukrainian>
+                <Korean>당신이 환자를 흔들어 깨우려 합니다</Korean>
+                <Spanish>Intentaste sacudir al paciente para despertarlo</Spanish>
             </Key>
         </Container>
         <Container name="// Slap Patient Action //">
@@ -423,27 +412,16 @@
                 <Korean>%1이 환자를 때렸습니다</Korean>
                 <Spanish>%1 abofeteó al paciente</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_SlapPatient_Complete">
-                <English>You slap the patient&lt;br/&gt;%1</English>
-                <Polish>Uderzyłeś pacjenta&lt;br/&gt;%1</Polish>
-                <German>Du setzt einen Schmerzreiz&lt;br/&gt;%1</German>
-                <French>Vous giflez le patient&lt;br/&gt;%1</French>
-                <Portuguese>Você estapeou o paciente&lt;br/&gt;%1</Portuguese>
-                <Russian>Вы дали пощёчину пациенту&lt;br/&gt;%1</Russian>
-                <Ukrainian>Ви дали ляпас пацієнту&lt;br/&gt;%1</Ukrainian>
-                <Korean>당신이 환자를 때립니다&lt;br/&gt;%1</Korean>
-                <Spanish>Abofeteaste al paciente&lt;br/&gt;%1</Spanish>
-            </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_Attempt">
-                <English>You attempt to slap the patient awake&lt;br/&gt;%1</English>
-                <Polish>Próbujesz uderzyć pacjenta by się obudził&lt;br/&gt;%1</Polish>
-                <German>Du versuchst einen Schmerzreiz zu setzen&lt;br/&gt;%1</German>
-                <French>Essayer de gifler le patient pour le réveiller&lt;br/&gt;%1</French>
-                <Portuguese>Você tentou estapear um paciente acordado&lt;br/&gt;%1</Portuguese>
-                <Russian>Вы пытаетесь разбудить пациента пощёчиной&lt;br/&gt;%1</Russian>
-                <Ukrainian>Ви намагаєтесь розбудити пацієнта ляпасом&lt;br/&gt;%1</Ukrainian>
-                <Korean>당신이 환자를 때려 깨우려 합니다&lt;br/&gt;%1</Korean>
-                <Spanish>Intentaste abofetear al paciente para despertarlo&lt;br/&gt;%1</Spanish>
+                <English>You attempt to slap the patient awake</English>
+                <Polish>Próbujesz uderzyć pacjenta by się obudził</Polish>
+                <German>Du versuchst einen Schmerzreiz zu setzen</German>
+                <French>Essayer de gifler le patient pour le réveiller</French>
+                <Portuguese>Você tentou estapear um paciente acordado</Portuguese>
+                <Russian>Вы пытаетесь разбудить пациента пощёчиной</Russian>
+                <Ukrainian>Ви намагаєтесь розбудити пацієнта ляпасом</Ukrainian>
+                <Korean>당신이 환자를 때려 깨우려 합니다</Korean>
+                <Spanish>Intentaste abofetear al paciente para despertarlo</Spanish>
             </Key>
         </Container>
         <Container name="// Inspect For Fracture Action //">
