@@ -8,7 +8,7 @@
  * 1: Minimum Concentration <NUMBER>
  *
  * Return Value:
- * [<Pain Suppress>,<HR Adjust>,<Peripheral Resistance>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
+ * [<Pain Suppress>,<HR Adjust>,<Peripheral Vasoconstriction Adjustment>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
  *
  * Example:
  * [player, 0.5] call ACM_circulation_fnc_effectVitalsEsmolol;
@@ -33,7 +33,7 @@ private _HRAdjust = [
     ] select (_concentrationIV > _desiredDoseHigh))
 ] select (_concentrationIV > _desiredDoseLow);
 
-private _peripheralResistanceAdjust = [
+private _peripheralVasoconstrictionAdjust = [
     (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -5, true]),
     ([
         (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -5, -10]),
@@ -44,7 +44,7 @@ private _peripheralResistanceAdjust = [
 [
     0,
     _HRAdjust,
-    _peripheralResistanceAdjust,
+    _peripheralVasoconstrictionAdjust,
     0,
     0,
     0

@@ -283,6 +283,8 @@
 
 #define GET_VASOCONSTRICTION(unit) (unit getVariable [QEGVAR(circulation,Vasoconstriction_State), 0])
 
+#define GET_HEART_FATIGUE(unit) (unit getVariable [QEGVAR(circulation,HeartFatigue_State), 0])
+
 #define ACM_Rhythm_NA -5
 #define ACM_Rhythm_CPR -1
 #define ACM_Rhythm_Sinus 0

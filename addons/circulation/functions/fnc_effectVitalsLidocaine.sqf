@@ -8,7 +8,7 @@
  * 1: Minimum Concentration <NUMBER>
  *
  * Return Value:
- * [<Pain Suppress>,<HR Adjust>,<Peripheral Resistance>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
+ * [<Pain Suppress>,<HR Adjust>,<Peripheral Vasoconstriction Adjustment>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
  *
  * Example:
  * [player, 0.5] call ACM_circulation_fnc_effectVitalsLidocaine;
@@ -32,7 +32,7 @@ private _effectIV_HR = [
     (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -2, -10])
 ] select (_concentrationIV > _desiredDoseLow);
 
-private _effectIV_peripheralResistance = [
+private _effectIV_peripheralVasoconstriction = [
     (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -4, true]),
     (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -4, -8])
 ] select (_concentrationIV > _desiredDoseLow);
@@ -40,7 +40,7 @@ private _effectIV_peripheralResistance = [
 [
     0,
     _effectIV_HR,
-    _effectIV_peripheralResistance,
+    _effectIV_peripheralVasoconstriction,
     0,
     0,
     0

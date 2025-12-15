@@ -20,8 +20,5 @@ params ["_unit"];
 private _internalBleeding = GET_INTERNAL_BLEEDING(_unit);
 if (_internalBleeding == 0) exitWith {0};
 
-private _cardiacOutput = [_unit] call ACEFUNC(medical_status,getCardiacOutput);
-private _resistance = _unit getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES];
-
 // even if heart stops blood will still flow slowly (gravity)
-(_internalBleeding * (_cardiacOutput max (GVAR(cardiacArrestBleedRate) / 2)) * (DEFAULT_PERIPH_RES / _resistance) * ACEGVAR(medical,bleedingCoefficient));
+(_internalBleeding * ([_patient, (GVAR(cardiacArrestBleedRate) / 2)] call FUNC(getBleedingMultiplier)));

@@ -20,8 +20,5 @@ params ["_patient"];
 private _capillaryBleeding = GET_CAPILLARY_DAMAGE(_patient) * 0.0004;
 if (_capillaryBleeding == 0) exitWith {0};
 
-private _cardiacOutput = [_patient] call ACEFUNC(medical_status,getCardiacOutput);
-private _resistance = _patient getVariable [VAR_PERIPH_RES, DEFAULT_PERIPH_RES];
-
 // even if heart stops blood will still flow slowly (gravity)
-(_capillaryBleeding * (_cardiacOutput max GVAR(cardiacArrestBleedRate)) * (DEFAULT_PERIPH_RES / _resistance) * ACEGVAR(medical,bleedingCoefficient));
+(_capillaryBleeding * ([_patient, GVAR(cardiacArrestBleedRate)] call FUNC(getBleedingMultiplier)));

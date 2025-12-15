@@ -76,7 +76,7 @@ if (_tourniquetPain > 0) then {
 // Get Medication Adjustments:
 private _hrTargetAdjustment = 0;
 private _painSuppressAdjustment = 0;
-private _peripheralResistanceAdjustment = 0;
+private _peripheralVasoconstrictionAdjustment = 0;
 private _respirationRateAdjustment = 0;
 private _coSensitivityAdjustment = 0;
 private _breathingEffectivenessAdjustment = 0;
@@ -99,11 +99,11 @@ if (count (_patient getVariable [QEGVAR(circulation,ActiveMedication), []]) > 0)
 
         private _medicationEffects = [_patient, _medicationMinimumConcentration] call MEDICATION_VITALS_FUNCTION(_forEachIndex);
 
-        _medicationEffects params [["_entryPainSuppressAdjustment", 0], ["_entryHRTargetAdjustment", 0], ["_entryPeripheralResistanceAdjustment", 0], ["_entryRespirationRateAdjustment", 0], ["_entryCOSensitivityAdjustment", 0], ["_entryBreathingEffectivenessAdjustment", 0]];
+        _medicationEffects params [["_entryPainSuppressAdjustment", 0], ["_entryHRTargetAdjustment", 0], ["_entryPeripheralVasoconstrictionAdjustment", 0], ["_entryRespirationRateAdjustment", 0], ["_entryCOSensitivityAdjustment", 0], ["_entryBreathingEffectivenessAdjustment", 0]];
 
         _painSuppressAdjustment = _painSuppressAdjustment + _entryPainSuppressAdjustment;
         _hrTargetAdjustment = _hrTargetAdjustment + _entryHRTargetAdjustment;
-        _peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _entryPeripheralResistanceAdjustment;
+        _peripheralVasoconstrictionAdjustment = _peripheralVasoconstrictionAdjustment + _entryPeripheralVasoconstrictionAdjustment;
         _respirationRateAdjustment = _respirationRateAdjustment + _entryRespirationRateAdjustment;
         _coSensitivityAdjustment = _coSensitivityAdjustment + _entryCOSensitivityAdjustment;
         _breathingEffectivenessAdjustment = _breathingEffectivenessAdjustment + _entryBreathingEffectivenessAdjustment;
@@ -115,7 +115,7 @@ private _reactionSeverity = _patient getVariable [QEGVAR(circulation,HemolyticRe
 if (_reactionSeverity > 0) then {
     _hrTargetAdjustment = _hrTargetAdjustment + (_reactionSeverity * 15);
     _respirationRateAdjustment = _respirationRateAdjustment - _reactionSeverity * 5;
-    _peripheralResistanceAdjustment = _peripheralResistanceAdjustment - _reactionSeverity * 15;
+    _peripheralVasoconstrictionAdjustment = _peripheralVasoconstrictionAdjustment - _reactionSeverity * 0.5;
     _breathingEffectivenessAdjustment = _breathingEffectivenessAdjustment - (_reactionSeverity * 0.05);
 };
 
@@ -144,51 +144,10 @@ if (EGVAR(CBRN,enable)) then {
 
 private _heartRate = [_patient, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
 [_patient, _painSuppressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
-
-private _vasoconstriction = GET_VASOCONSTRICTION(_patient);
-private _targetVasoconstriction = 0;
-
-if (_bloodVolume < 5.9) then {
-    _targetVasoconstriction = linearConversion [5.9, 4.5, _bloodVolume, 0, 50, true];
-};
-
-if (_bloodVolume > 4) then {
-    private _MAPAdjustment = 0;
-    private _MAP = GET_MAP_PATIENT(_patient);
-
-    if (_MAP > 94) then {
-        _MAPAdjustment = linearConversion [94, 120, _MAP, 0, -70, true];
-    } else {
-        if (_MAP < 88) then {
-            _MAPAdjustment = linearConversion [88, 60, _MAP, 0, 40, true];
-        };
-    };
-
-    _targetVasoconstriction = (_targetVasoconstriction + _MAPAdjustment) min 50;
-
-    if (IS_BLEEDING(_patient) && _targetVasoconstriction < 0) then {
-        _targetVasoconstriction = _targetVasoconstriction * 0.75;
-    };
-};
-
-private _vasoconstrictionChange = (_targetVasoconstriction - _vasoconstriction) / 4;
-
-if (_targetVasoconstriction > _vasoconstriction) then {
-    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * (_deltaT min 1.2)) min _targetVasoconstriction;
-} else {
-    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * (_deltaT min 1.2)) max _targetVasoconstriction;
-};
-
-_patient setVariable [QEGVAR(circulation,Vasoconstriction_State), _vasoconstriction, _syncValues];
-
-_peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _vasoconstriction;
-
-[_patient, _peripheralResistanceAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePeripheralResistance);
+[_patient, _heartRate, _bloodVolume, _peripheralVasoconstrictionAdjustment, _deltaT, _syncValues] call EFUNC(circulation,updateVasoconstriction);
 
 private _bloodPressure = [_patient] call ACEFUNC(medical_status,getBloodPressure);
 _patient setVariable [VAR_BLOOD_PRESS, _bloodPressure, _syncValues];
-
-_bloodPressure params ["_BPDiastolic", "_BPSystolic"];
 
 private _respirationRate = GET_RESPIRATION_RATE(_patient);
 
@@ -243,10 +202,10 @@ switch (true) do {
         };
         [QGVAR(handleFatalVitals), _patient] call CBA_fnc_localEvent;
     };
-    case (GET_MAP(_BPSystolic,_BPDiastolic) < 55): {
+    case (GET_MAP_PATIENT(_patient) < 55): {
         [QGVAR(handleFatalVitals), _patient] call CBA_fnc_localEvent;
     };
-    case (GET_MAP(_BPSystolic,_BPDiastolic) > 200): {
+    case (GET_MAP_PATIENT(_patient) > 200): {
         [QGVAR(handleFatalVitals), _patient] call CBA_fnc_localEvent;
     };
     case (IS_UNCONSCIOUS(_patient)): {}; // Already unconscious

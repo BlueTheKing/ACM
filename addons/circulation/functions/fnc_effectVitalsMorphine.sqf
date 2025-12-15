@@ -8,7 +8,7 @@
  * 1: Minimum Concentration <NUMBER>
  *
  * Return Value:
- * [<Pain Suppress>,<HR Adjust>,<Peripheral Resistance>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
+ * [<Pain Suppress>,<HR Adjust>,<Peripheral Vasoconstriction Adjustment>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
  *
  * Example:
  * [player, 0.5] call ACM_circulation_fnc_effectVitalsMorphine;
@@ -39,32 +39,32 @@ private _effectIM_painSuppression = [
 
 private _effectIV_HR = [
     (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -5, true]),
-    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -5, -12])
+    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -5, -10])
 ] select (_concentrationIV > _desiredDoseLow);
 
 private _effectIM_HR = [
     (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIM, 0, -3, true]),
-    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -3, -7])
+    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -3, -6])
 ] select (_concentrationIM > _desiredDoseLow);
 
-private _effectIV_peripheralResistance = [
-    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -4, true]),
-    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -4, -10])
+private _effectIV_peripheralVasoconstriction = [
+    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -8, true]),
+    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -8, -20])
 ] select (_concentrationIV > _desiredDoseLow);
 
-private _effectIM_peripheralResistance = [
-    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIM, 0, -2, true]),
-    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -2, -8])
+private _effectIM_peripheralVasoconstriction = [
+    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIM, 0, -5, true]),
+    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -5, -14])
 ] select (_concentrationIM > _desiredDoseLow);
 
 private _effectIV_COSensitivity = [
     (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -0.04, true]),
-    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -0.04, -0.06])
+    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -0.04, -0.08])
 ] select (_concentrationIV > _desiredDoseLow);
 
 private _effectIM_COSensitivity = [
     (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIM, 0, -0.06, true]),
-    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -0.06, -0.07])
+    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -0.06, -0.08])
 ] select (_concentrationIM > _desiredDoseLow);
 
 private _antagonistDose = GET_OPIOID_ANTAGONIST_DOSE(_patient);
@@ -73,7 +73,7 @@ private _blockEffect = (((_concentrationTotal - ([(linearConversion [0, 4, _anta
 [
     (((_effectIV_painSuppression max _effectIM_painSuppression) max ((_effectIV_painSuppression min 0.6) + (_effectIM_painSuppression min 0.4))) min 1) * _blockEffect,
     ([(_effectIV_HR + _effectIM_HR),(_effectIV_HR min _effectIM_HR)] select (_concentrationTotal > 5)) * _blockEffect,
-    ([(_effectIV_peripheralResistance + _effectIM_peripheralResistance),(_effectIV_peripheralResistance min _effectIM_peripheralResistance)] select (_concentrationTotal > 5)) * _blockEffect,
+    ([(_effectIV_peripheralVasoconstriction + _effectIM_peripheralVasoconstriction),(_effectIV_peripheralVasoconstriction min _effectIM_peripheralVasoconstriction)] select (_concentrationTotal > 5)) * _blockEffect,
     0,
     ([(_effectIV_COSensitivity + _effectIM_COSensitivity),(_effectIV_COSensitivity min _effectIM_COSensitivity)] select (_concentrationTotal > 5)) * _blockEffect,
     0

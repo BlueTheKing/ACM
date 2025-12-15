@@ -8,7 +8,7 @@
  * 1: Minimum Concentration <NUMBER>
  *
  * Return Value:
- * [<Pain Suppress>,<HR Adjust>,<Peripheral Resistance>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
+ * [<Pain Suppress>,<HR Adjust>,<Peripheral Vasoconstriction Adjustment>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
  *
  * Example:
  * [player, 0.5] call ACM_circulation_fnc_effectVitalsKetamine;
@@ -56,16 +56,6 @@ private _effectIM_HR = [
     (linearConversion [_analgesiaDoseLow_IM, _analgesiaDoseHigh_IM, _concentrationIM, 2, 6, true])
 ] select (_concentrationIM > _analgesiaDoseLow_IM);
 
-private _effectIV_peripheralResistance = [
-    (linearConversion [_minimumConcentration, _analgesiaDoseLow_IV, _concentrationIV, 0, 2, true]),
-    (linearConversion [_analgesiaDoseLow_IV, _analgesiaDoseHigh_IV, _concentrationIV, 2, 6])
-] select (_concentrationIV > _analgesiaDoseLow_IV);
-
-private _effectIM_peripheralResistance = [
-    (linearConversion [_minimumConcentration, _analgesiaDoseLow_IM, _concentrationIM, 0, 1, true]),
-    (linearConversion [_analgesiaDoseLow_IM, _analgesiaDoseHigh_IM, _concentrationIM, 1, 2])
-] select (_concentrationIM > _analgesiaDoseLow_IM);
-
 private _effectIV_RR = [
     (linearConversion [_sedationDoseHigh_IV, (_sedationDoseHigh_IV * 1.5), _concentrationIV, 0, -2, true]),
     (linearConversion [(_sedationDoseHigh_IV * 1.5), (_sedationDoseHigh_IV * 3), _concentrationIV, -2, -10])
@@ -82,7 +72,7 @@ private _effectIM_BreathingEffectiveness = (linearConversion [(_sedationDoseHigh
 [
     ((_effectIV_painSuppression max _effectIM_painSuppression) max ((_effectIV_painSuppression min 0.6) + (_effectIM_painSuppression min 0.4))) min 1,
     ([(_effectIV_HR + _effectIM_HR),(_effectIV_HR max _effectIM_HR)] select (_concentrationTotal > 20)) min 20,
-    ([(_effectIV_peripheralResistance + _effectIM_peripheralResistance),(_effectIV_peripheralResistance max _effectIM_peripheralResistance)] select (_concentrationTotal > 20)) min 25,
+    0,
     ([(_effectIV_RR + _effectIM_RR),(_effectIV_RR min _effectIM_RR)] select (_concentrationTotal > _sedationDoseHigh_IV)),
     0,
     ([(_effectIV_BreathingEffectiveness + _effectIM_BreathingEffectiveness),(_effectIV_BreathingEffectiveness min _effectIM_BreathingEffectiveness)] select (_concentrationTotal > (_sedationDoseHigh_IV * 1.5)))

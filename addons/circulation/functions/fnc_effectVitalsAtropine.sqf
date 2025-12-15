@@ -8,7 +8,7 @@
  * 1: Minimum Concentration <NUMBER>
  *
  * Return Value:
- * [<Pain Suppress>,<HR Adjust>,<Peripheral Resistance>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
+ * [<Pain Suppress>,<HR Adjust>,<Peripheral Vasoconstriction Adjustment>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
  *
  * Example:
  * [player, 0.5] call ACM_circulation_fnc_effectVitalsAtropine;
@@ -24,12 +24,18 @@ private _concentrationTotal = _concentrationIV + _concentrationIM;
 
 private _effectIV_HR = [
     (linearConversion [_minimumConcentration, 0.5, _concentrationIV, 0, -10, true]),
-    (linearConversion [0.5, 3, _concentrationIV, -10, 60])
+    ([
+        (linearConversion [0.5, 1, _concentrationIV, -10, 30, true]),
+        (linearConversion [1, 2, _concentrationIV, 30, 50])
+    ] select (_concentrationIV > 1))
 ] select (_concentrationIV > 0.5);
 
 private _effectIM_HR = [
     (linearConversion [_minimumConcentration, 0.3, _concentrationIM, 0, -5, true]),
-    (linearConversion [0.9, 3, _concentrationIM, -5, 30])
+    ([
+        (linearConversion [0.5, 1, _concentrationIM, -5, 10, true]),
+        (linearConversion [1, 2, _concentrationIM, 10, 20])
+    ] select (_concentrationIM > 1))
 ] select (_concentrationIM > 0.3);
 
 private _effectIV_RR = [

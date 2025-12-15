@@ -8,7 +8,7 @@
  * 1: Minimum Concentration <NUMBER>
  *
  * Return Value:
- * [<Pain Suppress>,<HR Adjust>,<Peripheral Resistance>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
+ * [<Pain Suppress>,<HR Adjust>,<Peripheral Vasoconstriction Adjustment>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
  *
  * Example:
  * [player, 0.5] call ACM_circulation_fnc_effectVitalsEpinephrine;
@@ -23,8 +23,8 @@ private _concentrationIM = [_patient, "Epinephrine", [ACM_ROUTE_IM]] call FUNC(g
 private _concentrationTotal = _concentrationIV + _concentrationIM;
 
 private _effectIV_HR = [
-    (linearConversion [_minimumConcentration, 1.1, _concentrationIV, 1, 21, true]),
-    (linearConversion [1.1, 3, _concentrationIV, 21, 45])
+    (linearConversion [_minimumConcentration, 1.1, _concentrationIV, 1, 25, true]),
+    (linearConversion [1.1, 3, _concentrationIV, 25, 50])
 ] select (_concentrationIV > 1.1);
 
 private _effectIM_HR = [
@@ -45,11 +45,19 @@ private _effectIM_RR = [
 private _effectIV_BreathingEffectiveness = linearConversion [_minimumConcentration, 1, _concentrationIV, 0.01, 0.04, true];
 private _effectIM_BreathingEffectiveness = linearConversion [_minimumConcentration, 0.9, _concentrationIM, 0, 0.01, true];
 
+private _effectiveness = 1;
+
+private _timeSinceROSC = (CBA_missionTime - (_patient getVariable [QEGVAR(ROSC_Time), -120]));
+
+if (_timeSinceROSC < 240) then {
+    _effectiveness = linearConversion [0, 240, _timeSinceROSC0, 0, 1, true];
+};
+
 [
     0,
-    [(_effectIV_HR + _effectIM_HR),(_effectIV_HR max _effectIM_HR)] select (_concentrationTotal > 2),
+    (([(_effectIV_HR + _effectIM_HR),(_effectIV_HR max _effectIM_HR)] select (_concentrationTotal > 2)) * _effectiveness),
     0,
-    [(_effectIV_RR + _effectIM_RR),(_effectIV_RR max _effectIM_RR)] select (_concentrationTotal > 2),
+    (([(_effectIV_RR + _effectIM_RR),(_effectIV_RR max _effectIM_RR)] select (_concentrationTotal > 2)) * _effectiveness),
     0,
-    [(_effectIV_BreathingEffectiveness + _effectIM_BreathingEffectiveness),(_effectIV_BreathingEffectiveness max _effectIM_BreathingEffectiveness)] select (_concentrationTotal > 2)
+    (([(_effectIV_BreathingEffectiveness + _effectIM_BreathingEffectiveness),(_effectIV_BreathingEffectiveness max _effectIM_BreathingEffectiveness)] select (_concentrationTotal > 2)) * _effectiveness)
 ];

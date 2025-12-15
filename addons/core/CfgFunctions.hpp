@@ -41,6 +41,9 @@ class CfgFunctions {
     class overwrite_medical_status {
         tag = "ace_medical_status";
         class ace_medical_status {
+            class getCardiacOutput { // Circulation
+                file = QPATHTOF(overrides\fnc_getCardiacOutput.sqf); //ace/addons/medical_status/functions/fnc_getCardiacOutput.sqf
+            };
             class getBloodPressure { // Circulation
                 file = QPATHTOF(overrides\fnc_getBloodPressure.sqf); //ace/addons/medical_status/functions/fnc_getBloodPressure.sqf
             };

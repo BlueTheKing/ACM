@@ -19,6 +19,7 @@ params ["_patient"];
 
 private _fnc_generateHeartRate = { // ace_medical_vitals_fnc_updateHeartRate
     params ["_unit"];
+
     private _lastTimeUpdated = _unit getVariable [QACEGVAR(medical_vitals,lastTimeUpdated), 0];
     private _deltaT = (CBA_missionTime - _lastTimeUpdated) min 10;
     if (_deltaT < 1) exitWith {_unit getVariable [QGVAR(CardiacArrest_EKG_HR), (ACM_TARGETVITALS_HR(_unit))]};
@@ -41,10 +42,7 @@ private _fnc_generateHeartRate = { // ace_medical_vitals_fnc_updateHeartRate
         _targetHR = linearConversion [BLOOD_VOLUME_CLASS_3_HEMORRHAGE, BLOOD_VOLUME_CLASS_4_HEMORRHAGE, _bloodVolume, (_desiredHR + 35), (_desiredHR + 120)];
     };
     if (_painLevel > 0.2) then {
-        _targetHR = _targetHR max (_desiredHR + 40 * _painLevel);
-    };
-    if (IS_BLEEDING(_unit)) then {
-        _targetHR = _targetHR - ((10 * GET_WOUND_BLEEDING(_unit)) * (_painLevel + 0.1));
+        _targetHR = _targetHR max (_desiredHR + 50 * _painLevel);
     };
     if (_bloodVolume > 3.9) then {
         _targetHR = _targetHR min ACM_TARGETVITALS_MAXHR(_unit);

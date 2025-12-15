@@ -8,7 +8,7 @@
  * 1: Minimum Concentration <NUMBER>
  *
  * Return Value:
- * [<Pain Suppress>,<HR Adjust>,<Peripheral Resistance>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
+ * [<Pain Suppress>,<HR Adjust>,<Peripheral Vasoconstriction Adjustment>,<RR Adjust>,<CO2 Sensitivity>,<Breathing Effectiveness>] <ARRAY<NUMBER>>
  *
  * Example:
  * [player, 0.5] call ACM_circulation_fnc_effectVitalsFentanyl;
@@ -48,12 +48,12 @@ private _effectIM_HR = [
     (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -0.5, -3])
 ] select (_concentrationIM > _desiredDoseLow);
 
-private _effectIV_peripheralResistance = [
+private _effectIV_peripheralVasoconstriction = [
     (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -4, true]),
     (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -4, -8])
 ] select (_concentrationIV > _desiredDoseLow);
 
-private _effectIM_peripheralResistance = [
+private _effectIM_peripheralVasoconstriction = [
     (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIM, 0, -1, true]),
     (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -1, -4])
 ] select (_concentrationIM > _desiredDoseLow);
@@ -81,7 +81,7 @@ private _effectBUCC_HR = [
     (linearConversion [_desiredDoseLow_BUCC, _desiredDoseHigh_BUCC, _concentrationBUCC, -0.5, -3])
 ] select (_concentrationBUCC > _desiredDoseLow_BUCC);
 
-private _effectBUCC_peripheralResistance = [
+private _effectBUCC_peripheralVasoconstriction = [
     (linearConversion [_minimumConcentration, _desiredDoseLow_BUCC, _concentrationBUCC, 0, -4, true]),
     (linearConversion [_desiredDoseLow_BUCC, _desiredDoseHigh_BUCC, _concentrationBUCC, -1, -4])
 ] select (_concentrationBUCC > _desiredDoseLow_BUCC);
@@ -97,7 +97,7 @@ private _blockEffect = (((_concentrationTotal - ([(linearConversion [0, 4, _anta
 [
     (((_effectIV_painSuppression max _effectIM_painSuppression max _effectBUCC_painSuppression) max ((_effectIV_painSuppression min 0.6) + (_effectIM_painSuppression min 0.4) + (_effectBUCC_painSuppression min 0.5))) min 1) * _blockEffect,
     ([(_effectIV_HR + _effectIM_HR + _effectBUCC_HR),(_effectIV_HR min _effectIM_HR min _effectBUCC_HR)] select (_concentrationTotal > 130)) * _blockEffect,
-    ([(_effectIV_peripheralResistance + _effectIM_peripheralResistance + _effectBUCC_peripheralResistance),(_effectIV_peripheralResistance min _effectIM_peripheralResistance min _effectBUCC_peripheralResistance)] select (_concentrationTotal > 130)) * _blockEffect,
+    ([(_effectIV_peripheralVasoconstriction + _effectIM_peripheralVasoconstriction + _effectBUCC_peripheralVasoconstriction),(_effectIV_peripheralVasoconstriction min _effectIM_peripheralVasoconstriction min _effectBUCC_peripheralVasoconstriction)] select (_concentrationTotal > 130)) * _blockEffect,
     0,
     ([(_effectIV_COSensitivity + _effectIM_COSensitivity + _effectBUCC_COSensitivity),(_effectIV_COSensitivity min _effectIM_COSensitivity min _effectBUCC_COSensitivity)] select (_concentrationTotal > 130)) * _blockEffect,
     0
