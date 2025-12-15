@@ -4,9 +4,11 @@
         <Container name="// Full Heal Facility //">
             <Key ID="STR_ACM_Mission_FullHealFacility_Action">
                 <English>Full Heal</English>
+                <Spanish>Curar al completo</Spanish>
             </Key>
             <Key ID="STR_ACM_Mission_FullHealFacility_Module">
                 <English>Full Heal Facility</English>
+                <Spanish>Edificio de cura completa</Spanish>
             </Key>
         </Container>
     </Package>
