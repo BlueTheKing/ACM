@@ -23,18 +23,18 @@ private _concentrationIM = [_patient, "Epinephrine", [ACM_ROUTE_IM]] call FUNC(g
 private _concentrationTotal = _concentrationIV + _concentrationIM;
 
 private _effectIV_HR = [
-    (linearConversion [_minimumConcentration, 1.1, _concentrationIV, 1, 25, true]),
-    (linearConversion [1.1, 3, _concentrationIV, 25, 50])
+    (linearConversion [_minimumConcentration, 1, _concentrationIV, 1, 50, true]),
+    (linearConversion [1, 2, _concentrationIV, 50, 120])
 ] select (_concentrationIV > 1.1);
 
 private _effectIM_HR = [
-    (linearConversion [_minimumConcentration, 0.9, _concentrationIM, 1, 15, true]),
-    (linearConversion [0.9, 2, _concentrationIM, 15, 30])
+    (linearConversion [_minimumConcentration, 0.9, _concentrationIM, 1, 25, true]),
+    (linearConversion [0.9, 2, _concentrationIM, 25, 60])
 ] select (_concentrationIM > 0.9);
 
 private _effectIV_RR = [
-    (linearConversion [_minimumConcentration, 1.1, _concentrationIV, 2, 9, true]),
-    (linearConversion [1.1, 3, _concentrationIV, 9, 18])
+    (linearConversion [_minimumConcentration, 1, _concentrationIV, 2, 10, true]),
+    (linearConversion [1, 2, _concentrationIV, 10, 24])
 ] select (_concentrationIV > 1.1);
 
 private _effectIM_RR = [
@@ -47,10 +47,10 @@ private _effectIM_BreathingEffectiveness = linearConversion [_minimumConcentrati
 
 private _effectiveness = 1;
 
-private _timeSinceROSC = (CBA_missionTime - (_patient getVariable [QEGVAR(ROSC_Time), -120]));
+private _timeSinceROSC = (CBA_missionTime - (_patient getVariable [QGVAR(ROSC_Time), -240]));
 
 if (_timeSinceROSC < 240) then {
-    _effectiveness = linearConversion [0, 240, _timeSinceROSC0, 0, 1, true];
+    _effectiveness = linearConversion [0, 240, _timeSinceROSC, 0.2, 1, true];
 };
 
 [
