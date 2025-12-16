@@ -518,6 +518,9 @@
             <Korean>약물 투여 시 주사기를 소비하지 않고 재사용할지 설정합니다.</Korean>
             <Spanish>Define si las jeringas son un objeto reutilizable en vez de ser consumidas al aplicar la dosis de medicina</Spanish>
         </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Option">
+            <English>IV Only</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
             <Portuguese>Permitir seringa</Portuguese>
