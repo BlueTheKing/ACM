@@ -21,4 +21,4 @@ params ["_patient", "_minimumCardiacOutput"];
 private _cardiacOutput = [_patient] call ACEFUNC(medical_status,getCardiacOutput);
 private _resistance = linearConversion [-50, 50, GET_VASOCONSTRICTION(_patient), 1.25, 0.85, true];
 
-(_cardiacOutput max _cardiacOutputMinimum) * _resistance * ACEGVAR(medical,bleedingCoefficient)
+(_cardiacOutput max _minimumCardiacOutput) * _resistance * ACEGVAR(medical,bleedingCoefficient)

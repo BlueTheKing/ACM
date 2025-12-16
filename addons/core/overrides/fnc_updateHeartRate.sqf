@@ -40,23 +40,24 @@ if (IN_CRDC_ARRST(_patient) || [_patient] call FUNC(cprActive)) then {
     if (_bloodVolume > BLOOD_VOLUME_CLASS_4_HEMORRHAGE) then {
         private _timeSinceROSC = (CBA_missionTime - (_patient getVariable [QEGVAR(circulation,ROSC_Time), -120]));
 
-        private _meanBP = GET_MAP_PATIENT(_patient);
+        private _MAP = GET_MAP_PATIENT(_patient);
         private _painLevel = GET_PAIN_PERCEIVED(_patient);
 
         _targetHR = _desiredHR;
+
         if (_bloodVolume <= BLOOD_VOLUME_CLASS_2_HEMORRHAGE) then {
-            private _targetBP = linearConversion [BLOOD_VOLUME_CLASS_2_HEMORRHAGE, BLOOD_VOLUME_CLASS_3_HEMORRHAGE, _bloodVolume, 90, 80, true];
+            _targetHR = _targetHR * (linearConversion [90, 60, (100 min _MAP), 1, 2]);
 
-            if (_bloodVolume <= BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
-                _targetBP = linearConversion [BLOOD_VOLUME_CLASS_3_HEMORRHAGE, BLOOD_VOLUME_CLASS_4_HEMORRHAGE, _bloodVolume, 80, 40, true];
-            };
-
-            _targetHR = _desiredHR max (_heartRate * (_targetBP / (45 max _meanBP)));
+            if (_bloodVolume < 4) then {
+                _targetHR = linearConversion [4, BLOOD_VOLUME_CLASS_4_HEMORRHAGE, _bloodVolume, (_desiredHR * 1.7), (_desiredHR * 2.4)];
+            }; 
         };
 
         if (_painLevel > 0.2) then {
             _targetHR = _targetHR max (_desiredHR + 50 * _painLevel);
         };
+
+        _targetHR = _targetHR min ACM_TARGETVITALS_MAXHR(_patient);
 
         // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
         private _oxygenDemand = _patient getVariable [VAR_OXYGEN_DEMAND, 0];
@@ -87,21 +88,20 @@ if (IN_CRDC_ARRST(_patient) || [_patient] call FUNC(cprActive)) then {
     } else {
         _heartRate = (_heartRate + _deltaT * _hrChange) min _targetHR;
     };
+};
 
-    private _heartFatigue = GET_HEART_FATIGUE(_patient);
+private _heartFatigue = GET_HEART_FATIGUE(_patient);
 
-    if (_heartFatigue > 0 || _heartRate > 130 || _oxygenSaturation < 95) then {
-        private _effectiveBloodVolume = GET_EFF_BLOOD_VOLUME(_patient);
-        private _heartFatigueChange = (-((linearConversion [100, ACM_TARGETVITALS_HR(_patient), _heartRate, 0, 0.15, true]) + (linearConversion [95, 99, _oxygenSaturation, 0, 0.15, true]))) * (linearConversion [3, 6, _effectiveBloodVolume, 0, 1.5, true]);
+if (_heartFatigue > 0 || _heartRate > 135 || _oxygenSaturation < 90) then {
+    private _effectiveBloodVolume = GET_EFF_BLOOD_VOLUME(_patient);
+    private _heartFatigueChange = (-((linearConversion [130, ACM_TARGETVITALS_HR(_patient), _heartRate, 0, 0.2, true]) + (linearConversion [90, 99, _oxygenSaturation, 0, 0.2, true]))) * (linearConversion [3, 6, _effectiveBloodVolume, 0, 2, true]);
 
-        if (_heartRate > 130 || _oxygenSaturation < 95) then {
-            _heartFatigueChange = ((linearConversion [130, ACM_TARGETVITALS_MAXHR(_patient), _heartRate, 0, 0.05, true]) + (linearConversion [95, 75, _oxygenSaturation, 0, 0.05, true])) * (linearConversion [5.5, 3, _effectiveBloodVolume, 1, 1.5, true]);
-        };
-
-        _heartFatigue = 0 max (_vasoconstriction + _heartFatigueChange * _deltaT) min 100;
-
-        _patient setVariable [QEGVAR(circulation,HeartFatigue_State), _heartFatigue, _syncValue];
+    if (_heartRate > 135 || (_oxygenSaturation < 90 && _heartRate > 0)) then {
+        _heartFatigueChange = _heartFatigueChange + ((linearConversion [135, ACM_TARGETVITALS_MAXHR(_patient), _heartRate, 0, 0.15, true]) + (linearConversion [90, 75, _oxygenSaturation, 0, 0.15, true])) * (linearConversion [5.5, 3, _effectiveBloodVolume, 1, 2, true]);
     };
+
+    _heartFatigue = 0 max (_heartFatigue + _heartFatigueChange * _deltaT) min 100;
+    _patient setVariable [QEGVAR(circulation,HeartFatigue_State), _heartFatigue, _syncValue];
 };
 
 _patient setVariable [VAR_HEART_RATE, _heartRate, _syncValue];

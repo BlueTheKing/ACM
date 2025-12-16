@@ -26,11 +26,10 @@
 
 params ["_patient"];
 
-private _bloodVolumeRatio = GET_BLOOD_VOLUME(_patient) / DEFAULT_BLOOD_VOLUME;
 private _heartRate = GET_HEART_RATE(_patient);
 
 // Blood volume ratio dictates how much is entering the ventricle (this is an approximation)
-private _entering = linearConversion [0.5, 1, _bloodVolumeRatio, 0, 1, true];
+private _entering = 1 min (linearConversion [6, 3, GET_BLOOD_VOLUME(_patient), 1, 0.15]) max 0;
 
 private _strokeVolume = VENTRICLE_STROKE_VOL * (linearConversion [55, 100, GET_HEART_FATIGUE(_patient), 1, 0.5, true]);
 
