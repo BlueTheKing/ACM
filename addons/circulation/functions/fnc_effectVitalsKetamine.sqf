@@ -24,11 +24,11 @@ private _concentrationTotal = _concentrationIV + _concentrationIM;
 
 private _weight = GET_BODYWEIGHT(_patient);
 
-private _analgesiaDoseLow_IV = 0.1 * _weight;
-private _analgesiaDoseHigh_IV = 0.2 * _weight;
+private _analgesiaDoseLow_IV = 0.2 * _weight;
+private _analgesiaDoseHigh_IV = 0.3 * _weight;
 
-private _analgesiaDoseLow_IM = 0.4 * _weight;
-private _analgesiaDoseHigh_IM = 0.8 * _weight;
+private _analgesiaDoseLow_IM = 0.65 * _weight;
+private _analgesiaDoseHigh_IM = _weight;
 
 private _sedationDoseLow_IV = _weight;
 private _sedationDoseHigh_IV = 2 * _weight;

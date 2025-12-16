@@ -49,16 +49,16 @@ private _fnc_handleDissociateEffect = {
         private _weight = GET_BODYWEIGHT(_patient);
 
         private _ketamineEffect_IV = [
-            (linearConversion [(0.15 * _weight), (0.3 * _weight), _ketamineDose_IV, 0, 0.25, true]),
-            (linearConversion [(0.3 * _weight), (1 * _weight), _ketamineDose_IV, 0.25, 1])
+            (linearConversion [(0.25 * _weight), (0.5 * _weight), _ketamineDose_IV, 0, 0.25, true]),
+            (linearConversion [(0.5 * _weight), _weight, _ketamineDose_IV, 0.25, 1])
         ] select (_ketamineDose_IV > (0.3 * _weight));
 
         private _ketamineEffect_IM = [
-            (linearConversion [(0.6 * _weight), (0.8 * _weight), _ketamineDose_IV, 0, 0.15, true]),
-            (linearConversion [(0.8 * _weight), (2 * _weight), _ketamineDose_IV, 0.15, 0.6])
+            (linearConversion [(0.65 * _weight), _weight, _ketamineDose_IV, 0, 0.15, true]),
+            (linearConversion [_weight, (2 * _weight), _ketamineDose_IV, 0.15, 0.6])
         ] select (_ketamineDose_IV > (0.8 * _weight));
 
-        private _ketamineCauseDissociation = _ketamineEffect_IV > (0.25 * _weight) || _ketamineEffect_IM > (0.7 * _weight);
+        private _ketamineCauseDissociation = _ketamineEffect_IV > (0.35 * _weight) || _ketamineEffect_IM > (0.9 * _weight);
 
         private _ketamineEffect = _ketamineEffect_IV + _ketamineEffect_IM;
 
