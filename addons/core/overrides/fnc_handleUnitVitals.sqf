@@ -123,10 +123,6 @@ if (_reactionSeverity > 0) then {
 // Update SPO2 intake and usage since last update
 private _oxygenSaturation = [_patient, _respirationRateAdjustment, _coSensitivityAdjustment, _breathingEffectivenessAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateOxygen);
 
-if (_oxygenSaturation < ACM_OXYGEN_HYPOXIA) then { // Severe hypoxia causes heart to give out
-    _hrTargetAdjustment = _hrTargetAdjustment - 10 * abs (ACM_OXYGEN_HYPOXIA - _oxygenSaturation);
-};
-
 if ((_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) || (_patient getVariable [QEGVAR(breathing,Hardcore_Pneumothorax), false])) then {
     _hrTargetAdjustment = _hrTargetAdjustment - ([25,35] select (_patient getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]));
 } else {
