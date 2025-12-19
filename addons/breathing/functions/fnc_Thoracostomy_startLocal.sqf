@@ -37,8 +37,6 @@ switch (true) do {
         _hintLogArray append [LSTRING(ThoracostomySweep_SevereCollapse_Short), LSTRING(ThoracostomySweep_SevereBlood_Short)];
         _hintLogFormat = "%1: %2, %3";
     };
-    //if tension pneumo and hemo => Lung severly collapsed, Bleeding in pleural space
-    //if tension pneumo and no hemo => Lung severly collapsed
     case (_patient getVariable [QGVAR(TensionPneumothorax_State), false]): {
         _hintArray set [0, "%1<br/><br/>%2"];
         _hintArray pushBack LSTRING(ThoracostomySweep_SevereCollapse);
