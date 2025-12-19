@@ -38,23 +38,21 @@ if (IN_CRDC_ARRST(_patient) || [_patient] call FUNC(cprActive)) then {
     private _oxygenSaturation = GET_OXYGEN(_patient);
 
     if (_bloodVolume > BLOOD_VOLUME_CLASS_4_HEMORRHAGE) then {
-        private _timeSinceROSC = (CBA_missionTime - (_patient getVariable [QEGVAR(circulation,ROSC_Time), -120]));
-
         private _MAP = GET_MAP_PATIENT(_patient);
         private _painLevel = GET_PAIN_PERCEIVED(_patient);
 
         _targetHR = _desiredHR;
 
         if (_bloodVolume <= BLOOD_VOLUME_CLASS_2_HEMORRHAGE) then {
-            _targetHR = _targetHR * (linearConversion [90, 60, (100 min _MAP), 1, 2]);
-
-            if (_bloodVolume < 4) then {
-                _targetHR = linearConversion [4, BLOOD_VOLUME_CLASS_4_HEMORRHAGE, _bloodVolume, (_desiredHR * 1.7), (_desiredHR * 2.4)];
-            }; 
+            if (_bloodVolume < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
+                _targetHR = linearConversion [BLOOD_VOLUME_CLASS_3_HEMORRHAGE, BLOOD_VOLUME_CLASS_4_HEMORRHAGE, _bloodVolume, (_desiredHR * 1.7), (_desiredHR * 2)];
+            } else {
+                _targetHR = _targetHR * ((linearConversion [90, 80, (100 min _MAP), 1, 1.7]) min 1.8);
+            };
         };
 
         if (_painLevel > 0.2) then {
-            _targetHR = _targetHR max (_desiredHR + 50 * _painLevel);
+            _targetHR = _targetHR max (_desiredHR + 40 * _painLevel);
         };
 
         _targetHR = _targetHR min ACM_TARGETVITALS_MAXHR(_patient);
@@ -62,7 +60,7 @@ if (IN_CRDC_ARRST(_patient) || [_patient] call FUNC(cprActive)) then {
         // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
         private _oxygenDemand = _patient getVariable [VAR_OXYGEN_DEMAND, 0];
         private _missingOxygen = (ACM_TARGETVITALS_OXYGEN(_patient) - _oxygenSaturation);
-        private _targetOxygenHR = _targetHR + ((_missingOxygen * (linearConversion [5, 20, _missingOxygen, 0, 2, true])) max (_oxygenDemand * -2000));
+        private _targetOxygenHR = (100 min _targetHR) + ((_missingOxygen * (linearConversion [5, 20, _missingOxygen, 0, 2, true])) max (_oxygenDemand * -2000));
         _targetOxygenHR = _targetOxygenHR min ACM_TARGETVITALS_MAXHR(_patient);
 
         _targetHR = _targetHR max _targetOxygenHR;
@@ -70,6 +68,8 @@ if (IN_CRDC_ARRST(_patient) || [_patient] call FUNC(cprActive)) then {
         _targetHR = (_targetHR + _hrTargetAdjustment) max 0;
 
         _targetHR = _targetHR * (linearConversion [55, 90, GET_HEART_FATIGUE(_patient), 1, 0.1, true]);
+
+        private _timeSinceROSC = (CBA_missionTime - (_patient getVariable [QEGVAR(circulation,ROSC_Time), -120]));
 
         if (_timeSinceROSC < 120) then {
             _targetHR = _targetHR - ((linearConversion [50, ACM_TARGETVITALS_MAXHR(_patient), _targetHR, 0, 150, true]) * (linearConversion [0, 120, _timeSinceROSC, 1, 0, true]));
@@ -79,7 +79,7 @@ if (IN_CRDC_ARRST(_patient) || [_patient] call FUNC(cprActive)) then {
             };
         };
 
-        _hrChange = round(_targetHR - _heartRate) / 2;
+        _hrChange = round(_targetHR - _heartRate) / 4;
     } else {
         _hrChange = -round(_heartRate / 10);
     };

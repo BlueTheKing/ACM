@@ -34,11 +34,11 @@ if (_heartRate > 30) then {
         private _MAPAdjustment = 0;
         private _MAP = GET_MAP_PATIENT(_patient);
 
-        if (_MAP > 94) then {
-            _MAPAdjustment = linearConversion [94, 120, _MAP, 0, -50, true];
+        if (_MAP > 95) then {
+            _MAPAdjustment = linearConversion [95, 120, _MAP, 0, -50, true];
         } else {
-            if (_MAP < 88) then {
-                _MAPAdjustment = linearConversion [88, 60, _MAP, 0, 50, true];
+            if (_MAP < 95) then {
+                _MAPAdjustment = linearConversion [95, 85, _MAP, 0, 50, true];
             };
         };
 

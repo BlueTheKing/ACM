@@ -27,8 +27,8 @@ private _cardiacOutput = [_patient] call ACEFUNC(medical_status,getCardiacOutput
 private _vasoconstriction = GET_VASOCONSTRICTION(_patient);
 
 private _resistance = ([
-    ([(linearConversion [0, 30, _vasoconstriction, 1, 1.5, true]), (linearConversion [30, 50, _vasoconstriction, 1.5, 2, true])] select (_vasoconstriction > 30)),
-    ([(linearConversion [0, -30, _vasoconstriction, 1, 0.5, true]), (linearConversion [-30, -50, _vasoconstriction, 0.5, 0.1, true])] select (_vasoconstriction < -30))
+    ([(linearConversion [0, -30, _vasoconstriction, 1, 0.6, true]), (linearConversion [-30, -50, _vasoconstriction, 0.6, 0.4, true])] select (_vasoconstriction < -30)),
+    ([(linearConversion [0, 30, _vasoconstriction, 1, 1.4, true]), (linearConversion [30, 50, _vasoconstriction, 1.4, 1.6, true])] select (_vasoconstriction > 30))
 ] select (_vasoconstriction > 0));
 
 private _bloodPressure = _cardiacOutput * _resistance * 100;

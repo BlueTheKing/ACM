@@ -18,40 +18,40 @@
 params ["_patient"];
 
 private _fnc_generateHeartRate = { // ace_medical_vitals_fnc_updateHeartRate
-    params ["_unit"];
+    params ["_patient"];
 
-    private _lastTimeUpdated = _unit getVariable [QACEGVAR(medical_vitals,lastTimeUpdated), 0];
+    private _lastTimeUpdated = _patient getVariable [QACEGVAR(medical_vitals,lastTimeUpdated), 0];
     private _deltaT = (CBA_missionTime - _lastTimeUpdated) min 10;
-    if (_deltaT < 1) exitWith {_unit getVariable [QGVAR(CardiacArrest_EKG_HR), (ACM_TARGETVITALS_HR(_unit))]};
+    if (_deltaT < 1) exitWith {_patient getVariable [QGVAR(CardiacArrest_EKG_HR), (ACM_TARGETVITALS_HR(_patient))]};
 
-    private _desiredHR = ACM_TARGETVITALS_HR(_unit);
+    private _desiredHR = ACM_TARGETVITALS_HR(_patient);
 
-    private _heartRate = _unit getVariable [QGVAR(CardiacArrest_EKG_HR), _desiredHR];
+    private _heartRate = _patient getVariable [QGVAR(CardiacArrest_EKG_HR), _desiredHR];
 
     private _hrChange = 0;
-    private _bloodVolume = GET_BLOOD_VOLUME(_unit);
+    private _bloodVolume = GET_BLOOD_VOLUME(_patient);
     private _targetHR = linearConversion [DEFAULT_BLOOD_VOLUME, BLOOD_VOLUME_CLASS_2_HEMORRHAGE, _bloodVolume, _desiredHR, (_desiredHR + 35)];
     
-    private _oxygenSaturation = GET_OXYGEN(_unit);
-    private _painLevel = GET_PAIN_PERCEIVED(_unit);
+    private _oxygenSaturation = GET_OXYGEN(_patient);
+    private _painLevel = GET_PAIN_PERCEIVED(_patient);
 
     if (_bloodVolume <= BLOOD_VOLUME_CLASS_2_HEMORRHAGE && _bloodVolume > BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
-        _targetHR = linearConversion [BLOOD_VOLUME_CLASS_2_HEMORRHAGE, BLOOD_VOLUME_CLASS_3_HEMORRHAGE, _bloodVolume, _desiredHR, (_desiredHR + 35)];
+        _targetHR = linearConversion [BLOOD_VOLUME_CLASS_2_HEMORRHAGE, BLOOD_VOLUME_CLASS_3_HEMORRHAGE, _bloodVolume, _desiredHR, (_desiredHR * 1.7)];
     };
     if (_bloodVolume <= BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
-        _targetHR = linearConversion [BLOOD_VOLUME_CLASS_3_HEMORRHAGE, BLOOD_VOLUME_CLASS_4_HEMORRHAGE, _bloodVolume, (_desiredHR + 35), (_desiredHR + 120)];
+        _targetHR = linearConversion [4, BLOOD_VOLUME_CLASS_4_HEMORRHAGE, _bloodVolume, (_desiredHR * 1.7), (_desiredHR * 2.4)];
     };
     if (_painLevel > 0.2) then {
-        _targetHR = _targetHR max (_desiredHR + 50 * _painLevel);
+        _targetHR = _targetHR max (_desiredHR + 40 * _painLevel);
     };
     if (_bloodVolume > 3.9) then {
-        _targetHR = _targetHR min ACM_TARGETVITALS_MAXHR(_unit);
+        _targetHR = _targetHR min ACM_TARGETVITALS_MAXHR(_patient);
     };
     
     // Increase HR to compensate for low blood oxygen/higher oxygen demand (e.g. running, recovering from sprint)
-    private _oxygenDemand = _unit getVariable [VAR_OXYGEN_DEMAND, 0];
-    private _targetOxygenHR = _targetHR + ((ACM_TARGETVITALS_OXYGEN(_unit) - _oxygenSaturation) * 2) + (_oxygenDemand * -1000);
-    _targetOxygenHR = _targetOxygenHR min ACM_TARGETVITALS_MAXHR(_unit);
+    private _oxygenDemand = _patient getVariable [VAR_OXYGEN_DEMAND, 0];
+    private _targetOxygenHR = _targetHR + ((ACM_TARGETVITALS_OXYGEN(_patient) - _oxygenSaturation) * 2) + (_oxygenDemand * -1000);
+    _targetOxygenHR = _targetOxygenHR min ACM_TARGETVITALS_MAXHR(_patient);
 
     _targetHR = _targetHR max _targetOxygenHR;
 
@@ -69,7 +69,7 @@ private _fnc_generateHeartRate = { // ace_medical_vitals_fnc_updateHeartRate
 
     _heartRate = _heartRate max 30;
 
-    _unit setVariable [QGVAR(CardiacArrest_EKG_HR), _heartRate];
+    _patient setVariable [QGVAR(CardiacArrest_EKG_HR), _heartRate];
 
     _heartRate;
 };
