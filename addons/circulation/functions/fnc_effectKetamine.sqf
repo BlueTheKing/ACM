@@ -49,16 +49,16 @@ private _fnc_handleDissociateEffect = {
         private _weight = GET_BODYWEIGHT(_patient);
 
         private _ketamineEffect_IV = [
-            (linearConversion [(0.25 * _weight), (0.5 * _weight), _ketamineDose_IV, 0, 0.25, true]),
-            (linearConversion [(0.5 * _weight), _weight, _ketamineDose_IV, 0.25, 1])
+            (linearConversion [(0.25 * _weight), (0.5 * _weight), _ketamineDose_IV, 0, 0.4, true]),
+            (linearConversion [(0.5 * _weight), _weight, _ketamineDose_IV, 0.4, 1])
         ] select (_ketamineDose_IV > (0.3 * _weight));
 
         private _ketamineEffect_IM = [
-            (linearConversion [(0.65 * _weight), _weight, _ketamineDose_IV, 0, 0.15, true]),
-            (linearConversion [_weight, (2 * _weight), _ketamineDose_IV, 0.15, 0.6])
-        ] select (_ketamineDose_IV > (0.8 * _weight));
+            (linearConversion [(0.65 * _weight), _weight, _ketamineDose_IM, 0, 0.4, true]),
+            (linearConversion [_weight, (2 * _weight), _ketamineDose_IM, 0.4, 0.7])
+        ] select (_ketamineDose_IM > (0.8 * _weight));
 
-        private _ketamineCauseDissociation = _ketamineEffect_IV > (0.35 * _weight) || _ketamineEffect_IM > (0.9 * _weight);
+        private _ketamineCauseDissociation = _ketamineEffect_IV > (0.35 * _weight) || _ketamineDose_IM > (1.05 * _weight);
 
         private _ketamineEffect = _ketamineEffect_IV + _ketamineEffect_IM;
 
@@ -162,7 +162,7 @@ private _fnc_handleDissociateEffect = {
             _effectStrength = 0;
         };
 
-        private _effectStrong = linearConversion [0, 1, _effectStrength, 0, 0.04, true];
+        private _effectStrong = linearConversion [0, 1, _effectStrength, 0, 0.06, true];
 
         EGVAR(core,ppDisocciateEffect_chrom) ppEffectAdjust [_effectStrong, _effectStrong, true];
         EGVAR(core,ppDisocciateEffect_chrom) ppEffectCommit (_delay / 3);
@@ -179,7 +179,7 @@ private _fnc_handleDissociateEffect = {
 
             _effectColor = _effectColor apply {_x / 3};
 
-            private _effectWeak = linearConversion [0, 1, _effectStrength, 0, 0.02, true];
+            private _effectWeak = linearConversion [0, 1, _effectStrength, 0, 0.03, true];
 
             EGVAR(core,ppDisocciateEffect_chrom) ppEffectAdjust [_effectWeak, _effectWeak, true];
             EGVAR(core,ppDisocciateEffect_chrom) ppEffectCommit _delay;

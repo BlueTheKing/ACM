@@ -40,7 +40,8 @@ private _PFH = [{
     private _lidocaineDose_IV = [_patient, "Lidocaine", [ACM_ROUTE_IV]] call FUNC(getMedicationConcentration);
     private _morphineDose = [_patient, "Morphine"] call FUNC(getMedicationConcentration);
     private _fentanylDose = [_patient, "Fentanyl"] call FUNC(getMedicationConcentration);
-    private _ketamineDose = [_patient, "Ketamine"] call FUNC(getMedicationConcentration);
+    private _ketamineDose_IM = [_patient, "Ketamine", [ACM_ROUTE_IM]] call FUNC(getMedicationConcentration);
+    private _ketamineDose_IV = [_patient, "Ketamine", [ACM_ROUTE_IV]] call FUNC(getMedicationConcentration);
     private _TXADose = [_patient, "TXA"] call FUNC(getMedicationConcentration);
     private _paracetamolDose = [_patient, "Paracetamol"] call FUNC(getMedicationConcentration);
 
@@ -53,8 +54,8 @@ private _PFH = [{
 
     private _lidocaineEffect = ((linearConversion [60, 100, _lidocaineDose_IM, 0, 0.5]) max 0) + ((linearConversion [(1.5 * _weight), (3 * _weight), _lidocaineDose_IV, 0, 0.8]) max 0);
     private _morphineEffect = (linearConversion [(0.08 * _weight), (0.1 * _weight), _morphineDose, 0, 0.8]) max 0;
-    private _fentanylEffect = (linearConversion [(0.95 * _weight), (1 * _weight), _fentanylDose, 0, 0.7]) max 0;
-    private _ketamineEffect = (linearConversion [(0.5 * _weight), (0.8 * _weight), _ketamineDose, 0, 0.8]) max 0;
+    private _fentanylEffect = (linearConversion [(0.95 * _weight), _weight, _fentanylDose, 0, 0.8]) max 0;
+    private _ketamineEffect = ((linearConversion [(1.1 * _weight), (1.5 * _weight), _ketamineDose_IM, 0, 0.6]) max 0) + ((linearConversion [(0.5 * _weight), (0.8 * _weight), _ketamineDose_IV, 0, 0.8]) max 0);
     private _TXAEffect = (linearConversion [1000, 2000, _TXADose, 0, 0.7]) max 0;
     private _paracetamolEffect = (linearConversion [2000, 3000, _paracetamolDose, 0, 0.3]) max 0;
 
