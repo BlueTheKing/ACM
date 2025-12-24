@@ -151,4 +151,6 @@ if (systemTime select 0 == 2025 && systemTime select 1 == 4 && systemTime select
 
 GVAR(itemHash) = uiNamespace getVariable QGVAR(itemHash); // Medic AI
 
+GVAR(NextWarningTime) = 0;
+
 ADDON = true;

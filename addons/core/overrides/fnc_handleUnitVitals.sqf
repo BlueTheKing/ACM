@@ -21,7 +21,8 @@ private _lastTimeUpdated = _unit getVariable [QACEGVAR(medical_vitals,lastTimeUp
 private _deltaT = (CBA_missionTime - _lastTimeUpdated) min 10;
 if (_deltaT < 1) exitWith { false }; // state machines could be calling this very rapidly depending on number of local units
 
-if (_deltaT > 7) then {
+if (_deltaT > 7 && (GVAR(NextWarningTime) < CBA_missionTime)) then {
+    GVAR(NextWarningTime) = CBA_missionTime + 600;
     WARNING_1("VITALS TIME BETWEEN SYNC IS LONG (%1s)",_deltaT);
 };
 
@@ -256,7 +257,7 @@ private _activeGracePeriod = IN_CRITICAL_STATE(_unit);
 
 // Statements are ordered by most lethal first.
 switch (true) do {
-    case (_bloodVolume < BLOOD_VOLUME_FATAL): {
+    case (ACEGVAR(medical_statemachine,cardiacArrestBleedoutEnabled) && _bloodVolume < BLOOD_VOLUME_FATAL): {
         TRACE_3("BloodVolume Fatal",_unit,BLOOD_VOLUME_FATAL,_bloodVolume);
         [QACEGVAR(medical,Bleedout), _unit] call CBA_fnc_localEvent;
     };

@@ -18,7 +18,7 @@
 
 params ["_medic", "_patient"];
 
-private _hint = LLSTRING(AttemptWakeUp_Failure);
+private _hintArray = ["%1<br/>%2", LSTRING(SlapPatient_Attempt), LSTRING(AttemptWakeUp_Failure)];
 
 if (ACE_player == _patient) then {
     addCamShake [5, 0.2, 30];
@@ -30,18 +30,18 @@ if (random 1 < 0.2) then {
     [_patient, 0.051, "head", "slap", _medic] call ACEFUNC(medical,addDamageToUnit);
 };
 
+if !(IS_UNCONSCIOUS(_patient)) exitWith {};
+
 if (!([_patient] call ACEFUNC(medical_status,hasStableVitals)) || [_patient] call EFUNC(core,isForcedUnconscious)) exitWith {
-    [QACEGVAR(common,displayTextStructured), [(format [LLSTRING(SlapPatient_Attempt), _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
+    [QACEGVAR(common,displayTextStructured), [_hintArray, 2, _medic, 12], _medic] call CBA_fnc_targetEvent;
 };
 
 private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 0.05, 0.4, true] ;
 
 if (random 1 < _oxygenSaturationChance) then {
-    if (IS_UNCONSCIOUS(_patient)) then {
-        [QEGVAR(core,playWakeUpSound), _patient] call CBA_fnc_localEvent;
-        [QACEGVAR(medical,WakeUp), _patient] call CBA_fnc_localEvent;
-    };
-    _hint = LLSTRING(AttemptWakeUp_Success);
+    [QEGVAR(core,playWakeUpSound), _patient] call CBA_fnc_localEvent;
+    [QACEGVAR(medical,WakeUp), _patient] call CBA_fnc_localEvent;
+    _hintArray set [2, LSTRING(AttemptWakeUp_Success)];
 };
 
-[QACEGVAR(common,displayTextStructured), [(format [LLSTRING(SlapPatient_Complete), _hint]), 2, _medic], _medic] call CBA_fnc_targetEvent;
+[QACEGVAR(common,displayTextStructured), [_hintArray, 2, _medic, 12], _medic] call CBA_fnc_targetEvent;
