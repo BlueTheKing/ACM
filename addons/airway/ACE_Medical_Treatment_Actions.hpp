@@ -13,6 +13,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE(GVAR(enable) && !(_patient call ACEFUNC(common,isAwake)) && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QFUNC(checkAirway);
         ACM_rollToBack = 1;
+        ACM_menuIcon = "CheckAirway";
     };
 
     class HeadTurn: CheckAirway {
@@ -24,6 +25,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE(GVAR(enable) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] == '') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])));
         callbackSuccess = QFUNC(performHeadTurn);
         ACM_cancelRecovery = 1;
+        ACM_menuIcon = "BeginHeadTiltChinLift";
     };
 
     class BeginHeadTiltChinLift: CheckAirway {
@@ -35,6 +37,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE(GVAR(enable) && !(_patient call ACEFUNC(common,isAwake)) && !(_patient getVariable [ARR_2(QQGVAR(HeadTilt_State),false)]) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] != 'SGA'));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(beginHeadTiltChinLift));
         ACM_cancelRecovery = 1;
+        ACM_menuIcon = "BeginHeadTiltChinLift";
     };
 
     class RecoveryPosition: CheckAirway {
@@ -47,6 +50,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE(GVAR(enable) && !([_patient] call EFUNC(core,cprActive)) && !(_patient call ACEFUNC(common,isAwake)) && (_patient getVariable [ARR_2(QQGVAR(AirwayItem_Oral),'')] != 'SGA') && !(alive (_patient getVariable [ARR_2(QQEGVAR(breathing,BVM_Medic),objNull)])) && !(IN_RECOVERYPOSITION(_patient)) && (isNull objectParent _patient));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,true)] call FUNC(setRecoveryPosition));
         ACM_rollToBack = 0;
+        ACM_menuIcon = "RecoveryPosition";
     };
     class CancelRecoveryPosition: RecoveryPosition {
         displayName = CSTRING(CancelRecoveryPosition);
