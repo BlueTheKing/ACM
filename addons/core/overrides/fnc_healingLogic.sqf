@@ -88,7 +88,7 @@ if (_finishTime > 0) exitWith {
                     };
 
                     [_target, _usedItem] call ACEFUNC(medical_treatment,addToTriageCard);
-                    [_target, "activity", LELSTRING(circulation,GUI_BeganTransfusing), [[_healer, false, true] call ACEFUNC(common,getName), ([_classname] call EFUNC(circulation,getFluidBagString)), ([_bodyPart] call FUNC(getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
+                    [_target, "activity", ELSTRING(circulation,GUI_BeganTransfusing), [[_healer, false, true] call ACEFUNC(common,getName), ([_classname] call EFUNC(circulation,getFluidBagString)), ([_bodyPart] call FUNC(getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
                 };
                 case QEGVAR(airway,handleSuctionLocal): {
                     if (_usedItem == "") then {
@@ -211,7 +211,7 @@ private _fnc_findNoTourniquet = {
             _bodyPart = selectRandom _bodyParts;
 
             // If no tourniquet on, use that body part
-            if (_tourniquets select (ALL_BODY_PARTS find _bodyPart) == 0) exitWith {};
+            if (_tourniquets select (GET_BODYPART_INDEX(_bodyPart)) == 0) exitWith {};
 
             _bodyParts deleteAt (_bodyParts find _bodyPart);
         };
@@ -241,7 +241,7 @@ if (true) then {
         private _bodyPartBleeding = [0, 0, 0, 0, 0, 0];
 
         {
-            private _partIndex = ALL_BODY_PARTS find _x;
+            private _partIndex = GET_BODYPART_INDEX(_x);
 
             // Ignore tourniqueted limbs
             if (_tourniquets select _partIndex == 0) then {

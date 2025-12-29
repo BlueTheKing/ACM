@@ -38,7 +38,7 @@ if (GVAR(TransfusionMenu_Move_Active)) then {
         private _IVBags = GVAR(TransfusionMenu_Target) getVariable [QGVAR(IV_Bags), createHashMap];
         private _IVBagsOnBodyPart = _IVBags getOrDefault [_bodypart, []];
 
-        _IVBagsOnBodyPart pushBack [_type, _remainingVolume, ([_patient, GVAR(TransfusionMenu_SelectIV), (ALL_BODY_PARTS find toLowerANSI _bodypart), GVAR(TransfusionMenu_Selected_AccessSite)] call FUNC(getAccessType)), GVAR(TransfusionMenu_Selected_AccessSite), GVAR(TransfusionMenu_SelectIV), _bloodType, _volume];
+        _IVBagsOnBodyPart pushBack [_type, _remainingVolume, ([_patient, GVAR(TransfusionMenu_SelectIV), GET_BODYPART_INDEX(_bodyPart), GVAR(TransfusionMenu_Selected_AccessSite)] call FUNC(getAccessType)), GVAR(TransfusionMenu_Selected_AccessSite), GVAR(TransfusionMenu_SelectIV), _bloodType, _volume];
 
         _IVBags set [_bodypart, _IVBagsOnBodyPart];
         GVAR(TransfusionMenu_Target) setVariable [QGVAR(IV_Bags), _IVBags, true];
@@ -46,8 +46,8 @@ if (GVAR(TransfusionMenu_Move_Active)) then {
         [_patient, _bodypart] call EFUNC(circulation,updateActiveFluidBags);
         GVAR(TransfusionMenu_Move_Active_Moving) = false;
 
-        private _fluidBagString = [([_type, _volume, _bloodType, true] call FUNC(formatFluidBagName))] call FUNC(getFluidBagString);
-        [_patient, "activity", LLSTRING(GUI_MovedTransfusing), [[_medic, false, true] call ACEFUNC(common,getName), _fluidBagString, ([_bodypart] call EFUNC(core,getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
+        private _fluidBagNameArray = [([_type, _volume, _bloodType, true] call FUNC(formatFluidBagName))] call FUNC(getFluidBagString);
+        [_patient, "activity", LSTRING(GUI_MovedTransfusing), [[_medic, false, true] call ACEFUNC(common,getName), _fluidBagNameArray, ([_bodypart, false] call EFUNC(core,getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
     };
 
     GVAR(TransfusionMenu_Move_Active_Moving) = true;

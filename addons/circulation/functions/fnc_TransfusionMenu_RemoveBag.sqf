@@ -75,14 +75,14 @@ private _funcParams = [_IVBags, _IVBagsOnBodyPart, _targetIndex, _itemClassName,
     
     _funcParams call _fnc_completeRemoval;
 
-    private _fluidBagString = "";
+    private _fluidBagNameArray = [];
 
     if (_type == "FBTK") then {
-        _fluidBagString = format ["%1 %2ml", "FBTK", _returnVolume];
+        _fluidBagNameArray = ["%1 %2ml", "FBTK", _returnVolume];
     } else {
-        _fluidBagString = [([_type, _returnVolume, _bloodType, true] call FUNC(formatFluidBagName))] call FUNC(getFluidBagString);
+        _fluidBagNameArray = [([_type, _returnVolume, _bloodType, true] call FUNC(formatFluidBagName))] call FUNC(getFluidBagString);
     };
-    [_patient, "activity", LSTRING(TransfusionMenu_RemoveBag_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), (_fluidBagString), ([GVAR(TransfusionMenu_Selected_BodyPart)] call EFUNC(core,getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "activity", LSTRING(TransfusionMenu_RemoveBag_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), _fluidBagNameArray, ([GVAR(TransfusionMenu_Selected_BodyPart), false] call EFUNC(core,getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
     closeDialog 0;
     
     [{

@@ -23,11 +23,13 @@
 
 params ["_medic", "_patient", "_bodyPart", "_type", "_state", ["_iv", true], ["_accessSite", -1]];
 
-private _hintState = LELSTRING(core,Common_Inserted);
-private _hintType = LLSTRING(IV_16g);
+private _hintState = ELSTRING(core,Common_Inserted);
+private _hintAccessType = LSTRING(IV_16g);
+
+private _bodyPartString = [_bodyPart, false] call EFUNC(core,getBodyPartString);
 
 private _exit = false;
-private _accessSiteHint = "";
+private _hintAccessSite = "";
 private _givePain = 0;
 private _giveComplication = false;
 private _successChance = 1;
@@ -35,16 +37,16 @@ private _classname = "ACM_IV_16g";
 
 switch (_type) do {
     case ACM_IV_14G_M: {
-        _hintType = LLSTRING(IV_14g);
+        _hintAccessType = LSTRING(IV_14g);
         _classname = "ACM_IV_14g";
     };
     case ACM_IO_FAST1_M: {
-        _hintType = LLSTRING(IO_FAST1);
+        _hintAccessType = LSTRING(IO_FAST1);
         _classname = "ACM_IO_FAST";
         _givePain = 0.31;
     };
     case ACM_IO_EZ_M: {
-        _hintType = LLSTRING(IO_EZ);
+        _hintAccessType = LSTRING(IO_EZ);
         _classname = "ACM_IO_EZ";
         _givePain = 0.31;
     };
@@ -52,23 +54,23 @@ switch (_type) do {
 };
 
 if (_iv) then {
-    _accessSiteHint = [LLSTRING(IV_Upper), LLSTRING(IV_Middle), LLSTRING(IV_Lower)] select _accessSite;
+    _hintAccessSite = [LSTRING(IV_Upper), LSTRING(IV_Middle), LSTRING(IV_Lower)] select _accessSite;
 
     if (_state) then {
         if ([_patient, _bodyPart, 0, _accessSite] call FUNC(hasIV)) exitWith {
             _exit = true;
-            [(format [LLSTRING(IV_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString)), _accessSiteHint]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+            [[LSTRING(IV_Already), _bodyPartString, _hintAccessSite], 2, _medic] call ACEFUNC(common,displayTextStructured);
         };
 
         if (_accessSite == 0 && _bodyPart in ["leftarm","rightarm"] && {([_patient, _bodyPart] call FUNC(hasPressureCuff) || ([_patient, _bodyPart, 3] call FUNC(hasAED)))}) exitWith {
             _exit = true;
-            [LLSTRING(IV_Blocked_PressureCuff), 2, _medic] call ACEFUNC(common,displayTextStructured);
+            [LSTRING(IV_Blocked_PressureCuff), 2, _medic] call ACEFUNC(common,displayTextStructured);
         };
     };
 } else {
     if (_state && [_patient, _bodyPart] call FUNC(hasIO)) exitWith {
         _exit = true;
-        [(format [LLSTRING(IO_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+        [[LSTRING(IO_Already), _bodyPartString], 2, _medic] call ACEFUNC(common,displayTextStructured);
     };
 };
 
@@ -141,9 +143,9 @@ if (!_exit && !(random 1 < _successChance)) then {
     _exit = true;
     
     if (_severeDamage) then {
-        [(format ["%1, %2", LLSTRING(IV_FailedToLocateVein), (toLower (LLSTRING(IV_BodyPartTooDamaged)))]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+        [["%1<br />%2", LSTRING(IV_FailedToLocateVein), LSTRING(IV_BodyPartTooDamaged)], 2, _medic] call ACEFUNC(common,displayTextStructured);
     } else {
-        [LLSTRING(IV_FailedToLocateVein), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+        [LSTRING(IV_FailedToLocateVein), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
     };
 };
 
@@ -162,14 +164,14 @@ if (_state) then {
         };
     };
 } else {
-    _hintState = LELSTRING(core,Common_Removed);
+    _hintState = ELSTRING(core,Common_Removed);
     _setState = 0;
 };
 
 if (_iv) then {
-    [_patient, "activity", "%1 %2 %3 (%4)", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _hintState), _hintType, _accessSiteHint]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "activity", "%1 %2 %3 (%4)", [[_medic, false, true] call ACEFUNC(common,getName), _hintState, _hintAccessType, _hintAccessSite]] call ACEFUNC(medical_treatment,addToLog);
 } else {
-    [_patient, "activity", "%1 %2 %3", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _hintState), _hintType]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "activity", "%1 %2 %3", [[_medic, false, true] call ACEFUNC(common,getName), _hintState, _hintAccessType]] call ACEFUNC(medical_treatment,addToLog);
 };
 
 [QGVAR(setIVLocal), [_medic, _patient, _bodyPart, _setState, _iv, _accessSite], _patient] call CBA_fnc_targetEvent;

@@ -24,19 +24,18 @@
 params ["_medic", "_patient", "_bodyPart", "_classname", ["_size", 10], ["_iv", true], ["_returnSyringe", true]];
 
 if (_iv && !([_patient, _bodyPart, 0] call FUNC(hasIV)) && !([_patient, _bodyPart, 0] call FUNC(hasIO))) exitWith {
-    [(format [LLSTRING(Syringe_PushFailed), toLower ([_bodyPart] call EFUNC(core,getBodyPartString))]), 2, _medic, 13] call ACEFUNC(common,displayTextStructured);
+    [[LSTRING(Syringe_PushFailed), ([_bodyPart, false] call EFUNC(core,getBodyPartString))], 2, _medic, 13] call ACEFUNC(common,displayTextStructured);
 };
 
 private _itemClassname = "";
-private _administrationString = LLSTRING(Intramuscular_Short);
-private _actionString = LLSTRING(Syringe_Injected);
-private _medicationName = localize (format ["STR_ACM_Circulation_Medication_%1", _classname]);
+private _administrationString = LSTRING(Intramuscular_Short);
+private _actionString = LSTRING(Syringe_Injected);
+private _medicationName = format ["STR_ACM_Circulation_Medication_%1", _classname];
 private _medicationClassname = _classname;
 
 if (_iv) then {
-    //_medicationClassname = format ["%1_IV", _classname];
-    _administrationString = LLSTRING(Intravenous_Short);
-    _actionString = LLSTRING(Syringe_Pushed);
+    _administrationString = LSTRING(Intravenous_Short);
+    _actionString = LSTRING(Syringe_Pushed);
 };
 
 _itemClassname = format ["ACM_Syringe_%1_%2", _size, _classname];
@@ -86,7 +85,7 @@ if !(_microDose) then {
     };
 };
 
-[_patient, format ["%1 %2 (%3%4)", _medicationName, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToTriageCard);
+[_patient, format ["%1 %2 (%3%4)", localize _medicationName, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", "%1 %2 %3 %4 (%5%6)", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _actionString), _medicationName, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToLog);
 [(format ["%1 %2 %3", _actionString, _administrationString, _medicationName]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 

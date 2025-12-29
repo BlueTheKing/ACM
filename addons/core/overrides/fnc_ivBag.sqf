@@ -33,14 +33,16 @@ if (((_classname splitString "_") select 0) == "FreshBloodBag") then {
 
 [_patient, _usedItem] call ACEFUNC(medical_treatment,addToTriageCard);
 
+private _bodyPartString = [_bodyPart, false] call FUNC(getBodyPartString);
+
 if (_classname in FBTK_ARRAY_DATA) then {
     private _amount = (_classname splitString "_") select 1;
-    [_patient, "activity", "%1 began collecting blood (%2ml) from %3", [[_medic, false, true] call ACEFUNC(common,getName), _amount, ([_bodyPart] call FUNC(getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "activity", "%1 began collecting blood (%2ml) from %3", [[_medic, false, true] call ACEFUNC(common,getName), _amount, _bodyPartString]] call ACEFUNC(medical_treatment,addToLog);
 } else {
-    [_patient, "activity", LELSTRING(circulation,GUI_BeganTransfusing), [[_medic, false, true] call ACEFUNC(common,getName), ([_classname] call EFUNC(circulation,getFluidBagString)), ([_bodyPart] call FUNC(getBodyPartString))]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "activity", ELSTRING(circulation,GUI_BeganTransfusing), [[_medic, false, true] call ACEFUNC(common,getName), [_classname] call EFUNC(circulation,getFluidBagString), _bodyPartString]] call ACEFUNC(medical_treatment,addToLog);
 };
 
-private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 private _accessType = [_patient, _iv, _partIndex, _accessSite] call EFUNC(circulation,getAccessType);
 

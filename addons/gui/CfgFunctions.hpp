@@ -17,6 +17,9 @@ class CfgFunctions {
             class updateInjuryList {
                 file = QPATHTOF(overrides\fnc_updateInjuryList.sqf); //ace/addons/medical_gui/functions/fnc_updateInjuryList.sqf
             };
+            class updateLogList {
+                file = QPATHTOF(overrides\fnc_updateLogList.sqf); //ace/addons/medical_gui/functions/fnc_updateLogList.sqf
+            };
         };
     };
 };
