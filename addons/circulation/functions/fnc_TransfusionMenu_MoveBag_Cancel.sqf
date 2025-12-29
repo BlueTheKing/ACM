@@ -36,7 +36,7 @@ if !([([_patient, _originBodyPart, 0] call FUNC(hasIO)), ([_patient, _originBody
 private _IVBags = _patient getVariable [QGVAR(IV_Bags), createHashMap];
 private _IVBagsOnBodyPart = _IVBags getOrDefault [GVAR(TransfusionMenu_Selected_BodyPart), []];
 
-_IVBagsOnBodyPart pushBack [_type, _remainingVolume, ([_patient, _originIV, (ALL_BODY_PARTS find toLowerANSI _originBodyPart), GVAR(TransfusionMenu_Move_OriginAccessSite)] call FUNC(getAccessType)), _accessSite, _originIV, _bloodType, _volume];
+_IVBagsOnBodyPart pushBack [_type, _remainingVolume, ([_patient, _originIV, GET_BODYPART_INDEX(_originBodyPart), GVAR(TransfusionMenu_Move_OriginAccessSite)] call FUNC(getAccessType)), _accessSite, _originIV, _bloodType, _volume];
 _IVBags set [GVAR(TransfusionMenu_Selected_BodyPart), _IVBagsOnBodyPart];
 
 _patient setVariable [QGVAR(IV_Bags), _IVBags, true];

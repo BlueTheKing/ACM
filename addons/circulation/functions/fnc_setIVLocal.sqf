@@ -22,7 +22,7 @@
 
 params ["_medic", "_patient", "_bodyPart", "_type", "_iv", "_accessSite"];
 
-private _partIndex = ALL_BODY_PARTS find _bodyPart;
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 if (_iv) then {
     private _IVState = GET_IV(_patient);

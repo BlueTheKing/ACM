@@ -54,7 +54,7 @@ GVAR(TransfusionMenu_Move_OriginAccessSite) = GVAR(TransfusionMenu_Selected_Acce
 if (GVAR(TransfusionMenu_Selected_AccessSite) == -1) then {
     if ([_patient, _bodyPart, 0, -1] call FUNC(hasIV)) then {
         GVAR(TransfusionMenu_SelectIV) = true;
-        private _ivAccess = (GET_IV(_patient) select (ALL_BODY_PARTS find GVAR(TransfusionMenu_Selected_BodyPart)));
+        private _ivAccess = GET_IV(_patient) select (GET_BODYPART_INDEX(GVAR(TransfusionMenu_Selected_BodyPart)));
         {
             if (_x > 0) exitWith {
                 GVAR(TransfusionMenu_Selected_AccessSite) = _forEachIndex;
@@ -113,7 +113,7 @@ private _inVehicle = !(isNull objectParent ACE_player);
         _x ctrlShow (HAS_TOURNIQUET_APPLIED_ON(_patient,(_forEachIndex + 2)));
     } forEach _ctrlTourniquetArray;
 
-    private _partIndex = ALL_BODY_PARTS find GVAR(TransfusionMenu_Selected_BodyPart);
+    private _partIndex = GET_BODYPART_INDEX(GVAR(TransfusionMenu_Selected_BodyPart));
 
     private _ctrlIVLeftArmUpper = _display displayCtrl IDC_TRANSFUSIONMENU_BG_IV_LEFTARM_UPPER;
     private _ctrlIVLeftArmMiddle = _display displayCtrl IDC_TRANSFUSIONMENU_BG_IV_LEFTARM_MIDDLE;

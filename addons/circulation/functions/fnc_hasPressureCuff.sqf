@@ -18,6 +18,6 @@
 
 params ["_patient", "_bodyPart"];
 
-private _partIndex = ALL_BODY_PARTS find _bodyPart;
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 HAS_PRESSURECUFF(_patient,(_partIndex - 2));

@@ -23,7 +23,7 @@
 
 params ["_patient", "_bodyPart", "_classname", "_accessType", ["_iv", true], "_accessSite", ["_freshBlood", false]];
 
-private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 // Add IV bag to patient's ivBags array
 private _IVBags = _patient getVariable [QEGVAR(circulation,IV_Bags), createHashMap];

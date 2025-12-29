@@ -16,7 +16,7 @@
  * Public: No
  */
 
-private _partIndex = ALL_BODY_PARTS find GVAR(TransfusionMenu_Selected_BodyPart);
+private _partIndex = GET_BODYPART_INDEX(GVAR(TransfusionMenu_Selected_BodyPart));
 
 if (GVAR(TransfusionMenu_SelectIV)) then {
     private _flowArray = GET_IV_FLOW(GVAR(TransfusionMenu_Target));

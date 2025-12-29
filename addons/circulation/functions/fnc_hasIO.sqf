@@ -23,7 +23,7 @@ if (_bodyPart == "") exitWith {
     GET_IO(_patient) isNotEqualTo ACM_IO_PLACEMENT_DEFAULT_0;
 };
 
-private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 if (_type == 0) then {
     (GET_IO(_patient) select _partIndex) > 0;

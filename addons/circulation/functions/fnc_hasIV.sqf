@@ -24,7 +24,7 @@ if (_bodyPart == "") exitWith {
     GET_IV(_patient) isNotEqualTo ACM_IV_PLACEMENT_DEFAULT_0;
 };
 
-private _partIndex = ALL_BODY_PARTS find toLowerANSI _bodyPart;
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 if (_type == 0) then {
     if (_accessSite == -1) then {

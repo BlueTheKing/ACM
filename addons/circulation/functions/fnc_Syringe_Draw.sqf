@@ -158,7 +158,7 @@ private _fnc_updateSelectedMedication = {
 
         _ctrlBText ctrlShow true;
 
-        private _partIndex = ALL_BODY_PARTS find _bodyPart;
+        private _partIndex = GET_BODYPART_INDEX(_bodyPart);
         private _bodyPartString = [
             ACELLSTRING(medical_gui,Torso),
             ACELLSTRING(medical_gui,LeftArm),
