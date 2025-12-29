@@ -27,7 +27,7 @@ private _cardiacOutput = [_patient] call ACEFUNC(medical_status,getCardiacOutput
 private _vasoconstriction = GET_VASOCONSTRICTION(_patient);
 
 private _resistance = ([
-    ([(linearConversion [0, -30, _vasoconstriction, 1, 0.6, true]), (linearConversion [-30, -50, _vasoconstriction, 0.6, 0.4, true])] select (_vasoconstriction < -30)),
+    ([(linearConversion [0, -30, _vasoconstriction, 1, 0.7, true]), (linearConversion [-30, -50, _vasoconstriction, 0.7, 0.6, true])] select (_vasoconstriction < -30)),
     ([(linearConversion [0, 30, _vasoconstriction, 1, 1.4, true]), (linearConversion [30, 50, _vasoconstriction, 1.4, 1.6, true])] select (_vasoconstriction > 30))
 ] select (_vasoconstriction > 0));
 
@@ -42,7 +42,7 @@ private _tensionEffect = 0;
 private _HTXFluid = _patient getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
 private _PTXState = _patient getVariable [QEGVAR(breathing,Pneumothorax_State), 0];
 
-private _overloadEffect = linearConversion [0, 1, (_patient getVariable [QEGVAR(circulation,Overload_Volume), 0]), 1, 1.5];
+private _overloadEffect = linearConversion [0, 1, (_patient getVariable [QEGVAR(circulation,Overload_Volume), 0]), 1, 2];
 
 private _poisonEffect = 1;
 

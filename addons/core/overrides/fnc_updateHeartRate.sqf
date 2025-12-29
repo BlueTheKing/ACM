@@ -91,13 +91,14 @@ if (IN_CRDC_ARRST(_patient) || [_patient] call FUNC(cprActive)) then {
 };
 
 private _heartFatigue = GET_HEART_FATIGUE(_patient);
+private _MAP = GET_MAP_PATIENT(_patient);
 
-if (_heartFatigue > 0 || _heartRate > 135 || _oxygenSaturation < 90) then {
+if (_heartFatigue > 0 || _heartRate > 135 || _oxygenSaturation < 90 || _MAP > 105) then {
     private _effectiveBloodVolume = GET_EFF_BLOOD_VOLUME(_patient);
     private _heartFatigueChange = (-((linearConversion [130, ACM_TARGETVITALS_HR(_patient), _heartRate, 0, 0.2, true]) + (linearConversion [90, 99, _oxygenSaturation, 0, 0.2, true]))) * (linearConversion [3, 6, _effectiveBloodVolume, 0, 2, true]);
 
-    if (_heartRate > 135 || (_oxygenSaturation < 90 && _heartRate > 0)) then {
-        _heartFatigueChange = _heartFatigueChange + ((linearConversion [135, ACM_TARGETVITALS_MAXHR(_patient), _heartRate, 0, 0.15, true]) + (linearConversion [90, 75, _oxygenSaturation, 0, 0.15, true])) * (linearConversion [5.5, 3, _effectiveBloodVolume, 1, 2, true]);
+    if (_heartRate > 135 || (_oxygenSaturation < 90 && _heartRate > 0) || _MAP > 105) then {
+        _heartFatigueChange = _heartFatigueChange + ((linearConversion [135, ACM_TARGETVITALS_MAXHR(_patient), _heartRate, 0, 0.15, true]) + (linearConversion [90, 75, _oxygenSaturation, 0, 0.15, true]) + (linearConversion [105, 150, _MAP, 0, 0.15, true])) * (linearConversion [5.5, 3, _effectiveBloodVolume, 1, 2, true]);
     };
 
     _heartFatigue = 0 max (_heartFatigue + _heartFatigueChange * _deltaT) min 100;

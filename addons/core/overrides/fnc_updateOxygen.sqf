@@ -79,7 +79,9 @@ private _targetOxygenSaturation = _desiredOxygenSaturation;
 // but falls off quickly as po2 drops further
 private _capture = 1 max ((_po2 / IDEAL_PPO2) ^ (-_po2 * 3));
 
-private _effectiveBloodVolume = [linearConversion [DEFAULT_BLOOD_VOLUME, 5, GET_EFF_BLOOD_VOLUME(_patient), 1, 0.92, true],(linearConversion [5, 4, GET_EFF_BLOOD_VOLUME(_patient), 0.92, 0.84])] select (GET_EFF_BLOOD_VOLUME(_patient) < 5);
+private _effectiveBloodVolume = GET_EFF_BLOOD_VOLUME(_patient) - (_patient getVariable [QEGVAR(circulation,Overload_Volume), 0]);
+
+private _bloodVolume = [linearConversion [DEFAULT_BLOOD_VOLUME, 5, _effectiveBloodVolume, 1, 0.92, true],(linearConversion [5, 4, _effectiveBloodVolume, 0.92, 0.84])] select (_effectiveBloodVolume < 5);
 private _airwayState = GET_AIRWAYSTATE(_patient);
 private _breathingState = GET_BREATHINGSTATE(_patient);
 
@@ -148,7 +150,7 @@ if (EGVAR(CBRN,enable) && _respirationRate > 0) then {
     };
 };
 
-private _breathingEffectiveness = _effectiveBloodVolume min _airwayState * _breathingState;
+private _breathingEffectiveness = _bloodVolume min _airwayState * _breathingState;
 
 switch (true) do {
     case (_respirationRate > 0 && HAS_PULSE(_patient)): {
