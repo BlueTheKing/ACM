@@ -27,7 +27,7 @@ if (_timeSinceLastUse < 10) exitWith {};
 
 if (!([_patient] call ACEFUNC(medical_status,hasStableVitals)) || [_patient] call EFUNC(core,isForcedUnconscious)) exitWith {};
 
-private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 0.5, 1, true] ;
+private _oxygenSaturationChance = linearConversion [80, 99, GET_OXYGEN(_patient), 0.5, 1, true];
 
 if (random 1 < _oxygenSaturationChance) then {
     if (IS_UNCONSCIOUS(_patient)) then {
