@@ -81,7 +81,7 @@ private _capture = 1 max ((_po2 / IDEAL_PPO2) ^ (-_po2 * 3));
 
 private _effectiveBloodVolume = GET_EFF_BLOOD_VOLUME(_patient) - (_patient getVariable [QEGVAR(circulation,Overload_Volume), 0]);
 
-private _bloodVolume = [linearConversion [DEFAULT_BLOOD_VOLUME, 5, _effectiveBloodVolume, 1, 0.92, true],(linearConversion [5, 4, _effectiveBloodVolume, 0.92, 0.84])] select (_effectiveBloodVolume < 5);
+private _bloodVolumeEffect = [linearConversion [DEFAULT_BLOOD_VOLUME, 5, _effectiveBloodVolume, 1, 0.92, true],(linearConversion [5, 4, _effectiveBloodVolume, 0.92, 0.84])] select (_effectiveBloodVolume < 5);
 private _airwayState = GET_AIRWAYSTATE(_patient);
 private _breathingState = GET_BREATHINGSTATE(_patient);
 
@@ -98,7 +98,7 @@ private _timeSinceLastBreath = CBA_missionTime - (_patient getVariable [QEGVAR(b
 private _BVMLastingEffect = 0;
 
 if (_timeSinceLastBreath < 35) then {
-    _BVMOxygenAssisted = (CBA_missionTime - (_patient getVariable [QEGVAR(breathing,BVM_lastBreathOxygen), -35])) < 30;
+    _BVMOxygenAssisted = _timeSinceLastBreath < 30;
     _BVMLastingEffect = 1 min 25 / (_timeSinceLastBreath max 0.001);
 };
 
@@ -150,7 +150,7 @@ if (EGVAR(CBRN,enable) && _respirationRate > 0) then {
     };
 };
 
-private _breathingEffectiveness = _bloodVolume min _airwayState * _breathingState;
+private _breathingEffectiveness = _bloodVolumeEffect min _airwayState * _breathingState;
 
 switch (true) do {
     case (_respirationRate > 0 && HAS_PULSE(_patient)): {
@@ -207,7 +207,7 @@ switch (true) do {
     };
     case (IN_CRDC_ARRST(_patient) && ([_patient] call FUNC(cprActive))): {
         _maxPositiveGain = _maxPositiveGain * (0.5 + (0.5 * _BVMLastingEffect));
-        _breathingEffectiveness = _breathingEffectiveness * 0.75 * (1 + (0.3 * _BVMLastingEffect));
+        _breathingEffectiveness = _breathingEffectiveness * 0.75 * (1 + (0.5 * _BVMLastingEffect));
 
         if (_BVMOxygenAssisted) then {
             _breathingEffectiveness = _breathingEffectiveness * 1.5;
