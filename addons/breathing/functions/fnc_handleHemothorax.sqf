@@ -60,7 +60,7 @@ private _PFH = [{
             _clearAmount = ([2,3] select (random 1 < (0.25 * _TXACount)));
         };
 
-        _hemothoraxState = (_hemothoraxState - _clearAmount) max 0;
+        _hemothoraxState = (_hemothoraxState - _clearAmount) max ([0, 2] select GVAR(Hardcore_HemothoraxBleeding));
 
         _patient setVariable [QGVAR(Hemothorax_State), _hemothoraxState, true];
     };
