@@ -230,14 +230,14 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                 };
                 // Flow pain
                 if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then { // IO
-                    private _IOPain = _bagChange / 3;
+                    private _IOPain = _bagChange / 2.5;
                     private _painSuppression = linearConversion [0, 30, ([_patient, "Lidocaine", [ACM_ROUTE_IV], _partIndex] call EFUNC(circulation,getMedicationConcentration)), 0, 0.95, true]; // 30mg "flush"
                     _transfusionPain = _transfusionPain + (0 max (_IOPain - _painSuppression));
                 } else { // IV complication
                     private _ivComplicationPain = GET_IV_COMPLICATIONS_PAIN_X(_unit,_partIndex,_accessSite);
 
                     if (_ivComplicationPain > 0) then {
-                        private _flowPain = (_bagChange / 1000) * _ivComplicationPain;
+                        private _flowPain = (_bagChange / 5) * _ivComplicationPain;
                         _transfusionPain = _transfusionPain + _flowPain;
                     };
                 };
