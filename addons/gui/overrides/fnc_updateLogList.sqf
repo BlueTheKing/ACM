@@ -46,7 +46,7 @@ lbClear _ctrl;
                 private _entry = _x select 0;
                 private _extraArguments = _x select [1];
 
-                private _localizedArray = [_entry];
+                private _localizedArray = [([_entry, localize _entry] select (isLocalized _entry))];
 
                 _extraArguments = _extraArguments apply {
                     if (_x isEqualType "" && {isLocalized _x}) then {

@@ -3071,26 +3071,32 @@
                 <Spanish>Empuje de medicación fallido&lt;br/&gt;El paciente no tiene acceso IV en %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Injected">
-                <English>injected</English>
-                <Polish>podano (IM)</Polish>
-                <German>injiziert (IM)</German>
-                <French>injecté (IM)</French>
-                <Portuguese>infundido (IM)</Portuguese>
-                <Russian>bведено (IM)</Russian>
-                <Ukrainian>bведено (IM)</Ukrainian>
+                <English>Injected</English>
+                <Polish>Podano (IM)</Polish>
+                <German>Injiziert (IM)</German>
+                <French>Injecté (IM)</French>
+                <Portuguese>Infundido (IM)</Portuguese>
+                <Russian>Введено (IM)</Russian>
+                <Ukrainian>Введено (IM)</Ukrainian>
                 <Korean>주입 완료 </Korean>
-                <Spanish>inyectado</Spanish>
+                <Spanish>Inyectado</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Syringe_%1_Injected">
+                <English>%1 injected</English>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Pushed">
-                <English>pushed</English>
-                <Polish>podano (IV)</Polish>
-                <German>injiziert (IV)</German>
-                <French>injecté (IV)</French>
-                <Portuguese>infundido (IV)</Portuguese>
-                <Russian>bведено (IV/IO)</Russian>
-                <Ukrainian>bведено (IV/IO)</Ukrainian>
+                <English>Pushed</English>
+                <Polish>Podano (IV)</Polish>
+                <German>Injiziert (IV)</German>
+                <French>Injecté (IV)</French>
+                <Portuguese>Infundido (IV)</Portuguese>
+                <Russian>Введено (IV/IO)</Russian>
+                <Ukrainian>Введено (IV/IO)</Ukrainian>
                 <Korean>푸시 완료</Korean>
-                <Spanish>empujado</Spanish>
+                <Spanish>Empujado</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Circulation_Syringe_%1_Pushed">
+                <English>%1 pushed</English>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawPush">
                 <English>Draw &amp; Push</English>

@@ -29,13 +29,15 @@ if (_iv && !([_patient, _bodyPart, 0] call FUNC(hasIV)) && !([_patient, _bodyPar
 
 private _itemClassname = "";
 private _administrationString = LSTRING(Intramuscular_Short);
-private _actionString = LSTRING(Syringe_Injected);
+private _actionHintString = LSTRING(Syringe_Injected);
+private _actionLogString = LSTRING(Syringe_%1_Injected);
 private _medicationName = format ["STR_ACM_Circulation_Medication_%1", _classname];
 private _medicationClassname = _classname;
 
 if (_iv) then {
     _administrationString = LSTRING(Intravenous_Short);
-    _actionString = LSTRING(Syringe_Pushed);
+    _actionHintString = LSTRING(Syringe_Pushed);
+    _actionLogString = LSTRING(Syringe_%1_Pushed);
 };
 
 _itemClassname = format ["ACM_Syringe_%1_%2", _size, _classname];
@@ -85,9 +87,9 @@ if !(_microDose) then {
     };
 };
 
-[_patient, format ["%1 %2 (%3%4)", localize _medicationName, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToTriageCard);
-[_patient, "activity", "%1 %2 %3 %4 (%5%6)", [[_medic, false, true] call ACEFUNC(common,getName), (toLower _actionString), _medicationName, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToLog);
-[(format ["%1 %2 %3", _actionString, _administrationString, _medicationName]), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+[_patient, format ["%1 %2 (%3%4)", localize _medicationName, localize _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToTriageCard);
+[_patient, "activity", "%1 %2 %3 (%4%5)", [[_actionLogString, ([_medic, false, true] call ACEFUNC(common,getName))], _medicationName, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToLog);
+[["%1 %2 %3", _actionHintString, _administrationString, _medicationName], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
 if (_returnSyringe) then {
     [_medic, (format ["ACM_Syringe_%1", _size])] call ACEFUNC(common,addToInventory);
