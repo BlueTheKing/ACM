@@ -32,6 +32,10 @@ if (_patient call ACEFUNC(common,isBeingDragged)) then {
     [_medic, _patient] call ACEFUNC(dragging,dropObject);
 };
 
+if !(alive _patient) exitWith {
+    [[ACELSTRING(medical_treatment,CanNotLoadDead), [_patient] call ACEFUNC(common,getName)]] call ACEFUNC(common,displayTextStructured);
+};
+
 private _vehicle = [
     _medic,
     _patient,
