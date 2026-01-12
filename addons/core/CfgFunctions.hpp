@@ -1,4 +1,7 @@
 class CfgFunctions {
+    // Compatibility
+    delete ace_dragging;
+
     class overwrite_interact_menu {
         tag = "ace_interact_menu";
         class ace_interact_menu {
