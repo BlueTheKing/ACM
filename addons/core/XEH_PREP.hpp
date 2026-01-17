@@ -13,6 +13,7 @@ PREP(fullHealLocal);
 PREP(generateTargetVitals);
 PREP(getBleedSeverity);
 PREP(getBodyPartString);
+PREP(getTimeString);
 PREP(getUp);
 PREP(getUpPrompt);
 PREP(handleRespawn);

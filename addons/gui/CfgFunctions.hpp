@@ -20,6 +20,9 @@ class CfgFunctions {
             class updateLogList {
                 file = QPATHTOF(overrides\fnc_updateLogList.sqf); //ace/addons/medical_gui/functions/fnc_updateLogList.sqf
             };
+            class updateTriageCard{
+                file = QPATHTOF(overrides\fnc_updateTriageCard.sqf); //ace/addons/medical_gui/functions/fnc_updateTriageCard.sqf
+            };
         };
     };
 };

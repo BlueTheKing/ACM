@@ -97,6 +97,9 @@ class CfgFunctions {
             class placeInBodyBag { // Return medical items on body bag use
                 file = QPATHTOF(overrides\fnc_placeInBodyBag.sqf); //ace/addons/medical_treatment/functions/fnc_placeInBodyBag.sqf
             };
+            class addToTriageCard{
+                file = QPATHTOF(overrides\fnc_addToTriageCard.sqf); //ace/addons/medical_treatment/functions/fnc_addToTriageCard.sqf
+            };
         };
     };
     class overwrite_medical_damage {

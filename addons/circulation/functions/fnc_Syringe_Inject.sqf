@@ -87,7 +87,7 @@ if !(_microDose) then {
     };
 };
 
-[_patient, format ["%1 %2 (%3%4)", localize _medicationName, localize _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToTriageCard);
+[_patient, ["%1 %2 (%3%4)", _medicationName, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToTriageCard);
 [_patient, "activity", "%1 %2 %3 (%4%5)", [[_actionLogString, ([_medic, false, true] call ACEFUNC(common,getName))], _medicationName, _administrationString, _stringDose, _doseMeasurement]] call ACEFUNC(medical_treatment,addToLog);
 [["%1 %2 %3", _actionHintString, _administrationString, _medicationName], 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
