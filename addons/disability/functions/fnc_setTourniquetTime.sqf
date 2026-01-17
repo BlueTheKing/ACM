@@ -22,7 +22,7 @@ private _partIndex = ALL_BODY_PARTS find toLower _bodyPart;
 private _tourniquetsDisplay = _patient getVariable [QGVAR(Tourniquet_Time), [0,0,0,0,0,0]];
 private _tourniquetsTime = _patient getVariable [QGVAR(Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]];
 
-_tourniquetsDisplay set [_partIndex, ([dayTime, "HH:MM"] call BIS_fnc_timeToString)];
+_tourniquetsDisplay set [_partIndex, ([] call EFUNC(core,getTimeString))];
 _tourniquetsTime set [_partIndex, CBA_missionTime];
 
 _patient setVariable [QGVAR(Tourniquet_Time), _tourniquetsDisplay, true];
