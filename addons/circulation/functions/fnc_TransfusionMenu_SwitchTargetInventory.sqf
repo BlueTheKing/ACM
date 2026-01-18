@@ -91,8 +91,8 @@ private _fnc_addToInventoryPanel = {
         ((configName _config) splitString "_") params ["","","_volume","_id"];
 
         private _bloodType = ([(parseNumber _id)] call FUNC(getFreshBloodEntry)) select 2;
-        private _bloodTypeString = [_bloodType, 1] call FUNC(convertBloodType);
-        _name = format [C_LLSTRING(FreshBloodBag_Short), (format ["%1 (%2ml) [%3]", _bloodTypeString, _volume, _id])];
+        //private _bloodTypeString = [_bloodType, 1] call FUNC(convertBloodType);
+        _name = format [C_LLSTRING(FreshBloodBag_Short), (format ["(%1ml) [%2]", _volume, _id])];
     } else {
         _name = [(getText (_config >> "displayName")), (getText (_config >> "shortName"))] select (isText (_config >> "shortName"));
     };

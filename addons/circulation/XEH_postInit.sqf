@@ -138,8 +138,8 @@ if (hasInterface || isServer) then {
 
         private _classname = format ["ACM_FreshBloodBag_%1_%2", _size, _id];
         private _bloodType = ([_id] call FUNC(getFreshBloodEntry)) select 2;
-        private _bloodTypeString = [_bloodType, 1] call FUNC(convertBloodType);
-        private _newName = format [C_LLSTRING(FreshBloodBag), (format ["%1 (%2ml) [%3]", _bloodTypeString, _size, _id])];
+        //private _bloodTypeString = [_bloodType, 1] call FUNC(convertBloodType);
+        private _newName = format [C_LLSTRING(FreshBloodBag), (format ["(%1ml) [%2]", _size, _id])];
         [_classname, _newName] call CBA_fnc_renameInventoryItem;
     }] call CBA_fnc_addEventHandler;
 };
