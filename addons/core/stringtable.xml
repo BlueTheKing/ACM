@@ -64,7 +64,7 @@
             <Portuguese>Define se as plaquetas de identificação listam o peso da unidade</Portuguese>
             <Russian>Задаёт, указывают ли жетоны вес бойца</Russian>
             <Ukrainian>Визначає, чи вказується вага бійця на жетонах</Ukrainian>
-            <Korean>군번줄에 부대원의 체중을 표시할지 설정 </Korean>
+            <Korean>군번줄에 부대원의 체중을 표시할지 설정</Korean>
             <Spanish>Define si las placas de identificación muestran el peso del individuo</Spanish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
@@ -264,7 +264,7 @@
                 <Portuguese>Paciente já foi colocado em posição supinada</Portuguese>
                 <Russian>Пациент уложен на спину</Russian>
                 <Ukrainian>Пацієнта покладено на спину</Ukrainian>
-                <Korean>환자가 바로 누운 자세가 되었습니다 </Korean>
+                <Korean>환자가 바로 누운 자세가 되었습니다</Korean>
                 <Spanish>El paciente ha sido colocado en posición supina</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Hint">
@@ -319,7 +319,7 @@
         <Container name="// Boxes //">
             <Key ID="STR_ACM_Core_MedicalSupplyCrate_Basic_Display">
                 <English>[ACM] Basic Medical Supply Crate</English>
-                <Polish>[ACM] Podstawowa skrzynia z zaopatrzeniem medycznym </Polish>
+                <Polish>[ACM] Podstawowa skrzynia z zaopatrzeniem medycznym</Polish>
                 <German>[ACM] Basis Versorgungskiste</German>
                 <French>[ACM] Caisse de fournitures médicales de base</French>
                 <Portuguese>[ACM] Caixa de Suprimentos Médicos Básicos</Portuguese>
@@ -330,7 +330,7 @@
             </Key>
             <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
                 <English>[ACM] Advanced Medical Supply Crate</English>
-                <Polish>[ACM] Zaawansowana skrzynia z zaopatrzeniem medycznym </Polish>
+                <Polish>[ACM] Zaawansowana skrzynia z zaopatrzeniem medycznym</Polish>
                 <German>[ACM] Erweiterte Versorgungskiste</German>
                 <French>[ACM] Caisse d'approvisionnement médical avancé</French>
                 <Portuguese>[ACM] Caixa de Suprimentos Médicos Avançados</Portuguese>
@@ -362,7 +362,7 @@
                 <Portuguese>Addon incompatível encontrado:</Portuguese>
                 <Russian>Обнаружены несовместимые аддоны:</Russian>
                 <Ukrainian>Знайдено несумісні аддони:</Ukrainian>
-                <Korean>호환되지 않는 애드온 발견: </Korean>
+                <Korean>호환되지 않는 애드온 발견:</Korean>
                 <Spanish>Addons incompatibles detectados:</Spanish>
             </Key>
         </Container>
@@ -447,7 +447,7 @@
                 <Portuguese>Removido</Portuguese>
                 <Russian>Удалено</Russian>
                 <Ukrainian>Видалено</Ukrainian>
-                <Korean>제거됨 </Korean>
+                <Korean>제거됨</Korean>
                 <Spanish>Retirado</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Connected">
@@ -458,7 +458,7 @@
                 <Portuguese>Conectado</Portuguese>
                 <Russian>Подключено</Russian>
                 <Ukrainian>Підключено</Ukrainian>
-                <Korean>연결됨 </Korean>
+                <Korean>연결됨</Korean>
                 <Spanish>Conectado</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Disconnected">
@@ -507,7 +507,7 @@
             </Key>
             <Key ID="STR_ACM_Core_Common_Empty">
                 <English>Empty</English>
-                <Polish>Pusty </Polish>
+                <Polish>Pusty</Polish>
                 <German>Leer</German>
                 <French>Vide</French>
                 <Portuguese>Vazio</Portuguese>

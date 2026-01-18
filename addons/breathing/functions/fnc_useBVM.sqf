@@ -260,7 +260,7 @@ GVAR(BVMSwap_MouseID) = [0xF2, [false, false, false], {
             if (GVAR(BVM_PortableOxygen)) then {
                 private _success = [_medic] call FUNC(useOxygenTankReserve);
                 if !(_success) then {
-                    [LLSTRING(BVM_UsingBVM_OxygenTankDepleted), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                    [LLSTRING(BVM_OxygenTankDepleted), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
                     _patient setVariable [QGVAR(BVM_ConnectedOxygen), false, true];
                     GVAR(BVM_PortableOxygen) = false;
                 };

@@ -119,7 +119,7 @@
             <Portuguese>Define a quantidade de tíquetes de ressurgimento disponíveis; se a contagem de tíquetes definida pela missão for maior, esse número será usado em seu lugar</Portuguese>
             <Russian>Задаёт количество доступных тикетов возрождения; если на миссии задано большее число, будет использовано оно</Russian>
             <Ukrainian>Визначає кількість доступних тікетів відродження; якщо на місії задано більше, буде використано його</Ukrainian>
-            <Korean>사용 가능한 리스폰 티켓 수 설정, 미션 설정 티켓 수가 더 높으면 그 수치 사용 </Korean>
+            <Korean>사용 가능한 리스폰 티켓 수 설정, 미션 설정 티켓 수가 더 높으면 그 수치 사용</Korean>
             <Spanish>Establece el número de tickets de reaparición disponibles; si la misión define un número mayor, ese prevalecerá.</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty">
@@ -194,7 +194,7 @@
             <Portuguese>Local para converter vítima</Portuguese>
             <Russian>Место конвертации раненых</Russian>
             <Ukrainian>Місце конвертації поранених</Ukrainian>
-            <Korean>사상자 전환 위치 </Korean>
+            <Korean>사상자 전환 위치</Korean>
             <Spanish>Ubicación para Conversión de Heridos</Spanish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert_Desc">
@@ -205,7 +205,7 @@
             <Portuguese>Define os locais em que a conversão de vítimas pode ser realizada</Portuguese>
             <Russian>Задаёт локации, в которых может выполняться конвертация раненых</Russian>
             <Ukrainian>Визначає локації, де може виконуватися конвертація поранених</Ukrainian>
-            <Korean>사상자 전환을 수행할 수 있는 위치 설정 </Korean>
+            <Korean>사상자 전환을 수행할 수 있는 위치 설정</Korean>
             <Spanish>Define las ubicaciones en las que puede realizarse la conversión de heridos.</Spanish>
         </Key>
         <Container name="// Actions //">

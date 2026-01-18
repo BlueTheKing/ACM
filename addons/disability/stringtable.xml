@@ -159,7 +159,7 @@
             <Portuguese>[HARDCORE] Fraturas complexas</Portuguese>
             <Russian>[ХАРДКОР] Сложные переломы</Russian>
             <Ukrainian>[ХАРДКОР] Складні переломи</Ukrainian>
-            <Korean>[HARDCORE] 복합 골절 </Korean>
+            <Korean>[HARDCORE] 복합 골절</Korean>
             <Spanish>[HARDCORE] Fracturas complejas</Spanish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture_Desc">
@@ -212,7 +212,7 @@
                 <Portuguese>Tala reutilizável utilizada para imobilizar fraturas, deve ser enfaixada para manter a fratura estável</Portuguese>
                 <Russian>Многоразовая шина для фиксации перелома, должна быть обмотана для стабильности</Russian>
                 <Ukrainian>Багаторазова шина для фіксації перелому, має бути обмотана для стабільності</Ukrainian>
-                <Korean>재사용 가능한 부목으로 골절을 고정함, 안정성을 위해 탄성 붕대로 감아야 함 </Korean>
+                <Korean>재사용 가능한 부목으로 골절을 고정함, 안정성을 위해 탄성 붕대로 감아야 함</Korean>
                 <Spanish>Férula reutilizable para inmovilizar fracturas, debe envolverse para mantenerla estable</Spanish>
             </Key>
         </Container>
@@ -263,7 +263,7 @@
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSplint_ActionLog">
                 <English>%1 removed splint</English>
-                <Polish>%1 zdjął szynę </Polish>
+                <Polish>%1 zdjął szynę</Polish>
                 <German>%1 entfernte Schiene</German>
                 <French>%1 a enlevé l'attelle</French>
                 <Portuguese>%1 removendo tala</Portuguese>
@@ -440,7 +440,7 @@
                 <Portuguese>Inspecionando membro por fratura...</Portuguese>
                 <Russian>Осмотр конечности на перелом...</Russian>
                 <Ukrainian>Огляд кінцівки на перелом...</Ukrainian>
-                <Korean>팔다리 골절 검사 중... </Korean>
+                <Korean>팔다리 골절 검사 중...</Korean>
                 <Spanish>Inspeccionando extremidad por fractura...</Spanish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_ActionLog">
@@ -548,7 +548,7 @@
                 <Portuguese>O paciente não apresenta danos substanciais no membro</Portuguese>
                 <Russian>У пациента нет существенных повреждений конечности</Russian>
                 <Ukrainian>У пацієнта немає суттєвих ушкоджень кінцівки</Ukrainian>
-                <Korean>환자의 팔다리에 큰 손상이 없습니다 </Korean>
+                <Korean>환자의 팔다리에 큰 손상이 없습니다</Korean>
                 <Spanish>El paciente no tiene daño significativo en la extremidad</Spanish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury_Short">
@@ -575,7 +575,7 @@
                 <Portuguese>realinhado</Portuguese>
                 <Russian>Репозиция выполнена</Russian>
                 <Ukrainian>Репозицію виконано</Ukrainian>
-                <Korean>정렬 수행됨 </Korean>
+                <Korean>정렬 수행됨</Korean>
                 <Spanish>Realineamiento realizado</Spanish>
             </Key>
         </Container>
@@ -601,7 +601,7 @@
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete">
                 <English>Fracture realignment performed</English>
                 <French>Réalignement de la fracture effectué</French>
-                <Portuguese>Realizado realinhamento </Portuguese>
+                <Portuguese>Realizado realinhamento</Portuguese>
                 <Russian>Репозиция перелома выполнена</Russian>
                 <Ukrainian>Репозицію перелому виконано</Ukrainian>
                 <Korean>골절 정렬 수행됨</Korean>

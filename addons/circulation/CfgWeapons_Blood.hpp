@@ -65,6 +65,7 @@ BLOODBAG_ENTRY(ABN,250,__EVAL(call compile BLOODBAG_NAME_FORMAT('AB- (250ml)')))
 #define FRESHBLOODBAG_ENTRY(id,amount,name,shortname) \
     class TRIPLES(ACM_FreshBloodBag,amount,id): DOUBLES(ACM_FreshBloodBag,amount) { \
         displayName = name; \
+        descriptionShort = CSTRING(FreshBloodBag_Desc); \
         shortName = shortname; \
         uniqueBag = 1; \
     }

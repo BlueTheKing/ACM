@@ -54,7 +54,7 @@ class ACEGVAR(medical_treatment,actions) {
 
     class AED_ApplyPads: CheckPulse {
         displayName = CSTRING(AED_ApplyPads);
-        displayNameProgress = CSTRING(AED_ApplyPads);
+        displayNameProgress = CSTRING(AED_ApplyPads_Progress);
         icon = "";
         category = "advanced";
         treatmentLocations = TREATMENT_LOCATIONS_ALL;

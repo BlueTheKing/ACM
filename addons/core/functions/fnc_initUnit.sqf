@@ -18,7 +18,7 @@
 params ["_patient"];
 
 [_patient] call EFUNC(airway,initUnit);
-[_patient] call EFUNC(circulation,initUnit);
+//[_patient] call EFUNC(circulation,initUnit);
 
 [{
     params ["_patient"];

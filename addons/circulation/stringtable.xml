@@ -352,7 +352,7 @@
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IO">
             <English>Allow IO</English>
-            <Polish>Pozwól na wkłucie IO </Polish>
+            <Polish>Pozwól na wkłucie IO</Polish>
             <French>Autoriser les IO</French>
             <German>Erlaube i.o. Zugang</German>
             <Portuguese>Permitir IO</Portuguese>
@@ -377,7 +377,7 @@
             <Polish>Czas igły 16g</Polish>
             <German>16g i.v. Zeit</German>
             <French>Temps 16g</French>
-            <Portuguese>Tempo para IV 16g </Portuguese>
+            <Portuguese>Tempo para IV 16g</Portuguese>
             <Russian>Время установки IV 16G</Russian>
             <Ukrainian>Час встановлення IV 16G</Ukrainian>
             <Korean>16g IV 시간</Korean>
@@ -443,7 +443,7 @@
             <Polish>Czas FAST1 IO</Polish>
             <German>FAST1 IO Zeit</German>
             <French>Temps FAST1 IO</French>
-            <Portuguese>Tempo para FAST1 IO </Portuguese>
+            <Portuguese>Tempo para FAST1 IO</Portuguese>
             <Russian>Время установки FAST1 IO</Russian>
             <Ukrainian>Час встановлення FAST1 IO</Ukrainian>
             <Korean>FAST1 IO 시간</Korean>
@@ -798,7 +798,7 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_PreparedWith">
                 <English>%1ml syringe prepared with %2</English>
-                <Polish>Strzykawka %1ml przygotowana z %2 </Polish>
+                <Polish>Strzykawka %1ml przygotowana z %2</Polish>
                 <German>%1 ml Spritze mit %2</German>
                 <French>Seringue de %1ml préparée avec %2</French>
                 <Portuguese>Seringa de %1ml preparada com %2</Portuguese>
@@ -870,7 +870,7 @@
                 <Portuguese>Bolsa de sangue fresco %1</Portuguese>
                 <Russian>Пакет свежей крови %1</Russian>
                 <Ukrainian>Пакет свіжої крові %1</Ukrainian>
-                <Korean>신선 혈액 백 %1 </Korean>
+                <Korean>신선 혈액 백 %1</Korean>
                 <Spanish>Bolsa de sangre fresca %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag_Short">
@@ -1125,7 +1125,7 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Adenosine_Desc">
                 <English>Used to treat certain heart arrhythmias</English>
-                <Polish>Używana do leczenia niektórych rodzajów arytmii serca </Polish>
+                <Polish>Używana do leczenia niektórych rodzajów arytmii serca</Polish>
                 <German>Behandelt bestimmte Arrhythmien</German>
                 <French>Utilisé pour traiter certaines arythmies cardiaques</French>
                 <Portuguese>Usado para tratar certas arritmias cardíacas</Portuguese>
@@ -1339,7 +1339,7 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ertapenem_Desc">
                 <English>Used to manage infections from open wounds, required before evacuation of casualty</English>
-                <Polish>Używany do walki z infekcjami otwartych ran, wymagany do ewakuacji </Polish>
+                <Polish>Używany do walki z infekcjami otwartych ran, wymagany do ewakuacji</Polish>
                 <German>Antibiotika, um Wundinfektionen bei offenen Wunden vorzubeugen. Wird vor Evakuierung benötigt.</German>
                 <French>Utilisé pour traiter les infections des plaies ouvertes, nécessaire avant l'évacuation de la victime.</French>
                 <Portuguese>Usado para tratar infecções de feridas abertas, necessário antes da evacuação da vítima</Portuguese>
@@ -1361,7 +1361,7 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Esmolol_Desc">
                 <English>Used to lower heart rate for a short time</English>
-                <Polish>Używany do obniżenia tętna na krótki czas </Polish>
+                <Polish>Używany do obniżenia tętna na krótki czas</Polish>
                 <German>Betablocker, um kurzfristig die Herzfrequenz zu senken</German>
                 <French>Utilisé pour réduire la fréquence cardiaque pendant une courte période</French>
                 <Portuguese>Usado para diminuir a frequência cardíaca por um curto período de tempo</Portuguese>
@@ -1791,7 +1791,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Hint">
                 <English>%1 removed lozenge</English>
                 <French>%1 a supprimé la pastille</French>
-                <Portuguese>%1 removeu </Portuguese>
+                <Portuguese>%1 removeu</Portuguese>
                 <Russian>%1 удалил леденец</Russian>
                 <Ukrainian>%1 видалив льодяник</Ukrainian>
                 <Korean>%1이 로젠지를 제거함</Korean>
@@ -2421,7 +2421,7 @@
                 <Portuguese>Inserir IV 16g (superior)</Portuguese>
                 <Russian>Установить IV 16G (верх)</Russian>
                 <Ukrainian>Встановити IV 16G (верх)</Ukrainian>
-                <Korean>16g IV 삽입 (상부) </Korean>
+                <Korean>16g IV 삽입 (상부)</Korean>
                 <Spanish>Insertar IV 16G (superior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Upper">
@@ -2498,7 +2498,7 @@
                 <Portuguese>Removendo IV 16g...</Portuguese>
                 <Russian>Снять IV 16G...</Russian>
                 <Ukrainian>Зняття IV 16G...</Ukrainian>
-                <Korean>16g IV 제거 중... </Korean>
+                <Korean>16g IV 제거 중...</Korean>
                 <Spanish>Retirando IV 16G...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Upper">
@@ -2575,7 +2575,7 @@
                 <Portuguese>Inserindo IV 14g...</Portuguese>
                 <Russian>Установка IV 14G...</Russian>
                 <Ukrainian>Встановлення IV 14G...</Ukrainian>
-                <Korean>14g IV 삽입 중... </Korean>
+                <Korean>14g IV 삽입 중...</Korean>
                 <Spanish>Insertando IV 14G...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Progress">
@@ -2586,7 +2586,7 @@
                 <Portuguese>Removendo IV 14g...</Portuguese>
                 <Russian>Снять IV 14G...</Russian>
                 <Ukrainian>Зняття IV 14G...</Ukrainian>
-                <Korean>14g IV 제거 중... </Korean>
+                <Korean>14g IV 제거 중...</Korean>
                 <Spanish>Retirando IV 14G...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_FAST1">
@@ -2608,7 +2608,7 @@
                 <Portuguese>Inserindo FAST1 IO...</Portuguese>
                 <Russian>Установка FAST1 IO...</Russian>
                 <Ukrainian>Встановлення FAST1 IO...</Ukrainian>
-                <Korean>FAST1 IO 삽입 중... </Korean>
+                <Korean>FAST1 IO 삽입 중...</Korean>
                 <Spanish>Insertando IO FAST1...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_FAST1">
@@ -2619,7 +2619,7 @@
                 <Portuguese>Remover FAST1 IO</Portuguese>
                 <Russian>Снять FAST1 IO</Russian>
                 <Ukrainian>Зняти FAST1 IO</Ukrainian>
-                <Korean>FAST1 IO 제거 </Korean>
+                <Korean>FAST1 IO 제거</Korean>
                 <Spanish>Retirar IO FAST1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_FAST1_Progress">
@@ -2630,7 +2630,7 @@
                 <Portuguese>Removendo FAST1 IO...</Portuguese>
                 <Russian>Снятие FAST1 IO...</Russian>
                 <Ukrainian>Зняття FAST1 IO...</Ukrainian>
-                <Korean>FAST1 IO 제거 중... </Korean>
+                <Korean>FAST1 IO 제거 중...</Korean>
                 <Spanish>Retirando IO FAST1...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_EZ">
@@ -2641,7 +2641,7 @@
                 <Portuguese>Inserir EZ-IO</Portuguese>
                 <Russian>Установить EZ-IO</Russian>
                 <Ukrainian>Встановити EZ-IO</Ukrainian>
-                <Korean>EZ-IO 삽입 </Korean>
+                <Korean>EZ-IO 삽입</Korean>
                 <Spanish>Insertar EZ-IO</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_EZ_Progress">
@@ -2652,7 +2652,7 @@
                 <Portuguese>Inserindo EZ-IO...</Portuguese>
                 <Russian>Установка EZ-IO...</Russian>
                 <Ukrainian>Встановлення EZ-IO...</Ukrainian>
-                <Korean>EZ-IO 삽입 중... </Korean>
+                <Korean>EZ-IO 삽입 중...</Korean>
                 <Spanish>Insertando EZ-IO...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_EZ">
@@ -2663,7 +2663,7 @@
                 <Portuguese>Remover EZ-IO</Portuguese>
                 <Russian>Снять EZ-IO</Russian>
                 <Ukrainian>Зняти EZ-IO</Ukrainian>
-                <Korean>EZ-IO 제거 </Korean>
+                <Korean>EZ-IO 제거</Korean>
                 <Spanish>Retirar EZ-IO</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_EZ_Progress">
@@ -2737,18 +2737,18 @@
                 <Portuguese>Paciente já tem IO no %1</Portuguese>
                 <Russian>У пациента уже стоит IO в %1</Russian>
                 <Ukrainian>У пацієнта вже є IO у %1</Ukrainian>
-                <Korean>환자는 이미 %1에 IO가 있음 </Korean>
+                <Korean>환자는 이미 %1에 IO가 있음</Korean>
                 <Spanish>El paciente ya tiene acceso IO en %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_FailedToLocateVein">
                 <English>Failed to locate vein</English>
-                <Polish>Nie udało się wyczuć żyły </Polish>
+                <Polish>Nie udało się wyczuć żyły</Polish>
                 <German>Keine Vene gefunden</German>
                 <French>N'a pas senti la veine</French>
                 <Portuguese>Falha em localizar a veia</Portuguese>
                 <Russian>Не удалось найти вену</Russian>
                 <Ukrainian>Не вдалося знайти вену</Ukrainian>
-                <Korean>정맥을 찾지 못함 </Korean>
+                <Korean>정맥을 찾지 못함</Korean>
                 <Spanish>No se pudo localizar la vena</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_BodyPartTooDamaged">
@@ -2772,7 +2772,7 @@
                 <Portuguese>Inspecionar cateter IV (superior)</Portuguese>
                 <Russian>Осмотреть катетер IV (верх)</Russian>
                 <Ukrainian>Оглянути катетер IV (верх)</Ukrainian>
-                <Korean>IV 카테터 검사 (상부) </Korean>
+                <Korean>IV 카테터 검사 (상부)</Korean>
                 <Spanish>Inspeccionar catéter IV (superior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Middle">
@@ -2783,7 +2783,7 @@
                 <Portuguese>Inspecionar cateter IV (medial)</Portuguese>
                 <Russian>Осмотреть катетер IV (середина)</Russian>
                 <Ukrainian>Оглянути катетер IV (середина)</Ukrainian>
-                <Korean>IV 카테터 검사 (중부) </Korean>
+                <Korean>IV 카테터 검사 (중부)</Korean>
                 <Spanish>Inspeccionar catéter IV (medio)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Lower">
@@ -2794,7 +2794,7 @@
                 <Portuguese>Inspecionar cateter (inferior)</Portuguese>
                 <Russian>Осмотреть катетер IV (низ)</Russian>
                 <Ukrainian>Оглянути катетер IV (низ)</Ukrainian>
-                <Korean>IV 카테터 검사 (하부) </Korean>
+                <Korean>IV 카테터 검사 (하부)</Korean>
                 <Spanish>Inspeccionar catéter IV (inferior)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Progress">
@@ -2816,7 +2816,7 @@
                 <Portuguese>Cateter IV está livre</Portuguese>
                 <Russian>Катетер IV проходим</Russian>
                 <Ukrainian>Катетер IV прохідний</Ukrainian>
-                <Korean>IV 카테터 막힘 없음 </Korean>
+                <Korean>IV 카테터 막힘 없음</Korean>
                 <Spanish>Catéter IV limpio</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Clear_Short">
@@ -2993,7 +2993,7 @@
                 <Portuguese>Infundir (IV) %1 (%2)</Portuguese>
                 <Russian>Ввести %1 (%2)</Russian>
                 <Ukrainian>Ввести %1 (%2)</Ukrainian>
-                <Korean>%1 푸시 (%2) </Korean>
+                <Korean>%1 푸시 (%2)</Korean>
                 <Spanish>Empujar %1 (%2)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Pushing">
@@ -3004,7 +3004,7 @@
                 <Portuguese>Infundindo (IV) %1...</Portuguese>
                 <Russian>Введение %1...</Russian>
                 <Ukrainian>Введення %1...</Ukrainian>
-                <Korean>%1 푸시 중... </Korean>
+                <Korean>%1 푸시 중...</Korean>
                 <Spanish>Empujando %1...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Inject">
@@ -3015,7 +3015,7 @@
                 <Portuguese>Infundir (IM) %1 (%2)</Portuguese>
                 <Russian>Инъекция %1 (%2)</Russian>
                 <Ukrainian>Інʼєкція %1 (%2)</Ukrainian>
-                <Korean>%1 주입 (%2) </Korean>
+                <Korean>%1 주입 (%2)</Korean>
                 <Spanish>Inyectar %1 (%2)</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Injecting">
@@ -3026,7 +3026,7 @@
                 <Portuguese>Infundindo (IM) %1...</Portuguese>
                 <Russian>Выполняется инъекция %1...</Russian>
                 <Ukrainian>Виконується інʼєкція %1...</Ukrainian>
-                <Korean>%1 주입 중... </Korean>
+                <Korean>%1 주입 중...</Korean>
                 <Spanish>Inyectando %1...</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawing">
@@ -3042,7 +3042,7 @@
                 <Polish>Pobrano %1 (%2) do strzykawki (%3ml)</Polish>
                 <German>Ziehe %1 (%2) in %3ml Spritze auf</German>
                 <French>Prélever %1 (%2) dans une seringue de %3ml</French>
-                <Portuguese>Aspirando %1 (%2) na seringa de %3ml </Portuguese>
+                <Portuguese>Aspirando %1 (%2) na seringa de %3ml</Portuguese>
                 <Russian>Набор %1 (%2) в шприц %3 мл</Russian>
                 <Ukrainian>Набір %1 (%2) у шприц %3 мл</Ukrainian>
                 <Korean>%1(%2)를 %3ml 주사기에 뽑는 중</Korean>
@@ -3078,7 +3078,7 @@
                 <Portuguese>Infundido (IM)</Portuguese>
                 <Russian>Введено (IM)</Russian>
                 <Ukrainian>Введено (IM)</Ukrainian>
-                <Korean>주입 완료 </Korean>
+                <Korean>주입 완료</Korean>
                 <Spanish>Inyectado</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_%1_Injected">
@@ -3128,7 +3128,7 @@
                 <Portuguese>Nenhuma medicação selecionada</Portuguese>
                 <Russian>Препарат не выбран</Russian>
                 <Ukrainian>Препарат не вибрано</Ukrainian>
-                <Korean>선택된 약물 없음 </Korean>
+                <Korean>선택된 약물 없음</Korean>
                 <Spanish>No hay medicación seleccionada</Spanish>
             </Key>
         </Container>
@@ -3583,7 +3583,7 @@
                 <Portuguese>Alternar alarmes</Portuguese>
                 <Russian>Переключение оповещений</Russian>
                 <Ukrainian>Перемикання сповіщень</Ukrainian>
-                <Korean>알람 전환 </Korean>
+                <Korean>알람 전환</Korean>
                 <Spanish>Alternar alarmas</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Charge">
@@ -3640,7 +3640,7 @@
                 <Portuguese>Transfundindo plasma [%1x]</Portuguese>
                 <Russian>Переливание плазмы [%1×]</Russian>
                 <Ukrainian>Переливання плазми [%1×]</Ukrainian>
-                <Korean>혈장 주입 중 [%1x] </Korean>
+                <Korean>혈장 주입 중 [%1x]</Korean>
                 <Spanish>Transfundiendo plasma [%1x]</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingBlood">
@@ -3662,7 +3662,7 @@
                 <Portuguese>Transfundindo sangue fresco [%1x]</Portuguese>
                 <Russian>Переливание свежей крови [%1×]</Russian>
                 <Ukrainian>Переливання свіжої крові [%1×]</Ukrainian>
-                <Korean>신선 혈액 수혈 중 [%1x] </Korean>
+                <Korean>신선 혈액 수혈 중 [%1x]</Korean>
                 <Spanish>Transfundiendo sangre fresca [%1x]</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_CollectingBlood">
@@ -3686,6 +3686,9 @@
                 <Ukrainian>%1 розпочав переливання (%2) у %3</Ukrainian>
                 <Korean>%1이 %3에 체액(%2) 주입을 시작함</Korean>
                 <Spanish>%1 inició transfusión (%2) en %3</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Circulation_GUI_BeganCollecting">
+                <English>%1 began collecting blood (%2ml) from %3</English>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
                 <English>%1 moved fluid bag (%2) to %3</English>
@@ -3801,7 +3804,7 @@
                 <Portuguese>Alvo: %1</Portuguese>
                 <Russian>Цель: %1</Russian>
                 <Ukrainian>Ціль: %1</Ukrainian>
-                <Korean>대상: %1 </Korean>
+                <Korean>대상: %1</Korean>
                 <Spanish>Objetivo: %1</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Self">
@@ -3823,7 +3826,7 @@
                 <Portuguese>Paciente</Portuguese>
                 <Russian>Пациент</Russian>
                 <Ukrainian>Пацієнт</Ukrainian>
-                <Korean>환자 </Korean>
+                <Korean>환자</Korean>
                 <Spanish>Paciente</Spanish>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Vehicle">

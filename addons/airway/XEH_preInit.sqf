@@ -142,13 +142,4 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
-/*[
-    QGVAR(airwayAdjunctReusable),
-    "CHECKBOX",
-    [LSTRING(SETTING_AirwayAdjunctsReusable), LSTRING(SETTING_AirwayAdjunctsReusable_Desc)],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_AirwayAdjunct)],
-    [false],
-    true
-] call CBA_fnc_addSetting;*/
-
 ADDON = true;

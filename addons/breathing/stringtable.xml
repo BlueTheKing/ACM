@@ -147,7 +147,7 @@
         <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance">
             <English>Hemothorax Chance</English>
             <Polish>Szansa na krwiaka opłucnej</Polish>
-            <French>Risque d'hemothorax </French>
+            <French>Risque d'hemothorax</French>
             <German>Hämatothorax Wahrscheinlichkeit</German>
             <Portuguese>Chance de hemotórax</Portuguese>
             <Russian>Вероятность гемоторакса</Russian>
@@ -966,7 +966,7 @@
                 <Spanish>Realizando descompresión torácica con aguja...</Spanish>
             </Key>
             <Key ID="STR_ACM_Breathing_NCD_Needle_Decompression">
-                <English>Needle Decompression</English>
+                <English>Needle Chest Decompression</English>
                 <Polish>Dekompresja igłowa</Polish>
                 <German>Nadledekompression</German>
                 <French>Décompression à l'aiguille</French>
@@ -1239,7 +1239,7 @@
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Accurate">
                 <English>~%1 ml of blood drained</English>
-                <Polish>Odessano ~%1 ml krwi </Polish>
+                <Polish>Odessano ~%1 ml krwi</Polish>
                 <German>~%1 ml Blut drainiert</German>
                 <French>~%1 ml de sang drainé</French>
                 <Portuguese>~%1 ml de sangue drenado</Portuguese>
@@ -1397,7 +1397,7 @@
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_Complete">
                 <English>Chest Tube re-sealed</English>
-                <Polish>Rurka do drenażu została już zamknięta </Polish>
+                <Polish>Rurka do drenażu została już zamknięta</Polish>
                 <German>Thoraxdrainage wiederverschlossen</German>
                 <French>Tube thoracique refermé</French>
                 <Portuguese>Tubo torácico selado novamente</Portuguese>
@@ -1547,7 +1547,7 @@
                 <Russian>Лёгкое коллапсировано</Russian>
                 <Ukrainian>Легеня колапсована</Ukrainian>
                 <Korean>폐 붕괴됨</Korean>
-                <Spanish>El pulmón está colapsado </Spanish>
+                <Spanish>El pulmón está colapsado</Spanish>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Blood">
                 <English>Found blood in pleural space</English>
@@ -1622,7 +1622,7 @@
                 <Polish>Użyj kieszonkowego worka samorozprężalnego (BVM)</Polish>
                 <German>Taschenbeatmungsbeutel verwenden</German>
                 <French>Utiliser le BVM de poche</French>
-                <Portuguese>Usar BVM compacto </Portuguese>
+                <Portuguese>Usar BVM compacto</Portuguese>
                 <Russian>Использовать карманный мешок Амбу</Russian>
                 <Ukrainian>Використати кишеньковий мішок Амбу</Ukrainian>
                 <Korean>Pocket BVM 사용</Korean>
@@ -1795,7 +1795,7 @@
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continued">
                 <English>Continued Rescue Breaths</English>
-                <Polish>Wznowiono oddechy ratunkowe </Polish>
+                <Polish>Wznowiono oddechy ratunkowe</Polish>
                 <German>Beatmung fortgesetzt</German>
                 <French>Poursuite la respiration artificielle</French>
                 <Portuguese>Continuando vesntilação</Portuguese>

@@ -303,28 +303,6 @@
             <Korean>수술적 기도 처치 (Surgical Airway) 시술에 필요한 훈련 수준</Korean>
             <Spanish>Nivel de entrenamiento requerido para establecer vías aéreas quirúrgicas</Spanish>
         </Key>
-        <Key ID="STR_ACM_Airway_SETTING_AirwayAdjunctsReusable">
-            <English>Airway Adjuncts Reusable</English>
-            <Polish>Przedmioty dróg oddechowych ponownego użytku</Polish>
-            <French>Adjuvants des voies aériennes réutilisables</French>
-            <German>Atemwegshilfen Wiederverwendung</German>
-            <Portuguese>Reutilização de adjuvantes de vias aéreas</Portuguese>
-            <Russian>Дополнительные средства для дыхательных путей многоразовые</Russian>
-            <Ukrainian>Додаткові засоби для дихальних шляхів багаторазові</Ukrainian>
-            <Korean>기도 (Airway) 보조기구 재사용 가능</Korean>
-            <Spanish>Dispositivos auxiliares de vía aérea reutilizables</Spanish>
-        </Key>
-        <Key ID="STR_ACM_Airway_SETTING_AirwayAdjunctsReusable_Desc">
-            <English>Airway adjuncts are kept instead of discarded on removal</English>
-            <Polish>Przedmioty dróg oddechowych pozostają w ekwipunku po ich użyciu</Polish>
-            <German>Atemwegshilfen sind wiederverwendbar und werden nicht verworfen nach Entfernung</German>
-            <French>Les dispositifs respiratoires sont réutilisables et ne sont pas jetés après avoir été retirés</French>
-            <Portuguese>Adjuvantes de vias aéreas são mantidos ao invés de serem descartados após a remoção</Portuguese>
-            <Russian>Дополнительные средства сохраняются после использования</Russian>
-            <Ukrainian>Додаткові засоби зберігаються після використання</Ukrainian>
-            <Korean>제거 시 버리지 않고 유지됨</Korean>
-            <Spanish>Los dispositivos auxiliares se conservan en lugar de desecharse al retirarlos</Spanish>
-        </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Airway_OPA">
                 <English>OPA</English>
@@ -1130,17 +1108,6 @@
                 <Ukrainian>Дихальні шляхи були очищені</Ukrainian>
                 <Korean>기도 (Airway) 이물 제거 완료</Korean>
                 <Spanish>La vía aérea ha sido despejada</Spanish>
-            </Key>
-            <Key ID="STR_ACM_Airway_HeadTurn_Failed">
-                <English>Head turning unsuccessful</English>
-                <Polish>Obracanie głowy nieudane</Polish>
-                <German>Kopfdrehung war nicht erfolgreich</German>
-                <French>Rotation de la tête sans succès</French>
-                <Portuguese>Lateralização de cabeça malsucedida </Portuguese>
-                <Russian>Поворот головы не удался</Russian>
-                <Ukrainian>Поворот голови не вдався</Ukrainian>
-                <Korean>머리 돌리기 실패</Korean>
-                <Spanish>Giro de cabeza fallido</Spanish>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTurn_SuctionRequired">
                 <English>Medical suction required</English>
