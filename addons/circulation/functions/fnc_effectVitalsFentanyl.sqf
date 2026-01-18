@@ -39,23 +39,23 @@ private _effectIM_painSuppression = [
 ] select (_concentrationIM > _desiredDoseLow);
 
 private _effectIV_HR = [
-    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -2, true]),
-    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -2, -5])
+    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -6, true]),
+    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -6, -10])
 ] select (_concentrationIV > _desiredDoseLow);
 
 private _effectIM_HR = [
-    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIM, 0, -0.5, true]),
-    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -0.5, -3])
+    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIM, 0, -2, true]),
+    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -2, -5])
 ] select (_concentrationIM > _desiredDoseLow);
 
 private _effectIV_peripheralVasoconstriction = [
-    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -4, true]),
-    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -4, -8])
+    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIV, 0, -7, true]),
+    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIV, -7, -15])
 ] select (_concentrationIV > _desiredDoseLow);
 
 private _effectIM_peripheralVasoconstriction = [
-    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIM, 0, -1, true]),
-    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -1, -4])
+    (linearConversion [_minimumConcentration, _desiredDoseLow, _concentrationIM, 0, -5, true]),
+    (linearConversion [_desiredDoseLow, _desiredDoseHigh, _concentrationIM, -5, -10])
 ] select (_concentrationIM > _desiredDoseLow);
 
 private _effectIV_COSensitivity = [
