@@ -140,7 +140,7 @@ _patient setVariable [QGVAR(SurgicalAirway_InProgress), true, true];
         [LLSTRING(SurgicalAirway_Cancelled), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
     } else {
         [_patient, "activity", LLSTRING(SurgicalAirway_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
-        [_patient, LLSTRING(SurgicalAirway)] call ACEFUNC(medical_treatment,addToTriageCard);
+        [_patient, LSTRING(SurgicalAirway)] call ACEFUNC(medical_treatment,addToTriageCard);
 
         if (_patient getVariable [QGVAR(SurgicalAirway_StrapSecure), false]) then {
             if (_patient getVariable [QGVAR(SurgicalAirway_Strap_PFH), -1] != -1) exitWith {};

@@ -28,7 +28,7 @@ private _isFreshBlood = false;
 
 if (((_classname splitString "_") select 0) == "FreshBloodBag") then {
     _isFreshBlood = true;
-    _usedItem = format ["%1_%2_%3", (_usedItem splitString "_" select 0), (_usedItem splitString "_" select 1), (_usedItem splitString "_" select 2)];
+    _usedItem = [ELSTRING(circulation,FreshBloodBag), (format ["(%1ml)", (_usedItem splitString "_" select 2)])];
 };
 
 [_patient, _usedItem] call ACEFUNC(medical_treatment,addToTriageCard);
@@ -37,7 +37,7 @@ private _bodyPartString = [_bodyPart, false] call FUNC(getBodyPartString);
 
 if (_classname in FBTK_ARRAY_DATA) then {
     private _amount = (_classname splitString "_") select 1;
-    [_patient, "activity", "%1 began collecting blood (%2ml) from %3", [[_medic, false, true] call ACEFUNC(common,getName), _amount, _bodyPartString]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "activity", ELSTRING(circulation,GUI_BeganCollecting), [[_medic, false, true] call ACEFUNC(common,getName), _amount, _bodyPartString]] call ACEFUNC(medical_treatment,addToLog);
 } else {
     [_patient, "activity", ELSTRING(circulation,GUI_BeganTransfusing), [[_medic, false, true] call ACEFUNC(common,getName), [_classname] call EFUNC(circulation,getFluidBagString), _bodyPartString]] call ACEFUNC(medical_treatment,addToLog);
 };

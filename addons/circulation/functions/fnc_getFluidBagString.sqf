@@ -36,7 +36,7 @@ switch (_fluidType) do {
         _returnArray = ["%1 %2 %3ml", LSTRING(Blood), ([GET_NUMBER(_config >> _classname >> "bloodtype",0), 1] call FUNC(convertBloodType)), _fluidAmount];
     };
     case "FreshBlood": {
-        _returnArray = ["%1 %2ml %3 [ID:%4]", LSTRING(FreshBlood), _fluidAmount, [(([_freshBloodID] call FUNC(getFreshBloodEntry)) select 2), 1] call FUNC(convertBloodType), _freshBloodID];
+        _returnArray = ["%1 %2ml [ID:%3]", LSTRING(FreshBlood), _fluidAmount, _freshBloodID];
     };
     default {
         _returnArray = ["%1 %2ml", _fluidType, _fluidAmount];

@@ -42,7 +42,7 @@ if (_type == "") then {
         [LLSTRING(FentanylLozenge_Blocked), 2, _medic] call ACEFUNC(common,displayTextStructured);
     };
 
-    [_patient, LLSTRING(FentanylLozenge)] call ACEFUNC(medical_treatment,addToTriageCard);
+    [_patient, LSTRING(FentanylLozenge)] call ACEFUNC(medical_treatment,addToTriageCard);
     
     [_patient, "activity", LLSTRING(FentanylLozenge_Give_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
     [LLSTRING(FentanylLozenge_Give_Complete), 1.5, _medic] call ACEFUNC(common,displayTextStructured);

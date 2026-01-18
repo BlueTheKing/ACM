@@ -102,7 +102,7 @@ if (_finishTime > 0) exitWith {
                         _usedItem = "ACM_ChestSeal";
                     };
 
-                    [_target, LELSTRING(breathing,ChestSeal)] call ACEFUNC(medical_treatment,addToTriageCard);
+                    [_target, ELSTRING(breathing,ChestSeal)] call ACEFUNC(medical_treatment,addToTriageCard);
                     [_target, "activity", LELSTRING(breathing,ChestSeal_ActionLog), [[_healer, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
                 };
                 case QEGVAR(circulation,administerMedicationItem): {
