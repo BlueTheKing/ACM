@@ -255,7 +255,7 @@
                 <Portuguese>Colocar em posição supinada</Portuguese>
                 <Russian>Уложить на спину</Russian>
                 <Ukrainian>Покласти на спину</Ukrainian>
-                <Korean>바로 누이기</Korean>
+                <Korean>앙아위로 눕히기</Korean>
                 <Spanish>Colocar en Posición Supina</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Complete">
@@ -264,7 +264,7 @@
                 <Portuguese>Paciente já foi colocado em posição supinada</Portuguese>
                 <Russian>Пациент уложен на спину</Russian>
                 <Ukrainian>Пацієнта покладено на спину</Ukrainian>
-                <Korean>환자가 바로 누운 자세가 되었습니다 </Korean>
+                <Korean>환자가 앙아위로 누웠습니다</Korean>
                 <Spanish>El paciente ha sido colocado en posición supina</Spanish>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Hint">
@@ -273,7 +273,7 @@
                 <Portuguese>Você foi colocado em posição supinada</Portuguese>
                 <Russian>Вас уложили на спину</Russian>
                 <Ukrainian>Вас поклали на спину</Ukrainian>
-                <Korean>바로 누운 자세가 되었습니다</Korean>
+                <Korean>앙아위로 눕혀졌습니다</Korean>
                 <Spanish>Has sido colocado en posición supina</Spanish>
             </Key>
         </Container>
@@ -312,7 +312,7 @@
                 <Portuguese>Carregar paciente</Portuguese>
                 <Russian>Нести пациента</Russian>
                 <Ukrainian>Нести пацієнта</Ukrainian>
-                <Korean>환자 들</Korean>
+                <Korean>환자 운반</Korean>
                 <Spanish>Portar Paciente</Spanish>
             </Key>
         </Container>
@@ -349,7 +349,7 @@
                 <Portuguese>%1 está inspecionando sua plaqueta de identificação</Portuguese>
                 <Russian>%1 проверяет ваши жетоны</Russian>
                 <Ukrainian>%1 перевіряє ваші жетони</Ukrainian>
-                <Korean>%1이 당신의 군번줄을 확인 중입니다</Korean>
+                <Korean>%1가 당신의 군번줄을 확인 중입니다</Korean>
                 <Spanish>%1 está inspeccionando tus chapas de identificación</Spanish>
             </Key>
         </Container>
