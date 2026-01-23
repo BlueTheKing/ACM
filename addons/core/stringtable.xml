@@ -96,6 +96,7 @@
             <Ukrainian>Дозволити ШІ-медику проміжне лікування</Ukrainian>
             <Korean>의무병 AI 중간 처치 허용</Korean>
             <Spanish>Permitir Tratamiento Intermedio al Médico IA</Spanish>
+            <French>Autoriser les médecin IA les traitements "intermédaires"</French>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment_Desc">
             <English>Sets whether medic AI is allowed to perform any actions other than bandaging and tourniqueting</English>
@@ -104,6 +105,7 @@
             <Ukrainian>Визначає, чи може ШІ-медик виконувати дії, окрім бинтування та накладання джгута</Ukrainian>
             <Korean>의무병 AI가 붕대 감기와 지혈대 적용 외의 행동을 수행할 수 있는지 설정</Korean>
             <Spanish>Define si el médico IA puede realizar acciones adicionales aparte de vendar y aplicar torniquetes</Spanish>
+            <French>Défini si le médecin IA est autorisé à exercer d'autres actions que panser, et mettre des tourniquets</French>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Core_MorphineAutoinjector">
@@ -378,7 +380,7 @@
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
                 <English>Split</English>
-                <French>Séparer</French>
+                <French>Scinder</French>
                 <Portuguese>Dividir</Portuguese>
                 <Russian>Разделить</Russian>
                 <Ukrainian>Розділити</Ukrainian>
@@ -403,6 +405,7 @@
                 <Ukrainian>Медичні предмети повернено з мішка для тіл</Ukrainian>
                 <Korean>시체가방에서 의료 아이템 반환</Korean>
                 <Spanish>Material médico recuperado de la mortaja</Spanish>
+                <French>Les objets médicales on été récupéré de la housse mortuaire</French>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -521,14 +524,17 @@
             <Key ID="STR_ACM_Core_Common_Module_InteractionDistance">
                 <English>Interaction Distance</English>
                 <Spanish>Distancia de Interacción</Spanish>
+                <French>Distance d'interactions</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition">
                 <English>Interaction Position</English>
                 <Spanish>Posición de Interacción</Spanish>
+                <French>Position d'interaction</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition_Tooltip">
                 <English>Interaction position relative to center of object, must be an array containing 3 numbers</English>
                 <Spanish>Posición de interacción relativa al centro del objeto; debe ser un grupo de 3 valores</Spanish>
+                <French>La position d'interaction relativee au centre de l'objet, doit être un ensembble contenant 3 nombres</French>
             </Key>
         </Container>
         <Container name="// ACE Action //">

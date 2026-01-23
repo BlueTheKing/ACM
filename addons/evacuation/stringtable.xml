@@ -281,6 +281,7 @@
                 <Ukrainian>Ви взяли під контроль нове підкріплення</Ukrainian>
                 <Korean>증원군 제어권을 획득했습니다</Korean>
                 <Spanish>Has tomado control de un nuevo refuerzo</Spanish>
+                <French>Vous avez pris le contrôle d'un nouveau renfort</French>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient">
                 <English>Evacuate Patient</English>
@@ -312,6 +313,7 @@
                 <Ukrainian>Точка евакуації</Ukrainian>
                 <Korean>대피 지점</Korean>
                 <Spanish>Punto de Evacuación</Spanish>
+                <French>Point d'évacuation</French>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_ReinforcePoint">
                 <English>Reinforce Point</English>
@@ -319,6 +321,7 @@
                 <Ukrainian>Точка підкріплення</Ukrainian>
                 <Korean>증원 지점</Korean>
                 <Spanish>Punto de Refuerzo</Spanish>
+                <French>Point de renforcement</French>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_PlayerFaction">
                 <English>Player Side</English>
