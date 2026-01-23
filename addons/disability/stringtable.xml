@@ -134,6 +134,7 @@
             <Ukrainian>Дозволити огляд на перелом</Ukrainian>
             <Korean>골절 검사 허용</Korean>
             <Spanish>Permitir inspección de fracturas</Spanish>
+            <French>Autoriser la recherche de fracture</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture_Desc">
             <English>Training level required to inspect for fractures</English>
@@ -142,6 +143,7 @@
             <Ukrainian>Рівень підготовки, необхідний для огляду на переломи</Ukrainian>
             <Korean>골절 검사를 위한 필요한 훈련 레벨</Korean>
             <Spanish>Nivel de entrenamiento requerido para inspeccionar fracturas</Spanish>
+            <French>Niveau de formation requis pour rechercher des fractures</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment">
             <English>Allow Performing Fracture Realignment</English>
@@ -150,6 +152,7 @@
             <Ukrainian>Дозволити репозицію перелому</Ukrainian>
             <Korean>골절 정렬 수행 허용</Korean>
             <Spanish>Permitir realineamiento de fracturas</Spanish>
+            <French>Autoriser d'exécuter les réalignements de fracture</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment_Desc">
             <English>Training level required to perform fracture realignment</English>
@@ -158,6 +161,7 @@
             <Ukrainian>Рівень підготовки, необхідний для виконання репозиції перелому</Ukrainian>
             <Korean>골절 정렬을 수행하기 위한 훈련 레벨</Korean>
             <Spanish>Nivel de entrenamiento requerido para realizar realineamiento de fracturas</Spanish>
+            <French>Niveau de formation requis pour exécuter le réalignement d'une fracture</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture">
             <English>[HARDCORE] Complex Fractures</English>
@@ -166,6 +170,7 @@
             <Ukrainian>[ХАРДКОР] Складні переломи</Ukrainian>
             <Korean>[HARDCORE] 복합 골절 </Korean>
             <Spanish>[HARDCORE] Fracturas complejas</Spanish>
+            <French>[HARDCORE] Fracture complexe</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture_Desc">
             <English>[HARDCORE] Sets whether certain fractures cannot be treated in the field, requiring evacuation</English>
@@ -174,6 +179,7 @@
             <Ukrainian>[ХАРДКОР] Визначає, чи можна лікувати деякі переломи лише в стаціонарі, потрібна евакуація</Ukrainian>
             <Korean>[HARDCORE] 특정 골절이 현장에서 치료 불가하며, 후송 필요 여부 설정</Korean>
             <Spanish>[HARDCORE] Define si ciertas fracturas no pueden tratarse en campo, requiriendo evacuación</Spanish>
+            <French>[HARDCORE] Defini si certaine fracture ne peuvent pas être traité sur le terrain, demandanrt une évacuation.</French>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Disability_UniversalSplint">
