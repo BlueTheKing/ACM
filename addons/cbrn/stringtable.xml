@@ -362,7 +362,7 @@
                 <Ukrainian>Автоінʼєктор ATNA</Ukrainian>
                 <Korean>ATNA 자동주사기 (ATNA Autoinjector)</Korean>
                 <Spanish>Autoinyector ATNA</Spanish>
-                <French>Autoinjecteur D'ATNA</French>
+                <French>Auto-injecteur D'ATNA</French>
             </Key>
             <Key ID="STR_ACM_CBRN_Autoinjector_ATNA_Desc">
                 <English>Antidote Treatment Nerve Agent Autoinjector, used to treat nerve agent exposure</English>
@@ -380,7 +380,7 @@
                 <Ukrainian>Автоінʼєктор мідазоламу</Ukrainian>
                 <Korean>미다졸람 자동주사기</Korean>
                 <Spanish>Autoinyector de Midazolam</Spanish>
-                <French>Autoinjecteur de Midazolam</French>
+                <French>Auto-injecteur de Midazolam</French>
             </Key>
             <Key ID="STR_ACM_CBRN_Autoinjector_Midazolam_Desc">
                 <English>Used to manage seizure activity caused by nerve agent exposure</English>
@@ -454,7 +454,7 @@
                 <Ukrainian>Використати автоінʼєктор ATNA</Ukrainian>
                 <Korean>ATNA 자동주사기 사용 </Korean>
                 <Spanish>Usar Autoinyector ATNA</Spanish>
-                <French>Utiliser l'Autoinjecteur d'ATNA</French>
+                <French>Utiliser l'Auto-injecteur d'ATNA</French>
             </Key>
             <Key ID="STR_ACM_CBRN_ATNAAutoinjector_Progress">
                 <English>Using ATNA Autoinjector...</English>
@@ -463,7 +463,7 @@
                 <Ukrainian>Використання автоінʼєктора ATNA...</Ukrainian>
                 <Korean>ATNA 자동주사기 사용 중... </Korean>
                 <Spanish>Usando el Autoinyector ATNA…</Spanish>
-                <French>Utilisation de l'Autoinjecteur d'ATNA</French>
+                <French>Utilisation de l'Auto-injecteur d'ATNA</French>
             </Key>
             <Key ID="STR_ACM_CBRN_MidazolamAutoinjector">
                 <English>Use Midazolam Autoinjector</English>
@@ -472,7 +472,7 @@
                 <Ukrainian>Використати автоінʼєктор мідазоламу</Ukrainian>
                 <Korean>미다졸람 자동주사기 사용</Korean>
                 <Spanish>Usar Autoinyector de Midazolam</Spanish>
-                <French>Utiliser L'autoinjecteur de Midazolam</French>
+                <French>Utiliser L'auto-injecteur de Midazolam</French>
             </Key>
             <Key ID="STR_ACM_CBRN_MidazolamAutoinjector_Progress">
                 <English>Using Midazolam Autoinjector...</English>
@@ -481,7 +481,7 @@
                 <Ukrainian>Використання автоінʼєктора мідазоламу...</Ukrainian>
                 <Korean>미다졸람 자동주사기 사용 중... </Korean>
                 <Spanish>Usando el Autoinyector de Midazolam…</Spanish>
-                <French>Utilisation de l'Autoinjecteur de Midazolam...</French>
+                <French>Utilisation de l'Auto-injecteur de Midazolam...</French>
             </Key>
         </Container>
         <Container name="// Supply Crate //">
