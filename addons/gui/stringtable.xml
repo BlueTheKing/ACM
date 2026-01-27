@@ -11,6 +11,7 @@
             <Ukrainian>ACM: Інтерфейс</Ukrainian>
             <Korean>ACM: GUI</Korean>
             <Spanish>ACM: GUI</Spanish>
+            <Turkish>ACM: Arayüz</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses">
             <English>Show inactive vitals statuses</English>
@@ -22,6 +23,7 @@
             <Ukrainian>Показувати неактивні показники життєвих функцій</Ukrainian>
             <Korean>비활성 활력징후 표시</Korean>
             <Spanish>Mostrar estados inactivos de constantes vitales</Spanish>
+            <Turkish>Pasif hayati bulgu durumlarını göster</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
             <English>Show vitals status in overview tab when inactive (display ""none"")</English>
@@ -33,6 +35,7 @@
             <Ukrainian>Показувати стан життєвих функцій на вкладці огляду, навіть якщо неактивні (відображати: немає)</Ukrainian>
             <Korean>활력징후가 없는 상태일 때 개요 탭에 활력징후 상태 표시 ("none" 표시)</Korean>
             <Spanish>Mostrar el estado de las constantes vitales en la pestaña de resumen cuando estén inactivas (mostrar “ninguna”)</Spanish>
+            <Turkish>Pasifken genel bakış sekmesinde hayati durumları göster ("yok" olarak görüntüler)</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount">
             <English>Show Pain Amount</English>
@@ -44,6 +47,7 @@
             <Ukrainian>Показувати рівень болю</Ukrainian>
             <Korean>통증 수치 표시</Korean>
             <Spanish>Mostrar Nivel de Dolor</Spanish>
+            <Turkish>Ağrı Miktarını Göster</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount_Desc">
             <English>Show exact pain amount in overview tab</English>
@@ -55,6 +59,7 @@
             <Ukrainian>Показувати точний рівень болю на вкладці огляду</Ukrainian>
             <Korean>개요 탭에 정확한 통증 수치 표시</Korean>
             <Spanish>Mostrar el nivel exacto de dolor en la pestaña de resumen</Spanish>
+            <Turkish>Genel bakış sekmesinde tam ağrı miktarını göster</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture">
             <English>Show Fracture</English>
@@ -62,6 +67,7 @@
             <Ukrainian>Показувати перелом</Ukrainian>
             <Korean>골절 표시</Korean>
             <Spanish>Mostrar Fractura</Spanish>
+            <Turkish>Kırıkları Göster</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
             <English>Show fractured limb(s) on patient and overview tab</English>
@@ -69,6 +75,7 @@
             <Ukrainian>Показувати переломи кінцівок у пацієнта та на вкладці огляду</Ukrainian>
             <Korean>환자 및 개요 탭에 골절된 팔다리 표시</Korean>
             <Spanish>Mostrar la(s) extremidad(es) fracturada(s) en el paciente y en la pestaña de resumen</Spanish>
+            <Turkish>Hastadaki kırık uzuvları ve genel bakış sekmesinde göster</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>
@@ -78,6 +85,7 @@
             <Ukrainian>Показувати іконки активних предметів</Ukrainian>
             <Korean>액션 아이템 아이콘 표시 </Korean>
             <Spanish>Mostrar Iconos de Acciones Médicas</Spanish>
+            <Turkish>Eylem Öğesi Simgelerini Göster</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons_Desc">
             <English>Show relevant item icons for medical menu actions</English>
@@ -87,6 +95,7 @@
             <Ukrainian>Показувати відповідні іконки активних предметів для медичних дій</Ukrainian>
             <Korean>의료 메뉴 행동에 관련된 아이템 아이콘 표시</Korean>
             <Spanish>Mostrar los iconos de los elementos relevantes en las acciones del menú médico</Spanish>
+            <Turkish>Tıbbi menü eylemleri için ilgili eşya simgelerini göster</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
             <English>Show overlay for selected body part</English>
@@ -98,6 +107,7 @@
             <Ukrainian>Показувати підсвічування обраної частини тіла</Ukrainian>
             <Korean>선택한 신체 부위 오버레이 표시</Korean>
             <Spanish>Mostrar superposición para la parte del cuerpo seleccionada</Spanish>
+            <Turkish>Seçilen vücut bölgesi için kaplama (overlay) göster</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels">
             <English>Show patient side labels</English>
@@ -109,6 +119,7 @@
             <Ukrainian>Показувати мітки сторін пацієнта</Ukrainian>
             <Korean>환자 사이드 라벨 표시</Korean>
             <Spanish>Mostrar Etiquetas Laterales del Paciente (Izq/Der)</Spanish>
+            <Turkish>Hasta taraf etiketlerini göster</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels_Desc">
             <English>Show patient left/right side labels in medical menu</English>
@@ -120,6 +131,7 @@
             <Ukrainian>Показувати мітки: ліва/права сторона в медичному меню</Ukrainian>
             <Korean>의료 메뉴에서 환자의 좌/우 측 라벨 표시 </Korean>
             <Spanish>Mostrar las etiquetas de izquierda/derecha del paciente en el menú médico</Spanish>
+            <Turkish>Tıbbi menüde hastanın sol/sağ taraf etiketlerini göster</Turkish>
         </Key>
         <Key ID="STR_ACM_GUI_NoExternalBleeding">
             <English>No external bleeding</English>
@@ -131,6 +143,7 @@
             <Ukrainian>Немає зовнішньої кровотечі</Ukrainian>
             <Korean>외부 출혈 없음 </Korean>
             <Spanish>Sin sangrado externo</Spanish>
+            <Turkish>Harici kanama yok</Turkish>
         </Key>
         <Container name="// Triage Text //">
             <Key ID="STR_ACM_GUI_Triage_Priority1_Short">
@@ -143,6 +156,7 @@
                 <Ukrainian>T1</Ukrainian>
                 <Korean>T1</Korean>
                 <Spanish>T1</Spanish>
+                <Turkish>T1</Turkish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority2_Short">
                 <English>T2</English>
@@ -154,6 +168,7 @@
                 <Ukrainian>T2</Ukrainian>
                 <Korean>T2</Korean>
                 <Spanish>T2</Spanish>
+                <Turkish>T2</Turkish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority3_Short">
                 <English>T3</English>
@@ -165,6 +180,7 @@
                 <Ukrainian>T3</Ukrainian>
                 <Korean>T3</Korean>
                 <Spanish>T3</Spanish>
+                <Turkish>T3</Turkish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4">
                 <English>Expectant</English>
@@ -176,6 +192,7 @@
                 <Ukrainian>Очікуючий</Ukrainian>
                 <Korean>즉시 처치 필요 (Expectant)</Korean>
                 <Spanish>Expectante</Spanish>
+                <Turkish>Beklenen</Turkish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
                 <English>T4</English>
@@ -187,6 +204,7 @@
                 <Ukrainian>T4</Ukrainian>
                 <Korean>T4 (T4)</Korean>
                 <Spanish>T4</Spanish>
+                <Turkish>T4</Turkish>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -200,6 +218,7 @@
                 <Ukrainian>Підготувати до перенесення</Ukrainian>
                 <Korean>들기 보조 (Assist Carry)</Korean>
                 <Spanish>Ayudar a portar</Spanish>
+                <Turkish>Taşımaya Yardım Et</Turkish>
             </Key>
         </Container>
     </Package>
