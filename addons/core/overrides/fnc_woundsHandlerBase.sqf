@@ -4,7 +4,7 @@
  * Handling of the open wounds & injuries upon the handleDamage eventhandler.
  *
  * Arguments:
- * 0: Unit That Was Hit <OBJECT>
+ * 0: Patient <OBJECT>
  * 1: Damage done to each body part <ARRAY>
  * 2: Type of the damage done <STRING>
  *
@@ -17,8 +17,8 @@
  * Public: No
  */
 
-params ["_unit", "_allDamages", "_typeOfDamage"];
-TRACE_3("woundsHandlerBase",_unit,_allDamages,_typeOfDamage);
+params ["_patient", "_allDamages", "_typeOfDamage"];
+TRACE_3("woundsHandlerBase",_patient,_allDamages,_typeOfDamage);
 
 
 if !(_typeOfDamage in ACEGVAR(medical_damage,damageTypeDetails)) then {
@@ -29,14 +29,14 @@ if !(_typeOfDamage in ACEGVAR(medical_damage,damageTypeDetails)) then {
 ACEGVAR(medical_damage,damageTypeDetails) get _typeOfDamage params ["_thresholds", "_selectionSpecific", "", "_damageWoundDetails"];
 
 // Administration for open wounds and ids
-private _openWounds = GET_OPEN_WOUNDS(_unit);
+private _openWounds = GET_OPEN_WOUNDS(_patient);
 
 private _createdWounds = false;
 private _updateDamageEffects = false;
 private _painLevel = 0;
 private _criticalDamage = false;
-private _bodyPartDamage = GET_BODYPART_DAMAGE(_unit);
-private _bodyPartVisParams = [_unit, false, false, false, false]; // params array for EFUNC(medical_engine,updateBodyPartVisuals);
+private _bodyPartDamage = GET_BODYPART_DAMAGE(_patient);
+private _bodyPartVisParams = [_patient, false, false, false, false]; // params array for EFUNC(medical_engine,updateBodyPartVisuals);
 
 // process wounds separately for each body part hit
 {   // forEach _allDamages
@@ -119,23 +119,23 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         if (!(_woundTypeToAdd in ["ThermalBurn","ChemicalBurn"]) && (_bodyPart isEqualTo "head" || {_bodyPart isEqualTo "body" && {_woundDamage > PENETRATION_THRESHOLD}})) then {
             _criticalDamage = true;
             if (EGVAR(damage,enable)) then {
-                if ([_unit, _bodyPartDamage] call EFUNC(damage,handleTrauma)) then {
-                    [QACEGVAR(medical,FatalInjury), _unit] call CBA_fnc_localEvent;
+                if ([_patient, _bodyPartDamage] call EFUNC(damage,handleTrauma)) then {
+                    [QACEGVAR(medical,FatalInjury), _patient] call CBA_fnc_localEvent;
                 } else {
-                    if ([_unit, _bodyPartDamage] call EFUNC(damage,handleCardiacArrestTrauma)) then {
-                        [QACEGVAR(medical,FatalVitals), _unit] call CBA_fnc_localEvent;
+                    if ([_patient, _bodyPartDamage] call EFUNC(damage,handleCardiacArrestTrauma)) then {
+                        [QACEGVAR(medical,FatalVitals), _patient] call CBA_fnc_localEvent;
                     };
                 };
             } else {
-                if ([_unit, _bodyPartNToAdd, _bodyPartDamage, _woundDamage] call ACEFUNC(medical_damage,determineIfFatal)) then {
-                    if (!isPlayer _unit || {random 1 < ACEGVAR(medical,deathChance)}) then {
+                if ([_patient, _bodyPartNToAdd, _bodyPartDamage, _woundDamage] call ACEFUNC(medical_damage,determineIfFatal)) then {
+                    if (!isPlayer _patient || {random 1 < ACEGVAR(medical,deathChance)}) then {
                         TRACE_1("determineIfFatal returned true",_woundDamage);
-                        [QACEGVAR(medical,FatalInjury), _unit] call CBA_fnc_localEvent;
+                        [QACEGVAR(medical,FatalInjury), _patient] call CBA_fnc_localEvent;
                     };
                 };
             };
             if (EGVAR(breathing,pneumothoraxEnabled) && _bodyPart isEqualTo "body" && {_woundClassIDToAdd in [1,6,7]}) then {
-                [QEGVAR(breathing,handleChestInjury), [_unit, _classComplex, _woundDamage]] call CBA_fnc_localEvent;
+                [QEGVAR(breathing,handleChestInjury), [_patient, _classComplex, _woundDamage]] call CBA_fnc_localEvent;
             };
         };
 
@@ -151,11 +151,11 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
                 && {_woundDamage > FRACTURE_DAMAGE_THRESHOLD}
                 && {random 1 < (_fractureMultiplier * ACEGVAR(medical,fractureChance))}
             ): {
-                private _fractures = GET_FRACTURES(_unit);
+                private _fractures = GET_FRACTURES(_patient);
                 _fractures set [_bodyPartNToAdd, 1];
-                _unit setVariable [VAR_FRACTURES, _fractures, true];
+                _patient setVariable [VAR_FRACTURES, _fractures, true];
 
-                [QACEGVAR(medical,fracture), [_unit, _bodyPartNToAdd]] call CBA_fnc_localEvent;
+                [QACEGVAR(medical,fracture), [_patient, _bodyPartNToAdd]] call CBA_fnc_localEvent;
                 TRACE_1("Limb fracture",_bodyPartNToAdd);
 
                 _updateDamageEffects = true;
@@ -197,8 +197,8 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         };
         _createdWounds = true;
 
-        [_unit, _bodyPart, (10 * _woundClassIDToAdd), _category, _bleeding] call EFUNC(damage,inflictInternalBleeding);
-        //[_unit, _bodyPart, _classComplex, _woundDamage] call EFUNC(damage,handleWoundReopening); // TODO test this
+        [_patient, _bodyPart, (10 * _woundClassIDToAdd), _category, _bleeding] call EFUNC(damage,inflictInternalBleeding);
+        //[_patient, _bodyPart, _classComplex, _woundDamage] call EFUNC(damage,handleWoundReopening); // TODO test this
     };
 
     // selection-specific damage only hits the first part
@@ -208,26 +208,26 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
 } forEach _allDamages;
 
 if (_updateDamageEffects) then {
-    [_unit] call ACEFUNC(medical_engine,updateDamageEffects);
+    [_patient] call ACEFUNC(medical_engine,updateDamageEffects);
 };
 
 if (_createdWounds) then {
-    _unit setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
-    _unit setVariable [VAR_BODYPART_DAMAGE, _bodyPartDamage, true];
+    _patient setVariable [VAR_OPEN_WOUNDS, _openWounds, true];
+    _patient setVariable [VAR_BODYPART_DAMAGE, _bodyPartDamage, true];
 
     _bodyPartVisParams call ACEFUNC(medical_engine,updateBodyPartVisuals);
 
-    [QACEGVAR(medical,injured), [_unit, _painLevel]] call CBA_fnc_localEvent;
+    [QACEGVAR(medical,injured), [_patient, _painLevel]] call CBA_fnc_localEvent;
 
     if (_criticalDamage || {_painLevel > PAIN_UNCONSCIOUS}) then {
-        [_unit] call ACEFUNC(medical_damage,handleIncapacitation);
+        [_patient] call ACEFUNC(medical_damage,handleIncapacitation);
     };
 
     if !(_patient getVariable [QGVAR(WasWounded), false]) then {
         _patient setVariable [QGVAR(WasWounded), true, true];
     };
 
-    TRACE_4("exit",_unit,_painLevel,GET_PAIN(_unit),GET_OPEN_WOUNDS(_unit));
+    TRACE_4("exit",_patient,_painLevel,GET_PAIN(_patient),GET_OPEN_WOUNDS(_patient));
 };
 
 [] //return, no further damage handling
