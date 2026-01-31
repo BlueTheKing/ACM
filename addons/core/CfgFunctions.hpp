@@ -232,4 +232,12 @@ class CfgFunctions {
             };
         };
     };
+    class overwrite_ace_zeus {
+        tag = "ace_zeus";
+        class ace_zeus {
+            class moduleUnconscious { // Fix AI unconsciousness being changed
+                file = QPATHTOF(overrides\fnc_moduleUnconscious.sqf); //ace/addons/zeus/functions/fnc_moduleUnconscious.sqf
+            };
+        };
+    };
 };
