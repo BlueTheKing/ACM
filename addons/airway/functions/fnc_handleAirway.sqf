@@ -24,6 +24,8 @@ private _airwayReflexDelay = 20 + (random 25);
 [{
     params ["_patient"];
 
+    if !(IS_UNCONSCIOUS(_patient)) exitWith {};
+
     if (_patient getVariable [QGVAR(AirwayReflex_State), false]) then {
         _patient setVariable [QGVAR(AirwayReflex_State), false, true];
     };
