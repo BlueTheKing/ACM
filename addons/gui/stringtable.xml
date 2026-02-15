@@ -62,6 +62,7 @@
             <Ukrainian>Показувати перелом</Ukrainian>
             <Korean>골절 표시</Korean>
             <Spanish>Mostrar Fractura</Spanish>
+            <French>Montrer la fracture</French>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
             <English>Show fractured limb(s) on patient and overview tab</English>
@@ -69,6 +70,7 @@
             <Ukrainian>Показувати переломи кінцівок у пацієнта та на вкладці огляду</Ukrainian>
             <Korean>환자 및 개요 탭에 골절된 팔다리 표시</Korean>
             <Spanish>Mostrar la(s) extremidad(es) fracturada(s) en el paciente y en la pestaña de resumen</Spanish>
+            <French>Montrer le(s) membre(s) fracturé(s) sur le patient et sur l'aperçu</French>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>

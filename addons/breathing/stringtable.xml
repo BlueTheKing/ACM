@@ -325,7 +325,7 @@
                 <English>Chest Seal</English>
                 <Polish>Opatrunek Chest Seal</Polish>
                 <German>Chest Seal</German>
-                <French>Chest Seal</French>
+                <French>Pansement Thorasique</French>
                 <Portuguese>Selo torácico</Portuguese>
                 <Russian>Окклюзионная повязка</Russian>
                 <Ukrainian>Оклюзійна наліпка</Ukrainian>
@@ -1998,6 +1998,7 @@
                 <Ukrainian>Нижня та верхня частина грудної клітки</Ukrainian>
                 <Korean>상·하흉부</Korean>
                 <Spanish>Parte inferior y superior del tórax</Spanish>
+                <French>Poitrine inférieur et Poitrine supérieur</French>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_%1">
                 <English>Thoracostomy Incision (%1)</English>

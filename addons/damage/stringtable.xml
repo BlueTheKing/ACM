@@ -407,6 +407,7 @@
                 <Ukrainian>Великий хімічний опік</Ukrainian>
                 <Korean>광범위 화학 화상</Korean>
                 <Spanish>Quemadura química extensa</Spanish>
+                <French>Brûlure chimique étendue</French>
             </Key>
             <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Medium">
                 <English>Moderate Chemical Burn</English>
@@ -415,6 +416,7 @@
                 <Ukrainian>Помірний хімічний опік</Ukrainian>
                 <Korean>중등도 화학 화상</Korean>
                 <Spanish>Quemadura química moderada</Spanish>
+                <French>Brûlure chimique modérée</French>
             </Key>
             <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Minor">
                 <English>Minor Chemical Burn</English>
@@ -423,6 +425,7 @@
                 <Ukrainian>Незначний хімічний опік</Ukrainian>
                 <Korean>경미 화학 화상</Korean>
                 <Spanish>Quemadura química leve</Spanish>
+                <French>Brûlure chimique mineure</French>
             </Key>
         </Container>
         <Container name="// Items //">

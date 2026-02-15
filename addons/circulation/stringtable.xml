@@ -74,6 +74,7 @@
             <Ukrainian>Медикаменти</Ukrainian>
             <Korean>투약</Korean>
             <Spanish>Medicación</Spanish>
+            <French>Traitement</French>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_BloodTypes">
             <English>Blood Types</English>
@@ -510,6 +511,7 @@
             <Ukrainian>Багаторазові шприци</Ukrainian>
             <Korean>주사기 재사용</Korean>
             <Spanish>Jeringas reutilizables</Spanish>
+            <French>Seringue Réutilisable</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Desc">
             <English>Sets whether syringes are reusable instead of consumed on medication administration</English>
@@ -517,6 +519,7 @@
             <Ukrainian>Визначає, чи є шприци багаторазовими замість витратних</Ukrainian>
             <Korean>약물 투여 시 주사기를 소비하지 않고 재사용할지 설정합니다.</Korean>
             <Spanish>Define si las jeringas son un objeto reutilizable en vez de ser consumidas al aplicar la dosis de medicina</Spanish>
+            <French>Définit si les seringues sont réutilisables au lieu d’être consommées lors de l’administration du médicament</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
@@ -525,6 +528,7 @@
             <Ukrainian>Дозволити шприц</Ukrainian>
             <Korean>주사기 허용</Korean>
             <Spanish>Permitir uso de jeringa</Spanish>
+            <French>Autoriser les Séringues</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe_Desc">
             <English>Training level required to use syringes</English>
@@ -533,6 +537,7 @@
             <Ukrainian>Рівень підготовки для використання шприців</Ukrainian>
             <Korean>주사기 사용에 필요한 훈련 수준을 설정합니다.</Korean>
             <Spanish>Nivel de entrenamiento requerido para utilizar jeringas</Spanish>
+            <French>Niveau de Formation requis pour utiliser les seringues</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant">
             <English>Allow Ammonia Inhalant</English>
@@ -541,6 +546,7 @@
             <Ukrainian>Дозволити аміачний інгалянт</Ukrainian>
             <Korean>암모니아 흡입제 허용</Korean>
             <Spanish>Permitir inhalante de amoníaco</Spanish>
+            <French>Autoriser le sel d'amoniaque</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant_Desc">
             <English>Training level required to use ammonia inhalant</English>
@@ -549,6 +555,7 @@
             <Ukrainian>Рівень підготовки для використання аміачного інгалянта</Ukrainian>
             <Korean>암모니아 흡입제 사용에 필요한 훈련 수준을 설정합니다.</Korean>
             <Spanish>Nivel de entrenamiento requerido para utilizar el inhalador</Spanish>
+            <French>Niveau de Formation requis pour utiliser le sel d'amoniaque</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge">
             <English>Allow Fentanyl Lozenge</English>
@@ -557,6 +564,7 @@
             <Ukrainian>Дозволити льодяник фентанілу</Ukrainian>
             <Korean>펜타닐 로젠지 허용</Korean>
             <Spanish>Permitir pastilla de fentanilo</Spanish>
+            <French>Autoriser les Pastilles de Fentanyl </French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge_Desc">
             <English>Training level required to administer fentanyl lozenges</English>
@@ -565,6 +573,7 @@
             <Ukrainian>Рівень підготовки для введення льодяників з фентанілом</Ukrainian>
             <Korean>펜타닐 로젠지 투여에 필요한 훈련 수준을 설정합니다.</Korean>
             <Spanish>Nivel de entrenamiento requerido para administrar la pastilla</Spanish>
+            <French>Niveau de Formation requis pour administrer des pastilles de fentanyl</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1">
             <English>%1 Ratio</English>
@@ -981,6 +990,7 @@
                 <Ukrainian>Атропін</Ukrainian>
                 <Korean>아트로핀 (Atropine)</Korean>
                 <Spanish>Atropina</Spanish>
+                <French>Atropine</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Fentanyl">
                 <English>Fentanyl</English>
@@ -1084,6 +1094,7 @@
                 <Ukrainian>Димеркапрол</Ukrainian>
                 <Korean>디메르캅롤 (Dimercaprol)</Korean>
                 <Spanish>Dimercaprol</Spanish>
+                <French>Dimercaprol</French>
             </Key>
         </Container>
         <Container name="// Items - Medication //">
@@ -1248,6 +1259,7 @@
                 <Ukrainian>Флакон атропіну (1 мг/1 мл)</Ukrainian>
                 <Korean>아트로핀 바이알 (1mg/1ml) (Atropine)</Korean>
                 <Spanish>Vial de atropina (1 mg/1 ml)</Spanish>
+                <French>Atropine en flacon (1mg/1ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Atropine_Desc">
                 <English>Used to treat nerve agent exposure and increase heart rate</English>
@@ -1256,6 +1268,7 @@
                 <Ukrainian>Для лікування впливу нервово-паралітичних агентів і підвищення ЧСС</Ukrainian>
                 <Korean>신경작용제 노출 치료 및 심박수 증가에 사용됩니다.</Korean>
                 <Spanish>Tratar exposición a agentes nerviosos y aumentar frecuencia cardíaca</Spanish>
+                <French>Utiliser pour traiter l'expositions aux agents organophosphorés et augemente le rythme cardiaque</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Fentanyl">
                 <English>Fentanyl Vial (100mcg/2ml)</English>
@@ -1498,6 +1511,7 @@
                 <Ukrainian>Ампула димеркапролу (300 мг/3 мл)</Ukrainian>
                 <Korean>디메르캅롤 앰플 (300mg/3ml) (Dimercaprol)</Korean>
                 <Spanish>Ampolla de dimercaprol (300 mg/3 ml)</Spanish>
+                <French>Ampoule de Dimercaprol (300mg/3ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol_Desc">
                 <English>Used to treat lewisite exposure, administered intramuscularly</English>
@@ -1506,6 +1520,7 @@
                 <Ukrainian>Для лікування отруєння люїзитом; внутрішньомʼязово</Ukrainian>
                 <Korean>루이사이트(Lewisite) 노출 치료에 사용되며, 근육주사로 투여합니다.</Korean>
                 <Spanish>Tratar exposición a lewisita, intramuscular</Spanish>
+                <French>Utiliser pour traiter l'exposition au lewisite, administré en intramusculaire</French>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -2061,6 +2076,7 @@
                 <Ukrainian>%1 оцінив пульс на %2 артерії</Ukrainian>
                 <Korean>%1이 %2 맥박을 촉지함</Korean>
                 <Spanish>%1 tomó el %2 pulso</Spanish>
+                <French>%1 a vérifié un pouls %2</French>
             </Key>
         </Container>
         <Container name="// Measure Blood Pressure Action //">
@@ -2713,6 +2729,7 @@
                 <Ukrainian>IV блокується встановленою манжетою</Ukrainian>
                 <Korean>커프에 의해 IV 차단됨</Korean>
                 <Spanish>Colocación de vía IV bloqueada por manguito de presión aplicado</Spanish>
+                <French>La mise en place d'un cathéter IV est bloqué par le brassard tensiomètre</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_Already">
                 <English>Patient already has IO in the %1</English>
@@ -2912,6 +2929,7 @@
                 <Ukrainian>Встановлення манжети блокується IV</Ukrainian>
                 <Korean>IV에 의해 커프 부착 불가</Korean>
                 <Spanish>Colocación de manguito bloqueada por IV</Spanish>
+                <French>Le brassard tensiomètre est bloqué par le cathéter IV</French>
             </Key>
         </Container>
         <Container name="// Syringe Actions //">
@@ -3021,6 +3039,7 @@
                 <Ukrainian>Набір %1...</Ukrainian>
                 <Korean>%1 흡인 중...</Korean>
                 <Spanish>Aspirando %1...</Spanish>
+                <French>Prelèvement %1...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawingInto">
                 <English>Drawing %1 (%2) into %3ml syringe</English>
@@ -3741,6 +3760,7 @@
                 <Ukrainian>Кров</Ukrainian>
                 <Korean>혈액</Korean>
                 <Spanish>Sangre</Spanish>
+                <French>Sang</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBlood">
                 <English>Fresh Blood</English>
@@ -3749,6 +3769,7 @@
                 <Ukrainian>Свіжа кров</Ukrainian>
                 <Korean>신선 혈액</Korean>
                 <Spanish>Sangre fresca</Spanish>
+                <French>Sang Frais</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_SwitchTargetInventory">
                 <English>Change target inventory</English>

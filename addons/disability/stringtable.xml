@@ -19,6 +19,7 @@
             <Ukrainian>Лікування переломів</Ukrainian>
             <Korean>골절 관리</Korean>
             <Spanish>Manejo de fracturas</Spanish>
+            <French>Gestion des Fractures</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
             <English>Tourniquet Impact Limbs</English>
@@ -29,6 +30,7 @@
             <Ukrainian>Вплив турнікету на кінцівки</Ukrainian>
             <Korean>지혈대 영향 받는 팔다리</Korean>
             <Spanish>Impacto del torniquete en extremidades</Spanish>
+            <French>Tourniquetss impact les membres</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
             <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
@@ -39,6 +41,7 @@
             <Ukrainian>Визначає, чи буде турнікет впливати на руки (збільшення тремтіння) та ноги (зменшення рухливості)</Ukrainian>
             <Korean>지혈대가 팔에는 흔들림을 증가시키고 다리에는 이동성을 감소시킬지 설정</Korean>
             <Spanish>Define si el torniquete afectará los brazos aumentando el balanceo y las piernas reduciendo la movilidad</Spanish>
+            <French>Défini si le tourniquet va impacter les bras en augementant le oscillation de l'arme et les jambes en reduisant la mobilité </French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity">
             <English>Enable Fracture Severity</English>
@@ -47,6 +50,7 @@
             <Ukrainian>Увімкнути ступінь тяжкості перелому</Ukrainian>
             <Korean>골절 심각도 활성화</Korean>
             <Spanish>Habilitar severidad de fractura</Spanish>
+            <French>Activer la gravité de la fracture</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity_Desc">
             <English>Enables fracture severity and performing fracture realignment</English>
@@ -55,6 +59,7 @@
             <Ukrainian>Вмикає врахування тяжкості переломів та виконання репозиції</Ukrainian>
             <Korean>골절 심각도 활성화 및 골절 정렬 수행 가능</Korean>
             <Spanish>Activa la severidad de fracturas y la posibilidad de realizar realineamiento</Spanish>
+            <French>Permet la gravité de la fracture et le réalignement de la fracture</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
             <English>SAM Splint Time</English>
@@ -129,6 +134,7 @@
             <Ukrainian>Дозволити огляд на перелом</Ukrainian>
             <Korean>골절 검사 허용</Korean>
             <Spanish>Permitir inspección de fracturas</Spanish>
+            <French>Autoriser la recherche de fracture</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture_Desc">
             <English>Training level required to inspect for fractures</English>
@@ -137,6 +143,7 @@
             <Ukrainian>Рівень підготовки, необхідний для огляду на переломи</Ukrainian>
             <Korean>골절 검사를 위한 필요한 훈련 레벨</Korean>
             <Spanish>Nivel de entrenamiento requerido para inspeccionar fracturas</Spanish>
+            <French>Niveau de formation requis pour rechercher des fractures</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment">
             <English>Allow Performing Fracture Realignment</English>
@@ -145,6 +152,7 @@
             <Ukrainian>Дозволити репозицію перелому</Ukrainian>
             <Korean>골절 정렬 수행 허용</Korean>
             <Spanish>Permitir realineamiento de fracturas</Spanish>
+            <French>Autoriser d'exécuter les réalignements de fracture</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment_Desc">
             <English>Training level required to perform fracture realignment</English>
@@ -153,6 +161,7 @@
             <Ukrainian>Рівень підготовки, необхідний для виконання репозиції перелому</Ukrainian>
             <Korean>골절 정렬을 수행하기 위한 훈련 레벨</Korean>
             <Spanish>Nivel de entrenamiento requerido para realizar realineamiento de fracturas</Spanish>
+            <French>Niveau de formation requis pour exécuter le réalignement d'une fracture</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture">
             <English>[HARDCORE] Complex Fractures</English>
@@ -161,6 +170,7 @@
             <Ukrainian>[ХАРДКОР] Складні переломи</Ukrainian>
             <Korean>[HARDCORE] 복합 골절 </Korean>
             <Spanish>[HARDCORE] Fracturas complejas</Spanish>
+            <French>[HARDCORE] Fracture complexe</French>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture_Desc">
             <English>[HARDCORE] Sets whether certain fractures cannot be treated in the field, requiring evacuation</English>
@@ -169,6 +179,7 @@
             <Ukrainian>[ХАРДКОР] Визначає, чи можна лікувати деякі переломи лише в стаціонарі, потрібна евакуація</Ukrainian>
             <Korean>[HARDCORE] 특정 골절이 현장에서 치료 불가하며, 후송 필요 여부 설정</Korean>
             <Spanish>[HARDCORE] Define si ciertas fracturas no pueden tratarse en campo, requiriendo evacuación</Spanish>
+            <French>[HARDCORE] Defini si certaine fracture ne peuvent pas être traité sur le terrain, demandanrt une évacuation.</French>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Disability_UniversalSplint">
