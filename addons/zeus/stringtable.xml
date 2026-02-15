@@ -299,7 +299,7 @@
                 <English>Toggle Plot Armor</English>
                 <Russian>Переключить: сюжетную броню</Russian>
                 <Ukrainian>Перемкнути: сюжетну броню</Ukrainian>
-                <Korean>주인공 버프 활성화</Korean>
+                <Korean>주인공 버프 토글</Korean>
                 <Spanish>Activar/Desactivar Plot Armor</Spanish>
                 <French>Activer/désactiver L'armure en scénarium</French>
             </Key>
@@ -307,7 +307,7 @@
                 <English>Plot armor enabled on unit</English>
                 <Russian>Сюжетная броня включена у бойца</Russian>
                 <Ukrainian>Сюжетна броня увімкнена у бійця</Ukrainian>
-                <Korean>유닛에 주인공 버프 활성화</Korean>
+                <Korean>유닛에 버프 활성화됨</Korean>
                 <Spanish>Plot armor activado en la unidad</Spanish>
                 <French>La protection du scénario à été activé sur l'unité</French>
             </Key>
@@ -315,7 +315,7 @@
                 <English>Plot armor disabled on unit</English>
                 <Russian>Сюжетная броня отключена у бойца</Russian>
                 <Ukrainian>Сюжетна броня вимкнена у бійця</Ukrainian>
-                <Korean>유닛에 주인공 버프 비활성화</Korean>
+                <Korean>유닛에 버프 비활성화됨</Korean>
                 <Spanish>Plot armor desactivado en la unidad</Spanish>
                 <French>La protection du scénario à été désactivé sur l'unité</French>
             </Key>

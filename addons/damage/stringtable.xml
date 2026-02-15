@@ -31,7 +31,7 @@
             <Portuguese>Hemorragia interna</Portuguese>
             <Russian>Внутреннее кровотечение</Russian>
             <Ukrainian>Внутрішня кровотеча</Ukrainian>
-            <Korean>내부 출혈</Korean>
+            <Korean>내출혈</Korean>
             <Spanish>Hemorragia Interna</Spanish>
         </Key>
         <Key ID="STR_ACM_Damage_Category_AIUnits">
@@ -459,7 +459,7 @@
                 <Portuguese>Curativo de emergência para trauma</Portuguese>
                 <Russian>Экстренная травматическая повязка</Russian>
                 <Ukrainian>Екстрена травматична пов’язка</Ukrainian>
-                <Korean>응급 외상 드레싱 (Emergency Trauma Dressing)</Korean>
+                <Korean>응급 외상 드레싱 (ETD)</Korean>
                 <Spanish>Vendaje israelí</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_EmergencyTraumaDressing_Desc">
@@ -470,7 +470,7 @@
                 <Portuguese>Curativo para trauma com grande área de superfície</Portuguese>
                 <Russian>Травматическая повязка с большой площадью покрытия</Russian>
                 <Ukrainian>Травматична пов’язка з великою площею покриття</Ukrainian>
-                <Korean>넓은 면적의 외상 드레싱 (Trauma dressing with large surface area)</Korean>
+                <Korean>넓은 면적의 외상 드레싱</Korean>
                 <Spanish>Vendaje israelí de gran superficie</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap">
@@ -481,7 +481,7 @@
                 <Portuguese>Atadura elástica</Portuguese>
                 <Russian>Эластичный бинт</Russian>
                 <Ukrainian>Еластичний бинт</Ukrainian>
-                <Korean>탄성 붕대 (Elastic Wrap)</Korean>
+                <Korean>탄력 붕대 (Elastic Wrap)</Korean>
                 <Spanish>Venda elástica</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Desc">
@@ -492,7 +492,7 @@
                 <Portuguese>Usado para enfaixar, talas, bandagens, ferimentos coagulados e hematomas</Portuguese>
                 <Russian>Используется для обмотки повязок, коагулированных ран и ушибов</Russian>
                 <Ukrainian>Використовується для обмотування пов'язок, коагульованих ран і забоїв</Ukrainian>
-                <Korean>붕대를 감싸거나, 응고된 상처(Clotted wounds) 및 멍(bruises)을 감싸는데 사용</Korean>
+                <Korean>붕대, 응고된 상처 및 타박상을 감싸는 데 사용됨</Korean>
                 <Spanish>Usada para envolver vendajes, heridas coaguladas y moretones</Spanish>
             </Key>
         </Container>
@@ -516,7 +516,7 @@
                 <Portuguese>Enfaixar hematomas</Portuguese>
                 <Russian>Обмотать ушибы</Russian>
                 <Ukrainian>Обмотати забої</Ukrainian>
-                <Korean>멍에 탄성 붕대 감기</Korean>
+                <Korean>타박상에 탄력 붕대 감기</Korean>
                 <Spanish>Envolver moretones</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Bandages">
@@ -527,7 +527,7 @@
                 <Portuguese>Enfaixar ferimentos coagulados</Portuguese>
                 <Russian>Обмотать перевязанные раны</Russian>
                 <Ukrainian>Обмотати перев’язані рани</Ukrainian>
-                <Korean>붕대에 탄성 붕대 감기 </Korean>
+                <Korean>붕대에 탄력 붕대 감기 </Korean>
                 <Spanish>Envolver heridas vendadas</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_ElasticWrap_Clots">
@@ -538,7 +538,7 @@
                 <Portuguese>Enfaixar ferimentos coagulados</Portuguese>
                 <Russian>Обмотать коагулированные раны</Russian>
                 <Ukrainian>Обмотати коагульовані рани</Ukrainian>
-                <Korean>응고된 상처에 탄성 붕대 감기</Korean>
+                <Korean>응고된 상처에 탄력 붕대 감기</Korean>
                 <Spanish>Envolver heridas coaguladas</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">
@@ -549,7 +549,7 @@
                 <Portuguese>%1 enfaixou %2</Portuguese>
                 <Russian>%1 обмотал(а) %2</Russian>
                 <Ukrainian>%1 обмотав(ла) %2</Ukrainian>
-                <Korean>%1이 %2을(를) 탄성 붕대로 감았습니다</Korean>
+                <Korean>%1이 %2을(를) 탄력 붕대로 감음</Korean>
                 <Spanish>%1 ha vendado a %2</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Bandages">
@@ -571,7 +571,7 @@
                 <Portuguese>ferimentos coagulados</Portuguese>
                 <Russian>коагулированные раны</Russian>
                 <Ukrainian>коагульовані рани</Ukrainian>
-                <Korean>응고 상처</Korean>
+                <Korean>응고된 상처</Korean>
                 <Spanish>heridas coaguladas</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_WrapBruises_ActionLog">
@@ -582,7 +582,7 @@
                 <Portuguese>%1 enfaixou hematomas</Portuguese>
                 <Russian>%1 обмотал(а) ушибы</Russian>
                 <Ukrainian>%1 обмотав(ла) забої</Ukrainian>
-                <Korean>%1이 멍을 탄성 붕대로 감았습니다</Korean>
+                <Korean>%1이 타박상을 탄성 붕대로 감음</Korean>
                 <Spanish>%1 ha envuelto los moretones</Spanish>
             </Key>
         </Container>
@@ -595,7 +595,7 @@
                 <Portuguese>Usar kit cirúrgico com fio de sutura</Portuguese>
                 <Russian>Использовать хирургический набор с нитью</Russian>
                 <Ukrainian>Використати хірургічний набір із ниткою</Ukrainian>
-                <Korean>봉합사와 함께 수술 도구 사용</Korean>
+                <Korean>봉합사 + 수술 도구 사용</Korean>
                 <Spanish>Usar kit quirúrgico con suturas</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Suture_Progress">
@@ -617,7 +617,7 @@
                 <Portuguese>Usar kit cirúrgico (enfaixado)</Portuguese>
                 <Russian>Использовать хирургический набор (обмотка)</Russian>
                 <Ukrainian>Використати хірургічний набір (обмотка)</Ukrainian>
-                <Korean>수술 키트 사용 (감은 상처)</Korean>
+                <Korean>수술 키트 사용 (감긴 상처)</Korean>
                 <Spanish>Usar kit quirúrgico con suturas (herida vendada)</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped_Suture">
@@ -628,7 +628,7 @@
                 <Portuguese>Usar kit cirúrgico com fio de sutura</Portuguese>
                 <Russian>Использовать хирургический набор с нитью (обмотка)</Russian>
                 <Ukrainian>Використати хірургічний набір із ниткою (обмотка)</Ukrainian>
-                <Korean>봉합사와 함께 수술 도구 사용 (감은 상처)</Korean>
+                <Korean>봉합사 + 수술 도구 사용 (감긴 상처)</Korean>
                 <Spanish>Usar kit quirúrgico (herida coagulada)</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Clotted">
@@ -639,7 +639,7 @@
                 <Portuguese>Usar kit cirúrgico (coagulado)</Portuguese>
                 <Russian>Использовать хирургический набор (коагулированные)</Russian>
                 <Ukrainian>Використати хірургічний набір (коагульовані)</Ukrainian>
-                <Korean>수술 키트 사용 (응고 상처)</Korean>
+                <Korean>수술 키트 사용 (응고된 상처)</Korean>
                 <Spanish>Usar kit quirúrgico (herida coagulada)</Spanish>
             </Key>
             <Key ID="STR_ACM_Damage_SurgicalKit_Clotted_Suture">
@@ -650,7 +650,7 @@
                 <Portuguese>Usar kit cirúrgico com fios de sutura (coagulado)</Portuguese>
                 <Russian>Использовать хирургический набор с нитью (коагулированные)</Russian>
                 <Ukrainian>Використати хірургічний набір із ниткою (коагульовані)</Ukrainian>
-                <Korean>봉합사와 함께 수술 도구 사용 (응고 상처)</Korean>
+                <Korean>봉합사 + 수술 도구 사용 (응고된 상처)</Korean>
                 <Spanish>Usar kit quirúrgico con suturas (herida coagulada)</Spanish>
             </Key>
         </Container>

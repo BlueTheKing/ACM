@@ -519,7 +519,7 @@
                 <Portuguese>Carga (CS)</Portuguese>
                 <Russian>БОВ (CS)</Russian>
                 <Ukrainian>БОР (CS)</Ukrainian>
-                <Korean>CWA (CS) (CWA (CS))</Korean>
+                <Korean>CWA (CS)</Korean>
                 <Spanish>Cargas Químicas (CS)</Spanish>
                 <French>AGC (Lacrymogène)</French>
             </Key>
@@ -537,7 +537,7 @@
                 <Portuguese>Carga (Cloro)</Portuguese>
                 <Russian>БОВ (хлор)</Russian>
                 <Ukrainian>БОР (хлор)</Ukrainian>
-                <Korean>CWA (염소) (CWA (Chlorine))</Korean>
+                <Korean>CWA (염소)</Korean>
                 <Spanish>Cargas Químicas (Gas Cloro)</Spanish>
                 <French>AGC (Chlore)</French>
             </Key>
@@ -555,7 +555,7 @@
                 <Portuguese>Carga (Sarin)</Portuguese>
                 <Russian>БОВ (зарин)</Russian>
                 <Ukrainian>БОР (зарин)</Ukrainian>
-                <Korean>CWA (사린) (CWA (Sarin))</Korean>
+                <Korean>CWA (사린)</Korean>
                 <Spanish>Cargas Químicas (Gas Sarín)</Spanish>
                 <French>AGC (Sarin)</French>
             </Key>
