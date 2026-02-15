@@ -32,6 +32,7 @@
             <Korean>완전 회복 시설 지정</Korean>
             <Spanish>Definir como edificio de restauración de vida</Spanish>
             <Turkish>Tam İyileştirme Tesisini Ata</Turkish>
+            <French>Assigner une Structure de Soin complet</French>
         </Key>
         <Container name="// Set Blood Volume Module //">
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume">
@@ -324,25 +325,28 @@
                 <English>Toggle Plot Armor</English>
                 <Russian>Переключить: сюжетную броню</Russian>
                 <Ukrainian>Перемкнути: сюжетну броню</Ukrainian>
-                <Korean>주인공 버프 활성화</Korean>
+                <Korean>주인공 버프 토글</Korean>
                 <Spanish>Activar/Desactivar Plot Armor</Spanish>
                 <Turkish>Plot Armor’u Aç/Kapat</Turkish>
+                <French>Activer/désactiver L'armure en scénarium</French>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_PlotArmor_Enabled">
                 <English>Plot armor enabled on unit</English>
                 <Russian>Сюжетная броня включена у бойца</Russian>
                 <Ukrainian>Сюжетна броня увімкнена у бійця</Ukrainian>
-                <Korean>유닛에 주인공 버프 활성화</Korean>
+                <Korean>유닛에 버프 활성화됨</Korean>
                 <Spanish>Plot armor activado en la unidad</Spanish>
                 <Turkish>Birime plot armor etkinleştirildi</Turkish>
+                <French>La protection du scénario à été activé sur l'unité</French>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_PlotArmor_Disabled">
                 <English>Plot armor disabled on unit</English>
                 <Russian>Сюжетная броня отключена у бойца</Russian>
                 <Ukrainian>Сюжетна броня вимкнена у бійця</Ukrainian>
-                <Korean>유닛에 주인공 버프 비활성화</Korean>
+                <Korean>유닛에 버프 비활성화됨</Korean>
                 <Spanish>Plot armor desactivado en la unidad</Spanish>
                 <Turkish>Birimin plot armor özelliği devre dışı bırakıldı</Turkish>
+                <French>La protection du scénario à été désactivé sur l'unité</French>
             </Key>
         </Container>
     </Package>

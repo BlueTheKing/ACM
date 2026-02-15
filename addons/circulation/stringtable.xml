@@ -81,6 +81,7 @@
             <Korean>투약</Korean>
             <Spanish>Medicación</Spanish>
             <Turkish>İlaç</Turkish>
+            <French>Traitement</French>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_BloodTypes">
             <English>Blood Types</English>
@@ -559,6 +560,7 @@
             <Korean>주사기 재사용</Korean>
             <Spanish>Jeringas reutilizables</Spanish>
             <Turkish>Yeniden kullanılabilir şırıngalar</Turkish>
+            <French>Seringue Réutilisable</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Desc">
             <English>Sets whether syringes are reusable instead of consumed on medication administration</English>
@@ -567,6 +569,7 @@
             <Korean>약물 투여 시 주사기를 소비하지 않고 재사용할지 설정합니다.</Korean>
             <Spanish>Define si las jeringas son un objeto reutilizable en vez de ser consumidas al aplicar la dosis de medicina</Spanish>
             <Turkish>Şırıngaların ilaç uygulamasında tüketilmek yerine yeniden kullanılabilir olup olmayacağını ayarlar</Turkish>
+            <French>Définit si les seringues sont réutilisables au lieu d’être consommées lors de l’administration du médicament</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
@@ -576,6 +579,7 @@
             <Korean>주사기 허용</Korean>
             <Spanish>Permitir uso de jeringa</Spanish>
             <Turkish>Şırıngaya izin ver</Turkish>
+            <French>Autoriser les Séringues</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe_Desc">
             <English>Training level required to use syringes</English>
@@ -585,6 +589,7 @@
             <Korean>주사기 사용에 필요한 훈련 수준을 설정합니다.</Korean>
             <Spanish>Nivel de entrenamiento requerido para utilizar jeringas</Spanish>
             <Turkish>Şırınga kullanmak için gereken eğitim seviyesi</Turkish>
+            <French>Niveau de Formation requis pour utiliser les seringues</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant">
             <English>Allow Ammonia Inhalant</English>
@@ -595,6 +600,7 @@
             <Spanish>Permitir inhalante de amoníaco</Spanish>
             <Turkish>Amonyak İnhalanı'na izin ver
 </Turkish>
+            <French>Autoriser le sel d'amoniaque</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant_Desc">
             <English>Training level required to use ammonia inhalant</English>
@@ -604,6 +610,7 @@
             <Korean>암모니아 흡입제 사용에 필요한 훈련 수준을 설정합니다.</Korean>
             <Spanish>Nivel de entrenamiento requerido para utilizar el inhalador</Spanish>
             <Turkish>Amonyak İnhalan'ı kullanmak için gereken eğitim seviyesi</Turkish>
+            <French>Niveau de Formation requis pour utiliser le sel d'amoniaque</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge">
             <English>Allow Fentanyl Lozenge</English>
@@ -613,6 +620,7 @@
             <Korean>펜타닐 로젠지 허용</Korean>
             <Spanish>Permitir pastilla de fentanilo</Spanish>
             <Turkish>Fentanil Pastili'ne izin ver</Turkish>
+            <French>Autoriser les Pastilles de Fentanyl </French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge_Desc">
             <English>Training level required to administer fentanyl lozenges</English>
@@ -622,6 +630,7 @@
             <Korean>펜타닐 로젠지 투여에 필요한 훈련 수준을 설정합니다.</Korean>
             <Spanish>Nivel de entrenamiento requerido para administrar la pastilla</Spanish>
             <Turkish>Fentanil Pasti'li uygulamak için gereken eğitim seviyesi</Turkish>
+            <French>Niveau de Formation requis pour administrer des pastilles de fentanyl</French>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1">
             <English>%1 Ratio</English>
@@ -1076,6 +1085,7 @@
                 <Korean>아트로핀 (Atropine)</Korean>
                 <Spanish>Atropina</Spanish>
                 <Turkish>Atropin</Turkish>
+                <French>Atropine</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Fentanyl">
                 <English>Fentanyl</English>
@@ -1189,6 +1199,7 @@
                 <Korean>디메르캅롤 (Dimercaprol)</Korean>
                 <Spanish>Dimercaprol</Spanish>
                 <Turkish>Dimercaprol</Turkish>
+                <French>Dimercaprol</French>
             </Key>
         </Container>
         <Container name="// Items - Medication //">
@@ -1200,7 +1211,7 @@
                 <Portuguese>Frasco de epinefrina (1mg/1ml)</Portuguese>
                 <Russian>Флакон адреналина (1 мг/1 мл)</Russian>
                 <Ukrainian>Флакон епінефрину (1 мг/1 мл)</Ukrainian>
-                <Korean>에피네프린 바이알 (1mg/1ml) (Epinephrine Vial)</Korean>
+                <Korean>에피네프린 바이알 (1mg/1ml) (Epinephrine)</Korean>
                 <Spanish>Vial de epinefrina (1 mg/1 ml)</Spanish>
                 <Turkish>Epinefrin flakonu (1mg/1ml)</Turkish>
             </Key>
@@ -1224,7 +1235,7 @@
                 <Portuguese>Frasco de adenosina (12mg/4ml)</Portuguese>
                 <Russian>Флакон аденозина (12 мг/4 мл)</Russian>
                 <Ukrainian>Флакон аденозину (12 мг/4 мл)</Ukrainian>
-                <Korean>아데노신 바이알 (12mg/4ml) (Adenosine Vial)</Korean>
+                <Korean>아데노신 바이알 (12mg/4ml) (Adenosine)</Korean>
                 <Spanish>Vial de adenosina (12 mg/4 ml)</Spanish>
                 <Turkish>Adenozin flakonu (12mg/4ml)</Turkish>
             </Key>
@@ -1248,7 +1259,7 @@
                 <Portuguese>Frasco de morfina (10 mg/2 ml)</Portuguese>
                 <Russian>Флакон морфина (10 мг/2 мл)</Russian>
                 <Ukrainian>Флакон морфіну (10 мг/2 мл)</Ukrainian>
-                <Korean>모르핀 바이알 (10mg/2ml) (Morphine Vial)</Korean>
+                <Korean>모르핀 바이알 (10mg/2ml) (Morphine)</Korean>
                 <Spanish>Vial de morfina (10 mg/2 ml)</Spanish>
                 <Turkish>Morfin flakonu (10mg/2ml)</Turkish>
             </Key>
@@ -1273,7 +1284,7 @@
                 <Portuguese>Frasco de quetamina (500mg/10ml)</Portuguese>
                 <Russian>Флакон кетамина (500 мг/10 мл)</Russian>
                 <Ukrainian>Флакон кетаміну (500 мг/10 мл)</Ukrainian>
-                <Korean>케타민 바이알 (500mg/10ml) (Ketamine Vial)</Korean>
+                <Korean>케타민 바이알 (500mg/10ml) (Ketamine)</Korean>
                 <Spanish>Vial de ketamina (500 mg/10 ml)</Spanish>
                 <Turkish>Ketamin flakonu (500mg/10ml)</Turkish>
             </Key>
@@ -1297,7 +1308,7 @@
                 <Portuguese>Frasco de lidocaína (100mg/5ml)</Portuguese>
                 <Russian>Флакон лидокаина (100 мг/5 мл)</Russian>
                 <Ukrainian>Флакон лідокаїну (100 мг/5 мл)</Ukrainian>
-                <Korean>리도카인 바이알 (100mg/5ml) (Lidocaine Vial)</Korean>
+                <Korean>리도카인 바이알 (100mg/5ml) (Lidocaine)</Korean>
                 <Spanish>Vial de lidocaína (100 mg/5 ml)</Spanish>
                 <Turkish>Lidokain flakonu (100mg/5ml)</Turkish>
             </Key>
@@ -1321,7 +1332,7 @@
                 <Portuguese>Frasco de TXA (1g/10ml)</Portuguese>
                 <Russian>Флакон ТХА (1 г/10 мл)</Russian>
                 <Ukrainian>Флакон TXA (1 г/10 мл)</Ukrainian>
-                <Korean>트라넥사믹산 바이알 (1g/10ml) (TXA Vial)</Korean>
+                <Korean>TXA 바이알 (1g/10ml)</Korean>
                 <Spanish>Vial de TXA (1 g/10 ml)</Spanish>
                 <Turkish>TXA flakonu (1g/10ml)</Turkish>
             </Key>
@@ -1345,7 +1356,7 @@
                 <Portuguese>Frasco de amiodarona (150mg/3ml)</Portuguese>
                 <Russian>Флакон амиодарона (150 мг/3 мл)</Russian>
                 <Ukrainian>Флакон аміодарону (150 мг/3 мл)</Ukrainian>
-                <Korean>아미오다론 바이알 (150mg/3ml) (Amiodarone Vial)</Korean>
+                <Korean>아미오다론 바이알 (150mg/3ml) (Amiodarone)</Korean>
                 <Spanish>Vial de amiodarona (150 mg/3 ml)</Spanish>
                 <Turkish>Amiodaron flakonu (150mg/3ml)</Turkish>
             </Key>
@@ -1366,9 +1377,10 @@
                 <Portuguese>Frasco de Atropina (1mg/1ml)</Portuguese>
                 <Russian>Флакон атропина (1 мг/1 мл)</Russian>
                 <Ukrainian>Флакон атропіну (1 мг/1 мл)</Ukrainian>
-                <Korean>아트로핀 바이알 (1mg/1ml) (Atropine Vial)</Korean>
+                <Korean>아트로핀 바이알 (1mg/1ml) (Atropine)</Korean>
                 <Spanish>Vial de atropina (1 mg/1 ml)</Spanish>
                 <Turkish>Atropin flakonu (1mg/1ml)</Turkish>
+                <French>Atropine en flacon (1mg/1ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Atropine_Desc">
                 <English>Used to treat nerve agent exposure and increase heart rate</English>
@@ -1378,6 +1390,7 @@
                 <Korean>신경작용제 노출 치료 및 심박수 증가에 사용됩니다.</Korean>
                 <Spanish>Tratar exposición a agentes nerviosos y aumentar frecuencia cardíaca</Spanish>
                 <Turkish>Sinir ajanı maruziyetini tedavi etmek ve kalp hızını artırmak için kullanılır</Turkish>
+                <French>Utiliser pour traiter l'expositions aux agents organophosphorés et augemente le rythme cardiaque</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Fentanyl">
                 <English>Fentanyl Vial (100mcg/2ml)</English>
@@ -1387,7 +1400,7 @@
                 <Portuguese>Frasco de fentanil (100mcg/2ml)</Portuguese>
                 <Russian>Флакон фентанила (100 мкг/2 мл)</Russian>
                 <Ukrainian>Флакон фентанілу (100 мкг/2 мл)</Ukrainian>
-                <Korean>펜타닐 바이알 (100mcg/2ml) (Fentanyl Vial)</Korean>
+                <Korean>펜타닐 바이알 (100mcg/2ml) (Fentanyl)</Korean>
                 <Spanish>Vial de fentanilo (100 mcg/2 ml)</Spanish>
                 <Turkish>Fentanil flakonu (100mcg/2ml)</Turkish>
             </Key>
@@ -1411,7 +1424,7 @@
                 <Portuguese>Frasco de Ondansetrona (4mg/2ml)</Portuguese>
                 <Russian>Флакон ондансетрона (4 мг/2 мл)</Russian>
                 <Ukrainian>Флакон ондансетрону (4 мг/2 мл)</Ukrainian>
-                <Korean>온단세트론 바이알 (4mg/2ml) (Ondansetron Vial)</Korean>
+                <Korean>온단세트론 바이알 (4mg/2ml) (Ondansetron)</Korean>
                 <Spanish>Vial de ondansetrón (4 mg/2 ml)</Spanish>
                 <Turkish>Ondansetron flakonu (4mg/2ml)</Turkish>
             </Key>
@@ -1435,7 +1448,7 @@
                 <Portuguese>Frasco de cloreto de cálcio (1g/10ml)</Portuguese>
                 <Russian>Флакон хлорида кальция (1 г/10 мл)</Russian>
                 <Ukrainian>Флакон хлориду кальцію (1 г/10 мл)</Ukrainian>
-                <Korean>염화칼슘 바이알 (1g/10ml) (Calcium Chloride Vial)</Korean>
+                <Korean>염화칼슘 바이알 (1g/10ml) (Calcium Chloride)</Korean>
                 <Spanish>Vial de cloruro de calcio (1 g/10 ml)</Spanish>
                 <Turkish>Kalsiyum klorür flakonu (1g/10ml)</Turkish>
             </Key>
@@ -1459,7 +1472,7 @@
                 <Portuguese>Frasco de Ertapenem (1g/3,2 ml)</Portuguese>
                 <Russian>Флакон эртапенема (1 г/3,2 мл)</Russian>
                 <Ukrainian>Флакон ертапенему (1 г/3,2 мл)</Ukrainian>
-                <Korean>에르타페넴 바이알 (1g/3.2ml) (Ertapenem Vial)</Korean>
+                <Korean>에르타페넴 바이알 (1g/3.2ml) (Ertapenem)</Korean>
                 <Spanish>Vial de ertapenem (1 g/3,2 ml)</Spanish>
                 <Turkish>Ertapenem flakonu (1g/3.2ml)</Turkish>
             </Key>
@@ -1507,7 +1520,7 @@
                 <Portuguese>Naloxona Spray Nasal</Portuguese>
                 <Russian>Назальный спрей налоксона</Russian>
                 <Ukrainian>Назальний спрей налоксону</Ukrainian>
-                <Korean>날록손 비강 분무 (Naloxone Nasal Spray)</Korean>
+                <Korean>날록손 비강 스프레이 (Naloxon)</Korean>
                 <Spanish>Spray nasal de naloxona</Spanish>
                 <Turkish>Nalokson nazal sprey</Turkish>
             </Key>
@@ -1541,7 +1554,7 @@
                 <Portuguese>Paracetamol (embalagem individual)</Portuguese>
                 <Russian>Парацетамол (одна упаковка)</Russian>
                 <Ukrainian>Парацетамол (одна упаковка)</Ukrainian>
-                <Korean>파라세타몰 (단일 포장) (Paracetamol (Single Pack))</Korean>
+                <Korean>파라세타몰 (단일 포장)</Korean>
                 <Spanish>Paracetamol (paquete individual)</Spanish>
                 <Turkish>Parasetamol (tek paket)</Turkish>
             </Key>
@@ -1551,7 +1564,7 @@
                 <Portuguese>Paracetamol (embalagem dupla)</Portuguese>
                 <Russian>Парацетамол (двойная упаковка)</Russian>
                 <Ukrainian>Парацетамол (подвійна упаковка)</Ukrainian>
-                <Korean>파라세타몰 (이중 포장) (Paracetamol (Double Pack))</Korean>
+                <Korean>파라세타몰 (이중 포장)</Korean>
                 <Spanish>Paracetamol (paquete doble)</Spanish>
                 <Turkish>Parasetamol (çift paket)</Turkish>
             </Key>
@@ -1599,7 +1612,7 @@
                 <Portuguese>Inalador Penthrox</Portuguese>
                 <Russian>Ингалятор Пентрокс</Russian>
                 <Ukrainian>Інгалятор Пентрокс</Ukrainian>
-                <Korean>Penthrox 흡입기 (Penthrox Inhaler)</Korean>
+                <Korean>Penthrox 흡입기 (Penthrox)</Korean>
                 <Spanish>Inhalador Penthrox</Spanish>
                 <Turkish>Penthrox İnhaler</Turkish>
             </Key>
@@ -1640,9 +1653,10 @@
                 <Portuguese>Dimercaprol Ampola (300mg/3ml)</Portuguese>
                 <Russian>Ампула димеркаптола (300 мг/3 мл)</Russian>
                 <Ukrainian>Ампула димеркапролу (300 мг/3 мл)</Ukrainian>
-                <Korean>디메르캅롤 앰플 (300mg/3ml) (Dimercaprol Ampule)</Korean>
+                <Korean>디메르캅롤 앰플 (300mg/3ml) (Dimercaprol)</Korean>
                 <Spanish>Ampolla de dimercaprol (300 mg/3 ml)</Spanish>
                 <Turkish>Dimercaprol ampul (300mg/3ml)</Turkish>
+                <French>Ampoule de Dimercaprol (300mg/3ml)</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol_Desc">
                 <English>Used to treat lewisite exposure, administered intramuscularly</English>
@@ -1652,6 +1666,7 @@
                 <Korean>루이사이트(Lewisite) 노출 치료에 사용되며, 근육주사로 투여합니다.</Korean>
                 <Spanish>Tratar exposición a lewisita, intramuscular</Spanish>
                 <Turkish>Lewisit maruziyetini tedavi etmek için kullanılır, intramüsküler uygulanır</Turkish>
+                <French>Utiliser pour traiter l'exposition au lewisite, administré en intramusculaire</French>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -1663,7 +1678,7 @@
                 <Portuguese>Usar de Paracetamol</Portuguese>
                 <Russian>Использовать парацетамол</Russian>
                 <Ukrainian>Використати парацетамол</Ukrainian>
-                <Korean>파라세타몰 사용 (Use Paracetamol)</Korean>
+                <Korean>파라세타몰 사용 </Korean>
                 <Spanish>Usar paracetamol</Spanish>
                 <Turkish>Parasetamol kullan</Turkish>
             </Key>
@@ -1675,7 +1690,7 @@
                 <Portuguese>Usando Paracetamol...</Portuguese>
                 <Russian>Использование парацетамола...</Russian>
                 <Ukrainian>Використання парацетамолу...</Ukrainian>
-                <Korean>파라세타몰 사용하는 중... (Using Paracetamol...)</Korean>
+                <Korean>파라세타몰 사용하는 중...</Korean>
                 <Spanish>Usando paracetamol...</Spanish>
                 <Turkish>Parasetamol kullanılıyor…</Turkish>
             </Key>
@@ -1687,7 +1702,7 @@
                 <Portuguese>Usar do Inalador Penthrox</Portuguese>
                 <Russian>Использовать ингалятор Пентрокс</Russian>
                 <Ukrainian>Використати інгалятор Пентрокс</Ukrainian>
-                <Korean>Penthrox 흡입기 사용 (Use Penthrox Inhaler)</Korean>
+                <Korean>Penthrox 흡입기 사용</Korean>
                 <Spanish>Usar inhalador Penthrox</Spanish>
                 <Turkish>Penthrox inhaler kullan</Turkish>
             </Key>
@@ -1699,7 +1714,7 @@
                 <Portuguese>Usando Inalador Penthrox...</Portuguese>
                 <Russian>Использование ингалятора Пентрокс...</Russian>
                 <Ukrainian>Використання інгалятора Пентрокс...</Ukrainian>
-                <Korean>Penthrox 흡입기 사용하는 중... (Using Penthrox Inhaler...)</Korean>
+                <Korean>Penthrox 흡입기 사용하는 중... </Korean>
                 <Spanish>Usando el inhalador Penthrox...</Spanish>
                 <Turkish>Penthrox inhaler kullanılıyor…</Turkish>
             </Key>
@@ -1711,7 +1726,7 @@
                 <Portuguese>Uso de inalante de amônia</Portuguese>
                 <Russian>Использовать аммиачный ингалянт</Russian>
                 <Ukrainian>Використати аміачний інгалянт</Ukrainian>
-                <Korean>암모니아 흡입제 사용 (Use Ammonia Inhalant)</Korean>
+                <Korean>암모니아 흡입제 사용</Korean>
                 <Spanish>Usar inhalante de amoníaco</Spanish>
                 <Turkish>Amonyak inhalanı kullan</Turkish>
             </Key>
@@ -1723,7 +1738,7 @@
                 <Portuguese>Usando inalador de amônia</Portuguese>
                 <Russian>Использование аммиачного ингалянта...</Russian>
                 <Ukrainian>Використання аміачного інгалянта...</Ukrainian>
-                <Korean>암모니아 흡입제 사용하는 중... (Using Ammonia Inhalant...)</Korean>
+                <Korean>암모니아 흡입제 사용하는 중... </Korean>
                 <Spanish>Usando el inhalante de amoníaco...</Spanish>
                 <Turkish>Amonyak inhalanı kullanılıyor…</Turkish>
             </Key>
@@ -1735,7 +1750,7 @@
                 <Portuguese>Use o spray de naloxona</Portuguese>
                 <Russian>Использовать спрей налоксона</Russian>
                 <Ukrainian>Використати спрей налоксону</Ukrainian>
-                <Korean>날록손 스프레이 사용 (Use Naloxone Spray)</Korean>
+                <Korean>날록손 스프레이 사용</Korean>
                 <Spanish>Usar spray de naloxona</Spanish>
                 <Turkish>Nalokson spreyi kullan</Turkish>
             </Key>
@@ -1747,7 +1762,7 @@
                 <Portuguese>Usando o spray de naloxona...</Portuguese>
                 <Russian>Использование спрея налоксона...</Russian>
                 <Ukrainian>Використання спрею налоксону...</Ukrainian>
-                <Korean>날록손 스프레이 사용하는 중... (Using Naloxone Spray...)</Korean>
+                <Korean>날록손 스프레이 사용하는 중... </Korean>
                 <Spanish>Usando el spray de naloxona...</Spanish>
                 <Turkish>Nalokson spreyi kullanılıyor…</Turkish>
             </Key>
@@ -1759,7 +1774,7 @@
                 <Portuguese>Usar seringa (%1ml)</Portuguese>
                 <Russian>Использовать шприц (%1 мл)</Russian>
                 <Ukrainian>Використати шприц (%1 мл)</Ukrainian>
-                <Korean>주사기 사용 (%1ml) (Use Syringe (%1ml))</Korean>
+                <Korean>주사기 사용 (%1ml)</Korean>
                 <Spanish>Usar jeringa (%1 ml)</Spanish>
                 <Turkish>Şırınga kullan (%1ml)</Turkish>
             </Key>
@@ -1831,7 +1846,7 @@
                 <Portuguese>Administrar pirulito de fentanil</Portuguese>
                 <Russian>Дать леденец с фентанилом</Russian>
                 <Ukrainian>Дати льодяник з фентанілом</Ukrainian>
-                <Korean>펜타닐 로젠지 투여 (Give Fentanyl Lozenge)</Korean>
+                <Korean>펜타닐 로젠지 투여</Korean>
                 <Spanish>Administrar pastilla de fentanilo</Spanish>
                 <Turkish>Fentanil pastili ver</Turkish>
             </Key>
@@ -1841,7 +1856,7 @@
                 <Portuguese>Administrando pirulito de fentanil...</Portuguese>
                 <Russian>Выдача леденца с фентанилом...</Russian>
                 <Ukrainian>Видача льодяника з фентанілом...</Ukrainian>
-                <Korean>펜타닐 로젠지 투여 중... (Giving Fentanyl Lozenge...)</Korean>
+                <Korean>펜타닐 로젠지 투여 중...</Korean>
                 <Spanish>Administrando pastilla de fentanilo...</Spanish>
                 <Turkish>Fentanil pastili veriliyor…</Turkish>
             </Key>
@@ -1851,7 +1866,7 @@
                 <Portuguese>Remover pirulito de fentanil</Portuguese>
                 <Russian>Забрать леденец с фентанилом</Russian>
                 <Ukrainian>Забрати льодяник з фентанілом</Ukrainian>
-                <Korean>펜타닐 로젠지 제거 (Remove Fentanyl Lozenge)</Korean>
+                <Korean>펜타닐 로젠지 제거</Korean>
                 <Spanish>Retirar pastilla de fentanilo</Spanish>
                 <Turkish>Fentanil pastilini çıkar</Turkish>
             </Key>
@@ -1861,7 +1876,7 @@
                 <Portuguese>Removendo pirulito de fentanil...</Portuguese>
                 <Russian>Изъятие леденца с фентанилом...</Russian>
                 <Ukrainian>Вилучення льодяника з фентанілом...</Ukrainian>
-                <Korean>펜타닐 로젠지 제거 중... (Removing Fentanyl Lozenge...)</Korean>
+                <Korean>펜타닐 로젠지 제거 중...</Korean>
                 <Spanish>Retirando pastilla de fentanilo...</Spanish>
                 <Turkish>Fentanil pastili çıkarılıyor…</Turkish>
             </Key>
@@ -1921,7 +1936,7 @@
                 <Portuguese>Pirulito de fentanil foi colocado by %1</Portuguese>
                 <Russian>Леденец с фентанилом установлен пользователем %1</Russian>
                 <Ukrainian>Льодяник з фентанілом встановлено користувачем %1</Ukrainian>
-                <Korean>%1이 펜타닐 로젠지를 적용함</Korean>
+                <Korean>%1 가 펜타닐 로젠지를 복용시킴</Korean>
                 <Spanish>Pastilla administrada por %1</Spanish>
                 <Turkish>Fentanil pastili %1 tarafından yerleştirildi</Turkish>
             </Key>
@@ -1931,7 +1946,7 @@
                 <Portuguese>%1 deu pirulito de fentanil</Portuguese>
                 <Russian>%1 выдал леденец с фентанилом</Russian>
                 <Ukrainian>%1 дав льодяник з фентанілом</Ukrainian>
-                <Korean>%1이 펜타닐 로젠지를 투여함</Korean>
+                <Korean>%1 가 펜타닐 로렌지를 복용시킴</Korean>
                 <Spanish>%1 administró pastilla de fentanilo</Spanish>
                 <Turkish>%1 fentanil pastili verdi</Turkish>
             </Key>
@@ -1961,7 +1976,7 @@
                 <Portuguese>Pirulito de fentanil foi removido</Portuguese>
                 <Russian>Леденец с фентанилом был удалён</Russian>
                 <Ukrainian>Льодяник з фентанілом було видалено</Ukrainian>
-                <Korean>펜타닐 로젠지가 제거됨</Korean>
+                <Korean>펜타닐 로젠지를 제거함</Korean>
                 <Spanish>La pastilla de fentanilo fue retirada</Spanish>
                 <Turkish>Fentanil pastili çıkarıldı</Turkish>
             </Key>
@@ -1971,7 +1986,7 @@
                 <Portuguese>Pirulito de fentanil acabou e foi removido</Portuguese>
                 <Russian>Действие леденца закончилось, он был изъят</Russian>
                 <Ukrainian>Дія льодяника завершилася, його було вилучено</Ukrainian>
-                <Korean>펜타닡 로젠지 효과가 사라져 제거됨</Korean>
+                <Korean>펜타닡 로젠지를 전부 복용함</Korean>
                 <Spanish>La pastilla de fentanilo se agotó y fue retirada</Spanish>
                 <Turkish>Fentanil pastilinin etkisi geçti ve çıkarıldı</Turkish>
             </Key>
@@ -2009,7 +2024,7 @@
                 <Portuguese>%1 iniciou RCP</Portuguese>
                 <Russian>%1 начал СЛР</Russian>
                 <Ukrainian>%1 розпочав СЛР</Ukrainian>
-                <Korean>%1이 CPR 시작</Korean>
+                <Korean>%1 CPR 시작</Korean>
                 <Spanish>%1 inició RCP</Spanish>
                 <Turkish>%1 CPR’a başladı</Turkish>
             </Key>
@@ -2021,7 +2036,7 @@
                 <Portuguese>%1 parou RCP (%2)</Portuguese>
                 <Russian>%1 остановил СЛР (%2)</Russian>
                 <Ukrainian>%1 зупинив СЛР (%2)</Ukrainian>
-                <Korean>%1이 CPR 중단 (%2)</Korean>
+                <Korean>%1 CPR 중단 (%2)</Korean>
                 <Spanish>%1 detuvo RCP (%2)</Spanish>
                 <Turkish>%1 CPR’ı durdurdu (%2)</Turkish>
             </Key>
@@ -2175,7 +2190,7 @@
                 <Portuguese>%1 tempo de enchimento capilar medido: %2s (%3)</Portuguese>
                 <Russian>%1 измерил время капиллярного наполнения: %2 с (%3)</Russian>
                 <Ukrainian>%1 виміряв час капілярного наповнення: %2 с (%3)</Ukrainian>
-                <Korean>%1이 모세혈관 재충혈 시간 측정: %2초 (%3)</Korean>
+                <Korean>%1 모세혈관 재충혈 시간 측정: %2초 (%3)</Korean>
                 <Spanish>%1 midió tiempo de relleno capilar: %2 s (%3)</Spanish>
                 <Turkish>%1 kapiller dolum süresini ölçtü: %2sn (%3)</Turkish>
             </Key>
@@ -2260,6 +2275,7 @@
                 <Korean>%1이 %2 맥박을 촉지함</Korean>
                 <Spanish>%1 tomó el %2 pulso</Spanish>
                 <Turkish>%1 %2 nabzını kontrol etti</Turkish>
+                <French>%1 a vérifié un pouls %2</French>
             </Key>
         </Container>
         <Container name="// Measure Blood Pressure Action //">
@@ -2393,7 +2409,7 @@
                 <Portuguese>Transfundir fluidos</Portuguese>
                 <Russian>Переливание жидкостей</Russian>
                 <Ukrainian>Переливання рідин</Ukrainian>
-                <Korean>수액/혈액 주입 (Transfuse Fluids)</Korean>
+                <Korean>수혈/수액 관리</Korean>
                 <Spanish>Transfundir fluidos</Spanish>
                 <Turkish>Sıvı transfüzyonu yap</Turkish>
             </Key>
@@ -2417,7 +2433,7 @@
                 <Portuguese>Interromper a transfusão no selecionado %1</Portuguese>
                 <Russian>Остановить переливание на выбранном %1</Russian>
                 <Ukrainian>Зупинити переливання на вибраному %1</Ukrainian>
-                <Korean>선택된 %1에서 수액/수혈을 중지</Korean>
+                <Korean>선택된 %1에서 수혈/주입을 중지</Korean>
                 <Spanish>Detener transfusión en %1 seleccionado</Spanish>
                 <Turkish>Seçili %1 üzerinde sıvı transfüzyonunu durdur</Turkish>
             </Key>
@@ -2441,7 +2457,7 @@
                 <Portuguese>Iniciar a transfusão no selecionado %1</Portuguese>
                 <Russian>Начать переливание на выбранном %1</Russian>
                 <Ukrainian>Почати переливання на вибраному %1</Ukrainian>
-                <Korean>선택된 %1로 수액/수혈 시작</Korean>
+                <Korean>선택된 %1로 수혈/주입 시작</Korean>
                 <Spanish>Iniciar transfusión en %1 seleccionado</Spanish>
                 <Turkish>Seçili %1 üzerinde sıvı transfüzyonunu başlat</Turkish>
             </Key>
@@ -2477,7 +2493,7 @@
                 <Portuguese>Adicionar nova bolsa de fluido</Portuguese>
                 <Russian>Добавить новый пакет жидкости</Russian>
                 <Ukrainian>Додати новий пакет рідини</Ukrainian>
-                <Korean>새로운 수액 백 추가</Korean>
+                <Korean>새로운 수액백 추가</Korean>
                 <Spanish>Añadir nueva bolsa de fluidos</Spanish>
                 <Turkish>Yeni sıvı torbası ekle</Turkish>
             </Key>
@@ -2549,7 +2565,7 @@
                 <Portuguese>Move a bolsa de fluido do IV</Portuguese>
                 <Russian>Снять пакет с IV</Russian>
                 <Ukrainian>Зняти пакет з IV</Ukrainian>
-                <Korean>IV에서 수액 백 이동</Korean>
+                <Korean>IV 라인에서 수액 이동</Korean>
                 <Spanish>Mover bolsa de IV</Spanish>
                 <Turkish>Sıvı torbasını IV’den taşı</Turkish>
             </Key>
@@ -2585,7 +2601,7 @@
                 <Portuguese>Remover bolsa de fluido</Portuguese>
                 <Russian>Удалить пакет жидкости</Russian>
                 <Ukrainian>Видалити пакет рідини</Ukrainian>
-                <Korean>수액 백 제거</Korean>
+                <Korean>수액백 제거</Korean>
                 <Spanish>Retirar bolsa de fluidos</Spanish>
                 <Turkish>Sıvı torbasını çıkar</Turkish>
             </Key>
@@ -2597,7 +2613,7 @@
                 <Portuguese>%1 removeu a bolsa de fluido (%2) do %3</Portuguese>
                 <Russian>%1 удалил пакет (%2) с %3</Russian>
                 <Ukrainian>%1 видалив пакет (%2) з %3</Ukrainian>
-                <Korean>%1이 %3에서 수액 백(%2)을 제거함</Korean>
+                <Korean>%1 %3에서 수액 백(%2)을 제거함</Korean>
                 <Spanish>%1 retiró bolsa de fluidos (%2) de %3</Spanish>
                 <Turkish>%1, %3 üzerinden sıvı torbasını (%2) çıkardı</Turkish>
             </Key>
@@ -2968,9 +2984,10 @@
                 <Portuguese>Colocação de IV bloqueada pelo esfigmomanômetro</Portuguese>
                 <Russian>IV блокируется установленной манжетой</Russian>
                 <Ukrainian>IV блокується встановленою манжетою</Ukrainian>
-                <Korean>부착된 혈압 커프로 IV 삽입이 차단됨</Korean>
+                <Korean>커프에 의해 IV 차단됨</Korean>
                 <Spanish>Colocación de vía IV bloqueada por manguito de presión aplicado</Spanish>
                 <Turkish>IV yerleştirme takılı tansiyon manşonu nedeniyle engellendi</Turkish>
+                <French>La mise en place d'un cathéter IV est bloqué par le brassard tensiomètre</French>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_Already">
                 <English>Patient already has IO in the %1</English>
@@ -3066,7 +3083,7 @@
                 <Portuguese>Cateter IV está livre</Portuguese>
                 <Russian>Катетер IV проходим</Russian>
                 <Ukrainian>Катетер IV прохідний</Ukrainian>
-                <Korean>IV 카테터 막힘 없음 </Korean>
+                <Korean>IV 카테터 정상</Korean>
                 <Spanish>Catéter IV limpio</Spanish>
                 <Turkish>IV kateteri açık</Turkish>
             </Key>
@@ -3078,7 +3095,7 @@
                 <Portuguese>Livre</Portuguese>
                 <Russian>Чисто</Russian>
                 <Ukrainian>Чисто</Ukrainian>
-                <Korean>정상 (Clear)</Korean>
+                <Korean>정상</Korean>
                 <Spanish>Limpio</Spanish>
                 <Turkish>Açık</Turkish>
             </Key>
@@ -3090,7 +3107,7 @@
                 <Portuguese>Fluxo normal do cateter IV</Portuguese>
                 <Russian>У катетера IV нормальный поток</Russian>
                 <Ukrainian>У катетера IV нормальний потік</Ukrainian>
-                <Korean>IV 카테터 정상 유속 (Normal flow)</Korean>
+                <Korean>IV 카테터 정상 유량</Korean>
                 <Spanish>Catéter IV con flujo normal</Spanish>
                 <Turkish>IV kateteri normal akışa sahip</Turkish>
             </Key>
@@ -3102,7 +3119,7 @@
                 <Portuguese>Fluxo normal</Portuguese>
                 <Russian>Нормальный поток</Russian>
                 <Ukrainian>Нормальний потік</Ukrainian>
-                <Korean>정상 유속 (Normal flow)</Korean>
+                <Korean>정상 유량</Korean>
                 <Spanish>Flujo normal</Spanish>
                 <Turkish>Normal akış</Turkish>
             </Key>
@@ -3114,7 +3131,7 @@
                 <Portuguese>Cateter IV sem fluxo</Portuguese>
                 <Russian>У катетера IV нет потока</Russian>
                 <Ukrainian>У катетера IV немає потоку</Ukrainian>
-                <Korean>IV 카테터 유속 없음 (no flow)</Korean>
+                <Korean>IV 카테터 유량 없음</Korean>
                 <Spanish>Catéter IV sin flujo</Spanish>
                 <Turkish>IV kateterinde akış yok</Turkish>
             </Key>
@@ -3126,7 +3143,7 @@
                 <Portuguese>Sem fluxo</Portuguese>
                 <Russian>Нет потока</Russian>
                 <Ukrainian>Немає потоку</Ukrainian>
-                <Korean>유속 없음 (No flow)</Korean>
+                <Korean>유량 없음</Korean>
                 <Spanish>Sin flujo</Spanish>
                 <Turkish>Akış yok</Turkish>
             </Key>
@@ -3138,7 +3155,7 @@
                 <Portuguese>Inchaço no local de inserção</Portuguese>
                 <Russian>Отёк в месте установки</Russian>
                 <Ukrainian>Набряк у місці встановлення</Ukrainian>
-                <Korean>삽입 부위 부종 (Swelling on insertion site)</Korean>
+                <Korean>삽입 부위 부종</Korean>
                 <Spanish>Hinchazón en sitio de inserción</Spanish>
                 <Turkish>Giriş yerinde şişlik</Turkish>
             </Key>
@@ -3150,7 +3167,7 @@
                 <Portuguese>inchaço perceptível</Portuguese>
                 <Russian>заметный отёк</Russian>
                 <Ukrainian>помітний набряк</Ukrainian>
-                <Korean>뚜렷한 부종 (noticable swelling)</Korean>
+                <Korean>뚜렷한 부종</Korean>
                 <Spanish>Hinchazón notable</Spanish>
                 <Turkish>fark edilir şişlik</Turkish>
             </Key>
@@ -3162,7 +3179,7 @@
                 <Portuguese>inspecionou o cateter IV</Portuguese>
                 <Russian>осмотрел катетер IV</Russian>
                 <Ukrainian>оглянув катетер IV</Ukrainian>
-                <Korean>이 IV 카테터 검사</Korean>
+                <Korean>IV 카테터 검사</Korean>
                 <Spanish>Catéter IV inspeccionado</Spanish>
                 <Turkish>IV kateteri incelendi</Turkish>
             </Key>
@@ -3176,7 +3193,7 @@
                 <Portuguese>O paciente já tem um esfigmomanômetro no %1</Portuguese>
                 <Russian>На %1 уже установлена манжета</Russian>
                 <Ukrainian>На %1 уже встановлено манжету</Ukrainian>
-                <Korean>환자는 이미 %1에 혈압 커프가 있음</Korean>
+                <Korean>환자는 이미 %1에 커프가 있음</Korean>
                 <Spanish>El paciente ya tiene manguito de presión en %1</Spanish>
                 <Turkish>Hastada %1 üzerinde zaten tansiyon manşonu var</Turkish>
             </Key>
@@ -3185,9 +3202,10 @@
                 <Portuguese>Esfigmomanômetro bloqueado pelo IV</Portuguese>
                 <Russian>Установка манжеты блокируется IV</Russian>
                 <Ukrainian>Встановлення манжети блокується IV</Ukrainian>
-                <Korean>IV 때문에 혈압계 부착 불가</Korean>
+                <Korean>IV에 의해 커프 부착 불가</Korean>
                 <Spanish>Colocación de manguito bloqueada por IV</Spanish>
                 <Turkish>Manşon yerleştirme IV nedeniyle engellendi</Turkish>
+                <French>Le brassard tensiomètre est bloqué par le cathéter IV</French>
             </Key>
         </Container>
         <Container name="// Syringe Actions //">
@@ -3235,7 +3253,7 @@
                 <Portuguese>Aspirar</Portuguese>
                 <Russian>Набрать</Russian>
                 <Ukrainian>Набрати</Ukrainian>
-                <Korean>약물 뽑기 (Draw)</Korean>
+                <Korean>흡인</Korean>
                 <Spanish>Aspirar</Spanish>
                 <Turkish>Çek</Turkish>
             </Key>
@@ -3307,6 +3325,7 @@
                 <Korean>%1 흡인 중...</Korean>
                 <Spanish>Aspirando %1...</Spanish>
                 <Turkish>%1 çekiliyor…</Turkish>
+                <French>Prelèvement %1...</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawingInto">
                 <English>Drawing %1 (%2) into %3ml syringe</English>
@@ -3921,7 +3940,7 @@
                 <Portuguese>Administrar choque</Portuguese>
                 <Russian>Подать разряд</Russian>
                 <Ukrainian>Подати розряд</Ukrainian>
-                <Korean>전기 충격 시행</Korean>
+                <Korean>쇼크 실시</Korean>
                 <Spanish>Administrar descarga</Spanish>
                 <Turkish>Şok uygula</Turkish>
             </Key>
@@ -3933,7 +3952,7 @@
                 <Portuguese>Discagem rápida</Portuguese>
                 <Russian>Скорость прокрутки</Russian>
                 <Ukrainian>Швидкість прокрутки</Ukrainian>
-                <Korean>빠른 다이얼</Korean>
+                <Korean>스피드 다이얼</Korean>
                 <Spanish>Marcación rápida</Spanish>
                 <Turkish>Hızlı arama</Turkish>
             </Key>
@@ -4007,7 +4026,7 @@
                 <Portuguese>%1 começou a transmissção de fluido (%2) em %3</Portuguese>
                 <Russian>%1 начал переливание (%2) в %3</Russian>
                 <Ukrainian>%1 розпочав переливання (%2) у %3</Ukrainian>
-                <Korean>%1이 %3에 체액(%2) 주입을 시작함</Korean>
+                <Korean>%1 %3에 (%2) 주입을 시작함</Korean>
                 <Spanish>%1 inició transfusión (%2) en %3</Spanish>
                 <Turkish>%1 %3 içine sıvı transfüzyonuna başladı (%2)</Turkish>
             </Key>
@@ -4019,7 +4038,7 @@
                 <Portuguese>%1 moveu a bolsa de fluido (%2) para %3</Portuguese>
                 <Russian>%1 переместил пакет (%2) к %3</Russian>
                 <Ukrainian>%1 перемістив пакет (%2) до %3</Ukrainian>
-                <Korean>%1이 수액 백(%2)을 %3로 이동함</Korean>
+                <Korean>%1 (%2)을 %3로 이동함</Korean>
                 <Spanish>%1 movió bolsa (%2) a %3</Spanish>
                 <Turkish>%1 sıvı torbasını (%2) %3’e taşıdı</Turkish>
             </Key>
@@ -4093,6 +4112,7 @@
                 <Korean>혈액</Korean>
                 <Spanish>Sangre</Spanish>
                 <Turkish>Kan</Turkish>
+                <French>Sang</French>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBlood">
                 <English>Fresh Blood</English>
@@ -4102,6 +4122,7 @@
                 <Korean>신선 혈액</Korean>
                 <Spanish>Sangre fresca</Spanish>
                 <Turkish>Taze Kan</Turkish>
+                <French>Sang Frais</French>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_SwitchTargetInventory">
                 <English>Change target inventory</English>

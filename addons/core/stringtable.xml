@@ -105,6 +105,7 @@
             <Korean>의무병 AI 중간 처치 허용</Korean>
             <Spanish>Permitir Tratamiento Intermedio al Médico IA</Spanish>
             <Turkish>Medik AI Orta Seviye Tedaviye İzin Ver</Turkish>
+            <French>Autoriser les médecin IA les traitements "intermédaires"</French>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment_Desc">
             <English>Sets whether medic AI is allowed to perform any actions other than bandaging and tourniqueting</English>
@@ -114,6 +115,7 @@
             <Korean>의무병 AI가 붕대 감기와 지혈대 적용 외의 행동을 수행할 수 있는지 설정</Korean>
             <Spanish>Define si el médico IA puede realizar acciones adicionales aparte de vendar y aplicar torniquetes</Spanish>
             <Turkish>Medik AI’nın bandaj ve turnike dışında işlem yapmasına izin verilip verilmeyeceğini ayarlar</Turkish>
+            <French>Défini si le médecin IA est autorisé à exercer d'autres actions que panser, et mettre des tourniquets</French>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Core_MorphineAutoinjector">
@@ -278,7 +280,7 @@
                 <Portuguese>Colocar em posição supinada</Portuguese>
                 <Russian>Уложить на спину</Russian>
                 <Ukrainian>Покласти на спину</Ukrainian>
-                <Korean>바로 누이기</Korean>
+                <Korean>앙아위로 눕히기</Korean>
                 <Spanish>Colocar en Posición Supina</Spanish>
                 <Turkish>Sırtüstü Pozisyona Al</Turkish>
             </Key>
@@ -288,7 +290,7 @@
                 <Portuguese>Paciente já foi colocado em posição supinada</Portuguese>
                 <Russian>Пациент уложен на спину</Russian>
                 <Ukrainian>Пацієнта покладено на спину</Ukrainian>
-                <Korean>환자가 바로 누운 자세가 되었습니다 </Korean>
+                <Korean>환자가 앙아위로 누웠습니다</Korean>
                 <Spanish>El paciente ha sido colocado en posición supina</Spanish>
                 <Turkish>Hasta sırtüstü pozisyona alındı</Turkish>
             </Key>
@@ -298,7 +300,7 @@
                 <Portuguese>Você foi colocado em posição supinada</Portuguese>
                 <Russian>Вас уложили на спину</Russian>
                 <Ukrainian>Вас поклали на спину</Ukrainian>
-                <Korean>바로 누운 자세가 되었습니다</Korean>
+                <Korean>앙아위로 눕혀졌습니다</Korean>
                 <Spanish>Has sido colocado en posición supina</Spanish>
                 <Turkish>Sırtüstü pozisyona alındınız</Turkish>
             </Key>
@@ -340,7 +342,7 @@
                 <Portuguese>Carregar paciente</Portuguese>
                 <Russian>Нести пациента</Russian>
                 <Ukrainian>Нести пацієнта</Ukrainian>
-                <Korean>환자 들</Korean>
+                <Korean>환자 운반</Korean>
                 <Spanish>Portar Paciente</Spanish>
                 <Turkish>Hastayı Taşı</Turkish>
             </Key>
@@ -380,7 +382,7 @@
                 <Portuguese>%1 está inspecionando sua plaqueta de identificação</Portuguese>
                 <Russian>%1 проверяет ваши жетоны</Russian>
                 <Ukrainian>%1 перевіряє ваші жетони</Ukrainian>
-                <Korean>%1이 당신의 군번줄을 확인 중입니다</Korean>
+                <Korean>%1가 당신의 군번줄을 확인 중입니다</Korean>
                 <Spanish>%1 está inspeccionando tus chapas de identificación</Spanish>
                 <Turkish>%1 künyelerinizi inceliyor</Turkish>
             </Key>
@@ -412,7 +414,7 @@
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
                 <English>Split</English>
-                <French>Séparer</French>
+                <French>Scinder</French>
                 <Portuguese>Dividir</Portuguese>
                 <Russian>Разделить</Russian>
                 <Ukrainian>Розділити</Ukrainian>
@@ -440,6 +442,7 @@
                 <Korean>시체가방에서 의료 아이템 반환</Korean>
                 <Spanish>Material médico recuperado de la mortaja</Spanish>
                 <Turkish>Tıbbi eşyalar ceset torbasından geri alındı</Turkish>
+                <French>Les objets médicales on été récupéré de la housse mortuaire</French>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -569,16 +572,19 @@
                 <English>Interaction Distance</English>
                 <Spanish>Distancia de Interacción</Spanish>
                 <Turkish>Etkileşim Mesafesi</Turkish>
+                <French>Distance d'interactions</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition">
                 <English>Interaction Position</English>
                 <Spanish>Posición de Interacción</Spanish>
                 <Turkish>Etkileşim Konumu</Turkish>
+                <French>Position d'interaction</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition_Tooltip">
                 <English>Interaction position relative to center of object, must be an array containing 3 numbers</English>
                 <Spanish>Posición de interacción relativa al centro del objeto; debe ser un grupo de 3 valores</Spanish>
                 <Turkish>Nesnenin merkezine göre etkileşim konumu, 3 sayı içeren bir dizi olmalıdır</Turkish>
+                <French>La position d'interaction relativee au centre de l'objet, doit être un ensembble contenant 3 nombres</French>
             </Key>
         </Container>
         <Container name="// ACE Action //">

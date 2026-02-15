@@ -68,6 +68,7 @@
             <Korean>골절 표시</Korean>
             <Spanish>Mostrar Fractura</Spanish>
             <Turkish>Kırıkları Göster</Turkish>
+            <French>Montrer la fracture</French>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
             <English>Show fractured limb(s) on patient and overview tab</English>
@@ -76,6 +77,7 @@
             <Korean>환자 및 개요 탭에 골절된 팔다리 표시</Korean>
             <Spanish>Mostrar la(s) extremidad(es) fracturada(s) en el paciente y en la pestaña de resumen</Spanish>
             <Turkish>Hastadaki kırık uzuvları ve genel bakış sekmesinde göster</Turkish>
+            <French>Montrer le(s) membre(s) fracturé(s) sur le patient et sur l'aperçu</French>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>
@@ -202,7 +204,7 @@
                 <Portuguese>T4</Portuguese>
                 <Russian>T4</Russian>
                 <Ukrainian>T4</Ukrainian>
-                <Korean>T4 (T4)</Korean>
+                <Korean>T4</Korean>
                 <Spanish>T4</Spanish>
                 <Turkish>T4</Turkish>
             </Key>
@@ -216,7 +218,7 @@
                 <Portuguese>Auxiliar carregamento</Portuguese>
                 <Russian>Подготовить к переноске</Russian>
                 <Ukrainian>Підготувати до перенесення</Ukrainian>
-                <Korean>들기 보조 (Assist Carry)</Korean>
+                <Korean>들기 보조 </Korean>
                 <Spanish>Ayudar a portar</Spanish>
                 <Turkish>Taşımaya Yardım Et</Turkish>
             </Key>

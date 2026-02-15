@@ -9,7 +9,7 @@
             <Portuguese>ACM: Evacuação</Portuguese>
             <Russian>ACM: Эвакуация</Russian>
             <Ukrainian>ACM: Евакуація</Ukrainian>
-            <Korean>ACM: 퇴출 (Evacuation)</Korean>
+            <Korean>ACM: 퇴출</Korean>
             <Spanish>ACM: Evacuación</Spanish>
             <Turkish>ACM: Tahliye</Turkish>
         </Key>
@@ -307,6 +307,7 @@
                 <Korean>증원군 제어권을 획득했습니다</Korean>
                 <Spanish>Has tomado control de un nuevo refuerzo</Spanish>
                 <Turkish>Yeni bir takviye biriminin kontrolünü aldınız</Turkish>
+                <French>Vous avez pris le contrôle d'un nouveau renfort</French>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient">
                 <English>Evacuate Patient</English>
@@ -341,6 +342,7 @@
                 <Korean>대피 지점</Korean>
                 <Spanish>Punto de Evacuación</Spanish>
                 <Turkish>Tahliye Noktası</Turkish>
+                <French>Point d'évacuation</French>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_ReinforcePoint">
                 <English>Reinforce Point</English>
@@ -349,6 +351,7 @@
                 <Korean>증원 지점</Korean>
                 <Spanish>Punto de Refuerzo</Spanish>
                 <Turkish>Takviye Noktası</Turkish>
+                <French>Point de renforcement</French>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_PlayerFaction">
                 <English>Player Side</English>
