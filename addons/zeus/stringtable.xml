@@ -1,319 +1,319 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ACM">
     <Package name="Zeus">
-        <Key ID="STR_ACM_Zeus_Module_AssignFullHealFacility">
-            <English>Assign Full Heal Facility</English>
-            <Spanish>Definir como edificio de restauración de vida</Spanish>
-            <Russian>Назначить объектом полного медицинского восстановления</Russian>
-            <Korean>완전 회복 시설 지정</Korean>
-            <Ukrainian>Призначити об'єктом повного медичного відновлення</Ukrainian>
+        <Key ID="STR_ACM_Zeus_Module_UnCardiacArrest">
+            <English>Un-Cardiac Arrest</English>
+            <Polish>Wznowienie akcji serca</Polish>
+            <German>Kreislaufstillstand aufheben</German>
+            <French>Reprise du rythme cardiaque</French>
+            <Portuguese>Desfazer parada cardíaca</Portuguese>
+            <Russian>Вывести из состояния остановки сердца</Russian>
+            <Ukrainian>Вивести зі стану зупинки серця</Ukrainian>
+            <Korean>심정지 해제</Korean>
+            <Spanish>Deshacer el paro cárdiaco</Spanish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_ForceWakeUp">
             <English>Force Wake-up</English>
-            <French>Forcer le réveil</French>
-            <Spanish>Forzar a que se despierte</Spanish>
             <Polish>Wymuszenie ocknięcia się</Polish>
+            <German>Erzwinge Wachwerden</German>
+            <French>Forcer le réveil</French>
             <Portuguese>Forçar acordar</Portuguese>
             <Russian>Принудительно разбудить</Russian>
-            <German>Erzwinge Wachwerden</German>
-            <Korean>강제 일으키기</Korean>
             <Ukrainian>Примусово розбудити</Ukrainian>
+            <Korean>강제 일으키기</Korean>
+            <Spanish>Forzar a que se despierte</Spanish>
         </Key>
-        <Key ID="STR_ACM_Zeus_Module_UnCardiacArrest">
-            <English>Un-Cardiac Arrest</English>
-            <French>Reprise du rythme cardiaque</French>
-            <Spanish>Deshacer el paro cárdiaco</Spanish>
-            <Polish>Wznowienie akcji serca</Polish>
-            <Portuguese>Desfazer parada cardíaca</Portuguese>
-            <Russian>Вывести из состояния остановки сердца</Russian>
-            <German>Kreislaufstillstand aufheben</German>
-            <Korean>심정지 해제</Korean>
-            <Ukrainian>Вивести зі стану зупинки серця</Ukrainian>
+        <Key ID="STR_ACM_Zeus_Module_AssignFullHealFacility">
+            <English>Assign Full Heal Facility</English>
+            <Russian>Назначить объектом полного медицинского восстановления</Russian>
+            <Ukrainian>Призначити об'єктом повного медичного відновлення</Ukrainian>
+            <Korean>완전 회복 시설 지정</Korean>
+            <Spanish>Definir como edificio de restauración de vida</Spanish>
         </Key>
-        <Container name="// Give Pain Module //">
-            <Key ID="STR_ACM_Zeus_Module_GivePain">
-                <English>Give Pain</English>
-                <French>Infliger une douleur</French>
-                <Spanish>Aplicar Dolor</Spanish>
-                <Polish>Zadanie bólu</Polish>
-                <Portuguese>Inflingir dor</Portuguese>
-                <Russian>Нанести боль</Russian>
-                <German>Schmerz zufügen</German>
-                <Korean>통증 부여</Korean>
-                <Ukrainian>Спричинити біль</Ukrainian>
+        <Container name="// Set Blood Volume Module //">
+            <Key ID="STR_ACM_Zeus_Module_SetBloodVolume">
+                <English>Set Blood Volume</English>
+                <Polish>Ustawienie ilości krwi</Polish>
+                <German>Setze Blutvolumen</German>
+                <French>Paramétrage du volume sanguin</French>
+                <Portuguese>Definir volume de sangue</Portuguese>
+                <Russian>Задать объём крови</Russian>
+                <Ukrainian>Задати об’єм крові</Ukrainian>
+                <Korean>혈액량 설정</Korean>
+                <Spanish>Cambiar el volumen de sangre</Spanish>
             </Key>
-            <Key ID="STR_ACM_Zeus_Module_GivePain_PainAmount">
-                <English>Pain Amount</English>
-                <French>Intensité de la douleur</French>
-                <Spanish>Nivel de Dolor</Spanish>
-                <Polish>Ilość bólu</Polish>
-                <Portuguese>Montante de dor</Portuguese>
-                <Russian>Количество боли</Russian>
-                <German>Schmerzintensität</German>
-                <Korean>통증 수치</Korean>
-                <Ukrainian>Кількість болю</Ukrainian>
+            <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_BloodVolume">
+                <English>Blood Volume</English>
+                <Polish>Ilość krwi</Polish>
+                <German>Blutvolumen</German>
+                <French>Quantité de sang</French>
+                <Portuguese>Volume de sangue</Portuguese>
+                <Russian>Объём крови</Russian>
+                <Ukrainian>Об’єм крові</Ukrainian>
+                <Korean>혈액량</Korean>
+                <Spanish>Volumen de sangre</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_PlasmaVolume">
+                <English>Plasma Volume</English>
+                <Polish>Ilość osocza</Polish>
+                <German>Plasmavolumen</German>
+                <French>Volume de plasma</French>
+                <Portuguese>Volume de plasma</Portuguese>
+                <Russian>Объём плазмы</Russian>
+                <Ukrainian>Об’єм плазми</Ukrainian>
+                <Korean>혈장량</Korean>
+                <Spanish>Volumen de plasma</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_SalineVolume">
+                <English>Saline Volume</English>
+                <Polish>Ilość soli fizjologicznej</Polish>
+                <German>Kochsalzvolumen</German>
+                <French>Volume de solution saline</French>
+                <Portuguese>Volume de soro</Portuguese>
+                <Russian>Объём физиологического раствора</Russian>
+                <Ukrainian>Об’єм фізіологічного розчину</Ukrainian>
+                <Korean>생리식염수량</Korean>
+                <Spanish>Volumen de salino</Spanish>
             </Key>
         </Container>
         <Container name="// Inflict Cardiac Arrest Module //">
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest">
                 <English>Inflict Cardiac Arrest</English>
-                <French>Provoquer un arrêt cardique</French>
-                <Spanish>Forzar un paro cárdiaco</Spanish>
                 <Polish>Zatrzymanie akcję serca</Polish>
+                <German>Kreislaufstillstand erzwingen</German>
+                <French>Provoquer un arrêt cardique</French>
                 <Portuguese>Inflingir parada cardíaca</Portuguese>
                 <Russian>Вызвать остановку сердца</Russian>
-                <German>Kreislaufstillstand erzwingen</German>
-                <Korean>심정지 유발</Korean>
                 <Ukrainian>Викликати зупинку серця</Ukrainian>
+                <Korean>심정지 유발</Korean>
+                <Spanish>Forzar un paro cárdiaco</Spanish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm">
                 <English>Target Rhythm</English>
-                <French>Définir le rythme cardiaque</French>
-                <Spanish>Definir el ritmo cárdiaco</Spanish>
                 <Polish>Docelowy rytm</Polish>
+                <German>Setze Herzrhythmus</German>
+                <French>Définir le rythme cardiaque</French>
                 <Portuguese>Ritmo alvo</Portuguese>
                 <Russian>Целевой ритм</Russian>
-                <German>Setze Herzrhythmus</German>
-                <Korean>목표 리듬 (Target Rhythm)</Korean>
                 <Ukrainian>Цільовий ритм</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Asystole">
-                <English>Asystole</English>
-                <French>Asystolie</French>
-                <Spanish>Asistolia</Spanish>
-                <Polish>Asystolia</Polish>
-                <Portuguese>Assistolia</Portuguese>
-                <Russian>Асистолия</Russian>
-                <German>Asystolie</German>
-                <Korean>무수축 (Asystole)</Korean>
-                <Ukrainian>Асистолія</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_PVT">
-                <English>Ventricular Tachycardia</English>
-                <French>Tachycardie ventriculaire</French>
-                <Spanish>Taquicardia Ventricular</Spanish>
-                <Polish>Częstoskurcz komorowy (Tachykardia)</Polish>
-                <Portuguese>Taquicardia ventricular</Portuguese>
-                <Russian>Желудочковая тахикардия</Russian>
-                <German>pulslose Ventrikuläre Tachykardie</German>
-                <Korean>심실 빈맥 (VT)</Korean>
-                <Ukrainian>Шлуночкова тахікардія</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Random">
-                <English>Random</English>
-                <French>Aléatoire</French>
-                <Spanish>Aleatorio</Spanish>
-                <Polish>Losowy</Polish>
-                <Portuguese>Aleatório</Portuguese>
-                <Russian>Случайный</Russian>
-                <German>Zufällig</German>
-                <Korean>무작위</Korean>
-                <Ukrainian>Випадковий</Ukrainian>
+                <Korean>목표 리듬 (Target Rhythm)</Korean>
+                <Spanish>Definir el ritmo cárdiaco</Spanish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Sinus">
                 <English>Sinus</English>
-                <French>Rythme sinusal</French>
-                <Spanish>Ritmo Sinusal</Spanish>
                 <Polish>Sinus</Polish>
+                <German>Sinusrhythmus</German>
+                <French>Rythme sinusal</French>
                 <Portuguese>Sinusal</Portuguese>
                 <Russian>Синусовый ритм</Russian>
-                <German>Sinusrhythmus</German>
-                <Korean>정상 동리듬 (Sinus)</Korean>
                 <Ukrainian>Синусовий ритм</Ukrainian>
+                <Korean>정상 동리듬 (Sinus)</Korean>
+                <Spanish>Ritmo Sinusal</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Asystole">
+                <English>Asystole</English>
+                <Polish>Asystolia</Polish>
+                <German>Asystolie</German>
+                <French>Asystolie</French>
+                <Portuguese>Assistolia</Portuguese>
+                <Russian>Асистолия</Russian>
+                <Ukrainian>Асистолія</Ukrainian>
+                <Korean>무수축 (Asystole)</Korean>
+                <Spanish>Asistolia</Spanish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_VF">
                 <English>Ventricular Fibrillation</English>
-                <French>Fibrillation ventriculaire</French>
-                <Spanish>Fibrilación Ventricular</Spanish>
                 <Polish>Migotanie komór</Polish>
+                <German>Kammerflimmern</German>
+                <French>Fibrillation ventriculaire</French>
                 <Portuguese>Fibrilação ventricular</Portuguese>
                 <Russian>Фибрилляция желудочков</Russian>
-                <German>Kammerflimmern</German>
-                <Korean>심실 세동 (V.Fibrillation)</Korean>
                 <Ukrainian>Фібриляція шлуночків</Ukrainian>
+                <Korean>심실 세동 (V.Fibrillation)</Korean>
+                <Spanish>Fibrilación Ventricular</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_PVT">
+                <English>Ventricular Tachycardia</English>
+                <Polish>Częstoskurcz komorowy (Tachykardia)</Polish>
+                <German>pulslose Ventrikuläre Tachykardie</German>
+                <French>Tachycardie ventriculaire</French>
+                <Portuguese>Taquicardia ventricular</Portuguese>
+                <Russian>Желудочковая тахикардия</Russian>
+                <Ukrainian>Шлуночкова тахікардія</Ukrainian>
+                <Korean>심실 빈맥 (VT)</Korean>
+                <Spanish>Taquicardia Ventricular</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Random">
+                <English>Random</English>
+                <Polish>Losowy</Polish>
+                <German>Zufällig</German>
+                <French>Aléatoire</French>
+                <Portuguese>Aleatório</Portuguese>
+                <Russian>Случайный</Russian>
+                <Ukrainian>Випадковий</Ukrainian>
+                <Korean>무작위</Korean>
+                <Spanish>Aleatorio</Spanish>
             </Key>
         </Container>
         <Container name="// Inflict Chest Injury Module //">
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury">
                 <English>Inflict Chest Injury</English>
-                <French>Infliger un lésion thoracique</French>
-                <Spanish>Causar Lesión Torácica</Spanish>
                 <Polish>Uraz klatki piersiowej</Polish>
+                <German>Pleuraverletzung erwzingen</German>
+                <French>Infliger un lésion thoracique</French>
                 <Portuguese>Inflingir lesão torácica</Portuguese>
                 <Russian>Нанести травму грудной клетки</Russian>
-                <German>Pleuraverletzung erwzingen</German>
-                <Korean>흉부 부상 유발</Korean>
                 <Ukrainian>Нанести травму грудної клітки</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Hemothorax">
-                <English>Hemothorax</English>
-                <French>Hémothorax</French>
-                <Spanish>Hemotórax</Spanish>
-                <Polish>Odma krwotoczna</Polish>
-                <Portuguese>Hemotórax</Portuguese>
-                <Russian>Гемоторакс</Russian>
-                <German>Hämatothorax</German>
-                <Korean>혈기흉 (Hemothorax)</Korean>
-                <Ukrainian>Гемоторакс</Ukrainian>
+                <Korean>흉부 부상 유발</Korean>
+                <Spanish>Causar Lesión Torácica</Spanish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_InjuryType">
                 <English>Injury Type</English>
-                <French>Type de blessure</French>
-                <Spanish>Tipo de Lesión</Spanish>
                 <Polish>Typ urazu</Polish>
+                <German>Verletzungsart</German>
+                <French>Type de blessure</French>
                 <Portuguese>Tipo de lesão</Portuguese>
                 <Russian>Тип травмы</Russian>
-                <German>Verletzungsart</German>
-                <Korean>부상 유형</Korean>
                 <Ukrainian>Тип травми</Ukrainian>
+                <Korean>부상 유형</Korean>
+                <Spanish>Tipo de Lesión</Spanish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Pneumothorax">
                 <English>Pneumothorax</English>
-                <French>Pneumothorax</French>
-                <Spanish>Neumotórax</Spanish>
                 <Polish>Odma płucna</Polish>
+                <German>Pneumothorax</German>
+                <French>Pneumothorax</French>
                 <Portuguese>Pneumotórax</Portuguese>
                 <Russian>Пневмоторакс</Russian>
-                <German>Pneumothorax</German>
-                <Korean>기흉 (Pneumothorax)</Korean>
                 <Ukrainian>Пневмоторакс</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionHemothorax">
-                <English>Tension Hemothorax</English>
-                <French>Hémothorax sous tension</French>
-                <Spanish>Hemotórax a Tensión</Spanish>
-                <Polish>Odma prężno-krwotoczna</Polish>
-                <Portuguese>Hemotórax hipertensivo</Portuguese>
-                <Russian>Напряжённый гемоторакс</Russian>
-                <German>Spannungshämatothorax</German>
-                <Korean>긴장성 혈기흉 (Tension Hemothorax)</Korean>
-                <Ukrainian>Напружений гемоторакс</Ukrainian>
+                <Korean>기흉 (Pneumothorax)</Korean>
+                <Spanish>Neumotórax</Spanish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionPneumothorax">
                 <English>Tension Pneumothorax</English>
-                <French>Pneumothorax sous tension</French>
-                <Spanish>Neumotórax a Tensión</Spanish>
                 <Polish>Odma prężna</Polish>
+                <German>Spannungspneumothorax</German>
+                <French>Pneumothorax sous tension</French>
                 <Portuguese>Pneumotórax hipertensivo</Portuguese>
                 <Russian>Напряжённый пневмоторакс</Russian>
-                <German>Spannungspneumothorax</German>
-                <Korean>긴장성 기흉 (Tension Pneumothorax)</Korean>
                 <Ukrainian>Напружений пневмоторакс</Ukrainian>
+                <Korean>긴장성 기흉 (Tension Pneumothorax)</Korean>
+                <Spanish>Neumotórax a Tensión</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Hemothorax">
+                <English>Hemothorax</English>
+                <Polish>Odma krwotoczna</Polish>
+                <German>Hämatothorax</German>
+                <French>Hémothorax</French>
+                <Portuguese>Hemotórax</Portuguese>
+                <Russian>Гемоторакс</Russian>
+                <Ukrainian>Гемоторакс</Ukrainian>
+                <Korean>혈기흉 (Hemothorax)</Korean>
+                <Spanish>Hemotórax</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionHemothorax">
+                <English>Tension Hemothorax</English>
+                <Polish>Odma prężno-krwotoczna</Polish>
+                <German>Spannungshämatothorax</German>
+                <French>Hémothorax sous tension</French>
+                <Portuguese>Hemotórax hipertensivo</Portuguese>
+                <Russian>Напряжённый гемоторакс</Russian>
+                <Ukrainian>Напружений гемоторакс</Ukrainian>
+                <Korean>긴장성 혈기흉 (Tension Hemothorax)</Korean>
+                <Spanish>Hemotórax a Tensión</Spanish>
             </Key>
         </Container>
-        <Container name="// Plot Armor Module //">
-            <Key ID="STR_ACM_Zeus_Module_PlotArmor">
-                <English>Toggle Plot Armor</English>
-                <Spanish>Activar/Desactivar Plot Armor</Spanish>
-                <Russian>Переключить: сюжетную броню</Russian>
-                <Korean>주인공 버프 활성화</Korean>
-                <Ukrainian>Перемкнути: сюжетну броню</Ukrainian>
+        <Container name="// Give Pain Module //">
+            <Key ID="STR_ACM_Zeus_Module_GivePain">
+                <English>Give Pain</English>
+                <Polish>Zadanie bólu</Polish>
+                <German>Schmerz zufügen</German>
+                <French>Infliger une douleur</French>
+                <Portuguese>Inflingir dor</Portuguese>
+                <Russian>Нанести боль</Russian>
+                <Ukrainian>Спричинити біль</Ukrainian>
+                <Korean>통증 부여</Korean>
+                <Spanish>Aplicar Dolor</Spanish>
             </Key>
-            <Key ID="STR_ACM_Zeus_Module_PlotArmor_Disabled">
-                <English>Plot armor disabled on unit</English>
-                <Spanish>Plot armor desactivado en la unidad</Spanish>
-                <Russian>Сюжетная броня отключена у бойца</Russian>
-                <Korean>유닛에 주인공 버프 비활성화</Korean>
-                <Ukrainian>Сюжетна броня вимкнена у бійця</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Zeus_Module_PlotArmor_Enabled">
-                <English>Plot armor enabled on unit</English>
-                <Spanish>Plot armor activado en la unidad</Spanish>
-                <Russian>Сюжетная броня включена у бойца</Russian>
-                <Korean>유닛에 주인공 버프 활성화</Korean>
-                <Ukrainian>Сюжетна броня увімкнена у бійця</Ukrainian>
-            </Key>
-        </Container>
-        <Container name="// Set Blood Type Module //">
-            <Key ID="STR_ACM_Zeus_Module_SetBloodType">
-                <English>Set Blood Type</English>
-                <French>Définir le groupe sanguin</French>
-                <Spanish>Asignar grupo sanguíneo</Spanish>
-                <Portuguese>Definir tipo sanguíneo</Portuguese>
-                <Russian>Задать группу крови</Russian>
-                <German>Setze Blutgruppe</German>
-                <Korean>혈액형 설정</Korean>
-                <Ukrainian>Задати групу крові</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Zeus_Module_SetBloodType_List">
-                <English>Blood Type List</English>
-                <French>Liste des groupes sanguins</French>
-                <Spanish>Lista de grupos sanguíneos</Spanish>
-                <Portuguese>Lista de tipo sanguíneo</Portuguese>
-                <Russian>Список групп крови</Russian>
-                <German>Blutgruppenliste</German>
-                <Korean>혈액형 목록</Korean>
-                <Ukrainian>Список груп крові</Ukrainian>
-            </Key>
-        </Container>
-        <Container name="// Set Blood Volume Module //">
-            <Key ID="STR_ACM_Zeus_Module_SetBloodVolume">
-                <English>Set Blood Volume</English>
-                <French>Paramétrage du volume sanguin</French>
-                <Spanish>Cambiar el volumen de sangre</Spanish>
-                <Polish>Ustawienie ilości krwi</Polish>
-                <Portuguese>Definir volume de sangue</Portuguese>
-                <Russian>Задать объём крови</Russian>
-                <German>Setze Blutvolumen</German>
-                <Korean>혈액량 설정</Korean>
-                <Ukrainian>Задати об’єм крові</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_BloodVolume">
-                <English>Blood Volume</English>
-                <French>Quantité de sang</French>
-                <Spanish>Volumen de sangre</Spanish>
-                <Polish>Ilość krwi</Polish>
-                <Portuguese>Volume de sangue</Portuguese>
-                <Russian>Объём крови</Russian>
-                <German>Blutvolumen</German>
-                <Korean>혈액량</Korean>
-                <Ukrainian>Об’єм крові</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_PlasmaVolume">
-                <English>Plasma Volume</English>
-                <French>Volume de plasma</French>
-                <Spanish>Volumen de plasma</Spanish>
-                <Polish>Ilość osocza</Polish>
-                <Portuguese>Volume de plasma</Portuguese>
-                <Russian>Объём плазмы</Russian>
-                <German>Plasmavolumen</German>
-                <Korean>혈장량</Korean>
-                <Ukrainian>Об’єм плазми</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_SalineVolume">
-                <English>Saline Volume</English>
-                <French>Volume de solution saline</French>
-                <Spanish>Volumen de salino</Spanish>
-                <Polish>Ilość soli fizjologicznej</Polish>
-                <Portuguese>Volume de soro</Portuguese>
-                <Russian>Объём физиологического раствора</Russian>
-                <German>Kochsalzvolumen</German>
-                <Korean>생리식염수량</Korean>
-                <Ukrainian>Об’єм фізіологічного розчину</Ukrainian>
+            <Key ID="STR_ACM_Zeus_Module_GivePain_PainAmount">
+                <English>Pain Amount</English>
+                <Polish>Ilość bólu</Polish>
+                <German>Schmerzintensität</German>
+                <French>Intensité de la douleur</French>
+                <Portuguese>Montante de dor</Portuguese>
+                <Russian>Количество боли</Russian>
+                <Ukrainian>Кількість болю</Ukrainian>
+                <Korean>통증 수치</Korean>
+                <Spanish>Nivel de Dolor</Spanish>
             </Key>
         </Container>
         <Container name="// Set Oxygen Module //">
             <Key ID="STR_ACM_Zeus_Module_SetOxygen">
                 <English>Set Oxygen</English>
-                <French>Régler l'oxygène</French>
-                <Spanish>Ajustar Oxígeno</Spanish>
                 <Polish>Ustawienie tlenu</Polish>
+                <German>Setze Sauerstoffsättigung</German>
+                <French>Régler l'oxygène</French>
                 <Portuguese>Definir oxigenação</Portuguese>
                 <Russian>Задать уровень кислорода</Russian>
-                <German>Setze Sauerstoffsättigung</German>
-                <Korean>산소량 설정</Korean>
                 <Ukrainian>Задати рівень кисню</Ukrainian>
+                <Korean>산소량 설정</Korean>
+                <Spanish>Ajustar Oxígeno</Spanish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetOxygen_OxygenLevel">
                 <English>Oxygen Level</English>
-                <French>Réglage du niveau d'oxygène</French>
-                <Spanish>Nivel de Oxígeno</Spanish>
                 <Polish>Ustawienie poziomu tlenu</Polish>
+                <German>Sauerstoffsättigung</German>
+                <French>Réglage du niveau d'oxygène</French>
                 <Portuguese>Nível de oxigenação</Portuguese>
                 <Russian>Уровень кислорода</Russian>
-                <German>Sauerstoffsättigung</German>
-                <Korean>산소 수치</Korean>
                 <Ukrainian>Рівень кисню</Ukrainian>
+                <Korean>산소 수치</Korean>
+                <Spanish>Nivel de Oxígeno</Spanish>
+            </Key>
+        </Container>
+        <Container name="// Set Blood Type Module //">
+            <Key ID="STR_ACM_Zeus_Module_SetBloodType">
+                <English>Set Blood Type</English>
+                <German>Setze Blutgruppe</German>
+                <French>Définir le groupe sanguin</French>
+                <Portuguese>Definir tipo sanguíneo</Portuguese>
+                <Russian>Задать группу крови</Russian>
+                <Ukrainian>Задати групу крові</Ukrainian>
+                <Korean>혈액형 설정</Korean>
+                <Spanish>Asignar grupo sanguíneo</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Zeus_Module_SetBloodType_List">
+                <English>Blood Type List</English>
+                <German>Blutgruppenliste</German>
+                <French>Liste des groupes sanguins</French>
+                <Portuguese>Lista de tipo sanguíneo</Portuguese>
+                <Russian>Список групп крови</Russian>
+                <Ukrainian>Список груп крові</Ukrainian>
+                <Korean>혈액형 목록</Korean>
+                <Spanish>Lista de grupos sanguíneos</Spanish>
+            </Key>
+        </Container>
+        <Container name="// Plot Armor Module //">
+            <Key ID="STR_ACM_Zeus_Module_PlotArmor">
+                <English>Toggle Plot Armor</English>
+                <Russian>Переключить: сюжетную броню</Russian>
+                <Ukrainian>Перемкнути: сюжетну броню</Ukrainian>
+                <Korean>주인공 버프 활성화</Korean>
+                <Spanish>Activar/Desactivar Plot Armor</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Zeus_Module_PlotArmor_Enabled">
+                <English>Plot armor enabled on unit</English>
+                <Russian>Сюжетная броня включена у бойца</Russian>
+                <Ukrainian>Сюжетна броня увімкнена у бійця</Ukrainian>
+                <Korean>유닛에 주인공 버프 활성화</Korean>
+                <Spanish>Plot armor activado en la unidad</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Zeus_Module_PlotArmor_Disabled">
+                <English>Plot armor disabled on unit</English>
+                <Russian>Сюжетная броня отключена у бойца</Russian>
+                <Ukrainian>Сюжетна броня вимкнена у бійця</Ukrainian>
+                <Korean>유닛에 주인공 버프 비활성화</Korean>
+                <Spanish>Plot armor desactivado en la unidad</Spanish>
             </Key>
         </Container>
     </Package>

@@ -3,640 +3,640 @@
     <Package name="Disability">
         <Key ID="STR_ACM_Disability_Category">
             <English>ACM: Disability</English>
-            <French>ACM : Restrictions de mouvement</French>
-            <Spanish>ACM: Discapacidad</Spanish>
             <Polish>ACM: Ograniczenia ruchowe</Polish>
+            <French>ACM : Restrictions de mouvement</French>
+            <German>ACM: Defizite</German>
             <Portuguese>ACM: Deficiência</Portuguese>
             <Russian>ACM: Травмы</Russian>
-            <German>ACM: Defizite</German>
-            <Korean>ACM: 장애 (Disability)</Korean>
             <Ukrainian>ACM: Травми</Ukrainian>
+            <Korean>ACM: 장애 (Disability)</Korean>
+            <Spanish>ACM: Discapacidad</Spanish>
         </Key>
         <Key ID="STR_ACM_Disability_Category_FractureManagement">
             <English>Fracture Management</English>
-            <Spanish>Manejo de fracturas</Spanish>
             <Portuguese>Gerenciamento de fraturas</Portuguese>
             <Russian>Лечение переломов</Russian>
-            <Korean>골절 관리</Korean>
             <Ukrainian>Лікування переломів</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment">
-            <English>Allow Performing Fracture Realignment</English>
-            <Spanish>Permitir realineamiento de fracturas</Spanish>
-            <Portuguese>Permitir realinhamento de fraturas</Portuguese>
-            <Russian>Разрешить репозицию перелома</Russian>
-            <Korean>골절 정렬 수행 허용</Korean>
-            <Ukrainian>Дозволити репозицію перелому</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment_Desc">
-            <English>Training level required to perform fracture realignment</English>
-            <Spanish>Nivel de entrenamiento requerido para realizar realineamiento de fracturas</Spanish>
-            <Portuguese>Nível de treinamento necessário para performar o realinhamento de fraturas</Portuguese>
-            <Russian>Уровень подготовки, необходимый для выполнения репозиции перелома</Russian>
-            <Korean>골절 정렬을 수행하기 위한 훈련 레벨</Korean>
-            <Ukrainian>Рівень підготовки, необхідний для виконання репозиції перелому</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture">
-            <English>Allow Inspecting For Fracture</English>
-            <Spanish>Permitir inspección de fracturas</Spanish>
-            <Portuguese>Permitir inspecionar por fraturas</Portuguese>
-            <Russian>Разрешить осмотр на перелом</Russian>
-            <Korean>골절 검사 허용</Korean>
-            <Ukrainian>Дозволити огляд на перелом</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture_Desc">
-            <English>Training level required to inspect for fractures</English>
-            <Spanish>Nivel de entrenamiento requerido para inspeccionar fracturas</Spanish>
-            <Portuguese>Nível de treinamento necessário para inspecionar por fraturas</Portuguese>
-            <Russian>Уровень подготовки, необходимый для осмотра на переломы</Russian>
-            <Korean>골절 검사를 위한 필요한 훈련 레벨</Korean>
-            <Ukrainian>Рівень підготовки, необхідний для огляду на переломи</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity">
-            <English>Enable Fracture Severity</English>
-            <Spanish>Habilitar severidad de fractura</Spanish>
-            <Portuguese>Habilitar a gravidade da fratura</Portuguese>
-            <Russian>Включить степень тяжести перелома</Russian>
-            <Korean>골절 심각도 활성화</Korean>
-            <Ukrainian>Увімкнути ступінь тяжкості перелому</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity_Desc">
-            <English>Enables fracture severity and performing fracture realignment</English>
-            <Spanish>Activa la severidad de fracturas y la posibilidad de realizar realineamiento</Spanish>
-            <Portuguese>Habilita a gravidade de fratura e a realização do realinhamento da fratura</Portuguese>
-            <Russian>Включает учёт тяжести переломов и выполнение репозиции</Russian>
-            <Korean>골절 심각도 활성화 및 골절 정렬 수행 가능</Korean>
-            <Ukrainian>Вмикає врахування тяжкості переломів та виконання репозиції</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture">
-            <English>[HARDCORE] Complex Fractures</English>
-            <Spanish>[HARDCORE] Fracturas complejas</Spanish>
-            <Portuguese>[HARDCORE] Fraturas complexas</Portuguese>
-            <Russian>[ХАРДКОР] Сложные переломы</Russian>
-            <Korean>[HARDCORE] 복합 골절</Korean>
-            <Ukrainian>[ХАРДКОР] Складні переломи</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture_Desc">
-            <English>[HARDCORE] Sets whether certain fractures cannot be treated in the field, requiring evacuation</English>
-            <Spanish>[HARDCORE] Define si ciertas fracturas no pueden tratarse en campo, requiriendo evacuación</Spanish>
-            <Portuguese>[HARDCORE] Define se certas fraturas não podem ser tratadas em campo e requerem evacuação</Portuguese>
-            <Russian>[ХАРДКОР] Определяет, можно ли лечить некоторые переломы только в стационаре, требуется эвакуация</Russian>
-            <Korean>[HARDCORE] 특정 골절이 현장에서 치료 불가하며, 후송 필요 여부 설정</Korean>
-            <Ukrainian>[ХАРДКОР] Визначає, чи можна лікувати деякі переломи лише в стаціонарі, потрібна евакуація</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime">
-            <English>Splint minimum fall off time</English>
-            <French>Temps minimal de chute de l'attelle</French>
-            <Spanish>Tiempo mínimo antes de que la férula se desprenda</Spanish>
-            <Polish>Czas odpadnięcia szyny</Polish>
-            <Portuguese>Tempo mínimo para queda da tala</Portuguese>
-            <Russian>Минимальное время спадания шины</Russian>
-            <German>Minimale Schienenabfallzeit</German>
-            <Korean>부목 최소 탈락 시간</Korean>
-            <Ukrainian>Мінімальний час спадання шини</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime_Desc">
-            <English>Minimum time for unwrapped SAM Splint to fall off</English>
-            <French>Temps minimum pour que la SAM Splint non renforcée tombe</French>
-            <Spanish>Tiempo mínimo para que una férula SAM sin envolver se caiga</Spanish>
-            <Polish>Minimalny czas po którym niezawinięta szyna odpadnie od kończyny</Polish>
-            <Portuguese>Tempo mínimo para queda de uma tala moldável não enfaixada</Portuguese>
-            <Russian>Минимальное время, через которое необмотанная шина SAM спадёт</Russian>
-            <German>Minimale Dauer, bis eine nicht fixierte/gewickelte SAM Splint ab fällt</German>
-            <Korean>탄성 붕대로 감기지 않은 SAM 부목이 떨어지기까지 최소 시간</Korean>
-            <Ukrainian>Мінімальний час, через який необмотана шина SAM спаде</Ukrainian>
+            <Korean>골절 관리</Korean>
+            <Spanish>Manejo de fracturas</Spanish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
             <English>Tourniquet Impact Limbs</English>
-            <Spanish>Impacto del torniquete en extremidades</Spanish>
             <Polish>Opaski uciskowe wpływają na kończyny</Polish>
+            <German>Tourniquet beeinträchtigt Extremtitäten</German>
             <Portuguese>Torniquete impacta os membros</Portuguese>
             <Russian>Влияние жгута на конечности</Russian>
-            <German>Tourniquet beeinträchtigt Extremtitäten</German>
-            <Korean>지혈대 영향 받는 팔다리</Korean>
             <Ukrainian>Вплив турнікету на кінцівки</Ukrainian>
+            <Korean>지혈대 영향 받는 팔다리</Korean>
+            <Spanish>Impacto del torniquete en extremidades</Spanish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
             <English>Sets whether tourniquet will impact arms by increasing sway and legs by reducing mobility</English>
-            <Spanish>Define si el torniquete afectará los brazos aumentando el balanceo y las piernas reduciendo la movilidad</Spanish>
             <Polish>Ustala czy założone opaski uciskowe mają wpływać na kołysanie broni w przypadku rąk oraz szybkość chodzenia w przypadku nóg</Polish>
+            <German>Stellt ein, ob ein angelegtes Tourniquet am Arm dasie Waffennutzung und am Bein die Mobilität negativ beeinflusst</German>
             <Portuguese>Define se o torniquete terá impacto nos braços, aumentando a oscilação, e, nas pernas, reduzindo a mobilidade</Portuguese>
             <Russian>Задаёт, будет ли жгут влиять на руки (увеличение дрожания) и ноги (снижение подвижности)</Russian>
-            <German>Stellt ein, ob ein angelegtes Tourniquet am Arm dasie Waffennutzung und am Bein die Mobilität negativ beeinflusst</German>
-            <Korean>지혈대가 팔에는 흔들림을 증가시키고 다리에는 이동성을 감소시킬지 설정</Korean>
             <Ukrainian>Визначає, чи буде турнікет впливати на руки (збільшення тремтіння) та ноги (зменшення рухливості)</Ukrainian>
+            <Korean>지혈대가 팔에는 흔들림을 증가시키고 다리에는 이동성을 감소시킬지 설정</Korean>
+            <Spanish>Define si el torniquete afectará los brazos aumentando el balanceo y las piernas reduciendo la movilidad</Spanish>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity">
+            <English>Enable Fracture Severity</English>
+            <Portuguese>Habilitar a gravidade da fratura</Portuguese>
+            <Russian>Включить степень тяжести перелома</Russian>
+            <Ukrainian>Увімкнути ступінь тяжкості перелому</Ukrainian>
+            <Korean>골절 심각도 활성화</Korean>
+            <Spanish>Habilitar severidad de fractura</Spanish>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity_Desc">
+            <English>Enables fracture severity and performing fracture realignment</English>
+            <Portuguese>Habilita a gravidade de fratura e a realização do realinhamento da fratura</Portuguese>
+            <Russian>Включает учёт тяжести переломов и выполнение репозиции</Russian>
+            <Ukrainian>Вмикає врахування тяжкості переломів та виконання репозиції</Ukrainian>
+            <Korean>골절 심각도 활성화 및 골절 정렬 수행 가능</Korean>
+            <Spanish>Activa la severidad de fracturas y la posibilidad de realizar realineamiento</Spanish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
             <English>SAM Splint Time</English>
-            <French>Temps d'application SAM Splint</French>
-            <Spanish>Tiempo de aplicación de férula SAM</Spanish>
             <Polish>Czas aplikacji szyny SAM splint</Polish>
+            <French>Temps d'application SAM Splint</French>
+            <German>SAM Splint Zeit</German>
             <Portuguese>Tempo para tala moldável</Portuguese>
             <Russian>Время наложения шины SAM</Russian>
-            <German>SAM Splint Zeit</German>
-            <Korean>SAM 부목 적용 시간</Korean>
             <Ukrainian>Час накладання шини SAM</Ukrainian>
+            <Korean>SAM 부목 적용 시간</Korean>
+            <Spanish>Tiempo de aplicación de férula SAM</Spanish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint_Desc">
             <English>Time to apply SAM Splint</English>
-            <French>Temps nécessaire d'application SAM Splint</French>
-            <Spanish>Tiempo para aplicar férula SAM</Spanish>
             <Polish>Czas potrzebny na aplikacje szyny SAM splint</Polish>
+            <French>Temps nécessaire d'application SAM Splint</French>
+            <German>Zeit bis SAM Splint angelegt ist</German>
             <Portuguese>Tempo para aplicar tala moldável</Portuguese>
             <Russian>Время для наложения шины SAM</Russian>
-            <German>Zeit bis SAM Splint angelegt ist</German>
-            <Korean>SAM 부목 적용 시간</Korean>
             <Ukrainian>Час для накладання шини SAM</Ukrainian>
+            <Korean>SAM 부목 적용 시간</Korean>
+            <Spanish>Tiempo para aplicar férula SAM</Spanish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint">
             <English>Wrap Splint Time</English>
-            <French>Temps nécessaire pour renforcer l'attelle</French>
-            <Spanish>Tiempo de envoltura de férula</Spanish>
             <Polish>Czas zawinięcia szyny</Polish>
+            <French>Temps nécessaire pour renforcer l'attelle</French>
+            <German>SAM Splint Fixierbindenzeit</German>
             <Portuguese>Tempo para enfaixar tala</Portuguese>
             <Russian>Время обмотки шины</Russian>
-            <German>SAM Splint Fixierbindenzeit</German>
-            <Korean>부목 감기 시간</Korean>
             <Ukrainian>Час обмотування шини</Ukrainian>
+            <Korean>부목 감기 시간</Korean>
+            <Spanish>Tiempo de envoltura de férula</Spanish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint_Desc">
             <English>Time to wrap SAM Splint</English>
-            <French>Temps nécessaire pour renforcer l'attelle SAM</French>
-            <Spanish>Tiempo para envolver la férula SAM</Spanish>
             <Polish>Czas potrzebny na zawinięcie (stabilizacje) szyny SAM splint</Polish>
+            <French>Temps nécessaire pour renforcer l'attelle SAM</French>
+            <German>Zeit bis SAM Splint mittels Fixierbinde umwickelt ist</German>
             <Portuguese>Tempo necessário para enfaixar uma tala moldável</Portuguese>
             <Russian>Время для обмотки шины SAM</Russian>
-            <German>Zeit bis SAM Splint mittels Fixierbinde umwickelt ist</German>
-            <Korean>SAM 부목 탄성 붕대 감는 시간</Korean>
             <Ukrainian>Час для обмотування шини SAM</Ukrainian>
+            <Korean>SAM 부목 탄성 붕대 감는 시간</Korean>
+            <Spanish>Tiempo para envolver la férula SAM</Spanish>
         </Key>
-        <Container name="// Fracture Realignment Action //">
-            <Key ID="STR_ACM_Disability_FractureRealignment">
-                <English>Perform Fracture Realignment</English>
-                <French>Réaliser un réalignement de fracture</French>
-                <Spanish>Realizar realineamiento de fractura</Spanish>
-                <Portuguese>Realizar realinhamento de fratura</Portuguese>
-                <Russian>Выполнить репозицию перелома</Russian>
-                <Korean>골절 정렬 수행</Korean>
-                <Ukrainian>Виконати репозицію перелому</Ukrainian>
+        <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime">
+            <English>Splint minimum fall off time</English>
+            <Polish>Czas odpadnięcia szyny</Polish>
+            <French>Temps minimal de chute de l'attelle</French>
+            <German>Minimale Schienenabfallzeit</German>
+            <Portuguese>Tempo mínimo para queda da tala</Portuguese>
+            <Russian>Минимальное время спадания шины</Russian>
+            <Ukrainian>Мінімальний час спадання шини</Ukrainian>
+            <Korean>부목 최소 탈락 시간</Korean>
+            <Spanish>Tiempo mínimo antes de que la férula se desprenda</Spanish>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime_Desc">
+            <English>Minimum time for unwrapped SAM Splint to fall off</English>
+            <Polish>Minimalny czas po którym niezawinięta szyna odpadnie od kończyny</Polish>
+            <French>Temps minimum pour que la SAM Splint non renforcée tombe</French>
+            <German>Minimale Dauer, bis eine nicht fixierte/gewickelte SAM Splint ab fällt</German>
+            <Portuguese>Tempo mínimo para queda de uma tala moldável não enfaixada</Portuguese>
+            <Russian>Минимальное время, через которое необмотанная шина SAM спадёт</Russian>
+            <Ukrainian>Мінімальний час, через який необмотана шина SAM спаде</Ukrainian>
+            <Korean>탄성 붕대로 감기지 않은 SAM 부목이 떨어지기까지 최소 시간</Korean>
+            <Spanish>Tiempo mínimo para que una férula SAM sin envolver se caiga</Spanish>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture">
+            <English>Allow Inspecting For Fracture</English>
+            <Portuguese>Permitir inspecionar por fraturas</Portuguese>
+            <Russian>Разрешить осмотр на перелом</Russian>
+            <Ukrainian>Дозволити огляд на перелом</Ukrainian>
+            <Korean>골절 검사 허용</Korean>
+            <Spanish>Permitir inspección de fracturas</Spanish>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture_Desc">
+            <English>Training level required to inspect for fractures</English>
+            <Portuguese>Nível de treinamento necessário para inspecionar por fraturas</Portuguese>
+            <Russian>Уровень подготовки, необходимый для осмотра на переломы</Russian>
+            <Ukrainian>Рівень підготовки, необхідний для огляду на переломи</Ukrainian>
+            <Korean>골절 검사를 위한 필요한 훈련 레벨</Korean>
+            <Spanish>Nivel de entrenamiento requerido para inspeccionar fracturas</Spanish>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment">
+            <English>Allow Performing Fracture Realignment</English>
+            <Portuguese>Permitir realinhamento de fraturas</Portuguese>
+            <Russian>Разрешить репозицию перелома</Russian>
+            <Ukrainian>Дозволити репозицію перелому</Ukrainian>
+            <Korean>골절 정렬 수행 허용</Korean>
+            <Spanish>Permitir realineamiento de fracturas</Spanish>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment_Desc">
+            <English>Training level required to perform fracture realignment</English>
+            <Portuguese>Nível de treinamento necessário para performar o realinhamento de fraturas</Portuguese>
+            <Russian>Уровень подготовки, необходимый для выполнения репозиции перелома</Russian>
+            <Ukrainian>Рівень підготовки, необхідний для виконання репозиції перелому</Ukrainian>
+            <Korean>골절 정렬을 수행하기 위한 훈련 레벨</Korean>
+            <Spanish>Nivel de entrenamiento requerido para realizar realineamiento de fracturas</Spanish>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture">
+            <English>[HARDCORE] Complex Fractures</English>
+            <Portuguese>[HARDCORE] Fraturas complexas</Portuguese>
+            <Russian>[ХАРДКОР] Сложные переломы</Russian>
+            <Ukrainian>[ХАРДКОР] Складні переломи</Ukrainian>
+            <Korean>[HARDCORE] 복합 골절</Korean>
+            <Spanish>[HARDCORE] Fracturas complejas</Spanish>
+        </Key>
+        <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture_Desc">
+            <English>[HARDCORE] Sets whether certain fractures cannot be treated in the field, requiring evacuation</English>
+            <Portuguese>[HARDCORE] Define se certas fraturas não podem ser tratadas em campo e requerem evacuação</Portuguese>
+            <Russian>[ХАРДКОР] Определяет, можно ли лечить некоторые переломы только в стационаре, требуется эвакуация</Russian>
+            <Ukrainian>[ХАРДКОР] Визначає, чи можна лікувати деякі переломи лише в стаціонарі, потрібна евакуація</Ukrainian>
+            <Korean>[HARDCORE] 특정 골절이 현장에서 치료 불가하며, 후송 필요 여부 설정</Korean>
+            <Spanish>[HARDCORE] Define si ciertas fracturas no pueden tratarse en campo, requiriendo evacuación</Spanish>
+        </Key>
+        <Container name="// Items //">
+            <Key ID="STR_ACM_Disability_UniversalSplint">
+                <English>Universal Splint</English>
+                <Polish>Szyna uniwersalna</Polish>
+                <German>Universelle Schiene</German>
+                <French>Attelle universelle</French>
+                <Portuguese>Tala universal</Portuguese>
+                <Russian>Универсальная шина</Russian>
+                <Ukrainian>Універсальна шина</Ukrainian>
+                <Korean>범용 부목</Korean>
+                <Spanish>Férula universal</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_FractureRealignment_ActionLog">
-                <English>%1 performed fracture realignment</English>
-                <French>%1 a effectué un réalignement de la fracture</French>
-                <Spanish>%1 realizó realineamiento de fractura</Spanish>
-                <Portuguese>%1 realizou realinhamento de fratura</Portuguese>
-                <Russian>%1 выполнил(а) репозицию перелома</Russian>
-                <Korean>%1이 골절 정렬을 수행했습니다</Korean>
-                <Ukrainian>%1 виконав(ла) репозицію перелому</Ukrainian>
+            <Key ID="STR_ACM_Disability_UniversalSplint_Desc">
+                <English>Single-use splint kit used to immobilize fracture</English>
+                <Polish>Jednorazowy zestaw szyny używany do unieruchomienia złamania</Polish>
+                <German>Einweg Schienenset, um eine Fraktur zu stabilisieren</German>
+                <French>Kit d'attelle à usage unique utilisé pour immobiliser une fracture</French>
+                <Portuguese>Kit de tala de uso único para imobilizar fraturas</Portuguese>
+                <Russian>Одноразовый набор для фиксации перелома</Russian>
+                <Ukrainian>Одноразовий набір для фіксації перелому</Ukrainian>
+                <Korean>단회용 부목 키트</Korean>
+                <Spanish>Kit de férula de un solo uso para inmovilizar fracturas</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_FractureRealignment_Complete">
-                <English>Fracture realignment performed</English>
-                <French>Réalignement de la fracture effectué</French>
-                <Spanish>Realineamiento de fractura realizado</Spanish>
-                <Portuguese>Realizado realinhamento</Portuguese>
-                <Russian>Репозиция перелома выполнена</Russian>
-                <Korean>골절 정렬 수행됨</Korean>
-                <Ukrainian>Репозицію перелому виконано</Ukrainian>
+            <Key ID="STR_ACM_Disability_SAMSplint">
+                <English>SAM Splint</English>
+                <Polish>Szyna SAM splint</Polish>
+                <German>SAM Splint Schiene</German>
+                <French>Attelle SAM Splint</French>
+                <Portuguese>Tala moldável</Portuguese>
+                <Russian>Шина SAM</Russian>
+                <Ukrainian>Шина SAM</Ukrainian>
+                <Korean>SAM 부목</Korean>
+                <Spanish>Férula SAM</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_FractureRealignment_Complete_Success">
-                <English>Fracture realignment performed successfully</English>
-                <French>Le réalignement de la fracture a été effectué avec succès</French>
-                <Spanish>Realineamiento de fractura realizado con éxito</Spanish>
-                <Portuguese>Realinhamento de fratura performado com sucesso</Portuguese>
-                <Russian>Репозиция перелома успешно выполнена</Russian>
-                <Korean>골절 정렬 성공적으로 수행됨</Korean>
-                <Ukrainian>Репозицію перелому успішно виконано</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_FractureRealignment_Progress">
-                <English>Performing fracture realignment...</English>
-                <French>Réaliser un réalignement de fracture...</French>
-                <Spanish>Realizando realineamiento de fractura...</Spanish>
-                <Portuguese>Realizando realinhamento de fratura...</Portuguese>
-                <Russian>Выполнение репозиции перелома...</Russian>
-                <Korean>골절 정렬 수행 중...</Korean>
-                <Ukrainian>Виконання репозиції перелому...</Ukrainian>
+            <Key ID="STR_ACM_Disability_SAMSplint_Desc">
+                <English>Re-usable splint used to immobilize fracture, should be wrapped to keep fracture stable</English>
+                <Polish>Wielorazowa szyna używana do stabilizacji złamań, powinna być zawinięta by utrzymać unieruchomione złamanie</Polish>
+                <German>Wiederverwendbare Schiene, um eine Fraktur zu stabilisieren, sollte mittels Fixierbinde umwickelt werden, um die Schiene zu stabilisieren</German>
+                <French>Attelle réutilisable qui immobilise la fracture, elle doit être renforcée pour maintenir la fracture stable</French>
+                <Portuguese>Tala reutilizável utilizada para imobilizar fraturas, deve ser enfaixada para manter a fratura estável</Portuguese>
+                <Russian>Многоразовая шина для фиксации перелома, должна быть обмотана для стабильности</Russian>
+                <Ukrainian>Багаторазова шина для фіксації перелому, має бути обмотана для стабільності</Ukrainian>
+                <Korean>재사용 가능한 부목으로 골절을 고정함, 안정성을 위해 탄성 붕대로 감아야 함</Korean>
+                <Spanish>Férula reutilizable para inmovilizar fracturas, debe envolverse para mantenerla estable</Spanish>
             </Key>
         </Container>
-        <Container name="// GUI //">
-            <Key ID="STR_ACM_Disability_GUI_Wrapped">
-                <English>Wrapped</English>
-                <French>Renforcé</French>
-                <Spanish>Envolviendo</Spanish>
-                <Polish>Zawinięte</Polish>
-                <Portuguese>Enfaixado</Portuguese>
-                <Russian>Обмотано</Russian>
-                <German>Eingewickelt</German>
-                <Korean>감김</Korean>
-                <Ukrainian>Обмотано</Ukrainian>
+        <Container name="// Splint Actions //">
+            <Key ID="STR_ACM_Disability_ApplySAMSplint">
+                <English>Apply SAM Splint</English>
+                <Polish>Użyj szyny SAM splint</Polish>
+                <German>SAM Splint anlegen</German>
+                <French>Appliquer une SAM Splint</French>
+                <Portuguese>Aplicar tala moldável</Portuguese>
+                <Russian>Наложить шину SAM</Russian>
+                <Ukrainian>Накласти шину SAM</Ukrainian>
+                <Korean>SAM 부목 적용</Korean>
+                <Spanish>Aplicar férula SAM</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_ApplySAMSplint_Progress">
+                <English>Applying SAM Splint...</English>
+                <Polish>Używanie szyny SAM splint...</Polish>
+                <German>Lege SAM Splint an...</German>
+                <French>Appliquer l'attelle SAM Splint...</French>
+                <Portuguese>Aplicando tala moldável...</Portuguese>
+                <Russian>Наложение шины SAM...</Russian>
+                <Ukrainian>Накладання шини SAM...</Ukrainian>
+                <Korean>SAM 부목 적용 중...</Korean>
+                <Spanish>Aplicando férula SAM...</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_RemoveSAMSplint">
+                <English>Remove SAM Splint</English>
+                <Polish>Zdejmij szynę SAM splint</Polish>
+                <German>SAM Splint entfernen</German>
+                <French>Retirer la SAM Splint</French>
+                <Portuguese>Remover tala moldável</Portuguese>
+                <Russian>Снять шину SAM</Russian>
+                <Ukrainian>Зняти шину SAM</Ukrainian>
+                <Korean>SAM 부목 제거</Korean>
+                <Spanish>Retirar férula SAM</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_RemoveSAMSplint_Progress">
+                <English>Removing SAM Splint...</English>
+                <Polish>Zdejmowanie szyny SAM splint...</Polish>
+                <German>Entferne SAM Splint...</German>
+                <French>Retrait de SAM Splint...</French>
+                <Portuguese>Removendo tala moldável...</Portuguese>
+                <Russian>Снятие шины SAM...</Russian>
+                <Ukrainian>Зняття шини SAM...</Ukrainian>
+                <Korean>SAM 부목 제거 중...</Korean>
+                <Spanish>Retirando férula SAM...</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_RemoveSplint_ActionLog">
+                <English>%1 removed splint</English>
+                <Polish>%1 zdjął szynę</Polish>
+                <German>%1 entfernte Schiene</German>
+                <French>%1 a enlevé l'attelle</French>
+                <Portuguese>%1 removendo tala</Portuguese>
+                <Russian>%1 снял(а) шину</Russian>
+                <Ukrainian>%1 зняв(ла) шину</Ukrainian>
+                <Korean>%1이 부목을 제거했습니다</Korean>
+                <Spanish>%1 retiró la férula</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_Splint_FellOff">
+                <English>Splint has fallen off</English>
+                <Polish>Szyna odpadła od kończyny</Polish>
+                <German>Schiene ist abgefallen</German>
+                <French>L'attelle est tombée</French>
+                <Portuguese>Tala caiu</Portuguese>
+                <Russian>Шина спала</Russian>
+                <Ukrainian>Шина спала</Ukrainian>
+                <Korean>부목이 떨어졌습니다</Korean>
+                <Spanish>La férula se ha desprendido</Spanish>
+            </Key>
+        </Container>
+        <Container name="// Wrap SAM Splint Action //">
+            <Key ID="STR_ACM_Disability_ElasticWrap_Splint">
+                <English>Wrap SAM Splint</English>
+                <Polish>Zawiń szynę SAM splint</Polish>
+                <German>SAM Splint einwickeln</German>
+                <French>SAM Splint renforcée</French>
+                <Portuguese>Enfaixar tala moldável</Portuguese>
+                <Russian>Обмотать шину SAM</Russian>
+                <Ukrainian>Обмотати шину SAM</Ukrainian>
+                <Korean>SAM 부목 감기</Korean>
+                <Spanish>Envolver férula SAM</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
+                <English>%1 has wrapped SAM Splint</English>
+                <Polish>%1 zawinął szynę SAM splint</Polish>
+                <German>%1 hat die Schiene eingewickelt</German>
+                <French>%1 a renforcé la SAM Splint</French>
+                <Portuguese>%1 enfaixou a tala moldável</Portuguese>
+                <Russian>%1 обмотал(а) шину SAM</Russian>
+                <Ukrainian>%1 обмотав(ла) шину SAM</Ukrainian>
+                <Korean>%1이 SAM 부목을 탄성 붕대로 감았습니다</Korean>
+                <Spanish>%1 envolvió la férula SAM</Spanish>
+            </Key>
+        </Container>
+        <Container name="// Patient WakeUp Actions //">
+            <Key ID="STR_ACM_Disability_AttemptWakeUp_Success">
+                <English>Patient has woken up</English>
+                <Polish>Pacjent się obudził</Polish>
+                <German>Patient ist aufgewacht</German>
+                <French>Le patient s'est réveillé</French>
+                <Portuguese>Paciente acordou</Portuguese>
+                <Russian>Пациент проснулся</Russian>
+                <Ukrainian>Пацієнт прокинувся</Ukrainian>
+                <Korean>환자가 깨어났습니다</Korean>
+                <Spanish>El paciente se ha despertado</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_AttemptWakeUp_Failure">
+                <English>Patient is still asleep</English>
+                <Polish>Pacjent nadal nieprzytomny</Polish>
+                <German>Patient ist weiter bewusstlos</German>
+                <French>Le patient est encore endormi</French>
+                <Portuguese>Paciente está desacordado</Portuguese>
+                <Russian>Пациент всё ещё без сознания</Russian>
+                <Ukrainian>Пацієнт досі без свідомості</Ukrainian>
+                <Korean>환자가 아직 잠들어 있습니다</Korean>
+                <Spanish>El paciente sigue dormido</Spanish>
+            </Key>
+        </Container>
+        <Container name="// Shake Patient Action //">
+            <Key ID="STR_ACM_Disability_ShakeAwake">
+                <English>Attempt To Shake Awake</English>
+                <Polish>Potrząśnij by wybudzić</Polish>
+                <German>Patienten wachrütteln</German>
+                <French>Secouer le patient</French>
+                <Portuguese>Tentar acordar o paciente sacudindo</Portuguese>
+                <Russian>Попытка разбудить встряхиванием</Russian>
+                <Ukrainian>Спроба розбудити струшуванням</Ukrainian>
+                <Korean>깨우기 시도</Korean>
+                <Spanish>Intentar despertar sacudiendo</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_ShakeAwake_Progress">
+                <English>Shaking Patient...</English>
+                <Polish>Potrząsanie...</Polish>
+                <German>Rüttel am Patienten...</German>
+                <French>Secouer le patient...</French>
+                <Portuguese>Sacudindo o paciente...</Portuguese>
+                <Russian>Встряхивание пациента...</Russian>
+                <Ukrainian>Струшування пацієнта...</Ukrainian>
+                <Korean>환자를 흔드는 중...</Korean>
+                <Spanish>Sacudiendo al paciente...</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_ShakePatient_ActionLog">
+                <English>%1 shook the patient</English>
+                <Polish>%1 potrząsnął pacjentem</Polish>
+                <German>%1 hat den Patient wachgerüttelt</German>
+                <French>%1 a secoué le patient</French>
+                <Portuguese>%1 sacudiu o padiente</Portuguese>
+                <Russian>%1 встряхнул(а) пациента</Russian>
+                <Ukrainian>%1 струснув(ла) пацієнта</Ukrainian>
+                <Korean>%1이 환자를 흔들었습니다</Korean>
+                <Spanish>%1 sacudió al paciente</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_ShakePatient_Attempt">
+                <English>You attempt to shake the patient awake</English>
+                <Polish>Próbujesz potrząsnąć pacjentem by się obudził</Polish>
+                <German>Du hast versucht den Patienten wachzurütteln</German>
+                <French>Vous tentez de secouer le patient pour le réveiller</French>
+                <Portuguese>Você tentou sacudir um paciente acordado</Portuguese>
+                <Russian>Вы пытаетесь разбудить пациента встряхиванием</Russian>
+                <Ukrainian>Ви намагаєтесь розбудити пацієнта струшуванням</Ukrainian>
+                <Korean>당신이 환자를 흔들어 깨우려 합니다</Korean>
+                <Spanish>Intentaste sacudir al paciente para despertarlo</Spanish>
+            </Key>
+        </Container>
+        <Container name="// Slap Patient Action //">
+            <Key ID="STR_ACM_Disability_SlapAwake">
+                <English>Attempt To Slap Awake</English>
+                <Polish>Uderz by wybudzić</Polish>
+                <German>Schmerzreiz zum Aufwecken setzen</German>
+                <French>Gifler pour réveiller</French>
+                <Portuguese>Tentar acordar o paciente estapeando</Portuguese>
+                <Russian>Попытка разбудить пощёчиной</Russian>
+                <Ukrainian>Спроба розбудити ляпасом</Ukrainian>
+                <Korean>때려서 깨우기 시도</Korean>
+                <Spanish>Intentar despertar abofeteando</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_SlapAwake_Progress">
+                <English>Slapping Patient...</English>
+                <Polish>Uderzanie...</Polish>
+                <German>Setze Schmerzreiz...</German>
+                <French>Gifler le patient...</French>
+                <Portuguese>Estapeando paciente...</Portuguese>
+                <Russian>Пощёчина пациенту...</Russian>
+                <Ukrainian>Ляпас пацієнту...</Ukrainian>
+                <Korean>환자를 때리는 중...</Korean>
+                <Spanish>Abofeteando al paciente...</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_SlapPatient_ActionLog">
+                <English>%1 slapped the patient</English>
+                <Polish>%1 uderzył pacjenta</Polish>
+                <German>%1 setzte einen Schmerzreiz</German>
+                <French>%1 a giflé le patient</French>
+                <Portuguese>%1 estapeou o paciente</Portuguese>
+                <Russian>%1 дал(а) пощёчину пациенту</Russian>
+                <Ukrainian>%1 дав(ла) ляпас пацієнту</Ukrainian>
+                <Korean>%1이 환자를 때렸습니다</Korean>
+                <Spanish>%1 abofeteó al paciente</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_SlapPatient_Attempt">
+                <English>You attempt to slap the patient awake</English>
+                <Polish>Próbujesz uderzyć pacjenta by się obudził</Polish>
+                <German>Du versuchst einen Schmerzreiz zu setzen</German>
+                <French>Essayer de gifler le patient pour le réveiller</French>
+                <Portuguese>Você tentou estapear um paciente acordado</Portuguese>
+                <Russian>Вы пытаетесь разбудить пациента пощёчиной</Russian>
+                <Ukrainian>Ви намагаєтесь розбудити пацієнта ляпасом</Ukrainian>
+                <Korean>당신이 환자를 때려 깨우려 합니다</Korean>
+                <Spanish>Intentaste abofetear al paciente para despertarlo</Spanish>
             </Key>
         </Container>
         <Container name="// Inspect For Fracture Action //">
             <Key ID="STR_ACM_Disability_InspectForFracture">
                 <English>Inspect For Fracture</English>
                 <French>Vérifier la présence de fractures</French>
-                <Spanish>Inspeccionar fractura</Spanish>
                 <Portuguese>Inspecionar por fratura</Portuguese>
                 <Russian>Осмотреть на перелом</Russian>
-                <Korean>골절 검사</Korean>
                 <Ukrainian>Оглянути на перелом</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_ActionLog">
-                <English>%1 inspected %2: %3</English>
-                <French>%1 inspecté %2 : %3</French>
-                <Spanish>%1 inspeccionó %2: %3</Spanish>
-                <Portuguese>%1 inspecionou %2: %3</Portuguese>
-                <Russian>%1 осмотрел(а) %2: %3</Russian>
-                <Korean>%1이 %2를 검사했습니다: %3</Korean>
-                <Ukrainian>%1 оглянув(ла) %2: %3</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_Bruised">
-                <English>Patient limb is bruised</English>
-                <French>Le membre du patient est contusionné</French>
-                <Spanish>La extremidad del paciente está magullada</Spanish>
-                <Portuguese>O membro do paciente tem hematomas</Portuguese>
-                <Russian>Конечность пациента ушиблена</Russian>
-                <Korean>환자의 팔다리가 멍들었습니다</Korean>
-                <Ukrainian>Кінцівка пацієнта забита</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_Bruised_Short">
-                <English>Bruised</English>
-                <French>Contusionné</French>
-                <Spanish>Magullada</Spanish>
-                <Portuguese>Com hematomas</Portuguese>
-                <Russian>Ушиб</Russian>
-                <Korean>멍 (Bruised)</Korean>
-                <Ukrainian>Забій</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury">
-                <English>Patient has no substantial damage on limb</English>
-                <French>Aucune lésion substantielle présente sur le membre</French>
-                <Spanish>El paciente no tiene daño significativo en la extremidad</Spanish>
-                <Portuguese>O paciente não apresenta danos substanciais no membro</Portuguese>
-                <Russian>У пациента нет существенных повреждений конечности</Russian>
-                <Korean>환자의 팔다리에 큰 손상이 없습니다</Korean>
-                <Ukrainian>У пацієнта немає суттєвих ушкоджень кінцівки</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury_Short">
-                <English>No Significant Injury</English>
-                <French>Pas de blessure importante</French>
-                <Spanish>Sin lesión significativa</Spanish>
-                <Portuguese>Nenhum lesão significante</Portuguese>
-                <Russian>Значительных повреждений нет</Russian>
-                <Korean>큰 손상 없음</Korean>
-                <Ukrainian>Суттєвих ушкоджень немає</Ukrainian>
+                <Korean>골절 검사</Korean>
+                <Spanish>Inspeccionar fractura</Spanish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Progress">
                 <English>Inspecting limb for fracture...</English>
                 <French>Inspection du membre pour vérifier qu'il n'y a pas de fracture...</French>
-                <Spanish>Inspeccionando extremidad por fractura...</Spanish>
                 <Portuguese>Inspecionando membro por fratura...</Portuguese>
                 <Russian>Осмотр конечности на перелом...</Russian>
-                <Korean>팔다리 골절 검사 중...</Korean>
                 <Ukrainian>Огляд кінцівки на перелом...</Ukrainian>
+                <Korean>팔다리 골절 검사 중...</Korean>
+                <Spanish>Inspeccionando extremidad por fractura...</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed">
-                <English>Fracture realignment performed</English>
-                <French>Inspection du réalignement de la fracture</French>
-                <Spanish>Realineamiento de fractura realizado</Spanish>
-                <Portuguese>Realinhamento realizado</Portuguese>
-                <Russian>Репозиция перелома выполнена</Russian>
-                <Korean>골절 정렬 수행됨</Korean>
-                <Ukrainian>Репозицію перелому виконано</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed_Short">
-                <English>realignment performed</English>
-                <French>Vérification du réalignement effectué</French>
-                <Spanish>Realineamiento realizado</Spanish>
-                <Portuguese>realinhado</Portuguese>
-                <Russian>Репозиция выполнена</Russian>
-                <Korean>정렬 수행됨</Korean>
-                <Ukrainian>Репозицію виконано</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising">
-                <English>Patient has severe bruising on limb</English>
-                <French>Le patient présente d'importantes ecchymoses sur un membre</French>
-                <Spanish>El paciente tiene hematomas graves en la extremidad</Spanish>
-                <Portuguese>O paciente apresenta hematomas graves no membro</Portuguese>
-                <Russian>У пациента сильный ушиб конечности</Russian>
-                <Korean>환자의 팔다리에 심한 멍이 있습니다</Korean>
-                <Ukrainian>У пацієнта сильний забій кінцівки</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising_Short">
-                <English>Severe Bruising</English>
-                <French>Ecchymoses sévères</French>
-                <Spanish>Hematomas graves</Spanish>
-                <Portuguese>Hematomas graves</Portuguese>
-                <Russian>Сильный ушиб</Russian>
-                <Korean>심한 멍 (Severe Bruising)</Korean>
-                <Ukrainian>Сильний забій</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling">
-                <English>Patient has significant swelling on limb</English>
-                <French>Le patient présente un gonflement important du membre</French>
-                <Spanish>El paciente tiene hinchazón significativa en la extremidad</Spanish>
-                <Portuguese>O paciente apresenta inchaço significativo no membro</Portuguese>
-                <Russian>У пациента значительная отёчность конечности</Russian>
-                <Korean>환자의 팔다리에 심한 부종이 있습니다</Korean>
-                <Ukrainian>У пацієнта значний набряк кінцівки</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling_Short">
-                <English>Significant Swelling</English>
-                <French>Gonflement important</French>
-                <Spanish>Hinchazón significativo</Spanish>
-                <Portuguese>Inchaço significativo</Portuguese>
-                <Russian>Значительный отёк</Russian>
-                <Korean>심한 부종 (Significant Swelling)</Korean>
-                <Ukrainian>Значний набряк</Ukrainian>
+            <Key ID="STR_ACM_Disability_InspectForFracture_ActionLog">
+                <English>%1 inspected %2: %3</English>
+                <French>%1 inspecté %2 : %3</French>
+                <Portuguese>%1 inspecionou %2: %3</Portuguese>
+                <Russian>%1 осмотрел(а) %2: %3</Russian>
+                <Ukrainian>%1 оглянув(ла) %2: %3</Ukrainian>
+                <Korean>%1이 %2를 검사했습니다: %3</Korean>
+                <Spanish>%1 inspeccionó %2: %3</Spanish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied">
                 <English>Patient has splint applied to limb</English>
                 <French>Le patient se voit appliquer une attelle sur le membre</French>
-                <Spanish>El paciente tiene férula aplicada en la extremidad</Spanish>
                 <Portuguese>Paciente tem uma tala aplicada ao membro</Portuguese>
                 <Russian>На конечность пациента наложена шина</Russian>
-                <Korean>환자의 팔다리에 부목이 적용되었습니다</Korean>
                 <Ukrainian>На кінцівку пацієнта накладена шина</Ukrainian>
+                <Korean>환자의 팔다리에 부목이 적용되었습니다</Korean>
+                <Spanish>El paciente tiene férula aplicada en la extremidad</Spanish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied_Short">
                 <English>Splinted</English>
                 <French>Attelle mise</French>
-                <Spanish>Férula aplicada</Spanish>
                 <Portuguese>Imobilizado</Portuguese>
                 <Russian>Зафиксировано шиной</Russian>
-                <Korean>부목 적용됨</Korean>
                 <Ukrainian>Зафіксовано шиною</Ukrainian>
+                <Korean>부목 적용됨</Korean>
+                <Spanish>Férula aplicada</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling">
+                <English>Patient has significant swelling on limb</English>
+                <French>Le patient présente un gonflement important du membre</French>
+                <Portuguese>O paciente apresenta inchaço significativo no membro</Portuguese>
+                <Russian>У пациента значительная отёчность конечности</Russian>
+                <Ukrainian>У пацієнта значний набряк кінцівки</Ukrainian>
+                <Korean>환자의 팔다리에 심한 부종이 있습니다</Korean>
+                <Spanish>El paciente tiene hinchazón significativa en la extremidad</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling_Short">
+                <English>Significant Swelling</English>
+                <French>Gonflement important</French>
+                <Portuguese>Inchaço significativo</Portuguese>
+                <Russian>Значительный отёк</Russian>
+                <Ukrainian>Значний набряк</Ukrainian>
+                <Korean>심한 부종 (Significant Swelling)</Korean>
+                <Spanish>Hinchazón significativo</Spanish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Swelling">
                 <English>Patient has swelling on limb</English>
                 <French>Le patient présente un gonflement d'un membre</French>
-                <Spanish>El paciente tiene hinchazón en la extremidad</Spanish>
                 <Portuguese>O paciente apresenta inchaço no membro</Portuguese>
                 <Russian>У пациента отёк конечности</Russian>
-                <Korean>환자의 팔다리에 부종이 있습니다</Korean>
                 <Ukrainian>У пацієнта набряк кінцівки</Ukrainian>
+                <Korean>환자의 팔다리에 부종이 있습니다</Korean>
+                <Spanish>El paciente tiene hinchazón en la extremidad</Spanish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Swelling_Short">
                 <English>Swelling</English>
                 <French>Gonflement</French>
-                <Spanish>Hinchazón</Spanish>
                 <Portuguese>Inchaço</Portuguese>
                 <Russian>Отёк</Russian>
-                <Korean>부종 (Swelling)</Korean>
                 <Ukrainian>Набряк</Ukrainian>
+                <Korean>부종 (Swelling)</Korean>
+                <Spanish>Hinchazón</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising">
+                <English>Patient has severe bruising on limb</English>
+                <French>Le patient présente d'importantes ecchymoses sur un membre</French>
+                <Portuguese>O paciente apresenta hematomas graves no membro</Portuguese>
+                <Russian>У пациента сильный ушиб конечности</Russian>
+                <Ukrainian>У пацієнта сильний забій кінцівки</Ukrainian>
+                <Korean>환자의 팔다리에 심한 멍이 있습니다</Korean>
+                <Spanish>El paciente tiene hematomas graves en la extremidad</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising_Short">
+                <English>Severe Bruising</English>
+                <French>Ecchymoses sévères</French>
+                <Portuguese>Hematomas graves</Portuguese>
+                <Russian>Сильный ушиб</Russian>
+                <Ukrainian>Сильний забій</Ukrainian>
+                <Korean>심한 멍 (Severe Bruising)</Korean>
+                <Spanish>Hematomas graves</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_InspectForFracture_Bruised">
+                <English>Patient limb is bruised</English>
+                <French>Le membre du patient est contusionné</French>
+                <Portuguese>O membro do paciente tem hematomas</Portuguese>
+                <Russian>Конечность пациента ушиблена</Russian>
+                <Ukrainian>Кінцівка пацієнта забита</Ukrainian>
+                <Korean>환자의 팔다리가 멍들었습니다</Korean>
+                <Spanish>La extremidad del paciente está magullada</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_InspectForFracture_Bruised_Short">
+                <English>Bruised</English>
+                <French>Contusionné</French>
+                <Portuguese>Com hematomas</Portuguese>
+                <Russian>Ушиб</Russian>
+                <Ukrainian>Забій</Ukrainian>
+                <Korean>멍 (Bruised)</Korean>
+                <Spanish>Magullada</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury">
+                <English>Patient has no substantial damage on limb</English>
+                <French>Aucune lésion substantielle présente sur le membre</French>
+                <Portuguese>O paciente não apresenta danos substanciais no membro</Portuguese>
+                <Russian>У пациента нет существенных повреждений конечности</Russian>
+                <Ukrainian>У пацієнта немає суттєвих ушкоджень кінцівки</Ukrainian>
+                <Korean>환자의 팔다리에 큰 손상이 없습니다</Korean>
+                <Spanish>El paciente no tiene daño significativo en la extremidad</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury_Short">
+                <English>No Significant Injury</English>
+                <French>Pas de blessure importante</French>
+                <Portuguese>Nenhum lesão significante</Portuguese>
+                <Russian>Значительных повреждений нет</Russian>
+                <Ukrainian>Суттєвих ушкоджень немає</Ukrainian>
+                <Korean>큰 손상 없음</Korean>
+                <Spanish>Sin lesión significativa</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed">
+                <English>Fracture realignment performed</English>
+                <French>Inspection du réalignement de la fracture</French>
+                <Portuguese>Realinhamento realizado</Portuguese>
+                <Russian>Репозиция перелома выполнена</Russian>
+                <Ukrainian>Репозицію перелому виконано</Ukrainian>
+                <Korean>골절 정렬 수행됨</Korean>
+                <Spanish>Realineamiento de fractura realizado</Spanish>
+            </Key>
+            <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed_Short">
+                <English>realignment performed</English>
+                <French>Vérification du réalignement effectué</French>
+                <Portuguese>realinhado</Portuguese>
+                <Russian>Репозиция выполнена</Russian>
+                <Ukrainian>Репозицію виконано</Ukrainian>
+                <Korean>정렬 수행됨</Korean>
+                <Spanish>Realineamiento realizado</Spanish>
             </Key>
         </Container>
-        <Container name="// Items //">
-            <Key ID="STR_ACM_Disability_SAMSplint">
-                <English>SAM Splint</English>
-                <French>Attelle SAM Splint</French>
-                <Spanish>Férula SAM</Spanish>
-                <Polish>Szyna SAM splint</Polish>
-                <Portuguese>Tala moldável</Portuguese>
-                <Russian>Шина SAM</Russian>
-                <German>SAM Splint Schiene</German>
-                <Korean>SAM 부목</Korean>
-                <Ukrainian>Шина SAM</Ukrainian>
+        <Container name="// Fracture Realignment Action //">
+            <Key ID="STR_ACM_Disability_FractureRealignment">
+                <English>Perform Fracture Realignment</English>
+                <French>Réaliser un réalignement de fracture</French>
+                <Portuguese>Realizar realinhamento de fratura</Portuguese>
+                <Russian>Выполнить репозицию перелома</Russian>
+                <Ukrainian>Виконати репозицію перелому</Ukrainian>
+                <Korean>골절 정렬 수행</Korean>
+                <Spanish>Realizar realineamiento de fractura</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_SAMSplint_Desc">
-                <English>Re-usable splint used to immobilize fracture, should be wrapped to keep fracture stable</English>
-                <French>Attelle réutilisable qui immobilise la fracture, elle doit être renforcée pour maintenir la fracture stable</French>
-                <Spanish>Férula reutilizable para inmovilizar fracturas, debe envolverse para mantenerla estable</Spanish>
-                <Polish>Wielorazowa szyna używana do stabilizacji złamań, powinna być zawinięta by utrzymać unieruchomione złamanie</Polish>
-                <Portuguese>Tala reutilizável utilizada para imobilizar fraturas, deve ser enfaixada para manter a fratura estável</Portuguese>
-                <Russian>Многоразовая шина для фиксации перелома, должна быть обмотана для стабильности</Russian>
-                <German>Wiederverwendbare Schiene, um eine Fraktur zu stabilisieren, sollte mittels Fixierbinde umwickelt werden, um die Schiene zu stabilisieren</German>
-                <Korean>재사용 가능한 부목으로 골절을 고정함, 안정성을 위해 탄성 붕대로 감아야 함</Korean>
-                <Ukrainian>Багаторазова шина для фіксації перелому, має бути обмотана для стабільності</Ukrainian>
+            <Key ID="STR_ACM_Disability_FractureRealignment_Progress">
+                <English>Performing fracture realignment...</English>
+                <French>Réaliser un réalignement de fracture...</French>
+                <Portuguese>Realizando realinhamento de fratura...</Portuguese>
+                <Russian>Выполнение репозиции перелома...</Russian>
+                <Ukrainian>Виконання репозиції перелому...</Ukrainian>
+                <Korean>골절 정렬 수행 중...</Korean>
+                <Spanish>Realizando realineamiento de fractura...</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_UniversalSplint">
-                <English>Universal Splint</English>
-                <French>Attelle universelle</French>
-                <Spanish>Férula universal</Spanish>
-                <Polish>Szyna uniwersalna</Polish>
-                <Portuguese>Tala universal</Portuguese>
-                <Russian>Универсальная шина</Russian>
-                <German>Universelle Schiene</German>
-                <Korean>범용 부목</Korean>
-                <Ukrainian>Універсальна шина</Ukrainian>
+            <Key ID="STR_ACM_Disability_FractureRealignment_Complete">
+                <English>Fracture realignment performed</English>
+                <French>Réalignement de la fracture effectué</French>
+                <Portuguese>Realizado realinhamento</Portuguese>
+                <Russian>Репозиция перелома выполнена</Russian>
+                <Ukrainian>Репозицію перелому виконано</Ukrainian>
+                <Korean>골절 정렬 수행됨</Korean>
+                <Spanish>Realineamiento de fractura realizado</Spanish>
             </Key>
-            <Key ID="STR_ACM_Disability_UniversalSplint_Desc">
-                <English>Single-use splint kit used to immobilize fracture</English>
-                <French>Kit d'attelle à usage unique utilisé pour immobiliser une fracture</French>
-                <Spanish>Kit de férula de un solo uso para inmovilizar fracturas</Spanish>
-                <Polish>Jednorazowy zestaw szyny używany do unieruchomienia złamania</Polish>
-                <Portuguese>Kit de tala de uso único para imobilizar fraturas</Portuguese>
-                <Russian>Одноразовый набор для фиксации перелома</Russian>
-                <German>Einweg Schienenset, um eine Fraktur zu stabilisieren</German>
-                <Korean>단회용 부목 키트</Korean>
-                <Ukrainian>Одноразовий набір для фіксації перелому</Ukrainian>
+            <Key ID="STR_ACM_Disability_FractureRealignment_Complete_Success">
+                <English>Fracture realignment performed successfully</English>
+                <French>Le réalignement de la fracture a été effectué avec succès</French>
+                <Portuguese>Realinhamento de fratura performado com sucesso</Portuguese>
+                <Russian>Репозиция перелома успешно выполнена</Russian>
+                <Ukrainian>Репозицію перелому успішно виконано</Ukrainian>
+                <Korean>골절 정렬 성공적으로 수행됨</Korean>
+                <Spanish>Realineamiento de fractura realizado con éxito</Spanish>
             </Key>
-        </Container>
-        <Container name="// Patient WakeUp Actions //">
-            <Key ID="STR_ACM_Disability_AttemptWakeUp_Failure">
-                <English>Patient is still asleep</English>
-                <French>Le patient est encore endormi</French>
-                <Spanish>El paciente sigue dormido</Spanish>
-                <Polish>Pacjent nadal nieprzytomny</Polish>
-                <Portuguese>Paciente está desacordado</Portuguese>
-                <Russian>Пациент всё ещё без сознания</Russian>
-                <German>Patient ist weiter bewusstlos</German>
-                <Korean>환자가 아직 잠들어 있습니다</Korean>
-                <Ukrainian>Пацієнт досі без свідомості</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_AttemptWakeUp_Success">
-                <English>Patient has woken up</English>
-                <French>Le patient s'est réveillé</French>
-                <Spanish>El paciente se ha despertado</Spanish>
-                <Polish>Pacjent się obudził</Polish>
-                <Portuguese>Paciente acordou</Portuguese>
-                <Russian>Пациент проснулся</Russian>
-                <German>Patient ist aufgewacht</German>
-                <Korean>환자가 깨어났습니다</Korean>
-                <Ukrainian>Пацієнт прокинувся</Ukrainian>
+            <Key ID="STR_ACM_Disability_FractureRealignment_ActionLog">
+                <English>%1 performed fracture realignment</English>
+                <French>%1 a effectué un réalignement de la fracture</French>
+                <Portuguese>%1 realizou realinhamento de fratura</Portuguese>
+                <Russian>%1 выполнил(а) репозицию перелома</Russian>
+                <Ukrainian>%1 виконав(ла) репозицію перелому</Ukrainian>
+                <Korean>%1이 골절 정렬을 수행했습니다</Korean>
+                <Spanish>%1 realizó realineamiento de fractura</Spanish>
             </Key>
         </Container>
-        <Container name="// Shake Patient Action //">
-            <Key ID="STR_ACM_Disability_ShakeAwake">
-                <English>Attempt To Shake Awake</English>
-                <French>Secouer le patient</French>
-                <Spanish>Intentar despertar sacudiendo</Spanish>
-                <Polish>Potrząśnij by wybudzić</Polish>
-                <Portuguese>Tentar acordar o paciente sacudindo</Portuguese>
-                <Russian>Попытка разбудить встряхиванием</Russian>
-                <German>Patienten wachrütteln</German>
-                <Korean>깨우기 시도</Korean>
-                <Ukrainian>Спроба розбудити струшуванням</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_ShakeAwake_Progress">
-                <English>Shaking Patient...</English>
-                <French>Secouer le patient...</French>
-                <Spanish>Sacudiendo al paciente...</Spanish>
-                <Polish>Potrząsanie...</Polish>
-                <Portuguese>Sacudindo o paciente...</Portuguese>
-                <Russian>Встряхивание пациента...</Russian>
-                <German>Rüttel am Patienten...</German>
-                <Korean>환자를 흔드는 중...</Korean>
-                <Ukrainian>Струшування пацієнта...</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_ShakePatient_ActionLog">
-                <English>%1 shook the patient</English>
-                <French>%1 a secoué le patient</French>
-                <Spanish>%1 sacudió al paciente</Spanish>
-                <Polish>%1 potrząsnął pacjentem</Polish>
-                <Portuguese>%1 sacudiu o padiente</Portuguese>
-                <Russian>%1 встряхнул(а) пациента</Russian>
-                <German>%1 hat den Patient wachgerüttelt</German>
-                <Korean>%1이 환자를 흔들었습니다</Korean>
-                <Ukrainian>%1 струснув(ла) пацієнта</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_ShakePatient_Attempt">
-                <English>You attempt to shake the patient awake</English>
-                <French>Vous tentez de secouer le patient pour le réveiller</French>
-                <Spanish>Intentaste sacudir al paciente para despertarlo</Spanish>
-                <Polish>Próbujesz potrząsnąć pacjentem by się obudził</Polish>
-                <Portuguese>Você tentou sacudir um paciente acordado</Portuguese>
-                <Russian>Вы пытаетесь разбудить пациента встряхиванием</Russian>
-                <German>Du hast versucht den Patienten wachzurütteln</German>
-                <Korean>당신이 환자를 흔들어 깨우려 합니다</Korean>
-                <Ukrainian>Ви намагаєтесь розбудити пацієнта струшуванням</Ukrainian>
-            </Key>
-        </Container>
-        <Container name="// Slap Patient Action //">
-            <Key ID="STR_ACM_Disability_SlapAwake">
-                <English>Attempt To Slap Awake</English>
-                <French>Gifler pour réveiller</French>
-                <Spanish>Intentar despertar abofeteando</Spanish>
-                <Polish>Uderz by wybudzić</Polish>
-                <Portuguese>Tentar acordar o paciente estapeando</Portuguese>
-                <Russian>Попытка разбудить пощёчиной</Russian>
-                <German>Schmerzreiz zum Aufwecken setzen</German>
-                <Korean>때려서 깨우기 시도</Korean>
-                <Ukrainian>Спроба розбудити ляпасом</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_SlapAwake_Progress">
-                <English>Slapping Patient...</English>
-                <French>Gifler le patient...</French>
-                <Spanish>Abofeteando al paciente...</Spanish>
-                <Polish>Uderzanie...</Polish>
-                <Portuguese>Estapeando paciente...</Portuguese>
-                <Russian>Пощёчина пациенту...</Russian>
-                <German>Setze Schmerzreiz...</German>
-                <Korean>환자를 때리는 중...</Korean>
-                <Ukrainian>Ляпас пацієнту...</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_SlapPatient_ActionLog">
-                <English>%1 slapped the patient</English>
-                <French>%1 a giflé le patient</French>
-                <Spanish>%1 abofeteó al paciente</Spanish>
-                <Polish>%1 uderzył pacjenta</Polish>
-                <Portuguese>%1 estapeou o paciente</Portuguese>
-                <Russian>%1 дал(а) пощёчину пациенту</Russian>
-                <German>%1 setzte einen Schmerzreiz</German>
-                <Korean>%1이 환자를 때렸습니다</Korean>
-                <Ukrainian>%1 дав(ла) ляпас пацієнту</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_SlapPatient_Attempt">
-                <English>You attempt to slap the patient awake</English>
-                <French>Essayer de gifler le patient pour le réveiller</French>
-                <Spanish>Intentaste abofetear al paciente para despertarlo</Spanish>
-                <Polish>Próbujesz uderzyć pacjenta by się obudził</Polish>
-                <Portuguese>Você tentou estapear um paciente acordado</Portuguese>
-                <Russian>Вы пытаетесь разбудить пациента пощёчиной</Russian>
-                <German>Du versuchst einen Schmerzreiz zu setzen</German>
-                <Korean>당신이 환자를 때려 깨우려 합니다</Korean>
-                <Ukrainian>Ви намагаєтесь розбудити пацієнта ляпасом</Ukrainian>
-            </Key>
-        </Container>
-        <Container name="// Splint Actions //">
-            <Key ID="STR_ACM_Disability_ApplySAMSplint">
-                <English>Apply SAM Splint</English>
-                <French>Appliquer une SAM Splint</French>
-                <Spanish>Aplicar férula SAM</Spanish>
-                <Polish>Użyj szyny SAM splint</Polish>
-                <Portuguese>Aplicar tala moldável</Portuguese>
-                <Russian>Наложить шину SAM</Russian>
-                <German>SAM Splint anlegen</German>
-                <Korean>SAM 부목 적용</Korean>
-                <Ukrainian>Накласти шину SAM</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_ApplySAMSplint_Progress">
-                <English>Applying SAM Splint...</English>
-                <French>Appliquer l'attelle SAM Splint...</French>
-                <Spanish>Aplicando férula SAM...</Spanish>
-                <Polish>Używanie szyny SAM splint...</Polish>
-                <Portuguese>Aplicando tala moldável...</Portuguese>
-                <Russian>Наложение шины SAM...</Russian>
-                <German>Lege SAM Splint an...</German>
-                <Korean>SAM 부목 적용 중...</Korean>
-                <Ukrainian>Накладання шини SAM...</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_RemoveSAMSplint">
-                <English>Remove SAM Splint</English>
-                <French>Retirer la SAM Splint</French>
-                <Spanish>Retirar férula SAM</Spanish>
-                <Polish>Zdejmij szynę SAM splint</Polish>
-                <Portuguese>Remover tala moldável</Portuguese>
-                <Russian>Снять шину SAM</Russian>
-                <German>SAM Splint entfernen</German>
-                <Korean>SAM 부목 제거</Korean>
-                <Ukrainian>Зняти шину SAM</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_RemoveSAMSplint_Progress">
-                <English>Removing SAM Splint...</English>
-                <French>Retrait de SAM Splint...</French>
-                <Spanish>Retirando férula SAM...</Spanish>
-                <Polish>Zdejmowanie szyny SAM splint...</Polish>
-                <Portuguese>Removendo tala moldável...</Portuguese>
-                <Russian>Снятие шины SAM...</Russian>
-                <German>Entferne SAM Splint...</German>
-                <Korean>SAM 부목 제거 중...</Korean>
-                <Ukrainian>Зняття шини SAM...</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_RemoveSplint_ActionLog">
-                <English>%1 removed splint</English>
-                <French>%1 a enlevé l'attelle</French>
-                <Spanish>%1 retiró la férula</Spanish>
-                <Polish>%1 zdjął szynę</Polish>
-                <Portuguese>%1 removendo tala</Portuguese>
-                <Russian>%1 снял(а) шину</Russian>
-                <German>%1 entfernte Schiene</German>
-                <Korean>%1이 부목을 제거했습니다</Korean>
-                <Ukrainian>%1 зняв(ла) шину</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_Splint_FellOff">
-                <English>Splint has fallen off</English>
-                <French>L'attelle est tombée</French>
-                <Spanish>La férula se ha desprendido</Spanish>
-                <Polish>Szyna odpadła od kończyny</Polish>
-                <Portuguese>Tala caiu</Portuguese>
-                <Russian>Шина спала</Russian>
-                <German>Schiene ist abgefallen</German>
-                <Korean>부목이 떨어졌습니다</Korean>
-                <Ukrainian>Шина спала</Ukrainian>
-            </Key>
-        </Container>
-        <Container name="// Wrap SAM Splint Action //">
-            <Key ID="STR_ACM_Disability_ElasticWrap_Splint">
-                <English>Wrap SAM Splint</English>
-                <French>SAM Splint renforcée</French>
-                <Spanish>Envolver férula SAM</Spanish>
-                <Polish>Zawiń szynę SAM splint</Polish>
-                <Portuguese>Enfaixar tala moldável</Portuguese>
-                <Russian>Обмотать шину SAM</Russian>
-                <German>SAM Splint einwickeln</German>
-                <Korean>SAM 부목 감기</Korean>
-                <Ukrainian>Обмотати шину SAM</Ukrainian>
-            </Key>
-            <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
-                <English>%1 has wrapped SAM Splint</English>
-                <French>%1 a renforcé la SAM Splint</French>
-                <Spanish>%1 envolvió la férula SAM</Spanish>
-                <Polish>%1 zawinął szynę SAM splint</Polish>
-                <Portuguese>%1 enfaixou a tala moldável</Portuguese>
-                <Russian>%1 обмотал(а) шину SAM</Russian>
-                <German>%1 hat die Schiene eingewickelt</German>
-                <Korean>%1이 SAM 부목을 탄성 붕대로 감았습니다</Korean>
-                <Ukrainian>%1 обмотав(ла) шину SAM</Ukrainian>
+        <Container name="// GUI //">
+            <Key ID="STR_ACM_Disability_GUI_Wrapped">
+                <English>Wrapped</English>
+                <Polish>Zawinięte</Polish>
+                <German>Eingewickelt</German>
+                <French>Renforcé</French>
+                <Portuguese>Enfaixado</Portuguese>
+                <Russian>Обмотано</Russian>
+                <Ukrainian>Обмотано</Ukrainian>
+                <Korean>감김</Korean>
+                <Spanish>Envolviendo</Spanish>
             </Key>
         </Container>
     </Package>

@@ -3,203 +3,203 @@
     <Package name="GUI">
         <Key ID="STR_ACM_GUI_Category">
             <English>ACM: GUI</English>
-            <French>ACM : INTERFACE</French>
-            <Spanish>ACM: GUI</Spanish>
             <Polish>ACM: Interfejs</Polish>
+            <French>ACM : INTERFACE</French>
+            <German>ACM: GUI</German>
             <Portuguese>ACM: Interface</Portuguese>
             <Russian>ACM: Интерфейс</Russian>
-            <German>ACM: GUI</German>
-            <Korean>ACM: GUI</Korean>
             <Ukrainian>ACM: Інтерфейс</Ukrainian>
+            <Korean>ACM: GUI</Korean>
+            <Spanish>ACM: GUI</Spanish>
         </Key>
-        <Key ID="STR_ACM_GUI_NoExternalBleeding">
-            <English>No external bleeding</English>
-            <French>Pas de saignement externe</French>
-            <Spanish>Sin sangrado externo</Spanish>
-            <Polish>Brak krwawienia zewnętrznego</Polish>
-            <Portuguese>Sem sangramento externo</Portuguese>
-            <Russian>Нет внешнего кровотечения</Russian>
-            <German>Keine externe Blutung</German>
-            <Korean>외부 출혈 없음</Korean>
-            <Ukrainian>Немає зовнішньої кровотечі</Ukrainian>
+        <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses">
+            <English>Show inactive vitals statuses</English>
+            <Polish>Pokaż nieaktywne statusy funkcji życiowych</Polish>
+            <French>Afficher les états vitaux inactifs</French>
+            <German>Zeige inaktive Vitatwerte</German>
+            <Portuguese>Mostrar status de sinais vitais inexistentes</Portuguese>
+            <Russian>Показывать неактивные показатели жизненных функций</Russian>
+            <Ukrainian>Показувати неактивні показники життєвих функцій</Ukrainian>
+            <Korean>비활성 활력징후 표시</Korean>
+            <Spanish>Mostrar estados inactivos de constantes vitales</Spanish>
         </Key>
-        <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
-            <English>Show overlay for selected body part</English>
-            <French>Entourer la partie du corps sélectionnée</French>
-            <Spanish>Mostrar superposición para la parte del cuerpo seleccionada</Spanish>
-            <Polish>Pokaż nakładkę dla wybranej części ciała</Polish>
-            <Portuguese>Mostrar sobreposição para a parte do corpo selecionada</Portuguese>
-            <Russian>Показывать подсветку выбранной части тела</Russian>
-            <German>Zeige Overlay für ausgewähltes Körperteil</German>
-            <Korean>선택한 신체 부위 오버레이 표시</Korean>
-            <Ukrainian>Показувати підсвічування обраної частини тіла</Ukrainian>
+        <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
+            <English>Show vitals status in overview tab when inactive (display ""none"")</English>
+            <Polish>Pokaż stan funkcji życiowych w zakładce przeglądu, gdy jest nieaktywny (wyświetl "brak")</Polish>
+            <French>Afficher le statut des fonctions vitales dans l'onglet «vue d'ensemble» lorsqu'elles sont inactives (affichage «none»)</French>
+            <German>Stellt ein, ob nicht-gemessene Vitalwerte in der Übersicht angezeigt werden sollen (Anzeige ""kein"")</German>
+            <Portuguese>Mostrar o status dos sinais vitais na guia de visão geral quando estiver inativo (exibir "nenhum")</Portuguese>
+            <Russian>Показывать состояние жизненных функций во вкладке обзора, даже если неактивны (отображать: нет)</Russian>
+            <Ukrainian>Показувати стан життєвих функцій на вкладці огляду, навіть якщо неактивні (відображати: немає)</Ukrainian>
+            <Korean>활력징후가 없는 상태일 때 개요 탭에 활력징후 상태 표시 ("none" 표시)</Korean>
+            <Spanish>Mostrar el estado de las constantes vitales en la pestaña de resumen cuando estén inactivas (mostrar “ninguna”)</Spanish>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount">
+            <English>Show Pain Amount</English>
+            <Polish>Pokaż wartość bólu</Polish>
+            <French>Afficher l'intensité de la douleur</French>
+            <German>Zeige Schmerzintensität</German>
+            <Portuguese>Mostrar quantidade de dor</Portuguese>
+            <Russian>Показывать уровень боли</Russian>
+            <Ukrainian>Показувати рівень болю</Ukrainian>
+            <Korean>통증 수치 표시</Korean>
+            <Spanish>Mostrar Nivel de Dolor</Spanish>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount_Desc">
+            <English>Show exact pain amount in overview tab</English>
+            <Polish>Pokaż dokładną ilość bólu w zakładce przeglądu</Polish>
+            <French>Afficher le montant exact de la douleur dans l'onglet «Vue d'ensemble»</French>
+            <German>Stellt ein, ob die exakte Schmerzintensität in der Übersicht angezeigt werden soll</German>
+            <Portuguese>Mostrar a quantidade exata de dor na guia de visão geral</Portuguese>
+            <Russian>Показывать точный уровень боли во вкладке обзора</Russian>
+            <Ukrainian>Показувати точний рівень болю на вкладці огляду</Ukrainian>
+            <Korean>개요 탭에 정확한 통증 수치 표시</Korean>
+            <Spanish>Mostrar el nivel exacto de dolor en la pestaña de resumen</Spanish>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowFracture">
+            <English>Show Fracture</English>
+            <Russian>Показывать перелом</Russian>
+            <Ukrainian>Показувати перелом</Ukrainian>
+            <Korean>골절 표시</Korean>
+            <Spanish>Mostrar Fractura</Spanish>
+        </Key>
+        <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
+            <English>Show fractured limb(s) on patient and overview tab</English>
+            <Russian>Показывать переломы конечностей у пациента и во вкладке обзора</Russian>
+            <Ukrainian>Показувати переломи кінцівок у пацієнта та на вкладці огляду</Ukrainian>
+            <Korean>환자 및 개요 탭에 골절된 팔다리 표시</Korean>
+            <Spanish>Mostrar la(s) extremidad(es) fracturada(s) en el paciente y en la pestaña de resumen</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>
             <French>Afficher les icônes des actions</French>
-            <Spanish>Mostrar Iconos de Acciones Médicas</Spanish>
             <Portuguese>Mostrar ícones de itens nas ações</Portuguese>
             <Russian>Показывать иконки активных предметов</Russian>
-            <Korean>액션 아이템 아이콘 표시</Korean>
             <Ukrainian>Показувати іконки активних предметів</Ukrainian>
+            <Korean>액션 아이템 아이콘 표시</Korean>
+            <Spanish>Mostrar Iconos de Acciones Médicas</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons_Desc">
             <English>Show relevant item icons for medical menu actions</English>
             <French>Afficher les icônes des éléments pertinents pour les actions du menu médical</French>
-            <Spanish>Mostrar los iconos de los elementos relevantes en las acciones del menú médico</Spanish>
             <Portuguese>Mostrar ícones de itens relevantes para ações do menu médico</Portuguese>
             <Russian>Показывать соответствующие иконки активных предметов для медицинских действий</Russian>
-            <Korean>의료 메뉴 행동에 관련된 아이템 아이콘 표시</Korean>
             <Ukrainian>Показувати відповідні іконки активних предметів для медичних дій</Ukrainian>
+            <Korean>의료 메뉴 행동에 관련된 아이템 아이콘 표시</Korean>
+            <Spanish>Mostrar los iconos de los elementos relevantes en las acciones del menú médico</Spanish>
         </Key>
-        <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount">
-            <English>Show Pain Amount</English>
-            <French>Afficher l'intensité de la douleur</French>
-            <Spanish>Mostrar Nivel de Dolor</Spanish>
-            <Polish>Pokaż wartość bólu</Polish>
-            <Portuguese>Mostrar quantidade de dor</Portuguese>
-            <Russian>Показывать уровень боли</Russian>
-            <German>Zeige Schmerzintensität</German>
-            <Korean>통증 수치 표시</Korean>
-            <Ukrainian>Показувати рівень болю</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount_Desc">
-            <English>Show exact pain amount in overview tab</English>
-            <French>Afficher le montant exact de la douleur dans l'onglet «Vue d'ensemble»</French>
-            <Spanish>Mostrar el nivel exacto de dolor en la pestaña de resumen</Spanish>
-            <Polish>Pokaż dokładną ilość bólu w zakładce przeglądu</Polish>
-            <Portuguese>Mostrar a quantidade exata de dor na guia de visão geral</Portuguese>
-            <Russian>Показывать точный уровень боли во вкладке обзора</Russian>
-            <German>Stellt ein, ob die exakte Schmerzintensität in der Übersicht angezeigt werden soll</German>
-            <Korean>개요 탭에 정확한 통증 수치 표시</Korean>
-            <Ukrainian>Показувати точний рівень болю на вкладці огляду</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_GUI_SETTING_ShowFracture">
-            <English>Show Fracture</English>
-            <Spanish>Mostrar Fractura</Spanish>
-            <Russian>Показывать перелом</Russian>
-            <Korean>골절 표시</Korean>
-            <Ukrainian>Показувати перелом</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
-            <English>Show fractured limb(s) on patient and overview tab</English>
-            <Spanish>Mostrar la(s) extremidad(es) fracturada(s) en el paciente y en la pestaña de resumen</Spanish>
-            <Russian>Показывать переломы конечностей у пациента и во вкладке обзора</Russian>
-            <Korean>환자 및 개요 탭에 골절된 팔다리 표시</Korean>
-            <Ukrainian>Показувати переломи кінцівок у пацієнта та на вкладці огляду</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses">
-            <English>Show inactive vitals statuses</English>
-            <French>Afficher les états vitaux inactifs</French>
-            <Spanish>Mostrar estados inactivos de constantes vitales</Spanish>
-            <Polish>Pokaż nieaktywne statusy funkcji życiowych</Polish>
-            <Portuguese>Mostrar status de sinais vitais inexistentes</Portuguese>
-            <Russian>Показывать неактивные показатели жизненных функций</Russian>
-            <German>Zeige inaktive Vitatwerte</German>
-            <Korean>비활성 활력징후 표시</Korean>
-            <Ukrainian>Показувати неактивні показники життєвих функцій</Ukrainian>
-        </Key>
-        <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
-            <English>Show vitals status in overview tab when inactive (display ""none"")</English>
-            <French>Afficher le statut des fonctions vitales dans l'onglet «vue d'ensemble» lorsqu'elles sont inactives (affichage «none»)</French>
-            <Spanish>Mostrar el estado de las constantes vitales en la pestaña de resumen cuando estén inactivas (mostrar “ninguna”)</Spanish>
-            <Polish>Pokaż stan funkcji życiowych w zakładce przeglądu, gdy jest nieaktywny (wyświetl "brak")</Polish>
-            <Portuguese>Mostrar o status dos sinais vitais na guia de visão geral quando estiver inativo (exibir "nenhum")</Portuguese>
-            <Russian>Показывать состояние жизненных функций во вкладке обзора, даже если неактивны (отображать: нет)</Russian>
-            <German>Stellt ein, ob nicht-gemessene Vitalwerte in der Übersicht angezeigt werden sollen (Anzeige ""kein"")</German>
-            <Korean>활력징후가 없는 상태일 때 개요 탭에 활력징후 상태 표시 ("none" 표시)</Korean>
-            <Ukrainian>Показувати стан життєвих функцій на вкладці огляду, навіть якщо неактивні (відображати: немає)</Ukrainian>
+        <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
+            <English>Show overlay for selected body part</English>
+            <Polish>Pokaż nakładkę dla wybranej części ciała</Polish>
+            <French>Entourer la partie du corps sélectionnée</French>
+            <German>Zeige Overlay für ausgewähltes Körperteil</German>
+            <Portuguese>Mostrar sobreposição para a parte do corpo selecionada</Portuguese>
+            <Russian>Показывать подсветку выбранной части тела</Russian>
+            <Ukrainian>Показувати підсвічування обраної частини тіла</Ukrainian>
+            <Korean>선택한 신체 부위 오버레이 표시</Korean>
+            <Spanish>Mostrar superposición para la parte del cuerpo seleccionada</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels">
             <English>Show patient side labels</English>
-            <French>Afficher les étiquettes côté patient</French>
-            <Spanish>Mostrar Etiquetas Laterales del Paciente (Izq/Der)</Spanish>
             <Polish>Show patient side labels</Polish>
+            <French>Afficher les étiquettes côté patient</French>
+            <German>Zeige Rechts/Links Markierung an</German>
             <Portuguese>Mostrar legenda dos lados do paciente</Portuguese>
             <Russian>Показывать метки сторон пациента</Russian>
-            <German>Zeige Rechts/Links Markierung an</German>
-            <Korean>환자 사이드 라벨 표시</Korean>
             <Ukrainian>Показувати мітки сторін пацієнта</Ukrainian>
+            <Korean>환자 사이드 라벨 표시</Korean>
+            <Spanish>Mostrar Etiquetas Laterales del Paciente (Izq/Der)</Spanish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels_Desc">
             <English>Show patient left/right side labels in medical menu</English>
-            <French>Afficher les étiquettes du côté gauche/droit du patient dans le menu médical</French>
-            <Spanish>Mostrar las etiquetas de izquierda/derecha del paciente en el menú médico</Spanish>
             <Polish>Pokaż oznaczenia lewej/prawej strony pacjenta w menu medycznym</Polish>
+            <French>Afficher les étiquettes du côté gauche/droit du patient dans le menu médical</French>
+            <German>Kennzeichnet im Menü die Patientenseite (Rechts/Links)</German>
             <Portuguese>Mostrar legenda do lado esquerdo/direito do paciente no menu médico</Portuguese>
             <Russian>Показывать метки: левая/правая сторона в медицинском меню</Russian>
-            <German>Kennzeichnet im Menü die Patientenseite (Rechts/Links)</German>
-            <Korean>의료 메뉴에서 환자의 좌/우 측 라벨 표시</Korean>
             <Ukrainian>Показувати мітки: ліва/права сторона в медичному меню</Ukrainian>
+            <Korean>의료 메뉴에서 환자의 좌/우 측 라벨 표시</Korean>
+            <Spanish>Mostrar las etiquetas de izquierda/derecha del paciente en el menú médico</Spanish>
         </Key>
-        <Container name="// Actions //">
-            <Key ID="STR_ACM_GUI_AssistCarry">
-                <English>Assist Carry</English>
-                <French>Aide au portage</French>
-                <Spanish>Ayudar a portar</Spanish>
-                <Polish>Pomóż w niesieniu</Polish>
-                <Portuguese>Auxiliar carregamento</Portuguese>
-                <Russian>Подготовить к переноске</Russian>
-                <German>Tragen unterstützen</German>
-                <Korean>들기 보조 (Assist Carry)</Korean>
-                <Ukrainian>Підготувати до перенесення</Ukrainian>
-            </Key>
-        </Container>
+        <Key ID="STR_ACM_GUI_NoExternalBleeding">
+            <English>No external bleeding</English>
+            <Polish>Brak krwawienia zewnętrznego</Polish>
+            <French>Pas de saignement externe</French>
+            <German>Keine externe Blutung</German>
+            <Portuguese>Sem sangramento externo</Portuguese>
+            <Russian>Нет внешнего кровотечения</Russian>
+            <Ukrainian>Немає зовнішньої кровотечі</Ukrainian>
+            <Korean>외부 출혈 없음</Korean>
+            <Spanish>Sin sangrado externo</Spanish>
+        </Key>
         <Container name="// Triage Text //">
             <Key ID="STR_ACM_GUI_Triage_Priority1_Short">
                 <English>T1</English>
-                <French>T1</French>
-                <Spanish>T1</Spanish>
                 <Polish>T1</Polish>
+                <German>Rot</German>
+                <French>T1</French>
                 <Portuguese>T1</Portuguese>
                 <Russian>T1</Russian>
-                <German>Rot</German>
-                <Korean>T1</Korean>
                 <Ukrainian>T1</Ukrainian>
+                <Korean>T1</Korean>
+                <Spanish>T1</Spanish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority2_Short">
                 <English>T2</English>
-                <French>T2</French>
-                <Spanish>T2</Spanish>
                 <Polish>T2</Polish>
+                <German>Gelb</German>
+                <French>T2</French>
                 <Portuguese>T2</Portuguese>
                 <Russian>T2</Russian>
-                <German>Gelb</German>
-                <Korean>T2</Korean>
                 <Ukrainian>T2</Ukrainian>
+                <Korean>T2</Korean>
+                <Spanish>T2</Spanish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority3_Short">
                 <English>T3</English>
-                <French>T3</French>
-                <Spanish>T3</Spanish>
                 <Polish>T3</Polish>
+                <German>Grün</German>
+                <French>T3</French>
                 <Portuguese>T3</Portuguese>
                 <Russian>T3</Russian>
-                <German>Grün</German>
-                <Korean>T3</Korean>
                 <Ukrainian>T3</Ukrainian>
+                <Korean>T3</Korean>
+                <Spanish>T3</Spanish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4">
                 <English>Expectant</English>
-                <French>En attente</French>
-                <Spanish>Expectante</Spanish>
                 <Polish>Oczekujacy</Polish>
+                <German>Blau</German>
+                <French>En attente</French>
                 <Portuguese>Expectante</Portuguese>
                 <Russian>Предполагаемый</Russian>
-                <German>Blau</German>
-                <Korean>즉시 처치 필요 (Expectant)</Korean>
                 <Ukrainian>Очікуючий</Ukrainian>
+                <Korean>즉시 처치 필요 (Expectant)</Korean>
+                <Spanish>Expectante</Spanish>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
                 <English>T4</English>
-                <French>T4</French>
-                <Spanish>T4</Spanish>
                 <Polish>T4</Polish>
+                <German>Schwarz</German>
+                <French>T4</French>
                 <Portuguese>T4</Portuguese>
                 <Russian>T4</Russian>
-                <German>Schwarz</German>
-                <Korean>T4 (T4)</Korean>
                 <Ukrainian>T4</Ukrainian>
+                <Korean>T4 (T4)</Korean>
+                <Spanish>T4</Spanish>
+            </Key>
+        </Container>
+        <Container name="// Actions //">
+            <Key ID="STR_ACM_GUI_AssistCarry">
+                <English>Assist Carry</English>
+                <Polish>Pomóż w niesieniu</Polish>
+                <German>Tragen unterstützen</German>
+                <French>Aide au portage</French>
+                <Portuguese>Auxiliar carregamento</Portuguese>
+                <Russian>Подготовить к переноске</Russian>
+                <Ukrainian>Підготувати до перенесення</Ukrainian>
+                <Korean>들기 보조 (Assist Carry)</Korean>
+                <Spanish>Ayudar a portar</Spanish>
             </Key>
         </Container>
     </Package>
