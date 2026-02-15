@@ -11,6 +11,7 @@
             <Ukrainian>ACM: Основний модуль</Ukrainian>
             <Korean>ACM: 코어</Korean>
             <Spanish>ACM: Core</Spanish>
+            <Turkish>ACM: Core</Turkish>
         </Key>
         <Key ID="STR_ACM_Core_Category_Items">
             <English>Items</English>
@@ -22,6 +23,7 @@
             <Ukrainian>Предмети</Ukrainian>
             <Korean>항목</Korean>
             <Spanish>Items</Spanish>
+            <Turkish>Eşyalar</Turkish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet">
             <English>Take Off Tourniquet Time</English>
@@ -33,6 +35,7 @@
             <Ukrainian>Час зняття турнікету</Ukrainian>
             <Korean>지혈대 제거 시간</Korean>
             <Spanish>Tiempo para Retirar el Torniquete</Spanish>
+            <Turkish>Turnike Çıkarma Süresi</Turkish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet_Desc">
             <English>Time to take off tourniquet</English>
@@ -44,6 +47,7 @@
             <Ukrainian>Час для зняття турнікету</Ukrainian>
             <Korean>지혈대를 제거하는 시간</Korean>
             <Spanish>Tiempo necesario para retirar el torniquete</Spanish>
+            <Turkish>Turnikeyi çıkarma süresi</Turkish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight">
             <English>Dogtag list weight</English>
@@ -55,6 +59,7 @@
             <Ukrainian>Показувати вагу на жетонах</Ukrainian>
             <Korean>군번줄에 체중 표시</Korean>
             <Spanish>Mostrar Peso en las Chapas de Identificación</Spanish>
+            <Turkish>Künye üzerinde ağırlığı göster</Turkish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
             <English>Set whether dog tags list the unit's weight</English>
@@ -66,6 +71,7 @@
             <Ukrainian>Визначає, чи вказується вага бійця на жетонах</Ukrainian>
             <Korean>군번줄에 부대원의 체중을 표시할지 설정</Korean>
             <Spanish>Define si las placas de identificación muestran el peso del individuo</Spanish>
+            <Turkish>Künyelerin birimin ağırlığını gösterip göstermeyeceğini ayarla</Turkish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
             <English>Ignore Incompatible Addon Warning</English>
@@ -77,6 +83,7 @@
             <Ukrainian>Ігнорувати попередження про несумісні аддони</Ukrainian>
             <Korean>호환되지 않는 애드온 경고 무시</Korean>
             <Spanish>Ignorar Advertencia de Addons Incompatibles</Spanish>
+            <Turkish>Uyumsuz Eklenti Uyarılarını Yoksay</Turkish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings_Desc">
             <English>Disables incompatible addon warnings</English>
@@ -88,6 +95,7 @@
             <Ukrainian>Вимикає попередження про несумісні аддони</Ukrainian>
             <Korean>호환되지 않는 애드온 경고를 비활성화</Korean>
             <Spanish>Desactiva las advertencias de addons incompatibles</Spanish>
+            <Turkish>Uyumsuz eklenti uyarılarını devre dışı bırakır</Turkish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment">
             <English>Medic AI Allow Intermediate Treatment</English>
@@ -96,6 +104,8 @@
             <Ukrainian>Дозволити ШІ-медику проміжне лікування</Ukrainian>
             <Korean>의무병 AI 중간 처치 허용</Korean>
             <Spanish>Permitir Tratamiento Intermedio al Médico IA</Spanish>
+            <Turkish>Medik AI Orta Seviye Tedaviye İzin Ver</Turkish>
+            <French>Autoriser les médecin IA les traitements "intermédaires"</French>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment_Desc">
             <English>Sets whether medic AI is allowed to perform any actions other than bandaging and tourniqueting</English>
@@ -104,6 +114,8 @@
             <Ukrainian>Визначає, чи може ШІ-медик виконувати дії, окрім бинтування та накладання джгута</Ukrainian>
             <Korean>의무병 AI가 붕대 감기와 지혈대 적용 외의 행동을 수행할 수 있는지 설정</Korean>
             <Spanish>Define si el médico IA puede realizar acciones adicionales aparte de vendar y aplicar torniquetes</Spanish>
+            <Turkish>Medik AI’nın bandaj ve turnike dışında işlem yapmasına izin verilip verilmeyeceğini ayarlar</Turkish>
+            <French>Défini si le médecin IA est autorisé à exercer d'autres actions que panser, et mettre des tourniquets</French>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Core_MorphineAutoinjector">
@@ -116,6 +128,7 @@
                 <Ukrainian>Використати автоінʼєктор морфіну</Ukrainian>
                 <Korean>모르핀 자동주사기 사용</Korean>
                 <Spanish>Usar Autoinyector de Morfina</Spanish>
+                <Turkish>Morfin Otoenjektörünü Kullan</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
                 <English>Using Morphine Autoinjector...</English>
@@ -127,6 +140,7 @@
                 <Ukrainian>Використання автоінʼєктора морфіну...</Ukrainian>
                 <Korean>모르핀 자동주사기 사용 중...</Korean>
                 <Spanish>Usando el Autoinyector de Morfina...</Spanish>
+                <Turkish>Morfin Otoenjektörü Kullanılıyor...</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
                 <English>Use Epinephrine Autoinjector</English>
@@ -138,6 +152,7 @@
                 <Ukrainian>Використати автоінʼєктор епінефрину</Ukrainian>
                 <Korean>에피네프린 자동주사기 사용</Korean>
                 <Spanish>Usar Autoinyector de Epinefrina</Spanish>
+                <Turkish>Epinefrin Otoenjektörünü Kullan</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
                 <English>Using Epinephrine Autoinjector...</English>
@@ -149,6 +164,7 @@
                 <Ukrainian>Використання автоінʼєктора епінефрину...</Ukrainian>
                 <Korean>에피네프린 자동주사기 사용 중...</Korean>
                 <Spanish>Usando el Autoinyector de Epinefrina...</Spanish>
+                <Turkish>Epinefrin Otoenjektörü Kullanılıyor...</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector">
                 <English>Use Adenosine Autoinjector</English>
@@ -160,6 +176,7 @@
                 <Ukrainian>Використати автоінʼєктор аденозину</Ukrainian>
                 <Korean>아데노신 자동주사기 사용</Korean>
                 <Spanish>Usar Autoinyector de Adenosina</Spanish>
+                <Turkish>Adenozin Otoenjektörünü Kullan</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
                 <English>Using Adenosine Autoinjector...</English>
@@ -171,6 +188,7 @@
                 <Ukrainian>Використання автоінʼєктора аденозину...</Ukrainian>
                 <Korean>아데노신 자동주사기 사용 중...</Korean>
                 <Spanish>Usando el Autoinyector de Adenosina...</Spanish>
+                <Turkish>Adenozin Otoenjektörü Kullanılıyor...</Turkish>
             </Key>
         </Container>
         <Container name="// Cancel Carrying //">
@@ -184,6 +202,7 @@
                 <Ukrainian>Скасувати перенесення</Ukrainian>
                 <Korean>들기 취소</Korean>
                 <Spanish>Cancelar Porte</Spanish>
+                <Turkish>Taşımayı İptal Et</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
                 <English>Stopped carrying %1</English>
@@ -195,6 +214,7 @@
                 <Ukrainian>Перенесення %1 припинено</Ukrainian>
                 <Korean>%1 들기를 중단했습니다</Korean>
                 <Spanish>Has dejado de transportar al %1</Spanish>
+                <Turkish>%1 taşınması durduruldu</Turkish>
             </Key>
         </Container>
         <Container name="// Lying State //">
@@ -208,6 +228,7 @@
                 <Ukrainian>Підвестися</Ukrainian>
                 <Korean>일어나기</Korean>
                 <Spanish>Levantarse</Spanish>
+                <Turkish>Ayağa Kalk</Turkish>
             </Key>
         </Container>
         <Container name="// Assist Carry Action //">
@@ -219,6 +240,7 @@
                 <Ukrainian>Пацієнт вже підготовлений до перенесення</Ukrainian>
                 <Korean>환자가 이미 들기 보조를 받고 있는 상태입니다</Korean>
                 <Spanish>El paciente ya está siendo portado</Spanish>
+                <Turkish>Hasta zaten taşınarak destekleniyor</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Complete">
                 <English>Prepared %1 for carrying</English>
@@ -228,6 +250,7 @@
                 <Ukrainian>%1 підготовлено до перенесення</Ukrainian>
                 <Korean>%1 들기를 준비했습니다</Korean>
                 <Spanish>%1 preparado para el porte</Spanish>
+                <Turkish>%1 taşımaya hazırlandı</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Progress">
                 <English>Preparing to carry...</English>
@@ -237,6 +260,7 @@
                 <Ukrainian>Підготовка до перенесення...</Ukrainian>
                 <Korean>들기 준비 중...</Korean>
                 <Spanish>Preparando para portar...</Spanish>
+                <Turkish>Taşımaya hazırlanılıyor...</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Cancelled">
                 <English>Carry-assist cancelled</English>
@@ -246,6 +270,7 @@
                 <Ukrainian>Підготовка до перенесення скасовано</Ukrainian>
                 <Korean>들기 보조 취소</Korean>
                 <Spanish>Porte cancelado</Spanish>
+                <Turkish>Taşıma desteği iptal edildi</Turkish>
             </Key>
         </Container>
         <Container name="// Supine Position Action //">
@@ -255,8 +280,9 @@
                 <Portuguese>Colocar em posição supinada</Portuguese>
                 <Russian>Уложить на спину</Russian>
                 <Ukrainian>Покласти на спину</Ukrainian>
-                <Korean>바로 누이기</Korean>
+                <Korean>앙아위로 눕히기</Korean>
                 <Spanish>Colocar en Posición Supina</Spanish>
+                <Turkish>Sırtüstü Pozisyona Al</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Complete">
                 <English>Patient has been placed into the supine position</English>
@@ -264,8 +290,9 @@
                 <Portuguese>Paciente já foi colocado em posição supinada</Portuguese>
                 <Russian>Пациент уложен на спину</Russian>
                 <Ukrainian>Пацієнта покладено на спину</Ukrainian>
-                <Korean>환자가 바로 누운 자세가 되었습니다</Korean>
+                <Korean>환자가 앙아위로 누웠습니다</Korean>
                 <Spanish>El paciente ha sido colocado en posición supina</Spanish>
+                <Turkish>Hasta sırtüstü pozisyona alındı</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Hint">
                 <English>You have been placed into the supine position</English>
@@ -273,8 +300,9 @@
                 <Portuguese>Você foi colocado em posição supinada</Portuguese>
                 <Russian>Вас уложили на спину</Russian>
                 <Ukrainian>Вас поклали на спину</Ukrainian>
-                <Korean>바로 누운 자세가 되었습니다</Korean>
+                <Korean>앙아위로 눕혀졌습니다</Korean>
                 <Spanish>Has sido colocado en posición supina</Spanish>
+                <Turkish>Sırtüstü pozisyona alındınız</Turkish>
             </Key>
         </Container>
         <Container name="// Treatment Text //">
@@ -288,6 +316,7 @@
                 <Ukrainian>Вас лікує %1</Ukrainian>
                 <Korean>%1에게 치료받고 있습니다</Korean>
                 <Spanish>Estás siendo tratado por el</Spanish>
+                <Turkish>%1 tarafından tedavi ediliyorsunuz</Turkish>
             </Key>
         </Container>
         <Container name="// Vehicle Patient Actions //">
@@ -301,6 +330,7 @@
                 <Ukrainian>Пацієнти в транспорті</Ukrainian>
                 <Korean>차량 내 환자</Korean>
                 <Spanish>Pacientes en Vehículo</Spanish>
+                <Turkish>Araçtaki Hastalar</Turkish>
             </Key>
         </Container>
         <Container name="// Unload and carry //">
@@ -312,8 +342,9 @@
                 <Portuguese>Carregar paciente</Portuguese>
                 <Russian>Нести пациента</Russian>
                 <Ukrainian>Нести пацієнта</Ukrainian>
-                <Korean>환자 들</Korean>
+                <Korean>환자 운반</Korean>
                 <Spanish>Portar Paciente</Spanish>
+                <Turkish>Hastayı Taşı</Turkish>
             </Key>
         </Container>
         <Container name="// Boxes //">
@@ -327,6 +358,7 @@
                 <Ukrainian>[ACM] Ящик базового медзабезпечення</Ukrainian>
                 <Korean>[ACM] 기본 의료 보급 상자</Korean>
                 <Spanish>[ACM] Caja de Suministros Médicos Básicos</Spanish>
+                <Turkish>[ACM] Temel Tıbbi Malzeme Sandığı</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
                 <English>[ACM] Advanced Medical Supply Crate</English>
@@ -338,6 +370,7 @@
                 <Ukrainian>[ACM] Ящик розширеного медзабезпечення</Ukrainian>
                 <Korean>[ACM] 고급 의료 보급 상자</Korean>
                 <Spanish>[ACM] Caja de Suministros Médicos Avanzados</Spanish>
+                <Turkish>[ACM] Gelişmiş Tıbbi Malzeme Sandığı</Turkish>
             </Key>
         </Container>
         <Container name="// Dog Tags //">
@@ -349,8 +382,9 @@
                 <Portuguese>%1 está inspecionando sua plaqueta de identificação</Portuguese>
                 <Russian>%1 проверяет ваши жетоны</Russian>
                 <Ukrainian>%1 перевіряє ваші жетони</Ukrainian>
-                <Korean>%1이 당신의 군번줄을 확인 중입니다</Korean>
+                <Korean>%1가 당신의 군번줄을 확인 중입니다</Korean>
                 <Spanish>%1 está inspeccionando tus chapas de identificación</Spanish>
+                <Turkish>%1 künyelerinizi inceliyor</Turkish>
             </Key>
         </Container>
         <Container name="// Incompatible Addons //">
@@ -364,6 +398,7 @@
                 <Ukrainian>Знайдено несумісні аддони:</Ukrainian>
                 <Korean>호환되지 않는 애드온 발견:</Korean>
                 <Spanish>Addons incompatibles detectados:</Spanish>
+                <Turkish>Uyumsuz eklentiler bulundu:</Turkish>
             </Key>
         </Container>
         <Container name="// Split Medication Action //">
@@ -375,15 +410,17 @@
                 <Ukrainian>Розділити упаковку медикаментів</Ukrainian>
                 <Korean>약물 패키지 분할</Korean>
                 <Spanish>Dividir Paquete de Medicación</Spanish>
+                <Turkish>İlaç Paketini Böl</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
                 <English>Split</English>
-                <French>Séparer</French>
+                <French>Scinder</French>
                 <Portuguese>Dividir</Portuguese>
                 <Russian>Разделить</Russian>
                 <Ukrainian>Розділити</Ukrainian>
                 <Korean>분할 (Split)</Korean>
                 <Spanish>Dividir</Spanish>
+                <Turkish>Böl</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Complete">
                 <English>%1 package has been split</English>
@@ -393,6 +430,7 @@
                 <Ukrainian>Упаковку %1 розділено</Ukrainian>
                 <Korean>%1 패키지가 분할되었습니다</Korean>
                 <Spanish>El paquete de %1 ha sido dividido</Spanish>
+                <Turkish>%1 paketi bölündü</Turkish>
             </Key>
         </Container>
         <Container name="// Body Bag Return Items //">
@@ -403,6 +441,8 @@
                 <Ukrainian>Медичні предмети повернено з мішка для тіл</Ukrainian>
                 <Korean>시체가방에서 의료 아이템 반환</Korean>
                 <Spanish>Material médico recuperado de la mortaja</Spanish>
+                <Turkish>Tıbbi eşyalar ceset torbasından geri alındı</Turkish>
+                <French>Les objets médicales on été récupéré de la housse mortuaire</French>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -416,6 +456,7 @@
                 <Ukrainian>Вставлено</Ukrainian>
                 <Korean>삽입됨</Korean>
                 <Spanish>Insertado</Spanish>
+                <Turkish>Yerleştirildi</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Attached">
                 <English>Attached</English>
@@ -427,6 +468,7 @@
                 <Ukrainian>Прикріплено</Ukrainian>
                 <Korean>부착됨</Korean>
                 <Spanish>Acoplado</Spanish>
+                <Turkish>Takıldı</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Applied">
                 <English>Applied</English>
@@ -438,6 +480,7 @@
                 <Ukrainian>Застосовано</Ukrainian>
                 <Korean>적용됨</Korean>
                 <Spanish>Aplicado</Spanish>
+                <Turkish>Uygulandı</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Removed">
                 <English>Removed</English>
@@ -449,6 +492,7 @@
                 <Ukrainian>Видалено</Ukrainian>
                 <Korean>제거됨</Korean>
                 <Spanish>Retirado</Spanish>
+                <Turkish>Çıkarıldı</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Connected">
                 <English>Connected</English>
@@ -460,6 +504,7 @@
                 <Ukrainian>Підключено</Ukrainian>
                 <Korean>연결됨</Korean>
                 <Spanish>Conectado</Spanish>
+                <Turkish>Bağlandı</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Disconnected">
                 <English>Disconnected</English>
@@ -471,6 +516,7 @@
                 <Ukrainian>Відключено</Ukrainian>
                 <Korean>연결 해제됨</Korean>
                 <Spanish>Desconectado</Spanish>
+                <Turkish>Bağlantı kesildi</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_Common_InProgress">
                 <English>In Progress</English>
@@ -482,6 +528,7 @@
                 <Ukrainian>Виконується</Ukrainian>
                 <Korean>진행 중</Korean>
                 <Spanish>En Progreso</Spanish>
+                <Turkish>Devam Ediyor</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Paused">
                 <English>Paused</English>
@@ -493,6 +540,7 @@
                 <Ukrainian>Призупинено</Ukrainian>
                 <Korean>일시정지</Korean>
                 <Spanish>Pausado</Spanish>
+                <Turkish>Duraklatıldı</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Active">
                 <English>Active</English>
@@ -504,6 +552,7 @@
                 <Ukrainian>Активно</Ukrainian>
                 <Korean>활성</Korean>
                 <Spanish>Activo</Spanish>
+                <Turkish>Aktif</Turkish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Empty">
                 <English>Empty</English>
@@ -515,20 +564,27 @@
                 <Ukrainian>Порожньо</Ukrainian>
                 <Korean>비어 있음</Korean>
                 <Spanish>Vacío</Spanish>
+                <Turkish>Boş</Turkish>
             </Key>
         </Container>
         <Container name="// Module Common //">
             <Key ID="STR_ACM_Core_Common_Module_InteractionDistance">
                 <English>Interaction Distance</English>
                 <Spanish>Distancia de Interacción</Spanish>
+                <Turkish>Etkileşim Mesafesi</Turkish>
+                <French>Distance d'interactions</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition">
                 <English>Interaction Position</English>
                 <Spanish>Posición de Interacción</Spanish>
+                <Turkish>Etkileşim Konumu</Turkish>
+                <French>Position d'interaction</French>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition_Tooltip">
                 <English>Interaction position relative to center of object, must be an array containing 3 numbers</English>
                 <Spanish>Posición de interacción relativa al centro del objeto; debe ser un grupo de 3 valores</Spanish>
+                <Turkish>Nesnenin merkezine göre etkileşim konumu, 3 sayı içeren bir dizi olmalıdır</Turkish>
+                <French>La position d'interaction relativee au centre de l'objet, doit être un ensembble contenant 3 nombres</French>
             </Key>
         </Container>
         <Container name="// ACE Action //">
@@ -542,6 +598,7 @@
                 <Ukrainian>Медичне обладнання</Ukrainian>
                 <Korean>의료 장비</Korean>
                 <Spanish>Equipo Médico</Spanish>
+                <Turkish>Tıbbi Ekipman</Turkish>
             </Key>
         </Container>
     </Package>

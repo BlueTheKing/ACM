@@ -11,6 +11,7 @@
             <Ukrainian>Вивести зі стану зупинки серця</Ukrainian>
             <Korean>심정지 해제</Korean>
             <Spanish>Deshacer el paro cárdiaco</Spanish>
+            <Turkish>Kardiyak Arresti Sonlandır</Turkish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_ForceWakeUp">
             <English>Force Wake-up</English>
@@ -22,6 +23,7 @@
             <Ukrainian>Примусово розбудити</Ukrainian>
             <Korean>강제 일으키기</Korean>
             <Spanish>Forzar a que se despierte</Spanish>
+            <Turkish>Zorla Uyandır</Turkish>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_AssignFullHealFacility">
             <English>Assign Full Heal Facility</English>
@@ -29,6 +31,8 @@
             <Ukrainian>Призначити об'єктом повного медичного відновлення</Ukrainian>
             <Korean>완전 회복 시설 지정</Korean>
             <Spanish>Definir como edificio de restauración de vida</Spanish>
+            <Turkish>Tam İyileştirme Tesisini Ata</Turkish>
+            <French>Assigner une Structure de Soin complet</French>
         </Key>
         <Container name="// Set Blood Volume Module //">
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume">
@@ -41,6 +45,7 @@
                 <Ukrainian>Задати об’єм крові</Ukrainian>
                 <Korean>혈액량 설정</Korean>
                 <Spanish>Cambiar el volumen de sangre</Spanish>
+                <Turkish>Kan Hacmini Ayarla</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_BloodVolume">
                 <English>Blood Volume</English>
@@ -52,6 +57,7 @@
                 <Ukrainian>Об’єм крові</Ukrainian>
                 <Korean>혈액량</Korean>
                 <Spanish>Volumen de sangre</Spanish>
+                <Turkish>Kan Hacmi</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_PlasmaVolume">
                 <English>Plasma Volume</English>
@@ -63,6 +69,7 @@
                 <Ukrainian>Об’єм плазми</Ukrainian>
                 <Korean>혈장량</Korean>
                 <Spanish>Volumen de plasma</Spanish>
+                <Turkish>Plazma Hacmi</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_SalineVolume">
                 <English>Saline Volume</English>
@@ -74,6 +81,7 @@
                 <Ukrainian>Об’єм фізіологічного розчину</Ukrainian>
                 <Korean>생리식염수량</Korean>
                 <Spanish>Volumen de salino</Spanish>
+                <Turkish>Serum Hacmi</Turkish>
             </Key>
         </Container>
         <Container name="// Inflict Cardiac Arrest Module //">
@@ -87,6 +95,7 @@
                 <Ukrainian>Викликати зупинку серця</Ukrainian>
                 <Korean>심정지 유발</Korean>
                 <Spanish>Forzar un paro cárdiaco</Spanish>
+                <Turkish>Kardiyak Arrest Uygula</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm">
                 <English>Target Rhythm</English>
@@ -98,6 +107,7 @@
                 <Ukrainian>Цільовий ритм</Ukrainian>
                 <Korean>목표 리듬 (Target Rhythm)</Korean>
                 <Spanish>Definir el ritmo cárdiaco</Spanish>
+                <Turkish>Hedef Ritim</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Sinus">
                 <English>Sinus</English>
@@ -109,6 +119,7 @@
                 <Ukrainian>Синусовий ритм</Ukrainian>
                 <Korean>정상 동리듬 (Sinus)</Korean>
                 <Spanish>Ritmo Sinusal</Spanish>
+                <Turkish>Sinüs Ritim</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Asystole">
                 <English>Asystole</English>
@@ -120,6 +131,7 @@
                 <Ukrainian>Асистолія</Ukrainian>
                 <Korean>무수축 (Asystole)</Korean>
                 <Spanish>Asistolia</Spanish>
+                <Turkish>Asistol</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_VF">
                 <English>Ventricular Fibrillation</English>
@@ -131,6 +143,7 @@
                 <Ukrainian>Фібриляція шлуночків</Ukrainian>
                 <Korean>심실 세동 (V.Fibrillation)</Korean>
                 <Spanish>Fibrilación Ventricular</Spanish>
+                <Turkish>Ventriküler Fibrilasyon</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_PVT">
                 <English>Ventricular Tachycardia</English>
@@ -142,6 +155,7 @@
                 <Ukrainian>Шлуночкова тахікардія</Ukrainian>
                 <Korean>심실 빈맥 (VT)</Korean>
                 <Spanish>Taquicardia Ventricular</Spanish>
+                <Turkish>Ventriküler Taşikardi</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Random">
                 <English>Random</English>
@@ -153,6 +167,7 @@
                 <Ukrainian>Випадковий</Ukrainian>
                 <Korean>무작위</Korean>
                 <Spanish>Aleatorio</Spanish>
+                <Turkish>Rastgele</Turkish>
             </Key>
         </Container>
         <Container name="// Inflict Chest Injury Module //">
@@ -166,6 +181,7 @@
                 <Ukrainian>Нанести травму грудної клітки</Ukrainian>
                 <Korean>흉부 부상 유발</Korean>
                 <Spanish>Causar Lesión Torácica</Spanish>
+                <Turkish>Göğüs Yaralanması Uygula</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_InjuryType">
                 <English>Injury Type</English>
@@ -177,6 +193,7 @@
                 <Ukrainian>Тип травми</Ukrainian>
                 <Korean>부상 유형</Korean>
                 <Spanish>Tipo de Lesión</Spanish>
+                <Turkish>Yaralanma Türü</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Pneumothorax">
                 <English>Pneumothorax</English>
@@ -188,6 +205,7 @@
                 <Ukrainian>Пневмоторакс</Ukrainian>
                 <Korean>기흉 (Pneumothorax)</Korean>
                 <Spanish>Neumotórax</Spanish>
+                <Turkish>Pnömotoraks</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionPneumothorax">
                 <English>Tension Pneumothorax</English>
@@ -199,6 +217,7 @@
                 <Ukrainian>Напружений пневмоторакс</Ukrainian>
                 <Korean>긴장성 기흉 (Tension Pneumothorax)</Korean>
                 <Spanish>Neumotórax a Tensión</Spanish>
+                <Turkish>Gergin Pnömotoraks</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Hemothorax">
                 <English>Hemothorax</English>
@@ -210,6 +229,7 @@
                 <Ukrainian>Гемоторакс</Ukrainian>
                 <Korean>혈기흉 (Hemothorax)</Korean>
                 <Spanish>Hemotórax</Spanish>
+                <Turkish>Hemotoraks</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionHemothorax">
                 <English>Tension Hemothorax</English>
@@ -221,6 +241,7 @@
                 <Ukrainian>Напружений гемоторакс</Ukrainian>
                 <Korean>긴장성 혈기흉 (Tension Hemothorax)</Korean>
                 <Spanish>Hemotórax a Tensión</Spanish>
+                <Turkish>Gergin Hemotoraks</Turkish>
             </Key>
         </Container>
         <Container name="// Give Pain Module //">
@@ -234,6 +255,7 @@
                 <Ukrainian>Спричинити біль</Ukrainian>
                 <Korean>통증 부여</Korean>
                 <Spanish>Aplicar Dolor</Spanish>
+                <Turkish>Ağrı Ver</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_GivePain_PainAmount">
                 <English>Pain Amount</English>
@@ -245,6 +267,7 @@
                 <Ukrainian>Кількість болю</Ukrainian>
                 <Korean>통증 수치</Korean>
                 <Spanish>Nivel de Dolor</Spanish>
+                <Turkish>Ağrı Miktarı</Turkish>
             </Key>
         </Container>
         <Container name="// Set Oxygen Module //">
@@ -258,6 +281,7 @@
                 <Ukrainian>Задати рівень кисню</Ukrainian>
                 <Korean>산소량 설정</Korean>
                 <Spanish>Ajustar Oxígeno</Spanish>
+                <Turkish>Oksijeni Ayarla</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetOxygen_OxygenLevel">
                 <English>Oxygen Level</English>
@@ -269,6 +293,7 @@
                 <Ukrainian>Рівень кисню</Ukrainian>
                 <Korean>산소 수치</Korean>
                 <Spanish>Nivel de Oxígeno</Spanish>
+                <Turkish>Oksijen Seviyesi</Turkish>
             </Key>
         </Container>
         <Container name="// Set Blood Type Module //">
@@ -281,6 +306,7 @@
                 <Ukrainian>Задати групу крові</Ukrainian>
                 <Korean>혈액형 설정</Korean>
                 <Spanish>Asignar grupo sanguíneo</Spanish>
+                <Turkish>Kan Grubunu Ayarla</Turkish>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodType_List">
                 <English>Blood Type List</English>
@@ -291,6 +317,7 @@
                 <Ukrainian>Список груп крові</Ukrainian>
                 <Korean>혈액형 목록</Korean>
                 <Spanish>Lista de grupos sanguíneos</Spanish>
+                <Turkish>Kan Grubu Listesi</Turkish>
             </Key>
         </Container>
         <Container name="// Plot Armor Module //">
@@ -298,22 +325,28 @@
                 <English>Toggle Plot Armor</English>
                 <Russian>Переключить: сюжетную броню</Russian>
                 <Ukrainian>Перемкнути: сюжетну броню</Ukrainian>
-                <Korean>주인공 버프 활성화</Korean>
+                <Korean>주인공 버프 토글</Korean>
                 <Spanish>Activar/Desactivar Plot Armor</Spanish>
+                <Turkish>Plot Armor’u Aç/Kapat</Turkish>
+                <French>Activer/désactiver L'armure en scénarium</French>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_PlotArmor_Enabled">
                 <English>Plot armor enabled on unit</English>
                 <Russian>Сюжетная броня включена у бойца</Russian>
                 <Ukrainian>Сюжетна броня увімкнена у бійця</Ukrainian>
-                <Korean>유닛에 주인공 버프 활성화</Korean>
+                <Korean>유닛에 버프 활성화됨</Korean>
                 <Spanish>Plot armor activado en la unidad</Spanish>
+                <Turkish>Birime plot armor etkinleştirildi</Turkish>
+                <French>La protection du scénario à été activé sur l'unité</French>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_PlotArmor_Disabled">
                 <English>Plot armor disabled on unit</English>
                 <Russian>Сюжетная броня отключена у бойца</Russian>
                 <Ukrainian>Сюжетна броня вимкнена у бійця</Ukrainian>
-                <Korean>유닛에 주인공 버프 비활성화</Korean>
+                <Korean>유닛에 버프 비활성화됨</Korean>
                 <Spanish>Plot armor desactivado en la unidad</Spanish>
+                <Turkish>Birimin plot armor özelliği devre dışı bırakıldı</Turkish>
+                <French>La protection du scénario à été désactivé sur l'unité</French>
             </Key>
         </Container>
     </Package>
