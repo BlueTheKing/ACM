@@ -87,7 +87,7 @@ private _actions = [];
             };
         };
 
-        private _triageText = ["",LELSTRING(GUI,Triage_Priority1_Short), LELSTRING(GUI,Triage_Priority2_Short), LELSTRING(GUI,Triage_Priority3_Short), LELSTRING(GUI,Triage_Priority4_Short)] select _triageLevel;
+        private _triageText = ["",LELSTRING(GUI,Triage_Priority3_Short), LELSTRING(GUI,Triage_Priority2_Short), LELSTRING(GUI,Triage_Priority1_Short), LELSTRING(GUI,Triage_Priority4_Short)] select _triageLevel;
         private _patientName = [_unit, true] call ACEFUNC(common,getName);
         private _actionText = [_patientName, (format ["%1 [%2]", _patientName, _triageText])] select (_triageLevel > 0);
 
@@ -135,7 +135,7 @@ private _actions = [];
                 [
                 "ACM_PatientActions_OpenTransfusionMenu",
                 LELSTRING(circulation,OpenTransfusionMenu),
-                "", // TODO icon
+                QPATHTOF(ui\icon_patient_transfusionmenu.paa),
                 {
                     params ["", "", "_args"];
                     _args params ["_patient", "_medic"];
@@ -175,7 +175,7 @@ private _actions = [];
                 [
                 "ACM_PatientActions_Unload",
                 ACELLSTRING(medical_treatment,Unload),
-                "", // TODO icon
+                QPATHTOF(ui\person_unload.paa),
                 {
                     params ["", "", "_args"];
                     _args params ["_patient", "_medic"];

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle adenosine effects (LOCAL)
+ * Handle Adenosine effects (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>

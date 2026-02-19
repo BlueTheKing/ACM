@@ -17,6 +17,8 @@
 
 params ["_patient"];
 
+_patient setVariable [QGVAR(InstantDeath), false];
+
 _patient setVariable [QGVAR(KnockOut_State), false];
 _patient setVariable [QGVAR(TimeOfDeath), nil, true];
 _patient setVariable [QGVAR(WasTreated), false, true];
@@ -33,3 +35,4 @@ _patient setVariable [QGVAR(CriticalVitals_Passed), false, true];
 
 [_patient] call FUNC(generateTargetVitals);
 [_patient] call FUNC(getUp);
+_patient setVariable [QGVAR(Sitting_State), false, true];

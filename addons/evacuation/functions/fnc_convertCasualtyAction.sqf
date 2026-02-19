@@ -22,16 +22,22 @@ if (isNull (objectParent _medic)) then {
     [_medic] call ACEFUNC(common,goKneeling);
 };
 
-[3, [_medic, _patient], {
-    params ["_args"];
-    _args params ["_medic", "_patient"];
+private _casualtySide = GET_SIDE_NUM(side (group _patient));
 
-    if !([_medic, _patient] call FUNC(canConvert)) exitWith {
+if (isNull GET_REINFORCE_POINT(_casualtySide) || (_casualtySide isNotEqualTo GET_SIDE_NUM(side (group _medic)))) exitWith {
+    [LLSTRING(ConvertCasualty_Failed), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+};
+
+[3, [_medic, _patient, _casualtySide], {
+    params ["_args"];
+    _args params ["_medic", "_patient", "_casualtySide"];
+
+    if (!([_medic, _patient] call FUNC(canConvert))) exitWith {
         [LLSTRING(ConvertCasualty_Failed), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
     };
 
     [_medic, _patient] call FUNC(convertCasualty);
-    [LLSTRING(ConvertCasualty_InProgress), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    [LLSTRING(ConvertCasualty_InProgress), 2, _medic] call ACEFUNC(common,displayTextStructured);
 }, {
     params ["_args"];
     _args params ["_medic", "_patient"];

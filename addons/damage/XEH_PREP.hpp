@@ -16,6 +16,8 @@ PREP(inflictInternalBleeding);
 PREP(isBodyPartBleeding);
 PREP(refreshWounds);
 PREP(resetVariables);
+PREP(stitchWound);
+PREP(surgicalKitCancel);
 PREP(surgicalKitProgress);
 PREP(surgicalKitStart);
 PREP(wrapBodyPart);

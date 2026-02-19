@@ -88,7 +88,7 @@ private _inVehicle = !(isNull objectParent ACE_player);
     private _dialogCondition = isNull findDisplay IDC_TRANSFUSIONMENU;
     private _patientCondition = (_patient isEqualTo objNull);
     private _medicCondition = (!(alive _medic) || IS_UNCONSCIOUS(_medic) || (_medic isEqualTo objNull));
-    private _vehicleCondition = !(objectParent _medic isEqualTo objectParent _patient);
+    private _vehicleCondition = (objectParent _medic isNotEqualTo objectParent _patient);
     private _distanceCondition = (_patient distance2D _medic > ACEGVAR(medical_gui,maxDistance));
 
     if (_medicCondition || _patientCondition || _dialogCondition || (_inVehicle && _vehicleCondition) || (!_inVehicle && _distanceCondition)) exitWith {

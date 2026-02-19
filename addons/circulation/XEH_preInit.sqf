@@ -79,24 +79,6 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
-/*[
-    QGVAR(treatmentTimePads),
-    "SLIDER",
-    ["Apply Pads Time", "Time to apply AED pads"],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Defibrillator)],
-    [1, 30, 6, 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(treatmentTimePulseOximeter),
-    "SLIDER",
-    ["Connect Pulse Oximeter Time", "Time to connect AED Pulse Oximeter"],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Defibrillator)],
-    [1, 30, 6, 1],
-    true
-] call CBA_fnc_addSetting;*/
-
 [
     QGVAR(AEDDistanceLimit),
     "SLIDER",
@@ -209,6 +191,44 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+// Medication
+
+[
+    QGVAR(reusableSyringe),
+    "CHECKBOX",
+    [LLSTRING(SETTING_ReusableSyringe), LLSTRING(SETTING_ReusableSyringe_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Medication)],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowSyringe),
+    "LIST",
+    [LLSTRING(SETTING_Allow_Syringe), LLSTRING(SETTING_Allow_Syringe_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Medication)],
+    [SETTING_DROPDOWN_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowAmmoniaInhalant),
+    "LIST",
+    [LLSTRING(SETTING_Allow_AmmoniaInhalant), LLSTRING(SETTING_Allow_AmmoniaInhalant_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Medication)],
+    [SETTING_DROPDOWN_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowFentanylLozenge),
+    "LIST",
+    [LLSTRING(SETTING_Allow_FentanylLozenge), LLSTRING(SETTING_Allow_FentanylLozenge_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Medication)],
+    [SETTING_DROPDOWN_SKILL, 1],
+    true
+] call CBA_fnc_addSetting;
+
 // Blood Types
 
 {
@@ -225,5 +245,16 @@ PREP_RECOMPILE_END;
         true
     ] call CBA_fnc_addSetting;
 } forEach [["O", "O+", 39],["ON", "O-", 5],["A", "A+", 28],["AN", "A-", 3],["B", "B+", 18],["BN", "B-", 2],["AB", "AB+", 4],["ABN", "AB-", 1]];
+
+[
+    QGVAR(customBloodTypeList_enable),
+    "CHECKBOX",
+    [LLSTRING(SETTING_CustomBloodTypeList), LLSTRING(SETTING_CustomBloodTypeList_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_BloodTypes)],
+    [false],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
 
 ADDON = true;

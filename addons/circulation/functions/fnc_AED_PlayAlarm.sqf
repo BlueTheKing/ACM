@@ -43,4 +43,4 @@ _patient setVariable [QGVAR(AED_AlarmPFH), -2];
     }, 0.528, [_patient]] call CBA_fnc_addPerFrameHandler;
 
     _patient setVariable [QGVAR(AED_AlarmPFH), _PFH];
-}, [_patient, _medic], 1.84] call CBA_fnc_waitAndExecute;
+}, [_patient], 1.84] call CBA_fnc_waitAndExecute;

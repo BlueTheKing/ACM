@@ -13,6 +13,10 @@
 class CfgMagazines {
     class CA_Magazine;
 
+    class ACE_painkillers: CA_Magazine {
+        scope = 1;
+    };
+
     class ACM_Paracetamol: CA_Magazine {
         scope = 2;
         author = "Blue";
@@ -23,6 +27,14 @@ class CfgMagazines {
         ACE_asItem = 1;
         count = 10;
         mass = 0.3;
+    };
+
+    class ACM_Paracetamol_DoublePack: ACM_Paracetamol {
+        scope = 1;
+        picture = QPATHTOF(ui\paracetamol_doublepack_ca.paa);
+        displayName = CSTRING(Paracetamol_DoublePack);
+        count = 2;
+        mass = 0.06;
     };
 
     class ACM_AmmoniaInhalant: ACM_Paracetamol {
@@ -74,6 +86,11 @@ class CfgMagazines {
     PREPARE_SYRINGE(300,0.6,3,Amiodarone,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Amiodarone,3)),__EVAL(call compile SYRINGE_FORMAT_DESC(Amiodarone,3)));
     PREPARE_SYRINGE(100,0.5,1,Amiodarone,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Amiodarone,1)),__EVAL(call compile SYRINGE_FORMAT_DESC(Amiodarone,1)));
 
+    PREPARE_SYRINGE(1000,0.9,10,Atropine,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Atropine,10)),__EVAL(call compile SYRINGE_FORMAT_DESC(Atropine,10)));
+    PREPARE_SYRINGE(500,0.7,5,Atropine,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Atropine,5)),__EVAL(call compile SYRINGE_FORMAT_DESC(Atropine,5)));
+    PREPARE_SYRINGE(300,0.6,3,Atropine,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Atropine,3)),__EVAL(call compile SYRINGE_FORMAT_DESC(Atropine,3)));
+    PREPARE_SYRINGE(100,0.5,1,Atropine,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Atropine,1)),__EVAL(call compile SYRINGE_FORMAT_DESC(Atropine,1)));
+
     PREPARE_SYRINGE(1000,0.9,10,Fentanyl,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Fentanyl,10)),__EVAL(call compile SYRINGE_FORMAT_DESC(Fentanyl,10)));
     PREPARE_SYRINGE(500,0.7,5,Fentanyl,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Fentanyl,5)),__EVAL(call compile SYRINGE_FORMAT_DESC(Fentanyl,5)));
     PREPARE_SYRINGE(300,0.6,3,Fentanyl,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Fentanyl,3)),__EVAL(call compile SYRINGE_FORMAT_DESC(Fentanyl,3)));
@@ -108,4 +125,9 @@ class CfgMagazines {
     PREPARE_SYRINGE(500,0.7,5,Esmolol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Esmolol,5)),__EVAL(call compile SYRINGE_FORMAT_DESC(Esmolol,5)));
     PREPARE_SYRINGE(300,0.6,3,Esmolol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Esmolol,3)),__EVAL(call compile SYRINGE_FORMAT_DESC(Esmolol,3)));
     PREPARE_SYRINGE(100,0.5,1,Esmolol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Esmolol,1)),__EVAL(call compile SYRINGE_FORMAT_DESC(Esmolol,1)));
+
+    PREPARE_SYRINGE(1000,0.9,10,Dimercaprol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Dimercaprol,10)),__EVAL(call compile SYRINGE_FORMAT_DESC(Dimercaprol,10)));
+    PREPARE_SYRINGE(500,0.7,5,Dimercaprol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Dimercaprol,5)),__EVAL(call compile SYRINGE_FORMAT_DESC(Dimercaprol,5)));
+    PREPARE_SYRINGE(300,0.6,3,Dimercaprol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Dimercaprol,3)),__EVAL(call compile SYRINGE_FORMAT_DESC(Dimercaprol,3)));
+    PREPARE_SYRINGE(100,0.5,1,Dimercaprol,__EVAL(call compile SYRINGE_FORMAT_DISPLAY(Dimercaprol,1)),__EVAL(call compile SYRINGE_FORMAT_DESC(Dimercaprol,1)));
 };

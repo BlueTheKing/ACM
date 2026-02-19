@@ -42,9 +42,8 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
     _ctrlText ctrlSetText ([_patient, false, true] call ACEFUNC(common,getName));
 
     _patient setVariable [QGVAR(HeadTilt_State), true, true];
-    [_patient] call FUNC(updateAirwayState);
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
+    params ["_medic", "_patient", "_bodyPart"];
 
     [GVAR(HeadTiltCancel_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
 
@@ -52,18 +51,15 @@ if (_patient getVariable [QGVAR(HeadTilt_State), false]) exitWith {
 
     "ACM_HeadTilt" cutText ["","PLAIN", 0, false];
 
-    if (_notInVehicle) then {
-        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
-    };
-
     [LLSTRING(HeadTiltChinLift_ActionCancelled), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
-    _patient setVariable [QGVAR(HeadTilt_State), false, true];
-    [_patient] call FUNC(updateAirwayState);
+    if !(_patient getVariable [QGVAR(RecoveryPosition_State), false]) then {
+        _patient setVariable [QGVAR(HeadTilt_State), false, true];
+    };
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart"];
 
-    if (_patient getVariable [QGVAR(AirwayItem_Oral), ""] == "SGA" || _patient getVariable [QGVAR(RecoveryPosition_State), false] || _patient call ACEFUNC(medical_status,isBeingDragged) || _patient call ACEFUNC(medical_status,isBeingCarried)) then {
+    if (_patient getVariable [QGVAR(AirwayItem_Oral), ""] == "SGA" || _patient getVariable [QGVAR(SurgicalAirway_InProgress), false] || _patient getVariable [QGVAR(SurgicalAirway_State), false] || _patient getVariable [QGVAR(RecoveryPosition_State), false] || _patient call ACEFUNC(common,isBeingDragged) || _patient call ACEFUNC(common,isBeingCarried)) then {
         EGVAR(core,ContinuousAction_Active) = false;
     };
 }] call EFUNC(core,beginContinuousAction);

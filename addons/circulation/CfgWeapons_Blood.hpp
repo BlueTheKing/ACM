@@ -1,7 +1,7 @@
 #define BLOODBAG_NAME_FORMAT(string) QUOTE(format [ARR_2(C_LLSTRING(BloodBag),string)])
 
 class ACE_bloodIV: ACE_ItemCore {
-    scope = 0;
+    scope = 1;
 };
 class ACM_BloodBag_O_1000: ACE_bloodIV {
     scope = 2;
@@ -24,7 +24,7 @@ BLOODBAG_ENTRY(AB,1000,__EVAL(call compile BLOODBAG_NAME_FORMAT('AB+ (1000ml)'))
 BLOODBAG_ENTRY(ABN,1000,__EVAL(call compile BLOODBAG_NAME_FORMAT('AB- (1000ml)')));
 
 class ACE_bloodIV_500: ACE_bloodIV {
-    scope = 0;
+    scope = 1;
 };
 class ACM_BloodBag_O_500: ACE_bloodIV_500 {
     scope = 2;
@@ -42,7 +42,7 @@ BLOODBAG_ENTRY(AB,500,__EVAL(call compile BLOODBAG_NAME_FORMAT('AB+ (500ml)')));
 BLOODBAG_ENTRY(ABN,500,__EVAL(call compile BLOODBAG_NAME_FORMAT('AB- (500ml)')));
 
 class ACE_bloodIV_250: ACE_bloodIV {
-    scope = 0;
+    scope = 1;
 };
 class ACM_BloodBag_O_250: ACE_bloodIV_250 {
     scope = 2;

@@ -24,12 +24,16 @@ TRACE_3("loadUnit",_medic,_patient,_vehicle);
     [[ACELSTRING(medical_treatment,CanNotLoad), _patient call ACEFUNC(common,getName)]] call ACEFUNC(common,displayTextStructured);
 };*/
 
-if (_patient call ACEFUNC(medical_status,isBeingCarried)) then {
+if (_patient call ACEFUNC(common,isBeingCarried)) then {
     [_medic, _patient] call ACEFUNC(dragging,dropObject_carry);
 };
 
-if (_patient call ACEFUNC(medical_status,isBeingDragged)) then {
+if (_patient call ACEFUNC(common,isBeingDragged)) then {
     [_medic, _patient] call ACEFUNC(dragging,dropObject);
+};
+
+if !(alive _patient) exitWith {
+    [[ACELSTRING(medical_treatment,CanNotLoadDead), [_patient] call ACEFUNC(common,getName)]] call ACEFUNC(common,displayTextStructured);
 };
 
 private _vehicle = [

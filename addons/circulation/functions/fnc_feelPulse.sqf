@@ -20,13 +20,30 @@
 
 params ["_medic", "_patient", "_bodyPart"];
 
-[[_medic, _patient, _bodyPart], { // On Start
+private _bodyPartString = switch (_bodyPart) do {
+    case "head": {
+        LLSTRING(FeelPulse_Carotid);
+    };
+    case "leftarm";
+    case "rightarm": {
+        LLSTRING(FeelPulse_Radial);
+    };
+    case "leftleg";
+    case "rightleg": {
+        LLSTRING(FeelPulse_Femoral);
+    };
+};
+
+[_patient, "activity", LSTRING(FeelPulse_ActionLog), [[_medic, false, true] call ACEFUNC(common,getName), (toLower _bodyPartString)]] call ACEFUNC(medical_treatment,addToLog);
+
+[[_medic, _patient, _bodyPart, [_bodyPartString]], { // On Start
     #define _x_pos(N) (ACM_FEELPULSE_POS_X(20) - (ACM_FEELPULSE_POS_W((ACM_FEELPULSE_FRONT_W * N)) / 2))
     #define _y_pos(N) (ACM_FEELPULSE_POS_Y(12.5) - (ACM_FEELPULSE_POS_H((ACM_FEELPULSE_FRONT_H * N)) / 2))
     #define _w_pos(N) ((ACM_FEELPULSE_FRONT_W * N) * GUI_GRID_W)
     #define _h_pos(N) ((ACM_FEELPULSE_FRONT_H * N) * GUI_GRID_H)
 
-    params ["_medic", "_patient", "_bodyPart"];
+    params ["_medic", "_patient", "_bodyPart", "_extraArgs"];
+    _extraArgs params ["_bodyPartString"];
 
     "ACM_FeelPulse" cutRsc ["RscFeelPulse", "PLAIN", 0, false];
 
@@ -34,21 +51,7 @@ params ["_medic", "_patient", "_bodyPart"];
     GVAR(FeelPulse_Done) = true;
 
     private _display = uiNamespace getVariable ["ACM_FeelPulse", displayNull];
-    private _ctrlText = _display displayCtrl IDC_FEELPULSE_TEXT; 
-
-    private _bodyPartString = switch (_bodyPart) do {
-        case "head": {
-            "Carotid";
-        };
-        case "leftarm";
-        case "rightarm": {
-            "Radial";
-        };
-        case "leftleg";
-        case "rightleg": {
-            "Femoral";
-        };
-    };
+    private _ctrlText = _display displayCtrl IDC_FEELPULSE_TEXT;
 
     _ctrlText ctrlSetText format ["%1 (%2)", ([_patient, false, true] call ACEFUNC(common,getName)), _bodyPartString];
 }, { // On cancel
@@ -56,13 +59,9 @@ params ["_medic", "_patient", "_bodyPart"];
 
     "ACM_FeelPulse" cutText ["","PLAIN", 0, false];
 
-    if (_notInVehicle) then {
-        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
-    };
-
     [LSTRING(FeelPulse_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 }, { // PerFrame
-    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
+    params ["_medic", "_patient", "_bodyPart"];
 
     private _display = uiNamespace getVariable ["ACM_FeelPulse", displayNull];
     private _ctrlHeart = _display displayCtrl IDC_FEELPULSE_HEART;
@@ -87,7 +86,7 @@ params ["_medic", "_patient", "_bodyPart"];
         if (GVAR(FeelPulse_NextPulse) > CBA_missionTime) exitWith {};
 
         private _delay = 60 / _HR;
-        private _pressureModifier = [0.6, 1] select (HAS_PULSE_P(_patient));
+        private _pressureModifier = [0.6, 1] select (HAS_PULSE_P(_patient) || _partIndex == 0);
         private _fullStrength = (linearConversion [_pressureCutoff, (_pressureCutoff + 60), _BPSystolic * _pressureModifier, 0.8, 3, true]);
         private _releaseStrength = (linearConversion [_pressureCutoff, (_pressureCutoff + 60), _BPSystolic * _pressureModifier, 0.5, 2, true]);
 
@@ -126,4 +125,4 @@ params ["_medic", "_patient", "_bodyPart"];
 
     private _color = linearConversion [_w_pos(1.1), _w_pos(2.8), ((ctrlPosition _ctrlHeart) select 2), 0.1, 1, false];
     _ctrlHeart ctrlSetTextColor [1, 0, 0, _color];
-}] call EFUNC(core,beginContinuousAction);
+}, true] call EFUNC(core,beginContinuousAction);

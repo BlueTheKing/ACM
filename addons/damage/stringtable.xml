@@ -3,176 +3,715 @@
     <Package name="Damage">
         <Key ID="STR_ACM_Damage_Category">
             <English>ACM: Damage</English>
+            <Polish>ACM: Obrażenia</Polish>
+            <German>ACM: Schaden</German>
+            <French>ACM : Dommages</French>
+            <Portuguese>ACM: Dano</Portuguese>
+            <Russian>ACM: Повреждения</Russian>
+            <Ukrainian>ACM: Ураження</Ukrainian>
+            <Korean>ACM: 데미지</Korean>
+            <Spanish>ACM: Daño</Spanish>
+            <Turkish>ACM: Yaralanma</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_Category_Thresholds">
             <English>Thresholds</English>
+            <Polish>Progi</Polish>
+            <German>Grenze</German>
+            <French>Seuils</French>
+            <Portuguese>Limiares</Portuguese>
+            <Russian>Пороги</Russian>
+            <Ukrainian>Пороги</Ukrainian>
+            <Korean>임계값</Korean>
+            <Spanish>Umbrales</Spanish>
+            <Turkish>Eşikler</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_Category_InternalBleeding">
             <English>Internal Bleeding</English>
+            <Polish>Krwotok wewnętrzny</Polish>
+            <German>Innere Blutung</German>
+            <French>Saignement interne</French>
+            <Portuguese>Hemorragia interna</Portuguese>
+            <Russian>Внутреннее кровотечение</Russian>
+            <Ukrainian>Внутрішня кровотеча</Ukrainian>
+            <Korean>내출혈</Korean>
+            <Spanish>Hemorragia Interna</Spanish>
+            <Turkish>İç Kanama</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_Category_AIUnits">
             <English>AI Units</English>
+            <Polish>Jednostki SI</Polish>
+            <German>KI Einheiten</German>
+            <French>Unités AI</French>
+            <Portuguese>Unidades IA</Portuguese>
+            <Russian>Подразделения ИИ</Russian>
+            <Ukrainian>Підрозділи ШІ</Ukrainian>
+            <Korean>AI 유닛</Korean>
+            <Spanish>Unidades IA</Spanish>
+            <Turkish>Yapay Zekâ Birimleri</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Enable">
             <English>Enable Damage Addon</English>
+            <Polish>Włącz obrażenia</Polish>
+            <German>Aktiviere Schadens-AddOn</German>
+            <French>Activer l'addon de dommages</French>
+            <Portuguese>Habilitar dano de addon</Portuguese>
+            <Russian>Включить модуль повреждений</Russian>
+            <Ukrainian>Увімкнути модуль ушкоджень</Ukrainian>
+            <Korean>데미지 애드온 활성화</Korean>
+            <Spanish>Habilitar Addon de Daño</Spanish>
+            <Turkish>Yaralanma Eklentisini Etkinleştir</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Enable_Desc">
             <English>Enable modified damage thresholds</English>
+            <Polish>Włącz modyfikowanie progów obrażeń</Polish>
+            <German>Aktiviere modifizierte Schadensgrenzen</German>
+            <French>Activation des seuils de dommages modifiés</French>
+            <Portuguese>Habilita limiares de dano modificados</Portuguese>
+            <Russian>Включить изменённые пороги повреждений</Russian>
+            <Ukrainian>Увімкнути змінені пороги ушкоджень</Ukrainian>
+            <Korean>수정된 데미지 임계값 활성화</Korean>
+            <Spanish>Habilitar umbrales de daño modificados</Spanish>
+            <Turkish>Değiştirilmiş yaralanma eşiklerini etkinleştir</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold">
             <English>Head Trauma Death Threshold</English>
+            <Polish>Próg śmiertelnych obrażeń w głowę</Polish>
+            <German>Kopfschaden Todesgrenze</German>
+            <French>Seuil de décès par traumatisme crânien</French>
+            <Portuguese>Limiar de morte por trauma na cabeça</Portuguese>
+            <Russian>Порог смертельной черепно-мозговой травмы</Russian>
+            <Ukrainian>Поріг смертельної черепно-мозкової травми</Ukrainian>
+            <Korean>머리 외상 즉사 임계값</Korean>
+            <Spanish>Umbral de Muerte por Trauma Craneal</Spanish>
+            <Turkish>Baş Travması Ölüm Eşiği</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThreshold_Desc">
             <English>Sets threshold for instant death from trauma to the head, disabled if 0</English>
+            <Polish>Im mniejsza wartość tym szybsza śmierć. 0 wyłącza możliwość śmierci</Polish>
+            <German>Setzt die Grenze die bei Kopfschaden direkt zum Tod führt, bei 0 deaktiviert</German>
+            <French>Fixe le seuil de mort instantanée par traumatisme crânien, désactivé si 0</French>
+            <Portuguese>Define o limiar para morte instantânea por trauma na cabeça, desativado se for 0</Portuguese>
+            <Russian>Задаёт порог мгновенной смерти от травмы головы; 0 — отключено</Russian>
+            <Ukrainian>Визначає поріг миттєвої смерті від травми голови; 0 — вимкнено</Ukrainian>
+            <Korean>머리 외상으로 인한 즉사 임계값 설정, 0이면 비활성화</Korean>
+            <Spanish>Define el umbral de muerte instantánea por trauma craneal (desactivado si es 0)</Spanish>
+            <Turkish>Başa alınan travmadan anında ölüm için eşiği ayarlar, 0 ise devre dışıdır</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold">
             <English>Torso Trauma Death Threshold</English>
+            <Polish>Próg śmiertelnych obrażeń w tors</Polish>
+            <German>Torsoschaden Todesgrenze</German>
+            <French>Seuil de décès avec une lésion thoracique</French>
+            <Portuguese>Limiar de morte por trauma no troco</Portuguese>
+            <Russian>Порог смертельной травмы торса</Russian>
+            <Ukrainian>Поріг смертельної травми торса</Ukrainian>
+            <Korean>몸통 외상 즉사 임계값</Korean>
+            <Spanish>Umbral de Muerte por Trauma Torácico</Spanish>
+            <Turkish>Gövde Travması Ölüm Eşiği</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThreshold_Desc">
             <English>Sets threshold for instant death from trauma to the torso, disabled if 0</English>
+            <Polish>Im mniejsza wartość tym szybsza śmierć. 0 wyłącza możliwość śmierci</Polish>
+            <German>Setzt die Grenze die bei Torsoschaden direkt zum Tod führt, bei 0 deaktiviert</German>
+            <French>Fixe le seuil de mort instantanée par avec une lésion thoracique, désactivé si 0</French>
+            <Portuguese>Define o limiar para morte instantânea por trauma no tronco, desativado se for 0</Portuguese>
+            <Russian>Задаёт порог мгновенной смерти от травмы торса; 0 — отключено</Russian>
+            <Ukrainian>Визначає поріг миттєвої смерті від травми торса; 0 — вимкнено</Ukrainian>
+            <Korean>몸통 외상으로 인한 즉사 임계값 설정, 0이면 비활성화 </Korean>
+            <Spanish>Define el valor umbral a partir del cual un traumatismo en el torso produce muerte instantánea. (Desactivado si el valor es 0.)</Spanish>
+            <Turkish>Gövdeye alınan travmadan anında ölüm için eşiği ayarlar, 0 ise devre dışıdır</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold">
             <English>Head Trauma Cardiac Arrest Threshold</English>
+            <Polish>Próg obrażeń w głowę powodujących zatrzymanie krążenia</Polish>
+            <German>Kopfschaden Kreislaufstillstand-Grenze</German>
+            <French>Seuil d'arrêt cardiaque pour les traumatismes crâniens</French>
+            <Portuguese>Limiar de parada cardíaca por traumatismo craniano</Portuguese>
+            <Russian>Порог остановки сердца при травме головы</Russian>
+            <Ukrainian>Поріг зупинки серця при травмі голови</Ukrainian>
+            <Korean>머리 외상 심정지 임계값</Korean>
+            <Spanish>Paro cardiaco por trauma craneal</Spanish>
+            <Turkish>Baş Travması Kardiyak Arrest Eşiği</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThreshold_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the head, disabled if 0</English>
+            <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
+            <German>Setzt die Grenze die bei Kopfschaden möglicherweise zu einem direkten Kreislaufstillstand führt, deaktiviert bei 0</German>
+            <French>Fixe le seuil de possibilité d'arrêt cardiaque dû à un traumatisme crânien, désactivé si 0</French>
+            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma na cabeça, desativado se for 0</Portuguese>
+            <Russian>Задаёт порог риска остановки сердца от травмы головы; 0 — отключено</Russian>
+            <Ukrainian>Визначає поріг ризику зупинки серця від травми голови; 0 — вимкнено</Ukrainian>
+            <Korean>머리 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화 </Korean>
+            <Spanish>Establece el umbral que determina la posibilidad de paro cardiaco como consecuencia de un traumatismo craneal. (Desactivado si el valor es 0.)</Spanish>
+            <Turkish>Başa alınan travmadan kardiyak arrest olasılığı için eşiği ayarlar, 0 ise devre dışıdır</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold">
             <English>Torso Trauma Cardiac Arrest Threshold</English>
+            <Polish>Próg obrażeń w tors powodujących zatrzymanie krążenia</Polish>
+            <German>Torsoschaden Kreislaufstillstand-Grenze</German>
+            <French>Seuil d'arrêt cardiaque en cas de lésion thoracique</French>
+            <Portuguese>Limiar de parada cardíaca por trauma no tronco</Portuguese>
+            <Russian>Порог остановки сердца при травме торса</Russian>
+            <Ukrainian>Поріг зупинки серця при травмі торса</Ukrainian>
+            <Korean>몸통 외상 심정지 임계값</Korean>
+            <Spanish>Paro cardiaco por trauma torácico</Spanish>
+            <Turkish>Gövde Travması Kardiyak Arrest Eşiği</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThreshold_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the torso, disabled if 0</English>
+            <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
+            <German>Setzt die Grenze die bei Torsoschaden möglicherweise zu einem direkten Kreislaufstillstand führt, deaktiviert bei 0</German>
+            <French>Fixe le seuil de possibilité d'arrêt cardiaque à la suite d'un traumatisme au torse, désactivé si 0</French>
+            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma no tronco, desativado se for 0</Portuguese>
+            <Russian>Задаёт порог риска остановки сердца от травмы торса; 0 — отключено</Russian>
+            <Ukrainian>Визначає поріг ризику зупинки серця від травми торса; 0 — вимкнено</Ukrainian>
+            <Korean>몸통 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화</Korean>
+            <Spanish>Establece el umbral que determina la posibilidad de paro cardiaco como consecuencia de un traumatismo torácico. (Desactivado si el valor es 0.)</Spanish>
+            <Turkish>Gövdeye alınan travmadan kardiyak arrest olasılığı için eşiği ayarlar, 0 ise devre dışıdır</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier">
             <English>Internal Bleeding Chance Multiplier</English>
+            <Polish>Szansa na krwawienie wewnątrzne</Polish>
+            <German>Innere Blutung Wahrscheinlichkeitmultiplikator</German>
+            <French>Risque d'hémorragie interne</French>
+            <Portuguese>Multiplicador de chance de hemorragia interna</Portuguese>
+            <Russian>Множитель вероятности внутреннего кровотечения</Russian>
+            <Ukrainian>Множник імовірності внутрішньої кровотечі</Ukrainian>
+            <Korean>내부 출혈 확률 배율</Korean>
+            <Spanish>Multiplicador de probabilidad de hemorragia interna</Spanish>
+            <Turkish>İç Kanama Olasılığı Çarpanı</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_InternalBleedingChanceMultiplier_Desc">
             <English>Chance for internal bleeding to occur from inflicted wounds</English>
+            <Polish>Szansa na pojawienie się krwawienia wewnętrzego na skutek odniesionych ran</Polish>
+            <German>Wahrscheinlichkeit, dass eine Wunde innere Blutungen auslöst</German>
+            <French>Risque d'hémorragie interne due à la blessure</French>
+            <Portuguese>Possibilidade de ocorrência de hemorragia interna em ferimentos infligidos</Portuguese>
+            <Russian>Шанс развития внутреннего кровотечения от нанесённых ран</Russian>
+            <Ukrainian>Шанс розвитку внутрішньої кровотечі від завданих поранень</Ukrainian>
+            <Korean>상처로 인한 내부 출혈 발생 확률</Korean>
+            <Spanish>Multiplicador que modifica la probabilidad de que se produzca hemorragia interna tras heridas infligidas.</Spanish>
+            <Turkish>Oluşan yaralardan iç kanama meydana gelme olasılığı</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Hardcore_InternalBleeding">
             <English>[HARDCORE] Internal Bleeding</English>
+            <Polish>[HARDCORE] Krwawienie wewnętrzne</Polish>
+            <German>[HARDCORE] Innere Blutung</German>
+            <French>[HARDCORE] Saignement interne</French>
+            <Portuguese>[HARDCORE] Hemorragia interna</Portuguese>
+            <Russian>[ХАРДКОР] Внутреннее кровотечение</Russian>
+            <Ukrainian>[ХАРДКОР] Внутрішня кровотеча</Ukrainian>
+            <Korean>[HARDCORE] 내부 출혈</Korean>
+            <Spanish>[HARDCORE] Hemorragia interna</Spanish>
+            <Turkish>[HARDCORE] İç Kanama</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_Hardcore_InternalBleeding_Desc">
             <English>[HARDCORE] Sets whether internal bleeding should require further treatment to fully stop</English>
+            <Polish>[HARDCORE] Określa czy krwawienie wewnętrzne będzie wymagało dalszych działań by je powstrzymać</Polish>
+            <German>[HARDCORE] Stellt ein, ob eine innere Blutung eine weitergehende Behandlung benötigt, um geheilt zu werden</German>
+            <French>[HARDCORE] Détermine si une hémorragie interne nécessite un traitement plus poussé pour être guérie</French>
+            <Portuguese>[HARDCORE] Define se a hemorragia deve exigir tratamento adicional para ser totalmente interrompido</Portuguese>
+            <Russian>[ХАРДКОР] Устанавливает, требуется ли дальнейшее лечение для полного прекращения внутреннего кровотечения</Russian>
+            <Ukrainian>[ХАРДКОР] Встановлює, чи потрібне подальше лікування для повного припинення внутрішньої кровотечі</Ukrainian>
+            <Korean>[HARDCORE] 내부 출혈이 완전히 멈추려면 추가 치료 필요 여부 설정</Korean>
+            <Spanish>Opción avanzada: define si la hemorragia interna requiere tratamientos adicionales para detenerse por completo.</Spanish>
+            <Turkish>[HARDCORE] İç kanamanın tamamen durması için ek tedavi gerektirip gerektirmeyeceğini ayarlar</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThresholdAI">
             <English>AI Head Trauma Death Threshold</English>
+            <Polish>Próg śmiertelnych obrażeń w głowę dla jednostek SI</Polish>
+            <German>KI Kopfschaden Todesgrenze</German>
+            <French>Seuil des traumatismes crâniens mortels pour les unités IA</French>
+            <Portuguese>Limiar de morte por trauma na cabeça para IA</Portuguese>
+            <Russian>Порог смертельной травмы головы (ИИ)</Russian>
+            <Ukrainian>Поріг смертельної травми голови (ШІ)</Ukrainian>
+            <Korean>AI 머리 외상 즉사 임계값</Korean>
+            <Spanish>Umbral IA — Muerte por trauma craneal (IA)</Spanish>
+            <Turkish>AI Baş Travması Ölüm Eşiği</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaDeathThresholdAI_Desc">
             <English>Sets threshold for instant death from trauma to the head for AI, disabled if 0</English>
+            <Polish>Im mniejsza wartość tym szybsza śmierć jednostki SI. 0 wyłącza możliwość śmierci</Polish>
+            <German>Setzt die Todesgrenze die bei Kopfschaden an KI-Einheiten direkt zum Tod führt, deaktiviert bei 0</German>
+            <French>Fixe le seuil de mort instantanée par traumatisme crânien pour l'IA, désactivé si 0</French>
+            <Portuguese>Define o limiar para morte instantânea por trauma na cabeça para IA, desativado se for 0</Portuguese>
+            <Russian>Порог мгновенной смерти от травмы головы для ИИ; 0 — отключено</Russian>
+            <Ukrainian>Поріг миттєвої смерті від травми голови для ШІ; 0 — вимкнено</Ukrainian>
+            <Korean>AI 머리 외상으로 인한 즉사 임계값 설정, 0이면 비활성화</Korean>
+            <Spanish>Umbral de muerte instantánea por trauma craneal aplicado a unidades controladas por IA. (Desactivado si es 0.)</Spanish>
+            <Turkish>AI için baş travmasından anında ölüm eşiğini ayarlar, 0 ise devre dışıdır</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThresholdAI">
             <English>AI Torso Trauma Death Threshold</English>
+            <Polish>Próg śmiertelnych obrażeń w tors dla jednostek SI</Polish>
+            <German>KI Torsoschaden Todesgrenze</German>
+            <French>Seuil de décès avec une lésion thoracique de l'IA</French>
+            <Portuguese>Limiar de morte para IA por dano no torso</Portuguese>
+            <Russian>Порог смертельной травмы торса (ИИ)</Russian>
+            <Ukrainian>Поріг смертельної травми торса (ШІ)</Ukrainian>
+            <Korean>AI 몸통 외상 즉사 임계값</Korean>
+            <Spanish>Umbral IA — Muerte por trauma torácico (IA)</Spanish>
+            <Turkish>AI Gövde Travması Ölüm Eşiği</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaDeathThresholdAI_Desc">
             <English>Sets threshold for instant death from trauma to the torso for AI, disabled if 0</English>
+            <Polish>Im mniejsza wartość tym szybsza śmierć jednostki SI. 0 wyłącza możliwość śmierci</Polish>
+            <German>Setzt die Todesgrenze die bei Torsoschaden an KI-Einheiten direkt zum Tod führt, deaktiviert bei 0</German>
+            <French>Fixe le seuil de mort instantanée avec une lésion thoracique pour l'IA, désactivé si 0</French>
+            <Portuguese>Define o limiar para morte instantânea por trauma no tronco para IA, desativado se for 0</Portuguese>
+            <Russian>Порог мгновенной смерти от травмы торса для ИИ; 0 — отключено</Russian>
+            <Ukrainian>Поріг миттєвої смерті від травми торса для ШІ; 0 — вимкнено</Ukrainian>
+            <Korean>AI 몸통 외상으로 인한 즉사 임계값 설정, 0이면 비활성화</Korean>
+            <Spanish>Umbral de muerte instantánea por trauma torácico aplicado a IA. (Desactivado si es 0.)</Spanish>
+            <Turkish>AI için gövde travmasından anında ölüm eşiğini ayarlar, 0 ise devre dışıdır</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThresholdAI">
             <English>AI Head Trauma Cardiac Arrest Threshold</English>
+            <Polish>Próg obrażeń w głowę powodujących zatrzymanie krążenia dla jednostek SI</Polish>
+            <German>KI Kopfschaden Reanimationsgrenze</German>
+            <French>Seuil des traumatismes crâniens provoquant un arrêt cardiaque pour les unités IA</French>
+            <Portuguese>Limiar de parada cardíaca por trauma na cabeça para IA</Portuguese>
+            <Russian>Порог остановки сердца при травме головы (ИИ)</Russian>
+            <Ukrainian>Поріг зупинки серця при травмі голови (ШІ)</Ukrainian>
+            <Korean>AI 머리 외상 심정지 임계값</Korean>
+            <Spanish>Umbral IA — Paro cardiaco por trauma craneal (IA)</Spanish>
+            <Turkish>AI Baş Travması Kardiyak Arrest Eşiği</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_HeadTraumaCardiacArrestThresholdAI_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the head for AI, disabled if 0</English>
+            <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia u jednostki SI. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
+            <German>Setzt die Grenze die bei Kopfschaden möglicherweise direkt zu einem Kreislaufstillstand an KI-Einheiten führt, deaktiviert bei 0</German>
+            <French>Fixe le seuil de possibilité d'arrêt cardiaque dû à un traumatisme crânien pour l'IA, désactivé si 0</French>
+            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma na cabeça para IA, desativado se for 0</Portuguese>
+            <Russian>Порог риска остановки сердца от травмы головы для ИИ; 0 — отключено</Russian>
+            <Ukrainian>Поріг ризику зупинки серця від травми голови для ШІ; 0 — вимкнено</Ukrainian>
+            <Korean>AI 머리 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화</Korean>
+            <Spanish>Umbral para la posibilidad de paro cardiaco por trauma craneal en IA. (Desactivado si es 0.)</Spanish>
+            <Turkish>AI için baş travmasından kardiyak arrest olasılığı eşiğini ayarlar, 0 ise devre dışıdır</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThresholdAI">
             <English>AI Torso Trauma Cardiac Arrest Threshold</English>
+            <Polish>Próg obrażeń w tors powodujących zatrzymanie krążenia dla jednostek SI</Polish>
+            <German>KI Torsoschaden Reanimationsgrenze</German>
+            <French>Seuil de lésion thoracique entraînant un arrêt cardiaque pour les unités IA</French>
+            <Portuguese>Limiar de parada cardíaca por dano no torso para IA</Portuguese>
+            <Russian>Порог остановки сердца при травме торса (ИИ)</Russian>
+            <Ukrainian>Поріг зупинки серця при травмі торса (ШІ)</Ukrainian>
+            <Korean>AI 몸통 외상 심정지 임계값</Korean>
+            <Spanish>Umbral IA — Paro cardiaco por trauma torácico (IA)</Spanish>
+            <Turkish>AI Gövde Travması Kardiyak Arrest Eşiği</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_BodyTraumaCardiacArrestThresholdAI_Desc">
             <English>Sets threshold for possibility of cardiac arrest from trauma to the torso for AI, disabled if 0</English>
+            <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia u jednostki SI. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
+            <German>Setzt die Grenze die bei Torsoschaden möglicherweise direkt zu einem Kreislaufstillstand an KI-Einheiten führt, deaktiviert bei 0</German>
+            <French>Fixe le seuil de possibilité d'arrêt cardiaque à la suite d'une lésion thoracique pour l'IA, désactivé si 0</French>
+            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma no tronco para IA, desativado se for 0</Portuguese>
+            <Russian>Порог риска остановки сердца от травмы торса для ИИ; 0 — отключено</Russian>
+            <Ukrainian>Поріг ризику зупинки серця від травми торса для ШІ; 0 — вимкнено</Ukrainian>
+            <Korean>AI 몸통 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화</Korean>
+            <Spanish>Umbral para la posibilidad de paro cardiaco por trauma torácico en IA. (Desactivado si es 0.)</Spanish>
+            <Turkish>AI için gövde travmasından kardiyak arrest olasılığı eşiğini ayarlar, 0 ise devre dışıdır</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance">
             <English>AI Stay Down Chance</English>
+            <Polish>Szansa że jednostka SI pozostanie na na ziemi</Polish>
+            <German>KI Bewusstseinswahrscheinlichkeit</German>
+            <French>Chance que l'unité IA reste au sol</French>
+            <Portuguese>Chance de ficar caído para IA</Portuguese>
+            <Russian>Шанс, что ИИ останется лежать</Russian>
+            <Ukrainian>Шанс, що ШІ залишиться лежати</Ukrainian>
+            <Korean>AI 다운 상태 유지 확률</Korean>
+            <Spanish>Probabilidad IA — Permanecer derribado</Spanish>
+            <Turkish>AI Yerde Kalma Olasılığı</Turkish>
         </Key>
         <Key ID="STR_ACM_Damage_SETTING_AIStayDownChance_Desc">
             <English>Sets chance for AI to stay down once unconscious (without intervention)</English>
-        </Key><!--
-            // Settings in CORE // -->
-        <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap">
-            <English>Allow Wrapping</English>
+            <Polish>Szansa na pozostanie jednostki SI w pozycji leżącej, gdy straci przytomność (bez interwencji)</Polish>
+            <German>Setzt die Wahrscheinlichkeit, dass eine bewusstloser KI-Einheit ohne Behandlung wieder zu bewusstsein kommt</German>
+            <French>Définit la probabilité que l'IA reste couchée une fois qu'elle est inconsciente (sans intervention)</French>
+            <Portuguese>Define a chance de a IA permanecer no chão quando estiver inconsciente (sem intervenção)</Portuguese>
+            <Russian>Вероятность, что ИИ не встанет после потери сознания (без вмешательства)</Russian>
+            <Ukrainian>Ймовірність, що ШІ не підведеться після втрати свідомості (без втручання)</Ukrainian>
+            <Korean>무의식 상태가 된 AI가 개입 없이 눕혀진 상태로 있을 확률 설정</Korean>
+            <Spanish>Probabilidad de que una unidad IA permanezca en el suelo tras quedar inconsciente si no se le interviene.</Spanish>
+            <Turkish>Müdahale olmadan bayılan AI’nın yerde kalma olasılığını ayarlar</Turkish>
         </Key>
-        <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap_Desc">
-            <English>Training level required to use Elastic Wrap</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart">
-            <English>Wrap Time</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart_Desc">
-            <English>Time to wrap whole body part</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch">
-            <English>Wrapped Stitch Time</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch_Desc">
-            <English>Time to stitch a wrapped wound</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch">
-            <English>Suture Stitch Time Multiplier</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch_Desc">
-            <English>Time multiplier when stitching wound with sutures</English>
-        </Key><!-- 
-            // Items // -->
-        <Key ID="STR_ACM_Damage_PressureBandage">
-            <English>Pressure Bandage</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_PressureBandage_Desc">
-            <English>Standard issue bandage</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_EmergencyTraumaDressing">
-            <English>Emergency Trauma Dressing</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_EmergencyTraumaDressing_Desc">
-            <English>Trauma dressing with large surface area</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_ElasticWrap">
-            <English>Elastic Wrap</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_ElasticWrap_Desc">
-            <English>Used to wrap bandages, clotted wounds and bruises</English>
-        </Key><!--
-            // Actions // -->
-        <Key ID="STR_ACM_Damage_ElasticWrap_Progress">
-            <English>Wrapping...</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_ElasticWrap_Bruises">
-            <English>Wrap Bruises</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_ElasticWrap_Bandages">
-            <English>Wrap Bandaged Wounds</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_ElasticWrap_Clots">
-            <English>Wrap Clotted Wounds</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Suture">
-            <English>Use Surgical Kit With Sutures</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Suture_Progress">
-            <English>Stitching With Sutures...</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped">
-            <English>Use Surgical Kit (Wrapped)</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped_Suture">
-            <English>Use Surgical Kit With Sutures (Wrapped)</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Clotted">
-            <English>Use Surgical Kit (Clotted)</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_SurgicalKit_Clotted_Suture">
-            <English>Use Surgical Kit With Sutures (Clotted)</English>
-        </Key><!--
-            // Wrap Body Part Action // -->
-        <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">
-            <English>%1 has wrapped %2</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Bandages">
-            <English>bandages</English>
-        </Key>
-        <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Clotted">
-            <English>clotted wounds</English>
-        </Key><!--
-            // Wrap Bruises Action // -->
-        <Key ID="STR_ACM_Damage_WrapBruises_ActionLog">
-            <English>%1 has wrapped bruises</English>
-        </Key>
+        <Container name="// Settings in CORE //">
+            <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap">
+                <English>Allow Wrapping</English>
+                <Polish>Pozwól na zawijanie ran</Polish>
+                <German>Erlaube Fixierbinden</German>
+                <French>Autoriser les bandes de fixation</French>
+                <Portuguese>Permitir enfaixar</Portuguese>
+                <Russian>Разрешить обмотку</Russian>
+                <Ukrainian>Дозволити обмотування</Ukrainian>
+                <Korean>탄성 붕대 감기 허용</Korean>
+                <Spanish>Permitir envolver</Spanish>
+                <Turkish>Sarmaya İzin Ver</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_Allow_Wrap_Desc">
+                <English>Training level required to use Elastic Wrap</English>
+                <Polish>Poziom wyszkolenia wymagany do zawijania ran</Polish>
+                <German>Benötigtes Qualifikationslevel, um Fixierbinden zu benutzen</German>
+                <French>Niveau de qualification requis pour utiliser des bandes de fixation</French>
+                <Portuguese>Nível de treinamento necessário para usar a atadura elástica</Portuguese>
+                <Russian>Уровень подготовки для использования эластичного бинта</Russian>
+                <Ukrainian>Рівень підготовки для використання еластичного бинта</Ukrainian>
+                <Korean>탄성 붕대 사용 가능 훈련 레벨</Korean>
+                <Spanish>Nivel de entrenamiento requerido para el vendaje elástico</Spanish>
+                <Turkish>Elastik Bandaj kullanmak için gereken eğitim seviyesi</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart">
+                <English>Wrap Time</English>
+                <Polish>Czas zawijania ran</Polish>
+                <German>Fixierbindenzeit</German>
+                <French>Durée de la bande de fixation</French>
+                <Portuguese>Tempo para enfaixar</Portuguese>
+                <Russian>Время обмотки</Russian>
+                <Ukrainian>Час обмотування</Ukrainian>
+                <Korean>탄성 붕대 감는 시간</Korean>
+                <Spanish>Tiempo de vendaje</Spanish>
+                <Turkish>Sarma Süresi</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrapBodyPart_Desc">
+                <English>Time to wrap whole body part</English>
+                <Polish>Czas do zawinięcia całej części ciała</Polish>
+                <German>Benötigte Zeit um ein ganzes Körperteil mittels Fixierbinde zu bandagieren</German>
+                <French>Temps nécessaire pour bander une partie entière du corps avec une bande de fixation</French>
+                <Portuguese>Tempo para enfaixar uma parte inteira do corpo</Portuguese>
+                <Russian>Время на обмотку всей части тела</Russian>
+                <Ukrainian>Час на обмотування всієї частини тіла</Ukrainian>
+                <Korean>전체 신체 부위 고정 붕대 감는 시간</Korean>
+                <Spanish>Tiempo necesario para vendar la extremidad</Spanish>
+                <Turkish>Tüm vücut parçasını sarmak için gereken süre</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch">
+                <English>Wrapped Stitch Time</English>
+                <Polish>Czas szycia zawiniętych ran</Polish>
+                <German>Nähzeit bei fixierten Bandagen</German>
+                <French>Temps de suture pour les bandages fixés</French>
+                <Portuguese>Tempo para suturar ferida enfaixada</Portuguese>
+                <Russian>Время наложения швов обмотанной раны</Russian>
+                <Ukrainian>Час накладання швів обмотаної рани</Ukrainian>
+                <Korean>탄성 붕대 봉합 시간</Korean>
+                <Spanish>Tiempo Sutura Vendada</Spanish>
+                <Turkish>Sarılı Dikiş Süresi</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch_Desc">
+                <English>Time to stitch a wrapped wound</English>
+                <Polish>Czas potrzebny na zeszycie zawiniętych wcześniej ran</Polish>
+                <German>Benötigte Zeit um eine bandagierte Wunde zu nähen, die vorher mittels Fixierbinde gesichert wurde</German>
+                <French>Temps nécessaire pour suturer une plaie bandée, préalablement maintenue par une bande de fixation</French>
+                <Portuguese>Tempo para suturar uma ferida enfaixada</Portuguese>
+                <Russian>Время на наложение швов по обмотанной ране</Russian>
+                <Ukrainian>Час на накладання швів по обмотаній рані</Ukrainian>
+                <Korean>탄성 붕대 감은 상처를 봉합하는 시간 </Korean>
+                <Spanish>Tiempo para suturar la herida vendada</Spanish>
+                <Turkish>Sarılmış bir yarayı dikmek için gereken süre</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch">
+                <English>Suture Stitch Time Multiplier</English>
+                <Polish>Mnożnik czasu szycia z użyciem szwów</Polish>
+                <German>Nähzeitmultiplikater</German>
+                <French>Multiplicateur de temps de suture</French>
+                <Portuguese>Multiplicador de tempo para suturar pontos</Portuguese>
+                <Russian>Множитель времени наложения швов</Russian>
+                <Ukrainian>Множник часу накладання швів</Ukrainian>
+                <Korean>봉합 시 시간 배율</Korean>
+                <Spanish>Multiplicador del tiempo de sutura con puntos</Spanish>
+                <Turkish>Sütür Dikiş Süresi Çarpanı</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_SutureStitch_Desc">
+                <English>Time multiplier when stitching wound with sutures</English>
+                <Polish>Mnożnik czasu zszywania ran z użyciem szwów</Polish>
+                <German>Zeitmultiplikator beim Nähen von Wunden mit Nahtmaterial</German>
+                <French>Multiplication du temps lors de la suture d'une plaie avec des points de suture</French>
+                <Portuguese>Multiplicador de tempo para dar pontos com sutura</Portuguese>
+                <Russian>Множитель времени при наложения швов (не обмотаной раны)</Russian>
+                <Ukrainian>Множник часу при накладенні швів (не обмотаної рани)</Ukrainian>
+                <Korean>봉합사로 상처를 봉합할 때 시간 배율</Korean>
+                <Spanish>Multiplicador del tiempo necesario al suturar una herida con puntos</Spanish>
+                <Turkish>Yarayı sütür ile dikerken uygulanan süre çarpanı</Turkish>
+            </Key>
+        </Container>
+        <Container name="// Wounds //">
+            <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Large">
+                <English>Extensive Chemical Burn</English>
+                <Portuguese>Queimadura química extensa</Portuguese>
+                <Russian>Обширный химический ожог</Russian>
+                <Ukrainian>Великий хімічний опік</Ukrainian>
+                <Korean>광범위 화학 화상</Korean>
+                <Spanish>Quemadura química extensa</Spanish>
+                <Turkish>Yaygın Kimyasal Yanık</Turkish>
+                <French>Brûlure chimique étendue</French>
+            </Key>
+            <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Medium">
+                <English>Moderate Chemical Burn</English>
+                <Portuguese>Queimadura química moderada</Portuguese>
+                <Russian>Умеренный химический ожог</Russian>
+                <Ukrainian>Помірний хімічний опік</Ukrainian>
+                <Korean>중등도 화학 화상</Korean>
+                <Spanish>Quemadura química moderada</Spanish>
+                <Turkish>Orta Dereceli Kimyasal Yanık</Turkish>
+                <French>Brûlure chimique modérée</French>
+            </Key>
+            <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Minor">
+                <English>Minor Chemical Burn</English>
+                <Portuguese>Queimadura química leve</Portuguese>
+                <Russian>Незначительный химический ожог</Russian>
+                <Ukrainian>Незначний хімічний опік</Ukrainian>
+                <Korean>경미 화학 화상</Korean>
+                <Spanish>Quemadura química leve</Spanish>
+                <Turkish>Hafif Kimyasal Yanık</Turkish>
+                <French>Brûlure chimique mineure</French>
+            </Key>
+        </Container>
+        <Container name="// Items //">
+            <Key ID="STR_ACM_Damage_PressureBandage">
+                <English>Pressure Bandage</English>
+                <Polish>Bandaż uciskowy</Polish>
+                <German>Druckverband</German>
+                <French>Pansement compressif</French>
+                <Portuguese>Bandagem de pressão</Portuguese>
+                <Russian>Компрессионная повязка</Russian>
+                <Ukrainian>Компресійна пов’язка</Ukrainian>
+                <Korean>압박 붕대 (Pressure Bandage)</Korean>
+                <Spanish>Vendaje compresivo</Spanish>
+                <Turkish>Basınç Bandajı</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_PressureBandage_Desc">
+                <English>Standard issue bandage</English>
+                <Polish>Standardowo przydzielany bandaż osobisty</Polish>
+                <German>Millitärischer Druckverband</German>
+                <French>Bandage standard</French>
+                <Portuguese>Bandagem padrão</Portuguese>
+                <Russian>Стандартная повязка</Russian>
+                <Ukrainian>Стандартна пов’язка</Ukrainian>
+                <Korean>표준 붕대 (Standard issue bandage)</Korean>
+                <Spanish>Vendaje estándar de dotación</Spanish>
+                <Turkish>Standart hizmet bandajı</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_EmergencyTraumaDressing">
+                <English>Emergency Trauma Dressing</English>
+                <Polish>Powiększony bandaż uciskowy</Polish>
+                <German>Notfallverband</German>
+                <French>Pansement d'urgence</French>
+                <Portuguese>Curativo de emergência para trauma</Portuguese>
+                <Russian>Экстренная травматическая повязка</Russian>
+                <Ukrainian>Екстрена травматична пов’язка</Ukrainian>
+                <Korean>응급 외상 드레싱 (ETD)</Korean>
+                <Spanish>Vendaje israelí</Spanish>
+                <Turkish>Acil Travma Pansumanı</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_EmergencyTraumaDressing_Desc">
+                <English>Trauma dressing with large surface area</English>
+                <Polish>Bandaż uciskowy z powiększoną powieszchnią</Polish>
+                <German>Notfallverband mit großer Fläche</German>
+                <French>Pansement d'urgence à grande surface</French>
+                <Portuguese>Curativo para trauma com grande área de superfície</Portuguese>
+                <Russian>Травматическая повязка с большой площадью покрытия</Russian>
+                <Ukrainian>Травматична пов’язка з великою площею покриття</Ukrainian>
+                <Korean>넓은 면적의 외상 드레싱</Korean>
+                <Spanish>Vendaje israelí de gran superficie</Spanish>
+                <Turkish>Geniş yüzey alanına sahip travma pansumanı</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_ElasticWrap">
+                <English>Elastic Wrap</English>
+                <Polish>Bandaż stabilizacyjny</Polish>
+                <German>Fixierbinde</German>
+                <French>Bande de fixation</French>
+                <Portuguese>Atadura elástica</Portuguese>
+                <Russian>Эластичный бинт</Russian>
+                <Ukrainian>Еластичний бинт</Ukrainian>
+                <Korean>탄력 붕대 (Elastic Wrap)</Korean>
+                <Spanish>Venda elástica</Spanish>
+                <Turkish>Elastik Bandaj</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_ElasticWrap_Desc">
+                <English>Used to wrap bandages, clotted wounds and bruises</English>
+                <Polish>Używany do stabilizacji bandaży, owijania skrzepniętych ran i siniaków</Polish>
+                <German>Wird verwendet, um Bandagen, geronnene Wunden oder Prellungen zu fixieren bzw. zu behandeln</German>
+                <French>Utilisé pour envelopper les bandages, les plaies coagulées et les ecchymoses.</French>
+                <Portuguese>Usado para enfaixar, talas, bandagens, ferimentos coagulados e hematomas</Portuguese>
+                <Russian>Используется для обмотки повязок, коагулированных ран и ушибов</Russian>
+                <Ukrainian>Використовується для обмотування пов'язок, коагульованих ран і забоїв</Ukrainian>
+                <Korean>붕대, 응고된 상처 및 타박상을 감싸는 데 사용됨</Korean>
+                <Spanish>Usada para envolver vendajes, heridas coaguladas y moretones</Spanish>
+                <Turkish>Bandajları, pıhtılaşmış yaraları ve morlukları sarmak için kullanılır</Turkish>
+            </Key>
+        </Container>
+        <Container name="// Wrap Actions //">
+            <Key ID="STR_ACM_Damage_ElasticWrap_Progress">
+                <English>Wrapping...</English>
+                <Polish>Zawijanie...</Polish>
+                <German>Benutze Fixierbinde...</German>
+                <French>Emballage ...</French>
+                <Portuguese>Enfaixando...</Portuguese>
+                <Russian>Обмотка...</Russian>
+                <Ukrainian>Обмотування...</Ukrainian>
+                <Korean>감는 중...</Korean>
+                <Spanish>Envolviendo...</Spanish>
+                <Turkish>Sarılıyor...</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_ElasticWrap_Bruises">
+                <English>Wrap Bruises</English>
+                <Polish>Zawiń siniaki</Polish>
+                <German>Prellung mit Fixierbinde einwickeln</German>
+                <French>Envelopper les bleus</French>
+                <Portuguese>Enfaixar hematomas</Portuguese>
+                <Russian>Обмотать ушибы</Russian>
+                <Ukrainian>Обмотати забої</Ukrainian>
+                <Korean>타박상에 탄력 붕대 감기</Korean>
+                <Spanish>Envolver moretones</Spanish>
+                <Turkish>Morlukları Sar</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_ElasticWrap_Bandages">
+                <English>Wrap Bandaged Wounds</English>
+                <Polish>Zawiń zabandażowane rany</Polish>
+                <German>Fixiere bandagierte Wunden</German>
+                <French>Envelopper les plaies bandées</French>
+                <Portuguese>Enfaixar ferimentos coagulados</Portuguese>
+                <Russian>Обмотать перевязанные раны</Russian>
+                <Ukrainian>Обмотати перев’язані рани</Ukrainian>
+                <Korean>붕대에 탄력 붕대 감기 </Korean>
+                <Spanish>Envolver heridas vendadas</Spanish>
+                <Turkish>Bandajlı Yaraları Sar</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_ElasticWrap_Clots">
+                <English>Wrap Clotted Wounds</English>
+                <Polish>Zawiń skrzepnięte rany</Polish>
+                <German>Geronnene Wunden einwickeln</German>
+                <French>Envelopper les plaies coagulées</French>
+                <Portuguese>Enfaixar ferimentos coagulados</Portuguese>
+                <Russian>Обмотать коагулированные раны</Russian>
+                <Ukrainian>Обмотати коагульовані рани</Ukrainian>
+                <Korean>응고된 상처에 탄력 붕대 감기</Korean>
+                <Spanish>Envolver heridas coaguladas</Spanish>
+                <Turkish>Pıhtılaşmış Yaraları Sar</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog">
+                <English>%1 has wrapped %2</English>
+                <Polish>%1 zawinął %2</Polish>
+                <German>%1 hat %2 mit Fixierbinde umwickelt</German>
+                <French>%1 a enveloppé %2 avec un bandage de fixation</French>
+                <Portuguese>%1 enfaixou %2</Portuguese>
+                <Russian>%1 обмотал(а) %2</Russian>
+                <Ukrainian>%1 обмотав(ла) %2</Ukrainian>
+                <Korean>%1이 %2을(를) 탄력 붕대로 감음</Korean>
+                <Spanish>%1 ha vendado a %2</Spanish>
+                <Turkish>%1, %2 sardı</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Bandages">
+                <English>bandages</English>
+                <Polish>Bandaże</Polish>
+                <German>Bandagen</German>
+                <French>bandages</French>
+                <Portuguese>bandagens</Portuguese>
+                <Russian>повязка</Russian>
+                <Ukrainian>пов’язка</Ukrainian>
+                <Korean>붕대</Korean>
+                <Spanish>vendajes</Spanish>
+                <Turkish>bandajları</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_WrapBodyPart_ActionLog_Clotted">
+                <English>clotted wounds</English>
+                <Polish>skrzepnięte rany</Polish>
+                <German>Geronnene Wunde</German>
+                <French>plaies coagulées</French>
+                <Portuguese>ferimentos coagulados</Portuguese>
+                <Russian>коагулированные раны</Russian>
+                <Ukrainian>коагульовані рани</Ukrainian>
+                <Korean>응고된 상처</Korean>
+                <Spanish>heridas coaguladas</Spanish>
+                <Turkish>pıhtılaşmış yaraları</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_WrapBruises_ActionLog">
+                <English>%1 has wrapped bruises</English>
+                <Polish>%1 zawinął siniaki</Polish>
+                <German>%1 hat Prellungen mit Fixierbinde bandagiert</German>
+                <French>%1 a enveloppé des contusions</French>
+                <Portuguese>%1 enfaixou hematomas</Portuguese>
+                <Russian>%1 обмотал(а) ушибы</Russian>
+                <Ukrainian>%1 обмотав(ла) забої</Ukrainian>
+                <Korean>%1이 타박상을 탄성 붕대로 감음</Korean>
+                <Spanish>%1 ha envuelto los moretones</Spanish>
+                <Turkish>%1 morlukları sardı</Turkish>
+            </Key>
+        </Container>
+        <Container name="// Stitch Actions //">
+            <Key ID="STR_ACM_Damage_SurgicalKit_Suture">
+                <English>Use Surgical Kit With Sutures</English>
+                <Polish>Użyj zestawu do szycia ze szwami</Polish>
+                <German>Nähset mit Nähten verwenden</German>
+                <French>Utiliser un kit chirurgical avec des sutures</French>
+                <Portuguese>Usar kit cirúrgico com fio de sutura</Portuguese>
+                <Russian>Использовать хирургический набор с нитью</Russian>
+                <Ukrainian>Використати хірургічний набір із ниткою</Ukrainian>
+                <Korean>봉합사 + 수술 도구 사용</Korean>
+                <Spanish>Usar kit quirúrgico con suturas</Spanish>
+                <Turkish>Sütürlü Cerrahi Kiti Kullan</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SurgicalKit_Suture_Progress">
+                <English>Stitching With Sutures...</English>
+                <Polish>Szycie ze szwami...</Polish>
+                <German>Nähe wunden mit Nadel und Faden...</German>
+                <French>Suture avec du fil de suture...</French>
+                <Portuguese>Suturando com fio de sutura...</Portuguese>
+                <Russian>Наложение швов...</Russian>
+                <Ukrainian>Накладання швів...</Ukrainian>
+                <Korean>봉합사로 봉합 중...</Korean>
+                <Spanish>Suturando con puntos...</Spanish>
+                <Turkish>Sütür ile Dikiliyor...</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped">
+                <English>Use Surgical Kit (Wrapped)</English>
+                <Polish>Użyj zestawu do szycia (zawinięte)</Polish>
+                <German>Nähset verwenden (Eingewickelte Wunden)</German>
+                <French>Utiliser un kit de couture (Blessures enveloppées)</French>
+                <Portuguese>Usar kit cirúrgico (enfaixado)</Portuguese>
+                <Russian>Использовать хирургический набор (обмотка)</Russian>
+                <Ukrainian>Використати хірургічний набір (обмотка)</Ukrainian>
+                <Korean>수술 키트 사용 (감긴 상처)</Korean>
+                <Spanish>Usar kit quirúrgico con suturas (herida vendada)</Spanish>
+                <Turkish>Cerrahi Kiti Kullan (Sarılı)</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SurgicalKit_Wrapped_Suture">
+                <English>Use Surgical Kit With Sutures (Wrapped)</English>
+                <Polish>Użyj zestawu do szycia ze szwami (zawinięte)</Polish>
+                <German>Nähset mit Nähten verwenden (Eingewickelte Wunden)</German>
+                <French>Utiliser un kit de couture avec des points de suture (Blessures enveloppées)</French>
+                <Portuguese>Usar kit cirúrgico com fio de sutura</Portuguese>
+                <Russian>Использовать хирургический набор с нитью (обмотка)</Russian>
+                <Ukrainian>Використати хірургічний набір із ниткою (обмотка)</Ukrainian>
+                <Korean>봉합사 + 수술 도구 사용 (감긴 상처)</Korean>
+                <Spanish>Usar kit quirúrgico (herida coagulada)</Spanish>
+                <Turkish>Sütürlü Cerrahi Kiti Kullan (Sarılı)</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SurgicalKit_Clotted">
+                <English>Use Surgical Kit (Clotted)</English>
+                <Polish>Użyj zestawu do szycia (skrzepy)</Polish>
+                <German>Nähset verwenden (Geronnene Wunden)</German>
+                <French>Utiliser un kit de suture (Blessures coagulées)</French>
+                <Portuguese>Usar kit cirúrgico (coagulado)</Portuguese>
+                <Russian>Использовать хирургический набор (коагулированные)</Russian>
+                <Ukrainian>Використати хірургічний набір (коагульовані)</Ukrainian>
+                <Korean>수술 키트 사용 (응고된 상처)</Korean>
+                <Spanish>Usar kit quirúrgico (herida coagulada)</Spanish>
+                <Turkish>Cerrahi Kiti Kullan (Pıhtılaşmış)</Turkish>
+            </Key>
+            <Key ID="STR_ACM_Damage_SurgicalKit_Clotted_Suture">
+                <English>Use Surgical Kit With Sutures (Clotted)</English>
+                <Polish>Użyj zestawu do szycia ze szwami (skrzepy)</Polish>
+                <German>Nähset mit Nähten verwenden (Geronnene Wunden)</German>
+                <French>Utiliser un kit de suture avec des points de suture (plaies coagulées)</French>
+                <Portuguese>Usar kit cirúrgico com fios de sutura (coagulado)</Portuguese>
+                <Russian>Использовать хирургический набор с нитью (коагулированные)</Russian>
+                <Ukrainian>Використати хірургічний набір із ниткою (коагульовані)</Ukrainian>
+                <Korean>봉합사 + 수술 도구 사용 (응고된 상처)</Korean>
+                <Spanish>Usar kit quirúrgico con suturas (herida coagulada)</Spanish>
+                <Turkish>Sütürlü Cerrahi Kiti Kullan (Pıhtılaşmış)</Turkish>
+            </Key>
+        </Container>
     </Package>
 </Project>

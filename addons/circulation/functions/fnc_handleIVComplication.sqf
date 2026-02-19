@@ -68,7 +68,7 @@ private _timer = 15 + (random 15);
             [_idPFH] call CBA_fnc_removePerFrameHandler;
         };
 
-        private _bodyDamage = _patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]];
+        private _bodyDamage = GET_BODYPART_DAMAGE(_patient);
 
         {
             private _partIndex = _forEachIndex;

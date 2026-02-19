@@ -41,12 +41,12 @@ switch (_type) do {
     case ACM_IO_FAST1_M: {
         _hintType = LLSTRING(IO_FAST1);
         _classname = "ACM_IO_FAST";
-        _givePain = 0.8;
+        _givePain = 0.31;
     };
     case ACM_IO_EZ_M: {
         _hintType = LLSTRING(IO_EZ);
         _classname = "ACM_IO_EZ";
-        _givePain = 0.8;
+        _givePain = 0.31;
     };
     default {};
 };
@@ -54,9 +54,16 @@ switch (_type) do {
 if (_iv) then {
     _accessSiteHint = [LLSTRING(IV_Upper), LLSTRING(IV_Middle), LLSTRING(IV_Lower)] select _accessSite;
 
-    if (_state && [_patient, _bodyPart, 0, _accessSite] call FUNC(hasIV)) exitWith {
-        _exit = true;
-        [(format [LLSTRING(IV_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString)), _accessSiteHint]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    if (_state) then {
+        if ([_patient, _bodyPart, 0, _accessSite] call FUNC(hasIV)) exitWith {
+            _exit = true;
+            [(format [LLSTRING(IV_Already), toLower ([_bodyPart] call EFUNC(core,getBodyPartString)), _accessSiteHint]), 2, _medic] call ACEFUNC(common,displayTextStructured);
+        };
+
+        if (_accessSite == 0 && _bodyPart in ["leftarm","rightarm"] && {([_patient, _bodyPart] call FUNC(hasPressureCuff) || ([_patient, _bodyPart, 3] call FUNC(hasAED)))}) exitWith {
+            _exit = true;
+            [LLSTRING(IV_Blocked_PressureCuff), 2, _medic] call ACEFUNC(common,displayTextStructured);
+        };
     };
 } else {
     if (_state && [_patient, _bodyPart] call FUNC(hasIO)) exitWith {
@@ -67,9 +74,9 @@ if (_iv) then {
 
 private _severeDamage = false;
 
-if (_iv && _state) then {
-    private _partIndex = GET_BODYPART_INDEX(_bodyPart);
+private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
+if (_iv && _state && !_exit) then {
     switch (true) do {
         case !(alive _patient): {
             _successChance = linearConversion [0, 90, (CBA_missionTime - (_patient getVariable [QEGVAR(core,TimeOfDeath), 0])), 0.75, 0, true];
@@ -96,7 +103,7 @@ if (_iv && _state) then {
     };
 
     if (_successChance > 0.1) then {
-        private _bodyPartDamage = (_patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]]) select _partIndex;
+        private _bodyPartDamage = GET_BODYPART_DAMAGE(_patient) select _partIndex;
         
         private _modifier = 0;
 
@@ -130,7 +137,7 @@ if (_iv && _state) then {
     };
 };
 
-if !(random 1 < _successChance) then {
+if (!_exit && !(random 1 < _successChance)) then {
     _exit = true;
     
     if (_severeDamage) then {
@@ -154,7 +161,14 @@ if (_state) then {
             };
         };
     } else {
-        [_patient, _givePain] call ACEFUNC(medical,adjustPainLevel);
+        private _suppressPain = linearConversion [0, 0.4, ([_patient, "Lidocaine", false, _partIndex] call ACEFUNC(medical_status,getMedicationCount)), 0, 0.3, true]; // 40mg IM
+        private _pain = 0 max (_givePain - _suppressPain);
+
+        [_patient, _pain] call ACEFUNC(medical,adjustPainLevel);
+
+        if (_pain > 0.15) then {
+            [_patient, "hit"] call ACEFUNC(medical_feedback,playInjuredSound);
+        };
     };
 } else {
     _hintState = LELSTRING(core,Common_Removed);

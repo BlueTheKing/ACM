@@ -6,13 +6,12 @@
  * Arguments:
  * 0: Medic <OBJECT>
  * 1: Patient <OBJECT>
- * 2: Body Part Index <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [player, cursorTarget, 2] call ACM_circulation_fnc_handleAED;
+ * [player, cursorTarget] call ACM_circulation_fnc_handleAED;
  *
  * Public: No
  */
@@ -86,6 +85,8 @@ private _PFH = [{
         _patient setVariable [QGVAR(AED_Provider), objNull, true];
 
         _patient setVariable [QGVAR(AED_MuteAlarm), false, true];
+
+        _patient setVariable [QGVAR(AED_Analyze_Busy), false, true];
 
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
@@ -202,7 +203,7 @@ if (_inVehicle) then {
     [{
         params ["_patient", "_medic"];
 
-        !((objectParent _medic) isEqualTo (objectParent _patient));
+        (objectParent _medic) isNotEqualTo (objectParent _patient);
     }, {
         params ["_patient", "_medic"];
 
@@ -219,7 +220,7 @@ if (_inVehicle) then {
     [{
         params ["_patient", "_medic"];
     
-        (!((objectParent _medic) isEqualTo (objectParent _patient)) || ((_patient distance _medic) > GVAR(AEDDistanceLimit)));
+        (((objectParent _medic) isNotEqualTo (objectParent _patient)) || ((_patient distance _medic) > GVAR(AEDDistanceLimit)));
     }, {
         params ["_patient", "_medic"];
         

@@ -62,7 +62,7 @@ ACEGVAR(interact_menu,openedMenuType) = _menuType;
 ACEGVAR(interact_menu,lastTimeSearchedActions) = -1000;
 ACEGVAR(interact_menu,ParsedTextCached) = [];
 
-ACEGVAR(interact_menu,useCursorMenu) = (vehicle ACE_player != ACE_player) ||
+ACEGVAR(interact_menu,useCursorMenu) = (!isNull objectParent ACE_player) ||
                       (!(isNull (ACE_controlledUAV select 0))) ||
                       visibleMap ||
                       (!isNull curatorCamera) ||
@@ -117,7 +117,7 @@ ACEGVAR(interact_menu,selfMenuOffset) = (AGLToASL (positionCameraToWorld [0, 0, 
 if (ACEGVAR(interact_menu,openedMenuType) == 0) then {
     if (isNull curatorCamera) then {
         if (isNull (ACE_controlledUAV select 0)) then {
-            if (vehicle ACE_player != ACE_player) then {
+            if (!isNull objectParent ACE_player) then {
                 ACEGVAR(interact_menu,menuDepthPath) = [["ACE_SelfActions", (vehicle ACE_player)]];
                 ACEGVAR(interact_menu,expanded) = true;
                 ACEGVAR(interact_menu,expandedTime) = diag_tickTime;

@@ -10,6 +10,17 @@ class CfgFunctions {
             };
         };
     };
+    class overwrite_medical {
+        tag = "ace_medical";
+        class ace_medical {
+            class deserializeState { // Serialize/Deserialize
+                file = QPATHTOF(overrides\fnc_deserializeState.sqf); //ace/addons/medical/functions/fnc_deserializeState.sqf
+            };
+            class serializeState { // Serialize/Deserialize
+                file = QPATHTOF(overrides\fnc_serializeState.sqf); //ace/addons/medical/functions/fnc_serializeState.sqf
+            };
+        };
+    };
     class overwrite_medical_vitals {
         tag = "ace_medical_vitals";
         class ace_medical_vitals {
@@ -89,6 +100,9 @@ class CfgFunctions {
             class handleBandageOpening { // Bandage reopening chance with platelets
                 file = QPATHTOF(overrides\fnc_handleBandageOpening.sqf); //ace/addons/medical_treatment/functions/fnc_handleBandageOpening.sqf
             };
+            class placeInBodyBag { // Return medical items on body bag use
+                file = QPATHTOF(overrides\fnc_placeInBodyBag.sqf); //ace/addons/medical_treatment/functions/fnc_placeInBodyBag.sqf
+            };
         };
     };
     class overwrite_medical_damage {
@@ -108,11 +122,17 @@ class CfgFunctions {
             class effectHeartBeat { // Lower high HR threshold
                 file = QPATHTOF(overrides\fnc_effectHeartBeat.sqf); //ace/addons/medical_feedback/functions/fnc_effectHeartBeat.sqf
             };
+            class effectPain { // Pain effect intensity
+                file = QPATHTOF(overrides\fnc_effectPain.sqf); //ace/addons/medical_feedback/functions/fnc_effectPain.sqf
+            };
             class initEffects { // Oxygen Effect
                 file = QPATHTOF(overrides\fnc_initEffects.sqf); //ace/addons/medical_feedback/functions/fnc_initEffects.sqf
             };
             class effectUnconscious { // Oxygen Effect
                 file = QPATHTOF(overrides\fnc_effectUnconscious.sqf); //ace/addons/medical_feedback/functions/fnc_effectUnconscious.sqf
+            };
+            class playInjuredSound { // Prevent overlapping sounds
+                file = QPATHTOF(overrides\fnc_playInjuredSound.sqf); //ace/addons/medical_feedback/functions/fnc_playInjuredSound.sqf
             };
         };
     };
@@ -121,9 +141,6 @@ class CfgFunctions {
         class ace_medical_statemachine {
             class enteredStateCardiacArrest { // Disable cardiac arrest timer
                 file = QPATHTOF(overrides\fnc_enteredStateCardiacArrest.sqf); //ace/addons/medical_statemachine/functions/fnc_enteredStateCardiacArrest.sqf
-            };
-            class conditionCardiacArrestTimer { // Disable cardiac arrest timer
-                file = QPATHTOF(overrides\fnc_conditionCardiacArrestTimer.sqf); //ace/addons/medical_statemachine/functions/fnc_conditionCardiacArrestTimer.sqf
             };
             class handleStateUnconscious { // KnockOut state
                 file = QPATHTOF(overrides\fnc_handleStateUnconscious.sqf); //ace/addons/medical_statemachine/functions/fnc_handleStateUnconscious.sqf
@@ -142,16 +159,28 @@ class CfgFunctions {
             class setUnconsciousAnim { // Force lying animation when waking up
                 file = QPATHTOF(overrides\fnc_setUnconsciousAnim.sqf); //ace/addons/medical_engine/functions/fnc_setUnconsciousAnim.sqf
             };
-            class updateDamageEffects { // Tourniquet effects for legs
+            class applyAnimAfterRagdoll { // Lying state
+                file = QPATHTOF(overrides\fnc_applyAnimAfterRagdoll.sqf); //ace/addons/medical_engine/functions/fnc_applyAnimAfterRagdoll.sqf
+            };
+            class updateDamageEffects { // Tourniquet effects for legs, splints/fractures
                 file = QPATHTOF(overrides\fnc_updateDamageEffects.sqf); //ace/addons/medical_engine/functions/fnc_updateDamageEffects.sqf
+            };
+            class handleDamage { // CBRN chemical burns
+                file = QPATHTOF(overrides\fnc_handleDamage.sqf); //ace/addons/medical_engine/functions/fnc_handleDamage.sqf
             };
         };
     };
     class overwrite_medical_ai {
         tag = "ace_medical_ai";
         class ace_medical_ai {
-            class healingLogic { // Use new items
+            class healingLogic { // Use new items, setting
                 file = QPATHTOF(overrides\fnc_healingLogic.sqf); //ace/addons/medical_ai/functions/fnc_healingLogic.sqf
+            };
+            class healSelf { // Prevent treatment from lying state
+                file = QPATHTOF(overrides\fnc_healSelf.sqf); //ace/addons/medical_ai/functions/fnc_healSelf.sqf
+            };
+            class healUnit { // Prevent treatment from lying state
+                file = QPATHTOF(overrides\fnc_healUnit.sqf); //ace/addons/medical_ai/functions/fnc_healUnit.sqf
             };
             class itemCheck { // Use own item list
                 file = QPATHTOF(overrides\fnc_itemCheck.sqf); //ace/addons/medical_ai/functions/fnc_itemCheck.sqf
@@ -200,6 +229,14 @@ class CfgFunctions {
             };
             class canCarry { // Lying state allow carry
                 file = QPATHTOF(overrides\fnc_canCarry.sqf); //ace/addons/dragging/functions/fnc_canCarry.sqf
+            };
+        };
+    };
+    class overwrite_ace_zeus {
+        tag = "ace_zeus";
+        class ace_zeus {
+            class moduleUnconscious { // Fix AI unconsciousness being changed
+                file = QPATHTOF(overrides\fnc_moduleUnconscious.sqf); //ace/addons/zeus/functions/fnc_moduleUnconscious.sqf
             };
         };
     };

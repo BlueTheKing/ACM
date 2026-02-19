@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Uncardiacarrest patient
+ * Module to uncardiacarrest (TM) patient.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>
@@ -25,6 +25,7 @@ private _unit = attachedTo _logic;
 scopeName "Main";
 private _fnc_errorAndClose = {
     params ["_msg"];
+
     deleteVehicle _logic;
     [_msg] call ACEFUNC(zeus,showMessage);
     breakOut "Main";

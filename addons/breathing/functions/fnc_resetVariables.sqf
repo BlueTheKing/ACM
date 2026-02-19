@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Reset breathing variables to default values (LOCAL)
+ * Reset breathing variables to default values. (LOCAL)
  *
  * Arguments:
  * 0: Patient <OBJECT>
@@ -30,6 +30,7 @@ _patient setVariable [QGVAR(Hemothorax_Fluid), 0, true];
 _patient setVariable [QGVAR(ChestSeal_State), false, true];
 
 _patient setVariable [QGVAR(Thoracostomy_State), nil, true];
+_patient setVariable [QGVAR(Thoracostomy_UsedKit), false, true];
 
 _patient setVariable [QGVAR(PulseOximeter_Display), [[0,0],[0,0]], true]; 
 _patient setVariable [QGVAR(PulseOximeter_Placement), [false,false], true];
@@ -37,8 +38,6 @@ _patient setVariable [QGVAR(PulseOximeter_PFH), -1];
 _patient setVariable [QGVAR(PulseOximeter_LastSync), [-1,-1]];
 
 _patient setVariable [QGVAR(Hardcore_Pneumothorax), false, true];
-
-[_patient, true] call FUNC(updateBreathingState);
 
 _patient setVariable [QGVAR(BVM_provider), objNull, true];
 _patient setVariable [QGVAR(BVM_Medic), objNull, true];
@@ -50,3 +49,5 @@ _patient setVariable [QGVAR(BVM_lastBreath), nil, true];
 _patient setVariable [QGVAR(BVM_lastBreathOxygen), nil, true];
 
 _patient setVariable [QGVAR(RespirationRate), (ACM_TARGETVITALS_RR(_patient)), true];
+
+[_patient, true] call FUNC(updateLungState);

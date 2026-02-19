@@ -21,6 +21,11 @@ private _lastTimeUpdated = _unit getVariable [QACEGVAR(medical_vitals,lastTimeUp
 private _deltaT = (CBA_missionTime - _lastTimeUpdated) min 10;
 if (_deltaT < 1) exitWith { false }; // state machines could be calling this very rapidly depending on number of local units
 
+if (_deltaT > 7 && (GVAR(NextWarningTime) < CBA_missionTime)) then {
+    GVAR(NextWarningTime) = CBA_missionTime + 600;
+    WARNING_1("VITALS TIME BETWEEN SYNC IS LONG (%1s)",_deltaT);
+};
+
 BEGIN_COUNTER(Vitals);
 
 _unit setVariable [QACEGVAR(medical_vitals,lastTimeUpdated), CBA_missionTime];
@@ -71,14 +76,16 @@ if (_tourniquetPain > 0) then {
 
 // Get Medication Adjustments:
 private _hrTargetAdjustment = 0;
-private _painSupressAdjustment = 0;
+private _painSuppressAdjustment = 0;
 private _peripheralResistanceAdjustment = 0;
 private _respirationRateAdjustment = 0;
 private _coSensitivityAdjustment = 0;
 private _breathingEffectivenessAdjustment = 0;
 private _adjustments = _unit getVariable [VAR_MEDICATIONS,[]];
 
-private _painSuppressAdjustmentMap = +GVAR(MedicationTypes);
+private _HRAdjustmentMap = +GVAR(MedicationTypes_MaxHRAdjust);
+private _RRAdjustmentMap = +GVAR(MedicationTypes_MaxRRAdjust);
+private _painSuppressAdjustmentMap = +GVAR(MedicationTypes_MaxPainAdjust);
 
 if (_adjustments isNotEqualTo []) then {
     private _deleted = false;
@@ -92,24 +99,48 @@ if (_adjustments isNotEqualTo []) then {
             private _effectRatio = [_administrationType, _timeInSystem, _timeTillMaxEffect, _maxTimeInSystem, _maxEffectTime] call EFUNC(circulation,getMedicationEffect);
             if (_hrAdjust != 0 && (GET_HEART_RATE(_unit) > 0)) then {
                 private _HREffect = [(GET_HEART_RATE(_unit) / (ACM_TARGETVITALS_HR(_unit) - 20)), ((ACM_TARGETVITALS_HR(_unit) + 20) / GET_HEART_RATE(_unit))] select (_hrAdjust > 0);
-                _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio * _HREffect;
+
+                if (_medicationType in _HRAdjustmentMap) then {
+                    (_HRAdjustmentMap get _medicationType) params ["_medHRIncrease", "_medMaxHRIncrease"];
+
+                    private _newHRIncrease = _medHRIncrease + _hrAdjust * _effectRatio * _HREffect;
+                    private _positive = _medMaxHRIncrease > 0;
+
+                    if ([(_medHRIncrease > (_newHRIncrease max _medMaxHRIncrease)), (_medHRIncrease < (_newHRIncrease min _medMaxHRIncrease))] select _positive) then {
+                        private _cappedHRIncrease = [(_newHRIncrease max _medMaxHRIncrease), (_newHRIncrease min _medMaxHRIncrease)] select _positive;
+                        _HRAdjustmentMap set [_medicationType, [_cappedHRIncrease, _medMaxHRIncrease]];
+                    };
+                } else {
+                    _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio * _HREffect;
+                };
             };
             if (_flowAdjust != 0) then { _peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _flowAdjust * _effectRatio; };
-            if (_rrAdjust != 0) then { _respirationRateAdjustment = _respirationRateAdjustment + _rrAdjust * _effectRatio; };
+            if (_rrAdjust != 0) then {
+                if (_medicationType in _RRAdjustmentMap) then {
+                    (_RRAdjustmentMap get _medicationType) params ["_medRRAdjust", "_medMaxRRAdjust"];
+
+                    private _newRRAdjust = _medRRAdjust + _rrAdjust * _effectRatio;
+                    private _positive = _medMaxRRAdjust > 0;
+
+                    if ([(_medRRAdjust > (_newRRAdjust max _medMaxRRAdjust)), (_medRRAdjust < (_newRRAdjust min _medMaxRRAdjust))] select _positive) then {
+                        private _cappedRRAdjust = [(_newRRAdjust max _medMaxRRAdjust), (_newRRAdjust min _medMaxRRAdjust)] select _positive;
+                        _RRAdjustmentMap set [_medicationType, [_cappedRRAdjust, _medMaxRRAdjust]];
+                    };
+                } else {
+                    _respirationRateAdjustment = _respirationRateAdjustment + _rrAdjust * _effectRatio; 
+                };
+            };
             if (_coSensitivityAdjust != 0) then { _coSensitivityAdjustment = _coSensitivityAdjustment + _coSensitivityAdjust * _effectRatio; };
             if (_breathingEffectivenessAdjust != 0) then { _breathingEffectivenessAdjustment = _breathingEffectivenessAdjustment + _breathingEffectivenessAdjust * _effectRatio; };
 
             if (_painAdjust != 0) then {
-                if (_medicationType == "Default") then {
-                    _medicationType = _medication;
-                };
-                (_painSuppressAdjustmentMap get _medicationType) params ["_medClassnames", "_medPainReduce", "_medMaxPainAdjust"];
-                
-                if (_medication in _medClassnames) then {
+                if (_medicationType in _painSuppressAdjustmentMap) then {
+                    (_painSuppressAdjustmentMap get _medicationType) params ["_medPainReduce", "_medMaxPainAdjust"];
+
                     private _newPainAdjust = _medPainReduce + _painAdjust * _effectRatio;
 
                     if (_medPainReduce < (_newPainAdjust min _medMaxPainAdjust)) then {
-                        _painSuppressAdjustmentMap set [_medicationType, [_medClassnames, (_newPainAdjust min _medMaxPainAdjust), _medMaxPainAdjust]];
+                        _painSuppressAdjustmentMap set [_medicationType, [(_newPainAdjust min _medMaxPainAdjust), _medMaxPainAdjust]];
                     };
                 };
             };
@@ -117,10 +148,22 @@ if (_adjustments isNotEqualTo []) then {
     } forEachReversed _adjustments;
 
     {
-        _y params ["", "_medPainAdjust", "_medMaxPainAdjust"];
+        _x params ["_medHRIncrease"];
 
-        _painSupressAdjustment = _painSupressAdjustment + (_medPainAdjust min _medMaxPainAdjust);
-    } forEach _painSuppressAdjustmentMap;
+        _hrTargetAdjustment = _hrTargetAdjustment + _medHRIncrease;
+    } forEach ((toArray _HRAdjustmentMap) select 1);
+
+    {
+        _x params ["_medRRAdjust"];
+
+        _respirationRateAdjustment = _respirationRateAdjustment + _medRRAdjust;
+    } forEach ((toArray _RRAdjustmentMap) select 1);
+
+    {
+        _x params ["_medPainAdjust"];
+
+        _painSuppressAdjustment = _painSuppressAdjustment + _medPainAdjust;
+    } forEach ((toArray _painSuppressAdjustmentMap) select 1);
 
     if (_deleted) then {
         _unit setVariable [VAR_MEDICATIONS, _adjustments, true];
@@ -156,11 +199,14 @@ if ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) > 0.05) 
     _hrTargetAdjustment = _hrTargetAdjustment - ((_unit getVariable [QEGVAR(circulation,TransfusedBlood_Volume), 0]) / 0.05);
 };
 
-private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
-[_unit, _painSupressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
+if (EGVAR(CBRN,enable)) then {
+    _hrTargetAdjustment = _hrTargetAdjustment - (linearConversion [15, 100, (_unit getVariable [QGVAR_BUILDUP(Chemical_Sarin), 0]), 0, 35, true]) - (linearConversion [15, 100, (_unit getVariable [QGVAR_BUILDUP(Chemical_Lewisite), 0]), 0, 35, true]);
+};
 
-private _vasoconstriction = GET_VASOCONSTRICTION(_unit);
-private _vasoconstrictionChange = 0;
+private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
+[_unit, _painSuppressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
+
+private _vasoconstriction = 0;
 private _targetVasoconstriction = 0;
 
 if (_bloodVolume < 5.9) then {
@@ -179,19 +225,19 @@ if (_bloodVolume > 4) then {
         };
     };
 
-    _targetVasoconstriction = _targetVasoconstriction + _MAPAdjustment min 50;
+    _targetVasoconstriction = (_targetVasoconstriction + _MAPAdjustment) min 50;
 
     if (IS_BLEEDING(_unit) && _targetVasoconstriction < 0) then {
         _targetVasoconstriction = _targetVasoconstriction * 0.75;
     };
 };
 
+private _vasoconstrictionChange = (_targetVasoconstriction - _vasoconstriction) / 4;
+
 if (_targetVasoconstriction > _vasoconstriction) then {
-    _vasoconstrictionChange = (((abs (_targetVasoconstriction + (abs _vasoconstriction))) / 10) max 0.05);
-    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) min _targetVasoconstriction;
+    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * (_deltaT min 1.2)) min _targetVasoconstriction;
 } else {
-    _vasoconstrictionChange = (((abs (_vasoconstriction - (abs _targetVasoconstriction))) / 10) min -0.05);
-    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * _deltaT) max _targetVasoconstriction;
+    _vasoconstriction = (_vasoconstriction + _vasoconstrictionChange * (_deltaT min 1.2)) max _targetVasoconstriction;
 };
 
 _unit setVariable [QEGVAR(circulation,Vasoconstriction_State), _vasoconstriction, true];
@@ -211,7 +257,7 @@ private _activeGracePeriod = IN_CRITICAL_STATE(_unit);
 
 // Statements are ordered by most lethal first.
 switch (true) do {
-    case (_bloodVolume < BLOOD_VOLUME_FATAL): {
+    case (ACEGVAR(medical_statemachine,cardiacArrestBleedoutEnabled) && _bloodVolume < BLOOD_VOLUME_FATAL): {
         TRACE_3("BloodVolume Fatal",_unit,BLOOD_VOLUME_FATAL,_bloodVolume);
         [QACEGVAR(medical,Bleedout), _unit] call CBA_fnc_localEvent;
     };
@@ -258,13 +304,13 @@ switch (true) do {
         };
         [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
     };
-    case (GET_MAP(_BPSystolic,_BPDiastolic) < 43): {
+    case (GET_MAP(_BPSystolic,_BPDiastolic) < 55): {
+        [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
+    };
+    case (GET_MAP(_BPSystolic,_BPDiastolic) > 200): {
         [QGVAR(handleFatalVitals), _unit] call CBA_fnc_localEvent;
     };
     case (IS_UNCONSCIOUS(_unit)): {}; // Already unconscious
-    case (GET_MAP(_BPSystolic,_BPDiastolic) > 200): {
-        [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
-    };
     case (_woundBloodLoss > BLOOD_LOSS_KNOCK_OUT_THRESHOLD): {
         [QACEGVAR(medical,CriticalVitals), _unit] call CBA_fnc_localEvent;
     };

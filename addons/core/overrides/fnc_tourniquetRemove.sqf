@@ -40,10 +40,9 @@ private _nearPlayers = (_patient nearEntities ["CAManBase", 6]) select {_x call 
 TRACE_1("clearConditionCaches: tourniquetRemove",_nearPlayers);
 [QACEGVAR(interact_menu,clearConditionCaches), [], _nearPlayers] call CBA_fnc_targetEvent;
 
-// Add tourniquet item to medic or patient
+// Return tourniquet to removing unit
 if (_medic call ACEFUNC(common,isPlayer)) then {
-    private _receiver = [_patient, _medic, _medic] select ACEGVAR(medical_treatment,allowSharedEquipment);
-    [_receiver, "ACE_tourniquet"] call ACEFUNC(common,addToInventory);
+    [_medic, "ACE_tourniquet"] call ACEFUNC(common,addToInventory);
 } else {
     // If the medic is AI, only return tourniquet if enabled
     if (missionNamespace getVariable [QACEGVAR(medical_ai,requireItems), 0] > 0) then {

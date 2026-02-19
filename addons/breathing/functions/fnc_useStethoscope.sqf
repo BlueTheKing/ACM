@@ -24,6 +24,8 @@ params ["_medic", "_patient"];
 [[_medic, _patient, _bodyPart], { // On Start
     params ["_medic", "_patient", "_bodyPart"];
 
+    [_patient] call FUNC(updateLungState); // TODO to be moved probably
+
     GVAR(Stethoscope_BellMoving) = false;
     GVAR(Stethoscope_NextBreath) = -1;
     GVAR(Stethoscope_NextBeat) = -1;
@@ -42,7 +44,7 @@ params ["_medic", "_patient"];
     private _ctrlText = _display displayCtrl IDC_STETHOSCOPE_TEXT; 
     _ctrlText ctrlSetText format ["%1 (%2)", [_patient, false, true] call ACEFUNC(common,getName), ACELLSTRING(medical_gui,Torso)];
 }, { // On cancel
-    params ["_medic", "_patient", "_bodyPart", "", "_notInVehicle"];
+    params ["_medic", "_patient", "_bodyPart"];
 
     stopSound GVAR(Stethoscope_BreathSoundID);
     stopSound GVAR(Stethoscope_BeatSoundID);
@@ -51,13 +53,9 @@ params ["_medic", "_patient"];
         closeDialog 0;
     };
 
-    if (_notInVehicle) then {
-        [_medic, "AmovPknlMstpSnonWnonDnon", 2] call ACEFUNC(common,doAnimation);
-    };
-
     [LSTRING(Stethoscope_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
 
-    call ACEFUNC(hearing,updateHearingProtection);
+    [-1] call ACEFUNC(hearing,updateHearingProtection);
 }, { // PerFrame
     params ["_medic", "_patient", "_bodyPart"];
 
@@ -219,4 +217,4 @@ params ["_medic", "_patient"];
             };
         };
     };
-}, IDC_STETHOSCOPE] call EFUNC(core,beginContinuousAction);
+}, false, IDC_STETHOSCOPE] call EFUNC(core,beginContinuousAction);

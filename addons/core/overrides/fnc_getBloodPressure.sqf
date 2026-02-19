@@ -45,7 +45,7 @@ if (_bloodVolume < 4.8) then {
 };
 
 private _bleedEffect = 1 - (0.2 * GET_WOUND_BLEEDING(_unit)); // Lower blood pressure if person is actively bleeding
-private _hemothoraxBleeding = 0.4 * ((_unit getVariable [QEGVAR(breathing,Hemothorax_State), 0]) / 4);
+private _hemothoraxBleeding = 0.5 * ((_unit getVariable [QEGVAR(breathing,Hemothorax_State), 0]) / 10);
 private _internalBleedingEffect = 1 min (1 - (0.8 * (GET_INTERNAL_BLEEDING(_unit) + _hemothoraxBleeding))) max 0.5; // Lower blood pressure if person has uncontrolled internal bleeding
 
 private _tensionEffect = 0;
@@ -53,7 +53,13 @@ private _tensionEffect = 0;
 private _HTXFluid = _unit getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
 private _PTXState = _unit getVariable [QEGVAR(breathing,Pneumothorax_State), 0];
 
-private _overloadEffect = linearConversion [0, 1, (_unit getVariable [QEGVAR(circulation,Overload_Volume), 0]), 1, 1.3];
+private _overloadEffect = linearConversion [0, 1, (_unit getVariable [QEGVAR(circulation,Overload_Volume), 0]), 1, 1.5];
+
+private _poisonEffect = 1;
+
+if (EGVAR(CBRN,enable)) then {
+    _poisonEffect = linearConversion [0, 100, GET_CAPILLARY_DAMAGE(_unit), 1, 0.7];
+};
 
 private _diastolicModifier = 1;
 
@@ -69,4 +75,4 @@ if ((_unit getVariable [QEGVAR(breathing,TensionPneumothorax_State), false]) || 
     _tensionEffect = 35;
 };
 
-[(round(((_bloodPressure * MODIFIER_BP_LOW * _diastolicModifier) - _tensionEffect) * _bleedEffect * _internalBleedingEffect * _overloadEffect)) max 0, (round(((_bloodPressure * MODIFIER_BP_HIGH) - _tensionEffect) * _bleedEffect * _internalBleedingEffect * _overloadEffect)) max 0]
+[(round(((_bloodPressure * MODIFIER_BP_LOW * _diastolicModifier) - _tensionEffect) * _bleedEffect * _internalBleedingEffect * _overloadEffect * _poisonEffect)) max 0, (round(((_bloodPressure * MODIFIER_BP_HIGH) - _tensionEffect) * _bleedEffect * _internalBleedingEffect * _overloadEffect * _poisonEffect)) max 0]

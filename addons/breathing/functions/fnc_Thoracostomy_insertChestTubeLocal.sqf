@@ -22,7 +22,6 @@ params ["_medic", "_patient"];
 
 _patient setVariable [QGVAR(Pneumothorax_State), 0, true];
 _patient setVariable [QGVAR(Thoracostomy_State), 2, true];
-[_patient] call FUNC(updateBreathingState);
 
 [{
     params ["_patient"];
@@ -38,7 +37,6 @@ _patient setVariable [QGVAR(Thoracostomy_State), 2, true];
             if (alive _patient && (_patient getVariable [QGVAR(Thoracostomy_State), 0]) == 2) then {
                 _patient setVariable [QGVAR(Pneumothorax_State), 3, true];
                 _patient setVariable [QGVAR(Thoracostomy_State), 3, true];
-                [_patient] call FUNC(updateBreathingState);
                 [_patient, 0.5] call ACEFUNC(medical,adjustPainLevel);
             };
         }, [_patient], (60 + (random 60))] call CBA_fnc_waitAndExecute;

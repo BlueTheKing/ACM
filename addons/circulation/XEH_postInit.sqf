@@ -13,6 +13,9 @@
     if (([_patient, "Adenosine_IV", false] call ACEFUNC(medical_status,getMedicationCount) > 0.1)) exitWith {};
 
     _patient setVariable [QGVAR(ROSC_Time), CBA_missionTime, true];
+    if ([_patient] call FUNC(recentAEDShock)) then {
+        _patient setVariable [QGVAR(AED_LastShock), 0, true];
+    };
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleCPR), LINKFUNC(handleCPR)] call CBA_fnc_addEventHandler;
@@ -27,11 +30,15 @@
 [QGVAR(handleMed_AdenosineLocal), LINKFUNC(handleMed_AdenosineLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_AmiodaroneLocal), LINKFUNC(handleMed_AmiodaroneLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_AmmoniaInhalantLocal), LINKFUNC(handleMed_AmmoniaInhalantLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_AtropineLocal), LINKFUNC(handleMed_AtropineLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_CalciumChlorideLocal), LINKFUNC(handleMed_CalciumChlorideLocal)] call CBA_fnc_addEventHandler;
+[QGVAR(handleMed_DimercaprolLocal), LINKFUNC(handleMed_DimercaprolLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_NaloxoneLocal), LINKFUNC(handleMed_NaloxoneLocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_TXALocal), LINKFUNC(handleMed_TXALocal)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_KetamineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
 [QGVAR(handleMed_LidocaineLocal), LINKFUNC(handleAnestheticEffects)] call CBA_fnc_addEventHandler;
-[QGVAR(handleMed_CalciumChlorideLocal), LINKFUNC(handleMed_CalciumChlorideLocal)] call CBA_fnc_addEventHandler;
+
+[QGVAR(setLozengeLocal), LINKFUNC(setLozengeLocal)] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleHemolyticReaction), LINKFUNC(handleHemolyticReaction)] call CBA_fnc_addEventHandler;
 
@@ -39,7 +46,7 @@
     params ["_patient", "_bodyPart", "_classname", ["_dose", 1]];
 
     // Handle special medication effects
-    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine", "CalciumChloride_IV", "Adenosine_IV"]) then {
+    if (_classname in ["AmmoniaInhalant", "Naloxone", "TXA_IV", "Ketamine", "Ketamine_IV", "Lidocaine", "CalciumChloride_IV", "Adenosine_IV", "Atropine", "Atropine_IV", "Dimercaprol"]) then {
         private _shortClassname = (_classname splitString "_") select 0;
         [(format ["ACM_circulation_handleMed_%1Local", toLower _shortClassname]), [_patient, _bodyPart, _classname, _dose], _patient] call CBA_fnc_targetEvent;
     };
@@ -64,13 +71,19 @@ GVAR(Fluids_Array_Data) = FLUIDS_ARRAY_DATA;
 
     {
         private _entry = format ["BloodBag_%1_%2", _bloodType, _x];
-        GVAR(Fluids_Array_Data) pushback _entry;
-        GVAR(Fluids_Array) pushback format ["ACM_%1", _entry];
+        GVAR(Fluids_Array_Data) pushBack _entry;
+        GVAR(Fluids_Array) pushBack format ["ACM_%1", _entry];
     } forEach [1000,500,250];
 } forEach ["O","ON","A","AN","B","BN","AB","ABN"];
 
-GVAR(Fluids_Array) append FBTK_ARRAY; 
-GVAR(Fluids_Array_Data) append FBTK_ARRAY_DATA; 
+GVAR(Fluids_Array) append FBTK_ARRAY;
+GVAR(Fluids_Array_Data) append FBTK_ARRAY_DATA;
+
+["ACE_bloodIV", "ACM_BloodBag_ON_1000"] call ACEFUNC(common,registerItemReplacement);
+["ACE_bloodIV_500", "ACM_BloodBag_ON_500"] call ACEFUNC(common,registerItemReplacement);
+["ACE_bloodIV_250", "ACM_BloodBag_ON_250"] call ACEFUNC(common,registerItemReplacement);
+
+// Syringes
 
 ACM_SYRINGES_10 = ['ACM_Syringe_10'];
 ACM_SYRINGES_5 = ['ACM_Syringe_5'];
@@ -89,6 +102,8 @@ ACM_SYRINGES_1 = ['ACM_Syringe_1'];
 
     _targetArray pushBack (configName _x);
 } forEach ("getNumber (_x >> 'ACM_isSyringe') > 0" configClasses (configFile >> "CfgMagazines"));
+
+// Vials
 
 ACM_MEDICATION_VIALS = [];
 

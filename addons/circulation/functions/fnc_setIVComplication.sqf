@@ -60,7 +60,7 @@ if (_type == 0) then { // Try to remove
         
     } forEach [[(GET_IV_COMPLICATIONS_PAIN(_patient)),VAR_IV_COMPLICATIONS_PAIN],[(GET_IV_COMPLICATIONS_FLOW(_patient)),VAR_IV_COMPLICATIONS_FLOW],[(GET_IV_COMPLICATIONS_BLOCK(_patient)),VAR_IV_COMPLICATIONS_BLOCK]];
 } else {
-    private _damageOnBodyPart = (_patient getVariable [QACEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]]) select _partIndex;
+    private _damageOnBodyPart = GET_BODYPART_DAMAGE(_patient) select _partIndex;
 
     switch (true) do {
         case (_damageOnBodyPart > ACM_IV_COMPLICATION_LEAK_THRESHOLD): { // Leakage

@@ -20,10 +20,11 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"LeftArm","RightArm"};
         items[] = {"ACM_PressureCuff"};
         consumeItem = 1;
-        condition = QUOTE(!([ARR_3(_patient,_bodyPart,3)] call FUNC(hasAED)) && !([ARR_2(_patient,_bodyPart)] call FUNC(hasPressureCuff)));
+        condition = QUOTE(!([ARR_3(_patient,_bodyPart,3)] call FUNC(hasAED)) && !([ARR_2(_patient,_bodyPart)] call FUNC(hasPressureCuff)) && !([ARR_4(_patient,_bodyPart,0,0)] call FUNC(hasIV)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,true)] call FUNC(setPressureCuff));
         ACM_cancelRecovery = 1;
         ACM_rollToBack = 1;
+        ACM_menuIcon = "ACM_PressureCuff";
     };
     class PressureCuff_Remove: PressureCuff_Attach {
         displayName = CSTRING(PressureCuff_Remove);
@@ -48,6 +49,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 0;
         condition = QUOTE(([ARR_2(_patient,_bodyPart)] call FUNC(hasAED)));
         callbackSuccess = QUOTE([ARR_2(_medic,_patient)] call FUNC(displayAEDMonitor));
+        ACM_menuIcon = "ACM_AED";
     };
 
     class AED_ApplyPads: CheckPulse {
@@ -65,6 +67,7 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call FUNC(setAED));
         ACM_cancelRecovery = 1;
         ACM_rollToBack = 1;
+        ACM_menuIcon = "ACM_AED";
     };
     class AED_RemovePads: AED_ApplyPads {
         displayName = CSTRING(AED_RemovePads);
@@ -74,6 +77,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 1;
         condition = QUOTE([ARR_3(_patient,_bodyPart,1)] call FUNC(hasAED));
         callbackSuccess = QUOTE([ARR_5(_medic,_patient,_bodyPart,0,false)] call FUNC(setAED));
+        ACM_cancelRecovery = 0;
     };
     class AED_ConnectPulseOximeter: AED_ApplyPads {
         displayName = CSTRING(AED_ConnectPulseOximeter);
@@ -104,7 +108,7 @@ class ACEGVAR(medical_treatment,actions) {
         category = "examine";
         treatmentTime = 3;
         allowedSelections[] = {"LeftArm","RightArm"};
-        condition = QUOTE(!([ARR_3(_patient,'',3)] call FUNC(hasAED)) && !([ARR_2(_patient,_bodyPart)] call FUNC(hasPressureCuff)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)));
+        condition = QUOTE(!([ARR_3(_patient,'',3)] call FUNC(hasAED)) && !([ARR_2(_patient,_bodyPart)] call FUNC(hasPressureCuff)) && ([ARR_2(_medic,_patient)] call FUNC(canConnectAED)) && !([ARR_4(_patient,_bodyPart,0,0)] call FUNC(hasIV)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,2)] call FUNC(setAED));
         ACM_cancelRecovery = 0;
     };
@@ -179,6 +183,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QUOTE([ARR_2(_medic,_patient)] call ACEFUNC(medical_treatment,canCPR) && ((_patient getVariable [ARR_2(QQEGVAR(airway,AirwayItem_Oral),'')] == 'SGA') || !([_patient] call EFUNC(core,bvmActive))));
         ACM_rollToBack = 1;
         ACM_cancelRecovery = 1;
+        ACM_menuIcon = "CPR";
     };
 
     class BasicBandage;

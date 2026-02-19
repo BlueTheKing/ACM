@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 if (GVAR(ignoreIncompatibleAddonWarning)) then {
-    INFO("Incompatible Addon Warning Disabled");
+    WARNING("Incompatible Addon Warning Disabled");
 } else {
     ["CBA_settingsInitialized", {
         [] call FUNC(checkIncompatibleAddons);
@@ -20,7 +20,12 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
     -1 * _count;
 }] call ACEFUNC(field_rations,addStatusModifier);
 
-[QGVAR(openMedicalMenu), ACELINKFUNC(medical_gui,openMenu)] call CBA_fnc_addEventHandler;
+[QGVAR(openMedicalMenu), {
+    params ["_target"];
+
+    ACEGVAR(medical_gui,pendingReopen) = false;
+    [ACEFUNC(medical_gui,openMenu), _target] call CBA_fnc_execNextFrame;
+}] call CBA_fnc_addEventHandler;
 
 ["ace_cardiacArrest", LINKFUNC(onCardiacArrest)] call CBA_fnc_addEventHandler;
 ["ace_unconscious", LINKFUNC(onUnconscious)] call CBA_fnc_addEventHandler;
@@ -83,6 +88,27 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
     [QACEGVAR(medical_feedback,forceSay3D), [_patient, _sound, _distance], _targets] call CBA_fnc_targetEvent;
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(forceSay3D), { // medical_feedback/postInit
+    params ["_patient", "_sound", "_distance", "_pitch"];
+
+    if (ACE_player distance _patient > _distance) exitWith {};
+
+    if (isNull objectParent _patient) then {
+        // say3D waits for the previous sound to finish, so use a dummy instead
+        private _dummy = "#dynamicsound" createVehicleLocal [0, 0, 0];
+        _dummy attachTo [_patient, [0, 0, 0], "camera"];
+        _dummy say3D [_sound, _distance, 1, false];
+
+        [{
+            detach _this;
+            deleteVehicle _this;
+        }, _dummy, 5] call CBA_fnc_waitAndExecute;
+    } else {
+        // Fallback: attachTo doesn't work within vehicles
+        _patient say3D [_sound, _distance, _pitch, false];
+    };
+}] call CBA_fnc_addEventHandler;
+
 [QACEGVAR(medical,death), {
     params ["_unit"];
 
@@ -114,4 +140,31 @@ if (GVAR(ignoreIncompatibleAddonWarning)) then {
 
 ["isNotInLyingState", {!((_this select 0) getVariable [QGVAR(Lying_State), false])}] call ACEFUNC(common,addCanInteractWithCondition);
 
-call FUNC(generateMedicationTypeMap);
+if (hasInterface) then {
+    GVAR(ppLowOxygenTunnelVision_Finalized) = false;
+};
+
+GVAR(MedicationTypes_MaxPainAdjust) = ["maxPainReduce", "painReduce"] call FUNC(generateMedicationTypeMap);
+GVAR(MedicationTypes_MaxHRAdjust) = ["maxHRIncrease", "hrIncrease"] call FUNC(generateMedicationTypeMap);
+GVAR(MedicationTypes_MaxRRAdjust) = ["maxRRAdjust", "rrAdjust"] call FUNC(generateMedicationTypeMap);
+
+[QGVAR(handleSitting), LINKFUNC(handleSitting)] call CBA_fnc_addEventHandler;
+
+ACE_player addEventHandler ["AnimDone", {
+    params ["_unit", "_anim"];
+
+    if !(local _unit) exitWith {};
+    if (_anim == "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground") then {
+        [{
+            params ["_unit"];
+
+            animationState _unit == "amovpsitmstpsnonwnondnon_ground";
+        }, {
+            params ["_unit"];
+
+            [QGVAR(handleSitting), _unit] call CBA_fnc_localEvent; 
+        }, [_unit], 2] call CBA_fnc_waitUntilAndExecute;
+    };
+}];
+
+["ACE_splint", "ACM_SAMSplint"] call ACEFUNC(common,registerItemReplacement);

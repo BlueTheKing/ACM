@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Module dialog to manually inflict chest injury
+ * Module to manually inflict chest injury.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>
@@ -31,6 +31,8 @@ private _unit = effectiveCommander attachedTo _logic;
 scopeName "Main";
 private _fnc_errorAndClose = {
     params ["_msg"];
+
+    _display closeDisplay 0;
     deleteVehicle _logic;
     [_msg] call ACEFUNC(zeus,showMessage);
     breakOut "Main";
@@ -77,14 +79,17 @@ private _fnc_onConfirm = {
         };
         case 1: {
             _patient setVariable [QEGVAR(breathing,Pneumothorax_State), 4, true];
-            [_patient] call EFUNC(breathing,handlePneumothorax);
+            _patient setVariable [QEGVAR(breathing,TensionPneumothorax_State), true, true];
+            _patient setVariable [QEGVAR(breathing,TensionPneumothorax_Time), CBA_missionTime, true];
         };
         case 2: {
-            _patient setVariable [QEGVAR(breathing,Hemothorax_State), 2, true];
+            _patient setVariable [QEGVAR(breathing,Hemothorax_State), (5 + round(random 5)), true];
+            [_patient, 1] call ACEFUNC(medical,adjustPainLevel);
             [_patient] call EFUNC(breathing,handleHemothorax);
         };
         case 3: {
-            _patient setVariable [QEGVAR(breathing,Hemothorax_State), 2, true];
+            _patient setVariable [QEGVAR(breathing,Hemothorax_State), (5 + round(random 5)), true];
+            [_patient, 1] call ACEFUNC(medical,adjustPainLevel);
             _patient setVariable [QEGVAR(breathing,Hemothorax_Fluid), 1.2, true];
             [_patient] call EFUNC(breathing,handleHemothorax);
         };

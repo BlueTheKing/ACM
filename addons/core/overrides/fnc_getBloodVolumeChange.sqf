@@ -40,6 +40,9 @@ private _activeVolumes = 0;
 
 private _bloodLoss = -_deltaT * GET_BLOOD_LOSS(_unit);
 private _internalBleeding = -_deltaT * GET_INTERNAL_BLEEDRATE(_unit);
+private _capillaryBleeding = -_deltaT * GET_CAPILLARYDAMAGE_BLEEDRATE(_unit);
+
+private _inCardiacArrest = IN_CRDC_ARRST(_unit);
 
 private _TXAEffect = ([_unit, "TXA_IV", false] call ACEFUNC(medical_status,getMedicationCount));
 
@@ -52,11 +55,20 @@ if (GET_INTERNAL_BLEEDING(_unit) > 0.3 || (_plateletCount < 0.1 && _TXAEffect < 
 private _HTXState = _unit getVariable [QEGVAR(breathing,Hemothorax_State), 0];
 private _hemothoraxBleeding = 0;
 
+private _plateletBleedRatio = [(0.8 min (linearConversion [2.9, 1.8, _plateletCount, 0.8, 0.5]) max 0), 0] select _inCardiacArrest;
+private _plateletInternalBleedRatio = [(0.8 min (linearConversion [2.4, 1.6, _plateletCount, 0.8, 0.5]) max 0), 0] select _inCardiacArrest;
+
 if (_HTXState > 0) then {
     _hemothoraxBleeding = -_deltaT * GET_HEMOTHORAX_BLEEDRATE(_unit);
     private _thoraxBlood = _unit getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
-    _thoraxBlood = _thoraxBlood - _hemothoraxBleeding;
+    _thoraxBlood = _thoraxBlood - (_hemothoraxBleeding * (1 - _plateletBleedRatio));
     _unit setVariable [QEGVAR(breathing,Hemothorax_Fluid), (_thoraxBlood min 1.5), _syncValues];
+};
+
+private _incisionBleedRate = GET_SURGICAL_AIRWAY_BLEEDRATE(_unit);
+
+if (_incisionBleedRate > 0 && !(_unit getVariable [QEGVAR(airway,SurgicalAirway_IncisionStitched), false])) then {
+    _bloodLoss = _bloodLoss + (-_deltaT * _incisionBleedRate);
 };
 
 if (_bloodVolume > 0) then {
@@ -71,26 +83,31 @@ if (_salineVolume > 0) then {
     _activeVolumes = _activeVolumes + 1;
 };
 
-private _plateletBleedRatio = _plateletCount / 2.9;
-private _plateletInternalBleedRation = _plateletCount / 2.4;
-
 if (_plateletCount > 0.1) then {
-    _plateletCountChange = ((_bloodLoss * _plateletBleedRatio) + ((_internalBleeding * 0.7) * _plateletInternalBleedRation) + ((_internalBleeding * 0.7) * _plateletInternalBleedRation)) * 0.6;
-    if (_TXAEffect > 0.1) then {
+    if (_TXAEffect > 0.5 && !_inCardiacArrest) then {
+        _bloodLoss = _bloodLoss * (linearConversion [0.5, 2, _TXAEffect, 1, 0.9, true]);
+        _internalBleeding = _internalBleeding * (linearConversion [0.5, 2, _TXAEffect, 1, 0.85, true]);
+        _hemothoraxBleeding = _hemothoraxBleeding * (linearConversion [0.5, 2, _TXAEffect, 1, 0.8, true]);
+        _capillaryBleeding = _capillaryBleeding * (linearConversion [0.5, 2, _TXAEffect, 1, 0.85, true]);
+    };
+
+    _plateletCountChange = (_bloodLoss * _plateletBleedRatio) + ((_internalBleeding * 0.6) * _plateletInternalBleedRatio) + (_hemothoraxBleeding * _plateletBleedRatio) + (_capillaryBleeding * _plateletBleedRatio);
+    
+    if (_TXAEffect > 0.1 && !_inCardiacArrest) then {
         _plateletCountChange = _plateletCountChange * 0.9;
     };
 };
 
 if (_bloodVolume > 0) then {
-    _bloodVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRation)) + (_hemothoraxBleeding * (1 - _plateletInternalBleedRation)))) / _activeVolumes;
+    _bloodVolumeChange = ((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)) + (_capillaryBleeding * (1 - _plateletBleedRatio))) / _activeVolumes;
 };
 
 if (_plasmaVolume > 0) then {
-    _plasmaVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRation)) + (_hemothoraxBleeding * (1 - _plateletInternalBleedRation)))) / _activeVolumes;
+    _plasmaVolumeChange = ((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)) + (_capillaryBleeding * (1 - _plateletBleedRatio))) / _activeVolumes;
 };
 
 if (_salineVolume > 0) then {
-    _salineVolumeChange = (((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRation)) + (_hemothoraxBleeding * (1 - _plateletInternalBleedRation)))) / _activeVolumes;
+    _salineVolumeChange = ((_bloodLoss * (1 - _plateletBleedRatio)) + ((_internalBleeding * _internalBleedingSeverity) * (1 - _plateletInternalBleedRatio)) + (_hemothoraxBleeding * (1 - _plateletBleedRatio)) + (_capillaryBleeding * (1 - _plateletBleedRatio))) / _activeVolumes;
 };
 
 private _transfusionPain = 0;
@@ -213,8 +230,9 @@ if (_unit getVariable [QEGVAR(circulation,IV_Bags_Active), false]) then {
                 };
                 // Flow pain
                 if (_accessType in [ACM_IO_FAST1_M, ACM_IO_EZ_M]) then { // IO
-                    private _IOPain = _bagChange / 3.7;
-                    _transfusionPain = _transfusionPain + _IOPain;
+                    private _IOPain = _bagChange / 3;
+                    private _painSuppression = linearConversion [0, 0.24, ([_unit, "Lidocaine_IV", false, _partIndex] call ACEFUNC(medical_status,getMedicationCount)), 0, 0.95, true]; // 30mg "flush"
+                    _transfusionPain = _transfusionPain + (0 max (_IOPain - _painSuppression));
                 } else { // IV complication
                     private _ivComplicationPain = GET_IV_COMPLICATIONS_PAIN_X(_unit,_partIndex,_accessSite);
 
@@ -357,7 +375,7 @@ if (_plateletCount != _targetPlateletCount) then {
     if (_TXAEffect > 0.1) then {
         _adjustSpeed = _adjustSpeed / 2;
     };
-    if (!(IS_BLEEDING(_unit)) && !(IS_I_BLEEDING(_unit)) && _HTXState < 1 && _plateletCount > _targetPlateletCount) then {
+    if ((_bloodVolumeChange >= 0) && _plateletCount > _targetPlateletCount) then {
         _adjustSpeed = 100;
     };
     _plateletCountChange = _plateletCountChange + ((_targetPlateletCount - _plateletCount) / _adjustSpeed) * _deltaT;

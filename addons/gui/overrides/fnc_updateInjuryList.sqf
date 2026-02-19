@@ -213,13 +213,40 @@ if (_selectionN == 0) then {
     };
 
     if (_airwayItemTypeOral != "") then {
-        private _airwayItem = LELSTRING(airway,GuedelTube);
+        private _airwayItem = LELSTRING(airway,OPA);
 
         if (_airwayItemTypeOral isEqualTo "SGA") then {
             _airwayItem = LELSTRING(airway,IGel);
         };
 
         _entries pushBack [_airwayItem, _airwayColor];
+    };
+
+    if ((_target getVariable [QEGVAR(airway,SurgicalAirway_State), false]) || (_target getVariable [QEGVAR(airway,SurgicalAirway_InProgress), false])) then {
+        private _entry = LELSTRING(airway,SurgicalAirway);
+
+        if (_target getVariable [QEGVAR(airway,SurgicalAirway_State), false]) then {
+            if (_target getVariable [QEGVAR(airway,SurgicalAirway_StrapSecure), false]) then {
+                _entry = format ["%1 [%2]", _entry, LELSTRING(airway,GUI_SurgicalAirway_Strapped)];
+            };
+            if (_target getVariable [QEGVAR(airway,SurgicalAirway_Incision), false] && !(_target getVariable [QEGVAR(airway,SurgicalAirway_IncisionStitched), false])) then {
+                _entry = format ["%1 [%2]", _entry, LELSTRING(airway,GUI_SurgicalAirway_OpenIncision)]; 
+            };
+        } else {
+            if (_target getVariable [QEGVAR(airway,SurgicalAirway_InProgress), false]) then {
+                _entry = format ["%1 [%2]", _entry, LELSTRING(core,Common_InProgress)];
+            };
+        };
+
+        _entries pushBack [_entry, _airwayColor];
+    };
+
+    private _lozengeItem = _target getVariable [QEGVAR(circulation,LozengeItem), ""];
+
+    if (_lozengeItem != "") then {
+        private _item = LELSTRING(circulation,FentanylLozenge);
+
+        _entries pushBack [_item, _circulationColor];
     };
 };
 
@@ -250,6 +277,21 @@ if (_selectionN in [0,2,3] && {!(alive _target) || (_oxygenSaturation < ACM_CYAN
         _entries pushBack [format ["%1 %2", _cyanosis, LELSTRING(breathing,GUI_Cyanosis)], [0.16, _colorScale, 1, 1]];
     } else {
         _entries pushBack [LELSTRING(breathing,GUI_NoticableCyanosis), [0.16, _colorScale, 1, 1]];
+    };
+};
+
+if (EGVAR(CBRN,enable)) then {
+    private _skinIrritation = (_target getVariable [QEGVAR(CBRN,SkinIrritation), [0,0,0,0,0,0]]) select _selectionN;
+    
+    if (_skinIrritation > 5) then {
+        private _colorMultiplier = linearConversion [5, 85, _skinIrritation, 1, 0.7, true];
+        private _severity = switch (true) do {
+            case (_skinIrritation < 25): {LELSTRING(CBRN,GUI_Slight)};
+            case (_skinIrritation < 65): {LELSTRING(CBRN,GUI_Moderate)};
+            default {LELSTRING(CBRN,GUI_Severe)};
+        };
+
+        _entries pushBack [format ["%1 %2", _severity, LELSTRING(CBRN,GUI_SkinIrritation)], [(0.8 * _colorMultiplier), (0.7 * _colorMultiplier), (0.1 * _colorMultiplier), 1]];
     };
 };
 
@@ -385,24 +427,52 @@ if (_selectionN in [2,3] && {HAS_PULSEOX(_target,(_selectionN - 2))}) then {
 
 // Damage taken tooltip
 if (ACEGVAR(medical_gui,showDamageEntry)) then {
-    private _bodyPartDamage = (_target getVariable [QACEGVAR(medical,bodyPartDamage), [0, 0, 0, 0, 0, 0]]) select _selectionN;
+    private _bodyPartDamage = GET_BODYPART_DAMAGE(_target) select _selectionN;
     if (_bodyPartDamage > 0) then {
         private _damageThreshold = GET_DAMAGE_THRESHOLD(_target);
-        switch (true) do {
-            case (_selectionN > 3): { // legs: index 4 & 5
-                _damageThreshold = LIMPING_DAMAGE_THRESHOLD * 4;
+
+        if (EGVAR(damage,enable)) then {
+            switch (true) do {
+                case (_selectionN > 3): { // legs: index 4 & 5
+                    _damageThreshold = LIMPING_DAMAGE_THRESHOLD * 4;
+                };
+                case (_selectionN > 1): { // arms: index 2 & 3
+                    _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
+                };
+                case (_selectionN == 0): { // head: index 0
+                    _damageThreshold = [EGVAR(damage,headTraumaDeathThresholdAI), EGVAR(damage,headTraumaDeathThreshold)] select (isPlayer _target);
+                };
+                default { // torso: index 1
+                    _damageThreshold = [EGVAR(damage,bodyTraumaDeathThresholdAI), EGVAR(damage,bodyTraumaDeathThreshold)] select (isPlayer _target);
+                };
             };
-            case (_selectionN > 1): { // arms: index 2 & 3
-                _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
-            };
-            case (_selectionN == 0): { // head: index 0
-                _damageThreshold = _damageThreshold * 1.25;
-            };
-            default { // torso: index 1
-                _damageThreshold = _damageThreshold * 1.5;
+        } else {
+            switch (true) do {
+                case (_selectionN > 3): { // legs: index 4 & 5
+                    if (ACEGVAR(medical,limbDamageThreshold) != 0 && {[false, !isPlayer _target, true] select ACEGVAR(medical,useLimbDamage)}) then { // Just indicate how close to the limping threshold we are
+                        _damageThreshold = _damageThreshold * ACEGVAR(medical,limbDamageThreshold);
+                    } else {
+                        _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
+                    };
+                };
+                case (_selectionN > 1): { // arms: index 2 & 3
+                    if (ACEGVAR(medical,limbDamageThreshold) != 0 && {[false, !isPlayer _target, true] select ACEGVAR(medical,useLimbDamage)}) then { // Just indicate how close to the fracture threshold we are
+                        _damageThreshold = _damageThreshold * ACEGVAR(medical,limbDamageThreshold);
+                    } else {
+                        _damageThreshold = FRACTURE_DAMAGE_THRESHOLD * 4;
+                    };
+                };
+                case (_selectionN == 0): { // head: index 0
+                    _damageThreshold = _damageThreshold * 1.25;
+                };
+                default { // torso: index 1
+                    _damageThreshold = _damageThreshold * 1.5;
+                };
             };
         };
-        _bodyPartDamage = (_bodyPartDamage / _damageThreshold) min 1;
+
+        // _bodyPartDamage here should indicate how close unit is to guaranteed death via sum of trauma, so use the same multipliers used in medical_damage/functions/fnc_determineIfFatal.sqf
+        _bodyPartDamage = (_bodyPartDamage / (_damageThreshold max 0.01)) min 1;
         switch (true) do {
             case (_bodyPartDamage isEqualTo 1): {
                 _entries pushBack [localize ACELSTRING(medical_gui,traumaSustained4), [_bodyPartDamage] call ACEFUNC(medical_gui,damageToRGBA)];
@@ -435,38 +505,49 @@ if (HAS_TOURNIQUET_APPLIED_ON(_target,_selectionN)) then {
     _entries pushBack [format ["%1 [%2]",localize ACELSTRING(medical_gui,Status_Tourniquet_Applied), ((_target getVariable [QEGVAR(disability,Tourniquet_Time), [0,0,0,0,0,0]]) select _selectionN)], [0.77, 0.51, 0.08, 1]];
 };
 
-// Indicate current body part fracture status
-switch (GET_FRACTURES(_target) select _selectionN) do {
-    case 1: {
-        _entries pushBack [localize ACELSTRING(medical_gui,Status_Fractured), [1, 0, 0, 1]];
-    };
-    case -1: {
-        if (ACEGVAR(medical,fractures) in [2, 3]) then { // Ignore if the splint has no effect
-            private _splintStatus = GET_SPLINTS(_target) select _selectionN;
-            if (_splintStatus > 0) then {
-                if (_splintStatus == 1) then {
-                    _entries pushBack [(format ["%1 %2", LELSTRING(disability,SAMSplint), LELSTRING(core,Common_Applied)]), [0.2, 0.2, 1, 1]];
-                } else {
-                    _entries pushBack [(format ["%1 %2 (%3)", LELSTRING(disability,SAMSplint), LELSTRING(core,Common_Applied), LELSTRING(disability,GUI_Wrapped)]), [0.2, 0.2, 1, 1]];
-                };
-            } else {
+// Fractures
+private _fractureState = GET_FRACTURES(_target) select _selectionN;
+if (_fractureState != 0) then {
+    private _splintStatus = GET_SPLINTS(_target) select _selectionN;
+
+    if (_splintStatus != 0) then {
+        switch (_splintStatus) do {
+            case 2: {
+                _entries pushBack [(format ["%1 %2 (%3)", LELSTRING(disability,SAMSplint), LELSTRING(core,Common_Applied), LELSTRING(disability,GUI_Wrapped)]), [0.2, 0.2, 1, 1]];
+            };
+            case 1: {
+                _entries pushBack [(format ["%1 %2", LELSTRING(disability,SAMSplint), LELSTRING(core,Common_Applied)]), [0.2, 0.2, 1, 1]];
+            };
+            default {
                 _entries pushBack [localize ACELSTRING(medical_gui,Status_SplintApplied), [0.2, 0.2, 1, 1]];
             };
+        };
+    } else {
+        if (_fractureState > 0 && GVAR(showFracture)) then {
+            _entries pushBack [localize ACELSTRING(medical_gui,Status_Fractured), [1, 0, 0, 1]];
         };
     };
 };
 
 // Internal bleeding indicator
 private _selectionN_InternalBleeding = [_target, _selectionN] call EFUNC(damage,getBodyPartInternalBleeding);
-if (_selectionN_InternalBleeding > 0.15) then {
-    private _colorAdjustment = linearConversion [0.15, 0.5, _selectionN_InternalBleeding, 0.75, 0.45, true];
-    _entries pushBack [LELSTRING(breathing,InspectChest_Bruising_Short), [_colorAdjustment, 0.1, 0.6, 1]];
-} else {
-    private _HTXFluid = _target getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
-    if (_selectionN == 1 && _HTXFluid > 0.5) then {
+private _HTXFluid = _target getVariable [QEGVAR(breathing,Hemothorax_Fluid), 0];
+
+switch (true) do {
+    case (_selectionN == 1 && _HTXFluid > 0.5): {
         private _colorAdjustment = linearConversion [0.5, 1.5, _HTXFluid, 0.75, 0.45, true];
-        _entries pushBack [(format ["%1 (%2)", LELSTRING(breathing,InspectChest_Bruising_Short), LELSTRING(breathing,GUI_UpperChest)]), [_colorAdjustment, 0.1, 0.6, 1]];
+        if (_selectionN_InternalBleeding > 0.15) then {
+            _colorAdjustment = _colorAdjustment max (linearConversion [0.15, 0.5, _selectionN_InternalBleeding, 0.75, 0.45, true]);
+            _entries pushBack [(format ["%1 (%2)", LELSTRING(breathing,InspectChest_Bruising_Short), LELSTRING(breathing,GUI_LowerAndUpperChest)]), [_colorAdjustment, 0.1, 0.6, 1]];
+        } else {
+            _entries pushBack [(format ["%1 (%2)", LELSTRING(breathing,InspectChest_Bruising_Short), LELSTRING(breathing,GUI_UpperChest)]), [_colorAdjustment, 0.1, 0.6, 1]];
+        };
     };
+    case (_selectionN_InternalBleeding > 0.15): {
+        private _colorAdjustment = linearConversion [0.15, 0.5, _selectionN_InternalBleeding, 0.75, 0.45, true];
+        _entries pushBack [LELSTRING(breathing,InspectChest_Bruising_Short), [_colorAdjustment, 0.1, 0.6, 1]];
+    };
+    default {};
 };
 
 // Thoracostomy status
@@ -497,7 +578,8 @@ private _fnc_processWounds = {
 
             private _className = ACEGVAR(medical_damage,woundClassNames) select _classIndex;
             private _suffix = ["Minor", "Medium", "Large"] select _category;
-            private _woundName = localize format [ACELSTRING(medical_damage,%1_%2), _className, _suffix];
+
+            private _woundName = localize ([(format [ACELSTRING(medical_damage,%1_%2), _className, _suffix]), (format [ELSTRING(damage,Wounds_%1_%2), _className, _suffix])] select (_className in ACM_WOUNDS));
 
             private _woundDescription = if (_amountOf >= 1) then {
                 format ["%1x %2", ceil _amountOf, _woundName]

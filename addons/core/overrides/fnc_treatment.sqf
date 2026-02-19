@@ -49,7 +49,7 @@ if (_treatmentTime == 0) exitWith {false};
 private _userAndItem = if (GET_NUMBER_ENTRY(_config >> "consumeItem") == 1) then {
     [_medic, _patient, getArray (_config >> "items")] call ACEFUNC(medical_treatment,useItem);
 } else {
-    [objNull, ""]; // Treatment does not require items to be consumed
+    [objNull, "", false]; // Treatment does not require items to be consumed
 };
 
 _userAndItem params ["_itemUser", "_usedItem", "_createLitter"];
@@ -76,7 +76,7 @@ if (isNumber (_config >> "ACM_cancelRecovery")) then {
     _cancelsRecoveryPosition = [false,true] select (getNumber (_config >> "ACM_cancelRecovery"));
 
     if ((_patient getVariable [QEGVAR(airway,RecoveryPosition_State), false]) && _cancelsRecoveryPosition) then {
-        _patient setVariable [QEGVAR(airway,RecoveryPosition_State), false, true];
+        [_medic, _patient, false, true] call EFUNC(airway,setRecoveryPosition);
     };
 };
 
@@ -133,9 +133,9 @@ if (_medic isNotEqualTo player || {!_isInZeus}) then {
     };
 
     // Determine the animation length
-    private _animDuration = ACEGVAR(medical_treatment,animDurations)  get toLowerANSI _medicAnim;
-    if (isNil "_animDuration") then {
-        WARNING_2("animation [%1] for [%2] has no duration defined",_medicAnim,_classname);
+    private _animDuration = ACEGVAR(medical_treatment,animDurations) get toLowerANSI _medicAnim;
+    if (isNil "_animDuration" && !(isNil _medicAnim)) then {
+        if (_medicAnim != "") then { WARNING_2("animation [%1] for [%2] has no duration defined",_medicAnim,_classname); };
         _animDuration = 10;
     };
 
@@ -154,7 +154,7 @@ if (_medic isNotEqualTo player || {!_isInZeus}) then {
     };
 
     // Play treatment animation for medic and determine the ending animation
-    if (vehicle _medic == _medic && {_medicAnim != ""}) then {
+    if (isNull objectParent _medic && {_medicAnim != ""}) then {
         // Speed up animation based on treatment time (but cap max to prevent odd animiations/cam shake)
         private _animRatio = _animDuration / _treatmentTime;
         TRACE_3("setAnimSpeedCoef",_animRatio,_animDuration,_treatmentTime);

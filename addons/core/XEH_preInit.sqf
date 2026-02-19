@@ -10,6 +10,35 @@ PREP_RECOMPILE_END;
 
 //ACEGVAR(medical,STATE_MACHINE) = (configFile >> "ACM_StateMachine") call CBA_statemachine_fnc_createFromConfig;
 
+[
+    QGVAR(Dogtag_ShowWeight),
+    "CHECKBOX",
+    [LLSTRING(SETTING_Dogtag_ShowWeight), LLSTRING(SETTING_Dogtag_ShowWeight_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(ignoreIncompatibleAddonWarning),
+    "CHECKBOX",
+    [LLSTRING(SETTING_IgnoreIncompatibleAddonWarnings), LLSTRING(SETTING_IgnoreIncompatibleAddonWarnings_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [false],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(MedicAI_AllowIntermediateTreatment),
+    "CHECKBOX",
+    [LLSTRING(SETTING_MedicAI_AllowIntermediateTreatment), LLSTRING(SETTING_MedicAI_AllowIntermediateTreatment_Desc)],
+    [ACM_SETTINGS_CATEGORY, ""],
+    [true],
+    true
+] call CBA_fnc_addSetting;
+
 // Items
 
 [
@@ -57,53 +86,6 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
-[
-    QGVAR(treatmentTimeSAMSplint),
-    "SLIDER",
-    [LELSTRING(disability,SETTING_TreatmentTime_SAMSplint), LELSTRING(disability,SETTING_TreatmentTime_SAMSplint_Desc)],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Items)],
-    [1, 30, 3, 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(treatmentTimeWrapSplint),
-    "SLIDER",
-    [LELSTRING(disability,SETTING_TreatmentTime_WrapSplint), LELSTRING(disability,SETTING_TreatmentTime_WrapSplint_Desc)],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Items)],
-    [1, 30, 5, 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(splintFallOffTime),
-    "SLIDER",
-    [LELSTRING(disability,SETTING_SplintFallOffTime), LELSTRING(disability,SETTING_SplintFallOffTime_Desc)],
-    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Items)],
-    [1, 300, 60, 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(Dogtag_ShowWeight),
-    "CHECKBOX",
-    [LLSTRING(SETTING_Dogtag_ShowWeight), LLSTRING(SETTING_Dogtag_ShowWeight_Desc)],
-    [ACM_SETTINGS_CATEGORY, ""],
-    [true],
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(ignoreIncompatibleAddonWarning),
-    "CHECKBOX",
-    [LLSTRING(SETTING_IgnoreIncompatibleAddonWarnings), LLSTRING(SETTING_IgnoreIncompatibleAddonWarnings_Desc)],
-    [ACM_SETTINGS_CATEGORY, ""],
-    [false],
-    true
-] call CBA_fnc_addSetting;
-
 // OVERRIDE ACE
 
 [
@@ -124,6 +106,51 @@ PREP_RECOMPILE_END;
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QACEGVAR(medical,fractures),
+    "LIST",
+    [ACELSTRING(medical,Fractures_DisplayName), ACELSTRING(medical,Fractures_Description)],
+    ACELSTRING(medical,Category),
+    [[0, 1, 2, 3], [ACELSTRING(common,Disabled), ACELSTRING(medical,Fractures_SplintHealsFully), ACELSTRING(medical,Fractures_SplintHealsNoSprint), ACELSTRING(medical,Fractures_SplintHealsNoJog)], 2],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+if (systemTime select 0 == 2025 && systemTime select 1 == 4 && systemTime select 2 <= 10) then {
+[
+    QACEGVAR(medical_treatment,allowBodyBalling),
+    "CHECKBOX",
+    [ACELSTRING(medical_treatment,AllowBodyBalling_DisplayName), ACELSTRING(medical_treatment,AllowBodyBalling_Description)],
+    ACELSTRING(medical,Category),
+    [false],
+    true
+] call CBA_fnc_addSetting;
+};
+
+// DISABLED SETTINGS
+
+[
+    QACEGVAR(medical_statemachine,cardiacArrestTime),
+    "TIME",
+    [ACELSTRING(medical_statemachine,CardiacArrestTime_DisplayName), "[ACM] SETTING DISABLED"],
+    [ACELSTRING(medical,Category), ACELSTRING(medical_statemachine,SubCategory)],
+    [1, 3600, 300],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QACEGVAR(medical_vitals,simulateSpO2),
+    "CHECKBOX",
+    [ACELSTRING(medical_vitals,simulateSpO2_DisplayName), "[ACM] SETTING DISABLED"],
+    [ACELSTRING(medical,Category), ACELSTRING(medical_vitals,SubCategory)],
+    true,
+    1,
+    {}
+] call CBA_fnc_addSetting;
+
 GVAR(itemHash) = uiNamespace getVariable QGVAR(itemHash); // Medic AI
+
+GVAR(NextWarningTime) = 0;
 
 ADDON = true;

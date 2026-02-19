@@ -19,6 +19,8 @@
 
 params ["_medic", "_patient"];
 
+GVAR(AED_ReOpenMenu) = ACEGVAR(medical_gui,pendingReopen);
+
 ACEGVAR(medical_gui,pendingReopen) = false; // Prevent medical menu from reopening
 
 if (dialog) then { // If another dialog is open (medical menu) close it
@@ -153,7 +155,7 @@ private _PFH = [{
     private _oxygenSaturation = _patient getVariable [QGVAR(AED_PulseOximeter_Display), -1];
     private _etco2 = _patient getVariable [QGVAR(AED_CO2_Display), -1];
 
-    private _monitorUpdateStep = (_patient getVariable [QGVAR(AED_UpdateStep), (floor ((CBA_missionTime - (_patient getvariable [QGVAR(AED_StartTime), CBA_missionTime])) mod 6.2304 / 0.0354))]); // x1.18
+    private _monitorUpdateStep = (_patient getVariable [QGVAR(AED_UpdateStep), (floor ((CBA_missionTime - (_patient getVariable [QGVAR(AED_StartTime), CBA_missionTime])) mod 6.2304 / 0.0354))]); // x1.18
     private _monitorArray_Offset = _patient getVariable [QGVAR(AED_Offset), 0];
 
     private _monitorArray_EKG = _patient getVariable [QGVAR(AED_EKGDisplay), []];
@@ -174,6 +176,11 @@ private _PFH = [{
         _patient setVariable [QGVAR(AED_Offset), 0];
         
         _patient setVariable [QGVAR(AEDMonitorDisplay_PFH), -1];
+
+        if (GVAR(AED_ReOpenMenu)) then {
+            GVAR(AED_ReOpenMenu) = false;
+            [QEGVAR(core,openMedicalMenu), _patient] call CBA_fnc_localEvent;
+        };
         
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
@@ -249,7 +256,7 @@ private _PFH = [{
             _POStepSpacing = 0;
             _COStepSpacing = 0;
         };
-        case !(HAS_PULSE_P(_patient)): { // VT
+        case (!(HAS_PULSE_P(_patient)) && _hr > 180): { // VT
             if (_padsState) then {
                 _EKGRhythm = ACM_Rhythm_VT;
             };
@@ -503,7 +510,7 @@ private _PFH = [{
             _displayedNIBP_D = "---";
             _displayedNIBP_M = "--";
         } else {
-            _displayedNIBP_M = (2/3) * _displayedNIBP_S + (1/3) * _displayedNIBP_D;
+            _displayedNIBP_M = GET_MAP(_displayedNIBP_S,_displayedNIBP_D);
             _displayedNIBP_M = _displayedNIBP_M toFixed 0;
             _displayedNIBP_S = _displayedNIBP_S toFixed 0;
             _displayedNIBP_D = _displayedNIBP_D toFixed 0;

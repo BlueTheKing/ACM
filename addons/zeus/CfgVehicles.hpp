@@ -47,4 +47,19 @@ class CfgVehicles {
         icon = QPATHTOF(ui\Icon_Module_SetOxygen_ca.paa);
         curatorInfoType = QGVAR(RscSetOxygen);
     };
+    class GVAR(setBloodType): GVAR(moduleBase) {
+        displayName = CSTRING(Module_SetBloodType);
+        icon = QPATHTOF(ui\Icon_Module_SetBloodType_ca.paa);
+        curatorInfoType = QGVAR(RscSetBloodType);
+    };
+    class GVAR(togglePlotArmor): GVAR(moduleBase) {
+        displayName = CSTRING(Module_PlotArmor);
+        function = QFUNC(togglePlotArmor);
+        icon = QPATHTOF(ui\Icon_Module_PlotArmor_ca.paa);
+    };
+    class GVAR(assignFullHealFacility): GVAR(moduleBase) {
+        displayName = CSTRING(Module_AssignFullHealFacility);
+        function = QFUNC(assignFullHealFacility);
+        icon = QPATHTOEF(mission,ui\Icon_Module_FullHealFacility_ca.paa);
+    };
 };

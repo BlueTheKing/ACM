@@ -17,18 +17,20 @@
 
 params ["_patient"];
 
-if !(IS_UNCONSCIOUS(_patient)) exitWith {};
+if (!(GVAR(enable)) || !(IS_UNCONSCIOUS(_patient))) exitWith {};
 
 private _airwayReflexDelay = 20 + (random 25);
 
 [{
     params ["_patient"];
 
+    if !(IS_UNCONSCIOUS(_patient)) exitWith {};
+
     if (_patient getVariable [QGVAR(AirwayReflex_State), false]) then {
         _patient setVariable [QGVAR(AirwayReflex_State), false, true];
     };
 
-    if ([_patient, "head"] call EFUNC(damage,isBodyPartBleeding)) then {
+    if ([_patient, "head"] call EFUNC(damage,isBodyPartBleeding) && (GVAR(airwayObstructionBloodChance) > 0)) then {
         [QGVAR(handleAirwayObstruction_Blood), [_patient], _patient] call CBA_fnc_targetEvent;
     };
 }, [_patient], _airwayReflexDelay] call CBA_fnc_waitAndExecute;
@@ -39,12 +41,14 @@ private _airwayReflexDelay = 20 + (random 25);
     [QGVAR(handleAirwayCollapse), [_patient], _patient] call CBA_fnc_targetEvent;
 }, [_patient], (_airwayReflexDelay + (240 + (random 60)))] call CBA_fnc_waitAndExecute;
 
-private _medicationEffect = [_patient] call EFUNC(circulation,getNauseaMedicationEffects);
+if (GVAR(airwayObstructionVomitChance) > 0) then {
+    private _medicationEffect = [_patient] call EFUNC(circulation,getNauseaMedicationEffects);
 
-if (random 1 < (0.5 + _medicationEffect)) then {
-    [{
-        params ["_patient"];
+    if ((((GET_BODYPART_DAMAGE(_patient) select 0) > 1) && (random 1 < (0.8 + _medicationEffect))) || random 1 < (0.3 + _medicationEffect)) then {
+        [{
+            params ["_patient"];
 
-        [QGVAR(handleAirwayObstruction_Vomit), [_patient], _patient] call CBA_fnc_targetEvent;
-    }, [_patient], (_airwayReflexDelay + (90 + (random 60)))] call CBA_fnc_waitAndExecute;
+            [QGVAR(handleAirwayObstruction_Vomit), [_patient], _patient] call CBA_fnc_targetEvent;
+        }, [_patient], (_airwayReflexDelay + (60 + (random 60)))] call CBA_fnc_waitAndExecute;
+    };
 };

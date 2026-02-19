@@ -50,14 +50,14 @@ class CfgWeapons {
         };
     };
 
-    /*class ACM_ThoracostomyKit: ACM_ChestSeal {
+    class ACM_ThoracostomyKit: ACM_ChestSeal {
         picture = QPATHTOF(ui\thoracostomyKit_ca.paa);
-        displayName = "Thoracostomy Kit";
-        descriptionShort = "Single-use kit used to prepare patient for chest tube insertion";
+        displayName = CSTRING(ThoracostomyKit);
+        descriptionShort = CSTRING(ThoracostomyKit_Desc);
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 2;
+            mass = 4;
         };
-    };*/
+    };
 
     class ACM_PocketBVM: ACM_ChestSeal {
         picture = QPATHTOF(ui\pocketbvm_ca.paa);

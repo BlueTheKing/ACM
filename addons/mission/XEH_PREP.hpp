@@ -1,6 +1,11 @@
+PREP(clearPatients);
+PREP(createCustomBloodTypeList);
+PREP(initFullHealFacility);
 PREP(initHealTent);
 PREP(initTrainingComputer);
+PREP(moduleInitFullHealFacility_Eden);
 PREP(generatePatient);
 PREP(generatePatients);
+PREP(spawnCustomPatient);
 PREP(spawnPatient_childActions);
 PREP(spawnPatients_childActions);

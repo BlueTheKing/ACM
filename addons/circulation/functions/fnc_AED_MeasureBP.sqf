@@ -36,6 +36,8 @@ _patient setVariable [QGVAR(AED_PressureCuffBusy), true, true];
     if !(HAS_TOURNIQUET_APPLIED_ON(_patient,_pressureCuffPlacement)) then {
         private _bp = GET_BLOOD_PRESSURE(_patient); // backwards
 
+        if ((_bp select 1) < 80 || !(HAS_PULSE_P(_patient))) exitWith {};
+
         _systolic = _bp select 1;
         _diastolic = _bp select 0;
     };
@@ -53,6 +55,7 @@ private _sound = playSound3D [QPATHTO_R(sound\aed_pressurecuff.wav), _patient, f
     params ["", "", "_sound"];
 
     stopSound _sound;
+    _patient setVariable [QGVAR(AED_PressureCuffBusy), false, true];
 }, [_medic, _patient, _sound], 10, 
 {
     params ["", "_patient"];

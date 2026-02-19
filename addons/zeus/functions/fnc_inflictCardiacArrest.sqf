@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Module dialog to manually inflict cardiac arrest
+ * Module to manually inflict cardiac arrest.
  *
  * Arguments:
  * 0: Module Logic <OBJECT>
@@ -31,6 +31,8 @@ private _unit = effectiveCommander attachedTo _logic;
 scopeName "Main";
 private _fnc_errorAndClose = {
     params ["_msg"];
+
+    _display closeDisplay 0;
     deleteVehicle _logic;
     [_msg] call ACEFUNC(zeus,showMessage);
     breakOut "Main";

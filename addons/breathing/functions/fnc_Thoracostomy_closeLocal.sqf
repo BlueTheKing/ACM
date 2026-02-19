@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Blue
- * Handle closing up Thoracostomy incision (LOCAL)
+ * Handle closing up Thoracostomy incision. (LOCAL)
  *
  * Arguments:
  * 0: Medic <OBJECT>
@@ -22,5 +22,5 @@ params ["_medic", "_patient"];
 
 _patient setVariable [QGVAR(Thoracostomy_State), 0, true];
 _patient setVariable [QGVAR(Pneumothorax_State), 0, true];
-
-[_patient] call FUNC(updateBreathingState);
+_patient setVariable [QGVAR(Thoracostomy_UsedKit), false, true];
+[_patient] call FUNC(updateLungState);

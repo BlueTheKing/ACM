@@ -19,9 +19,25 @@
 params ["_medic", "_patient"];
 
 if !(isNull (_patient getVariable [QGVAR(CPR_Medic), objNull])) exitWith {
-    [LSTRING(CPR_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
+    [LLSTRING(CPR_Already), 2, _medic] call ACEFUNC(common,displayTextStructured);
 };
 
+private _fnc_doCPRAnimation = {
+    params ["_medic"];
+
+    if (GVAR(loopCPR)) then {
+        [QACEGVAR(common,switchMove), [_medic, "ACM_CPR"]] call CBA_fnc_globalEvent;
+        _medic addEventHandler ["AnimDone", {
+	        params ["_medic", "_anim"];
+
+            if !(GVAR(loopCPR)) exitWith {
+                _medic removeEventHandler [_thisEvent, _thisEventHandler];
+            };
+
+            [QACEGVAR(common,switchMove), [_medic, "ACM_CPR"]] call CBA_fnc_globalEvent;
+        }];
+    };
+};
 _patient setVariable [QACEGVAR(medical,CPR_provider), _medic, true];
 _patient setVariable [QGVAR(CPR_Medic), _medic, true];
 
@@ -30,6 +46,27 @@ _medic setVariable [QGVAR(isPerformingCPR), true, true];
 GVAR(CPRTarget) = _patient;
 GVAR(CPRActive) = true;
 GVAR(BVMActive) = false;
+
+GVAR(MedicHasBVM) = false;
+GVAR(MedicHasBVMType) = "";
+
+GVAR(SwapToBVM) = false;
+
+private _uniqueItems = [_medic, 0] call ACEFUNC(common,uniqueItems);
+private _itemIndex = _uniqueItems findIf {_x == "ACM_BVM"};
+
+if (_itemIndex < 0) then {
+    _itemIndex = _uniqueItems findIf {_x == "ACM_PocketBVM"};
+    GVAR(MedicHasBVMType) = "ACM_PocketBVM";
+} else {
+    GVAR(MedicHasBVMType) = "ACM_BVM";
+};
+
+GVAR(MedicHasBVM) = _itemIndex > 0;
+
+if !(GVAR(MedicHasBVM)) then {
+    GVAR(MedicHasBVMType) = "";
+};
 
 GVAR(CPRCancel_EscapeID) = [0x01, [false, false, false], {
     GVAR(CPRTarget) setVariable [QACEGVAR(medical,CPR_provider), objNull, true];
@@ -52,6 +89,12 @@ GVAR(CPRToggle_MouseID) = [0xF1, [false, false, false], {
         };
     } else {
         GVAR(CPRTarget) setVariable [QACEGVAR(medical,CPR_provider), objNull, true];
+    };
+}, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
+
+GVAR(CPRSwap_MouseID) = [0xF2, [false, false, false], {
+    if (isNull (GVAR(CPRTarget) getVariable [QACEGVAR(medical,CPR_provider), objNull]) && isNull (GVAR(CPRTarget) getVariable [QEGVAR(breathing,BVM_Medic), objNull]) && GVAR(MedicHasBVM)) then {
+        GVAR(SwapToBVM) = true;
     };
 }, "keydown", "", false, 0] call CBA_fnc_addKeyHandler;
 
@@ -82,31 +125,37 @@ if (_initialAnimation in ["amovpercmstpsnonwnondnon", "amovpknlmstpsnonwnondnon_
 private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
 
 [{
-    params ["_medic", "_patient", "_notInVehicle", "_CPRStartTime"];
+    params ["_medic", "_patient", "_notInVehicle", "_CPRStartTime", "_fnc_doCPRAnimation"];
 
     if (currentWeapon _medic != "") then {
         [_medic] call ACEFUNC(weaponselect,putWeaponAway);
     };
     
     [LLSTRING(CPR_Stop), LLSTRING(CPR_Pause), ""] call ACEFUNC(interaction,showMouseHint);
-    [LSTRING(CPR_Started), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-    [_patient, "activity", LSTRING(CPR_ActionLog_Started), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+    [_patient, "activity", LLSTRING(CPR_ActionLog_Started), [[_medic, false, true] call ACEFUNC(common,getName)]] call ACEFUNC(medical_treatment,addToLog);
+
+    if (EGVAR(breathing,SwapToCPR)) then {
+        EGVAR(breathing,SwapToCPR) = false;
+    } else {
+        [LLSTRING(CPR_Started), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+    };
 
     [{
         params ["_args", "_idPFH"];
-        _args params ["_medic", "_patient", "_notInVehicle", "_CPRStartTime"];
+        _args params ["_medic", "_patient", "_notInVehicle", "_CPRStartTime", "_fnc_doCPRAnimation"];
 
         private _patientCondition = (!(IS_UNCONSCIOUS(_patient)) && alive _patient || _patient isEqualTo objNull);
         private _medicCondition = (!(alive _medic) || IS_UNCONSCIOUS(_medic) || _medic isEqualTo objNull);
-        private _vehicleCondition = !(objectParent _medic isEqualTo objectParent _patient);
+        private _vehicleCondition = (objectParent _medic isNotEqualTo objectParent _patient);
         private _distanceCondition = (_patient distance2D _medic > ACEGVAR(medical_gui,maxDistance));
 
-        if (_patientCondition || _medicCondition || !(alive (_patient getVariable [QGVAR(CPR_Medic), objNull])) || dialog || {(!_notInVehicle && _vehicleCondition) || {(_notInVehicle && _distanceCondition)}}) exitWith { // Stop CPR
+        if (_patientCondition || _medicCondition || !(alive (_patient getVariable [QGVAR(CPR_Medic), objNull])) || GVAR(SwapToBVM) || dialog || {(!_notInVehicle && _vehicleCondition) || {(_notInVehicle && _distanceCondition)}}) exitWith { // Stop CPR
             [_idPFH] call CBA_fnc_removePerFrameHandler;
             [] call ACEFUNC(interaction,hideMouseHint);
             [GVAR(CPRCancel_EscapeID), "keydown"] call CBA_fnc_removeKeyHandler;
             [GVAR(CPRCancel_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
             [GVAR(CPRToggle_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
+            [GVAR(CPRSwap_MouseID), "keydown"] call CBA_fnc_removeKeyHandler;
 
             if (_notInVehicle) then {
                 [_medic, "AinvPknlMstpSnonWnonDnon_medicEnd", 2] call ACEFUNC(common,doAnimation);
@@ -115,12 +164,12 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
             private _CPRTime = CBA_missionTime - _CPRStartTime; 
             private _time = [_CPRTime, "MM:SS"] call BIS_fnc_secondsToString;
 
-            [_patient, "activity", LSTRING(CPR_ActionLog_Stopped), [[_medic, false, true] call ACEFUNC(common,getName), _time]] call ACEFUNC(medical_treatment,addToLog);
+            [_patient, "activity", LLSTRING(CPR_ActionLog_Stopped), [[_medic, false, true] call ACEFUNC(common,getName), _time]] call ACEFUNC(medical_treatment,addToLog);
 
             _patient setVariable [QGVAR(CPR_StoppedTotal), _CPRTime, true];
             _patient setVariable [QGVAR(CPR_StoppedTime), CBA_missionTime, true];
 
-            if !(_patient getVariable [QACEGVAR(medical,CPR_provider), objNull] isEqualTo objNull) then {
+            if (_patient getVariable [QACEGVAR(medical,CPR_provider), objNull] isNotEqualTo objNull) then {
                 _patient setVariable [QACEGVAR(medical,CPR_provider), objNull, true];
             };
 
@@ -128,13 +177,18 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
             _medic setVariable [QGVAR(isPerformingCPR), false, true];
 
             closeDialog 0;
+            
+            if (GVAR(SwapToBVM)) then {
+                [LLSTRING(CPR_SwappedToBVM), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                [_medic, _patient, false] call EFUNC(breathing,useBVM);
+            } else {
+                [LLSTRING(CPR_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                [QEGVAR(core,openMedicalMenu), GVAR(CPRTarget)] call CBA_fnc_localEvent;
+            };
 
-            [LSTRING(CPR_Stopped), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
             GVAR(CPRActive) = false;
-
-            [QEGVAR(core,openMedicalMenu), GVAR(CPRTarget)] call CBA_fnc_localEvent;
-
             GVAR(CPRTarget) = objNull;
+            GVAR(loopCPR) = false;
         };
 
         private _updateMouseHint = false;
@@ -144,19 +198,38 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
         };
 
         if (_updateMouseHint) then {
+            private _uniqueItems = [_medic, 0] call ACEFUNC(common,uniqueItems);
+            private _itemIndex = _uniqueItems findIf {_x == "ACM_BVM"};
+
+            if (_itemIndex < 0) then {
+                _itemIndex = _uniqueItems findIf {_x == "ACM_PocketBVM"};
+                GVAR(MedicHasBVMType) = "ACM_PocketBVM";
+            } else {
+                GVAR(MedicHasBVMType) = "ACM_BVM";
+            };
+
+            GVAR(MedicHasBVM) = _itemIndex > 0;
+
+            if !(GVAR(MedicHasBVM)) then {
+                GVAR(MedicHasBVMType) = "";
+            };
+
             if ((_patient getVariable [QEGVAR(airway,AirwayItem_Oral), ""]) == "SGA") then { // Intubated
                 GVAR(BVMActive) = [_patient] call EFUNC(core,bvmActive);
                 if ([_patient] call EFUNC(core,cprActive)) then {
-                    [LSTRING(CPR_Continued), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                    [LLSTRING(CPR_Continued), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
                     [LLSTRING(CPR_Stop), LLSTRING(CPR_Pause), ""] call ACEFUNC(interaction,showMouseHint);
                     GVAR(CPRActive) = true;
                     GVAR(loopCPR) = true;
+                    if (_notInVehicle) then {
+                        [_medic] call _fnc_doCPRAnimation;
+                    };
                 } else {
                     if (_notInVehicle) then {
                         [QACEGVAR(common,switchMove), [_medic, "ACM_CPR_Stop"]] call CBA_fnc_globalEvent;
                     };
-                    [LSTRING(CPR_Paused), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-                    [LLSTRING(CPR_Stop), LLSTRING(CPR_Continue), ""] call ACEFUNC(interaction,showMouseHint);
+                    [LLSTRING(CPR_Paused), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                    [LLSTRING(CPR_Stop), LLSTRING(CPR_Continue), (["", LLSTRING(CPR_SwapToBVM)] select (GVAR(MedicHasBVM) && isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])))] call ACEFUNC(interaction,showMouseHint);
                     GVAR(CPRActive) = false;
                     GVAR(loopCPR) = false;
                 };
@@ -169,16 +242,19 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
                 } else {
                     GVAR(BVMActive) = false;
                     if ([_patient] call EFUNC(core,cprActive)) then {
-                        [LSTRING(CPR_Continued), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                        [LLSTRING(CPR_Continued), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
                         [LLSTRING(CPR_Stop), LLSTRING(CPR_Pause), ""] call ACEFUNC(interaction,showMouseHint);
                         GVAR(CPRActive) = true;
                         GVAR(loopCPR) = true;
+                        if (_notInVehicle) then {
+                            [_medic] call _fnc_doCPRAnimation;
+                        };
                     } else {
                         if (_notInVehicle) then {
                             [QACEGVAR(common,switchMove), [_medic, "ACM_CPR_Stop"]] call CBA_fnc_globalEvent;
                         };
-                        [LSTRING(CPR_Paused), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
-                        [LLSTRING(CPR_Stop), LLSTRING(CPR_Continue), ""] call ACEFUNC(interaction,showMouseHint);
+                        [LLSTRING(CPR_Paused), 1.5, _medic] call ACEFUNC(common,displayTextStructured);
+                        [LLSTRING(CPR_Stop), LLSTRING(CPR_Continue), (["", LLSTRING(CPR_SwapToBVM)] select (GVAR(MedicHasBVM) && isNull (_patient getVariable [QGVAR(BVM_Medic), objNull])))] call ACEFUNC(interaction,showMouseHint);
                         GVAR(CPRActive) = false;
                         GVAR(loopCPR) = false;
                     };
@@ -186,21 +262,11 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
             };
             _medic setVariable [QGVAR(isPerformingCPR), GVAR(CPRActive), true];
         };
-
-        if (_notInVehicle && GVAR(loopCPR)) then {
-            [QACEGVAR(common,switchMove), [_medic, "ACM_CPR"]] call CBA_fnc_globalEvent;
-            GVAR(loopCPR) = false;
-
-            [{
-                params ["_patient"];
-
-                !([_patient] call EFUNC(core,cprActive));
-            }, {}, [_patient], 9, {
-                if !([_patient] call EFUNC(core,cprActive)) exitWith {};
-                GVAR(loopCPR) = true;
-            }] call CBA_fnc_waitUntilAndExecute;
-        };
-    }, 0, [_medic, _patient, _notInVehicle, _CPRStartTime]] call CBA_fnc_addPerFrameHandler;
+    }, 0, [_medic, _patient, _notInVehicle, _CPRStartTime, _fnc_doCPRAnimation]] call CBA_fnc_addPerFrameHandler;
 
     [QGVAR(handleCPR), [_patient, _CPRStartTime], _patient] call CBA_fnc_targetEvent;
-}, [_medic, _patient, _notInVehicle, _CPRStartTime], _startDelay] call CBA_fnc_waitAndExecute;
+
+    if (_notInVehicle) then {
+        [_medic] call _fnc_doCPRAnimation;
+    };
+}, [_medic, _patient, _notInVehicle, _CPRStartTime, _fnc_doCPRAnimation], _startDelay] call CBA_fnc_waitAndExecute;

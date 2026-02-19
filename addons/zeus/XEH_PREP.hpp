@@ -1,7 +1,10 @@
+PREP(assignFullHealFacility);
 PREP(forceWakeUp);
 PREP(givePain);
 PREP(inflictCardiacArrest);
 PREP(inflictChestInjury);
+PREP(setBloodType);
 PREP(setBloodVolume);
 PREP(setOxygen);
+PREP(togglePlotArmor);
 PREP(unCardiacArrest);

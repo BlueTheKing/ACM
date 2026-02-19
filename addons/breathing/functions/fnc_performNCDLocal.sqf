@@ -29,14 +29,12 @@ if (_patient getVariable [QGVAR(TensionPneumothorax_State), false]) then {
 
         if !(_patient getVariable [QGVAR(ChestSeal_State), false]) then {
             [_patient] call FUNC(handlePneumothorax);
-        } else {
-            [_patient] call FUNC(updateBreathingState);
         };
-    } else {
-        [_patient] call FUNC(updateBreathingState);
     };
 } else {
     if !(_patient getVariable [QGVAR(ChestSeal_State), false]) then {
         _patient setVariable [QGVAR(Pneumothorax_State), 3, true];
     };
 };
+
+[_patient] call FUNC(updateLungState);

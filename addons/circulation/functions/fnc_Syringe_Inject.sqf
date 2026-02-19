@@ -95,3 +95,10 @@ if (_returnSyringe) then {
 private _concentrationDose = _medicationConcentration * (_dose / 100);
 
 [QACEGVAR(medical_treatment,medicationLocal), [_patient, _bodyPart, _medicationClassname, _concentrationDose, _iv], _patient] call CBA_fnc_targetEvent;
+
+if (!_iv && ([_patient, "Lidocaine", false, GET_BODYPART_INDEX(_bodyPart)] call ACEFUNC(medical_status,getMedicationCount)) < 0.5) then {
+    [_patient, (linearConversion [1, 10, (_dose / 100), 0.1, 0.4])] call ACEFUNC(medical,adjustPainLevel);
+    [_patient, "hit"] call ACEFUNC(medical_feedback,playInjuredSound);
+};
+
+[QEGVAR(core,openMedicalMenu), _patient] call CBA_fnc_localEvent;

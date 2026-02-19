@@ -38,17 +38,6 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(playerFaction),
-    "LIST",
-    [LLSTRING(SETTING_PlayerFaction), LLSTRING(SETTING_PlayerFaction_Desc)],
-    [ACM_SETTINGS_CATEGORY, ""],
-    [[west, east, resistance], ["BLUFOR", "REDFOR", "GREENFOR"], 0],
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
     QGVAR(ticketCountRespawn),
     "SLIDER",
     [LLSTRING(SETTING_TicketCountRespawn), LLSTRING(SETTING_TicketCountRespawn_Desc)],
@@ -71,6 +60,15 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(convertedCasualtyDeathPenalty),
+    "SLIDER",
+    [LLSTRING(SETTING_ConvertedCasualtyDeathPenalty), LLSTRING(SETTING_ConvertedCasualtyDeathPenalty_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Tickets)],
+    [1, 100, 1, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(allowConvert),
     "LIST",
     [LLSTRING(SETTING_Allow_Convert), LLSTRING(SETTING_Allow_Convert_Desc)],
@@ -87,5 +85,9 @@ PREP_RECOMPILE_END;
     [SETTING_DROPDOWN_LOCATION, 0],
     true
 ] call CBA_fnc_addSetting;
+
+GVAR(ReinforcePoint_BLUFOR) = objNull;
+GVAR(ReinforcePoint_REDFOR) = objNull;
+GVAR(ReinforcePoint_GREENFOR) = objNull;
 
 ADDON = true;

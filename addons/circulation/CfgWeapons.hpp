@@ -153,6 +153,12 @@ class CfgWeapons {
         descriptionShort = CSTRING(Vial_Amiodarone_Desc);
     };
 
+    class ACM_Vial_Atropine: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\vial_atropine_ca.paa);
+        displayName = CSTRING(Vial_Atropine);
+        descriptionShort = CSTRING(Vial_Atropine_Desc);
+    };
+
     class ACM_Vial_Fentanyl: ACM_Vial_Epinephrine {
         picture = QPATHTOF(ui\vial_fentanyl_ca.paa);
         displayName = CSTRING(Vial_Fentanyl);
@@ -190,6 +196,30 @@ class CfgWeapons {
         ACM_isVial = 0;
     };
 
+    class ACM_Lozenge_Fentanyl: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\lozenge_fentanyl_ca.paa);
+        displayName = CSTRING(Lozenge_Fentanyl);
+        descriptionShort = CSTRING(Lozenge_Fentanyl_Desc);
+        ACM_isVial = 0;
+    };
+
+    class ACM_Ampule_Dimercaprol: ACM_Vial_Epinephrine {
+        picture = QPATHTOF(ui\ampule_dimercaprol_ca.paa);
+        displayName = CSTRING(Ampule_Dimercaprol);
+        descriptionShort = CSTRING(Ampule_Dimercaprol_Desc);
+        scope = 1;
+    };
+
+    class ACM_Paracetamol_SinglePack: ACM_Spray_Naloxone {
+        scope = 1;
+        picture = QPATHTOF(ui\paracetamol_singlepack_ca.paa);
+        displayName = CSTRING(Paracetamol_SinglePack);
+        descriptionShort = CSTRING(Paracetamol_Desc);
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 0.03;
+        };
+    };
+
     class ACM_FieldBloodTransfusionKit_500: ACE_ItemCore {
         scope = 2;
         author = "Blue";
@@ -212,7 +242,11 @@ class CfgWeapons {
     };
 
     class ACE_adenosine: ACE_ItemCore {
-        scope = 0;
+        scope = 1;
+    };
+
+    class ACE_morphine: ACE_ItemCore {
+        picture = QPATHTOEF(core,ui\override\morphine_ca.paa);
     };
 
     #include "CfgWeapons_Blood.hpp"

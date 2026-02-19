@@ -9,14 +9,15 @@ class CfgPatches {
         requiredAddons[] = {
             "cba_main",
             "ace_main",
-            "ace_medical_treatment"
+            "ace_medical_treatment",
+            "ace_medical_statemachine"
         };
         author = AUTHOR;
         VERSION_CONFIG;
     };
 };
 
-//#include "ACM_Statemachine.hpp"
+#include "ACM_Statemachine.hpp"
 #include "CfgEditorSubcategories.hpp"
 #include "CfgFunctions.hpp"
 #include "CfgEventHandlers.hpp"
@@ -27,5 +28,6 @@ class CfgPatches {
 #include "CfgSounds.hpp"
 #include "CfgReplacementItems.hpp"
 #include "CfgVehicles.hpp"
+
 #include "UI_defines.hpp"
 #include "RscTitles.hpp"
