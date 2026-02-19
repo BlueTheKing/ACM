@@ -69,6 +69,7 @@
             <Spanish>Mostrar Fractura</Spanish>
             <Turkish>Kırıkları Göster</Turkish>
             <French>Montrer la fracture</French>
+            <Polish>Pokaż złamania</Polish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
             <English>Show fractured limb(s) on patient and overview tab</English>
@@ -78,6 +79,7 @@
             <Spanish>Mostrar la(s) extremidad(es) fracturada(s) en el paciente y en la pestaña de resumen</Spanish>
             <Turkish>Hastadaki kırık uzuvları ve genel bakış sekmesinde göster</Turkish>
             <French>Montrer le(s) membre(s) fracturé(s) sur le patient et sur l'aperçu</French>
+            <Polish>Pokaż złamania na częsci ciała w menu medycznym</Polish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>
@@ -88,6 +90,7 @@
             <Korean>액션 아이템 아이콘 표시 </Korean>
             <Spanish>Mostrar Iconos de Acciones Médicas</Spanish>
             <Turkish>Eylem Öğesi Simgelerini Göster</Turkish>
+            <Polish>Pokaż ikony w menu medycznym</Polish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons_Desc">
             <English>Show relevant item icons for medical menu actions</English>
@@ -98,6 +101,7 @@
             <Korean>의료 메뉴 행동에 관련된 아이템 아이콘 표시</Korean>
             <Spanish>Mostrar los iconos de los elementos relevantes en las acciones del menú médico</Spanish>
             <Turkish>Tıbbi menü eylemleri için ilgili eşya simgelerini göster</Turkish>
+            <Polish>Pokaż ikony przedmiotów w menu medycznym</Polish>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
             <English>Show overlay for selected body part</English>

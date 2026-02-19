@@ -22,6 +22,7 @@
             <Spanish>Manejo de fracturas</Spanish>
             <Turkish>Kırık Yönetimi</Turkish>
             <French>Gestion des Fractures</French>
+            <Polish>Złamania</Polish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
             <English>Tourniquet Impact Limbs</English>
@@ -56,6 +57,7 @@
             <Spanish>Habilitar severidad de fractura</Spanish>
             <Turkish>Kırık Şiddetini Etkinleştir</Turkish>
             <French>Activer la gravité de la fracture</French>
+            <Polish>Włącz stopnie złamań</Polish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity_Desc">
             <English>Enables fracture severity and performing fracture realignment</English>
@@ -66,6 +68,7 @@
             <Spanish>Activa la severidad de fracturas y la posibilidad de realizar realineamiento</Spanish>
             <Turkish>Kırık şiddetini ve kırık hizalama (redüksiyon) işlemini etkinleştirir</Turkish>
             <French>Permet la gravité de la fracture et le réalignement de la fracture</French>
+            <Polish>Umożliwia ocenę stopnia złamań i wykonanie redukcji złamania</Polish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
             <English>SAM Splint Time</English>
@@ -148,6 +151,7 @@
             <Spanish>Permitir inspección de fracturas</Spanish>
             <Turkish>Kırık Kontrolüne İzin Ver</Turkish>
             <French>Autoriser la recherche de fracture</French>
+            <Polish>Pozwól na sprawdzenie złamań</Polish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture_Desc">
             <English>Training level required to inspect for fractures</English>
@@ -158,6 +162,7 @@
             <Spanish>Nivel de entrenamiento requerido para inspeccionar fracturas</Spanish>
             <Turkish>Kırık kontrolü yapmak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de formation requis pour rechercher des fractures</French>
+            <Polish>Poziom wyszkolenia wymagany do sprawdzenia stanu złamania</Polish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment">
             <English>Allow Performing Fracture Realignment</English>
@@ -168,6 +173,7 @@
             <Spanish>Permitir realineamiento de fracturas</Spanish>
             <Turkish>Kırık Hizalamaya İzin Ver</Turkish>
             <French>Autoriser d'exécuter les réalignements de fracture</French>
+            <Polish>Pozwól na redukcje złamań</Polish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment_Desc">
             <English>Training level required to perform fracture realignment</English>
@@ -178,6 +184,7 @@
             <Spanish>Nivel de entrenamiento requerido para realizar realineamiento de fracturas</Spanish>
             <Turkish>Kırık hizalama yapmak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de formation requis pour exécuter le réalignement d'une fracture</French>
+            <Polish>Poziom wyszkolenia wymagany do przeprowadzenia redukcji złamań</Polish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture">
             <English>[HARDCORE] Complex Fractures</English>
@@ -188,6 +195,7 @@
             <Spanish>[HARDCORE] Fracturas complejas</Spanish>
             <Turkish>[HARDCORE] Karmaşık Kırıklar</Turkish>
             <French>[HARDCORE] Fracture complexe</French>
+            <Polish>[HARDCORE] Skomplikowane złamania</Polish>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture_Desc">
             <English>[HARDCORE] Sets whether certain fractures cannot be treated in the field, requiring evacuation</English>
@@ -198,6 +206,7 @@
             <Spanish>[HARDCORE] Define si ciertas fracturas no pueden tratarse en campo, requiriendo evacuación</Spanish>
             <Turkish>[HARDCORE] Bazı kırıkların sahada tedavi edilemeyip tahliye gerektirmesini ayarlar</Turkish>
             <French>[HARDCORE] Defini si certaine fracture ne peuvent pas être traité sur le terrain, demandanrt une évacuation.</French>
+            <Polish>[HARDCORE] Definiuje czy pewnych złamań nie można leczyć w terenie, co wymaga ewakuacji</Polish>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Disability_UniversalSplint">
@@ -485,6 +494,7 @@
                 <Korean>골절 여부 확인</Korean>
                 <Spanish>Inspeccionar fractura</Spanish>
                 <Turkish>Kırık Kontrolü Yap</Turkish>
+                <Polish>Sprawdź złamania</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Progress">
                 <English>Inspecting limb for fracture...</English>
@@ -495,6 +505,7 @@
                 <Korean>팔다리 골절 여부 확인 중...</Korean>
                 <Spanish>Inspeccionando extremidad por fractura...</Spanish>
                 <Turkish>Uzuv kırık açısından inceleniyor...</Turkish>
+                <Polish>Sprawdzanie złamań...</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_ActionLog">
                 <English>%1 inspected %2: %3</English>
@@ -505,6 +516,7 @@
                 <Korean>%1가 %2를 검사함: %3</Korean>
                 <Spanish>%1 inspeccionó %2: %3</Spanish>
                 <Turkish>%1, %2’yi inceledi: %3</Turkish>
+                <Polish>%1 sprawdził %2: %3</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied">
                 <English>Patient has splint applied to limb</English>
@@ -515,6 +527,7 @@
                 <Korean>환자의 팔다리에 부목이 있음</Korean>
                 <Spanish>El paciente tiene férula aplicada en la extremidad</Spanish>
                 <Turkish>Hastanın uzvuna atel uygulanmış</Turkish>
+                <Polish>Pacjent ma założoną szynę</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied_Short">
                 <English>Splinted</English>
@@ -525,6 +538,7 @@
                 <Korean>부목이 있음</Korean>
                 <Spanish>Férula aplicada</Spanish>
                 <Turkish>Atellenmiş</Turkish>
+                <Polish>Unieruchomiona szyną</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling">
                 <English>Patient has significant swelling on limb</English>
@@ -535,6 +549,7 @@
                 <Korean>환자의 팔다리에 심한 부종이 있음</Korean>
                 <Spanish>El paciente tiene hinchazón significativa en la extremidad</Spanish>
                 <Turkish>Hastanın uzvunda belirgin şişlik var</Turkish>
+                <Polish>Pacjent ma dużą opuchlizne na kończynie</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling_Short">
                 <English>Significant Swelling</English>
@@ -545,6 +560,7 @@
                 <Korean>심한 부종</Korean>
                 <Spanish>Hinchazón significativo</Spanish>
                 <Turkish>Belirgin Şişlik</Turkish>
+                <Polish>Duża opuchlizna </Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Swelling">
                 <English>Patient has swelling on limb</English>
@@ -555,6 +571,7 @@
                 <Korean>환자의 팔다리에 부종이 있음</Korean>
                 <Spanish>El paciente tiene hinchazón en la extremidad</Spanish>
                 <Turkish>Hastanın uzvunda şişlik var</Turkish>
+                <Polish>Pacjent ma opuchlizne na kończynie</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Swelling_Short">
                 <English>Swelling</English>
@@ -565,6 +582,7 @@
                 <Korean>부종</Korean>
                 <Spanish>Hinchazón</Spanish>
                 <Turkish>Şişlik</Turkish>
+                <Polish>Opuchlizna</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising">
                 <English>Patient has severe bruising on limb</English>
@@ -575,6 +593,7 @@
                 <Korean>환자의 팔다리에 심한 타박상이 있음</Korean>
                 <Spanish>El paciente tiene hematomas graves en la extremidad</Spanish>
                 <Turkish>Hastanın uzvunda ciddi morarma var</Turkish>
+                <Polish>Pacjent ma poważnie zasinioną kończynę</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising_Short">
                 <English>Severe Bruising</English>
@@ -585,6 +604,7 @@
                 <Korean>심한 타박상</Korean>
                 <Spanish>Hematomas graves</Spanish>
                 <Turkish>Ciddi Morarma</Turkish>
+                <Polish>Poważne zasinienie</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Bruised">
                 <English>Patient limb is bruised</English>
@@ -595,6 +615,7 @@
                 <Korean>환자의 팔다리에 타박상이 있음</Korean>
                 <Spanish>La extremidad del paciente está magullada</Spanish>
                 <Turkish>Hastanın uzvu morarmış</Turkish>
+                <Polish>Pacjent ma zasinioną kończynę</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Bruised_Short">
                 <English>Bruised</English>
@@ -605,6 +626,7 @@
                 <Korean>타박상</Korean>
                 <Spanish>Magullada</Spanish>
                 <Turkish>Morarmış</Turkish>
+                <Polish>Zasiniona</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury">
                 <English>Patient has no substantial damage on limb</English>
@@ -615,6 +637,7 @@
                 <Korean>환자의 팔다리에 큰 손상이 없음</Korean>
                 <Spanish>El paciente no tiene daño significativo en la extremidad</Spanish>
                 <Turkish>Hastanın uzvunda belirgin bir hasar yok</Turkish>
+                <Polish>Pacjent nie ma poważnych obrażeń na kończynie</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury_Short">
                 <English>No Significant Injury</English>
@@ -625,6 +648,7 @@
                 <Korean>큰 손상 없음</Korean>
                 <Spanish>Sin lesión significativa</Spanish>
                 <Turkish>Belirgin Yaralanma Yok</Turkish>
+                <Polish>Brak poważnych obrażeń</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed">
                 <English>Fracture realignment performed</English>
@@ -635,6 +659,7 @@
                 <Korean>골절 정복 수행됨</Korean>
                 <Spanish>Realineamiento de fractura realizado</Spanish>
                 <Turkish>Kırık hizalama yapıldı</Turkish>
+                <Polish>Przeprowadzono redukcje złamania</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed_Short">
                 <English>realignment performed</English>
@@ -645,6 +670,7 @@
                 <Korean>정복 수행됨 </Korean>
                 <Spanish>Realineamiento realizado</Spanish>
                 <Turkish>hizalama yapıldı</Turkish>
+                <Polish>Redukcja przeprowadzona</Polish>
             </Key>
         </Container>
         <Container name="// Fracture Realignment Action //">
@@ -657,6 +683,7 @@
                 <Korean>골절 정복 수행</Korean>
                 <Spanish>Realizar realineamiento de fractura</Spanish>
                 <Turkish>Kırık Hizalama Yap</Turkish>
+                <Polish>Wykonaj redukcje złamania</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Progress">
                 <English>Performing fracture realignment...</English>
@@ -667,6 +694,7 @@
                 <Korean>골절 정복 수행 중...</Korean>
                 <Spanish>Realizando realineamiento de fractura...</Spanish>
                 <Turkish>Kırık hizalama yapılıyor...</Turkish>
+                <Polish>Wykonywanie redukcji złamania...</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete">
                 <English>Fracture realignment performed</English>
@@ -677,6 +705,7 @@
                 <Korean>골절 정복 수행됨</Korean>
                 <Spanish>Realineamiento de fractura realizado</Spanish>
                 <Turkish>Kırık hizalama yapıldı</Turkish>
+                <Polish>Wykonano redukcje złamania</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete_Success">
                 <English>Fracture realignment performed successfully</English>
@@ -687,6 +716,7 @@
                 <Korean>골절 정복 성공적으로 수행됨</Korean>
                 <Spanish>Realineamiento de fractura realizado con éxito</Spanish>
                 <Turkish>Kırık hizalama başarıyla gerçekleştirildi</Turkish>
+                <Polish>Redukcja złamania udana</Polish>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_ActionLog">
                 <English>%1 performed fracture realignment</English>
@@ -697,6 +727,7 @@
                 <Korean>%1이 골절 정복을 수행</Korean>
                 <Spanish>%1 realizó realineamiento de fractura</Spanish>
                 <Turkish>%1 kırık hizalama gerçekleştirdi</Turkish>
+                <Polish>%1 wykonał redukcje złamania</Polish>
             </Key>
         </Container>
         <Container name="// GUI //">

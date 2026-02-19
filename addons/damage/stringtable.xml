@@ -445,6 +445,7 @@
                 <Spanish>Quemadura química extensa</Spanish>
                 <Turkish>Yaygın Kimyasal Yanık</Turkish>
                 <French>Brûlure chimique étendue</French>
+                <Polish>Poważne poparzenia chemiczne</Polish>
             </Key>
             <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Medium">
                 <English>Moderate Chemical Burn</English>
@@ -455,6 +456,7 @@
                 <Spanish>Quemadura química moderada</Spanish>
                 <Turkish>Orta Dereceli Kimyasal Yanık</Turkish>
                 <French>Brûlure chimique modérée</French>
+                <Polish>Umiarkowane poparzenia chemiczne</Polish>
             </Key>
             <Key ID="STR_ACM_Damage_Wounds_ChemicalBurn_Minor">
                 <English>Minor Chemical Burn</English>
@@ -465,6 +467,7 @@
                 <Spanish>Quemadura química leve</Spanish>
                 <Turkish>Hafif Kimyasal Yanık</Turkish>
                 <French>Brûlure chimique mineure</French>
+                <Polish>Lekkie poparzenia chemiczne</Polish>
             </Key>
         </Container>
         <Container name="// Items //">
