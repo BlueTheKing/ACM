@@ -106,6 +106,7 @@
             <Spanish>Permitir Tratamiento Intermedio al Médico IA</Spanish>
             <Turkish>Medik AI Orta Seviye Tedaviye İzin Ver</Turkish>
             <French>Autoriser les médecin IA les traitements "intermédaires"</French>
+            <Polish>Leczenie pośrednie medyków AI</Polish>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment_Desc">
             <English>Sets whether medic AI is allowed to perform any actions other than bandaging and tourniqueting</English>
@@ -116,6 +117,7 @@
             <Spanish>Define si el médico IA puede realizar acciones adicionales aparte de vendar y aplicar torniquetes</Spanish>
             <Turkish>Medik AI’nın bandaj ve turnike dışında işlem yapmasına izin verilip verilmeyeceğini ayarlar</Turkish>
             <French>Défini si le médecin IA est autorisé à exercer d'autres actions que panser, et mettre des tourniquets</French>
+            <Polish>Definiuje czy medycy AI mogą wykonywać jakiekolwiek czynności poza bandażowaniem i zakładaniem TQj</Polish>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Core_MorphineAutoinjector">
@@ -241,6 +243,7 @@
                 <Korean>환자가 이미 들기 보조를 받고 있는 상태입니다</Korean>
                 <Spanish>El paciente ya está siendo portado</Spanish>
                 <Turkish>Hasta zaten taşınarak destekleniyor</Turkish>
+                <Polish>Pacjent jest już wspólnie niesiony</Polish>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Complete">
                 <English>Prepared %1 for carrying</English>
@@ -251,6 +254,7 @@
                 <Korean>%1 들기를 준비했습니다</Korean>
                 <Spanish>%1 preparado para el porte</Spanish>
                 <Turkish>%1 taşımaya hazırlandı</Turkish>
+                <Polish>%1 przygotowany do niesienia</Polish>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Progress">
                 <English>Preparing to carry...</English>
@@ -261,6 +265,7 @@
                 <Korean>들기 준비 중...</Korean>
                 <Spanish>Preparando para portar...</Spanish>
                 <Turkish>Taşımaya hazırlanılıyor...</Turkish>
+                <Polish>Przygotowywanie do niesienia...</Polish>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Cancelled">
                 <English>Carry-assist cancelled</English>
@@ -271,6 +276,7 @@
                 <Korean>들기 보조 취소</Korean>
                 <Spanish>Porte cancelado</Spanish>
                 <Turkish>Taşıma desteği iptal edildi</Turkish>
+                <Polish>wspólne niesienie anulowane</Polish>
             </Key>
         </Container>
         <Container name="// Supine Position Action //">
@@ -283,6 +289,7 @@
                 <Korean>앙아위로 눕히기</Korean>
                 <Spanish>Colocar en Posición Supina</Spanish>
                 <Turkish>Sırtüstü Pozisyona Al</Turkish>
+                <Polish>Ułóż w pozycji leżącej</Polish>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Complete">
                 <English>Patient has been placed into the supine position</English>
@@ -293,6 +300,7 @@
                 <Korean>환자가 앙아위로 누웠습니다</Korean>
                 <Spanish>El paciente ha sido colocado en posición supina</Spanish>
                 <Turkish>Hasta sırtüstü pozisyona alındı</Turkish>
+                <Polish>Pacjent został ułożony w pozycji leżącej</Polish>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Hint">
                 <English>You have been placed into the supine position</English>
@@ -303,6 +311,7 @@
                 <Korean>앙아위로 눕혀졌습니다</Korean>
                 <Spanish>Has sido colocado en posición supina</Spanish>
                 <Turkish>Sırtüstü pozisyona alındınız</Turkish>
+                <Polish>Ułożono cię w pozycji leżącej</Polish>
             </Key>
         </Container>
         <Container name="// Treatment Text //">
@@ -411,6 +420,7 @@
                 <Korean>약물 패키지 분할</Korean>
                 <Spanish>Dividir Paquete de Medicación</Spanish>
                 <Turkish>İlaç Paketini Böl</Turkish>
+                <Polish>Rozdziel opakowanie leku</Polish>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
                 <English>Split</English>
@@ -421,6 +431,7 @@
                 <Korean>분할 (Split)</Korean>
                 <Spanish>Dividir</Spanish>
                 <Turkish>Böl</Turkish>
+                <Polish>Podziel</Polish>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Complete">
                 <English>%1 package has been split</English>
@@ -431,6 +442,7 @@
                 <Korean>%1 패키지가 분할되었습니다</Korean>
                 <Spanish>El paquete de %1 ha sido dividido</Spanish>
                 <Turkish>%1 paketi bölündü</Turkish>
+                <Polish>1% opakowanie podzielone</Polish>
             </Key>
         </Container>
         <Container name="// Body Bag Return Items //">
@@ -443,6 +455,7 @@
                 <Spanish>Material médico recuperado de la mortaja</Spanish>
                 <Turkish>Tıbbi eşyalar ceset torbasından geri alındı</Turkish>
                 <French>Les objets médicales on été récupéré de la housse mortuaire</French>
+                <Polish>Sprzęt medyczny wyciągnięty z torby na zwłoki</Polish>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -573,18 +586,21 @@
                 <Spanish>Distancia de Interacción</Spanish>
                 <Turkish>Etkileşim Mesafesi</Turkish>
                 <French>Distance d'interactions</French>
+                <Polish>Dystans interakcji</Polish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition">
                 <English>Interaction Position</English>
                 <Spanish>Posición de Interacción</Spanish>
                 <Turkish>Etkileşim Konumu</Turkish>
                 <French>Position d'interaction</French>
+                <Polish>Pozycja interakcji</Polish>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition_Tooltip">
                 <English>Interaction position relative to center of object, must be an array containing 3 numbers</English>
                 <Spanish>Posición de interacción relativa al centro del objeto; debe ser un grupo de 3 valores</Spanish>
                 <Turkish>Nesnenin merkezine göre etkileşim konumu, 3 sayı içeren bir dizi olmalıdır</Turkish>
                 <French>La position d'interaction relativee au centre de l'objet, doit être un ensembble contenant 3 nombres</French>
+                <Polish>Pozycja interakcji względem środka obiektu musi zawierać 3 liczby</Polish>
             </Key>
         </Container>
         <Container name="// ACE Action //">
