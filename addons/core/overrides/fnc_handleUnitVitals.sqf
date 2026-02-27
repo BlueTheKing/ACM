@@ -206,7 +206,7 @@ if (EGVAR(CBRN,enable)) then {
 private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updateHeartRate);
 [_unit, _painSuppressAdjustment, _deltaT, _syncValues] call ACEFUNC(medical_vitals,updatePainSuppress);
 
-private _vasoconstriction = 0;
+private _vasoconstriction = GET_VASOCONSTRICTION(_unit);
 private _targetVasoconstriction = 0;
 
 if (_bloodVolume < 5.9) then {
