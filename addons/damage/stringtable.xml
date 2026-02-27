@@ -386,6 +386,12 @@
                 <Spanish>Tiempo necesario para vendar la extremidad</Spanish>
                 <Turkish>Tüm vücut parçasını sarmak için gereken süre</Turkish>
             </Key>
+            <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance">
+                <English>Wrapped Wound Reopen Chance Multiplier</English>
+            </Key>
+            <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance_Desc">
+                <English>Sets chance that a wrapped wound reopens</English>
+            </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch">
                 <English>Wrapped Stitch Time</English>
                 <Polish>Czas szycia zawiniętych ran</Polish>

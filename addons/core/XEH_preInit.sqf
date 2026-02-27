@@ -69,6 +69,15 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(wrappedWoundReopenChance),
+    "SLIDER",
+    [LELSTRING(damage,SETTING_WrappedWoundReopenChance), LELSTRING(damage,SETTING_WrappedWoundReopenChance_Desc)],
+    [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Items)],
+    [0.5, 2, 1, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(treatmentTimeWrappedStitch),
     "SLIDER",
     [LELSTRING(damage,SETTING_TreatmentTime_WrappedStitch), LELSTRING(damage,SETTING_TreatmentTime_WrappedStitch_Desc)],
