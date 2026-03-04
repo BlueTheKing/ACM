@@ -322,6 +322,7 @@
             <Spanish>Permitir vías aéreas quirúrgicas</Spanish>
             <Turkish>Cerrahi Hava Yoluna İzin Ver</Turkish>
             <French>Autoriser les voies aériennes chirurgicales</French>
+            <Polish>Pozwól chirurgiczne drogi oddechowe</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SurgicalAirway_Desc">
             <English>Training level required to establish surgical airway</English>
@@ -332,6 +333,7 @@
             <Spanish>Nivel de entrenamiento requerido para establecer vías aéreas quirúrgicas</Spanish>
             <Turkish>Cerrahi hava yolu oluşturmak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de formation est nécesaire pour établir les voies respiratoires chirurgicales</French>
+            <Polish>Poziom szkolenia wymagany do ustanowienia chirurgicznych dróg oddechowych</Polish>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayAdjunctsReusable">
             <English>Airway Adjuncts Reusable</English>
@@ -499,6 +501,7 @@
                 <Spanish>Kit Cric</Spanish>
                 <Turkish>Krikotirotomi Kiti</Turkish>
                 <French>Kit de cricothyrotomie.</French>
+                <Polish>Zestaw do krykotyrotomiczny</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_CricKit_Desc">
                 <English>Single-use kit used to establish emergency surgical airway</English>
@@ -509,6 +512,7 @@
                 <Spanish>Kit de cricotiroidotomía de un solo uso para establecer vía aérea quirúrgica de emergencia</Spanish>
                 <Turkish>Acil cerrahi hava yolu oluşturmak için kullanılan tek kullanımlık kit</Turkish>
                 <French>Un kit a usage unique utilisé pour établir une voie respiratoires chirurgicales</French>
+                <Polish>Jednorazowy zestaw Zestaw jednorazowego użytku używany do ustanowienia nagłych dróg chirurgicznych</Polish>
             </Key>
         </Container>
         <Container name="// Head tilt-chin lift Action //">
@@ -838,6 +842,7 @@
                 <Spanish>Vía aérea con inflamación severa</Spanish>
                 <Turkish>Hava yolunda ciddi iltihaplanma var</Turkish>
                 <French>Les voies respiratoires sont sevèrement inflammé</French>
+                <Polish>Drogi oddechowe mają bardzo silne zapalenie</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Severe_Short">
                 <English>Severe inflammation</English>
@@ -848,6 +853,7 @@
                 <Spanish>Inflamación severa</Spanish>
                 <Turkish>Ciddi iltihaplanma</Turkish>
                 <French>Inflammation sevère</French>
+                <Polish>Bardzo Silne zapalenie</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Serious">
                 <English>Airway has significant inflammation</English>
@@ -1156,6 +1162,7 @@
                 <Spanish>Paciente consciente</Spanish>
                 <Turkish>Hasta uyanık</Turkish>
                 <French>Le patient est réveillé</French>
+                <Polish>Pacjent jest przytomny</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_Failed_Inflammation">
                 <English>Blocked by airway inflammation</English>
@@ -1167,6 +1174,7 @@
                 <Spanish>Bloqueado por inflamación de vía aérea</Spanish>
                 <Turkish>Hava yolu iltihabı nedeniyle engellendi</Turkish>
                 <French>Bloqué par l'infllamation des voies respiratoires</French>
+                <Polish>Zablokowane przez stan zapalny dróg oddechowych</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_%1_Inserted">
                 <English>%1 inserted</English>
@@ -1411,6 +1419,7 @@
                 <Spanish>Vía aérea quirúrgica</Spanish>
                 <Turkish>Cerrahi Hava Yolu</Turkish>
                 <French>Voies respiratoires chirurgicales</French>
+                <Polish>Chirurgiczne drogi oddechowe</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Action">
                 <English>Establish Surgical Airway</English>
@@ -1421,6 +1430,7 @@
                 <Spanish>Establecer vía aérea quirúrgica</Spanish>
                 <Turkish>Cerrahi Hava Yolu Oluştur</Turkish>
                 <French>Etablir les voies respiratoires chirurgicales</French>
+                <Polish>Ustalenie chirurgicznych dróg oddechowych</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_ActionProgress">
                 <English>Establishing Surgical Airway...</English>
@@ -1432,6 +1442,7 @@
                 <Spanish>Estableciendo vía aérea quirúrgica...</Spanish>
                 <Turkish>Cerrahi Hava Yolu Oluşturuluyor...</Turkish>
                 <French>Entrain d'établir les voies respiratoires chirurgicales...</French>
+                <Polish>Ustalenie chirurgicznych dróg oddechowych,,,</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_ActionLog">
                 <English>%1 established surgical airway</English>
@@ -1442,6 +1453,7 @@
                 <Spanish>%1 estableció una vía aérea quirúrgica</Spanish>
                 <Turkish>%1 cerrahi hava yolu oluşturdu</Turkish>
                 <French>%1 Voies respiratoires chirurgicales Établi </French>
+                <Polish>%1 ustalone chirurgiczne drogi oddechowe</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_AlreadyInProgress">
                 <English>Surgical airway already in progress</English>
@@ -1492,6 +1504,7 @@
                 <Spanish>Bisturí</Spanish>
                 <Turkish>Bistüri</Turkish>
                 <French>Scalpel</French>
+                <Polish>Skalpel</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Hook">
                 <English>Tracheal Hook</English>
@@ -1502,6 +1515,7 @@
                 <Spanish>Gancho traqueal</Spanish>
                 <Turkish>Trakeal Kanca</Turkish>
                 <French>Crochet tracéale</French>
+                <Polish>Hak tchawicowy</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Tube">
                 <English>Cric-Key</English>
@@ -1522,6 +1536,7 @@
                 <Spanish>Jeringa</Spanish>
                 <Turkish>Şırınga</Turkish>
                 <French>Seringue</French>
+                <Polish>Strzykawka</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Strap">
                 <English>Neck Strap</English>
@@ -1532,6 +1547,7 @@
                 <Spanish>Collarín cervical</Spanish>
                 <Turkish>Boyun Kayışı</Turkish>
                 <French>Sangle</French>
+                <Polish>Pasek na szyję</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_IncisionExpanded">
                 <English>Expanded incision with finger</English>
@@ -1800,6 +1816,7 @@
                 <Spanish>Incisión abierta</Spanish>
                 <Turkish>Kesiyi Aç</Turkish>
                 <French>Incision ouverte</French>
+                <Polish>Otwórz nacięcie</Polish>
             </Key>
             <Key ID="STR_ACM_Airway_GUI_SurgicalAirway_Strapped">
                 <English>Strapped</English>
@@ -1810,6 +1827,7 @@
                 <Spanish>Correa colocada</Spanish>
                 <Turkish>Kayışlandı</Turkish>
                 <French>Attaché</French>
+                <Polish>Przywiązany</Polish>
             </Key>
         </Container>
     </Package>

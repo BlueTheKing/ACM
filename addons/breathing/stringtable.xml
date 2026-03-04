@@ -1568,6 +1568,7 @@
                 <Korean>키트로 흉강 천자 (Thoracostomy) 수행</Korean>
                 <Spanish>Realizar toracostomía (kit)</Spanish>
                 <Turkish>Torakostomi Yap (Kit)</Turkish>
+                <Polish>Wykonaj torakostomię (zestaw)</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Already">
                 <English>Thoracostomy sweep already performed</English>
@@ -1603,6 +1604,7 @@
                 <Korean>%1 키트로 흉강 천자 (Thoracostomy) 수행</Korean>
                 <Spanish>%1 realizó una toracostomía (kit)</Spanish>
                 <Turkish>%1 torakostomi yaptı (Torakostomi Kiti)</Turkish>
+                <Polish>%1 wykonało torakostomię (zestaw do torakostomii)</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Complete">
                 <English>Finger Thoracostomy Performed</English>
@@ -1975,6 +1977,7 @@
                 <Korean>CPR로 전환</Korean>
                 <Spanish>Cambiar a RCP</Spanish>
                 <Turkish>CPR’a Geç</Turkish>
+                <Polish>Przejście na resuscytację / CPR</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_SwappedToCPR">
                 <English>Swapped To CPR</English>
@@ -1985,6 +1988,7 @@
                 <Korean>CPR로 전환됨</Korean>
                 <Spanish>RCP iniciada</Spanish>
                 <Turkish>CPR’a Geçildi</Turkish>
+                <Polish>Przeszło na resuscytację / CPR</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_ActionLog_Start">
                 <English>%1 started BVM rescue breaths</English>
@@ -2179,6 +2183,7 @@
                 <Spanish>Parte inferior y superior del tórax</Spanish>
                 <Turkish>Alt ve Üst Göğüs</Turkish>
                 <French>Poitrine inférieur et Poitrine supérieur</French>
+                <Polish>Dolna i górna część klatki piersiowej</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_%1">
                 <English>Thoracostomy Incision (%1)</English>
