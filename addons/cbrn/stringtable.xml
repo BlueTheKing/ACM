@@ -10,6 +10,7 @@
             <Spanish>ACM: CBRN</Spanish>
             <Turkish>ACM: CBRN</Turkish>
             <French>ACM : NRBC</French>
+            <Polish>CBRJ</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Autoinjectors">
             <English>Autoinjectors</English>
@@ -19,6 +20,7 @@
             <Korean>자동주사기</Korean>
             <Spanish>Autoinyectores</Spanish>
             <Turkish>Otoenjektörler</Turkish>
+            <Polish>Autowtryskiwacze</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical">
             <English>Chemical</English>
@@ -29,6 +31,7 @@
             <Spanish>Químico</Spanish>
             <Turkish>Kimyasal</Turkish>
             <French>Chimique</French>
+            <Polish>Chemia</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_CS">
             <English>Chemical - CS Gas</English>
@@ -39,6 +42,7 @@
             <Spanish>Químico – Gas CS</Spanish>
             <Turkish>Kimyasal – CS Gazı</Turkish>
             <French>Chimique - Gaz lacrymogène</French>
+            <Polish>Chemia - Gaz CS</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_Chlorine">
             <English>Chemical - Chlorine Gas</English>
@@ -49,6 +53,7 @@
             <Spanish>Químico – Gas Cloro</Spanish>
             <Turkish>Kimyasal – Klor Gazı</Turkish>
             <French>Chimique -  Gaz de chlore</French>
+            <Polish>Chemia - Gaz Chlorowy</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_Sarin">
             <English>Chemical - Sarin Gas</English>
@@ -59,6 +64,7 @@
             <Spanish>Químico – Gas Sarín</Spanish>
             <Turkish>Kimyasal – Sarin Gazı</Turkish>
             <French>Chimique -  Gaz Sarin</French>
+            <Polish>Chemia - Gaz Sarinowy</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_Lewisite">
             <English>Chemical - Lewisite</English>
@@ -69,16 +75,18 @@
             <Spanish>Químico – Lewisita</Spanish>
             <Turkish>Kimyasal – Lewisit</Turkish>
             <French>Chimique - Lewisite</French>
+            <Polish>Chemia - Gaz Luizytowy</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Enable">
             <English>Enable CBRN</English>
-            <Portuguese>Habilitar QBRN</Portuguese>
+            <Portuguese>Ativar QBRN</Portuguese>
             <Russian>Включить ХБРЯ</Russian>
             <Ukrainian>Увімкнути ХБРЯ</Ukrainian>
             <Korean>CBRN 활성화</Korean>
             <Spanish>Habilitar CBRN</Spanish>
             <Turkish>CBRN’i Etkinleştir</Turkish>
             <French>Activer le NRBC</French>
+            <Polish>Włącz CBRJ</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Enable_Desc">
             <English>Enable CBRN threat functionality</English>
@@ -89,6 +97,7 @@
             <Spanish>Habilitar funcionalidad de amenaza CBRN</Spanish>
             <Turkish>CBRN tehdit işlevselliğini etkinleştir</Turkish>
             <French>Rendre le traitement NRBC fonctionnel</French>
+            <Polish>Włączenie funkcjonalności zagrożeń CBRJ</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask">
             <English>Gas Mask List</English>
@@ -99,6 +108,7 @@
             <Spanish>Lista de Máscaras de Gas</Spanish>
             <Turkish>Gaz Maskesi Listesi</Turkish>
             <French>Liste des masques à gaz</French>
+            <Polish>Lista masek gazowych</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask_Desc">
             <English>List of goggles (facewear)/helmets that are gas masks (or equivalent). Each entry should be a goggles/helmet classname and should be seperated with a comma</English>
@@ -109,6 +119,7 @@
             <Spanish>Lista de gafas (accesorios faciales)/cascos que son máscaras de gas (o equivalentes). Cada entrada debe ser un classname de gafas/casco separada por coma.</Spanish>
             <Turkish>Gaz maskesi (veya eşdeğeri) olan gözlüklerin (yüz ekipmanı)/kaskların listesi. Her giriş bir gözlük/kask sınıf adı olmalı ve virgülle ayrılmalıdır</Turkish>
             <French>Listes des lunettes (masque)/casque qui sont des masques à gaz (ou équivalent) chaque entrée doit être des lunettes/casques classname et doit être séparé avec un point virgule</French>
+            <Polish>Lista gogli (ochron do twarzy)/kasków będących maskami gazowymi (lub ich odpowiednikami). Każdy wpis powinien być nazwa klasy dotycząca gogli/hełmu i powinien być oddzielony przecinkiem</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit">
             <English>CBRN Suit List</English>
@@ -119,6 +130,7 @@
             <Spanish>Lista de Trajes CBRN</Spanish>
             <Turkish>CBRN Elbisesi Listesi</Turkish>
             <French>Liste de combinaison NRBC</French>
+            <Polish>Lista garniturów CBRJ</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit_Desc">
             <English>List of uniforms that are CBRN suits. Each entry should be a uniform classname and should be seperated with a comma</English>
@@ -129,6 +141,7 @@
             <Spanish>Lista de uniformes que son trajes CBRN. Cada entrada debe ser un classname de uniforme separada por coma.</Spanish>
             <Turkish>CBRN elbisesi olan üniformaların listesi. Her giriş bir üniforma sınıf adı olmalı ve virgülle ayrılmalıdır</Turkish>
             <French>Liste des uniformes qui sont des tenue NRBC. Chaque entrée doit être une classname d'uniforme et doit être séparé avec un point virgule</French>
+            <Polish>Lista mundurów będących kombinezonami CBRJ. Każdy wpis powinien mieć jednolitą nazwę klasy i być oddzielony przecinkiem</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN">
             <English>CBRN Protected Vehicle List</English>
@@ -139,6 +152,7 @@
             <Spanish>Lista de Vehículos con Protección CBRN</Spanish>
             <Turkish>CBRN Korumalı Araç Listesi</Turkish>
             <French>Véhicule bénéficiant d'une protection NRBC</French>
+            <Polish>Lista Pojazdów Chronionych CBRJ</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN_Desc">
             <English>List of vehicles that are CBRN protected (overpressure capability). Each entry should be a vehicle classname and should be seperated with a comma</English>
