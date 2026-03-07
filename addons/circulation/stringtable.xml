@@ -571,6 +571,9 @@
             <Turkish>Şırıngaların ilaç uygulamasında tüketilmek yerine yeniden kullanılabilir olup olmayacağını ayarlar</Turkish>
             <French>Définit si les seringues sont réutilisables au lieu d’être consommées lors de l’administration du médicament</French>
         </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Option">
+            <English>IV Only</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
             <Portuguese>Permitir seringa</Portuguese>
