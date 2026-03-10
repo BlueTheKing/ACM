@@ -10,6 +10,7 @@
             <Spanish>ACM: CBRN</Spanish>
             <Turkish>ACM: CBRN</Turkish>
             <French>ACM : NRBC</French>
+            <Polish>ACM: CBRN</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Autoinjectors">
             <English>Autoinjectors</English>
@@ -19,6 +20,7 @@
             <Korean>자동주사기</Korean>
             <Spanish>Autoinyectores</Spanish>
             <Turkish>Otoenjektörler</Turkish>
+            <Polish>Autostrzykawki</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical">
             <English>Chemical</English>
@@ -29,6 +31,7 @@
             <Spanish>Químico</Spanish>
             <Turkish>Kimyasal</Turkish>
             <French>Chimique</French>
+            <Polish>Chemikalia</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_CS">
             <English>Chemical - CS Gas</English>
@@ -39,6 +42,7 @@
             <Spanish>Químico – Gas CS</Spanish>
             <Turkish>Kimyasal – CS Gazı</Turkish>
             <French>Chimique - Gaz lacrymogène</French>
+            <Polish>Chemikalia - Gaz CS</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_Chlorine">
             <English>Chemical - Chlorine Gas</English>
@@ -49,6 +53,7 @@
             <Spanish>Químico – Gas Cloro</Spanish>
             <Turkish>Kimyasal – Klor Gazı</Turkish>
             <French>Chimique -  Gaz de chlore</French>
+            <Polish>Chemikalia - Chlor</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_Sarin">
             <English>Chemical - Sarin Gas</English>
@@ -59,6 +64,7 @@
             <Spanish>Químico – Gas Sarín</Spanish>
             <Turkish>Kimyasal – Sarin Gazı</Turkish>
             <French>Chimique -  Gaz Sarin</French>
+            <Polish>Chemikalia - Sarin</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_Lewisite">
             <English>Chemical - Lewisite</English>
@@ -69,6 +75,7 @@
             <Spanish>Químico – Lewisita</Spanish>
             <Turkish>Kimyasal – Lewisit</Turkish>
             <French>Chimique - Lewisite</French>
+            <Polish>Chemikalia - Luizyt</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Enable">
             <English>Enable CBRN</English>
@@ -79,6 +86,7 @@
             <Spanish>Habilitar CBRN</Spanish>
             <Turkish>CBRN’i Etkinleştir</Turkish>
             <French>Activer le NRBC</French>
+            <Polish>Włącz CBRN</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Enable_Desc">
             <English>Enable CBRN threat functionality</English>
@@ -89,6 +97,7 @@
             <Spanish>Habilitar funcionalidad de amenaza CBRN</Spanish>
             <Turkish>CBRN tehdit işlevselliğini etkinleştir</Turkish>
             <French>Rendre le traitement NRBC fonctionnel</French>
+            <Polish>Włącz możliwość leczenia CBRN</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask">
             <English>Gas Mask List</English>
@@ -99,6 +108,7 @@
             <Spanish>Lista de Máscaras de Gas</Spanish>
             <Turkish>Gaz Maskesi Listesi</Turkish>
             <French>Liste des masques à gaz</French>
+            <Polish>Lista masek przeciwgazowych</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask_Desc">
             <English>List of goggles (facewear)/helmets that are gas masks (or equivalent). Each entry should be a goggles/helmet classname and should be seperated with a comma</English>
@@ -109,6 +119,7 @@
             <Spanish>Lista de gafas (accesorios faciales)/cascos que son máscaras de gas (o equivalentes). Cada entrada debe ser un classname de gafas/casco separada por coma.</Spanish>
             <Turkish>Gaz maskesi (veya eşdeğeri) olan gözlüklerin (yüz ekipmanı)/kaskların listesi. Her giriş bir gözlük/kask sınıf adı olmalı ve virgülle ayrılmalıdır</Turkish>
             <French>Listes des lunettes (masque)/casque qui sont des masques à gaz (ou équivalent) chaque entrée doit être des lunettes/casques classname et doit être séparé avec un point virgule</French>
+            <Polish>Lista gogli (ochrona twarzy)/hełmów, które są maskami gazowymi. Każdy wpis powinien być nazwą klasy gogli/hełmów i powinien być rozdzielony przecinkiem.</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit">
             <English>CBRN Suit List</English>
@@ -119,6 +130,7 @@
             <Spanish>Lista de Trajes CBRN</Spanish>
             <Turkish>CBRN Elbisesi Listesi</Turkish>
             <French>Liste de combinaison NRBC</French>
+            <Polish>Lista kombinezonów CBRN</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_Suit_Desc">
             <English>List of uniforms that are CBRN suits. Each entry should be a uniform classname and should be seperated with a comma</English>
@@ -129,6 +141,7 @@
             <Spanish>Lista de uniformes que son trajes CBRN. Cada entrada debe ser un classname de uniforme separada por coma.</Spanish>
             <Turkish>CBRN elbisesi olan üniformaların listesi. Her giriş bir üniforma sınıf adı olmalı ve virgülle ayrılmalıdır</Turkish>
             <French>Liste des uniformes qui sont des tenue NRBC. Chaque entrée doit être une classname d'uniforme et doit être séparé avec un point virgule</French>
+            <Polish>Lista uniformów, które chronią przed gazami bojowymi. Każdy wpis powinien być nazwą klasy gogli/hełmów i powinien być rozdzielony przecinkiem.</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN">
             <English>CBRN Protected Vehicle List</English>
@@ -139,6 +152,7 @@
             <Spanish>Lista de Vehículos con Protección CBRN</Spanish>
             <Turkish>CBRN Korumalı Araç Listesi</Turkish>
             <French>Véhicule bénéficiant d'une protection NRBC</French>
+            <Polish>Lista pojazdów z dodatnim ciśnieniem</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN_Desc">
             <English>List of vehicles that are CBRN protected (overpressure capability). Each entry should be a vehicle classname and should be seperated with a comma</English>
@@ -149,6 +163,7 @@
             <Spanish>Lista de vehículos con protección CBRN (capacidad de sobrepresión). Cada entrada debe ser un classname de vehículo separada por coma.</Spanish>
             <Turkish>CBRN korumalı (aşırı basınç kabiliyetine sahip) araçların listesi. Her giriş bir araç sınıf adı olmalı ve virgülle ayrılmalıdır</Turkish>
             <French>Liste des véhicules bénéficiant d'une protection NRBC (Capacité de Sur-Pression). Chaque entrée doit être une classname de véhicule et doit être séparé avec un point virgule</French>
+            <Polish>Lista pojazdów, które chronią przed gazami bojowymi za pomocą dodatniego ciśnienia w środku. Każdy wpis powinien być nazwą klasy gogli/hełmów i powinien być rozdzielony przecinkiem.</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed">
             <English>Sealed Vehicle List</English>
@@ -159,6 +174,7 @@
             <Spanish>Lista de Vehículos Sellados</Spanish>
             <Turkish>Yalıtımlı Araç Listesi</Turkish>
             <French>Liste de véhicules hermétique</French>
+            <Polish>Lista pojazdów szczelnych</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_Sealed_Desc">
             <English>List of vehicles that are sealed. Each entry should be a vehicle classname and should be seperated with a comma</English>
@@ -169,6 +185,7 @@
             <Spanish>Lista de vehículos que están sellados. Cada entrada debe ser un classname de vehículo separada por coma.</Spanish>
             <Turkish>Yalıtımlı araçların listesi. Her giriş bir araç sınıf adı olmalı ve virgülle ayrılmalıdır</Turkish>
             <French>Liste de véhicules qui sont hermétique. Chaque entrée doit être un classname de véhicule et doit être séparé avec un point virgule</French>
+            <Polish>Lista pojazdów, które chronią przed gazami bojowymi będąc szczelnymi. Każdy wpis powinien być nazwą klasy gogli/hełmów i powinien być rozdzielony przecinkiem.</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_ATNAAutoinjector">
             <English>Allow ATNA Autoinjector</English>
@@ -179,6 +196,7 @@
             <Spanish>Permitir Autoinyector ATNA</Spanish>
             <Turkish>ATNA Otoenjektörüne İzin Ver</Turkish>
             <French>Autoriser l'autoinjecteur d'ATNA</French>
+            <Polish>Pozwól na urzycie autostrzykawki ATNA</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_ATNAAutoinjector_Desc">
             <English>Training level required to use ATNA Autoinjector</English>
@@ -189,6 +207,7 @@
             <Spanish>Nivel de entrenamiento requerido para usar el Autoinyector ATNA.</Spanish>
             <Turkish>ATNA otoenjektörü kullanmak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de formation requis pour utiliser l'autoinjecteur d'ATNA</French>
+            <Polish>Poziom wyszkolenia wymagany do urzycia ATNA</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_MidazolamAutoinjector">
             <English>Allow Midazolam Autoinjector</English>
@@ -199,6 +218,7 @@
             <Spanish>Permitir Autoinyector de Midazolam</Spanish>
             <Turkish>Midazolam Otoenjektörüne İzin Ver</Turkish>
             <French>Autoriser le Midazolam</French>
+            <Polish>Pozwól na urzycie autostrzykawki z Midazolamem</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Allow_MidazolamAutoinjector_Desc">
             <English>Training level required to use Midazolam Autoinjector</English>
@@ -209,6 +229,7 @@
             <Spanish>Nivel de entrenamiento requerido para usar el Autoinyector de Midazolam.</Spanish>
             <Turkish>Midazolam otoenjektörü kullanmak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de formation requis pour utiliser l'autoinjecteur à Midazolam</French>
+            <Polish>Poziom wyszkolenia wymagany do urzycia autostrzykawki z Midazolamem</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI">
             <English>Chemical Agents Affect AI</English>
@@ -219,6 +240,7 @@
             <Spanish>Los Agentes Químicos Afectan a la IA</Spanish>
             <Turkish>Kimyasal Ajanlar AI’yı Etkiler</Turkish>
             <French>Les Agents Chimiques vont Affecté les IA</French>
+            <Polish>Chemikalia wpływają na AI</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAI_Desc">
             <English>Sets whether AI will be affected by chemical agent exposure</English>
@@ -229,6 +251,7 @@
             <Spanish>Define si la IA será afectada por exposición a agentes químicos.</Spanish>
             <Turkish>AI’nın kimyasal ajan maruziyetinden etkilenip etkilenmeyeceğini ayarlar</Turkish>
             <French>Défini si les IA vont être affecté par l'exposition au agent chimique</French>
+            <Polish>Definiuje czy gazy bojowe będą miały wpływ na AI </Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAISkill">
             <English>Chemical Agents Affect AI Skill</English>
@@ -239,6 +262,7 @@
             <Spanish>Los Agentes Químicos Afectan a la Habilidad de IA</Spanish>
             <Turkish>Kimyasal Ajanlar AI Yeteneğini Etkiler</Turkish>
             <French>Les agent chimique affecte les compétence des IA</French>
+            <Polish>Chemikalia wpływają na umiejętności AI</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChemicalAffectAISkill_Desc">
             <English>Sets whether AI skill will be affected by chemical agent exposure</English>
@@ -249,6 +273,7 @@
             <Spanish>Define si la habilidad de la IA será afectada por exposición a agentes químicos.</Spanish>
             <Turkish>AI yetenek seviyesinin kimyasal ajan maruziyetinden etkilenip etkilenmeyeceğini ayarlar</Turkish>
             <French>Défini si la compétence des IA va être affecté par l'expositions aux agents chimique</French>
+            <Polish>Definiuje czy gazy bojowe będą miały wpływ na umiejętności AI</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness">
             <English>CS Exposure Cause Blindness</English>
@@ -259,6 +284,7 @@
             <Spanish>La Exposición a Gas CS Causa Ceguera</Spanish>
             <Turkish>CS Maruziyeti Körlüğe Neden Olur</Turkish>
             <French>L'exposition au CS cause la cécité</French>
+            <Polish>Ślepota po wystawieniu na gaz CS</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CSCauseBlindness_Desc">
             <English>Sets whether CS gas exposure causes blindness</English>
@@ -269,6 +295,7 @@
             <Spanish>Define si la exposición al gas CS provoca ceguera.</Spanish>
             <Turkish>CS gazına maruz kalmanın körlüğe neden olup olmayacağını ayarlar</Turkish>
             <French>Défini si l'exposition au Gaz lacrymogène cause la cécité</French>
+            <Polish>Definiuje czy wystawienie na gaz CS powoduje ślepote</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChlorineCauseBlindness">
             <English>Chlorine Exposure Cause Blindness</English>
@@ -279,6 +306,7 @@
             <Spanish>Exposición a Cloro Causa Ceguera</Spanish>
             <Turkish>Klor Maruziyeti Körlüğe Neden Olur</Turkish>
             <French>L'exposition au clhore cause la cécité</French>
+            <Polish>Ślepota po wystawieniu na chlor</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_ChlorineCauseBlindness_Desc">
             <English>Sets whether chlorine gas exposure causes blindness</English>
@@ -289,6 +317,7 @@
             <Spanish>Define si la exposición al gas cloro provoca ceguera.</Spanish>
             <Turkish>Klor gazına maruz kalmanın körlüğe neden olup olmayacağını ayarlar</Turkish>
             <French>Définit si l'exposition au clhore cause la cécité </French>
+            <Polish>Definiuje czy wystawienie na chlor powoduje ślepote</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_SarinIsColorless">
             <English>Colorless Sarin Gas</English>
@@ -299,6 +328,7 @@
             <Spanish>Gas Sarín Incoloro</Spanish>
             <Turkish>Renksiz Sarin Gazı</Turkish>
             <French>Gaz Sarin Incolor</French>
+            <Polish>Niewidzialny sarin</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_SarinIsColorless_Desc">
             <English>Sets whether sarin gas should be invisible</English>
@@ -309,6 +339,7 @@
             <Spanish>Define si el sarín debe ser invisible.</Spanish>
             <Turkish>Sarin gazının görünmez olup olmayacağını ayarlar</Turkish>
             <French>Définit si le gaz sarin doit être invisible</French>
+            <Polish>Definiuje czy sarin powinien być niewidzialny</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteCauseBlindness">
             <English>Lewisite Exposure Cause Blindness</English>
@@ -319,6 +350,7 @@
             <Spanish>Exposición a Lewisita Causa Ceguera</Spanish>
             <Turkish>Lewisit Maruziyeti Körlüğe Neden Olur</Turkish>
             <French>Définit si l'exposition au lewisite entraîne la cécité</French>
+            <Polish>Ślepota po wystawieniu na luizyt</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteCauseBlindness_Desc">
             <English>Sets whether lewisite exposure causes blindness</English>
@@ -329,6 +361,7 @@
             <Spanish>Define si la exposición a lewisita provoca ceguera.</Spanish>
             <Turkish>Lewisite maruziyetinin körlüğe neden olup olmayacağını ayarlar</Turkish>
             <French>Définit si l'exposition au lewisite entraine la perte de la vue</French>
+            <Polish>Definiuje czy wystawienie na luizyt powoduje ślepote</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteIsColorless">
             <English>Colorless Lewisite</English>
@@ -339,6 +372,7 @@
             <Spanish>Lewisita Incolora</Spanish>
             <Turkish>Renksiz Lewisit</Turkish>
             <French>Lewisite incolor</French>
+            <Polish>Niewidzialny luizyt</Polish>
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteIsColorless_Desc">
             <English>Sets whether lewisite should be invisible</English>
@@ -349,6 +383,7 @@
             <Spanish>Define si la lewisita debe ser invisible.</Spanish>
             <Turkish>Lewisitin görünmez olup olmayacağını ayarlar</Turkish>
             <French>Définit si le lewisite doit être invisible</French>
+            <Polish>Definiuje czy luizyt powinien być niewidzialny</Polish>
         </Key>
         <Container name="// Hazards //">
             <Key ID="STR_ACM_CBRN_Chemical_Placebo">
@@ -360,6 +395,7 @@
                 <Spanish>Placebo</Spanish>
                 <Turkish>Plasebo</Turkish>
                 <French>Placebo</French>
+                <Polish>Placebo</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chemical_CS">
                 <English>CS Gas</English>
@@ -370,6 +406,7 @@
                 <Spanish>Gas CS</Spanish>
                 <Turkish>CS Gazı</Turkish>
                 <French>Gaz lacrymogène</French>
+                <Polish>Gaz CS</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chemical_Chlorine">
                 <English>Chlorine Gas</English>
@@ -380,6 +417,7 @@
                 <Spanish>Gas Cloro</Spanish>
                 <Turkish>Klor Gazı</Turkish>
                 <French>Gaz de chlore</French>
+                <Polish>Chlor</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chemical_Sarin">
                 <English>Sarin Gas</English>
@@ -390,6 +428,7 @@
                 <Spanish>Gas Sarín</Spanish>
                 <Turkish>Sarin Gazı</Turkish>
                 <French>Gaz Sarin</French>
+                <Polish>Sarin</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chemical_Lewisite">
                 <English>Lewisite</English>
@@ -400,6 +439,7 @@
                 <Spanish>Lewisita</Spanish>
                 <Turkish>Lewisit</Turkish>
                 <French>Lewisite</French>
+                <Polish>Luizyt</Polish>
             </Key>
         </Container>
         <Container name="// Items //">
@@ -412,6 +452,7 @@
                 <Spanish>Autoinyector ATNA</Spanish>
                 <Turkish>ATNA Otoenjektörü</Turkish>
                 <French>Auto-injecteur D'ATNA</French>
+                <Polish>Autostrzykawka ATNA</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Autoinjector_ATNA_Desc">
                 <English>Antidote Treatment Nerve Agent Autoinjector, used to treat nerve agent exposure</English>
@@ -422,6 +463,7 @@
                 <Spanish>Autoinyector Antídoto para Agentes Nerviosos, usado para tratar exposición a agentes neurotóxicos.</Spanish>
                 <Turkish>Sinir ajanı maruziyetini tedavi etmek için kullanılan Antidot Tedavisi Sinir Ajanı Otoenjektörü</Turkish>
                 <French>Autoinjecteur antidote contre les agents nerveux, utilisé pour traiter l'exposition à un agent nerveux.</French>
+                <Polish>Antidotum stosowane po wystawieniu na działanie gazów bojowych</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Autoinjector_Midazolam">
                 <English>Midazolam Autoinjector</English>
@@ -432,6 +474,7 @@
                 <Spanish>Autoinyector de Midazolam</Spanish>
                 <Turkish>Midazolam Otoenjektörü</Turkish>
                 <French>Auto-injecteur de Midazolam</French>
+                <Polish>Autostrzykawka Midazolamu</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Autoinjector_Midazolam_Desc">
                 <English>Used to manage seizure activity caused by nerve agent exposure</English>
@@ -442,6 +485,7 @@
                 <Spanish>Usado para manejar actividad convulsiva causada por exposición a agentes nerviosos.</Spanish>
                 <Turkish>Sinir ajanı maruziyetinin neden olduğu nöbetleri kontrol etmek için kullanılır</Turkish>
                 <French>Utilisé pour gérer les convulsions causé par un agent nerveux</French>
+                <Polish>Używana do ograniczenia napadów padaczki po wystawieniu na gazy bojowe</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_CS_Grenade">
                 <English>CS Grenade</English>
@@ -452,6 +496,7 @@
                 <Spanish>Granada CS</Spanish>
                 <Turkish>CS Bombası</Turkish>
                 <French>Grenade CS</French>
+                <Polish>Granat z gazem CS</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_CS_Grenade_Desc">
                 <English>Type: CS Grenade&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: Hand</English>
@@ -462,6 +507,7 @@
                 <Spanish>Tipo: Granada CS&lt;br/&gt;Munición: 1&lt;br/&gt;Usado en: Mano</Spanish>
                 <Turkish>Tür: CS Bombası&lt;br /&gt;Mermi: 1&lt;br /&gt;Kullanım: El</Turkish>
                 <French>Type: Grenade CS&lt;br /&gt;Balles: 1&lt;br /&gt;Utilisé en: main</French>
+                <Polish>Typ: Granat CS&lt;br /&gt;Pociski: 1&lt;br /&gt;Używany w: Ręka</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_CS_Shell_40mm">
                 <English>CS Grenade Shell</English>
@@ -472,6 +518,7 @@
                 <Spanish>Proyectil de Gas CS</Spanish>
                 <Turkish>CS Bomba Mermisi</Turkish>
                 <French>Obus Grenade lacrymogène</French>
+                <Polish>Pocisk granatnika z gazem CS</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_CS_Shell_40mm_Desc">
                 <English>Type: CS Gas Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: EGLM, 3GL</English>
@@ -482,6 +529,7 @@
                 <Spanish>Tipo: Munición de Gas CS&lt;br/&gt;Munición: 1&lt;br/&gt;Usado en: EGLM, 3GL</Spanish>
                 <Turkish>Tür: CS Gaz Mermisi&lt;br /&gt;Mermi: 1&lt;br /&gt;Kullanım: EGLM, 3GL</Turkish>
                 <French>Type: Balle Gaz lacrymogène&lt;br /&gt;Balles: 1&lt;br /&gt;Utilisé en: EGLM, 3GL</French>
+                <Polish>Typ: Granat CS&lt;br /&gt;Pociski: 1&lt;br /&gt;Używany w: EGLM, 3GL</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMaskFilter">
                 <English>Gas Mask Filter</English>
@@ -492,6 +540,7 @@
                 <Spanish>Filtro de Máscara de Gas</Spanish>
                 <Turkish>Gaz Maskesi Filtresi</Turkish>
                 <French>Filtre de Masque à Gaz</French>
+                <Polish>Filtr maski przeciwkazowej</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMaskFilter_Desc">
                 <English>Used with gas mask to allow breathing in hazardous environments</English>
@@ -502,6 +551,7 @@
                 <Spanish>Usado con una máscara de gas para permitir respiración en ambientes peligrosos.</Spanish>
                 <Turkish>Tehlikeli ortamlarda nefes almayı sağlamak için gaz maskesiyle kullanılır</Turkish>
                 <French>Utilisé avec un masque à gaz pour permettre la respiration dans des environnement</French>
+                <Polish>Używany z maską by umożliwić oddychanie w zagrożonym środowisku</Polish>
             </Key>
         </Container>
         <Container name="// Autoinjector Actions //">
@@ -514,6 +564,7 @@
                 <Spanish>Usar Autoinyector ATNA</Spanish>
                 <Turkish>ATNA Otoenjektörünü Kullan</Turkish>
                 <French>Utiliser l'Auto-injecteur d'ATNA</French>
+                <Polish>Użyj autostrzykawki ATNN</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ATNAAutoinjector_Progress">
                 <English>Using ATNA Autoinjector...</English>
@@ -524,6 +575,7 @@
                 <Spanish>Usando el Autoinyector ATNA…</Spanish>
                 <Turkish>ATNA Otoenjektörü Kullanılıyor...</Turkish>
                 <French>Utilisation de l'Auto-injecteur d'ATNA</French>
+                <Polish>Używanie ATNA</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_MidazolamAutoinjector">
                 <English>Use Midazolam Autoinjector</English>
@@ -534,6 +586,7 @@
                 <Spanish>Usar Autoinyector de Midazolam</Spanish>
                 <Turkish>Midazolam Otoenjektörünü Kullan</Turkish>
                 <French>Utiliser L'auto-injecteur de Midazolam</French>
+                <Polish>Użyj autostrzykawki Midazolamu</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_MidazolamAutoinjector_Progress">
                 <English>Using Midazolam Autoinjector...</English>
@@ -544,6 +597,7 @@
                 <Spanish>Usando el Autoinyector de Midazolam…</Spanish>
                 <Turkish>Midazolam Otoenjektörü Kullanılıyor...</Turkish>
                 <French>Utilisation de l'Auto-injecteur de Midazolam...</French>
+                <Polish>Używanie Midazolamu</Polish>
             </Key>
         </Container>
         <Container name="// Supply Crate //">
@@ -556,6 +610,7 @@
                 <Spanish>[ACM] Caja de Suministros CBRN</Spanish>
                 <Turkish>[ACM] CBRN Malzeme Sandığı</Turkish>
                 <French>[ACM] NRBC Caisse de Ravitaillement</French>
+                <Polish>[ACM] Skrzynia zapasów CBRN</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_SupplyCrate_PPE_Display">
                 <English>[ACM] CBRN PPE Supply Crate</English>
@@ -566,6 +621,7 @@
                 <Spanish>[ACM] Caja de Suministros EPI CBRN</Spanish>
                 <Turkish>[ACM] CBRN KKD Malzeme Sandığı</Turkish>
                 <French>[ACM] NRBC EPI Caisse de Ravitaillement</French>
+                <Polish>[ACM] Skrzynia CBRN zawierająca PPE</Polish>
             </Key>
         </Container>
         <Container name="// Chemical Weapons //">
@@ -578,6 +634,7 @@
                 <Spanish>Proyectil Químico (CS)</Spanish>
                 <Turkish>Kimyasal Yüklü Mermi (CS)</Turkish>
                 <French>Obus Chargé Chimiquement</French>
+                <Polish>Pocisk chemiczny (CS)</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_CS_Shell_82mm_Short">
                 <English>CWA (CS)</English>
@@ -588,6 +645,7 @@
                 <Spanish>Cargas Químicas (CS)</Spanish>
                 <Turkish>KSA (CS)</Turkish>
                 <French>AGC (Lacrymogène)</French>
+                <Polish>CWA (CS)</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chlorine_Shell_82mm">
                 <English>Chemical Payload Shell (Chlorine Gas)</English>
@@ -598,6 +656,7 @@
                 <Spanish>Proyectil Químico (Gas Cloro)</Spanish>
                 <Turkish>Kimyasal Yüklü Mermi (Klor Gazı)</Turkish>
                 <French>Obus Chargé Chimiquement</French>
+                <Polish>Pocisk chemiczny (Chlor)</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Chlorine_Shell_82mm_Short">
                 <English>CWA (Chlorine)</English>
@@ -608,6 +667,7 @@
                 <Spanish>Cargas Químicas (Gas Cloro)</Spanish>
                 <Turkish>KSA (Klor)</Turkish>
                 <French>AGC (Chlore)</French>
+                <Polish>CWA (Chlor)</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Sarin_Shell_82mm">
                 <English>Chemical Payload Shell (Sarin Gas)</English>
@@ -618,6 +678,7 @@
                 <Spanish>Proyectil Químico (Gas Sarín)</Spanish>
                 <Turkish>Kimyasal Yüklü Mermi (Sarin Gazı)</Turkish>
                 <French>Obus Chargé Chimiquement</French>
+                <Polish>Pocisk chemiczny (Sarin)</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Sarin_Shell_82mm_Short">
                 <English>CWA (Sarin)</English>
@@ -628,6 +689,7 @@
                 <Spanish>Cargas Químicas (Gas Sarín)</Spanish>
                 <Turkish>KSA (Sarin)</Turkish>
                 <French>AGC (Sarin)</French>
+                <Polish>CWA (Sarin)</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Lewisite_Shell_82mm">
                 <English>Chemical Payload Shell (Lewisite)</English>
@@ -638,6 +700,7 @@
                 <Spanish>Proyectil Químico (Lewisita)</Spanish>
                 <Turkish>Kimyasal Yüklü Mermi (Lewisit)</Turkish>
                 <French>Obus Chargé Chimiquement (Lewisite)</French>
+                <Polish>Pocisk chemiczny (Luizyt)</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Lewisite_Shell_82mm_Short">
                 <English>CWA (Lewisite)</English>
@@ -648,6 +711,7 @@
                 <Spanish>Cargas Químicas (Lewisita)</Spanish>
                 <Turkish>KSA (Lewisit)</Turkish>
                 <French>AGC (Lewisite)</French>
+                <Polish>CWA (Luizyt)</Polish>
             </Key>
         </Container>
         <Container name="// Wash Eyes Action //">
@@ -660,6 +724,7 @@
                 <Spanish>Lavar ojos</Spanish>
                 <Turkish>Gözleri Yıka</Turkish>
                 <French>Laver les yeux</French>
+                <Polish>Przemyj oczy</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyesOf">
                 <English>Wash Eyes Of</English>
@@ -670,6 +735,7 @@
                 <Spanish>Lavar los ojos de</Spanish>
                 <Turkish>Şunun Gözlerini Yıka</Turkish>
                 <French>Laver les yeux de</French>
+                <Polish>Przemyj oczy z</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Progress">
                 <English>Washing eyes with water...</English>
@@ -680,6 +746,7 @@
                 <Spanish>Lavando ojos con agua...</Spanish>
                 <Turkish>Gözler suyla yıkanıyor...</Turkish>
                 <French>Nettoyage de vos yeux avec de l'eau...</French>
+                <Polish>Przemywanie oczu wodą...</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Complete">
                 <English>Washed eyes with water</English>
@@ -690,6 +757,7 @@
                 <Spanish>Ojos lavados con agua</Spanish>
                 <Turkish>Gözler suyla yıkandı</Turkish>
                 <French>Yeux lavés avec de l'eau</French>
+                <Polish>Oczy przemyte wodą</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Complete_Self">
                 <English>%1 washed your eyes with water</English>
@@ -700,6 +768,7 @@
                 <Spanish>%1 te lavó los ojos con agua</Spanish>
                 <Turkish>%1 gözlerini suyla yıkadı</Turkish>
                 <French>%1 nettoies vos yeux avec de l'eau </French>
+                <Polish>%1 przemył twoje oczy wodą</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Complete_Other">
                 <English>Washed %1's eyes with water</English>
@@ -710,6 +779,7 @@
                 <Spanish>Lavaste los ojos de %1 con agua</Spanish>
                 <Turkish>%1’in gözleri suyla yıkandı</Turkish>
                 <French>Nettoyer les yeux de %1 avec de l'eau </French>
+                <Polish>Przemyto oczy %1 wodą</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_ActionLog">
                 <English>%1 washed eyes with water</English>
@@ -720,6 +790,7 @@
                 <Spanish>%1 lavó los ojos con agua</Spanish>
                 <Turkish>%1 gözleri suyla yıkadı</Turkish>
                 <French>%1 laves ses yeux avec de l'eau</French>
+                <Polish>%1 przemył oczy wodą</Polish>
             </Key>
         </Container>
         <Container name="// Gas Mask Actions //">
@@ -732,6 +803,7 @@
                 <Spanish>Máscara de Gas</Spanish>
                 <Turkish>Gaz Maskesi</Turkish>
                 <French>Masque à Gaz</French>
+                <Polish>Maska przeciwgazowa</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_PutOn">
                 <English>Put On</English>
@@ -742,6 +814,7 @@
                 <Spanish>Poner</Spanish>
                 <Turkish>Tak</Turkish>
                 <French>Mettre</French>
+                <Polish>Załóż</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_TakeOff">
                 <English>Take Off</English>
@@ -752,6 +825,7 @@
                 <Spanish>Quitar</Spanish>
                 <Turkish>Çıkar</Turkish>
                 <French>Retirer</French>
+                <Polish>Zdejmij</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter">
                 <English>Replace Filter</English>
@@ -762,6 +836,7 @@
                 <Spanish>Reemplazar Filtro</Spanish>
                 <Turkish>Filtreyi Değiştir</Turkish>
                 <French>Remplacer le Filtre</French>
+                <Polish>Wymień filtr</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_Donned">
                 <English>Donned gas mask</English>
@@ -772,6 +847,7 @@
                 <Spanish>Máscara de gas colocada</Spanish>
                 <Turkish>Gaz maskesi takıldı</Turkish>
                 <French>Mettre son masque à gaz</French>
+                <Polish>Założono maskę</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_Removed">
                 <English>Took off gas mask</English>
@@ -782,6 +858,7 @@
                 <Spanish>Máscara de gas retirada</Spanish>
                 <Turkish>Gaz maskesi çıkarıldı</Turkish>
                 <French>Retirer son masque à gaz</French>
+                <Polish>Zdjęto maskę</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_DroppedFaceWear">
                 <English>Dropped facewear</English>
@@ -792,6 +869,7 @@
                 <Spanish>Accesorio facial tirado</Spanish>
                 <Turkish>Yüz ekipmanı yere bırakıldı</Turkish>
                 <French>Masque jeté</French>
+                <Polish>Zrzucono przedmioty z twarzy</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter_Complete">
                 <English>Replaced gas mask filter</English>
@@ -802,6 +880,7 @@
                 <Spanish>El filtro de máscara de gas ha sido reemplazado</Spanish>
                 <Turkish>Gaz maskesi filtresi değiştirildi</Turkish>
                 <French>Le filtre du masque à gaz à été remplacé</French>
+                <Polish>Wymieniono filtr maski</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GasMask_ReplaceFilter_Progress">
                 <English>Replacing gas mask filter...</English>
@@ -812,6 +891,7 @@
                 <Spanish>máscara </Spanish>
                 <Turkish>Gaz maskesi filtresi değiştiriliyor...</Turkish>
                 <French>Remplacement du  fitre du masque à gaz...</French>
+                <Polish>Wymiana fitlra maski...</Polish>
             </Key>
         </Container>
         <Container name="// Chemical Detector Actions //">
@@ -824,6 +904,7 @@
                 <Spanish>Detector Químico</Spanish>
                 <Turkish>Kimyasal Dedektör</Turkish>
                 <French>Détecteur chimique</French>
+                <Polish>Detektor chemiczny</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnOn">
                 <English>Turn On</English>
@@ -834,6 +915,7 @@
                 <Spanish>Encender</Spanish>
                 <Turkish>Aç</Turkish>
                 <French>Allumer</French>
+                <Polish>Załącz</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnOff">
                 <English>Turn Off</English>
@@ -844,6 +926,7 @@
                 <Spanish>Apagar</Spanish>
                 <Turkish>Kapat</Turkish>
                 <French>Éteindre</French>
+                <Polish>Wyłącz</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_EnableAlarm">
                 <English>Enable Alarm</English>
@@ -854,6 +937,7 @@
                 <Spanish>Habilitar Alarma</Spanish>
                 <Turkish>Alarmı Etkinleştir</Turkish>
                 <French>Activer l'alarme</French>
+                <Polish>Włącz alarm</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_DisableAlarm">
                 <English>Disable Alarm</English>
@@ -864,6 +948,7 @@
                 <Spanish>Deshabilitar Alarma</Spanish>
                 <Turkish>Alarmı Devre Dışı Bırak</Turkish>
                 <French>Désactiver l'alarme</French>
+                <Polish>Wyłącz alarm</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_Reset">
                 <English>Reset</English>
@@ -874,6 +959,7 @@
                 <Spanish>Reiniciar</Spanish>
                 <Turkish>Sıfırla</Turkish>
                 <French>Réinitialisation</French>
+                <Polish>Resetuj</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnedOn">
                 <English>Chemical detector turned on</English>
@@ -884,6 +970,7 @@
                 <Spanish>Detector químico encendido</Spanish>
                 <Turkish>Kimyasal dedektör açıldı</Turkish>
                 <French>Le détecteur chimique a été allumé</French>
+                <Polish>Detektor chemiczny załączony</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_TurnedOff">
                 <English>Chemical detector turned off</English>
@@ -894,6 +981,7 @@
                 <Spanish>Detector químico apagado</Spanish>
                 <Turkish>Kimyasal dedektör kapatıldı</Turkish>
                 <French>Le détecteur chimique a été éteint</French>
+                <Polish>Detektor chemiczny wyłączony</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_AlarmEnabled">
                 <English>Chemical detector alarm enabled</English>
@@ -904,6 +992,7 @@
                 <Spanish>Alarma del detector habilitada</Spanish>
                 <Turkish>Kimyasal dedektör alarmı etkinleştirildi</Turkish>
                 <French>l'alarme du détecteur chimique à été activé</French>
+                <Polish>Alarm detektora załączony</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_AlarmDisabled">
                 <English>Chemical detector alarm disabled</English>
@@ -914,6 +1003,7 @@
                 <Spanish>Alarma del detector deshabilitada</Spanish>
                 <Turkish>Kimyasal dedektör alarmı devre dışı bırakıldı</Turkish>
                 <French>L'alarme du détecteur chimique a été désactivé</French>
+                <Polish>Alarm detektora wyłączony</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_ChemicalDetector_WasReset">
                 <English>Chemical detector has been reset</English>
@@ -924,6 +1014,7 @@
                 <Spanish>El detector químico ha sido reiniciado</Spanish>
                 <Turkish>Kimyasal dedektör sıfırlandı</Turkish>
                 <French>Le détecteur chimique a été réinitialisé</French>
+                <Polish>Zresetowano detektor chemiczny</Polish>
             </Key>
         </Container>
         <Container name="// Module Generic //">
@@ -936,6 +1027,7 @@
                 <Spanish>Tipo de Peligro</Spanish>
                 <Turkish>Tehlike Türü</Turkish>
                 <French>Type de Contamination</French>
+                <Polish>Typ zagrożenia</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_ZoneRadius">
                 <English>Zone Radius</English>
@@ -946,6 +1038,7 @@
                 <Spanish>Radio de la Zona</Spanish>
                 <Turkish>Bölge Yarıçapı</Turkish>
                 <French>Rayon de zone</French>
+                <Polish>Promień strefy</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_EffectTime">
                 <English>Effect Time</English>
@@ -956,6 +1049,7 @@
                 <Spanish>Tiempo de Efecto</Spanish>
                 <Turkish>Etki Süresi</Turkish>
                 <French>Temps de l'effet</French>
+                <Polish>Czas trwania efektu</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_EffectTime_Tooltip">
                 <English>Sets time in minutes after which hazard zone will remove itself, will last forever if 0</English>
@@ -966,6 +1060,7 @@
                 <Spanish>Define el tiempo en minutos tras el cual la zona de peligro se eliminará; durará para siempre si es 0.</Spanish>
                 <Turkish>Tehlike bölgesinin kaç dakika sonra kaldırılacağını ayarlar, 0 ise süresiz kalır</Turkish>
                 <French>Définit le temps en minutes après quoi la zone de contamination se supprimera, durera éternellement si 0</French>
+                <Polish>Ustawia czas w minutach po którym strefa zagrożenia się usunie, przy 0 efekt będzie trwał wiecznie</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_AttachToObject">
                 <English>Attach To Object</English>
@@ -976,6 +1071,7 @@
                 <Spanish>Poner en objeto</Spanish>
                 <Turkish>Nesneye Bağla</Turkish>
                 <French>Attacher à l'objet</French>
+                <Polish>Podłącz do obiektu</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_AttachToObject_TooltipEden">
                 <English>Attaches hazard zone to synchronized object</English>
@@ -986,6 +1082,7 @@
                 <Spanish>Adjunta la zona de peligro al objeto sincronizado.</Spanish>
                 <Turkish>Tehlike bölgesini senkronize nesneye bağlar</Turkish>
                 <French>Attache la zone de danger à l'objet syncronisé</French>
+                <Polish>Podłącza strefe zagrożenia do schynchronizowanego obiektu</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_ShowMist">
                 <English>Show Mist</English>
@@ -996,6 +1093,7 @@
                 <Spanish>Mostrar Niebla</Spanish>
                 <Turkish>Sis Efektini Göster</Turkish>
                 <French>Montrer la brume</French>
+                <Polish>Pokaż mgłę</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_ShowMist_Tooltip">
                 <English>Show mist effect over hazard radius</English>
@@ -1006,6 +1104,7 @@
                 <Spanish>Muestra el efecto de niebla sobre el radio de peligro.</Spanish>
                 <Turkish>Tehlike yarıçapı üzerinde sis efektini göster</Turkish>
                 <French>Montrer des effets brumeux sur la zone de contamination</French>
+                <Polish>Pokaż mgłę w strefie zagrożenia</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_AffectAI">
                 <English>Affect AI</English>
@@ -1016,6 +1115,7 @@
                 <Spanish>Afectar a la IA</Spanish>
                 <Turkish>AI’yı Etkile</Turkish>
                 <French>IA affecté</French>
+                <Polish>Wpływa na AI</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_Error_AddonDisabled">
                 <English>CBRN Addon must be enabled</English>
@@ -1025,6 +1125,7 @@
                 <Spanish>El Addon CBRN debe estar habilitado</Spanish>
                 <Turkish>CBRN eklentisi etkin olmalıdır</Turkish>
                 <French>L'Addon NRBC doit être activé</French>
+                <Polish>Moduł CBRN musi być załączony</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_Error_SelectObject">
                 <English>Must select object</English>
@@ -1035,6 +1136,7 @@
                 <Spanish>Debe seleccionar un objeto</Spanish>
                 <Turkish>Bir nesne seçilmelidir</Turkish>
                 <French>Un objet doit être sélectionné</French>
+                <Polish>Trzeba wybrać obiekt</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_Error_NotDestroyed">
                 <English>Object must not be destroyed</English>
@@ -1045,6 +1147,7 @@
                 <Spanish>El objeto no debe estar destruido</Spanish>
                 <Turkish>Nesne yok edilmemiş olmalıdır</Turkish>
                 <French>L'objet ne doit pas être détruit</French>
+                <Polish>Obiekt nie może być zniszczony</Polish>
             </Key>
         </Container>
         <Container name="// Create Hazard Zone Module //">
@@ -1056,6 +1159,7 @@
                 <Spanish>Zona de Peligro</Spanish>
                 <Turkish>Tehlike Bölgesi</Turkish>
                 <French>Zone contaminé</French>
+                <Polish>Strefa zagrożenia</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateHazardZone">
                 <English>Create Hazard Zone</English>
@@ -1066,6 +1170,7 @@
                 <Spanish>Crear Zona de Peligro</Spanish>
                 <Turkish>Tehlike Bölgesi Oluştur</Turkish>
                 <French>Créer une zone contaminé</French>
+                <Polish>Stwórz strefę zagrożenia</Polish>
             </Key>
         </Container>
         <Container name="// Create Chemical Device Module //">
@@ -1077,6 +1182,7 @@
                 <Spanish>Dispositivo Químico</Spanish>
                 <Turkish>Kimyasal Cihaz</Turkish>
                 <French>Dispositif chimique</French>
+                <Polish>Urządzenie chemiczne</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice">
                 <English>Create Chemical Device</English>
@@ -1087,6 +1193,7 @@
                 <Spanish>Crear Dispositivo Químico</Spanish>
                 <Turkish>Kimyasal Cihaz Oluştur</Turkish>
                 <French>Créer un dispositif chimique</French>
+                <Polish>Stwórz urządzenie chemiczne</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_PermanentHazard">
                 <English>Permanent Hazard</English>
@@ -1097,6 +1204,7 @@
                 <Spanish>Peligro Permanente</Spanish>
                 <Turkish>Kalıcı Tehlike</Turkish>
                 <French>Contamination Permanante</French>
+                <Polish>Stałe zagrożenie</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_PermanentHazard_Tooltip">
                 <English>Sets whether the created hazard will not dissipate after activation</English>
@@ -1107,6 +1215,7 @@
                 <Spanish>Define si el peligro creado no se disipará tras activación.</Spanish>
                 <Turkish>Oluşturulan tehlikenin etkinleştirildikten sonra dağılmayıp dağılmayacağını ayarlar</Turkish>
                 <French>Défini si la contamination crée ne va pas se dissiper après activation</French>
+                <Polish>Definiuje czy stworzone zagrożenie nie zniknie po czasie</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize">
                 <English>Explosion Cloud Size</English>
@@ -1117,6 +1226,7 @@
                 <Spanish>Tamaño de la Nube de Explosión</Spanish>
                 <Turkish>Patlama Bulutu Boyutu</Turkish>
                 <French>Taille du nuage d'explosion</French>
+                <Polish>Rozmiar chmury wybuchu</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_None">
                 <English>None</English>
@@ -1127,6 +1237,7 @@
                 <Spanish>Ninguno</Spanish>
                 <Turkish>Yok</Turkish>
                 <French>Aucun</French>
+                <Polish>Brak</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_Small">
                 <English>Small</English>
@@ -1137,6 +1248,7 @@
                 <Spanish>Pequeño</Spanish>
                 <Turkish>Küçük</Turkish>
                 <French>Petit</French>
+                <Polish>Małe</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice_CloudSize_Large">
                 <English>Large</English>
@@ -1147,6 +1259,7 @@
                 <Spanish>Grande</Spanish>
                 <Turkish>Büyük</Turkish>
                 <French>Large</French>
+                <Polish>Duże</Polish>
             </Key>
         </Container>
         <Container name="// GUI //">
@@ -1159,6 +1272,7 @@
                 <Spanish>Irritación Cutánea</Spanish>
                 <Turkish>Cilt Tahrişi</Turkish>
                 <French>Irritation de la peau</French>
+                <Polish>Podrażnienie skóry</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GUI_Slight">
                 <English>Slight</English>
@@ -1169,6 +1283,7 @@
                 <Spanish>Leve</Spanish>
                 <Turkish>Hafif</Turkish>
                 <French>Léger</French>
+                <Polish>Lekkie</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GUI_Moderate">
                 <English>Moderate</English>
@@ -1179,6 +1294,7 @@
                 <Spanish>Moderada</Spanish>
                 <Turkish>Orta</Turkish>
                 <French>Modéré</French>
+                <Polish>Umiarkowane</Polish>
             </Key>
             <Key ID="STR_ACM_CBRN_GUI_Severe">
                 <English>Severe</English>
@@ -1189,6 +1305,7 @@
                 <Spanish>Severa</Spanish>
                 <Turkish>Şiddetli</Turkish>
                 <French>Sévère</French>
+                <Polish>Ciężkie</Polish>
             </Key>
         </Container>
     </Package>

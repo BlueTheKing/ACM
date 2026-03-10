@@ -82,6 +82,7 @@
             <Spanish>Medicación</Spanish>
             <Turkish>İlaç</Turkish>
             <French>Traitement</French>
+            <Polish>Medykamenty</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_BloodTypes">
             <English>Blood Types</English>
@@ -561,6 +562,7 @@
             <Spanish>Jeringas reutilizables</Spanish>
             <Turkish>Yeniden kullanılabilir şırıngalar</Turkish>
             <French>Seringue Réutilisable</French>
+            <Polish>Strzykawki wielokrotnego użytku</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Desc">
             <English>Sets whether syringes are reusable instead of consumed on medication administration</English>
@@ -570,6 +572,7 @@
             <Spanish>Define si las jeringas son un objeto reutilizable en vez de ser consumidas al aplicar la dosis de medicina</Spanish>
             <Turkish>Şırıngaların ilaç uygulamasında tüketilmek yerine yeniden kullanılabilir olup olmayacağını ayarlar</Turkish>
             <French>Définit si les seringues sont réutilisables au lieu d’être consommées lors de l’administration du médicament</French>
+            <Polish>Definiuje czy strzykawki mogą być użyte wielokrotnie</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
@@ -580,6 +583,7 @@
             <Spanish>Permitir uso de jeringa</Spanish>
             <Turkish>Şırıngaya izin ver</Turkish>
             <French>Autoriser les Séringues</French>
+            <Polish>Pozwól na strzykawki</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe_Desc">
             <English>Training level required to use syringes</English>
@@ -590,6 +594,7 @@
             <Spanish>Nivel de entrenamiento requerido para utilizar jeringas</Spanish>
             <Turkish>Şırınga kullanmak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de Formation requis pour utiliser les seringues</French>
+            <Polish>Poziom wyszkolenia pozwalający na użycie strzykawek</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant">
             <English>Allow Ammonia Inhalant</English>
@@ -601,6 +606,7 @@
             <Turkish>Amonyak İnhalanı'na izin ver
 </Turkish>
             <French>Autoriser le sel d'amoniaque</French>
+            <Polish>Pozwól na użycie amoniaku</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant_Desc">
             <English>Training level required to use ammonia inhalant</English>
@@ -611,6 +617,7 @@
             <Spanish>Nivel de entrenamiento requerido para utilizar el inhalador</Spanish>
             <Turkish>Amonyak İnhalan'ı kullanmak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de Formation requis pour utiliser le sel d'amoniaque</French>
+            <Polish>Poziom wyszkolenia pozwalający na użycie strzykawek</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge">
             <English>Allow Fentanyl Lozenge</English>
@@ -621,6 +628,7 @@
             <Spanish>Permitir pastilla de fentanilo</Spanish>
             <Turkish>Fentanil Pastili'ne izin ver</Turkish>
             <French>Autoriser les Pastilles de Fentanyl </French>
+            <Polish>Pozwól na lizak fentanylowy</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge_Desc">
             <English>Training level required to administer fentanyl lozenges</English>
@@ -631,6 +639,7 @@
             <Spanish>Nivel de entrenamiento requerido para administrar la pastilla</Spanish>
             <Turkish>Fentanil Pasti'li uygulamak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de Formation requis pour administrer des pastilles de fentanyl</French>
+            <Polish>Poziom wyszkolenia pozwalający na użycie lizaka fentanylowego</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1">
             <English>%1 Ratio</English>
@@ -666,6 +675,7 @@
             <Korean>사용자 정의 목록 사용</Korean>
             <Spanish>Usar lista personalizada</Spanish>
             <Turkish>Özel liste kullan</Turkish>
+            <Polish>Używaj personalizowanej listy</Polish>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList_Desc">
             <English>Sets whether blood types should be set based on custom list instead of SteamID</English>
@@ -677,6 +687,7 @@
             <Korean>혈액형을 SteamID가 아닌 사용자 정의 목록으로 설정할지 여부를 정합니다.</Korean>
             <Spanish>Define si los grupos sanguíneos son asignados en base a la lista customizada en vez del SteamID</Spanish>
             <Turkish>Kan gruplarının SteamID yerine özel listeye göre ayarlanıp ayarlanmayacağını ayarlar</Turkish>
+            <Polish>Definiuje czy grupy krwi powinny być ustawiane zgodnie z personalizowaną listą zamiast steam ID</Polish>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Circulation_AED">
@@ -1086,6 +1097,7 @@
                 <Spanish>Atropina</Spanish>
                 <Turkish>Atropin</Turkish>
                 <French>Atropine</French>
+                <Polish>Atropina</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Fentanyl">
                 <English>Fentanyl</English>
@@ -1180,6 +1192,7 @@
                 <Korean>구강점막 펜타닐 시트르산염 (Oral Transmucosal Fentanyl Citrate)</Korean>
                 <Spanish>Fentanilo oral transmucosal</Spanish>
                 <Turkish>Oral Transmukozal Fentanil Sitrat</Turkish>
+                <Polish>Cytrynian fentanylu do stosowania doustnego przez błonę śluzową</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_OTFC_Short">
                 <English>OTFC</English>
@@ -1190,6 +1203,7 @@
                 <Korean>OTFC</Korean>
                 <Spanish>OTFC</Spanish>
                 <Turkish>OTFC</Turkish>
+                <Polish>OTFC</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Dimercaprol">
                 <English>Dimercaprol</English>
@@ -1200,6 +1214,7 @@
                 <Spanish>Dimercaprol</Spanish>
                 <Turkish>Dimercaprol</Turkish>
                 <French>Dimercaprol</French>
+                <Polish>Dimercaprol</Polish>
             </Key>
         </Container>
         <Container name="// Items - Medication //">
@@ -1381,6 +1396,7 @@
                 <Spanish>Vial de atropina (1 mg/1 ml)</Spanish>
                 <Turkish>Atropin flakonu (1mg/1ml)</Turkish>
                 <French>Atropine en flacon (1mg/1ml)</French>
+                <Polish>Atropina (1mg/1ml)</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Atropine_Desc">
                 <English>Used to treat nerve agent exposure and increase heart rate</English>
@@ -1391,6 +1407,7 @@
                 <Spanish>Tratar exposición a agentes nerviosos y aumentar frecuencia cardíaca</Spanish>
                 <Turkish>Sinir ajanı maruziyetini tedavi etmek ve kalp hızını artırmak için kullanılır</Turkish>
                 <French>Utiliser pour traiter l'expositions aux agents organophosphorés et augemente le rythme cardiaque</French>
+                <Polish>Stosowany w leczeniu narażenia na działanie środka paralityczno-drgawkowego i przyspieszenia akcji serca</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Fentanyl">
                 <English>Fentanyl Vial (100mcg/2ml)</English>
@@ -1557,6 +1574,7 @@
                 <Korean>파라세타몰 (단일 포장)</Korean>
                 <Spanish>Paracetamol (paquete individual)</Spanish>
                 <Turkish>Parasetamol (tek paket)</Turkish>
+                <Polish>Paracetamol (pojedyńczy)</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_DoublePack">
                 <English>Paracetamol (Double Pack)</English>
@@ -1567,6 +1585,7 @@
                 <Korean>파라세타몰 (이중 포장)</Korean>
                 <Spanish>Paracetamol (paquete doble)</Spanish>
                 <Turkish>Parasetamol (çift paket)</Turkish>
+                <Polish>Paracetamol (podwójny)</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_Desc">
                 <English>Used to combat mild to moderate pain</English>
@@ -1637,6 +1656,7 @@
                 <Korean>펜타닐 로젠지 (Fentanyl Lozenge)</Korean>
                 <Spanish>Pastilla de Fentanilo</Spanish>
                 <Turkish>Fentanil pastili</Turkish>
+                <Polish>Lizak Fentanylowy</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
                 <English>Used to manage acute severe pain, via oral transmucosal route</English>
@@ -1647,6 +1667,7 @@
                 <Korean>구강점막 경로로 급성 중증 통증을 관리하는 데 사용됩니다.</Korean>
                 <Spanish>Analgesia oral transmucosal para dolor severo agudo</Spanish>
                 <Turkish>Oral transmukozal yolla akut şiddetli ağrıyı yönetmek için kullanılır</Turkish>
+                <Polish>Stosowany w leczeniu silnego bólu, drogą doustną przez błonę śluzową</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol">
                 <English>Dimercaprol Ampule (300mg/3ml)</English>
@@ -1657,6 +1678,7 @@
                 <Spanish>Ampolla de dimercaprol (300 mg/3 ml)</Spanish>
                 <Turkish>Dimercaprol ampul (300mg/3ml)</Turkish>
                 <French>Ampoule de Dimercaprol (300mg/3ml)</French>
+                <Polish>Dimerkaprol (300mg/3ml)</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol_Desc">
                 <English>Used to treat lewisite exposure, administered intramuscularly</English>
@@ -1667,6 +1689,7 @@
                 <Spanish>Tratar exposición a lewisita, intramuscular</Spanish>
                 <Turkish>Lewisit maruziyetini tedavi etmek için kullanılır, intramüsküler uygulanır</Turkish>
                 <French>Utiliser pour traiter l'exposition au lewisite, administré en intramusculaire</French>
+                <Polish>Stosowany w leczeniu narażenia na luizyt, podawany domięśniowo</Polish>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -1849,6 +1872,7 @@
                 <Korean>펜타닐 로젠지 투여</Korean>
                 <Spanish>Administrar pastilla de fentanilo</Spanish>
                 <Turkish>Fentanil pastili ver</Turkish>
+                <Polish>Podaj lizak fentanylowy</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_GiveFentanylLozenge_Progress">
                 <English>Giving Fentanyl Lozenge...</English>
@@ -1859,6 +1883,7 @@
                 <Korean>펜타닐 로젠지 투여 중...</Korean>
                 <Spanish>Administrando pastilla de fentanilo...</Spanish>
                 <Turkish>Fentanil pastili veriliyor…</Turkish>
+                <Polish>Podawanie lizaka...</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge">
                 <English>Remove Fentanyl Lozenge</English>
@@ -1869,6 +1894,7 @@
                 <Korean>펜타닐 로젠지 제거</Korean>
                 <Spanish>Retirar pastilla de fentanilo</Spanish>
                 <Turkish>Fentanil pastilini çıkar</Turkish>
+                <Polish>Usuń lizak fentanylowy</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge_Progress">
                 <English>Removing Fentanyl Lozenge...</English>
@@ -1879,6 +1905,7 @@
                 <Korean>펜타닐 로젠지 제거 중...</Korean>
                 <Spanish>Retirando pastilla de fentanilo...</Spanish>
                 <Turkish>Fentanil pastili çıkarılıyor…</Turkish>
+                <Polish>Usuwanie lizaka...</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Lozenge">
                 <English>Lozenge</English>
@@ -1889,6 +1916,7 @@
                 <Korean>로젠지</Korean>
                 <Spanish>Pastilla</Spanish>
                 <Turkish>Pastil</Turkish>
+                <Polish>Lizak</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge">
                 <English>Lozenge (OTFC)</English>
@@ -1899,6 +1927,7 @@
                 <Korean>로젠지 (OTFC)</Korean>
                 <Spanish>Pastilla (OTFC)</Spanish>
                 <Turkish>Pastil (OTFC)</Turkish>
+                <Polish>Lizak (OTFC)</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Already">
                 <English>Patient already has fentanyl lozenge</English>
@@ -1909,6 +1938,7 @@
                 <Korean>환자는 이미 펜타닐 로젠지를 보유함</Korean>
                 <Spanish>Paciente ya tiene una pastilla de fentanilo</Spanish>
                 <Turkish>Hastada zaten fentanil pastili var</Turkish>
+                <Polish>Pacjent ma już lizak fentanylowy</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Blocked">
                 <English>Patient oral access is blocked by airway adjunct</English>
@@ -1919,6 +1949,7 @@
                 <Korean>환자의 구강 접근이 기도 보조기구로 막혀 있음</Korean>
                 <Spanish>Acceso oral bloqueado por dispositivo de vía aérea</Spanish>
                 <Turkish>Hastanın ağız erişimi havayolu yardımcı ekipmanı nedeniyle engelli</Turkish>
+                <Polish>Dostęp do dróg oddechowych zablokowany przez narzędzie stabilizacji</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Complete">
                 <English>Gave Lozenge (OTFC)</English>
@@ -1929,6 +1960,7 @@
                 <Korean>로젠지(OTFC) 투여 완료</Korean>
                 <Spanish>Administrada la pastilla (OTFC)</Spanish>
                 <Turkish>Pastil verildi (OTFC)</Turkish>
+                <Polish>Podaj lizak (OTFC)</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Hint">
                 <English>Fentanyl Lozenge has been placed by %1</English>
@@ -1939,6 +1971,7 @@
                 <Korean>%1 가 펜타닐 로젠지를 복용시킴</Korean>
                 <Spanish>Pastilla administrada por %1</Spanish>
                 <Turkish>Fentanil pastili %1 tarafından yerleştirildi</Turkish>
+                <Polish>%1 podał lizak fentanylowy</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_ActionLog">
                 <English>%1 gave Fentanyl Lozenge</English>
@@ -1949,6 +1982,7 @@
                 <Korean>%1 가 펜타닐 로렌지를 복용시킴</Korean>
                 <Spanish>%1 administró pastilla de fentanilo</Spanish>
                 <Turkish>%1 fentanil pastili verdi</Turkish>
+                <Polish>%1 podał lizak fentanylowy</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Complete">
                 <English>Removed fentanyl lozenge</English>
@@ -1959,6 +1993,7 @@
                 <Korean>펜타닐 로젠지 제거됨</Korean>
                 <Spanish>Pastilla de fentanilo retirada</Spanish>
                 <Turkish>Fentanil pastili çıkarıldı</Turkish>
+                <Polish>Usunięto lizak fentanylowy</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Hint">
                 <English>%1 removed lozenge</English>
@@ -1969,6 +2004,7 @@
                 <Korean>%1이 로젠지를 제거함</Korean>
                 <Spanish>%1 retiró la pastilla</Spanish>
                 <Turkish>%1 pastili çıkardı</Turkish>
+                <Polish>%1 usunął lizak</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_HintSelf">
                 <English>Fentanyl lozenge was removed</English>
@@ -1979,6 +2015,7 @@
                 <Korean>펜타닐 로젠지를 제거함</Korean>
                 <Spanish>La pastilla de fentanilo fue retirada</Spanish>
                 <Turkish>Fentanil pastili çıkarıldı</Turkish>
+                <Polish>Usunięto lizak fentanylowy</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
                 <English>Fentanyl lozenge wore off and was removed</English>
@@ -1989,6 +2026,7 @@
                 <Korean>펜타닡 로젠지를 전부 복용함</Korean>
                 <Spanish>La pastilla de fentanilo se agotó y fue retirada</Spanish>
                 <Turkish>Fentanil pastilinin etkisi geçti ve çıkarıldı</Turkish>
+                <Polish>Lizak fentanylowy utracił efektywność i został usunięty</Polish>
             </Key>
         </Container>
         <Container name="// CPR Action //">
@@ -2133,6 +2171,7 @@
                 <Korean>BVM로 전환</Korean>
                 <Spanish>Cambiar a ventilación con ambú</Spanish>
                 <Turkish>BVM’ye geç</Turkish>
+                <Polish>Zmień na worek (BVM)</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwappedToBVM">
                 <English>Swapped To BVM</English>
@@ -2143,6 +2182,7 @@
                 <Korean>BVM로 전환됨</Korean>
                 <Spanish>Cambio completado</Spanish>
                 <Turkish>BVM’ye geçildi</Turkish>
+                <Polish>Zmieniono na worek (BVM)</Polish>
             </Key>
         </Container>
         <Container name="// Capillary Refill Action //">
@@ -2276,6 +2316,7 @@
                 <Spanish>%1 tomó el %2 pulso</Spanish>
                 <Turkish>%1 %2 nabzını kontrol etti</Turkish>
                 <French>%1 a vérifié un pouls %2</French>
+                <Polish>%1 sprawdził puls %2</Polish>
             </Key>
         </Container>
         <Container name="// Measure Blood Pressure Action //">
@@ -2988,6 +3029,7 @@
                 <Spanish>Colocación de vía IV bloqueada por manguito de presión aplicado</Spanish>
                 <Turkish>IV yerleştirme takılı tansiyon manşonu nedeniyle engellendi</Turkish>
                 <French>La mise en place d'un cathéter IV est bloqué par le brassard tensiomètre</French>
+                <Polish>Założenie IV niemożliwe przez obecność ciśnieniomierza</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_Already">
                 <English>Patient already has IO in the %1</English>
@@ -3206,6 +3248,7 @@
                 <Spanish>Colocación de manguito bloqueada por IV</Spanish>
                 <Turkish>Manşon yerleştirme IV nedeniyle engellendi</Turkish>
                 <French>Le brassard tensiomètre est bloqué par le cathéter IV</French>
+                <Polish>Załorzenie ciśnieniomierza niemożliwe przez IV</Polish>
             </Key>
         </Container>
         <Container name="// Syringe Actions //">
@@ -3326,6 +3369,7 @@
                 <Spanish>Aspirando %1...</Spanish>
                 <Turkish>%1 çekiliyor…</Turkish>
                 <French>Prelèvement %1...</French>
+                <Polish>Pobieranie %1...</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawingInto">
                 <English>Drawing %1 (%2) into %3ml syringe</English>
@@ -4113,6 +4157,7 @@
                 <Spanish>Sangre</Spanish>
                 <Turkish>Kan</Turkish>
                 <French>Sang</French>
+                <Polish>Krew</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBlood">
                 <English>Fresh Blood</English>
@@ -4123,6 +4168,7 @@
                 <Spanish>Sangre fresca</Spanish>
                 <Turkish>Taze Kan</Turkish>
                 <French>Sang Frais</French>
+                <Polish>Świerza krew</Polish>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_SwitchTargetInventory">
                 <English>Change target inventory</English>

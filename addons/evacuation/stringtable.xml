@@ -167,6 +167,7 @@
             <Korean>전환된 사상자 사망 시 리스폰 티켓 차감</Korean>
             <Spanish>Penalización de Tickets por Muerte de Herido Convertido</Spanish>
             <Turkish>Dönüştürülen Zayiat Ölüm Bileti Cezası</Turkish>
+            <Polish>Kara punktów odradzania na wypadek śmierci pacjenta po konwersji</Polish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty_Desc">
             <English>Sets amount of respawn tickets subtracted upon converted casualty death</English>
@@ -178,6 +179,7 @@
             <Korean>전환된 사상자 사망 시 차감될 리스폰 티켓 수 설정</Korean>
             <Spanish>Establece el número de tickets de reaparición que se restarán cuando muera un herido convertido.</Spanish>
             <Turkish>Dönüştürülmüş zayiat öldüğünde düşülecek yeniden doğma bileti sayısını ayarlar</Turkish>
+            <Polish>Ustawia ilość punktów odrodzenia, jeśli pacjent po konwersji umrze</Polish>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert">
             <English>Allow Converting Casualties</English>
@@ -308,6 +310,7 @@
                 <Spanish>Has tomado control de un nuevo refuerzo</Spanish>
                 <Turkish>Yeni bir takviye biriminin kontrolünü aldınız</Turkish>
                 <French>Vous avez pris le contrôle d'un nouveau renfort</French>
+                <Polish>Przejąłeś kontrole nad nowym wsparciem</Polish>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient">
                 <English>Evacuate Patient</English>
@@ -343,6 +346,7 @@
                 <Spanish>Punto de Evacuación</Spanish>
                 <Turkish>Tahliye Noktası</Turkish>
                 <French>Point d'évacuation</French>
+                <Polish>Punkt ewakuacji</Polish>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_ReinforcePoint">
                 <English>Reinforce Point</English>
@@ -352,6 +356,7 @@
                 <Spanish>Punto de Refuerzo</Spanish>
                 <Turkish>Takviye Noktası</Turkish>
                 <French>Point de renforcement</French>
+                <Polish>Punkt wsparcia</Polish>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_PlayerFaction">
                 <English>Player Side</English>

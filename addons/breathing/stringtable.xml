@@ -480,6 +480,7 @@
                 <Korean>흉강 천자 키트 (Thoracostomy Kit)</Korean>
                 <Spanish>Kit de toracostomía</Spanish>
                 <Turkish>Torakostomi Kiti</Turkish>
+                <Polish>Zestaw do torakotomii</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyKit_Desc">
                 <English>Single-use kit used to prepare patient for chest tube insertion</English>
@@ -491,6 +492,7 @@
                 <Korean>가슴관 삽입 준비 1회용 흉강 천자 키트</Korean>
                 <Spanish>Usado para preparar al paciente para la inserción de tubo torácico</Spanish>
                 <Turkish>Göğüs tüpü yerleştirilmesine hazırlık için kullanılan tek kullanımlık kit</Turkish>
+                <Polish>Jednorazowy zestaw do przygotowania pacjentów do założenia rurki do drenażu </Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_PocketBVM">
                 <English>Pocket BVM</English>
@@ -1568,6 +1570,7 @@
                 <Korean>키트로 흉강 천자 (Thoracostomy) 수행</Korean>
                 <Spanish>Realizar toracostomía (kit)</Spanish>
                 <Turkish>Torakostomi Yap (Kit)</Turkish>
+                <Polish>Wykonaj torakotomie (zestaw)</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Already">
                 <English>Thoracostomy sweep already performed</English>
@@ -1603,6 +1606,7 @@
                 <Korean>%1 키트로 흉강 천자 (Thoracostomy) 수행</Korean>
                 <Spanish>%1 realizó una toracostomía (kit)</Spanish>
                 <Turkish>%1 torakostomi yaptı (Torakostomi Kiti)</Turkish>
+                <Polish>%1 wykonał torakotomie (zestaw)</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Complete">
                 <English>Finger Thoracostomy Performed</English>
@@ -1975,6 +1979,7 @@
                 <Korean>CPR로 전환</Korean>
                 <Spanish>Cambiar a RCP</Spanish>
                 <Turkish>CPR’a Geç</Turkish>
+                <Polish>Zmień na RKO</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_SwappedToCPR">
                 <English>Swapped To CPR</English>
@@ -1985,6 +1990,7 @@
                 <Korean>CPR로 전환됨</Korean>
                 <Spanish>RCP iniciada</Spanish>
                 <Turkish>CPR’a Geçildi</Turkish>
+                <Polish>Zmieniono na RKO</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_ActionLog_Start">
                 <English>%1 started BVM rescue breaths</English>
@@ -2179,6 +2185,7 @@
                 <Spanish>Parte inferior y superior del tórax</Spanish>
                 <Turkish>Alt ve Üst Göğüs</Turkish>
                 <French>Poitrine inférieur et Poitrine supérieur</French>
+                <Polish>Góra i dół klatki piersiowej</Polish>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_%1">
                 <English>Thoracostomy Incision (%1)</English>

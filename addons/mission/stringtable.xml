@@ -8,6 +8,7 @@
                 <Turkish>Tam İyileştirme</Turkish>
                 <French>Soigner compètement</French>
                 <Korean>완전 치료</Korean>
+                <Polish>Pełne leczenie</Polish>
             </Key>
             <Key ID="STR_ACM_Mission_FullHealFacility_Module">
                 <English>Full Heal Facility</English>
@@ -15,6 +16,7 @@
                 <Turkish>Tam İyileştirme Tesisi</Turkish>
                 <French>Structure de Soin complet</French>
                 <Korean>완전 치료 시설</Korean>
+                <Polish>Placówka pełnego leczenia</Polish>
             </Key>
         </Container>
     </Package>
