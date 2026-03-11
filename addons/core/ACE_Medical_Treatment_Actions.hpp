@@ -70,6 +70,7 @@ class ACEGVAR(medical_treatment,actions) {
     class CheckPulse;
     class CheckResponse: CheckPulse {
         treatmentTime = 2.5;
+        ACM_menuIcon = "CheckResponse";
     };
     class CheckBloodPressure: CheckPulse {
         displayName = ECSTRING(circulation,CheckCapillaryRefill);
@@ -77,6 +78,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowedSelections[] = {"Body", "LeftArm", "RightArm"};
         treatmentTime = 4;
         callbackSuccess = QEFUNC(circulation,checkCapillaryRefill);
+        ACM_menuIcon = "CheckCapillaryRefill";
     };
     class MeasureBloodPressure: CheckBloodPressure {
         displayName = ECSTRING(circulation,PressureCuff_Measure);
@@ -103,6 +105,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QFUNC(canCheckDogtag);
         callbackSuccess = QACEFUNC(dogtags,checkDogtag);
         ACM_rollToBack = 1;
+        ACM_menuIcon = "CheckDogTags";
     };
 
     class PressureBandage: BasicBandage {
@@ -225,6 +228,7 @@ class ACEGVAR(medical_treatment,actions) {
         animationMedic = "";
         condition = QEFUNC(disability,canInspectForFracture);
         callbackSuccess = QEFUNC(disability,inspectForFracture);
+        ACM_menuIcon = "Fracture";
     };
     class FractureRealignment: Splint {
         displayName = ECSTRING(disability,FractureRealignment);
@@ -239,7 +243,7 @@ class ACEGVAR(medical_treatment,actions) {
         condition = QEFUNC(disability,canPerformFractureRealignment);
         litter[] = {};
         ACM_rollToBack = 1;
-        ACM_menuIcon = "";
+        ACM_menuIcon = "Fracture";
     };
     class ApplySAMSplint: Splint {
         displayName = ECSTRING(disability,ApplySAMSplint);
@@ -261,6 +265,9 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QEFUNC(disability,removeSplint);
         litter[] = {};
         ACM_menuIcon = "ACM_SAMSplint";
+    };
+    class PersonalAidKit: BasicBandage {
+        ACM_menuIcon = "ACE_personalAidKit";
     };
     class SurgicalKit: FieldDressing {
         ACM_menuIcon = "ACE_surgicalKit";
@@ -328,6 +335,7 @@ class ACEGVAR(medical_treatment,actions) {
         animationMedic = "";
         condition = QUOTE([ARR_4(_patient,_bodyPart,0,-1)] call EFUNC(circulation,hasIV) || [ARR_3(_patient,_bodyPart,0)] call EFUNC(circulation,hasIO));
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,_bodyPart)] call EFUNC(circulation,openTransfusionMenu));
+        ACM_menuIcon = "OpenTransfusionMenu";
     };
 
     // IV Catheter Examination
@@ -343,6 +351,7 @@ class ACEGVAR(medical_treatment,actions) {
         allowSelfTreatment = 1;
         condition = QUOTE(([ARR_4(_patient,_bodyPart,0,0)] call EFUNC(circulation,hasIV)));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,0)] call EFUNC(circulation,inspectIV));
+        ACM_menuIcon = "";
     };
     class InspectIV_Middle: InspectIV_Upper {
         displayName = ECSTRING(circulation,InspectIV_Middle);
@@ -571,6 +580,7 @@ class ACEGVAR(medical_treatment,actions) {
         treatmentTime = 1.5;
         condition = QUOTE(!([_patient] call ACEFUNC(common,isAwake)));
         callbackSuccess = QEFUNC(disability,shakeAwake);
+        ACM_menuIcon = "ShakeAwake";
     };
     class SlapAwake: ShakeAwake {
         displayName = ECSTRING(disability,SlapAwake);
@@ -582,6 +592,7 @@ class ACEGVAR(medical_treatment,actions) {
         animationMedic = "AinvPknlMstpSnonWnonDr_medic3";
         ACM_rollToBack = 1;
         ACM_ignoreAnimCoef = 1;
+        ACM_menuIcon = "SlapAwake";
     };
 
     class UseSyringe_10: OpenTransfusionMenu {
@@ -837,5 +848,6 @@ class ACEGVAR(medical_treatment,actions) {
         callbackSuccess = QUOTE([ARR_3(_medic,_patient,_usedItem)] call EFUNC(CBRN,washEyes));
         animationMedicSelf = "";
         ACM_rollToBack = 1;
+        ACM_menuIcon = "WashEyes";
     };
 };
