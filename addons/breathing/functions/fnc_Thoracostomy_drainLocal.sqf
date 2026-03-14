@@ -26,7 +26,7 @@ private _fluid = _patient getVariable [QGVAR(Hemothorax_Fluid), 0];
 private _width = 10;
 private _amount = "";
 
-if (_type == 0) then {
+if (_type != 1) then {
     _amount = switch (true) do {
         case (_fluid <= 0): {
             LSTRING(ThoracostomyDrain_Amount_None);
