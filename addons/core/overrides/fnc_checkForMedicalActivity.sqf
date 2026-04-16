@@ -1,24 +1,25 @@
 #include "..\script_component.hpp"
 /*
- * Author: BaerMitUmlaut
- * Serializes the medical state of a unit into a string.
+ * Author: PabstMirror
+ * Checks for scripted medical activity on a unit
  *
  * Arguments:
  * 0: Unit <OBJECT>
  *
  * Return Value:
- * Serialized state as JSON string <STRING>
+ * None
  *
  * Example:
- * [player] call ace_medical_fnc_serializeState;
+ * [player] call ace_medical_engine_fnc_checkForMedicalActivity
  *
- * Public: Yes
+ * Public: No
  */
-params [["_unit", objNull, [objNull]]];
+params ["_unit"];
+TRACE_1("checkForMedicalActivity",_unit);
 
-private _state = [] call CBA_fnc_createNamespace;
+if (!alive _unit || {!local _unit}) exitWith {};
+if (IS_MEDICAL_ACTIVITY(_unit)) exitWith {};
 
-// For variables, see: EFUNC(medical_status,initUnit)
 private _variableList = [
     [VAR_BLOOD_VOL, DEFAULT_BLOOD_VOLUME],
     [VAR_HEART_RATE, DEFAULT_HEART_RATE],
@@ -62,9 +63,6 @@ private _variableList = [
     [QEGVAR(airway,SurgicalAirway_IncisionCount), 0],
     [QEGVAR(airway,SurgicalAirway_StrapSecure), false],
     [QEGVAR(airway,SurgicalAirway_TubeUnSecure), false],
-    [QEGVAR(airway,AirwayCollapse_PFH), -1],
-    [QEGVAR(airway,AirwayObstructionVomit_PFH), -1],
-    [QEGVAR(airway,AirwayObstructionBlood_PFH), -1],
     // Breathing
     [QEGVAR(breathing,ChestInjury_State), false],
     [QEGVAR(breathing,Pneumothorax_State), 0],
@@ -83,8 +81,6 @@ private _variableList = [
     [QEGVAR(breathing,BVM_lastBreathOxygen), nil],
     [QEGVAR(breathing,RespirationRate), 18],
     [QEGVAR(breathing,Stethoscope_LungState), [0,0]],
-    [QEGVAR(breathing,Pneumothorax_PFH), -1],
-    [QEGVAR(breathing,Hemothorax_PFH), -1],
     // Circulation
     [QEGVAR(circulation,LozengeItem), ""],
     [QEGVAR(circulation,LozengeItem_InsertTime), -1],
@@ -129,9 +125,6 @@ private _variableList = [
     [QEGVAR(circulation,AmmoniaInhalant_LastUse), -1],
     [QEGVAR(circulation,CirculationState), true],
     [QEGVAR(circulation,BloodType), ACM_BLOODTYPE_O],
-    [QEGVAR(circulation,CardiacArrest_PFH), -1],
-    [QEGVAR(circulation,ReversibleCardiacArrest_PFH), -1],
-    [QEGVAR(circulation,HemolyticReaction_PFH), -1],
     // Core
     [QEGVAR(core,KnockOut_State), false],
     [QEGVAR(core,WasTreated), false],
@@ -147,17 +140,16 @@ private _variableList = [
     [QEGVAR(disability,Fracture_NoEffect), [false,false,false,false,false,false]],
     [VAR_TOURNIQUET_NECROSIS, DEFAULT_TOURNIQUET_NECROSIS],
     [VAR_TOURNIQUET_NECROSIS_T, DEFAULT_TOURNIQUET_NECROSIS],
-    [QEGVAR(disability,TourniquetEffects_PFH), -1],
     // Damage
     [VAR_CLOTTED_WOUNDS, createHashMap],
     [VAR_WRAPPED_WOUNDS, createHashMap],
-    [VAR_INTERNAL_WOUNDS, createHashMap],
-    [QEGVAR(damage,Coagulation_PFH), -1],
-    [QEGVAR(damage,IBCoagulation_PFH), -1]
+    [VAR_INTERNAL_WOUNDS, createHashMap]
 ];
 
 // CBRN
 if (EGVAR(CBRN,enable)) then {
+    private _CBRN_HazardsToCheck = [];
+
     _variableList append [
         [QEGVAR(CBRN,Exposed_State), false],
         [QEGVAR(CBRN,Exposed_External_State), false],
@@ -185,29 +177,17 @@ if (EGVAR(CBRN,enable)) then {
         _variableList pushBack [(format ["ACM_CBRN_%1_Exposed_External_State", toLower _x]), false];
         _variableList pushBack [(format ["ACM_CBRN_%1_Contaminated_State", toLower _x]), false];
         _variableList pushBack [(format ["ACM_CBRN_%1_WasExposed", toLower _x]), false];
+
+        _CBRN_HazardsToCheck pushBack (format ["ACM_CBRN_%1_Buildup", toLower _x]);
     } forEach EGVAR(CBRN,HazardType_Array);
 };
 
 {
-    _x params ["_var"];
-
-    _state setVariable [_var, _unit getVariable _x];
+    _x params ["_var", "_default"];
+    if (_unit isNil _var) then { continue };
+    private _current = _unit getVariable [_var, _default];
+    if (_current isNotEqualTo _default) exitWith {
+        TRACE_2("unit has non-defaults",_unit,_var);
+        [QACEGVAR(medical,activateMedical), _unit] call CBA_fnc_localEvent;
+    };
 } forEach _variableList;
-
-// Convert medications time to offset
-private _medications = +(_unit getVariable [VAR_MEDICATIONS, []]);
-{
-    _x set [1, _x#1 - CBA_missionTime];
-} forEach _medications;
-_state setVariable [VAR_MEDICATIONS, _medications];
-
-// Medical statemachine state
-private _currentState = [_unit, ACEGVAR(medical,STATE_MACHINE)] call CBA_statemachine_fnc_getCurrentState;
-_state setVariable [QACEGVAR(medical,statemachineState), _currentState];
-
-[QACEGVAR(medical,serialize), [_unit, _state]] call CBA_fnc_localEvent;
-
-// Serialize & return
-private _json = [_state] call CBA_fnc_encodeJSON;
-_state call CBA_fnc_deleteNamespace;
-_json
