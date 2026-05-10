@@ -388,9 +388,11 @@
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance">
                 <English>Wrapped Wound Reopen Chance Multiplier</English>
+                <Polish>Mnożnik szansy na rozejście się zaopatrzonej rany</Polish>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance_Desc">
                 <English>Sets chance that a wrapped wound reopens</English>
+                <Polish>Szansa na rozejście się zaopatrzonej rany</Polish>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch">
                 <English>Wrapped Stitch Time</English>
