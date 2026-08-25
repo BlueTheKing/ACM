@@ -12,6 +12,7 @@
             <Korean>ACM: Airway</Korean>
             <Spanish>ACM: Vías aéreas</Spanish>
             <Turkish>ACM: Hava Yolu</Turkish>
+            <Chinesesimp>ACM:呼吸道</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_Category_AirwayManagement">
             <English>Airway Management</English>
@@ -24,6 +25,7 @@
             <Korean>기도 (Airway) 관리</Korean>
             <Spanish>Gestión de vías aéreas</Spanish>
             <Turkish>Hava Yolu Yönetimi</Turkish>
+            <Chinesesimp>呼吸道管理设置</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_Category_AirwayAdjunct">
             <English>Airway Adjunct</English>
@@ -36,6 +38,7 @@
             <Korean>기도 (Airway) 보조기구</Korean>
             <Spanish>Dispositivo auxiliar de vía aérea</Spanish>
             <Turkish>Hava Yolu Yardımcı Ekipmanı</Turkish>
+            <Chinesesimp>呼吸道辅助设备设置</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Enable">
             <English>Enable Airway</English>
@@ -48,6 +51,7 @@
             <Korean>기도 (Airway) 활성화</Korean>
             <Spanish>Habilitar vía aérea</Spanish>
             <Turkish>Hava Yolunu Etkinleştir</Turkish>
+            <Chinesesimp>启动呼吸道系统模拟</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Enable_Desc">
             <English>Enable airway collapse/obstruction</English>
@@ -60,6 +64,7 @@
             <Korean>기도 (Airway) 붕괴/폐쇄 활성화</Korean>
             <Spanish>Habilitar el colapso/obstrucción de la vía aérea</Spanish>
             <Turkish>Hava Yolu çökmesini/obstrüksiyonunu etkinleştir</Turkish>
+            <Chinesesimp>启动呼吸道塌陷\堵塞模拟</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayCollapseChance">
             <English>Airway Collapse Chance Multiplier</English>
@@ -72,6 +77,7 @@
             <Korean>기도 (Airway) 붕괴 확률 배수</Korean>
             <Spanish>Multiplicador de probabilidad de colapso de vía aérea</Spanish>
             <Turkish>Hava Yolu Çökme Olasılığı Çarpanı</Turkish>
+            <Chinesesimp>呼吸道塌陷概率倍数</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayObstructionChance_Blood">
             <English>Airway Obstruction (Blood) Chance Multiplier</English>
@@ -84,6 +90,7 @@
             <Korean>기도 (Airway) 폐쇄(혈액) 확률 배수</Korean>
             <Spanish>Multiplicador de probabilidad de obstrucción de vía aérea por sangre</Spanish>
             <Turkish>Hava Yolu Tıkanıklığı (Kan) Olasılığı Çarpanı</Turkish>
+            <Chinesesimp>呼吸道堵塞(血液)概率倍数</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayObstructionChance_Vomit">
             <English>Airway Obstruction (Vomit) Chance Multiplier</English>
@@ -96,6 +103,7 @@
             <Korean>기도 (Airway) 폐쇄(구토) 확률 배수</Korean>
             <Spanish>Multiplicador de probabilidad de obstrucción de vía aérea por vómito</Spanish>
             <Turkish>Hava Yolu Tıkanıklığı (Kusmuk) Olasılığı Çarpanı</Turkish>
+            <Chinesesimp>呼吸道堵塞(呕吐物)概率倍数</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_RecoveryPosition">
             <English>Establish Recovery Position Time</English>
@@ -108,6 +116,7 @@
             <Korean>회복자세 유지 시간</Korean>
             <Spanish>Duración de la PLS</Spanish>
             <Turkish>Kurtarma Pozisyonu Oluşturma Süresi</Turkish>
+            <Chinesesimp>建立恢复姿势的时间</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_RecoveryPosition_Desc">
             <English>Time to establish Recovery Position</English>
@@ -120,6 +129,7 @@
             <Korean>회복자세를 만드는 데 걸리는 시간</Korean>
             <Spanish>Tiempo necesario para establecer la PLS</Spanish>
             <Turkish>Kurtarma Pozisyonuna Alma Süresi</Turkish>
+            <Chinesesimp>建立恢复姿势所需要的时间</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SuctionBag">
             <English>Allow Suction Bag</English>
@@ -132,6 +142,7 @@
             <Korean>Suction Bag 허용</Korean>
             <Spanish>Pemitir bolsa de succión</Spanish>
             <Turkish>Aspirasyon Torbasına İzin Ver</Turkish>
+            <Chinesesimp>允许使用吸痰袋</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SuctionBag_Desc">
             <English>Training level required to use Suction Bag</English>
@@ -144,6 +155,7 @@
             <Korean>Suction Bag 사용에 필요한 훈련 수준</Korean>
             <Spanish>Nivel de entrenamiento requerido para utilizar la bolsa de succión</Spanish>
             <Turkish>Aspirasyon Torbası kullanmak için gereken eğitim seviyesi</Turkish>
+            <Chinesesimp>使用吸痰袋所要求的训练等级</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_ACCUVAC">
             <English>Allow ACCUVAC</English>
@@ -156,6 +168,7 @@
             <Korean>ACCUVAC 허용</Korean>
             <Spanish>Pemitir ACCUVAC</Spanish>
             <Turkish>ACCUVAC’a İzin Ver</Turkish>
+            <Chinesesimp>允许使用ACCUVAC</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_ACCUVAC_Desc">
             <English>Training level required to use ACCUVAC</English>
@@ -168,6 +181,7 @@
             <Korean>ACCUVAC 사용에 필요한 훈련 수준</Korean>
             <Spanish>Nivel de entrenamiento requerido para utilizar ACCUVAC</Spanish>
             <Turkish>ACCUVAC kullanmak için gereken eğitim seviyesi</Turkish>
+            <Chinesesimp>使用ACCUVAC所要求的训练等级</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_OPA">
             <English>OPA Time</English>
@@ -180,6 +194,7 @@
             <Korean>Guedel Tube 삽입 시간</Korean>
             <Spanish>Duración del tubo orofaríngeo</Spanish>
             <Turkish>OPA Süresi</Turkish>
+            <Chinesesimp>使用OPA的时间</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_OPA_Desc">
             <English>Time to insert OPA</English>
@@ -192,6 +207,7 @@
             <Korean>Guedel Tube 삽입에 걸리는 시간</Korean>
             <Spanish>Tiempo para insertar el tubo orofaríngeo</Spanish>
             <Turkish>OPA yerleştirme süresi</Turkish>
+            <Chinesesimp>插入OPA所需的时间</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_NPA">
             <English>NPA Time</English>
@@ -204,6 +220,7 @@
             <Korean>NPA 삽입 시간</Korean>
             <Spanish>Duración del tubo nasofaríngeo</Spanish>
             <Turkish>NPA Süresi</Turkish>
+            <Chinesesimp>使用NPA的时间</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_NPA_Desc">
             <English>Time to insert NPA</English>
@@ -216,6 +233,7 @@
             <Korean>NPA 삽입에 걸리는 시간</Korean>
             <Spanish>Tiempo para insertar el tubo nasofaríngeo</Spanish>
             <Turkish>NPA yerleştirme süresi</Turkish>
+            <Chinesesimp>插入NPA所需的时间</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_SGA">
             <English>i-gel Time</English>
@@ -228,6 +246,7 @@
             <Korean>i-gel 삽입 시간</Korean>
             <Spanish>Duración del i-gel</Spanish>
             <Turkish>i-gel Süresi</Turkish>
+            <Chinesesimp>使用i-gel的时间</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_SGA_Desc">
             <English>Time to insert i-gel</English>
@@ -240,6 +259,7 @@
             <Korean>i-gel 삽입에 걸리는 시간</Korean>
             <Spanish>Tiempo para insertar el i-gel</Spanish>
             <Turkish>i-gel yerleştirme süresi</Turkish>
+            <Chinesesimp>插入i-gel所需的时间</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_OPA">
             <English>Allow OPA</English>
@@ -252,6 +272,7 @@
             <Korean>Guedel Tube 허용</Korean>
             <Spanish>Permitir tubo orofaríngeo</Spanish>
             <Turkish>OPA’ya İzin Ver</Turkish>
+            <Chinesesimp>允许使用OPA</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_OPA_Desc">
             <English>Training level required to insert OPA</English>
@@ -264,6 +285,7 @@
             <Korean>Guedel Tube 삽입에 필요한 훈련 수준</Korean>
             <Spanish>Nivel de entrenamiento requerido para utilizar el tubo orofaríngeo</Spanish>
             <Turkish>OPA yerleştirmek için gereken eğitim seviyesi</Turkish>
+            <Chinesesimp>使用OPA所要求的训练等级</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_NPA">
             <English>Allow NPA</English>
@@ -276,6 +298,7 @@
             <Korean>NPA 허용</Korean>
             <Spanish>Pemitir tubo nasofaríngeo</Spanish>
             <Turkish>NPA’ya İzin Ver</Turkish>
+            <Chinesesimp>允许使用NPA</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_NPA_Desc">
             <English>Training level required to insert NPA</English>
@@ -288,6 +311,7 @@
             <Korean>NPA 삽입에 필요한 훈련 수준</Korean>
             <Spanish>Nivel de entrenamiento requerido para utilizar el tubo nasofaríngeo</Spanish>
             <Turkish>NPA yerleştirmek için gereken eğitim seviyesi</Turkish>
+            <Chinesesimp>使用NPA所需要的训练等级</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SGA">
             <English>Allow i-gel</English>
@@ -300,6 +324,7 @@
             <Korean>i-gel 허용</Korean>
             <Spanish>Permitir i-gel</Spanish>
             <Turkish>i-gel’e İzin Ver</Turkish>
+            <Chinesesimp>允许使用i-gel</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SGA_Desc">
             <English>Training level required to insert i-gel</English>
@@ -312,6 +337,7 @@
             <Korean>i-gel 삽입에 필요한 훈련 수준</Korean>
             <Spanish>Nivel de entrenamiento requerido para utilizar el i-gel</Spanish>
             <Turkish>i-gel yerleştirmek için gereken eğitim seviyesi</Turkish>
+            <Chinesesimp>使用i-gel所需要的训练等级</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SurgicalAirway">
             <English>Allow Surgical Airway</English>
@@ -323,6 +349,7 @@
             <Turkish>Cerrahi Hava Yoluna İzin Ver</Turkish>
             <French>Autoriser les voies aériennes chirurgicales</French>
             <Polish>Pozwól na wykonanie cric</Polish>
+            <Chinesesimp>允许使用手术呼吸道</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SurgicalAirway_Desc">
             <English>Training level required to establish surgical airway</English>
@@ -334,6 +361,7 @@
             <Turkish>Cerrahi hava yolu oluşturmak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de formation est nécesaire pour établir les voies respiratoires chirurgicales</French>
             <Polish>Poziom wyszkolenia potrzebny do wykonania cric</Polish>
+            <Chinesesimp>使用手术呼吸道所需要的训练等级</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayAdjunctsReusable">
             <English>Airway Adjuncts Reusable</English>
@@ -346,6 +374,7 @@
             <Korean>기도 (Airway) 보조기구 재사용 가능</Korean>
             <Spanish>Dispositivos auxiliares de vía aérea reutilizables</Spanish>
             <Turkish>Hava yolu yardımcı ekipmanları yeniden kullanılabilir</Turkish>
+            <Chinesesimp>呼吸道辅助设备可复用</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_AirwayAdjunctsReusable_Desc">
             <English>Airway adjuncts are kept instead of discarded on removal</English>
@@ -358,6 +387,7 @@
             <Korean>제거 시 버리지 않고 유지됨</Korean>
             <Spanish>Los dispositivos auxiliares se conservan en lugar de desecharse al retirarlos</Spanish>
             <Turkish>Hava yolu yardımcı ekipmanları çıkarıldığında atılmaz, saklanır</Turkish>
+            <Chinesesimp>呼吸道辅助设备移除后保留而非丢弃</Chinesesimp>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Airway_OPA">
@@ -371,6 +401,7 @@
                 <Korean>Guedel Tube</Korean>
                 <Spanish>Tubo Orofaríngeo</Spanish>
                 <Turkish>OPA</Turkish>
+                <Chinesesimp>口咽通气道(OPA)</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_OPA_Desc">
                 <English>Used to keep airway open through the oral route</English>
@@ -383,6 +414,7 @@
                 <Korean>구강 경로를 통해 기도 개방 유지</Korean>
                 <Spanish>Usado para mantener las vías aéreas abiertas mediante la vía oral</Spanish>
                 <Turkish>Ağız yoluyla hava yolunu açık tutmak için kullanılır</Turkish>
+                <Chinesesimp>用于经口腔途径保持呼吸道通畅</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_IGel">
                 <English>i-gel</English>
@@ -395,6 +427,7 @@
                 <Korean>i-gel</Korean>
                 <Spanish>i-gel</Spanish>
                 <Turkish>i-gel</Turkish>
+                <Chinesesimp>声门上气道管理装置(i-gel)</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_IGel_Desc">
                 <English>Used to secure airway for prolonged time</English>
@@ -407,6 +440,7 @@
                 <Korean>장시간 기도 확보용</Korean>
                 <Spanish>Usado para asegurar vías aéreas por tiempos prolongados</Spanish>
                 <Turkish>Hava yolunu uzun süreli güvence altına almak için kullanılır</Turkish>
+                <Chinesesimp>用于长时间确保呼吸道畅通</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_NPA">
                 <English>NPA</English>
@@ -419,6 +453,7 @@
                 <Korean>NPA</Korean>
                 <Spanish>Tubo Nasofaríngeo</Spanish>
                 <Turkish>NPA</Turkish>
+                <Chinesesimp>鼻咽通气道(NPA)</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_NPA_Desc">
                 <English>Used to keep airway open through nasal route</English>
@@ -431,6 +466,7 @@
                 <Korean>비강 경로로 기도 개방 유지</Korean>
                 <Spanish>Usado para mantener vías aéreas abiertas mediante la vía nasal</Spanish>
                 <Turkish>Burun yoluyla hava yolunu açık tutmak için kullanılır</Turkish>
+                <Chinesesimp>用于经鼻腔保持呼吸道畅通</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SuctionBag">
                 <English>Emergency Disposable Suction Bag</English>
@@ -443,6 +479,7 @@
                 <Korean>Emergency Disposable Suction Bag</Korean>
                 <Spanish>Bolsa de succión desechable de emergencia</Spanish>
                 <Turkish>Acil Tek Kullanımlık Aspirasyon Torbası</Turkish>
+                <Chinesesimp>应急一次性吸痰袋</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SuctionBag_Short">
                 <English>Suction Bag</English>
@@ -455,6 +492,7 @@
                 <Korean>Suction Bag</Korean>
                 <Spanish>Bolsa de succión</Spanish>
                 <Turkish>Aspirasyon Torbası</Turkish>
+                <Chinesesimp>吸痰袋</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SuctionBag_Desc">
                 <English>Single-use bag used to clear airway obstructions</English>
@@ -467,6 +505,7 @@
                 <Korean>기도 확보 1회용 석션백</Korean>
                 <Spanish>Bolsa de un solo uso para quitar obstrucciones en las vías aéreas</Spanish>
                 <Turkish>Hava yolu tıkanıklıklarını temizlemek için kullanılan tek kullanımlık torba</Turkish>
+                <Chinesesimp>用于清理呼吸道堵塞的一次性袋</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_ACCUVAC">
                 <English>ACCUVAC</English>
@@ -479,6 +518,7 @@
                 <Korean>ACCUVAC</Korean>
                 <Spanish>ACCUVAC</Spanish>
                 <Turkish>ACCUVAC</Turkish>
+                <Chinesesimp>便携式紧急吸痰装置(ACCUVAC)</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_ACCUVAC_Desc">
                 <English>Device used to clear airway obstructions</English>
@@ -491,6 +531,7 @@
                 <Korean>기도 (Airway) 폐쇄 제거 장치</Korean>
                 <Spanish>Dispositivo utilizado para succionar obstrucciones en la vía aérea</Spanish>
                 <Turkish>Hava yolu tıkanıklıklarını gidermek için kullanılan cihaz</Turkish>
+                <Chinesesimp>用于清理呼吸道堵塞的设备</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CricKit">
                 <English>Cric Kit</English>
@@ -502,6 +543,7 @@
                 <Turkish>Krikotirotomi Kiti</Turkish>
                 <French>Kit de cricothyrotomie.</French>
                 <Polish>Zestaw Cric</Polish>
+                <Chinesesimp>环甲膜切开术工具包</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CricKit_Desc">
                 <English>Single-use kit used to establish emergency surgical airway</English>
@@ -513,6 +555,7 @@
                 <Turkish>Acil cerrahi hava yolu oluşturmak için kullanılan tek kullanımlık kit</Turkish>
                 <French>Un kit a usage unique utilisé pour établir une voie respiratoires chirurgicales</French>
                 <Polish>Jednorazowy zestaw używany do wykonania konikotomii</Polish>
+                <Chinesesimp>用于建立应急手术呼吸道的一次性工具包</Chinesesimp>
             </Key>
         </Container>
         <Container name="// Head tilt-chin lift Action //">
@@ -527,6 +570,7 @@
                 <Korean>머리 기울임-턱 들어올리기 시행</Korean>
                 <Spanish>Realizar inclinación de cabeza y elevación de mentón</Spanish>
                 <Turkish>Baş Geriye – Çene Yukarı Manevrasını Uygula</Turkish>
+                <Chinesesimp>执行仰头抬颏法</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTiltChinLift_Already">
                 <English>Patient already has head tilted-chin lifted</English>
@@ -539,6 +583,7 @@
                 <Korean>환자는 이미 머리 기울어짐-턱 들어올린 상태임</Korean>
                 <Spanish>Paciente ya tiene cabeza inclinada y mentón elevado</Spanish>
                 <Turkish>Hastanın başı zaten geriye yatırılmış ve çenesi kaldırılmış</Turkish>
+                <Chinesesimp>病人已经仰头抬颏</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTiltChinLift_ActionLog">
                 <English>%1 started performing head tilt-chin lift</English>
@@ -551,6 +596,7 @@
                 <Korean>%1 머리 기울임-턱 들어올리는 중</Korean>
                 <Spanish>%1 comienzo de realizar la inclinación de cabeza y elevación de mentón</Spanish>
                 <Turkish>%1 baş geriye–çene yukarı manevrasını uygulamaya başladı</Turkish>
+                <Chinesesimp>%1 开始仰头抬颏法</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTiltChinLift_ActionHint">
                 <English>Performing head tilt-chin lift&lt;br/&gt;Stay close to the patient</English>
@@ -563,6 +609,7 @@
                 <Korean>머리 기울임-턱 들어올리는 중&lt;br/&gt;환자 가까이에 머무르세요</Korean>
                 <Spanish>Realizando inclinación de cabeza y elevación de mentón&lt;br/&gt;Mantenerse cerca del paciente</Spanish>
                 <Turkish>Baş geriye–çene yukarı manevrası uygulanıyor&lt;br/&gt;Hastaya yakın dur</Turkish>
+                <Chinesesimp>正在执行仰头抬颏法&lt;br/&gt;呆在病人附近</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTiltChinLift_ActionInProgress">
                 <English>Performing Head Tilt-Chin Lift...</English>
@@ -575,6 +622,7 @@
                 <Korean>머리 기울임-턱 들어올리는 중...</Korean>
                 <Spanish>Realizando inclinación de cabeza y elevación de mentón...</Spanish>
                 <Turkish>Baş Geriye – Çene Yukarı Manevrası Uygulanıyor...</Turkish>
+                <Chinesesimp>执行仰头抬颏法...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTiltChinLift_ActionCancelled">
                 <English>Head tilt-chin lift cancelled</English>
@@ -587,6 +635,7 @@
                 <Korean>머리 기울임-턱 들어올리기 취소됨</Korean>
                 <Spanish>Inclinación de cabeza y elevación de mentón cancelada</Spanish>
                 <Turkish>Baş geriye–çene yukarı manevrası iptal edildi</Turkish>
+                <Chinesesimp>仰头抬颏法已取消</Chinesesimp>
             </Key>
         </Container>
         <Container name="// Check Airway Action //">
@@ -601,6 +650,7 @@
                 <Korean>기도 확인</Korean>
                 <Spanish>Revisar vías aéreas</Spanish>
                 <Turkish>Hava yolunu Kontrol Et</Turkish>
+                <Chinesesimp>检查呼吸道</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Progress">
                 <English>Checking Airway...</English>
@@ -613,6 +663,7 @@
                 <Korean>기도 확인 중...</Korean>
                 <Spanish>Revisando vías aéreas...</Spanish>
                 <Turkish>Hava yolu Kontrol Ediliyor...</Turkish>
+                <Chinesesimp>检查呼吸道中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_ActionLog">
                 <English>checked airway</English>
@@ -625,6 +676,7 @@
                 <Korean>이 기도 확인</Korean>
                 <Spanish>Vías aéreas revisadas</Spanish>
                 <Turkish>hava yolu kontrol edildi</Turkish>
+                <Chinesesimp>呼吸道已经检查</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_AirwayIsClear">
                 <English>Airway is clear</English>
@@ -637,6 +689,7 @@
                 <Korean>기도가 깨끗함</Korean>
                 <Spanish>Vías aéreas despejadas</Spanish>
                 <Turkish>Hava yolu açık</Turkish>
+                <Chinesesimp>呼吸道畅通</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_AirwayIsClear_Short">
                 <English>Clear</English>
@@ -649,6 +702,7 @@
                 <Korean>깨끗함 (Clrear)</Korean>
                 <Spanish>Despejado</Spanish>
                 <Turkish>Açık</Turkish>
+                <Chinesesimp>畅通</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_RecoveryPosition">
                 <English>In Recovery Position</English>
@@ -661,6 +715,7 @@
                 <Korean>회복자세 유지 중</Korean>
                 <Spanish>En posición de recuperación</Spanish>
                 <Turkish>Kurtarma Pozisyonunda</Turkish>
+                <Chinesesimp>在恢复姿势中</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_RecoveryPosition_Short">
                 <English>In Recovery</English>
@@ -673,6 +728,7 @@
                 <Korean>회복자세</Korean>
                 <Spanish>En recuperación</Spanish>
                 <Turkish>Kurtarmada</Turkish>
+                <Chinesesimp>正在恢复</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_HeadTiltChinLift">
                 <English>Head Tilted-Chin Lifted</English>
@@ -685,6 +741,7 @@
                 <Korean>머리 기울여짐-턱 들여올려짐</Korean>
                 <Spanish>Cabeza inclinada y mentón elevado</Spanish>
                 <Turkish>Baş Geriye – Çene Yukarı</Turkish>
+                <Chinesesimp>仰头抬颏了</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_HeadTiltChinLift_Short">
                 <English>Head Tilted</English>
@@ -697,6 +754,7 @@
                 <Korean>머리 기울여짐</Korean>
                 <Spanish>Cabeza inclinada</Spanish>
                 <Turkish>Baş Geriye Yatırılmış</Turkish>
+                <Chinesesimp>仰头了</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_%1_Inserted">
                 <English>inserted</English>
@@ -709,6 +767,7 @@
                 <Korean>삽입 완료</Korean>
                 <Spanish>insertado</Spanish>
                 <Turkish>yerleştirildi</Turkish>
+                <Chinesesimp>插入了</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Mild">
                 <English>Airway mildly collapsed</English>
@@ -721,6 +780,7 @@
                 <Korean>기도 경미 붕괴</Korean>
                 <Spanish>Vía aérea levemente colapsada</Spanish>
                 <Turkish>Hava yolu hafif çökmüş</Turkish>
+                <Chinesesimp>呼吸道轻微塌陷</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Mild_Short">
                 <English>Mild collapse</English>
@@ -733,6 +793,7 @@
                 <Korean>경미한 붕괴</Korean>
                 <Spanish>Colapso leve</Spanish>
                 <Turkish>Hafif çökme</Turkish>
+                <Chinesesimp>轻微塌陷</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Moderate">
                 <English>Airway moderately collapsed</English>
@@ -746,6 +807,7 @@
 (Moderate)</Korean>
                 <Spanish>Vía aérea moderadamente colapsada</Spanish>
                 <Turkish>Hava yolu orta derecede çökmüş</Turkish>
+                <Chinesesimp>呼吸道中等塌陷</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Moderate_Short">
                 <English>Moderate collapse</English>
@@ -759,6 +821,7 @@
 (Moderate)</Korean>
                 <Spanish>Colapso moderado</Spanish>
                 <Turkish>Orta derecede çökme</Turkish>
+                <Chinesesimp>中等塌陷</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Severe">
                 <English>Airway severely collapsed</English>
@@ -771,6 +834,7 @@
                 <Korean>기도 심각한 붕괴</Korean>
                 <Spanish>Vía aérea severamente colapsada</Spanish>
                 <Turkish>Hava yolu ciddi şekilde çökmüş</Turkish>
+                <Chinesesimp>呼吸道严重塌陷</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Collapse_Severe_Short">
                 <English>Severe collapse</English>
@@ -783,6 +847,7 @@
                 <Korean>심각한 붕괴</Korean>
                 <Spanish>Colapso severo</Spanish>
                 <Turkish>Ciddi çökme</Turkish>
+                <Chinesesimp>严重塌陷</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Obstruction_Light">
                 <English>Airway lightly obstructed</English>
@@ -795,6 +860,7 @@
                 <Korean>기도 경미한 폐쇄</Korean>
                 <Spanish>Vía aérea ligeramente obstruida</Spanish>
                 <Turkish>Hava yolu hafif tıkalı</Turkish>
+                <Chinesesimp>呼吸道轻微堵塞</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Obstruction_Light_Short">
                 <English>Light obstruction</English>
@@ -807,6 +873,7 @@
                 <Korean>경미한 폐쇄</Korean>
                 <Spanish>Obstrucción leve</Spanish>
                 <Turkish>Hafif tıkanıklık</Turkish>
+                <Chinesesimp>轻微堵塞</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Obstruction">
                 <English>Airway obstructed</English>
@@ -819,6 +886,7 @@
                 <Korean>기도 폐쇄됨</Korean>
                 <Spanish>Vía aérea obstruida</Spanish>
                 <Turkish>Hava yolu tıkalı</Turkish>
+                <Chinesesimp>呼吸道堵塞了</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Obstruction_Short">
                 <English>Obstruction</English>
@@ -831,6 +899,7 @@
                 <Korean>폐쇄</Korean>
                 <Spanish>Obstrucción</Spanish>
                 <Turkish>Tıkanıklık</Turkish>
+                <Chinesesimp>堵塞</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Severe">
                 <English>Airway has severe inflammation</English>
@@ -843,6 +912,7 @@
                 <Turkish>Hava yolunda ciddi iltihaplanma var</Turkish>
                 <French>Les voies respiratoires sont sevèrement inflammé</French>
                 <Polish>Poważny stan zapalny dróg oddechowych</Polish>
+                <Chinesesimp>呼吸道严重发炎</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Severe_Short">
                 <English>Severe inflammation</English>
@@ -854,6 +924,7 @@
                 <Turkish>Ciddi iltihaplanma</Turkish>
                 <French>Inflammation sevère</French>
                 <Polish>Poważny stan zapalny</Polish>
+                <Chinesesimp>严重发炎</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Serious">
                 <English>Airway has significant inflammation</English>
@@ -866,6 +937,7 @@
                 <Turkish>Hava yolunda belirgin iltihaplanma var</Turkish>
                 <French>Les voies respiratoires significative</French>
                 <Polish>Duży stan zapalny dróg oddechowych</Polish>
+                <Chinesesimp>呼吸道显著发炎</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Serious_Short">
                 <English>Significant inflammation</English>
@@ -877,6 +949,7 @@
                 <Turkish>Belirgin iltihaplanma</Turkish>
                 <French>Inflammation significative</French>
                 <Polish>Duży stan zapalny</Polish>
+                <Chinesesimp>显著发炎</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Mild">
                 <English>Airway has noticable inflammation</English>
@@ -889,6 +962,7 @@
                 <Turkish>Hava yolunda fark edilir iltihaplanma var</Turkish>
                 <French>Les voies respiratoires ont une inflammation visible</French>
                 <Polish>Widoczny stan zapalny dróg oddechowych</Polish>
+                <Chinesesimp>呼吸道明显发炎</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CheckAirway_Inflammation_Mild_Short">
                 <English>Noticable inflammation</English>
@@ -900,6 +974,7 @@
                 <Turkish>Fark edilir iltihaplanma</Turkish>
                 <French>Inflammation visible</French>
                 <Polish>Widoczny stan zapalny</Polish>
+                <Chinesesimp>明显发炎</Chinesesimp>
             </Key>
         </Container>
         <Container name="// Airway Suction Actions //">
@@ -914,6 +989,7 @@
                 <Korean>Suction Bag 사용</Korean>
                 <Spanish>Usar bolsa de succión</Spanish>
                 <Turkish>Aspirasyon Torbasını Kullan</Turkish>
+                <Chinesesimp>使用吸痰袋</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_UseSuctionBag_Progress">
                 <English>Using Suction Bag...</English>
@@ -926,6 +1002,7 @@
                 <Korean>Suction Bag 사용 중...</Korean>
                 <Spanish>Usando bolsa de succión...</Spanish>
                 <Turkish>Aspirasyon Torbası Kullanılıyor...</Turkish>
+                <Chinesesimp>使用吸痰袋中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_UseACCUVAC">
                 <English>Use ACCUVAC</English>
@@ -938,6 +1015,7 @@
                 <Korean>ACCUVAC 사용</Korean>
                 <Spanish>Usar ACCUVAC</Spanish>
                 <Turkish>ACCUVAC Kullan</Turkish>
+                <Chinesesimp>使用ACCUVAC</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_UseACCUVAC_Progress">
                 <English>Using ACCUVAC...</English>
@@ -950,6 +1028,7 @@
                 <Korean>ACCUVAC 사용 중...</Korean>
                 <Spanish>Usando ACCUVAC...</Spanish>
                 <Turkish>ACCUVAC Kullanılıyor...</Turkish>
+                <Chinesesimp>使用ACCUVAC中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_Suction_Finished">
                 <English>Suction finished</English>
@@ -962,6 +1041,7 @@
                 <Korean>흡인 완료</Korean>
                 <Spanish>Succión finalizada</Spanish>
                 <Turkish>Aspirasyon tamamlandı</Turkish>
+                <Chinesesimp>吸痰完毕</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_Suction_AirwayIsClear">
                 <English>Airway is clear</English>
@@ -974,6 +1054,7 @@
                 <Korean>기도 깨끗함</Korean>
                 <Spanish>Vía aérea despejada</Spanish>
                 <Turkish>Hava yolu açık</Turkish>
+                <Chinesesimp>呼吸道已畅通</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_Suction_AirwayHasBeenCleared">
                 <English>Airway has been cleared</English>
@@ -986,6 +1067,7 @@
                 <Korean>기도 깨끗해짐</Korean>
                 <Spanish>Vía aérea ha sido despejada</Spanish>
                 <Turkish>Hava yolu temizlendi</Turkish>
+                <Chinesesimp>呼吸道已经是畅通的</Chinesesimp>
             </Key>
         </Container>
         <Container name="// Adjunct Actions //">
@@ -1000,6 +1082,7 @@
                 <Korean>Guedel Tube 삽입</Korean>
                 <Spanish>Insertar tubo orofaríngeo</Spanish>
                 <Turkish>OPA Yerleştir</Turkish>
+                <Chinesesimp>插入OPA</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_InsertOPA_Progress">
                 <English>Inserting OPA...</English>
@@ -1012,6 +1095,7 @@
                 <Korean>Guedel Tube 삽입 중...</Korean>
                 <Spanish>Insertando tubo orofaríngeo...</Spanish>
                 <Turkish>OPA Yerleştiriliyor...</Turkish>
+                <Chinesesimp>插入OPA中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_InsertNPA">
                 <English>Insert NPA</English>
@@ -1024,6 +1108,7 @@
                 <Korean>NPA 삽입</Korean>
                 <Spanish>Insertar tubo nasofaríngeo</Spanish>
                 <Turkish>NPA Yerleştir</Turkish>
+                <Chinesesimp>插入NPA</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_InsertNPA_Progress">
                 <English>Inserting NPA...</English>
@@ -1036,6 +1121,7 @@
                 <Korean>NPA 삽입 중...</Korean>
                 <Spanish>Insertando tubo nasofaríngeo</Spanish>
                 <Turkish>NPA Yerleştiriliyor...</Turkish>
+                <Chinesesimp>插入NPA中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_InsertIGel">
                 <English>Insert i-gel</English>
@@ -1048,6 +1134,7 @@
                 <Korean>i-gel 삽입</Korean>
                 <Spanish>Insertar i-gel</Spanish>
                 <Turkish>i-gel Yerleştir</Turkish>
+                <Chinesesimp>插入i-gel</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_InsertIGel_Progress">
                 <English>Inserting i-gel...</English>
@@ -1060,6 +1147,7 @@
                 <Korean>i-gel 삽입 중...</Korean>
                 <Spanish>Insertando i-gel...</Spanish>
                 <Turkish>i-gel Yerleştiriliyor...</Turkish>
+                <Chinesesimp>插入i-gel中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RemoveOPA">
                 <English>Remove OPA</English>
@@ -1072,6 +1160,7 @@
                 <Korean>Guedel Tube 제거</Korean>
                 <Spanish>Quitar tubo orofaríngeo</Spanish>
                 <Turkish>OPA’yı Çıkar</Turkish>
+                <Chinesesimp>移除OPA</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RemoveOPA_Progress">
                 <English>Removing OPA...</English>
@@ -1084,6 +1173,7 @@
                 <Korean>Guedel Tube 제거 중...</Korean>
                 <Spanish>Quitando tubo orofaríngeo...</Spanish>
                 <Turkish>OPA Çıkarılıyor...</Turkish>
+                <Chinesesimp>移除OPA中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RemoveNPA">
                 <English>Remove NPA</English>
@@ -1096,6 +1186,7 @@
                 <Korean>NPA 제거</Korean>
                 <Spanish>Quitar tubo nasofaríngeo</Spanish>
                 <Turkish>NPA’yı Çıkar</Turkish>
+                <Chinesesimp>移除NPA</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RemoveNPA_Progress">
                 <English>Removing NPA...</English>
@@ -1108,6 +1199,7 @@
                 <Korean>NPA 제거 중...</Korean>
                 <Spanish>Quitando tubo nasofaríngeo</Spanish>
                 <Turkish>NPA Çıkarılıyor...</Turkish>
+                <Chinesesimp>移除NPA中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RemoveIGel">
                 <English>Remove i-gel</English>
@@ -1120,6 +1212,7 @@
                 <Korean>i-gel 제거</Korean>
                 <Spanish>Quitar i-gel</Spanish>
                 <Turkish>i-gel’i Çıkar</Turkish>
+                <Chinesesimp>移除i-gel</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RemoveIGel_Progress">
                 <English>Removing i-gel...</English>
@@ -1132,6 +1225,7 @@
                 <Korean>i-gel 제거 중...</Korean>
                 <Spanish>Quitando i-gel</Spanish>
                 <Turkish>i-gel Çıkarılıyor...</Turkish>
+                <Chinesesimp>移除i-gel中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_Already">
                 <English>Airway item already inserted</English>
@@ -1144,6 +1238,7 @@
                 <Korean>기도 기구 이미 삽입됨</Korean>
                 <Spanish>Dispositivo de vía aérea ya insertado</Spanish>
                 <Turkish>Havayolu ekipmanı zaten yerleştirilmiş</Turkish>
+                <Chinesesimp>呼吸道已经有物品插入</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_Failed">
                 <English>Failed to insert %1</English>
@@ -1156,6 +1251,7 @@
                 <Korean>%1 삽입 실패</Korean>
                 <Spanish>Falló la inserción de %1</Spanish>
                 <Turkish>%1 yerleştirilemedi</Turkish>
+                <Chinesesimp>插入失败</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_Failed_Awake">
                 <English>Patient is awake</English>
@@ -1167,6 +1263,7 @@
                 <Turkish>Hasta uyanık</Turkish>
                 <French>Le patient est réveillé</French>
                 <Polish>Pacjent jest przytomny</Polish>
+                <Chinesesimp>病人是醒着的</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_Failed_Inflammation">
                 <English>Blocked by airway inflammation</English>
@@ -1179,6 +1276,7 @@
                 <Turkish>Hava yolu iltihabı nedeniyle engellendi</Turkish>
                 <French>Bloqué par l'infllamation des voies respiratoires</French>
                 <Polish>Zablokowany przez stan zapalny dróg oddechowych</Polish>
+                <Chinesesimp>被呼吸道炎症阻挡</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_%1_Inserted">
                 <English>%1 inserted</English>
@@ -1191,6 +1289,7 @@
                 <Korean>%1 삽입 완료</Korean>
                 <Spanish>%1 insertado</Spanish>
                 <Turkish>%1 yerleştirildi</Turkish>
+                <Chinesesimp>%1 插入了</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_Adjunct_ActionLog">
                 <English>%1 has inserted %2</English>
@@ -1203,6 +1302,7 @@
                 <Korean>%1 %2 삽입함</Korean>
                 <Spanish>%1 ha insertado %2</Spanish>
                 <Turkish>%1, %2 yerleştirdi</Turkish>
+                <Chinesesimp>%1 已经插入 %2</Chinesesimp>
             </Key>
         </Container>
         <Container name="// Head Turning Action //">
@@ -1217,6 +1317,7 @@
                 <Korean>머리 돌리기 수행</Korean>
                 <Spanish>Realizar giro de cabeza</Spanish>
                 <Turkish>Baş Çevirme Manevrasını Uygula</Turkish>
+                <Chinesesimp>执行转动头部</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_PerformHeadTurning_Progress">
                 <English>Head Turning...</English>
@@ -1229,6 +1330,7 @@
                 <Korean>머리 돌리는 중...</Korean>
                 <Spanish>Girando cabeza...</Spanish>
                 <Turkish>Baş Çevriliyor...</Turkish>
+                <Chinesesimp>正在转动头部...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTurn_Performed">
                 <English>Head turning performed</English>
@@ -1241,6 +1343,7 @@
                 <Korean>머리 돌리기 완료</Korean>
                 <Spanish>Giro de cabeza realizado</Spanish>
                 <Turkish>Baş çevirme uygulandı</Turkish>
+                <Chinesesimp>头部已经转动</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTurn_AirwayIsClear">
                 <English>Airway is clear</English>
@@ -1253,6 +1356,7 @@
                 <Korean>기도 깨끗함</Korean>
                 <Spanish>Vía aérea despejada</Spanish>
                 <Turkish>Hava yolu açık</Turkish>
+                <Chinesesimp>呼吸道已畅通</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTurn_AirwayCleared">
                 <English>Airway has been cleared</English>
@@ -1265,6 +1369,7 @@
                 <Korean>기도 이물 제거 완료</Korean>
                 <Spanish>La vía aérea ha sido despejada</Spanish>
                 <Turkish>Havayolu temizlendi</Turkish>
+                <Chinesesimp>呼吸道已经被清空了</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTurn_Failed">
                 <English>Head turning unsuccessful</English>
@@ -1277,6 +1382,7 @@
                 <Korean>머리 돌리기 실패</Korean>
                 <Spanish>Giro de cabeza fallido</Spanish>
                 <Turkish>Baş çevirme başarısız</Turkish>
+                <Chinesesimp>转动头部失败</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTurn_SuctionRequired">
                 <English>Medical suction required</English>
@@ -1289,6 +1395,7 @@
                 <Korean>흡인 필요</Korean>
                 <Spanish>Requiere succión médica</Spanish>
                 <Turkish>Tıbbi aspirasyon gerekli</Turkish>
+                <Chinesesimp>需要医学抽吸</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_HeadTurn_ActionLog">
                 <English>%1 performed head turning</English>
@@ -1301,6 +1408,7 @@
                 <Korean>%1 머리 돌리기 수행함</Korean>
                 <Spanish>%1 realizó el giro de cabeza</Spanish>
                 <Turkish>%1 baş çevirme uyguladı</Turkish>
+                <Chinesesimp>%1 已经执行转动头部</Chinesesimp>
             </Key>
         </Container>
         <Container name="// Recovery Position Action //">
@@ -1315,6 +1423,7 @@
                 <Korean>회복자세 만들기</Korean>
                 <Spanish>Colocar en posición lateral de recuperación</Spanish>
                 <Turkish>Kurtarma Pozisyonuna Al</Turkish>
+                <Chinesesimp>建立恢复姿态</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_EstablishRecoveryPosition_Progress">
                 <English>Establishing Recovery Position...</English>
@@ -1327,6 +1436,7 @@
                 <Korean>회복자세 만드는 중...</Korean>
                 <Spanish>Colocando en posición lateral de recuperación</Spanish>
                 <Turkish>Kurtarma Pozisyonuna Alınıyor...</Turkish>
+                <Chinesesimp>建立恢复姿态中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CancelRecoveryPosition">
                 <English>Cancel Recovery Position</English>
@@ -1339,6 +1449,7 @@
                 <Korean>회복자세 취소</Korean>
                 <Spanish>Cancelar posición lateral de recuperación</Spanish>
                 <Turkish>Kurtarma Pozisyonunu İptal Et</Turkish>
+                <Chinesesimp>取消恢复姿态</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_CancelRecoveryPosition_Progress">
                 <English>Cancelling Recovery Position...</English>
@@ -1351,6 +1462,7 @@
                 <Korean>회복자세 취소 중...</Korean>
                 <Spanish>Cancelando posición lateral de recuperación</Spanish>
                 <Turkish>Kurtarma Pozisyonu İptal Ediliyor...</Turkish>
+                <Chinesesimp>正在取消恢复姿态中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RecoveryPosition_Already">
                 <English>Patient already in recovery position</English>
@@ -1363,6 +1475,7 @@
                 <Korean>환자는 이미 회복자세 상태임</Korean>
                 <Spanish>Paciente ya en posición</Spanish>
                 <Turkish>Hasta zaten kurtarma pozisyonunda</Turkish>
+                <Chinesesimp>病人已经在恢复姿态中</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RecoveryPosition_Established">
                 <English>Established recovery position</English>
@@ -1375,6 +1488,7 @@
                 <Korean>회복자세 완료</Korean>
                 <Spanish>Posición de recuperación establecida</Spanish>
                 <Turkish>Kurtarma pozisyonuna alındı</Turkish>
+                <Chinesesimp>建立恢复姿态</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RecoveryPosition_Established_ActionLog">
                 <English>%1 established recovery position</English>
@@ -1387,6 +1501,7 @@
                 <Korean>%1 회복자세 완료</Korean>
                 <Spanish>%1 estableció la posición de recuperación</Spanish>
                 <Turkish>%1 iyileşme pozisyonuna aldı</Turkish>
+                <Chinesesimp>%1 建立了恢复姿态</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RecoveryPosition_Cancelled">
                 <English>Cancelled recovery position</English>
@@ -1399,6 +1514,7 @@
                 <Korean>회복자세 취소됨</Korean>
                 <Spanish>Posición de recuperación cancelada</Spanish>
                 <Turkish>İyileşme pozisyonu iptal edildi</Turkish>
+                <Chinesesimp>取消建立恢复姿态</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_RecoveryPosition_Cancelled_ActionLog">
                 <English>%1 cancelled recovery position</English>
@@ -1411,6 +1527,7 @@
                 <Korean>%1 회복자세 취소함</Korean>
                 <Spanish>%1 canceló la posición de recuperación</Spanish>
                 <Turkish>%1 iyileşme pozisyonunu iptal etti</Turkish>
+                <Chinesesimp>%1 取消了建立恢复姿态</Chinesesimp>
             </Key>
         </Container>
         <Container name="// Surgical Airway Action //">
@@ -1424,6 +1541,7 @@
                 <Turkish>Cerrahi Hava Yolu</Turkish>
                 <French>Voies respiratoires chirurgicales</French>
                 <Polish>Chirurgiczne udrożnienie dróg oddechowych</Polish>
+                <Chinesesimp>手术呼吸道</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Action">
                 <English>Establish Surgical Airway</English>
@@ -1435,6 +1553,7 @@
                 <Turkish>Cerrahi Hava Yolu Oluştur</Turkish>
                 <French>Etablir les voies respiratoires chirurgicales</French>
                 <Polish>Załóż chirurgiczne udrożnienie</Polish>
+                <Chinesesimp>建立手术呼吸道</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_ActionProgress">
                 <English>Establishing Surgical Airway...</English>
@@ -1447,6 +1566,7 @@
                 <Turkish>Cerrahi Hava Yolu Oluşturuluyor...</Turkish>
                 <French>Entrain d'établir les voies respiratoires chirurgicales...</French>
                 <Polish>Zakładanie chirurgicznego udrożnienia...</Polish>
+                <Chinesesimp>建立手术呼吸道中...</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_ActionLog">
                 <English>%1 established surgical airway</English>
@@ -1458,6 +1578,7 @@
                 <Turkish>%1 cerrahi hava yolu oluşturdu</Turkish>
                 <French>%1 Voies respiratoires chirurgicales Établi </French>
                 <Polish>%1 założył chirurgiczne udrożnienie</Polish>
+                <Chinesesimp>%1 建立了手术呼吸道</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_AlreadyInProgress">
                 <English>Surgical airway already in progress</English>
@@ -1469,6 +1590,7 @@
                 <Turkish>Cerrahi hava yolu işlemi zaten devam ediyor</Turkish>
                 <French> Voies respiratoires chirurgicales en cours </French>
                 <Polish>Chirurgiczne udrożnienie w toku</Polish>
+                <Chinesesimp>手术呼吸道已经在建立中</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Failed">
                 <English>Surgical airway failed</English>
@@ -1480,6 +1602,7 @@
                 <Turkish>Cerrahi hava yolu başarısız</Turkish>
                 <French> Voies respiratoires chirurgicales a échoué</French>
                 <Polish>Chirurgiczne udrożnienie nieudane</Polish>
+                <Chinesesimp>手术呼吸道建立失败</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Cancelled">
                 <English>Cancelled surgical airway</English>
@@ -1491,6 +1614,7 @@
                 <Turkish>Cerrahi hava yolu iptal edildi</Turkish>
                 <French> Voies respiratoires chirurgicales annulé</French>
                 <Polish>Przerwano chirurgiczne udrożnienie</Polish>
+                <Chinesesimp>取消手术呼吸道</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Cancelled_ActionLog">
                 <English>%1 cancelled surgical airway</English>
@@ -1502,6 +1626,7 @@
                 <Turkish>%1 cerrahi havayolunu iptal etti</Turkish>
                 <French>%1 Voies respiratoires chirurgicales annulé</French>
                 <Polish>%1 Przerwał chirurgiczne udrożnienie</Polish>
+                <Chinesesimp>%1 取消了手术呼吸道</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Scalpel">
                 <English>Scalpel</English>
@@ -1513,6 +1638,7 @@
                 <Turkish>Bistüri</Turkish>
                 <French>Scalpel</French>
                 <Polish>Skalpel</Polish>
+                <Chinesesimp>手术刀</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Hook">
                 <English>Tracheal Hook</English>
@@ -1524,6 +1650,7 @@
                 <Turkish>Trakeal Kanca</Turkish>
                 <French>Crochet tracéale</French>
                 <Polish>Hak stabilizujący</Polish>
+                <Chinesesimp>气管拉钩</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Tube">
                 <English>Cric-Key</English>
@@ -1535,6 +1662,7 @@
                 <Turkish>Cric-Key</Turkish>
                 <French>Tube de cricothyroïdotomie</French>
                 <Polish>Cric-Key</Polish>
+                <Chinesesimp>环甲膜导管键</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Syringe">
                 <English>Syringe</English>
@@ -1546,6 +1674,7 @@
                 <Turkish>Şırınga</Turkish>
                 <French>Seringue</French>
                 <Polish>Strzykawka</Polish>
+                <Chinesesimp>注射器</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Strap">
                 <English>Neck Strap</English>
@@ -1557,6 +1686,7 @@
                 <Turkish>Boyun Kayışı</Turkish>
                 <French>Sangle</French>
                 <Polish>Pasek stabilizujący</Polish>
+                <Chinesesimp>固定颈带</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_IncisionExpanded">
                 <English>Expanded incision with finger</English>
@@ -1568,6 +1698,7 @@
                 <Turkish>Kesi parmakla genişletildi</Turkish>
                 <French>Insicion élargie à l'aide du doigt</French>
                 <Polish>Rozszerzono nacięcie palcem</Polish>
+                <Chinesesimp>用手指扩张切口</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_LiftIncision">
                 <English>Lift Incision</English>
@@ -1579,6 +1710,7 @@
                 <Turkish>Kesiyi Kaldır</Turkish>
                 <French>Soulever l'incision</French>
                 <Polish>Ustabilizuj nacięcie</Polish>
+                <Chinesesimp>提拉切口</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_LiftIncision_Complete">
                 <English>Lifted incision with tracheal hook</English>
@@ -1590,6 +1722,7 @@
                 <Turkish>Kesi trakeal kanca ile kaldırıldı</Turkish>
                 <French>Incision maintenue ouverte avec le crochet trachéale</French>
                 <Polish>Ustabilizowano nacięcie hakiem</Polish>
+                <Chinesesimp>用气管拉钩提拉切口</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_RemoveHook">
                 <English>Remove Tracheal Hook</English>
@@ -1601,6 +1734,7 @@
                 <Turkish>Trakeal Kancayı Çıkar</Turkish>
                 <French>Enlever le crochet trachéale</French>
                 <Polish>Usuń hak stabilizujący</Polish>
+                <Chinesesimp>移除气管拉钩</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_RemoveHook_Complete">
                 <English>Removed tracheal hook</English>
@@ -1612,6 +1746,7 @@
                 <Turkish>Trakeal kanca çıkarıldı</Turkish>
                 <French>Crochet trachéale enlevé</French>
                 <Polish>Usunięto hak stabilizujący</Polish>
+                <Chinesesimp>移除的气管拉钩</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_InsertTube">
                 <English>Insert Cric-Key</English>
@@ -1623,6 +1758,7 @@
                 <Turkish>Cric-Key Yerleştir</Turkish>
                 <French>Insertion du tube de cricothyroïdotomie</French>
                 <Polish>Włóż Cric-Key</Polish>
+                <Chinesesimp>插入环甲膜导管键</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_InsertTube_Complete">
                 <English>Inserted cric-key</English>
@@ -1634,6 +1770,7 @@
                 <Turkish>Cric-Key yerleştirildi</Turkish>
                 <French>Tube de cricothyroïdotomie inséré</French>
                 <Polish>Włożono Cric-Key</Polish>
+                <Chinesesimp>插入的环甲膜导管键</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_InflateTubeCuff">
                 <English>Inflate Tube Cuff</English>
@@ -1645,6 +1782,7 @@
                 <Turkish>Tüp Manşonunu Şişir</Turkish>
                 <French>Gonfler le ballonet</French>
                 <Polish>Napełnij balonik</Polish>
+                <Chinesesimp>为气管导管气囊充气</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_InflateTubeCuff_Complete">
                 <English>Inflated cric-key cuff</English>
@@ -1656,6 +1794,7 @@
                 <Turkish>Cric-Key manşonu şişirildi</Turkish>
                 <French>Ballonet gonflé</French>
                 <Polish>Napełniono balonik Cric-Key</Polish>
+                <Chinesesimp>已充气的环甲膜导管键</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_RemoveTubeStylet">
                 <English>Remove Stylet</English>
@@ -1667,6 +1806,7 @@
                 <Turkish>Stileyi Çıkar</Turkish>
                 <French>Enlever le stylet</French>
                 <Polish>Usuń prowadnice</Polish>
+                <Chinesesimp>移除引导丝</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_RemoveTubeStylet_Complete">
                 <English>Removed cric-key stylet</English>
@@ -1678,6 +1818,7 @@
                 <Turkish>Cric-Key stilesi çıkarıldı</Turkish>
                 <French>Stylet du tube de cricothyroïdotomie retiré</French>
                 <Polish>Usunięto prowadnice Cric-Key</Polish>
+                <Chinesesimp>移除的环甲膜导管键引导丝</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_ConnectStrap">
                 <English>Connect Strap</English>
@@ -1689,6 +1830,7 @@
                 <Turkish>Kayışı Bağla</Turkish>
                 <French>Connecter la sangle</French>
                 <Polish>Połącz pasek stabilizujący</Polish>
+                <Chinesesimp>连接固定颈带</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_ConnectStrap_Complete">
                 <English>Connected neck strap</English>
@@ -1700,6 +1842,7 @@
                 <Turkish>Boyun kayışı bağlandı</Turkish>
                 <French>Sangle connecté</French>
                 <Polish>Połączono pasek stabilizujący</Polish>
+                <Chinesesimp>已连接的固定颈带</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_SecureStrap">
                 <English>Secure Strap</English>
@@ -1711,6 +1854,7 @@
                 <Turkish>Kayışı Sabitle</Turkish>
                 <French>Sécuriser la sangle</French>
                 <Polish>Zabezpiecz pasek</Polish>
+                <Chinesesimp>固定固定颈带</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_SecureStrap_Complete">
                 <English>Secured neck strap</English>
@@ -1722,6 +1866,7 @@
                 <Turkish>Boyun kayışı sabitlendi</Turkish>
                 <French>Sangle sécurisé</French>
                 <Polish>Zabezpieczono pasek stabilizujący</Polish>
+                <Chinesesimp>已固定的固定颈带</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_PutBack">
                 <English>Put Back</English>
@@ -1733,6 +1878,7 @@
                 <Turkish>Geri Yerleştir</Turkish>
                 <French>Remettre</French>
                 <Polish>Odłóż</Polish>
+                <Chinesesimp>放回</Chinesesimp>
             </Key>
         </Container>
         <Container name="// Surgical Airway Strap Action //">
@@ -1746,6 +1892,7 @@
                 <Turkish>Cerrahi Hava Yolu Kayışını Sabitle</Turkish>
                 <French>Sécuriser la sangle de la voie respiratoire chirurgicale</French>
                 <Polish>Zabezpiecz pasek chirurgicznego udrożnienia</Polish>
+                <Chinesesimp>固定手术呼吸道固定颈带</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirwayStrap_Progress">
                 <English>Securing neck strap...</English>
@@ -1757,6 +1904,7 @@
                 <Turkish>Boyun kayışı sabitleniyor...</Turkish>
                 <French>Entrain de sécuriser la sangle</French>
                 <Polish>Zabezpieczanie paska...</Polish>
+                <Chinesesimp>正在固定固定颈带</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirwayStrap_Complete">
                 <English>Secured neck strap</English>
@@ -1768,6 +1916,7 @@
                 <Turkish>Boyun kayışı sabitlendi</Turkish>
                 <French>Sangle sécurisé</French>
                 <Polish>Zabezpieczono pasek</Polish>
+                <Chinesesimp>已固定的固定颈带</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirwayStrap_ActionLog">
                 <English>%1 secured surgical airway neck strap</English>
@@ -1779,6 +1928,7 @@
                 <Turkish>%1 cerrahi havayolu boyun kayışını sabitledi</Turkish>
                 <French>%1 Sangle des voies respiratoire chirurgicale securisé </French>
                 <Polish>%1 zabezpieczył pasek chirurgicznego udrożnienia</Polish>
+                <Chinesesimp>%1 固定了手术呼吸道固定颈带</Chinesesimp>
             </Key>
         </Container>
         <Container name="// Surgical Airway Stitch Action //">
@@ -1792,6 +1942,7 @@
                 <Turkish>Hava Yolu Kesisini Dik</Turkish>
                 <French>Suturer l'incision des voie respiratoire</French>
                 <Polish>Zszyj nacięcie chirurgicznego udrożnienia</Polish>
+                <Chinesesimp>缝合呼吸道切口</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirwayStitch_Suture">
                 <English>Stitch Airway Incision (Suture)</English>
@@ -1803,6 +1954,7 @@
                 <Turkish>Hava Yolu Kesisini Dik (Sütür)</Turkish>
                 <French>Suturer l'incision des voie respiratoire (Suture)</French>
                 <Polish>Zszyj nacięcie chirurgicznego udrożnienia (szew)</Polish>
+                <Chinesesimp>缝合呼吸道切口(初步缝合)</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirwayStitch_Complete">
                 <English>Stitched surgical airway incision</English>
@@ -1814,6 +1966,7 @@
                 <Turkish>Cerrahi havay olu kesisi dikildi</Turkish>
                 <French>L'incision des voies respiratoires chirurgicales à été suturée</French>
                 <Polish>Zszyto nacięcie chirurgicznego udrożnienia</Polish>
+                <Chinesesimp>缝合过的手术呼吸道切口</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirwayStitch_ActionLog">
                 <English>%1 stitched surgical airway incision</English>
@@ -1825,6 +1978,7 @@
                 <Turkish>%1 cerrahi hava yolu kesisini dikti</Turkish>
                 <French>%1 L'incision des voies respiratoires chirurgicales à été suturée</French>
                 <Polish>%1 Zszył nacięcie chirurgicznego udrożnienia</Polish>
+                <Chinesesimp>%1 缝合了手术呼吸道切口</Chinesesimp>
             </Key>
         </Container>
         <Container name="// GUI //">
@@ -1839,6 +1993,7 @@
                 <Korean>머리 기울임 &amp; 턱 들어올림</Korean>
                 <Spanish>Cabeza inclinada y mentón elevado</Spanish>
                 <Turkish>Baş Geriye &amp; Çene Yukarı</Turkish>
+                <Chinesesimp>已经仰头抬颏</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_GUI_SurgicalAirway_OpenIncision">
                 <English>Open Incision</English>
@@ -1850,6 +2005,7 @@
                 <Turkish>Kesiyi Aç</Turkish>
                 <French>Incision ouverte</French>
                 <Polish>Otwarte nacięcie</Polish>
+                <Chinesesimp>打开切口</Chinesesimp>
             </Key>
             <Key ID="STR_ACM_Airway_GUI_SurgicalAirway_Strapped">
                 <English>Strapped</English>
@@ -1861,6 +2017,7 @@
                 <Turkish>Kayışlandı</Turkish>
                 <French>Attaché</French>
                 <Polish>Zabezpieczone</Polish>
+                <Chinesesimp>绑带固定</Chinesesimp>
             </Key>
         </Container>
     </Package>
