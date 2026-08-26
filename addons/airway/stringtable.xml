@@ -116,7 +116,7 @@
             <Korean>회복자세 유지 시간</Korean>
             <Spanish>Duración de la PLS</Spanish>
             <Turkish>Kurtarma Pozisyonu Oluşturma Süresi</Turkish>
-            <Chinesesimp>建立恢复姿势的时间</Chinesesimp>
+            <Chinesesimp>建立恢复姿势耗时</Chinesesimp>
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_TreatmentTime_RecoveryPosition_Desc">
             <English>Time to establish Recovery Position</English>
