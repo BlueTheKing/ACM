@@ -132,6 +132,12 @@
 
 #define DEFAULT_TOURNIQUET_VALUES [0,0,0,0,0,0]
 
+// Time until a tourniquet starts causing pain
+#define TOURNIQUET_MIN_TIME_FOR_PAIN 120
+
+// How much pain a tourniquet will cause per second after TOURNIQUET_MIN_TIME_FOR_PAIN
+#define TOURNIQUET_PAIN_PER_SECOND 0.001
+
 #define DEFAULT_FRACTURE_VALUES [0,0,0,0,0,0]
 
 #define DEFAULT_BODYPART_DAMAGE_VALUES [0,0,0,0,0,0]
@@ -217,3 +223,9 @@
 
 // Ignore UAV/Drone AI Base Classes
 #define IGNORE_BASE_UAVPILOTS "B_UAV_AI", "O_UAV_AI", "UAV_AI_base_F"
+
+// Medical Activity (optimization for AI)
+#define VAR_MEDICAL_ACTIVITY          QEGVAR(medical,medicalActivity)
+#define MEDICAL_ACTIVITY              EGVAR(medical,const_medicalActivity)
+#define MEDICAL_ACTIVITY_DEFAULT      false
+#define IS_MEDICAL_ACTIVITY(unit)     (unit getVariable [VAR_MEDICAL_ACTIVITY, MEDICAL_ACTIVITY])

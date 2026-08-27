@@ -12,6 +12,7 @@
             <Korean>ACM: 코어</Korean>
             <Spanish>ACM: Core</Spanish>
             <Turkish>ACM: Core</Turkish>
+            <Japanese>ACM: Core</Japanese>
         </Key>
         <Key ID="STR_ACM_Core_Category_Items">
             <English>Items</English>
@@ -24,6 +25,7 @@
             <Korean>항목</Korean>
             <Spanish>Items</Spanish>
             <Turkish>Eşyalar</Turkish>
+            <Japanese>Items</Japanese>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet">
             <English>Take Off Tourniquet Time</English>
@@ -36,6 +38,7 @@
             <Korean>지혈대 제거 시간</Korean>
             <Spanish>Tiempo para Retirar el Torniquete</Spanish>
             <Turkish>Turnike Çıkarma Süresi</Turkish>
+            <Japanese>止血帯を外す時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_TreatmentTime_TakeOffTourniquet_Desc">
             <English>Time to take off tourniquet</English>
@@ -48,6 +51,7 @@
             <Korean>지혈대를 제거하는 시간</Korean>
             <Spanish>Tiempo necesario para retirar el torniquete</Spanish>
             <Turkish>Turnikeyi çıkarma süresi</Turkish>
+            <Japanese>止血帯を外すのにかかる時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight">
             <English>Dogtag list weight</English>
@@ -60,6 +64,7 @@
             <Korean>군번줄에 체중 표시</Korean>
             <Spanish>Mostrar Peso en las Chapas de Identificación</Spanish>
             <Turkish>Künye üzerinde ağırlığı göster</Turkish>
+            <Japanese>ドッグタグに体重を表示</Japanese>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_Dogtag_ShowWeight_Desc">
             <English>Set whether dog tags list the unit's weight</English>
@@ -72,6 +77,7 @@
             <Korean>군번줄에 부대원의 체중을 표시할지 설정 </Korean>
             <Spanish>Define si las placas de identificación muestran el peso del individuo</Spanish>
             <Turkish>Künyelerin birimin ağırlığını gösterip göstermeyeceğini ayarla</Turkish>
+            <Japanese>ドッグタグにユニットの体重を表示するかどうかを設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings">
             <English>Ignore Incompatible Addon Warning</English>
@@ -84,6 +90,7 @@
             <Korean>호환되지 않는 애드온 경고 무시</Korean>
             <Spanish>Ignorar Advertencia de Addons Incompatibles</Spanish>
             <Turkish>Uyumsuz Eklenti Uyarılarını Yoksay</Turkish>
+            <Japanese>非互換アドオン警告を無視</Japanese>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_IgnoreIncompatibleAddonWarnings_Desc">
             <English>Disables incompatible addon warnings</English>
@@ -96,6 +103,7 @@
             <Korean>호환되지 않는 애드온 경고를 비활성화</Korean>
             <Spanish>Desactiva las advertencias de addons incompatibles</Spanish>
             <Turkish>Uyumsuz eklenti uyarılarını devre dışı bırakır</Turkish>
+            <Japanese>非互換アドオン警告を無効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment">
             <English>Medic AI Allow Intermediate Treatment</English>
@@ -107,6 +115,7 @@
             <Turkish>Medik AI Orta Seviye Tedaviye İzin Ver</Turkish>
             <French>Autoriser les médecin IA les traitements "intermédaires"</French>
             <Polish>Leczenie pośrednie medyków AI</Polish>
+            <Japanese>AI衛生兵に中級治療を許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Core_SETTING_MedicAI_AllowIntermediateTreatment_Desc">
             <English>Sets whether medic AI is allowed to perform any actions other than bandaging and tourniqueting</English>
@@ -118,6 +127,7 @@
             <Turkish>Medik AI’nın bandaj ve turnike dışında işlem yapmasına izin verilip verilmeyeceğini ayarlar</Turkish>
             <French>Défini si le médecin IA est autorisé à exercer d'autres actions que panser, et mettre des tourniquets</French>
             <Polish>Definiuje czy medycy AI mogą wykonywać jakiekolwiek czynności poza bandażowaniem i zakładaniem TQj</Polish>
+            <Japanese>AI衛生兵が、包帯の処置および止血帯の使用以外の行動を実行できるかどうかを設定</Japanese>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Core_MorphineAutoinjector">
@@ -131,6 +141,7 @@
                 <Korean>모르핀 자동주사기 사용</Korean>
                 <Spanish>Usar Autoinyector de Morfina</Spanish>
                 <Turkish>Morfin Otoenjektörünü Kullan</Turkish>
+                <Japanese>モルヒネ自己注射器を使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_MorphineAutoinjector_Progress">
                 <English>Using Morphine Autoinjector...</English>
@@ -143,6 +154,7 @@
                 <Korean>모르핀 자동주사기 사용 중...</Korean>
                 <Spanish>Usando el Autoinyector de Morfina...</Spanish>
                 <Turkish>Morfin Otoenjektörü Kullanılıyor...</Turkish>
+                <Japanese>モルヒネ自己注射器を使用中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector">
                 <English>Use Epinephrine Autoinjector</English>
@@ -155,6 +167,7 @@
                 <Korean>에피네프린 자동주사기 사용</Korean>
                 <Spanish>Usar Autoinyector de Epinefrina</Spanish>
                 <Turkish>Epinefrin Otoenjektörünü Kullan</Turkish>
+                <Japanese>エピネフリン自己注射器を使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_EpinephrineAutoinjector_Progress">
                 <English>Using Epinephrine Autoinjector...</English>
@@ -167,6 +180,7 @@
                 <Korean>에피네프린 자동주사기 사용 중...</Korean>
                 <Spanish>Usando el Autoinyector de Epinefrina...</Spanish>
                 <Turkish>Epinefrin Otoenjektörü Kullanılıyor...</Turkish>
+                <Japanese>エピネフリン自己注射器を使用中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector">
                 <English>Use Adenosine Autoinjector</English>
@@ -179,6 +193,7 @@
                 <Korean>아데노신 자동주사기 사용</Korean>
                 <Spanish>Usar Autoinyector de Adenosina</Spanish>
                 <Turkish>Adenozin Otoenjektörünü Kullan</Turkish>
+                <Japanese>アデノシン自己注射器を使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_AdenosineAutoinjector_Progress">
                 <English>Using Adenosine Autoinjector...</English>
@@ -191,6 +206,7 @@
                 <Korean>아데노신 자동주사기 사용 중...</Korean>
                 <Spanish>Usando el Autoinyector de Adenosina...</Spanish>
                 <Turkish>Adenozin Otoenjektörü Kullanılıyor...</Turkish>
+                <Japanese>アデノシン自己注射器を使用中...</Japanese>
             </Key>
         </Container>
         <Container name="// Cancel Carrying //">
@@ -205,6 +221,7 @@
                 <Korean>들기 취소</Korean>
                 <Spanish>Cancelar Porte</Spanish>
                 <Turkish>Taşımayı İptal Et</Turkish>
+                <Japanese>運搬をキャンセル</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_CancelCarrying_Stopped">
                 <English>Stopped carrying %1</English>
@@ -217,6 +234,7 @@
                 <Korean>%1 들기를 중단했습니다</Korean>
                 <Spanish>Has dejado de transportar al %1</Spanish>
                 <Turkish>%1 taşınması durduruldu</Turkish>
+                <Japanese>%1 の運搬を停止した</Japanese>
             </Key>
         </Container>
         <Container name="// Lying State //">
@@ -231,6 +249,7 @@
                 <Korean>일어나기</Korean>
                 <Spanish>Levantarse</Spanish>
                 <Turkish>Ayağa Kalk</Turkish>
+                <Japanese>起き上がる</Japanese>
             </Key>
         </Container>
         <Container name="// Assist Carry Action //">
@@ -244,6 +263,7 @@
                 <Spanish>El paciente ya está siendo portado</Spanish>
                 <Turkish>Hasta zaten taşınarak destekleniyor</Turkish>
                 <Polish>Pacjent jest już wspólnie niesiony</Polish>
+                <Japanese>患者はすでに運搬補助を受けている</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Complete">
                 <English>Prepared %1 for carrying</English>
@@ -255,6 +275,7 @@
                 <Spanish>%1 preparado para el porte</Spanish>
                 <Turkish>%1 taşımaya hazırlandı</Turkish>
                 <Polish>%1 przygotowany do niesienia</Polish>
+                <Japanese>%1 を運搬できる状態にした</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Progress">
                 <English>Preparing to carry...</English>
@@ -266,6 +287,7 @@
                 <Spanish>Preparando para portar...</Spanish>
                 <Turkish>Taşımaya hazırlanılıyor...</Turkish>
                 <Polish>Przygotowywanie do niesienia...</Polish>
+                <Japanese>運搬準備中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_AssistCarry_Cancelled">
                 <English>Carry-assist cancelled</English>
@@ -277,6 +299,7 @@
                 <Spanish>Porte cancelado</Spanish>
                 <Turkish>Taşıma desteği iptal edildi</Turkish>
                 <Polish>wspólne niesienie anulowane</Polish>
+                <Japanese>運搬補助をキャンセルした</Japanese>
             </Key>
         </Container>
         <Container name="// Supine Position Action //">
@@ -290,6 +313,7 @@
                 <Spanish>Colocar en Posición Supina</Spanish>
                 <Turkish>Sırtüstü Pozisyona Al</Turkish>
                 <Polish>Ułóż w pozycji leżącej</Polish>
+                <Japanese>仰向けにする</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Complete">
                 <English>Patient has been placed into the supine position</English>
@@ -301,6 +325,7 @@
                 <Spanish>El paciente ha sido colocado en posición supina</Spanish>
                 <Turkish>Hasta sırtüstü pozisyona alındı</Turkish>
                 <Polish>Pacjent został ułożony w pozycji leżącej</Polish>
+                <Japanese>患者は仰向けにされた</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_SupinePosition_Hint">
                 <English>You have been placed into the supine position</English>
@@ -312,6 +337,7 @@
                 <Spanish>Has sido colocado en posición supina</Spanish>
                 <Turkish>Sırtüstü pozisyona alındınız</Turkish>
                 <Polish>Ułożono cię w pozycji leżącej</Polish>
+                <Japanese>あなたは仰向けにされた</Japanese>
             </Key>
         </Container>
         <Container name="// Treatment Text //">
@@ -326,6 +352,7 @@
                 <Korean>%1에게 치료받고 있습니다</Korean>
                 <Spanish>Estás siendo tratado por el</Spanish>
                 <Turkish>%1 tarafından tedavi ediliyorsunuz</Turkish>
+                <Japanese>あなたは %1 によって治療を受けている</Japanese>
             </Key>
         </Container>
         <Container name="// Vehicle Patient Actions //">
@@ -340,6 +367,7 @@
                 <Korean>차량 내 환자</Korean>
                 <Spanish>Pacientes en Vehículo</Spanish>
                 <Turkish>Araçtaki Hastalar</Turkish>
+                <Japanese>車両内患者</Japanese>
             </Key>
         </Container>
         <Container name="// Unload and carry //">
@@ -354,6 +382,7 @@
                 <Korean>환자 운반</Korean>
                 <Spanish>Portar Paciente</Spanish>
                 <Turkish>Hastayı Taşı</Turkish>
+                <Japanese>患者を運ぶ</Japanese>
             </Key>
         </Container>
         <Container name="// Boxes //">
@@ -368,6 +397,7 @@
                 <Korean>[ACM] 기본 의료 보급 상자</Korean>
                 <Spanish>[ACM] Caja de Suministros Médicos Básicos</Spanish>
                 <Turkish>[ACM] Temel Tıbbi Malzeme Sandığı</Turkish>
+                <Japanese>[ACM] 基本医療物資箱</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_MedicalSupplyCrate_Advanced_Display">
                 <English>[ACM] Advanced Medical Supply Crate</English>
@@ -380,6 +410,7 @@
                 <Korean>[ACM] 고급 의료 보급 상자</Korean>
                 <Spanish>[ACM] Caja de Suministros Médicos Avanzados</Spanish>
                 <Turkish>[ACM] Gelişmiş Tıbbi Malzeme Sandığı</Turkish>
+                <Japanese>[ACM] 上級医療物資箱</Japanese>
             </Key>
         </Container>
         <Container name="// Dog Tags //">
@@ -394,6 +425,7 @@
                 <Korean>%1가 당신의 군번줄을 확인 중입니다</Korean>
                 <Spanish>%1 está inspeccionando tus chapas de identificación</Spanish>
                 <Turkish>%1 künyelerinizi inceliyor</Turkish>
+                <Japanese>%1 があなたのドッグタグを確認している</Japanese>
             </Key>
         </Container>
         <Container name="// Incompatible Addons //">
@@ -408,6 +440,7 @@
                 <Korean>호환되지 않는 애드온 발견: </Korean>
                 <Spanish>Addons incompatibles detectados:</Spanish>
                 <Turkish>Uyumsuz eklentiler bulundu:</Turkish>
+                <Japanese>非互換アドオンを検出:</Japanese>
             </Key>
         </Container>
         <Container name="// Split Medication Action //">
@@ -421,6 +454,7 @@
                 <Spanish>Dividir Paquete de Medicación</Spanish>
                 <Turkish>İlaç Paketini Böl</Turkish>
                 <Polish>Rozdziel opakowanie leku</Polish>
+                <Japanese>薬剤パッケージを分割</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Split">
                 <English>Split</English>
@@ -432,6 +466,7 @@
                 <Spanish>Dividir</Spanish>
                 <Turkish>Böl</Turkish>
                 <Polish>Podziel</Polish>
+                <Japanese>分割</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_SplitMedicationPack_Complete">
                 <English>%1 package has been split</English>
@@ -443,6 +478,7 @@
                 <Spanish>El paquete de %1 ha sido dividido</Spanish>
                 <Turkish>%1 paketi bölündü</Turkish>
                 <Polish>1% opakowanie podzielone</Polish>
+                <Japanese>%1 パッケージは分割された</Japanese>
             </Key>
         </Container>
         <Container name="// Body Bag Return Items //">
@@ -456,6 +492,7 @@
                 <Turkish>Tıbbi eşyalar ceset torbasından geri alındı</Turkish>
                 <French>Les objets médicales on été récupéré de la housse mortuaire</French>
                 <Polish>Sprzęt medyczny wyciągnięty z torby na zwłoki</Polish>
+                <Japanese>ボディバッグから返却された医療アイテム</Japanese>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -470,6 +507,7 @@
                 <Korean>삽입됨</Korean>
                 <Spanish>Insertado</Spanish>
                 <Turkish>Yerleştirildi</Turkish>
+                <Japanese>挿入済み</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Attached">
                 <English>Attached</English>
@@ -482,6 +520,7 @@
                 <Korean>부착됨</Korean>
                 <Spanish>Acoplado</Spanish>
                 <Turkish>Takıldı</Turkish>
+                <Japanese>装着済み</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Applied">
                 <English>Applied</English>
@@ -494,6 +533,7 @@
                 <Korean>적용됨</Korean>
                 <Spanish>Aplicado</Spanish>
                 <Turkish>Uygulandı</Turkish>
+                <Japanese>適用済み</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Removed">
                 <English>Removed</English>
@@ -506,6 +546,7 @@
                 <Korean>제거됨 </Korean>
                 <Spanish>Retirado</Spanish>
                 <Turkish>Çıkarıldı</Turkish>
+                <Japanese>取り外し済み</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Connected">
                 <English>Connected</English>
@@ -518,6 +559,7 @@
                 <Korean>연결됨 </Korean>
                 <Spanish>Conectado</Spanish>
                 <Turkish>Bağlandı</Turkish>
+                <Japanese>接続済み</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Disconnected">
                 <English>Disconnected</English>
@@ -530,6 +572,7 @@
                 <Korean>연결 해제됨</Korean>
                 <Spanish>Desconectado</Spanish>
                 <Turkish>Bağlantı kesildi</Turkish>
+                <Japanese>切断済み</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_InProgress">
                 <English>In Progress</English>
@@ -542,6 +585,7 @@
                 <Korean>진행 중</Korean>
                 <Spanish>En Progreso</Spanish>
                 <Turkish>Devam Ediyor</Turkish>
+                <Japanese>進行中</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Paused">
                 <English>Paused</English>
@@ -554,6 +598,7 @@
                 <Korean>일시정지</Korean>
                 <Spanish>Pausado</Spanish>
                 <Turkish>Duraklatıldı</Turkish>
+                <Japanese>一時停止中</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Active">
                 <English>Active</English>
@@ -566,6 +611,7 @@
                 <Korean>활성</Korean>
                 <Spanish>Activo</Spanish>
                 <Turkish>Aktif</Turkish>
+                <Japanese>有効</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Empty">
                 <English>Empty</English>
@@ -578,6 +624,7 @@
                 <Korean>비어 있음</Korean>
                 <Spanish>Vacío</Spanish>
                 <Turkish>Boş</Turkish>
+                <Japanese>空</Japanese>
             </Key>
         </Container>
         <Container name="// Module Common //">
@@ -587,6 +634,7 @@
                 <Turkish>Etkileşim Mesafesi</Turkish>
                 <French>Distance d'interactions</French>
                 <Polish>Dystans interakcji</Polish>
+                <Japanese>インタラクション距離</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition">
                 <English>Interaction Position</English>
@@ -594,6 +642,7 @@
                 <Turkish>Etkileşim Konumu</Turkish>
                 <French>Position d'interaction</French>
                 <Polish>Pozycja interakcji</Polish>
+                <Japanese>インタラクション位置</Japanese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition_Tooltip">
                 <English>Interaction position relative to center of object, must be an array containing 3 numbers</English>
@@ -601,6 +650,7 @@
                 <Turkish>Nesnenin merkezine göre etkileşim konumu, 3 sayı içeren bir dizi olmalıdır</Turkish>
                 <French>La position d'interaction relativee au centre de l'objet, doit être un ensembble contenant 3 nombres</French>
                 <Polish>Pozycja interakcji względem środka obiektu musi zawierać 3 liczby</Polish>
+                <Japanese>オブジェクトの中心を基準としたインタラクション位置。3つの数値を含む配列である必要がある</Japanese>
             </Key>
         </Container>
         <Container name="// ACE Action //">
@@ -615,6 +665,7 @@
                 <Korean>의료 장비</Korean>
                 <Spanish>Equipo Médico</Spanish>
                 <Turkish>Tıbbi Ekipman</Turkish>
+                <Japanese>医療器具</Japanese>
             </Key>
         </Container>
     </Package>
