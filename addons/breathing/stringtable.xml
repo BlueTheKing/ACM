@@ -12,6 +12,7 @@
             <Korean>ACM: 호흡 (Breathing)</Korean>
             <Spanish>ACM: Respiración</Spanish>
             <Turkish>ACM:Solunum</Turkish>
+            <Chinese>ACM: 呼吸</Chinese>
             <Japanese>ACM: 呼吸</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_Category_Pneumothorax">
@@ -25,6 +26,7 @@
             <Korean>기흉 (Pneumothorax)</Korean>
             <Spanish>Neumotórax</Spanish>
             <Turkish>Pnömotoraks</Turkish>
+            <Chinese>气胸</Chinese>
             <Japanese>気胸</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_Category_Diagnosis">
@@ -38,6 +40,7 @@
             <Korean>진단</Korean>
             <Spanish>Diagnóstico</Spanish>
             <Turkish>Diyagnoz</Turkish>
+            <Chinese>诊断</Chinese>
             <Japanese>診断</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_Category_Treatment">
@@ -51,6 +54,7 @@
             <Korean>치료</Korean>
             <Spanish>Tratamiento</Spanish>
             <Turkish>Tedavi</Turkish>
+            <Chinese>治疗</Chinese>
             <Japanese>処置</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen">
@@ -64,6 +68,7 @@
             <Korean>고도에 따른 산소 영향</Korean>
             <Spanish>Efecto de la altitud sobre el oxígeno</Spanish>
             <Turkish>Rakım Oksijeni Etkiler</Turkish>
+            <Chinese>海拔对氧合的影响</Chinese>
             <Japanese>高度が酸素に影響</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_AltitudeAffectOxygen_Desc">
@@ -77,6 +82,7 @@
             <Korean>지형 고도에 따라 산소포화도 계산에 영향을 줄지 설정</Korean>
             <Spanish>Determina si los cálculos de saturación de oxígeno se ven afectados por la altitud del terreno</Spanish>
             <Turkish>Oksijen satürasyonu hesaplamalarının arazi rakımından etkilenip etkilenmeyeceğini ayarlar</Turkish>
+            <Chinese>设置血氧饱和度计算是否受地形海拔影响</Chinese>
             <Japanese>酸素飽和度の計算に地形の高度を反映するかを設定する</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ShowCyanosisSeverity">
@@ -90,6 +96,7 @@
             <Korean>청색증 (Cyanosis) 중증도 표시</Korean>
             <Spanish>Mostrar severidad de la cianosis</Spanish>
             <Turkish>Siyanoz Şiddetini Göster</Turkish>
+            <Chinese>显示发绀程度</Chinese>
             <Japanese>チアノーゼ重症度を表示</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ShowCyanosisSeverity_Desc">
@@ -103,6 +110,7 @@
             <Korean>개요 탭에 청색증 (Cyanosis) 중증도 표시</Korean>
             <Spanish>Mostrar severidad de la cianosis en la pestaña de resumen</Spanish>
             <Turkish>Genel bakış sekmesinde siyanoz şiddetini göster</Turkish>
+            <Chinese>在概览选项卡中显示发绀程度</Chinese>
             <Japanese>概要タブにチアノーゼ重症度を表示</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxEnabled">
@@ -116,6 +124,7 @@
             <Korean>기흉 (Pneumothorax) 활성화</Korean>
             <Spanish>Neumotórax activado</Spanish>
             <Turkish>Pnömotoraks Etkin</Turkish>
+            <Chinese>气胸已启用</Chinese>
             <Japanese>気胸を有効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ChestInjuryChance">
@@ -129,6 +138,7 @@
             <Korean>흉부 손상 중증도 배수</Korean>
             <Spanish>Multiplicador de la severidad de lesión torácica</Spanish>
             <Turkish>Göğüs Yaralanması Şiddeti Çarpanı</Turkish>
+            <Chinese>胸部伤势严重程度倍率</Chinese>
             <Japanese>胸部損傷重症度倍率</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_ChestInjuryChance_Desc">
@@ -142,6 +152,7 @@
             <Korean>흉부 손상이 기흉 (Pneumothorax) 또는 혈흉 (Hemothorax)을 일으킬 확률</Korean>
             <Spanish>Probabilidad de que una lesión torácica cause neumotórax o hemotórax</Spanish>
             <Turkish>Bir göğüs yaralanmasının pnömotoraks veya hemotoraksa yol açma olasılığı</Turkish>
+            <Chinese>胸部伤势导致气胸或血胸的概率</Chinese>
             <Japanese>胸部損傷によって気胸または血胸が発生する確率</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxDeteriorateChance">
@@ -155,6 +166,7 @@
             <Korean>기흉 (Pneumothorax) 악화 배수</Korean>
             <Spanish>Multiplicador de deterioro del neumotórax</Spanish>
             <Turkish>Pnömotoraks Kötüleşme Çarpanı</Turkish>
+            <Chinese>气胸恶化倍率</Chinese>
             <Japanese>気胸悪化倍率</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_PneumothoraxDeteriorateChance_Desc">
@@ -168,6 +180,7 @@
             <Korean>기흉 (Pneumothorax)가 악화될 확률</Korean>
             <Spanish>Probabilidad de que el neumotórax se deteriore</Spanish>
             <Turkish>Pnömotoraksın kötüleşme olasılığı</Turkish>
+            <Chinese>气胸恶化概率</Chinese>
             <Japanese>気胸が悪化する確率</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance">
@@ -181,6 +194,7 @@
             <Korean>혈흉 (Hemothorax) 확률</Korean>
             <Spanish>Probabilidad de hemotórax</Spanish>
             <Turkish>Hemotoraks Olasılığı</Turkish>
+            <Chinese>血胸概率</Chinese>
             <Japanese>血胸発生確率</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance_Desc">
@@ -194,6 +208,7 @@
             <Korean>심각한 흉부 손상이 혈흉 (Hemothorax)일 확률</Korean>
             <Spanish>Probabilidad de que una lesión torácica grave sea un hemotórax en lugar de un neumotórax</Spanish>
             <Turkish>Uygulanan ciddi göğüs yaralanmasının pnömotoraks yerine hemotoraks olma olasılığı</Turkish>
+            <Chinese>严重胸部伤势为血胸而非气胸的概率</Chinese>
             <Japanese>重度胸部損傷が気胸ではなく血胸になる確率</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury">
@@ -207,6 +222,7 @@
             <Korean>[HARDCORE] 흉부 손상 (Chest Injuries)</Korean>
             <Spanish>[HARDCORE] Lesiones torácicas</Spanish>
             <Turkish>[HARDCORE] Göğüs Yaralanmaları</Turkish>
+            <Chinese>【硬核】胸部受伤</Chinese>
             <Japanese>[HARDCORE] 胸部損傷</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_ChestInjury_Desc">
@@ -220,6 +236,7 @@
             <Korean>[HARDCORE] 긴장성 기흉 (Tension Pneumothorax) 완전 치료를 위해 추가 치료가 필요한지 여부</Korean>
             <Spanish>[HARDCORE] Determina si el neumotórax a tensión requiere tratamiento adicional para su resolución completa</Spanish>
             <Turkish>[HARDCORE] Gergin pnömotoraksın tamamen tedavi edilmesi için ek tedavi gerektirip gerektirmeyeceğini ayarlar</Turkish>
+            <Chinese>【硬核】设置张力性气胸是否需要进一步治疗才能完全治愈</Chinese>
             <Japanese>[HARDCORE] 緊張性気胸の完全治療に追加処置を必要とする</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding">
@@ -233,6 +250,7 @@
             <Korean>[HARDCORE] 혈흉 (Hemothorax) 출혈</Korean>
             <Spanish>[HARDCORE] Sangrado por hemotórax</Spanish>
             <Turkish>[HARDCORE] Hemotoraks Kanaması</Turkish>
+            <Chinese>【硬核】血胸出血</Chinese>
             <Japanese>[HARDCORE] 血胸による出血</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Hardcore_HemothoraxBleeding_Desc">
@@ -246,6 +264,7 @@
             <Korean>[HARDCORE] 혈흉 (Hemothorax) 완전 지혈을 위해 추가 치료가 필요한지 여부</Korean>
             <Spanish>[HARDCORE] Determina si el hemotórax requiere tratamiento adicional para detener completamente el sangrado interno</Spanish>
             <Turkish>[HARDCORE] Hemotoraksın iç kanamayı tamamen durdurmak için ek tedavi gerektirip gerektirmeyeceğini ayarlar</Turkish>
+            <Chinese>【硬核】设置血胸是否需要进一步治疗才能完全止住内出血</Chinese>
             <Japanese>[HARDCORE] 血胸で内出血を完全に止めるために追加処置を必要とするかを設定する</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_InspectChest">
@@ -259,6 +278,7 @@
             <Korean>흉부 확인 (Inspect Chest) 허용</Korean>
             <Spanish>Permitir inspección torácica</Spanish>
             <Turkish>Göğüs Muayenesine İzin Ver</Turkish>
+            <Chinese>允许检查胸部</Chinese>
             <Japanese>胸部観察を有効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_InspectChest_Desc">
@@ -272,6 +292,7 @@
             <Korean>흉부 확인에 필요한 훈련 수준</Korean>
             <Spanish>Nivel de entrenamiento requerido para inspeccionar el tórax</Spanish>
             <Turkish>Göğüs muayenesi yapmak için gereken eğitim seviyesi</Turkish>
+            <Chinese>检查胸部所需训练等级</Chinese>
             <Japanese>胸部観察に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_TreatmentTime_InspectChest">
@@ -285,6 +306,7 @@
             <Korean>흉부 확인 시간</Korean>
             <Spanish>Tiempo para la inspección torácica</Spanish>
             <Turkish>Göğüs Muayenesi Süresi</Turkish>
+            <Chinese>检查胸部时间</Chinese>
             <Japanese>胸部観察時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_TreatmentTime_InspectChest_Desc">
@@ -298,6 +320,7 @@
             <Korean>흉부 확인에 걸리는 시간</Korean>
             <Spanish>Tiempo para realizar la inspección torácica</Spanish>
             <Turkish>Göğüs muayenesi eylemini gerçekleştirme süresi</Turkish>
+            <Chinese>检查胸部所需时间</Chinese>
             <Japanese>胸部観察を行うまでの時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_NCD">
@@ -311,6 +334,7 @@
             <Korean>NCD Kit 허용</Korean>
             <Spanish>Permitir uso de kit de descompresión con aguja</Spanish>
             <Turkish>NCD Kitine İzin Ver</Turkish>
+            <Chinese>允许NCD套件</Chinese>
             <Japanese>NCDキットを有効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_NCD_Desc">
@@ -324,6 +348,7 @@
             <Korean>NCD Kit 사용에 필요한 훈련 수준</Korean>
             <Spanish>Nivel de entrenamiento requerido para usar kit NCD</Spanish>
             <Turkish>NCD kiti kullanmak için gereken eğitim seviyesi</Turkish>
+            <Chinese>使用NCD套件所需训练等级</Chinese>
             <Japanese>NCDキットの使用に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_Thoracostomy">
@@ -337,6 +362,7 @@
             <Korean>흉강 천자 (Thoracostomy) 허용</Korean>
             <Spanish>Permitir toracostomía</Spanish>
             <Turkish>Torakostomiye İzin Ver</Turkish>
+            <Chinese>允许胸腔造口术</Chinese>
             <Japanese>胸腔切開を有効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Allow_Thoracostomy_Desc">
@@ -350,6 +376,7 @@
             <Korean>Thoracostomy 수행에 필요한 훈련 수준</Korean>
             <Spanish>Nivel de entrenamiento requerido para realizar toracostomía</Spanish>
             <Turkish>Torakostomi yapmak için gereken eğitim seviyesi</Turkish>
+            <Chinese>进行胸腔造口术所需训练等级</Chinese>
             <Japanese>胸腔切開の実施に必要なレベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Location_Thoracostomy">
@@ -363,6 +390,7 @@
             <Korean>Thoracostomy 위치</Korean>
             <Spanish>Ubicaciones donde se puede realizar toracostomía</Spanish>
             <Turkish>Torakostomi Konumları</Turkish>
+            <Chinese>胸腔造口部位</Chinese>
             <Japanese>胸腔切開部位</Japanese>
         </Key>
         <Key ID="STR_ACM_Breathing_SETTING_Location_Thoracostomy_Desc">
@@ -376,6 +404,7 @@
             <Korean>Thoracostomy를 수행할 수 있는 위치 설정</Korean>
             <Spanish>Define donde se puede realizar toracostomía</Spanish>
             <Turkish>Torakostominin yapılabileceği konumları ayarlar</Turkish>
+            <Chinese>设置可进行胸腔造口的位置</Chinese>
             <Japanese>胸腔切開を実施できる部位を設定する</Japanese>
         </Key>
         <Container name="// Items //">
@@ -390,6 +419,7 @@
                 <Korean>체스트 씰 (Chest Seal)</Korean>
                 <Spanish>Parche torácico</Spanish>
                 <Turkish>Göğüs Yaması</Turkish>
+                <Chinese>胸封贴</Chinese>
                 <Japanese>Chest Seal</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ChestSeal_Desc">
@@ -403,6 +433,7 @@
                 <Korean>흉부 관통상 관리용</Korean>
                 <Spanish>Usado para tratar heridas torácicas penetrantes</Spanish>
                 <Turkish>Delici göğüs yaralanmalarını yönetmek için kullanılır</Turkish>
+                <Chinese>用于处理穿透性胸部伤势</Chinese>
                 <Japanese>貫通性胸部外傷の処置に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PulseOximeter">
@@ -416,6 +447,7 @@
                 <Korean>옥시미터</Korean>
                 <Spanish>Pulsioxímetro</Spanish>
                 <Turkish>Nabız Oksimetresi</Turkish>
+                <Chinese>脉搏血氧仪</Chinese>
                 <Japanese>Pulse Oximeter</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PulseOximeter_Desc">
@@ -429,6 +461,7 @@
                 <Korean>환자 활력징후 (Vital) 측정용</Korean>
                 <Spanish>Usado para medir signos vitales</Spanish>
                 <Turkish>Hastanın hayati bulgularını ölçmek için kullanılır</Turkish>
+                <Chinese>用于测量患者生命体征</Chinese>
                 <Japanese>患者のバイタル測定に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope">
@@ -442,6 +475,7 @@
                 <Korean>청진기 (Stethoscope)</Korean>
                 <Spanish>Estetoscopio</Spanish>
                 <Turkish>Stetoskop</Turkish>
+                <Chinese>听诊器</Chinese>
                 <Japanese>聴診器</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_Desc">
@@ -455,6 +489,7 @@
                 <Korean>환자의 호흡과 심장음을 청진하는 데 사용</Korean>
                 <Spanish>Usado para auscultar sonidos respiratorios y cardíacos</Spanish>
                 <Turkish>Hastanın solunum ve kalp seslerini dinlemek için kullanılır</Turkish>
+                <Chinese>用于听取患者的呼吸音和心音</Chinese>
                 <Japanese>患者の呼吸音および心音の聴取に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_NCDKit">
@@ -468,6 +503,7 @@
                 <Korean>NCD Kit</Korean>
                 <Spanish>Kit de descompresión</Spanish>
                 <Turkish>NCD Kiti</Turkish>
+                <Chinese>NCD套件</Chinese>
                 <Japanese>NCD Kit</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_NCDKit_Desc">
@@ -481,6 +517,7 @@
                 <Korean>긴장성 기흉 (Tension Pneumothorax) 감압용 1회용 바늘</Korean>
                 <Spanish>Usado para descomprimir neumotórax a tensión</Spanish>
                 <Turkish>Gergin pnömotoraksı dekomprese etmek için kullanılan tek kullanımlık iğne</Turkish>
+                <Chinese>用于减压张力性气胸的一次性针具</Chinese>
                 <Japanese>緊張性気胸を減圧するために使用する使い捨て針</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ChestTubeKit">
@@ -494,6 +531,7 @@
                 <Korean>가슴관 키트 (Chest Tube) </Korean>
                 <Spanish>Kit de drenaje torácico</Spanish>
                 <Turkish>Göğüs Tüpü Kiti</Turkish>
+                <Chinese>胸腔引流管套件</Chinese>
                 <Japanese>Chest Tube Kit</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ChestTubeKit_Desc">
@@ -507,6 +545,7 @@
                 <Korean>흉강액 제거 1회용 가슴관 키트 </Korean>
                 <Spanish>Usado para insertar tubo torácico y evacuar líquido del espacio pleural</Spanish>
                 <Turkish>Plevral boşluktan sıvı almak için göğüs tüpü yerleştirmede kullanılan tek kullanımlık kit</Turkish>
+                <Chinese>用于置入胸腔引流管以排出胸膜腔积液的一次性套件</Chinese>
                 <Japanese>胸膜腔内の液体を除去するため、胸腔チューブを挿入するのに使用する使い捨てキット</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyKit">
@@ -520,6 +559,7 @@
                 <Spanish>Kit de toracostomía</Spanish>
                 <Turkish>Torakostomi Kiti</Turkish>
                 <Polish>Zestaw do torakotomii</Polish>
+                <Chinese>胸腔造口套件</Chinese>
                 <Japanese>胸腔切開キット</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyKit_Desc">
@@ -533,6 +573,7 @@
                 <Spanish>Usado para preparar al paciente para la inserción de tubo torácico</Spanish>
                 <Turkish>Göğüs tüpü yerleştirilmesine hazırlık için kullanılan tek kullanımlık kit</Turkish>
                 <Polish>Jednorazowy zestaw do przygotowania pacjentów do założenia rurki do drenażu </Polish>
+                <Chinese>用于准备患者接受胸腔引流管置入的一次性套件</Chinese>
                 <Japanese>胸腔チューブ挿入のために患者を準備する使い捨てキット</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PocketBVM">
@@ -546,6 +587,7 @@
                 <Korean>휴대용 BVM</Korean>
                 <Spanish>Micro Ambú</Spanish>
                 <Turkish>Cep Tipi BVM</Turkish>
+                <Chinese>便携式BVM</Chinese>
                 <Japanese>Pocket BVM</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PocketBVM_Desc">
@@ -559,6 +601,7 @@
                 <Korean>Bag-Valve-Mask의 소형 버전</Korean>
                 <Spanish>Versión compacta del ambú</Spanish>
                 <Turkish>Balon-Valf-Maske’nin kompakt versiyonu</Turkish>
+                <Chinese>球囊面罩通气器的紧凑型版本</Chinese>
                 <Japanese>Bag–Valve–Maskのコンパクト版</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM">
@@ -572,6 +615,7 @@
                 <Korean>Bag-Valve-Mask</Korean>
                 <Spanish>Ambú</Spanish>
                 <Turkish>Balon-Valf-Maske</Turkish>
+                <Chinese>球囊面罩通气器</Chinese>
                 <Japanese>Bag–Valve–Mask</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Short">
@@ -585,6 +629,7 @@
                 <Korean>BVM</Korean>
                 <Spanish>Ambú</Spanish>
                 <Turkish>BVM</Turkish>
+                <Chinese>BVM</Chinese>
                 <Japanese>BVM</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Desc">
@@ -598,6 +643,7 @@
                 <Korean>호흡하지 않는 환자 환기용, 산소통 연결 가능</Korean>
                 <Spanish>Utilizada para ventilar paciente apneico, puede conectarse a oxígeno</Spanish>
                 <Turkish>Solunumu olmayan hastayı ventile etmek için kullanılır, oksijene bağlanabilir</Turkish>
+                <Chinese>用于为无自主呼吸的患者进行通气，可连接氧气</Chinese>
                 <Japanese>呼吸していない患者の換気に使用し、酸素に接続することもできる</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_OxygenTank_425_Empty">
@@ -611,6 +657,7 @@
                 <Korean>빈 휴대용 산소통 (425L)</Korean>
                 <Spanish>Tanque de oxígeno portátil vacío (425L)</Spanish>
                 <Turkish>Boş Taşınabilir Oksijen Tüpü (425L)</Turkish>
+                <Chinese>空便携式氧气瓶（425L）</Chinese>
                 <Japanese>空の携帯用酸素ボンベ(425L)</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_OxygenTank_425">
@@ -624,6 +671,7 @@
                 <Korean>휴대용 산소통 (425L)</Korean>
                 <Spanish>Tanque de oxígeno portátil (425L)</Spanish>
                 <Turkish>Taşınabilir Oksijen Tüpü (425L)</Turkish>
+                <Chinese>便携式氧气瓶（425L）</Chinese>
                 <Japanese>携帯用酸素ボンベ(425L)</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_OxygenTank_425_Desc">
@@ -637,6 +685,7 @@
                 <Korean>BVM과 함께 사용해 환자에게 산소 공급</Korean>
                 <Spanish>Usado junto al ambú para oxigenoterapia suplementaria</Spanish>
                 <Turkish>Hastalara ek oksijen sağlamak için BVM ile kullanılır</Turkish>
+                <Chinese>与BVM配合使用，为患者提供补充氧气</Chinese>
                 <Japanese>BVMと併用して、患者に補助酸素を供給するために使用</Japanese>
             </Key>
         </Container>
@@ -652,6 +701,7 @@
                 <Korean>체스트 씰 적용</Korean>
                 <Spanish>Aplicar parche torácico</Spanish>
                 <Turkish>Göğüs Yaması Uygula</Turkish>
+                <Chinese>贴敷胸封贴</Chinese>
                 <Japanese>チェストシールを貼る</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ApplyChestSeal_Progress">
@@ -665,6 +715,7 @@
                 <Korean>체스트 씰 적용 중</Korean>
                 <Spanish>Aplicando parche torácico...</Spanish>
                 <Turkish>Göğüs Yaması Uygulanıyor...</Turkish>
+                <Chinese>正在贴敷胸封贴…</Chinese>
                 <Japanese>チェストシールを貼っています...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ChestSeal_ActionLog">
@@ -678,6 +729,7 @@
                 <Korean>%1 체스트 씰 적용</Korean>
                 <Spanish>%1 aplicó un parche torácico</Spanish>
                 <Turkish>%1 göğüs yaması uyguladı</Turkish>
+                <Chinese>%1贴敷了胸封贴</Chinese>
                 <Japanese>%1 がチェストシールを使用した</Japanese>
             </Key>
         </Container>
@@ -693,6 +745,7 @@
                 <Korean>호흡 확인</Korean>
                 <Spanish>Comprobar la respiración</Spanish>
                 <Turkish>Solunumu Kontrol Et</Turkish>
+                <Chinese>检查呼吸</Chinese>
                 <Japanese>呼吸を確認</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Progress">
@@ -706,6 +759,7 @@
                 <Korean>호흡 확인 중...</Korean>
                 <Spanish>Comprobando la respiración...</Spanish>
                 <Turkish>Solunum Kontrol Ediliyor...</Turkish>
+                <Chinese>正在检查呼吸…</Chinese>
                 <Japanese>呼吸を確認中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_ActionLog">
@@ -719,6 +773,7 @@
                 <Korean>%1 호흡 확인: %2</Korean>
                 <Spanish>%1 comprobó la respiración: %2</Spanish>
                 <Turkish>%1 solunumu kontrol etti: %2</Turkish>
+                <Chinese>%1检查了呼吸：%2</Chinese>
                 <Japanese>%1 が呼吸を確認: %2</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Normal">
@@ -732,6 +787,7 @@
                 <Korean>환자가 정상적으로 호흡함</Korean>
                 <Spanish>El paciente respira con normalidad</Spanish>
                 <Turkish>Hasta normal soluyor</Turkish>
+                <Chinese>患者呼吸正常</Chinese>
                 <Japanese>患者は正常に呼吸している</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Normal_Short">
@@ -745,6 +801,7 @@
                 <Korean>정상</Korean>
                 <Spanish>Normal</Spanish>
                 <Turkish>Normal</Turkish>
+                <Chinese>正常</Chinese>
                 <Japanese>正常</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_None">
@@ -758,6 +815,7 @@
                 <Korean>환자가 호흡하지 않음</Korean>
                 <Spanish>El paciente no respira</Spanish>
                 <Turkish>Hasta solumuyor</Turkish>
+                <Chinese>患者无呼吸</Chinese>
                 <Japanese>患者は呼吸していない</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_None_Short">
@@ -771,6 +829,7 @@
                 <Korean>없음</Korean>
                 <Spanish>Nada</Spanish>
                 <Turkish>Yok</Turkish>
+                <Chinese>无</Chinese>
                 <Japanese>なし</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Slow">
@@ -784,6 +843,7 @@
                 <Korean>환자 호흡이 느림 (Slow)</Korean>
                 <Spanish>La respiración del paciente es lenta</Spanish>
                 <Turkish>Hastanın solunumu yavaş</Turkish>
+                <Chinese>患者呼吸缓慢</Chinese>
                 <Japanese>患者の呼吸は遅い</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Slow_Short">
@@ -797,6 +857,7 @@
                 <Korean>느림</Korean>
                 <Spanish>Lenta</Spanish>
                 <Turkish>Yavaş</Turkish>
+                <Chinese>缓慢</Chinese>
                 <Japanese>遅い</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Rapid">
@@ -810,6 +871,7 @@
                 <Korean>환자 호흡이 빠름 (Rapid)</Korean>
                 <Spanish>La respiración del paciente es rápida</Spanish>
                 <Turkish>Hastanın solunumu hızlı</Turkish>
+                <Chinese>患者呼吸急促</Chinese>
                 <Japanese>患者の呼吸は速い</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Rapid_Short">
@@ -823,6 +885,7 @@
                 <Korean>빠름</Korean>
                 <Spanish>Rápida</Spanish>
                 <Turkish>Hızlı</Turkish>
+                <Chinese>急促</Chinese>
                 <Japanese>速い</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Shallow">
@@ -836,6 +899,7 @@
                 <Korean>환자 호흡이 얕음 (Shallow)</Korean>
                 <Spanish>La respiración del paciente es superficial</Spanish>
                 <Turkish>Hastanın solunumu yüzeysel</Turkish>
+                <Chinese>患者呼吸浅表</Chinese>
                 <Japanese>患者の呼吸は浅い</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_Shallow_Short">
@@ -849,6 +913,7 @@
                 <Korean>얕음</Korean>
                 <Spanish>Superficial</Spanish>
                 <Turkish>Yüzeysel</Turkish>
+                <Chinese>浅表</Chinese>
                 <Japanese>浅い</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowSlow">
@@ -862,6 +927,7 @@
                 <Korean>환자 호흡이 느리고 얕음</Korean>
                 <Spanish>La respiración del paciente es lenta y superficial</Spanish>
                 <Turkish>Hastanın solunumu yavaş ve yüzeysel</Turkish>
+                <Chinese>患者呼吸缓慢且浅表</Chinese>
                 <Japanese>患者の呼吸は遅く浅い</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowSlow_Short">
@@ -875,6 +941,7 @@
                 <Korean>느림, 얕음</Korean>
                 <Spanish>Lenta y superficial</Spanish>
                 <Turkish>Yavaş ve yüzeysel</Turkish>
+                <Chinese>缓慢且浅表</Chinese>
                 <Japanese>遅く浅い</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowRapid">
@@ -888,6 +955,7 @@
                 <Korean>환자 호흡이 빠르고 얕음</Korean>
                 <Spanish>La respiración del paciente es rápida y superficial</Spanish>
                 <Turkish>Hastanın solunumu hızlı ve yüzeysel</Turkish>
+                <Chinese>患者呼吸急促且浅表</Chinese>
                 <Japanese>患者の呼吸は速く浅い</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CheckBreathing_ShallowRapid_Short">
@@ -901,6 +969,7 @@
                 <Korean>빠름, 얕음</Korean>
                 <Spanish>Rápida y superficial</Spanish>
                 <Turkish>Hızlı ve yüzeysel</Turkish>
+                <Chinese>急促且浅表</Chinese>
                 <Japanese>速く浅い</Japanese>
             </Key>
         </Container>
@@ -916,6 +985,7 @@
                 <Korean>흉부 확인</Korean>
                 <Spanish>Inspeccionar tórax</Spanish>
                 <Turkish>Göğsü Muayene Et</Turkish>
+                <Chinese>检查胸部</Chinese>
                 <Japanese>胸部を確認</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Progress">
@@ -929,6 +999,7 @@
                 <Korean>흉부 확인 중</Korean>
                 <Spanish>Inspeccionando tórax...</Spanish>
                 <Turkish>Göğüs Muayene Ediliyor...</Turkish>
+                <Chinese>正在检查胸部…</Chinese>
                 <Japanese>胸部を確認中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_ActionLog">
@@ -942,6 +1013,7 @@
                 <Korean>흉부 확인 함</Korean>
                 <Spanish>Tórax inspeccionado</Spanish>
                 <Turkish>göğüs muayene edildi</Turkish>
+                <Chinese>已检查胸部</Chinese>
                 <Japanese>胸部を確認した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Normal">
@@ -955,6 +1027,7 @@
                 <Korean>흉부 운동 관찰됨</Korean>
                 <Spanish>Observada elevación y caída torácica</Spanish>
                 <Turkish>Göğüs yükselip alçalması gözlemlendi</Turkish>
+                <Chinese>观察到胸廓起伏</Chinese>
                 <Japanese>胸部の上下運動を確認</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_None">
@@ -968,6 +1041,7 @@
                 <Korean>흉부 운동 관찰되지 않음</Korean>
                 <Spanish>No se observa movimiento torácico</Spanish>
                 <Turkish>Göğüs hareketi gözlemlenmedi</Turkish>
+                <Chinese>未观察到胸廓运动</Chinese>
                 <Japanese>胸部の動きは確認されない</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_None_Short">
@@ -981,6 +1055,7 @@
                 <Korean>흉부 운동 없음</Korean>
                 <Spanish>Sin movimiento torácico</Spanish>
                 <Turkish>Göğüs hareketi yok</Turkish>
+                <Chinese>无胸廓运动</Chinese>
                 <Japanese>胸部の動きなし</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_None_Uneven">
@@ -994,6 +1069,7 @@
                 <Korean>흉부 양쪽 비대칭</Korean>
                 <Spanish>Hemitorax desiguales</Spanish>
                 <Turkish>Göğüs tarafları eşit değil</Turkish>
+                <Chinese>双侧胸廓不对称</Chinese>
                 <Japanese>胸部の左右が不均等</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_None_Uneven_Short">
@@ -1007,6 +1083,7 @@
                 <Korean>흉부 비대칭</Korean>
                 <Spanish>Hemitorax asimétricos</Spanish>
                 <Turkish>göğüs tarafları eşit değil</Turkish>
+                <Chinese>双侧胸廓不对称</Chinese>
                 <Japanese>胸部の左右が不均等</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Bruising">
@@ -1020,6 +1097,7 @@
                 <Korean>뚜렷한 광범위 타박상 </Korean>
                 <Spanish>Numerosos hematomas visibles</Spanish>
                 <Turkish>Belirgin yaygın morarma</Turkish>
+                <Chinese>明显广泛瘀伤</Chinese>
                 <Japanese>広範囲にわたる明らかな打撲</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Bruising_Short">
@@ -1033,6 +1111,7 @@
                 <Korean>광범위 타박상</Korean>
                 <Spanish>Numerosos hematomas</Spanish>
                 <Turkish>Yaygın Morarma</Turkish>
+                <Chinese>广泛瘀伤</Chinese>
                 <Japanese>広範囲の打撲</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Uneven">
@@ -1046,6 +1125,7 @@
                 <Korean>흉부 운동 불균형 관찰됨</Korean>
                 <Spanish>Elevación y caída torácica desigual detectada</Spanish>
                 <Turkish>Düzensiz göğüs yükselip alçalması gözlemlendi</Turkish>
+                <Chinese>观察到胸廓起伏不对称</Chinese>
                 <Japanese>胸部の上下運動に左右差を確認</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_Uneven_Short">
@@ -1059,6 +1139,7 @@
                 <Korean>흉부 운동 불균형 </Korean>
                 <Spanish>Elevación y caída torácica desigual</Spanish>
                 <Turkish>Düzensiz göğüs yükselip alçalması</Turkish>
+                <Chinese>胸廓起伏不对称</Chinese>
                 <Japanese>胸部の上下運動に左右差あり</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation">
@@ -1072,6 +1153,7 @@
                 <Korean>심한 기관 편위 (Tracheal Deviation)</Korean>
                 <Spanish>Desviación traqueal severa</Spanish>
                 <Turkish>Şiddetli Trakeal Deviasyon</Turkish>
+                <Chinese>严重气管偏移</Chinese>
                 <Japanese>重度の気管偏位</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation_Short">
@@ -1085,6 +1167,7 @@
                 <Korean>심한 기관 편위 (Tracheal Deviation)</Korean>
                 <Spanish>Desviación traqueal severa</Spanish>
                 <Turkish>şiddetli trakeal deviasyon</Turkish>
+                <Chinese>严重气管偏移</Chinese>
                 <Japanese>重度の気管偏位</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation_Slight">
@@ -1098,6 +1181,7 @@
                 <Korean>경미한 기관 편위 (Tracheal Deviation)</Korean>
                 <Spanish>Desviación traqueal leve</Spanish>
                 <Turkish>Hafif Trakeal Deviasyon</Turkish>
+                <Chinese>轻微气管偏移</Chinese>
                 <Japanese>軽度の気管偏位</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InspectChest_TrachealDeviation_Slight_Short">
@@ -1111,6 +1195,7 @@
                 <Korean>경미한 기관 편위 (Tracheal Deviation)</Korean>
                 <Spanish>Desviación traqueal leve</Spanish>
                 <Turkish>hafif trakeal deviasyon</Turkish>
+                <Chinese>轻微气管偏移</Chinese>
                 <Japanese>軽度の気管偏位</Japanese>
             </Key>
         </Container>
@@ -1126,6 +1211,7 @@
                 <Korean>바늘 감압술 (NCD) 수행</Korean>
                 <Spanish>Realizar descompresión torácica con aguja</Spanish>
                 <Turkish>İğne Göğüs Dekompresyonu Yap</Turkish>
+                <Chinese>进行针刺胸腔减压</Chinese>
                 <Japanese>針胸腔減圧を実施</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PerformNCD_Progress">
@@ -1139,6 +1225,7 @@
                 <Korean>바늘 감압술 (NCD) 수행 중...</Korean>
                 <Spanish>Realizando descompresión torácica con aguja...</Spanish>
                 <Turkish>İğne Göğüs Dekompresyonu Yapılıyor...</Turkish>
+                <Chinese>正在进行针刺胸腔减压…</Chinese>
                 <Japanese>針胸腔減圧を実施中</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_NCD_Needle_Decompression">
@@ -1152,6 +1239,7 @@
                 <Korean>바늘 감압술</Korean>
                 <Spanish>Descompresión con aguja</Spanish>
                 <Turkish>İğne Dekompresyonu</Turkish>
+                <Chinese>针刺胸腔减压</Chinese>
                 <Japanese>針胸腔減圧</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_NCD_ActionLog">
@@ -1165,6 +1253,7 @@
                 <Korean>%1 바늘 감압술 (NCD) 수행 중</Korean>
                 <Spanish>%1 realizó una descompresión torácica con aguja</Spanish>
                 <Turkish>%1 iğne göğüs dekompresyonu yaptı</Turkish>
+                <Chinese>%1进行了针刺胸腔减压</Chinese>
                 <Japanese>%1 が針胸腔減圧を実施した</Japanese>
             </Key>
         </Container>
@@ -1180,6 +1269,7 @@
                 <Korean>산소통 보충</Korean>
                 <Spanish>Rellenar tanque de oxígeno</Spanish>
                 <Turkish>Oksijen Tüpünü Doldur</Turkish>
+                <Chinese>补充氧气瓶</Chinese>
                 <Japanese>酸素ボンベを補充</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_RefillOxygenTank_Complete">
@@ -1193,6 +1283,7 @@
                 <Korean>산소통 보충 완료</Korean>
                 <Spanish>Tanque de oxígeno rellenado</Spanish>
                 <Turkish>Oksijen Tüpü Dolduruldu</Turkish>
+                <Chinese>氧气瓶已补充</Chinese>
                 <Japanese>酸素ボンベを補充した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_RefillOxygenTank_Cancelled">
@@ -1206,6 +1297,7 @@
                 <Korean>산소통 보충 취소</Korean>
                 <Spanish>Recarga de tanque cancelada</Spanish>
                 <Turkish>Oksijen Tüpü Doldurma İptal Edildi</Turkish>
+                <Chinese>氧气瓶补充已取消</Chinese>
                 <Japanese>酸素ボンベの補充をキャンセルした</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_RefillOxygenTank_Progress">
@@ -1219,6 +1311,7 @@
                 <Korean>산소통 보충 중...</Korean>
                 <Spanish>Rellenando tanque de oxígeno...</Spanish>
                 <Turkish>Oksijen Tüpü Dolduruluyor...</Turkish>
+                <Chinese>正在补充氧气瓶…</Chinese>
                 <Japanese>酸素ボンベを補充中...</Japanese>
             </Key>
         </Container>
@@ -1234,6 +1327,7 @@
                 <Korean>옥시미터 착용</Korean>
                 <Spanish>Colocar pulsioxímetro</Spanish>
                 <Turkish>Nabız Oksimetesi Yerleştir</Turkish>
+                <Chinese>放置脉搏血氧仪</Chinese>
                 <Japanese>パルスオキシメーターを装着</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PlacePulseOximeter_Progress">
@@ -1247,6 +1341,7 @@
                 <Korean>옥시미터 적용 착용 중</Korean>
                 <Spanish>Colocando pulsioxímetro...</Spanish>
                 <Turkish>Nabız Oksimetesi Yerleştiriliyor...</Turkish>
+                <Chinese>正在放置脉搏血氧仪…</Chinese>
                 <Japanese>パルスオキシメーターを装着中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_RemovePulseOximeter">
@@ -1260,6 +1355,7 @@
                 <Korean>옥시미터 제거</Korean>
                 <Spanish>Quitar pulsioxímetro</Spanish>
                 <Turkish>Nabız Oksimetesi'ni Çıkar</Turkish>
+                <Chinese>移除脉搏血氧仪</Chinese>
                 <Japanese>パルスオキシメーターを取り外す</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_RemovePulseOximeter_Progress">
@@ -1273,6 +1369,7 @@
                 <Korean>옥시미터 제거 중</Korean>
                 <Spanish>Quitando pulsioxímetro...</Spanish>
                 <Turkish>Nabız Oksimetesi Çıkarılıyor...</Turkish>
+                <Chinese>正在移除脉搏血氧仪…</Chinese>
                 <Japanese>パルスオキシメーターを取り外し中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PulseOximeter_Already">
@@ -1286,6 +1383,7 @@
                 <Korean>환자는 이미 %1에 옥시미터 착용 중</Korean>
                 <Spanish>El paciente ya tiene un pulsioxímetro en %1</Spanish>
                 <Turkish>Hastada %1 üzerinde zaten nabız oksimetresi var</Turkish>
+                <Chinese>患者%1上已放置脉搏血氧仪</Chinese>
                 <Japanese>患者はすでに %1 にパルスオキシメーターを装着している</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PulseOximeter_ActionLog_Placed">
@@ -1299,6 +1397,7 @@
                 <Korean>%1 이 옥시미터 착용 시킴</Korean>
                 <Spanish>%1 colocó un pulsioxímetro</Spanish>
                 <Turkish>%1 nabız oksimetresi yerleştirdi</Turkish>
+                <Chinese>%1放置了脉搏血氧仪</Chinese>
                 <Japanese>%1 がパルスオキシメーターを装着した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PulseOximeter_ActionLog_Removed">
@@ -1312,6 +1411,7 @@
                 <Korean>%1 이 옥시미터 제거 시킴</Korean>
                 <Spanish>%1 retiró un pulsioxímetro</Spanish>
                 <Turkish>%1 nabız oksimetresini çıkardı</Turkish>
+                <Chinese>%1移除了脉搏血氧仪</Chinese>
                 <Japanese>%1 がパルスオキシメーターを取り外した</Japanese>
             </Key>
         </Container>
@@ -1327,6 +1427,7 @@
                 <Korean>흉강 천자 절개부 봉합</Korean>
                 <Spanish>Cerrar la incisión de toracostomía</Spanish>
                 <Turkish>Torakostomi Kesisini Kapat</Turkish>
+                <Chinese>闭合胸腔造口切口</Chinese>
                 <Japanese>胸腔切開創を閉鎖</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_CloseIncision_Progress">
@@ -1340,6 +1441,7 @@
                 <Korean>흉강 천자 절개부 봉합 중...</Korean>
                 <Spanish>Cerrando la incisión de toracostomía...</Spanish>
                 <Turkish>Torakostomi Kesisi Kapatılıyor...</Turkish>
+                <Chinese>正在闭合胸腔造口切口…</Chinese>
                 <Japanese>胸腔切開創を閉鎖中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyClose_Already">
@@ -1353,6 +1455,7 @@
                 <Korean>흉강 천자 절개부 이미 봉합 됨</Korean>
                 <Spanish>Incisión de toracostomía ya cerrada</Spanish>
                 <Turkish>Torakostomi kesisi zaten kapalı</Turkish>
+                <Chinese>胸腔造口切口已闭合</Chinese>
                 <Japanese>胸腔切開創はすでに閉鎖されている</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyClose_ActionLog">
@@ -1366,6 +1469,7 @@
                 <Korean>%1 흉강 천자 절개부 봉합 완료</Korean>
                 <Spanish>%1 cerró la incisión de toracostomía</Spanish>
                 <Turkish>%1 torakostomi kesisini kapattı</Turkish>
+                <Chinese>%1闭合了胸腔造口切口</Chinese>
                 <Japanese>%1 が胸腔切開創を閉鎖した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyClose_Complete">
@@ -1379,6 +1483,7 @@
                 <Korean>흉강 천자 절개부 봉합 후 일방향 밸브 부착</Korean>
                 <Spanish>Incisión de toracostomía sellada y válvula unidireccional colocada</Spanish>
                 <Turkish>Torakostomi kesisi kapatıldı ve tek yönlü valf yerleştirildi</Turkish>
+                <Chinese>胸腔造口切口已封闭且单向阀已放置</Chinese>
                 <Japanese>胸腔切開創を密閉し、一方向弁を設置した</Japanese>
             </Key>
         </Container>
@@ -1394,6 +1499,7 @@
                 <Korean>배액 (ACCUVAC)</Korean>
                 <Spanish>Drenar líquido (ACCUVAC)</Spanish>
                 <Turkish>Sıvıyı Drene Et (ACCUVAC)</Turkish>
+                <Chinese>引流液体（ACCUVAC）</Chinese>
                 <Japanese>液体を排出(ACCUVAC)</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_DrainFluid_SuctionBag">
@@ -1407,6 +1513,7 @@
                 <Korean>배액 (Suction Bag)</Korean>
                 <Spanish>Drenar líquido (Bolsa de succión)</Spanish>
                 <Turkish>Sıvıyı Drene Et (Aspirasyon Torbası)</Turkish>
+                <Chinese>引流液体（吸引袋）</Chinese>
                 <Japanese>液体を排出(吸引バッグ)</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_DrainFluid_Suction_Progress">
@@ -1420,6 +1527,7 @@
                 <Korean>배액 중...</Korean>
                 <Spanish>Drenando líquido...</Spanish>
                 <Turkish>Sıvı Drene Ediliyor...</Turkish>
+                <Chinese>正在引流液体…</Chinese>
                 <Japanese>液体を排出中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_ActionLog">
@@ -1433,6 +1541,7 @@
                 <Korean>%1 흉강액 배액 (%2)</Korean>
                 <Spanish>%1 drenó espacio pleural (%2)</Spanish>
                 <Turkish>%1 plevral boşluğu drene etti (%2)</Turkish>
+                <Chinese>%1引流了胸膜腔（%2）</Chinese>
                 <Japanese>%1 が胸膜腔を排液した (%2)</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_QuickViewLog">
@@ -1446,6 +1555,7 @@
                 <Korean>흉강 천자 배액: %1</Korean>
                 <Spanish>Drenaje torácico: %1</Spanish>
                 <Turkish>Torakostomi Dreni: %1</Turkish>
+                <Chinese>胸腔造口引流：%1</Chinese>
                 <Japanese>胸腔切開ドレーン: %1</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Complete">
@@ -1459,6 +1569,7 @@
                 <Korean>배액 완료</Korean>
                 <Spanish>Drenaje completado</Spanish>
                 <Turkish>Sıvı drenajı tamamlandı</Turkish>
+                <Chinese>液体引流完成</Chinese>
                 <Japanese>排液完了</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Accurate">
@@ -1472,6 +1583,7 @@
                 <Korean>~%1 ml 혈액 배출</Korean>
                 <Spanish>~%1 ml de sangre drenada</Spanish>
                 <Turkish>Yaklaşık %1 ml kan drene edildi</Turkish>
+                <Chinese>引流出~%1 ml血液</Chinese>
                 <Japanese>%1 mlの血液を排出した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_None">
@@ -1485,6 +1597,7 @@
                 <Korean>혈액 배출 없음</Korean>
                 <Spanish>Sin drenaje de sangre</Spanish>
                 <Turkish>Kan drene edilmedi</Turkish>
+                <Chinese>未引流出血液</Chinese>
                 <Japanese>血液は排出されなかった</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Small">
@@ -1498,6 +1611,7 @@
                 <Korean>소량의 혈액 배출됨</Korean>
                 <Spanish>Pequeña cantidad de sangre drenada</Spanish>
                 <Turkish>Az miktarda kan drene edildi</Turkish>
+                <Chinese>引流出少量血液</Chinese>
                 <Japanese>少量の血液を排出した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Significant">
@@ -1511,6 +1625,7 @@
                 <Korean>상당한 혈액 배출됨</Korean>
                 <Spanish>Cantidad significativa de sangre drenada</Spanish>
                 <Turkish>Belirgin miktarda kan drene edildi</Turkish>
+                <Chinese>引流出较多血液</Chinese>
                 <Japanese>かなりの量の血液を排液した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Large">
@@ -1524,6 +1639,7 @@
                 <Korean>대량의 혈액 배출됨</Korean>
                 <Spanish>Gran cantidad de sangre drenada</Spanish>
                 <Turkish>Fazla miktarda kan drene edildi</Turkish>
+                <Chinese>引流出大量血液</Chinese>
                 <Japanese>大量の血液を排液した</Japanese>
             </Key>
         </Container>
@@ -1539,6 +1655,7 @@
                 <Korean>가슴관 삽관 </Korean>
                 <Spanish>Insertar tubo torácico</Spanish>
                 <Turkish>Göğüs Tüpü Yerleştir</Turkish>
+                <Chinese>置入胸腔引流管</Chinese>
                 <Japanese>胸腔チューブを挿入</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_InsertChestTube_Progress">
@@ -1552,6 +1669,7 @@
                 <Korean>삽관 중...</Korean>
                 <Spanish>Insertando tubo torácico...</Spanish>
                 <Turkish>Göğüs Tüpü Yerleştiriliyor...</Turkish>
+                <Chinese>正在置入胸腔引流管…</Chinese>
                 <Japanese>胸腔チューブを挿入中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_Already">
@@ -1565,6 +1683,7 @@
                 <Korean>이미 가슴삽관됨</Korean>
                 <Spanish>Tubo torácico ya insertado</Spanish>
                 <Turkish>Göğüs tüpü zaten yerleştirilmiş</Turkish>
+                <Chinese>胸腔引流管已置入</Chinese>
                 <Japanese>胸腔チューブはすでに挿入されている</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_ActionLog">
@@ -1578,6 +1697,7 @@
                 <Korean>%1 가슴삽관함</Korean>
                 <Spanish>%1 insertó un tubo torácico</Spanish>
                 <Turkish>%1 göğüs tüpü yerleştirdi</Turkish>
+                <Chinese>%1置入了胸腔引流管</Chinese>
                 <Japanese>%1 が胸腔チューブを挿入した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyChestTube_Complete">
@@ -1591,6 +1711,7 @@
                 <Korean>가슴삽관 완료</Korean>
                 <Spanish>Tubo torácico insertado</Spanish>
                 <Turkish>Göğüs tüpü yerleştirildi</Turkish>
+                <Chinese>胸腔引流管已置入</Chinese>
                 <Japanese>胸腔チューブを挿入した</Japanese>
             </Key>
         </Container>
@@ -1606,6 +1727,7 @@
                 <Korean>가슴관 재밀봉</Korean>
                 <Spanish>Re-sellar tubo torácico</Spanish>
                 <Turkish>Göğüs Tüpünü Yeniden Sızdırmaz Yap</Turkish>
+                <Chinese>重新封闭胸腔引流管</Chinese>
                 <Japanese>胸腔チューブを再密閉</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ReSealChestTube_Progress">
@@ -1619,6 +1741,7 @@
                 <Korean>재밀봉 중...</Korean>
                 <Spanish>Re-sellando tubo torácico...</Spanish>
                 <Turkish>Göğüs Tüpü Yeniden Sızdırmaz Yapılıyor...</Turkish>
+                <Chinese>正在重新封闭胸腔引流管…</Chinese>
                 <Japanese>胸腔チューブを再密閉中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_Already">
@@ -1632,6 +1755,7 @@
                 <Korean>이미 재밀봉됨</Korean>
                 <Spanish>Tubo torácico ya re-sellado</Spanish>
                 <Turkish>Göğüs tüpü zaten yeniden sızdırmaz</Turkish>
+                <Chinese>胸腔引流管已重新封闭</Chinese>
                 <Japanese>胸腔チューブはすでに再密閉されている</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_ActionLog">
@@ -1645,6 +1769,7 @@
                 <Korean>%1 Chest Tube 재밀봉</Korean>
                 <Spanish>%1 re-selló el tubo torácico</Spanish>
                 <Turkish>%1 göğüs tüpünü yeniden sızdırmaz yaptı</Turkish>
+                <Chinese>%1重新封闭了胸腔引流管</Chinese>
                 <Japanese>%1 が胸腔チューブを再密閉した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_Complete">
@@ -1658,6 +1783,7 @@
                 <Korean>재밀봉 완료</Korean>
                 <Spanish>Tubo torácico re-sellado</Spanish>
                 <Turkish>Göğüs tüpü yeniden sızdırmaz yapıldı</Turkish>
+                <Chinese>胸腔引流管已重新封闭</Chinese>
                 <Japanese>胸腔チューブを再密閉した</Japanese>
             </Key>
         </Container>
@@ -1673,6 +1799,7 @@
                 <Korean>흉강 천자 수행 (Thoracostomy)</Korean>
                 <Spanish>Realizar toracostomía</Spanish>
                 <Turkish>Torakostomi Yap</Turkish>
+                <Chinese>进行胸腔造口术</Chinese>
                 <Japanese>胸腔切開を実施</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PerformThoracostomy_Progress">
@@ -1686,6 +1813,7 @@
                 <Korean>흉강 천자 수행 중...</Korean>
                 <Spanish>Realizando toracostomía...</Spanish>
                 <Turkish>Torakostomi Yapılıyor...</Turkish>
+                <Chinese>正在进行胸腔造口术…</Chinese>
                 <Japanese>胸腔切開を実施中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_PerformThoracostomy_Kit">
@@ -1699,6 +1827,7 @@
                 <Spanish>Realizar toracostomía (kit)</Spanish>
                 <Turkish>Torakostomi Yap (Kit)</Turkish>
                 <Polish>Wykonaj torakotomie (zestaw)</Polish>
+                <Chinese>进行胸腔造口术（套件）</Chinese>
                 <Japanese>胸腔切開を実施(キット)</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Already">
@@ -1712,6 +1841,7 @@
                 <Korean>흉강 천자 이미 수행됨</Korean>
                 <Spanish>Toracostomía con barrido ya realizada</Spanish>
                 <Turkish>Torakostomi taraması zaten yapılmış</Turkish>
+                <Chinese>胸腔造口探查已完成</Chinese>
                 <Japanese>胸腔切開後のスイープはすでに実施されている</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_ActionLog_Complete">
@@ -1725,6 +1855,7 @@
                 <Korean>%1 흉강 천자 (Thoracostomy) 수행</Korean>
                 <Spanish>%1 realizó una toracostomía</Spanish>
                 <Turkish>%1 torakostomi yaptı</Turkish>
+                <Chinese>%1进行了胸腔造口术</Chinese>
                 <Japanese>%1 が胸腔切開を実施した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Kit_ActionLog_Complete">
@@ -1738,6 +1869,7 @@
                 <Spanish>%1 realizó una toracostomía (kit)</Spanish>
                 <Turkish>%1 torakostomi yaptı (Torakostomi Kiti)</Turkish>
                 <Polish>%1 wykonał torakotomie (zestaw)</Polish>
+                <Chinese>%1进行了胸腔造口术（胸腔造口术套件）</Chinese>
                 <Japanese>%1 が胸腔切開を実施した(胸腔切開キット)</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Complete">
@@ -1751,6 +1883,7 @@
                 <Korean>수지 흉강 천자 수행됨</Korean>
                 <Spanish>Toracostomía con dedo realizada</Spanish>
                 <Turkish>Parmak Torakostomisi Yapıldı</Turkish>
+                <Chinese>手指胸腔造口术已完成</Chinese>
                 <Japanese>フィンガー胸腔切開を実施した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_ActionLog">
@@ -1764,6 +1897,7 @@
                 <Korean>흉강 수지 탐색</Korean>
                 <Spanish>Barrido de toracostomía</Spanish>
                 <Turkish>Torakostomi Taraması</Turkish>
+                <Chinese>胸腔造口探查</Chinese>
                 <Japanese>胸腔切開後のスイープ</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Normal">
@@ -1777,6 +1911,7 @@
                 <Korean>폐 정상 팽창</Korean>
                 <Spanish>El pulmón se infla de manera normal</Spanish>
                 <Turkish>Akciğer normal şekilde şişiyor</Turkish>
+                <Chinese>肺部正常复张</Chinese>
                 <Japanese>肺は正常に膨張している</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Normal_Short">
@@ -1790,6 +1925,7 @@
                 <Korean>폐 정상 팽창</Korean>
                 <Spanish>El pulmón se infla de manera normal</Spanish>
                 <Turkish>akciğer normal şekilde şişiyor</Turkish>
+                <Chinese>肺部复张正常</Chinese>
                 <Japanese>肺は正常に膨張している</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_NotInflating">
@@ -1803,6 +1939,7 @@
                 <Korean>폐 팽창 안 됨</Korean>
                 <Spanish>El pulmón no se infla</Spanish>
                 <Turkish>Akciğer şişmiyor</Turkish>
+                <Chinese>肺部未复张</Chinese>
                 <Japanese>肺は膨張していない</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereCollapse">
@@ -1816,6 +1953,7 @@
                 <Korean>중증 폐허탈</Korean>
                 <Spanish>El pulmón está colapsado severamente</Spanish>
                 <Turkish>Akciğer ciddi şekilde çökmüş</Turkish>
+                <Chinese>肺部严重萎陷</Chinese>
                 <Japanese>肺は重度に虚脱している</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereCollapse_Short">
@@ -1829,6 +1967,7 @@
                 <Korean>폐허탈</Korean>
                 <Spanish>El pulmón está colapsado </Spanish>
                 <Turkish>Akciğer çökmüş</Turkish>
+                <Chinese>肺部萎陷</Chinese>
                 <Japanese>肺は虚脱している</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Blood">
@@ -1842,6 +1981,7 @@
                 <Korean>흉강 내 혈액 발견</Korean>
                 <Spanish>Sangre encontrada en la cavidad pleural</Spanish>
                 <Turkish>Plevral boşlukta kan bulundu</Turkish>
+                <Chinese>发现胸膜腔内积血</Chinese>
                 <Japanese>胸膜腔内に血液を確認</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Blood_Short">
@@ -1855,6 +1995,7 @@
                 <Korean>흉강 내 혈액 발견</Korean>
                 <Spanish>Sangre en la cavidad pleural</Spanish>
                 <Turkish>Plevral boşlukta kan</Turkish>
+                <Chinese>胸膜腔内积血</Chinese>
                 <Japanese>胸膜腔内に血液あり</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereBlood">
@@ -1868,6 +2009,7 @@
                 <Korean>흉강 내 혈액 다량</Korean>
                 <Spanish>Gran cantidad de sangre en la cavidad pleural</Spanish>
                 <Turkish>Plevral boşlukta fazla miktarda kan</Turkish>
+                <Chinese>胸膜腔内大量积血</Chinese>
                 <Japanese>胸膜腔内に大量の血液あり</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_SevereBlood_Short">
@@ -1881,6 +2023,7 @@
                 <Korean>혈액 다량</Korean>
                 <Spanish>Gran cantidad de sangre</Spanish>
                 <Turkish>fazla miktarda kan</Turkish>
+                <Chinese>大量积血</Chinese>
                 <Japanese>大量の血液</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Bleeding">
@@ -1894,6 +2037,7 @@
                 <Korean>뚜렷한 흉강 출혈</Korean>
                 <Spanish>Sangrado visible en la cavidad pleural</Spanish>
                 <Turkish>Plevral boşlukta fark edilir kanama</Turkish>
+                <Chinese>胸膜腔内明显出血</Chinese>
                 <Japanese>胸膜腔内に明らかな出血あり</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomySweep_Bleeding_Short">
@@ -1907,6 +2051,7 @@
                 <Korean>흉강 출혈</Korean>
                 <Spanish>Sangrado en la cavidad pleural</Spanish>
                 <Turkish>Plevral boşlukta kanama</Turkish>
+                <Chinese>胸膜腔内出血</Chinese>
                 <Japanese>胸膜腔内出血</Japanese>
             </Key>
         </Container>
@@ -1922,6 +2067,7 @@
                 <Korean>휴대용 BVM 사용</Korean>
                 <Spanish>Usar micro ambú</Spanish>
                 <Turkish>Cep Tipi BVM Kullan</Turkish>
+                <Chinese>使用便携式BVM</Chinese>
                 <Japanese>ポケットBVMを使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_UseBVM">
@@ -1935,6 +2081,7 @@
                 <Korean>BVM 사용</Korean>
                 <Spanish>Usar ambú</Spanish>
                 <Turkish>BVM Kullan</Turkish>
+                <Chinese>使用BVM</Chinese>
                 <Japanese>BVMを使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_UseBVM_Oxygen">
@@ -1948,6 +2095,7 @@
                 <Korean>BVM + 산소통 사용</Korean>
                 <Spanish>Usar ambú con oxígeno</Spanish>
                 <Turkish>Oksijenli BVM Kullan</Turkish>
+                <Chinese>使用BVM连接氧气</Chinese>
                 <Japanese>酸素併用でBVMを使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_UseBVM_VehicleOxygen">
@@ -1961,6 +2109,7 @@
                 <Korean>BVM + 산소통 사용 (차량)</Korean>
                 <Spanish>Usar ambú con oxígeno (vehículo)</Spanish>
                 <Turkish>Oksijenli BVM Kullan (Araç)</Turkish>
+                <Chinese>使用BVM连接氧气（载具）</Chinese>
                 <Japanese>酸素併用でBVMを使用（車両）</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_UseBVM_PortableOxygen">
@@ -1974,6 +2123,7 @@
                 <Korean>BVM + 산소통 사용 (휴대용)</Korean>
                 <Spanish>Usar ambú con oxígeno (portable)</Spanish>
                 <Turkish>Oksijenli BVM Kullan (Taşınabilir)</Turkish>
+                <Chinese>使用BVM连接氧气（便携式）</Chinese>
                 <Japanese>酸素併用でBVMを使用（携行型）</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Already">
@@ -1987,6 +2137,7 @@
                 <Korean>환자는 이미 BVM 착용 중</Korean>
                 <Spanish>El pacienta ya tiene un ambú</Spanish>
                 <Turkish>Hastada zaten BVM var</Turkish>
+                <Chinese>患者已连接BVM</Chinese>
                 <Japanese>患者にはすでにBVMが装着されている</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_UsingBVM">
@@ -2000,6 +2151,7 @@
                 <Korean>BVM 사용 중...</Korean>
                 <Spanish>Utilizando ambú...</Spanish>
                 <Turkish>BVM Kullanılıyor...</Turkish>
+                <Chinese>正在连接BVM…</Chinese>
                 <Japanese>BVMを使用中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_UsingBVM_Assist">
@@ -2013,6 +2165,7 @@
                 <Korean>BVM 사용 중 (CPR 보조)...</Korean>
                 <Spanish>Utilizando un ambú (asistiendo RCP)</Spanish>
                 <Turkish>BVM Kullanılıyor (CPR Destekleniyor)...</Turkish>
+                <Chinese>正在使用BVM（辅助心肺复苏）…</Chinese>
                 <Japanese>BVMを使用中（CPR補助）...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_UsingBVM_Oxygen">
@@ -2026,6 +2179,7 @@
                 <Korean>BVM + 산소통 사용 중...</Korean>
                 <Spanish>Usando ambú con oxígeno...</Spanish>
                 <Turkish>Oksijenli BVM Kullanılıyor...</Turkish>
+                <Chinese>正在使用BVM连接氧气…</Chinese>
                 <Japanese>酸素併用でBVMを使用中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_UsingBVM_AssistOxygen">
@@ -2039,6 +2193,7 @@
                 <Korean>BVM + 산소통 사용 중 (CPR 보조)...</Korean>
                 <Spanish>Usando ambú con oxígeno (asistiendo RCP)</Spanish>
                 <Turkish>Oksijenli BVM Kullanılıyor (CPR Destekleniyor)...</Turkish>
+                <Chinese>正在使用BVM连接氧气（辅助心肺复苏）…</Chinese>
                 <Japanese>酸素併用でBVMを使用中(CPR補助)...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Stop">
@@ -2052,6 +2207,7 @@
                 <Korean>BVM 사용 중단</Korean>
                 <Spanish>Dejar de utilizar el ambú</Spanish>
                 <Turkish>BVM Kullanımını Durdur</Turkish>
+                <Chinese>停止使用BVM</Chinese>
                 <Japanese>BVMの使用を中止</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Stopped">
@@ -2065,6 +2221,7 @@
                 <Korean>BVM 사용 중단함</Korean>
                 <Spanish>Detenido</Spanish>
                 <Turkish>BVM Kullanımı Durduruldu</Turkish>
+                <Chinese>已停止使用BVM</Chinese>
                 <Japanese>BVMの使用を中止した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Started">
@@ -2078,6 +2235,7 @@
                 <Korean>구조 호흡 시작함</Korean>
                 <Spanish>Iniciando ventilaciones de rescate</Spanish>
                 <Turkish>Kurtarıcı Solunuma Başlandı</Turkish>
+                <Chinese>已开始进行人工呼吸</Chinese>
                 <Japanese>人工呼吸を開始した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Pause">
@@ -2091,6 +2249,7 @@
                 <Korean>구조 호흡 일시 중지</Korean>
                 <Spanish>Detener ventilaciones de rescate</Spanish>
                 <Turkish>Kurtarıcı Solunumu Duraklat</Turkish>
+                <Chinese>暂停人工呼吸</Chinese>
                 <Japanese>人工呼吸を一時停止</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Paused">
@@ -2104,6 +2263,7 @@
                 <Korean>구조 호흡 일시 중지됨</Korean>
                 <Spanish>ventilaciones de rescate detenidas</Spanish>
                 <Turkish>Kurtarıcı Solunum Duraklatıldı</Turkish>
+                <Chinese>已暂停人工呼吸</Chinese>
                 <Japanese>人工呼吸を一時停止した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continue">
@@ -2117,6 +2277,7 @@
                 <Korean>구조 호흡 재개</Korean>
                 <Spanish>Continuar ventilaciones de rescate</Spanish>
                 <Turkish>Kurtarıcı Solunuma Devam Et</Turkish>
+                <Chinese>继续进行人工呼吸</Chinese>
                 <Japanese>人工呼吸を再開</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continued">
@@ -2130,6 +2291,7 @@
                 <Korean>구조 호흡 재개됨</Korean>
                 <Spanish>Continuando con las ventilaciones de rescate</Spanish>
                 <Turkish>Kurtarıcı Solunuma Devam Edildi</Turkish>
+                <Chinese>已继续进行人工呼吸</Chinese>
                 <Japanese>人工呼吸を再開した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_SwapToCPR">
@@ -2142,6 +2304,7 @@
                 <Spanish>Cambiar a RCP</Spanish>
                 <Turkish>CPR’a Geç</Turkish>
                 <Polish>Zmień na RKO</Polish>
+                <Chinese>切换至心肺复苏</Chinese>
                 <Japanese>CPRに切り替え</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_SwappedToCPR">
@@ -2154,6 +2317,7 @@
                 <Spanish>RCP iniciada</Spanish>
                 <Turkish>CPR’a Geçildi</Turkish>
                 <Polish>Zmieniono na RKO</Polish>
+                <Chinese>已切换至心肺复苏</Chinese>
                 <Japanese>CPRに切り替えた</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_ActionLog_Start">
@@ -2167,6 +2331,7 @@
                 <Korean>%1 BVM 구조 호흡 시작</Korean>
                 <Spanish>%1 inició las ventilaciones de rescate con ambú</Spanish>
                 <Turkish>%1 BVM ile kurtarıcı solunuma başladı</Turkish>
+                <Chinese>%1开始进行BVM人工呼吸</Chinese>
                 <Japanese>%1 がBVMによる人工呼吸を開始した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_ActionLog_Stop">
@@ -2180,6 +2345,7 @@
                 <Korean>%1 BVM 구조 호흡 중단 (x%2)</Korean>
                 <Spanish>%1 detuvo las ventilaciones de rescate con ambú (x%2)</Spanish>
                 <Turkish>%1 BVM kurtarıcı solunumunu durdurdu (x%2)</Turkish>
+                <Chinese>%1停止了BVM人工呼吸（x%2）</Chinese>
                 <Japanese>%1 がBVMによる人工呼吸を中止した(%2)</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_OxygenTankDepleted">
@@ -2193,6 +2359,7 @@
                 <Korean>휴대용 산소통 소모됨</Korean>
                 <Spanish>Tanque de oxígeno portátil agotado</Spanish>
                 <Turkish>Taşınabilir Oksijen Tüpü Tükendi</Turkish>
+                <Chinese>便携式氧气瓶已耗尽</Chinese>
                 <Japanese>携帯用酸素ボンベを使い切った</Japanese>
             </Key>
         </Container>
@@ -2208,6 +2375,7 @@
                 <Korean>청진기로 흉부 확인</Korean>
                 <Spanish>Inspeccionar el tórax con estetoscopio</Spanish>
                 <Turkish>Stetoskop ile Göğsü Dinle</Turkish>
+                <Chinese>使用听诊器检查胸部</Chinese>
                 <Japanese>聴診器で胸部を確認</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_ActionLog">
@@ -2221,6 +2389,7 @@
                 <Korean>%1  청진기로 흉부 확인</Korean>
                 <Spanish>%1 inspeccionó el tórax con un estetoscopio</Spanish>
                 <Turkish>%1 stetoskop ile göğsü dinledi</Turkish>
+                <Chinese>%1使用了听诊器检查胸部</Chinese>
                 <Japanese>%1 が聴診器で胸部を確認した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_Stopped">
@@ -2234,6 +2403,7 @@
                 <Korean>청진 중단</Korean>
                 <Spanish>Detenido el uso del estetoscopio</Spanish>
                 <Turkish>Stetoskop kullanımı durduruldu</Turkish>
+                <Chinese>已停止使用听诊器</Chinese>
                 <Japanese>聴診器の使用を中止した</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_Using">
@@ -2247,6 +2417,7 @@
                 <Korean>청진 중...</Korean>
                 <Spanish>Usando estetoscopio...</Spanish>
                 <Turkish>Stetoskop Kullanılıyor...</Turkish>
+                <Chinese>正在使用听诊器…</Chinese>
                 <Japanese>聴診器を使用中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_MoveBell">
@@ -2260,6 +2431,7 @@
                 <Korean>벨 이동</Korean>
                 <Spanish>Mover campanilla</Spanish>
                 <Turkish>Çanı Taşı</Turkish>
+                <Chinese>移动听诊器钟面</Chinese>
                 <Japanese>チェストピースを移動</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_Stethoscope_PlaceBell">
@@ -2273,6 +2445,7 @@
                 <Korean>벨 배치</Korean>
                 <Spanish>Colocar campanilla</Spanish>
                 <Turkish>Çanı Yerleştir</Turkish>
+                <Chinese>放置听诊器钟面</Chinese>
                 <Japanese>チェストピースを当てる</Japanese>
             </Key>
         </Container>
@@ -2288,6 +2461,7 @@
                 <Korean>청색증 (Cyanosis)</Korean>
                 <Spanish>Cianosis</Spanish>
                 <Turkish>Siyanoz</Turkish>
+                <Chinese>发绀</Chinese>
                 <Japanese>チアノーゼ</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_NoticableCyanosis">
@@ -2301,6 +2475,7 @@
                 <Korean>뚜렷한 청색증(Cyanosis)</Korean>
                 <Spanish>Cianosis notable</Spanish>
                 <Turkish>Belirgin Siyanoz</Turkish>
+                <Chinese>明显发钳</Chinese>
                 <Japanese>明らかなチアノーゼ</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_Slight">
@@ -2314,6 +2489,7 @@
                 <Korean>경미</Korean>
                 <Spanish>Leve</Spanish>
                 <Turkish>Hafif</Turkish>
+                <Chinese>轻度</Chinese>
                 <Japanese>軽度</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_Moderate">
@@ -2327,6 +2503,7 @@
                 <Korean>중등도</Korean>
                 <Spanish>Moderada</Spanish>
                 <Turkish>Orta</Turkish>
+                <Chinese>中度</Chinese>
                 <Japanese>中等度</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_Severe">
@@ -2340,6 +2517,7 @@
                 <Korean>심각</Korean>
                 <Spanish>Severa</Spanish>
                 <Turkish>Şiddetli</Turkish>
+                <Chinese>重度</Chinese>
                 <Japanese>重度</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_UpperChest">
@@ -2353,6 +2531,7 @@
                 <Korean>상흉부</Korean>
                 <Spanish>Parte superior del tórax</Spanish>
                 <Turkish>Üst Göğüs</Turkish>
+                <Chinese>上胸部</Chinese>
                 <Japanese>上胸部</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_LowerAndUpperChest">
@@ -2365,6 +2544,7 @@
                 <Turkish>Alt ve Üst Göğüs</Turkish>
                 <French>Poitrine inférieur et Poitrine supérieur</French>
                 <Polish>Góra i dół klatki piersiowej</Polish>
+                <Chinese>下胸部和上胸部</Chinese>
                 <Japanese>下胸部および上胸部</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_%1">
@@ -2378,6 +2558,7 @@
                 <Korean>흉강 천자 절개 (%1)</Korean>
                 <Spanish>Incisión de toracostomía (%1)</Spanish>
                 <Turkish>Torakostomi Kesisi (%1)</Turkish>
+                <Chinese>胸腔造口切口（%1）</Chinese>
                 <Japanese>胸腔切開創 (%1)</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_Sealed">
@@ -2391,6 +2572,7 @@
                 <Korean>밀봉됨</Korean>
                 <Spanish>Sellado</Spanish>
                 <Turkish>Kapalı</Turkish>
+                <Chinese>已封闭</Chinese>
                 <Japanese>密閉</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_Open">
@@ -2404,6 +2586,7 @@
                 <Korean>개방됨</Korean>
                 <Spanish>Abierto</Spanish>
                 <Turkish>Açık</Turkish>
+                <Chinese>开放</Chinese>
                 <Japanese>開放</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_ChestTube">
@@ -2417,6 +2600,7 @@
                 <Korean>가슴관 밀봉</Korean>
                 <Spanish>Tubo torácico sellado</Spanish>
                 <Turkish>Sızdırmaz Göğüs Tüpü</Turkish>
+                <Chinese>已封闭胸腔引流管</Chinese>
                 <Japanese>密閉された胸腔チューブ</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_ThoracostomyIncision_ChestTubeUnsealed">
@@ -2430,6 +2614,7 @@
                 <Korean>가슴관 개통됨</Korean>
                 <Spanish>Tubo torácico no sellado</Spanish>
                 <Turkish>Sızdırmaz Olmayan Göğüs Tüpü</Turkish>
+                <Chinese>未封闭胸腔引流管</Chinese>
                 <Japanese>密閉されていない胸腔チューブ</Japanese>
             </Key>
             <Key ID="STR_ACM_Breathing_GUI_TrachealDeviation">
@@ -2443,6 +2628,7 @@
                 <Korean>뚜렷한 기관 편위</Korean>
                 <Spanish>Desviación traqueal notable</Spanish>
                 <Turkish>Belirgin Trakeal Deviasyon</Turkish>
+                <Chinese>明显气管偏移</Chinese>
                 <Japanese>明らかな気管偏位</Japanese>
             </Key>
         </Container>
