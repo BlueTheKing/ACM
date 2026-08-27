@@ -48,15 +48,10 @@ if (_tryLoad && {!(_target isKindOf "CAManBase")} && {["ace_cargo"] call ACEFUNC
     detach _target;
 };
 
-// Fix anim when aborting carrying persons
-if (_target isKindOf "CAManBase" || {animationState _unit in CARRY_ANIMATIONS}) then {
-
+// Put unit into correct animation
+if (_target isKindOf "CAManBase") then {
     if (!(_target getVariable [QGVAR(Lying_State), false]) && IS_UNCONSCIOUS(_target)) then {
         _target setVariable [QGVAR(Lying_State), true, true];
-    };
-
-    if (isNull objectParent _unit && {_unit call ACEFUNC(common,isAwake)}) then {
-        [_unit, "", 2] call ACEFUNC(common,doAnimation);
     };
 
     if (IS_UNCONSCIOUS(_target) || (_target getVariable [QGVAR(Lying_State), false])) then {
@@ -67,6 +62,15 @@ if (_target isKindOf "CAManBase" || {animationState _unit in CARRY_ANIMATIONS}) 
 
     if (!(IS_UNCONSCIOUS(_target)) && _target getVariable [QGVAR(Lying_State), false]) then {
         [QGVAR(getUpPrompt), [_target], _target] call CBA_fnc_targetEvent;
+    };
+};
+
+// Fix anim when aborting carrying persons
+if (isNull objectParent _unit && {_unit call ACEFUNC(common,isAwake)}) then {
+    private _animationState = animationState _unit;
+
+    if (_animationState regexMatch "^acinpercmrunsnonwnond.*" || {_animationState in CARRY_ANIMATIONS}) then {
+        [_unit, "", 2] call ACEFUNC(common,doAnimation);
     };
 };
 

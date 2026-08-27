@@ -158,6 +158,10 @@
 #define VAR_TOURNIQUET        QACEGVAR(medical,tourniquets)
 #undef VAR_FRACTURES
 #define VAR_FRACTURES         QACEGVAR(medical,fractures)
+#undef VAR_MEDICAL_ACTIVITY
+#define VAR_MEDICAL_ACTIVITY  QACEGVAR(medical,medicalActivity)
+#undef MEDICAL_ACTIVITY
+#define MEDICAL_ACTIVITY      ACEGVAR(medical,const_medicalActivity)
 
 #undef GET_SM_STATE
 #define GET_SM_STATE(unit)    ([unit, ACEGVAR(medical,STATE_MACHINE)] call CBA_statemachine_fnc_getCurrentState)

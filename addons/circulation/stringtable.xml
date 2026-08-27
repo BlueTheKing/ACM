@@ -13,6 +13,7 @@
             <Spanish>ACM: Circulación</Spanish>
             <Turkish>ACM: Dolaşım</Turkish>
             <Chinese>ACM: 循环</Chinese>
+            <Japanese>ACM: 循環</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Coagulation">
             <English>Coagulation</English>
@@ -26,6 +27,7 @@
             <Spanish>Coagulación</Spanish>
             <Turkish>Pıhtılaşma</Turkish>
             <Chinese>凝血</Chinese>
+            <Japanese>凝固</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_CardiacArrest">
             <English>Cardiac Arrest</English>
@@ -39,6 +41,7 @@
             <Spanish>Paro Cardíaco</Spanish>
             <Turkish>Kardiyak Arrest</Turkish>
             <Chinese>心脏骤停</Chinese>
+            <Japanese>心停止</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Defibrillator">
             <English>Defibrillator</English>
@@ -52,6 +55,7 @@
             <Spanish>Desfibrilador</Spanish>
             <Turkish>Defibrilatör</Turkish>
             <Chinese>除颤器</Chinese>
+            <Japanese>除細動器</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_CPR">
             <English>CPR</English>
@@ -65,6 +69,7 @@
             <Spanish>RCP</Spanish>
             <Turkish>CPR</Turkish>
             <Chinese>心肺复苏</Chinese>
+            <Japanese>CPR</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_IV_IO">
             <English>IV/IO</English>
@@ -78,6 +83,7 @@
             <Spanish>IV/IO</Spanish>
             <Turkish>IV/IO</Turkish>
             <Chinese>静脉/骨内 (IV/IO)</Chinese>
+            <Japanese>IV/IO</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_Medication">
             <English>Medication</English>
@@ -90,6 +96,7 @@
             <French>Traitement</French>
             <Polish>Medykamenty</Polish>
             <Chinese>药物</Chinese>
+            <Japanese>薬剤</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_Category_BloodTypes">
             <English>Blood Types</English>
@@ -103,6 +110,7 @@
             <Spanish>Grupos Sanguíneos</Spanish>
             <Turkish>Kan Grupları</Turkish>
             <Chinese>血型</Chinese>
+            <Japanese>血液型</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestBleedRate">
             <English>Cardiac Arrest Bleed Rate</English>
@@ -116,6 +124,7 @@
             <Spanish>Tasa de Sangrado en Paro Cardíaco</Spanish>
             <Turkish>Kardiyak arrestte kanama hızı</Turkish>
             <Chinese>心脏骤停失血速率</Chinese>
+            <Japanese>心停止時出血率</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestBleedRate_Desc">
             <English>Sets bleed rate while in cardiac arrest</English>
@@ -129,6 +138,7 @@
             <Spanish>Configura la tasa de sangrado durante el paro cardíaco</Spanish>
             <Turkish>Kardiyak arrestteyken kanama hızını ayarlar</Turkish>
             <Chinese>设置心脏骤停时的失血速率</Chinese>
+            <Japanese>心停止中の出血率を設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClotting">
             <English>Enable Clotting</English>
@@ -142,6 +152,7 @@
             <Spanish>Activar Coagulación</Spanish>
             <Turkish>Pıhtılaşmayı etkinleştir</Turkish>
             <Chinese>启用凝血</Chinese>
+            <Japanese>凝固を有効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClotting_Desc">
             <English>Sets whether clotting is enabled</English>
@@ -155,6 +166,7 @@
             <Spanish>Define si la coagulación está activada</Spanish>
             <Turkish>Pıhtılaşmanın etkin olup olmadığını ayarlar</Turkish>
             <Chinese>设置凝血是否启用</Chinese>
+            <Japanese>凝固を有効にするかどうかを設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClottingAffectAI">
             <English>Clotting for AI</English>
@@ -168,6 +180,7 @@
             <Spanish>Coagulación para IA</Spanish>
             <Turkish>AI için pıhtılaşma</Turkish>
             <Chinese>AI凝血</Chinese>
+            <Japanese>AIの凝固</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CoagulationClottingAffectAI_Desc">
             <English>Sets whether clotting is allowed for AI</English>
@@ -181,6 +194,7 @@
             <Spanish>Define si la IA puede coagular</Spanish>
             <Turkish>AI için pıhtılaşmaya izin verilip verilmeyeceğini ayarlar</Turkish>
             <Chinese>设置是否允许AI凝血</Chinese>
+            <Japanese>AIに凝固を許可するかどうかを設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestChance">
             <English>Critical Damage Cardiac Arrest Chance</English>
@@ -194,6 +208,7 @@
             <Spanish>Probabilidad de Paro Cardíaco por Daño Crítico</Spanish>
             <Turkish>Kritik Hasar Sonrası Kardiyak Arrest Olasılığı</Turkish>
             <Chinese>严重伤害心脏骤停概率</Chinese>
+            <Japanese>重度損傷時の心停止率</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestChance_Desc">
             <English>Sets chance for unit to go into cardiac arrest after taking critical damage</English>
@@ -207,6 +222,7 @@
             <Spanish>Define la probabilidad de que una unidad entre en paro tras un daño crítico</Spanish>
             <Turkish>Birimin kritik hasar aldıktan sonra kardiyak arreste girme olasılığını ayarlar</Turkish>
             <Chinese>设置单位受到严重伤害后心脏骤停的概率</Chinese>
+            <Japanese>ユニットが重度損傷を受けた後に心停止に陥る確率を設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestDeteriorationRate">
             <English>Rhythm Deterioration Multiplier</English>
@@ -220,6 +236,7 @@
             <Spanish>Multiplicador de Deterioro del Ritmo Cardíaco</Spanish>
             <Turkish>Ritim Kötüleşme Çarpanı</Turkish>
             <Chinese>心律恶化系数</Chinese>
+            <Japanese>心拍リズム悪化倍率</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CardiacArrestDeteriorationRate_Desc">
             <English>Chance that rhythm will deteriorate while in cardiac arrest</English>
@@ -233,6 +250,7 @@
             <Spanish>Probabilidad de deterioro del ritmo durante paro cardíaco</Spanish>
             <Turkish>Kardiyak arrest sırasında ritmin kötüleşme olasılığı</Turkish>
             <Chinese>心脏骤停期间心律恶化的概率</Chinese>
+            <Japanese>心停止中に心拍リズムが悪化する確率</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Hardcore_PostCardiacArrest">
             <English>[HARDCORE] Post Cardiac Arrest Complications</English>
@@ -246,6 +264,7 @@
             <Spanish>[HARDCORE] Complicaciones Post-Paro Cardíaco</Spanish>
             <Turkish>[HARDCORE] Kardiyak Arrest Sonrası Komplikasyonlar</Turkish>
             <Chinese>【硬核】心脏骤停后并发症</Chinese>
+            <Japanese>[HARDCORE] 心停止後の合併症</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Hardcore_PostCardiacArrest_Desc">
             <English>[HARDCORE] Sets whether there should be a decrease in cardiac output after ROSC requiring further treatment to fully treat</English>
@@ -259,6 +278,7 @@
             <Spanish>[HARDCORE] Define si debe haber una disminución del gasto cardíaco tras el ROSC que requiera más tratamiento</Spanish>
             <Turkish>[HARDCORE] ROSC sonrası kardiyak output düşüşü olup olmayacağını ve tamamen tedavi için ek tedavi gerekip gerekmediğini ayarlar</Turkish>
             <Chinese>【硬核】设置ROSC后是否会出现心输出量下降，需要进一步治疗才能完全恢复</Chinese>
+            <Japanese>[HARDCORE] ROSC後に心拍出量の低下を発生させ、完全に治療するために追加治療を必要とするかどうかを設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AED">
             <English>Allow AED</English>
@@ -272,6 +292,7 @@
             <Spanish>Permitir DEA</Spanish>
             <Turkish>AED’ye izin ver</Turkish>
             <Chinese>允许AED</Chinese>
+            <Japanese>AEDを許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AED_Desc">
             <English>Training level required to use AED</English>
@@ -285,6 +306,7 @@
             <Spanish>Nivel de entrenamiento requerido para usar el DEA</Spanish>
             <Turkish>AED kullanmak için gereken eğitim seviyesi</Turkish>
             <Chinese>使用AED所需训练等级</Chinese>
+            <Japanese>AEDの使用に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_AEDDistanceLimit">
             <English>AED Distance Limit</English>
@@ -298,6 +320,7 @@
             <Spanish>Límite de Distancia del DEA</Spanish>
             <Turkish>AED Mesafe Sınırı</Turkish>
             <Chinese>AED距离限制</Chinese>
+            <Japanese>AED使用距離制限</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_AEDDistanceLimit_Desc">
             <English>Distance over which the AED will disconnect itself from the patient</English>
@@ -311,6 +334,7 @@
             <Spanish>Distancia máxima antes de que el DEA se desconecte del paciente</Spanish>
             <Turkish>AED’nin hastadan otomatik ayrılacağı mesafe</Turkish>
             <Chinese>超过此距离时AED将自动与患者断开连接</Chinese>
+            <Japanese>AEDが患者から自動的に切り離される距離</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CPREffectiveness">
             <English>CPR Effectiveness Multiplier</English>
@@ -324,6 +348,7 @@
             <Spanish>Multiplicador de Efectividad de RCP</Spanish>
             <Turkish>CPR Etkinliği Çarpanı</Turkish>
             <Chinese>心肺复苏有效性倍率</Chinese>
+            <Japanese>CPR効果倍率</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CPREffectiveness_Desc">
             <English>Sets overall CPR effectiveness</English>
@@ -337,6 +362,7 @@
             <Spanish>Configura la efectividad general del RCP</Spanish>
             <Turkish>Genel CPR etkinliğini ayarlar</Turkish>
             <Chinese>设置心肺复苏总体有效性</Chinese>
+            <Japanese>CPR全体の効果を設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplications">
             <English>Enable IV Complications</English>
@@ -351,6 +377,7 @@
             <Turkish>IV Komplikasyonlarını Etkinleştir
 </Turkish>
             <Chinese>启用静注并发症</Chinese>
+            <Japanese>IV合併症を有効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplications_Desc">
             <English>Sets whether IVs can get complications if inserted on damaged limbs</English>
@@ -365,6 +392,7 @@
             <Turkish>Hasarlı uzuvlara takılan IV’lerde komplikasyon oluşup oluşmayacağını ayarlar
 </Turkish>
             <Chinese>设置静脉导管置入受损肢体时是否会出现并发症</Chinese>
+            <Japanese>損傷した四肢にIVを挿入した場合に合併症が発生するかどうかを設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplicationsDeteriorate">
             <English>Enable IV Complication Deterioration</English>
@@ -378,6 +406,7 @@
             <Spanish>Activar Deterioro de Complicaciones en vías IV</Spanish>
             <Turkish>IV Komplikasyonu Kötüleşmesini Etkinleştir</Turkish>
             <Chinese>启用静注并发症恶化</Chinese>
+            <Japanese>IV合併症の悪化を有効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_IVComplicationsDeteriorate_Desc">
             <English>Sets whether IVs with complications can deteriorate during use, or deteriorate into a complication if one isn't already present</English>
@@ -391,6 +420,7 @@
             <Spanish>Define si las vías IV complicadas pueden deteriorarse</Spanish>
             <Turkish>Komplikasyonlu IV’lerin kullanım sırasında kötüleşip kötüleşmeyeceğini veya henüz yoksa komplikasyona dönüşüp dönüşmeyeceğini ayarlar</Turkish>
             <Chinese>设置静脉注射并发症是否会在使用过程中恶化，或在无并发症时产生并发症</Chinese>
+            <Japanese>合併症のあるIVが使用中に悪化するか、または未発生の場合に合併症へ悪化するかどうかを設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IV">
             <English>Allow IV</English>
@@ -404,6 +434,7 @@
             <Spanish>Permitir IV</Spanish>
             <Turkish>IV’ye izin ver</Turkish>
             <Chinese>允许静注</Chinese>
+            <Japanese>IVを許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IV_Desc">
             <English>Training level required to insert IVs</English>
@@ -417,6 +448,7 @@
             <Spanish>Nivel de entrenamiento requerido para insertar IV</Spanish>
             <Turkish>IV takmak için gereken eğitim seviyesi</Turkish>
             <Chinese>置入静脉导管所需训练等级</Chinese>
+            <Japanese>IV挿入に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IO">
             <English>Allow IO</English>
@@ -430,6 +462,7 @@
             <Spanish>Permitir IO</Spanish>
             <Turkish>IO’ya izin ver</Turkish>
             <Chinese>允许骨注</Chinese>
+            <Japanese>IOを許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_IO_Desc">
             <English>Training level required to insert IOs</English>
@@ -443,6 +476,7 @@
             <Spanish>Nivel de entrenamiento requerido para insertar IO</Spanish>
             <Turkish>IO takmak için gereken eğitim seviyesi</Turkish>
             <Chinese>置入骨内导管所需训练等级</Chinese>
+            <Japanese>IO挿入に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_16">
             <English>16g IV Time</English>
@@ -456,6 +490,7 @@
             <Spanish>Tiempo para vía venosa 16G</Spanish>
             <Turkish>16g IV süresi</Turkish>
             <Chinese>16g静注时间</Chinese>
+            <Japanese>16g IV 挿入時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_16_Desc">
             <English>Time to insert 16g IV</English>
@@ -469,6 +504,7 @@
             <Spanish>Tiempo para insertar vía venosa 16G</Spanish>
             <Turkish>16g IV takma süresi</Turkish>
             <Chinese>置入16g静脉导管所需时间</Chinese>
+            <Japanese>16g IVの挿入時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_14">
             <English>14g IV Time</English>
@@ -482,6 +518,7 @@
             <Spanish>Tiempo para vía venosa 14G</Spanish>
             <Turkish>14g IV süresi</Turkish>
             <Chinese>14g静注时间</Chinese>
+            <Japanese>14g IV 挿入時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IV_14_Desc">
             <English>Time to insert 14g IV</English>
@@ -495,6 +532,7 @@
             <Spanish>Tiempo para insertar vía venosa 14G</Spanish>
             <Turkish>14g IV takma süresi</Turkish>
             <Chinese>置入14g静脉导管所需时间</Chinese>
+            <Japanese>14g IVの挿入時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_EZ">
             <English>EZ-IO Time</English>
@@ -508,6 +546,7 @@
             <Spanish>Tiempo de acceso EZ-IO</Spanish>
             <Turkish>EZ-IO süresi</Turkish>
             <Chinese>EZ-IO骨注时间</Chinese>
+            <Japanese>EZ-IO 挿入時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_EZ_Desc">
             <English>Time to insert EZ-IO</English>
@@ -521,6 +560,7 @@
             <Spanish>Tiempo para insertar EZ-IO</Spanish>
             <Turkish>EZ-IO takma süresi</Turkish>
             <Chinese>置入EZ-IO骨内导管所需时间</Chinese>
+            <Japanese>EZ-IOの挿入時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_FAST1">
             <English>FAST1 IO Time</English>
@@ -534,6 +574,7 @@
             <Spanish>Tiempo de acceso FAST1 IO</Spanish>
             <Turkish>FAST1 IO süresi</Turkish>
             <Chinese>FAST1骨注时间</Chinese>
+            <Japanese>FAST1 IO 挿入時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_TreatmentTime_IO_FAST1_Desc">
             <English>Time to insert FAST1 IO</English>
@@ -547,6 +588,7 @@
             <Spanish>Tiempo para insertar FAST1 IO</Spanish>
             <Turkish>FAST1 IO takma süresi</Turkish>
             <Chinese>置入FAST1骨内导管所需时间</Chinese>
+            <Japanese>FAST1 IOの挿入時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIV">
             <English>Allow Self IV</English>
@@ -560,6 +602,7 @@
             <Spanish>Permitir autoinserción de vía venosa</Spanish>
             <Turkish>Kendine IV yapmaya izin ver</Turkish>
             <Chinese>允许自我静注</Chinese>
+            <Japanese>自己IVを許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIV_Desc">
             <English>Allow self-application of IV</English>
@@ -573,6 +616,7 @@
             <Spanish>Permitir autoinserción de vía venosa</Spanish>
             <Turkish>IV’yi kendine uygulamaya izin ver</Turkish>
             <Chinese>允许自行静脉注射</Chinese>
+            <Japanese>IVの自己実施を許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIO">
             <English>Allow Self IO</English>
@@ -586,6 +630,7 @@
             <Spanish>Permitir autoinserción de acceso intraóseo</Spanish>
             <Turkish>Kendine IO yapmaya izin ver</Turkish>
             <Chinese>允许自我骨注</Chinese>
+            <Japanese>自己IOを許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_SelfIO_Desc">
             <English>Allow self-application of IO</English>
@@ -599,6 +644,7 @@
             <Spanish>Permitir autoinserción de acceso intraóseo</Spanish>
             <Turkish>IO’yu kendine uygulamaya izin ver</Turkish>
             <Chinese>允许自行骨内注射</Chinese>
+            <Japanese>IOの自己実施を許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe">
             <English>Reusable Syringes</English>
@@ -610,6 +656,7 @@
             <French>Seringue Réutilisable</French>
             <Polish>Strzykawki wielokrotnego użytku</Polish>
             <Chinese>可重复使用的注射器</Chinese>
+            <Japanese>再利用可能な注射器</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Desc">
             <English>Sets whether syringes are reusable instead of consumed on medication administration</English>
@@ -621,6 +668,7 @@
             <French>Définit si les seringues sont réutilisables au lieu d’être consommées lors de l’administration du médicament</French>
             <Polish>Definiuje czy strzykawki mogą być użyte wielokrotnie</Polish>
             <Chinese>设置注射器是否可重复使用而非在药物注射后消耗</Chinese>
+            <Japanese>薬剤投与時に注射器を消費する代わりに再利用可能にするかどうかを設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
@@ -633,6 +681,7 @@
             <French>Autoriser les Séringues</French>
             <Polish>Pozwól na strzykawki</Polish>
             <Chinese>允许注射器</Chinese>
+            <Japanese>注射器を許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe_Desc">
             <English>Training level required to use syringes</English>
@@ -645,6 +694,7 @@
             <French>Niveau de Formation requis pour utiliser les seringues</French>
             <Polish>Poziom wyszkolenia pozwalający na użycie strzykawek</Polish>
             <Chinese>使用注射器所需训练等级</Chinese>
+            <Japanese>注射器の使用に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant">
             <English>Allow Ammonia Inhalant</English>
@@ -658,6 +708,7 @@
             <French>Autoriser le sel d'amoniaque</French>
             <Polish>Pozwól na użycie amoniaku</Polish>
             <Chinese>允许氨吸入剂</Chinese>
+            <Japanese>アンモニア吸入剤を許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_AmmoniaInhalant_Desc">
             <English>Training level required to use ammonia inhalant</English>
@@ -670,6 +721,7 @@
             <French>Niveau de Formation requis pour utiliser le sel d'amoniaque</French>
             <Polish>Poziom wyszkolenia pozwalający na użycie strzykawek</Polish>
             <Chinese>使用氨吸入剂所需训练等级</Chinese>
+            <Japanese>アンモニア吸入剤の使用に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge">
             <English>Allow Fentanyl Lozenge</English>
@@ -682,6 +734,7 @@
             <French>Autoriser les Pastilles de Fentanyl </French>
             <Polish>Pozwól na lizak fentanylowy</Polish>
             <Chinese>允许芬太尼含片</Chinese>
+            <Japanese>フェンタニル・トローチを許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge_Desc">
             <English>Training level required to administer fentanyl lozenges</English>
@@ -694,6 +747,7 @@
             <French>Niveau de Formation requis pour administrer des pastilles de fentanyl</French>
             <Polish>Poziom wyszkolenia pozwalający na użycie lizaka fentanylowego</Polish>
             <Chinese>使用芬太尼含片所需训练等级</Chinese>
+            <Japanese>フェンタニル・トローチの投与に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1">
             <English>%1 Ratio</English>
@@ -707,6 +761,7 @@
             <Spanish>Proporción %1</Spanish>
             <Turkish>%1 oranı</Turkish>
             <Chinese>%1比例</Chinese>
+            <Japanese>%1 の比率</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_BloodType_Ratio_%1_Desc">
             <English>Ratio out of 100 that is taken by the %1 blood type, ratios must add up to exactly 100</English>
@@ -720,6 +775,7 @@
             <Spanish>Proporción sobre 100 correspondiente al grupo sanguíneo %1, las proporciones deben sumar exactamente 100</Spanish>
             <Turkish>100 üzerinden %1 kan grubuna ayrılan oran; oranların toplamı tam olarak 100 olmalıdır</Turkish>
             <Chinese>%1血型占比，所有血型比例之和必须正好100</Chinese>
+            <Japanese>%1 血液型が占める100分率。比率の合計は必ずちょうど100でなければならない</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList">
             <English>Use Custom List</English>
@@ -733,6 +789,7 @@
             <Turkish>Özel liste kullan</Turkish>
             <Polish>Używaj personalizowanej listy</Polish>
             <Chinese>使用自定义列表</Chinese>
+            <Japanese>カスタムリストを使用</Japanese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_CustomBloodTypeList_Desc">
             <English>Sets whether blood types should be set based on custom list instead of SteamID</English>
@@ -746,6 +803,7 @@
             <Turkish>Kan gruplarının SteamID yerine özel listeye göre ayarlanıp ayarlanmayacağını ayarlar</Turkish>
             <Polish>Definiuje czy grupy krwi powinny być ustawiane zgodnie z personalizowaną listą zamiast steam ID</Polish>
             <Chinese>设置是否使用自定义列表确定血型而非根据SteamID分配</Chinese>
+            <Japanese>血液型をSteamIDではなくカスタムリストに基づいて設定するかどうかを設定</Japanese>
         </Key>
         <Container name="// Items //">
             <Key ID="STR_ACM_Circulation_AED">
@@ -760,6 +818,7 @@
                 <Spanish>Desfibrilador Externo Automático</Spanish>
                 <Turkish>Otomatik Harici Defibrilatör (AED)</Turkish>
                 <Chinese>自动体外除颤器</Chinese>
+                <Japanese>自動体外式除細動器</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Short">
                 <English>AED</English>
@@ -773,6 +832,7 @@
                 <Spanish>DEA</Spanish>
                 <Turkish>AED</Turkish>
                 <Chinese>AED</Chinese>
+                <Japanese>AED</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Desc">
                 <English>Device used to monitor patient vitals and treat cardiac arrest</English>
@@ -786,6 +846,7 @@
                 <Spanish>Dispositivo usado para observar las vitales del paciente y tratar paros cardíacos</Spanish>
                 <Turkish>Hastanın hayati bulgularını izlemek ve kardiyak arresti tedavi etmek için kullanılan cihaz</Turkish>
                 <Chinese>用于监测患者生命体征并治疗心搏骤停的设备</Chinese>
+                <Japanese>患者のバイタルを監視し、心停止を治療するための機器</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff">
                 <English>Pressure Cuff</English>
@@ -799,6 +860,7 @@
                 <Spanish>Manguito de Presión</Spanish>
                 <Turkish>Tansiyon Manşonu</Turkish>
                 <Chinese>血压袖带</Chinese>
+                <Japanese>圧迫カフ</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Desc">
                 <English>Used to measure blood pressure</English>
@@ -812,6 +874,7 @@
                 <Spanish>Utilizado para medir la tensión arterial</Spanish>
                 <Turkish>Kan basıncını ölçmek için kullanılır</Turkish>
                 <Chinese>用于测量血压</Chinese>
+                <Japanese>血圧を測定するために使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_16g">
                 <English>16g IV</English>
@@ -825,6 +888,7 @@
                 <Spanish>Vía Venosa 16G</Spanish>
                 <Turkish>16g IV</Turkish>
                 <Chinese>16g IV</Chinese>
+                <Japanese>16g IV</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_16g_Desc">
                 <English>Used to gain intravenous access to transfuse fluids in case of blood loss</English>
@@ -838,6 +902,7 @@
                 <Spanish>Usado para obtener acceso intravenoso para transfuir fluidos en caso de perdida de sangre</Spanish>
                 <Turkish>Kan kaybı durumunda sıvı transfüzyonu için damar yolu açmakta kullanılır</Turkish>
                 <Chinese>用于在失血时建立静脉通路并输注液体</Chinese>
+                <Japanese>出血時に輸液を行うための静脈路を確保するのに使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_14g">
                 <English>14g IV</English>
@@ -851,6 +916,7 @@
                 <Spanish>Vía Venosa 14G</Spanish>
                 <Turkish>14g IV</Turkish>
                 <Chinese>14g IV</Chinese>
+                <Japanese>14g IV</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_14g_Desc">
                 <English>Used to gain intravenous access to rapidly transfuse fluids in case of blood loss</English>
@@ -864,6 +930,7 @@
                 <Spanish>Usada para obtener acceso intravenoso para transferir rapidamente fluidos en caso de perdida de sangre</Spanish>
                 <Turkish>Kan kaybı durumunda hızlı sıvı transfüzyonu için damar yolu açmakta kullanılır</Turkish>
                 <Chinese>用于在失血时快速建立静脉通路并输注液体</Chinese>
+                <Japanese>出血時に迅速に輸液を行うための静脈路を確保するのに使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_FAST1">
                 <English>FAST1 IO</English>
@@ -877,6 +944,7 @@
                 <Spanish>FAST1 IO</Spanish>
                 <Turkish>FAST1 IO</Turkish>
                 <Chinese>FAST1 IO</Chinese>
+                <Japanese>FAST1 IO</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_FAST1_Desc">
                 <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the sternum</English>
@@ -890,6 +958,7 @@
                 <Spanish>Usado para obtener acceso intraóseo con el fin de transferir fluidos en caso de heridas severas, facilita el acceso al esternón</Spanish>
                 <Turkish>Ciddi yaralanmada sıvı transfüzyonu için kemik içi yol sağlar, sternum üzerinden uygulanabilir</Turkish>
                 <Chinese>用于在严重受伤情况下建立骨髓腔内通路以输注液体，可通过胸骨建立通路</Chinese>
+                <Japanese>重傷時に輸液を行うための骨内路を確保するのに使用し、胸骨からのアクセスが可能</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_EZ">
                 <English>EZ-IO</English>
@@ -903,6 +972,7 @@
                 <Spanish>EZ-IO</Spanish>
                 <Turkish>EZ-IO</Turkish>
                 <Chinese>EZ-IO</Chinese>
+                <Japanese>EZ-IO</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_EZ_Desc">
                 <English>Used to gain intraosseous access to transfuse fluids in case of severe injury, allows access on the extremities</English>
@@ -916,6 +986,7 @@
                 <Spanish>Usado para obtenir acceso intraóseo con el fin de transferir fluidos en caso de heridas severas, permite el acceso en extremidades</Spanish>
                 <Turkish>Ciddi yaralanmada sıvı transfüzyonu için kemik içi yol sağlar, uzuvlara uygulanabilir</Turkish>
                 <Chinese>用于在严重受伤情况下建立骨髓腔内通路以输注液体，可在四肢部位建立通路</Chinese>
+                <Japanese>重傷時に輸液を行うための骨内路を確保するのに使用し、四肢からのアクセスが可能</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe">
                 <English>Syringe</English>
@@ -929,6 +1000,7 @@
                 <Spanish>Jeringa</Spanish>
                 <Turkish>Şırınga</Turkish>
                 <Chinese>注射器</Chinese>
+                <Japanese>注射器</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringes">
                 <English>Syringes</English>
@@ -942,6 +1014,7 @@
                 <Spanish>Jeringas</Spanish>
                 <Turkish>Şırıngalar</Turkish>
                 <Chinese>注射器</Chinese>
+                <Japanese>注射器</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_%1">
                 <English>Syringe (%1ml)</English>
@@ -955,6 +1028,7 @@
                 <Spanish>Jeringa (%1 ml)</Spanish>
                 <Turkish>Şırınga (%1ml)</Turkish>
                 <Chinese>注射器（%1ml）</Chinese>
+                <Japanese>注射器 (%1ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Desc_%1">
                 <English>Used to administer %1ml of medication</English>
@@ -968,6 +1042,7 @@
                 <Spanish>Usado para administrar %1 ml de medicación</Spanish>
                 <Turkish>%1ml ilaç uygulamak için kullanılır</Turkish>
                 <Chinese>用于注射%1ml药物</Chinese>
+                <Japanese>%1mlの薬剤を投与するのに使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_PreparedWith">
                 <English>%1ml syringe prepared with %2</English>
@@ -981,6 +1056,7 @@
                 <Spanish>Jeringa de %1 ml preparada con %2</Spanish>
                 <Turkish>%2 ile hazırlanmış %1ml şırınga</Turkish>
                 <Chinese>装有%2的%1ml注射器</Chinese>
+                <Japanese>%2 を充填した%1 ml注射器</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_BloodBag">
                 <English>Blood Bag %1</English>
@@ -994,6 +1070,7 @@
                 <Spanish>Bolsa de sangre %1</Spanish>
                 <Turkish>Kan torbası %1</Turkish>
                 <Chinese>血袋%1</Chinese>
+                <Japanese>血液バッグ %1</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_BloodBag_Desc">
                 <English>Used to replenish lost blood volume</English>
@@ -1007,6 +1084,7 @@
                 <Spanish>Usado para reponer el volumen sanguíneo perdido</Spanish>
                 <Turkish>Kaybedilen kan hacmini yerine koymak için kullanılır</Turkish>
                 <Chinese>用于补充丢失的血容量</Chinese>
+                <Japanese>失われた血液量を補うのに使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit">
                 <English>Field Blood Transfusion Kit</English>
@@ -1020,6 +1098,7 @@
                 <Spanish>Kit de transfusión de sangre de campo</Spanish>
                 <Turkish>Saha Kan Transfüzyon Kiti</Turkish>
                 <Chinese>野战输血包</Chinese>
+                <Japanese>野外輸血キット</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Short">
                 <English>FBTK</English>
@@ -1033,6 +1112,7 @@
                 <Spanish>FBTK</Spanish>
                 <Turkish>FBTK</Turkish>
                 <Chinese>FBTK</Chinese>
+                <Japanese>FBTK</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FieldBloodTransfusionKit_Desc">
                 <English>Used to transfuse fresh blood in emergency</English>
@@ -1046,6 +1126,7 @@
                 <Spanish>Usado para transferir sangre fresca en emergencias</Spanish>
                 <Turkish>Acil durumda taze kan transfüzyonu yapmak için kullanılır</Turkish>
                 <Chinese>用于在紧急情况下输注新鲜血液</Chinese>
+                <Japanese>緊急時に新鮮血を輸血するのに使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag">
                 <English>Fresh Blood Bag %1</English>
@@ -1059,6 +1140,7 @@
                 <Spanish>Bolsa de sangre fresca %1</Spanish>
                 <Turkish>Taze Kan Torbası %1</Turkish>
                 <Chinese>%1型新鲜血液袋</Chinese>
+                <Japanese>新鮮血バッグ %1</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag_Short">
                 <English>FWB Bag %1</English>
@@ -1072,6 +1154,7 @@
                 <Spanish>Bolsa SF %1</Spanish>
                 <Turkish>FWB torbası %1</Turkish>
                 <Chinese>%1型全血袋</Chinese>
+                <Japanese>FWBバッグ %1</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBloodBag_Desc">
                 <English>Freshly transfused blood, used to replenish lost blood volume</English>
@@ -1085,6 +1168,7 @@
                 <Spanish>Sangre recién transfundida, usada para reponer el volumen sanguíneo perdido</Spanish>
                 <Turkish>Taze transfüze edilmiş kan, kaybedilen kan hacmini yerine koymak için kullanılır</Turkish>
                 <Chinese>用于补充丢失血容量的新鲜全血</Chinese>
+                <Japanese>輸血されたばかりの血液で、失われた血液量を補うのに使用</Japanese>
             </Key>
         </Container>
         <Container name="// Items - Individual Medication //">
@@ -1100,6 +1184,7 @@
                 <Spanish>Epinefrina</Spanish>
                 <Turkish>Epinefrin</Turkish>
                 <Chinese>肾上腺素</Chinese>
+                <Japanese>エピネフリン</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Adenosine">
                 <English>Adenosine</English>
@@ -1113,6 +1198,7 @@
                 <Spanish>Adenosina</Spanish>
                 <Turkish>Adenozin</Turkish>
                 <Chinese>腺苷</Chinese>
+                <Japanese>アデノシン</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Morphine">
                 <English>Morphine</English>
@@ -1126,6 +1212,7 @@
                 <Spanish>Morfina</Spanish>
                 <Turkish>Morfin</Turkish>
                 <Chinese>吗啡</Chinese>
+                <Japanese>モルヒネ</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ketamine">
                 <English>Ketamine</English>
@@ -1139,6 +1226,7 @@
                 <Spanish>Ketamina</Spanish>
                 <Turkish>Ketamin</Turkish>
                 <Chinese>氯胺酮</Chinese>
+                <Japanese>ケタミン</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Lidocaine">
                 <English>Lidocaine</English>
@@ -1152,6 +1240,7 @@
                 <Spanish>Lidocaína</Spanish>
                 <Turkish>Lidokain</Turkish>
                 <Chinese>利多卡因</Chinese>
+                <Japanese>リドカイン</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_TXA">
                 <English>TXA</English>
@@ -1165,6 +1254,7 @@
                 <Spanish>Ácido tranexámico (TXA)</Spanish>
                 <Turkish>TXA</Turkish>
                 <Chinese>氨甲环酸 (TXA)</Chinese>
+                <Japanese>TXA</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Amiodarone">
                 <English>Amiodarone</English>
@@ -1178,6 +1268,7 @@
                 <Spanish>Amiodarona</Spanish>
                 <Turkish>Amiodaron</Turkish>
                 <Chinese>胺碘酮</Chinese>
+                <Japanese>アミオダロン</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Atropine">
                 <English>Atropine</English>
@@ -1190,6 +1281,7 @@
                 <French>Atropine</French>
                 <Polish>Atropina</Polish>
                 <Chinese>阿托品</Chinese>
+                <Japanese>アトロピン</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Fentanyl">
                 <English>Fentanyl</English>
@@ -1203,6 +1295,7 @@
                 <Spanish>Fentanilo</Spanish>
                 <Turkish>Fentanil</Turkish>
                 <Chinese>芬太尼</Chinese>
+                <Japanese>フェンタニル</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ondansetron">
                 <English>Ondansetron</English>
@@ -1216,6 +1309,7 @@
                 <Spanish>Ondansetrón</Spanish>
                 <Turkish>Ondansetron</Turkish>
                 <Chinese>昂丹司琼</Chinese>
+                <Japanese>オンダンセトロン</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_CalciumChloride">
                 <English>Calcium Chloride</English>
@@ -1229,6 +1323,7 @@
                 <Spanish>Cloruro de calcio</Spanish>
                 <Turkish>Kalsiyum klorür</Turkish>
                 <Chinese>氯化钙</Chinese>
+                <Japanese>塩化カルシウム</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Ertapenem">
                 <English>Ertapenem</English>
@@ -1242,6 +1337,7 @@
                 <Spanish>Ertapenem</Spanish>
                 <Turkish>Ertapenem</Turkish>
                 <Chinese>厄他培南</Chinese>
+                <Japanese>エルタペネム</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Esmolol">
                 <English>Esmolol</English>
@@ -1255,6 +1351,7 @@
                 <Spanish>Esmolol</Spanish>
                 <Turkish>Esmolol</Turkish>
                 <Chinese>艾司洛尔</Chinese>
+                <Japanese>エスモロール</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Naloxone">
                 <English>Naloxone</English>
@@ -1268,6 +1365,7 @@
                 <Spanish>Naloxona</Spanish>
                 <Turkish>Nalokson</Turkish>
                 <Chinese>纳洛酮</Chinese>
+                <Japanese>ナロキソン</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Penthrox">
                 <English>Penthrox</English>
@@ -1281,6 +1379,7 @@
                 <Spanish>Penthrox</Spanish>
                 <Turkish>Penthrox</Turkish>
                 <Chinese>甲氧氟烷</Chinese>
+                <Japanese>ペンスロックス</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_OTFC">
                 <English>Oral Transmucosal Fentanyl Citrate</English>
@@ -1293,6 +1392,7 @@
                 <Turkish>Oral Transmukozal Fentanil Sitrat</Turkish>
                 <Polish>Cytrynian fentanylu do stosowania doustnego przez błonę śluzową</Polish>
                 <Chinese>枸橼酸芬太尼口腔黏膜制剂</Chinese>
+                <Japanese>経口粘膜吸収フェンタニルクエン酸塩</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_OTFC_Short">
                 <English>OTFC</English>
@@ -1305,6 +1405,7 @@
                 <Turkish>OTFC</Turkish>
                 <Polish>OTFC</Polish>
                 <Chinese>OTFC</Chinese>
+                <Japanese>OTFC</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Medication_Dimercaprol">
                 <English>Dimercaprol</English>
@@ -1317,6 +1418,7 @@
                 <French>Dimercaprol</French>
                 <Polish>Dimercaprol</Polish>
                 <Chinese>二巯丙醇</Chinese>
+                <Japanese>ジメルカプロール</Japanese>
             </Key>
         </Container>
         <Container name="// Items - Medication //">
@@ -1332,6 +1434,7 @@
                 <Spanish>Vial de epinefrina (1 mg/1 ml)</Spanish>
                 <Turkish>Epinefrin flakonu (1mg/1ml)</Turkish>
                 <Chinese>肾上腺素注射液（1mg/1ml）</Chinese>
+                <Japanese>エピネフリンバイアル(1mg/1ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Epinephrine_Desc">
                 <English>Used to treat cardiac arrest</English>
@@ -1345,6 +1448,7 @@
                 <Spanish>Para tratar paros cardíacos</Spanish>
                 <Turkish>Kardiyak arresti tedavi etmek için kullanılır</Turkish>
                 <Chinese>用于治疗心搏骤停</Chinese>
+                <Japanese>心停止の治療に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Adenosine">
                 <English>Adenosine Vial (12mg/4ml)</English>
@@ -1358,6 +1462,7 @@
                 <Spanish>Vial de adenosina (12 mg/4 ml)</Spanish>
                 <Turkish>Adenozin flakonu (12mg/4ml)</Turkish>
                 <Chinese>腺苷注射液（12mg/4ml）</Chinese>
+                <Japanese>アデノシンバイアル(12mg/4ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Adenosine_Desc">
                 <English>Used to treat certain heart arrhythmias</English>
@@ -1371,6 +1476,7 @@
                 <Spanish>Para tratar ciertas arritmias cardíacas</Spanish>
                 <Turkish>Bazı kalp ritim bozukluklarını tedavi etmek için kullanılır</Turkish>
                 <Chinese>用于治疗某些心律失常</Chinese>
+                <Japanese>特定の不整脈の治療に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Morphine">
                 <English>Morphine Vial (10mg/2ml)</English>
@@ -1384,6 +1490,7 @@
                 <Spanish>Vial de morfina (10 mg/2 ml)</Spanish>
                 <Turkish>Morfin flakonu (10mg/2ml)</Turkish>
                 <Chinese>吗啡注射液（10mg/2ml）</Chinese>
+                <Japanese>モルヒネバイアル(10mg/2ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Morphine_Desc">
                 <English>Used to manage moderate to severe pain experiences</English>
@@ -1398,6 +1505,7 @@
                 <Turkish>Orta-şiddetli ağrıyı yönetmek için kullanılır
 </Turkish>
                 <Chinese>用于缓解中度至重度疼痛</Chinese>
+                <Japanese>中等度から重度の痛みの管理に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ketamine">
                 <English>Ketamine Vial (500mg/10ml)</English>
@@ -1411,6 +1519,7 @@
                 <Spanish>Vial de ketamina (500 mg/10 ml)</Spanish>
                 <Turkish>Ketamin flakonu (500mg/10ml)</Turkish>
                 <Chinese>氯胺酮注射液（500mg/10ml）</Chinese>
+                <Japanese>ケタミンバイアル(500mg/10ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ketamine_Desc">
                 <English>Used to manage moderate to severe pain, alternative to opioid analgesics</English>
@@ -1424,6 +1533,7 @@
                 <Spanish>Analgesia alternativa para dolor moderado a severo</Spanish>
                 <Turkish>Orta-şiddetli ağrıyı yönetmek için kullanılır, opioid analjeziklere alternatiftir</Turkish>
                 <Chinese>用于缓解中度至重度疼痛，可作为阿片类镇痛药的替代药物</Chinese>
+                <Japanese>中等度から重度の痛みの管理に使用。オピオイド鎮痛薬の代替</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Lidocaine">
                 <English>Lidocaine Vial (100mg/5ml)</English>
@@ -1437,6 +1547,7 @@
                 <Spanish>Vial de lidocaína (100 mg/5 ml)</Spanish>
                 <Turkish>Lidokain flakonu (100mg/5ml)</Turkish>
                 <Chinese>利多卡因注射液（100mg/5ml）</Chinese>
+                <Japanese>リドカインバイアル(100mg/5ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Lidocaine_Desc">
                 <English>Used as local anesthetic for painful surgical procedures, and to treat irregular heart rhythms</English>
@@ -1450,6 +1561,7 @@
                 <Spanish>Anestesia local y tratamiento de arritmias</Spanish>
                 <Turkish>Ağrılı cerrahi işlemlerde lokal anestezik olarak ve düzensiz kalp ritimlerini tedavi etmek için kullanılır</Turkish>
                 <Chinese>用于疼痛性外科操作的局部麻醉，以及治疗心律失常</Chinese>
+                <Japanese>痛みを伴う外科処置における局所麻酔薬として使用し、不整脈の治療にも使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_TXA">
                 <English>TXA Vial (1g/10ml)</English>
@@ -1463,6 +1575,7 @@
                 <Spanish>Vial de TXA (1 g/10 ml)</Spanish>
                 <Turkish>TXA flakonu (1g/10ml)</Turkish>
                 <Chinese>氨甲环酸注射液（1g/10ml）</Chinese>
+                <Japanese>TXAバイアル(1g/10ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_TXA_Desc">
                 <English>Used to manage catastrophic bleeding by preventing clot dissolvement</English>
@@ -1476,6 +1589,7 @@
                 <Spanish>Controlar hemorragias graves evitando disolución del coágulo</Spanish>
                 <Turkish>Pıhtının çözünmesini önleyerek katastrofik kanamayı yönetmek için kullanılır</Turkish>
                 <Chinese>用于通过抑制血凝块溶解来控制危及生命的大出血</Chinese>
+                <Japanese>血栓の溶解を防ぐことで、重篤な出血の管理に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Amiodarone">
                 <English>Amiodarone Vial (150mg/3ml)</English>
@@ -1489,6 +1603,7 @@
                 <Spanish>Vial de amiodarona (150 mg/3 ml)</Spanish>
                 <Turkish>Amiodaron flakonu (150mg/3ml)</Turkish>
                 <Chinese>胺碘酮注射液（150mg/3ml）</Chinese>
+                <Japanese>アミオダロンバイアル(150mg/3ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Amiodarone_Desc">
                 <English>Used to treat irregular heart rhythms</English>
@@ -1502,6 +1617,7 @@
                 <Spanish>Tratar arritmias cardíacas</Spanish>
                 <Turkish>Düzensiz kalp ritimlerini tedavi etmek için kullanılır</Turkish>
                 <Chinese>用于治疗心律失常</Chinese>
+                <Japanese>不整脈の治療に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Atropine">
                 <English>Atropine Vial (1mg/1ml)</English>
@@ -1514,6 +1630,7 @@
                 <French>Atropine en flacon (1mg/1ml)</French>
                 <Polish>Atropina (1mg/1ml)</Polish>
                 <Chinese>阿托品注射液（1mg/1ml）</Chinese>
+                <Japanese>アトロピンバイアル(1mg/1ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Atropine_Desc">
                 <English>Used to treat nerve agent exposure and increase heart rate</English>
@@ -1526,6 +1643,7 @@
                 <French>Utiliser pour traiter l'expositions aux agents organophosphorés et augemente le rythme cardiaque</French>
                 <Polish>Stosowany w leczeniu narażenia na działanie środka paralityczno-drgawkowego i przyspieszenia akcji serca</Polish>
                 <Chinese>用于治疗神经性毒剂暴露并提高心率</Chinese>
+                <Japanese>神経剤曝露の治療および心拍数の増加に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Fentanyl">
                 <English>Fentanyl Vial (100mcg/2ml)</English>
@@ -1539,6 +1657,7 @@
                 <Spanish>Vial de fentanilo (100 mcg/2 ml)</Spanish>
                 <Turkish>Fentanil flakonu (100mcg/2ml)</Turkish>
                 <Chinese>芬太尼注射液（100μg/2mL）</Chinese>
+                <Japanese>フェンタニルバイアル(100mcg/2ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Fentanyl_Desc">
                 <English>Used to manage acute severe pain</English>
@@ -1552,6 +1671,7 @@
                 <Spanish>Manejo de dolor agudo severo</Spanish>
                 <Turkish>Akut şiddetli ağrıyı yönetmek için kullanılır</Turkish>
                 <Chinese>用于缓解急性重度疼痛</Chinese>
+                <Japanese>急性の重度疼痛の管理に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ondansetron">
                 <English>Ondansetron Vial (4mg/2ml)</English>
@@ -1565,6 +1685,7 @@
                 <Spanish>Vial de ondansetrón (4 mg/2 ml)</Spanish>
                 <Turkish>Ondansetron flakonu (4mg/2ml)</Turkish>
                 <Chinese>昂丹司琼注射液（4mg/2ml）</Chinese>
+                <Japanese>オンダンセトロンバイアル(4mg/2ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ondansetron_Desc">
                 <English>Used to manage nausea and vomiting</English>
@@ -1578,6 +1699,7 @@
                 <Spanish>Manejo de náuseas y vómitos</Spanish>
                 <Turkish>Bulantı ve kusmayı yönetmek için kullanılır</Turkish>
                 <Chinese>用于缓解恶心和呕吐</Chinese>
+                <Japanese>悪心および嘔吐の管理に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_CalciumChloride">
                 <English>Calcium Chloride Vial (1g/10ml)</English>
@@ -1591,6 +1713,7 @@
                 <Spanish>Vial de cloruro de calcio (1 g/10 ml)</Spanish>
                 <Turkish>Kalsiyum klorür flakonu (1g/10ml)</Turkish>
                 <Chinese>氯化钙注射液（1g/10ml）</Chinese>
+                <Japanese>塩化カルシウムバイアル(1g/10ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_CalciumChloride_Desc">
                 <English>Used to manage low calcium after blood transfusion</English>
@@ -1604,6 +1727,7 @@
                 <Spanish>Corregir hipocalcemia post-transfusión</Spanish>
                 <Turkish>Kan transfüzyonu sonrası düşük kalsiyumu yönetmek için kullanılır</Turkish>
                 <Chinese>用于处理输血后的低钙血症</Chinese>
+                <Japanese>輸血後の低カルシウム血症の管理に使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ertapenem">
                 <English>Ertapenem Vial (1g/3.2ml)</English>
@@ -1617,6 +1741,7 @@
                 <Spanish>Vial de ertapenem (1 g/3,2 ml)</Spanish>
                 <Turkish>Ertapenem flakonu (1g/3.2ml)</Turkish>
                 <Chinese>厄他培南注射液（1g/3.2ml）</Chinese>
+                <Japanese>エルタペネムバイアル(1g/3.2ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Ertapenem_Desc">
                 <English>Used to manage infections from open wounds, required before evacuation of casualty</English>
@@ -1630,6 +1755,7 @@
                 <Spanish>Tratar infecciones de heridas abiertas, requerido antes de evacuación</Spanish>
                 <Turkish>Açık yaralardan kaynaklanan enfeksiyonları yönetmek için kullanılır, zayiat tahliyesinden önce gereklidir</Turkish>
                 <Chinese>用于治疗开放性伤口感染，伤员后送前必须使用</Chinese>
+                <Japanese>開放創による感染の管理に使用。負傷者搬送前に必要</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Esmolol">
                 <English>Esmolol Vial (100mg/10ml)</English>
@@ -1643,6 +1769,7 @@
                 <Spanish>Vial de esmolol (100 mg/10 ml)</Spanish>
                 <Turkish>Esmolol flakonu (100mg/10ml)</Turkish>
                 <Chinese>艾司洛尔注射液（100mg/10ml）</Chinese>
+                <Japanese>エスモロールバイアル(100mg/10ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Esmolol_Desc">
                 <English>Used to lower heart rate for a short time</English>
@@ -1656,6 +1783,7 @@
                 <Spanish>Reducir frecuencia cardíaca temporalmente</Spanish>
                 <Turkish>Kısa süreliğine kalp hızını düşürmek için kullanılır</Turkish>
                 <Chinese>用于短时间降低心率</Chinese>
+                <Japanese>心拍数を短時間低下させるために使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Spray_Naloxone">
                 <English>Naloxone Nasal Spray</English>
@@ -1669,6 +1797,7 @@
                 <Spanish>Spray nasal de naloxona</Spanish>
                 <Turkish>Nalokson nazal sprey</Turkish>
                 <Chinese>纳洛酮鼻喷雾剂</Chinese>
+                <Japanese>ナロキソン点鼻スプレー</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Spray_Naloxone_Desc">
                 <English>Used to rapidly reverse opioid overdose</English>
@@ -1682,6 +1811,7 @@
                 <Spanish>Revertir sobredosis de opioides rápidamente</Spanish>
                 <Turkish>Opioid aşırı dozunu hızla tersine çevirmek için kullanılır</Turkish>
                 <Chinese>用于快速逆转阿片类药物过量</Chinese>
+                <Japanese>オピオイド過量投与を迅速に拮抗するために使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol">
                 <English>Paracetamol</English>
@@ -1695,6 +1825,7 @@
                 <Spanish>Paracetamol</Spanish>
                 <Turkish>Parasetamol</Turkish>
                 <Chinese>对乙酰氨基酚</Chinese>
+                <Japanese>パラセタモール</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_SinglePack">
                 <English>Paracetamol (Single Pack)</English>
@@ -1707,6 +1838,7 @@
                 <Turkish>Parasetamol (tek paket)</Turkish>
                 <Polish>Paracetamol (pojedyńczy)</Polish>
                 <Chinese>对乙酰氨基酚（单包装）</Chinese>
+                <Japanese>パラセタモール(単包)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_DoublePack">
                 <English>Paracetamol (Double Pack)</English>
@@ -1719,6 +1851,7 @@
                 <Turkish>Parasetamol (çift paket)</Turkish>
                 <Polish>Paracetamol (podwójny)</Polish>
                 <Chinese>对乙酰氨基酚（双包装）</Chinese>
+                <Japanese>パラセタモール(2包)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Paracetamol_Desc">
                 <English>Used to combat mild to moderate pain</English>
@@ -1732,6 +1865,7 @@
                 <Spanish>Combatir dolor leve a moderado</Spanish>
                 <Turkish>Hafif-orta şiddette ağrı ile mücadele etmek için kullanılır</Turkish>
                 <Chinese>用于缓解轻度至中度疼痛</Chinese>
+                <Japanese>軽度から中等度の痛みを抑えるために使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AmmoniaInhalant">
                 <English>Ammonia Inhalant</English>
@@ -1745,6 +1879,7 @@
                 <Spanish>Inhalante de amoníaco</Spanish>
                 <Turkish>Amonyak İnhalanı</Turkish>
                 <Chinese>氨吸入剂</Chinese>
+                <Japanese>アンモニア吸入剤</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AmmoniaInhalant_Desc">
                 <English>Used to wake up patients who've fainted</English>
@@ -1758,6 +1893,7 @@
                 <Spanish>Dspertar pacientes desmayados</Spanish>
                 <Turkish>Bayılan hastaları uyandırmak için kullanılır</Turkish>
                 <Chinese>用于唤醒昏厥患者</Chinese>
+                <Japanese>失神した患者を覚醒させるために使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Inhaler_Penthrox">
                 <English>Penthrox Inhaler</English>
@@ -1771,6 +1907,7 @@
                 <Spanish>Inhalador Penthrox</Spanish>
                 <Turkish>Penthrox İnhaler</Turkish>
                 <Chinese>甲氧氟烷吸入器</Chinese>
+                <Japanese>ペンスロックス吸入器</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Inhaler_Penthrox_Desc">
                 <English>Used to rapidly manage acute pain for a short time</English>
@@ -1784,6 +1921,7 @@
                 <Spanish>Manejo rápido de dolor agudo por tiempo limitado</Spanish>
                 <Turkish>Kısa süreliğine akut ağrıyı hızlı yönetmek için kullanılır</Turkish>
                 <Chinese>用于短时间快速缓解急性疼痛</Chinese>
+                <Japanese>急性の痛みを短時間で迅速に管理するために使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl">
                 <English>Fentanyl Lozenge</English>
@@ -1796,6 +1934,7 @@
                 <Turkish>Fentanil pastili</Turkish>
                 <Polish>Lizak Fentanylowy</Polish>
                 <Chinese>芬太尼含片</Chinese>
+                <Japanese>フェンタニル・トローチ</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl_Desc">
                 <English>Used to manage acute severe pain, via oral transmucosal route</English>
@@ -1808,6 +1947,7 @@
                 <Turkish>Oral transmukozal yolla akut şiddetli ağrıyı yönetmek için kullanılır</Turkish>
                 <Polish>Stosowany w leczeniu silnego bólu, drogą doustną przez błonę śluzową</Polish>
                 <Chinese>用于经口腔黏膜途径缓解急性重度疼痛</Chinese>
+                <Japanese>口腔粘膜経路で急性の重度の痛みを管理するために使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol">
                 <English>Dimercaprol Ampule (300mg/3ml)</English>
@@ -1820,6 +1960,7 @@
                 <French>Ampoule de Dimercaprol (300mg/3ml)</French>
                 <Polish>Dimerkaprol (300mg/3ml)</Polish>
                 <Chinese>二巯丙醇注射液（300mg/3ml）</Chinese>
+                <Japanese>ジメルカプロールアンプル(300mg/3ml)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol_Desc">
                 <English>Used to treat lewisite exposure, administered intramuscularly</English>
@@ -1832,6 +1973,7 @@
                 <French>Utiliser pour traiter l'exposition au lewisite, administré en intramusculaire</French>
                 <Polish>Stosowany w leczeniu narażenia na luizyt, podawany domięśniowo</Polish>
                 <Chinese>用于治疗路易氏剂暴露，通过肌肉注射给药</Chinese>
+                <Japanese>ルイサイト曝露の治療に使用し、筋肉内投与される</Japanese>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -1847,6 +1989,7 @@
                 <Spanish>Usar paracetamol</Spanish>
                 <Turkish>Parasetamol kullan</Turkish>
                 <Chinese>使用对乙酰氨基酚</Chinese>
+                <Japanese>パラセタモールを使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_UseParacetamol_Progress">
                 <English>Using Paracetamol...</English>
@@ -1860,6 +2003,7 @@
                 <Spanish>Usando paracetamol...</Spanish>
                 <Turkish>Parasetamol kullanılıyor…</Turkish>
                 <Chinese>正在使用对乙酰氨基酚…</Chinese>
+                <Japanese>パラセタモールを使用中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_UsePenthroxInhaler">
                 <English>Use Penthrox Inhaler</English>
@@ -1873,6 +2017,7 @@
                 <Spanish>Usar inhalador Penthrox</Spanish>
                 <Turkish>Penthrox inhaler kullan</Turkish>
                 <Chinese>使用甲氧氟烷吸入器</Chinese>
+                <Japanese>ペンスロックス吸入器を使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_UsePenthroxInhaler_Progress">
                 <English>Using Penthrox Inhaler...</English>
@@ -1886,6 +2031,7 @@
                 <Spanish>Usando el inhalador Penthrox...</Spanish>
                 <Turkish>Penthrox inhaler kullanılıyor…</Turkish>
                 <Chinese>正在使用甲氧氟烷吸入器…</Chinese>
+                <Japanese>ペンスロックス吸入器を使用中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_UseAmmoniaInhalant">
                 <English>Use Ammonia Inhalant</English>
@@ -1899,6 +2045,7 @@
                 <Spanish>Usar inhalante de amoníaco</Spanish>
                 <Turkish>Amonyak inhalanı kullan</Turkish>
                 <Chinese>使用氨吸入剂</Chinese>
+                <Japanese>アンモニア吸入剤を使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_UseAmmoniaInhalant_Progress">
                 <English>Using Ammonia Inhalant...</English>
@@ -1912,6 +2059,7 @@
                 <Spanish>Usando el inhalante de amoníaco...</Spanish>
                 <Turkish>Amonyak inhalanı kullanılıyor…</Turkish>
                 <Chinese>正在使用氨吸入剂…</Chinese>
+                <Japanese>アンモニア吸入剤を使用中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_UseNaloxoneSpray">
                 <English>Use Naloxone Spray</English>
@@ -1925,6 +2073,7 @@
                 <Spanish>Usar spray de naloxona</Spanish>
                 <Turkish>Nalokson spreyi kullan</Turkish>
                 <Chinese>使用纳洛酮喷雾剂</Chinese>
+                <Japanese>ナロキソンスプレーを使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_UseNaloxoneSpray_Progress">
                 <English>Using Naloxone Spray...</English>
@@ -1938,6 +2087,7 @@
                 <Spanish>Usando el spray de naloxona...</Spanish>
                 <Turkish>Nalokson spreyi kullanılıyor…</Turkish>
                 <Chinese>正在使用纳洛酮喷雾剂…</Chinese>
+                <Japanese>ナロキソンスプレーを使用中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_UseSyringe">
                 <English>Use Syringe (%1ml)</English>
@@ -1951,6 +2101,7 @@
                 <Spanish>Usar jeringa (%1 ml)</Spanish>
                 <Turkish>Şırınga kullan (%1ml)</Turkish>
                 <Chinese>使用注射器（%1ml）</Chinese>
+                <Japanese>注射器 (%1ml)を使用</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Intravenous_Short">
                 <English>IV</English>
@@ -1964,6 +2115,7 @@
                 <Spanish>IV (intravenoso)</Spanish>
                 <Turkish>IV</Turkish>
                 <Chinese>静脉注射 (IV)</Chinese>
+                <Japanese>IV</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Intraosseous_Short">
                 <English>IO</English>
@@ -1977,6 +2129,7 @@
                 <Spanish>IO (intraóseo)</Spanish>
                 <Turkish>IO</Turkish>
                 <Chinese>骨内注射 (IO)</Chinese>
+                <Japanese>IO</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Intramuscular_Short">
                 <English>IM</English>
@@ -1990,6 +2143,7 @@
                 <Spanish>IM (intramuscular)</Spanish>
                 <Turkish>IM</Turkish>
                 <Chinese>肌内注射 (IM)</Chinese>
+                <Japanese>IM</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Push">
                 <English>Push</English>
@@ -2003,6 +2157,7 @@
                 <Spanish>Inyectar</Spanish>
                 <Turkish>İtme</Turkish>
                 <Chinese>推注</Chinese>
+                <Japanese>押し込む</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Inject">
                 <English>Inject</English>
@@ -2016,6 +2171,7 @@
                 <Spanish>Inyectar</Spanish>
                 <Turkish>Enjekte et</Turkish>
                 <Chinese>注射</Chinese>
+                <Japanese>注入</Japanese>
             </Key>
         </Container>
         <Container name="// Fentanyl Lozenge Actions //">
@@ -2030,6 +2186,7 @@
                 <Turkish>Fentanil pastili ver</Turkish>
                 <Polish>Podaj lizak fentanylowy</Polish>
                 <Chinese>给予芬太尼含片</Chinese>
+                <Japanese>フェンタニル・トローチを投与</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GiveFentanylLozenge_Progress">
                 <English>Giving Fentanyl Lozenge...</English>
@@ -2042,6 +2199,7 @@
                 <Turkish>Fentanil pastili veriliyor…</Turkish>
                 <Polish>Podawanie lizaka...</Polish>
                 <Chinese>正在给予芬太尼含片…</Chinese>
+                <Japanese>フェンタニル・トローチを投与中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge">
                 <English>Remove Fentanyl Lozenge</English>
@@ -2054,6 +2212,7 @@
                 <Turkish>Fentanil pastilini çıkar</Turkish>
                 <Polish>Usuń lizak fentanylowy</Polish>
                 <Chinese>取出芬太尼含片</Chinese>
+                <Japanese>フェンタニル・トローチを取り外す</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge_Progress">
                 <English>Removing Fentanyl Lozenge...</English>
@@ -2066,6 +2225,7 @@
                 <Turkish>Fentanil pastili çıkarılıyor…</Turkish>
                 <Polish>Usuwanie lizaka...</Polish>
                 <Chinese>正在取出芬太尼含片…</Chinese>
+                <Japanese>フェンタニル・トローチを取り外し中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Lozenge">
                 <English>Lozenge</English>
@@ -2078,6 +2238,7 @@
                 <Turkish>Pastil</Turkish>
                 <Polish>Lizak</Polish>
                 <Chinese>含片</Chinese>
+                <Japanese>トローチ</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge">
                 <English>Lozenge (OTFC)</English>
@@ -2090,6 +2251,7 @@
                 <Turkish>Pastil (OTFC)</Turkish>
                 <Polish>Lizak (OTFC)</Polish>
                 <Chinese>含片 (OTFC)</Chinese>
+                <Japanese>トローチ(OTFC)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Already">
                 <English>Patient already has fentanyl lozenge</English>
@@ -2102,6 +2264,7 @@
                 <Turkish>Hastada zaten fentanil pastili var</Turkish>
                 <Polish>Pacjent ma już lizak fentanylowy</Polish>
                 <Chinese>患者已含服芬太尼含片</Chinese>
+                <Japanese>患者はすでにフェンタニル・トローチを使用中</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Blocked">
                 <English>Patient oral access is blocked by airway adjunct</English>
@@ -2114,6 +2277,7 @@
                 <Turkish>Hastanın ağız erişimi havayolu yardımcı ekipmanı nedeniyle engelli</Turkish>
                 <Polish>Dostęp do dróg oddechowych zablokowany przez narzędzie stabilizacji</Polish>
                 <Chinese>患者口腔通道被气道辅助装置阻塞</Chinese>
+                <Japanese>患者の口腔アクセスは気道補助器具によって妨げられている</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Complete">
                 <English>Gave Lozenge (OTFC)</English>
@@ -2126,6 +2290,7 @@
                 <Turkish>Pastil verildi (OTFC)</Turkish>
                 <Polish>Podaj lizak (OTFC)</Polish>
                 <Chinese>已给予含片（OTFC）</Chinese>
+                <Japanese>トローチ(OTFC)を投与した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Hint">
                 <English>Fentanyl Lozenge has been placed by %1</English>
@@ -2138,6 +2303,7 @@
                 <Turkish>Fentanil pastili %1 tarafından yerleştirildi</Turkish>
                 <Polish>%1 podał lizak fentanylowy</Polish>
                 <Chinese>芬太尼含片已由%1放置</Chinese>
+                <Japanese>[フェンタニル] トローチが %1 によって投与された</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_ActionLog">
                 <English>%1 gave Fentanyl Lozenge</English>
@@ -2150,6 +2316,7 @@
                 <Turkish>%1 fentanil pastili verdi</Turkish>
                 <Polish>%1 podał lizak fentanylowy</Polish>
                 <Chinese>%1已给予芬太尼含片</Chinese>
+                <Japanese>%1 がフェンタニル・トローチを投与した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Complete">
                 <English>Removed fentanyl lozenge</English>
@@ -2162,6 +2329,7 @@
                 <Turkish>Fentanil pastili çıkarıldı</Turkish>
                 <Polish>Usunięto lizak fentanylowy</Polish>
                 <Chinese>已取出芬太尼含片</Chinese>
+                <Japanese>フェンタニル・トローチを取り外した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Hint">
                 <English>%1 removed lozenge</English>
@@ -2174,6 +2342,7 @@
                 <Turkish>%1 pastili çıkardı</Turkish>
                 <Polish>%1 usunął lizak</Polish>
                 <Chinese>%1取出了芬太尼含片</Chinese>
+                <Japanese>%1 がトローチを取り外した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_HintSelf">
                 <English>Fentanyl lozenge was removed</English>
@@ -2186,6 +2355,7 @@
                 <Turkish>Fentanil pastili çıkarıldı</Turkish>
                 <Polish>Usunięto lizak fentanylowy</Polish>
                 <Chinese>芬太尼含片已取出</Chinese>
+                <Japanese>フェンタニル・トローチは取り外された</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
                 <English>Fentanyl lozenge wore off and was removed</English>
@@ -2198,6 +2368,7 @@
                 <Turkish>Fentanil pastilinin etkisi geçti ve çıkarıldı</Turkish>
                 <Polish>Lizak fentanylowy utracił efektywność i został usunięty</Polish>
                 <Chinese>芬太尼含片药效已消退并已取出</Chinese>
+                <Japanese>フェンタニル・トローチの効果が切れ、取り外された</Japanese>
             </Key>
         </Container>
         <Container name="// CPR Action //">
@@ -2213,6 +2384,7 @@
                 <Spanish>Iniciar RCP</Spanish>
                 <Turkish>CPR’a başla</Turkish>
                 <Chinese>开始心肺复苏</Chinese>
+                <Japanese>CPRを開始</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Already">
                 <English>Patient already has CPR provider</English>
@@ -2226,6 +2398,7 @@
                 <Spanish>El paciente ya tiene proveedor de RCP</Spanish>
                 <Turkish>Hastanın zaten bir CPR uygulayıcısı var</Turkish>
                 <Chinese>患者已有心肺复苏施救者</Chinese>
+                <Japanese>患者にはすでにCPR実施者がいる</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_ActionLog_Started">
                 <English>%1 started CPR</English>
@@ -2239,6 +2412,7 @@
                 <Spanish>%1 inició RCP</Spanish>
                 <Turkish>%1 CPR’a başladı</Turkish>
                 <Chinese>%1开始了心肺复苏</Chinese>
+                <Japanese>%1 がCPRを開始した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_ActionLog_Stopped">
                 <English>%1 stopped CPR (%2)</English>
@@ -2252,6 +2426,7 @@
                 <Spanish>%1 detuvo RCP (%2)</Spanish>
                 <Turkish>%1 CPR’ı durdurdu (%2)</Turkish>
                 <Chinese>%1停止了心肺复苏（%2）</Chinese>
+                <Japanese>%1 がCPRを停止した (%2)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Stop">
                 <English>Stop CPR</English>
@@ -2265,6 +2440,7 @@
                 <Spanish>Detener RCP</Spanish>
                 <Turkish>CPR’ı durdur</Turkish>
                 <Chinese>停止心肺复苏</Chinese>
+                <Japanese>CPRを停止</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Stopped">
                 <English>Stopped CPR</English>
@@ -2278,6 +2454,7 @@
                 <Spanish>RCP detenida</Spanish>
                 <Turkish>CPR durduruldu</Turkish>
                 <Chinese>已停止心肺复苏</Chinese>
+                <Japanese>CPRを停止した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Started">
                 <English>Started CPR</English>
@@ -2291,6 +2468,7 @@
                 <Spanish>RCP iniciada</Spanish>
                 <Turkish>CPR başlatıldı</Turkish>
                 <Chinese>已开始心肺复苏</Chinese>
+                <Japanese>CPRを開始した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Continue">
                 <English>Continue CPR</English>
@@ -2304,6 +2482,7 @@
                 <Spanish>Continuar RCP</Spanish>
                 <Turkish>CPR’a devam et</Turkish>
                 <Chinese>继续心肺复苏</Chinese>
+                <Japanese>CPRを続行</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Continued">
                 <English>Continued CPR</English>
@@ -2317,6 +2496,7 @@
                 <Spanish>RCP continuada</Spanish>
                 <Turkish>CPR’a devam edildi</Turkish>
                 <Chinese>已继续心肺复苏</Chinese>
+                <Japanese>CPRを続行している</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Pause">
                 <English>Pause CPR</English>
@@ -2330,6 +2510,7 @@
                 <Spanish>Pausar RCP</Spanish>
                 <Turkish>CPR’ı duraklat</Turkish>
                 <Chinese>暂停心肺复苏</Chinese>
+                <Japanese>CPRを一時停止</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_Paused">
                 <English>Paused CPR</English>
@@ -2343,6 +2524,7 @@
                 <Spanish>RCP pausada</Spanish>
                 <Turkish>CPR duraklatıldı</Turkish>
                 <Chinese>已暂停心肺复苏</Chinese>
+                <Japanese>CPRを一時停止した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwapToBVM">
                 <English>Swap To BVM</English>
@@ -2355,6 +2537,7 @@
                 <Turkish>BVM’ye geç</Turkish>
                 <Polish>Zmień na worek (BVM)</Polish>
                 <Chinese>切换至BVM</Chinese>
+                <Japanese>BVMに切り替え</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CPR_SwappedToBVM">
                 <English>Swapped To BVM</English>
@@ -2367,6 +2550,7 @@
                 <Turkish>BVM’ye geçildi</Turkish>
                 <Polish>Zmieniono na worek (BVM)</Polish>
                 <Chinese>已切换至BVM</Chinese>
+                <Japanese>BVMに切り替えた</Japanese>
             </Key>
         </Container>
         <Container name="// Capillary Refill Action //">
@@ -2382,6 +2566,7 @@
                 <Spanish>Comprobar tiempo de relleno capilar</Spanish>
                 <Turkish>Kapiller dolum süresini kontrol et</Turkish>
                 <Chinese>检查毛细血管再充盈时间</Chinese>
+                <Japanese>毛細血管再充満時間を確認</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CheckCapillaryRefill_Progress">
                 <English>Checking Capillary Refill Time...</English>
@@ -2395,6 +2580,7 @@
                 <Spanish>Comprobando tiempo de relleno capilar...</Spanish>
                 <Turkish>Kapiller dolum süresi kontrol ediliyor…</Turkish>
                 <Chinese>正在检查毛细血管再充盈时间…</Chinese>
+                <Japanese>毛細血管再充満時間を確認中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CapillaryRefill_Hint">
                 <English>Measured Capillary Refill Time&lt;br/&gt;%1 seconds</English>
@@ -2408,6 +2594,7 @@
                 <Spanish>Tiempo de relleno capilar medido: %1 segundos</Spanish>
                 <Turkish>Kapiller dolum süresi ölçüldü&lt;br/&gt;%1 saniye</Turkish>
                 <Chinese>测得毛细血管再充盈时间&lt;br/&gt;%1秒</Chinese>
+                <Japanese>測定された毛細血管再充満時間&lt;br/&gt;%1 秒</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_CapillaryRefill_ActionLog">
                 <English>%1 measured capillary refill time: %2s (%3)</English>
@@ -2421,6 +2608,7 @@
                 <Spanish>%1 midió tiempo de relleno capilar: %2 s (%3)</Spanish>
                 <Turkish>%1 kapiller dolum süresini ölçtü: %2sn (%3)</Turkish>
                 <Chinese>%1测得毛细血管再充盈时间：%2s（%3）</Chinese>
+                <Japanese>%1 が毛細血管再充満時間を測定した： %2 秒 (%3)</Japanese>
             </Key>
         </Container>
         <Container name="// Feel Pulse Action //">
@@ -2436,6 +2624,7 @@
                 <Spanish>Tomar el pulso</Spanish>
                 <Turkish>Nabız hisset</Turkish>
                 <Chinese>检查脉搏</Chinese>
+                <Japanese>脈拍を確認</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_FeelingForPulse">
                 <English>Feeling for pulse...</English>
@@ -2449,6 +2638,7 @@
                 <Spanish>Palpando pulso...</Spanish>
                 <Turkish>Nabız kontrol ediliyor…</Turkish>
                 <Chinese>正在检查脉搏…</Chinese>
+                <Japanese>脈拍を確認中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Stopped">
                 <English>Stopped feeling pulse</English>
@@ -2462,6 +2652,7 @@
                 <Spanish>Dejar de palpar pulso</Spanish>
                 <Turkish>Nabız kontrolü durduruldu</Turkish>
                 <Chinese>停止检查脉搏</Chinese>
+                <Japanese>脈拍の確認を停止した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Carotid">
                 <English>Carotid</English>
@@ -2475,6 +2666,7 @@
                 <Spanish>Carótido</Spanish>
                 <Turkish>Karotis</Turkish>
                 <Chinese>颈动脉</Chinese>
+                <Japanese>頸動脈</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Radial">
                 <English>Radial</English>
@@ -2488,6 +2680,7 @@
                 <Spanish>Radial</Spanish>
                 <Turkish>Radyal</Turkish>
                 <Chinese>桡动脉</Chinese>
+                <Japanese>橈骨動脈</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_Femoral">
                 <English>Femoral</English>
@@ -2501,6 +2694,7 @@
                 <Spanish>Femoral</Spanish>
                 <Turkish>Femoral</Turkish>
                 <Chinese>股动脉</Chinese>
+                <Japanese>大腿動脈</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FeelPulse_ActionLog">
                 <English>%1 felt for a %2 pulse</English>
@@ -2512,6 +2706,7 @@
                 <French>%1 a vérifié un pouls %2</French>
                 <Polish>%1 sprawdził puls %2</Polish>
                 <Chinese>%1检查了%2脉搏</Chinese>
+                <Japanese>%1 が %2 の脈拍を確認した</Japanese>
             </Key>
         </Container>
         <Container name="// Measure Blood Pressure Action //">
@@ -2527,6 +2722,7 @@
                 <Spanish>Colocar manguito de presión</Spanish>
                 <Turkish>Tansiyon manşonunu tak</Turkish>
                 <Chinese>绑上血压袖带</Chinese>
+                <Japanese>圧迫カフを装着</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Attach_Progress">
                 <English>Attaching Pressure Cuff...</English>
@@ -2540,6 +2736,7 @@
                 <Spanish>Colocando manguito de presión...</Spanish>
                 <Turkish>Tansiyon manşonu takılıyor…</Turkish>
                 <Chinese>正在绑上血压袖带…</Chinese>
+                <Japanese>圧迫カフを装着中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Remove">
                 <English>Remove Pressure Cuff</English>
@@ -2553,6 +2750,7 @@
                 <Spanish>Retirar manguito de presión</Spanish>
                 <Turkish>Tansiyon manşonunu çıkar</Turkish>
                 <Chinese>取下血压袖带</Chinese>
+                <Japanese>圧迫カフを取り外す</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Remove_Progress">
                 <English>Removing Pressure Cuff...</English>
@@ -2566,6 +2764,7 @@
                 <Spanish>Retirando manguito de presión...</Spanish>
                 <Turkish>Tansiyon manşonu çıkarılıyor…</Turkish>
                 <Chinese>正在取下血压袖带…</Chinese>
+                <Japanese>圧迫カフを取り外し中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Measure">
                 <English>Measure Blood Pressure</English>
@@ -2579,6 +2778,7 @@
                 <Spanish>Medir tensión arterial</Spanish>
                 <Turkish>Kan basıncını ölç</Turkish>
                 <Chinese>测量血压</Chinese>
+                <Japanese>血圧を測定</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Measure_Stethoscope">
                 <English>Measure Blood Pressure (Stethoscope)</English>
@@ -2592,6 +2792,7 @@
                 <Spanish>Medir tensión arterial (estetoscopio)</Spanish>
                 <Turkish>Kan basıncını ölç (stetoskop)</Turkish>
                 <Chinese>测量血压（听诊器）</Chinese>
+                <Japanese>血圧を測定 (聴診器)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Stopped">
                 <English>Stopped measuring blood pressure</English>
@@ -2605,6 +2806,7 @@
                 <Spanish>Detenida la medición</Spanish>
                 <Turkish>Kan basıncı ölçümü durduruldu</Turkish>
                 <Chinese>已停止测量血压</Chinese>
+                <Japanese>血圧測定を停止した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Measuring">
                 <English>Measuring Blood Pressure...</English>
@@ -2618,6 +2820,7 @@
                 <Spanish>Midiendo tensión arterial...</Spanish>
                 <Turkish>Kan basıncı ölçülüyor…</Turkish>
                 <Chinese>正在停止测量血压…</Chinese>
+                <Japanese>血圧を測定中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Hint_Bulb">
                 <English>Squeeze Bulb\n+50 (LMB) | +30 (RMB)</English>
@@ -2631,6 +2834,7 @@
                 <Spanish>Comprimir bulbo \n+50 (LMB) | +30 (RMB)</Spanish>
                 <Turkish>Pompayı sık\n+50 (LMB) | +30 (RMB)</Turkish>
                 <Chinese>挤压球囊\n+50 (左键) | +30 (右键)</Chinese>
+                <Japanese>ポンプを握る\n+50 (LMB) | +30 (RMB)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_MeasureBP_Hint_Valve">
                 <English>Release Pressure\n-10 (LMB) | -2 (RMB)</English>
@@ -2644,6 +2848,7 @@
                 <Spanish>Liberar presión \n-10 (LMB) | -2 (RMB)</Spanish>
                 <Turkish>Basıncı boşalt\n-10 (LMB) | -2 (RMB)</Turkish>
                 <Chinese>释放压力\n-10 (左键) | -2 (右键)</Chinese>
+                <Japanese>圧を抜く\n-10 (LMB) | -2 (RMB)</Japanese>
             </Key>
         </Container>
         <Container name="// Transfusion Menu //">
@@ -2659,6 +2864,7 @@
                 <Spanish>Transfundir fluidos</Spanish>
                 <Turkish>Sıvı transfüzyonu yap</Turkish>
                 <Chinese>输液</Chinese>
+                <Japanese>輸液を行う</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StopTransfusion_Display">
                 <English>Stop %1 Transfusion</English>
@@ -2672,6 +2878,7 @@
                 <Spanish>Detener transfusión de %1</Spanish>
                 <Turkish>%1 transfüzyonunu durdur</Turkish>
                 <Chinese>停止%1输注</Chinese>
+                <Japanese>%1 の輸液を停止</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StopTransfusion_ToolTip">
                 <English>Stop fluid transfusion on selected %1</English>
@@ -2685,6 +2892,7 @@
                 <Spanish>Detener transfusión en %1 seleccionado</Spanish>
                 <Turkish>Seçili %1 üzerinde sıvı transfüzyonunu durdur</Turkish>
                 <Chinese>停止选定%1输液</Chinese>
+                <Japanese>選択した %1 への輸液を停止</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StartTransfusion_Display">
                 <English>Start %1 Transfusion</English>
@@ -2698,6 +2906,7 @@
                 <Spanish>Iniciar transfusión de %1</Spanish>
                 <Turkish>%1 transfüzyonunu başlat</Turkish>
                 <Chinese>开始%1输注</Chinese>
+                <Japanese>%1 の輸液を開始</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_StartTransfusion_ToolTip">
                 <English>Start fluid transfusion on selected %1</English>
@@ -2711,6 +2920,7 @@
                 <Spanish>Iniciar transfusión en %1 seleccionado</Spanish>
                 <Turkish>Seçili %1 üzerinde sıvı transfüzyonunu başlat</Turkish>
                 <Chinese>开始选定%1输液</Chinese>
+                <Japanese>選択した %1 への輸液を開始</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_ToggleIV">
                 <English>Toggle IV/IO</English>
@@ -2724,6 +2934,7 @@
                 <Spanish>Alternar IV/IO</Spanish>
                 <Turkish>IV/IO’yu aç/kapat</Turkish>
                 <Chinese>切换静注/骨注</Chinese>
+                <Japanese>IV/IOを切り替え</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_AddBag_Display">
                 <English>Add Bag</English>
@@ -2737,6 +2948,7 @@
                 <Spanish>Añadir bolsa</Spanish>
                 <Turkish>Torba ekle</Turkish>
                 <Chinese>添加输液袋</Chinese>
+                <Japanese>バッグを追加</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_AddBag_ToolTip">
                 <English>Add new fluid bag</English>
@@ -2750,6 +2962,7 @@
                 <Spanish>Añadir nueva bolsa de fluidos</Spanish>
                 <Turkish>Yeni sıvı torbası ekle</Turkish>
                 <Chinese>添加新输液袋</Chinese>
+                <Japanese>新しい輸液バッグを追加</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_AddBag_Progress">
                 <English>Connecting %1...</English>
@@ -2763,6 +2976,7 @@
                 <Spanish>Conectando %1...</Spanish>
                 <Turkish>%1 bağlanıyor…</Turkish>
                 <Chinese>正在连接%1…</Chinese>
+                <Japanese>%1を接続中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Display">
                 <English>Move</English>
@@ -2776,6 +2990,7 @@
                 <Spanish>Mover</Spanish>
                 <Turkish>Taşı</Turkish>
                 <Chinese>转移</Chinese>
+                <Japanese>Move</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Progress">
                 <English>Moving %1 to %2...</English>
@@ -2789,6 +3004,7 @@
                 <Spanish>Moviendo %1 a %2...</Spanish>
                 <Turkish>%1 %2 konumuna taşınıyor…</Turkish>
                 <Chinese>转移%1到%2</Chinese>
+                <Japanese>%1 を %2 へ移動中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Hint">
                 <English>Began moving %1</English>
@@ -2802,6 +3018,7 @@
                 <Spanish>Inicio del movimiento de %1</Spanish>
                 <Turkish>%1 taşınmaya başlandı</Turkish>
                 <Chinese>已开始移动%1</Chinese>
+                <Japanese>%1 の移動を開始した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Place_Display">
                 <English>Place</English>
@@ -2815,6 +3032,7 @@
                 <Spanish>Colocar</Spanish>
                 <Turkish>Yerleştir</Turkish>
                 <Chinese>连接</Chinese>
+                <Japanese>Place</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_ToolTip">
                 <English>Move fluid bag from IV</English>
@@ -2828,6 +3046,7 @@
                 <Spanish>Mover bolsa de IV</Spanish>
                 <Turkish>Sıvı torbasını IV’den taşı</Turkish>
                 <Chinese>从静脉输液管上取下输液袋</Chinese>
+                <Japanese>IVから輸液バッグを移動</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_MoveBag_Place_ToolTip">
                 <English>Place fluid bag on selected IV line</English>
@@ -2841,6 +3060,7 @@
                 <Spanish>Colocar bolsa en línea IV seleccionada</Spanish>
                 <Turkish>Sıvı torbasını seçili IV hattına yerleştir</Turkish>
                 <Chinese>在选定静脉输液管上连接输液袋</Chinese>
+                <Japanese>選択したIVラインに輸液バッグを配置</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_Display">
                 <English>Remove</English>
@@ -2854,6 +3074,7 @@
                 <Spanish>Retirar</Spanish>
                 <Turkish>Çıkar</Turkish>
                 <Chinese>取下</Chinese>
+                <Japanese>取り外す</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_ToolTip">
                 <English>Remove fluid bag</English>
@@ -2867,6 +3088,7 @@
                 <Spanish>Retirar bolsa de fluidos</Spanish>
                 <Turkish>Sıvı torbasını çıkar</Turkish>
                 <Chinese>取下输液袋</Chinese>
+                <Japanese>輸液バッグを取り外す</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_ActionLog">
                 <English>%1 removed fluid bag (%2) from %3</English>
@@ -2880,6 +3102,7 @@
                 <Spanish>%1 retiró bolsa de fluidos (%2) de %3</Spanish>
                 <Turkish>%1, %3 üzerinden sıvı torbasını (%2) çıkardı</Turkish>
                 <Chinese>%1从%3上取下了输液袋（%2）</Chinese>
+                <Japanese>%1 が %3 から輸液バッグ (%2) を取り外した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_RemoveBag_Progress">
                 <English>Removing %1...</English>
@@ -2893,6 +3116,7 @@
                 <Spanish>Retirando %1...</Spanish>
                 <Turkish>%1 çıkarılıyor…</Turkish>
                 <Chinese>正在取下%1…</Chinese>
+                <Japanese>%1 を取り外し中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_TransfusionMenu_FluidRemaining">
                 <English>%1ml remaining</English>
@@ -2906,6 +3130,7 @@
                 <Spanish>%1 ml restantes</Spanish>
                 <Turkish>%1ml kaldı</Turkish>
                 <Chinese>还剩%1ml</Chinese>
+                <Japanese>残り %1ml</Japanese>
             </Key>
         </Container>
         <Container name="// IV/IO Actions //">
@@ -2921,6 +3146,7 @@
                 <Spanish>Insertar IV 16G (superior)</Spanish>
                 <Turkish>16g IV yerleştir (üst)</Turkish>
                 <Chinese>置入16g静脉导管（上段）</Chinese>
+                <Japanese>16g IVを挿入(上)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Upper">
                 <English>Remove 16g IV (Upper)</English>
@@ -2934,6 +3160,7 @@
                 <Spanish>Retirar IV 16G (superior)</Spanish>
                 <Turkish>16g IV’yi çıkar (üst)</Turkish>
                 <Chinese>拔除16g静脉导管（上段）</Chinese>
+                <Japanese>16g IVを除去(上)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Middle">
                 <English>Insert 16g IV (Middle)</English>
@@ -2947,6 +3174,7 @@
                 <Spanish>Insertar IV 16G (medio)</Spanish>
                 <Turkish>16g IV yerleştir (orta)</Turkish>
                 <Chinese>置入16g静脉导管（中段）</Chinese>
+                <Japanese>16g IVを挿入(中)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Middle">
                 <English>Remove 16g IV (Middle)</English>
@@ -2960,6 +3188,7 @@
                 <Spanish>Retirar IV 16G (medio)</Spanish>
                 <Turkish>16g IV’yi çıkar (orta)</Turkish>
                 <Chinese>拔除16g静脉导管（中段）</Chinese>
+                <Japanese>16g IVを除去(中)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Lower">
                 <English>Insert 16g IV (Lower)</English>
@@ -2973,6 +3202,7 @@
                 <Spanish>Insertar IV 16G (inferior)</Spanish>
                 <Turkish>16g IV yerleştir (alt)</Turkish>
                 <Chinese>置入16g静脉导管（下段）</Chinese>
+                <Japanese>16g IVを挿入(下)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Lower">
                 <English>Remove 16g IV (Lower)</English>
@@ -2986,6 +3216,7 @@
                 <Spanish>Retirar IV 16G (inferior)</Spanish>
                 <Turkish>16g IV’yi çıkar (alt)</Turkish>
                 <Chinese>拔除16g静脉导管（下段）</Chinese>
+                <Japanese>16g IVを除去(下)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_16_Progress">
                 <English>Inserting 16g IV...</English>
@@ -2999,6 +3230,7 @@
                 <Spanish>Insertando IV 16G...</Spanish>
                 <Turkish>16g IV yerleştiriliyor…</Turkish>
                 <Chinese>正在置入16g静脉导管…</Chinese>
+                <Japanese>16g IVを挿入中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_16_Progress">
                 <English>Removing 16g IV...</English>
@@ -3012,6 +3244,7 @@
                 <Spanish>Retirando IV 16G...</Spanish>
                 <Turkish>16g IV çıkarılıyor…</Turkish>
                 <Chinese>正在拔除16g静脉导管…</Chinese>
+                <Japanese>16g IVを除去中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Upper">
                 <English>Insert 14g IV (Upper)</English>
@@ -3025,6 +3258,7 @@
                 <Spanish>Insertar IV 14G (superior)</Spanish>
                 <Turkish>14g IV yerleştir (üst)</Turkish>
                 <Chinese>置入14g静脉导管（上段）</Chinese>
+                <Japanese>14g IVを挿入(上)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Upper">
                 <English>Remove 14g IV (Upper)</English>
@@ -3038,6 +3272,7 @@
                 <Spanish>Retirar IV 14G (superior)</Spanish>
                 <Turkish>14g IV’yi çıkar (üst)</Turkish>
                 <Chinese>拔除14g静脉导管（上段）</Chinese>
+                <Japanese>14g IVを除去(上)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Middle">
                 <English>Insert 14g IV (Middle)</English>
@@ -3051,6 +3286,7 @@
                 <Spanish>Insertar IV 14G (medio)</Spanish>
                 <Turkish>14g IV yerleştir (orta)</Turkish>
                 <Chinese>置入14g静脉导管（中段）</Chinese>
+                <Japanese>14g IVを挿入(中)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Middle">
                 <English>Remove 14g IV (Middle)</English>
@@ -3064,6 +3300,7 @@
                 <Spanish>Retirar IV 14G (medio)</Spanish>
                 <Turkish>14g IV’yi çıkar (orta)</Turkish>
                 <Chinese>拔除14g静脉导管（中段）</Chinese>
+                <Japanese>14g IVを除去(中)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Lower">
                 <English>Insert 14g IV (Lower)</English>
@@ -3077,6 +3314,7 @@
                 <Spanish>Insertar IV 14G (inferior)</Spanish>
                 <Turkish>14g IV yerleştir (alt)</Turkish>
                 <Chinese>置入14g静脉导管（下段）</Chinese>
+                <Japanese>14g IVを挿入(下)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Lower">
                 <English>Remove 14g IV (Lower)</English>
@@ -3090,6 +3328,7 @@
                 <Spanish>Retirar IV 14G (inferior)</Spanish>
                 <Turkish>14g IV’yi çıkar (alt)</Turkish>
                 <Chinese>拔除14g静脉导管（下段）</Chinese>
+                <Japanese>14g IVを除去(下)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIV_14_Progress">
                 <English>Inserting 14g IV...</English>
@@ -3103,6 +3342,7 @@
                 <Spanish>Insertando IV 14G...</Spanish>
                 <Turkish>14g IV yerleştiriliyor…</Turkish>
                 <Chinese>正在置入14g静脉导管…</Chinese>
+                <Japanese>14g IVを挿入中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIV_14_Progress">
                 <English>Removing 14g IV...</English>
@@ -3116,6 +3356,7 @@
                 <Spanish>Retirando IV 14G...</Spanish>
                 <Turkish>14g IV çıkarılıyor…</Turkish>
                 <Chinese>正在拔除14g静脉导管…</Chinese>
+                <Japanese>14g IVを除去中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_FAST1">
                 <English>Insert FAST1 IO</English>
@@ -3129,6 +3370,7 @@
                 <Spanish>Insertar IO FAST1</Spanish>
                 <Turkish>FAST1 IO yerleştir</Turkish>
                 <Chinese>置入FAST1骨内导管</Chinese>
+                <Japanese>FAST1 IOを挿入</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_FAST1_Progress">
                 <English>Inserting FAST1 IO...</English>
@@ -3142,6 +3384,7 @@
                 <Spanish>Insertando IO FAST1...</Spanish>
                 <Turkish>FAST1 IO yerleştiriliyor…</Turkish>
                 <Chinese>正在置入FAST1骨内导管…</Chinese>
+                <Japanese>FAST1 IOを挿入中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_FAST1">
                 <English>Remove FAST1 IO</English>
@@ -3155,6 +3398,7 @@
                 <Spanish>Retirar IO FAST1</Spanish>
                 <Turkish>FAST1 IO’yu çıkar</Turkish>
                 <Chinese>置入FAST1骨内导管</Chinese>
+                <Japanese>FAST1 IOを除去</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_FAST1_Progress">
                 <English>Removing FAST1 IO...</English>
@@ -3168,6 +3412,7 @@
                 <Spanish>Retirando IO FAST1...</Spanish>
                 <Turkish>FAST1 IO çıkarılıyor…</Turkish>
                 <Chinese>正在拔除FAST1骨内导管…</Chinese>
+                <Japanese>FAST1 IOを除去中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_EZ">
                 <English>Insert EZ-IO</English>
@@ -3181,6 +3426,7 @@
                 <Spanish>Insertar EZ-IO</Spanish>
                 <Turkish>EZ-IO yerleştir</Turkish>
                 <Chinese>置入EZ-IO骨内导管</Chinese>
+                <Japanese>EZ-IOを挿入</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InsertIO_EZ_Progress">
                 <English>Inserting EZ-IO...</English>
@@ -3194,6 +3440,7 @@
                 <Spanish>Insertando EZ-IO...</Spanish>
                 <Turkish>EZ-IO yerleştiriliyor…</Turkish>
                 <Chinese>正在置入EZ-IO骨内导管…</Chinese>
+                <Japanese>EZ-IOを挿入中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_EZ">
                 <English>Remove EZ-IO</English>
@@ -3207,6 +3454,7 @@
                 <Spanish>Retirar EZ-IO</Spanish>
                 <Turkish>EZ-IO’yu çıkar</Turkish>
                 <Chinese>拔除EZ-IO骨内导管</Chinese>
+                <Japanese>EZ-IOを除去</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_RemoveIO_EZ_Progress">
                 <English>Removing EZ-IO...</English>
@@ -3220,6 +3468,7 @@
                 <Spanish>Retirando EZ-IO...</Spanish>
                 <Turkish>EZ-IO çıkarılıyor…</Turkish>
                 <Chinese>正在拔除EZ-IO骨内导管…</Chinese>
+                <Japanese>EZ-IOを除去中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Upper">
                 <English>Upper</English>
@@ -3233,6 +3482,7 @@
                 <Spanish>Superior</Spanish>
                 <Turkish>Üst</Turkish>
                 <Chinese>上段</Chinese>
+                <Japanese>上</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Middle">
                 <English>Middle</English>
@@ -3246,6 +3496,7 @@
                 <Spanish>Medio</Spanish>
                 <Turkish>Orta</Turkish>
                 <Chinese>中段</Chinese>
+                <Japanese>中</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Lower">
                 <English>Lower</English>
@@ -3259,6 +3510,7 @@
                 <Spanish>Inferior</Spanish>
                 <Turkish>Alt</Turkish>
                 <Chinese>下段</Chinese>
+                <Japanese>下</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Already">
                 <English>Patient already has IV in the %1 (%2)</English>
@@ -3272,6 +3524,7 @@
                 <Spanish>El paciente ya tiene acceso IV en %1 (%2)</Spanish>
                 <Turkish>Hastada %1 (%2) üzerinde zaten IV var</Turkish>
                 <Chinese>患者%1（%2）上已有静脉导管</Chinese>
+                <Japanese>患者はすでに　%1(%2)　にIVが入っている</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_Blocked_PressureCuff">
                 <English>IV placement blocked by applied pressure cuff</English>
@@ -3284,6 +3537,7 @@
                 <French>La mise en place d'un cathéter IV est bloqué par le brassard tensiomètre</French>
                 <Polish>Założenie IV niemożliwe przez obecność ciśnieniomierza</Polish>
                 <Chinese>已绑有血压袖带，静脉置入受阻</Chinese>
+                <Japanese>装着された圧迫カフによりIV挿入は妨げられている</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IO_Already">
                 <English>Patient already has IO in the %1</English>
@@ -3297,6 +3551,7 @@
                 <Spanish>El paciente ya tiene acceso IO en %1</Spanish>
                 <Turkish>Hastada %1 üzerinde zaten IO var</Turkish>
                 <Chinese>患者%1上已有骨内导管</Chinese>
+                <Japanese>患者はすでに　%1　にIOが入っている</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_FailedToLocateVein">
                 <English>Failed to locate vein</English>
@@ -3310,6 +3565,7 @@
                 <Spanish>No se pudo localizar la vena</Spanish>
                 <Turkish>Damar bulunamadı</Turkish>
                 <Chinese>未定位到静脉</Chinese>
+                <Japanese>静脈の確保に失敗した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_IV_BodyPartTooDamaged">
                 <English>Body part too damaged</English>
@@ -3323,6 +3579,7 @@
                 <Spanish>Parte del cuerpo demasiado dañada</Spanish>
                 <Turkish>Vücut bölgesi çok hasarlı</Turkish>
                 <Chinese>身体部位损伤过重</Chinese>
+                <Japanese>部位の損傷が大きすぎる</Japanese>
             </Key>
         </Container>
         <Container name="// Inspect IV Action //">
@@ -3338,6 +3595,7 @@
                 <Spanish>Inspeccionar catéter IV (superior)</Spanish>
                 <Turkish>IV kateterini incele (üst)</Turkish>
                 <Chinese>检查静脉导管（上段）</Chinese>
+                <Japanese>IVカテーテルを確認(上)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Middle">
                 <English>Inspect IV Catheter (Middle)</English>
@@ -3351,6 +3609,7 @@
                 <Spanish>Inspeccionar catéter IV (medio)</Spanish>
                 <Turkish>IV kateterini incele (orta)</Turkish>
                 <Chinese>检查静脉导管（中段）</Chinese>
+                <Japanese>IVカテーテルを確認(中)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Lower">
                 <English>Inspect IV Catheter (Lower)</English>
@@ -3364,6 +3623,7 @@
                 <Spanish>Inspeccionar catéter IV (inferior)</Spanish>
                 <Turkish>IV kateterini incele (alt)</Turkish>
                 <Chinese>检查静脉导管（下段）</Chinese>
+                <Japanese>IVカテーテルを確認(下)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Progress">
                 <English>Inspecting IV Catheter...</English>
@@ -3377,6 +3637,7 @@
                 <Spanish>Inspeccionando catéter IV...</Spanish>
                 <Turkish>IV kateteri inceleniyor…</Turkish>
                 <Chinese>正在检查静脉导管…</Chinese>
+                <Japanese>IVカテーテルを確認中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Clear">
                 <English>IV Catheter is clear</English>
@@ -3390,6 +3651,7 @@
                 <Spanish>Catéter IV limpio</Spanish>
                 <Turkish>IV kateteri açık</Turkish>
                 <Chinese>静脉导管通畅</Chinese>
+                <Japanese>IVカテーテルは開通している</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Clear_Short">
                 <English>Clear</English>
@@ -3403,6 +3665,7 @@
                 <Spanish>Limpio</Spanish>
                 <Turkish>Açık</Turkish>
                 <Chinese>通畅</Chinese>
+                <Japanese>Clear</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow">
                 <English>IV Catheter has normal flow</English>
@@ -3416,6 +3679,7 @@
                 <Spanish>Catéter IV con flujo normal</Spanish>
                 <Turkish>IV kateteri normal akışa sahip</Turkish>
                 <Chinese>静脉导管输液通畅</Chinese>
+                <Japanese>IVカテーテルの流れは正常</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NormalFlow_Short">
                 <English>Normal flow</English>
@@ -3429,6 +3693,7 @@
                 <Spanish>Flujo normal</Spanish>
                 <Turkish>Normal akış</Turkish>
                 <Chinese>输液通畅</Chinese>
+                <Japanese>正常流量</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NoFlow">
                 <English>IV Catheter has no flow</English>
@@ -3442,6 +3707,7 @@
                 <Spanish>Catéter IV sin flujo</Spanish>
                 <Turkish>IV kateterinde akış yok</Turkish>
                 <Chinese>静脉导管无流量</Chinese>
+                <Japanese>IVカテーテルに流れがない</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_NoFlow_Short">
                 <English>No flow</English>
@@ -3455,6 +3721,7 @@
                 <Spanish>Sin flujo</Spanish>
                 <Turkish>Akış yok</Turkish>
                 <Chinese>无流量</Chinese>
+                <Japanese>流れなし</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Swelling">
                 <English>Swelling on insertion site</English>
@@ -3468,6 +3735,7 @@
                 <Spanish>Hinchazón en sitio de inserción</Spanish>
                 <Turkish>Giriş yerinde şişlik</Turkish>
                 <Chinese>置管部位出现肿胀</Chinese>
+                <Japanese>挿入部位の腫脹</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_Swelling_Short">
                 <English>noticable swelling</English>
@@ -3481,6 +3749,7 @@
                 <Spanish>Hinchazón notable</Spanish>
                 <Turkish>fark edilir şişlik</Turkish>
                 <Chinese>明显肿胀</Chinese>
+                <Japanese>明らかな腫脹</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_InspectIV_ActionLog">
                 <English>inspected IV Catheter</English>
@@ -3494,6 +3763,7 @@
                 <Spanish>Catéter IV inspeccionado</Spanish>
                 <Turkish>IV kateteri incelendi</Turkish>
                 <Chinese>已置入静脉导管</Chinese>
+                <Japanese>IVカテーテルを確認した</Japanese>
             </Key>
         </Container>
         <Container name="// Pressure Cuff Action //">
@@ -3509,6 +3779,7 @@
                 <Spanish>El paciente ya tiene manguito de presión en %1</Spanish>
                 <Turkish>Hastada %1 üzerinde zaten tansiyon manşonu var</Turkish>
                 <Chinese>患者%1上已绑有血压袖带</Chinese>
+                <Japanese>患者はすでに %1 に圧迫カフを装着している</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_PressureCuff_Blocked_IV">
                 <English>Pressure cuff placement blocked by IV</English>
@@ -3521,6 +3792,7 @@
                 <French>Le brassard tensiomètre est bloqué par le cathéter IV</French>
                 <Polish>Załorzenie ciśnieniomierza niemożliwe przez IV</Polish>
                 <Chinese>静脉导管阻挡血压袖带</Chinese>
+                <Japanese>IVにより圧迫カフの装着は妨げられている</Japanese>
             </Key>
         </Container>
         <Container name="// Syringe Actions //">
@@ -3536,6 +3808,7 @@
                 <Spanish>Desechar</Spanish>
                 <Turkish>At</Turkish>
                 <Chinese>丢弃</Chinese>
+                <Japanese>廃棄</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Discard_Complete">
                 <English>Discarded syringe contents</English>
@@ -3549,6 +3822,7 @@
                 <Spanish>Contenido de jeringa desechado</Spanish>
                 <Turkish>Şırınga içeriği atıldı</Turkish>
                 <Chinese>已丢弃注射器内容物</Chinese>
+                <Japanese>注射器の内容物を廃棄した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Discard_Progress">
                 <English>Discarding %1 from %2 syringe...</English>
@@ -3562,6 +3836,7 @@
                 <Spanish>Desechando %1 de jeringa %2...</Spanish>
                 <Turkish>%2 şırıngasından %1 atılıyor…</Turkish>
                 <Chinese>正在丢弃%2注射器中的%1…</Chinese>
+                <Japanese>%2 注射器から %1 を廃棄中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Draw">
                 <English>Draw</English>
@@ -3575,6 +3850,7 @@
                 <Spanish>Aspirar</Spanish>
                 <Turkish>Çek</Turkish>
                 <Chinese>抽取</Chinese>
+                <Japanese>吸い上げる</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawn">
                 <English>%1 Drawn</English>
@@ -3588,6 +3864,7 @@
                 <Spanish>%1 aspirado</Spanish>
                 <Turkish>%1 çekildi</Turkish>
                 <Chinese>%1已抽取</Chinese>
+                <Japanese>%1 を吸い上げた</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Push">
                 <English>Push %1 (%2)</English>
@@ -3601,6 +3878,7 @@
                 <Spanish>Empujar %1 (%2)</Spanish>
                 <Turkish>%1 it (%2)</Turkish>
                 <Chinese>推注%1（%2）</Chinese>
+                <Japanese>%1 (%2) を押し込む</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Pushing">
                 <English>Pushing %1...</English>
@@ -3614,6 +3892,7 @@
                 <Spanish>Empujando %1...</Spanish>
                 <Turkish>%1 itiliyor…</Turkish>
                 <Chinese>正在推注%1…</Chinese>
+                <Japanese>%1 を押し込み中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Inject">
                 <English>Inject %1 (%2)</English>
@@ -3627,6 +3906,7 @@
                 <Spanish>Inyectar %1 (%2)</Spanish>
                 <Turkish>%1 enjekte et (%2)</Turkish>
                 <Chinese>注射%1（%2）</Chinese>
+                <Japanese>%1 (%2) を注入</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Injecting">
                 <English>Injecting %1...</English>
@@ -3640,6 +3920,7 @@
                 <Spanish>Inyectando %1...</Spanish>
                 <Turkish>%1 enjekte ediliyor…</Turkish>
                 <Chinese>正在注射%1…</Chinese>
+                <Japanese>%1 を注入中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawing">
                 <English>Drawing %1...</English>
@@ -3652,6 +3933,7 @@
                 <French>Prelèvement %1...</French>
                 <Polish>Pobieranie %1...</Polish>
                 <Chinese>正在抽取%1…</Chinese>
+                <Japanese>%1 を吸い上げ中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawingInto">
                 <English>Drawing %1 (%2) into %3ml syringe</English>
@@ -3665,6 +3947,7 @@
                 <Spanish>Aspirando %1 (%2) en jeringa de %3 ml</Spanish>
                 <Turkish>%1 (%2) %3ml şırıngaya çekiliyor</Turkish>
                 <Chinese>正在将%1（%2）抽入%3ml注射器</Chinese>
+                <Japanese>%1 (%2) を %3 ml注射器に吸い上げ中</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_MovePlunger">
                 <English>Move Plunger</English>
@@ -3678,6 +3961,7 @@
                 <Spanish>Mover émbolo</Spanish>
                 <Turkish>Pistonu hareket ettir</Turkish>
                 <Chinese>移动活塞</Chinese>
+                <Japanese>プランジャーを動かす</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_PushFailed">
                 <English>Medication push failed&lt;br/&gt;Patient has no IV access on the %1</English>
@@ -3691,6 +3975,7 @@
                 <Spanish>Empuje de medicación fallido&lt;br/&gt;El paciente no tiene acceso IV en %1</Spanish>
                 <Turkish>İlaç itme başarısız&lt;br/&gt;Hastada %1 üzerinde IV erişimi yok</Turkish>
                 <Chinese>药物推注失败&lt;br/&gt;患者%1无静脉通路</Chinese>
+                <Japanese>薬剤注入に失敗した&lt;br/&gt;患者の %1 にはIVアクセスがない</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Injected">
                 <English>Injected</English>
@@ -3704,6 +3989,7 @@
                 <Spanish>Inyectado</Spanish>
                 <Turkish>Enjekte edildi</Turkish>
                 <Chinese>已注射</Chinese>
+                <Japanese>注入した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Pushed">
                 <English>Pushed</English>
@@ -3717,6 +4003,7 @@
                 <Spanish>Empujado</Spanish>
                 <Turkish>İtildi</Turkish>
                 <Chinese>已推注</Chinese>
+                <Japanese>押し込んだ</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawPush">
                 <English>Draw &amp; Push</English>
@@ -3730,6 +4017,7 @@
                 <Spanish>Aspirar e empujar</Spanish>
                 <Turkish>Çek ve it</Turkish>
                 <Chinese>抽取并推注</Chinese>
+                <Japanese>吸い上げて押し込む</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_DrawInject">
                 <English>Draw &amp; Inject</English>
@@ -3743,6 +4031,7 @@
                 <Spanish>Aspirar e inyectar</Spanish>
                 <Turkish>Çek ve enjekte et</Turkish>
                 <Chinese>抽取并注射</Chinese>
+                <Japanese>吸い上げて注入</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_NoMedicationSelected">
                 <English>No Medication Selected</English>
@@ -3756,6 +4045,7 @@
                 <Spanish>No hay medicación seleccionada</Spanish>
                 <Turkish>Seçili ilaç yok</Turkish>
                 <Chinese>未选择药物</Chinese>
+                <Japanese>薬剤が選択されていない</Japanese>
             </Key>
         </Container>
         <Container name="// AED Actions //">
@@ -3771,6 +4061,7 @@
                 <Spanish>Ver monitor</Spanish>
                 <Turkish>Monitörü görüntüle</Turkish>
                 <Chinese>查看监护仪</Chinese>
+                <Japanese>モニターを見る</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ViewMonitor">
                 <English>View AED Monitor</English>
@@ -3784,6 +4075,7 @@
                 <Spanish>Ver monitor DEA</Spanish>
                 <Turkish>AED monitörünü görüntüle</Turkish>
                 <Chinese>查看AED监护仪</Chinese>
+                <Japanese>AEDモニターを見る</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ApplyPads">
                 <English>Apply AED Pads</English>
@@ -3797,6 +4089,7 @@
                 <Spanish>Aplicar electrodos DEA</Spanish>
                 <Turkish>AED pedlerini uygula</Turkish>
                 <Chinese>粘贴AED电极片</Chinese>
+                <Japanese>AEDパッドを装着</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ApplyPads_Progress">
                 <English>Applying AED Pads...</English>
@@ -3810,6 +4103,7 @@
                 <Spanish>Aplicando electrodos DEA...</Spanish>
                 <Turkish>AED pedleri uygulanıyor…</Turkish>
                 <Chinese>正在粘贴AED电极片…</Chinese>
+                <Japanese>AEDパッドを装着中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_RemovePads">
                 <English>Remove AED Pads</English>
@@ -3823,6 +4117,7 @@
                 <Spanish>Retirar electrodos DEA</Spanish>
                 <Turkish>AED pedlerini çıkar</Turkish>
                 <Chinese>揭下AED电极片</Chinese>
+                <Japanese>AEDパッドを取り外す</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_RemovePads_Progress">
                 <English>Removing AED Pads...</English>
@@ -3836,6 +4131,7 @@
                 <Spanish>Retirando electrodos DEA...</Spanish>
                 <Turkish>AED pedleri çıkarılıyor…</Turkish>
                 <Chinese>正在揭下AED电极片</Chinese>
+                <Japanese>AEDパッドを取り外し中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPulseOximeter">
                 <English>Connect AED Pulse Oximeter</English>
@@ -3849,6 +4145,7 @@
                 <Spanish>Conectar oxímetro DEA</Spanish>
                 <Turkish>AED pulse oksimetresini bağla</Turkish>
                 <Chinese>连接AED血氧仪</Chinese>
+                <Japanese>AEDパルスオキシメーターを接続</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPulseOximeter_Progress">
                 <English>Connecting AED Pulse Oximeter...</English>
@@ -3862,6 +4159,7 @@
                 <Spanish>Conectando oxímetro DEA...</Spanish>
                 <Turkish>AED pulse oksimetresi bağlanıyor…</Turkish>
                 <Chinese>正在连接AED血氧仪…</Chinese>
+                <Japanese>AEDパルスオキシメーターを接続中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPulseOximeter">
                 <English>Disconnect AED Pulse Oximeter</English>
@@ -3876,6 +4174,7 @@
                 <Turkish>AED pulse oksimetresini ayır
 </Turkish>
                 <Chinese>断开AED血氧仪</Chinese>
+                <Japanese>AEDパルスオキシメーターを切断</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPulseOximeter_Progress">
                 <English>Disconnecting AED Pulse Oximeter...</English>
@@ -3889,6 +4188,7 @@
                 <Spanish>Desconectando oxímetro DEA...</Spanish>
                 <Turkish>AED pulse oksimetresi ayrılıyor…</Turkish>
                 <Chinese>正在断开AED血氧仪…</Chinese>
+                <Japanese>AEDパルスオキシメーターを切断中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPressureCuff">
                 <English>Connect AED Pressure Cuff</English>
@@ -3902,6 +4202,7 @@
                 <Spanish>Conectar manguito DEA</Spanish>
                 <Turkish>AED tansiyon manşonunu bağla</Turkish>
                 <Chinese>连接AED血压袖带</Chinese>
+                <Japanese>AED圧迫カフを接続</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectPressureCuff_Progress">
                 <English>Connecting AED Pressure Cuff...</English>
@@ -3915,6 +4216,7 @@
                 <Spanish>Conectando manguito DEA...</Spanish>
                 <Turkish>AED tansiyon manşonu bağlanıyor…</Turkish>
                 <Chinese>正在连接AED血压袖带…</Chinese>
+                <Japanese>AED圧迫カフを接続中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPressureCuff">
                 <English>Disconnect AED Pressure Cuff</English>
@@ -3928,6 +4230,7 @@
                 <Spanish>Desconectar manguito DEA</Spanish>
                 <Turkish>AED tansiyon manşonunu ayır</Turkish>
                 <Chinese>断开AED血压袖带</Chinese>
+                <Japanese>AED圧迫カフを切断</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectPressureCuff_Progress">
                 <English>Disconnecting AED Pressure Cuff...</English>
@@ -3941,6 +4244,7 @@
                 <Spanish>Desconectando manguito DEA...</Spanish>
                 <Turkish>AED tansiyon manşonu ayrılıyor…</Turkish>
                 <Chinese>正在断开AED血压袖带…</Chinese>
+                <Japanese>AED圧迫カフを切断中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectCapnograph">
                 <English>Connect AED Capnograph</English>
@@ -3954,6 +4258,7 @@
                 <Spanish>Conectar capnógrafo DEA</Spanish>
                 <Turkish>AED kapnografını bağla</Turkish>
                 <Chinese>连接AED二氧化碳监测仪</Chinese>
+                <Japanese>AEDカプノグラフを接続</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ConnectCapnograph_Progress">
                 <English>Connecting AED Capnograph...</English>
@@ -3967,6 +4272,7 @@
                 <Spanish>Conectando capnógrafo DEA...</Spanish>
                 <Turkish>AED kapnografı bağlanıyor…</Turkish>
                 <Chinese>正在连接AED二氧化碳监测仪…</Chinese>
+                <Japanese>AEDカプノグラフを接続中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectCapnograph">
                 <English>Disconnect AED Capnograph</English>
@@ -3980,6 +4286,7 @@
                 <Spanish>Desconectar capnógrafo DEA</Spanish>
                 <Turkish>AED kapnografını ayır</Turkish>
                 <Chinese>断开AED二氧化碳监测仪</Chinese>
+                <Japanese>AEDカプノグラフを切断</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_DisconnectCapnograph_Progress">
                 <English>Disconnecting AED Capnograph...</English>
@@ -3993,6 +4300,7 @@
                 <Spanish>Desconectando capnógrafo DEA...</Spanish>
                 <Turkish>AED kapnografı ayrılıyor…</Turkish>
                 <Chinese>正在断开AED二氧化碳监测仪…</Chinese>
+                <Japanese>AEDカプノグラフを切断中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_AnalyzeRhythm">
                 <English>Analyze Rhythm</English>
@@ -4006,6 +4314,7 @@
                 <Spanish>Analizar ritmo</Spanish>
                 <Turkish>Ritmi analiz et</Turkish>
                 <Chinese>分析心律</Chinese>
+                <Japanese>心拍リズムを解析</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_ManualCharge">
                 <English>Charge AED</English>
@@ -4019,6 +4328,7 @@
                 <Spanish>Cargar DEA</Spanish>
                 <Turkish>AED’yi şarj et</Turkish>
                 <Chinese>给AED充电</Chinese>
+                <Japanese>AEDを充電</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Shock">
                 <English>Administer Shock</English>
@@ -4032,6 +4342,7 @@
                 <Spanish>Administrar descarga</Spanish>
                 <Turkish>Şok uygula</Turkish>
                 <Chinese>执行电击</Chinese>
+                <Japanese>電気ショックを実施</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_CancelCharge">
                 <English>Cancel Charge</English>
@@ -4045,6 +4356,7 @@
                 <Spanish>Cancelar carga</Spanish>
                 <Turkish>Şarjı iptal et</Turkish>
                 <Chinese>取消充电</Chinese>
+                <Japanese>充電をキャンセル</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_MeasureBP">
                 <English>Measure Blood Pressure (AED)</English>
@@ -4058,6 +4370,7 @@
                 <Spanish>Medir tensión arterial (DEA)</Spanish>
                 <Turkish>Kan basıncını ölç (AED)</Turkish>
                 <Chinese>测量血压（AED）</Chinese>
+                <Japanese>血圧を測定(AED)</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Already">
                 <English>Patient already has %1 on the %2</English>
@@ -4071,6 +4384,7 @@
                 <Spanish>El paciente ya tiene %1 en %2</Spanish>
                 <Turkish>Hastada %2 üzerinde zaten %1 var</Turkish>
                 <Chinese>患者%2上已有%1</Chinese>
+                <Japanese>患者はすでに %2 に %1 を装着している</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_%1_Disconnected">
                 <English>%1 disconnected AED</English>
@@ -4084,6 +4398,7 @@
                 <Spanish>%1 desconectó DEA</Spanish>
                 <Turkish>%1 AED bağlantısını kesti</Turkish>
                 <Chinese>%1断开了AED连接</Chinese>
+                <Japanese>%1 がAEDを切断した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PatientDisconnected">
                 <English>Patient Disconnected</English>
@@ -4097,6 +4412,7 @@
                 <Spanish>Paciente desconectado</Spanish>
                 <Turkish>Hasta bağlantısı kesildi</Turkish>
                 <Chinese>患者已断开连接</Chinese>
+                <Japanese>患者との接続が切断された</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Pads">
                 <English>AED pads</English>
@@ -4110,6 +4426,7 @@
                 <Spanish>Electrodos DEA</Spanish>
                 <Turkish>AED pedleri</Turkish>
                 <Chinese>AED电极片</Chinese>
+                <Japanese>AEDパッド</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PulseOximeter">
                 <English>AED Pulse Oximeter</English>
@@ -4123,6 +4440,7 @@
                 <Spanish>Oxímetro DEA</Spanish>
                 <Turkish>AED Nabız Oksimetresi</Turkish>
                 <Chinese>AED血氧仪</Chinese>
+                <Japanese>AEDパルスオキシメーター</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_PressureCuff">
                 <English>AED Pressure Cuff</English>
@@ -4136,6 +4454,7 @@
                 <Spanish>Manguito DEA</Spanish>
                 <Turkish>AED tansiyon manşonu</Turkish>
                 <Chinese>AED血压袖带</Chinese>
+                <Japanese>AED圧迫カフ</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Capnograph">
                 <English>AED Capnograph</English>
@@ -4149,6 +4468,7 @@
                 <Spanish>Capnógrafo DEA</Spanish>
                 <Turkish>AED kapnograf</Turkish>
                 <Chinese>AED二氧化碳监测仪</Chinese>
+                <Japanese>AEDカプノグラフ</Japanese>
             </Key>
         </Container>
         <Container name="// AED Monitor //">
@@ -4164,6 +4484,7 @@
                 <Spanish>FC</Spanish>
                 <Turkish>HR</Turkish>
                 <Chinese>心率</Chinese>
+                <Japanese>HR</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_PR">
                 <English>PR</English>
@@ -4177,6 +4498,7 @@
                 <Spanish>PR</Spanish>
                 <Turkish>PR</Turkish>
                 <Chinese>脉搏</Chinese>
+                <Japanese>PR</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_SpO2">
                 <English>SpO2</English>
@@ -4190,6 +4512,7 @@
                 <Spanish>SpO2</Spanish>
                 <Turkish>SpO2</Turkish>
                 <Chinese>血氧</Chinese>
+                <Japanese>SpO2</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_CO2">
                 <English>CO2</English>
@@ -4203,6 +4526,7 @@
                 <Spanish>CO2</Spanish>
                 <Turkish>CO2</Turkish>
                 <Chinese>二氧化碳</Chinese>
+                <Japanese>CO2</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_NIBP">
                 <English>NIBP</English>
@@ -4216,6 +4540,7 @@
                 <Spanish>NIBP</Spanish>
                 <Turkish>NIBP</Turkish>
                 <Chinese>无创血压</Chinese>
+                <Japanese>NIBP</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_BP">
                 <English>BP</English>
@@ -4229,6 +4554,7 @@
                 <Spanish>PA</Spanish>
                 <Turkish>BP</Turkish>
                 <Chinese>血压</Chinese>
+                <Japanese>BP</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_RR">
                 <English>RR</English>
@@ -4242,6 +4568,7 @@
                 <Spanish>FR</Spanish>
                 <Turkish>RR</Turkish>
                 <Chinese>呼吸</Chinese>
+                <Japanese>RR</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_CPR">
                 <English>CPR Mode Toggle</English>
@@ -4255,6 +4582,7 @@
                 <Spanish>Alternar modo RCP</Spanish>
                 <Turkish>CPR modu aç/kapat</Turkish>
                 <Chinese>心肺复苏模式切换</Chinese>
+                <Japanese>CPRモード切り替え</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Analyze">
                 <English>Analyze Rhythm</English>
@@ -4268,6 +4596,7 @@
                 <Spanish>Analizar ritmo</Spanish>
                 <Turkish>Ritmi analiz et</Turkish>
                 <Chinese>分析心律</Chinese>
+                <Japanese>心拍リズムを解析</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_NIBP">
                 <English>Measure NIBP</English>
@@ -4281,6 +4610,7 @@
                 <Spanish>Medir NIBP</Spanish>
                 <Turkish>NIBP ölç</Turkish>
                 <Chinese>测量血压</Chinese>
+                <Japanese>NIBPを測定</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Alarms">
                 <English>Toggle Alarms</English>
@@ -4294,6 +4624,7 @@
                 <Spanish>Alternar alarmas</Spanish>
                 <Turkish>Alarmları aç/kapat</Turkish>
                 <Chinese>切换警报</Chinese>
+                <Japanese>アラーム切り替え</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Charge">
                 <English>Manual Charge</English>
@@ -4307,6 +4638,7 @@
                 <Spanish>Carga manual</Spanish>
                 <Turkish>Manuel şarj</Turkish>
                 <Chinese>手动充电</Chinese>
+                <Japanese>手動充電</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_Shock">
                 <English>Administer Shock</English>
@@ -4320,6 +4652,7 @@
                 <Spanish>Administrar descarga</Spanish>
                 <Turkish>Şok uygula</Turkish>
                 <Chinese>执行电击</Chinese>
+                <Japanese>電気ショックを実施</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_AED_Monitor_Button_SpeedDial">
                 <English>Speed Dial</English>
@@ -4333,6 +4666,7 @@
                 <Spanish>Marcación rápida</Spanish>
                 <Turkish>Hızlı arama</Turkish>
                 <Chinese>快捷设置</Chinese>
+                <Japanese>スピードダイヤル</Japanese>
             </Key>
         </Container>
         <Container name="// GUI //">
@@ -4348,6 +4682,7 @@
                 <Spanish>Transfundiendo solución salina [%1x]</Spanish>
                 <Turkish>Serum transfüzyonu [%1x]</Turkish>
                 <Chinese>正在输注生理盐水[%1x]</Chinese>
+                <Japanese>生理食塩水を輸液中 [%1x]</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingPlasma">
                 <English>Transfusing Plasma [%1x]</English>
@@ -4361,6 +4696,7 @@
                 <Spanish>Transfundiendo plasma [%1x]</Spanish>
                 <Turkish>Plazma transfüzyonu [%1x]</Turkish>
                 <Chinese>正在输注血浆[%1x]</Chinese>
+                <Japanese>血漿を輸液中 [%1x]</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingBlood">
                 <English>Transfusing Blood [%1x]</English>
@@ -4374,6 +4710,7 @@
                 <Spanish>Transfundiendo sangre [%1x]</Spanish>
                 <Turkish>Kan transfüzyonu [%1x]</Turkish>
                 <Chinese>正在输注血液[%1x]</Chinese>
+                <Japanese>血液を輸液中 [%1x]</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingFreshBlood">
                 <English>Transfusing Fresh Blood [%1x]</English>
@@ -4387,6 +4724,7 @@
                 <Spanish>Transfundiendo sangre fresca [%1x]</Spanish>
                 <Turkish>Taze kan transfüzyonu [%1x]</Turkish>
                 <Chinese>正在输注新鲜血液[%1x]</Chinese>
+                <Japanese>新鮮血を輸液中 [%1x]</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_CollectingBlood">
                 <English>Collecting Blood [%1x]</English>
@@ -4400,6 +4738,7 @@
                 <Spanish>Recolectando sangre [%1x]</Spanish>
                 <Turkish>Kan toplanıyor [%1x]</Turkish>
                 <Chinese>正在采集血液[%1x]</Chinese>
+                <Japanese>血液を採取中 [%1x]</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_BeganTransfusing">
                 <English>%1 began transfusing fluids (%2) into %3</English>
@@ -4413,6 +4752,7 @@
                 <Spanish>%1 inició transfusión (%2) en %3</Spanish>
                 <Turkish>%1 %3 içine sıvı transfüzyonuna başladı (%2)</Turkish>
                 <Chinese>%1开始向%3输液（%2）</Chinese>
+                <Japanese>%1 が %3 に輸液 (%2) を開始した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_MovedTransfusing">
                 <English>%1 moved fluid bag (%2) to %3</English>
@@ -4426,6 +4766,7 @@
                 <Spanish>%1 movió bolsa (%2) a %3</Spanish>
                 <Turkish>%1 sıvı torbasını (%2) %3’e taşıdı</Turkish>
                 <Chinese>%1将输液袋（%2）移动至%3</Chinese>
+                <Japanese>%1 が輸液バッグ (%2) を %3 へ移動した</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Saline_Short">
                 <English>S</English>
@@ -4439,6 +4780,7 @@
                 <Spanish>S</Spanish>
                 <Turkish>S</Turkish>
                 <Chinese>S</Chinese>
+                <Japanese>S</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Plasma_Short">
                 <English>P</English>
@@ -4452,6 +4794,7 @@
                 <Spanish>P</Spanish>
                 <Turkish>P</Turkish>
                 <Chinese>P</Chinese>
+                <Japanese>P</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_Blood_Short">
                 <English>B</English>
@@ -4465,6 +4808,7 @@
                 <Spanish>B</Spanish>
                 <Turkish>B</Turkish>
                 <Chinese>B</Chinese>
+                <Japanese>B</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FreshWholeBlood_Short">
                 <English>FWB</English>
@@ -4478,6 +4822,7 @@
                 <Spanish>FWB</Spanish>
                 <Turkish>FWB</Turkish>
                 <Chinese>FWB</Chinese>
+                <Japanese>FWB</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_GUI_TransfusingVolume_FieldBloodTransfusionKit_Short">
                 <English>FBTK</English>
@@ -4491,6 +4836,7 @@
                 <Spanish>FBTK</Spanish>
                 <Turkish>FBTK</Turkish>
                 <Chinese>FBTK</Chinese>
+                <Japanese>FBTK</Japanese>
             </Key>
         </Container>
         <Container name="// Common //">
@@ -4505,6 +4851,7 @@
                 <French>Sang</French>
                 <Polish>Krew</Polish>
                 <Chinese>血液</Chinese>
+                <Japanese>血液</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_FreshBlood">
                 <English>Fresh Blood</English>
@@ -4517,6 +4864,7 @@
                 <French>Sang Frais</French>
                 <Polish>Świerza krew</Polish>
                 <Chinese>新鲜血液</Chinese>
+                <Japanese>新鮮血</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_SwitchTargetInventory">
                 <English>Change target inventory</English>
@@ -4530,6 +4878,7 @@
                 <Spanish>Cambiar inventario objetivo</Spanish>
                 <Turkish>Hedef envanteri değiştir</Turkish>
                 <Chinese>更改目标库存</Chinese>
+                <Japanese>対象インベントリを変更</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Available">
                 <English>%1 available</English>
@@ -4543,6 +4892,7 @@
                 <Spanish>%1 disponible</Spanish>
                 <Turkish>%1 mevcut</Turkish>
                 <Chinese>%1可用</Chinese>
+                <Japanese>%1 利用可能</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_InventoryTarget">
                 <English>Target: %1</English>
@@ -4556,6 +4906,7 @@
                 <Spanish>Objetivo: %1</Spanish>
                 <Turkish>Hedef: %1</Turkish>
                 <Chinese>目标：%1</Chinese>
+                <Japanese>対象: %1</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Self">
                 <English>Self</English>
@@ -4569,6 +4920,7 @@
                 <Spanish>Propio</Spanish>
                 <Turkish>Kendin</Turkish>
                 <Chinese>自我</Chinese>
+                <Japanese>自分</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Patient">
                 <English>Patient</English>
@@ -4582,6 +4934,7 @@
                 <Spanish>Paciente</Spanish>
                 <Turkish>Hasta</Turkish>
                 <Chinese>患者</Chinese>
+                <Japanese>患者</Japanese>
             </Key>
             <Key ID="STR_ACM_Circulation_Common_Vehicle">
                 <English>Vehicle</English>
@@ -4595,6 +4948,7 @@
                 <Spanish>Vehículo</Spanish>
                 <Turkish>Araç</Turkish>
                 <Chinese>载具</Chinese>
+                <Japanese>車両</Japanese>
             </Key>
         </Container>
     </Package>

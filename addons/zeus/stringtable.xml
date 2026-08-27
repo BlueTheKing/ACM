@@ -13,6 +13,7 @@
             <Spanish>Deshacer el paro cárdiaco</Spanish>
             <Turkish>Kardiyak Arresti Sonlandır</Turkish>
             <Chinese>解除心脏停搏</Chinese>
+            <Japanese>心停止を解除</Japanese>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_ForceWakeUp">
             <English>Force Wake-up</English>
@@ -26,6 +27,7 @@
             <Spanish>Forzar a que se despierte</Spanish>
             <Turkish>Zorla Uyandır</Turkish>
             <Chinese>强制唤醒</Chinese>
+            <Japanese>強制的に覚醒</Japanese>
         </Key>
         <Key ID="STR_ACM_Zeus_Module_AssignFullHealFacility">
             <English>Assign Full Heal Facility</English>
@@ -37,6 +39,7 @@
             <French>Assigner une Structure de Soin complet</French>
             <Polish>Wyznacz placówke pełnego leczenia</Polish>
             <Chinese>指定完全治愈设施</Chinese>
+            <Japanese>完全治療施設として割り当て</Japanese>
         </Key>
         <Container name="// Set Blood Volume Module //">
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume">
@@ -51,6 +54,7 @@
                 <Spanish>Cambiar el volumen de sangre</Spanish>
                 <Turkish>Kan Hacmini Ayarla</Turkish>
                 <Chinese>设置血容量</Chinese>
+                <Japanese>血液量を設定</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_BloodVolume">
                 <English>Blood Volume</English>
@@ -64,6 +68,7 @@
                 <Spanish>Volumen de sangre</Spanish>
                 <Turkish>Kan Hacmi</Turkish>
                 <Chinese>血容量</Chinese>
+                <Japanese>血液量</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_PlasmaVolume">
                 <English>Plasma Volume</English>
@@ -77,6 +82,7 @@
                 <Spanish>Volumen de plasma</Spanish>
                 <Turkish>Plazma Hacmi</Turkish>
                 <Chinese>血浆容量</Chinese>
+                <Japanese>血漿量</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodVolume_SalineVolume">
                 <English>Saline Volume</English>
@@ -90,6 +96,7 @@
                 <Spanish>Volumen de salino</Spanish>
                 <Turkish>Serum Hacmi</Turkish>
                 <Chinese>生理盐水容量</Chinese>
+                <Japanese>生理食塩水の量</Japanese>
             </Key>
         </Container>
         <Container name="// Inflict Cardiac Arrest Module //">
@@ -105,6 +112,7 @@
                 <Spanish>Forzar un paro cárdiaco</Spanish>
                 <Turkish>Kardiyak Arrest Uygula</Turkish>
                 <Chinese>造成心脏停搏</Chinese>
+                <Japanese>心停止を発生させる</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm">
                 <English>Target Rhythm</English>
@@ -118,6 +126,7 @@
                 <Spanish>Definir el ritmo cárdiaco</Spanish>
                 <Turkish>Hedef Ritim</Turkish>
                 <Chinese>目标心律</Chinese>
+                <Japanese>目標心拍リズム</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Sinus">
                 <English>Sinus</English>
@@ -131,6 +140,7 @@
                 <Spanish>Ritmo Sinusal</Spanish>
                 <Turkish>Sinüs Ritim</Turkish>
                 <Chinese>窦性心律</Chinese>
+                <Japanese>洞調律</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Asystole">
                 <English>Asystole</English>
@@ -144,6 +154,7 @@
                 <Spanish>Asistolia</Spanish>
                 <Turkish>Asistol</Turkish>
                 <Chinese>心搏停止</Chinese>
+                <Japanese>心静止</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_VF">
                 <English>Ventricular Fibrillation</English>
@@ -157,6 +168,7 @@
                 <Spanish>Fibrilación Ventricular</Spanish>
                 <Turkish>Ventriküler Fibrilasyon</Turkish>
                 <Chinese>心室颤动</Chinese>
+                <Japanese>心室細動 (VF)</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_PVT">
                 <English>Ventricular Tachycardia</English>
@@ -170,6 +182,7 @@
                 <Spanish>Taquicardia Ventricular</Spanish>
                 <Turkish>Ventriküler Taşikardi</Turkish>
                 <Chinese>室性心动过速</Chinese>
+                <Japanese>心室頻拍 (VT)</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictCardiacArrest_TargetRhythm_Random">
                 <English>Random</English>
@@ -183,6 +196,7 @@
                 <Spanish>Aleatorio</Spanish>
                 <Turkish>Rastgele</Turkish>
                 <Chinese>随机</Chinese>
+                <Japanese>ランダム</Japanese>
             </Key>
         </Container>
         <Container name="// Inflict Chest Injury Module //">
@@ -198,6 +212,7 @@
                 <Spanish>Causar Lesión Torácica</Spanish>
                 <Turkish>Göğüs Yaralanması Uygula</Turkish>
                 <Chinese>造成胸部受伤</Chinese>
+                <Japanese>胸部損傷を発生させる</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_InjuryType">
                 <English>Injury Type</English>
@@ -211,6 +226,7 @@
                 <Spanish>Tipo de Lesión</Spanish>
                 <Turkish>Yaralanma Türü</Turkish>
                 <Chinese>受伤类型</Chinese>
+                <Japanese>負傷の種類</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Pneumothorax">
                 <English>Pneumothorax</English>
@@ -224,6 +240,7 @@
                 <Spanish>Neumotórax</Spanish>
                 <Turkish>Pnömotoraks</Turkish>
                 <Chinese>气胸</Chinese>
+                <Japanese>気胸</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionPneumothorax">
                 <English>Tension Pneumothorax</English>
@@ -237,6 +254,7 @@
                 <Spanish>Neumotórax a Tensión</Spanish>
                 <Turkish>Gergin Pnömotoraks</Turkish>
                 <Chinese>张力性气胸</Chinese>
+                <Japanese>緊張性気胸</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_Hemothorax">
                 <English>Hemothorax</English>
@@ -250,6 +268,7 @@
                 <Spanish>Hemotórax</Spanish>
                 <Turkish>Hemotoraks</Turkish>
                 <Chinese>血胸</Chinese>
+                <Japanese>血胸</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_InflictChestInjury_TensionHemothorax">
                 <English>Tension Hemothorax</English>
@@ -263,6 +282,7 @@
                 <Spanish>Hemotórax a Tensión</Spanish>
                 <Turkish>Gergin Hemotoraks</Turkish>
                 <Chinese>张力性血胸</Chinese>
+                <Japanese>緊張性血胸</Japanese>
             </Key>
         </Container>
         <Container name="// Give Pain Module //">
@@ -278,6 +298,7 @@
                 <Spanish>Aplicar Dolor</Spanish>
                 <Turkish>Ağrı Ver</Turkish>
                 <Chinese>给予疼痛</Chinese>
+                <Japanese>痛みを与える</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_GivePain_PainAmount">
                 <English>Pain Amount</English>
@@ -291,6 +312,7 @@
                 <Spanish>Nivel de Dolor</Spanish>
                 <Turkish>Ağrı Miktarı</Turkish>
                 <Chinese>疼痛值</Chinese>
+                <Japanese>痛みのレベル</Japanese>
             </Key>
         </Container>
         <Container name="// Set Oxygen Module //">
@@ -306,6 +328,7 @@
                 <Spanish>Ajustar Oxígeno</Spanish>
                 <Turkish>Oksijeni Ayarla</Turkish>
                 <Chinese>设置血氧</Chinese>
+                <Japanese>酸素量を設定</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetOxygen_OxygenLevel">
                 <English>Oxygen Level</English>
@@ -319,6 +342,7 @@
                 <Spanish>Nivel de Oxígeno</Spanish>
                 <Turkish>Oksijen Seviyesi</Turkish>
                 <Chinese>血氧等级</Chinese>
+                <Japanese>酸素レベル</Japanese>
             </Key>
         </Container>
         <Container name="// Set Blood Type Module //">
@@ -334,6 +358,7 @@
                 <Turkish>Kan Grubunu Ayarla</Turkish>
                 <Polish>Ustaw grupe krwi</Polish>
                 <Chinese>设置血型</Chinese>
+                <Japanese>血液型を設定</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_SetBloodType_List">
                 <English>Blood Type List</English>
@@ -347,6 +372,7 @@
                 <Turkish>Kan Grubu Listesi</Turkish>
                 <Polish>Lista grup krwi</Polish>
                 <Chinese>血型列表</Chinese>
+                <Japanese>血液型一覧</Japanese>
             </Key>
         </Container>
         <Container name="// Plot Armor Module //">
@@ -360,6 +386,7 @@
                 <French>Activer/désactiver L'armure en scénarium</French>
                 <Polish>Włącz plot armor </Polish>
                 <Chinese>切换主角光环</Chinese>
+                <Japanese>ユニットのバフのオン/オフ</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_PlotArmor_Enabled">
                 <English>Plot armor enabled on unit</English>
@@ -371,6 +398,7 @@
                 <French>La protection du scénario à été activé sur l'unité</French>
                 <Polish>Plot armor załączony na jednostce</Polish>
                 <Chinese>单位已启用剧情护甲</Chinese>
+                <Japanese>ユニットにバフが適用されました</Japanese>
             </Key>
             <Key ID="STR_ACM_Zeus_Module_PlotArmor_Disabled">
                 <English>Plot armor disabled on unit</English>
@@ -382,6 +410,7 @@
                 <French>La protection du scénario à été désactivé sur l'unité</French>
                 <Polish>Plot armor wyłączony na jednostce</Polish>
                 <Chinese>单位已禁用剧情护甲</Chinese>
+                <Japanese>ユニットのバフが無効化されました</Japanese>
             </Key>
         </Container>
     </Package>

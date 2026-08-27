@@ -13,6 +13,7 @@
             <Spanish>ACM: Evacuación</Spanish>
             <Turkish>ACM: Tahliye</Turkish>
             <Chinese>ACM: 后送</Chinese>
+            <Japanese>ACM: 後送</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_Tickets">
             <English>Tickets</English>
@@ -26,6 +27,7 @@
             <Spanish>Tickets</Spanish>
             <Turkish>Biletler</Turkish>
             <Chinese>票数</Chinese>
+            <Japanese>チケット</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_Category_CasualtyConversion">
             <English>Casualty Conversion</English>
@@ -39,6 +41,7 @@
             <Spanish>Conversión de Herido</Spanish>
             <Turkish>Zayiat Dönüştürme</Turkish>
             <Chinese>伤亡转化</Chinese>
+            <Japanese>負傷者数</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Enable">
             <English>Enable Evacuation Addon</English>
@@ -52,6 +55,7 @@
             <Spanish>Habilitar Addon de Evacuación</Spanish>
             <Turkish>Tahliye Eklentisini Etkinleştir</Turkish>
             <Chinese>启用后送模组</Chinese>
+            <Japanese>後送機能を有効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Enable_Desc">
             <English>Enable Evacuation Addon functionality, respawning and tickets must be enabled on mission to work</English>
@@ -65,6 +69,7 @@
             <Spanish>Habilita la funcionalidad del Addon de Evacuación; deben estar activados el respawn y los tickets en la misión para que funcione.</Spanish>
             <Turkish>Tahliye eklentisi işlevini etkinleştirir; çalışması için görevde yeniden doğma ve biletlerin etkin olması gerekir</Turkish>
             <Chinese>启用后送模组功能。要使此功能生效，任务中必须启用重生和票数</Chinese>
+            <Japanese>後送機能を有効化。動作させるには、ミッションでリスポーンとチケットを有効にする必要がある</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout">
             <English>Clear Casualty Loadout</English>
@@ -78,6 +83,7 @@
             <Spanish>Vaciar Equipamiento del Herido</Spanish>
             <Turkish>Zayiat Teçhizatını Temizle</Turkish>
             <Chinese>清空伤员装备</Chinese>
+            <Japanese>負傷者のロードアウトをクリア</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ClearCasualtyLoadout_Desc">
             <English>Sets whether casualty's loadout should be cleared after conversion</English>
@@ -91,6 +97,7 @@
             <Spanish>Define si el equipamiento del herido debe vaciarse tras la conversión.</Spanish>
             <Turkish>Dönüştürme sonrası zayiatın teçhizatının temizlenip temizlenmeyeceğini ayarlar</Turkish>
             <Chinese>设置是否在转化后清空伤员装备</Chinese>
+            <Japanese>変換後に負傷者のロードアウトをクリアするかどうかを設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics">
             <English>Require Antibiotics</English>
@@ -104,6 +111,7 @@
             <Spanish>Requerir Antibióticos</Spanish>
             <Turkish>Antibiyotik Gerekli</Turkish>
             <Chinese>需要抗生素</Chinese>
+            <Japanese>抗生物質を必須にする</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_RequireAntibiotics_Desc">
             <English>Sets whether antibiotics need to be administered before a casualty can be converted</English>
@@ -117,6 +125,7 @@
             <Spanish>Define si es necesario administrar antibióticos antes de que un herido pueda ser convertido.</Spanish>
             <Turkish>Bir zayiatın dönüştürülebilmesi için öncesinde antibiyotik verilmesinin gerekip gerekmediğini ayarlar</Turkish>
             <Chinese>设置是否在伤员转化前需要使用抗生素</Chinese>
+            <Japanese>負傷者を変換できるようになる前に抗生物質の投与が必要かどうかを設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn">
             <English>Respawn Ticket Count</English>
@@ -130,6 +139,7 @@
             <Spanish>Cantidad de Tickets de Reaparición</Spanish>
             <Turkish>Yeniden Doğma Bileti Sayısı</Turkish>
             <Chinese>重生票数</Chinese>
+            <Japanese>リスポーンチケット数</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountRespawn_Desc">
             <English>Sets amount of available respawn tickets, if mission-set ticket count is higher then that number will be used instead</English>
@@ -143,6 +153,7 @@
             <Spanish>Establece el número de tickets de reaparición disponibles; si la misión define un número mayor, ese prevalecerá.</Spanish>
             <Turkish>Kullanılabilir yeniden doğma biletlerinin sayısını ayarlar; görevde ayarlanan sayı daha yüksekse o kullanılır</Turkish>
             <Chinese>设置可用重生票数，任务设定值更高时以任务值为准</Chinese>
+            <Japanese>利用可能なリスポーンチケット数を設定。ミッションで設定されたチケット数のほうが多い場合は、代わりにその数が使用される</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty">
             <English>Casualty Ticket Count</English>
@@ -156,6 +167,7 @@
             <Spanish>Cantidad de Tickets de Herido</Spanish>
             <Turkish>Zayiat Bileti Sayısı</Turkish>
             <Chinese>伤员票数</Chinese>
+            <Japanese>負傷者チケット数</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_TicketCountCasualty_Desc">
             <English>Sets amount of available casualty tickets</English>
@@ -169,6 +181,7 @@
             <Spanish>Establece el número de tickets de herido disponibles.</Spanish>
             <Turkish>Kullanılabilir zayiat biletlerinin sayısını ayarlar</Turkish>
             <Chinese>设置可用伤员票数</Chinese>
+            <Japanese>利用可能な負傷者チケット数を設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty">
             <English>Converted Casualty Death Ticket Penalty</English>
@@ -182,6 +195,7 @@
             <Turkish>Dönüştürülen Zayiat Ölüm Bileti Cezası</Turkish>
             <Polish>Kara punktów odradzania na wypadek śmierci pacjenta po konwersji</Polish>
             <Chinese>转化伤员死亡罚票</Chinese>
+            <Japanese>変換済み負傷者死亡時のチケットペナルティ</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_ConvertedCasualtyDeathPenalty_Desc">
             <English>Sets amount of respawn tickets subtracted upon converted casualty death</English>
@@ -195,6 +209,7 @@
             <Turkish>Dönüştürülmüş zayiat öldüğünde düşülecek yeniden doğma bileti sayısını ayarlar</Turkish>
             <Polish>Ustawia ilość punktów odrodzenia, jeśli pacjent po konwersji umrze</Polish>
             <Chinese>设置转化后伤员死亡所扣除的重生票数</Chinese>
+            <Japanese>変換済み負傷者の死亡時に差し引かれるリスポーンチケット数を設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert">
             <English>Allow Converting Casualties</English>
@@ -208,6 +223,7 @@
             <Spanish>Permitir la Conversión de Heridos</Spanish>
             <Turkish>Zayiat Dönüştürmeye İzin Ver</Turkish>
             <Chinese>允许转化伤员</Chinese>
+            <Japanese>負傷者変換を許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Allow_Convert_Desc">
             <English>Training level required to convert casualties</English>
@@ -221,6 +237,7 @@
             <Spanish>Nivel de entrenamiento requerido para convertir heridos.</Spanish>
             <Turkish>Zayiat dönüştürmek için gereken eğitim seviyesi</Turkish>
             <Chinese>转化伤员所需训练等级</Chinese>
+            <Japanese>負傷者変換に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert">
             <English>Converting Casualty Location</English>
@@ -234,6 +251,7 @@
             <Spanish>Ubicación para Conversión de Heridos</Spanish>
             <Turkish>Zayiat Dönüştürme Konumu</Turkish>
             <Chinese>转化伤员位置</Chinese>
+            <Japanese>負傷者の変換場所</Japanese>
         </Key>
         <Key ID="STR_ACM_Evacuation_SETTING_Location_Convert_Desc">
             <English>Sets locations at which casualty conversion can be performed</English>
@@ -247,6 +265,7 @@
             <Spanish>Define las ubicaciones en las que puede realizarse la conversión de heridos.</Spanish>
             <Turkish>Zayiat dönüştürmenin yapılabileceği konumları ayarlar</Turkish>
             <Chinese>设置可执行伤员转化的位置</Chinese>
+            <Japanese>負傷者変換を実行できる場所を設定</Japanese>
         </Key>
         <Container name="// Actions //">
             <Key ID="STR_ACM_Evacuation_ConvertCasualty">
@@ -261,6 +280,7 @@
                 <Spanish>Convertir Herido</Spanish>
                 <Turkish>Zayiatı Dönüştür</Turkish>
                 <Chinese>转化伤员</Chinese>
+                <Japanese>負傷者を変換</Japanese>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Progress">
                 <English>Converting Casualty...</English>
@@ -274,6 +294,7 @@
                 <Spanish>Convirtiendo Herido...</Spanish>
                 <Turkish>Zayiat Dönüştürülüyor...</Turkish>
                 <Chinese>正在转化伤员…</Chinese>
+                <Japanese>負傷者を変換中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Complete">
                 <English>Casualty Conversion Complete</English>
@@ -287,6 +308,7 @@
                 <Spanish>Conversión de Herido Completada</Spanish>
                 <Turkish>Zayiat Dönüştürme Tamamlandı</Turkish>
                 <Chinese>伤员转化完成</Chinese>
+                <Japanese>負傷者変換完了</Japanese>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_InProgress">
                 <English>Casualty Conversion In Progress</English>
@@ -300,6 +322,7 @@
                 <Spanish>Conversión de Herido en Progreso</Spanish>
                 <Turkish>Zayiat Dönüştürme Devam Ediyor</Turkish>
                 <Chinese>伤员转化正在进行中</Chinese>
+                <Japanese>負傷者変換進行中</Japanese>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Cancelled">
                 <English>Casualty Conversion Cancelled</English>
@@ -313,6 +336,7 @@
                 <Spanish>Conversión de Herido Cancelada</Spanish>
                 <Turkish>Zayiat Dönüştürme İptal Edildi</Turkish>
                 <Chinese>伤员转化已取消</Chinese>
+                <Japanese>負傷者変換がキャンセルされた</Japanese>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_Failed">
                 <English>Casualty Conversion Failed</English>
@@ -326,6 +350,7 @@
                 <Spanish>Conversión de Herido Fallida</Spanish>
                 <Turkish>Zayiat Dönüştürme Başarısız</Turkish>
                 <Chinese>伤员转化失败</Chinese>
+                <Japanese>負傷者変換に失敗した</Japanese>
             </Key>
             <Key ID="STR_ACM_Evacuation_ConvertCasualty_ReinforceHint">
                 <English>You have taken control of a new reinforcement</English>
@@ -337,6 +362,7 @@
                 <French>Vous avez pris le contrôle d'un nouveau renfort</French>
                 <Polish>Przejąłeś kontrole nad nowym wsparciem</Polish>
                 <Chinese>你已接管新的增援单位</Chinese>
+                <Japanese>増援部隊の指揮権を獲得しました</Japanese>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient">
                 <English>Evacuate Patient</English>
@@ -350,6 +376,7 @@
                 <Spanish>Evacuar Paciente</Spanish>
                 <Turkish>Hastayı Tahliye Et</Turkish>
                 <Chinese>后送患者</Chinese>
+                <Japanese>患者を後送</Japanese>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient_Success">
                 <English>Casualty Successfully Evacuated</English>
@@ -363,6 +390,7 @@
                 <Spanish>Herido Evacuado con Éxito</Spanish>
                 <Turkish>Zayiat Başarıyla Tahliye Edildi</Turkish>
                 <Chinese>伤员已成功后送</Chinese>
+                <Japanese>負傷者の後送に成功した</Japanese>
             </Key>
         </Container>
         <Container name="// Module //">
@@ -376,6 +404,7 @@
                 <French>Point d'évacuation</French>
                 <Polish>Punkt ewakuacji</Polish>
                 <Chinese>后送点</Chinese>
+                <Japanese>後送地点</Japanese>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_ReinforcePoint">
                 <English>Reinforce Point</English>
@@ -387,6 +416,7 @@
                 <French>Point de renforcement</French>
                 <Polish>Punkt wsparcia</Polish>
                 <Chinese>增援点</Chinese>
+                <Japanese>増援地点</Japanese>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_PlayerFaction">
                 <English>Player Side</English>
@@ -400,6 +430,7 @@
                 <Spanish>Bando del Jugador</Spanish>
                 <Turkish>Oyuncu Tarafı</Turkish>
                 <Chinese>玩家方</Chinese>
+                <Japanese>プレイヤー陣営</Japanese>
             </Key>
         </Container>
     </Package>

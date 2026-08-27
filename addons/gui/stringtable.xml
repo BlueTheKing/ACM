@@ -13,6 +13,7 @@
             <Spanish>ACM: GUI</Spanish>
             <Turkish>ACM: Arayüz</Turkish>
             <Chinese>ACM: 界面</Chinese>
+            <Japanese>ACM: GUI</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses">
             <English>Show inactive vitals statuses</English>
@@ -26,6 +27,7 @@
             <Spanish>Mostrar estados inactivos de constantes vitales</Spanish>
             <Turkish>Pasif hayati bulgu durumlarını göster</Turkish>
             <Chinese>显示非活跃生命体征</Chinese>
+            <Japanese>バイタルサインの非表示</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowInactiveStatuses_Desc">
             <English>Show vitals status in overview tab when inactive (display ""none"")</English>
@@ -39,6 +41,7 @@
             <Spanish>Mostrar el estado de las constantes vitales en la pestaña de resumen cuando estén inactivas (mostrar “ninguna”)</Spanish>
             <Turkish>Pasifken genel bakış sekmesinde hayati durumları göster ("yok" olarak görüntüler)</Turkish>
             <Chinese>在概览标签页中显示非活跃生命体征（显示“无”）</Chinese>
+            <Japanese>バイタルサインが無い場合に、概要タブにバイタル状態を表示（"none" と表示）</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount">
             <English>Show Pain Amount</English>
@@ -52,6 +55,7 @@
             <Spanish>Mostrar Nivel de Dolor</Spanish>
             <Turkish>Ağrı Miktarını Göster</Turkish>
             <Chinese>显示疼痛值</Chinese>
+            <Japanese>痛みのレベルを表示</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowExactPainAmount_Desc">
             <English>Show exact pain amount in overview tab</English>
@@ -65,6 +69,7 @@
             <Spanish>Mostrar el nivel exacto de dolor en la pestaña de resumen</Spanish>
             <Turkish>Genel bakış sekmesinde tam ağrı miktarını göster</Turkish>
             <Chinese>在概览标签页显示精确疼痛值</Chinese>
+            <Japanese>概要タブで正確な痛みを数値を表示</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture">
             <English>Show Fracture</English>
@@ -76,6 +81,7 @@
             <French>Montrer la fracture</French>
             <Polish>Pokaż złamania</Polish>
             <Chinese>显示骨折</Chinese>
+            <Japanese>骨折を表示</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
             <English>Show fractured limb(s) on patient and overview tab</English>
@@ -87,6 +93,7 @@
             <French>Montrer le(s) membre(s) fracturé(s) sur le patient et sur l'aperçu</French>
             <Polish>Pokaż złamania na częsci ciała w menu medycznym</Polish>
             <Chinese>在患者和概览标签页显示骨折肢体</Chinese>
+            <Japanese>患者上および概要タブで骨折した四肢を表示</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>
@@ -99,6 +106,7 @@
             <Turkish>Eylem Öğesi Simgelerini Göster</Turkish>
             <Polish>Pokaż ikony w menu medycznym</Polish>
             <Chinese>显示操作项图标</Chinese>
+            <Japanese>アクション項目アイコンを表示</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons_Desc">
             <English>Show relevant item icons for medical menu actions</English>
@@ -111,6 +119,7 @@
             <Turkish>Tıbbi menü eylemleri için ilgili eşya simgelerini göster</Turkish>
             <Polish>Pokaż ikony przedmiotów w menu medycznym</Polish>
             <Chinese>显示医疗菜单动作的相关物品图标</Chinese>
+            <Japanese>医療メニューのアクションに関連するアイコンを表示</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_OverlayBodyPart">
             <English>Show overlay for selected body part</English>
@@ -124,6 +133,7 @@
             <Spanish>Mostrar superposición para la parte del cuerpo seleccionada</Spanish>
             <Turkish>Seçilen vücut bölgesi için kaplama (overlay) göster</Turkish>
             <Chinese>显示选定身体部位的覆盖层</Chinese>
+            <Japanese>選択した部位のオーバーレイを表示</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels">
             <English>Show patient side labels</English>
@@ -137,6 +147,7 @@
             <Spanish>Mostrar Etiquetas Laterales del Paciente (Izq/Der)</Spanish>
             <Turkish>Hasta taraf etiketlerini göster</Turkish>
             <Chinese>显示患者侧标签</Chinese>
+            <Japanese>患者のサイドラベルを表示</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowPatientSideLabels_Desc">
             <English>Show patient left/right side labels in medical menu</English>
@@ -150,6 +161,7 @@
             <Spanish>Mostrar las etiquetas de izquierda/derecha del paciente en el menú médico</Spanish>
             <Turkish>Tıbbi menüde hastanın sol/sağ taraf etiketlerini göster</Turkish>
             <Chinese>在医疗菜单中显示患者左/右侧标签</Chinese>
+            <Japanese>医療メニューで患者のサイドラベルを表示</Japanese>
         </Key>
         <Key ID="STR_ACM_GUI_NoExternalBleeding">
             <English>No external bleeding</English>
@@ -163,6 +175,7 @@
             <Spanish>Sin sangrado externo</Spanish>
             <Turkish>Harici kanama yok</Turkish>
             <Chinese>无外出血</Chinese>
+            <Japanese>外傷性出血なし</Japanese>
         </Key>
         <Container name="// Triage Text //">
             <Key ID="STR_ACM_GUI_Triage_Priority1_Short">
@@ -177,6 +190,7 @@
                 <Spanish>T1</Spanish>
                 <Turkish>T1</Turkish>
                 <Chinese>T1</Chinese>
+                <Japanese>T1</Japanese>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority2_Short">
                 <English>T2</English>
@@ -190,6 +204,7 @@
                 <Spanish>T2</Spanish>
                 <Turkish>T2</Turkish>
                 <Chinese>T2</Chinese>
+                <Japanese>T2</Japanese>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority3_Short">
                 <English>T3</English>
@@ -203,6 +218,7 @@
                 <Spanish>T3</Spanish>
                 <Turkish>T3</Turkish>
                 <Chinese>T3</Chinese>
+                <Japanese>T3</Japanese>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4">
                 <English>Expectant</English>
@@ -216,6 +232,7 @@
                 <Spanish>Expectante</Spanish>
                 <Turkish>Beklenen</Turkish>
                 <Chinese>濒死</Chinese>
+                <Japanese>救命困難</Japanese>
             </Key>
             <Key ID="STR_ACM_GUI_Triage_Priority4_Short">
                 <English>T4</English>
@@ -229,6 +246,7 @@
                 <Spanish>T4</Spanish>
                 <Turkish>T4</Turkish>
                 <Chinese>T4</Chinese>
+                <Japanese>T4</Japanese>
             </Key>
         </Container>
         <Container name="// Actions //">
@@ -244,6 +262,7 @@
                 <Spanish>Ayudar a portar</Spanish>
                 <Turkish>Taşımaya Yardım Et</Turkish>
                 <Chinese>辅助搬运</Chinese>
+                <Japanese>運搬補助</Japanese>
             </Key>
         </Container>
     </Package>
