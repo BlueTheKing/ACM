@@ -579,6 +579,12 @@
                 <Polish>Typ: Granat CS&lt;br /&gt;Pociski: 1&lt;br /&gt;Używany w: EGLM, 3GL</Polish>
                 <Japanese>Type: CS Gas Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: EGLM, 3GL</Japanese>
             </Key>
+            <Key ID="STR_ACM_CBRN_CS_Shell_40mm_6Rnd">
+                <English>6Rnd CS Grenade Shell</English>
+            </Key>
+            <Key ID="STR_ACM_CBRN_CS_Shell_40mm_6Rnd_Desc">
+                <English>Type: CS Gas Round&lt;br /&gt;Rounds: 6&lt;br /&gt;Used in: M32</English>
+            </Key>
             <Key ID="STR_ACM_CBRN_GasMaskFilter">
                 <English>Gas Mask Filter</English>
                 <Portuguese>Filtro de máscara de gás</Portuguese>

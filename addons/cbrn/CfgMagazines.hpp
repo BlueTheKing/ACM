@@ -21,6 +21,13 @@ class CfgMagazines {
         descriptionShort = CSTRING(CS_Shell_40mm_Desc);
         mass = 4;
     };
+    class ACM_Grenade_Shell_6Rnd_CS: ACM_Grenade_Shell_CS {
+        displayName = CSTRING(CS_Shell_40mm_6Rnd);
+        displayNameShort = CSTRING(CS_Shell_40mm_6Rnd);
+        descriptionShort = CSTRING(CS_Shell_40mm_6Rnd_Desc);
+        count = 6;
+        mass = 24;
+    };
 
     class 8Rnd_82mm_Mo_Smoke_white;
     class ACM_Mortar_Shell_8Rnd_CS: 8Rnd_82mm_Mo_Smoke_white {
