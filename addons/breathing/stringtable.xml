@@ -576,6 +576,18 @@
                 <Chinese>用于准备患者接受胸腔引流管置入的一次性套件</Chinese>
                 <Japanese>胸腔チューブ挿入のために患者を準備する使い捨てキット</Japanese>
             </Key>
+            <Key ID="STR_ACM_Breathing_HandPump">
+                <English>Hand Pump</English>
+                <German>Handpumpe</German>
+                <French>Pompe à main</French>
+                <Portuguese>Bomba manual</Portuguese>
+            </Key>
+            <Key ID="STR_ACM_Breathing_HandPump_Desc">
+                <English>Reusable hand-held suction pump used to drain fluids from a chest tube</English>
+                <German>Wiederverwendbare Handabsaugpumpe zum Ablassen von Flüssigkeiten aus einem Thoraxschlauch</German>
+                <French>Pompe d'aspiration portative réutilisable utilisée pour drainer les fluides d'un drain thoracique</French>
+                <Portuguese>Bomba de sucção manual reutilizável usada para drenar fluidos de um dreno torácico</Portuguese>
+            </Key>
             <Key ID="STR_ACM_Breathing_PocketBVM">
                 <English>Pocket BVM</English>
                 <Polish>Kieszonkowy worek samorozprężalny (BVM)</Polish>
@@ -1515,6 +1527,13 @@
                 <Turkish>Sıvıyı Drene Et (Aspirasyon Torbası)</Turkish>
                 <Chinese>引流液体（吸引袋）</Chinese>
                 <Japanese>液体を排出(吸引バッグ)</Japanese>
+            </Key>
+            <Key ID="STR_ACM_Breathing_DrainFluid_HandPump">
+                <English>Drain Fluid (Hand Pump)</English>
+                <Polish>Odessaj płyny (Pompka ręczna)</Polish>
+                <German>Flüssigkeit absaugen (Handpumpe)</German>
+                <French>Aspirer le liquide (Pompe à main)</French>
+                <Portuguese>Drenar fluido (Bomba manual)</Portuguese>
             </Key>
             <Key ID="STR_ACM_Breathing_DrainFluid_Suction_Progress">
                 <English>Draining Fluid...</English>
