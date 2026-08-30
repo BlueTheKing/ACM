@@ -195,10 +195,10 @@ PREP_RECOMPILE_END;
 
 [
     QGVAR(reusableSyringe),
-    "CHECKBOX",
+    "LIST",
     [LLSTRING(SETTING_ReusableSyringe), LLSTRING(SETTING_ReusableSyringe_Desc)],
     [ACM_SETTINGS_CATEGORY, LLSTRING(Category_Medication)],
-    [true],
+    [[0, 1, 2], [ACELSTRING(common,No), ACELSTRING(common,Yes), LLSTRING(SETTING_ReusableSyringe_Option)], 1],
     true
 ] call CBA_fnc_addSetting;
 

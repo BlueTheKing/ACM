@@ -670,6 +670,9 @@
             <Chinese>设置注射器是否可重复使用而非在药物注射后消耗</Chinese>
             <Japanese>薬剤投与時に注射器を消費する代わりに再利用可能にするかどうかを設定</Japanese>
         </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Option">
+            <English>IV Only</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
             <Portuguese>Permitir seringa</Portuguese>
