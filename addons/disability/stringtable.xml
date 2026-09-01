@@ -12,7 +12,7 @@
             <Korean>ACM: 장애 (Disability)</Korean>
             <Spanish>ACM: Discapacidad</Spanish>
             <Turkish>ACM: Sakatlık</Turkish>
-            <Chinese>ACM: 伤残</Chinese>
+            <Chinesesimp>ACM: 伤残</Chinesesimp>
             <Japanese>ACM: 機能障害</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_Category_FractureManagement">
@@ -25,7 +25,7 @@
             <Turkish>Kırık Yönetimi</Turkish>
             <French>Gestion des Fractures</French>
             <Polish>Złamania</Polish>
-            <Chinese>骨折系统</Chinese>
+            <Chinesesimp>骨折系统</Chinesesimp>
             <Japanese>骨折管理</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs">
@@ -39,7 +39,7 @@
             <Spanish>Impacto del torniquete en extremidades</Spanish>
             <Turkish>Turnikenin Uzuvlara Etkisi</Turkish>
             <French>Tourniquetss impact les membres</French>
-            <Chinese>止血带肢体影响</Chinese>
+            <Chinesesimp>止血带肢体影响</Chinesesimp>
             <Japanese>止血帯の四肢への影響</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TourniquetImpactLimbs_Desc">
@@ -53,7 +53,7 @@
             <Spanish>Define si el torniquete afectará los brazos aumentando el balanceo y las piernas reduciendo la movilidad</Spanish>
             <Turkish>Turnikenin kolları salınımı artırarak, bacakları ise hareket kabiliyetini azaltarak etkileyip etkilemeyeceğini ayarlar</Turkish>
             <French>Défini si le tourniquet va impacter les bras en augementant le oscillation de l'arme et les jambes en reduisant la mobilité </French>
-            <Chinese>设置止血带是否会影响双臂（增加晃动）和双腿（降低机动性）</Chinese>
+            <Chinesesimp>设置止血带是否会影响双臂（增加晃动）和双腿（降低机动性）</Chinesesimp>
             <Japanese>止血帯が、腕では揺れを増加させ、脚では機動力を低下させる影響を与えるかどうかを設定</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity">
@@ -66,7 +66,7 @@
             <Turkish>Kırık Şiddetini Etkinleştir</Turkish>
             <French>Activer la gravité de la fracture</French>
             <Polish>Włącz stopnie złamań</Polish>
-            <Chinese>启用骨折严重度</Chinese>
+            <Chinesesimp>启用骨折严重度</Chinesesimp>
             <Japanese>骨折重症度を有効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_EnableFractureSeverity_Desc">
@@ -79,7 +79,7 @@
             <Turkish>Kırık şiddetini ve kırık hizalama (redüksiyon) işlemini etkinleştirir</Turkish>
             <French>Permet la gravité de la fracture et le réalignement de la fracture</French>
             <Polish>Umożliwia ocenę stopnia złamań i wykonanie redukcji złamania</Polish>
-            <Chinese>启用骨折严重度及骨折复位</Chinese>
+            <Chinesesimp>启用骨折严重度及骨折复位</Chinesesimp>
             <Japanese>骨折重症度および骨折整復の実行を有効化</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint">
@@ -93,7 +93,7 @@
             <Korean>SAM 부목 적용 시간</Korean>
             <Spanish>Tiempo de aplicación de férula SAM</Spanish>
             <Turkish>SAM Ateli Süresi</Turkish>
-            <Chinese>SAM夹板时间</Chinese>
+            <Chinesesimp>SAM夹板时间</Chinesesimp>
             <Japanese>SAMスプリント装着時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_SAMSplint_Desc">
@@ -107,7 +107,7 @@
             <Korean>SAM 부목 적용 시간</Korean>
             <Spanish>Tiempo para aplicar férula SAM</Spanish>
             <Turkish>SAM ateli uygulama süresi</Turkish>
-            <Chinese>使用SAM夹板所需时间</Chinese>
+            <Chinesesimp>使用SAM夹板所需时间</Chinesesimp>
             <Japanese>SAMスプリントの装着時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint">
@@ -121,7 +121,7 @@
             <Korean>부목 감기 시간</Korean>
             <Spanish>Tiempo de envoltura de férula</Spanish>
             <Turkish>Atel Sarma Süresi</Turkish>
-            <Chinese>卷式夹板时间</Chinese>
+            <Chinesesimp>卷式夹板时间</Chinesesimp>
             <Japanese>スプリント巻き付け時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_TreatmentTime_WrapSplint_Desc">
@@ -135,7 +135,7 @@
             <Korean>SAM 부목 탄성 붕대 감는 시간</Korean>
             <Spanish>Tiempo para envolver la férula SAM</Spanish>
             <Turkish>SAM atelini sarma süresi</Turkish>
-            <Chinese>缠绕SAM夹板所需时间</Chinese>
+            <Chinesesimp>缠绕SAM夹板所需时间</Chinesesimp>
             <Japanese>SAMスプリントを巻くのにかかる時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime">
@@ -149,7 +149,7 @@
             <Korean>부목 최소 탈락 시간</Korean>
             <Spanish>Tiempo mínimo antes de que la férula se desprenda</Spanish>
             <Turkish>Atelin Minimum Düşme Süresi</Turkish>
-            <Chinese>夹板最短脱落时间</Chinese>
+            <Chinesesimp>夹板最短脱落时间</Chinesesimp>
             <Japanese>スプリント最小脱落時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_SplintFallOffTime_Desc">
@@ -163,7 +163,7 @@
             <Korean>탄성 붕대로 감기지 않은 SAM 부목이 떨어지기까지 최소 시간</Korean>
             <Spanish>Tiempo mínimo para que una férula SAM sin envolver se caiga</Spanish>
             <Turkish>Sarılmamış SAM atelinin düşmesi için gereken minimum süre</Turkish>
-            <Chinese>未缠绕SAM夹板最短脱落时间</Chinese>
+            <Chinesesimp>未缠绕SAM夹板最短脱落时间</Chinesesimp>
             <Japanese>巻かれていないSAMスプリントが脱落するまでの最小時間</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture">
@@ -176,7 +176,7 @@
             <Turkish>Kırık Kontrolüne İzin Ver</Turkish>
             <French>Autoriser la recherche de fracture</French>
             <Polish>Pozwól na sprawdzenie złamań</Polish>
-            <Chinese>允许检查骨折</Chinese>
+            <Chinesesimp>允许检查骨折</Chinesesimp>
             <Japanese>骨折の確認を許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_InspectForFracture_Desc">
@@ -189,7 +189,7 @@
             <Turkish>Kırık kontrolü yapmak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de formation requis pour rechercher des fractures</French>
             <Polish>Poziom wyszkolenia wymagany do sprawdzenia stanu złamania</Polish>
-            <Chinese>检查骨折所需训练等级</Chinese>
+            <Chinesesimp>检查骨折所需训练等级</Chinesesimp>
             <Japanese>骨折の確認に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment">
@@ -202,7 +202,7 @@
             <Turkish>Kırık Hizalamaya İzin Ver</Turkish>
             <French>Autoriser d'exécuter les réalignements de fracture</French>
             <Polish>Pozwól na redukcje złamań</Polish>
-            <Chinese>允许进行骨折复位</Chinese>
+            <Chinesesimp>允许进行骨折复位</Chinesesimp>
             <Japanese>骨折整復の実施を許可</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Allow_FractureRealignment_Desc">
@@ -215,7 +215,7 @@
             <Turkish>Kırık hizalama yapmak için gereken eğitim seviyesi</Turkish>
             <French>Niveau de formation requis pour exécuter le réalignement d'une fracture</French>
             <Polish>Poziom wyszkolenia wymagany do przeprowadzenia redukcji złamań</Polish>
-            <Chinese>进行骨折复位所需训练等级</Chinese>
+            <Chinesesimp>进行骨折复位所需训练等级</Chinesesimp>
             <Japanese>骨折整復の実施に必要な訓練レベル</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture">
@@ -228,7 +228,7 @@
             <Turkish>[HARDCORE] Karmaşık Kırıklar</Turkish>
             <French>[HARDCORE] Fracture complexe</French>
             <Polish>[HARDCORE] Skomplikowane złamania</Polish>
-            <Chinese>【硬核】复杂骨折</Chinese>
+            <Chinesesimp>【硬核】复杂骨折</Chinesesimp>
             <Japanese>[HARDCORE] 複雑骨折</Japanese>
         </Key>
         <Key ID="STR_ACM_Disability_SETTING_Hardcore_ComplexFracture_Desc">
@@ -241,7 +241,7 @@
             <Turkish>[HARDCORE] Bazı kırıkların sahada tedavi edilemeyip tahliye gerektirmesini ayarlar</Turkish>
             <French>[HARDCORE] Defini si certaine fracture ne peuvent pas être traité sur le terrain, demandanrt une évacuation.</French>
             <Polish>[HARDCORE] Definiuje czy pewnych złamań nie można leczyć w terenie, co wymaga ewakuacji</Polish>
-            <Chinese>【硬核】设置是否某些骨折无法在现场治疗，需要后送</Chinese>
+            <Chinesesimp>【硬核】设置是否某些骨折无法在现场治疗，需要后送</Chinesesimp>
             <Japanese>[HARDCORE] 一部の骨折が現場で治療できず、後送を必要とするかどうかを設定</Japanese>
         </Key>
         <Container name="// Items //">
@@ -256,7 +256,7 @@
                 <Korean>범용 부목</Korean>
                 <Spanish>Férula universal</Spanish>
                 <Turkish>Evrensel Atel</Turkish>
-                <Chinese>通用夹板</Chinese>
+                <Chinesesimp>通用夹板</Chinesesimp>
                 <Japanese>汎用スプリント</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_UniversalSplint_Desc">
@@ -270,7 +270,7 @@
                 <Korean>단회용 부목 키트</Korean>
                 <Spanish>Kit de férula de un solo uso para inmovilizar fracturas</Spanish>
                 <Turkish>Kırığı sabitlemek için kullanılan tek kullanımlık atel kiti</Turkish>
-                <Chinese>一次性骨折夹板包</Chinese>
+                <Chinesesimp>一次性骨折夹板包</Chinesesimp>
                 <Japanese>骨折を固定するために使用する使い切りのスプリントキット</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_SAMSplint">
@@ -284,7 +284,7 @@
                 <Korean>SAM 부목</Korean>
                 <Spanish>Férula SAM</Spanish>
                 <Turkish>SAM Ateli</Turkish>
-                <Chinese>SAM夹板</Chinese>
+                <Chinesesimp>SAM夹板</Chinesesimp>
                 <Japanese>SAMスプリント</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_SAMSplint_Desc">
@@ -298,7 +298,7 @@
                 <Korean>재사용 가능한 부목으로 골절을 고정함, 안정성을 위해 탄성 붕대로 감아야 함 </Korean>
                 <Spanish>Férula reutilizable para inmovilizar fracturas, debe envolverse para mantenerla estable</Spanish>
                 <Turkish>Kırığı sabitlemek için kullanılan yeniden kullanılabilir atel; stabilite için sarılmalıdır</Turkish>
-                <Chinese>可重复使用骨折夹板</Chinese>
+                <Chinesesimp>可重复使用骨折夹板</Chinesesimp>
                 <Japanese>骨折を固定するために使用する再利用可能なスプリントで、骨折を安定させるために巻く必要がある</Japanese>
             </Key>
         </Container>
@@ -314,7 +314,7 @@
                 <Korean>SAM 부목 적용</Korean>
                 <Spanish>Aplicar férula SAM</Spanish>
                 <Turkish>SAM Atelini Uygula</Turkish>
-                <Chinese>使用SAM夹板</Chinese>
+                <Chinesesimp>使用SAM夹板</Chinesesimp>
                 <Japanese>SAMスプリントを装着</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_ApplySAMSplint_Progress">
@@ -328,7 +328,7 @@
                 <Korean>SAM 부목 적용 중...</Korean>
                 <Spanish>Aplicando férula SAM...</Spanish>
                 <Turkish>SAM Ateli Uygulanıyor...</Turkish>
-                <Chinese>正在使用SAM夹板…</Chinese>
+                <Chinesesimp>正在使用SAM夹板…</Chinesesimp>
                 <Japanese>SAMスプリントを装着中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSAMSplint">
@@ -342,7 +342,7 @@
                 <Korean>SAM 부목 제거</Korean>
                 <Spanish>Retirar férula SAM</Spanish>
                 <Turkish>SAM Atelini Çıkar</Turkish>
-                <Chinese>取下SAM夹板</Chinese>
+                <Chinesesimp>取下SAM夹板</Chinesesimp>
                 <Japanese>SAMスプリントを取り外す</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSAMSplint_Progress">
@@ -356,7 +356,7 @@
                 <Korean>SAM 부목 제거 중...</Korean>
                 <Spanish>Retirando férula SAM...</Spanish>
                 <Turkish>SAM Ateli Çıkarılıyor...</Turkish>
-                <Chinese>正在取下SAM夹板…</Chinese>
+                <Chinesesimp>正在取下SAM夹板…</Chinesesimp>
                 <Japanese>SAMスプリントを取り外し中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_RemoveSplint_ActionLog">
@@ -370,7 +370,7 @@
                 <Korean>%1이 부목을 제거</Korean>
                 <Spanish>%1 retiró la férula</Spanish>
                 <Turkish>%1 ateli çıkardı</Turkish>
-                <Chinese>%1取下了夹板</Chinese>
+                <Chinesesimp>%1取下了夹板</Chinesesimp>
                 <Japanese>%1 がスプリントを取り外した</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_Splint_FellOff">
@@ -384,7 +384,7 @@
                 <Korean>부목이 탈락됨</Korean>
                 <Spanish>La férula se ha desprendido</Spanish>
                 <Turkish>Atel düştü</Turkish>
-                <Chinese>夹板已脱落</Chinese>
+                <Chinesesimp>夹板已脱落</Chinesesimp>
                 <Japanese>スプリントが脱落した</Japanese>
             </Key>
         </Container>
@@ -400,7 +400,7 @@
                 <Korean>SAM 부목 감기</Korean>
                 <Spanish>Envolver férula SAM</Spanish>
                 <Turkish>SAM Atelini Sar</Turkish>
-                <Chinese>缠绕SAM夹板</Chinese>
+                <Chinesesimp>缠绕SAM夹板</Chinesesimp>
                 <Japanese>SAMスプリントを巻く</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_WrapSplint_ActionLog">
@@ -414,7 +414,7 @@
                 <Korean>%1이 SAM 부목을 탄력 붕대로 고정</Korean>
                 <Spanish>%1 envolvió la férula SAM</Spanish>
                 <Turkish>%1 SAM atelini sardı</Turkish>
-                <Chinese>%1已缠绕了SAM夹板</Chinese>
+                <Chinesesimp>%1已缠绕了SAM夹板</Chinesesimp>
                 <Japanese>%1 がSAMスプリントを巻いた</Japanese>
             </Key>
         </Container>
@@ -430,7 +430,7 @@
                 <Korean>환자가 깨어남</Korean>
                 <Spanish>El paciente se ha despertado</Spanish>
                 <Turkish>Hasta uyandı</Turkish>
-                <Chinese>患者已苏醒</Chinese>
+                <Chinesesimp>患者已苏醒</Chinesesimp>
                 <Japanese>患者は目を覚ました</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_AttemptWakeUp_Failure">
@@ -444,7 +444,7 @@
                 <Korean>환자가 아직 잠들어 있음</Korean>
                 <Spanish>El paciente sigue dormido</Spanish>
                 <Turkish>Hasta hâlâ uyuyor</Turkish>
-                <Chinese>患者仍未苏醒</Chinese>
+                <Chinesesimp>患者仍未苏醒</Chinesesimp>
                 <Japanese>患者はまだ眠っている</Japanese>
             </Key>
         </Container>
@@ -460,7 +460,7 @@
                 <Korean>흔들어 깨우기 시도</Korean>
                 <Spanish>Intentar despertar sacudiendo</Spanish>
                 <Turkish>Sarsarak Uyandırmayı Dene</Turkish>
-                <Chinese>尝试摇醒</Chinese>
+                <Chinesesimp>尝试摇醒</Chinesesimp>
                 <Japanese>揺すって覚醒を試みる</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_ShakeAwake_Progress">
@@ -474,7 +474,7 @@
                 <Korean>환자를 흔드는 중...</Korean>
                 <Spanish>Sacudiendo al paciente...</Spanish>
                 <Turkish>Hasta sarsılıyor...</Turkish>
-                <Chinese>正在摇晃患者…</Chinese>
+                <Chinesesimp>正在摇晃患者…</Chinesesimp>
                 <Japanese>患者を揺すっている...</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_ActionLog">
@@ -488,7 +488,7 @@
                 <Korean>%1이 환자를 흔듬</Korean>
                 <Spanish>%1 sacudió al paciente</Spanish>
                 <Turkish>%1 hastayı sarstı</Turkish>
-                <Chinese>%1摇晃了患者</Chinese>
+                <Chinesesimp>%1摇晃了患者</Chinesesimp>
                 <Japanese>%1 が患者を揺すった</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_ShakePatient_Attempt">
@@ -502,7 +502,7 @@
                 <Korean>환자를 흔들어 깨우려 시도함</Korean>
                 <Spanish>Intentaste sacudir al paciente para despertarlo</Spanish>
                 <Turkish>Hastayı sarsarak uyandırmaya çalışıyorsun</Turkish>
-                <Chinese>你尝试摇醒患者</Chinese>
+                <Chinesesimp>你尝试摇醒患者</Chinesesimp>
                 <Japanese>あなたは患者を揺すって覚醒を試みる</Japanese>
             </Key>
         </Container>
@@ -518,7 +518,7 @@
                 <Korean>때려서 깨우기 시도</Korean>
                 <Spanish>Intentar despertar abofeteando</Spanish>
                 <Turkish>Tokatlayarak Uyandırmayı Dene</Turkish>
-                <Chinese>尝试拍醒</Chinese>
+                <Chinesesimp>尝试拍醒</Chinesesimp>
                 <Japanese>叩いて覚醒を試みる</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_SlapAwake_Progress">
@@ -532,7 +532,7 @@
                 <Korean>환자를 때리는 중...</Korean>
                 <Spanish>Abofeteando al paciente...</Spanish>
                 <Turkish>Hasta tokatlanıyor...</Turkish>
-                <Chinese>正在拍打患者…</Chinese>
+                <Chinesesimp>正在拍打患者…</Chinesesimp>
                 <Japanese>患者を叩いている...</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_ActionLog">
@@ -546,7 +546,7 @@
                 <Korean>%1이 환자를 때림</Korean>
                 <Spanish>%1 abofeteó al paciente</Spanish>
                 <Turkish>%1 hastayı tokatladı</Turkish>
-                <Chinese>%1拍打了患者</Chinese>
+                <Chinesesimp>%1拍打了患者</Chinesesimp>
                 <Japanese>%1 が患者を叩いた</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_SlapPatient_Attempt">
@@ -560,7 +560,7 @@
                 <Korean>환자를 때려서 깨우려 시도함</Korean>
                 <Spanish>Intentaste abofetear al paciente para despertarlo</Spanish>
                 <Turkish>Hastayı tokatlayarak uyandırmaya çalışıyorsun</Turkish>
-                <Chinese>你尝试拍醒患者</Chinese>
+                <Chinesesimp>你尝试拍醒患者</Chinesesimp>
                 <Japanese>患者を叩いて目を覚ませようとした</Japanese>
             </Key>
         </Container>
@@ -575,7 +575,7 @@
                 <Spanish>Inspeccionar fractura</Spanish>
                 <Turkish>Kırık Kontrolü Yap</Turkish>
                 <Polish>Sprawdź złamania</Polish>
-                <Chinese>检查骨折</Chinese>
+                <Chinesesimp>检查骨折</Chinesesimp>
                 <Japanese>骨折を確認</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Progress">
@@ -588,7 +588,7 @@
                 <Spanish>Inspeccionando extremidad por fractura...</Spanish>
                 <Turkish>Uzuv kırık açısından inceleniyor...</Turkish>
                 <Polish>Sprawdzanie złamań...</Polish>
-                <Chinese>正在检查肢体骨折…</Chinese>
+                <Chinesesimp>正在检查肢体骨折…</Chinesesimp>
                 <Japanese>四肢の骨折を確認中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_ActionLog">
@@ -601,7 +601,7 @@
                 <Spanish>%1 inspeccionó %2: %3</Spanish>
                 <Turkish>%1, %2’yi inceledi: %3</Turkish>
                 <Polish>%1 sprawdził %2: %3</Polish>
-                <Chinese>%1检查了%2：%3</Chinese>
+                <Chinesesimp>%1检查了%2：%3</Chinesesimp>
                 <Japanese>%1 が %2 を確認した: %3</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied">
@@ -614,7 +614,7 @@
                 <Spanish>El paciente tiene férula aplicada en la extremidad</Spanish>
                 <Turkish>Hastanın uzvuna atel uygulanmış</Turkish>
                 <Polish>Pacjent ma założoną szynę</Polish>
-                <Chinese>患者肢体已使用夹板</Chinese>
+                <Chinesesimp>患者肢体已使用夹板</Chinesesimp>
                 <Japanese>患者の四肢にはスプリントが装着されている</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SplintApplied_Short">
@@ -627,7 +627,7 @@
                 <Spanish>Férula aplicada</Spanish>
                 <Turkish>Atellenmiş</Turkish>
                 <Polish>Unieruchomiona szyną</Polish>
-                <Chinese>已上夹板</Chinese>
+                <Chinesesimp>已上夹板</Chinesesimp>
                 <Japanese>スプリント装着済み</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling">
@@ -640,7 +640,7 @@
                 <Spanish>El paciente tiene hinchazón significativa en la extremidad</Spanish>
                 <Turkish>Hastanın uzvunda belirgin şişlik var</Turkish>
                 <Polish>Pacjent ma dużą opuchlizne na kończynie</Polish>
-                <Chinese>患者肢体有显著肿胀</Chinese>
+                <Chinesesimp>患者肢体有显著肿胀</Chinesesimp>
                 <Japanese>患者の四肢に著しい腫脹がある</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SignificantSwelling_Short">
@@ -653,7 +653,7 @@
                 <Spanish>Hinchazón significativo</Spanish>
                 <Turkish>Belirgin Şişlik</Turkish>
                 <Polish>Duża opuchlizna </Polish>
-                <Chinese>显著肿胀</Chinese>
+                <Chinesesimp>显著肿胀</Chinesesimp>
                 <Japanese>著しい腫脹</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Swelling">
@@ -666,7 +666,7 @@
                 <Spanish>El paciente tiene hinchazón en la extremidad</Spanish>
                 <Turkish>Hastanın uzvunda şişlik var</Turkish>
                 <Polish>Pacjent ma opuchlizne na kończynie</Polish>
-                <Chinese>患者肢体肿胀</Chinese>
+                <Chinesesimp>患者肢体肿胀</Chinesesimp>
                 <Japanese>患者の四肢に腫脹がある</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Swelling_Short">
@@ -679,7 +679,7 @@
                 <Spanish>Hinchazón</Spanish>
                 <Turkish>Şişlik</Turkish>
                 <Polish>Opuchlizna</Polish>
-                <Chinese>肿胀</Chinese>
+                <Chinesesimp>肿胀</Chinesesimp>
                 <Japanese>腫脹</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising">
@@ -692,7 +692,7 @@
                 <Spanish>El paciente tiene hematomas graves en la extremidad</Spanish>
                 <Turkish>Hastanın uzvunda ciddi morarma var</Turkish>
                 <Polish>Pacjent ma poważnie zasinioną kończynę</Polish>
-                <Chinese>患者肢体有严重淤青</Chinese>
+                <Chinesesimp>患者肢体有严重淤青</Chinesesimp>
                 <Japanese>患者の四肢に重度の打撲がある</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_SevereBruising_Short">
@@ -705,7 +705,7 @@
                 <Spanish>Hematomas graves</Spanish>
                 <Turkish>Ciddi Morarma</Turkish>
                 <Polish>Poważne zasinienie</Polish>
-                <Chinese>严重淤青</Chinese>
+                <Chinesesimp>严重淤青</Chinesesimp>
                 <Japanese>重度の打撲</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Bruised">
@@ -718,7 +718,7 @@
                 <Spanish>La extremidad del paciente está magullada</Spanish>
                 <Turkish>Hastanın uzvu morarmış</Turkish>
                 <Polish>Pacjent ma zasinioną kończynę</Polish>
-                <Chinese>患者肢体淤青</Chinese>
+                <Chinesesimp>患者肢体淤青</Chinesesimp>
                 <Japanese>患者の四肢に打撲がある</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_Bruised_Short">
@@ -731,7 +731,7 @@
                 <Spanish>Magullada</Spanish>
                 <Turkish>Morarmış</Turkish>
                 <Polish>Zasiniona</Polish>
-                <Chinese>淤青</Chinese>
+                <Chinesesimp>淤青</Chinesesimp>
                 <Japanese>打撲</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury">
@@ -744,7 +744,7 @@
                 <Spanish>El paciente no tiene daño significativo en la extremidad</Spanish>
                 <Turkish>Hastanın uzvunda belirgin bir hasar yok</Turkish>
                 <Polish>Pacjent nie ma poważnych obrażeń na kończynie</Polish>
-                <Chinese>患者肢体无明显损伤</Chinese>
+                <Chinesesimp>患者肢体无明显损伤</Chinesesimp>
                 <Japanese>患者の四肢に大きな損傷はない</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury_Short">
@@ -757,7 +757,7 @@
                 <Spanish>Sin lesión significativa</Spanish>
                 <Turkish>Belirgin Yaralanma Yok</Turkish>
                 <Polish>Brak poważnych obrażeń</Polish>
-                <Chinese>无显著受伤</Chinese>
+                <Chinesesimp>无显著受伤</Chinesesimp>
                 <Japanese>重大な損傷なし</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed">
@@ -770,7 +770,7 @@
                 <Spanish>Realineamiento de fractura realizado</Spanish>
                 <Turkish>Kırık hizalama yapıldı</Turkish>
                 <Polish>Przeprowadzono redukcje złamania</Polish>
-                <Chinese>骨折复位已完成</Chinese>
+                <Chinesesimp>骨折复位已完成</Chinesesimp>
                 <Japanese>骨折整復を実施した</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_InspectForFracture_RealignmentPerformed_Short">
@@ -783,7 +783,7 @@
                 <Spanish>Realineamiento realizado</Spanish>
                 <Turkish>hizalama yapıldı</Turkish>
                 <Polish>Redukcja przeprowadzona</Polish>
-                <Chinese>复位已进行</Chinese>
+                <Chinesesimp>复位已进行</Chinesesimp>
                 <Japanese>整復を実施した</Japanese>
             </Key>
         </Container>
@@ -798,7 +798,7 @@
                 <Spanish>Realizar realineamiento de fractura</Spanish>
                 <Turkish>Kırık Hizalama Yap</Turkish>
                 <Polish>Wykonaj redukcje złamania</Polish>
-                <Chinese>进行骨折复位</Chinese>
+                <Chinesesimp>进行骨折复位</Chinesesimp>
                 <Japanese>骨折整復を実施</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Progress">
@@ -811,7 +811,7 @@
                 <Spanish>Realizando realineamiento de fractura...</Spanish>
                 <Turkish>Kırık hizalama yapılıyor...</Turkish>
                 <Polish>Wykonywanie redukcji złamania...</Polish>
-                <Chinese>正在进行骨折复位…</Chinese>
+                <Chinesesimp>正在进行骨折复位…</Chinesesimp>
                 <Japanese>骨折整復を実施中...</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete">
@@ -824,7 +824,7 @@
                 <Spanish>Realineamiento de fractura realizado</Spanish>
                 <Turkish>Kırık hizalama yapıldı</Turkish>
                 <Polish>Wykonano redukcje złamania</Polish>
-                <Chinese>骨折复位已完成</Chinese>
+                <Chinesesimp>骨折复位已完成</Chinesesimp>
                 <Japanese>骨折整復を実施した</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete_Success">
@@ -837,7 +837,7 @@
                 <Spanish>Realineamiento de fractura realizado con éxito</Spanish>
                 <Turkish>Kırık hizalama başarıyla gerçekleştirildi</Turkish>
                 <Polish>Redukcja złamania udana</Polish>
-                <Chinese>骨折复位已成功完成</Chinese>
+                <Chinesesimp>骨折复位已成功完成</Chinesesimp>
                 <Japanese>骨折整復は正常に実施された</Japanese>
             </Key>
             <Key ID="STR_ACM_Disability_FractureRealignment_ActionLog">
@@ -850,7 +850,7 @@
                 <Spanish>%1 realizó realineamiento de fractura</Spanish>
                 <Turkish>%1 kırık hizalama gerçekleştirdi</Turkish>
                 <Polish>%1 wykonał redukcje złamania</Polish>
-                <Chinese>%1进行了骨折复位</Chinese>
+                <Chinesesimp>%1进行了骨折复位</Chinesesimp>
                 <Japanese>%1 が骨折整復を実施した</Japanese>
             </Key>
         </Container>
@@ -866,7 +866,7 @@
                 <Korean>붕대로 감김</Korean>
                 <Spanish>Envolviendo</Spanish>
                 <Turkish>Sarılmış</Turkish>
-                <Chinese>已包扎</Chinese>
+                <Chinesesimp>已包扎</Chinesesimp>
                 <Japanese>巻き付け済み</Japanese>
             </Key>
         </Container>
