@@ -186,7 +186,7 @@ private _actions = [];
                     params ["", "", "_args"];
                     _args params ["_patient", "_medic"];
 
-                    true;
+                    IS_UNCONSCIOUS(_patient);
                 },
                 {},
                 [_patient, _medic]

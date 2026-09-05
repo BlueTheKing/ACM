@@ -25,16 +25,23 @@ _unit setVariable [QGVAR(GetUpActionID), [0xF0, [false, false, false], {
     ACE_player call FUNC(getUp);
 }, "keyup", "", false, 0] call CBA_fnc_addKeyHandler];
 
-[{
-    params ["_unit"];
+private _inVehicle = !(isNull (objectParent _unit));
 
-    !(_unit getVariable [QGVAR(Lying_State), false]) || IS_UNCONSCIOUS(_unit) || !(alive _unit) || (animationState _unit == "AinjPfalMstpSnonWnonDf_carried_dead");
+[{
+    params ["_unit", "_inVehicle"];
+
+    !(_unit getVariable [QGVAR(Lying_State), false]) || IS_UNCONSCIOUS(_unit) || !(alive _unit) || (animationState _unit == "AinjPfalMstpSnonWnonDf_carried_dead") || (_inVehicle != !(isNull (objectParent _unit)));
 }, {
     params ["_unit"];
 
     if ((animationState _unit != "AinjPfalMstpSnonWnonDf_carried_dead") || IS_UNCONSCIOUS(_unit) || !(alive _unit)) then {
         [] call ACEFUNC(interaction,hideMouseHint);
+        
+        if (alive _unit && (animationState _unit != "AinjPfalMstpSnonWnonDf_carried_dead") && !(IS_UNCONSCIOUS(_unit))) then {
+            _unit setVariable [QGVAR(Lying_State), false, true];
+        };
     };
+    
     [_unit getVariable QGVAR(GetUpActionID), "keyup"] call CBA_fnc_removeKeyHandler;
     _unit setVariable [QGVAR(GetUpActionID), nil];
-}, [_unit], 3600, {}] call CBA_fnc_waitUntilAndExecute;
+}, [_unit, _inVehicle], 3600, {}] call CBA_fnc_waitUntilAndExecute;
