@@ -1650,7 +1650,7 @@
         <Container name="// Surgical Airway Action //">
             <Key ID="STR_ACM_Airway_SurgicalAirway">
                 <English>Surgical Airway</English>
-                <Portuguese> Cricotireoidostomia</Portuguese>
+                <Portuguese>Cricotireoidostomia</Portuguese>
                 <Russian>Хирургическое обеспечение дыхательных путей</Russian>
                 <Ukrainian>Хірургічне забезпечення дихальних шляхів</Ukrainian>
                 <Korean>외과적 기도 </Korean>
@@ -1709,7 +1709,7 @@
                 <Korean>외과적 기도 확보 이미 진행 중</Korean>
                 <Spanish>Vía aérea quirúrgica ya en proceso</Spanish>
                 <Turkish>Cerrahi hava yolu işlemi zaten devam ediyor</Turkish>
-                <French> Voies respiratoires chirurgicales en cours </French>
+                <French>Voies respiratoires chirurgicales en cours </French>
                 <Polish>Chirurgiczne udrożnienie w toku</Polish>
                 <Chinesesimp>外科气道操作已在进行中</Chinesesimp>
                 <Japanese>外科的気道確保はすでに進行中</Japanese>
@@ -1722,7 +1722,7 @@
                 <Korean>외과적 기도 확보 실패</Korean>
                 <Spanish>Falló la vía aérea quirúrgica</Spanish>
                 <Turkish>Cerrahi hava yolu başarısız</Turkish>
-                <French> Voies respiratoires chirurgicales a échoué</French>
+                <French>Voies respiratoires chirurgicales a échoué</French>
                 <Polish>Chirurgiczne udrożnienie nieudane</Polish>
                 <Chinesesimp>外科气道操作失败</Chinesesimp>
                 <Japanese>外科的気道確保に失敗</Japanese>
@@ -1735,7 +1735,7 @@
                 <Korean>외과적 기도 확보 취소됨</Korean>
                 <Spanish>Vía aérea quirúrgica cancelada</Spanish>
                 <Turkish>Cerrahi hava yolu iptal edildi</Turkish>
-                <French> Voies respiratoires chirurgicales annulé</French>
+                <French>Voies respiratoires chirurgicales annulé</French>
                 <Polish>Przerwano chirurgiczne udrożnienie</Polish>
                 <Chinesesimp>已取消外科气道操作</Chinesesimp>
                 <Japanese>外科的気道確保をキャンセル</Japanese>
