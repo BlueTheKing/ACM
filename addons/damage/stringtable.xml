@@ -448,27 +448,21 @@
                 <Spanish>Tiempo necesario para vendar la extremidad</Spanish>
                 <Turkish>Tüm vücut parçasını sarmak için gereken süre</Turkish>
                 <Chinesesimp>包扎身体部位时间</Chinesesimp>
-            </Key>
-            <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance">
-                <English>Wrapped Wound Reopen Chance Multiplier</English>
-                <Chinesesimp>包扎伤口裂开概率倍率</Chinesesimp>
-                <Portuguese>Chance de reabertura de uma ferida enfaixada</Portuguese>
-            </Key>
-            <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance_Desc">
-                <English>Sets chance that a wrapped wound reopens</English>
-                <Chinesesimp>设置包扎伤口裂开的概率</Chinesesimp>
                 <Japanese>部位全体を巻くのにかかる時間</Japanese>
-                <Portuguese>Define a chance de um ferimento enfaixado reabrir</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance">
                 <English>Wrapped Wound Reopen Chance Multiplier</English>
                 <Polish>Mnożnik szansy na rozejście się zaopatrzonej rany</Polish>
                 <Japanese>巻いた創傷の再開口率倍率</Japanese>
+                <Chinesesimp>包扎伤口裂开概率倍率</Chinesesimp>
+                <Portuguese>Chance de reabertura de uma ferida enfaixada</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance_Desc">
                 <English>Sets chance that a wrapped wound reopens</English>
                 <Polish>Szansa na rozejście się zaopatrzonej rany</Polish>
                 <Japanese>巻いた創傷が再び開く確率を設定</Japanese>
+                <Chinesesimp>设置包扎伤口裂开的概率</Chinesesimp>
+                <Portuguese>Define a chance de um ferimento enfaixado reabrir</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_TreatmentTime_WrappedStitch">
                 <English>Wrapped Stitch Time</English>
