@@ -135,7 +135,7 @@
             <Portuguese>Define o limiar para morte instantânea por trauma no tronco, desativado se for 0</Portuguese>
             <Russian>Задаёт порог мгновенной смерти от травмы торса; 0 — отключено</Russian>
             <Ukrainian>Визначає поріг миттєвої смерті від травми торса; 0 — вимкнено</Ukrainian>
-            <Korean>몸통 외상으로 인한 즉사 임계값 설정, 0이면 비활성화 </Korean>
+            <Korean>몸통 외상으로 인한 즉사 임계값 설정, 0이면 비활성화</Korean>
             <Spanish>Define el valor umbral a partir del cual un traumatismo en el torso produce muerte instantánea. (Desactivado si el valor es 0.)</Spanish>
             <Turkish>Gövdeye alınan travmadan anında ölüm için eşiği ayarlar, 0 ise devre dışıdır</Turkish>
             <Chinesesimp>设置躯干创伤导致立即死亡的阈值，设为0则禁用</Chinesesimp>
@@ -163,7 +163,7 @@
             <Portuguese>Define o limiar para a possibilidade de parada cardiorrespiratória por trauma na cabeça, desativado se for 0</Portuguese>
             <Russian>Задаёт порог риска остановки сердца от травмы головы; 0 — отключено</Russian>
             <Ukrainian>Визначає поріг ризику зупинки серця від травми голови; 0 — вимкнено</Ukrainian>
-            <Korean>머리 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화 </Korean>
+            <Korean>머리 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화</Korean>
             <Spanish>Establece el umbral que determina la posibilidad de paro cardiaco como consecuencia de un traumatismo craneal. (Desactivado si el valor es 0.)</Spanish>
             <Turkish>Başa alınan travmadan kardiyak arrest olasılığı için eşiği ayarlar, 0 ise devre dışıdır</Turkish>
             <Chinesesimp>设置头部创伤导致心脏骤停的阈值，设为0则禁用</Chinesesimp>
@@ -486,7 +486,7 @@
                 <Portuguese>Tempo para suturar uma ferida enfaixada</Portuguese>
                 <Russian>Время на наложение швов по обмотанной ране</Russian>
                 <Ukrainian>Час на накладання швів по обмотаній рані</Ukrainian>
-                <Korean>탄성 붕대 감은 상처를 봉합하는 시간 </Korean>
+                <Korean>탄성 붕대 감은 상처를 봉합하는 시간</Korean>
                 <Spanish>Tiempo para suturar la herida vendada</Spanish>
                 <Turkish>Sarılmış bir yarayı dikmek için gereken süre</Turkish>
                 <Chinesesimp>缝合包扎伤口的时间</Chinesesimp>
@@ -685,7 +685,7 @@
                 <Portuguese>Enfaixar ferimentos bandageados</Portuguese>
                 <Russian>Обмотать перевязанные раны</Russian>
                 <Ukrainian>Обмотати перев’язані рани</Ukrainian>
-                <Korean>붕대에 탄력 붕대 감기 </Korean>
+                <Korean>붕대에 탄력 붕대 감기</Korean>
                 <Spanish>Envolver heridas vendadas</Spanish>
                 <Turkish>Bandajlı Yaraları Sar</Turkish>
                 <Chinesesimp>加固包扎伤口</Chinesesimp>

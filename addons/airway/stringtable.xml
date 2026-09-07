@@ -1481,7 +1481,7 @@
                 <Polish>Obracanie głowy nieudane</Polish>
                 <German>Kopfdrehung war nicht erfolgreich</German>
                 <French>Rotation de la tête sans succès</French>
-                <Portuguese>Lateralização de cabeça malsucedida </Portuguese>
+                <Portuguese>Lateralização de cabeça malsucedida</Portuguese>
                 <Russian>Поворот головы не удался</Russian>
                 <Ukrainian>Поворот голови не вдався</Ukrainian>
                 <Korean>머리 돌리기 실패</Korean>
@@ -1653,7 +1653,7 @@
                 <Portuguese>Cricotireoidostomia</Portuguese>
                 <Russian>Хирургическое обеспечение дыхательных путей</Russian>
                 <Ukrainian>Хірургічне забезпечення дихальних шляхів</Ukrainian>
-                <Korean>외과적 기도 </Korean>
+                <Korean>외과적 기도</Korean>
                 <Spanish>Vía aérea quirúrgica</Spanish>
                 <Turkish>Cerrahi Hava Yolu</Turkish>
                 <French>Voies respiratoires chirurgicales</French>
@@ -1696,7 +1696,7 @@
                 <Korean>%1 외과적 기도  확보 완료</Korean>
                 <Spanish>%1 estableció una vía aérea quirúrgica</Spanish>
                 <Turkish>%1 cerrahi hava yolu oluşturdu</Turkish>
-                <French>%1 Voies respiratoires chirurgicales Établi </French>
+                <French>%1 Voies respiratoires chirurgicales Établi</French>
                 <Polish>%1 założył chirurgiczne udrożnienie</Polish>
                 <Chinesesimp>%1建立了外科气道</Chinesesimp>
                 <Japanese>%1 が外科的気道確保を実施</Japanese>
@@ -1709,7 +1709,7 @@
                 <Korean>외과적 기도 확보 이미 진행 중</Korean>
                 <Spanish>Vía aérea quirúrgica ya en proceso</Spanish>
                 <Turkish>Cerrahi hava yolu işlemi zaten devam ediyor</Turkish>
-                <French>Voies respiratoires chirurgicales en cours </French>
+                <French>Voies respiratoires chirurgicales en cours</French>
                 <Polish>Chirurgiczne udrożnienie w toku</Polish>
                 <Chinesesimp>外科气道操作已在进行中</Chinesesimp>
                 <Japanese>外科的気道確保はすでに進行中</Japanese>
@@ -2075,7 +2075,7 @@
                 <Korean>%1 Cric-Key 스트랩 고정 완료</Korean>
                 <Spanish>%1 aseguró la correa cervical de la vía aérea quirúrgica</Spanish>
                 <Turkish>%1 cerrahi havayolu boyun kayışını sabitledi</Turkish>
-                <French>%1 Sangle des voies respiratoire chirurgicale securisé </French>
+                <French>%1 Sangle des voies respiratoire chirurgicale securisé</French>
                 <Polish>%1 zabezpieczył pasek chirurgicznego udrożnienia</Polish>
                 <Chinesesimp>%1固定了外科气道颈带</Chinesesimp>
                 <Japanese>%1 が外科的気道確保用ネックストラップを固定</Japanese>

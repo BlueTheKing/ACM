@@ -186,7 +186,7 @@
         <Key ID="STR_ACM_Breathing_SETTING_HemothoraxChance">
             <English>Hemothorax Chance</English>
             <Polish>Szansa na krwiaka opłucnej</Polish>
-            <French>Risque d'hemothorax </French>
+            <French>Risque d'hemothorax</French>
             <German>Hämatothorax Wahrscheinlichkeit</German>
             <Portuguese>Chance de hemotórax</Portuguese>
             <Russian>Вероятность гемоторакса</Russian>
@@ -528,7 +528,7 @@
                 <Portuguese>Dreno torácico</Portuguese>
                 <Russian>Набор для дренирования грудной клетки</Russian>
                 <Ukrainian>Набір для дренажу грудної клітки</Ukrainian>
-                <Korean>가슴관 키트 (Chest Tube) </Korean>
+                <Korean>가슴관 키트 (Chest Tube)</Korean>
                 <Spanish>Kit de drenaje torácico</Spanish>
                 <Turkish>Göğüs Tüpü Kiti</Turkish>
                 <Chinesesimp>胸腔引流管套件</Chinesesimp>
@@ -542,7 +542,7 @@
                 <Portuguese>Kit de uso único com dreno torácico para remoção de fluido do espaço pleural</Portuguese>
                 <Russian>Одноразовый набор для введения дренажа грудной клетки и удаления жидкости из плевральной полости</Russian>
                 <Ukrainian>Одноразовий набір для введення дренажу грудної клітки та видалення рідини з плевральної порожнини</Ukrainian>
-                <Korean>흉강액 제거 1회용 가슴관 키트 </Korean>
+                <Korean>흉강액 제거 1회용 가슴관 키트</Korean>
                 <Spanish>Usado para insertar tubo torácico y evacuar líquido del espacio pleural</Spanish>
                 <Turkish>Plevral boşluktan sıvı almak için göğüs tüpü yerleştirmede kullanılan tek kullanımlık kit</Turkish>
                 <Chinesesimp>用于置入胸腔引流管以排出胸膜腔积液的一次性套件</Chinesesimp>
@@ -572,7 +572,7 @@
                 <Korean>가슴관 삽입 준비 1회용 흉강 천자 키트</Korean>
                 <Spanish>Usado para preparar al paciente para la inserción de tubo torácico</Spanish>
                 <Turkish>Göğüs tüpü yerleştirilmesine hazırlık için kullanılan tek kullanımlık kit</Turkish>
-                <Polish>Jednorazowy zestaw do przygotowania pacjentów do założenia rurki do drenażu </Polish>
+                <Polish>Jednorazowy zestaw do przygotowania pacjentów do założenia rurki do drenażu</Polish>
                 <Chinesesimp>用于准备患者接受胸腔引流管置入的一次性套件</Chinesesimp>
                 <Japanese>胸腔チューブ挿入のために患者を準備する使い捨てキット</Japanese>
             </Key>
@@ -1094,7 +1094,7 @@
                 <Portuguese>Hematomas extensos perceptíveis</Portuguese>
                 <Russian>Наблюдается выраженный ушиб</Russian>
                 <Ukrainian>Спостерігається виражений забій</Ukrainian>
-                <Korean>뚜렷한 광범위 타박상 </Korean>
+                <Korean>뚜렷한 광범위 타박상</Korean>
                 <Spanish>Numerosos hematomas visibles</Spanish>
                 <Turkish>Belirgin yaygın morarma</Turkish>
                 <Chinesesimp>明显广泛瘀伤</Chinesesimp>
@@ -1136,7 +1136,7 @@
                 <Portuguese>Expansão irregular do tórax</Portuguese>
                 <Russian>Неравномерное движение грудной клетки</Russian>
                 <Ukrainian>Нерівномірний рух грудної клітки</Ukrainian>
-                <Korean>흉부 운동 불균형 </Korean>
+                <Korean>흉부 운동 불균형</Korean>
                 <Spanish>Elevación y caída torácica desigual</Spanish>
                 <Turkish>Düzensiz göğüs yükselip alçalması</Turkish>
                 <Chinesesimp>胸廓起伏不对称</Chinesesimp>
@@ -1574,7 +1574,7 @@
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyDrain_Amount_Accurate">
                 <English>~%1 ml of blood drained</English>
-                <Polish>Odessano ~%1 ml krwi </Polish>
+                <Polish>Odessano ~%1 ml krwi</Polish>
                 <German>~%1 ml Blut drainiert</German>
                 <French>~%1 ml de sang drainé</French>
                 <Portuguese>~%1 ml de sangue drenado</Portuguese>
@@ -1652,7 +1652,7 @@
                 <Portuguese>Colocar tubo torácico</Portuguese>
                 <Russian>Вставить дренаж грудной клетки</Russian>
                 <Ukrainian>Вставити дренаж грудної клітки</Ukrainian>
-                <Korean>가슴관 삽관 </Korean>
+                <Korean>가슴관 삽관</Korean>
                 <Spanish>Insertar tubo torácico</Spanish>
                 <Turkish>Göğüs Tüpü Yerleştir</Turkish>
                 <Chinesesimp>置入胸腔引流管</Chinesesimp>
@@ -1774,7 +1774,7 @@
             </Key>
             <Key ID="STR_ACM_Breathing_ThoracostomyResealChestTube_Complete">
                 <English>Chest Tube re-sealed</English>
-                <Polish>Rurka do drenażu została już zamknięta </Polish>
+                <Polish>Rurka do drenażu została już zamknięta</Polish>
                 <German>Thoraxdrainage wiederverschlossen</German>
                 <French>Tube thoracique refermé</French>
                 <Portuguese>Tubo torácico re-selado</Portuguese>
@@ -1965,7 +1965,7 @@
                 <Russian>Лёгкое коллапсировано</Russian>
                 <Ukrainian>Легеня колапсована</Ukrainian>
                 <Korean>폐허탈</Korean>
-                <Spanish>El pulmón está colapsado </Spanish>
+                <Spanish>El pulmón está colapsado</Spanish>
                 <Turkish>Akciğer çökmüş</Turkish>
                 <Chinesesimp>肺部萎陷</Chinesesimp>
                 <Japanese>肺は虚脱している</Japanese>
@@ -2061,7 +2061,7 @@
                 <Polish>Użyj kieszonkowego worka samorozprężalnego (BVM)</Polish>
                 <German>Taschenbeatmungsbeutel verwenden</German>
                 <French>Utiliser le BVM de poche</French>
-                <Portuguese>Usar BVM compacto </Portuguese>
+                <Portuguese>Usar BVM compacto</Portuguese>
                 <Russian>Использовать карманный мешок Амбу</Russian>
                 <Ukrainian>Використати кишеньковий мішок Амбу</Ukrainian>
                 <Korean>휴대용 BVM 사용</Korean>
@@ -2282,7 +2282,7 @@
             </Key>
             <Key ID="STR_ACM_Breathing_BVM_Continued">
                 <English>Continued Rescue Breaths</English>
-                <Polish>Wznowiono oddechy ratunkowe </Polish>
+                <Polish>Wznowiono oddechy ratunkowe</Polish>
                 <German>Beatmung fortgesetzt</German>
                 <French>Poursuite la respiration artificielle</French>
                 <Portuguese>Continuando ventilação</Portuguese>
