@@ -80,7 +80,7 @@
         </Key>
         <Key ID="STR_ACM_CBRN_Category_Chemical_Lewisite">
             <English>Chemical - Lewisite</English>
-            <Portuguese>Químico - Gás Lewisite</Portuguese>
+            <Portuguese>Químico - Lewisita</Portuguese>
             <Russian>Химическое – люизит</Russian>
             <Ukrainian>Хімічне – люїзит</Ukrainian>
             <Korean>화학 - 루이사이트</Korean>
@@ -106,7 +106,7 @@
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_Enable_Desc">
             <English>Enable CBRN threat functionality</English>
-            <Portuguese>Habilitar a funcionalidade de ameaças CBRN</Portuguese>
+            <Portuguese>Habilitar a funcionalidade de ameaças QBRN</Portuguese>
             <Russian>Включить функционал химико-биологической угрозы</Russian>
             <Ukrainian>Увімкнути функціонал хімічно-біологічної загрози</Ukrainian>
             <Korean>CBRN 위협 기능 활성화</Korean>
@@ -132,7 +132,7 @@
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomPPEList_GasMask_Desc">
             <English>List of goggles (facewear)/helmets that are gas masks (or equivalent). Each entry should be a goggles/helmet classname and should be seperated with a comma</English>
-            <Portuguese>Lista de óculos de proteção (faciais)/capacetes que são máscaras de gás (ou equivalentes). Cada entrada deve ser um nome de classe de óculos/capacete e deve ser separada por uma vírgula</Portuguese>
+            <Portuguese>Lista de óculos/capacetes que são máscaras de gás (ou equivalentes). Cada entrada deve ser um nome de classe de óculos/capacete e deve ser separada por uma vírgula</Portuguese>
             <Russian>Список очков (масок)/шлемов, которые являются противогазами (или эквивалентом). Каждый элемент должен быть классом очков/шлема и разделяться запятой</Russian>
             <Ukrainian>Список окулярів (масок)/шоломів, що є протигазами (або еквівалентом). Кожен елемент має бути класом окулярів/шолома та розділятися комою</Ukrainian>
             <Korean>방독면(또는 동등 장비)으로 간주되는 고글/헬멧 목록. 각 항목은 클래스명으로 콤마(",")로 구분</Korean>
@@ -184,7 +184,7 @@
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_CustomVehicleList_CBRN_Desc">
             <English>List of vehicles that are CBRN protected (overpressure capability). Each entry should be a vehicle classname and should be seperated with a comma</English>
-            <Portuguese>Lista de veículos que são protegidos contra QBRN (capacidade de sobrepressão). Cada entrada deve ser um nome de classe de veículo e deve ser separada por uma vírgula</Portuguese>
+            <Portuguese>Lista de veículos que são protegidos contra QBRN (capacidade de pressão positiva). Cada entrada deve ser um nome de classe de veículo e deve ser separada por uma vírgula</Portuguese>
             <Russian>Список машин, защищённых от ХБРЯ (с избыточным давлением). Каждый элемент должен быть классом машины и разделяться запятой</Russian>
             <Ukrainian>Список машин, захищених від ХБРЯ (з надлишковим тиском). Кожен елемент має бути класом машини та розділятися комою</Ukrainian>
             <Korean>CBRN 보호(과압 기능) 차량 목록. 각 항목은 클래스명으로 콤마(",")로 구분</Korean>
@@ -405,7 +405,7 @@
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteCauseBlindness">
             <English>Lewisite Exposure Cause Blindness</English>
-            <Portuguese>Exposição à Lewisite causa cegueira</Portuguese>
+            <Portuguese>Exposição a Lewisita causa cegueira</Portuguese>
             <Russian>Люизит вызывает слепоту</Russian>
             <Ukrainian>Люїзит викликає сліпоту</Ukrainian>
             <Korean>루이사이트 노출로 인한 실명</Korean>
@@ -418,7 +418,7 @@
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteCauseBlindness_Desc">
             <English>Sets whether lewisite exposure causes blindness</English>
-            <Portuguese>Define se a exposição à Lewisite causa cegueira</Portuguese>
+            <Portuguese>Define se a exposição à Lewisita causa cegueira</Portuguese>
             <Russian>Определяет, вызывает ли люизит слепоту</Russian>
             <Ukrainian>Визначає, чи викликає люїзит сліпоту</Ukrainian>
             <Korean>루이사이트 노출로 실명 여부 설정</Korean>
@@ -444,7 +444,7 @@
         </Key>
         <Key ID="STR_ACM_CBRN_SETTING_LewisiteIsColorless_Desc">
             <English>Sets whether lewisite should be invisible</English>
-            <Portuguese>Define se o Lewisite deve ser invisível</Portuguese>
+            <Portuguese>Define se a Lewisita deve ser invisível</Portuguese>
             <Russian>Определяет, должен ли люизит быть невидимым</Russian>
             <Ukrainian>Визначає, чи має люїзит бути невидимим</Ukrainian>
             <Korean>루이사이트가 눈에 보이지 않도록 설정</Korean>
@@ -734,7 +734,7 @@
             </Key>
             <Key ID="STR_ACM_CBRN_SupplyCrate_PPE_Display">
                 <English>[ACM] CBRN PPE Supply Crate</English>
-                <Portuguese>[ACM] Caixa de suprimentos de EPIs CBRN</Portuguese>
+                <Portuguese>[ACM] Caixa de suprimentos de EPI QBRN</Portuguese>
                 <Russian>[ACM] Ящик СИЗ ХБРЯ</Russian>
                 <Ukrainian>[ACM] Ящик ЗІЗ ХБРЯ</Ukrainian>
                 <Korean>[ACM] CBRN PPE 보급 상자</Korean>
@@ -827,7 +827,7 @@
             </Key>
             <Key ID="STR_ACM_CBRN_Lewisite_Shell_82mm">
                 <English>Chemical Payload Shell (Lewisite)</English>
-                <Portuguese>Carga química (Lewisite)</Portuguese>
+                <Portuguese>Carga química (Lewisita)</Portuguese>
                 <Russian>Химический снаряд (люизит)</Russian>
                 <Ukrainian>Хімічний снаряд (люїзит)</Ukrainian>
                 <Korean>화학 탄두 탄환 (루이사이트)</Korean>
@@ -840,7 +840,7 @@
             </Key>
             <Key ID="STR_ACM_CBRN_Lewisite_Shell_82mm_Short">
                 <English>CWA (Lewisite)</English>
-                <Portuguese>Carga (Lewisite)</Portuguese>
+                <Portuguese>Carga (Lewisita)</Portuguese>
                 <Russian>БОВ (люизит)</Russian>
                 <Ukrainian>БОР (люїзит)</Ukrainian>
                 <Korean>CWA (루이사이트)</Korean>
@@ -920,7 +920,7 @@
             </Key>
             <Key ID="STR_ACM_CBRN_WashEyes_Complete_Other">
                 <English>Washed %1's eyes with water</English>
-                <Portuguese>Lavou os olhos de %1's com água</Portuguese>
+                <Portuguese>Lavou os olhos de %1 com água</Portuguese>
                 <Russian>Глаза %1 промыты водой</Russian>
                 <Ukrainian>Очі %1 промито водою</Ukrainian>
                 <Korean>%1의 눈을 물로 씻음</Korean>
@@ -1338,10 +1338,11 @@
                 <Polish>Moduł CBRN musi być załączony</Polish>
                 <Chinese>CBRN插件必须启用</Chinese>
                 <Japanese>CBRNアドオンを有効化する必要がある</Japanese>
+                <Portuguese>Addon de QBRN deve ser habilitado</Portuguese>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_Error_SelectObject">
                 <English>Must select object</English>
-                <Portuguese>Deve selecionar o objeto</Portuguese>
+                <Portuguese>Deve selecionar um objeto</Portuguese>
                 <Russian>Нужно выбрать объект</Russian>
                 <Ukrainian>Потрібно вибрати обʼєкт</Ukrainian>
                 <Korean>객체 선택 필요 </Korean>
@@ -1354,7 +1355,7 @@
             </Key>
             <Key ID="STR_ACM_CBRN_Module_Generic_Error_NotDestroyed">
                 <English>Object must not be destroyed</English>
-                <Portuguese>O objeto não deve ser destruído</Portuguese>
+                <Portuguese>O objeto não pode estar destruído</Portuguese>
                 <Russian>Объект не должен быть уничтожен</Russian>
                 <Ukrainian>Обʼєкт не має бути знищений</Ukrainian>
                 <Korean>객체가 파괴되지 않아야 함</Korean>
@@ -1378,6 +1379,7 @@
                 <Polish>Strefa zagrożenia</Polish>
                 <Chinese>危害区域</Chinese>
                 <Japanese>危険区域</Japanese>
+                <Portuguese>Zona de risco</Portuguese>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateHazardZone">
                 <English>Create Hazard Zone</English>
@@ -1405,6 +1407,7 @@
                 <Polish>Urządzenie chemiczne</Polish>
                 <Chinese>化学装置</Chinese>
                 <Japanese>化学剤装置</Japanese>
+                <Portuguese>Dispositivo químico</Portuguese>
             </Key>
             <Key ID="STR_ACM_CBRN_Module_CreateChemicalDevice">
                 <English>Create Chemical Device</English>

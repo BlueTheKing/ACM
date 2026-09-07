@@ -20,7 +20,7 @@
             <Polish>Udrażnianie dróg oddechowych</Polish>
             <French>Gestion des voies respiratoires</French>
             <German>Atemwegs-Managment</German>
-            <Portuguese>Gestão de vias aéreas</Portuguese>
+            <Portuguese>Manejo de vias aéreas</Portuguese>
             <Russian>Контроль дыхательных путей</Russian>
             <Ukrainian>Контроль дихальних шляхів</Ukrainian>
             <Korean>기도 (Airway) 관리</Korean>
@@ -34,7 +34,7 @@
             <Polish>Stabilizacja dróg oddechowych</Polish>
             <French>Adjuvant des voies respiratoires</French>
             <German>Atemwegs-Hilfe</German>
-            <Portuguese>Adjuvante de vias aéreas</Portuguese>
+            <Portuguese>Dispositivos de vias aéreas</Portuguese>
             <Russian>Средства для контроля дыхательных путей</Russian>
             <Ukrainian>Засоби для котролю дихальних шляхів</Ukrainian>
             <Korean>기도 (Airway) 보조기구</Korean>
@@ -76,7 +76,7 @@
             <Polish>Mnożnik szansy zapadnięcia się dróg oddechowych</Polish>
             <French>Multiplicateur du risque de collapsus des voies respiratoires</French>
             <German>Atemwegs-Kollaps Wahrscheinlichkeitsmultiplikator</German>
-            <Portuguese>Multiplicador de chance de colapto de vias aéreas</Portuguese>
+            <Portuguese>Multiplicador de chance de colapso de vias aéreas</Portuguese>
             <Russian>Множитель вероятности коллапса дыхательных путей</Russian>
             <Ukrainian>Множник імовірності колапсу дихальних шляхів</Ukrainian>
             <Korean>기도 (Airway) 붕괴 확률 배수</Korean>
@@ -118,7 +118,7 @@
             <Polish>Czas pozycji bezpiecznej</Polish>
             <French>Durée de la position latérale de sécurité</French>
             <German>Stabile Seitenlage Zeit</German>
-            <Portuguese>Tempo para estabelecer posição de recuperação</Portuguese>
+            <Portuguese>Tempo para posição de recuperação</Portuguese>
             <Russian>Время придания стабильного бокового положения</Russian>
             <Ukrainian>Час надання стабільного бокового положення</Ukrainian>
             <Korean>회복자세 유지 시간</Korean>
@@ -132,7 +132,7 @@
             <Polish>Czas potrzebny na ułożenie pozycji bocznej ustalonej</Polish>
             <French>Temps nécessaire pour placer la victime en position latérale de sécurité</French>
             <German>Zeit bis Patient in stabile Seitenlage gelegt ist</German>
-            <Portuguese>Tempo para colocar um paciente em posição de recuperação</Portuguese>
+            <Portuguese>Tempo para colocar em posição de recuperação</Portuguese>
             <Russian>Время для придания стабильного бокового положения</Russian>
             <Ukrainian>Час для надання стабільного бокового положення</Ukrainian>
             <Korean>회복자세를 만드는 데 걸리는 시간</Korean>
@@ -146,7 +146,7 @@
             <Polish>Pozwól na użycie ssaka ręcznego</Polish>
             <French>Permettre l'utilisation de la poche d'aspiration</French>
             <German>Absaugbeutel erlauben</German>
-            <Portuguese>Permitir Aspirador Manual</Portuguese>
+            <Portuguese>Permitir aspirador manual</Portuguese>
             <Russian>Разрешить использование высасывающего мешка</Russian>
             <Ukrainian>Дозволити використання відсмоктувального мішка</Ukrainian>
             <Korean>Suction Bag 허용</Korean>
@@ -160,7 +160,7 @@
             <Polish>Poziom wyszkolenia potrzebny do użycia ssaka ręcznego</Polish>
             <French>Niveau de formation requis pour l'utilisation de la poche d'aspiration</French>
             <German>Benötigte Qualifikationsstufe um den Absaugbeutel zu benutzen</German>
-            <Portuguese>Nível de treinamento requerido para usar Aspirador Manual</Portuguese>
+            <Portuguese>Nível de treinamento requerido para usar o aspirador manual</Portuguese>
             <Russian>Уровень подготовки, необходимый для использования отсасывающего мешка</Russian>
             <Ukrainian>Рівень підготовки, необхідний для використання відсмоктувального мішка</Ukrainian>
             <Korean>Suction Bag 사용에 필요한 훈련 수준</Korean>
@@ -188,7 +188,7 @@
             <Polish>Poziom wyszkolenia potrzebny do użycia ACCUVACa</Polish>
             <French>Niveau de formation requis pour utiliser l'ACCUVAC</French>
             <German>Benötigte Qualifikationsstufe um den ACCUVAC zu benutzen</German>
-            <Portuguese>Nível de treinamento requerido para usar ACCUVAC</Portuguese>
+            <Portuguese>Nível de treinamento requerido para usar o ACCUVAC</Portuguese>
             <Russian>Уровень подготовки, необходимый для использования ACCUVAC</Russian>
             <Ukrainian>Рівень підготовки, необхідний для використання ACCUVAC</Ukrainian>
             <Korean>ACCUVAC 사용에 필요한 훈련 수준</Korean>
@@ -216,7 +216,7 @@
             <Polish>Czas potrzebny na aplikacje rurki ustno-gardłowej</Polish>
             <French>Temps pour insérer la canule de Guedel</French>
             <German>Zeit bis Guedeltubus eingelegt ist</German>
-            <Portuguese>Tempo para inserir uma cânula de Guedel num paciente</Portuguese>
+            <Portuguese>Tempo para colocar a cânula de Guedel</Portuguese>
             <Russian>Время для введения трубки Геделя</Russian>
             <Ukrainian>Час для введення трубки Геделя</Ukrainian>
             <Korean>Guedel Tube 삽입에 걸리는 시간</Korean>
@@ -230,7 +230,7 @@
             <Polish>Czas rurki nosowo-gardłowej</Polish>
             <French>Durée du tube respiratoire nasopharyngé</French>
             <German>Nasopharyngealtubus Zeit</German>
-            <Portuguese>Tempo para cânula nasofaragínea</Portuguese>
+            <Portuguese>Tempo para a cânula nasofaragínea</Portuguese>
             <Russian>Время введения NPA</Russian>
             <Ukrainian>Час введення NPA</Ukrainian>
             <Korean>NPA 삽입 시간</Korean>
@@ -244,7 +244,7 @@
             <Polish>Czas potrzebny na aplikacje rurki nosowo-gardłowej</Polish>
             <French>Temps pour insérer le tube respiratoire nasopharyngé</French>
             <German>Zeit bis der Nasopharyngealtubus eingelegt ist</German>
-            <Portuguese>Tempo para inserir uma cânula nasofaragínea num paciente</Portuguese>
+            <Portuguese>Tempo para colocarm a cânula nasofaragínea</Portuguese>
             <Russian>Время для введения NPA</Russian>
             <Ukrainian>Час для введення NPA</Ukrainian>
             <Korean>NPA 삽입에 걸리는 시간</Korean>
@@ -272,7 +272,7 @@
             <Polish>Czas potrzebny na aplikacje maski krtaniowej i-gel</Polish>
             <French>Temps pour insérer i-gel</French>
             <German>Zeit bis i-gel Tubus eingelegt ist</German>
-            <Portuguese>Tempo para inserir i-gel</Portuguese>
+            <Portuguese>Tempo para colocar o i-gel</Portuguese>
             <Russian>Время для введения i-gel</Russian>
             <Ukrainian>Час для введення i-gel</Ukrainian>
             <Korean>i-gel 삽입에 걸리는 시간</Korean>
@@ -300,7 +300,7 @@
             <Polish>Poziom wyszkolenia potrzebny do użycia rurki ustno-gardłowej</Polish>
             <French>Niveau de formation requis pour utiliser la canule de Guedel</French>
             <German>Benötigte Qualifikationsstufe um den Gudel Tubus zu benutzen</German>
-            <Portuguese>Nível de treinamento requerido para inserir cânula de Guedel</Portuguese>
+            <Portuguese>Nível de treinamento requerido para colocar cânula de Guedel</Portuguese>
             <Russian>Уровень подготовки требуемый для введения трубки Геделя</Russian>
             <Ukrainian>Рівень підготовки потрібний для введення трубки Геделя</Ukrainian>
             <Korean>Guedel Tube 삽입에 필요한 훈련 수준</Korean>
@@ -328,7 +328,7 @@
             <Polish>Poziom wyszkolenia potrzebny do użycia rurki nosowo-gardłowej</Polish>
             <French>Niveau de formation nécessaire pour l'utilisation du tube respiratoire nasopharyngé</French>
             <German>Benötigte Qualifikationsstufe um den Nasopharyngealtubus zu benutzen</German>
-            <Portuguese>Nível de treinamento requerido para inserir cânula de Guedel</Portuguese>
+            <Portuguese>Nível de treinamento requerido para colocar a cânula de Guedel</Portuguese>
             <Russian>Уровень подготовки для введения NPA</Russian>
             <Ukrainian>Рівень підготовки для введення NPA</Ukrainian>
             <Korean>NPA 삽입에 필요한 훈련 수준</Korean>
@@ -356,7 +356,7 @@
             <Polish>Poziom wyszkolenia potrzebny do użycia maski krtaniowej i-gel</Polish>
             <French>Niveau de formation nécessaire pour utiliser le masque laryngé i-gel</French>
             <German>Benötigte Qualifikationsstufe um die i-gel-Maske zu benutzen</German>
-            <Portuguese>Nível de treinamento requerido para inserir i-gel</Portuguese>
+            <Portuguese>Nível de treinamento requerido para colocar o i-gel</Portuguese>
             <Russian>Уровень подготовки требуемый для введения i-gel</Russian>
             <Ukrainian>Рівень підготовки потрібний для введення i-gel</Ukrainian>
             <Korean>i-gel 삽입에 필요한 훈련 수준</Korean>
@@ -367,7 +367,7 @@
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SurgicalAirway">
             <English>Allow Surgical Airway</English>
-            <Portuguese>Permitir cirurgia em vias aéreas</Portuguese>
+            <Portuguese>Permitir cricotireoidostomia</Portuguese>
             <Russian>Разрешить хирургическое обеспечение дыхательных путей</Russian>
             <Ukrainian>Дозволити хірургічне забезпечення дихальних шляхів</Ukrainian>
             <Korean>외과적 기도 확보(Surgical Airway) 허용</Korean>
@@ -380,7 +380,7 @@
         </Key>
         <Key ID="STR_ACM_Airway_SETTING_Allow_SurgicalAirway_Desc">
             <English>Training level required to establish surgical airway</English>
-            <Portuguese>Nível de treinamento requerido estabelecer cirurgia de vias aéreas</Portuguese>
+            <Portuguese>Nível de treinamento requerido para realizar cricotireoidostomia</Portuguese>
             <Russian>Уровень подготовки для хирургического обеспечения дыхательных путей</Russian>
             <Ukrainian>Рівень підготовки для хірургічного забезпечення дихальних шляхів</Ukrainian>
             <Korean>외과적 기도 확보 (Surgical Airway)가 가능한 훈련 수준</Korean>
@@ -396,7 +396,7 @@
             <Polish>Przedmioty dróg oddechowych ponownego użytku</Polish>
             <French>Adjuvants des voies aériennes réutilisables</French>
             <German>Atemwegshilfen Wiederverwendung</German>
-            <Portuguese>Reutilização de adjuvantes de vias aéreas</Portuguese>
+            <Portuguese>Reutilização de dispositivos de vias aéreas</Portuguese>
             <Russian>Дополнительные средства для дыхательных путей многоразовые</Russian>
             <Ukrainian>Додаткові засоби для дихальних шляхів багаторазові</Ukrainian>
             <Korean>기도 (Airway) 보조기구 재사용 가능</Korean>
@@ -410,7 +410,7 @@
             <Polish>Przedmioty dróg oddechowych pozostają w ekwipunku po ich użyciu</Polish>
             <German>Atemwegshilfen sind wiederverwendbar und werden nicht verworfen nach Entfernung</German>
             <French>Les dispositifs respiratoires sont réutilisables et ne sont pas jetés après avoir été retirés</French>
-            <Portuguese>Adjuvantes de vias aéreas são mantidos ao invés de serem descartados após a remoção</Portuguese>
+            <Portuguese>Dispositivos de vias aéreas são mantidos ao invés de serem descartados após a remoção</Portuguese>
             <Russian>Дополнительные средства сохраняются после использования</Russian>
             <Ukrainian>Додаткові засоби зберігаються після використання</Ukrainian>
             <Korean>제거 시 버리지 않고 유지됨</Korean>
@@ -439,7 +439,7 @@
                 <Polish>Udrażnia drogi oddechowe przez usta</Polish>
                 <German>Hält den Atemweg offen</German>
                 <French>Utilisé pour maintenir les voies respiratoires ouvertes</French>
-                <Portuguese>Utilizado para manter as vias aéreas abertas pela cavidade oral</Portuguese>
+                <Portuguese>Utilizado por via oral para manter as vias aéreas abertas</Portuguese>
                 <Russian>Используется для обеспечения проходимости дыхательных путей через рот</Russian>
                 <Ukrainian>Використовується для забезпечення прохідності дихальних шляхів через рот</Ukrainian>
                 <Korean>구강 경로를 통해 기도 개방 유지</Korean>
@@ -495,7 +495,7 @@
                 <Polish>Udrażnia drogi oddechowe przez nos</Polish>
                 <German>Hält den Atemweg über die Nase offen</German>
                 <French>Maintient les voies respiratoires ouvertes par voie nasale</French>
-                <Portuguese>Utilizada para manter as vias aéreas abertas pela cavidade nasal</Portuguese>
+                <Portuguese>Utilizada pela via nasal para manter as vias aéreas abertas</Portuguese>
                 <Russian>Используется для обеспечения проходимости дыхательных путей через нос</Russian>
                 <Ukrainian>Використовується для забезпечення прохідності дихальних шляхів через ніс</Ukrainian>
                 <Korean>비강 경로로 기도 개방 유지</Korean>
@@ -509,7 +509,7 @@
                 <Polish>Jednorazowy ssak ręczny</Polish>
                 <German>Einweghandabsaugpumpe</German>
                 <French>Pompe d'aspiration manuelle à usage unique</French>
-                <Portuguese>Aspirador Manual de Emergência</Portuguese>
+                <Portuguese>Aspirador Manual Descartável de Emergência</Portuguese>
                 <Russian>Одноразовый экстренный высасывающий мешок</Russian>
                 <Ukrainian>Одноразовий екстрений відсмоктувальний мішок</Ukrainian>
                 <Korean>Emergency Disposable Suction Bag</Korean>
@@ -537,7 +537,7 @@
                 <Polish>Jednorazowy ssak służący do oczyszczania zatorów dróg oddechowych</Polish>
                 <German>Eine Einmalhandabsaugpumpe, um Blockierungen im Rachenraum abzusaugen</German>
                 <French>Une pompe d'aspiration manuelle à usage unique pour aspirer les obstructions des voies respiratoires</French>
-                <Portuguese>Aspirador manual de uso único para liberar vias aéreas obstruídas</Portuguese>
+                <Portuguese>Aspirador manual de uso único usado para limpar vias aéreas obstruídas</Portuguese>
                 <Russian>Одноразовый мешок для устранения обструкции дыхательных путей</Russian>
                 <Ukrainian>Одноразовий мішок для усунення обструкції дихальних шляхів</Ukrainian>
                 <Korean>기도 확보 1회용 석션백</Korean>
@@ -565,7 +565,7 @@
                 <Polish>Urządzenie służące do oczyszczania zatorów dróg oddechowych</Polish>
                 <German>Eine elektronische Absaugpump, um Blockierungen im Rachenraum abzusaugen</German>
                 <French>Une pompe d'aspiration électronique pour aspirer les blocages dans des voies respiratoires</French>
-                <Portuguese>Dispositivo utilizado para liberar vias aéreas obstruídas</Portuguese>
+                <Portuguese>Dispositivo eletrônico utilizado para limpar vias aéreas obstruídas</Portuguese>
                 <Russian>Устройство для устранения обструкции дыхательных путей</Russian>
                 <Ukrainian>Пристрій для усунення обструкції дихальних шляхів</Ukrainian>
                 <Korean>기도 (Airway) 폐쇄 제거 장치</Korean>
@@ -589,7 +589,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_CricKit_Desc">
                 <English>Single-use kit used to establish emergency surgical airway</English>
-                <Portuguese>Kit de uso único para estabelecer cirurgia emergencial de vias aéreas</Portuguese>
+                <Portuguese>Kit de uso único para realizar cricotireoidostomia de emergência</Portuguese>
                 <Russian>Одноразовый набор для экстренного хирургического обеспечения проходимости дыхательных путей</Russian>
                 <Ukrainian>Одноразовий набір для екстреного хірургічного забезпечення прохідності дихальних шляхів</Ukrainian>
                 <Korean>응급 외과적 기도확보용 1회용 키트</Korean>
@@ -607,7 +607,7 @@
                 <Polish>Wykonaj rękoczyn czołowo-żuchwowy</Polish>
                 <German>Kopf überstrecken</German>
                 <French>Effectuer une hyperextension de la tête</French>
-                <Portuguese>Efetuar hiperextensão de vias aéreas</Portuguese>
+                <Portuguese>Realizar hiperextensão de vias aéreas</Portuguese>
                 <Russian>Выполнить действие: Запрокидывание головы — подъём подбородка</Russian>
                 <Ukrainian>Виконати дію: Запрокидування голови — підняття підборіддя</Ukrainian>
                 <Korean>머리 기울임-턱 들어올리기 시행</Korean>
@@ -621,7 +621,7 @@
                 <Polish>Rękoczyn czoło-żuchwa w toku</Polish>
                 <German>Kopf des Patienten bereits überstreckt</German>
                 <French>Tête du patient déjà en hyperextension</French>
-                <Portuguese>Paciente já está as vias aéreas hiperextendidas</Portuguese>
+                <Portuguese>Paciente já está com as vias aéreas hiperextendidas</Portuguese>
                 <Russian>У пациента уже выполнено действие: Запрокидывание головы — подъём подбородка</Russian>
                 <Ukrainian>У пацієнта вже виконана дія: Запрокидування голови — підняття підборіддя</Ukrainian>
                 <Korean>환자는 이미 머리 기울어짐-턱 들어올린 상태임</Korean>
@@ -635,7 +635,7 @@
                 <Polish>%1 rozpoczął rękoczyn czoło-żuchwa</Polish>
                 <German>%1 überstreckt den Kopf des Patienten</German>
                 <French>%1 met la tête du patient en hyperextension</French>
-                <Portuguese>%1 inciou hiperextensão de vias aéreas</Portuguese>
+                <Portuguese>%1 iniciou a hiperextensão de vias aéreas</Portuguese>
                 <Russian>%1 начал выполнение действия: Запрокидывание головы — подъём подбородка</Russian>
                 <Ukrainian>%1 почав виконання дії: Запрокидування голови — підняття підборіддя</Ukrainian>
                 <Korean>%1 머리 기울임-턱 들어올리는 중</Korean>
@@ -707,7 +707,7 @@
                 <Polish>Sprawdzanie drożności...</Polish>
                 <German>Überprüfe Atemweg...</German>
                 <French>Vérification des voies respiratoires...</French>
-                <Portuguese>Checar vias aéreas</Portuguese>
+                <Portuguese>Checando vias aéreas</Portuguese>
                 <Russian>Проверка дыхательных путей...</Russian>
                 <Ukrainian>Перевірка дихальних шляхів...</Ukrainian>
                 <Korean>기도 확인 중...</Korean>
@@ -805,7 +805,7 @@
                 <Polish>Czoło-żuchwa w toku</Polish>
                 <German>Kopf überstreckt</German>
                 <French>Tête inclinée</French>
-                <Portuguese>Cabeça inclinada</Portuguese>
+                <Portuguese>Hiperextendida</Portuguese>
                 <Russian>Голова запрокинута</Russian>
                 <Ukrainian>Голова запрокинута</Ukrainian>
                 <Korean>머리 기울여짐</Korean>
@@ -1128,7 +1128,7 @@
                 <Polish>Drogi oddechowe drożne</Polish>
                 <German>Atemweg ist frei</German>
                 <French>Les voies respiratoires sont dégagées</French>
-                <Portuguese>Vias aéreas estão liberadas</Portuguese>
+                <Portuguese>Vias aéreas estão livres</Portuguese>
                 <Russian>Дыхательные пути свободны</Russian>
                 <Ukrainian>Дихальні шляхи вільні</Ukrainian>
                 <Korean>기도 깨끗함</Korean>
@@ -1158,7 +1158,7 @@
                 <Polish>Wprowadź rurki ustno-gardłowej</Polish>
                 <German>Gudel-Tubus einlegen</German>
                 <French>Insérer la Canule de Guedel</French>
-                <Portuguese>Cânula de Guedel inserida</Portuguese>
+                <Portuguese>Inserir cânula de Guedel</Portuguese>
                 <Russian>Ввести трубку Геделя</Russian>
                 <Ukrainian>Ввести трубку Геделя</Ukrainian>
                 <Korean>Guedel Tube 삽입</Korean>
@@ -1172,7 +1172,7 @@
                 <Polish>Wprowadzanie rurki ustno-gardłowej...</Polish>
                 <German>Lege Guedel-Tubus ein...</German>
                 <French>Insertion de la Canule de Guedel</French>
-                <Portuguese>Inserindo cânula de Guedel</Portuguese>
+                <Portuguese>Inserindo cânula de Guedel...</Portuguese>
                 <Russian>Введение трубки Геделя...</Russian>
                 <Ukrainian>Введення трубки Геделя...</Ukrainian>
                 <Korean>Guedel Tube 삽입 중...</Korean>
@@ -1200,7 +1200,7 @@
                 <Polish>Wprowadzanie rurki nosowo-gardłowej...</Polish>
                 <German>Lege Weindl-Tubus ein...</German>
                 <French>Insertion d'une sonde nasopharyngée ...</French>
-                <Portuguese>Inserindo cânula nasofaragínea</Portuguese>
+                <Portuguese>Inserindo cânula nasofaragínea...</Portuguese>
                 <Russian>Введение NPA...</Russian>
                 <Ukrainian>Введення NPA...</Ukrainian>
                 <Korean>NPA 삽입 중...</Korean>
@@ -1228,7 +1228,7 @@
                 <Polish>Wprowadzanie maski krtaniowej i-gel...</Polish>
                 <German>Lege i-gel ein...</German>
                 <French>Mise en place du masque laryngé i-gel....</French>
-                <Portuguese>Inserindo i-gel</Portuguese>
+                <Portuguese>Inserindo i-gel...</Portuguese>
                 <Russian>Введение i-gel...</Russian>
                 <Ukrainian>Введення i-gel...</Ukrainian>
                 <Korean>i-gel 삽입 중...</Korean>
@@ -1256,7 +1256,7 @@
                 <Polish>Wyjmowanie rurki ustno-gardłowej...</Polish>
                 <German>Entferne Guedel-Tubus...</German>
                 <French>Retrait de la Canule de Guedel</French>
-                <Portuguese>Removendo cânula de Guedel</Portuguese>
+                <Portuguese>Removendo cânula de Guedel...</Portuguese>
                 <Russian>Извлечение трубки Геделя...</Russian>
                 <Ukrainian>Витягування трубки Геделя...</Ukrainian>
                 <Korean>Guedel Tube 제거 중...</Korean>
@@ -1284,7 +1284,7 @@
                 <Polish>Wyjmowanie rurki nosowo-gardłowej...</Polish>
                 <German>Entferne Wendl-Tubus...</German>
                 <French>Retrait de la sonde nasopharyngée ...</French>
-                <Portuguese>Removendo cânula nasofaragínea</Portuguese>
+                <Portuguese>Removendo cânula nasofaragínea...</Portuguese>
                 <Russian>Извлечение NPA</Russian>
                 <Ukrainian>Витагування NPA</Ukrainian>
                 <Korean>NPA 제거 중...</Korean>
@@ -1312,7 +1312,7 @@
                 <Polish>Wyjmowanie maski krtaniowej i-gel...</Polish>
                 <German>Entferne i-gel...</German>
                 <French>Retrait du masque laryngé i-gel ...</French>
-                <Portuguese>Removendo i-gel</Portuguese>
+                <Portuguese>Removendo i-gel...</Portuguese>
                 <Russian>Извлечение i-gel...</Russian>
                 <Ukrainian>Витагування i-gel...</Ukrainian>
                 <Korean>i-gel 제거 중...</Korean>
@@ -1326,7 +1326,7 @@
                 <Polish>Przedmiot jest już w użyciu</Polish>
                 <German>Atemwegshilfe ist bereits eingelegt</German>
                 <French>Elément de voie aérienne déjà inséré</French>
-                <Portuguese>Item de vias aéreas já inserido</Portuguese>
+                <Portuguese>Dispositivo já colocado</Portuguese>
                 <Russian>В дыхательных путях уже установлен предмет</Russian>
                 <Ukrainian>У дихальних шляхах вже встановлено предмет</Ukrainian>
                 <Korean>기도 기구 이미 삽입됨</Korean>
@@ -1340,7 +1340,7 @@
                 <Polish>Nie udało się użyć: %1</Polish>
                 <German>Fehler beim Einlegen von %1</German>
                 <French>Échec de l'insertion de %1</French>
-                <Portuguese>Falhou para inserir %1</Portuguese>
+                <Portuguese>Falhou em colocar %1</Portuguese>
                 <Russian>Не удалось ввести %1</Russian>
                 <Ukrainian>Не вдалося ввести %1</Ukrainian>
                 <Korean>%1 삽입 실패</Korean>
@@ -1381,7 +1381,7 @@
                 <Polish>Użyto: %1</Polish>
                 <German>%1 eingelegt</German>
                 <French>%1 inséré(e)</French>
-                <Portuguese>%1 inseriu</Portuguese>
+                <Portuguese>%1 colocou</Portuguese>
                 <Russian>%1 вставлено</Russian>
                 <Ukrainian>%1 вставлено</Ukrainian>
                 <Korean>%1 삽입 완료</Korean>
@@ -1395,7 +1395,7 @@
                 <Polish>%1 użył: %2</Polish>
                 <German>%1 hat %2 eingelegt</German>
                 <French>%1 a inséré(e) %2</French>
-                <Portuguese>%1 inseriu %2</Portuguese>
+                <Portuguese>%1 colocou %2</Portuguese>
                 <Russian>%1 вставил %2</Russian>
                 <Ukrainian>%1 вставив %2</Ukrainian>
                 <Korean>%1 %2 삽입함</Korean>
@@ -1411,7 +1411,7 @@
                 <Polish>Obróć głowę</Polish>
                 <German>Kopf zur Seite drehen</German>
                 <French>Effectuer des rotations de la tête</French>
-                <Portuguese>Performar lateralização de cabeça</Portuguese>
+                <Portuguese>Realizar lateralização de cabeça</Portuguese>
                 <Russian>Выполнить поворот головы</Russian>
                 <Ukrainian>Виконати поворот голови</Ukrainian>
                 <Korean>머리 돌리기 수행</Korean>
@@ -1439,7 +1439,7 @@
                 <Polish>Obracanie głowy wykonane</Polish>
                 <German>Kopf zur Seite gedreht</German>
                 <French>Rotation de la tête effectué</French>
-                <Portuguese>Lateralização de cabeça performada</Portuguese>
+                <Portuguese>Lateralização de cabeça realizada</Portuguese>
                 <Russian>Поворот головы выполнен</Russian>
                 <Ukrainian>Поворот голови виконано</Ukrainian>
                 <Korean>머리 돌리기 완료</Korean>
@@ -1453,7 +1453,7 @@
                 <Polish>Drogi oddechowe drożne</Polish>
                 <German>Atemweg ist frei</German>
                 <French>Les voies respiratoires sont dégagées</French>
-                <Portuguese>Vias aéreas estão livres</Portuguese>
+                <Portuguese>Vias aéreas livres</Portuguese>
                 <Russian>Дыхательные пути свободны</Russian>
                 <Ukrainian>Дихальні шляхи вільні</Ukrainian>
                 <Korean>기도 깨끗함</Korean>
@@ -1467,7 +1467,7 @@
                 <Polish>Drogi oddechowe oczyszczone</Polish>
                 <German>Atemweg frei gemacht</German>
                 <French>Les voies respiratoires ont été dégagées</French>
-                <Portuguese>Vias aéreas foram liberadas</Portuguese>
+                <Portuguese>Vias aéreas foram limpas</Portuguese>
                 <Russian>Дыхательные пути были очищены</Russian>
                 <Ukrainian>Дихальні шляхи були очищені</Ukrainian>
                 <Korean>기도 이물 제거 완료</Korean>
@@ -1509,7 +1509,7 @@
                 <Polish>%1 wykonał obracanie głowy</Polish>
                 <German>%1 hat den Kopf zur Seite gedreht</German>
                 <French>%1 a effectué une rotation de la tête</French>
-                <Portuguese>%1 performou lateralização de cabeça</Portuguese>
+                <Portuguese>%1 realizou lateralização de cabeça</Portuguese>
                 <Russian>%1 выполнил поворот головы</Russian>
                 <Ukrainian>%1 виконав поворот голови</Ukrainian>
                 <Korean>%1 머리 돌리기 수행함</Korean>
@@ -1525,7 +1525,7 @@
                 <Polish>Pozycja boczna bezpieczna</Polish>
                 <German>Stabile Seitenlage etablieren</German>
                 <French>Mettre en position latérale de sécurité</French>
-                <Portuguese>Estabelecer posição de recuperação</Portuguese>
+                <Portuguese>Colocar em posição de recuperação</Portuguese>
                 <Russian>Придать устойчивое боковое положение</Russian>
                 <Ukrainian>Надати стабільне бокове положення</Ukrainian>
                 <Korean>회복자세 만들기</Korean>
@@ -1539,7 +1539,7 @@
                 <Polish>Ustawianie pozycji bocznej bezpiecznej...</Polish>
                 <German>Lege Patient in die stabile Seitenlage...</German>
                 <French>Mise en position latérale de sécurité</French>
-                <Portuguese>Estabelecendo posição de recuperação...</Portuguese>
+                <Portuguese>Colocando em posição de recuperação...</Portuguese>
                 <Russian>Придание устойчивого бокового положения...</Russian>
                 <Ukrainian>Надання стабільного бокового положення...</Ukrainian>
                 <Korean>회복자세 만드는 중...</Korean>
@@ -1595,7 +1595,7 @@
                 <Polish>Pozycja bezpieczna wykonana</Polish>
                 <German>Patient in stabile Seitenlage gelegt</German>
                 <French>Position latérale de sécurité adoptée</French>
-                <Portuguese>Estabelecendo posição de recuperação</Portuguese>
+                <Portuguese>Colocado em posição de recuperação</Portuguese>
                 <Russian>Придано устойчивое боковое положение</Russian>
                 <Ukrainian>Надано стабільне бокове положення</Ukrainian>
                 <Korean>회복자세 완료</Korean>
@@ -1609,7 +1609,7 @@
                 <Polish>%1 wykonał pozycję bezpieczną</Polish>
                 <German>%1 legte den Patienten in stabile Seitenlage</German>
                 <French>%1 a effectué une position latérale de sécurité</French>
-                <Portuguese>%1 estabeleu posição de recuperação</Portuguese>
+                <Portuguese>%1 colocou em posição de recuperação</Portuguese>
                 <Russian>%1 придал устойчивое боковое положение</Russian>
                 <Ukrainian>%1 надав стабільне бокове положення</Ukrainian>
                 <Korean>%1 회복자세 완료</Korean>
@@ -1650,7 +1650,7 @@
         <Container name="// Surgical Airway Action //">
             <Key ID="STR_ACM_Airway_SurgicalAirway">
                 <English>Surgical Airway</English>
-                <Portuguese>Cirurgia de vias aéreas</Portuguese>
+                <Portuguese> Cricotireoidostomia</Portuguese>
                 <Russian>Хирургическое обеспечение дыхательных путей</Russian>
                 <Ukrainian>Хірургічне забезпечення дихальних шляхів</Ukrainian>
                 <Korean>외과적 기도 </Korean>
@@ -1663,7 +1663,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Action">
                 <English>Establish Surgical Airway</English>
-                <Portuguese>Estabelecer cirurgia de vias aéreas</Portuguese>
+                <Portuguese>Realizar cricotireoidostomia</Portuguese>
                 <Russian>Выполнить хирургическое обеспечение дыхательных путей</Russian>
                 <Ukrainian>Виконати хірургічне забезпечення дихальних шляхів</Ukrainian>
                 <Korean>외과적 기도 확보</Korean>
@@ -1676,7 +1676,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_ActionProgress">
                 <English>Establishing Surgical Airway...</English>
-                <Portuguese>Estabelecendo cirurgia de vias aéreas...</Portuguese>
+                <Portuguese>Realizando cricotireoidostomia...</Portuguese>
                 <Russian>Выполняется хирургическое обеспечение дыхательных путей...</Russian>
                 <Ukrainian>Виконується хірургічне забезпечення дихальних шляхів...</Ukrainian>
                 <Korean>외과적 기도 
@@ -1690,7 +1690,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_ActionLog">
                 <English>%1 established surgical airway</English>
-                <Portuguese>%1 estabeleceu cirurgia de vias aéreas</Portuguese>
+                <Portuguese>%1 realizou cricotireoidostomia</Portuguese>
                 <Russian>%1 выполнил хирургическое обеспечение дыхательных путей</Russian>
                 <Ukrainian>%1 виконав хірургічне забезпечення дихальних шляхів</Ukrainian>
                 <Korean>%1 외과적 기도  확보 완료</Korean>
@@ -1703,7 +1703,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_AlreadyInProgress">
                 <English>Surgical airway already in progress</English>
-                <Portuguese>Cirurgia de vias aéreas já está em andamento</Portuguese>
+                <Portuguese>Cricotireoidostomia em progresso</Portuguese>
                 <Russian>Хирургическое обеспечение дыхательных путей уже выполняется</Russian>
                 <Ukrainian>Хірургічне забезпечення дихальних шляхів вже виконується</Ukrainian>
                 <Korean>외과적 기도 확보 이미 진행 중</Korean>
@@ -1716,7 +1716,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Failed">
                 <English>Surgical airway failed</English>
-                <Portuguese>Cirurgia de vias aéreas falhou</Portuguese>
+                <Portuguese>Cricotireoidostomia falhou</Portuguese>
                 <Russian>Хирургическое обеспечение дыхательных путей не удалось</Russian>
                 <Ukrainian>Хірургічне забезпечення дихальних шляхів не вдалося</Ukrainian>
                 <Korean>외과적 기도 확보 실패</Korean>
@@ -1729,7 +1729,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Cancelled">
                 <English>Cancelled surgical airway</English>
-                <Portuguese>Cirurgia de vias aéreas cancelada</Portuguese>
+                <Portuguese>Cricotireoidostomia cancelada</Portuguese>
                 <Russian>Хирургическое обеспечение дыхательных путей отменено</Russian>
                 <Ukrainian>Хірургічне забезпечення дихальних шляхів скасовано</Ukrainian>
                 <Korean>외과적 기도 확보 취소됨</Korean>
@@ -1742,7 +1742,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Cancelled_ActionLog">
                 <English>%1 cancelled surgical airway</English>
-                <Portuguese>%1 cancelou cirurgia de vias aéreas</Portuguese>
+                <Portuguese>%1 cancelou cricotireoidostomia</Portuguese>
                 <Russian>%1 отменил хирургическое обеспечение дыхательных путей</Russian>
                 <Ukrainian>%1 скасував хірургічне забезпечення дихальних шляхів</Ukrainian>
                 <Korean>%1 외과적 기도 확보 취소함</Korean>
@@ -1781,7 +1781,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_Tube">
                 <English>Cric-Key</English>
-                <Portuguese>Tubo de cricotireotomia</Portuguese>
+                <Portuguese>Tubo de cricotireoidostomia</Portuguese>
                 <Russian>Cric-Key</Russian>
                 <Ukrainian>Cric-Key</Ukrainian>
                 <Korean>Cric-Key</Korean>
@@ -1937,7 +1937,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_RemoveTubeStylet">
                 <English>Remove Stylet</English>
-                <Portuguese>Remora estirador</Portuguese>
+                <Portuguese>Remover estirador</Portuguese>
                 <Russian>Извлечь сталет</Russian>
                 <Ukrainian>Вилучити сталет</Ukrainian>
                 <Korean>스틸렛 제거</Korean>
@@ -1950,7 +1950,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_RemoveTubeStylet_Complete">
                 <English>Removed cric-key stylet</English>
-                <Portuguese>Removido estirador tubo de cricotireotomia</Portuguese>
+                <Portuguese>Removido estirador tubo de cricotireoidostomia</Portuguese>
                 <Russian>Сталет Cric-Key извлечен</Russian>
                 <Ukrainian>Сталет Cric-Key вилучено</Ukrainian>
                 <Korean>Cric-Key 스틸렛 제거 완료</Korean>
@@ -1989,7 +1989,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_SecureStrap">
                 <English>Secure Strap</English>
-                <Portuguese>Prenda a cinta</Portuguese>
+                <Portuguese>Prender a cinta</Portuguese>
                 <Russian>Зафиксировать ремень</Russian>
                 <Ukrainian>Зафіксувати ремінь</Ukrainian>
                 <Korean>스트랩 고정</Korean>
@@ -2015,7 +2015,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirway_PutBack">
                 <English>Put Back</English>
-                <Portuguese>Devolva</Portuguese>
+                <Portuguese>Devolver</Portuguese>
                 <Russian>Убрать обратно</Russian>
                 <Ukrainian>Прибрати назад</Ukrainian>
                 <Korean>돌려놓기</Korean>
@@ -2030,7 +2030,7 @@
         <Container name="// Surgical Airway Strap Action //">
             <Key ID="STR_ACM_Airway_SurgicalAirwayStrap_Action">
                 <English>Secure Surgical Airway Strap</English>
-                <Portuguese>Prenda a cinta</Portuguese>
+                <Portuguese>Prender a cinta</Portuguese>
                 <Russian>Зафиксировать хирургический ремень</Russian>
                 <Ukrainian>Зафіксувати хірургічний ремінь</Ukrainian>
                 <Korean>Cric-Key 스트랩 고정</Korean>
@@ -2043,7 +2043,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirwayStrap_Progress">
                 <English>Securing neck strap...</English>
-                <Portuguese>Prendendo cinta de pescoço</Portuguese>
+                <Portuguese>Prendendo cinta de pescoço...</Portuguese>
                 <Russian>Фиксация шейного ремня...</Russian>
                 <Ukrainian>Фіксація шийного ременя...</Ukrainian>
                 <Korean>스트랩 고정 중...</Korean>
@@ -2084,7 +2084,7 @@
         <Container name="// Surgical Airway Stitch Action //">
             <Key ID="STR_ACM_Airway_SurgicalAirwayStitch">
                 <English>Stitch Airway Incision</English>
-                <Portuguese>Suturar incisão em vias aéreas</Portuguese>
+                <Portuguese>Suturar incisão da cricotireoidostomia</Portuguese>
                 <Russian>Зашить разрез дыхательных путей</Russian>
                 <Ukrainian>Зашити розріз дихальних шляхів</Ukrainian>
                 <Korean>기도 절개부 봉합</Korean>
@@ -2097,7 +2097,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirwayStitch_Suture">
                 <English>Stitch Airway Incision (Suture)</English>
-                <Portuguese>Suturar incisão em vias aéreas (Sutura)</Portuguese>
+                <Portuguese>Suturar incisão das vias aéreas (com sutura)</Portuguese>
                 <Russian>Зашить разрез дыхательных путей (шов)</Russian>
                 <Ukrainian>Зашити розріз дихальних шляхів (шов)</Ukrainian>
                 <Korean>기도 절개부 봉합(수쳐)</Korean>
@@ -2123,7 +2123,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_SurgicalAirwayStitch_ActionLog">
                 <English>%1 stitched surgical airway incision</English>
-                <Portuguese>%1 suturou incisão de cirurgia de vias aéreas</Portuguese>
+                <Portuguese>%1 suturou incisão da cricotireoidostomia</Portuguese>
                 <Russian>%1 зашил разрез дыхательных путей</Russian>
                 <Ukrainian>%1 зашив розріз дихальних шляхів</Ukrainian>
                 <Korean>%1 기도 절개부 봉합 완료</Korean>
@@ -2141,7 +2141,7 @@
                 <Polish>Rękoczyn czoło-żuchwa w toku</Polish>
                 <German>Kopf überstreckt</German>
                 <French>Tête en hyperextension</French>
-                <Portuguese>Hiperextensão de cabeça</Portuguese>
+                <Portuguese>Vias aéreas hiperextendidas</Portuguese>
                 <Russian>Голова запрокинута и подбородок поднят</Russian>
                 <Ukrainian>Голова запрокинута та підборіддя підняте</Ukrainian>
                 <Korean>머리 기울임 &amp; 턱 들어올림</Korean>
@@ -2165,7 +2165,7 @@
             </Key>
             <Key ID="STR_ACM_Airway_GUI_SurgicalAirway_Strapped">
                 <English>Strapped</English>
-                <Portuguese>Com cinta</Portuguese>
+                <Portuguese>Assegurada</Portuguese>
                 <Russian>Зафиксировано</Russian>
                 <Ukrainian>Зафіксовано</Ukrainian>
                 <Korean>스트랩 고정됨</Korean>

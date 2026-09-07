@@ -62,7 +62,7 @@
             <Polish>Włącz obrażenia</Polish>
             <German>Aktiviere Schadens-AddOn</German>
             <French>Activer l'addon de dommages</French>
-            <Portuguese>Habilitar dano de addon</Portuguese>
+            <Portuguese>Habilitar addon de dano</Portuguese>
             <Russian>Включить модуль повреждений</Russian>
             <Ukrainian>Увімкнути модуль ушкоджень</Ukrainian>
             <Korean>데미지 애드온 활성화</Korean>
@@ -146,7 +146,7 @@
             <Polish>Próg obrażeń w głowę powodujących zatrzymanie krążenia</Polish>
             <German>Kopfschaden Kreislaufstillstand-Grenze</German>
             <French>Seuil d'arrêt cardiaque pour les traumatismes crâniens</French>
-            <Portuguese>Limiar de parada cardíaca por traumatismo craniano</Portuguese>
+            <Portuguese>Limiar de parada cardiorrespiratória por traumatismo craniano</Portuguese>
             <Russian>Порог остановки сердца при травме головы</Russian>
             <Ukrainian>Поріг зупинки серця при травмі голови</Ukrainian>
             <Korean>머리 외상 심정지 임계값</Korean>
@@ -160,7 +160,7 @@
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
             <German>Setzt die Grenze die bei Kopfschaden möglicherweise zu einem direkten Kreislaufstillstand führt, deaktiviert bei 0</German>
             <French>Fixe le seuil de possibilité d'arrêt cardiaque dû à un traumatisme crânien, désactivé si 0</French>
-            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma na cabeça, desativado se for 0</Portuguese>
+            <Portuguese>Define o limiar para a possibilidade de parada cardiorrespiratória por trauma na cabeça, desativado se for 0</Portuguese>
             <Russian>Задаёт порог риска остановки сердца от травмы головы; 0 — отключено</Russian>
             <Ukrainian>Визначає поріг ризику зупинки серця від травми голови; 0 — вимкнено</Ukrainian>
             <Korean>머리 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화 </Korean>
@@ -174,7 +174,7 @@
             <Polish>Próg obrażeń w tors powodujących zatrzymanie krążenia</Polish>
             <German>Torsoschaden Kreislaufstillstand-Grenze</German>
             <French>Seuil d'arrêt cardiaque en cas de lésion thoracique</French>
-            <Portuguese>Limiar de parada cardíaca por trauma no tronco</Portuguese>
+            <Portuguese>Limiar de parada cardiorrespiratória por trauma no tronco</Portuguese>
             <Russian>Порог остановки сердца при травме торса</Russian>
             <Ukrainian>Поріг зупинки серця при травмі торса</Ukrainian>
             <Korean>몸통 외상 심정지 임계값</Korean>
@@ -188,7 +188,7 @@
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
             <German>Setzt die Grenze die bei Torsoschaden möglicherweise zu einem direkten Kreislaufstillstand führt, deaktiviert bei 0</German>
             <French>Fixe le seuil de possibilité d'arrêt cardiaque à la suite d'un traumatisme au torse, désactivé si 0</French>
-            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma no tronco, desativado se for 0</Portuguese>
+            <Portuguese>Define o limiar para a possibilidade de parada cardiorrespiratória por trauma no tronco, desativado se for 0</Portuguese>
             <Russian>Задаёт порог риска остановки сердца от травмы торса; 0 — отключено</Russian>
             <Ukrainian>Визначає поріг ризику зупинки серця від травми торса; 0 — вимкнено</Ukrainian>
             <Korean>몸통 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화</Korean>
@@ -244,7 +244,7 @@
             <Polish>[HARDCORE] Określa czy krwawienie wewnętrzne będzie wymagało dalszych działań by je powstrzymać</Polish>
             <German>[HARDCORE] Stellt ein, ob eine innere Blutung eine weitergehende Behandlung benötigt, um geheilt zu werden</German>
             <French>[HARDCORE] Détermine si une hémorragie interne nécessite un traitement plus poussé pour être guérie</French>
-            <Portuguese>[HARDCORE] Define se a hemorragia deve exigir tratamento adicional para ser totalmente interrompido</Portuguese>
+            <Portuguese>[HARDCORE] Define se a hemorragia deve exigir tratamento adicional para ser totalmente interrompida</Portuguese>
             <Russian>[ХАРДКОР] Устанавливает, требуется ли дальнейшее лечение для полного прекращения внутреннего кровотечения</Russian>
             <Ukrainian>[ХАРДКОР] Встановлює, чи потрібне подальше лікування для повного припинення внутрішньої кровотечі</Ukrainian>
             <Korean>[HARDCORE] 내부 출혈이 완전히 멈추려면 추가 치료 필요 여부 설정</Korean>
@@ -258,7 +258,7 @@
             <Polish>Próg śmiertelnych obrażeń w głowę dla jednostek SI</Polish>
             <German>KI Kopfschaden Todesgrenze</German>
             <French>Seuil des traumatismes crâniens mortels pour les unités IA</French>
-            <Portuguese>Limiar de morte por trauma na cabeça para IA</Portuguese>
+            <Portuguese>Limiar de morte da IA por trauma na cabeça</Portuguese>
             <Russian>Порог смертельной травмы головы (ИИ)</Russian>
             <Ukrainian>Поріг смертельної травми голови (ШІ)</Ukrainian>
             <Korean>AI 머리 외상 즉사 임계값</Korean>
@@ -272,7 +272,7 @@
             <Polish>Im mniejsza wartość tym szybsza śmierć jednostki SI. 0 wyłącza możliwość śmierci</Polish>
             <German>Setzt die Todesgrenze die bei Kopfschaden an KI-Einheiten direkt zum Tod führt, deaktiviert bei 0</German>
             <French>Fixe le seuil de mort instantanée par traumatisme crânien pour l'IA, désactivé si 0</French>
-            <Portuguese>Define o limiar para morte instantânea por trauma na cabeça para IA, desativado se for 0</Portuguese>
+            <Portuguese>Define o limiar para morte instantânea da IA por trauma na cabeça, desativado se for 0</Portuguese>
             <Russian>Порог мгновенной смерти от травмы головы для ИИ; 0 — отключено</Russian>
             <Ukrainian>Поріг миттєвої смерті від травми голови для ШІ; 0 — вимкнено</Ukrainian>
             <Korean>AI 머리 외상으로 인한 즉사 임계값 설정, 0이면 비활성화</Korean>
@@ -286,7 +286,7 @@
             <Polish>Próg śmiertelnych obrażeń w tors dla jednostek SI</Polish>
             <German>KI Torsoschaden Todesgrenze</German>
             <French>Seuil de décès avec une lésion thoracique de l'IA</French>
-            <Portuguese>Limiar de morte para IA por dano no torso</Portuguese>
+            <Portuguese>Limiar de morte da IA por dano no torso</Portuguese>
             <Russian>Порог смертельной травмы торса (ИИ)</Russian>
             <Ukrainian>Поріг смертельної травми торса (ШІ)</Ukrainian>
             <Korean>AI 몸통 외상 즉사 임계값</Korean>
@@ -300,7 +300,7 @@
             <Polish>Im mniejsza wartość tym szybsza śmierć jednostki SI. 0 wyłącza możliwość śmierci</Polish>
             <German>Setzt die Todesgrenze die bei Torsoschaden an KI-Einheiten direkt zum Tod führt, deaktiviert bei 0</German>
             <French>Fixe le seuil de mort instantanée avec une lésion thoracique pour l'IA, désactivé si 0</French>
-            <Portuguese>Define o limiar para morte instantânea por trauma no tronco para IA, desativado se for 0</Portuguese>
+            <Portuguese>Define o limiar para morte instantânea da IA por trauma no tronco, desativado se for 0</Portuguese>
             <Russian>Порог мгновенной смерти от травмы торса для ИИ; 0 — отключено</Russian>
             <Ukrainian>Поріг миттєвої смерті від травми торса для ШІ; 0 — вимкнено</Ukrainian>
             <Korean>AI 몸통 외상으로 인한 즉사 임계값 설정, 0이면 비활성화</Korean>
@@ -314,7 +314,7 @@
             <Polish>Próg obrażeń w głowę powodujących zatrzymanie krążenia dla jednostek SI</Polish>
             <German>KI Kopfschaden Reanimationsgrenze</German>
             <French>Seuil des traumatismes crâniens provoquant un arrêt cardiaque pour les unités IA</French>
-            <Portuguese>Limiar de parada cardíaca por trauma na cabeça para IA</Portuguese>
+            <Portuguese>Limiar de parada cardiorrespiratória em IA por trauma na cabeça</Portuguese>
             <Russian>Порог остановки сердца при травме головы (ИИ)</Russian>
             <Ukrainian>Поріг зупинки серця при травмі голови (ШІ)</Ukrainian>
             <Korean>AI 머리 외상 심정지 임계값</Korean>
@@ -328,7 +328,7 @@
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia u jednostki SI. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
             <German>Setzt die Grenze die bei Kopfschaden möglicherweise direkt zu einem Kreislaufstillstand an KI-Einheiten führt, deaktiviert bei 0</German>
             <French>Fixe le seuil de possibilité d'arrêt cardiaque dû à un traumatisme crânien pour l'IA, désactivé si 0</French>
-            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma na cabeça para IA, desativado se for 0</Portuguese>
+            <Portuguese>Define o limiar para a possibilidade de parada cardiorrespiratória por trauma na cabeça para IA, desativado se for 0</Portuguese>
             <Russian>Порог риска остановки сердца от травмы головы для ИИ; 0 — отключено</Russian>
             <Ukrainian>Поріг ризику зупинки серця від травми голови для ШІ; 0 — вимкнено</Ukrainian>
             <Korean>AI 머리 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화</Korean>
@@ -342,7 +342,7 @@
             <Polish>Próg obrażeń w tors powodujących zatrzymanie krążenia dla jednostek SI</Polish>
             <German>KI Torsoschaden Reanimationsgrenze</German>
             <French>Seuil de lésion thoracique entraînant un arrêt cardiaque pour les unités IA</French>
-            <Portuguese>Limiar de parada cardíaca por dano no torso para IA</Portuguese>
+            <Portuguese>Limiar de parada cardiorrespiratória em IA por dano no torso</Portuguese>
             <Russian>Порог остановки сердца при травме торса (ИИ)</Russian>
             <Ukrainian>Поріг зупинки серця при травмі торса (ШІ)</Ukrainian>
             <Korean>AI 몸통 외상 심정지 임계값</Korean>
@@ -356,7 +356,7 @@
             <Polish>Im mniejsza wartość tym łatwiej o zatrzymanie krążenia u jednostki SI. 0 wyłącza możliwość nagłego zatrzymania krążenia</Polish>
             <German>Setzt die Grenze die bei Torsoschaden möglicherweise direkt zu einem Kreislaufstillstand an KI-Einheiten führt, deaktiviert bei 0</German>
             <French>Fixe le seuil de possibilité d'arrêt cardiaque à la suite d'une lésion thoracique pour l'IA, désactivé si 0</French>
-            <Portuguese>Define o limiar para a possibilidade de parada cardíaca por trauma no tronco para IA, desativado se for 0</Portuguese>
+            <Portuguese>Define o limiar de possibilidade de parada cardiorrespiratória na IA por trauma no tronco, desativado se for 0</Portuguese>
             <Russian>Порог риска остановки сердца от травмы торса для ИИ; 0 — отключено</Russian>
             <Ukrainian>Поріг ризику зупинки серця від травми торса для ШІ; 0 — вимкнено</Ukrainian>
             <Korean>AI 몸통 외상으로 인한 심정지 가능성 임계값 설정, 0이면 비활성화</Korean>
@@ -370,7 +370,7 @@
             <Polish>Szansa że jednostka SI pozostanie na na ziemi</Polish>
             <German>KI Bewusstseinswahrscheinlichkeit</German>
             <French>Chance que l'unité IA reste au sol</French>
-            <Portuguese>Chance de ficar caído para IA</Portuguese>
+            <Portuguese>Chance da IA ficar caída</Portuguese>
             <Russian>Шанс, что ИИ останется лежать</Russian>
             <Ukrainian>Шанс, що ШІ залишиться лежати</Ukrainian>
             <Korean>AI 다운 상태 유지 확률</Korean>
@@ -384,7 +384,7 @@
             <Polish>Szansa na pozostanie jednostki SI w pozycji leżącej, gdy straci przytomność (bez interwencji)</Polish>
             <German>Setzt die Wahrscheinlichkeit, dass eine bewusstloser KI-Einheit ohne Behandlung wieder zu bewusstsein kommt</German>
             <French>Définit la probabilité que l'IA reste couchée une fois qu'elle est inconsciente (sans intervention)</French>
-            <Portuguese>Define a chance de a IA permanecer no chão quando estiver inconsciente (sem intervenção)</Portuguese>
+            <Portuguese>Define a chance da IA permanecer no chão quando estiver inconsciente (sem intervenção)</Portuguese>
             <Russian>Вероятность, что ИИ не встанет после потери сознания (без вмешательства)</Russian>
             <Ukrainian>Ймовірність, що ШІ не підведеться після втрати свідомості (без втручання)</Ukrainian>
             <Korean>무의식 상태가 된 AI가 개입 없이 눕혀진 상태로 있을 확률 설정</Korean>
@@ -452,11 +452,13 @@
             <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance">
                 <English>Wrapped Wound Reopen Chance Multiplier</English>
                 <Chinese>包扎伤口裂开概率倍率</Chinese>
+                <Portuguese>Chance de reabertura de uma ferida enfaixada</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance_Desc">
                 <English>Sets chance that a wrapped wound reopens</English>
                 <Chinese>设置包扎伤口裂开的概率</Chinese>
                 <Japanese>部位全体を巻くのにかかる時間</Japanese>
+                <Portuguese>Define a chance de um ferimento enfaixado reabrir</Portuguese>
             </Key>
             <Key ID="STR_ACM_Damage_SETTING_WrappedWoundReopenChance">
                 <English>Wrapped Wound Reopen Chance Multiplier</English>
@@ -600,7 +602,7 @@
                 <Polish>Powiększony bandaż uciskowy</Polish>
                 <German>Notfallverband</German>
                 <French>Pansement d'urgence</French>
-                <Portuguese>Curativo de emergência para trauma</Portuguese>
+                <Portuguese>Curativo para trauma de emergência</Portuguese>
                 <Russian>Экстренная травматическая повязка</Russian>
                 <Ukrainian>Екстрена травматична пов’язка</Ukrainian>
                 <Korean>응급 외상 드레싱 (ETD)</Korean>
@@ -642,7 +644,7 @@
                 <Polish>Używany do stabilizacji bandaży, owijania skrzepniętych ran i siniaków</Polish>
                 <German>Wird verwendet, um Bandagen, geronnene Wunden oder Prellungen zu fixieren bzw. zu behandeln</German>
                 <French>Utilisé pour envelopper les bandages, les plaies coagulées et les ecchymoses.</French>
-                <Portuguese>Usado para enfaixar, talas, bandagens, ferimentos coagulados e hematomas</Portuguese>
+                <Portuguese>Usada para enfaixar, talas, bandagens, ferimentos coagulados e hematomas</Portuguese>
                 <Russian>Используется для обмотки повязок, коагулированных ран и ушибов</Russian>
                 <Ukrainian>Використовується для обмотування пов'язок, коагульованих ран і забоїв</Ukrainian>
                 <Korean>붕대, 응고된 상처 및 타박상을 감싸는 데 사용됨</Korean>
@@ -686,7 +688,7 @@
                 <Polish>Zawiń zabandażowane rany</Polish>
                 <German>Fixiere bandagierte Wunden</German>
                 <French>Envelopper les plaies bandées</French>
-                <Portuguese>Enfaixar ferimentos coagulados</Portuguese>
+                <Portuguese>Enfaixar ferimentos bandageados</Portuguese>
                 <Russian>Обмотать перевязанные раны</Russian>
                 <Ukrainian>Обмотати перев’язані рани</Ukrainian>
                 <Korean>붕대에 탄력 붕대 감기 </Korean>
@@ -814,7 +816,7 @@
                 <Polish>Użyj zestawu do szycia ze szwami (zawinięte)</Polish>
                 <German>Nähset mit Nähten verwenden (Eingewickelte Wunden)</German>
                 <French>Utiliser un kit de couture avec des points de suture (Blessures enveloppées)</French>
-                <Portuguese>Usar kit cirúrgico com fio de sutura</Portuguese>
+                <Portuguese>Usar kit cirúrgico com fio de sutura (enfaixado)</Portuguese>
                 <Russian>Использовать хирургический набор с нитью (обмотка)</Russian>
                 <Ukrainian>Використати хірургічний набір із ниткою (обмотка)</Ukrainian>
                 <Korean>봉합사 + 수술 도구 사용 (감긴 상처)</Korean>

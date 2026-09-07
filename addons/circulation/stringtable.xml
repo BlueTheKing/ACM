@@ -34,7 +34,7 @@
             <Polish>Zatrzymanie krążenia</Polish>
             <French>Arrêt cardiaque</French>
             <German>Kreislaufstillstand</German>
-            <Portuguese>Parada cardíaca</Portuguese>
+            <Portuguese>Parada cardiorrespiratória</Portuguese>
             <Russian>Остановка сердца</Russian>
             <Ukrainian>Зупинка серця</Ukrainian>
             <Korean>심정지 (Cardiac Arrest)</Korean>
@@ -145,7 +145,7 @@
             <Polish>Włącz skrzepy</Polish>
             <French>Permettre la coagulation</French>
             <German>Blutgerinnung aktivieren</German>
-            <Portuguese>Habilitar coagulamento</Portuguese>
+            <Portuguese>Habilitar coagulação</Portuguese>
             <Russian>Включить свёртывание</Russian>
             <Ukrainian>Увімкнути згортання</Ukrainian>
             <Korean>응고 활성화</Korean>
@@ -187,7 +187,7 @@
             <Polish>Ustawia czy u jednostki SI mają tworzyć się skrzepy</Polish>
             <French>Définit si la coagulation est autorisée pour l'IA</French>
             <German>Stellt ein, ob KI-Einheiten von Blutgerinnung betroffen sind</German>
-            <Portuguese>Define se a coagulamento é permitida para IA</Portuguese>
+            <Portuguese>Define se a coagulação é permitida para IA</Portuguese>
             <Russian>Задаёт, разрешено ли свёртывание для ИИ</Russian>
             <Ukrainian>Визначає, чи дозволено згортання для ШІ</Ukrainian>
             <Korean>AI에게 응고를 허용할지 설정합니다.</Korean>
@@ -201,7 +201,7 @@
             <Polish>Szansa na nagłe zatrzymanie krążenia</Polish>
             <French>Risque d'arrêt cardiaque soudain</French>
             <German>Kritischer Schaden Kreislaufstillstandwahrscheinlichkeit</German>
-            <Portuguese>Dano crítico chance de parada cardíaca</Portuguese>
+            <Portuguese>Chance de parada cardiorrespiratória por dano crítico</Portuguese>
             <Russian>Шанс остановки сердца при критическом повреждении</Russian>
             <Ukrainian>Імовірність зупинки серця при критичному ушкодженні</Ukrainian>
             <Korean>치명상 시 심정지 확률</Korean>
@@ -215,7 +215,7 @@
             <Polish>Szansa na NZK przy otrzymaniu krytycznych obrażeń</Polish>
             <French>Définit la probabilité que l'unité fasse un arrêt cardiaque après avoir subi des dégâts critiques</French>
             <German>Setzt die Wahrscheinlichkeit, dass ein Spieler reanimationspflichtig wird, nachdem kritischer Schaden erhalten wurde</German>
-            <Portuguese>Define a chance de a unidade entrar em parada cardíaca após sofrer dano crítico</Portuguese>
+            <Portuguese>Define a chance de a unidade entrar em parada cardiorrespiratória após sofrer dano crítico</Portuguese>
             <Russian>Задаёт вероятность остановки сердца после критического повреждения</Russian>
             <Ukrainian>Визначає шанс зупинки серця після критичного ушкодження</Ukrainian>
             <Korean>중상 후 유닛이 심정지에 빠질 확률을 설정합니다.</Korean>
@@ -229,7 +229,7 @@
             <Polish>Mnożnik pogarszania rytmu</Polish>
             <French>Multiplicateur de détérioration du rythme</French>
             <German>Rhythmusverschlechterungsmultiplikator</German>
-            <Portuguese>Multiplicador de deterioração do ritmo</Portuguese>
+            <Portuguese>Multiplicador de deterioração de ritmo</Portuguese>
             <Russian>Множитель ухудшения ритма</Russian>
             <Ukrainian>Множник погіршення ритму</Ukrainian>
             <Korean>리듬 악화 배수</Korean>
@@ -243,7 +243,7 @@
             <Polish>Szansa na pogorszenie się rytmu serca</Polish>
             <French>Risque d'aggravation du rythme cardiaque</French>
             <German>Wahrscheinlichkeit, dass sich ein Rhythmus im Laufe der Reanimation verschlechtert</German>
-            <Portuguese>Chance de deterioração do ritmo durante a parada cardíaca</Portuguese>
+            <Portuguese>Chance de deterioração do ritmo durante a parada cardiorrespiratória</Portuguese>
             <Russian>Шанс ухудшения ритма во время остановки сердца</Russian>
             <Ukrainian>Шанс погіршення ритму під час зупинки серця</Ukrainian>
             <Korean>심정지 동안 심장 리듬이 악화될 확률을 설정합니다.</Korean>
@@ -257,7 +257,7 @@
             <Polish>[HARDCORE] Komplikacje po zatrzymaniu krążenia</Polish>
             <French>[HARDCORE] Complications post-arrêt cardiaque</French>
             <German>[HARDCORE] Post-Reanimation Komplikationen</German>
-            <Portuguese>[HARDCORE] Complicações pós-parada cardíaca</Portuguese>
+            <Portuguese>[HARDCORE] Complicações pós-parada cardiorrespiratória</Portuguese>
             <Russian>[ХАРДКОР] Осложнения после восстановления кровообращения</Russian>
             <Ukrainian>[ХАРДКОР] Ускладнення після відновлення кровообігу</Ukrainian>
             <Korean>[HARDCORE] 심정지 후 합병증</Korean>
@@ -271,7 +271,7 @@
             <Polish>[HARDCORE] Ustawia czy po spontanicznym powrocie krążenia (ROSC) powinna pojawić się obniżona wydajność serca</Polish>
             <French>[HARDCORE] Définit si le débit cardiaque doit être réduit après le retour spontané de la circulation (ROSC).</French>
             <German>[HARDCORE] Stellt ein, ob es eine verringerten kardialen Auswurf nach ROSC gibt, welcher weiter behandelt werden muss, um voll geheilt zu werden</German>
-            <Portuguese>[HARDCORE] Define se deve haver uma diminuição na eficiência cardíaco após o ROSC, exigindo tratamento adicional para o tratamento completo</Portuguese>
+            <Portuguese>[HARDCORE] Define se deve haver uma diminuição na eficiência cardíaca após o RCE, exigindo tratamento adicional para o tratamento completo</Portuguese>
             <Russian>[ХАРДКОР] Задаёт, будет ли снижение сердечного выброса после ROSC, требующее дополнительного лечения</Russian>
             <Ukrainian>[ХАРДКОР] Визначає, чи буде зниження серцевого викиду після ROSC, що потребує додаткового лікування</Ukrainian>
             <Korean>[HARDCORE] ROSC(자발순환 회복) 후 심박출량 감소 여부를 설정합니다. 완전 치료를 위해 추가 처치가 필요합니다.</Korean>
@@ -657,6 +657,7 @@
             <Polish>Strzykawki wielokrotnego użytku</Polish>
             <Chinese>可重复使用的注射器</Chinese>
             <Japanese>再利用可能な注射器</Japanese>
+            <Portuguese>Seringas reutilizáveis</Portuguese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Desc">
             <English>Sets whether syringes are reusable instead of consumed on medication administration</English>
@@ -669,6 +670,7 @@
             <Polish>Definiuje czy strzykawki mogą być użyte wielokrotnie</Polish>
             <Chinese>设置注射器是否可重复使用而非在药物注射后消耗</Chinese>
             <Japanese>薬剤投与時に注射器を消費する代わりに再利用可能にするかどうかを設定</Japanese>
+            <Portuguese>Define se seringas são reutilizáveis ao invés de consumidas após administração de medicações</Portuguese>
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
@@ -725,7 +727,7 @@
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge">
             <English>Allow Fentanyl Lozenge</English>
-            <Portuguese>Permitir pirulito de fentanil</Portuguese>
+            <Portuguese>Permitir pastilha de fentanil</Portuguese>
             <Russian>Разрешить леденец фентанила</Russian>
             <Ukrainian>Дозволити льодяник фентанілу</Ukrainian>
             <Korean>펜타닐 로젠지 허용</Korean>
@@ -738,7 +740,7 @@
         </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_FentanylLozenge_Desc">
             <English>Training level required to administer fentanyl lozenges</English>
-            <Portuguese>Nível de treinamento necessário para administrar pirulitos de fentanil</Portuguese>
+            <Portuguese>Nível de treinamento necessário para administrar pastilhas de fentanil</Portuguese>
             <Russian>Уровень подготовки для введения леденцов с фентанилом</Russian>
             <Ukrainian>Рівень підготовки для введення льодяників з фентанілом</Ukrainian>
             <Korean>펜타닐 로젠지 투여에 필요한 훈련 수준을 설정합니다.</Korean>
@@ -754,7 +756,7 @@
             <Polish>%1 Współczynnik</Polish>
             <French>%1 Ratio</French>
             <German>%1 Rate</German>
-            <Portuguese>%1 Razão</Portuguese>
+            <Portuguese>%1 Proporção</Portuguese>
             <Russian>Доля %1</Russian>
             <Ukrainian>Частка %1</Ukrainian>
             <Korean>%1 비율</Korean>
@@ -867,7 +869,7 @@
                 <Polish>Używany do pomiaru ciśnienia krwi</Polish>
                 <German>Wird benutzt, um Blutdruck zu messen</German>
                 <French>Utilisé pour mesurer la tension artérielle</French>
-                <Portuguese>Usado para medir a pressão arterial</Portuguese>
+                <Portuguese>Usado para aferir a pressão arterial</Portuguese>
                 <Russian>Используется для измерения артериального давления</Russian>
                 <Ukrainian>Використовується для вимірювання артеріального тиску</Ukrainian>
                 <Korean>혈압을 측정하는 데 사용됩니다.</Korean>
@@ -1119,7 +1121,7 @@
                 <Polish>Używany do transfuzji świeżej krwi w nagłych wypadkach</Polish>
                 <German>Wird benutzt, um frisches Vollblut im Notfall zu transfundieren</German>
                 <French>Utilisé pour transfuser du sang frais en cas d'urgence</French>
-                <Portuguese>Usado para transfusão de sangue fresco em casos de emergência</Portuguese>
+                <Portuguese>Usado para transfusão de sangue fresco em emergência</Portuguese>
                 <Russian>Для переливания свежей крови в экстренной ситуации</Russian>
                 <Ukrainian>Для переливання свіжої крові в екстрених умовах</Ukrainian>
                 <Korean>응급 상황에서 신선한 혈액을 수혈하는 데 사용됩니다.</Korean>
@@ -1247,7 +1249,7 @@
                 <Polish>TXA</Polish>
                 <German>TXA</German>
                 <French>TXA</French>
-                <Portuguese>TXA</Portuguese>
+                <Portuguese>Ácido Tranexâmico (TXA)</Portuguese>
                 <Russian>ТХА</Russian>
                 <Ukrainian>TXA</Ukrainian>
                 <Korean>트라넥사믹산 (TXA)</Korean>
@@ -1441,7 +1443,7 @@
                 <Polish>Używana do leczenia zatrzymania krążenia</Polish>
                 <German>Wird im Rahmen der Reanimation verwendet</German>
                 <French>Utilisé pour traiter les arrêts cardiaques</French>
-                <Portuguese>Usado para tratar parada cardíaca</Portuguese>
+                <Portuguese>Usado para tratar parada cardiorrespiratória</Portuguese>
                 <Russian>Используется для лечения остановки сердца</Russian>
                 <Ukrainian>Використовується для лікування зупинки серця</Ukrainian>
                 <Korean>심정지 치료에 사용됩니다.</Korean>
@@ -1621,7 +1623,7 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Vial_Atropine">
                 <English>Atropine Vial (1mg/1ml)</English>
-                <Portuguese>Frasco de Atropina (1mg/1ml)</Portuguese>
+                <Portuguese>Frasco de atropina (1mg/1ml)</Portuguese>
                 <Russian>Флакон атропина (1 мг/1 мл)</Russian>
                 <Ukrainian>Флакон атропіну (1 мг/1 мл)</Ukrainian>
                 <Korean>아트로핀 바이알 (1mg/1ml) (Atropine)</Korean>
@@ -1678,7 +1680,7 @@
                 <Polish>Ondansetron (4mg/2ml)</Polish>
                 <German>Ondansetron Ampulle (4mg/2ml)</German>
                 <French>Ondansétron en flacon (4mg/2ml)</French>
-                <Portuguese>Frasco de Ondansetrona (4mg/2ml)</Portuguese>
+                <Portuguese>Frasco de ondansetrona (4mg/2ml)</Portuguese>
                 <Russian>Флакон ондансетрона (4 мг/2 мл)</Russian>
                 <Ukrainian>Флакон ондансетрону (4 мг/2 мл)</Ukrainian>
                 <Korean>온단세트론 바이알 (4mg/2ml) (Ondansetron)</Korean>
@@ -1734,7 +1736,7 @@
                 <Polish>Ertapenem (1g/3.2ml)</Polish>
                 <German>Ertapanem Ampulle (1g/3.2ml)</German>
                 <French>Ertapenem Flacon (1g/3.2ml)</French>
-                <Portuguese>Frasco de Ertapenem (1g/3,2 ml)</Portuguese>
+                <Portuguese>Frasco de ertapenem (1g/3,2 ml)</Portuguese>
                 <Russian>Флакон эртапенема (1 г/3,2 мл)</Russian>
                 <Ukrainian>Флакон ертапенему (1 г/3,2 мл)</Ukrainian>
                 <Korean>에르타페넴 바이알 (1g/3.2ml) (Ertapenem)</Korean>
@@ -1762,7 +1764,7 @@
                 <Polish>Esmolol (100mg/10ml)</Polish>
                 <German>Esmolol Ampulle (100mg/10ml)</German>
                 <French>Esmolol Flacon (100mg/10ml)</French>
-                <Portuguese>Frasco de Esmolol (100mg/10ml)</Portuguese>
+                <Portuguese>Frasco de esmolol (100mg/10ml)</Portuguese>
                 <Russian>Флакон эсмолола (100 мг/10 мл)</Russian>
                 <Ukrainian>Флакон есмололу (100 мг/10 мл)</Ukrainian>
                 <Korean>에스몰롤 바이알 (100mg/10ml) (Esmolol Vial)</Korean>
@@ -1776,7 +1778,7 @@
                 <Polish>Używany do obniżenia tętna na krótki czas </Polish>
                 <German>Betablocker, um kurzfristig die Herzfrequenz zu senken</German>
                 <French>Utilisé pour réduire la fréquence cardiaque pendant une courte période</French>
-                <Portuguese>Usado para diminuir a frequência cardíaca por um curto período de tempo</Portuguese>
+                <Portuguese>Usado para diminuir a frequência cardíaca por um curto período</Portuguese>
                 <Russian>Кратковременное снижение ЧСС</Russian>
                 <Ukrainian>Короткочасне зниження ЧСС</Ukrainian>
                 <Korean>단시간 심박수를 낮추는 데 사용됩니다.</Korean>
@@ -1790,7 +1792,7 @@
                 <Polish>Nalokson w spreju</Polish>
                 <German>Naloxon Nasenspray</German>
                 <French>Naloxone en spray nasal</French>
-                <Portuguese>Naloxona Spray Nasal</Portuguese>
+                <Portuguese>Naloxona spray nasal</Portuguese>
                 <Russian>Назальный спрей налоксона</Russian>
                 <Ukrainian>Назальний спрей налоксону</Ukrainian>
                 <Korean>날록손 비강 스프레이 (Naloxon)</Korean>
@@ -1926,7 +1928,7 @@
             <Key ID="STR_ACM_Circulation_Lozenge_Fentanyl">
                 <English>Fentanyl Lozenge</English>
                 <French>Pastille de Fentanyl</French>
-                <Portuguese>Pirulito de Fentanil</Portuguese>
+                <Portuguese>Pastilha de fentanil</Portuguese>
                 <Russian>Леденец с фентанилом</Russian>
                 <Ukrainian>Льодяник з фентанілом</Ukrainian>
                 <Korean>펜타닐 로젠지 (Fentanyl Lozenge)</Korean>
@@ -1951,7 +1953,7 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol">
                 <English>Dimercaprol Ampule (300mg/3ml)</English>
-                <Portuguese>Dimercaprol Ampola (300mg/3ml)</Portuguese>
+                <Portuguese>Ampola de dimercaprol (300mg/3ml)</Portuguese>
                 <Russian>Ампула димеркаптола (300 мг/3 мл)</Russian>
                 <Ukrainian>Ампула димеркапролу (300 мг/3 мл)</Ukrainian>
                 <Korean>디메르캅롤 앰플 (300mg/3ml) (Dimercaprol)</Korean>
@@ -1964,7 +1966,7 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Ampule_Dimercaprol_Desc">
                 <English>Used to treat lewisite exposure, administered intramuscularly</English>
-                <Portuguese>Usado para tratar a exposição à lewisite, administrado por via intramuscular</Portuguese>
+                <Portuguese>Usado para tratar a exposição à lewisita, administrado por via intramuscular</Portuguese>
                 <Russian>Для лечения отравления люизитом; внутримышечно</Russian>
                 <Ukrainian>Для лікування отруєння люїзитом; внутрішньомʼязово</Ukrainian>
                 <Korean>루이사이트(Lewisite) 노출 치료에 사용되며, 근육주사로 투여합니다.</Korean>
@@ -1982,7 +1984,7 @@
                 <Polish>Użyj paracetamolu</Polish>
                 <German>Paracetamol verabreichen</German>
                 <French>Utiliser du paracétamol</French>
-                <Portuguese>Usar de Paracetamol</Portuguese>
+                <Portuguese>Usar Paracetamol</Portuguese>
                 <Russian>Использовать парацетамол</Russian>
                 <Ukrainian>Використати парацетамол</Ukrainian>
                 <Korean>파라세타몰 사용 </Korean>
@@ -2010,7 +2012,7 @@
                 <Polish>Użyj inhalatora pentrox</Polish>
                 <German>Penthroxpfeife benutzen</German>
                 <French>Utiliser l'inhalateur Penthrox</French>
-                <Portuguese>Usar do Inalador Penthrox</Portuguese>
+                <Portuguese>Usar inalador Penthrox</Portuguese>
                 <Russian>Использовать ингалятор Пентрокс</Russian>
                 <Ukrainian>Використати інгалятор Пентрокс</Ukrainian>
                 <Korean>Penthrox 흡입기 사용</Korean>
@@ -2024,7 +2026,7 @@
                 <Polish>Używanie inhalatora pentorx...</Polish>
                 <German>Benutze Penthroxpfeife...</German>
                 <French>Utilisation de l'inhalateur Penthrox...</French>
-                <Portuguese>Usando Inalador Penthrox...</Portuguese>
+                <Portuguese>Usando inalador Penthrox...</Portuguese>
                 <Russian>Использование ингалятора Пентрокс...</Russian>
                 <Ukrainian>Використання інгалятора Пентрокс...</Ukrainian>
                 <Korean>Penthrox 흡입기 사용하는 중... </Korean>
@@ -2038,7 +2040,7 @@
                 <Polish>Użyj amoniaku wziewnego</Polish>
                 <German>Ammoniak-Inhalant benutzen</German>
                 <French>Utilisation des inhalations d'ammoniac</French>
-                <Portuguese>Uso de inalante de amônia</Portuguese>
+                <Portuguese>Usar inalador de amônia</Portuguese>
                 <Russian>Использовать аммиачный ингалянт</Russian>
                 <Ukrainian>Використати аміачний інгалянт</Ukrainian>
                 <Korean>암모니아 흡입제 사용</Korean>
@@ -2066,7 +2068,7 @@
                 <Polish>Użyj naloxonu w spreju</Polish>
                 <German>Naloxon Nasenspray verwenden</German>
                 <French>Utiliser la Naloxone en spray</French>
-                <Portuguese>Use o spray de naloxona</Portuguese>
+                <Portuguese>Usar o spray de naloxona</Portuguese>
                 <Russian>Использовать спрей налоксона</Russian>
                 <Ukrainian>Використати спрей налоксону</Ukrainian>
                 <Korean>날록손 스프레이 사용</Korean>
@@ -2150,7 +2152,7 @@
                 <Polish>Podaj (IV/IO)</Polish>
                 <German>Injizieren (IV/IO)</German>
                 <French>Injecter (IV/IO)</French>
-                <Portuguese>Injetar (IV)</Portuguese>
+                <Portuguese>Infundir (IV)</Portuguese>
                 <Russian>Ввести (IV/IO)</Russian>
                 <Ukrainian>Ввести (IV/IO)</Ukrainian>
                 <Korean>푸시 (Push)</Korean>
@@ -2178,7 +2180,7 @@
             <Key ID="STR_ACM_Circulation_GiveFentanylLozenge">
                 <English>Give Fentanyl Lozenge</English>
                 <French>Donner des pastilles de Fentanyl</French>
-                <Portuguese>Administrar pirulito de fentanil</Portuguese>
+                <Portuguese>Administrar pastilha de fentanil</Portuguese>
                 <Russian>Дать леденец с фентанилом</Russian>
                 <Ukrainian>Дати льодяник з фентанілом</Ukrainian>
                 <Korean>펜타닐 로젠지 투여</Korean>
@@ -2191,7 +2193,7 @@
             <Key ID="STR_ACM_Circulation_GiveFentanylLozenge_Progress">
                 <English>Giving Fentanyl Lozenge...</English>
                 <French>Donner des pastilles de Fentanyl...</French>
-                <Portuguese>Administrando pirulito de fentanil...</Portuguese>
+                <Portuguese>Administrando pastilha de fentanil...</Portuguese>
                 <Russian>Выдача леденца с фентанилом...</Russian>
                 <Ukrainian>Видача льодяника з фентанілом...</Ukrainian>
                 <Korean>펜타닐 로젠지 투여 중...</Korean>
@@ -2204,7 +2206,7 @@
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge">
                 <English>Remove Fentanyl Lozenge</English>
                 <French>Supprimer la pastille de Fentanyl</French>
-                <Portuguese>Remover pirulito de fentanil</Portuguese>
+                <Portuguese>Remover pastilha de fentanil</Portuguese>
                 <Russian>Забрать леденец с фентанилом</Russian>
                 <Ukrainian>Забрати льодяник з фентанілом</Ukrainian>
                 <Korean>펜타닐 로젠지 제거</Korean>
@@ -2217,7 +2219,7 @@
             <Key ID="STR_ACM_Circulation_RemoveFentanylLozenge_Progress">
                 <English>Removing Fentanyl Lozenge...</English>
                 <French>Suppression de la pastille de Fentanyl...</French>
-                <Portuguese>Removendo pirulito de fentanil...</Portuguese>
+                <Portuguese>Removendo patilha de fentanil...</Portuguese>
                 <Russian>Изъятие леденца с фентанилом...</Russian>
                 <Ukrainian>Вилучення льодяника з фентанілом...</Ukrainian>
                 <Korean>펜타닐 로젠지 제거 중...</Korean>
@@ -2230,7 +2232,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Lozenge">
                 <English>Lozenge</English>
                 <French>Pastille</French>
-                <Portuguese>Pirulito</Portuguese>
+                <Portuguese>Pastilha</Portuguese>
                 <Russian>Леденец</Russian>
                 <Ukrainian>Льодяник</Ukrainian>
                 <Korean>로젠지</Korean>
@@ -2243,7 +2245,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge">
                 <English>Lozenge (OTFC)</English>
                 <French>Pastille (OTFC)</French>
-                <Portuguese>Pirulito (CFTO)</Portuguese>
+                <Portuguese>Pastilha (CFTO)</Portuguese>
                 <Russian>Леденец (ОТЦФ)</Russian>
                 <Ukrainian>Льодяник (ОТЦФ)</Ukrainian>
                 <Korean>로젠지 (OTFC)</Korean>
@@ -2256,7 +2258,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Already">
                 <English>Patient already has fentanyl lozenge</English>
                 <French>Le patient a déjà des pastilles de fentanyl</French>
-                <Portuguese>O paciente já tem um pirulito de fentanil</Portuguese>
+                <Portuguese>O paciente já tem uma pastilha de fentanil</Portuguese>
                 <Russian>У пациента уже есть леденец с фентанилом</Russian>
                 <Ukrainian>У пацієнта вже є льодяник з фентанілом</Ukrainian>
                 <Korean>환자는 이미 펜타닐 로젠지를 보유함</Korean>
@@ -2269,7 +2271,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Blocked">
                 <English>Patient oral access is blocked by airway adjunct</English>
                 <French>L'accès oral du patient est bloqué par l'adjuvant des voies aériennes.</French>
-                <Portuguese>O acesso oral do paciente está bloqueado por um adjuvante de vias aéreas</Portuguese>
+                <Portuguese>A cavidade oral do paciente está bloqueada por um dispositivo de vias aéreas</Portuguese>
                 <Russian>Пероральный доступ перекрыт воздуховодом</Russian>
                 <Ukrainian>Пероральний доступ перекрито повітроводом</Ukrainian>
                 <Korean>환자의 구강 접근이 기도 보조기구로 막혀 있음</Korean>
@@ -2282,7 +2284,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Complete">
                 <English>Gave Lozenge (OTFC)</English>
                 <French>Donner une pastille (OTFC)</French>
-                <Portuguese>Deu pirulito (CFTO)</Portuguese>
+                <Portuguese>Deu pastilha (CFTO)</Portuguese>
                 <Russian>Леденец (ОТЦФ) выдан</Russian>
                 <Ukrainian>Льодяник (ОТЦФ) видано</Ukrainian>
                 <Korean>로젠지(OTFC) 투여 완료</Korean>
@@ -2295,7 +2297,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_Hint">
                 <English>Fentanyl Lozenge has been placed by %1</English>
                 <French>La pastille de Fentanyl a été placée par %1</French>
-                <Portuguese>Pirulito de fentanil foi colocado by %1</Portuguese>
+                <Portuguese>Pastilha de fentanil colocada por %1</Portuguese>
                 <Russian>Леденец с фентанилом установлен пользователем %1</Russian>
                 <Ukrainian>Льодяник з фентанілом встановлено користувачем %1</Ukrainian>
                 <Korean>%1 가 펜타닐 로젠지를 복용시킴</Korean>
@@ -2308,7 +2310,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Give_ActionLog">
                 <English>%1 gave Fentanyl Lozenge</English>
                 <French>%1 a donné des pastilles de Fentanyl</French>
-                <Portuguese>%1 deu pirulito de fentanil</Portuguese>
+                <Portuguese>%1 deu pastilha de fentanil</Portuguese>
                 <Russian>%1 выдал леденец с фентанилом</Russian>
                 <Ukrainian>%1 дав льодяник з фентанілом</Ukrainian>
                 <Korean>%1 가 펜타닐 로렌지를 복용시킴</Korean>
@@ -2321,7 +2323,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Complete">
                 <English>Removed fentanyl lozenge</English>
                 <French>Suppression de la pastille de fentanyl</French>
-                <Portuguese>Removeu pirulito de fentanil</Portuguese>
+                <Portuguese>Removeu pastilha de fentanil</Portuguese>
                 <Russian>Леденец с фентанилом изъят</Russian>
                 <Ukrainian>Льодяник з фентанілом вилучено</Ukrainian>
                 <Korean>펜타닐 로젠지 제거됨</Korean>
@@ -2334,7 +2336,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_Hint">
                 <English>%1 removed lozenge</English>
                 <French>%1 a supprimé la pastille</French>
-                <Portuguese>%1 removeu </Portuguese>
+                <Portuguese>%1 removida pastilha</Portuguese>
                 <Russian>%1 удалил леденец</Russian>
                 <Ukrainian>%1 видалив льодяник</Ukrainian>
                 <Korean>%1이 로젠지를 제거함</Korean>
@@ -2347,7 +2349,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_HintSelf">
                 <English>Fentanyl lozenge was removed</English>
                 <French>La pastille de Fentanyl a été retirée</French>
-                <Portuguese>Pirulito de fentanil foi removido</Portuguese>
+                <Portuguese>Pastilha de fentanil foi removida</Portuguese>
                 <Russian>Леденец с фентанилом был удалён</Russian>
                 <Ukrainian>Льодяник з фентанілом було видалено</Ukrainian>
                 <Korean>펜타닐 로젠지를 제거함</Korean>
@@ -2360,7 +2362,7 @@
             <Key ID="STR_ACM_Circulation_FentanylLozenge_Remove_WoreOff_Hint">
                 <English>Fentanyl lozenge wore off and was removed</English>
                 <French>La pastille de Fentanyl s'est estompée et a été éliminée.</French>
-                <Portuguese>Pirulito de fentanil acabou e foi removido</Portuguese>
+                <Portuguese>Pastilha de fentanil acabou e foi removida</Portuguese>
                 <Russian>Действие леденца закончилось, он был изъят</Russian>
                 <Ukrainian>Дія льодяника завершилася, його було вилучено</Ukrainian>
                 <Korean>펜타닡 로젠지를 전부 복용함</Korean>
@@ -2377,7 +2379,7 @@
                 <Polish>Rozpocznij RKO</Polish>
                 <German>HLW starten</German>
                 <French>Commencez la RCP</French>
-                <Portuguese>Começou RCP</Portuguese>
+                <Portuguese>Iniciar RCP</Portuguese>
                 <Russian>Начать СЛР</Russian>
                 <Ukrainian>Розпочати СЛР</Ukrainian>
                 <Korean>CPR 시작</Korean>
@@ -2475,7 +2477,7 @@
                 <Polish>Kontynuuj RKO</Polish>
                 <German>HLW fortsetzen</German>
                 <French>Poursuivre la RCP</French>
-                <Portuguese>Continuar RCP</Portuguese>
+                <Portuguese>Retomar RCP</Portuguese>
                 <Russian>Продолжить СЛР</Russian>
                 <Ukrainian>Продовжити СЛР</Ukrainian>
                 <Korean>CPR 계속</Korean>
@@ -2489,7 +2491,7 @@
                 <Polish>Kontynuuje RKO</Polish>
                 <German>setzte HLW fort</German>
                 <French>Poursuite de la RCP</French>
-                <Portuguese>Continuada RCP</Portuguese>
+                <Portuguese>Retomada RCP</Portuguese>
                 <Russian>СЛР продолжена</Russian>
                 <Ukrainian>СЛР продовжено</Ukrainian>
                 <Korean>CPR 계속됨</Korean>
@@ -2601,7 +2603,7 @@
                 <Polish>%1 sprawdził nawrót kapilarny: %2s (%3)</Polish>
                 <German>%1 hat die Rekapillarisierungszeit gemessen: %2s (%3)</German>
                 <French>%1 a mesuré le temps de recapillation : %2s (%3)</French>
-                <Portuguese>%1 tempo de enchimento capilar medido: %2s (%3)</Portuguese>
+                <Portuguese>%1 mediu tempo de enchimento capilar: %2s (%3)</Portuguese>
                 <Russian>%1 измерил время капиллярного наполнения: %2 с (%3)</Russian>
                 <Ukrainian>%1 виміряв час капілярного наповнення: %2 с (%3)</Ukrainian>
                 <Korean>%1 모세혈관 재충혈 시간 측정: %2초 (%3)</Korean>
@@ -2707,6 +2709,7 @@
                 <Polish>%1 sprawdził puls %2</Polish>
                 <Chinese>%1检查了%2脉搏</Chinese>
                 <Japanese>%1 が %2 の脈拍を確認した</Japanese>
+                <Portuguese>%1 sentiu pulso de %2 </Portuguese>
             </Key>
         </Container>
         <Container name="// Measure Blood Pressure Action //">
@@ -2771,7 +2774,7 @@
                 <Polish>Sprawdź ciśnienie krwi</Polish>
                 <German>Blutdruck messen</German>
                 <French>Mesure de la pression artérielle</French>
-                <Portuguese>Aferir pressão sanguínea</Portuguese>
+                <Portuguese>Aferir pressão arterial</Portuguese>
                 <Russian>Измерить давление</Russian>
                 <Ukrainian>Виміряти тиск</Ukrainian>
                 <Korean>혈압 측정</Korean>
@@ -2785,7 +2788,7 @@
                 <Polish>Sprawdź ciśnienie krwi (stetoskop)</Polish>
                 <German>Blutdruck messen (Stethoskop)</German>
                 <French>Mesure de la pression artérielle (stéthoscope)</French>
-                <Portuguese>Aferir pressão sanguínea (estetoscópio)</Portuguese>
+                <Portuguese>Aferir pressão arterial (com estetoscópio)</Portuguese>
                 <Russian>Измерить давление (стетоскоп)</Russian>
                 <Ukrainian>Виміряти тиск (стетоскоп)</Ukrainian>
                 <Korean>혈압 측정 (청진기)</Korean>
@@ -2799,7 +2802,7 @@
                 <Polish>Przestano mierzyć ciśnienie</Polish>
                 <German>Blutdruckmessung unterbrochen</German>
                 <French>Arrêt de la mesure de la pression artérielle</French>
-                <Portuguese>Parou de aferir a pressão sanguínea</Portuguese>
+                <Portuguese>Parou de aferir a pressão arterial</Portuguese>
                 <Russian>Измерение давления прекращено</Russian>
                 <Ukrainian>Вимірювання тиску припинено</Ukrainian>
                 <Korean>혈압 측정 중단</Korean>
@@ -2813,7 +2816,7 @@
                 <Polish>Pomiar ciśnienia...</Polish>
                 <German>Messe Blutdruck...</German>
                 <French>Mesure de la pression artérielle...</French>
-                <Portuguese>Aferindo pressão sanguínea...</Portuguese>
+                <Portuguese>Aferindo pressão arterial...</Portuguese>
                 <Russian>Измерение давления...</Russian>
                 <Ukrainian>Вимірювання тиску...</Ukrainian>
                 <Korean>혈압 측정 중...</Korean>
@@ -2871,7 +2874,7 @@
                 <Polish>Zatrzymaj transfuzję: %1</Polish>
                 <German>Beende %1 Transfusion</German>
                 <French>Arrêter la transfusion de %1</French>
-                <Portuguese>Interromper %1 Transfusão</Portuguese>
+                <Portuguese>Interromper transfusão (%1)</Portuguese>
                 <Russian>Остановить переливание %1</Russian>
                 <Ukrainian>Зупинити переливання %1</Ukrainian>
                 <Korean>%1 수혈/주입 중지</Korean>
@@ -2899,7 +2902,7 @@
                 <Polish>Rozpocznij transfuzje: %1</Polish>
                 <German>Beginne %1Transfusion</German>
                 <French>Début de la transfusion %1</French>
-                <Portuguese>Iniciar %1 transfusão</Portuguese>
+                <Portuguese>Iniciar transfusão (%1)</Portuguese>
                 <Russian>Начать переливание %1</Russian>
                 <Ukrainian>Почати переливання %1</Ukrainian>
                 <Korean>%1 수혈/주입 시작</Korean>
@@ -2913,7 +2916,7 @@
                 <Polish>Rozpocznij transfuzje na wybranym: %1</Polish>
                 <German>Beginne Transfusion am ausgewählten %1</German>
                 <French>Commencer la transfusion de liquide sur le %1 sélectionné</French>
-                <Portuguese>Iniciar a transfusão no selecionado %1</Portuguese>
+                <Portuguese>Iniciar a transfusão (%1)</Portuguese>
                 <Russian>Начать переливание на выбранном %1</Russian>
                 <Ukrainian>Почати переливання на вибраному %1</Ukrainian>
                 <Korean>선택된 %1로 수혈/주입 시작</Korean>
@@ -3011,7 +3014,7 @@
                 <Polish>Rozpoczęto przenoszenie %1</Polish>
                 <German>Beginne %1 zu verschieben</German>
                 <French>Début du déplacement %1</French>
-                <Portuguese>Começar a mover %1</Portuguese>
+                <Portuguese>Começou a mover %1</Portuguese>
                 <Russian>Начато перемещение %1</Russian>
                 <Ukrainian>Почато переміщення %1</Ukrainian>
                 <Korean>%1 이동 시작</Korean>
@@ -3039,7 +3042,7 @@
                 <Polish>Przenieś torebkę z IV</Polish>
                 <German>Verschiebe Infusion von i.v. Zugang</German>
                 <French>Déplacer la poche de liquide de la perfusion</French>
-                <Portuguese>Move a bolsa de fluido do IV</Portuguese>
+                <Portuguese>Mover a bolsa de fluido IV</Portuguese>
                 <Russian>Снять пакет с IV</Russian>
                 <Ukrainian>Зняти пакет з IV</Ukrainian>
                 <Korean>IV 라인에서 수액 이동</Korean>
@@ -3053,7 +3056,7 @@
                 <Polish>Podłącz torebkę z wybraną linią IV</Polish>
                 <German>Verschiebe Infusion zu ausgewähltem i.v. Zugang</German>
                 <French>Placer la poche de liquide sur la ligne IV sélectionnée</French>
-                <Portuguese>Coloque a bolsa de fluido na linha IV selecionada</Portuguese>
+                <Portuguese>Colocar a bolsa de fluido na linha IV selecionada</Portuguese>
                 <Russian>Установить пакет на выбранную IV-линию</Russian>
                 <Ukrainian>Встановити пакет на вибрану IV-лінію</Ukrainian>
                 <Korean>선택한 IV 라인에 수액 백 설치</Korean>
@@ -3630,7 +3633,7 @@
                 <Polish>Sprawdzanie wkłucia...</Polish>
                 <German>Prüfe i.v. Katheter...</German>
                 <French>Vérification du cathéter IV ...</French>
-                <Portuguese>Inspecionando cateter IV</Portuguese>
+                <Portuguese>Inspecionando cateter IV...</Portuguese>
                 <Russian>Осмотр катетера IV...</Russian>
                 <Ukrainian>Огляд катетера IV...</Ukrainian>
                 <Korean>IV 카테터 검사 중...</Korean>
@@ -3672,7 +3675,7 @@
                 <Polish>Wenflon ma normalny przepływ</Polish>
                 <German>i.v. Katheter mit normalen Fluss</German>
                 <French>Cathéter i.v. à débit normal</French>
-                <Portuguese>Fluxo normal do cateter IV</Portuguese>
+                <Portuguese>Fluxo normal no cateter IV</Portuguese>
                 <Russian>У катетера IV нормальный поток</Russian>
                 <Ukrainian>У катетера IV нормальний потік</Ukrainian>
                 <Korean>IV 카테터 정상 유량</Korean>
@@ -3924,7 +3927,7 @@
             </Key>
             <Key ID="STR_ACM_Circulation_Syringe_Drawing">
                 <English>Drawing %1...</English>
-                <Portuguese>Extraindo</Portuguese>
+                <Portuguese>Aspirando %1...</Portuguese>
                 <Russian>Набор %1...</Russian>
                 <Ukrainian>Набір %1...</Ukrainian>
                 <Korean>%1 흡인 중...</Korean>
@@ -3982,7 +3985,7 @@
                 <Polish>Podano (IM)</Polish>
                 <German>Injiziert (IM)</German>
                 <French>Injecté (IM)</French>
-                <Portuguese>Infundido (IM)</Portuguese>
+                <Portuguese>Injetando (IM)</Portuguese>
                 <Russian>Введено (IM)</Russian>
                 <Ukrainian>Введено (IM)</Ukrainian>
                 <Korean>주입 완료 </Korean>
@@ -4024,7 +4027,7 @@
                 <Polish>Pobierz i podaj (IM)</Polish>
                 <German>Aufziehen und i.m. injizieren</German>
                 <French>Injecter par IM</French>
-                <Portuguese>Aspirar e infundir (IM)</Portuguese>
+                <Portuguese>Aspirar e injetar (IM)</Portuguese>
                 <Russian>Набрать и ввести (IM)</Russian>
                 <Ukrainian>Набрати і ввести (IM)</Ukrainian>
                 <Korean>약물 뽑기 &amp; 주입</Korean>
@@ -4054,7 +4057,7 @@
                 <Polish>Pokaż monitor</Polish>
                 <German>Patientenmonitor anschauen</German>
                 <French>Afficher le moniteur</French>
-                <Portuguese>Exibir monitor</Portuguese>
+                <Portuguese>Ver monitor</Portuguese>
                 <Russian>Открыть монитор</Russian>
                 <Ukrainian>Відкрити монітор</Ukrainian>
                 <Korean>모니터 보기</Korean>
@@ -4068,7 +4071,7 @@
                 <Polish>Pokaż monitor defibrylatora</Polish>
                 <German>Patientenmonitor anschauen</German>
                 <French>Voir le moniteur DAE</French>
-                <Portuguese>Exibir o monitor do DEA</Portuguese>
+                <Portuguese>Ver o monitor do DEA</Portuguese>
                 <Russian>Открыть монитор AED</Russian>
                 <Ukrainian>Відкрити монітор AED</Ukrainian>
                 <Korean>AED 모니터 보기</Korean>
@@ -4082,7 +4085,7 @@
                 <Polish>Załóż elektrody</Polish>
                 <German>Defi-Elektroden kleben</German>
                 <French>Appliquer les électrodes de DAE</French>
-                <Portuguese>Aplicar eletrodos do DEA</Portuguese>
+                <Portuguese>Conectar as pás do DEA</Portuguese>
                 <Russian>Наложить электроды AED</Russian>
                 <Ukrainian>Накласти електроди AED</Ukrainian>
                 <Korean>AED 패드 부착</Korean>
@@ -4096,7 +4099,7 @@
                 <Polish>Zakadanie elektrod...</Polish>
                 <German>Klebe Defi-Elektroden auf...</German>
                 <French>Application des électrodes du DAE...</French>
-                <Portuguese>Aplicando eletrodos do DEA...</Portuguese>
+                <Portuguese>Conectando as pás do DEA...</Portuguese>
                 <Russian>Наложение электродов AED...</Russian>
                 <Ukrainian>Накладання електродів AED...</Ukrainian>
                 <Korean>AED 패드 부착 중...</Korean>
@@ -4110,7 +4113,7 @@
                 <Polish>Zdejmij elektrody</Polish>
                 <German>Defi-Elektroden entfernen</German>
                 <French>Retirer les électrodes du DAE</French>
-                <Portuguese>Remover eletrodos do DEA</Portuguese>
+                <Portuguese>Remover as pás do DEA</Portuguese>
                 <Russian>Снять электроды AED</Russian>
                 <Ukrainian>Зняти електроди AED</Ukrainian>
                 <Korean>AED 패드 제거</Korean>
@@ -4124,7 +4127,7 @@
                 <Polish>Zdejmowanie elektrod...</Polish>
                 <German>Entferne Defi-Elektroden...</German>
                 <French>Retrait des coussinets de DAE...</French>
-                <Portuguese>Removendo eletrodos do DEA</Portuguese>
+                <Portuguese>Removendo as pás do DEA...</Portuguese>
                 <Russian>Снятие электродов AED...</Russian>
                 <Ukrainian>Зняття електродів AED...</Ukrainian>
                 <Korean>AED 패드 제거 중...</Korean>
@@ -4265,7 +4268,7 @@
                 <Polish>Zakładanie kapnografu defibrylatora...</Polish>
                 <German>Verbinde AED-Kapnograph...</German>
                 <French>Connexion du capnographe DAE...</French>
-                <Portuguese>Conectando capnógrafo do DEA</Portuguese>
+                <Portuguese>Conectando capnógrafo do DEA...</Portuguese>
                 <Russian>Подключение капнографа к AED...</Russian>
                 <Ukrainian>Підключення капнографа до AED...</Ukrainian>
                 <Korean>AED 카프노그래프 연결 중...</Korean>
@@ -4363,7 +4366,7 @@
                 <Polish>Zmierz ciśnienie krwi (defibrylator)</Polish>
                 <German>Blutdruck messen (AED)</German>
                 <French>Prendre la tension (DAE)</French>
-                <Portuguese>Mensurar pressão sanguínea (DEA)</Portuguese>
+                <Portuguese>Mensurar pressão arterial (DEA)</Portuguese>
                 <Russian>Измерить давление (AED)</Russian>
                 <Ukrainian>Виміряти тиск (AED)</Ukrainian>
                 <Korean>혈압 측정 (AED)</Korean>
@@ -4745,7 +4748,7 @@
                 <Polish>%1 rozpoczął transfuzje płynu (%2) do %3</Polish>
                 <German>%1 transfundierte %2 in %3</German>
                 <French>%1 a commencé à transfuser des fluides (%2) dans %3</French>
-                <Portuguese>%1 começou a transmissção de fluido (%2) em %3</Portuguese>
+                <Portuguese>%1 começou a transfusão de fluido (%2) em %3</Portuguese>
                 <Russian>%1 начал переливание (%2) в %3</Russian>
                 <Ukrainian>%1 розпочав переливання (%2) у %3</Ukrainian>
                 <Korean>%1 %3에 (%2) 주입을 시작함</Korean>
@@ -4815,7 +4818,7 @@
                 <Polish>ŚK</Polish>
                 <German>VB</German>
                 <French>ST</French>
-                <Portuguese>Sangue fresco</Portuguese>
+                <Portuguese>SF</Portuguese>
                 <Russian>ПСК</Russian>
                 <Ukrainian>ПСК</Ukrainian>
                 <Korean>FWB</Korean>
@@ -4829,7 +4832,7 @@
                 <Polish>ZPTK</Polish>
                 <German>FBTK</German>
                 <French>FBTK</French>
-                <Portuguese>KTSC</Portuguese>
+                <Portuguese>FBTK</Portuguese>
                 <Russian>ПНПК</Russian>
                 <Ukrainian>ПНПК</Ukrainian>
                 <Korean>FBTK</Korean>

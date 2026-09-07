@@ -6,7 +6,7 @@
             <Polish>ACM: Core</Polish>
             <French>ACM: Core</French>
             <German>ACM: Kern</German>
-            <Portuguese>ACM: Núcleo</Portuguese>
+            <Portuguese>ACM: Principal</Portuguese>
             <Russian>ACM: Основной модуль</Russian>
             <Ukrainian>ACM: Основний модуль</Ukrainian>
             <Korean>ACM: 코어</Korean>
@@ -173,7 +173,7 @@
                 <Polish>Użyj autostrzykawki z epinefryną</Polish>
                 <German>Adrenalin-Autoinjektor benutzen</German>
                 <French>Utiliser un auto-injecteur d'épinéphrine</French>
-                <Portuguese>Usar autoinjeto de epinefrina</Portuguese>
+                <Portuguese>Usar autoinjetor de epinefrina</Portuguese>
                 <Russian>Использовать автоинъектор адреналина</Russian>
                 <Ukrainian>Використати автоінʼєктор епінефрину</Ukrainian>
                 <Korean>에피네프린 자동주사기 사용</Korean>
@@ -275,7 +275,7 @@
             <Key ID="STR_ACM_Core_AssistCarry_Already">
                 <English>Patient is already being carry-assisted</English>
                 <French>Le patient bénéficie déjà d'une assistance au portage</French>
-                <Portuguese>O paciente já está sendo assistido para carregamento</Portuguese>
+                <Portuguese>O paciente já está recebendo assistência para carregamento</Portuguese>
                 <Russian>Пациента уже подготовлен к переноске</Russian>
                 <Ukrainian>Пацієнт вже підготовлений до перенесення</Ukrainian>
                 <Korean>환자가 이미 들기 보조를 받고 있는 상태입니다</Korean>
@@ -314,7 +314,7 @@
             <Key ID="STR_ACM_Core_AssistCarry_Cancelled">
                 <English>Carry-assist cancelled</English>
                 <French>L'assistance au portage a été annulée</French>
-                <Portuguese>Assistência ao carregamento cancelada</Portuguese>
+                <Portuguese>Assistência para carregamento cancelada</Portuguese>
                 <Russian>Подготовка к переноске отменена</Russian>
                 <Ukrainian>Підготовка до перенесення скасовано</Ukrainian>
                 <Korean>들기 보조 취소</Korean>
@@ -388,7 +388,7 @@
                 <Polish>Pacjenci w pojeździe</Polish>
                 <German>Fahrzeug Verletzte</German>
                 <French>Patients du véhicule</French>
-                <Portuguese>Pacientes em veículos</Portuguese>
+                <Portuguese>Pacientes no veículo</Portuguese>
                 <Russian>Пациенты в транспорте</Russian>
                 <Ukrainian>Пацієнти в транспорті</Ukrainian>
                 <Korean>차량 내 환자</Korean>
@@ -420,7 +420,7 @@
                 <Polish>[ACM] Podstawowa skrzynia z zaopatrzeniem medycznym </Polish>
                 <German>[ACM] Basis Versorgungskiste</German>
                 <French>[ACM] Caisse de fournitures médicales de base</French>
-                <Portuguese>[ACM] Caixa de Suprimentos Médicos Básicos</Portuguese>
+                <Portuguese>[ACM] Caixa de suprimentos médicos básicos</Portuguese>
                 <Russian>[ACM] Ящик базового медснабжения</Russian>
                 <Ukrainian>[ACM] Ящик базового медзабезпечення</Ukrainian>
                 <Korean>[ACM] 기본 의료 보급 상자</Korean>
@@ -434,7 +434,7 @@
                 <Polish>[ACM] Zaawansowana skrzynia z zaopatrzeniem medycznym </Polish>
                 <German>[ACM] Erweiterte Versorgungskiste</German>
                 <French>[ACM] Caisse d'approvisionnement médical avancé</French>
-                <Portuguese>[ACM] Caixa de Suprimentos Médicos Avançados</Portuguese>
+                <Portuguese>[ACM] Caixa de suprimentos médicos avançados</Portuguese>
                 <Russian>[ACM] Ящик расширенного медснабжения</Russian>
                 <Ukrainian>[ACM] Ящик розширеного медзабезпечення</Ukrainian>
                 <Korean>[ACM] 고급 의료 보급 상자</Korean>
@@ -450,7 +450,7 @@
                 <Polish>%1 sprawdza twój nieśmiertelnik</Polish>
                 <German>%1 schaut sich deine Erkennungsmarke an</German>
                 <French>%1 examine ta plaque d'identification</French>
-                <Portuguese>%1 está inspecionando sua plaqueta de identificação</Portuguese>
+                <Portuguese>%1 está inspecionando sua dog tag</Portuguese>
                 <Russian>%1 проверяет ваши жетоны</Russian>
                 <Ukrainian>%1 перевіряє ваші жетони</Ukrainian>
                 <Korean>%1가 당신의 군번줄을 확인 중입니다</Korean>
@@ -520,7 +520,7 @@
         <Container name="// Body Bag Return Items //">
             <Key ID="STR_ACM_Core_BodyBagReturnedItems">
                 <English>Medical items returned from body bag</English>
-                <Portuguese>Itens médicos recuperados do saco de cadáver</Portuguese>
+                <Portuguese>Itens médicos recuperados do saco de despojos</Portuguese>
                 <Russian>Медицинские предметы возвращены из мешка для тел</Russian>
                 <Ukrainian>Медичні предмети повернено з мішка для тіл</Ukrainian>
                 <Korean>시체가방에서 의료 아이템 반환</Korean>
@@ -608,7 +608,7 @@
                 <Polish>Odczepiono</Polish>
                 <German>Diskonnektiert</German>
                 <French>Déconnecté</French>
-                <Portuguese>Disconectado</Portuguese>
+                <Portuguese>Desconectado</Portuguese>
                 <Russian>Отключено</Russian>
                 <Ukrainian>Відключено</Ukrainian>
                 <Korean>연결 해제됨</Korean>
@@ -683,6 +683,7 @@
                 <Polish>Dystans interakcji</Polish>
                 <Chinese>互动距离</Chinese>
                 <Japanese>インタラクション距離</Japanese>
+                <Portuguese>Distância de interação</Portuguese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition">
                 <English>Interaction Position</English>
@@ -692,6 +693,7 @@
                 <Polish>Pozycja interakcji</Polish>
                 <Chinese>互动位置</Chinese>
                 <Japanese>インタラクション位置</Japanese>
+                <Portuguese>Posição de interação</Portuguese>
             </Key>
             <Key ID="STR_ACM_Core_Common_Module_InteractionPosition_Tooltip">
                 <English>Interaction position relative to center of object, must be an array containing 3 numbers</English>
@@ -701,6 +703,7 @@
                 <Polish>Pozycja interakcji względem środka obiektu musi zawierać 3 liczby</Polish>
                 <Chinese>交互位置相对于物体中心，必须为包含3个数字的数组</Chinese>
                 <Japanese>オブジェクトの中心を基準としたインタラクション位置。3つの数値を含む配列である必要がある</Japanese>
+                <Portuguese>Posição de interação relativa ao centro do objeto. Deve ser um vetor com 3 números</Portuguese>
             </Key>
         </Container>
         <Container name="// ACE Action //">

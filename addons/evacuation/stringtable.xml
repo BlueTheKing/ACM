@@ -48,7 +48,7 @@
             <Polish>Włącz ewakuację</Polish>
             <French>Activer l'addon d'évacuation</French>
             <German>Aktiviere Evakuierungs-AddOn</German>
-            <Portuguese>Habilitar complemento Evacuação</Portuguese>
+            <Portuguese>Habilitar addon de evacuação</Portuguese>
             <Russian>Включить модуль эвакуации</Russian>
             <Ukrainian>Увімкнути модуль евакуації</Ukrainian>
             <Korean>퇴출 기능 활성화</Korean>
@@ -62,7 +62,7 @@
             <Polish>Włącz funkcje ewakuacji na misji, szczegóły dotyczące przygotowania od strony misji znajdziesz w dokumencie opisującym zawartość ACMa</Polish>
             <French>Activer la fonctionnalité de l'addon d'évacuation, le respawning et les tickets doivent être activés sur la mission pour fonctionner.</French>
             <German>Aktiviere die Evakuationsfunktion, Respawn Tickets müssen in der Mission aktiviert sein</German>
-            <Portuguese>Habilite a funcionalidade do complemento Evacuação, o ressurgimento e os tíquetes devem ser habilitados na missão para funcionar</Portuguese>
+            <Portuguese>Habilite a funcionalidade do addon de evacuação, o ressurgimento e os tíquetes devem estar habilitados na missão para funcionar</Portuguese>
             <Russian>Включить функционал модуля эвакуации, требуется включённый респаун и тикеты на миссии</Russian>
             <Ukrainian>Увімкнути функціонал модуля евакуації, потрібен увімкнений респаун і тікети на місії</Ukrainian>
             <Korean>퇴출 기능 활성화, 작동하려면 미션에서 리스폰 및 티켓 활성화 필요</Korean>
@@ -363,6 +363,7 @@
                 <Polish>Przejąłeś kontrole nad nowym wsparciem</Polish>
                 <Chinese>你已接管新的增援单位</Chinese>
                 <Japanese>増援部隊の指揮権を獲得しました</Japanese>
+                <Portuguese>Você assumiu o controle de um novo reforço</Portuguese>
             </Key>
             <Key ID="STR_ACM_Evacuation_EvacuatePatient">
                 <English>Evacuate Patient</English>
@@ -405,6 +406,7 @@
                 <Polish>Punkt ewakuacji</Polish>
                 <Chinese>后送点</Chinese>
                 <Japanese>後送地点</Japanese>
+                <Portuguese>Ponto de evacuação</Portuguese>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_ReinforcePoint">
                 <English>Reinforce Point</English>
@@ -417,6 +419,7 @@
                 <Polish>Punkt wsparcia</Polish>
                 <Chinese>增援点</Chinese>
                 <Japanese>増援地点</Japanese>
+                <Portuguese>Ponto de reforço</Portuguese>
             </Key>
             <Key ID="STR_ACM_Evacuation_Module_PlayerFaction">
                 <English>Player Side</English>

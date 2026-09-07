@@ -20,7 +20,7 @@
             <Polish>Pokaż nieaktywne statusy funkcji życiowych</Polish>
             <French>Afficher les états vitaux inactifs</French>
             <German>Zeige inaktive Vitatwerte</German>
-            <Portuguese>Mostrar status de sinais vitais inexistentes</Portuguese>
+            <Portuguese>Mostrar situação de sinais vitais inexistentes</Portuguese>
             <Russian>Показывать неактивные показатели жизненных функций</Russian>
             <Ukrainian>Показувати неактивні показники життєвих функцій</Ukrainian>
             <Korean>비활성 활력징후 표시</Korean>
@@ -34,7 +34,7 @@
             <Polish>Pokaż stan funkcji życiowych w zakładce przeglądu, gdy jest nieaktywny (wyświetl "brak")</Polish>
             <French>Afficher le statut des fonctions vitales dans l'onglet «vue d'ensemble» lorsqu'elles sont inactives (affichage «none»)</French>
             <German>Stellt ein, ob nicht-gemessene Vitalwerte in der Übersicht angezeigt werden sollen (Anzeige ""kein"")</German>
-            <Portuguese>Mostrar o status dos sinais vitais na guia de visão geral quando estiver inativo (exibir "nenhum")</Portuguese>
+            <Portuguese>Mostrar a situação dos sinais vitais na guia de visão geral quando estiver inativo (exibir "nenhum")</Portuguese>
             <Russian>Показывать состояние жизненных функций во вкладке обзора, даже если неактивны (отображать: нет)</Russian>
             <Ukrainian>Показувати стан життєвих функцій на вкладці огляду, навіть якщо неактивні (відображати: немає)</Ukrainian>
             <Korean>활력징후가 없는 상태일 때 개요 탭에 활력징후 상태 표시 ("none" 표시)</Korean>
@@ -82,6 +82,7 @@
             <Polish>Pokaż złamania</Polish>
             <Chinese>显示骨折</Chinese>
             <Japanese>骨折を表示</Japanese>
+            <Portuguese>Exibir fratura</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowFracture_Desc">
             <English>Show fractured limb(s) on patient and overview tab</English>
@@ -94,6 +95,7 @@
             <Polish>Pokaż złamania na częsci ciała w menu medycznym</Polish>
             <Chinese>在患者和概览标签页显示骨折肢体</Chinese>
             <Japanese>患者上および概要タブで骨折した四肢を表示</Japanese>
+            <Portuguese>Exibir membro(s) fraturado(s) no paciente e na aba de visão geral</Portuguese>
         </Key>
         <Key ID="STR_ACM_GUI_SETTING_ShowActionItemIcons">
             <English>Show Action Item Icons</English>

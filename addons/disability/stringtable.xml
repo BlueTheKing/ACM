@@ -6,7 +6,7 @@
             <Polish>ACM: Ograniczenia ruchowe</Polish>
             <French>ACM : Restrictions de mouvement</French>
             <German>ACM: Defizite</German>
-            <Portuguese>ACM: Deficiência</Portuguese>
+            <Portuguese>ACM: Incapacitação</Portuguese>
             <Russian>ACM: Травмы</Russian>
             <Ukrainian>ACM: Травми</Ukrainian>
             <Korean>ACM: 장애 (Disability)</Korean>
@@ -17,7 +17,7 @@
         </Key>
         <Key ID="STR_ACM_Disability_Category_FractureManagement">
             <English>Fracture Management</English>
-            <Portuguese>Gerenciamento de fraturas</Portuguese>
+            <Portuguese>Tratamento de fraturas</Portuguese>
             <Russian>Лечение переломов</Russian>
             <Ukrainian>Лікування переломів</Ukrainian>
             <Korean>골절 관리</Korean>
@@ -101,7 +101,7 @@
             <Polish>Czas potrzebny na aplikacje szyny SAM splint</Polish>
             <French>Temps nécessaire d'application SAM Splint</French>
             <German>Zeit bis SAM Splint angelegt ist</German>
-            <Portuguese>Tempo para aplicar tala moldável</Portuguese>
+            <Portuguese>Tempo para aplicar tala</Portuguese>
             <Russian>Время для наложения шины SAM</Russian>
             <Ukrainian>Час для накладання шини SAM</Ukrainian>
             <Korean>SAM 부목 적용 시간</Korean>
@@ -364,7 +364,7 @@
                 <Polish>%1 zdjął szynę </Polish>
                 <German>%1 entfernte Schiene</German>
                 <French>%1 a enlevé l'attelle</French>
-                <Portuguese>%1 removendo tala</Portuguese>
+                <Portuguese>%1 removeu tala</Portuguese>
                 <Russian>%1 снял(а) шину</Russian>
                 <Ukrainian>%1 зняв(ла) шину</Ukrainian>
                 <Korean>%1이 부목을 제거</Korean>
@@ -750,7 +750,7 @@
             <Key ID="STR_ACM_Disability_InspectForFracture_NoInjury_Short">
                 <English>No Significant Injury</English>
                 <French>Pas de blessure importante</French>
-                <Portuguese>Nenhum lesão significante</Portuguese>
+                <Portuguese>Nenhuma lesão significante</Portuguese>
                 <Russian>Значительных повреждений нет</Russian>
                 <Ukrainian>Суттєвих ушкоджень немає</Ukrainian>
                 <Korean>큰 손상 없음</Korean>
@@ -830,7 +830,7 @@
             <Key ID="STR_ACM_Disability_FractureRealignment_Complete_Success">
                 <English>Fracture realignment performed successfully</English>
                 <French>Le réalignement de la fracture a été effectué avec succès</French>
-                <Portuguese>Realinhamento de fratura performado com sucesso</Portuguese>
+                <Portuguese>Realinhamento de fratura realizado com sucesso</Portuguese>
                 <Russian>Репозиция перелома успешно выполнена</Russian>
                 <Ukrainian>Репозицію перелому успішно виконано</Ukrainian>
                 <Korean>골절 정복 성공적으로 수행됨</Korean>
