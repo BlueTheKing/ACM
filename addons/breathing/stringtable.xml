@@ -62,7 +62,7 @@
             <Polish>Wysokość wpływa na saturacje</Polish>
             <French>L'altitude affecte l'oxygène</French>
             <German>Höhe beeinflusst Sauerstoffsätigung</German>
-            <Portuguese>Altitude afeta oxigênação</Portuguese>
+            <Portuguese>Altitude afeta oxigenação</Portuguese>
             <Russian>Высота влияет на насыщение кислородом</Russian>
             <Ukrainian>Висота впливає на насичення киснем</Ukrainian>
             <Korean>고도에 따른 산소 영향</Korean>
@@ -202,7 +202,7 @@
             <Polish>Szansa na pourazowego krwiaka opłucnej zamiast odmy prężnej</Polish>
             <French>Risque qu'un traumatisme thoracique grave soit un hémothorax plutôt qu'un pneumothorax.</French>
             <German>Wahrscheinlichkeit, dass eine schwere Thoraxverletzung eine Hämatothorax statt einer Pneumothorax verursacht</German>
-            <Portuguese>Chance de que uma lesão torácica grave infligida seja um hemotórax em vez de um pneumotórax</Portuguese>
+            <Portuguese>Chance de que uma lesão torácica grave seja um hemotórax em vez de um pneumotórax</Portuguese>
             <Russian>Шанс, что тяжёлое ранение грудной клетки вызовет гемоторакс вместо пневмоторакса</Russian>
             <Ukrainian>Шанс, що тяжке поранення грудної клітки спричинить гемоторакс замість пневмотораксу</Ukrainian>
             <Korean>심각한 흉부 손상이 혈흉 (Hemothorax)일 확률</Korean>
@@ -216,7 +216,7 @@
             <Polish>[HARDCORE] Urazy klatki piersiowej</Polish>
             <French>[HARDCORE] Blessures thoraciques</French>
             <German>[HARDCORE] Thoraxverletzungen</German>
-            <Portuguese>[HARDCORE] Lesões no peito</Portuguese>
+            <Portuguese>[DIFÍCIL] Lesões no peito</Portuguese>
             <Russian>[ХАРДКОР] Ранения грудной клетки</Russian>
             <Ukrainian>[ХАРДКОР] Поранення грудної клітки</Ukrainian>
             <Korean>[HARDCORE] 흉부 손상 (Chest Injuries)</Korean>
@@ -230,7 +230,7 @@
             <Polish>[HARDCORE] Określa czy odma prężna powinna wymagać dalszego leczenia by zostać wyeliminowana</Polish>
             <French>[HARDCORE] Définit si le pneumothorax sous tension doit faire l'objet d'un traitement supplémentaire pour être entièrement traité.</French>
             <German>[HARDCORE] Stellt ein, ob eine Spannungspneumothorax eine weitere Behandlung braucht, um voll geheilt zu werden</German>
-            <Portuguese>[HARDCORE] Define se o pneumotórax de tensão deve exigir tratamento adicional para ser totalmente tratado</Portuguese>
+            <Portuguese>[DIFÍCIL] Define se o pneumotórax hipertensivo deve exigir tratamento adicional para ser totalmente tratado</Portuguese>
             <Russian>[ХАРДКОР] Определяет, нужно ли для полного лечения напряжённого пневмоторакса дополнительное вмешательство</Russian>
             <Ukrainian>[ХАРДКОР] Визначає, чи потрібно для повного лікування напруженого пневмотораксу додаткове втручання</Ukrainian>
             <Korean>[HARDCORE] 긴장성 기흉 (Tension Pneumothorax) 완전 치료를 위해 추가 치료가 필요한지 여부</Korean>
@@ -244,7 +244,7 @@
             <Polish>[HARDCORE] Krwawienie krwiaka opłucnej</Polish>
             <French>[HARDCORE] Saignement de l'hémothorax</French>
             <German>[HARDCORE] Hämatothorax Blutung</German>
-            <Portuguese>[HARDCORE] Sangramento de hemotórax</Portuguese>
+            <Portuguese>[DIFÍCIL] Sangramento de hemotórax</Portuguese>
             <Russian>[ХАРДКОР] Кровотечение при гемотораксе</Russian>
             <Ukrainian>[ХАРДКОР] Кровотеча при гемотораксі</Ukrainian>
             <Korean>[HARDCORE] 혈흉 (Hemothorax) 출혈</Korean>
@@ -258,7 +258,7 @@
             <Polish>[HARDCORE] Określa czy krwiak opłucnej powinien wymagać dalszego leczenia by zostać wyeliminowany</Polish>
             <French>[HARDCORE] Définit si l'hémothorax doit faire l'objet d'un traitement supplémentaire pour arrêter complètement l'hémorragie interne.</French>
             <German>[HARDCORE] Stellt ein, ob eine Hämatothorax eine weitere Behandlung braucht, um die innere Blutung komplett zu stoppen</German>
-            <Portuguese>[HARDCORE] Define se o hemotórax deve exigir tratamento adicional para interromper totalmente o sangramento interno</Portuguese>
+            <Portuguese>[DIFÍCIL] Define se o hemotórax deve exigir tratamento adicional para cessar totalmente a hemorragia interna</Portuguese>
             <Russian>[ХАРДКОР] Определяет, требуется ли для полной остановки кровотечения при гемотораксе дополнительное вмешательство</Russian>
             <Ukrainian>[ХАРДКОР] Визначає, чи потрібно для повної зупинки кровотечі при гемотораксі додаткове втручання</Ukrainian>
             <Korean>[HARDCORE] 혈흉 (Hemothorax) 완전 지혈을 위해 추가 치료가 필요한지 여부</Korean>
@@ -272,7 +272,7 @@
             <Polish>Sprawdź klatkę piesiową</Polish>
             <German>Erlaube Brustinspektion</German>
             <French>Permettre d'inspecter le thorax</French>
-            <Portuguese>Permitir inspecionar o tórax</Portuguese>
+            <Portuguese>Permitir inspeção do tórax</Portuguese>
             <Russian>Разрешить осмотр грудной клетки</Russian>
             <Ukrainian>Дозволити огляд грудної клітки</Ukrainian>
             <Korean>흉부 확인 (Inspect Chest) 허용</Korean>
@@ -286,7 +286,7 @@
             <Polish>Poziom wyszkolenia potrzebny do sprawdzenia klatki piersiowej</Polish>
             <German>Benötigtes Qualifikationslevel, um eine Brustinspektion durchzuführen</German>
             <French>Niveau de formation requis pour l'inspection du thorax</French>
-            <Portuguese>Nível de treinamento necessário para inspecionar o peito</Portuguese>
+            <Portuguese>Nível de treinamento necessário para inspecionar o tórax</Portuguese>
             <Russian>Уровень подготовки, необходимый для осмотра грудной клетки</Russian>
             <Ukrainian>Рівень підготовки, необхідний для огляду грудної клітки</Ukrainian>
             <Korean>흉부 확인에 필요한 훈련 수준</Korean>
@@ -314,7 +314,7 @@
             <Polish>Czas potrzebny na sprawdzenie klatki piersiowej</Polish>
             <German>Benötigte Zeit, um eine Brust-Nadel-Dekompression durchzuführen</German>
             <French>Temps nécessaire pour effectuer une décompression par aiguille thoracique</French>
-            <Portuguese>Tempo para executar a ação de inspeção tóracica</Portuguese>
+            <Portuguese>Tempo para realizar a ação de inspeção tóracica</Portuguese>
             <Russian>Время выполнения действия: осмотр грудной клетки</Russian>
             <Ukrainian>Час виконання дії: огляд грудної клітки</Ukrainian>
             <Korean>흉부 확인에 걸리는 시간</Korean>
@@ -328,7 +328,7 @@
             <Polish>Pozwól na użycie zestawu NCD</Polish>
             <German>Erlaube Brust-Nadel-Dekompression</German>
             <French>Autoriser le kit NCD</French>
-            <Portuguese>Permtir agulha de descompressão torácica</Portuguese>
+            <Portuguese>Permitir agulha de descompressão torácica</Portuguese>
             <Russian>Разрешить набор NCD Kit</Russian>
             <Ukrainian>Дозволити набір NCD Kit</Ukrainian>
             <Korean>NCD Kit 허용</Korean>
@@ -370,7 +370,7 @@
             <Polish>Poziom wyszkolenia potrzebny do wykonania torakotomii</Polish>
             <German>Benötigtes Qualifikationslevel, um eine Nadledekompressierung durchzuführen</German>
             <French>Niveau de formation requis pour effectuer une thoracostomie</French>
-            <Portuguese>Nível de treinamento para toracostomia</Portuguese>
+            <Portuguese>Nível de treinamento para realizar toracostomia</Portuguese>
             <Russian>Уровень подготовки для выполнения торакостомии</Russian>
             <Ukrainian>Рівень підготовки для виконання торакостомії</Ukrainian>
             <Korean>Thoracostomy 수행에 필요한 훈련 수준</Korean>
@@ -398,7 +398,7 @@
             <Polish>Określa lokalizacje w których można wykonywać torakotomie</Polish>
             <German>Stellt die Standorte ein, an denen eine Thorakotomie durchgeführt werden kann</German>
             <French>Définit les endroits où la thoracostomie peut être pratiquée</French>
-            <Portuguese>Define os locais em que a toracostomia pode ser realizada</Portuguese>
+            <Portuguese>Define os locais onde a toracostomia pode ser realizada</Portuguese>
             <Russian>Задаёт места, где может быть выполнена торакостомия</Russian>
             <Ukrainian>Визначає місця, де може бути виконана торакостомія</Ukrainian>
             <Korean>Thoracostomy를 수행할 수 있는 위치 설정</Korean>
@@ -427,7 +427,7 @@
                 <Polish>Używany do zabezpieczania urazów klatki piersiowej</Polish>
                 <German>Wird benutzt, um penetrierende Brustverletzungen abzudecken</German>
                 <French>Utilisé pour traiter les lésions thoraciques pénétrantes</French>
-                <Portuguese>Usado para tratar lesões penetrantes no tórax</Portuguese>
+                <Portuguese>Usado para tratar lesões perfurantes no tórax</Portuguese>
                 <Russian>Используется для лечения проникающих ран грудной клетки</Russian>
                 <Ukrainian>Використовується для лікування проникаючих поранень грудної клітки</Ukrainian>
                 <Korean>흉부 관통상 관리용</Korean>
@@ -483,7 +483,7 @@
                 <Polish>Używany do osłuchiwania klatki piersiowej pacjenta</Polish>
                 <German>Wird zur Auskultation der Lunge und des Herzens verwendet</German>
                 <French>Utilisé pour écouter les bruits respiratoires et cardiaques du patient</French>
-                <Portuguese>Usado para auscultar sons respiratórios e pulmonares do paciente</Portuguese>
+                <Portuguese>Usado para ausculta cardíaca e pulmonar</Portuguese>
                 <Russian>Используется для выслушивания дыхания и сердечных тонов пациента</Russian>
                 <Ukrainian>Використовується для вислуховування дихання та серцевих тонів пацієнта</Ukrainian>
                 <Korean>환자의 호흡과 심장음을 청진하는 데 사용</Korean>
@@ -539,7 +539,7 @@
                 <Polish>Jednorazowa rurka używana do usuwania nadmiaru płynu z przestrzeni opłucnowej</Polish>
                 <German>Einmalset, um eine Thoraxdrainage zu legen und Flüssigkeit aus dem Pleuraraum zu entfernen</German>
                 <French>Kit à usage unique utilisé pour insérer un drain thoracique afin d'évacuer le liquide de l'espace pleural.</French>
-                <Portuguese>Kit de uso único usado para inserir um tubo torácico para remoção de fluido do espaço pleural</Portuguese>
+                <Portuguese>Kit de uso único com dreno torácico para remoção de fluido do espaço pleural</Portuguese>
                 <Russian>Одноразовый набор для введения дренажа грудной клетки и удаления жидкости из плевральной полости</Russian>
                 <Ukrainian>Одноразовий набір для введення дренажу грудної клітки та видалення рідини з плевральної порожнини</Ukrainian>
                 <Korean>흉강액 제거 1회용 가슴관 키트 </Korean>
@@ -581,7 +581,7 @@
                 <Polish>Kieszonkowy worek samorozprężalny (BVM)</Polish>
                 <German>Taschenbeatmungsbeutel</German>
                 <French>Ballon de réanimation de poche</French>
-                <Portuguese>BVM Compacto</Portuguese>
+                <Portuguese>BVM compacto</Portuguese>
                 <Russian>Карманный мешок Амбу</Russian>
                 <Ukrainian>Кишеньковий мішок Амбу</Ukrainian>
                 <Korean>휴대용 BVM</Korean>
@@ -609,7 +609,7 @@
                 <Polish>Worek samorozprężalny (BVM)</Polish>
                 <German>Beatmungsbeutel</German>
                 <French>Ballon de réanimation</French>
-                <Portuguese>Bolsa-válvula-máscara</Portuguese>
+                <Portuguese>Bolsa-válvula-máscara (BVM)</Portuguese>
                 <Russian>Мешок Амбу</Russian>
                 <Ukrainian>Мішок Амбу</Ukrainian>
                 <Korean>Bag-Valve-Mask</Korean>
@@ -651,7 +651,7 @@
                 <Polish>Pusta przenośna butla z tlenem (425L)</Polish>
                 <German>Leere tragbare Sauerstoffflasche (425L)</German>
                 <French>Réservoir d'oxygène portable vide (425L)</French>
-                <Portuguese>Tanque de oxigênio portátil vazio (425L)</Portuguese>
+                <Portuguese>Tanque de oxigênio portátil (425L) vazio</Portuguese>
                 <Russian>Пустой портативный кислородный баллон (425 л)</Russian>
                 <Ukrainian>Порожній портативний кисневий балон (425 л)</Ukrainian>
                 <Korean>빈 휴대용 산소통 (425L)</Korean>
@@ -709,7 +709,7 @@
                 <Polish>Używanie opatrnuku Chest Seal...</Polish>
                 <German>Klebe Chest Seal...</German>
                 <French>Application du Chest Seal...</French>
-                <Portuguese>Aplicando selo torácico</Portuguese>
+                <Portuguese>Aplicando selo torácico...</Portuguese>
                 <Russian>Наложение окклюзионной повязки...</Russian>
                 <Ukrainian>Накладання оклюзійної наліпки...</Ukrainian>
                 <Korean>체스트 씰 적용 중</Korean>
@@ -723,7 +723,7 @@
                 <Polish>%1 założył Chest Seal</Polish>
                 <German>%1 legt Chest Seal an</German>
                 <French>%1 met le Chest Seal</French>
-                <Portuguese>%1 selo torácico aplicado</Portuguese>
+                <Portuguese>%1 aplicou selo torácico</Portuguese>
                 <Russian>%1 наложил окклюзионную повязку</Russian>
                 <Ukrainian>%1 наклав оклюзійну наліпку</Ukrainian>
                 <Korean>%1 체스트 씰 적용</Korean>
@@ -739,7 +739,7 @@
                 <Polish>Sprawdź oddychanie</Polish>
                 <German>Atmung überprüfen</German>
                 <French>Vérifier la respiration</French>
-                <Portuguese>Checar vias aéreas</Portuguese>
+                <Portuguese>Checar respiração</Portuguese>
                 <Russian>Проверить дыхание</Russian>
                 <Ukrainian>Перевірити дихання</Ukrainian>
                 <Korean>호흡 확인</Korean>
@@ -753,7 +753,7 @@
                 <Polish>Sprawdzanie oddychania...</Polish>
                 <German>Überprüfe Atmung...</German>
                 <French>Vérification de la respiration...</French>
-                <Portuguese>Checando vias aéreas</Portuguese>
+                <Portuguese>Checando respiração...</Portuguese>
                 <Russian>Проверка дыхания...</Russian>
                 <Ukrainian>Перевірка дихання...</Ukrainian>
                 <Korean>호흡 확인 중...</Korean>
@@ -767,7 +767,7 @@
                 <Polish>%1 sprawdził oddychanie: %2</Polish>
                 <German>%1 überprüfte die Atmung: %2</German>
                 <French>%1 a vérifié la respiration : %2</French>
-                <Portuguese>%1 checada respiração: %2</Portuguese>
+                <Portuguese>%1 checou respiração: %2</Portuguese>
                 <Russian>%1 проверил дыхание: %2</Russian>
                 <Ukrainian>%1 перевірив дихання: %2</Ukrainian>
                 <Korean>%1 호흡 확인: %2</Korean>
@@ -837,7 +837,7 @@
                 <Polish>Pacjent oddycha powoli</Polish>
                 <German>Patient atmet langsam</German>
                 <French>La respiration du patient est lente</French>
-                <Portuguese>Respiração do paciente é lenta</Portuguese>
+                <Portuguese>Respiração do paciente está lenta</Portuguese>
                 <Russian>Дыхание пациента замедленное</Russian>
                 <Ukrainian>Дихання пацієнта повільне</Ukrainian>
                 <Korean>환자 호흡이 느림 (Slow)</Korean>
@@ -865,7 +865,7 @@
                 <Polish>Pacjent szybko oddycha</Polish>
                 <German>Patient atmet schnell</German>
                 <French>La respiration du patient est rapide</French>
-                <Portuguese>Respiração do paciente é rápida</Portuguese>
+                <Portuguese>Respiração do paciente está rápida</Portuguese>
                 <Russian>Дыхание пациента учащённое</Russian>
                 <Ukrainian>Дихання пацієнта прискорене</Ukrainian>
                 <Korean>환자 호흡이 빠름 (Rapid)</Korean>
@@ -893,7 +893,7 @@
                 <Polish>Pacjent płytko oddycha</Polish>
                 <German>Patient atmet flach</German>
                 <French>La respiration du patient est superficielle</French>
-                <Portuguese>Respiração do paciente é superficial</Portuguese>
+                <Portuguese>Respiração do paciente está superficial</Portuguese>
                 <Russian>Дыхание пациента поверхностное</Russian>
                 <Ukrainian>Дихання пацієнта поверхневе</Ukrainian>
                 <Korean>환자 호흡이 얕음 (Shallow)</Korean>
@@ -921,7 +921,7 @@
                 <Polish>Pacjent oddycha powoli i płytko</Polish>
                 <German>Patient atmet langsam und flach</German>
                 <French>La respiration du patient est lente et superficielle</French>
-                <Portuguese>Respiração do paciente é lenta e superficial</Portuguese>
+                <Portuguese>Respiração do paciente está lenta e superficial</Portuguese>
                 <Russian>Дыхание медленное и поверхностное</Russian>
                 <Ukrainian>Дихання повільне і поверхневе</Ukrainian>
                 <Korean>환자 호흡이 느리고 얕음</Korean>
@@ -949,7 +949,7 @@
                 <Polish>Pacjent oddycha szybko i płytko</Polish>
                 <German>Patient atmet schnell und flach</German>
                 <French>La respiration du patient est rapide et superficielle</French>
-                <Portuguese>Respiração do paciente é rápida e superficial</Portuguese>
+                <Portuguese>Respiração do paciente está rápida e superficial</Portuguese>
                 <Russian>Дыхание учащённое и поверхностное</Russian>
                 <Ukrainian>Дихання прискорене і поверхневе</Ukrainian>
                 <Korean>환자 호흡이 빠르고 얕음</Korean>
@@ -1021,7 +1021,7 @@
                 <Polish>Równe unoszenie się klatki zaobserwowane</Polish>
                 <German>Brust hebt und senkt sich</German>
                 <French>Élévation et abaissement du thorax observés</French>
-                <Portuguese>Elevação e queda do tórax observadas</Portuguese>
+                <Portuguese>Expansão torácica observada</Portuguese>
                 <Russian>Наблюдается подъем и опускание грудной клетки</Russian>
                 <Ukrainian>Спостерігається підняття та опускання грудної клітки</Ukrainian>
                 <Korean>흉부 운동 관찰됨</Korean>
@@ -1063,7 +1063,7 @@
                 <Polish>Strony klatki są nierówne</Polish>
                 <German>Brust ist asymmetrisch</German>
                 <French>Les côtés de la poitrine sont inégaux</French>
-                <Portuguese>Lados do tórax são irregulares</Portuguese>
+                <Portuguese>Lados do tórax estão desiguais</Portuguese>
                 <Russian>Стороны грудной клетки двигаются неравномерно</Russian>
                 <Ukrainian>Сторони грудної клітки рухаються нерівномірно</Ukrainian>
                 <Korean>흉부 양쪽 비대칭</Korean>
@@ -1119,7 +1119,7 @@
                 <Polish>Nierówne unoszenie się klatki zaobserwowane</Polish>
                 <German>Asymmetrische Atmung beobachtet</German>
                 <French>Augmentation et diminution inégales de la hauteur de la poitrine</French>
-                <Portuguese>Observada elevação e queda irregular do tórax</Portuguese>
+                <Portuguese>Observada expansão irregular do tórax</Portuguese>
                 <Russian>Наблюдается неравномерное движение грудной клетки</Russian>
                 <Ukrainian>Спостерігається нерівномірний рух грудної клітки</Ukrainian>
                 <Korean>흉부 운동 불균형 관찰됨</Korean>
@@ -1133,7 +1133,7 @@
                 <Polish>Nierówne unoszenie się klatki</Polish>
                 <German>Asymmetrische Atmung</German>
                 <French>Relèvement et abaissement inégaux de la cage thoracique</French>
-                <Portuguese>Elevação e queda irregulares do tórax</Portuguese>
+                <Portuguese>Expansão irregular do tórax</Portuguese>
                 <Russian>Неравномерное движение грудной клетки</Russian>
                 <Ukrainian>Нерівномірний рух грудної клітки</Ukrainian>
                 <Korean>흉부 운동 불균형 </Korean>
@@ -1219,7 +1219,7 @@
                 <Polish>Wykonywanie dekompresji...</Polish>
                 <German>Führe Nadledekompression durch...</German>
                 <French>Effectue une décompression thoracique à l'aiguille...</French>
-                <Portuguese>Realização de descompressão torácica por agulha...</Portuguese>
+                <Portuguese>Realizando descompressão torácica com agulha...</Portuguese>
                 <Russian>Выполнение игольной декомпрессии грудной клетки...</Russian>
                 <Ukrainian>Виконання голкової декомпресії грудної клітки...</Ukrainian>
                 <Korean>바늘 감압술 (NCD) 수행 중...</Korean>
@@ -1233,7 +1233,7 @@
                 <Polish>Dekompresja igłowa</Polish>
                 <German>Nadledekompression</German>
                 <French>Décompression à l'aiguille</French>
-                <Portuguese>Descompressão por agulha</Portuguese>
+                <Portuguese>Descompressão com agulha</Portuguese>
                 <Russian>Игольная декомпрессия</Russian>
                 <Ukrainian>Голкова декомпресія</Ukrainian>
                 <Korean>바늘 감압술</Korean>
@@ -1247,7 +1247,7 @@
                 <Polish>%1 wykonał dekompresję igłową</Polish>
                 <German>%1 führte eine Nadledekompression durch</German>
                 <French>%1 a effectué une décompression thoracique à l'aiguille</French>
-                <Portuguese>%1 realizada descompressão torácica com agulha</Portuguese>
+                <Portuguese>%1 realizou descompressão torácica com agulha</Portuguese>
                 <Russian>%1 выполнил игольную декомпрессию грудной клетки</Russian>
                 <Ukrainian>%1 виконав голкову декомпресію грудної клітки</Ukrainian>
                 <Korean>%1 바늘 감압술 (NCD) 수행 중</Korean>
@@ -1305,7 +1305,7 @@
                 <Polish>Uzupełnianie butli z tlenem...</Polish>
                 <German>Fülle Sauerstoffflasche auf...</German>
                 <French>Remplissage de la bouteille d'oxygène...</French>
-                <Portuguese>Reabastecendo tanque de oxigênio</Portuguese>
+                <Portuguese>Reabastecendo tanque de oxigênio...</Portuguese>
                 <Russian>Заправка кислородного баллона...</Russian>
                 <Ukrainian>Заправка кисневого балона...</Ukrainian>
                 <Korean>산소통 보충 중...</Korean>
@@ -1335,7 +1335,7 @@
                 <Polish>Zakładanie pulsoksymetru...</Polish>
                 <German>Hänge Pulsoxymeter an...</German>
                 <French>Mise en place de l'oxymètre de pouls...</French>
-                <Portuguese>Colocando oxímetro</Portuguese>
+                <Portuguese>Colocando oxímetro...</Portuguese>
                 <Russian>Установка пульсоксиметра...</Russian>
                 <Ukrainian>Встановлення пульсоксиметра...</Ukrainian>
                 <Korean>옥시미터 적용 착용 중</Korean>
@@ -1377,7 +1377,7 @@
                 <Polish>Pacjęt ma już pulsoksymetr na %1</Polish>
                 <German>Patient hat bereits ein Pulsoxymeter am %1</German>
                 <French>Le patient a déjà un oxymètre de pouls sur le %1</French>
-                <Portuguese>O paciente já tem um oxímetro de pulso %1</Portuguese>
+                <Portuguese>O paciente já tem um oxímetro no %1</Portuguese>
                 <Russian>У пациента уже установлен пульсоксиметр на %1</Russian>
                 <Ukrainian>У пацієнта вже встановлено пульсоксиметр на %1</Ukrainian>
                 <Korean>환자는 이미 %1에 옥시미터 착용 중</Korean>
@@ -1391,7 +1391,7 @@
                 <Polish>%1 założył pulsoksymetr</Polish>
                 <German>%1 hängte Pulsoxymeter an</German>
                 <French>%1 place l'oxymètre de pouls</French>
-                <Portuguese>%1 oxímetro de pulso colocado</Portuguese>
+                <Portuguese>%1 oxímetro colocado</Portuguese>
                 <Russian>%1 установил пульсоксиметр</Russian>
                 <Ukrainian>%1 встановив пульсоксиметр</Ukrainian>
                 <Korean>%1 이 옥시미터 착용 시킴</Korean>
@@ -1463,7 +1463,7 @@
                 <Polish>%1 zamknął nacięcie drenażu</Polish>
                 <German>%1 nähte die Thorakotomieschnittwunde</German>
                 <French>%1 a suturé la plaie de thoracotomie</French>
-                <Portuguese>%1 incisão de toracostomia fechada</Portuguese>
+                <Portuguese>%1 fechou incisão da toracostomia</Portuguese>
                 <Russian>%1 закрыл разрез торакостомии</Russian>
                 <Ukrainian>%1 закрив розріз торакостомії</Ukrainian>
                 <Korean>%1 흉강 천자 절개부 봉합 완료</Korean>
@@ -1507,7 +1507,7 @@
                 <Polish>Odessaj płyny (Ssak ręczny)</Polish>
                 <German>Flüssigkeit absaugen (Einwegabsaugpumpe)</German>
                 <French>Aspirer le liquide (pompe d'aspiration à usage unique)</French>
-                <Portuguese>Drenar fluido (Aspirador manual)</Portuguese>
+                <Portuguese>Drenar fluido (aspirador manual)</Portuguese>
                 <Russian>Дренировать жидкость (отсасывающий мешок)</Russian>
                 <Ukrainian>Дренувати рідину (відсмоктувальний мішок)</Ukrainian>
                 <Korean>배액 (Suction Bag)</Korean>
@@ -1535,7 +1535,7 @@
                 <Polish>%1 odessał jamę opłucnej (%2)</Polish>
                 <German>%1 saugte Flüssigkeit aus Pleuraraum ab (%2)</German>
                 <French>%1 a aspiré du liquide de l'espace pleural (%2)</French>
-                <Portuguese>%1 espaço pleurall drenado (%2)</Portuguese>
+                <Portuguese>%1 drenou espaço pleural (%2)</Portuguese>
                 <Russian>%1 дренировал плевральную полость (%2)</Russian>
                 <Ukrainian>%1 дренував плевральну порожнину (%2)</Ukrainian>
                 <Korean>%1 흉강액 배액 (%2)</Korean>
@@ -1549,7 +1549,7 @@
                 <Polish>Ilość usuniętego płynu: %1</Polish>
                 <German>Thorakotomie Absaugung: %1</German>
                 <French>Thoracotomie drainage : %1</French>
-                <Portuguese>Dreno de toracostomia</Portuguese>
+                <Portuguese>Dreno de toracostomia: %1</Portuguese>
                 <Russian>Дренаж торакостомии: %1</Russian>
                 <Ukrainian>Дренаж торакостомії: %1</Ukrainian>
                 <Korean>흉강 천자 배액: %1</Korean>
@@ -1563,7 +1563,7 @@
                 <Polish>Odsysanie zakończone</Polish>
                 <German>Flüssigkeit fertig abgesaugt</German>
                 <French>Aspiration terminée</French>
-                <Portuguese>Drenagem completa do fluido</Portuguese>
+                <Portuguese>Drenagem de fluido completa</Portuguese>
                 <Russian>Дренирование жидкости завершено</Russian>
                 <Ukrainian>Дренування рідини завершено</Ukrainian>
                 <Korean>배액 완료</Korean>
@@ -1591,7 +1591,7 @@
                 <Polish>Brak krwi do odessania</Polish>
                 <German>Kein Blut drainiert</German>
                 <French>Pas de sang drainé</French>
-                <Portuguese>Nenhum sangue foi drenado</Portuguese>
+                <Portuguese>Nenhum sangue drenado</Portuguese>
                 <Russian>Крови не дренировано</Russian>
                 <Ukrainian>Кров не дреновано</Ukrainian>
                 <Korean>혈액 배출 없음</Korean>
@@ -1649,7 +1649,7 @@
                 <Polish>Wprowadź rurkę do drenażu</Polish>
                 <German>Thoraxdrainage einlegen</German>
                 <French>Insérer le tube thoracique</French>
-                <Portuguese>Inserção do tubo torácico</Portuguese>
+                <Portuguese>Colocar tubo torácico</Portuguese>
                 <Russian>Вставить дренаж грудной клетки</Russian>
                 <Ukrainian>Вставити дренаж грудної клітки</Ukrainian>
                 <Korean>가슴관 삽관 </Korean>
@@ -1663,7 +1663,7 @@
                 <Polish>Wprowadzanie rurki do drenażu...</Polish>
                 <German>Lege Thoraxdrainage ein...</German>
                 <French>Insertion du tube thoracique...</French>
-                <Portuguese>Inserindo tubo torácico...</Portuguese>
+                <Portuguese>Colocando tubo torácico...</Portuguese>
                 <Russian>Введение дренажа грудной клетки...</Russian>
                 <Ukrainian>Введення дренажу грудної клітки...</Ukrainian>
                 <Korean>삽관 중...</Korean>
@@ -1677,7 +1677,7 @@
                 <Polish>Rurka do drenażu została już włożona</Polish>
                 <German>Thoraxdrainage liegt bereits ein</German>
                 <French>Tube thoracique déjà inséré</French>
-                <Portuguese>Tubo torácico já inserido</Portuguese>
+                <Portuguese>Tubo torácico colocado</Portuguese>
                 <Russian>Дренаж грудной клетки уже установлен</Russian>
                 <Ukrainian>Дренаж грудної клітки вже встановлено</Ukrainian>
                 <Korean>이미 가슴삽관됨</Korean>
@@ -1691,7 +1691,7 @@
                 <Polish>%1 włożył rurkę do drenażu</Polish>
                 <German>%1 legte eine Thoraxdrainage ein</German>
                 <French>%1 tube thoracique inséré</French>
-                <Portuguese>%1 tubo torácico inserido</Portuguese>
+                <Portuguese>%1 colocou tubo torácico</Portuguese>
                 <Russian>%1 установил дренаж грудной клетки</Russian>
                 <Ukrainian>%1 встановив дренаж грудної клітки</Ukrainian>
                 <Korean>%1 가슴삽관함</Korean>
@@ -1705,7 +1705,7 @@
                 <Polish>Rurka do drenażu włożona</Polish>
                 <German>Thoraxdrainage eingelegt</German>
                 <French>Tube thoracique inséré</French>
-                <Portuguese>Tubo torácico inserido</Portuguese>
+                <Portuguese>Tubo torácico colocado</Portuguese>
                 <Russian>Дренаж грудной клетки установлен</Russian>
                 <Ukrainian>Дренаж грудної клітки встановлено</Ukrainian>
                 <Korean>가슴삽관 완료</Korean>
@@ -1721,7 +1721,7 @@
                 <Polish>Zabezpiecz drenaż opłucnej</Polish>
                 <German>Thoraxdrainage verschließen</German>
                 <French>Fermeture du tube thoracique</French>
-                <Portuguese>Selar novamente o tubo torácico</Portuguese>
+                <Portuguese>Re-selar o tubo torácico</Portuguese>
                 <Russian>Повторно герметизировать дренаж</Russian>
                 <Ukrainian>Повторно герметизувати дренаж</Ukrainian>
                 <Korean>가슴관 재밀봉</Korean>
@@ -1749,7 +1749,7 @@
                 <Polish>Rurka do drenażu została już ponownie zamknięta</Polish>
                 <German>Thoraxdrainage ist bereits wiederverschlossen</German>
                 <French>Tube thoracique déjà refermé</French>
-                <Portuguese>Tubo torácico já selado novamente</Portuguese>
+                <Portuguese>Tubo torácico já selado</Portuguese>
                 <Russian>Дренаж уже герметизирован</Russian>
                 <Ukrainian>Дренаж вже герметизовано</Ukrainian>
                 <Korean>이미 재밀봉됨</Korean>
@@ -1763,7 +1763,7 @@
                 <Polish>%1 zamknął ponownie rurkę do drenażu</Polish>
                 <German>%1 verschließte Thoraxdrainage erneut</German>
                 <French>%1 referme le tube thoracique</French>
-                <Portuguese>%1 Tubo torácico selado novamente</Portuguese>
+                <Portuguese>%1 re-selou o tubo torácico</Portuguese>
                 <Russian>%1 повторно герметизировал дренаж грудной клетки</Russian>
                 <Ukrainian>%1 повторно герметизував дренаж грудної клітки</Ukrainian>
                 <Korean>%1 Chest Tube 재밀봉</Korean>
@@ -1777,7 +1777,7 @@
                 <Polish>Rurka do drenażu została już zamknięta </Polish>
                 <German>Thoraxdrainage wiederverschlossen</German>
                 <French>Tube thoracique refermé</French>
-                <Portuguese>Tubo torácico selado novamente</Portuguese>
+                <Portuguese>Tubo torácico re-selado</Portuguese>
                 <Russian>Дренаж грудной клетки герметизирован</Russian>
                 <Ukrainian>Дренаж грудної клітки герметизовано</Ukrainian>
                 <Korean>재밀봉 완료</Korean>
@@ -1862,7 +1862,7 @@
                 <English>%1 performed thoracostomy (Thoracostomy Kit)</English>
                 <German>%1 führte Thorakotomie (Thorakotomie Kit) durch</German>
                 <French>%1 a effectué une thoracotomie (kit de thoracotomie)</French>
-                <Portuguese>%1 realizar toracostomia (kit de toracostomia)</Portuguese>
+                <Portuguese>%1 realizou toracostomia (kit de toracostomia)</Portuguese>
                 <Russian>%1 выполнил торакостомию (набор для торакостомии)</Russian>
                 <Ukrainian>%1 виконав торакостомію (набір для торакостомії)</Ukrainian>
                 <Korean>%1 키트로 흉강 천자 (Thoracostomy) 수행</Korean>
@@ -1877,7 +1877,7 @@
                 <Polish>Przetarcie wnętrza klatki wykonane</Polish>
                 <German>Finger-Thorakotomie durchgeführt</German>
                 <French>Thoracotomie au doigt effectuée</French>
-                <Portuguese>Toracostomia com dedo realizada</Portuguese>
+                <Portuguese>Toracostomia de dedo realizada</Portuguese>
                 <Russian>Выполнена пальцевая торакостомия</Russian>
                 <Ukrainian>Виконана пальцева торакостомія</Ukrainian>
                 <Korean>수지 흉강 천자 수행됨</Korean>
@@ -2215,7 +2215,7 @@
                 <Polish>Przestano używać worka samorozprężalnego</Polish>
                 <German>Beatmung beendet</German>
                 <French>Stopper la respiration artificielle</French>
-                <Portuguese>Interrompido uso do BVM</Portuguese>
+                <Portuguese>Parado o uso do BVM</Portuguese>
                 <Russian>Использование мешка Амбу прекращено</Russian>
                 <Ukrainian>Використання мішка Амбу припинено</Ukrainian>
                 <Korean>BVM 사용 중단함</Korean>
@@ -2257,7 +2257,7 @@
                 <Polish>Przerwano oddechy ratunkowe</Polish>
                 <German>Beatmung pausiert</German>
                 <French>Interrompution de la respiration artificielle</French>
-                <Portuguese>Ventilação pausada</Portuguese>
+                <Portuguese>Pausada ventilação</Portuguese>
                 <Russian>Искусственное дыхание приостановлено</Russian>
                 <Ukrainian>Штучне дихання припинено</Ukrainian>
                 <Korean>구조 호흡 일시 중지됨</Korean>
@@ -2285,7 +2285,7 @@
                 <Polish>Wznowiono oddechy ratunkowe </Polish>
                 <German>Beatmung fortgesetzt</German>
                 <French>Poursuite la respiration artificielle</French>
-                <Portuguese>Continuando vesntilação</Portuguese>
+                <Portuguese>Continuando ventilação</Portuguese>
                 <Russian>Продолжение искусственного дыхания</Russian>
                 <Ukrainian>Продовження штучного дихання</Ukrainian>
                 <Korean>구조 호흡 재개됨</Korean>
