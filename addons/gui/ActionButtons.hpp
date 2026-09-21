@@ -3,9 +3,22 @@
         textureNoShortcut = picture; \
     }
 
+ACM_MEDICALMENU_ACTION_BUTTON(CheckCapillaryRefill,QPATHTOEF(gui,ui\CheckCapillaryRefill.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(SlapAwake,QPATHTOEF(gui,ui\SlapAwake.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(ShakeAwake,QPATHTOEF(gui,ui\ShakeAwake.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(CheckResponse,QPATHTOEF(gui,ui\CheckResponse.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(CheckAirway,QPATHTOEF(gui,ui\CheckAirway.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(BeginHeadTiltChinLift,QPATHTOEF(gui,ui\BeginHeadTiltChinLift.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(RecoveryPosition,QPATHTOEF(gui,ui\RecoveryPosition.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(CheckDogTags,QPATHTOEF(gui,ui\CheckDogTags.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(CheckBreathing,QPATHTOEF(gui,ui\CheckBreathing.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(InspectChest,QPATHTOEF(gui,ui\InspectChest.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(CheckPulse,QPATHTOEF(gui,ui\CheckPulse.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(WashEyes,QPATHTOEF(gui,ui\WashEyes.paa));
+
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_tourniquet,QACEPATHTOF(medical_treatment,ui\tourniquet_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_surgicalKit,QACEPATHTOF(medical_treatment,ui\surgicalKit_ca.paa));
-ACM_MEDICALMENU_ACTION_BUTTON(ACE_personalAidKit,QACEPATHTOF(medical_treatment,ui\surgicalKit_ca.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(ACE_personalAidKit,QACEPATHTOF(medical_treatment,ui\personal_aid_kit_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_bodyBag,QACEPATHTOF(medical_treatment,ui\bodybag_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_bodyBag_blue,QACEPATHTOF(medical_treatment,ui\bodybag_blue_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_bodyBag_white,QACEPATHTOF(medical_treatment,ui\bodybag_white_ca.paa));
@@ -13,6 +26,7 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACE_adenosine,QACEPATHTOF(medical_treatment,ui\ade
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_epinephrine,QACEPATHTOF(medical_treatment,ui\epinephrine_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(CPR,QPATHTOEF(core,ui\icon_patient_cpr.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(OpenTransfusionMenu,QPATHTOEF(core,ui\icon_patient_transfusionmenu.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACE_morphine,QPATHTOEF(core,ui\override\morphine_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_OPA,QPATHTOEF(airway,ui\opa_ca.paa));
@@ -52,6 +66,7 @@ ACM_MEDICALMENU_ACTION_BUTTON(ACM_EmergencyTraumaDressing,QPATHTOEF(damage,ui\et
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_ElasticWrap,QACEPATHTOF(medical_treatment,ui\elasticbandage_ca.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_SAMSplint,QPATHTOEF(disability,ui\samSplint.paa));
+ACM_MEDICALMENU_ACTION_BUTTON(Fracture,QACEPATHTOF(medical_feedback,data\fracture.paa));
 
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_ATNA_Autoinjector,QPATHTOEF(cbrn,ui\autoinjector_ATNA_ca.paa));
 ACM_MEDICALMENU_ACTION_BUTTON(ACM_Midazolam_Autoinjector,QPATHTOEF(cbrn,ui\autoinjector_midazolam_ca.paa));
