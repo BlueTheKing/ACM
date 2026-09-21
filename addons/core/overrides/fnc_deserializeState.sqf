@@ -167,9 +167,9 @@ private _variableList = [
 ];
 
 // CBRN
-private _CBRN_HazardsToCheck = [];
-
 if (EGVAR(CBRN,enable)) then {
+    private _CBRN_HazardsToCheck = [];
+
     _variableList append [
         [QEGVAR(CBRN,Exposed_State), false],
         [QEGVAR(CBRN,Exposed_External_State), false],
@@ -309,5 +309,10 @@ if (EGVAR(CBRN,enable)) then {
         };
     } forEach EGVAR(CBRN,HazardType_Array);
 };
+
+// Manually activate if non-defaults are present
+[_unit] call ACEFUNC(medical_engine,checkForMedicalActivity);
+
+[QACEGVAR(medical,deserialize), [_unit, _state]] call CBA_fnc_localEvent;
 
 _state call CBA_fnc_deleteNamespace;

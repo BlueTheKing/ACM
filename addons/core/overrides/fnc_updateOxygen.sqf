@@ -150,6 +150,14 @@ if (EGVAR(CBRN,enable) && _respirationRate > 0) then {
 
 private _breathingEffectiveness = _effectiveBloodVolume min _airwayState * _breathingState;
 
+{
+    _breathingEffectiveness = if (_y isEqualType 0) then {
+        _breathingEffectiveness * _y
+    } else {
+        _breathingEffectiveness * (_unit call _y)
+    };
+} forEach ACEGVAR(medical_vitals,spo2DutyList);
+
 switch (true) do {
     case (_respirationRate > 0 && HAS_PULSE(_patient)): {
         private _airSaturation = _airOxygenSaturation * _capture;

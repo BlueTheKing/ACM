@@ -84,9 +84,11 @@ switch (true) do {
             _hintLogFormat = ["%1 %2: %3, %4", "%1 %2: %3, %4, %5"] select _hasPneumothorax;
         };
     };
-    case (_pneumothorax): {
-        _hintArray pushBack LSTRING(InspectChest_Uneven);
-        _hintLogArray pushBack LSTRING(InspectChest_Uneven_Short);
+    case (_hasPneumothorax): {
+        _hintHeight = 2;
+    
+        _hintArray set [1, LSTRING(InspectChest_Uneven)];
+        _hintLogArray set [0, LSTRING(InspectChest_Uneven_Short)];
     };
     case (_hemothorax): {
         _hintHeight = 2.5;

@@ -28,7 +28,7 @@ ACEGVAR(medical_gui,actions) = [];
     private _menuIcon = (["",getText (_x >> "ACM_menuIcon")] select GVAR(showActionItemIcons));
 
     ACEGVAR(medical_gui,actions) pushBack [_displayName, _category, _condition, _statement, _items, _menuIcon];
-} forEach configProperties [configFile >> QACEGVAR(medical_treatment,actions), "isClass _x"];
+} forEach ("true" configClasses (configFile >> QACEGVAR(medical_treatment,actions)));
 
 
 if ("ace_dragging" call ACEFUNC(common,isModLoaded)) then {

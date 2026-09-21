@@ -77,21 +77,16 @@ private _severeDamage = false;
 private _partIndex = GET_BODYPART_INDEX(_bodyPart);
 
 if (_iv && _state && !_exit) then {
-    switch (true) do {
-        case !(alive _patient): {
-            _successChance = linearConversion [0, 90, (CBA_missionTime - (_patient getVariable [QEGVAR(core,TimeOfDeath), 0])), 0.75, 0, true];
-        };
-        case (IN_CRDC_ARRST(_patient)): {
+    if !(alive _patient) then {
+        _successChance = linearConversion [0, 90, (CBA_missionTime - (_patient getVariable [QEGVAR(core,TimeOfDeath), 0])), 0.5, 0, true];
+    } else {
+        if (IN_CRDC_ARRST(_patient)) then {
             if ([_patient] call EFUNC(core,cprActive)) then {
-                _successChance = linearConversion [6, 3, GET_BLOOD_VOLUME(_patient), 0.8, 0, true];
+                _successChance = linearConversion [6, 3, GET_BLOOD_VOLUME(_patient), 0.7, 0, true];
             } else {
-                _successChance = linearConversion [0, 120, (CBA_missionTime - (_patient getVariable [QGVAR(CardiacArrest_Time), 0])), 0.8, 0, true];
+                _successChance = linearConversion [0, 120, (CBA_missionTime - (_patient getVariable [QGVAR(CardiacArrest_Time), 0])), 0.6, 0, true];
             };
-        };
-        case (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)): {
-            _successChance = linearConversion [0, 90, (CBA_missionTime - ((_patient getVariable [QEGVAR(disability,Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]]) select _partIndex)), 0.9, 0, true];
-        };
-        default {
+        } else {
             GET_BLOOD_PRESSURE(_patient) params ["_diastolic", "_systolic"];
 
             if (_bodyPart in ["leftarm","rightarm"]) then {
@@ -100,6 +95,10 @@ if (_iv && _state && !_exit) then {
                 _successChance = linearConversion [60, 80, _systolic, 0, 1, true];
             };
         };
+    };
+
+    if (HAS_TOURNIQUET_APPLIED_ON(_patient,_partIndex)) then {
+        _successChance = 0 max (_successChance - (linearConversion [0, 90, (CBA_missionTime - ((_patient getVariable [QEGVAR(disability,Tourniquet_ApplyTime), [-1,-1,-1,-1,-1,-1]]) select _partIndex)), 0.2, 0.9, true]));
     };
 
     if (_successChance > 0.1) then {

@@ -26,7 +26,7 @@ if !(_state) then {
         _patient setVariable [QGVAR(WasTreated), false, true];
     };
 
-    if ((_patient getVariable [QGVAR(Lying_State), false]) && ((animationState _patient) in LYING_ANIMATION)) then {
+    if ((_patient getVariable [QGVAR(Lying_State), false]) && (((animationState _patient) in LYING_ANIMATION) || !(isNull (objectParent _patient)))) then {
         [QGVAR(getUpPrompt), [_patient], _patient] call CBA_fnc_targetEvent;
     };
 

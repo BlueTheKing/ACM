@@ -1,3 +1,5 @@
+class SmokeShellWhite;
+
 #define SMOKESHELL_ENTRY(classname) \
     class SmokeShellWhite: SmokeShellWhite { \
         simulation = "particles"; \

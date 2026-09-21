@@ -168,6 +168,9 @@ class CfgFunctions {
             class handleDamage { // CBRN chemical burns
                 file = QPATHTOF(overrides\fnc_handleDamage.sqf); //ace/addons/medical_engine/functions/fnc_handleDamage.sqf
             };
+            class checkForMedicalActivity { // Include ACM variables
+                file = QPATHTOF(overrides\fnc_checkForMedicalActivity.sqf); //ace/addons/medical_engine/functions/fnc_checkForMedicalActivity.sqf
+            };
         };
     };
     class overwrite_medical_ai {
@@ -229,6 +232,14 @@ class CfgFunctions {
             };
             class canCarry { // Lying state allow carry
                 file = QPATHTOF(overrides\fnc_canCarry.sqf); //ace/addons/dragging/functions/fnc_canCarry.sqf
+            };
+        };
+    };
+    class overwrite_ace_zeus {
+        tag = "ace_zeus";
+        class ace_zeus {
+            class moduleUnconscious { // Fix AI unconsciousness being changed
+                file = QPATHTOF(overrides\fnc_moduleUnconscious.sqf); //ace/addons/zeus/functions/fnc_moduleUnconscious.sqf
             };
         };
     };

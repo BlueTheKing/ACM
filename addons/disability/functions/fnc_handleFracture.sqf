@@ -118,7 +118,7 @@ private _PFH = [{
 
     for "_i" from 2 to 5 do {
         if (!_givePain && _givePainArray select _i) then {
-            _givePain = true;
+            _givePain = (random 1 < 0.3);
         };
 
         if ((_fractures select _i) == -1 && _reFractureArray select _i) then {
