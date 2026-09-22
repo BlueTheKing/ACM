@@ -670,6 +670,9 @@
             <Japanese>薬剤投与時に注射器を消費する代わりに再利用可能にするかどうかを設定</Japanese>
             <Portuguese>Define se seringas são reutilizáveis ao invés de consumidas após administração de medicações</Portuguese>
         </Key>
+        <Key ID="STR_ACM_Circulation_SETTING_ReusableSyringe_Option">
+            <English>IV Only</English>
+        </Key>
         <Key ID="STR_ACM_Circulation_SETTING_Allow_Syringe">
             <English>Allow Syringe</English>
             <Portuguese>Permitir seringa</Portuguese>
