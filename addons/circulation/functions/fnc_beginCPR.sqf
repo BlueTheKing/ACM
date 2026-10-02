@@ -52,7 +52,7 @@ GVAR(MedicHasBVMType) = "";
 
 GVAR(SwapToBVM) = false;
 
-private _uniqueItems = [_medic, 0] call ACEFUNC(common,uniqueItems);
+private _uniqueItems = [_medic, 0] call EFUNC(core,itemList);
 private _itemIndex = _uniqueItems findIf {_x == "ACM_BVM"};
 
 if (_itemIndex < 0) then {
@@ -62,7 +62,7 @@ if (_itemIndex < 0) then {
     GVAR(MedicHasBVMType) = "ACM_BVM";
 };
 
-GVAR(MedicHasBVM) = _itemIndex > 0;
+GVAR(MedicHasBVM) = _itemIndex >= 0;
 
 if !(GVAR(MedicHasBVM)) then {
     GVAR(MedicHasBVMType) = "";
@@ -198,7 +198,7 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
         };
 
         if (_updateMouseHint) then {
-            private _uniqueItems = [_medic, 0] call ACEFUNC(common,uniqueItems);
+            private _uniqueItems = [_medic, 0] call EFUNC(core,itemList);
             private _itemIndex = _uniqueItems findIf {_x == "ACM_BVM"};
 
             if (_itemIndex < 0) then {
@@ -208,7 +208,7 @@ private _CPRStartTime = CBA_missionTime + _startDelay + 0.2;
                 GVAR(MedicHasBVMType) = "ACM_BVM";
             };
 
-            GVAR(MedicHasBVM) = _itemIndex > 0;
+            GVAR(MedicHasBVM) = _itemIndex >= 0;
 
             if !(GVAR(MedicHasBVM)) then {
                 GVAR(MedicHasBVMType) = "";

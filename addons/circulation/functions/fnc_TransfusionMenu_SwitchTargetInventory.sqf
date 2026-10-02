@@ -56,7 +56,7 @@ private _target = [ACE_player, GVAR(TransfusionMenu_Target), _vehicle] select GV
 
 _ctrlInventorySelectText ctrlSetText (format [LLSTRING(Common_InventoryTarget), _text]);
 
-private _cachedItems = [ACE_player, 0] call ACEFUNC(common,uniqueItems);
+private _cachedItems = [ACE_player, 0] call EFUNC(core,itemList);
 
 private _fluidsArray = +GVAR(Fluids_Array);
 private _fluidsArrayData = +GVAR(Fluids_Array_Data);
@@ -119,7 +119,7 @@ if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
     } forEach _fluidsArray;
 } else {
     {
-        private _count = [_target, _x] call ACEFUNC(common,getCountOfItem);
+        private _count = [_target, _x] call EFUNC(core,itemCount);
 
         if (_count > 0) then { 
             [_ctrlInventoryPanel, _fluidsArrayData, _count, _x, _forEachIndex] call _fnc_addToInventoryPanel;

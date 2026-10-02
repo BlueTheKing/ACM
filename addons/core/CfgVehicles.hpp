@@ -205,7 +205,7 @@ class CfgVehicles {
                 exceptions[] = {"isNotInside", "isNotSitting"};
                 class ACM_AED_Interactions {
                     displayName = ECSTRING(circulation,AED_Short);
-                    condition = QUOTE('ACM_AED' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                    condition = QUOTE(([ARR_2(_player,'ACM_AED')] call FUNC(itemCount)) > 0);
                     statement = "";
                     exceptions[] = {"isNotInside", "isNotSitting"};
                     showDisabled = 0;
@@ -228,7 +228,7 @@ class CfgVehicles {
                     insertChildren = QUOTE([ARR_2(_player,true)] call EFUNC(circulation,Syringe_ChildActions));
                     class ACM_Action_Syringe_10_Empty {
                         displayName = __EVAL(call compile QUOTE(format [ARR_4('%1 (%2ml) [%3]',localize 'STR_ACM_Circulation_Syringe',10,localize 'STR_ACM_Core_Common_Empty')]));
-                        condition = QUOTE('ACM_Syringe_10' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                        condition = QUOTE(([ARR_2(_player,'ACM_Syringe_10')] call FUNC(itemCount)) > 0);
                         statement = QUOTE([ARR_4(_player,objNull,'',10)] call EFUNC(circulation,Syringe_Draw));
                         showDisabled = 0;
                         exceptions[] = {"isNotInside", "isNotSitting"};
@@ -236,19 +236,19 @@ class CfgVehicles {
                     };
                     class ACM_Action_Syringe_5_Empty: ACM_Action_Syringe_10_Empty {
                         displayName = __EVAL(call compile QUOTE(format [ARR_4('%1 (%2ml) [%3]',localize 'STR_ACM_Circulation_Syringe',5,localize 'STR_ACM_Core_Common_Empty')]));
-                        condition = QUOTE('ACM_Syringe_5' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                        condition = QUOTE(([ARR_2(_player,'ACM_Syringe_5')] call FUNC(itemCount)) > 0);
                         statement = QUOTE([ARR_4(_player,objNull,'',5)] call EFUNC(circulation,Syringe_Draw));
                         icon = QPATHTOEF(circulation,ui\icon_syringe_5_ca.paa);
                     };
                     class ACM_Action_Syringe_3_Empty: ACM_Action_Syringe_10_Empty {
                         displayName = __EVAL(call compile QUOTE(format [ARR_4('%1 (%2ml) [%3]',localize 'STR_ACM_Circulation_Syringe',3,localize 'STR_ACM_Core_Common_Empty')]));
-                        condition = QUOTE('ACM_Syringe_3' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                        condition = QUOTE(([ARR_2(_player,'ACM_Syringe_3')] call FUNC(itemCount)) > 0);
                         statement = QUOTE([ARR_4(_player,objNull,'',3)] call EFUNC(circulation,Syringe_Draw));
                         icon = QPATHTOEF(circulation,ui\icon_syringe_3_ca.paa);
                     };
                     class ACM_Action_Syringe_1_Empty: ACM_Action_Syringe_10_Empty {
                         displayName = __EVAL(call compile QUOTE(format [ARR_4('%1 (%2ml) [%3]',localize 'STR_ACM_Circulation_Syringe',1,localize 'STR_ACM_Core_Common_Empty')]));
-                        condition = QUOTE('ACM_Syringe_1' in ([ARR_2(_player,0)] call ACEFUNC(common,uniqueItems)));
+                        condition = QUOTE(([ARR_2(_player,'ACM_Syringe_1')] call FUNC(itemCount)) > 0);
                         statement = QUOTE([ARR_4(_player,objNull,'',1)] call EFUNC(circulation,Syringe_Draw));
                         icon = QPATHTOEF(circulation,ui\icon_syringe_1_ca.paa);
                     };

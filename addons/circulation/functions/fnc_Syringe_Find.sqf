@@ -18,7 +18,7 @@
 
 params ["_medic", ["_size", 0]];
 
-private _cachedItems = [_medic, 1] call ACEFUNC(common,uniqueItems);
+private _cachedItems = [_medic, 1] call EFUNC(core,itemList);
 
 private _array = switch (_size) do {
     case 10: {ACM_SYRINGES_10};

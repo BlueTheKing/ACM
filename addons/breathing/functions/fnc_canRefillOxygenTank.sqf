@@ -18,4 +18,4 @@
 
 params ["_unit", "_vehicle"];
 
-"ACM_OxygenTank_425_Empty" in ([_unit, 0] call ACEFUNC(common,uniqueItems)) && ([_vehicle] call ACEFUNC(medical_treatment,isMedicalVehicle));
+(([_unit, "ACM_OxygenTank_425_Empty"] call EFUNC(core,itemCount)) > 0) && ([_vehicle] call ACEFUNC(medical_treatment,isMedicalVehicle));

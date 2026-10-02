@@ -44,7 +44,7 @@ if (GVAR(SyringeDraw_InventorySelection) == 2) then {
 
     {
         private _classname = _x;
-        private _count = [_inventoryTarget,_classname] call ACEFUNC(common,getCountOfItem);
+        private _count = [_inventoryTarget, _classname] call EFUNC(core,itemCount);
 
         if (_count > 0) then {
             private _config = (configFile >> "CfgWeapons" >> _classname);

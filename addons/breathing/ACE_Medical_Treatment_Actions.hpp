@@ -66,7 +66,7 @@ class ACEGVAR(medical_treatment,actions) {
         displayName = CSTRING(UseBVM_PortableOxygen);
         treatmentLocations = TREATMENT_LOCATIONS_ALL;
         items[] = {"ACM_BVM"};
-        condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(canUseBVM) && ('ACM_OxygenTank_425' in ([ARR_2(_medic,2)] call ACEFUNC(common,uniqueItems))));
+        condition = QUOTE([ARR_2(_medic,_patient)] call FUNC(canUseBVM) && (([ARR_2(_medic,'ACM_OxygenTank_425')] call EFUNC(core,itemCount)) > 0));
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,true,true)] call FUNC(useBVM));
     };
 

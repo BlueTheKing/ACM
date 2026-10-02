@@ -22,16 +22,16 @@ params ["_medic", "_medication", "_dose", ["_size", 10]];
 
 switch (GVAR(SyringeDraw_InventorySelection)) do {
     case 1: {
-        GVAR(SyringeDraw_Target) removeItem (format ["ACM_Vial_%1", _medication]);
+        [GVAR(SyringeDraw_Target), format ["ACM_Vial_%1", _medication]] call EFUNC(core,itemTake);
     };
     case 2: {
         (objectParent _medic) addItemCargoGlobal [(format ["ACM_Vial_%1", _medication]), -1];
     };
     default {
-        _medic removeItem (format ["ACM_Vial_%1", _medication]);
+        [_medic, format ["ACM_Vial_%1", _medication]] call EFUNC(core,itemTake);
     };
 };
 
-_medic removeItem (format ["ACM_Syringe_%1", _size]);
+[_medic, format ["ACM_Syringe_%1", _size]] call EFUNC(core,itemTake);
 
 [_medic, (format ["ACM_Syringe_%1_%2",_size, _medication]), "", (floor (_dose * 100))] call ACEFUNC(common,addToInventory);

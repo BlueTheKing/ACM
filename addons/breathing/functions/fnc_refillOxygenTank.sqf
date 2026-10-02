@@ -19,7 +19,7 @@ params ["_unit"];
 
 _unit call ACEFUNC(common,goKneeling);
 
-_unit removeItem "ACM_OxygenTank_425_Empty";
+[_unit, "ACM_OxygenTank_425_Empty"] call EFUNC(core,itemTake);
 
 [8, [_unit], {
     params ["_args"];

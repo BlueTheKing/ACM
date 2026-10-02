@@ -36,7 +36,7 @@ private _target = [_medic, _patient, _vehicle] select GVAR(TransfusionMenu_Selec
 if (GVAR(TransfusionMenu_Selected_Inventory) == 2) then {
     _vehicle addItemCargoGlobal [_itemClassname, -1];
 } else {
-    _target removeItem _itemClassname;
+    [_target, _itemClassname] call EFUNC(core,itemTake);
 };
 
 private _itemClassNameString = getText (configFile >> "CfgWeapons" >> _itemClassName >> "displayName");

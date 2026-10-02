@@ -592,28 +592,28 @@ class ACEGVAR(medical_treatment,actions) {
         icon = QPATHTOEF(circulation,ui\icon_syringe_10_ca.paa);
         allowedSelections[] = {"Body","LeftArm","RightArm","LeftLeg","RightLeg"};
         treatmentTime = 0.01;
-        condition = QUOTE('ACM_Syringe_10' in (items _medic));
+        condition = QUOTE(([ARR_2(_medic,'ACM_Syringe_10')] call FUNC(itemCount)) > 0);
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,10)] call EFUNC(circulation,Syringe_Draw));
         ACM_menuIcon = "ACM_Syringe_10";
     };
     class UseSyringe_5: UseSyringe_10 {
         displayName = __EVAL(call compile QUOTE(format [ARR_2(localize 'STR_ACM_Circulation_UseSyringe',5)]));
         icon = QPATHTOEF(circulation,ui\icon_syringe_5_ca.paa);
-        condition = QUOTE('ACM_Syringe_5' in (items _medic));
+        condition = QUOTE(([ARR_2(_medic,'ACM_Syringe_5')] call FUNC(itemCount)) > 0);
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,5)] call EFUNC(circulation,Syringe_Draw));
         ACM_menuIcon = "ACM_Syringe_5";
     };
     class UseSyringe_3: UseSyringe_10 {
         displayName = __EVAL(call compile QUOTE(format [ARR_2(localize 'STR_ACM_Circulation_UseSyringe',3)]));
         icon = QPATHTOEF(circulation,ui\icon_syringe_3_ca.paa);
-        condition = QUOTE('ACM_Syringe_3' in (items _medic));
+        condition = QUOTE(([ARR_2(_medic,'ACM_Syringe_3')] call FUNC(itemCount)) > 0);
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,3)] call EFUNC(circulation,Syringe_Draw));
         ACM_menuIcon = "ACM_Syringe_3";
     };
     class UseSyringe_1: UseSyringe_10 {
         displayName = __EVAL(call compile QUOTE(format [ARR_2(localize 'STR_ACM_Circulation_UseSyringe',1)]));
         icon = QPATHTOEF(circulation,ui\icon_syringe_1_ca.paa);
-        condition = QUOTE('ACM_Syringe_1' in (items _medic));
+        condition = QUOTE(([ARR_2(_medic,'ACM_Syringe_1')] call FUNC(itemCount)) > 0);
         callbackSuccess = QUOTE([ARR_4(_medic,_patient,_bodyPart,1)] call EFUNC(circulation,Syringe_Draw));
         ACM_menuIcon = "ACM_Syringe_1";
     };

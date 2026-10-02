@@ -18,9 +18,9 @@
 params [];
 
 private _targetInventory = switch (GVAR(SyringeDraw_InventorySelection)) do {
-    case 1: {[GVAR(SyringeDraw_Target)] call ACEFUNC(common,uniqueItems)};
+    case 1: {[GVAR(SyringeDraw_Target)] call EFUNC(core,itemList)};
     case 2: {};
-    default {[ACE_player] call ACEFUNC(common,uniqueItems)};
+    default {[ACE_player] call EFUNC(core,itemList)};
 };
 
 private _medicationList = [];
