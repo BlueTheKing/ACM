@@ -135,4 +135,4 @@ _args call _onStart;
     };
 
     _args call _perFrame;
-}, 0, [_medic, _patient, _bodyPart, _extraArgs, _notInVehicle, _isProne, _perFrame, _onCancel, _dialogID]] call CBA_fnc_addPerFrameHandler;
+}, ([0.0000000000000001, 0] select GVAR(ContinuousAction_IsDialog)), [_medic, _patient, _bodyPart, _extraArgs, _notInVehicle, _isProne, _perFrame, _onCancel, _dialogID]] call CBA_fnc_addPerFrameHandler;
